@@ -17,7 +17,7 @@ Writing a text file is a common task in programming, whether you are storing dat
 
 To write a text file in C++, you will need to include the `<fstream>` library. This library provides classes and functions for reading and writing files. First, you will need to create an instance of the `ofstream` class to open a file for writing. You can do this by specifying the name of the file you want to create and the mode in which you want to open it, which in this case is `ios::out` for writing.
 
-```
+```C++
 #include <iostream>
 #include <fstream>
 
