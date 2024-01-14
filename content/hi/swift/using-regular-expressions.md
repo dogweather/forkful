@@ -1,42 +1,37 @@
 ---
-title:    "Swift: नियमित अभिव्यक्तियों का उपयोग करना"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/swift/using-regular-expressions.md"
+title:                "Swift: विन्यस्त अभिव्यंजनों का प्रयोग करना"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-यदि आप Swift में कोडिंग करने के लिए एक प्रोग्रामर हैं, तो आपने संभावतः इस शब्द को सुना है - "Regular Expressions"। यह स्ट्रिंग में पैटर्न को ढूंढने और उस पैटर्न के आधार पर स्ट्रिंग को जाँचने का एक अच्छा तरीका है। लेकिन क्या आपको पता है कि आप इसे कैसे प्रयोग कर सकते हैं? इस ब्लॉग पोस्ट में, हम आपको इसके बारे में बताएंगे।
+आज के डिजिटल दुनिया में, हर प्रोग्रामर को भी कुछ न भी करे, उन्हें खुद को रेगुलर एक्सप्रेशन्स का सामना जरूर करना पड़ता है। इससे कोडिंग प्रक्रिया आसान होने के साथ-साथ उनके प्रोग्राम्स का परफॉर्मेंस भी बढ़ जाता है।
 
-## कैसे करें
-
-इस ब्लॉग पोस्ट में, हम पदों को ढूंढने के लिए एक पैटर्न का उपयोग करने की तकनीक सीखेंगे। साथ ही, हम आपको इसे Swift में कैसे लिखते हैं और कैसे इसका उपयोग करते हैं, भी सिखाएंगे। तो चलिए जानते हैं कि कैसे हम इस शक्तिशाली टूल का उपयोग कर सकते हैं।
-
-आप निम्नलिखित कोड ब्लॉक के माध्यम से एक साधारण Swift फंक्शन का सरल उदाहरण देख सकते हैं।
+## कैसे
 
 ```Swift
-func findMatches(pattern: String, inString string: String) -> [String] {
-    var matches = [String]()
-    let regex = try! NSRegularExpression(pattern: pattern, options: [])
-    let nsString = string as NSString
-    regex.enumerateMatches(in: string, options: [], range: NSMakeRange(0, nsString.length)) {
-        (match, _, _) in
-        if let match = match {
-            let matchedString = nsString.substring(with: match.range)
-            matches.append(matchedString)
-        }
+let regex = try! NSRegularExpression(pattern: "a|e|i|o|u")
+let input = "Hello, Swift!"
+let matches = regex.matches(in: input, range: NSRange(input.startIndex..., in: input))
+for match in matches {
+    let matchRange = match.range
+    if let range = Range(matchRange, in: input) {
+        print(input[range])
     }
-    return matches
 }
 ```
 
-और यदि हम इस फंक्शन को निम्नलिखित अंकित शब्दों के लिए कॉल करेंगे:
+यह कोड हमें "Hello, Swift!" रास्ता में से गए वर्णों को दिखाएगा। हम चाहें तो उनको अन्य वर्णों से भी बदल सकते हैं।
 
-```Swift
-let string = "मुझे Swift सीखना है। Swift मौजूदा, सबसे लोकप्रिय और अच्छा प्रोग्रामिंग भाषा है।"
-let matches = findMatches(pattern: "[A-Za-z]+", inString: string)
-```
+## गहराई से जानकारी
 
-तो हमारे लिए `मुझे, Swift, सीखना, है, Swift, मौजूदा, सबसे, लोकप्रिय, और, अच्छा, प्रोग्रामिं
+रेगुलर एक्सप्रेशन्स एक पावरफुल और विस्तृत उपकरण हो सकते हैं। यदि आपको कोई भी डिजाइन डेटो या पैटर्न ढूंढना हो तो इससे सहायता ले सकते हैं। इसके अलावा, आप सीख सकते हैं कि किस तरह से अलग-अलग मेटाचिंग और ग्रूपिंग विकल्प काम करते हैं। आप स्ट्रिंग में परिवर्तन करने के लिए भी इसका उपयोग कर सकते हैं।
+
+## देखें भी
+
+- [NSRegularExpression कक्षा डॉक्यूमेंटेशन](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Swift कोर्स - रेगुलर एक्सप्रेशन्स से काम करना सिखे](https://www.udemy.com/course/swift-regular-expressions/)

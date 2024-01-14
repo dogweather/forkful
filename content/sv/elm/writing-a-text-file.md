@@ -1,43 +1,59 @@
 ---
-title:    "Elm: Skriva en textfil"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/writing-a-text-file.md"
+title:                "Elm: Skriva en textfil"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+#Varför
 
-Att skriva en textfil är ett viktigt verktyg för att organisera och lagra information. Det kan vara till nytta både för personligt bruk och för professionell användning.
+Att skriva en textfil kan vara ett användbart sätt att organisera och spara information. I Elm, kan textfiler användas för att lagra data, konfigurationsfiler och även källkod.
 
-## Så här gör man
+#Så här gör du
 
-För att skriva en textfil i Elm behöver du först importera "Text"-modulen. Sedan kan du använda funktionen "writeFile" och ange både filnamn och innehållet som en sträng. Här är ett enkelt exempel:
-
-```Elm
-import Text exposing (writeFile)
-
-main = 
-  writeFile "hello.txt" "Hej världen!"
-```
-
-Output: En fil med namnet "hello.txt" kommer att skapas och innehålla texten "Hej världen!".
-
-## Djupdykning
-
-För att skriva en textfil med mer komplex innehåll kan man använda sig av funktionen "writeFileWith" som tar en modifieringsfunktion som argument. Detta gör det möjligt att använda sig av loops, if-satser och andra funktioner för att skapa en dynamisk fil. Här är ett exempel som skapar en fil med talen 1 till 10:
+För att skapa en textfil i Elm, används funktionen `File.write`. Nedan finns ett exempel på hur man skapar en textfil med innehållet "Hej världen":
 
 ```Elm
-import Text exposing (writeFileWith)
-import List exposing (range)
+import File
 
-main = 
-  writeFileWith (\num -> String.fromInt num) "numbers.txt" (range 1 10)
+File.write "hello.txt" "Hej världen"
 ```
 
-Output: En fil med namnet "numbers.txt" kommer att skapas och innehålla siffrorna 1 till 10, varje tal på en ny rad.
+När detta körs, kommer en ny fil med namnet "hello.txt" att skapas med texten "Hej världen" som innehåll. Om filen redan finns, kommer den gamla filen att skrivas över.
 
-## Se även
+För att läsa en befintlig textfil, används istället funktionen `File.read`. Nedan finns ett exempel på hur man läser innehållet i en textfil och skriver ut det i konsolen:
 
-- Elm dokumentation för Text-modulen: https://package.elm-lang.org/packages/elm/core/latest/Text
-- En guide för att lära sig att skriva textfiler i Elm: https://medium.com/@ajung14/writing-files-in-elm-8133b49a41d3
+```Elm
+import File
+import Task
+
+-- En hjälpfunktion för att skriva ut resultatet
+printResult : Result File.Error String -> Task x ()
+printResult result =
+    case result of
+        Ok text ->
+            text
+                |> Debug.log "Innehåll i filen:"
+
+        Err error ->
+            error
+                |> Debug.log "Ett fel uppstod:"
+
+-- Läser innehållet från filen "hello.txt"
+Task.attempt printResult (File.read "hello.txt")
+```
+
+Detta kommer att skriva ut "Innehåll i filen: Hej världen" i konsolen. Om filen inte finns, kommer det istället att skriva ut "Ett fel uppstod: FileNotFound".
+
+#Djupdykning
+
+När man skriver en textfil i Elm, kan man också använda sig av fält och registervärden för att organisera och strukturera informationen. Detta är särskilt användbart när man ska lagra komplexa datastrukturer.
+
+Man kan också använda sig av funktioner som `File.append` för att lägga till innehåll i en befintlig textfil istället för att skriva över den.
+
+#Se även
+
+- [Officiell dokumentation för Elm filhantering](https://package.elm-lang.org/packages/elm/file/latest/) 
+- [Samtliga Elm blogginlägg på swedishelm.org](https://www.swedishelm.org/tag/elm/)

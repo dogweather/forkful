@@ -1,39 +1,62 @@
 ---
-title:    "Elm: Verificando se um diretório existe"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/checking-if-a-directory-exists.md"
+title:                "Elm: Verificando se um diretório existe"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que verificar se um diretório existe?
+# Por que verificar se um diretório existe no Elm?
 
-Ao desenvolver um aplicativo ou site em Elm, muitas vezes precisamos verificar se um diretório específico existe no sistema de arquivos. Isso pode ser útil para garantir que os usuários tenham acesso a determinados arquivos ou para organizar melhor a estrutura dos arquivos no aplicativo.
+Se você é um programador Elm, provavelmente já se deparou com a necessidade de verificar se um determinado diretório existe. Embora essa seja uma tarefa simples, pode ser de grande importância para garantir o bom funcionamento do seu código.
 
-## Como fazer:
+# Como fazer isso
 
-Verificar a existência de um diretório em Elm é muito simples. Podemos usar a função `File.exists` do pacote `elm/file` para verificar se um determinado diretório existe ou não. Por exemplo:
+Existem várias maneiras de verificar se um diretório existe no Elm. Aqui, mostraremos duas abordagens diferentes usando funções nativas do Elm.
 
-```Elm
+## Usando a função `Directory.exists`
+
+Uma das formas mais simples de verificar se um diretório existe é usando a função `Directory.exists` do pacote `elm/file`. Essa função retorna um `Task` que pode ser mapeado para `True` se o diretório existir ou `False` se não existir.
+
+```
 import File exposing (exists)
+import Task exposing (map)
 
-directoryExists : Bool
-directoryExists =
+main : Task Never Bool
+main = 
     exists "caminho/do/diretorio"
+        |> map (\exists -> 
+            if exists then True 
+            else False)
 ```
 
-O código acima irá retornar um valor booleano, indicando se o diretório especificado existe ou não. Podemos então usar esse valor em nossa lógica para realizar ações diferentes dependendo da existência do diretório.
+No exemplo acima, utilizamos a função `exists` passando como argumento o caminho do diretório que queremos verificar. Em seguida, utilizamos a função `map` para mapear o resultado do `Task` para `True` ou `False` dependendo do resultado. 
 
-## Mergulho profundo:
+## Usando a função `Directory.list`
 
-Além do pacote `elm/file`, também podemos usar o pacote `elm/directory` para trabalhar com diretórios em Elm. Esse pacote nos fornece funções mais avançadas para manipular diretórios, como listar os arquivos contidos em um diretório ou criar um novo diretório.
+Outra forma de verificar se um diretório existe é usando a função `Directory.list` do mesmo pacote. Essa função retorna um `Task` que pode ser mapeado para uma lista de arquivos e diretórios existentes no diretório especificado.
 
-A função `Directory.exists` do pacote `elm/directory` é semelhante à `File.exists`, mas ela permite verificar a existência de um diretório recursivamente, ou seja, incluindo todos os diretórios aninhados. Isso pode ser útil em casos em que precisamos ter certeza de que um diretório e todos os seus subdiretórios existem antes de realizar uma tarefa específica.
+```
+import File exposing (list)
+import Task exposing (map)
 
-## Veja também:
+main : Task Never (List String)
+main = 
+    list "caminho/do/diretorio"
+        |> map (\files -> 
+            if List.length files > 0 then True 
+            else False)
+```
 
-- Documentação do pacote `elm/file`: [https://package.elm-lang.org/packages/elm/file/latest/](https://package.elm-lang.org/packages/elm/file/latest/)
-- Documentação do pacote `elm/directory`: [https://package.elm-lang.org/packages/elm/directory/latest/](https://package.elm-lang.org/packages/elm/directory/latest/)
-- Exemplo de código no Ellie App: [https://ellie-app.com/82dDKftKvF3a1](https://ellie-app.com/82dDKftKvF3a1)
+Nesse caso, usamos a função `list` passando o caminho do diretório e mapeamos o resultado para uma lista de arquivos e diretórios existentes. Se essa lista tiver tamanho maior que 0, significa que o diretório existe.
 
-Se você precisar trabalhar com diretórios em seu próximo projeto em Elm, esperamos que este artigo tenha sido útil e que os links fornecidos também sejam úteis para o seu aprendizado contínuo da linguagem. Boa codificação!
+# Detalhes sobre a verificação de diretórios
+
+Tanto a função `Directory.exists` quanto a função `Directory.list` são baseadas na função `FileSystem.access`, que é a responsável por verificar se um determinado arquivo ou diretório existe. Por isso, se você estiver familiarizado com essa função, pode utilizá-la para realizar a verificação de diretórios de forma mais detalhada.
+
+# Veja também
+
+- Documentação oficial do pacote `elm/file`: https://package.elm-lang.org/packages/elm/file/latest/
+- Função `FileSystem.access`: https://package.elm-lang.org/packages/elm/file/latest/FileSystem#access 
+- Tutorial sobre manipulação de arquivos e diretórios no Elm: https://medium.com/@limadeveloper/manipulação-de-arquivos-e-diretórios-no-elm-1630d59adb96

@@ -1,34 +1,41 @@
 ---
-title:    "Clojure: Regulaarilausekkeiden käyttö"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/using-regular-expressions.md"
+title:                "Clojure: Säännöllisten lausekkeiden käyttö"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää tavallisia ilmauksia?
+## Miksi käyttää säännöllisiä lausekkeita?
 
-Tavalliset ilmaukset ovat erittäin hyödyllisiä työkaluja tiedonkäsittelyyn ja tekstinmuokkaukseen Clojure-ohjelmoinnissa. Niiden avulla voit löytää ja muokata tiettyjä tekstin osia, jotka noudattavat tiettyä kaavaa tai mallia. Tämä säästää aikaa ja vaivaa manuaalisen tiedonkäsittelyn sijaan.
+Säännölliset lausekkeet ovat erittäin hyödyllinen työkalu tekstien käsittelyyn ja muokkaamiseen. Niiden avulla voit etsiä ja korvata tiettyjä merkkijonoja tai löytää tietynlaista rakennetta sisältäviä tekstinpätkiä. Ne auttavat myös validoimaan syötteitä ja tekemään monimutkaisia hakuja tekstimassoista. Säännöllisiä lausekkeita käytetään laajasti ohjelmoinnissa ja tekstinkäsittelysovelluksissa, joten on hyödyllistä oppia niiden käyttöä.
 
-## Miten käyttää tavallisia ilmauksia?
+## Kuinka käyttää säännöllisiä lausekkeita?
 
-Tavallisia ilmauksia voi käyttää Clojure-kielen `re-find` ja `re-matcher` -toimintojen avulla. Voit etsiä haluamasi kaavan tai mallin tekstin joukosta ja palauttaa tuloksen haluamassasi muodossa. Esimerkiksi, jos haluat etsiä kaikki numerot tekstistä ja palauttaa ne listana, voit käyttää seuraavaa koodia:
+Säännöllisten lausekkeiden käyttö Clojurella on melko suoraviivaista. Yksinkertaisimmassa tapauksessa voit käyttää ```re-find```-funktiota löytääksesi tietyn mittaisen merkkijonon, esimerkiksi:
 
 ```Clojure
-(def teksti "Tänään on ensimmäinen helmikuuta ja kello on 12:30.")
-
-(re-find #"[0-9]+" teksti)
-=> ("1" "0" "12" "30")
+(re-find #"abc" "abcd") ; => "abc"
+(re-find #"123" "abc")  ; => nil
 ```
-Haluamme käyttää ilmestyspaikkaa (character class) `[0-9]+`, joka etsii kaikki numerot tekstistä. Käytämme myös `re-find`-funktiota löytääksemme kaikki täsmäävät ilmaukset ja palauttaaksemme ne listassa.
 
-## Syvemmälle tavallisten ilmausten käyttöön
+Voit myös käyttää säännöllisiä lausekkeita muuttamaan tekstimuotoja helpommin. Esimerkiksi, voit käyttää ```re-pattern```-funktiota luomaan säännöllisen lausekkeen, jolla voi hakea kaikki 3-merkkiset sanat, ja sitten käyttää ```clojure.string/replace```-funktiota korvaamaan ne haluamallasi merkkijonolla. Esimerkiksi:
 
-Tavallisia ilmauksia käyttäessä on tärkeää ymmärtää erilaisia ilmausten merkkejä ja niiden merkitys. Esimerkiksi `+` merkki ilmaisee, että edellinen ilmaus voi esiintyä useamman kerran, kun taas `*` merkki ilmaisee, että edellinen ilmaus voi olla tyhjä tai esiintyä useamman kerran. Voit löytää täydellisen listan ilmausten käyttötavoista ja merkityksistä Clojure:n dokumentaatiosta.
+```Clojure
+(->> "moi hei moi moi"
+     (re-pattern #"\w{3}")
+     (clojure.string/replace "lol")) ; => "lol lol lol lol"
+```
 
-On myös hyvä muistaa, että tavalliset ilmaukset ovat melko tehokkaita, mutta samalla myös monimutkaisia. Niiden kanssa työskennellessä kannattaa olla kärsivällinen ja kokeilla erilaisia ilmauksia, kunnes löytää sopivan.
+Jos haluat tehdä monimutkaisempia hakuja, voit käyttää erilaisia säännöllisten lausekkeiden ominaisuuksia, kuten vaihtoehtoisia haaroja, toistoja ja ryhmiä. Käy läpi Clojuren dokumentaatio löytääksesi kaikki käytettävissä olevat toiminnot ja ominaisuudet.
+
+## Syvempää tietoa säännöllisistä lausekkeista
+
+Vaikka säännöllisten lausekkeiden avulla voit tehdä monimutkaisia hakuja ja muokkauksia, niiden käyttö voi olla joskus haastavaa ja vaikeasti luettavaa. On tärkeää muistaa käyttää selkeitä ja hyvin dokumentoituja säännöllisiä lausekkeita pitkän ajan projekteissa. Lisäksi, jos käytät säännöllisiä lausekkeita usein, voit tallentaa niitä muuttujaan ja käyttää niitä myöhemmin uudelleen, mikä helpottaa ohjelmien ylläpitoa.
 
 ## Katso myös
 
-- [Clojure:n dokomentaatio tavallisista ilmauksista](https://clojure.org/api/cheatsheet)
-- [Regexr - Työkalu tavallisten ilmausten testaamiseen ja luomiseen](https://regexr.com/)
+- Clojuren virallinen säännöllisiä lausekkeita käsittelevä dokumentaatio: https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/replace
+- Säännöllisten lausekkeiden opetusohjelma: https://regexone.com/lesson/introduction_abcs
+- Regular Expressions Cheat Sheet: https://www.rexegg.com/regex-quickstart.html

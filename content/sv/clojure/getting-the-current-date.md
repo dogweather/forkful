@@ -1,40 +1,54 @@
 ---
-title:    "Clojure: Att få aktuellt datum"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/getting-the-current-date.md"
+title:                "Clojure: Att hämta aktuellt datum"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att få dagens datum är en vanlig och nödvändig uppgift inom programmering. Genom att inkludera aktuellt datum i applikationer eller script kan man bland annat hålla reda på skapade dokument eller hålla koll på deadlines.
+Att få den aktuella datumen är en viktig del av många Clojure-program. Det kan hjälpa till att styra logik, registrera händelser och göra tidsberäkningar.
 
-## Hur man gör
-För att få aktuellt datum i Clojure behöver man först importera biblioteket "java.time". Sedan kan man använda sig av funktionen "LocalDate/now" för att få dagens datum.
-
-```Clojure
-(import java.time.LocalDate)
-
-(def current-date (LocalDate/now))
-```
-
-Om man nu till exempel vill skriva ut dagens datum på ett snyggt sätt kan vi använda "println" tillsammans med "clj-time", ett bibliotek som erbjuder funktioner för att arbeta med datum.
+## Hur man gör det
+För att få den aktuella datumen i Clojure, använder vi funktionen `java.util.Date` tillsammans med `println`:
 
 ```Clojure
-(import java.time.LocalDate)
-(require '[clj-time.core :refer [format]])
-(def current-date (LocalDate/now))
-(println (format current-date "Datum: yyyy-MM-dd"))
+(def today (java.util.Date.))
+(println today)
 ```
 
-Detta kommer att skriva ut något liknande "Datum: 2021-10-22".
+Detta kommer att skriva ut den aktuella datumen i terminalen:
 
-För mer komplexa manipulationer av datum, som att lägga till eller ta bort dagar, månader eller år kan man använda sig av "clj-time" tillsammans med funktionen "plus" eller "minus".
+```
+Wed Mar 24 15:12:02 CET 2021
+```
+
+Om vi vill ha en mer specifik representation av datumet, som till exempel bara månad och år, kan vi använda funktionen `java.text.SimpleDateFormat` tillsammans med formatsträngen `MMM YYYY`:
+
+```Clojure
+(def month-and-year (java.text.SimpleDateFormat. "MMM YYYY"))
+(println (month-and-year.format today))
+```
+
+Detta kommer att skriva ut:
+
+```
+Mar 2021
+```
 
 ## Djupdykning
-Att få aktuellt datum är en grundläggande uppgift i Clojure, men det finns mycket mer man kan göra med datum och tidsuppgifter. Genom att använda sig av olika bibliotek, som "clj-time", kan man enkelt hantera olika tidszoner, arbeta med intervall och utföra omvandlingar mellan olika format.
+`java.util.Date`-klassen har en mängd olika metoder som vi kan använda för att manipulera och hämta olika delar av datumet, som år, månad, dag osv. I Clojure kan vi också använda "threading macro" syntax (`->` och `->>`) för att kedja flera funktioner utan att behöva skriva ut alla argument.
+
+```Clojure
+(-> today
+    (.getYear)
+    (+ 1900)
+    (println))
+```
+
+Detta kommer att skriva ut året (2021 i detta fall). Med `->>` kan vi göra samma sak fast baklänges, om vi vill. Läs mer om threading macros här: [The Joy of Clojure](https://www.amazon.com/Joy-Clojure-Thinking-Way/dp/1935182641).
 
 ## Se även
-- [ClojureDocs: LocalDate/now](https://clojuredocs.org/clojure.java-time.local-date/now)
-- [ClojureDocs: clj-time](https://clojuredocs.org/clj-time)
-- [Java Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Clojure Cookbook: Dates and Times](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/06_datetimes-and-logical-time.markdown)
+- [Clojure Cheat Sheet](https://clojure.org/api/cheatsheet)

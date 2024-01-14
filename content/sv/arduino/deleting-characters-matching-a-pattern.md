@@ -1,64 +1,33 @@
 ---
-title:    "Arduino: Borttagning av tecken som matchar ett mönster"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/deleting-characters-matching-a-pattern.md"
+title:                "Arduino: Borttagning av tecken som matchar ett mönster"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att ta bort tecken som matchar ett mönster är ett vanligt problem som många Arduino-programmerare kan stöta på. Ibland vill man rensa en textsträng från oönskade tecken eller bara filtrera ut specifika delar av en sträng. Oavsett anledningen kan det vara användbart att veta hur man gör detta i dina Arduino-program.
+Att ta bort tecken som matchar ett mönster är en användbar teknik för att rensa upp och hantera textsträngar i ditt Arduino-program. Det kan hjälpa dig att effektivisera din kod och se till att den endast innehåller relevanta tecken.
 
 ## Hur man gör
-För att ta bort tecken som matchar ett visst mönster i en textsträng, kan man använda sig av en kombination av stränghanteringsfunktioner och loopar. Ett enkelt exempel på detta kan se ut som följande:
+Det finns flera sätt att ta bort tecken som matchar ett visst mönster i din textsträng. Här är några exempel:
 
 ```Arduino
-// Skapa en textsträng med oönskade tecken
-String text = "Hej, det är söndag idag!";
-
-// Loopa igenom textsträngen och ersätt tecken som matchar mönstret med en tom sträng
-for (int i = 0; i < text.length(); i++) {
-  if (text.substring(i, i+1) == "ö") { // byt ut "ö" mot vilket mönster du vill matcha
-    text.remove(i, 1);
-  }
-}
-
-// Skriv ut den nya textsträngen utan oönskade tecken
-Serial.println(text); // Output: Hej, det är sndag idag!
+String str = "Abc123Def456Ghi";
+str.remove('1'); // Resultat: Abc23Def456Ghi
+str.remove('2', '3'); // Resultat: AbcDef456Ghi
+str.remove('a', 'f'); // Resultat: bc123Def456Ghi
 ```
 
-I exemplet ovan används funktionerna `substring()` för att gå igenom varje enskilt tecken i textsträngen och `remove()` för att ta bort tecknet om det matchar mönstret.
-
-En annan metod för att ta bort tecken som matchar ett mönster är att använda sig av `replace()`-funktionen. Detta kan vara användbart om man vill ersätta de oönskade tecknen med något annat istället för att bara ta bort dem. Exempelvis:
-
-```Arduino
-// Skapa en textsträng med oönskade tecken
-String text = "Hej, det är söndag idag!";
-
-// Använd replace() för att byta ut alla oönskade tecken mot en *
-text.replace("ö", "*"); // byt ut "ö" mot vilket mönster du vill matcha
-
-// Skriv ut den nya textsträngen med de bytta tecknen
-Serial.println(text); // Output: Hej, det är s*ndag idag!
-```
-
-Det är även möjligt att använda sig av regular expressions (regex) för att ta bort tecken som matchar ett mönster. Detta är en avancerad metod som kan vara mer passande för mer komplexa mönster.
+I det första exemplet använder vi funktionen "remove()" för att ta bort tecknet '1' från textsträngen "Abc123Def456Ghi". I det andra exemplet tar vi bort alla tecken mellan '2' och '3', och i det tredje exemplet tar vi bort alla tecken mellan 'a' och 'f'. Du kan också använda "substring()" funktionen för att ta bort en viss del av textsträngen.
 
 ## Djupdykning
-Att använda sig av `substring()`- och `remove()`-funktionerna för att ta bort tecken som matchar ett mönster kan vara effektivt, men det finns vissa saker att tänka på. Eftersom en textsträng är en array av tecken, kommer indexet för tecknen ändras när du tar bort ett tecken, vilket kan resultera i felaktig indexering. För att undvika detta kan man loopa baklänges genom textsträngen:
+Att ta bort tecken som matchar ett mönster är en effektiv teknik när du vill filtrera bort oönskad information från en textsträng. Det är också användbart när du behöver omforma en sträng till en annan, t.ex. när du jobbar med formattering eller sökningar.
 
-```Arduino
-// Skapa en textsträng med oönskade tecken
-String text = "Hej, det är söndag idag!";
+Det är viktigt att vara noga med vilka tecken du tar bort, eftersom det kan påverka den slutgiltiga textsträngen på ett oväntat sätt. Se till att testa din kod väl för att undvika misstag.
 
-// Loopa baklänges igenom textsträngen och ta bort tecken som matchar mönstret
-for (int i = text.length() - 1; i >= 0; i--) {
-  if (text.substring(i, i+1) == "ö") { // byt ut "ö" mot vilket mönster du vill matcha
-    text.remove(i, 1);
-  }
-}
-```
-
-Ett annat sätt att undvika felaktig indexering är att använda sig av `charAt()`-funktionen istället för `substring()`. Denna funktion returnerar tecknet vid ett specifikt index istället för en understräng.
-
-En annan viktig sak att tänka på är att `remove()`- och `replace()`-funktionerna endast tar bort det första matchande tecknet. Om mönstret förekommer flera gånger i textsträngen, behöver man använd
+## Se också
+- [Arduino Reference - Strings](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Arduino String remove() function](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/remove/)
+- [Arduino String substring() function](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)

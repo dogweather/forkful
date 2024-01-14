@@ -1,46 +1,48 @@
 ---
-title:    "Ruby: Convertendo uma string em maiúsculas"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/capitalizing-a-string.md"
+title:                "Ruby: Capitalizando uma string"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Capitalizar uma string pode ser uma tarefa comum em muitos projetos de programação. Ao converter uma string para maiúsculas, podemos garantir que ela siga um padrão específico e seja facilmente legível por outros desenvolvedores que trabalham no mesmo código.
+Alguma vez você já se deparou com um texto todo em minúsculas e pensou "Como faço para deixar todas as primeiras letras de cada palavra em maiúsculo?" Se sim, então você está no lugar certo! Neste post, vamos explorar a função de capitalizar uma string em Ruby e como ela pode ser útil em seus programas.
 
-## Como Fazer
+## Como fazer
 
-Para capitalizar uma string em Ruby, podemos utilizar o método `upcase`. Vamos dar uma olhada em um exemplo de código abaixo:
+Em Ruby, existe uma função chamada `capitalize` que permite transformar a primeira letra de uma string em maiúsculo. É importante notar que isso só afeta a primeira letra da string, todas as outras letras continuarão como estão.
 
-```Ruby
-string = "hello world"
-puts string.upcase
+Vamos ver um exemplo em ação:
+
+```ruby
+s = "ruby é incrível"
+puts s.capitalize
+# Saída: "Ruby é incrível"
 ```
 
-A saída deste código será `HELLO WORLD`, pois o `upcase` converte todas as letras da string em maiúsculas.
+Como você pode ver, a primeira palavra "ruby" agora está em letra maiúscula. Esta função pode ser bastante útil quando você precisa padronizar a capitalização em uma string em seu programa.
+
+Mas e se quisermos capitalizar cada palavra de uma string? Para isso, existe a função `capitalize_words` que está disponível como parte da biblioteca de extensão de string.
+
+```ruby
+s = "ruby é incrível"
+puts s.capitalize_words
+# Saída: "Ruby É Incrível"
+```
+
+Você deve estar se perguntando por que a palavra "é" agora está com a letra "É" maiúscula. Isso porque a função `capitalize_words` segue as regras gramaticais da língua em que a string está escrita. Em português, "é" sempre é escrito com acento e em maiúsculo quando é a primeira palavra da string.
 
 ## Deep Dive
 
-Além do método `upcase`, existem outras maneiras de capitalizar uma string em Ruby. Por exemplo, se quisermos que apenas a primeira letra da string seja maiúscula e o restante seja minúsculo, podemos usar o método `capitalize`. Vamos ver um exemplo:
+A função `capitalize` em Ruby usa o método `upcase` para transformar a primeira letra em maiúscula. O método `upcase` por si só é bastante simples, ele apenas substitui a letra minúscula por sua correspondente em maiúscula de acordo com a tabela ASCII.
 
-```Ruby
-string = "hello world"
-puts string.capitalize
-```
-
-A saída será `Hello world`, com apenas a primeira letra maiúscula. Outro método útil é o `swapcase`, que inverte as letras maiúsculas e minúsculas em uma string. Vejamos um exemplo:
-
-```Ruby
-string = "hELLO wORLD"
-puts string.swapcase
-```
-
-A saída será `Hello World`, com as letras maiúsculas se tornando minúsculas e vice-versa.
+Além disso, se você estiver trabalhando com strings em diferentes idiomas, pode encontrar resultados inesperados ao usar a função `capitalize`. Isso porque cada idioma possui suas próprias regras de capitalização.
 
 ## Veja também
 
-- [Documentação Ruby oficial sobre string](https://ruby-doc.org/core-2.7.1/String.html)
-- [Tutorial sobre strings em Ruby](https://www.rubyguides.com/ruby-tutorial/string/)
-- [Guia para iniciantes em Ruby](https://www.codecademy.com/learn/learn-ruby)
+- Documentação oficial da função `capitalize` em Ruby: https://ruby-doc.org/core-2.7.1/String.html#method-i-capitalize
+- Outras funções úteis de string em Ruby: https://www.rubyguides.com/2015/05/ruby-string-methods/
+- Tutorial de Ruby grátis (em português): https://tutsplus.com/pt/tutorials/tutorials/search/ruby

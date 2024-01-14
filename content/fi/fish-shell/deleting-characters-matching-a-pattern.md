@@ -1,41 +1,38 @@
 ---
-title:    "Fish Shell: Kuviota vastaavien merkkien poistaminen"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/deleting-characters-matching-a-pattern.md"
+title:                "Fish Shell: Mallia vastaavien merkkien poistaminen"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi Poistaa Merkkejä, Joita Vastaavat Kaavat?
 
-On monia syitä, miksi haluat ehkä poistaa merkkejä, jotka vastaavat tiettyä mallia. Se voi olla osa isompaa skriptiä tai haluat ehkä puhdistaa tietokannan tiettyjen merkkien vuoksi. Fish Shellilla on hyödyllisiä työkaluja, jotka voivat auttaa sinua tässä tehtävässä.
+Merkkejä vastaavien kaavojen poistaminen on hyödyllistä, kun haluat puhdistaa tietoja tai suodattaa tiettyjä merkkijonoja. Tämä voi myös auttaa muokkaamaan tai parantamaan koodia.
 
-## Miten
+# Kuinka Tehdä Se?
 
-Fish Shell tarjoaa erilaisia keinoja poistaa merkkejä, jotka vastaavat tiettyä mallia. Yksi vaihtoehto on käyttää `sed`-komennolla. Voit käyttää seuraavaa syntaksia poistaaksesi kaikki numerot tekstitiedostosta:
+```Fish Shell ``` tarjoaa käteviä keinoja poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Alla on joitakin esimerkkejä: 
 
-```Fish Shell
-sed -E 's/[0-9]//g' tiedostonimi.txt
+```
+rm *\.txt
 ```
 
-Tämä komento korvaa kaikki numerot tyhjillä merkeillä, jolloin ne poistuvat tiedostosta. Voit myös käyttää `tr`-komennolla poistaaksesi tietyt merkit. Esimerkiksi, jos haluat poistaa kaikki välimerkit tekstitiedostosta, voit käyttää seuraavaa:
+Tämä poistaa kaikki .txt-tiedostot hakemistosta. Voit myös käyttää säännöllisiä lausekkeita poistaaksesi tiettyjä merkkejä, kuten seuraavassa esimerkissä:
 
-```Fish Shell
-tr -d '[:punct:]' < tiedostonimi.txt
 ```
+rm (echo abc | sed 's/b/#/')
+```
+Tämä poistaisi merkin "b" ja korvaisi sen merkillä "#" merkkijonossa "abc".
 
-Tämä komento poistaa kaikki välimerkit tiedostosta ja tulostaa lopputuloksen näytölle.
+# Syvemmälle Aiheeseen
 
-## Syväsukellus
+Säännölliset lausekkeet ovat erittäin hyödyllisiä poistettaessa merkkejä, jotka vastaavat tiettyä kaavaa. Voit käyttää myös muita komentoja, kuten ```grep``` ja ```sed```, löytääksesi ja muokataksesi haluamiasi merkkijonoja. 
 
-`sed`- ja `tr`-komentojen lisäksi Fish Shell tarjoaa myös muita tapoja poistaa merkkejä vastaavat tiettyä mallia. Voit esimerkiksi käyttää `grep`-komennolla löytääksesi tietyn merkkijonon ja sitten poistaa sen `sed`-komennolla. Lisäksi voit käyttää `$string` muuttujaa löytääksesi ja poistaaksesi tietyt merkit.
+# Katso Myös
 
-On myös mahdollista luoda omia funktioita Fish Shellilla, jotka voivat helpottaa merkkien poistamista. Voit luoda oman funktion, joka poistaa kaikki merkit vastaavat tiettyä mallia ja käyttää sitä halutessasi. Mahdollisuudet ovat rajattomat, joten voit löytää juuri sinulle sopivan tavan poistaa merkkejä Fish Shellilla.
-
-## Katso myös
-
-- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Artikkeli merkkijonojen manipuloinnista Fish Shellilla](https://www.digitalocean.com/community/tutorials/how-to-manipulate-strings-in-fish-shell#removing-characters)
-- [Ohjeita tekstinkäsittelyyn Fish Shellilla](https://www.shellhacks.com/remove-delete-characters-from-string-bash/)
-
-Kiitos lukemisesta! Toivottavasti tämä opas auttoi sinua poistamaan merkkejä vastaavat tiettyä mallia Fish Shellilla. Jatkossa voit hyödyntää näitä taitoja monissa eri skripteissä ja tehtävissä. Onnea koodaukseen!
+- https://fishshell.com/docs/current/commands.html#rm
+- https://fishshell.com/docs/current/commands.html#sed
+- https://fishshell.com/docs/current/commands.html#grep
+- https://fishshell.com/docs/current/commands.html#regex

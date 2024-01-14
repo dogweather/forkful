@@ -1,80 +1,51 @@
 ---
-title:    "Haskell: Lecture d'un fichier texte"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/reading-a-text-file.md"
+title:                "Haskell: Lecture d'un fichier texte"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Si vous êtes un développeur Haskell, il est fort probable que vous ayez à un moment donné besoin de lire un fichier texte dans votre programme. Que ce soit pour récupérer des données à partir d'un fichier externe ou pour traiter un fichier généré par votre propre programme, la lecture de fichiers texte est une compétence essentielle dans le monde de la programmation. Dans cet article, nous allons voir comment lire un fichier texte en utilisant Haskell.
+Si vous êtes un programmeur débutant ou expérimenté en Haskell, vous savez certainement à quel point la manipulation de fichiers est importante dans tout type d'application. Lire un fichier texte peut sembler simple, mais il y a plusieurs façons de le faire en Haskell et cela peut être une compétence très utile à ajouter à votre boîte à outils de programmation.
 
-## Comment faire
+## Comment faire 
 
-Dans Haskell, la première étape pour lire un fichier est d'ouvrir le fichier en utilisant la fonction `openFile`. Cette fonction prend deux arguments : le chemin du fichier et le mode d'ouverture (lecture, écriture, etc.). Voici un exemple de code pour ouvrir un fichier en lecture seule :
+Pour lire un fichier texte en Haskell, nous allons utiliser la fonction "readFile" qui est intégrée dans le module "System.IO". Voici un exemple de code montrant comment utiliser cette fonction pour lire un fichier texte:
 
-```Haskell
+```
 import System.IO
 
 main = do
-    file <- openFile "mon_fichier.txt" ReadMode
+  contenu <- readFile "mon_fichier.txt"
+  putStr contenu
 ```
 
-Une fois que le fichier est ouvert, nous pouvons utiliser la fonction `hGetContents` pour lire son contenu. Cette fonction prend un `Handle` (retourné par la fonction `openFile`) en paramètre et renvoie un `String` contenant tout le contenu du fichier.
+Dans cet exemple, nous importons d'abord le module "System.IO" qui contient la fonction "readFile". Ensuite, nous utilisons la fonction "do" pour indiquer que nous allons exécuter plusieurs instructions. La première instruction utilise la fonction "readFile" pour lire le contenu du fichier "mon_fichier.txt" et le stocker dans la variable "contenu". Enfin, nous utilisons la fonction "putStr" pour afficher le contenu du fichier à l'écran.
 
-```Haskell
-import System.IO
+Maintenant, voyons à quoi ressemble le contenu de notre fichier "mon_fichier.txt" et le résultat affiché à l'écran:
 
-main = do
-    file <- openFile "mon_fichier.txt" ReadMode
-    contents <- hGetContents file
-    putStrLn contents -- affiche le contenu du fichier sur la console
+Contenu du fichier "mon_fichier.txt":
+```
+Bonjour, ceci est un fichier texte!
 ```
 
-Il est important de noter que la fonction `hGetContents` ne lit pas tout le contenu du fichier immédiatement, mais utilise un mécanisme de "lazy evaluation" pour ne lire que les parties du fichier demandées à mesure que nous en avons besoin.
-
-## Plongée en profondeur
-
-Si vous souhaitez lire un fichier ligne par ligne, plutôt que de tout lire en une seule fois, vous pouvez utiliser la fonction `hGetLine`. Cette fonction prend également un `Handle` en paramètre et renvoie une ligne du fichier sous forme de `String`.
-
-```Haskell
-import System.IO
-
-main = do
-    file <- openFile "mon_fichier.txt" ReadMode
-    line <- hGetLine file -- lit une ligne du fichier
-    putStrLn line -- affiche la ligne sur la console
+Résultat à l'écran:
+```
+Bonjour, ceci est un fichier texte!
 ```
 
-Si vous avez besoin de lire des valeurs numériques à partir du fichier, vous pouvez utiliser la fonction `hGetContents` avec la fonction `read`. Cela convertira le `String` lu à partir du fichier en valeur numérique.
+Comme vous pouvez le voir, la fonction "readFile" lit le contenu du fichier et le stocke dans une chaîne de caractères. Nous pouvons ensuite utiliser cette chaîne de caractères pour effectuer des opérations telles que l'afficher à l'écran.
 
-```Haskell
-import System.IO
+## Plongée en profondeur 
 
-main = do
-    file <- openFile "mon_fichier.txt" ReadMode
-    contents <- hGetContents file
-    let num = read contents :: Int -- convertit le contenu en Int
-    print (3 * num) -- affiche le résultat de la multiplication sur la console
-```
+La fonction "readFile" peut sembler simple, mais elle utilise en fait plusieurs fonctions internes pour fonctionner. Par exemple, elle utilise la fonction "openFile" pour ouvrir le fichier, la fonction "hGetContents" pour lire le contenu du fichier et la fonction "hClose" pour fermer le fichier après avoir terminé de le lire. Si vous êtes curieux, vous pouvez jeter un coup d'œil à la documentation officielle pour en savoir plus sur ces fonctions et comment elles fonctionnent ensemble.
 
-Il est également important de s'assurer de fermer le fichier après l'avoir lu en utilisant la fonction `hClose`. Cela permettra de libérer les ressources utilisées par le `Handle`.
+Maintenant que vous savez comment utiliser la fonction "readFile" pour lire un fichier texte, vous pouvez l'appliquer à vos propres projets et expérimenter avec différentes fonctions pour manipuler les données lues à partir du fichier.
 
-```Haskell
-import System.IO
+## Voir aussi 
 
-main = do
-    file <- openFile "mon_fichier.txt" ReadMode
-    contents <- hGetContents file
-    putStrLn contents -- affiche le contenu du fichier sur la console
-    hClose file -- ferme le fichier
-```
-
-## Voir aussi
-
-Vous pouvez trouver plus d'informations sur la lecture de fichiers en Haskell sur ces sites :
-
-- [Documentation officielle de Haskell sur la gestion des fichiers](https://haskell.org/haskellwiki/Handling_files)
-- [Tutoriel sur la lecture et l'écriture de fichiers en Haskell](https://www.tutorialspoint.com/haskell/haskell_input_output.htm)
-- [Exemple de code pour lire un fichier texte en Haskell](https://rosettacode.org/wiki/Read_entire_file#Haskell)
+- La documentation officielle de Haskell pour en savoir plus sur la fonction "readFile": https://www.haskell.org/documentation/ 
+- Un tutoriel complet sur la manipulation de fichiers en Haskell: https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20examples#reading-from-a-text-file

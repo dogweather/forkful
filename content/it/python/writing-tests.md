@@ -1,38 +1,44 @@
 ---
-title:    "Python: Scrivere test"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/python/writing-tests.md"
+title:                "Python: Scrivere test"
+programming_language: "Python"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere test è importante in Python
-Scrivere test è un componente fondamentale della programmazione in Python. I test ci aiutano a verificare che il nostro codice funzioni correttamente e ci permettono di identificare eventuali errori o bug. Inoltre, ci aiutano a sviluppare codice più robusto e manutenibile nel tempo. 
+## Perché
+Scrivere test è fondamentale per garantire la correttezza e l'affidabilità del nostro codice. Non solo ci aiuta a trovare errori durante lo sviluppo, ma ci permette anche di refactorizzare il codice con più sicurezza.
 
-## Come scrivere test in Python
-Per iniziare a scrivere test in Python, dobbiamo utilizzare il modulo di testing integrato, chiamato `unittest`. Con questo modulo, possiamo definire delle classi di test che controllano il comportamento del nostro codice. Di seguito, un esempio di un test per una semplice funzione di addizione:
+## Come fare
+Per scrivere test in Python, possiamo utilizzare il modulo `unittest` della libreria standard. Iniziamo importando il modulo:
 
-```Python
+```
 import unittest
+```
 
-def add(x, y):
-    return x + y
+Definiamo poi una classe che erediti da `unittest.TestCase`. All'interno di questa classe, possiamo definire i nostri test come metodi che iniziano con il prefisso `test_`:
 
-class TestAdd(unittest.TestCase):
-    def test_add(self):
-        self.assertEqual(add(2, 3), 5)
-        self.assertEqual(add(-1, 5), 4)
+```
+class CalcolatriceTest(unittest.TestCase):
+    def test_somma(self):
+        somma = 3 + 4
+        self.assertEqual(somma, 7)
+
+    def test_prodotto(self):
+        prodotto = 5 * 2
+        self.assertEqual(prodotto, 10)
 
 if __name__ == '__main__':
     unittest.main()
 ```
 
-Nell'esempio sopra, abbiamo definito una classe di test chiamata `TestAdd` che eredita dalla classe `unittest.TestCase`. All'interno di questa classe, abbiamo definito un metodo chiamato `test_add` che contiene gli assert per verificare che la nostra funzione `add` funzioni come previsto. Infine, abbiamo utilizzato `unittest.main()` per eseguire i nostri test.
+Qui stiamo testando una semplice calcolatrice, confrontando il risultato delle operazioni con il valore atteso utilizzando il metodo `assertEqual`. Infine, eseguiamo i nostri test con il metodo `main` di `unittest`.
 
-## Approfondimento su come scrivere test in Python
-Oltre alla semplice sintassi per scrivere test, esistono anche diverse pratiche consigliate da seguire quando si scrivono test in Python. Alcune di queste includono l'organizzazione dei test in moduli separati, l'utilizzo di tecniche di test-driven development e l'uso di strumenti di code coverage per identificare il codice non testato. Inoltre, ci sono anche diversi framework di testing di terze parti che possono aiutarci a scrivere test più avanzati e completi.
+## Approfondimento
+Esistono varie tipologie di test che possiamo scrivere in Python, come test di unità, test di integrazione e test funzionali. Inoltre, possiamo utilizzare anche altre librerie per il testing, come `pytest` e `doctest`. È importante scrivere test significativi e leggibili, in modo da facilitare la manutenzione del codice.
 
 ## Vedi anche
-- [Documentazione ufficiale di `unittest`](https://docs.python.org/3/library/unittest.html)
-- [Python Testing with pytest](https://realpython.com/python-testing/)
-- [The Hitchhiker's Guide to Python Testing](https://docs.python-guide.org/writing/tests/)
+- Documentazione ufficiale del modulo `unittest`: https://docs.python.org/3/library/unittest.html
+- Tutorial sul testing in Python: https://realpython.com/python-testing/
+- Video tutorial sui test di unità in Python: https://www.youtube.com/watch?v=1Lfv5tUGsn8

@@ -1,59 +1,48 @@
 ---
-title:    "Gleam: Erstellen einer temporären Datei"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/creating-a-temporary-file.md"
+title:                "Gleam: Eine temporäre Datei erstellen"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Die Erstellung temporärer Dateien ist oft eine notwendige Aufgabe beim Programmieren. Hier erfährst du, warum diese Funktion so wichtig ist und wie du sie in Gleam implementieren kannst.
+Warum sollte man sich überhaupt die Mühe machen, temporäre Dateien zu erstellen? Ganz einfach: Temporary Files sind nützlich, wenn man Daten zwischen verschiedenen Prozessen oder Programmen austauschen möchte. Sie dienen als eine Art Zwischenspeicher, ähnlich wie der Zwischenablage in Windows.
 
-## Wie geht das?
+# Wie geht's
 
-Die Erstellung einer temporären Datei in Gleam ist ganz einfach. Zuerst müssen wir das `os` Modul importieren, welches uns Zugriff auf Betriebssystem-Funktionen gibt.
+Das Erstellen einer temporären Datei ist in Gleam ganz einfach. Zuerst importieren wir das Modul `gleam/tempfile` und erstellen dann unsere temporäre Datei mit `tempfile.create()`. Hier ein Beispiel:
 
-```
-Gleam module TempFile {
+```Gleam
+import gleam/tempfile
 
-    import os
-
-    fn create_temp_file() {
-        let filename = os.tmp()
-        // Hier können wir dann die Datei manipulieren
-    }
-}
+let temp_file = tempfile.create()
 ```
 
-Die Funktion `os.tmp()` gibt uns einen String zurück, welcher der Pfad und Name der temporären Datei ist. Wir können dann diesen String verwenden, um die Datei zu erstellen und zu bearbeiten.
+Durch das Aufrufen der Funktion `create()` erhalten wir eine `TempFile` Struktur, welche Informationen über unsere temporäre Datei enthält. Zum Beispiel den Pfad zur Datei über `temp_file.path`. Wir können jetzt diese Datei ganz normal verwenden, ähnlich wie jede andere Datei.
 
-## Tiefer Einblick
+```Gleam
+import gleam/tempfile
+import gleam/io
+import gleam/path
 
-Manchmal möchtest du vielleicht mehr Kontrolle über deine temporären Dateien haben, zum Beispiel indem du bestimmte Berechtigungen festlegst oder einen benutzerdefinierten Dateinamen verwendest. In Gleam gibt es die Funktion `os.tmp_with_options()`, die uns die Möglichkeit gibt, diese Parameter selbst anzugeben.
+let temp_file = tempfile.create()
 
-```
-Gleam module TempFile {
-
-    import os
-
-    type FileOptions {
-        permissions: Int,
-        prefix: String,
-        suffix: String
-    }
-
-    pub fn create_temp_file(options: FileOptions) {
-        let filename = os.tmp_with_options(options)
-        // Hier können wir dann die Datei manipulieren
-    }
-}
+// Schreibe etwas in die Datei
+io.write(&temp_file.path, "Hallo, Welt!")
 ```
 
-Wir definieren eine eigene Datentyp `FileOptions`, der die entsprechenden Parameter enthält, und übergeben diese dann an die `os.tmp_with_options()` Funktion. Dies gibt uns noch mehr Flexibilität bei der Erstellung von temporären Dateien.
+Mehr Informationen über die `TempFile` Struktur und die verfügbaren Funktionen findest du in der Gleam Dokumentation.
 
-## Siehe auch
+# Tiefer Einblick
 
-- [Gleam Dokumentation - os Modul](https://gleam.run/modules/standard-libraries/os/)
-- [Gleam Greeter Tutorial](https://github.com/gleam-lang/gleam/blob/main/docs/getting-started/greeter.md) (Deutsch)
-- [Einführung in Gleam](https://dev.to/m1garand/getting-started-with-gleam-dm7) (Deutsch)
+Das Erstellen von temporären Dateien kann auch hilfreich sein, wenn man Dateien anlegen möchte, die nur für einen begrenzten Zeitraum verfügbar sein sollen. Nach der Verwendung kann man die temporäre Datei einfach löschen. Zum Beispiel kann man dies in Testumgebungen oder bei der Verarbeitung von sensiblen Daten verwenden.
+
+Außerdem ermöglicht Gleam auch das Erstellen von temporären Verzeichnissen, anstatt nur einzelnen Dateien. Auch hier kann man die `TempDir` Struktur verwenden, um auf das Verzeichnis und dessen Inhalt zuzugreifen.
+
+# Siehe auch
+
+- [Gleam Dokumentation zu `gleam/tempfile`](https://gleam.run/modules/tempfile.html)
+- [GitHub Repo von Gleam](https://github.com/gleam-lang/gleam)

@@ -1,49 +1,59 @@
 ---
-title:    "Fish Shell: Porównywanie dwóch dat."
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/comparing-two-dates.md"
+title:                "Fish Shell: Porównywanie dwóch dat"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Porównywanie dwóch dat może być niezbędnym zadaniem w wielu projektach programistycznych. Niezależnie od tego, czy chcesz sprawdzić, czy dana data jest wcześniejsza czy późniejsza, czy też potrzebujesz wykonać określone działania na dwóch różnych datach, znajomość techniki porównywania dat w języku Fish Shell jest niezwykle przydatna.
+Porównywanie dwóch dat może być bardzo przydatne w programowaniu, szczególnie gdy chcemy sprawdzić jaki kod został wykonany w danym przedziale czasowym lub w przypadku traktowania dat jako klucza w naszych aplikacjach.
 
 ## Jak to zrobić
 
-Aby porównać dwie daty w języku Fish Shell, możesz użyć wbudowanego polecenia ```date```. Poniżej znajdują się kilka przykładów tego, jak możesz wykorzystać to polecenie:
+Jeśli pracujesz w środowisku Fish Shell, masz szczęście! W tej powłoce mamy wiele przydatnych funkcji, które ułatwiają porównywanie dat. Aby porównać dwie daty, możesz skorzystać z polecenia `date` i operatorów porównania, takich jak `>` (większe), `<` (mniejsze) czy `=` (równe).
 
-```
-fish
-set data1 "2021-01-01"
-set data2 "2021-01-15"
-if test (date -f "%Y-%m-%d" $data1) -ge (date -f "%Y-%m-%d" $data2)
-    echo $data1 jest niepóźniejsza lub równa $data2
-else
-    echo $data1 jest wcześniejsza niż $data2
+```Fish Shell
+
+set date1 (date -u +%Y-%m-%d) # ustawienie pierwszej daty jako bieżąca data
+set date2 2020-01-01 # ustawienie drugiej daty jako 1 stycznia 2020
+
+if [ $date1 > $date2 ] # porównanie dat za pomocą operatora ">"
+    echo "Pierwsza data jest późniejsza niż druga"
+else 
+    echo "Pierwsza data jest wcześniejsza lub równa drugiej"
 end
-```
-
-W powyższym przykładzie użyliśmy polecenia test, aby porównać dwie daty zapisane jako zmienne. Użyliśmy również opcji ```-ge``` (greater than or equal), aby sprawdzić, czy pierwsza data jest większa lub równa drugiej. Jeśli tak, wyświetlamy odpowiedni komunikat.
-
-Możesz także wykorzystać polecenie ```date``` do przeprowadzenia innych operacji na dacie, na przykład konwersji jej do innego formatu lub obliczenia różnicy między dwoma datami.
-
-## Głębszy zanurzenie
-
-Aby lepiej zrozumieć działanie porównywania dat w języku Fish Shell, warto poznać jego dokładniejsze mechanizmy. Na przykład, aby dokładnie wyświetlić różnicę między dwiema datami, możesz użyć polecenia ```math```, aby odjąć od siebie dwa wartości czasu uzyskane za pomocą polecenia ```date```.
 
 ```
-set time1 (date +%s)
-set time2 (date +%s)
-set difference (math $time2 - $time1)
-echo "Różnica między datami w sekundach:" $difference
+
+Powyższy kod wyświetli nam odpowiedni komunikat, w zależności od rezultatu porównania. Możemy również wykorzystać inne operatory, aby określić, czy dwie daty są równe lub czy jedna jest późniejsza od drugiej.
+
+## Głębsze zagłębienie
+
+W Fish Shell możemy również wykorzystać funkcję `string to date`, która pozwala konwertować ciągi znaków na daty. W ten sposób możemy porównywać daty, które nie są w formacie daty, ale są przechowywane jako tekst w naszych zmiennych.
+
+```Fish Shell
+
+set date1 (string to date "2020-12-31" "%Y-%m-%d") # konwersja tekstu na datę
+set date2 2020-12-31 # ustawienie drugiej daty również jako 31 grudnia 2020
+
+if [ $date1 = $date2 ] # porównanie dat za pomocą operatora "="
+    echo "Daty są równe"
+else 
+    echo "Daty nie są równe"
+end
+
 ```
 
-Opcja ```+%s``` w poleceniu ```date``` zwraca czas w sekundach od epoki UNIX, co ułatwia obliczenie różnicy.
+Powyższy kod wykorzystuje funkcję `string to date` oraz operator porównania `=` i wyświetli komunikat, który stwierdza, czy dwie daty są równe czy nie.
 
-## Zobacz także
+Należy również pamiętać, że w Fish Shell możemy porównywać również godziny i minuty, jeśli chcemy dokładniej określić przedziały czasowe.
 
-- Dokumentacja polecenia ```date``` w języku Fish Shell: https://fishshell.com/docs/current/cmds/date.html
-- Przewodnik po obsłudze dat w języku Fish Shell: https://fishshell.com/docs/current/tutorial.html#tut_dates
-- Przykłady użycia polecenia ```date``` w języku Fish Shell: https://fishshell.com/docs/current/tutorial.html#tut_date_f
+## Zobacz również
+
+Chcesz dowiedzieć się więcej o porównywaniu dat w Fish Shell? Sprawdź poniższe linki:
+- [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Porównywanie dat w Fish Shell](https://fishshell.com/docs/current/index.html#comparison-operators)
+- [Funkcja string to date w Fish Shell](https://fishshell.com/docs/current/cmds/string-to-date.html)

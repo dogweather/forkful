@@ -1,61 +1,51 @@
 ---
-title:    "C: Sammenligne to datoer"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/comparing-two-dates.md"
+title:                "C: Sammenligner to datoer."
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Har du noen gang lurt på hvordan man sammenligner to datoer i et C-program? Vel, i denne bloggposten vil jeg forklare hvorfor du kanskje ønsker å kjenne til denne ferdigheten og hvordan du kan gjøre det.
+For å forstå komplekse hendelser og sammenligne datoer, kan det være nyttig å kunne programmere i C. Dette kan gi deg en bedre forståelse av hvordan datering fungerer og hvordan du kan sammenligne to datoer for å trekke ut relevant informasjon.
 
 ## Hvordan
 
-For å sammenligne to datoer i et C-program, må du først konvertere de to datoene til et numerisk format som datamaskinen kan forstå. Dette gjør du ved å bruke `mktime()`-funksjonen som tar inn en `struct tm`-variabel som representerer datoen.
+For å sammenligne to datoer i C, kan du bruke innebygde funksjoner som `difftime()` og `mktime()`. Først må du definere to `struct tm` objekter som inneholder de to datoene som skal sammenlignes. Deretter kan du bruke funksjonen `difftime()` for å beregne differansen i sekunder mellom de to datoene.
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
+    // Definer to datoer
+    struct tm dato1 = { .tm_year = 121, .tm_mon = 7, .tm_mday = 1 };  // 1. august 2021
+    struct tm dato2 = { .tm_year = 120, .tm_mon = 6, .tm_mday = 1 };  // 1. juli 2020
 
-    // Oppretter to struct tm-variabler for å representere datoene
-    struct tm dato1 = { .tm_year = 2019, .tm_mon = 11, .tm_mday = 3 }; 
-    struct tm dato2 = { .tm_year = 2020, .tm_mon = 6, .tm_mday = 10 };
+    // Bruk difftime() for å beregne differansen i sekunder
+    double differanse = difftime(mktime(&dato1), mktime(&dato2));
 
-    // Konverterer datoene til numerisk format
-    time_t tid1 = mktime(&dato1);
-    time_t tid2 = mktime(&dato2);
-
-    // Sammenligner de to datoene ved å trekke dem fra hverandre
-    time_t differanse = difftime(tid1, tid2);
-
-    // Skriver ut resultatet i antall sekunder
-    printf("%ld sekunder forskjell mellom datoene\n", differanse);
+    // Skriv ut differansen i antall år
+    printf("Differansen i år er %.2f", differanse / (365*24*60*60));
 
     return 0;
 }
 ```
 
 Output:
-
 ```
-179784000 sekunder forskjell mellom datoene
+Differansen i år er 1.00
 ```
 
-I dette eksempelet er resultatet antall sekunder mellom de to datoene, men du kan også bruke `difftime()`-funksjonen til å sammenligne datoer i andre formater som for eksempel år, måneder, dager osv.
+## Dypdykk
 
-## Deep Dive
+For å sammenligne to datoer i C, må du forstå hva som faktisk skjer bak kulissene. I C, representeres datoer som en posisjon på et tidslinje, vanligvis uttrykt i sekunder siden 1. januar 1970 (også kjent som "epoch"). Når du kaller `mktime()` funksjonen, konverterer den datoene til sekunder, og dermed lar deg sammenligne dem ved hjelp av `difftime()`.
 
-Nå som du vet hvordan man sammenligner to datoer i et C-program, la oss gå litt dypere og se hva som faktisk skjer i bakgrunnen når vi bruker `mktime()`- og `difftime()`-funksjonene.
+Det er viktig å merke seg at C inneholder begrensninger når det gjelder hvilke typer datoer det kan håndtere. For eksempel, kan C ikke håndtere datoer før 1970, og heller ikke datoer etter år 2038, på grunn av hvordan det internasjonale tidsformatet er implementert.
 
-`mktime()`-funksjonen konverterer datoen til et numerisk format som kalles Unix epoch, som baserer seg på antall sekunder som har gått siden 01. januar 1970. Dette gjør det enklere å regne med datoer på en datamaskin.
+## Se Også
 
-Når du bruker `difftime()`-funksjonen, beregnes differansen mellom to datoer ved å trekke den ene fra den andre i Unix epoch-formatet. Resultatet kan deretter konverteres til ønsket format.
-
-## Se også
-
-- [C-programspråket](https://no.wikipedia.org/wiki/C_(programmeringsspr%C3%A5k))
-- [struct tm-dokumentasjon](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [time.h-dokumentasjon](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Dokumentasjon for difftime()](https://www.gnu.org/software/libc/manual/html_node/Elapsed-Time.html)
+- [Oversikt over tid i C](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1124.pdf)

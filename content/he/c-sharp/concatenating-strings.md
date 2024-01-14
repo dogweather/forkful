@@ -1,57 +1,59 @@
 ---
-title:    "C#: שרשור מחרוזות"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/concatenating-strings.md"
+title:                "C#: זיקוק מחרוזות"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה:
+## למה
 
-קישור מחרוזות הוא תהליך יסודי בשפת תכנות C#. זה מאפשר לך להציג מידע מרוכז ומאוחד במחרוזות אחת.
+### נגיד לך סוד
 
-## איך לעשות זאת:
+הודות לטכנולוגיות המתקדמות של עיבוד שפת תכנות כמו סי שארפ, יש לנו יתרונות רבים לעבוד עם מחרוזות בצורה יעילה וקלה. אז למה כדאי לנו לבחור לחבר מחרוזות באופן יפהפה?
 
-מחרוזות ניתן לקשר יחד על ידי השתמשות בתו "+" או בשימוש בפעולת המחרוזת .Concat. הבאה תהיה הרמז לשימוש בפעולת .Concat:
+## כיצד לעשות את זה
 
-```C#
-string firstName = "יעקב";
-string lastName = " לוי";
-string fullName = firstName + lastName;
-Console.WriteLine(fullName);
-```
+### באמצעות תרגיל
 
-פלט: יעקב לוי
-
-שימו לב שיכולים להיות כל מספר של מחרוזות המחרוזת .Concat, אין מגבלה על כמות המחרוזות בפעולה זו.
-
-אם אינך מעוניין בשימוש בפעולת המחרוזת .Concat, תוכל גם להשתמש בפעולת המחרוזת .Join כדי לקשר מחרוזות יחד.
+תחילה, נתחיל עם הקוד הבא כדי לחבר את שני מחרוזות יחד:
 
 ```C#
-string[] names = {"גלית", "מיכאל", "נעמה"};
-string jointNames = string.Join(" ו", names);
-Console.WriteLine(jointNames);
+string firstString = "שלום";
+string secondString = "עולם";
+string combinedString = firstString + " " + secondString;
+Console.WriteLine(combinedString);
+```
+הפלט יהיה:
+
+```
+שלום עולם
 ```
 
-פלט: גלית ומיכאל ונעמה
-
-ניתן גם להשתמש בפעולת המחרוזת .Format כדי לקשר מחרוזות יחד ולהוסיף פרמטרים משתנים:
+ניתן גם להשתמש בפונקציה `string.Join()` כדי לחבר מספר מחרוזות ביחד בצורה נקייה יותר:
 
 ```C#
-string name = "אליהו";
-double age = 30;
-string sentence = string.Format("שלום, שמי הוא {0} ואני בן {1} שנים.", name, age);
-Console.WriteLine(sentence);
+string[] stringList = {"אני", "אוהב", "לתכנת"};
+string combinedString = string.Join(" ", stringList);
+Console.WriteLine(combinedString);
 ```
 
-פלט: שלום, שמי הוא אליהו ואני בן 30 שנים.
+הפלט יהיה:
 
-## נחיקה מעמוקה:
+```
+אני אוהב לתכנת
+```
 
-כאשר אנו קושרים מחרוזות, הם לא משתנים בשפה, אלא מוחזרים כמשתנים חדשים. זה מאפשר לנו לשנות את המחרוזת המקורית בעת ליצור מחרוזות חדשות.
+## Deep Dive
 
-אם ברצונך להשתמש בפעולות מתקדמות יותר בקישור מחרוזות, תוכל להתעמק עוד יותר על ידי קריאת התיעוד המפורט של מחלקות מחרוזות בשפת תכנות C#.
+### עומק יותר על חיבור מחרוזות
 
-# ראה גם:
+חיבור מחרוזות הוא פעולה בסיסית בשפת תכנות והיא יכולה להיות מאוד שימושית כאשר אנו צריכים ליצור מחרוזת חדשה מתוך מספר מחרוזות קיימות. בסיסית, חיבור מחרוזות משתמש באופרטור + כדי להחבר שתי מחרוזות יחד. אבל ניתן גם להשתמש בפונקציות כדי לבצע חיבור מבוסס עקרונות יותר מתקדמים, כגון `string.Concat()` ו- `string.Format()`.
 
-- [תיעוד של מחלקות מחרוזות בC#](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-
+תוכלו ללמוד עוד על חיבור מחרוזות ופונקציות נוספות במדריכים הבאים:
+
+- [הסבר על `string.Concat()`](https://docs.microsoft.com/en-us/dotnet/api/system.string.concat)
+- [הסבר על `string.Join()`](https://docs.microsoft.com/en-us/dotnet/api/system.string.join)
+- [הסבר על `string.Format()`](https://docs.microsoft.com/en-us/dotnet/api/system.string.format)
+- [פונקציות נוספות לעבוד עם מחרוזות בסי שארפ](https://docs.microsoft

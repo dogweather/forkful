@@ -1,58 +1,49 @@
 ---
-title:    "Rust: Cercare e sostituire il testo"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/rust/searching-and-replacing-text.md"
+title:                "Rust: Ricerca e sostituzione di testo"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+# Perché
 
-La ricerca e la sostituzione di testo sono operazioni comuni durante la scrittura del codice. Con l'aiuto di Rust, possiamo automatizzare questo processo per risparmiare tempo e ridurre gli errori umani.
+Il testo è un elemento fondamentale nella programmazione, ed è spesso necessario modificarlo per adattarlo alle esigenze del nostro codice. La Rust offre strumenti potenti per la ricerca e la sostituzione del testo, rendendo questo compito semplice ed efficiente.
 
-## Come fare
+# Come fare
 
-Per iniziare, dobbiamo importare il modulo `std::fs` per leggere e scrivere file e il modulo `std::io::{BufRead, BufReader, BufWriter, Write}` per gestire il buffering dei file in modo efficace.
-
-```Rust
-use std::fs;
-use std::io::{BufRead, BufReader, BufWriter, Write};
-```
-
-Creiamo un nuovo file di input `input.txt` con il seguente contenuto:
-
-> Questo è un esempio di testo che vogliamo modificare.
-
-Ora possiamo creare un nuovo file `output.txt` e copiare il contenuto di `input.txt` sostituendo le parole "esempio" con "prova".
+Per eseguire una ricerca e sostituzione del testo in Rust, possiamo utilizzare il metodo `replace()` della struttura `String`. Questo metodo accetta due parametri: il testo da cercare e il testo con cui sostituirlo. Ecco un esempio di come utilizzarlo:
 
 ```Rust
-let input_file = fs::File::open("input.txt").expect("Impossibile aprire il file di input.");
-let output_file = fs::File::create("output.txt").expect("Impossibile creare il file di output.");
-
-let reader = BufReader::new(input_file);
-let mut writer = BufWriter::new(output_file);
-
-for line in reader.lines() {
-    let line = line.expect("Impossibile leggere la linea.");
-    let new_line = line.replace("esempio", "prova");
-    writeln!(writer, "{}", new_line).expect("Impossibile scrivere il file.");
-}
-
-writer.flush().expect("Impossibile aggiornare il file.");
-
-
+let text = "Questo è un esempio di testo.";
+let new_text = text.replace("esempio", "esempio modificato");
+println!("{}", new_text);
 ```
 
-L'output nel file `output.txt` sarà:
+Questo codice stamperà "Questo è un esempio modificato di testo." come output. Possiamo anche utilizzare il metodo `replace()` su una `String` immutabile, in questo caso verrà restituita una nuova `String` con il testo modificato.
 
-> Questo è un prova di testo che vogliamo modificare.
+È inoltre possibile utilizzare il metodo `replace()` con espressioni regolari per eseguire ricerche più avanzate. Per farlo, dobbiamo importare il modulo `regex` e utilizzare il metodo `replace_all()` invece di `replace()`:
 
-## Approfondimento
+```Rust
+use regex::Regex;
 
-Esistono diverse funzioni in Rust per la ricerca e sostituzione di testo, come `replace()`, `replacen()` e `replacen_ignore_ascii_case()`. Oltre a ciò, possiamo utilizzare librerie di espressi regolari come `regex` per rendere le nostre sostituzioni ancora più flessibili.
+let text = "Una chiave non è solo una chiave.";
+let re = Regex::new("chiave").unwrap();
+let new_text = re.replace_all(text, "parola");
+println!("{}", new_text);
+```
 
-## Vedi anche
+Questo codice stamperà "Una parola non è solo una parola." come output, poiché il metodo `replace_all()` sostituisce tutte le occorrenze del testo che corrispondono all'espressione regolare.
 
-- [Documentazione di Rust per il modulo fs](https://doc.rust-lang.org/std/fs/index.html)
-- [Documentazione di Rust per il modulo io](https://doc.rust-lang.org/std/io/)
-- [Libreria regex per Rust](https://crates.io/crates/regex)
+# Approfondimento
+
+Il metodo `replace()` della struttura `String` implementa il trait `Replace`, che è anche implementato per altri tipi come `&str` e `&mut str`. Ciò significa che possiamo utilizzare il metodo `replace()` su qualunque tipo che implementi questo trait, semplificando il nostro codice e rendendolo più flessibile.
+
+Un altro approfondimento interessante è l'utilizzo di iteratori e il metodo `fold()` della struttura `String` per eseguire ricerche e sostituzioni su grandi quantità di testo in modo efficiente.
+
+# Vedi anche
+
+- Documentazione ufficiale della Rust sul metodo `replace()`: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
+- Documentazione ufficiale della Rust sul modulo `regex`: https://doc.rust-lang.org/regex/regex/index.html
+- Guida introduttiva alla regex in Rust: https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html

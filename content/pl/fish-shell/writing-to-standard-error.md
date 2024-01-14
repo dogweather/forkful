@@ -1,34 +1,48 @@
 ---
-title:    "Fish Shell: Pisanie do standardowego błędu"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/writing-to-standard-error.md"
+title:                "Fish Shell: Pisanie do standardowego błędu"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Pisanie do standardowego błędu (standard error) jest ważnym narzędziem w programowaniu w Fish Shell. Pomimo tego, że może brzmieć nieco skomplikowanie, pozwala ono na wyświetlanie komunikatów o błędach lub ostrzeżeniach, co jest niezbędne do prawidłowego debugowania kodu.
+Praca z błędami w programowaniu może wydawać się frustrująca, ale często jest niezbędna do poprawnego działania aplikacji. Pisanie do standardowego błędu może pomóc w odnajdywaniu i rozwiązywaniu problemów, dzięki czemu kod będzie działać bardziej efektywnie.
 
 ## Jak to zrobić
 
-Jest kilka sposobów na napisanie do standardowego błędu w Fish Shell. Jednym z nich jest użycie polecenia "fprintf", które działa podobnie jak w innych językach programowania. Przykładowe użycie wyglądałoby następująco:
+Aby pisać do standardowego błędu w Fish Shell, możemy użyć polecenia `echo` z opcją `&2` oraz podać wiadomość lub zmienną, która ma zostać wyświetlona. Na przykład, jeśli chcemy wyświetlić wiadomość "Błąd wykonania skryptu" do standardowego błędu, możemy użyć następującego kodu:
 
+```Fish Shell
+echo "Błąd wykonania skryptu" &2
 ```
-Fish Shell ...
-fprintf stderr "To jest komunikat błędu!"
+
+To spowoduje wyświetlenie tej wiadomości jako błędu w terminalu.
+
+Dodatkowo, jeśli chcemy zapisywać błędy do pliku, możemy użyć "przekierowania strumienia", które pozwoli nam przekierować wynik `echo` do pliku tekstowego. Przykładowy kod wyglądałby tak:
+
+```Fish Shell
+echo "Błąd wykonania skryptu" &2 > error.log
 ```
 
-W powyższym kodzie, "fprintf" określa, do którego strumienia ma zostać wysłana wiadomość, a później podajemy sam komunikat, który ma zostać wyświetlony. Należy również pamiętać o użyciu "2>" przed komendami, aby przekierować je do standardowego błędu.
+Ten kod spowoduje zapisanie wiadomości "Błąd wykonania skryptu" do pliku error.log zamiast wyświetlania jej w terminalu.
 
-## Deep Dive
+## Głębsze zagadnienia
 
-Głębsze zanurzenie w temacie pisania do standardowego błędu wymaga zrozumienia różnic między standardowym wejściem (standard input), standardowym wyjściem (standard output) oraz standardowym błędem (standard error). Standardowe wejście służy do przekazania danych do programu, standardowe wyjście do wypisywania wyników, a standardowy błąd do komunikatów o błędach i ostrzeżeń.
+Pisanie do standardowego błędu może być także przydatne w debugowaniu aplikacji. Błędy, które nie są łatwo zauważalne w konsoli, mogą zostać zapisane do pliku, co ułatwi ich analizę i rozwiązanie.
 
-Pisanie do standardowego błędu jest przydatne w przypadkach, gdy chcemy odróżnić informacje o błędach od standardowego wyjścia. Możemy również przekierować standardowy błąd do pliku, aby odebrać komunikaty o błędach w łatwiejszy sposób.
+Należy jednak pamiętać, że standardowy błąd jest połączony ze standardowym wyjściem, dlatego warto korzystać z funkcji `>&` do oddzielenia tych dwóch strumieni. Na przykład, jeśli chcemy zapisać tylko błędy do pliku, a wyświetlać wszystko inne w terminalu, możemy użyć tego kodu:
 
-## Zobacz także
+```Fish Shell
+&> log.txt echo "Błąd wykonania skryptu" &2
+```
 
-- Wprowadzenie do standardowych strumieni w Fish Shell: [link](https://fishshell.com/docs/current/tutorial.html#tut_streams)
-- Dokumentacja Fish Shell na temat strumieni: [link](https://fishshell.com/docs/current/index.html#stderr)
-- Poradnik o przekierowywaniu strumieni: [link](https://www.howtogeek.com/435903/what-are-stdin-stdout-and-stderr-on-linux/)
+W tym przypadku, wiadomość o błędzie zostanie zapisana do pliku log.txt, a inne komunikaty będą wyświetlane w konsoli.
+
+## Zobacz również
+
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/)
+- [Podręcznik użytkownika Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Przekierowanie strumienia w Fish Shell](https://fishshell.com/docs/current/tutorial.html#redirection)

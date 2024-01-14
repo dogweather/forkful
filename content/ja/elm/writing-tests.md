@@ -1,48 +1,60 @@
 ---
-title:    "Elm: テストの書き方"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/writing-tests.md"
+title:                "Elm: テストの作成"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+# なぜテストを書く必要があるのか
 
-プログラマーにとってテストを書くことは非常に重要です。テストを書くことにより、自分のコードがどれだけ頑健であるかを確認することができます。また、新しい機能を追加する際に既存のコードが意図した通りに動作するかを確認することもできます。
+テストを書くことは、プログラムの信頼性を高め、バグを見つけて修正するのに役立ちます。これにより、コードの品質が向上し、将来的な変更や拡張が容易になります。
 
 ## テストの書き方
 
-テストを書くためには、まず最初にElmのテストモジュールをインポートする必要があります。次に、テストを書きたい関数を定義します。そして、テストを書くための特別な関数を使用して、関数の期待される結果を指定します。最後に、作成したテストをテストスイートに追加します。
+テストを書くためには、まずテストフレームワークをインストールする必要があります。その後、"```Elm ... ```"のコードブロック内にコード例とサンプルの出力を示します。
+
+例えば、以下のようなコードで値が正しく加算されることをテストすることができます。
 
 ```Elm
+-- テストフレームワークのインポート
 import Test exposing (..)
 
-add : Int -> Int -> Int
-add x y =
-  x + y
+-- 加算関数を定義
+add x y = x + y
 
-addTest : Test
-addTest =
-  test "add関数は期待通りに動作する" (
-    add 2 3
-    |> Expect.equal 5
-  )
+-- テストを定義
+tests =
+    describe "加算関数" [
+        test "2と3を加算すると5になること" (
+            add 2 3
+            |> Expect.equal 5
+        )
+    ]
 
-suite : Test
-suite =
-  describe "add関数" [
-    addTest
-  ]
+-- テスト実行
+main =
+    run tests
 ```
 
-上記の例では、`add`関数をテストするために`addTest`という名前のテストを定義しています。そして、`Expect.equal`関数を使用して、`add`関数の結果が`5`であることを期待しています。最後に、定義したテストを`suite`に追加し、全てのテストを実行します。
+出力は以下のようになります。
+
+```Elm
+Running 1 test. To reproduce these results, run: elm-test tests/Main.elm
+
+
+TEST OK: 1 passed, 0 failed, 0 ignored
+```
 
 ## テストの詳細
 
-テストを書く際には、様々なアサーションを使用することができます。例えば、`Expect.equal`以外にも、`Expect.notEqual`や`Expect.lt`などがあります。また、テストの実行前に特定の条件が満たされているかどうかを確認することができる`Test.andThen`や、エラーメッセージをカスタマイズすることができる`Expect.custom`などもあります。
+テストを書くときは、網羅的なテストケースを用意することが重要です。多様な入力やエッジケースを考慮し、バグが見つからなかったとしても、未来の変更や追加で問題が起きないようにするためです。
 
-## その他のリンク
+また、テストはプログラムの一部として考えるべきであり、メンテナンスも必要です。コードの変更や変更された仕様に合わせてテストも更新することで、バグが混入する可能性を減らすことができます。
 
-- [Elmのテストについての公式ドキュメント](https://guide.elm-lang.org/testing/)
-- [テストを書く際のベストプラクティス](https://thoughtbot.com/blog/elm-testing-for-beginners)
-- [Elmのテストに関する問題を解決する方法](https://medium.com/@matsimitsu/problem-solved-elm-testing-tools-764795d265cc)
+# See Also
+
+- [Elmテストドキュメント](https://guide.elm-lang.jp/recommended.html#elm-test)
+- [テスト駆動開発の概要](https://www.techtarget.com/definition/test-driven-development-TDD)
+- [プログラムの品質管理について](https://www.dreamarts.co.jp/staff-blog/11541.html)

@@ -1,48 +1,47 @@
 ---
-title:    "Bash: Escribiendo al error estándar"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/writing-to-standard-error.md"
+title:                "Bash: Escribiendo en error estándar"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir a la salida estándar de errores?
+## Por Qué
 
-Escribir a la salida estándar de errores es una técnica común en la programación Bash. Permite a los desarrolladores mostrar mensajes de error y depurar su código de manera más eficiente. Al escribir a la salida estándar de errores, se pueden identificar y solucionar problemas más rápidamente, lo que a su vez ayuda a mejorar la calidad del software.
+Escribir en el error estándar en Bash es una habilidad importante para cualquier programador. Al hacer uso de esta técnica, podemos mostrar mensajes de error y depuración en nuestros programas para facilitar el proceso de identificación y solución de problemas.
 
-## Cómo hacerlo:
+## Cómo Hacerlo
 
-Para escribir a la salida estándar de errores en Bash, se utiliza el comando "echo" seguido de la opción "-e" y el símbolo ">&2", seguido del mensaje de error entre comillas. Por ejemplo:
-
-```Bash
-echo -e "¡Ha ocurrido un error!" >&2
-```
-
-Esto imprimirá el mensaje "¡Ha ocurrido un error!" en la salida estándar de errores. También se pueden utilizar variables en el mensaje de error, por ejemplo:
+Para escribir en el error estándar en Bash, utilizamos el comando `>&2` seguido de un mensaje entre comillas. Por ejemplo:
 
 ```Bash
-archivo="nombre del archivo"
-echo -e "El archivo $archivo no pudo ser encontrado" >&2
+echo "Este es un mensaje de error" >&2
 ```
 
-Esto imprimirá "El archivo nombre del archivo no pudo ser encontrado" en la salida estándar de errores.
-
-Otra manera de escribir a la salida estándar de errores es utilizando el comando "cat", que permite imprimir contenido de archivos en la salida estándar. Por ejemplo, si se tiene un archivo llamado "errores.txt" con los mensajes de error, se puede utilizar el siguiente comando para imprimirlos en la salida estándar de errores:
+Este comando enviará el mensaje especificado al error estándar en lugar de a la salida estándar. Si ejecutamos este comando en nuestro terminal, no veremos nada impreso en la pantalla, ya que el error estándar no se muestra por defecto. Sin embargo, si combinamos este comando con la redirección del error estándar a un archivo, podemos crear un archivo de registro de errores.
 
 ```Bash
-cat errores.txt >&2
+ls archivos_noexistentes 2> registro_errores.txt
 ```
 
-## Profundizando:
+Este comando ejecutará el comando `ls` con una entrada inválida y redireccionará cualquier mensaje de error al archivo `registro_errores.txt`.
 
-Escribir a la salida estándar de errores no solo es útil para imprimir mensajes de error, también es importante para el manejo de excepciones en scripts Bash. Al escribir mensajes de error en la salida estándar de errores, se pueden utilizar comandos como "grep" o "awk" para filtrar y procesar estos errores de manera más eficiente.
+## Profundizando
 
-Además, es importante tener en cuenta que la salida estándar de errores es diferente a la salida estándar. Mientras que la salida estándar (representada por "1") se utiliza para imprimir resultados o información relevante, la salida estándar de errores (representada por "2") se utiliza específicamente para mensajes de error.
+En ocasiones, podemos encontrarnos con la necesidad de mostrar mensajes de error personalizados en nuestros scripts de Bash. Para hacer esto, podemos utilizar el comando `exit` seguido de un número de salida. Por convención, se utiliza el número `1` para indicar errores generales y números mayores para errores específicos. Por ejemplo:
 
-En resumen, escribir a la salida estándar de errores es una técnica valiosa para mejorar la eficiencia y calidad del código en Bash. Al aprender a utilizar correctamente esta herramienta, se pueden identificar y solucionar problemas en el código de manera más rápida y eficiente.
+```Bash
+if [ $# -eq 0 ]; then
+  echo "Debe proporcionar un parámetro" >&2
+  exit 1
+fi
+```
 
-## Ver también:
+Este script comprueba si se proporciona un parámetro en la línea de comandos y si no, muestra un mensaje de error personalizado y finaliza la ejecución con un estado de salida `1`.
 
-- [Documentación de Bash sobre la salida estándar de errores](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
-- [Artículo sobre el manejo de errores en scripts Bash](https://www.thegeekstuff.com/2010/06/bash-error-handling/)
-- [Tutorial sobre cómo utilizar la salida estándar de errores en Bash](https://linuxize.com/post/bash-redirect-stderr-stdout/)
+## Ver También
+
+- [Documentación Oficial de Bash sobre Redirecciones] (https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
+- [Tutorial de Programación de Bash para Principiantes] (https://ryanstutorials.net/bash-scripting-tutorial/bash-script.php)
+- [Guía de Depuración de Bash] (https://www.linuxjournal.com/content/debugging-bash-scripts)

@@ -1,44 +1,42 @@
 ---
-title:    "Elixir: Tworzenie pliku tekstowego"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/writing-a-text-file.md"
+title:                "Elixir: Pisanie pliku tekstowego"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+### Dlaczego pisanie plików tekstowych jest ważne w programowaniu?
 
-Pisanie plików tekstowych jest nieodłączną częścią wielu programistycznych zadań. W przypadku języka Elixir, pisanie plików tekstowych jest proste i niezawodne, co sprawia, że jest to ważna umiejętność dla każdego programisty.
+Pisanie plików tekstowych jest ważną częścią procesu programowania, ponieważ pozwala nam przechowywać i przetwarzać duże ilości informacji w prosty i czytelny sposób. Pliki tekstowe są również przydatne, gdy chcemy udostępnić nasz kod innym programistom lub uruchomić naszą aplikację na różnych środowiskach.
 
-## Jak to zrobić
+### Jak pisać pliki tekstowe w języku Elixir?
 
-Aby napisać plik tekstowy w Elixir, możemy użyć funkcji `File.write/2` lub `File.write!/2`. Przykładowy kod wykorzystujący pierwszą funkcję wyglądałby następująco:
-
-```elixir
-File.write("plik.txt", "To jest przykładowy tekst")
-```
-
-Za pomocą funkcji `File.write!/2` możemy dodatkowo zdefiniować tryb w jakim ma być tworzony plik, na przykład `:append` lub `:utf8`:
+W języku Elixir możemy łatwo pisać pliki tekstowe przy użyciu wbudowanych funkcji modułu `File` oraz `IO`. Poniżej znajdują się przykładowe kodowe bloki przedstawiające dwa sposoby zapisu tekstu do pliku:
 
 ```elixir
-File.write!("plik.txt", "Nowy tekst", [:append])
+# Przy użyciu modułu File
+File.write("moj_plik.txt", "To jest przykładowy tekst.")
+
+# Przy użyciu modułu IO
+File.open("moj_plik.txt", [:write], fn file ->
+  IO.write(file, "To jest przykładowy tekst.")
+end)
 ```
 
-Jeśli chcielibyśmy uzyskać dostęp do zawartości pliku, możemy wykonac funkcję `File.read/1`:
+W powyższych przykładach `moj_plik.txt` jest nazwą pliku, a `"To jest przykładowy tekst."` jest tekstem, który zostanie zapisany w pliku. Możemy również użyć różnych opcji, takich jak `:append` lub `:utf8`, aby dostosować sposób zapisu pliku.
 
-```elixir
-File.read("plik.txt")
-```
+Po wykonaniu powyższego kodu, utworzymy plik o nazwie `moj_plik.txt` z tekstem `"To jest przykładowy tekst."` wewnątrz.
 
-W tym przykładzie, funkcja zwróci w konsoli zawartość pliku `plik.txt`.
+### Pogłębione informacje o pisaniu plików tekstowych
 
-## Głębsze zagadnienia
+Pisanie plików tekstowych w języku Elixir jest bardzo proste i wydajne, ponieważ język ten ma wbudowane funkcje, które pozwalają nam na łatwe zarządzanie plikami. Dodatkowo, dzięki funkcjom modułu `IO`, możemy nie tylko pisać do pliku, ale także czytać z niego i manipulować jego zawartością.
 
-Podstawowy zapis i odczyt plików tekstowych w Elixir jest bardzo prosty, jednak jeśli chcemy poznać bardziej zaawansowane techniki, możemy wykorzystać funkcję `IO.binwrite/2`, która pozwala na zapisanie danych w postaci binarnej. Oprócz tego, warto zwrócić uwagę na funkcję `File.stream!/3`, która umożliwia odczyt pliku w postaci strumienia.
+Warto również pamiętać, że pliki tekstowe w Elixir są traktowane jako strumienie danych, co sprawia, że są wysoce wydajne i mogą być przetwarzane w sposób przewidywalny i skalowalny.
 
-## Zobacz również
+### Zobacz również
 
-Jeśli jesteś zainteresowany/zainteresowana poznaniem więcej na temat obsługi plików w Elixir, możesz skorzystać z poniższych linków:
-
-- Dokumentacja Elixir na temat tworzenia plików: [https://elixir-lang.org/getting-started/file-operations.html](https://elixir-lang.org/getting-started/file-operations.html)
-- Przewodnik na temat pisania plików w Elixir: [https://dockyard.com/blog/2016/05/19/writing-files-with-elixir](https://dockyard.com/blog/2016/05/19/writing-files-with-elixir)
+- [Dokumentacja Elixir - Moduł File](https://hexdocs.pm/elixir/File.html)
+- [Dokumentacja Elixir - Moduł IO](https://hexdocs.pm/elixir/IO.html)
+- [Blog o Elixirze (po polsku)](https://brainhub.eu/blog/elixir-put-language-backend-development/)

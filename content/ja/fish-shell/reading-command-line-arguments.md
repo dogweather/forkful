@@ -1,43 +1,64 @@
 ---
-title:    "Fish Shell: コンピュータープログラミングにおける「コマンドライン引数の読み方」"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/reading-command-line-arguments.md"
+title:                "Fish Shell: コンピュータープログラミング上の記事タイトル：コマンドライン引数の読み取り"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-コマンドライン引数の読み取りを学ぶ理由を説明します。コマンドライン引数は、プログラムが実行される際に与えられた追加の情報を提供するため、プログラムをより柔軟に作成することができます。
+## なぜ
 
-## 方法
-コマンドライン引数を読み取る方法はいくつかありますが、Fish Shellを使用すると簡単に実装することができます。以下のようにコードを書くことで、コマンドライン引数を読み取ることができます。
+コマンドライン引数を読み取ることは、Fish Shellプログラミングを行う上で非常に便利です。引数を使用することで、プログラムをより柔軟に設定し、ユーザーにとって使いやすいものにすることができます。
 
-```
-Fish Shell
+## How To
 
-# コマンドライン引数を読み取る関数を定義
-function read_arguments
-  echo "引数1: " $argv[1]
-  echo "引数2: " $argv[2]
-  echo "引数3: " $argv[3]
-end
+引数を読み取るには、`$fish_opt`変数を使用します。この変数には、ユーザーが入力した引数の内容が格納されます。以下の例をご覧ください。
 
-# 関数を呼び出す
-read_arguments foo bar baz
-```
+```Fish Shell
 
-上記のコードを実行すると、以下のような結果が得られます。
+# ユーザーが引数を入力しなかった場合
+$fish_opt
 
-```
-引数1: foo
-引数2: bar
-引数3: baz
+# ユーザーが引数を1つ入力した場合
+$fish_opt "Hello"
+
+# 出力結果
+"Hello"
+
+# ユーザーが複数の引数を入力した場合
+$fish_opt "Hello" "こんにちは"
+
+# 出力結果
+"Hello こんにちは"
 ```
 
-## 深いダイブ
-コマンドライン引数を読み取る際に注意するべき点がいくつかあります。まず、コマンドライン引数の数に制限はありませんが、必ずしもすべてが必要なわけではありません。また、スペースを含む引数を正しく読み取るためには、クォーテーション（"）を使用する必要があります。さらに、Fish Shellでは、コマンドライン引数のほかにも環境変数や標準入力などの入力元を使用することができます。
+引数の数や内容に応じて、適切に処理を行うことができます。
 
-## また見る
-- [Fish Shellの公式ドキュメント](https://fishshell.com/docs/current/index.html)
-- [コマンドライン引数の取得方法について](https://qiita.com/tmknom/items/e485421516fc7dd5013b)
-- [環境変数とコマンドライン引数の違いについて](https://www.labri.fr/perso/betrema/debian/21036-ca.pdf)
+## Deep Dive
+
+引数を読み取る際には、いくつかのポイントに注意する必要があります。
+
+### 1. 引数の数を確認する
+
+ユーザーが引数を入力していない場合、`$fish_opt`変数には何も格納されません。そのため、プログラムを実行する前に、引数の数を確認する必要があります。
+
+### 2. 適切な引数の型を指定する
+
+Fish Shellでは、引数の型を指定することができます。たとえば、`-n`オプションを使用すると、引数を数値型として読み取ることができます。
+
+```Fish Shell
+$fish_opt -n 100
+
+# 100を数値型として読み取ることができます
+```
+
+### 3. 複数のオプションを扱う
+
+ユーザーが複数のオプションを使用して引数を入力することもあります。この場合、`$fish_opt`変数にはオプションごとに値が格納されます。そのため、正確に処理を行うためには、各オプションに対して適切な処理を行う必要があります。
+
+## See Also
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Fish Shell GitHub Repository](https://github.com/fish-shell/fish-shell)
+- [Fish Shell Examples](https://fishshell.com/docs/current/commands.html#examples-and-tutorials)

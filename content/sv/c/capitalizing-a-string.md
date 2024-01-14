@@ -1,73 +1,54 @@
 ---
-title:    "C: Att skriva om en teckensträng"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/capitalizing-a-string.md"
+title:                "C: Att Skriva Ut En Sträng Med Stor Bokstav"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna ändra en sträng så att första bokstaven blir stor är en viktig funktion i C-programmering. Det låter dig formatera utdata på ett sätt som är lättläst för användaren. I den här bloggposten kommer vi att utforska hur man gör detta på ett enkelt sätt.
 
-## Hur man gör
-För att kapitalisera en sträng i C behöver du använda två inbyggda funktioner, toupper() och tolower(). Dessa funktioner ändrar bokstäverna i en sträng till antingen stora eller små bokstäver. Här är ett exempel på hur du kan använda dem i kod:
+Att kunna ändra storleken på bokstäver i en sträng är en viktig färdighet för alla som programmerar i C. Det kan hjälpa dig att göra din kod mer läsbar och välstrukturerad, samt möjliggöra funktioner som att jämföra strängar.
 
-```C
-#include <stdio.h>
-#include <ctype.h>
+## Så här gör du
 
-int main()
-{
-  char str[] = "hej alla!";
-  int i;
+Att ändra storleken på bokstäver i en sträng i C är en relativt enkel uppgift. Det första du behöver göra är att inkludera standardbiblioteket `string.h` i din kod. Detta ger dig tillgång till funktioner som kan manipulera strängar.
 
-  //kapitalisera strängen
-  for (i = 0; str[i] != '\0'; i++)
-  {
-    str[i] = toupper(str[i]);
-  }
+För att ändra storleken på bokstäver i en sträng kan du använda antingen `toupper()` eller `tolower()` funktionen. Dessa funktioner tar in en enskild karaktär som parameter och returnerar den motsvarande versalen eller gemena bokstaven. Om karaktären redan är en stor bokstav respektive liten bokstav, returneras den utan några ändringar.
 
-  printf("Den kapitaliserade strängen är: %s\n", str);
+Här är ett exempel på hur du skulle kunna använda dessa funktioner:
 
-  return 0;
-}
 ```
-
-Output:
-
-```C
-HEJ ALLA!
-```
-
-Som du kan se, använde vi en for-loop för att gå igenom varje tecken i strängen och ändra det till stora bokstäver. Sedan skriver vi ut den kapitaliserade strängen med hjälp av printf()-funktionen.
-
-## Djupdykning
-Förutom toupper() och tolower() finns det en annan funktion som är speciellt användbar för att kapitalisera strängar. Det är funktionen strupr() som finns i string.h-biblioteket. Denna funktion kapitaliserar inte bara första bokstaven i en sträng, utan alla bokstäver i strängen. Här är ett exempel på hur man använder det:
-
-```C
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-  char str[] = "hej alla!";
-  
-  //kapitalisera hela strängen
-  printf("Den kapitalgjorda strängen är: %s\n", strupr(str));
+int main() {
+    char str[] = "Hej, världen!";
+    int i;
 
-  return 0;
+    for (i = 0; i < strlen(str); i++) {
+        str[i] = toupper(str[i]);
+    }
+
+    printf("%s", str);
+
+    return 0;
 }
 ```
 
-Output:
+**Output:** HEJ, VÄRLDEN!
 
-```C
-HEJ ALLA!
-```
+I det här exemplet skapar vi en sträng med texten "Hej, världen!" och använder sedan en loop för att ändra storleken på varje bokstav till versaler med hjälp av `toupper()` funktionen. Därefter skrivs den ändrade strängen ut till konsolen.
 
-En annan viktig sak att notera är att toupper(), tolower() och strupr() funktionerna är inte specifika för svenska bokstäver. De fungerar med alla bokstäver i det ASCII-teckenuppsättning som C använder.
+## Djupdykning
+
+Förutom `toupper()` och `tolower()` funktionerna finns det andra sätt att ändra storleken på bokstäver i en sträng i C. Till exempel kan du använda `sprintf()` funktionen för att ändra storleken på varje karaktär i en sträng till versaler eller gemener. Detta kan vara användbart om du behöver utföra flera olika typer av manipulationer på en sträng.
+
+Det är också viktigt att notera att storleksändringar kan variera beroende på vilket teckensnitt och vilket skriftspråk som används. Till exempel kan en karaktär ha en annan versal och gemener i det engelska alfabetet jämfört med det svenska alfabetet. Så se till att ha detta i åtanke när du arbetar med strängar i C.
 
 ## Se även
-- [toupper() - C Reference](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
-- [tolower() - C Reference](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
-- [strupr() - C Reference](https://www.tutorialspoint.com/c_standard_library/c_function_strupr.htm)
+
+- <https://www.programiz.com/c-programming/library-function/string.h/toupper>
+- <https://www.geeksforgeeks.org/toupper-function-in-c/>
+- <https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm>

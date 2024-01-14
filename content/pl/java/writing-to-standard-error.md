@@ -1,44 +1,40 @@
 ---
-title:    "Java: Zapisywanie do standardowego błędu"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/writing-to-standard-error.md"
+title:                "Java: Pisanie do standardowego błędu"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Pisanie do standardowego wyjścia błędów jest nieodłączną częścią programowania w języku Java. Jest to wyjątkowo przydatne narzędzie, które pomaga oznaczać i debugować błędy w naszym kodzie. W tym artykule dowiesz się, dlaczego warto używać standardowego wyjścia błędów i jak to zrobić.
+
+Pisanie do standardowego wyjścia błędów może być przydatne w wielu sytuacjach, na przykład w celu monitorowania działania programu lub znalezienia błędów, które mogą zostać pominięte w standardowym wyjściu.
 
 ## Jak to zrobić
-Pisanie do standardowego wyjścia błędów jest bardzo proste w języku Java. Wystarczy użyć metody `System.err.println()` lub `System.err.print()`. Przykłady kodu poniżej pokazują, jak użyć tych metod:
+
+Najprostszym sposobem na wypisanie do standardowego wyjścia błędów w języku Java jest użycie metody `System.err.println()`. Przykładowy kod wyglądałby następująco:
 
 ```Java
-System.err.println("To jest błąd!");   // wypisze: To jest błąd! w standardowym wyjściu błędów
-System.err.print("To jest ");   // nie przejdzie do nowej linii
-System.err.println("błąd!");   // wypisze: To jest błąd! w standardowym wyjściu błędów
+System.err.println("To jest wiadomość błędu");
 ```
 
-Można również użyć standardowego strumienia błędów jako argumentu w metodzie `println()` lub `print()`:
+To polecenie wypisze podaną wiadomość do standardowego wyjścia błędów, które można odczytać w konsoli.
+
+Można również zmienić kolor tekstu wypisywanego do standardowego wyjścia błędów, co może być szczególnie przydatne, jeśli chcesz wyróżnić błędy w konsoli. Przykładowy kod wyglądałby następująco:
 
 ```Java
-int liczba = 0;
-if (liczba == 0) {
-    System.err.println("Liczba nie może być równa 0!");   // wypisze: Liczba nie może być równa 0!
-}
+System.err.println("\u001B[31m" + "To jest czerwony tekst błędu");
 ```
 
 ## Deep Dive
-Główną różnicą między standardowym wyjściem a standardowym wyjściem błędów jest przeznaczenie. Standardowe wyjście jest używane do normalnych wyjść przekazywanych użytkownikowi, podczas gdy standardowe wyjście błędów służy do raportowania błędów i informacji diagnostycznych. Dzięki temu programista może łatwo rozpoznać, gdzie znajduje się problem w kodzie i naprawić go.
 
-Istnieje również możliwość przekierowania standardowego wyjścia błędów do pliku lub strumienia wyjściowego. Można to zrobić za pomocą klasy `PrintStream` i metody `setErr()`:
+Istnieją również inne sposoby na pisanie do standardowego wyjścia błędów w języku Java, takie jak użycie klasy `PrintStream` lub `PrintWriter`. Jednak metoda `System.err.println()` jest najprostszym i najczęściej stosowanym sposobem.
 
-```Java
-PrintStream strumienBledow = new PrintStream(new File("bledy.txt"));
-System.setErr(strumienBledow);
-System.err.println("Ten błąd zostanie zapisany do pliku bledy.txt!");   // zapisze błąd do wskazanego pliku
-```
+Warto również zaznaczyć, że w standardowej bibliotece języka Java istnieje również klasa `System.console()`, która może być użyta do wypisywania wiadomości do standardowego wyjścia błędów. Jednak nie zawsze jest ona dostępna, zwłaszcza w środowisku, gdzie nie ma dostępu do konsoli.
 
 ## Zobacz również
-- [Java: Writing to Standard Error](https://www.javatpoint.com/java-system-err)
-- [Java System Properties](https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html)
-- [Java: Difference between System.out and System.err](https://www.baeldung.com/java-system-out-err)
+
+- [Dokumentacja Java: System.err.println](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
+- [Dokumentacja Java: System.console](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#console--)
+- [Tutorial: Pisanie do standardowego wyjścia błędów](https://www.baeldung.com/java-write-to-system-error)

@@ -1,62 +1,46 @@
 ---
-title:    "Haskell: 读取命令行参数"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/reading-command-line-arguments.md"
+title:                "Haskell: 读取命令行参数"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么？
+## 为什么
 
-命令行参数是在Haskell编程中经常使用的重要概念。通过读取命令行参数，我们可以让我们的程序更具有灵活性，让它们能够以不同的方式运行。阅读本文可以帮助您学习如何在Haskell中读取命令行参数，并将其应用到您的编程项目中。
+在编写Haskell程序时，可能会需要使用命令行参数来传递输入信息。了解如何读取和使用命令行参数可以让你的程序更加灵活和通用，提高编程的效率。
 
-## 如何
+## 如何做
 
-要读取命令行参数，我们需要使用一个名为"System.Environment"的Haskell模块。首先，我们需要在程序的顶部导入这个模块，如下所示：
-
-```Haskell
-import System.Environment
-```
-
-接下来，我们可以使用"getArgs"函数来读取命令行参数。"getArgs"函数将返回一个名为"IO [String]"的操作，其中"IO"表示它包含"IO"操作，并且返回值是一个字符串列表。因此，我们可以通过以下方式来读取命令行参数：
+使用Haskell内置的`getArgs`方法可以读取命令行参数。首先，需要在程序的顶部引入`System.Environment`模块，然后在需要读取参数的地方使用`getArgs`方法。下面是一个示例代码：
 
 ```Haskell
-args <- getArgs
-```
-
-这个"args"变量就是我们读取到的命令行参数列表。我们可以通过使用"!!"运算符来访问特定的参数，该运算符接受一个索引值作为参数。例如，如果我们想要访问第一个命令行参数，我们可以使用"args !! 0"来获取它。
-
-下面是一个完整的示例程序，它将打印出用户提供的第一个和第二个命令行参数：
-
-``` Haskell
 import System.Environment
 
 main = do
-    args <- getArgs
-    putStrLn ("The first argument is: " ++ args !! 0)
-    putStrLn ("The second argument is: " ++ args !! 1)
+  args <- getArgs
+  putStrLn ("你输入的参数是：" ++ show args)
 ```
 
-如果我们在命令行中使用"runhaskell"命令运行这个程序，并且提供两个参数，比如"abc"和"123"，那么程序将会输出以下内容：
+这段代码中，我们使用`putStrLn`方法将读取到的参数打印出来。然后，在命令行中执行编译后的程序并输入参数，就可以看到输出的结果了。假设程序的名字是`sample`，那么在命令行中可以这样运行：
 
-``` 
-The first argument is: abc
-The second argument is: 123
+```bash
+./sample Hello Haskell
+```
+
+输出的结果将是：
+
+```text
+你输入的参数是：["Hello", "Haskell"]
 ```
 
 ## 深入了解
 
-除了"getArgs"函数，"System.Environment"模块还提供了其他一些函数来帮助我们处理命令行参数。例如，我们可以使用"getProgName"函数来获取程序的名称，使用"getEnv"函数来获取环境变量的值，使用"lookupEnv"函数来查找特定的环境变量，等等。您可以在官方文档中找到更多关于这些函数的信息。
+除了使用`getArgs`方法外，还可以使用`getProgName`方法获取当前程序的名字，以及使用`withArgs`方法改变命令行参数。此外，Haskell还提供了一些其他的方法来处理命令行参数，如`getEnv`方法可以读取环境变量，而`getContents`方法可以读取标准输入。深入了解这些方法可以帮助你更好地处理命令行参数。
 
 ## 参考链接
 
-- [Official documentation for "System.Environment" module](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
-- [Haskell Tutorial - Getting Command Line Arguments](https://www.tutorialspoint.com/haskell/haskell_command_line_arguments.htm)
-- [Haskell入门教程-获取命令行参数](https://studygolang.com/articles/27729)
-- [Haskell中使用命令行参数](https://www.yuque.com/bhdy/blog/xd1zft)
-
-## 请参阅
-
-- [Haskell编程指南](https://www.haskell.org/tutorial/)
-- [Haskell命令行工具集合](https://github.com/cli-guidelines/cli-guidelines)
-- [Haskell编程入门](https://learnxinyminutes.com/docs/zh-cn/haskell-cn/)
+- [Haskell命令行参数文档](https://www.haskell.org/hoogle/?hoogle=getArgs)
+- [使用Haskell处理命令行参数](https://wiki.haskell.org/Handling_command-line_arguments)
+- [Haskell文档：System.Environment](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html)

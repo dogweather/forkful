@@ -1,42 +1,38 @@
 ---
-title:    "Javascript: 生成するランダムな数字"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/generating-random-numbers.md"
+title:                "Javascript: ランダムな数を生成する"
+programming_language: "Javascript"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜランダムな数字を生成するのか
 
-Javascriptでランダムな数字を生成することが重要なのかをご存知ですか？この記事では、その重要性について説明し、実際にランダムな数字を生成する方法をご紹介します。
+ランダムな数字を生成することは、プログラミングの世界では非常によく使われるテクニックです。例えば、ランダムな数字を使用してゲームを作ったり、ランダムなテストデータを生成したりすることができます。さまざまな用途で活用される、便利な機能です。
 
-## ランダムな数字を生成する方法
+## 生成方法
 
-ランダムな数字を生成するには、まずMathオブジェクトを使用します。Mathオブジェクトには、乱数を生成するためのメソッドが用意されています。
-
-```Javascript
-// 0から1の間のランダムな数字を生成
-let randomNumber = Math.random();
-```
-
-さらに、生成された乱数を整数に変換することも可能です。そのためには、Math.floor()メソッドを使用します。
+ランダムな数字をJavascriptで生成するには、Mathオブジェクトの`random()`メソッドを使用します。下記のようにコードを記述することで、0から1の間のランダムな小数点数を得ることができます。
 
 ```Javascript
-// 1から10までの間のランダムな整数を生成
-let randomInteger = Math.floor(Math.random() * 10) + 1;
+Math.random()
 ```
 
-上記のコードを実行すると、1から10の間のランダムな整数が生成されます。このように、Mathオブジェクトのメソッドを組み合わせることで様々なランダムな数字を生成することができます。
+もし、1から10までのランダムな整数を生成したい場合は、`Math.floor()`メソッドを使い、以下のようにコードを記述します。
 
-## ランダムな数字の生成についての詳細
+```Javascript
+Math.floor(Math.random() * 10) + 1
+```
 
-ランダムな数字を生成する際には、注意点があります。例えば、Math.random()メソッドの戻り値が0以上1未満であることや、繰り返し実行すると同じ結果が返されることがある点などを把握しておく必要があります。
+ここで、`Math.floor()`メソッドは小数点以下を切り捨てるために使用し、`Math.random()`メソッドに10を掛けることで、0から9までのランダムな小数点数を得ます。最後に1を足すことで、1から10までのランダムな整数を得ることができます。
 
-また、乱数を使用する場合、統計的にバイアスのある結果が出る可能性があります。そのため、ランダムな数字を生成するアルゴリズムには注意が必要です。
+## 詳しく学ぶ
 
-## 関連記事を参照
+ランダムな数字を生成する方法は以上ですが、もっと詳しく学びたい方には、乱数生成アルゴリズムや擬似乱数生成器などの概念を学ぶことをお勧めします。また、乱数がどのようにコンピュータによって生成されるか、乱数の使用にあたっての注意点なども学ぶことができます。
 
-ランダムな数字を生成する方法やそれに関する詳細については、以下のリンクを参考にしてください。
+## さらに見る
 
 - [Mathオブジェクト - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math)
-- [ランダムな数字の生成について - Qiita](https://qiita.com/Ted-HM/items/981c0ff5af538b537e76)
+- [乱数生成アルゴリズム - Wikipedia](https://ja.wikipedia.org/wiki/%E4%B9%B1%E6%95%B0%E7%94%9F%E6%88%90%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0)
+- [乱数生成器の仕組みと擬似乱数 - Qiita](https://qiita.com/kotakato/items/ccae16902c075d53b5d1)

@@ -1,54 +1,54 @@
 ---
-title:    "PHP: パターンに一致する文字を削除する"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/deleting-characters-matching-a-pattern.md"
+title:                "PHP: パターンと一致する文字を削除する"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ削除するのか？
+## なぜ
 
-文字のパターンに一致する文字を削除するのになぜ人々が関わるのかを説明します。
+文字のパターンにマッチする文字を削除することで、パフォーマンスを改善し、データを効率的に処理することができます。
 
-文字列を操作するためには、時には不要な文字を削除することが必要です。例えば、ユーザーからの入力を受け付ける際に、余分なスペースや特殊文字を削除することで、データの整合性を保つことができます。そのような場合、特定のパターンに一致する文字を一括で削除することが効率的であり、プログラマーにとって非常に便利です。
+## 方法
 
-# 方法：PHPでの削除コード例と出力
+```PHP
+<?php
+// テキストデータを設定
+$text = "今日は良い天気です。私たちも良い一日を過ごしましょう！";
 
-以下に、PHPで文字列から特定のパターンに一致する文字を削除する方法を示します。
+echo "元のテキスト：" . $text; // 元のテキストを表示
+echo "\n";
+
+// 文字のパターンを指定
+$pattern = "/[良い]/u";
+
+// マッチする文字を削除
+$clean_text = preg_replace($pattern, "", $text);
+
+echo "マッチした文字を削除したテキスト：" . $clean_text; // マッチした文字を削除したテキストを表示
+```
+
+実行結果:
 
 ```
-// 削除するパターンを指定
-$pattern = '/[0-9]/';
-// テキストを入力
-$text = "Hello World123";
-// パターンに一致する文字を削除
-$new_text = preg_replace($pattern, "", $text);
-// 結果を出力
-echo $new_text;
-
-// 出力：Hello World
+元のテキスト：今日は良い天気です。私たちも良い一日を過ごしましょう！
+マッチした文字を削除したテキスト：今日は天気です。私たちも一日を過ごしましょう！
 ```
 
-このように、`preg_replace()`関数を使用することで、指定したパターンに一致する文字を一括で削除することができます。この例では、数字に一致する`[0-9]`を指定していますが、他の任意のパターンも指定することができます。
+## ディープダイブ
 
-# 深層へのダイブ
+上記の例では、正規表現を使用して文字のパターンを指定し、`preg_replace()`関数を使用してマッチした文字を削除しました。正規表現を使うことで、複雑なパターンのマッチングも可能になります。また、文字のパターンを変更することで、様々な処理を行うこともできます。
 
-さらに深く掘り下げて、正規表現を使用した文字の削除について説明します。
+## さらに参考になる情報
 
-正規表現は、文字列のパターンを表すための特別な表記方法です。上記の例では、`[0-9]`というパターンを指定しましたが、これは「数字に一致する文字」という意味になります。その他にも、様々なパターンを指定することができます。
+- [PHP正規表現チュートリアル](https://www.php.net/manual/ja/tutorial.php)
+- [PHPで文字列を処理する方法](https://www.php.net/manual/ja/ref.strings.php)
+- [正規表現クイックリファレンス](https://www.php.net/manual/ja/regexp.reference.php)
 
-例えば、`[a-z]`は「小文字のアルファベットに一致する文字」を指定し、`[A-Z]`は「大文字のアルファベットに一致する文字」となります。また、`[a-zA-Z]`と指定することで、すべてのアルファベットに一致する文字を指定することもできます。
+## 参考文献
 
-さらに、`[^0-9]`と指定することで、数字以外のすべての文字に一致することもできます。このように、様々な正規表現を組み合わせることで、より複雑なパターンに一致する文字を削除することも可能です。
-
-# さらに詳しく学ぶには
-
-正規表現を使用した文字の削除についてさらに詳しく学ぶには、以下のリンクを参考にしてください。
-
-- [PHPマニュアル：正規表現](https://www.php.net/manual/ja/reference.pcre.pattern.syntax.php)
-- [正規表現チュートリアル](https://www.php.net/manual/ja/regexp.tutorial.php)
-- [正規表現の基本](https://www.php.net/manual/ja/regexp.reference.basic.php)
-
-# はじめての正規表現
-
-正規表現は初めての方には難しいかもしれませんが、練習することで理解することができます。ぜひ、実
+- [W3Schools - PHP Regular Expressions](https://www.w3schools.com/php/php_ref_regex.asp)
+- [TutorialsPoint - PHP Regular Expressions](https://www.tutorialspoint.com/php/php_regular_expression.htm)
+- [Eloquent JavaScript - Regular Expressions](https://eloquentjavascript.net/09_regexp.html)

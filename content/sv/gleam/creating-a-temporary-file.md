@@ -1,42 +1,40 @@
 ---
-title:    "Gleam: Skapa en tillfällig fil"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/creating-a-temporary-file.md"
+title:                "Gleam: Skapa en temporär fil"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Varför: Skapandet av tillfälliga filer är en vanlig del av programmering, särskilt när man hanterar data och behöver en tillfällig lagringsplats för att utföra olika operationer. I denna bloggpost kommer vi att diskutera varför det är viktigt att förstå hur man skapar tillfälliga filer och hur det kan hjälpa dig i dina programmingsprojekt.
+## Varför
 
-Hur man gör det: För att skapa en tillfällig fil i Gleam, kan du använda "gleam_fs" biblioteket. Det ger en hjälpfunktion för att skapa ett temporärt filnamn och sedan skapa filen med det namnet. Här är ett enkelt exempel:
+Att skapa temporära filer är en vanlig uppgift inom programmering, särskilt när man arbetar med stora datamängder eller behöver hantera tillfällig data. Genom att använda Gleam kan du enkelt skapa temporära filer i ditt program för att säkerställa en smidig och effektiv datahantering.
 
-```Gleam
-gleam_fs.temp_file()
-  |> Ok
-  |> io.puts
-```
+## Hur man gör det
 
-Detta kommer att generera ett tillfälligt filnamn och skriva det till standardutdata. Det är också möjligt att ange ett prefix för det tillfälliga filnamnet genom att lägga till en parameter i "temp_file" funktionen. Här är ett exempel där ett prefix "tmp_" används:
+För att skapa en temporär fil i Gleam kan du använda funktionen `temp_file` från modulen `gleam/file`. Här är ett enkelt exempel:
 
 ```Gleam
-gleam_fs.temp_file("tmp_")
-  |> Ok
-  |> io.puts
+import gleam/file.{temp_file}
+import gleam/filesystem.{write_file}
+
+let main = _ {
+  let temp_file = temp_file()
+  write_file(temp_file, "Detta är en temporär fil.")
+}
 ```
 
-Detta kommer att generera ett filnamn som börjar med "tmp_" följt av en slumpmässig sträng, t.ex "tmp_khg54321". Det är också möjligt att ange ett suffix för filnamnet genom att lägga till en andra parameter. En komplett "temp_file" funktion ser ut så här:
+I exemplet ovan skapar vi en temporär fil genom att anropa `temp_file`-funktionen. Därefter använder vi den skapade filen för att skriva lite text med `write_file`-funktionen. När vi har använt filen kan vi sedan ta bort den med hjälp av `gleam/filesystem/delete_file`-funktionen.
 
-```Gleam
-gleam_fs.temp_file(prefix, suffix)
-  |> Ok
-  |> io.puts
-```
+Output från koden ovan kommer att vara en ny temporär fil med innehållet "Detta är en temporär fil". Detta är ett enkelt exempel, men du kan använda samma princip för att skapa mer komplexa temporära filer med olika typer av data.
 
-Djupdykning: Nu när vi har gått igenom hur man skapar en tillfällig fil, låt oss titta på några av de saker du kan göra med den. Tillfälliga filer är utmärkta för att utföra temporära dataoperationer, t.ex. att kopiera filer, skriva data eller bearbeta information. Efter att ha använt en tillfällig fil kan du helt enkelt ta bort den när du är klar med dina operationer. Detta hjälper till att hålla din arbetyd miljö ren och organiserad.
+## Deep Dive
 
-Se också: För mer information om hur man skapar tillfälliga filer i Gleam, kolla in följande länkar:
+När du skapar en temporär fil i Gleam är det viktigt att förstå att filen endast är tillgänglig inom miljön där ditt program körs. Det betyder att om du till exempel skapar en temporär fil på din lokala dator, kommer den inte att vara tillgänglig om du kör ditt program på en server. Du kan också specificera var den temporära filen ska skapas genom att ange en sökväg som argument till `temp_file`-funktionen.
 
-- Gleam dokumentation för "gleam_fs" biblioteket (https://gleam.run/modules/gleam_fs.html)
-- En guide för hur man använder temporära filer (https://dev.to/rubysolo/temporary-files-and-folders-in-ruby-1g04)
+## Se även
 
-Tack för att du läste vår bloggpost om hur man skapar tillfälliga filer i Gleam. Vi hoppas att du har lärt dig något nytt och att detta kommer att hjälpa dig i dina framtida programmingsprojekt. Ha det fint!
+- [Gleam's modul för filhantering](https://gleam.run/modules/gleam/file.html)
+- [Gleam's modul för filsystem](https://gleam.run/modules/gleam/filesystem.html)
+- [Mer om grundläggande filhantering](https://www.howtogeek.com/348960/what-is-a-temporary-file-and-are-they-safe-to-delete/)

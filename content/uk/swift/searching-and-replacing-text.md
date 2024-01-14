@@ -1,51 +1,44 @@
 ---
-title:    "Swift: Пошук та заміна тексту."
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/swift/searching-and-replacing-text.md"
+title:                "Swift: Пошук і заміна тексту"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-У пошуку та заміні тексту є важлива роль в програмуванні на Swift. Воно дозволяє замінювати певні частини тексту швидко та ефективно, що робить процес програмування менш часозатратним та швидким.
+Можливо, у вас є великий проект з багатьма рядками коду, і ви хочете замінити певне розміщення тексту на інше. Заміна тексту може зекономити ваш час і забезпечити правильне функціонування вашого програмного забезпечення.
 
-## Як
+## Як це зробити
 
-Для початку, спробуйте використати метод `replacingOccurrences(of:with:)`, який замінює всі входження певної підстрічки на іншу підстрічку.
+У Swift є кілька способів заміни тексту. Один з них - використання методу ```replacingOccurrences``` для заміни всіх входжень даного рядка на інший рядок. Наприклад:
 
-```Swift
-let message = "Сьогодні день народження, щасливого дня!"
-let newMessage = message.replacingOccurrences(of: "народження", with: "весілля")
-print(newMessage)
-
-// поточне значення message: Сьогодні день народження, щасливого дня!
-// нове значення newMessage: Сьогодні день весілля, щасливого дня!
+```
+let originalString = "Привіт, Ukraine!"
+let newString = originalString.replacingOccurrences(of: "Ukraine", with: "мій друг")
+print(newString)
+// виводить "Привіт, мій друг!"
 ```
 
-Також, можна використовувати метод `components(separatedBy:)`, який розбиває рядок на масив підрядків окремою підстрічкою.
+Інший спосіб - використання регулярних виразів з методом ```replacingMatches``` для заміни специфічних входжень тексту. Наприклад, якщо ви хочете замінити всі літери "а" на "е", ви можете використати наступний код:
 
-```Swift
-let message = "Сьогодні день народження, щасливого дня!"
-let words = message.components(separatedBy: " ")
-print(words)
-
-// вивід: ["Сьогодні", "день", "народження,", "щасливого", "дня!"]
+```
+let originalString = "apple"
+let newString = originalString.replacingOccurrences(of: "[аA]", with: "е", options: .regularExpression)
+print(newString)
+// виводить "eрple"
 ```
 
-## Deep Dive
+## Розглиблення
 
-При пошуку та заміні тексту, важливо звертати увагу на регістр символів. Наприклад, якщо потрібно замінити слово "день" на "ніч", але в рядку є слово "День", то воно залишиться незмінним, оскільки символ "д" не збігається з символом "Д". Щоб уникнути цієї проблеми, можна використовувати метод `replacingOccurrences(of:with:options:)` та встановити параметр `options` як `.caseInsensitive`, щоб ігнорувати регістр символів.
+Заміна тексту може бути більш складним процесом, коли ви працюєте з більшими обсягами коду. Є кілька корисних методів, які можуть полегшити цю задачу, таких як ```trimmingCharacters``` для видалення пропусків, ```range(of:)``` для пошуку інтервалів тексту та ```replacingCharacters``` для заміни символів у певному інтервалі. Важливо також враховувати особливості релізного і девелоперського режимів, щоб не зробити помилки в заміні тексту на живому проекті.
 
-```Swift
-let message = "День народження, щасливого дня!"
-let newMessage = message.replacingOccurrences(of: "день", with: "ніч", options: .caseInsensitive)
-print(newMessage)
+## Дивись також
 
-// вивід: Ніч народження, щасливого дня!
-```
+Для додаткової інформації про заміну тексту, рекомендуємо переглянути наступні посилання:
 
-## See Also
-
-- [Документація Apple для методу `replacingOccurrences(of:with:)`](https://developer.apple.com/documentation/swift/string/1642143-replacingoccurrences)
-- [Документація Apple для методу `components(separatedBy:)`](https://developer.apple.com/documentation/swift/string/1641697-components)
+- [Документація Swift про метод заміни тексту](https://developer.apple.com/documentation/foundation/nsstring/1413216-replacingoccurrences)
+- [Курс з основ програмування на Swift на Coursera](https://www.coursera.org/learn/swift-programming-syntax)
+- [Стаття на тему заміни тексту в Swift на блозі Ray Wenderlich](https://www.raywenderlich.com/170-codable-tutorial-getting-started-with-codable)

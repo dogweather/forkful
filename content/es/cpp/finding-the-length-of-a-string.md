@@ -1,65 +1,68 @@
 ---
-title:    "C++: Encontrando la longitud de una cadena"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/finding-the-length-of-a-string.md"
+title:                "C++: Encontrando la longitud de una cadena"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué
 
-En programación, es común trabajar con cadenas de caracteres o strings. Una de las operaciones básicas que podemos realizar con ellas es determinar su longitud, es decir, cuántos caracteres contiene. A continuación, explicaré por qué es importante saber cómo encontrar la longitud de una string en C++.
+La longitud de una cadena de texto es una información esencial en la programación. Saber la cantidad de caracteres que componen una cadena nos permite realizar diversas operaciones y manipulaciones de dicha cadena. En este artículo exploraremos cómo encontrar la longitud de una cadena en C++.
 
 ## Cómo hacerlo
-
-Para encontrar la longitud de una string en C++, utilizamos la función integrada `length()`, que nos devuelve un valor entero correspondiente al número de caracteres del string. Veamos un ejemplo:
-
-```C++
-#include <iostream>
-using namespace std;
-
-int main() {
-    string miString = "¡Hola Mundo!";
-    int longitud = miString.length();
-
-    cout << "La longitud de miString es de " << longitud << " caracteres." << endl;
-
-    return 0;
-}
-```
-**Output:**
-```
-La longitud de miString es de 11 caracteres.
-```
-
-También podemos utilizar la función `size()` de la misma manera, ya que es un alias de `length()` en C++. A continuación, un ejemplo donde pedimos al usuario que ingrese una string y mostramos su longitud:
+En C++, podemos encontrar la longitud de una cadena utilizando la función `length()` de la librería `string`. Veamos un ejemplo de cómo se utilizaría esta función en un programa:
 
 ```C++
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 int main() {
-    string miString;
-    cout << "Ingrese una string: ";
-    cin >> miString;
-    int longitud = miString.size();
-
-    cout << "La longitud de su string es de " << longitud << " caracteres." << endl;
-
+    string cadena = "Hola mundo";
+    int longitud = cadena.length();
+    cout << "La longitud de la cadena es: " << longitud << endl;
     return 0;
 }
 ```
-**Output:**
+
+En este caso, la salida del programa sería:
 ```
-Ingrese una string: Programar es divertido
-La longitud de su string es de 21 caracteres.
+La longitud de la cadena es: 10
 ```
+
+También podemos utilizar la función `size()`, que es equivalente a `length()` y realiza la misma tarea. A continuación, veremos un ejemplo:
+
+```C++
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string cadena = "Hola mundo";
+    int longitud = cadena.size();
+    cout << "La longitud de la cadena es: " << longitud << endl;
+    return 0;
+}
+```
+
+La salida del programa sería la misma que en el ejemplo anterior:
+```
+La longitud de la cadena es: 10
+```
+
+Además, es importante mencionar que la longitud de una cadena incluye todos los caracteres, incluso los espacios en blanco y signos de puntuación.
 
 ## Profundizando
+Existen diferentes métodos para encontrar la longitud de una cadena en C++. A parte de las ya mencionadas, también podemos utilizar la función `strlen()` de la librería `cstring`, que es propia del lenguaje C. Sin embargo, esta función sólo puede ser utilizada con cadenas de texto clásicas, no con objetos de la clase `string`.
 
-En realidad, encontrar la longitud de una string en C++ es una tarea sencilla y no requiere de mucha explicación adicional. Sin embargo, es importante destacar que el método `length()` no cuenta el carácter nulo (`\0`) al final del string, mientras que `size()` lo incluye en su cálculo. Además, en caso de que utilicemos un tipo de dato `char` en lugar de un objeto `string`, podemos obtener la longitud del mismo utilizando la función `strlen()` de la librería `cstring`.
+También es importante tener en cuenta que la longitud de una cadena puede variar dependiendo del tipo de codificación utilizado. Si estamos trabajando con cadenas en diferentes idiomas, como por ejemplo el chino o el ruso, es necesario utilizar codificaciones especiales como `wchar_t` para encontrar la longitud correcta.
 
 ## Ver también
-
-- [Documentación de la función length() en cplusplus.com](https://www.cplusplus.com/reference/string/string/length/)
-- [Ejemplos de la función size() en geeksforgeeks.org](https://www.geeksforgeeks.org/size-function-in-c-stl/)
+- [Función length en cppreference](https://en.cppreference.com/w/cpp/string/basic_string/length)
+- [Función size en cppreference](https://en.cppreference.com/w/cpp/string/basic_string/size)
+- [Función strlen en cplusplus.com](https://www.cplusplus.com/reference/cstring/strlen/)
+- [Codificaciones de caracteres en cplusplus.com](https://www.cplusplus.com/reference/cstdlib/mblen/)

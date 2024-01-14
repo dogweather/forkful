@@ -1,51 +1,61 @@
 ---
-title:    "Javascript: Ein Datum in einen String umwandeln"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/converting-a-date-into-a-string.md"
+title:                "Javascript: Eine Datum in eine Zeichenfolge umwandeln."
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Konvertieren von Datumsangaben in Zeichenfolgen ist ein häufiger Schritt beim Programmieren von Webanwendungen. Es ist wichtig zu verstehen, wie man dies richtig macht, um effizient und fehlerfrei zu arbeiten.
+Das Konvertieren von einem Date-Objekt in einen String ist eine wichtige Funktion in der JavaScript Programmierung, da es es ermöglicht, Daten in einem für den Menschen lesbares Format darzustellen. Dies kann besonders hilfreich sein, wenn man mit Datum- und Zeitangaben arbeitet und diese in einer ansprechenden Form präsentieren möchte.
 
-# Wie man es macht
+## Wie man ein Date-Objekt in einen String umwandelt
 
-Die Javascript-Methode `toString()` ermöglicht es uns, ein Datum in einen lesbareren String umzuwandeln. In der folgenden Code-Beispiellinie sehen wir, wie dies gemacht wird:
-
-```Javascript
-const date = new Date(2020, 11, 25);
-const dateString = date.toString();
-console.log(dateString); // Output: Fri Dec 25 2020 00:00:00 GMT+0100 (Mitteleuropäische Normalzeit)
-```
-
-Wie Sie sehen können, gibt `toString()` das Datum in einem vordefinierten Format aus. Allerdings ist dies eventuell nicht immer die gewünschte Darstellung der Datumsangabe. Glücklicherweise bietet Javascript auch die Möglichkeit, das gewünschte Format anzupassen. Hier ist ein Beispiel, das das Datum in dem sehr gebräuchlichen Format `TT.MM.JJJJ` ausgibt:
+Weiter unten finden Sie ein Beispiel, das zeigt, wie man ein Date-Objekt in einen String umwandelt. Es gibt mehrere Möglichkeiten, dies zu tun, aber im Allgemeinen wird dafür die Methode `toDateString()` verwendet. Diese Methode gibt ein Standard-Datums-Format zurück, das je nach Region unterschiedlich sein kann.
 
 ```Javascript
-const date = new Date(2020, 11, 25);
-const options = {day: "numeric", month: "2-digit", year: "numeric"};
-const dateString = date.toLocaleDateString("de-DE", options);
-console.log(dateString); // Output: 25.12.2020
+let today = new Date();
+let dateString = today.toDateString();
+console.log(dateString);
 ```
 
-Hier verwenden wir die Methode `toLocaleDateString()` mit dem Parameter `"de-DE"`, um sicherzustellen, dass das Datum im deutschen Format ausgegeben wird. Die Optionen ermöglichen uns, das Format des Datums festzulegen, indem wir angeben, welche Teile des Datums (`day`, `month` und `year`) und in welchem Format (hier `numeric` für Zahlen und `2-digit` für zweistellige Zahlen) angezeigt werden sollen.
-
-# Tiefere Einblicke
-
-Javascript bietet uns auch die Möglichkeit, benutzerdefinierte Datumsformate zu erstellen. Dazu verwenden wir die `strftime()`-Methode des `strftime`-Moduls. Hier ist ein Beispiel, das das Datum als deutschen Text mit dem Monat als Abkürzung ausgibt:
+Dieses Beispiel erzeugt die folgende Ausgabe:
 
 ```Javascript
-const date = new Date(2020, 11, 25);
-const dateFormat = '%d. %b %Y';
-const strftime = require('strftime');
-const dateString = strftime(dateFormat, date);
-console.log(dateString); // Output: 25. Dez 2020
+Wed Nov 24 2021
 ```
 
-Hier definieren wir zuerst unser gewünschtes Format `dateFormat` und importieren dann das `strftime`-Modul, das die Methode `strftime()` enthält. Wir geben diese Methode dann mit dem gewünschten Format und dem Datum als Parameter aus. Es gibt viele verschiedene Platzhalter, die verwendet werden können, um benutzerdefinierte Formate zu erstellen, und sie können in offiziellen Dokumentationen nachgelesen werden.
+Man kann diese Methode auch mit anderen Methoden kombinieren, um verschiedene Datums- und Zeitformate zu erhalten. Zum Beispiel könnte man die Methode `toLocaleDateString()` verwenden, um das Datum in der jeweiligen Lokalzeitzone darzustellen, oder `toTimeString()` für die Uhrzeit alleine.
 
-# Siehe auch
+Hier ist ein Beispiel, das das Datum und die Zeit im amerikanischen Format darstellt:
 
-- [Javascript Date Referenz](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [strftime Modul Dokumentation](https://github.com/samsonjs/strftime)
+```Javascript
+let now = new Date();
+let dateString = now.toLocaleDateString('en-US', {month: '2-digit', day: '2-digit', year: 'numeric'});
+let timeString = now.toLocaleTimeString('en-US');
+console.log(`${dateString}, ${timeString}`);
+```
+
+Diese Code-Abschnitte ergeben zusammen folgende Ausgabe:
+
+```Javascript
+11/24/2021, 9:30:15 PM
+```
+
+## Tiefer in die Konvertierung von Dateien in Strings eintauchen
+
+Beim Konvertieren von Date-Objekten in Strings gibt es ein paar Dinge zu beachten. Zum einen gibt es verschiedene Methoden, um das Datum in unterschiedlichen Formaten darzustellen. Außerdem sollte man bedenken, dass die Darstellung des Datums von der Region oder den Ländereinstellungen des Geräts abhängen kann.
+
+Eine weitere Überlegung ist die Handhabung von Zeitzonen. Wenn Sie ein Datum aus einer bestimmten Zeitzone in eine andere konvertieren, müssen Sie möglicherweise eine Zeitzonenanpassung vornehmen, um ein korrektes Ergebnis zu erhalten.
+
+Es ist ebenfalls wichtig zu wissen, dass JavaScript-Date-Objekte keine eingebauten Formatierungsfunktionen haben. Dies bedeutet, dass man selbst entscheiden muss, wie man das Datum und die Uhrzeit anzeigen möchte.
+
+In der [offiziellen JavaScript Dokumentation](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date) finden Sie weitere Informationen zu Date-Objekten und deren Verwendung.
+
+## Siehe auch
+
+- [Die offizielle JavaScript Dokumentation zu Date-Objekten](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Date-Objekte in Strings konvertieren - ein Tutorial von w3schools](https://www.w3schools.com/js/js_dates_string.asp)
+- [JavaScript Date Object Umwandlung in UTC und DateStrings - ein Beitrag von Flavio Copes](https://flaviocopes.com/how-to-convert-date-to-string-javascript/)

@@ -1,39 +1,61 @@
 ---
-title:    "Java: Väliaikaisen tiedoston luominen"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/creating-a-temporary-file.md"
+title:                "Java: Väliaikaisen tiedoston luominen"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi luoda tilapäistiedosto?
+# Miksi: Miksi luoda väliaikainen tiedosto Java-ohjelmoinnissa?
 
-Joskus Java-ohjelmointikentässä törmätään tilanteeseen, jossa tarvitaan väliaikainen tiedosto ohjelman suorituksen aikana. Tämä voi olla esimerkiksi tarve tallentaa väliaikaista dataa, tehdä varmuuskopioita tai suorittaa muunlaisia toimintoja, jotka vaativat väliaikaisen tiedoston. Tässä blogikirjoituksessa käymme läpi, miten luodaan tilapäistiedosto Java-koodissa ja miksi se voi olla hyödyllistä.
+Java-ohjelmoijat saattavat joutua luomaan väliaikaisia tiedostoja erilaisissa tilanteissa, kuten tallentaessaan väliaikaista dataa tai suorittaessaan tiettyjä algoritmeja. Väliaikaiset tiedostot ovat hyödyllisiä väliaikaisina säilöinä ja voidaan poistaa käytön jälkeen, mikä auttaa välttämään turhia tietokoneen resurssien käyttöä.
 
-## Miten luoda tilapäistiedosto?
+## Miten tehdä: Esimerkkejä Java-koodilla ja näytöllä
 
-Tilapäistiedoston luominen Javassa on helppoa `java.io.File`-luokan avulla. Käytämme `File.createTempFile()`-metodia luomaan tilapäistiedoston ohjelman juurihakemistoon. Alla on esimerkkikoodi, jossa luomme tilapäistiedoston nimeltä "tempfile.txt" ja kirjoitamme siihen tekstiä:
+```Java
+import java.io.File;
+import java.io.IOException;
 
-```java
-File tempFile = File.createTempFile("tempfile", ".txt"); // luodaan tilapäistiedosto
-try (PrintWriter writer = new PrintWriter(tempFile)) { // avaamme tiedostonkirjoitin
-    writer.println("Tämä on tilapäinenteksti."); // kirjoitetaan teksti tiedostoon
-    writer.flush(); // tyhjennetään kirjoitin
-    System.out.println("Tilapäistiedosto luotu: " + tempFile.getAbsolutePath()); // tulostetaan tiedoston polku
+public class TemporaryFileExample {
+    public static void main(String[] args) {
+        try {
+            // Luodaan väliaikainen tiedosto aloituspolkuun
+            File tempFile = File.createTempFile("temp", ".txt");
+            System.out.println("Väliaikainen tiedosto luotu: " + tempFile.getAbsolutePath());
+
+            // Kirjoitetaan tiedostoon dataa
+            PrintWriter writer = new PrintWriter(tempFile);
+            writer.println("Hei, tämä on väliaikainen tiedosto!");
+            writer.close();
+
+            // Luetaan tiedoston sisältö ja tulostetaan se näytölle
+            Scanner scanner = new Scanner(tempFile);
+            while (scanner.hasNext()) {
+                System.out.println(scanner.nextLine());
+            }
+            scanner.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-Ohjelman tulostamaksi viestiksi saadaan "Tilapäistiedosto luotu: [tiedoston polku]", ja tiedoston sisällöksi "Tämä on tilapäinenteksti."
+**Näyttö:**
 
-## Syvempi sukellus tilapäistiedoston luomiseen
+```
+Väliaikainen tiedosto luotu: C:\Users\Käyttäjä\AppData\Local\Temp\temp2104542262852852084.txt
+Hei, tämä on väliaikainen tiedosto!
+```
 
-Kun luodaan tilapäistiedosto Java-koodissa, tiedosto tallennetaan oletusarvoisesti ohjelman juurihakemistoon. Tämä voidaan kuitenkin muuttaa antamalla `createTempFile()`-metodille parametreina haluttu tiedostonimi ja hakemistopolku, johon tiedosto halutaan tallentaa.
+## Syvällinen sukellus: Lisätietoa väliaikaisten tiedostojen luomisesta
 
-Lisäksi, `createTempFile()`-metodille voidaan antaa myös prefix sekä suffix tiettyä formaattia varten. Tämä varmistaa, että tilapäistiedosto ei sekoitu muiden tiedostojen joukkoon.
+Väliaikaisten tiedostojen luominen Java-ohjelmassa tapahtuu File-luokan avulla. Tämä luokka tarjoaa useita metodeja, kuten `createTempFile()`, jotta voimme luoda väliaikaisen tiedoston haluttuun paikkaan. Oletuksena väliaikaiset tiedostot tallennetaan käyttöjärjestelmän temp-hakemistoon.
 
-Vaikka tilapäistiedosto poistetaan automaattisesti, kun ohjelma suoritetaan loppuun, on hyvä tapa poistaa se itse ohjelmakoodissa `deleteOnExit()`-metodia käyttäen. Tällä varmistetaan, että tilapäistiedosto ei jää turhaan roikkumaan tietokoneelle.
+Voimme myös antaa parametrina tiedostolle halutun nimen ja tiedostopäätteen, kuten `.txt`, jolloin voimme helposti tunnistaa ja käsitellä väliaikaista tiedostoa. Väliaikainen tiedosto poistetaan automaattisesti, kun ohjelma suoritus päättyy tai kun se poistetaan manuaalisesti `delete()`-metodilla.
 
-## Katso myös
+# Katso myös
 
-- [Java File-luokka](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [createTempFile() Java-Docs](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)
+- [Java File-luokka - Javadoc](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html)
+- [TemporaryFile-luokka - Apache Commons IO](https://commons.apache.org/proper/commons-io/javadocs/api-release/org/apache/commons/io/FileUtils.html#createTempFile(java.lang.String,java.lang.String))

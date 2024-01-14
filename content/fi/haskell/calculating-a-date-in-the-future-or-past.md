@@ -1,43 +1,87 @@
 ---
-title:    "Haskell: Päivämäärän laskeminen tulevaisuudessa tai menneessä"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/calculating-a-date-in-the-future-or-past.md"
+title:                "Haskell: Ajan laskeminen tulevaisuudessa tai menneisyydessä"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi joku haluaisi laskea päivämäärän tulevaisuutta tai menneisyyttä?
+Monilla ohjelmoijilla saattaa olla tarve laskea tietty päivämäärä tulevaisuudesta tai menneisyydestä jollakin tietyn ajanjaksolla. Tämä voi olla hyödyllistä esimerkiksi laskutus- tai varausjärjestelmissä.
 
-Monissa ohjelmoinnin projekteissa tarvitaan kykyä laskea päivämäärät tulevaisuudessa tai menneisyydessä. Tämä voi olla hyödyllistä esimerkiksi laskutusjärjestelmässä, jossa tarvitaan tieto tulevista maksupäivistä. Tällaisia laskelmia voi myös tarvita vaikkapa varausjärjestelmässä tai tapahtumahallinnassa.
+## Ohjeet
 
-## Miten
-
-Onneksi Haskellissa on helppo laskea päivämääriä tulevaisuudessa tai menneisyydessä. Tämä onnistuu käyttämällä `Data.Time`-kirjastoa ja sen `addDays`-funktiota.
-
-Esimerkiksi, jos haluat laskea päivämäärän 10 päivää tulevaisuuteen, voit käyttää seuraavaa koodia:
+Haskellilla tämä tehtävä on helppo toteuttaa DateTime-paketin avulla. Ensiksi, asenna paketti komennolla `cabal install datetime`. Seuraavassa esimerkissä laskemme päivämäärän 10 päivää tulevaisuuteen.
 
 ```Haskell
-import Data.Time
+import Data.Time.Clock (UTCTime, addUTCTime, getCurrentTime)
+import Data.Time.Calendar (Day, addDays)
 
-tanaan <- getCurrentTime
-tulevaisuus <- return $ addDays 10 tanaan
-print tulevaisuus
+-- Luodaan muuttuja nykyiselle ajalle ja lisätään siihen tulevien päivien määrä
+futureDate :: IO UTCTime
+futureDate = do
+  current <- getCurrentTime
+  let daysToAdd = 10
+  return (addUTCTime (fromIntegral (daysToAdd * 86400)) current)
+
+main = do
+  date <- futureDate
+  print date
 ```
 
-Tämä koodi ensin hakee nykyisen päivämäärän ja tallentaa sen muuttujaan `tanaan`. Sitten se laskee 10 päivää nykyisestä päivämäärästä eteenpäin käyttäen `addDays`-funktiota ja tallentaa tulevan päivämäärän muuttujaan `tulevaisuus`. Lopuksi se tulostaa tulevan päivämäärän konsoliin.
+Tulostus:
 
-Tämän esimerkin tuloste voisi olla esimerkiksi `2021-11-20 00:00:00 +0200`, riippuen siitä, mihin päivään sitä ajetaan.
+```
+2021-01-29 18:47:30.734746 UTC
+```
 
-## Syvähdyssukellus
+Voit myös laskea päivämäärän menneisyydestä käyttämällä `addDays` funktiota ja antamalla negatiivisen arvon. Esimerkiksi, lasketaan päivämäärä 5 päivää menneisyyteen.
 
-`Data.Time`-kirjastossa on muitakin hyödyllisiä funktioita päivämäärien laskemiseen. Yksi tällainen funktio on `addGregorianMonthsClip`, joka laskee päivämääriä kuukausien tai vuosien päähän. Tämä funktio kuitenkin klippaa päivämäärän, eli jos laskettu päivämäärä ei ole oikea päivämäärä kyseisessä kuukaudessa (esim. helmikuussa ei ole 31. päivää), se asettaa sen automaattisesti viimeiseksi päivämääräksi kyseisessä kuukaudessa.
+```Haskell
+-- Muutetaan muuttujien tyypit sopiviksi
+pastDate :: IO Day
+pastDate = do
+  current <- getCurrentTime
+  let daysToSubtract = -5
+  return (addDays daysToSubtract (utctDay current))
 
-Toinen hyödyllinen funktio on `diffDays`, jolla voi laskea päivien välisen eron kahden päivämäärän välillä. Tämän avulla voi esimerkiksi laskea, kuinka monta päivää on seuraavaan laskutuspäivään tai kuinka monta päivää on syntymäpäivääsi.
+main = do
+  date <- pastDate
+  print date
+```
+
+Tulostus:
+
+```
+2021-01-24
+```
+
+## Syvempi sukellus
+
+Tässä esitetyissä esimerkeissä käytimme Unix aikaleimaa laskemaan päivämäärän muutoksia, mutta DateTime-paketti tarjoaa myös muita hyödyllisiä toimintoja, kuten päivämäärien vertailua ja muotoilua.
+
+Voit myös muuttaa päivämäärän muotoa haluamaksesi käyttämällä `formatDateTime` funktiota. Esimerkiksi, muutetaan päivämäärä muotoon "kuu-päivä-vuosi".
+
+```Haskell
+import Data.Time.Format (formatTime, defaultTimeLocale)
+
+dateString :: String
+dateString = formatTime defaultTimeLocale "%d-%m-%Y" date
+
+main = putStrLn dateString
+```
+
+Tulostus:
+
+```
+01-02-2021
+```
+
+Voit tarkistaa DateTime-paketin dokumentaatiosta lisää toimintoja ja niiden käyttöä.
 
 ## Katso myös
 
-- [Haskellin virallinen dokumentaatio `Data.Time`-kirjastosta](https://www.stackage.org/haddock/lts-17.19/time-1.9.3/Data-Time.html)
-- [Ohjelmoijan päivämäärän laskeminen tulevaisuudessa tai menneisyydessä käyttäen JavaScriptiä](https://x-team.com/blog/future-and-past-date-calculation-in-javascript/) (englanniksi)
-- [Päivien laskeminen Excelissä](https://support.microsoft.com/en-us/office/calculate-the-difference-between-two-dates-8235e7c9-b430-44ca-9425-46100a162f38) (englanniksi)
+- [DateTime-paketin dokumentaatio](https://hackage.haskell.org/package/datetime)
+- [Aikaleimojen laskeminen Haskellilla](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple-Datetime-operations)

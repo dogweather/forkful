@@ -1,38 +1,52 @@
 ---
-title:    "Kotlin: 두 날짜 비교하기"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/comparing-two-dates.md"
+title:                "Kotlin: 두 날짜 비교하기"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-날짜를 두 개 비교하는 일이 어떤 이유 때문에 중요할까요? 일반적으로 날짜를 비교하는 것은 유용한 일일 수 있습니다. 예를 들어, 어떤 사건이 두 날짜 사이에 발생했는지 알고 싶을 때, 또는 특정 날짜 이후의 일정을 확인하고 싶을 때 등이 있을 수 있습니다.
+## 왜
 
-# 어떻게
-날짜를 비교하는 것은 매우 간단합니다. Kotlin에서는 `isAfter()`, `isBefore()`, `equals()`와 같은 메서드를 사용하여 두 날짜를 비교할 수 있습니다. 또한 `compareTo()` 메서드를 사용하여 두 날짜를 비교할 수 있습니다. 아래는 Kotlin으로 두 날짜를 비교하는 간단한 예제 코드입니다.
+날짜 비교를 하는 이유는 무엇일까요? 
 
+두 날짜를 비교하면 두 날짜 사이의 시간 차이를 계산할 수 있습니다. 이는 프로그래밍에서 매우 유용한 기능이며, 예를 들어 파산 날짜와 현재 날짜 사이의 남은 시간을 계산하는 데 사용할 수 있습니다.
+
+## 어떻게
+
+날짜를 비교하는 방법에 대해 알아보겠습니다. Kotlin 언어를 사용하여 다음과 같이 두 날짜를 비교할 수 있습니다.
+
+```Kotlin
+val formatter = SimpleDateFormat("yyyy-MM-dd") // 비교할 날짜 형식 설정
+val date1 = formatter.parse("2021-10-10") // 비교할 첫 번째 날짜
+val date2 = formatter.parse("2021-12-25") // 비교할 두 번째 날짜
+
+// 두 날짜 비교
+if (date1.before(date2)) {
+    println("date2가 더 늦은 날짜입니다.")
+} else if (date2.before(date1)) {
+    println("date1이 더 늦은 날짜입니다.")
+} else {
+    println("두 날짜는 같은 날짜입니다.")
+}
 ```
-Kotlin
-val date1 = LocalDate.of(2021, 1, 1)
-val date2 = LocalDate.of(2021, 1, 15)
 
-println(date1.isBefore(date2)) // Output: true
-println(date1.compareTo(date2)) // Output: -14
-```
+위 코드를 실행하면 `date2가 더 늦은 날짜입니다.`라는 출력 결과를 볼 수 있습니다.
 
-# 깊이있는 탐구
-아래는 `compareTo()` 메서드를 사용하여 날짜를 비교하는 방법에 대한 몇 가지 깊이있는 정보입니다.
+## 깊게 들어가기
 
-- 두 날짜가 같으면 `compareTo()`는 0을 반환합니다.
-- 첫 번째 날짜가 두 번째 날짜보다 이전이면 `compareTo()`는 음수를 반환합니다.
-- 첫 번째 날짜가 두 번째 날짜보다 이후이면 `compareTo()`는 양수를 반환합니다.
+위 예제에서 사용된 `SimpleDateFormat`은 날짜 형식을 문자열과 일치시키는 데 유용한 클래스입니다. 이 클래스 외에도 `Calendar` 클래스를 사용하여 날짜 간의 시간 차이를 계산할 수 있습니다. 또한 `LocalDate`와 같은 새로운 날짜/시간 API를 사용하여 더욱 쉽게 날짜를 비교할 수 있습니다.
 
-더 자세한 정보는 Kotlin 공식 문서를 참고하시기 바랍니다.
+## 더 알아보기
 
-# 참고자료
-- [Kotlin 공식 문서](https://kotlinlang.org/docs/compare-multiple-items.html#comparison-methods)
-- [Java 날짜 비교 방법](https://www.baeldung.com/java-compare-dates)
-- [날짜와 시간 처리를 위한 Java 8 새로운 기능들](https://docs.oracle.com/javase/tutorial/datetime/overview/index.html])
+더 많은 정보를 원한다면 아래 링크들을 확인해보세요.
 
-# 더 보기
+- [Kotlin 공식 문서 - 날짜/시간 API](https://kotlinlang.org/docs/datetime-overview.html)
+- [날짜 형식 지정 문자열 참고](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+- [Java Date vs. Calendar](https://www.geeksforgeeks.org/java-date-vs-calendar-class/) 
+
+## 연관된 항목
+
+- [Kotlin으로 미래 날짜 예약하기](https://linktofutureblogpost.com)
+- [Calendar 클래스를 사용한 시간 변경하기](https://linktochangeblogpost.com)

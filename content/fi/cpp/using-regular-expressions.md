@@ -1,52 +1,51 @@
 ---
-title:    "C++: Säännöllisten lausekkeiden käyttö"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/using-regular-expressions.md"
+title:                "C++: Säännöllisten lausekkeiden käyttö"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita?
+## Miksi käyttää säännöllisiä lausekkeita C++-ohjelmoinnissa?
 
-Säännölliset lausekkeet ovat erittäin hyödyllisiä C++ ohjelmoinnissa, ja ne tarjoavat tehokkaan tavan tarkistaa ja käsitellä merkkijonoja. Niitä voidaan käyttää esimerkiksi merkkijonon muotoilussa, hakemisessa ja korvaamisessa.
+Säännölliset lausekkeet ovat hyödyllinen työkalu, joka mahdollistaa tietojen tarkan haun ja käsittelyn ohjelmissa. Ne ovat erityisen hyödyllisiä datan validoinnissa ja hakemisessa suuresta datamäärästä.
 
-## Miten käyttää säännöllisiä lausekkeita
+## Miten käyttää säännöllisiä lausekkeita C++:ssa?
 
-Säännöllisiä lausekkeita käytetään C++:ssa "regex" kirjastolla. Ensiksi, se täytyy sisällyttää ohjelmaan ```#include <regex>```. Sitten voimme käyttää säännöllisiä lausekkeita etsintään ja käsittelyyn.
+Säännölliset lausekkeet voidaan ottaa käyttöön C++:ssa käyttämällä <code>regex</code>-kirjastoa. Alla on esimerkki, joka etsii merkkijonosta kaikki sanat, jotka alkavat kirjaimella "h" ja päättyvät kirjaimella "n". 
 
-Esimerkiksi voimme tarkistaa, onko merkkijono kokonaisluku regex-kirjasto avulla: 
 ```C++
 #include <iostream>
 #include <regex>
+using namespace std;
 
 int main() {
-  std::string s = "12345";
-  
-  // Luodaan regex objekti
-  std::regex integer("^[0-9]+$");
-  
-  // Tarkistetaan, onko merkkijono kokonaisluku
-  if (std::regex_match(s, integer)) {
-    std::cout << "Merkkijono on kokonaisluku." << std::endl;
-  } else {
-    std::cout << "Merkkijono ei ole kokonaisluku." << std::endl;
-  }
-  return 0;
+    string s = "Hei on vain yksi maailmassa oleva henkilö, jolle voi luottaa: sinä.";
+    regex pattern ("h[a-zA-Z]*n");
+    smatch matches;
+    
+    while(regex_search(s, matches, pattern)) {
+        cout << matches[0] << endl;
+        s = matches.suffix().str();
+    }
+    return 0;
 }
 ```
-**Tuloste:**
+
+Tulostaa:
+
 ```
-Merkkijono on kokonaisluku.
+Hei
+henkilö
 ```
 
-## Syvällisempiä tietoja säännöllisten lausekkeiden käytöstä
+## Syvemmälle säännöllisiin lausekkeisiin
 
-Säännöllisissä lausekkeissa on laaja valikoima erilaisia toimintoja ja käyttötarkoituksia. Ne voivat sisältää sääntöjä, jotka määrittelevät merkkien ja merkkijonojen rakenteen ja muodon.
-
-Säännöllinen lauseke `"^[0-9]+$"` käytettynä edellisessä esimerkissä tarkoittaa, että merkkijonossa voi olla vain numeromerkkejä ja sen pituus voi olla mikä tahansa. Voimme myös käyttää säännöllisiä lausekkeita tarkastelemaan esimerkiksi sähköpostiosoitteita, puhelinnumeroita tai jopa monimutkaisempia merkkijonoja.
+Säännöllisillä lausekkeilla on monia erilaisia käyttötarkoituksia, jotka kannattaa tutkia tarkemmin. Niiden avulla voidaan esimerkiksi suodattaa tietoja, muuntaa merkkijonoja ja suorittaa monimutkaisia hakutoimintoja. Säännöllisten lausekkeiden opiskelu auttaa myös ymmärtämään paremmin merkkijonoihin liittyviä käsitteitä kuten erikoismerkkejä ja tiedostonimien muotoilua.
 
 ## Katso myös
 
-- [cppreference: regex](https://en.cppreference.com/w/cpp/regex) (englanniksi)
-- [Tutoriaali säännöllisistä lausekkeista](https://www.tutorialspoint.com/cpp_standard_library/cpp_regular_expressions.htm) (englanniksi)
-- [Säännölliset lausekkeet ja niiden sovellukset](https://fi.wikipedia.org/wiki/S%C3%A4%C3%A4nn%C3%B6llinen_lauseke) (suomeksi)
+- [C++ regex-opetusohjelma](https://www.tutorialspoint.com/cpp_standard_library/regex.htm)
+- [Säännölliset lausekkeet C++:ssa - virallinen dokumentaatio](https://en.cppreference.com/w/cpp/regex)
+- [RegExr - verkkosivusto säännöllisten lausekkeiden testaamiseen ja opiskeluun](https://regexr.com/)

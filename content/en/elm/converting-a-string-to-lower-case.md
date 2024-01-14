@@ -1,40 +1,44 @@
 ---
-title:    "Elm recipe: Converting a string to lower case"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/converting-a-string-to-lower-case.md"
+title:                "Elm recipe: Converting a string to lower case"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Converting strings to lowercase is a common task in programming, especially when working with user input or data manipulation. In Elm, this can be achieved using a built-in function, making it a quick and easy solution for developers.
+String manipulation is a fundamental aspect of programming, and one commonly used operation is converting a string to lower case. This can be useful in various scenarios, such as comparing two strings without worrying about capitalization or generating user-friendly output.
 
 ## How To
 
-To convert a string to lowercase in Elm, we can use the `String.toLower` function. This function takes in a string as its parameter and returns a new string with all characters converted to lowercase. Let's take a look at an example:
+Before diving into the code, it's important to note that strings in Elm are immutable, meaning they cannot be modified directly. Instead, a new string with the desired changes needs to be created. With that in mind, let's see how we can convert a string to lower case in Elm:
 
-```elm
-name = "ELM PROGRAMMING"
-lowercaseName = String.toLower name
+```Elm
+import String exposing (toLower)
 
--- Output: lowercaseName = "elm programming"
+toLower "Elm Programming" -- Outputs "elm programming"
 ```
 
-In this example, we have a string `name` with all capital letters. By using `String.toLower`, we are able to convert it to lowercase and assign it to the `lowercaseName` variable. We can then use this variable in our code further.
+As seen in the code, the `toLower` function from the `String` module takes in a string as input and returns the lower case version of that string. It handles all special characters and accented letters as well.
 
-Another useful function is `String.toUpper`, which does the opposite and converts all characters to uppercase. These functions are useful when dealing with case-sensitive data or when we want to normalize user inputs.
+```Elm
+toLower "STRIng convertER 123" -- Outputs "string converter 123"
+```
+
+The `toLower` function also works with non-alphabetical characters, such as numbers, symbols, and spaces.
 
 ## Deep Dive
 
-Under the surface, the `String.toLower` function works by using the `Char.toLower` function on each character of the string. This function takes in a character and returns a lowercase version of it, or the original character if it is already lowercase.
+For those interested in understanding the inner workings of the `toLower` function, here's a deeper look at how it handles string conversion.
 
-One thing to keep in mind is that these functions only work for English characters. If you are working with non-English characters, you might need to use a different library or function to handle case conversions.
+The `toLower` function works by iterating through each character in the original string and checking if it is a capital letter. If so, it uses the `Char.toCode` function to get the Unicode code point for that character, adds 32 to it (which is the difference between the ASCII code for upper and lower case letters), and then converts it back to a character using the `Char.fromCode` function.
+
+This process is repeated for each character in the string, and the resulting characters are combined to create the lower case version of the original string.
 
 ## See Also
 
-For more information on string operations in Elm, you can refer to the official Elm documentation or check out these resources:
-
-- [The Basics of Strings in Elm](https://guide.elm-lang.org/appendix/strings.html)
-- [Elm String Library](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm Strings Cheat Sheet](https://devhints.io/elm-strings)
+- Official Elm Documentation for String Module: https://package.elm-lang.org/packages/elm/core/latest/String
+- Interactive String manipulation tool: https://elm-lang.org/0.19.1/tools/make-elm-value
+- Article on String techniques in Elm: https://dev.to/jfmengels/extended-real-world-example-of-using-elm-for-web-trading-pace-calculator-3hee

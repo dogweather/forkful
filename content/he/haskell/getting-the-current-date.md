@@ -1,37 +1,39 @@
 ---
-title:    "Haskell: קבלת תאריך נוכחי"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/haskell/getting-the-current-date.md"
+title:                "Haskell: לקבלת התאריך הנוכחי"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-בעולם התכנות, השתמשות בתאריך הנוכחי היא חלק בלתי נפרד מתהליך הפיתוח. דבר זה יכול להיות שימושי במגוון רחב של תכניות, כולל אפליקציות ואתרים תדירים, וכן לפתרונות לכספים וניתוח המידע המודרני.
+במאמר זה נלמד כיצד לקבל את התאריך הנוכחי בשפת התכנות הוסקל. זה נחשב לתחום חשוב מאוד לתוכנתנים ומפתחים כלליים.
 
-## איך לעשות זאת
+## כיצד
 
-בשפת התכנות המעבדת Haskell, קל מאוד לקבל את התאריך הנוכחי באמצעות שימוש בפונקציית `getCurrentTime` מחבילת `Data.Time`:
+התאריך הנוכחי נחשב לאינפורמציה תדירה וחשובה בשפת התכנות הוסקל. תאריך נוכחי אומר לנו מתי מכשיר נוראן ננעל, מתי נוצרה תנועת נתינה חדשה או כמה זמן שלחת אימייל אחרון. היא מאוד עזרה במספר פונקציות של שפת התכנות הוסקל, אז זה מאוד חשוב לדעת כיצד לקבל תאריך נוכחי.
+
+הריצו את המילון הבא, שמרקם אותו בצורה קצת כברירת מחדל:
 
 ```Haskell
-import Data.Time
+import Data.Time.Clock
 
 main = do
-    now <- getCurrentTime
-    print now
-
--- 2021-10-19 17:59:32.12345678 UTC
+  time <- getCurrentTime
+  print time
 ```
 
-ישנם כמה פונקציות נוספות כמו `getCurrentTime` המציעות אפשרויות נוספות לעיבוד וייצוג של התאריך הנוכחי בפורמט שונה, כמו `getZonedTime` ו- `getUTCTime`.
+תוצאות:
 
-## לחפש עמקים נמוכים
+`2021-06-30 15:45:32.489023 UTC`
 
-לאחר שלמדנו איך לקבל את התאריך הנוכחי בשפת Haskell, ניתן לעשות עוד ניסיונות עם המידע שקיבלנו. לדוגמה, ניתן לשנות את פורמט התאריך על ידי שימוש בפונקציות כמו `formatTime` ו- `parseTimeM`. ניתן גם לבצע חישובים וניתוחים מתקדמים על התאריך כדי לנתח את המידע המדויק של הזמן.
+## נגישה לעומק
 
-## ראה גם
+כדי להבין יותר על איך לקבל את התאריך הנוכחי, חשוב להבין כיצד המחשב תופס זמן ותאריך. בשפת התכנות הוסקל, קיימות פונקציות רבות לעבודה עם זמן ותאריך, כולל פונקציות למניפולציה וניתוח. למידע נוסף על הפונקציות הנדרש להציץ בתיעוד הרשמי של שפת התכנות הוסקל.
 
-* [פיקודי התאריך והזמן ב-Haskell](https://www.haskell.org/ghc/blog/20120304-time.html)
-* [מדריך גישה נעימה לזמן ב-Haskell](https://orbifold.xyz/getting-time-right-the-endgoal.html)
-* [מדריך לתמיכה בתכונות זמן של Swift ב-Haskell](https://github.com/tonarino/asa-time)
+## ראו גם
+
+- [תיעוד רשמי לתאריך וזמן בשפת התכנות הוסקל](https://hackage.haskell.org/package/time/docs/Data-Time-Clock.html)
+- [מדריך לשפת התכנות הוסקל עבור מתחילים](https://wiki.haskell.org/Introduction_to_Haskell)

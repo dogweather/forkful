@@ -1,65 +1,56 @@
 ---
-title:    "C++: Extraction de sous-chaînes"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/extracting-substrings.md"
+title:                "C++: Extraction de sous-chaînes"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous êtes un programmeur C++ en herbe, vous avez probablement déjà entendu parler de l'extraction de sous-chaînes. Mais peut-être que vous ne savez pas exactement pourquoi c'est utile ou comment le faire correctement. Dans cet article, nous allons plonger dans le monde des sous-chaînes et vous expliquer pourquoi vous devriez les utiliser.
+Les sous-chaînes, aussi appelées "substrings", sont des parties d'une chaîne de caractères plus grande. Les extraire peut être extrêmement utile lorsque vous travaillez avec des données textuelles dans votre programme C++. Cela permet de manipuler et de traiter des portions spécifiques de texte de manière plus efficace.
 
 ## Comment faire
 
-L'extraction de sous-chaînes consiste à extraire une partie spécifique d'une chaîne de caractères. Cela peut être utile pour diverses tâches telles que la recherche de mots-clés dans une chaîne, ou pour obtenir une partie spécifique d'une URL.
-
-Voici un exemple de code en C++ pour extraire une sous-chaîne d'une chaîne :
+Pour extraire une sous-chaîne dans un programme C++, vous pouvez utiliser la fonction `substr` de la classe `string`. Voici un exemple de code qui extrait une sous-chaîne à partir d'une chaîne de caractères :
 
 ```C++
 #include <iostream>
-#include <string>
-
 using namespace std;
 
 int main() {
-    string s = "Bonjour tout le monde !";
-    string sousChaine = s.substr(8, 11); //extrait la sous-chaîne commençant à l'indice 8 et ayant une longueur de 11 caractères
-    cout << sousChaine; //affiche "tout le monde"
+    string texte = "Bonjour tout le monde";
+    string sous_chaine = texte.substr(8,4); // à partir de l'index 8, 4 caractères sont extraits
+    cout << sous_chaine << endl; // affiche "tout"
     return 0;
 }
 ```
 
-Dans cet exemple, nous utilisons la fonction `substr()` de la classe `string` pour extraire la sous-chaîne. Elle prend deux paramètres : l'indice de départ et la longueur de la sous-chaîne désirée.
+Dans cet exemple, la fonction `substr` prend deux arguments : l'index de départ et le nombre de caractères à extraire. Le résultat est stocké dans une nouvelle chaîne de caractères `sous_chaine`.
 
-Voici un autre exemple pour extraire une partie spécifique d'une URL :
+Vous pouvez également spécifier un seul argument à la fonction `substr` pour extraire tous les caractères à partir d'un index donné jusqu'à la fin de la chaîne.
 
 ```C++
-#include <iostream>
-#include <string>
+string sous_chaine = texte.substr(3); // à partir de l'index 3 jusqu'à la fin
+cout << sous_chaine << endl; // affiche "jour tout le monde"
+```
 
-using namespace std;
+Il est également possible de fournir un index négatif pour extraire une sous-chaîne à partir de la fin.
 
-int main() {
-    string url = "https://www.example.com/article/123456";
-    string id = url.substr(30); //extrait l'ID de l'article en commençant à l'indice 30 jusqu'à la fin de la chaîne
-    cout << id; //affiche "123456"
-    return 0;
-}
+```C++
+string sous_chaine = texte.substr(-6, 3); // à partir des 6 derniers caractères, 3 sont extraits
+cout << sous_chaine << endl; // affiche "mon"
 ```
 
 ## Plongée en profondeur
 
-Maintenant que vous savez comment extraire des sous-chaînes en C++, vous pouvez également vouloir en savoir plus sur le fonctionnement interne de cette opération. Une sous-chaîne est simplement une vue de la chaîne d'origine, elle ne fait donc pas de copie de la mémoire. Cela signifie que si vous modifiez la sous-chaîne, la chaîne d'origine sera également modifiée.
+La fonction `substr` n'est pas la seule méthode pour extraire des sous-chaînes en C++. Vous pouvez également utiliser des boucles et des fonctions de manipulation de chaînes de caractères telles que `find` et `replace`.
 
-Il est également important de noter que les indices dans une chaîne commencent à 0, donc si vous voulez extraire une sous-chaîne de l'indice 0 jusqu'à un indice donné, il vous suffit simplement de spécifier la longueur de la sous-chaîne.
+Vous pouvez également utiliser des expressions régulières pour extraire des sous-chaînes qui correspondent à un modèle spécifique. Cela peut être particulièrement utile pour extraire des informations telles que des dates, des adresses ou des numéros de téléphone dans du texte.
 
 ## Voir aussi
 
-Maintenant que vous savez comment extraire des sous-chaînes en C++, vous pouvez peut-être être intéressé par d'autres sujets liés à la manipulation de chaînes de caractères. Voici quelques liens qui pourraient vous être utiles :
-
-- [Comment concaténer des chaînes de caractères en C++](https://www.example.com/concatenation-cpp)
-- [Comment convertir une chaîne de caractères en entier en C++](https://www.example.com/conversion-entier-cpp)
-- [Comment trouver une chaîne dans une autre chaîne en C++](https://www.example.com/recherche-chaine-cpp)
-
-Maintenant, à vous de jouer ! Utilisez l'extraction de sous-chaînes dans vos projets pour améliorer votre code et faciliter vos tâches de manipulation de chaînes en C++.
+- [Documentation officielle de la fonction substr](https://www.cplusplus.com/reference/string/string/substr/)
+- [Tutoriel sur la manipulation de chaînes de caractères en C++](https://www.tutorialspoint.com/cpp_standard_library/string.htm)
+- [Guide des expressions régulières en C++](https://www.regular-expressions.info/cpp.html)

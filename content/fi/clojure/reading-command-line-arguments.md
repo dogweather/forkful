@@ -1,41 +1,44 @@
 ---
-title:    "Clojure: Pääkomennoin argumenttien lukeminen"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/reading-command-line-arguments.md"
+title:                "Clojure: Lukeminen komentoriviparametreista"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi lukea komentoriviargumentteja? Komentoriviargumenttien lukeminen on tärkeä taito, joka auttaa ohjelmoijia paremmin hallitsemaan ja suorittamaan heidän luomiaan ohjelmia. Valmiiksi annettuja argumentteja käyttämällä ohjelmoijat voivat määrittää ohjelmiensa suorituksen eri parametreilla ja tehdä siitä joustavamman.
+# Miksi
 
-## Miten
-Komentoriviargumenttien lukeminen on helppo toteuttaa Clojuren avulla. Alla on esimerkkejä koodista ja tulosteesta:
+Ihmiset kommunikoivat tietokoneohjelmien kanssa monin eri tavoin. Yksi kätevä tapa on lukea komentoriviparametreja. Tässä blogikirjoituksessa opimme, kuinka voimme lukea komentoriviparametreja Clojure-ohjelmassamme.
 
-```Clojure
-;; Määritetään muuttuja komentoriviargumenteille
-(def args *command-line-args*)
- 
-;; Tulostetaan argumentit
-(print args)
-```
-
-Kun ajetaan komennolla `clj -m args "Hello" "world!"`, koodin tulosteena nähdään `"Hello" "world!"`. Käyttämällä tätä tapaa, ohjelmoija voi lukea ja käyttää komentoriviargumentteja koodissaan.
-
-## Syvällisempi tarkastelu
-Komentoriviargumenttien lukeminen onnistuu myös käyttämällä `clojure.core` -kirjaston `with-command-line` funktiota. Tämä mahdollistaa argumenttien käsittelyn ennen niiden käyttöä koodissa. Alla on esimerkki koodista:
+# Kuinka
 
 ```Clojure
-;; Määritetään argumentit käytettäviksi muuttujissa
-(with-command-line args
-  (let [hello (first args)
-        name (second args)]
-    (println "Päivää," name "oletko kuullut tervehdyksestä" hello "?")))
+(defn -main [& args]
+  (println "Komentoriviparametreja oli " (count args))
+  (if (empty? args)
+    (println "Ei parametreja annettu")
+    (doseq [arg args]
+      (println "Saatu parametri: " arg))))
 ```
 
-Kun ajetaan komennolla `clj -m args "Moi" "Sakura"`, koodin tulosteena nähdään `"Päivää, Sakura oletko kuullut tervehdyksestä Moi?"`.
+Koodirivit selitetään alla.
 
-## Katso myös
-- [Clojure Docs: with-command-line](https://clojuredocs.org/clojure.core/with-command-line)
-- [Brave Clojure: Command-Line Arguments](https://www.braveclojure.com/functional-programming/?genie=querystring&arg0=command-line%20arguments&arg1=eb98842c-69aa-42b4-8331-3cbc20404c51&arg2=5c8894cd-9b50-44ea-8928-f177017e846b&arg3=https%3A%2F%2Fwww.braveclojure.com%2Ffunctional-programming%2F&arg4=1521704251824&arg5=0.9999999999968891)
-- [The Clojure Style Guide: Command-Line Arguments](https://guide.clojure.style/dynamic-programming/command-line.html)
+Ensimmäisellä rivillä luodaan funktio nimeltä `-main`, joka odottaa parametreja `& args` muodossa.
+
+Toisella rivillä tulostetaan viesti komentoriviparametrien määrästä käyttämällä `count` funktiota ja `println` funktiota. Tämän jälkeen käytetään `if` lauseketta tarkistamaan, onko parametreja annettu vai ei.
+
+Jos parametreja ei ole annettu, tulostetaan virheilmoitus "Ei parametreja annettu".
+
+Jos parametreja on annettu, käytetään `doseq` funktiota käymään läpi kaikki parametrit ja tulostetaan jokainen niistä erikseen.
+
+# Syvennä
+
+Komentoriviparametrien lukeminen voi olla hyödyllistä esimerkiksi silloin, kun haluamme antaa ohjelmalle tietoa ennen sen suorittamista. Parametrit voivat sisältää esimerkiksi tiedostonimiä, argumentteja tai muita arvoja, joita ohjelma tarvitsee toimiakseen.
+
+Komentoriviparametrien lukeminen voidaan tehdä myös käyttämällä Clojuren `ARGV` muuttujaa, joka sisältää listan kaikista parametreista. Tämä muuttuja on kuitenkin vain luku eikä sitä voi muuttaa.
+
+# Katso myös
+
+- [Official Clojure documentation for command line arguments](https://clojure.org/reference/repl_libraries)
+- [ClojureDocs kokoelma-komentoriviparametreja käsitteleviä ohjeita](https://clojuredocs.org/clojure.core/ARGV)

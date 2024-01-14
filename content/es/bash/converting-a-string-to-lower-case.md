@@ -1,55 +1,40 @@
 ---
-title:    "Bash: Convirtiendo una cadena a minúsculas"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/converting-a-string-to-lower-case.md"
+title:                "Bash: Convirtiendo una cadena a minúsculas"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-En la programación, a menudo se necesita manipular cadenas de texto para realizar diversas tareas. Una de estas tareas puede ser convertir una cadena de texto a minúsculas. Esto es especialmente útil para comparar cadenas de texto de manera más sencilla o para asegurarse de que los datos ingresados por los usuarios sean consistentes y legibles.
+Convertir una cadena de texto a minúsculas puede ser útil cuando se trabaja con programación de Bash. Esto permite que el programa reconozca la misma cadena en diferentes formas, ya sea en mayúsculas o minúsculas.
 
 ## Cómo hacerlo
 
-La conversión de una cadena de texto a minúsculas en Bash es muy sencilla. Simplemente usamos el comando `tr` seguido de la opción `-s` para especificar que queremos aplicar la conversión de forma "silenciosa" y luego usamos la opción `-d` junto con la expresión regular `[A-Z]` para eliminar todas las mayúsculas. Aquí hay un ejemplo:
+Para convertir una cadena de texto a minúsculas en Bash, se puede utilizar el comando "tr". Este comando permite transformar un conjunto de caracteres en otro. En este caso, utilizaremos "tr" para transformar los caracteres en mayúscula a caracteres en minúscula.
 
 ```Bash
-%%bash
-
-cadena="BLOG DE PROGRAMACIÓN"
-echo "$cadena" | tr -s -d '[A-Z]'
+cadena="BLOG DE PROGRAMACIÓN EN BASH"
+echo $cadena | tr '[:upper:]' '[:lower:]'
+# Output: blog de programación en bash
 ```
 
-El resultado de este código sería `blog de programación`, todas las letras mayúsculas han sido eliminadas. También podemos usar la opción `-s` junto con `-d` para eliminar los espacios en blanco y hacer que la cadena de texto resultante sea más legible.
+Como se puede ver en el ejemplo, utilizamos el comando "tr" junto con los parámetros "[:upper:]" y "[:lower:]" para indicarle que queremos transformar los caracteres en mayúscula a caracteres en minúscula.
 
-```Bash
-%%bash
+## Profundizando
 
-cadena="HOLA, BIENVENIDOS!"
-echo "$cadena" | tr -s -d '[A-Z]'
-```
+Al usar el comando "tr" para convertir una cadena de texto a minúsculas, es importante tener en cuenta que este comando no solo afectará a las letras, sino a cualquier carácter que esté en mayúscula. Por ejemplo, si nuestra cadena incluye símbolos o números en mayúscula, también serán transformados a minúscula.
 
-Con esto, la salida sería `holabienvenidos`, lo cual puede ser útil para formatear nombres o títulos de manera más concisa.
-
-## Profundicemos
-
-Aunque el comando `tr` es muy útil para convertir una cadena de texto a minúsculas, debemos tener en cuenta que solo funciona para caracteres ASCII. Si necesitamos trabajar con caracteres internacionales, podemos utilizar el comando ` awk` y su función `tolower`:
-
-```Bash
-%%bash
-
-cadena="HOLA, BIENVENIDOS!"
-awk '{print tolower($0)}' <<< "$cadena"
-```
-
-La salida de este código sería `hola, bienvenidos!`, manteniendo los caracteres internacionales intactos.
-
-También es importante mencionar que la conversión a minúsculas puede ser problemática si nuestros datos contienen números o caracteres especiales. En ese caso, es importante asegurarse de que la conversión se aplique solo a las letras y no a los demás caracteres. Esto se puede lograr utilizando una expresión regular específica y la opción `-c` del comando `tr`.
-
-En resumen, convertir una cadena de texto a minúsculas puede ser de gran ayuda en la programación para comparar datos y asegurarse de su consistencia y legibilidad. Sin embargo, debemos tener en cuenta los posibles problemas en cuanto a caracteres internacionales y otros caracteres especiales.
+Además, este comando solo afectará a la cadena de texto que se le indique, no cambiará permanentemente en la variable original. Por lo tanto, si queremos utilizar la cadena convertida a minúsculas, debemos almacenarla en una nueva variable o imprimir el resultado directamente.
 
 ## Ver también
 
-- Bash `tr` command documentation: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
-- AWK `tolower` function documentation: https://www.gnu.org/software/gawk/manual/gawk.html#Built_002din-Functions
+Si quieres seguir aprendiendo sobre programación en Bash, aquí te dejamos algunos enlaces útiles:
+
+- [Introducción a Bash en español](http://www.solucione.es/introduccion-a-bash/)
+- [Guía de comandos básicos de Bash](https://www.hostinger.es/tutoriales/comandos-basicos-de-linux/)
+- [Documentación oficial de Bash](https://www.gnu.org/software/bash/)
+
+¡Esperamos que este artículo te haya sido útil! Recuerda que practicando y experimentando con los comandos de Bash podrás mejorar tus habilidades y conocimientos en programación. ¡Hasta la próxima!

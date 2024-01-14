@@ -1,54 +1,45 @@
 ---
-title:    "C: 文字ファイルの書き方"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/writing-a-text-file.md"
+title:                "C: テキストファイルの書き方"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテキストファイルを書くのか
+## なぜ書くのか
 
-テキストファイルを書くことは、コンピューターの言語であるC言語を学ぶ上で非常に重要です。テキストファイルを書くことで、プログラマーはコードやデータを保存し、後で再利用することができます。また、コマンドラインから簡単にアクセスして編集することもできます。
+テキストファイルを書く理由はさまざまです。例えば、データを保存したい場合や、プログラムの出力を保存したい場合に使うことができます。
 
 ## 書き方
 
-テキストファイルを書くには、まずファイルを開くステップが必要です。その後、ファイルに書き込むデータを定義し、最後にファイルを閉じる必要があります。
+テキストファイルを書く方法は簡単です。まず、ファイルを開きます。次に、書き込みモードでファイルを開く必要があります。最後に、```fprintf()```関数を使用してテキストをファイルに書き込みます。
 
-以下は、C言語でテキストファイルを書く例です。
-
-```C
+```
 #include <stdio.h>
-
-int main() {
-    // ファイルを開く
-    FILE *fp = fopen("sample.txt", "w");
-
-    // ファイルに書き込むデータを定義する
-    char data[] = "これはテキストファイルに書き込まれたデータです。";
-
-    // ファイルにデータを書き込む
-    fprintf(fp, "%s", data);
-
-    // ファイルを閉じる
-    fclose(fp);
-
-    return 0;
+int main()
+{
+  FILE *fp;
+  fp = fopen("sample.txt", "w");
+  fprintf(fp, "こんにちは、世界!");
+  fclose(fp);
+  return 0;
 }
 ```
 
-上記のコードを実行すると、`sample.txt`という名前のテキストファイルが現在のディレクトリに作成され、その中には「これはテキストファイルに書き込まれたデータです。」という文字列が書き込まれます。
+上記のコードを実行すると、"sample.txt"という名前のファイルが作成され、その中に"こんにちは、世界!"というテキストが書き込まれます。
 
-## ディープダイブ
+## 詳細を掘り下げる
 
-テキストファイルを書く際によく使われるフォーマットとして、CSV（Comma-Separated Values）があります。これは、カンマで区切られたデータを格納するためのファイル形式です。多くのデータベースやスプレッドシートプログラムでもサポートされており、データのやりとりによく用いられます。
+テキストファイルを書く際には、いくつかの注意点があります。まず、ファイルが正しく開かれているかどうかを確認する必要があります。ファイルが開かれないと、エラーが発生します。また、ファイルに書き込むデータの型に注意する必要があります。文字列を書き込む場合は、```fprintf()```関数の第二引数に%sというフォーマット指定子を使用します。
 
-また、テキストファイルの書き込みには、`fprintf()`の他にも`fputs()`や`fwrite()`などの関数があります。それぞれの関数には特有の特徴があるため、適切な関数を使い分けることが重要です。
+## 詳しくはこちらを参照してください
+
+- [C プログラミング（初心者ユーザー向け）](https://www.geeksforgeeks.org/c-programming-language/)
+- [C言語 ファイル入出力 - pat Suite ～ プログラミング入門 ～](https://www.tohoho-web.com/ex/cpp.html#file2)
+- [C言語ファイル入出力テストドライバ突撃インタビュー - Qiita](https://qiita.com/kotetu/items/0531c1856b6ad2c7f355)
 
 ## 参考リンク
 
-- [C言語でテキストファイルを書く方法](https://www.geeksforgeeks.org/writing-text-file-using-vi/)
-
-## 関連リンク
-
-- [C言語入門](https://www.tohoho-web.com/ex/c.htm)
-- [テキストエディタの使い方](https://forest.watch.impress.co.jp/library/editor/)
+- [Markdownの書き方 - Qiita](https://qiita.com/kamorits/items/6f342da395ad57468ae3)
+- [Markdownチートシート - Qiita](https://qiita.com/Qiita/items/c686397e4a0f4f11683d)

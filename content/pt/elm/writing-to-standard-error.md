@@ -1,54 +1,46 @@
 ---
-title:    "Elm: Escrevendo para o erro padrão"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/writing-to-standard-error.md"
+title:                "Elm: Escrevendo para o erro padrão"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever no erro padrão (Standard Error)
+## Por que escrever para o erro padrão? 
 
-Escrever no erro padrão é uma prática comum em programação Elm. Isso nos permite lidar com erros de maneira mais eficiente e oferece uma maneira mais robusta de lidar com exceções em nosso código.
+Se você é um programador iniciante ou experiente, já deve ter se deparado com o desafio de encontrar erros em seu código. O Elm oferece uma ótima maneira de lidar com esse problema, permitindo que você escreva para o erro padrão. Mas por que exatamente você deveria fazer isso? Neste post, vamos explorar as vantagens e como fazer isso.
 
-## Como fazer
+## Como fazer 
 
-Para escrever no erro padrão em Elm, podemos usar a função `Debug.crash` seguida por uma mensagem de erro entre aspas. Por exemplo:
+Escrever para o erro padrão é um processo simples em Elm. Tudo que você precisa fazer é usar a função `Debug.log` e fornecer uma string como primeiro argumento e qualquer valor como segundo argumento. Por exemplo:
 
-```Elm
-Debug.crash "Ocorreu um erro inesperado!"
+```elm
+meuDado = "olá"
+Debug.log "mensagem" meuDado
 ```
 
-Isso imprimirá a mensagem no console de desenvolvimento e ajudará a identificar a origem do erro.
+Isso vai imprimir "mensagem: olá" no seu console. Você também pode usar essa função para depuração, como por exemplo:
 
-Também podemos usar a função `Ergo.catch` para capturar e manipular erros específicos em nosso código. Por exemplo:
-
-```Elm
-import Ergo exposing (catch)
-
-divide x y =
-  if y == 0 then
-    catch (Just "Não é possível dividir por zero") (\msg -> Debug.crash msg)
-  else
-    x / y
+```elm
+isEven num =
+  Debug.log "checando paridade" (num % 2 == 0)
 ```
 
-Este bloco de código primeiro verifica se o divisor é igual a zero e, se for o caso, chama a função `catch` para capturar o erro e passar uma mensagem personalizada para a função `Debug.crash`.
+Isso vai imprimir "checando paridade: True" ou "checando paridade: False" dependendo do valor de `num`. Assim, você pode verificar se sua função está funcionando corretamente em tempo real.
 
-## Mergulho Profundo
+## Mergulho profundo 
 
-Escrever no erro padrão em Elm também nos permite lidar com casos inesperados que podem surgir durante a execução do nosso programa. Podemos usar a função `Task.perform` para realizar uma tarefa e, se houver um erro, chamar a função `Debug.crash` para imprimir uma mensagem no console. Por exemplo:
+Além de ser útil para depuração, escrever para o erro padrão também pode ser útil para entender o fluxo de dados em sua aplicação. Por exemplo, você pode usar a função `Debug.log` para imprimir valores em diferentes pontos do seu código e ver como eles mudam conforme sua aplicação é executada. Isso pode ajudar a identificar onde os erros estão ocorrendo e a entender melhor o comportamento do seu código.
 
-```Elm
-performTask =
-  Task.perform
-    (\err -> Debug.crash "Ocorreu um erro ao realizar a tarefa")
-    (\success -> "Tarefa realizada com sucesso")
-```
+Outra vantagem de escrever para o erro padrão é que isso não afeta o desempenho da sua aplicação em produção. O compilador do Elm remove automaticamente essas chamadas de depuração do código gerado, garantindo que sua aplicação funcione da melhor forma possível.
 
-Esta função primeiro especifica o que deve ser feito em caso de erro (imprimir uma mensagem) e depois o que deve ser feito em caso de sucesso (retornar uma mensagem).
+## Veja também 
 
-## Veja também
+Aqui estão alguns links para mais recursos sobre escrever para o erro padrão em Elm:
 
-- Documentação do Elm: https://guide.elm-lang.org/
-- Elm Weekly: https://elmlang.substack.com/
-- Fórum da Comunidade Elm: https://discourse.elm-lang.org/
+- Documentação oficial: https://guide.elm-lang.org/debugging/debugging.html
+- Artigo sobre depuração em Elm: https://dev.to/sleeptillseven/debugging-in-elm-2flo
+- Vídeo explicando a função `Debug.log`: https://youtu.be/ruvExM-JdM4 
+
+Agora que você sabe como e por que escrever para o erro padrão em Elm, experimente em suas próprias aplicações e veja como pode facilitar seu processo de desenvolvimento. Lembre-se sempre de remover essas chamadas de depuração do seu código antes de publicá-lo em produção.

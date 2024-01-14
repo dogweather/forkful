@@ -1,54 +1,85 @@
 ---
-title:    "C++: Génération de nombres aléatoires"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/generating-random-numbers.md"
+title:                "C++: Génération de nombres aléatoires"
+programming_language: "C++"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Les nombres aléatoires sont essentiels dans la programmation, car ils permettent aux développeurs de créer des applications plus dynamiques et interactives. En utilisant des nombres aléatoires, les programmes peuvent générer des résultats variés et surprenants, offrant ainsi une expérience unique à chaque exécution.
+Générer des nombres aléatoires est très utile pour une variété de programmes, tels que les jeux, les simulations, et les tests de performance. Cette fonctionnalité permet de créer de l'imprévisibilité dans le fonctionnement d'un programme, ce qui le rend plus réaliste et plus intéressant.
 
-# Comment faire
+## Comment Faire
 
-Pour générer des nombres aléatoires en C++, vous pouvez utiliser la fonction `rand()` de la bibliothèque standard `cstdlib`. Cette fonction renvoie un nombre entier pseudo-aléatoire compris entre 0 et la valeur maximum définie dans la macro `RAND_MAX`. Voici un exemple de code pour générer un nombre aléatoire entre 1 et 100 :
+Il existe plusieurs façons de générer des nombres aléatoires en C++. La plus simple est d'utiliser la fonction `rand()` de la bibliothèque standard `<cstdlib>`. Cette fonction renvoie un entier aléatoire entre 0 et la valeur maximale définie par la macro `RAND_MAX`. Voici un exemple de code montrant comment générer 10 nombres aléatoires et les afficher :
 
 ```C++
 #include <cstdlib>
 #include <iostream>
 
 int main() {
-    int rand_num = (rand() % 100) + 1;
-    std::cout << "Le nombre aléatoire est : " << rand_num << std::endl;
+    for (int i = 0; i < 10; i++) {
+        int random = rand();
+        std::cout << random << std::endl;
+    }
     return 0;
 }
 ```
 
-L'exécution de ce code peut produire des résultats tels que : "Le nombre aléatoire est : 42" ou "Le nombre aléatoire est : 87". Vous pouvez également utiliser la fonction `srand()` pour initialiser le générateur de nombres aléatoires avec une graine différente à chaque exécution, ce qui garantit une plus grande variété dans les résultats.
+Voici un exemple de sortie possible :
 
-# Plongée en profondeur
+`1432253896` <br>
+`1002384046` <br>
+`1876938405` <br>
+`511971850` <br>
+`1110120649` <br>
+`541279992` <br>
+`53180817` <br>
+`625328209` <br>
+`781167553` <br>
+`641772712`
 
-Il est important de noter que les nombres générés par la fonction `rand()` ne sont pas complètement aléatoires, mais plutôt pseudo-aléatoires car ils sont basés sur une algorithme déterministe. Cela signifie que les mêmes nombres seront générés dans le même ordre à chaque exécution du programme, sauf si la graine est modifiée.
-
-Pour obtenir une plus grande aléatoire dans vos nombres, vous pouvez utiliser les fonctions `mt19937` et `uniform_int_distribution` de la bibliothèque `<random>`. Voici un exemple de code pour générer un nombre aléatoire entre 1 et 100 grâce à une distribution uniforme :
+Il est également possible de limiter la plage de nombres aléatoires en utilisant le modulo de la valeur renvoyée par `rand()`. Par exemple, pour générer des nombres aléatoires entre 0 et 9, vous pouvez utiliser `random = rand() % 10`. Voici un exemple de code utilisant cette méthode :
 
 ```C++
-#include <random>
+#include <cstdlib>
 #include <iostream>
 
 int main() {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dist(1, 100);
-    int rand_num = dist(gen);
-    std::cout << "Le nombre aléatoire est : " << rand_num << std::endl;
+    for (int i = 0; i < 10; i++) {
+        int random = rand() % 10;
+        std::cout << random << std::endl;
+    }
     return 0;
 }
 ```
 
-# Voir aussi
+Et voici un exemple de sortie possible :
 
-- [Documentation sur la fonction `rand()`](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [Documentation sur la fonction `srand()`](https://www.cplusplus.com/reference/cstdlib/srand/)
-- [Documentation sur `<random>`](https://www.cplusplus.com/reference/random/)
+`3` <br>
+`6` <br>
+`2` <br>
+`9` <br>
+`8` <br>
+`5` <br>
+`1` <br>
+`7` <br>
+`4` <br>
+`0`
+
+## Plongée Plus Profonde
+
+Pour générer des nombres vraiment aléatoires, il est recommandé d'utiliser une distribution aléatoire telle que `uniform_int_distribution` ou `uniform_real_distribution` de la bibliothèque `<random>`. Ces distributions fournissent une meilleure aléatorité et une plus grande variété de types de données.
+
+Il est également important de s'assurer d'initialiser correctement le générateur de nombres aléatoires en utilisant une graine différente à chaque exécution du programme. Vous pouvez utiliser `srand()` pour initialiser une graine basée sur l'heure courante du système.
+
+## Voir aussi
+
+Pour plus d'informations sur la génération de nombres aléatoires en C++, voici quelques ressources utiles (en anglais) :
+
+- [Cppreference - Random library](https://en.cppreference.com/w/cpp/numeric/random)
+- [GeeksforGeeks - Generating Random Numbers in C++](https://www.geeksforgeeks.org/generating-random-numbers-in-c/)
+- [Cplusplus.com - rand() function](https://www.cplusplus.com/reference/cstdlib/rand/)
+- [Cplusplus.com - <random> library](https://www.cplusplus.com/reference/random/)

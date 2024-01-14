@@ -1,49 +1,44 @@
 ---
-title:    "Fish Shell: Skriva till standardfel"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/writing-to-standard-error.md"
+title:                "Fish Shell: Skriva till standardfel"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva till standardfel är en viktig del av skriptning med Fish Shell. Det gör det möjligt att tydligt markera fel och varningar i terminalen och underlättar felsökning.
+Att skriva till standardfel är viktigt för att kunna hantera felmeddelanden och felsökning i Fish Shell. Genom att skicka information till standardfel istället för standardutdata kan användaren enkelt spåra fel och identifiera problemkällan.
 
-## Hur man gör
+## Så här gör du
 
-För att skriva till standardfel i Fish Shell, används kommandot `echo` med flaggan `-e` för att tolka escape-sekvenser och flaggan `&2` för att skicka utskriften till standardfel. Exempelvis:
+För att skriva till standardfel i Fish Shell, använd kommandot `>&2`. Detta kommer att skicka all information som följer efter kommandot till standardfel istället för standardutdata. Detta är särskilt användbart när du vill skicka utdata till ett fil eller rör utan att störa andra kommandon eller skapa onödig output.
 
-```Fish Shell
-echo -e "Detta är ett felmeddelande" >&2
-```
-
-Detta kommer att skriva ut det givna meddelandet till standardfel. I Fish Shell, kan man även använda sig av `echo` kommandot utan flaggor, då standardutskriften är satt till standardutgången (vanligtvis terminalen). Exempelvis:
+Ett enkelt exempel på hur du kan använda `>&2` är att skicka ett felmeddelande när ett kommando misslyckas. Till exempel:
 
 ```Fish Shell
-echo "Detta är ett meddelande"  
+ls -l non_existent_file >&2
 ```
 
-Detta kommer att skriva ut meddelandet till standardutgången. 
+I detta fall kommer `ls`-kommandot att misslyckas eftersom filen inte finns, och felmeddelandet kommer att skickas till standardfel istället för att visas i terminalen.
 
 ## Djupdykning
 
-Det finns flera olika sätt att skriva till standardfel i Fish Shell. Utöver `echo` kommandot, kan man även använda sig av `printf` kommandot tillsammans med `$stderr` variabeln för att skriva till standardfel. Exempelvis:
+Att skicka information till standardfel kan också vara användbart när man använder pipelining och vill se till att ett felmeddelande inte påverkar resultatet av de andra kommandon i pipen.
+
+Ett annat användningsområde för att skriva till standardfel är att använda `>&2` tillsammans med `echo`-kommandot för att skapa en loggfil som endast innehåller felmeddelanden. Till exempel:
 
 ```Fish Shell
-printf "Detta är ett meddelande" > $stderr  
+echo "Error while running command." >&2 >> error.log
 ```
 
-Man kan även använda sig av rörlig syntax för att skicka data direkt till standardfel. Exempelvis:
-
-```Fish Shell
-ls -l /path/to/nonexistent/directory 2> $stderr
-```
-
-Detta kommer att skicka eventuella felmeddelanden från `ls` kommandot till standardfel. 
+Denna rad kommer att skriva ett felmeddelande till filen "error.log" istället för att visa det i terminalen.
 
 ## Se även
 
-- Fish Shell dokumentation för `echo`: https://fishshell.com/docs/current/cmds/echo.html
-- Fish Shell dokumentation för `printf`: https://fishshell.com/docs/current/cmds/printf.html 
-- Fish Shell dokumentation för rörlig syntax: https://fishshell.com/docs/current/tutorial.html#set-stderr
+Här är några andra användbara resurser för att lära dig mer om Fish Shell:
+
+- Fish Shell officiell hemsida: https://fishshell.com/
+- Fish Shell Wiki: https://github.com/fish-shell/fish-shell/wiki
+- Fish Shell forum: https://fishshell.com/forum/

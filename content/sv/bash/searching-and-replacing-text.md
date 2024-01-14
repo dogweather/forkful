@@ -1,47 +1,46 @@
 ---
-title:    "Bash: Sökning och ersättning av text"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/searching-and-replacing-text.md"
+title:                "Bash: Sökning och ersättning av text"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Har du någonsin behövt ändra text i en fil eller ett dokument? I så fall kan du dra nytta av Bash-progammeringens möjlighet att söka och ersätta text. Detta gör det möjligt att snabbt och effektivt ändra flera förekomster av en viss text utan att behöva göra det manuellt.
+Att söka och ersätta text är en nödvändig färdighet när man programmerar i Bash. Det gör det möjligt för oss att effektivt ändra eller uppdatera stora mängder text på en gång.
 
 ## Hur man gör det
 
-Så här fungerar det: För att söka och ersätta text i en fil med hjälp av Bash, använder man kommandot `sed`. Det står för "stream editor" och är utformat för att utföra operationer på filströmmar, vilket innebär att den kan tolka och ändra text i en fil utan att man behöver öppna och redigera den manuellt.
+För att söka och ersätta text i Bash måste vi använda oss av kommandot `sed`. Nedan följer ett enkelt exempel på hur man kan ersätta alla förekomster av ordet "hej" med "tja" i en fil som heter `text.txt`:
 
-Eftersom sök- och ersättningstolet är enkelt att läsa och skriva, kan du använda `sed` för att göra avancerade ändringar i en fil med bara några få linjer kod.
-
-Låt oss till exempel säga att du har en textfil med titlar på filmer, men du vill ändra en del av filmtiteln för att bättre beskriva innehållet. Du vill ändra "Star Wars: The Empire Strikes Back" till "Star Wars: Episode V - The Empire Strikes Back". Istället för att öppna filen och manuellt ändra varje förekomst av filmtiteln, kan du använda `sed` för att göra detta på bara ett par sekunder:
-
-```Bash
-sed -i 's/The Empire Strikes Back/Episode V - The Empire Strikes Back/g' filnamn.txt
+```Bash 
+sed 's/hej/tja/g' text.txt
 ```
 
-Låt oss gå igenom vad som händer här:
+I det här exemplet kommer varje förekomst av "hej" i `text.txt` att ersättas med "tja". Den modifierade texten skrivs ut i terminalen, men för att spara ändringarna i filen måste vi lägga till flaggan `-i`:
 
-- `-i` - Detta flagga indikerar för `sed` att ändringarna ska göras direkt på den befintliga filen.
-- `s` - Detta står för "ersätt" och är kommandot som instruerar sed att söka efter en viss text och ersätta den med en annan.
-- 'The Empire Strikes Back' - Detta är den befintliga texten som ska ersättas.
-- 'Episode V - The Empire Strikes Back' - Detta är den nya texten som ska ersätta den befintliga.
-- `g` - Detta flagga indikerar för `sed` att alla förekomster av den befintliga texten ska ersättas, inte bara den första som hittas.
+```Bash
+sed -i 's/hej/tja/g' text.txt
+```
 
-Som en snabb editeringsanteckning måste du se till att det inte finns några mellanslag mellan flaggorna och texten som de är kopplade till, och att alla flaggor är omgivna av citattecken.
-
-Efter att ha kört detta kommando kommer du att se att filen nu har 'Episode V - The Empire Strikes Back' som filmtitel för hela filmen.
+På så sätt kommer `sed` att modifiera filen direkt istället för att bara visa ändringarna i terminalen.
 
 ## Djupdykning
 
-Förutom kommandon som vi använde ovan, finns det många andra flaggor och användningsområden för `sed`-kommandot. Du kan också använda Regex (reguljära uttryck) för att göra sökningen mer precist. Detta kan vara till hjälp om du behöver göra komplexa ändringar i en fil.
+Utöver den grundläggande syntaxen för att söka och ersätta text har `sed` flera andra funktioner som kan användas för att göra mer avancerade sökningar och ersättningar. Till exempel kan vi använda reguljära uttryck för att ersätta mer komplexa strängar.
 
-En annan användbar funktion i `sed` är möjligheten att ändra endast en viss del av en fil. Istället för att ersätta allt innehåll av en viss fil kan du använda flaggan `c` för att ersätta allt innehåll mellan två specifika linjer i filen.
+En annan användbar funktion är flaggan `-n`, som gör att endast de rader som matchar det sökta uttrycket skrivs ut. Till exempel, om vi bara vill se rader som innehåller ordet "hej" i en fil, kan vi använda oss av följande kod:
+
+```Bash
+sed -n '/hej/p' text.txt
+```
+
+Här kommer bara rader som innehåller "hej" att skrivas ut i terminalen.
 
 ## Se även
 
-- Kom igång med shell-scripting med Bash (https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- Den kompletta guiden för `sed`-kommandot (https://www.linode.com/docs/tools-reference/tools/sed-beginners-guide/)
-- Reguljära uttryck för Bash-programmerare (https://linuxacademy.com/blog/linux/regex-tips-tricks-for-the-bash-guru/)
+- [Bash Tutorial: Introduction to Searching and Replacing Text](https://www.grymoire.com/Unix/Search.html)
+- [Sed Command in Linux/Unix with Examples](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
+- [The Linux Documentation Project: Sed](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_01.html)

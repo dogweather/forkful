@@ -1,38 +1,47 @@
 ---
-title:    "Kotlin: Nauhan pituuden löytäminen"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/finding-the-length-of-a-string.md"
+title:                "Kotlin: Merkkijonon pituuden löytäminen"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?
 
-Miksi henkilö voisi haluta selvittää merkkijonon pituuden? Merkkijonojen käsittely on tärkeä osa ohjelmointia ja usein tarvitsemme tietoa merkkijonojen koosta ja sisällöstä. Merkkijonon pituuden selvittäminen on yksi tapa tehdä tämä.
+Kotlin on monikäyttöinen ja helposti opittava ohjelmointikieli, joka on tullut suosituksi erityisesti Android-sovellusten kehittämisessä. Yksi tärkeimmistä taidoista ohjelmointikielen hallitsemisessa on kyky muokata ja käsitellä merkkijonoja. Merkkijonojen pituuden laskeminen on yksi näistä taidoista, joka on hyödyllinen monissa ohjelmoinnin tehtävissä.
 
-## Kuinka
+## Miten?
+
+Merkkijonojen pituuden laskeminen Kotlinissa on helppoa. Voit käyttää `length` -funktiota, joka palauttaa merkkijonon pituuden. Alla on esimerkki:
 
 ```Kotlin
-// Luodaan esimerkki-merkkijono
-val merkkijono = "Tervetuloa Kotlinin ihmeelliseen maailmaan"
-
-// Käytetään String-luokan metodia length()
-val pituus = merkkijono.length
-
-println(pituus) // Tulostaa: 42
+val sana = "Tervetuloa"
+println(sana.length) //tulostaa 10
 ```
 
-Deep Dive:
+Voit myös laskea merkkijonojen pituuden käyttämällä `count` -funktiota. Se palauttaa merkkijonon merkkien määrän ainoastaan, eikä huomioi esimerkiksi välilyöntejä. Alla on esimerkki:
 
-Merkkijonojen pituuden selvittämiseksi voimme käyttää String-luokan length-metodia, kuten yllä olevassa esimerkissä. Tämä metodi palauttaa arvon, joka kertoo merkkijonon merkkien lukumäärän. On hyvä huomata, että välilyönnit ja muut erikoismerkit lasketaan mukaan pituuteen.
+```Kotlin
+val lause = "Tämä on esimerkkilause"
+println(lause.count()) //tulostaa 22
+```
 
-##Lue Lisää
+Voit myös käyttää `length` ja `count` yhdessä saadaksesi merkkien ja välilyöntien lukumäärän. Esimerkiksi:
 
-- [Kotlinin virallinen ohjelmointikielen peruskäsitteet](https://kotlinlang.org/docs/reference/basic-syntax.html)
-- [Merkkijonojen käsittely Java- ja Kotlin-ohjelmointikielissä](https://www.baeldung.com/java-string-length)
-- [String-luokan dokumentaatio Kotlinissa](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html)
+```Kotlin
+val lause = "Tämä on esimerkkilause"
+val pituus = lause.length + lause.count()
+println(pituus) //tulostaa 24
+```
+
+## Syvemmälle
+
+Kotlinin merkkijonojen pituuden laskeminen perustuu `CharSequence` -rajapintaan, joka antaa pääsyn merkkijonon elementteihin ja niiden määrään. Tämä tarkoittaa sitä, että merkkijonojen pituuden laskeminen ei riipu pelkästään `length` tai `count` -funktioista, vaan voit myös käyttää muita `CharSequence` -rajapinnan tarjoamia toimintoja.
+
+Merkkijonojen pituuden laskeminen voi myös olla hyödyllistä silloin, kun haluat esimerkiksi rajata käyttäjän antaman merkkijonon tiettyyn pituuteen, tai tarkistaa onko merkkijono riittävän pitkä ennen sen käyttämistä.
 
 ## Katso myös
 
-- [Kotlinin opetusohjelma aloittelijoille](https://kotlinlang.org/docs/tutorials/getting-started.html)
-- [Kotlin-ohjelmointikielen virallinen sivusto](https://kotlinlang.org/)
+- [Kotlinin merkkijonojen käsittely](https://kotlinlang.org/docs/strings.html)
+- [Kotlinin `CharSequence` -rajapinta](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/)

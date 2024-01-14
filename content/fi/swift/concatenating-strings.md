@@ -1,53 +1,53 @@
 ---
-title:    "Swift: Yhdistettävien merkkijonojen yhdistäminen"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/concatenating-strings.md"
+title:                "Swift: Merkkijonojen yhdistäminen"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluat yhdistää merkkijonoja Swift-koodissasi? Yhdistäminen antaa sinulle mahdollisuuden luoda uusia merkkijonoja, jotka koostuvat useista erillisistä merkkijonoista. Tämä voi olla hyödyllistä esimerkiksi silloin, kun haluat luoda selkeitä ja hyvin muotoiltuja tekstirivejä tulostamiseen tai tallentamiseen.
+Miksi haluaisit yhdistää merkkijonoja Swiftissä? Joissain ohjelmointitehtävissä saattaa olla tarpeen yhdistää useampi merkkijono yhdeksi, jolloin concatenaatio eli merkkijonojen yhdistäminen tulee tarpeeseen.
 
-## Miten tehdä se
+## Kuinka tehdä
 
-Yhdistetään ensin kaksi merkkijonoa käyttämällä " + " operaattoria:
+Yhdistämistä varten Swiftissä on erityinen ```+``` operaattori, joka mahdollistaa kahden merkkijonon yhdistämisen yhdeksi. Katsotaanpa esimerkkiä:
 
 ```Swift
 let etunimi = "Matti"
 let sukunimi = "Meikäläinen"
-let kokoNimi = etunimi + " " + sukunimi
+
+let nimi = etunimi + " " + sukunimi
+
+print(nimi) //tulostaa "Matti Meikäläinen"
 ```
 
-Tulosteena saat "Matti Meikäläinen", joka on yhdistelmä etu- ja sukunimestä. Voit myös yhdistää useita merkkijonoja yksinkertaisesti lisäämällä ne " + " merkkien väliin:
+Tässä esimerkissä yhdistimme ensin kaksi muuttujaa ```etunimi``` ja ```sukunimi``` yhdeksi nimeksi ```nimi```. Huomaa, että yhdistäessä merkkijonoja tulee välissä olla välilyöntiä, jotta nimet eivät ole kiinni toisissaan.
+
+Voit myös yhdistää useampia kuin kaksi merkkijonoa kerrallaan:
 
 ```Swift
-let kaupunki = "Helsinki"
-let osoite = "Mannerheimintie"
-let postiosoite = kaupunki + ", " + osoite + " 21"
+let aloituslause = "Hei, nimeni on"
+let etunimi = "Matti"
+let sukunimi = "Meikäläinen"
+let loppulause = "ja olen Swift-kehittäjä."
+
+let esittely = aloituslause + " " + etunimi + " " + sukunimi + ", " + loppulause
+
+print(esittely) //tulostaa "Hei, nimeni on Matti Meikäläinen ja olen Swift-kehittäjä."
 ```
 
-Tulosteena saat "Helsinki, Mannerheimintie 21", joka on yhdistelmä kaupungista, osoitteesta ja numerosta.
+Huomaa, että voit myös yhdistää merkkijonoja ja muuttujia, kuten esimerkissä yhdistimme ```aloituslauseen```, ```etunimen```, ```sukunimen``` ja ```loppulauseen``` yhdeksi esittelyksi.
 
-Voit myös yhdistää merkkijonoja käyttämällä yhdistetyn sijoitusoperaattorin " += " avulla:
+## Syvemmälle
 
-```Swift
-var lause = "Tänään on "
-lause += "kaunis "
-lause += "sää."
-```
+Vaikka yhdistäminen merkkijonoja Swiftissä on helppoa ja kätevää, on hyvä muistaa, että se luo joka kerta uuden merkkijonon, mikä voi aiheuttaa suorituskyvyn hidastumista erityisesti suurilla merkkijonoilla.
 
-Tulosteena saat "Tänään on kaunis sää.", joka on yhdistelmä kolmesta erillisestä merkkijonosta.
-
-## Syventävä tieto
-
-Swift tarjoaa myös muita tapoja yhdistää merkkijonoja, kuten käyttämällä alilausekkeita tai yhdistämällä muuttujan tai vakion merkkijonon kanssa. Voit myös käyttää merkkijonan muotoilua käyttämällä interpolointia eli lisäämällä muuttujan tai vakion arvon merkkijonoon sen sijaan, että sekoittaisit sen " + " operaattoreilla.
-
-Voit myös yhdistää muita tietotyyppejä, kuten numeroita ja booleaneja, merkkijonoon käyttämällä niiden tiedoston muotoilua.
+On myös otettava huomioon, että yhdistäminen voi aiheuttaa virheitä, jos merkkijonassa on erikoismerkkejä tai numerotekstiä. Tällöin kannattaa käyttää `String(describing:)` tai `String(stringInterpolationSegment:)` -metodia, joka muuntaa muut tyypit merkkijonoksi ennen yhdistämistä.
 
 ## Katso myös
 
-- [Swiftin merkkijonon perusteet](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Merkkijonon muotoilu Swiftissä](https://www.hackingwithswift.com/articles/162/how-to-format-strings-in-swift-using-string-interpolation)
-- [Muita vinkkejä Swift-kielen käyttöön](https://cocoacasts.com/40-essential-swift-tips-and-tricks)
+- [Swiftin perustoimintojen dokumentaatio](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Codecademyn opetusvideo Swiftin concatenaatiosta](https://www.youtube.com/watch?v=Wko-PkvR11Q)

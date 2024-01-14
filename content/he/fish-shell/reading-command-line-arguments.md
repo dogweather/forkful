@@ -1,32 +1,34 @@
 ---
-title:    "Fish Shell: קריאת ארגומנטים מפקודת הפקודה"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/reading-command-line-arguments.md"
+title:                "Fish Shell: קריאת ארגומנטים משורת הפקודה"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 # למה
 
-קריאת פרמטרי שורת הפקודה מאפשרת לנו לתכנת סקריפטים ותוכניות בצורה יעילה יותר. היא מאפשרת לנו לשלוט על הפעולות של התוכניות שלנו ולהעביר להן מידע יעיל נוסף.
+אם אתם מתכנתים או משתמשים במחשב בצורה תדירה, סביר להניח שהשתמשתם בפקודות של מסוף הפקודות של המערכת הפעלה שלכם. למעשה, פקודות אלו מכילות גם מידע נוסף שאותו ניתן לקרוא ולעבד על ידי תוכנת התוכנית או התסריט שאתם מריצים. במאמר זה נלמד כיצד לקרוא ולעבד את הארגומנטים של שורת הפקודה שלכם באמצעות תוכנת השיטה fish shell.
 
-# איך לעשות זאת
+# איך לעבוד
 
-הקובץ `fish` מאפשר לנו לקבל את פרמטרי השורת הפקודה בצורה יעילה ונוחה. אפשר להשתמש בפקודה `argv` כדי לקרוא את הפרמטרים מתוך הקובץ בפקודת shell. לדוגמה:
+תוכנית fish shell מספקת לנו כמה פקודות ששמורות למניפולציה ועיבוד של נתונים שנמצאים בשורת הפקודה שלנו. הפקודות האלו כוללות את `chomp`, `set`, ו `string`, אשר ניתן לעשות בהן לולאות ופעולות נתונים. ננסה להבין את הפקודות הללו על ידי קוד המציג ומעבד נתונים משורת הפקודה שלנו.
 
+```fish shell
+set data "Hello World"
+string trim-right $data # Output: "Hello World"
 ```
-Fish Shell
-salmon.fish
+
+בקוד אלו אנו מקבלים מחרוזת כקלט לפקודה `set` ואילו הפקודה `string` מסתכלת על המחרוזת שהתקבלה ומסירה את הרווחים מהצד הימני שלה. הפונקציה `trim-right` של `string` מעיף מחרוזות המסתיימות ברווחים. ניתן להשתמש גם בפונקציה `trim` אשר מעיף מחרוזת כל הרווחים מהצדים שלה.
+
+# חקר עמוק
+
+כעת שנדקות שנעשה שימוש בפקודות אלו יחד יחד עם ארגומנטים נראה כיצד ניתן לעבוד עם שורת הפקודה שלנו. אנו נמתין לקלט של מחרוזת ונעבוד עם הנתונים שלנו.
+
+```fish shell
+set data "Hello World"
+string length $data # Output: 11
 ```
 
-כאן, קובץ השלומית `salmon.fish` מקבל את הפרמטר `Fish Shell` כפרמטר נכנס.
-
-# צלילה עמוקה
-
-כאשר מתקדמים בתכנות פשוט, קריאת פרמטרי שורת הפקודה היא כלי חיוני להבנה טובה יותר של פקודות shell ולבנות סקריפטים יעילים יותר. כאשר משתמשים בפקודת `argv`, ניתן להשתמש בתנאים ולבצע פעולות מתקדמות יותר בהתאם לפרמטרים שהתקבלו. ישנם גם פקודות מתקדמות כמו `getopts` המאפשרות לנו לטפל בפרמטרים בצורה יעילה יותר.
-
-# ראה גם
-
-* דרך נוחה לקרוא פרמטרי שורת הפקודה בשפת Fish Shell - <https://fishshell.com/docs/current/tutorial.html#reading-command-line-arguments>
-* פקודת `getopts` בדיוק - <https://fishshell.com/docs/current/cmds/getopts.html>
-* תמיכה נוספת בפרמטרים בשפת Fish Shell - <https://fishshell.com/docs/current/commands.html#argv>
+הפקודה `length` של `string` מ

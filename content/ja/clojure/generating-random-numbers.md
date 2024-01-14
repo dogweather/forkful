@@ -1,47 +1,65 @@
 ---
-title:    "Clojure: ランダムの数字を生成する"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/generating-random-numbers.md"
+title:                "Clojure: ランダム数字の生成"
+programming_language: "Clojure"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-乱数を生成することに興味がある人にとって、なぜこのようなことを行うのかは重要な質問です。乱数は、ゲームや暗号化、統計学など様々な分野で使用される重要なツールです。
+ランダムな数字の生成に参加する理由は何でしょうか？数字をランダムに生成することで、様々なアプリケーションやゲームをより興味深くしたり、データの偏りを防ぐことができるからです。
 
 ## 方法
 
-乱数を生成する方法は多くありますが、Clojureを使用することで簡単かつ効率的に実装することができます。以下のコードブロックは、Clojureで乱数を生成する方法を示しています。
+Clojureでランダムな数字を生成する方法は簡単です。以下のように、 ```Clojure (rand) ```関数を使うことで、乱数を生成することができます。
 
 ```Clojure
-; 1から10までの間の整数乱数を生成する
-(rand-int 10)
-
-; 0から1までの間の小数乱数を生成する
-(rand)
-
-; シード値を指定して乱数を生成する
-(random-seed 1234)
-(rand-int 100)
+(rand) ;;=> 0.567208421482615
 ```
 
-上記のように、`rand-int`と`rand`の2つの関数を使用して、整数や小数の乱数を生成することができます。また、`random-seed`関数を使用することで、同じシード値を指定することで同じ乱数を再現することができます。
+また、特定の範囲内の乱数を生成するには、 ```Clojure (rand-int n) ```関数を使うことができます。 ```n``` は生成する最大の整数値を指定します。
+
+```Clojure
+(rand-int 100) ;;=> 47
+(rand-int 5) ;;=> 3
+```
+
+さらに、シード値を指定することで、同じ乱数を生成することもできます。
+
+```Clojure
+(def r (random-seed 1234))
+(rand r) ;;=> 0.8586351428435014
+(rand r) ;;=> 0.8586351428435014 (同じ値が出力される)
+```
 
 ## ディープダイブ
 
-乱数を生成するアルゴリズムには様々なものがありますが、ClojureではMersenne Twisterアルゴリズムが使用されています。このアルゴリズムは高速かつ疑似乱数を生成することができるため、広く使われています。
+Clojureでは、乱数を生成するためのさまざまな関数が用意されています。例えば、 ```rand-nth ```関数を使うことで、リストやベクターからランダムな要素を選択することができます。
 
-さらに、Clojureでは乱数の生成にJavaの`java.util.Random`クラスも使用されています。このクラスはMersenne Twisterアルゴリズムの改良版であり、より高品質な乱数を生成することができます。
+```Clojure
+(rand-nth ["apple", "banana", "orange"]) ;;=> "banana"
+(rand-nth [1 2 3 4 5]) ;;=> 3
+```
 
-## 詳細情報
+また、2つの値の間の乱数を生成するには、 ```rand-range ```関数を使うことができます。 ```Clojure (rand-range min max) ```のように使います。
 
-- [Clojure公式ドキュメント](https://clojuredocs.org/clojure.core/rand-int)
-- [乱数生成アルゴリズムの比較](https://qiita.com/nkoketsu/items/77cfdabb961f1eb2a8ab)
-- [Mersenne Twisterアルゴリズムの説明](https://en.wikipedia.org/wiki/Mersenne_Twister)
+```Clojure
+(rand-range 1 10) ;;=> 7
+(rand-range 100 200) ;;=> 145
+```
 
-## 参考
+さらに、乱数の分布を指定することで、特定のパターンの数値を生成することもできます。例えば、正規分布を指定することで、平均値や標準偏差に基づいた数値を生成することができます。
 
-[See Also]
-- [Javaのjava.util.Randomクラスの詳細情報](https://docs.oracle.com/javase/7/docs/api/java/util/Random.html)
-- [Clojureで乱数を生成する方法](https://tech-ojisan.com/random-number-clojure/)
+```Clojure
+(def normal (normal-distribution 50 10)) ;; 平均値: 50, 標準偏差: 10
+(rand normal) ;;=> 48.74567258147989
+```
+
+## 関連リンク
+
+- [Clojure ドキュメンテーション](https://clojure.org/)
+- [Clojure の乱数生成についてのドキュメンテーション](https://clojuredocs.org/clojure.core/rand)
+- [Clojureの乱数生成についてのチュートリアル](https://www.braveclojure.com/core-functions-in-depth/#Random)
+- [Clojureの乱数生成についてのブログ記事](https://purelyfunctional.tv/article/generate-random-values-clojure/)

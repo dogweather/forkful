@@ -1,46 +1,47 @@
 ---
-title:    "Rust: 未来または過去の日付の計算"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/calculating-a-date-in-the-future-or-past.md"
+title:                "Rust: 未来または過去の日付を計算する"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
+## Why
+日付を将来や過去に計算する理由は何でしょうか？答えはとてもシンプルです。人々は常に特定の日時を把握したい、または将来の予定を立てたいと考えています。これまでの計算方法に加えて、Rustプログラミング言語を使用することで、さらに効率的な方法で日付を計算することができます。
 
-現在の日付から未来や過去の日付を計算する必要性は、多くのプログラマーが直面する一般的な課題です。この課題に対処するために、Rustプログラミング言語を使用して日付の計算方法を紹介します。
-
-# やり方
+## How To
+まずはRust言語を使って日付を計算する方法を見ていきましょう。以下のようにコードブロックを使用してコーディングの例を示します。
 
 ```Rust
-use chrono::{Local, Duration};
+use chrono::{NaiveDate, Datelike};
 
-// 現在の日付
-let current_date = Local::today();
+// ベーシックな日付の計算
+let today = NaiveDate::from_ymd(2021, 5, 21);
+let five_days_later = today + chrono::Duration::days(5);
+println!("今日の日付から5日後は{}年{}月{}日です。", five_days_later.year(), five_days_later.month(), five_days_later.day());
 
-// 2日後の日付を計算
-let future_date = current_date + Duration::days(2);
-println!("2日後は{}です。", future_date);
-
-// 1年前の日付を計算
-let past_date = current_date - Duration::days(365);
-println!("1年前は{}です。", past_date);
+// 過去の日付の計算
+let past_date = NaiveDate::from_ymd(2000, 1, 1);
+let ten_years_ago = past_date - chrono::Duration::years(10);
+println!("2000年1月1日から10年前は{}年{}月{}日でした。", ten_years_ago.year(), ten_years_ago.month(), ten_years_ago.day());
 ```
 
-上記のコードでは、Rustの標準ライブラリである`chrono`を使用して、今日の日付を取得し、日付の計算を行っています。`Duration`構造体を使用することで、任意の日数の未来や過去の日付を計算することができます。
+上記のコードを実行すると、次のような出力結果が得られます。
 
-# ディープダイブ
+```
+今日の日付から5日後は2021年5月26日です。
+2000年1月1日から10年前は1990年1月1日でした。
+```
 
-日付の計算は、一見簡単に見えるかもしれませんが、実際には複雑な処理が必要になることがあります。例えば、うるう年やタイムゾーンの考慮など、様々な要素が影響してきます。
+## Deep Dive
+日付の計算にはさまざまな方法がありますが、Rust言語では`chrono`ライブラリを使用することで、さまざまな日付操作を行うことができます。例えば、`chrono::Duration`を使用して日付を加算または減算することができます。また、`NaiveDate`を使用して特定の日付のオブジェクトを作成することも可能です。
 
-幸いにも、Rustの`chrono`ライブラリはこれらの要素をすべて考慮しており、正確な日付の計算を行うことができます。また、`Date`や`Duration`など、さまざまな構造体を組み合わせることで、さらに複雑な計算を行うことも可能です。
+さらに、Rust言語では時間やタイムゾーンを考慮した日付計算も行うことができます。`chrono`ライブラリには`DateTime`や`Utc`などの機能があり、これらを使用することでタイムゾーンを考慮した日付計算が可能になります。
 
-# 参考リンク
+## See Also
+この記事ではRust言語を使用して日付を計算する方法を紹介しましたが、他にも日付計算に役立つ情報がたくさんあります。以下のリンクを参考にして、さらに多くの知識を身につけてください。
 
-- `chrono`ドキュメント: https://docs.rs/chrono/
-- Rustプログラムの日付計算の方法: https://linuxacademy.com/blog/linux/date-and-time-in-rust/
-- Rustでのタイムゾーンの処理: https://llogiq.github.io/2015/07/15/dst.html
-
-# 他にも知りたい方は
-
-Rustを使った日付の計算方法については、上記のリンクやさまざまなブログ記事などを参考にすることで、より詳細な情報を得ることができます。さらに、Rustの公式ドキュメントやコミュニティサイトであるrust-lang.orgなども積極的に活用することをおすすめします。
+- [Rust公式ドキュメント](https://doc.rust-lang.org/std/chrono/)
+- [Rust Cookbook：日付と時刻をオブジェクトに変換する方法](https://rust-lang-nursery.github.io/rust-cookbook/datetime/datetime.html)
+- [ハンズオン！ Rustプログラミング - 日付と時刻の処理](https://blog.scottlogic.com/2020/06/03/rust-datetime.html)

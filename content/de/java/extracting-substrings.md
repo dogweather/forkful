@@ -1,55 +1,42 @@
 ---
-title:    "Java: Unterstrings extrahieren"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/extracting-substrings.md"
+title:                "Java: Unterstrings extrahieren"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum?
-Viele Menschen stehen vor der Herausforderung, Teilstrings aus längeren Texten oder Strings extrahieren zu müssen. Dies kann aus verschiedenen Gründen nützlich sein, wie zum Beispiel die Analyse von Daten oder die Extraktion von Informationen aus Benutzereingaben. In dieser Blogpost werden wir uns mit verschiedenen Techniken für das Extrahieren von Substrings in Java befassen.
+## Warum
+Substring-Extraktion kann in vielen Fällen eine hilfreiche Funktion sein, besonders wenn du mit längeren Strings arbeitest, die bestimmte Informationen enthalten, die du benötigst. Durch die Extraktion dieser Substrings kannst du deine Programmierarbeit vereinfachen und schnell die benötigten Daten erhalten.
 
-## Wie geht man vor?
-Um Teilstrings aus einem längeren String zu extrahieren, gibt es in Java verschiedene Methoden und Techniken. Wir werden uns die häufigsten und nützlichsten davon ansehen, um Ihnen einen Einstieg in das Extrahieren von Substrings zu geben.
-
-### Substring-Methode
-Die einfachste Methode zum Extrahieren von Teilstrings in Java ist die Verwendung der `substring()`-Methode. Diese Methode ermöglicht es uns, einen Teilstring basierend auf einem Start- und Endindex aus einem längeren String zu extrahieren. Hier ist ein Beispielcode, der dies verdeutlicht:
+## Wie geht es
+Das Extrahieren von Substrings in Java ist einfach und erfordert nur ein paar Zeilen Code. Hier ist ein Beispiel, in dem wir den Vornamen aus einem String mit dem vollständigen Namen extrahieren:
 
 ```Java
-String text = "Hallo Welt";
-String sub = text.substring(2, 5);
-System.out.println(sub);
+String fullName = "Max Mustermann";
+String firstName = fullName.substring(0, 3);
+
+System.out.println(firstName);
 ```
 
-Ausgegeben wird dabei "llo" sein, da die Zählung der Indizes bei 0 beginnt und der Teilstring vom dritten (Index 2) bis zum fünften Index (exklusiv) extrahiert wird.
+Dieser Code wird "Max" ausgeben, da die `substring()`-Methode den Teil des Strings zwischen dem Startindex (0) und dem Endindex (3) zurückgibt. Beachte die Indexierung beginnt bei 0 und der Endindex ist exklusiv, also muss der Endindex um 1 erhöht werden, um den gewünschten Teil zu erhalten.
 
-### String-Tokenizer-Klasse
-Eine andere Möglichkeit, Teilstrings zu extrahieren, ist die Verwendung der `StringTokenizer`-Klasse. Diese ermöglicht es uns, einen String basierend auf einem bestimmten Trennzeichen in mehrere Teilstrings aufzuteilen. Hier ist ein Beispielcode:
+Um den Nachnamen zu extrahieren, könnten wir die `lastIndexOf()`-Methode verwenden, um den Index des Leerzeichens zwischen Vor- und Nachnamen zu finden:
 
 ```Java
-String text = "Dies, ist, ein, Beispiel";
-StringTokenizer st = new StringTokenizer(text, ",");
-while (st.hasMoreTokens()) {
-    String token = st.nextToken();
-    System.out.println(token);
-}
+int spaceIndex = fullName.lastIndexOf(" ");
+String lastName = fullName.substring(spaceIndex + 1);
+
+System.out.println(lastName);
 ```
 
-Die Ausgabe wäre dabei:
+Dieser Code gibt "Mustermann" aus, da wir den Teil des Strings erhalten, der nach dem Leerzeichen kommt.
 
-- Dies
-- ist
-- ein
-- Beispiel
-
-## Tiefentauchen
-Zusätzlich zu den oben genannten Methoden gibt es auch noch andere Techniken für das Extrahieren von Teilstrings in Java. Zum Beispiel können Sie die `indexOf()`-Methode verwenden, um das Auftreten eines bestimmten Zeichens oder einer Zeichenfolge in einem String zu finden, und anschließend die `substring()`-Methode verwenden, um den Teilstring zu extrahieren.
-
-Es ist auch wichtig zu beachten, dass die `substring()`-Methode immer eine neue String-Instanz zurückgibt und nicht den ursprünglichen String ändert. Wenn Sie also den ursprünglichen String ändern möchten, können Sie die `replace()`-Methode verwenden. Weitere Informationen zu diesen Techniken finden Sie in der offiziellen Java-Dokumentation.
+## Tiefer eintauchen
+Das Extrahieren von Substrings in Java kann mit verschiedenen Methoden erfolgen, je nachdem welche Informationen du benötigst. Du kannst auch die Länge des zu extrahierenden Teils angeben, indem du keinen Endindex angibst, sodass der Substring vom Startindex bis zum Ende des Strings zurückgegeben wird. Es ist auch möglich, nur einen Teil des Substrings zu erhalten, indem ein Start- und Endindex für den Teil des Substrings angegeben wird.
 
 ## Siehe auch
-- [Java Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
-- [Tutorialspoint-Artikel über das Extrahieren von Substrings in Java](https://www.tutorialspoint.com/java/java_string_substring.htm)
-- [GeeksforGeeks-Artikel über die String-Tokenizer-Klasse](https://www.geeksforgeeks.org/java-stringtokenizer-class-java/)
-
-Vielen Dank fürs Lesen und viel Spaß beim Extrahieren von Substrings in Java!
+- [Java String Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [substring() Methode Erklärung und Beispiele](https://www.geeksforgeeks.org/java-string-substring-method-example/)
+- [lastIndexOf() Methode Erklärung und Beispiele](https://www.geeksforgeeks.org/java-string-lastindexof-method-example/)

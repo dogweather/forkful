@@ -1,56 +1,34 @@
 ---
-title:    "Elm: מציאת אורך של מחרוזת"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/finding-the-length-of-a-string.md"
+title:                "Elm: מציאת אורך של מחרוזת"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-למה: רק 1-2 משפטים המסבירים *למה* מישהו ירצה לפתור את משימת מציאת אורך תווים באלם.
+## למה?
+מציאת אורך של מחרוזת היא פעולה שימושית ונפוצה בתכנות באלם. היא מאפשרת לנו לטפל בנתונים שהוזנו על ידי המשתמש במתודה מדוייקת ונוחה.
 
-למען הסילונים התורמים - מציאת אורך תווים הוא כלי חשוב בתכנות באלם. המשימה הנפוצה מבין התכניתנים היא לראות את האורך של לוחות מספרים או מחרוזות טקסט. מציאת אורך התווים מאפשר לנו לבצע פעולות חשובות כגון השוואת תווים ועריכה של ערכים בתוך מרכיבים בגרפיקה אלמנטטית.
+## איך לעשות זאת?
+ניתן להשתמש בפונקציית `String.length` כדי למצוא את האורך של מחרוזת ספציפית. הנה דוגמה פשוטה:
 
-## How To
-
-כמה דוגמאות לכתיבת קוד ופלט מצורף בתוך קוד "`Elm ...`":
-```
--- למצוא את אורך המחרוזת "אלם":
-Elm.length "אלם"
--- הפלט: 3
-
--- למצוא את אורך המחרוזת "היי! זה תורגם לעברית":
-Elm.length "היי! זה תורגם לעברית"
--- הפלט: 23
+```Elm
+let myString = "שלום עולם"
+String.length myString -- יחזיר 9
 ```
 
-ניתן גם לאתחל את אורך המחרוזת באמצעות פונקציית `length`:
-```
-myString = "אלם"
-myStringLength = Elm.length myString
--- האורך כעת מחזיר: 3
-```
+ניתן גם להשתמש בפונקציה `List.length` בתוך `String.toList` כדי לקבל את אורך המחרוזת בצורה יותר מסודרת כך:
 
-למטה מספר דוגמאות נוספות של פעולות חשובות שניתן לבצע בעזרת מציאת אורך המחרוזת:
-
-```
--- הפיכת תווים לאותיות קטנות:
-Elm.toLower "ABCDEF"
--- הפלט: "abcdef"
-
--- הפיכת תווים לאותיות גדולות:
-Elm.toUpper "abcdef"
--- הפלט: "ABCDEF"
-
--- חיתוך חלק מהמחרוזת:
-Elm.slice 3 6 "abcdefghijklmnopqrstuvwxyz"
--- הפלט: "def"
-
--- שינוי מרכיב במחרוזת:
-Elm.replace "love" "like" "I love Elm!"
--- הפלט: "I like Elm!"
+```Elm
+let myString = "שלום עולם"
+myString |> String.toList |> List.length -- יחזיר 9
 ```
 
-## Deep Dive
+## חידוש עומק
+מציאת אורך של מחרוזות יכול להיות מניע לעוד פעולות חשובות כגון חיתוך, התאמה לתבנית או גיבוי של נתונים. בנוסף, כאשר משתמשים בפונקציות נמצאות כבר באלם, כמו `String.length`, יש אפשרות לחסוך זמן ומאמץ בפיתוח.
 
-כדי להבין את מציאת אורך המחרוזת במוחכם, נדרשים כמה ידעים בסיסיים בקשר לפונקציות שנשתמש בהן. הפונקציה בשם `length` מתח
+## ראה גם
+- [פונקציית `String.length` באתר הרשמי של אלם](https://package.elm-lang.org/packages/elm/core/latest/String#length)
+- [מדריך ממוחשב לאלם (בעברית) על אורך מחרוזות](https://ebaytech.berlin/en/blog/elm-for-beginners-a-debugging-cheat-sheet-a0c1f87833b7/#string-length)
+- [קורס לימוד אלם בעברית על מחרוזות](https://www.youtube.com/watch?v=WvDQlvT3GvI)

@@ -1,19 +1,36 @@
 ---
-title:    "Ruby: Å bruke regulære uttrykk"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/using-regular-expressions.md"
+title:                "Ruby: Å bruke regulære uttrykk"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-Hvorfor: Hvorfor bør du bruke regulære uttrykk i Ruby-programmering? Vel, en av hovedfordelene er at de lar deg søke og manipulere tekstmønstre på en enkel og effektiv måte. Dette er ideelt for ting som tekstformatering, datafiltrering og datavalidering.
+## Hvorfor
 
-Slik gjør du det: For å bruke regulære uttrykk i Ruby, må du først inkludere "regexp" biblioteket ved å skrive ```Ruby require 'regexp'``` i toppen av koden din. Deretter kan du begynne å konstruere uttrykkene dine ved å bruke ulike symbolske uttrykk for å matche eller erstatte tekst i en streng. For eksempel, hvis du vil matche alle tall i en streng, kan du bruke ```Ruby /[0-9]+/``` som ditt regulære uttrykk. Dette vil returnere en liste over alle tall som finnes i strengen.
+Regulære uttrykk er en kraftig verktøy for å søke og manipulere tekst i et programmeringsspråk som Ruby. De lar deg finne og behandle tekstmønstre på en effektiv måte, noe som kan være svært nyttig i dataanalyse, tekstbehandling og mer.
 
-Dypdykk: Selv om dette bare er et grunnleggende eksempel, kan regulære uttrykk bli mye mer komplekse og kraftige. Du kan bruke metakarakterer, gruppeuttrykk og til og med alternativer for å lage mer presise og avanserte uttrykk. Det er også viktig å vite at regulære uttrykk ofte brukes i kombinasjon med andre metoder i Ruby, som for eksempel .gsub (erstatte) eller .match (matche). Det er også mange online veiledninger og dokumentasjon tilgjengelig for å hjelpe deg å mestre bruken av regulære uttrykk i Ruby-programmering.
+## Hvordan
 
-Se også: For mer informasjon om regulære uttrykk i Ruby-programmering, kan du sjekke ut følgende ressurser:
+For å bruke regulære uttrykk i Ruby, må du først importere "regexp" biblioteket. Deretter kan du definere uttrykket ditt innenfor et "```Ruby ... ```" kodeblokk som følger:
 
-- https://rubular.com/ - en nettbasert regulær uttrykk tester og veiledning
-- https://www.regular-expressions.info/ruby.html - en omfattende guide til bruk av regulære uttrykk i Ruby
-- https://www.rubyguides.com/ruby-reg-ex/ - en tutorial for nybegynnere om regulære uttrykk i Ruby-programmering
+```Ruby
+my_string = "Dette er en tekststreng som inneholder tallene 123"
+
+my_regex = /(\d+)/ # (d+) angir at vi ønsker å finne alle tallene i strengen
+
+matches = my_string.scan(my_regex) # gir oss en liste over alle tallene som matchet uttrykket vårt
+
+puts matches # output: ["123"]
+```
+
+## Dypdykk
+
+Det er mange forskjellige spesifikke uttrykk og metoder du kan bruke med regulære uttrykk i Ruby. For eksempel kan du bruke "match" metoden til å finne et spesifikt mønster i en streng, eller "sub" metoden for å erstatte deler av en streng med annen tekst. Det er også mulig å bruke flagg for å endre hvordan uttrykket tolkes, for eksempel for å ignorere store og små bokstaver eller begynnelsen og slutten på en linje.
+
+## Se Også
+
+- [En oversikt over regulære uttrykk i Ruby](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html)
+- [Ruby sin offisielle dokumentasjon for regexp biblioteket](https://ruby-doc.org/core-3.0.0/Regexp.html)
+- [En tutorial for å lære mer om regulære uttrykk i Ruby](https://www.youtube.com/watch?v=sa-TUpSx1JA)

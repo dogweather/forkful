@@ -1,97 +1,73 @@
 ---
-title:    "Haskell: Ausgabe von Debugging-Informationen drucken"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/printing-debug-output.md"
+title:                "Haskell: Ausgabe von Fehlermeldungen drucken"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Eine der wichtigsten Fähigkeiten beim Programmieren ist es, die eigene Codebasis zu verstehen und zu beheben, wenn es zu Fehlern kommt. Eine nützliche Methode, um dieses Verständnis zu verbessern, ist das Drucken von Debug-Ausgaben. In diesem Blogbeitrag werden wir uns ansehen, warum es sinnvoll ist, Debug-Ausgaben in Haskell zu verwenden und wie man sie umsetzt.
+Das Drucken von Debug-Ausgaben in Haskell kann beim Entwickeln von komplexen Programmen sehr hilfreich sein, um Fehler zu identifizieren und zu beheben. Es ermöglicht Entwicklern, den Programmablauf genau zu verfolgen und zu verstehen, was im Code passiert.
 
-## Wie geht das
+# Wie man Debug-Ausgaben druckt
 
-Das Drucken von Debug-Ausgaben in Haskell ist einfach und kann auf verschiedene Arten erfolgen. Eine Möglichkeit ist die Verwendung der Funktion `trace` aus dem `Debug.Trace`-Modul. Diese Funktion akzeptiert einen beliebigen Datentyp als Eingabe und gibt diesen zusammen mit einer Debug-Nachricht auf der Konsole aus.
-
-```Haskell
-import Debug.Trace (trace)
-
-foo :: Int -> Int
-foo x = trace ("Die Funktion wurde mit dem Wert " ++ show x ++ " aufgerufen.") x + 1
-
-main = print (foo 5)
-```
-
-Die Ausgabe dieses Codes wäre:
-
-```
-Die Funktion wurde mit dem Wert 5 aufgerufen.
-6
-```
-
-Eine andere Möglichkeit ist die Verwendung der Funktion `putStrLn` aus dem `System.IO`-Modul. Diese Funktion gibt eine Nachricht auf der Konsole aus, die übergebenen Werte werden automatisch in Strings konvertiert.
+Es gibt mehrere Wege, um Debug-Ausgaben in Haskell zu drucken. Der einfachste Weg ist die Verwendung der Funktion `print`. Diese Funktion akzeptiert jeden beliebigen Datentyp und gibt ihn auf der Konsole aus.
 
 ```Haskell
-import System.IO (putStrLn)
+x = 5
+print x
 
-foo :: Int -> Int
-foo x = x + 1
-
-main = do
-  putStrLn "Start der Funktion."
-  print (foo 5)
-  putStrLn "Ende der Funktion."
+-- Output:
+-- 5
 ```
 
-Die Ausgabe wäre hier:
-
-```
-Start der Funktion.
-6
-Ende der Funktion.
-```
-
-Beide Methoden sind nützlich, um den Codefluss besser zu verstehen und Fehler zu identifizieren.
-
-## Tieferer Einblick
-
-Neben dem einfachen Drucken von Werten gibt es noch weitere Möglichkeiten, Debug-Ausgaben in Haskell zu verwenden. Eine Möglichkeit ist das Hinzufügen von Bedingungen für das Drucken von Ausgaben, um nur in bestimmten Situationen die Debug-Ausgaben zu erhalten.
+Eine andere Möglichkeit ist die Verwendung von `putStrLn`, um eine formatierte String-Ausgabe zu erstellen.
 
 ```Haskell
-import Debug.Trace (trace)
+name = "Haskell"
+putStrLn ("Hello " ++ name ++ " programmers!")
 
-foo :: Int -> Int
-foo x =
-  trace (if x > 10 then "Der Wert ist größer als 10" else "Der Wert ist kleiner oder gleich 10") x + 1
-
-main = print (foo 5)
+-- Output:
+-- Hello Haskell programmers!
 ```
 
-In diesem Beispiel wird nur dann die Debug-Ausgabe ausgegeben, wenn der Wert größer als 10 ist. Dies ist nützlich, um nur die wichtigsten Informationen zu erhalten.
-
-Eine weitere Möglichkeit ist die Verwendung von `Debug.Trace.traceShow` oder `Debug.Trace.traceShowId` aus dem `Debug.Trace`-Modul. Diese Funktionen ermöglichen die Ausgabe von komplexen Datenstrukturen und das Verständnis des Codeflusses anhand dieser Ausgaben.
+Auch die Verwendung von `show` kann hilfreich sein, um komplexe Datentypen wie Listen oder Tupel auszugeben.
 
 ```Haskell
-import Debug.Trace (traceShowId)
+list = [1, 2, 3]
+show list
 
-foo :: [Int] -> [Int]
-foo xs = traceShowId xs
-
-main = do
-  let list = [1, 2, 3]
-  print (foo list)
+-- Output:
+-- "[1,2,3]"
 ```
 
-Die Ausgabe wäre hier:
+# Tieferer Einblick in das Drucken von Debug-Ausgaben
 
+Das Drucken von Debug-Ausgaben kann auch mit dem `Debug.Trace`-Modul durchgeführt werden. Dieses Modul bietet mehr Kontrolle über die Ausgabe und ermöglicht die Verwendung von Konditionalausdrücken, um zu entscheiden, ob Debug-Ausgaben gedruckt werden sollen oder nicht.
+
+```Haskell
+import Debug.Trace
+
+factorial :: Int -> Int
+factorial n = trace ("Calculating factorial of " ++ show n) $ product [1 .. n]
+
+result = factorial 5
+
+-- Output:
+-- Calculating factorial of 5
+-- Calculating factorial of 4
+-- Calculating factorial of 3
+-- Calculating factorial of 2
+-- Calculating factorial of 1
+-- 120
 ```
-[1,2,3]
-```
 
-Wie man sehen kann, gibt die Funktion `traceShowId` den übergebenen Wert als Ausgabe zurück und ermöglicht somit das Drucken von komplexen Datenstrukturen ohne zusätzlichen Code.
+Es ist jedoch wichtig zu beachten, dass Debug-Ausgaben nur während der Entwicklung verwendet werden sollten und nicht in der Produktionsumgebung. Sie können sich negativ auf die Performance auswirken und sollten daher entfernt werden, sobald der Code fehlerfrei und stabil ist.
 
-## Siehe auch
+# Siehe auch
 
-- [Debug-Ausgaben in Haskell verwenden (Englisch)](https://www.realworldhaskell.org/Chapter_7:_Debugging,_testing,_and_profiling)
-- [Einfaches Debugging in Haskell (Englisch)](https://www.fpcomplete.com/blog/2017/09/easy-debugging-with-trace)
+- [Haskell Dokumentation](https://www.haskell.org/documentation/)
+- [Offizielle Haskell Tutorials](https://www.haskell.org/tutorial/)
+- [Debugging in Haskell](https://wiki.haskell.org/Debugging)

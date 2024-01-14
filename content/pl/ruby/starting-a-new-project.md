@@ -1,47 +1,38 @@
 ---
-title:    "Ruby: Rozpoczynanie nowego projektu"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/starting-a-new-project.md"
+title:                "Ruby: Rozpoczynając nowy projekt"
+programming_language: "Ruby"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Zapewne wielu z Was zastanawia się, dlaczego warto zacząć nowy projekt w programowaniu Ruby. Odpowiedź jest dość prosta - Ruby jest prostym i eleganckim językiem, a dzięki dużej ilości gotowych bibliotek i frameworków, tworzenie aplikacji jest niezwykle szybkie i efektywne.
+Zacząć nowy projekt programowania może być trudnym wyzwaniem, ale jest to wspaniały sposób na naukę nowych umiejętności i rozwój osobisty. Tworzenie aplikacji i programów może być również bardzo satysfakcjonujące i możliwe do wykorzystania w życiu zawodowym.
 
 ## Jak to zrobić
 
-Najważniejszą częścią rozpoczęcia projektu w Ruby jest oczywiście stworzenie odpowiedniego środowiska do pracy. Musimy mieć zainstalowaną odpowiednią wersję języka oraz upewnić się, że mamy dostęp do potrzebnych bibliotek. Poniżej przedstawię krótki przykład kodu oraz jego wyjścia, aby zobrazować, jak łatwo jest to zrobić w Ruby.
+Aby rozpocząć nowy projekt programowania w języku Ruby, należy pobrać i zainstalować najnowszą wersję Ruby na swoim komputerze. Następnie można użyć edytora kodu, takiego jak Visual Studio Code lub Atom, aby rozpocząć pisanie kodu w języku Ruby.
 
-```Ruby
-# Utworzenie zmiennej i przypisanie wartości
-name = "Anna"
+Poniżej znajduje się przykładowy kod w języku Ruby, który wyświetli prostą wiadomość "Witaj Świecie!" w konsoli:
 
-# Wyświetlenie komunikatu z wykorzystaniem zmiennej
-puts "Cześć #{name}!"
-
-# Wyświetlenie kolejnego komunikatu bez użycia zmiennej
-puts "Witaj w świecie Ruby!"
+```ruby
+puts "Witaj Świecie!"
 ```
 
-Output:
-```
-Cześć Anna!
-Witaj w świecie Ruby!
-```
+Po napisaniu kodu, należy uruchomić go klikając przycisk "Run" lub używając skrótu klawiszowego. W konsoli powinna pojawić się nasza wiadomość "Witaj Świecie!".
 
-Jak widać, już samo utworzenie zmiennej i wypisanie jej wartości jest niezwykle prostym zadaniem w Ruby. Dzięki temu nie musimy się martwić o skomplikowane składnie czy używanie wielu linijek kodu.
+## Wnikliwe spojrzenie
 
-## Głębszy zanurk
+Początek nowego projektu programowania może być przytłaczający, ale warto poświęcić czas na zaplanowanie go i rozpoczęcie na prawo. Najważniejsze jest ustalenie celów i wyznaczenie kroków niezbędnych do osiągnięcia tych celów.
 
-Jednym z najważniejszych kroków przy rozpoczęciu nowego projektu jest odpowiednie zaplanowanie jego struktury i funkcjonalności. W Ruby możemy wykorzystać różnego rodzaju frameworki, takie jak Ruby on Rails czy Sinatra, które pomogą nam w szybkim i efektywnym tworzeniu aplikacji internetowych. Dodatkowo, warto zapoznać się z dobrymi praktykami programowania oraz zasadami DRY (Don't Repeat Yourself), które pozwolą nam na pisanie czytelnego i łatwo rozszerzalnego kodu.
+Kolejnym ważnym krokiem jest nauka podstaw języka Ruby i wybór odpowiednich narzędzi i bibliotek, które będą niezbędne do stworzenia danego projektu. Ważne jest również zapoznanie się z dobrymi praktykami programowania, takimi jak pisania czystego i czytelnego kodu.
 
-Należy również pamiętać, że Ruby posiada szeroką społeczność programistów i mnóstwo materiałów edukacyjnych, które mogą nam pomóc w rozwiązywaniu ewentualnych problemów oraz rozwijaniu naszych umiejętności.
+Po skończeniu projektu, warto przetestować go i poprosić o feedback od innych programistów. Ponadto, niezapomnianym elementem jest udostępnienie swojego projektu innym i otwarcie się na uwagi i sugestie, co pozwoli na dalszy rozwój umiejętności programistycznych.
 
 ## Zobacz również
 
-- [Ruby on Rails - oficjalna strona](https://rubyonrails.org)
-- [Sinatra - framework webowy](http://sinatrarb.com)
-- [Ruby Tricks - blog z przydatnymi trikami](https://rubytricks.com/)
-- [The Ruby Style Guide - standardy i dobre praktyki programowania](https://github.com/rubocop-hq/ruby-style-guide)
+* [Ruby dla początkujących](https://guides.rubyonrails.org/getting_started.html)
+* [Podstawy programowania w języku Ruby](https://www.codecademy.com/learn/learn-ruby)
+* [Stosowane praktyki w programowaniu](https://www.theodinproject.com/courses/ruby-programming/lessons/basics)

@@ -1,46 +1,59 @@
 ---
-title:    "C: Väliaikaisen tiedoston luominen"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/creating-a-temporary-file.md"
+title:                "C: Väliaikaisen tiedoston luominen"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi luoda tilapäinen tiedosto?
+## Miksi luoda väliaikaistiedostoja?
 
-Tilapäisten tiedostojen luominen on tärkeä osa monia ohjelmointitehtäviä. Ne tarjoavat lyhytaikaisen tallennustilan tietojen käsittelyyn ja välittämiseen. Tilapäisten tiedostojen käyttö voi myös olla hyödyllistä silloin, kun halutaan välttää pysyvien tiedostojen luomista.
+Väliaikaisten tiedostojen luominen on yleinen tekniikka, jota käytetään ohjelmoinnissa tiedon tallentamiseen hetkellisesti. Näitä tiedostoja voidaan käyttää esimerkiksi silloin, kun halutaan tallentaa väliaikaisia laskentatuloksia tai kun ohjelma tarvitsee väliaikaisen tallennustilan.
 
-## Miten luoda tilapäinen tiedosto?
+## Näin luot väliaikaistiedoston C-kielellä
 
-Tilapäisen tiedoston luominen C-kielellä on hyvin yksinkertaista. Se vaatii vain muutaman rivin koodia, kuten esimerkiksi:
+Väliaikaistiedostojen luominen C-kielellä on yksinkertaista käyttämällä standardikirjaston <stdio.h> ja <stdlib.h> funktioita. Alla on esimerkki, joka näyttää, miten luodaan väliaikainen tiedosto ja tallennetaan siihen merkkijono.
 
 ```C
-// Avataan uusi tiedosto nimellä "temporary.txt" luomistilassa, joka mahdollistaa tiedoston kirjoittamisen ja lukemisen
-FILE *tempFile = fopen("temporary.txt", "w+");
+#include <stdio.h>
+#include <stdlib.h>
 
-// Tarkistetaan, että tiedoston avaaminen onnistuu
-if (tempFile == NULL) {
-    // Jos ei onnistu, tulostetaan virheilmoitus ja lopetetaan ohjelma
-    printf("Tilapäistiedoston luominen epäonnistui.\n");
+int main(void) {
+  FILE *file;
+  char string[50];
+
+  // Luodaan väliaikainen tiedosto, joka avataan kirjoitustilassa
+  file = tmpfile();
+
+  // Tarkistetaan, onko tiedosto luotu onnistuneesti
+  if (file == NULL) { 
+    printf("Väliaikaistiedoston luominen epäonnistui");
     exit(1);
+  }
+
+  // Kysytään käyttäjältä merkkijono ja tallennetaan se väliaikaiseen tiedostoon
+  printf("Syötä haluamasi merkkijono: ");
+  scanf("%s", string);
+  fprintf(file, "%s", string);
+
+  // Suljetaan tiedosto ja tulostetaan sen sisältö
+  fclose(file);
+  printf("Väliaikaistiedoston sisältö: ");
+  system("cat /tmp/<tiedoston_nimi>");
+
+  return 0;
 }
-
-// Kirjoitetaan tiedostoon sisältöä
-fprintf(tempFile, "Tämä on esimerkkiteksti tilapäisessä tiedostossa.");
-
-// Suljetaan tiedosto
-fclose(tempFile);
 ```
+Kun koodi suoritetaan, käyttäjältä kysytään merkkijono, joka tallennetaan väliaikaiseen tiedostoon. Tiedoston sisältö tulostetaan lopuksi komentorivillä funktion "cat" avulla.
 
-Koodia suorittaessa voidaan huomata, että uusi tiedosto nimeltä "temporary.txt" on luotu ja siihen on kirjoitettu teksti. Tämän jälkeen tiedosto suljetaan ja poistetaan käytöstä.
+## Syvemmälle väliaikaistiedostojen maailmaan
 
-## Syvällisempää tietoa tilapäisen tiedoston luomisesta
+Väliaikaistiedostot luodaan yleensä silloin, kun tiedon tallentaminen muistiin ei ole optimaalista tai mahdollista. Nämä tiedostot luodaan usein eri ohjelmien väliseen kommunikaatioon. Väliaikaisten tiedostojen luominen on myös yleinen tekniikka, jota käytetään esimerkiksi web-palvelimien välimuistien hallinnassa.
 
-Tilapäisen tiedoston luominen tapahtuu usein kahdessa vaiheessa. Ensimmäisessä vaiheessa avataan uusi tiedosto ja varmistetaan, että tiedoston avaaminen onnistuu. Toisessa vaiheessa tiedostoon kirjoitetaan sisältöä ja suljetaan tiedosto. Tämän jälkeen tiedosto voidaan poistaa käytöstä.
-
-Tilapäisten tiedostojen käyttö on erityisen hyödyllistä silloin, kun ohjelmassa käsitellään suuria määriä dataa tai tarvitaan väliaikainen säilytyspaikka tiedon lähettämiseen ja vastaanottamiseen. Ne myös auttavat vähentämään pysyvien tiedostojen määrää, mikä voi olla hyödyllistä esimerkiksi turvallisuuden kannalta.
+Väliaikaistiedostot voidaan myös luoda nimellä, mikäli halutaan tallentaa tietoa tiettyyn paikkaan tiedostojärjestelmässä. Näitä tiedostoja voidaan käsitellä kuten muitakin tiedostoja, ja ne tulee muistaa poistaa käytön jälkeen.
 
 ## Katso myös
 
-- [Tilapäisen tiedoston luominen C-kielellä](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
-- [C-ohjelmoinnin perusteet](https://fi.wikibooks.org/wiki/C/_ohjelmoinnin_perusteet)
+- [The Basics of Creating Temporary Files in C](https://www.guru99.com/c-temporary-file.html)
+- [Temporary file](https://en.wikipedia.org/wiki/Temporary_file)

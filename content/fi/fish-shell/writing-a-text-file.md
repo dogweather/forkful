@@ -1,46 +1,29 @@
 ---
-title:    "Fish Shell: Tekstitiedoston kirjoittaminen"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/writing-a-text-file.md"
+title:                "Fish Shell: Tekstitiedoston kirjoittaminen"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa tekstitiedosto?
+## Miksi kirjoittaa teksti-tiedosto Fish Shellilla
 
-Tekstitiedostot ovat olennainen osa ohjelmoinnin maailmaa, ja niitä käytetään usein tallentamaan tietoa ja muuttujia. Niitä voidaan myös käyttää ohjelmien lähdekoodin tallentamiseen. Kirjoittamalla tekstitiedoston voit tallentaa tärkeitä tietoja ja muuttujia, jotka pysyvät saatavilla jopa ohjelman suorittamisen jälkeen.
+Kirjoittaminen ja tallentaminen teksti-tiedostoja Fish Shellilla on hyödyllistä, kun haluat tallentaa ja jakaa tietoja ja koodia helposti. Se on myös tehokas tapa järjestää ja hallita projekteja.
 
-## Näin kirjoitat tekstitiedoston Fish Shellilla
+## Kuinka tehdä se
 
-Fish Shellin avulla voit helposti luoda ja muokata tekstitiedostoja. Se käyttää yksinkertaista ```echo``` -komentoa tekstin lisäämiseen tiedostoon. Alla on esimerkki:
-
-```
-echo "Tämä on esimerkki tekstistä" > tiedosto.txt
-```
-
-Tämä luo uuden tiedoston nimeltä "tiedosto.txt" ja lisää siihen tekstikappaleen. Voit myös käyttää ```>>``` -komentoa lisätäksesi uutta tekstiä olemassa olevaan tiedostoon. Alla on esimerkki:
-
-```
-echo "Toinen esimerkki" >> tiedosto.txt
+```Fish Shell
+echo "Tervetuloa Fish Shellin oppaaseen!" > esimerkki.txt  # Luo uuden teksti-tiedoston nimeltä "esimerkki.txt" ja kirjoita siihen teksti
+cat esimerkki.txt  # Tulostaa teksti-tiedostossa olevan sisällön
 ```
 
-Voit myös käyttää Fish Shellin loop -komentoa, joka kysyy käyttäjältä tietoa ja tallentaa sen tiedostoon. Alla on esimerkki:
+## Syvemmälle pinnan alle
 
-```
-for i in (seq 1 5)
-    read -P "Syötä teksti: " syöte
-    echo $syöte >> tiedosto.txt
-end
-```
+Fish Shellilla on monia hyödyllisiä komentoja, joita voit käyttää teksti-tiedostojen luomiseen ja muokkaamiseen. Voit käyttää myös erilaisia lisätyökaluja, kuten "&&" ja ">>" operaattoreita, jotka lisäävät joustavuutta ja tehokkuutta ohjelmointiin.
 
-Tämä luo viisi syötettä ja tallentaa ne tiedostoon nimeltä "tiedosto.txt". Voit käyttää erilaisia ​​komentoja ja muuttujia luodaksesi monimutkaisempia tekstitiedostoja.
+See Also:
 
-## Syvempää tietoa tekstitiedoston kirjoittamisesta
+[Kuinka luoda ja muokata tekstitiedostoja Fish Shellilla](https://fishshell.com/docs/current/tutorial.html#file-redirection-and-pipes)
 
-Tekstitiedoston kirjoittaminen Fish Shellilla on yksinkertainen tapa tallentaa tärkeitä tietoja ja muuttujia. Voit myös käyttää muita käskyjä, kuten ```cat``` ja ```sed```, muokkaamaan ja muuttamaan olemassa olevia tiedostoja. Voit myös käyttää Shell Script -komentoja luodaksesi monimutkaisempia tiedostoja. On tärkeää muistaa, että tekstitiedoston sisältö on tarkistettava ja tarkistettava ennen sen tallentamista ja käyttämistä.
-
-## Katso myös
-
-- [Fish Shellin kotisivut](https://fishshell.com/)
-- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Ohjelmointi ja tekstitiedostot](https://www.digitalocean.com/community/tutorials/how-to-work-with-text-files-in-bash-using-the-cat-less-and-more-commands)
+[Fish Shellin hallintalaitteet ja toiminnot](https://fishshell.com/docs/current/commands.html)

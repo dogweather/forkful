@@ -1,43 +1,63 @@
 ---
-title:    "Java: Beräkna ett datum i framtiden eller förflutna"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/calculating-a-date-in-the-future-or-past.md"
+title:                "Java: Beräkning av ett datum i framtiden eller förflutna"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna beräkna ett datum i framtiden eller det förflutna kan vara en användbar funktion för att hålla koll på viktiga händelser eller planera framtida aktiviteter. Genom att använda Java-programmering kan du enkelt skapa en algoritm för att beräkna datum baserat på olika parametrar.
+Att beräkna datum i framtiden eller förflutna kan vara en användbar funktion för att hantera tidssensitive information eller att planera för händelser i framtiden. Det kan vara särskilt användbart för att upprätthålla deadlines eller för att hålla koll på åldern för olika händelser.
 
-## Så här gör du
+## Hur man gör det
 
-Först och främst måste vi förstå att datum i Java representeras av objektet `LocalDate`. Det finns olika metoder som kan användas för att manipulera en `LocalDate` och beräkna ett önskat datum. Här är ett exempel på en metod som används för att beräkna ett datum i framtiden baserat på ett visst antal år:
+För att beräkna ett datum i framtiden eller förflutna behöver vi använda oss av en kombination av datatyper och inbyggda funktioner i Java. Låt oss ta en titt på ett exempel för att förtydliga det:
 
-```Java
-LocalDate idag = LocalDate.now(); // Hämtar dagens datum
-int antalÅr = 5; // Antal år vi vill lägga till
+````java
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-// Använder metoden plusYears() för att lägga till år till idag
-LocalDate framtidaDatum = idag.plusYears(antalÅr);
+public class DateCalculator {
+  public static void main(String[] args) {
+    // Vi väljer ett specifikt datum att utgå ifrån
+    LocalDate startDate = LocalDate.of(2020, 5, 15);
+    
+    // Vi använder oss av en DateTimeFormatter för att definiera formatet på datumet
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    
+    // Vi kan sedan använda oss av LocalDate's metod plusDays för att beräkna ett datum i framtiden eller förflutna
+    // I det här fallet lägger vi till 10 dagar till vårt startdatum
+    LocalDate futureDate = startDate.plusDays(10);
+    
+    // Vi kan också använda minusDays för en beräkning i förflutna
+    LocalDate pastDate = startDate.minusDays(10);
+    
+    // Slutligen skriver vi ut resultaten i det definierade formatet med hjälp av DateTimeFormatter
+    System.out.println(formatter.format(futureDate));
+    System.out.println(formatter.format(pastDate));
+  }
+}
+````
 
-// Skriver ut det nya datumet
-System.out.println(framtidaDatum);
+Körningsresultat:
+
+```
+25/05/2020
+05/05/2020
 ```
 
-Kör man denna kod kommer man att se att det nya datumet som skrivs ut är 5 år efter dagens datum. Genom att använda metoder som `minusDays()`, `plusMonths()` och `minusYears()` kan man enkelt beräkna datum i både framtiden och förflutnan.
+Som vi kan se kan vi enkelt beräkna ett datum i framtiden eller förflutna genom att använda oss av Java's inbyggda funktioner.
 
-## På djupet
+## Djupdykning
 
-När man beräknar datum i Java måste man också ta hänsyn till skottår och olika kalendrar. Olika länder och kulturer kan ha sina egna kalendrar och datumformat, vilket kan påverka hur man beräknar ett datum. Det är därför viktigt att förstå hur `LocalDate`-objektet fungerar och vilka metoder som finns tillgängliga för att hantera olika situationer.
+Om du vill ha mer avancerade beräkningar kan du också använda dig av andra klasser som är tillgängliga i java.time-paketet, såsom Period och Duration. Dessa klasser tillåter mer exakta beräkningar beroende på dina specifika behov.
 
-Ytterligare saker att tänka på när man beräknar datum är att se till att hantera undantag och felhantering, samt att använda rätt format när man skriver ut datumet. Java har olika formateringsklasser som kan användas för att ändra hur datum skrivs ut i konsolen eller i ett GUI.
+Du kan också använda dig av olika metoder för att manipulera datumet, såsom plusWeeks(), plusMonths() eller plusYears(). Utforska dessa funktioner för att hitta den bästa lösningen för ditt specifika projekt.
 
-## Se även
+## Se också
 
-För mer information och exempel på hur man kan beräkna datum i Java, se följande länkar:
-
-- [LocalDate-klassens officiella dokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Tutorialspoint Java Date and Time tutorial](https://www.tutorialspoint.com/java8/java8_date_time.htm)
-- [Baeldung Java Date and Time tutorial](https://www.baeldung.com/java-date-time)
-- [Java DateTimeFormatter-klassens officiella dokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Java Dokumentation: LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Tutorial: Beräkna datum i Java](https://www.baeldung.com/java-date-difference)
+- [Java Date and Time API – Handling of Time and Date](https://www.baeldung.com/java-8-date-time-intro)

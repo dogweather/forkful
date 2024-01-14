@@ -1,54 +1,82 @@
 ---
-title:    "Bash: 두 날짜 비교하기."
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/comparing-two-dates.md"
+title:                "Bash: 두 날짜 비교하기"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-
-날짜 비교를 하는 이유는 무엇일까요? 날짜는 우리 일상에서 매우 중요한 역할을 합니다. 우리는 날짜를 통해 언제 어떤 일이 발생했는지 알 수 있고, 계획을 세울 때에도 날짜를 중요한 요소로 고려합니다. 따라서 날짜를 비교하는 것은 우리가 일상에서 자주 다루게 되는 일입니다.
+날짜를 비교하는 방법을 배우는 이유는 간단합니다. 날짜는 프로그래밍에서 매우 중요하고 유용한 자료 유형이기 때문이며, 날짜를 비교하기 위한 강력한 도구가 되기 때문입니다.
 
 ## 어떻게
+날짜를 비교하는 방법은 Bash 프로그래밍에서도 중요합니다. 우리는 두 개의 날짜를 비교하는 간단한 Bash 스크립트를 만들어보겠습니다.
 
-날짜를 비교하는 방법에 대해 알아보겠습니다. Bash 프로그래밍을 이용하여 두 날짜를 비교하는 방법을 간단한 예제와 함께 살펴보겠습니다.
-
-```Bash
+```
 #!/bin/bash
 
-# 첫 번째 날짜 지정
-date1=2021-01-01
+# 첫 번째 날짜
+first_date="2021-01-10"
 
-# 두 번째 날짜 지정
-date2=2020-12-31
+# 두 번째 날짜
+second_date="2021-01-20"
+
+# 날짜를 Unix epoch로 변환
+first_epoch=$(date -d "$first_date" +%s)
+second_epoch=$(date -d "$second_date" +%s)
 
 # 날짜 비교
-if [[ "$date1" > "$date2" ]]
-then
-  echo "첫 번째 날짜가 더 큽니다."
-elif [[ "$date1" < "$date2" ]]
-then
-  echo "두 번째 날짜가 더 큽니다."
+if [ $first_epoch -gt $second_epoch ]; then
+    echo "$second_date 이 $first_date 보다 이전입니다."
+elif [ $first_epoch -lt $second_epoch ]; then
+    echo "$first_date 이 $second_date 보다 이전입니다."
 else
-  echo "두 날짜가 같습니다."
+    echo "두 날짜는 같습니다."
 fi
 ```
 
-위 예제를 실행하면 "첫 번째 날짜가 더 큽니다."라는 메시지가 출력됩니다. 이처럼 Bash는 비교 연산자를 이용하여 간단하게 날짜를 비교할 수 있습니다.
+위의 스크립트를 실행하면 다음과 같은 출력을 볼 수 있습니다.
 
-## 깊이있게 살펴보기
+```
+2021-01-20 이 2021-01-10 보다 이전입니다.
+```
 
-날짜 비교를 좀 더 깊이있게 살펴보겠습니다. 날짜를 비교할 때에는 몇 가지 주의해야할 사항이 있습니다. 첫째, 날짜 형식이 일치해야합니다. 위 예제에서는 날짜를 "YYYY-MM-DD" 형식으로 지정했지만, 다른 형식을 사용할 경우 비교 연산이 정상적으로 이루어지지 않을 수 있습니다. 둘째, 날짜가 유효한 범위 내에 있는지 체크해야합니다. 만약 유효하지 않은 날짜를 비교하는 경우 오류가 발생할 수 있습니다. 따라서 날짜를 비교하는 경우에는 이러한 사항들을 고려하여 적절한 에러 처리를 해주는 것이 좋습니다.
+배열을 사용하여 여러 날짜를 비교할 수도 있습니다.
 
-## 이어보기
+```
+#!/bin/bash
 
-날짜 비교에 대해 더 알아보고 싶다면 아래 링크들을 참고하세요.
+# 비교할 날짜 배열
+dates=("2021-01-10" "2021-01-20" "2021-02-01" "2021-02-10")
 
-[GNU Bash](https://www.gnu.org/software/bash/)  
-[Comparison Operators in Bash](https://www.tldp.org/LDP/abs/html/comparison-ops.html)  
-[Validating Dates in Bash](https://www.linuxjournal.com/content/validating-dates-bash-script)
+# 비교할 날짜 수
+length=${#dates[@]}
+
+# 가장 이전 날짜로 초기화
+first_date=${dates[0]}
+first_epoch=$(date -d "$first_date" +%s)
+
+# 배열 순회하며 가장 이전 날짜와 비교
+for (( i=1; i<$length; i++ )); do
+    current_date=${dates[$i]}
+    current_epoch=$(date -d "$current_date" +%s)
+    if [ $first_epoch -gt $current_epoch ]; then
+        first_date=$current_date
+        first_epoch=$current_epoch
+    fi
+done
+
+echo "$first_date 이 가장 이전 날짜입니다."
+```
+
+```
+2021-01-10 이 가장 이전 날짜입니다.
+```
+
+## 깊이 있는 내용
+두 날짜를 비교할 때, Unix epoch라는 개념을 사용하여 모든 날짜를 숫자로 변환합니다. 이렇게 함으로써 날짜의 크기를 비교할 수 있게 되고, 더 쉽게 두 날짜를 비교할 수 있습니다. 그리고 날짜를 배열로 다루는 방법을 배울 때 유용한 스킬이 될 수 있습니다.
 
 ## 참고
-
-[날짜를 비교하는 방법](https://www.youtube.com/watch?v=b5ywuMWujvg)
+* [Unix epoch - Wikipedia](https://ko.wikipedia.org/wiki/Unix_%ED%99%88%EC%A0%84)
+* [Unix epoch calculator](https://www.epochconverter.com/)

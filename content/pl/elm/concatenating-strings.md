@@ -1,43 +1,41 @@
 ---
-title:    "Elm: Łączenie ciągów znaków"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/concatenating-strings.md"
+title:                "Elm: Łączenie ciągów znaków"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+# Czemu warto łączyć łańcuchy w języku Elm?
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego warto połączyć dwie lub więcej ciągów znaków w jedno? W programowaniu, jedną z najczęstszych operacji wykonanych na ciągach jest łączenie ich ze sobą. W tym artykule dowiesz się dlaczego jest to przydatne i jak to zrobić w języku Elm.
+Często przy pisaniu oprogramowania potrzebujemy połączyć dwa czy więcej łańcuchów tekstu w jeden. W języku Elm mamy do dyspozycji funkcję `String.concat`, która zadanie to wykonuje w bardzo prosty sposób. W tym artykule pokażę Wam, jak skutecznie korzystać z tej funkcji.
 
 ## Jak to zrobić?
 
-Aby połączyć dwa ciągi znaków w języku Elm, możesz użyć funkcji `++`. Przykładowy kod wyglądałby następująco:
+W celu połączenia łańcuchów w języku Elm należy skorzystać z funkcji `String.concat`, która przyjmuje jako argumenty dwie listy: pierwszą zawierającą łańcuchy, które chcemy połączyć, oraz drugą zawierającą łańcuchy oddzielające nasze łańcuchy z pierwszej listy.
+
+Przykładowo, jeśli chcemy połączyć łańcuchy "Hello" i "world" oraz oddzielić je spacją, możemy napisać:
 
 ```Elm
-"Hello, " ++ "world!"
+String.concat ["Hello", "world"] " " -- output: "Hello world"
 ```
 
-Wyjściem z tej operacji będzie ciąg znaków "Hello, world!". Możesz również dokonać konkatenacji więcej niż dwóch ciągów:
+Warto zauważyć, że oddzielający łańcuch jest opcjonalny - jeśli go nie podamy, funkcja automatycznie wykorzysta pusty łańcuch jako separator.
+
+Co więcej, możemy również połączyć więcej niż dwa łańcuchy:
 
 ```Elm
-"Programming " ++ "is " ++ "fun!"
+String.concat ["Elm", "jest", "super", "!", "!"] " " -- output: "Elm jest super !!"
 ```
-
-Powyższy przykład daje wynik "Programming is fun!". Pamiętaj, aby używać tylko ciągów znaków do konkatenacji, inaczej możesz otrzymać błąd.
 
 ## Głębszy wgląd
 
-W języku Elm znaki specjalne i liczby mogą być automatycznie przekształcone w ciągi znaków podczas konkatenacji. Na przykład:
+Podczas połączenia łańcuchów funkcja `String.concat` wykorzystuje funkcję `String.join`, która dokonuje faktycznego łączenia łańcuchów i oddzielania ich separators. Jest to przydatne szczególnie w przypadku, gdy  nasza pierwsza lista zawiera elementy innego typu niż łańcuchy, ponieważ funkcja `String.join` jest w stanie zamienić je na łańcuchy przed połączeniem.
 
-```Elm
-"Today is " ++ 25 ++ "th of October."
-```
-
-Powoduje to wyjście "Today is 25th of October." W przypadku, gdy oba argumenty `++` są ciągami znaków, operator ten po prostu łączy je ze sobą. Jednak jeśli jednym z argumentów jest liczba, Elm automatycznie zamienia ją na ciąg znaków.
+Warto również zauważyć, że funkcja `String.concat` zwraca nowo utworzony łańcuch, a nie modyfikuje oryginalnych.
 
 ## Zobacz również
 
-- [Dokumentacja Elm - konkatenacja ciągów znaków](https://guide.elm-lang.org/strings/concatenation.html)
-- [Wideo na temat konkatenacji w języku Elm przez Evan Czaplicki](https://www.youtube.com/watch?v=WmHXPsxEQZY)
-- [Artykuł o operacjach na ciągach znaków w języku Elm](https://dev.to/dillion/elm-string-operations-removing-characters-etc-479d)
+* Dokumentacja języka Elm o funkcji `String.concat`: https://package.elm-lang.org/packages/elm/core/latest/String#concat
+* Dokumentacja języka Elm o funkcji `String.join`: https://package.elm-lang.org/packages/elm/core/latest/String#join

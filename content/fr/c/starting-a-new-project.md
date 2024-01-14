@@ -1,60 +1,62 @@
 ---
-title:    "C: Commencer un nouveau projet"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/starting-a-new-project.md"
+title:                "C: Commencer un nouveau projet"
+programming_language: "C"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Il y a plusieurs raisons pour lesquelles quelqu'un pourrait vouloir se lancer dans un nouveau projet de programmation en C. Peut-être qu'ils ont une idée de projet passionnante qu'ils veulent réaliser, ou qu'ils cherchent à améliorer leurs compétences en programmation. Quelle que soit la raison, c'est une excellente opportunité pour apprendre et s'exprimer à travers le langage de programmation C.
+Si vous êtes passionné par la programmation en C, vous avez probablement déjà pensé à lancer un nouveau projet. Mais pourquoi se lancer dans cette aventure ? Il y a plusieurs raisons qui pourraient vous motiver. Peut-être avez-vous une idée de programme qui n'existe pas encore ou vous souhaitez améliorer un existant. Peut-être voulez-vous simplement vous challenger et apprendre de nouvelles compétences. Quelle que soit la raison, c'est un excellent moyen d'utiliser vos connaissances en C et de créer quelque chose de nouveau et utile.
 
 ## Comment faire
 
-Pour commencer un projet en C, vous aurez besoin d'un environnement de développement intégré (IDE) et d'un compilateur C. Vous pouvez utiliser l'IDE de votre choix, mais si vous êtes nouveau en programmation C, je recommande d'utiliser un IDE tel que Code::Blocks ou Eclipse pour faciliter la compilation et le débogage.
-
-Une fois que vous avez votre IDE et votre compilateur en place, vous pouvez commencer par créer un nouveau fichier source C. Vous pouvez le nommer comme vous le souhaitez, mais assurez-vous de lui donner l'extension ".c". Ensuite, vous pouvez écrire votre code dans ce fichier en utilisant les structures de programmation de base telles que les boucles, les conditions et les fonctions.
-
-Voici un exemple de code qui imprime les nombres pairs de 0 à 10 :
+Maintenant que nous avons exploré les raisons pour démarrer un nouveau projet, passons à la partie technique. Voici quelques exemples de code pour vous aider à démarrer.
 
 ```C
 #include <stdio.h>
 
-int main()
-{
-    int i;
-
-    for(i = 0; i <= 10; i++)
-    {
-        if(i % 2 == 0)
-        {
-            printf("%d ", i);
-        }
-    }
-
-    return 0;
+int main() {
+  printf("Bonjour le monde !");
+  return 0;
 }
 ```
 
-Lorsque vous exécutez ce code, vous devriez voir la sortie suivante :
+Ce premier exemple est un classique en programmation : le fameux "Hello, World!". Ici, nous utilisons la bibliothèque standard `stdio.h` pour afficher un message à l'écran. Lorsque vous exécutez ce code, vous devriez voir le message "Bonjour le monde !" s'afficher.
 
-```
-0 2 4 6 8 10
-```
+Voici un autre exemple plus avancé :
 
-Félicitations, vous avez écrit votre premier programme en C! N'hésitez pas à expérimenter avec différents codes pour en apprendre davantage sur le langage C.
+```C
+#include <stdio.h>
+
+int main() {
+  int nombre;
+  printf("Entrez un nombre : ");
+  scanf("%d", &nombre);
+  printf("Le carré de %d est %d", nombre, nombre * nombre);
+  return 0;
+}
+```
+Dans ce code, nous demandons à l'utilisateur d'entrer un nombre, puis nous calculons et affichons son carré. L'utilisation de la fonction `scanf` permet de capturer la valeur entrée par l'utilisateur et de la stocker dans la variable `nombre`.
 
 ## Plongée en profondeur
 
-Comme mentionné précédemment, il est important de choisir un IDE et un compilateur appropriés pour votre projet. Cependant, il est également essentiel de comprendre les concepts de base de la programmation en C tels que les types de données, les opérateurs et les pointeurs.
+Maintenant que vous avez une idée de la façon de démarrer un projet en C, voyons quelques conseils pour rendre cette expérience plus productive et moins stressante.
 
-Les types de données déterminent la taille et la valeur qu'un objet peut contenir. Les opérateurs sont utilisés pour effectuer des opérations sur ces données et les pointeurs sont des variables qui contiennent des adresses de mémoire. Ces concepts peuvent sembler complexes au début, mais en les pratiquant, vous serez en mesure de mieux les comprendre et de les utiliser dans vos projets.
+Tout d'abord, commencez par un plan clair de ce que vous voulez réaliser. Cela peut sembler évident, mais souvent, les développeurs se lancent dans un projet sans vraiment savoir où ils veulent aller. Prenez le temps de définir les fonctionnalités de votre programme et de sa structure.
 
-De plus, il est important de bien organiser votre code en utilisant des commentaires et des conventions de codage telles que le style de nommage des variables. Cela rendra votre code plus facile à lire et à maintenir, en particulier lorsqu'il s'agit de projets plus importants.
+Ensuite, n'hésitez pas à utiliser des outils tels que des gestionnaires de versions ou des frameworks pour vous aider à organiser et à gérer votre code. Cela vous fera gagner du temps et vous évitera des erreurs.
+
+Enfin, n'oubliez pas de faire des pauses régulières et de ne pas vous laisser submerger par le code. Prendre du recul et prendre soin de vous est essentiel pour maintenir un bon niveau de productivité.
 
 ## Voir aussi
 
-- [Tutoriel de programmation en C pour débutants](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c)
-- [Guide officiel de référence du langage C](https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html)
-- [Chaîne YouTube "TheNewBoston" pour des tutoriels C complets](https://www.youtube.com/playlist?list=PL2_aWCzGMAwLSqGsERZGXGkA5AfMhcknE)
+Voici quelques ressources utiles pour vous aider à démarrer votre nouveau projet en C :
+
+- [Documentation officielle du langage C](https://en.cppreference.com/w/c)
+- [Apprendre à programmer en C - OpenClassrooms](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c)
+- [GitHub - gestionnaire de versions](https://github.com/)
+
+N'oubliez pas de vous amuser et d'explorer toutes les possibilités offertes par le langage C dans votre nouveau projet !

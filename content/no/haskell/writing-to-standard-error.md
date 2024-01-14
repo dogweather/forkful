@@ -1,39 +1,37 @@
 ---
-title:    "Haskell: Skriver til standardfeil"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/writing-to-standard-error.md"
+title:                "Haskell: Skriving til standardfeil"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor skrive til standardfeil i Haskell
 
-Å skrive til standard error er en enkel måte å rapportere feil og advarsler i Haskell-programmering. Dette gjør det lettere å identifisere og løse problemer under utviklingsprosessen.
+Haskell er et funksjonelt programmeringsspråk som er kjent for å være strengt og typehåndtert. Det betyr at det er viktig å håndtere feil og unntak på en god måte for å sikre en robust og pålitelig kode. En måte å gjøre dette på er å skrive til standardfeil (stderr). Dette kan gi nyttig informasjon om eventuelle feil som oppstår under kjøring av programmet.
 
-## Hvordan
+## Slik gjør du det
 
-For å skrive til standard error i Haskell, må du bruke funksjonene `hPutStr` eller `hPutStrLn` fra `System.IO` biblioteket. Dette vil la deg skrive en streng direkte til standard error.
+For å skrive til standardfeil i Haskell, kan du bruke funksjonen `hPutStrLn` fra modulen `System.IO`. Den tar inn en hånd som representerer standardfeil og en streng med meldingen du ønsker å skrive ut. For eksempel:
 
-```Haskell
+```haskell
 import System.IO
 
 main = do
-  hPutStrLn stderr "Dette er en advarsel!"
+  hPutStrLn stderr "Dette er en feilmelding"
 ```
 
-Output vil vises i terminalen som:
-
-```
-Dette er en advarsel!
-```
+Output vil være `Dette er en feilmelding` på standardfeil.
 
 ## Dykk dypere
 
-Når du skriver til standard error, er det viktig å vite forskjellen mellom standard output og standard error. Standard output brukes vanligvis til å vise resultatene av et program, mens standard error brukes til å rapportere feil og advarsler. Ved å kommunisere på den riktige kanalen, blir det lettere å behandle og fange opp problemer under utviklingsprosessen.
+Å skrive til standardfeil kan være spesielt nyttig når du jobber med feilhåndtering i Haskell. Det er vanlig å bruke `Either` eller `Maybe`-monader for å håndtere feil. Å skrive feilmeldinger til standardfeil kan hjelpe deg med å spore opp slike feil til riktig kontekst og løse dem.
 
-En annen viktig ting å merke seg er at standard error kan omdirigeres til en fil ved hjelp av `2>` kommandoen i terminalen. Dette kan være nyttig når du kjører et program og ønsker å lagre eventuelle feilmeldinger til en fil for senere analyse.
+En annen fordel med å skrive til standardfeil er at meldingen vil vises uavhengig av om den vanlige outputen blir omdirigert. Det gir deg mulighet til å se feilmeldinger selv om du logger eller skriver til en fil.
 
 ## Se også
 
-- [Haskell dokumentasjon for System.IO](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Stack Overflow diskusjon om skriving til standard error i Haskell](https://stackoverflow.com/questions/20723936/writing-to-stderr-in-haskell)
+- [Haskell-dokumentasjon om å skrive til standardfeil](https://hackage.haskell.org/package/base-4.15.2.0/docs/System-IO.html#v:hPutStrLn)
+- [En grundig guide til feilhåndtering i Haskell](https://simonmar.github.io/bibifi-icfp-2012/tutorial/simonmar.pdf)
+- [Offisiell Haskell-dokumentasjon](https://www.haskell.org/documentation/)

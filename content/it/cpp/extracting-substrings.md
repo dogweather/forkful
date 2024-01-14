@@ -1,38 +1,60 @@
 ---
-title:    "C++: Estrarre sottostringhe"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/cpp/extracting-substrings.md"
+title:                "C++: Estrazione di sottostringhe"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-La ricerca e l'estrazione di sottostringhe (o substring) è una delle operazioni comuni nella programmazione. Questo processo è utile quando si desidera ottenere una parte specifica di una stringa più lunga. Ad esempio, si potrebbe voler estrarre il nome di una persona da una stringa che contiene il nome completo e altre informazioni. L'estrazione delle sottostringhe consente di scomporre e manipolare le stringhe in modo semplice ed efficiente.
+Estrarre sottostringhe è una pratica molto comune nella programmazione C++. Spesso, è necessario ottenere una parte specifica di una stringa più grande per elaborarla o manipolarla. In questo post, vedremo come estrarre efficientemente le sottostringhe in C++.
 
-## Come si fa
-Per estrarre una sottostringa in C++, è possibile utilizzare la funzione `substr()` della libreria standard di C++. Questa funzione richiede due parametri: l'indice di inizio e la lunghezza della sottostringa. Ad esempio, supponiamo di avere la stringa "Buongiorno!" e vogliamo estrarre la sottostringa "Giorno". Possiamo fare così:
+## Come fare
+Per estrarre una sottostringa in C++, è possibile utilizzare la funzione `substr()` della libreria `<string>`. Questa funzione richiede due parametri: l'indice di inizio e il numero di caratteri da estrarre. Vediamo un esempio pratico di come utilizzarla:
 
-```
-#include <iostream>
-#include <string>
-using namespace std;
+```C++
+#include<iostream>
+#include<string>
 
 int main() {
-    string saluto = "Buongiorno!";
-    string sottostringa = saluto.substr(4,5); // 4 è l'indice di inizio, 5 è la lunghezza della sottostringa
-    cout << sottostringa; // output: "Giorno"
-    return 0;
+  std::string s = "Ciao a tutti";
+
+  // Estrarre la sottostringa "Ciao"
+  std::string sub = s.substr(0, 4);
+
+  // Stampa la sottostringa
+  std::cout << sub; // Output: Ciao
+
+  return 0;
 }
 ```
 
-In questo esempio, abbiamo usato la funzione `substr()` per estrarre la sottostringa "Giorno" dalla stringa "Buongiorno!" a partire dall'indice 4 (lettera "g") per una lunghezza di 5 caratteri.
+La funzione `substr()` è molto versatile e può essere utilizzata per estrarre sottostringhe in diversi modi. Ad esempio, è possibile specificare un solo parametro per estrarre una parte della stringa a partire dall'indice specificato fino alla fine della stringa.
+
+```C++
+// Estrarre la sottostringa "a tutti"
+std::string sub = s.substr(5); // Il numero di caratteri da estrarre viene automaticamente calcolato
+
+// Stampa la sottostringa
+std::cout << sub; // Output: a tutti
+```
+
+Inoltre, è possibile utilizzare un valore negativo per l'indice di inizio per contare all'indietro a partire dalla fine della stringa.
+
+```C++
+// Estrarre la sottostringa "tutti"
+std::string sub = s.substr(-5); // Inizia a contare dalla fine della stringa
+
+// Stampa la sottostringa
+std::cout << sub; // Output: tutti
+```
 
 ## Approfondimento
-In C++, gli indici delle stringhe partono da 0. Questo significa che la prima lettera della stringa ha l'indice 0, la seconda ha l'indice 1 e così via. Inoltre, la funzione `substr()` includerà il carattere di inizio dell'indice ma escluderà il carattere finale. Ad esempio, nell'esempio precedente, l'indice di inizio è 4 ma la sottostinga include la lettera "g" (che ha l'indice 4) e finisce alla lettera "o" (che ha l'indice 8, ma escluso dalla sottostringa).
+Oltre alla funzione `substr()`, ci sono altre opzioni per estrarre sottostringhe in C++. Per esempio, si può utilizzare il puntatore alla stringa per accedere direttamente ai singoli caratteri e creare una nuova stringa con i caratteri desiderati. Tuttavia, questa è una soluzione più complicata e richiede una buona conoscenza dei puntatori.
 
-È possibile utilizzare questa funzionalità per estrarre sottostringhe di lunghezza variabile a partire da un indice arbitrario. Inoltre, è possibile utilizzare variabili o espressioni al posto dei parametri fissi per rendere dinamica l'estrazione delle sottostringhe.
+Inoltre, è importante prestare attenzione alla gestione della memoria quando si lavora con sottostringhe. La funzione `substr()` crea una nuova stringa, quindi è necessario assicurarsi di dealloccare la memoria dopo l'utilizzo.
 
 ## Vedi anche
-- [Documentazione di C++ su `substr()`](https://www.cplusplus.com/reference/string/string/substr/)
-- [Tutorial su come utilizzare le stringhe in C++](https://www.programiz.com/cpp-programming/strings)
-- [Esempi avanzati di estrazione delle sottostringhe in C++](https://www.geeksforgeeks.org/substring-substr-in-cpp/)
+- Tutorial su come utilizzare la funzione `substr()` in C++: https://www.programiz.com/cpp-programming/library-function/string/substr
+- Tutorial su come utilizzare i puntatori per estrarre sottostringhe in C++: https://www.tutorialspoint.com/cplusplus/cpp_strings.htm

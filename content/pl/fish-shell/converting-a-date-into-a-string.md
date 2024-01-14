@@ -1,39 +1,45 @@
 ---
-title:    "Fish Shell: Konwersja daty na ciąg znaków"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/converting-a-date-into-a-string.md"
+title:                "Fish Shell: Konwertowanie daty na łańcuch znaków."
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jeśli jesteś programistą pracującym z językiem Fish Shell, prawdopodobnie musiałeś już zmienić format daty w postaci łańcucha znaków. Konwersja daty jest częstą czynnością w programowaniu i może być wyzwaniem dla początkujących lub nawet doświadczonych programistów. W tym wpisie przeczytasz jak w prosty sposób można wykonać konwersję daty na łańcuch znaków w języku Fish Shell.
+Każdy programista wie, że praca z danymi czasowymi jest nieodłącznym elementem wielu projektów. Często konieczne jest konwertowanie daty na ciąg znaków, aby móc wyświetlić ją czy zapisać w odpowiednim formacie. W tym artykule opiszemy jak przekonwertować datę w języku Fish Shell oraz podzielimy się cennymi wskazówkami, które ułatwią Ci pracę z tym zadaniem.
 
 ## Jak to zrobić
 
-Aby przekonwertować datę na łańcuch znaków w języku Fish Shell, możesz użyć funkcji `date` wraz z flagą `+%Y-%m-%d` aby określić format łańcucha wyjściowego. Spójrzmy na przykładowy kod:
+Do przekonwertowania daty na ciąg znaków w języku Fish Shell możemy wykorzystać funkcję `date` oraz operator `strftime`. Przykładowy kod wyglądałby następująco:
 
-```
-Fish Shell - Konwersja daty na łańcuch znaków
-
-#!/usr/bin/fish
-set currentDate (date +%Y-%m-%d)
-echo "Dzisiejsza data to: $currentDate"
+```Fish Shell
+set my_date (date)
+set my_string $my_date.strftime("%d/%m/%Y")
+echo $my_string
 ```
 
-W powyższym przykładzie, używamy funkcji `date` wraz z flagą `+%Y-%m-%d`, co oznacza, że chcemy uzyskać datę w formacie roku-miesiąc-dzień. Następnie używamy funkcji `echo`, aby wydrukować naszą datę wraz z tekstem "Dzisiejsza data to: ". Gdy uruchomimy ten skrypt, zobaczymy na ekranie naszą datę w formacie łańcucha znaków.
+W powyższym przykładzie używamy funkcji `date`, aby pobrać aktualną datę i zapisujemy ją w zmiennej `my_date`. Następnie korzystając z operatora `strftime` przekonwertowujemy tę datę na ciąg znaków w wybranym przez nas formacie. W ostatnim kroku wyświetlamy ten ciąg za pomocą funkcji `echo`.
+
+Poniżej znajduje się lista kilku przydatnych formatów, które możemy wykorzystać przy konwersji daty na ciąg znaków:
+
+- `%d` - dzień miesiąca w formacie dziesiętnym (np. 01, 02, 03)
+- `%m` - miesiąc w formacie dziesiętnym (np. 01, 02, 03)
+- `%Y` - rok w formacie czterocyfrowym (np. 2021)
+- `%H` - godzina w formacie 24-godzinnym (np. 13, 14, 15)
+- `%M` - minuta w formacie dziesiętnym (np. 01, 02, 03)
+- `%S` - sekunda w formacie dziesiętnym (np. 01, 02, 03)
 
 ## Deep Dive
 
-Istnieje wiele różnych opcji i flag, które możesz użyć w funkcji `date` w celu dostosowania formatu łańcucha wyjściowego do swoich potrzeb. Na przykład, flaga `+%A` zwróci nazwę dnia tygodnia, a flaga `+%H:%M:%S` zwróci godzinę, minutę i sekundę. Możesz także użyć znaków specjalnych, takich jak `\n` aby wstawiać nowe linie lub `\t` aby wstawić tabulację. Przykład ten pokazuje tylko podstawy konwersji daty na łańcuch znaków w języku Fish Shell, ale możliwości są znacznie większe.
+Funkcja `date` w języku Fish Shell może przyjąć również inne parametry, które pozwolą nam dostosować sposób wyświetlania daty. Dokładną dokumentację tych parametrów można znaleźć w oficjalnej dokumentacji Fish Shell.
 
-## Zobacz także
+Warto również zwrócić uwagę, że operator `strftime` jest dostępny nie tylko przy konwertowaniu daty, ale również przy konwertowaniu innych wartości, takich jak np. czas ostatniej modyfikacji pliku. Możliwości wykorzystania tego operatora są więc bardzo szerokie.
 
-Jeśli chcesz dowiedzieć się więcej o konwersji daty w języku Fish Shell, polecam przeczytać następujące artykuły:
+## Zobacz również
 
-- [Fish Shell - dokumentacja](https://fishshell.com/docs/current/index.html)
-- [Jak konwertować daty w bashu](https://www.baeldung.com/linux/convert-date-to-string-bash)
-- [Konwersja daty w języku Python](https://www.w3schools.com/python/python_datetime.asp)
-
-Dziękujemy za przeczytanie naszego wpisu, mam nadzieję, że to pomoże wam w waszych przyszłych projektach!
+- Dokumentacja devdocs.io
+- Oficjalna dokumentacja Fish Shell
+- Artykuł na blogu Fish Shell o funkcji `date` i operatorze `strftime` (w języku angielskim)

@@ -1,43 +1,51 @@
 ---
-title:    "Bash: Obteniendo la fecha actual"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/getting-the-current-date.md"
+title:                "Bash: Obteniendo la fecha actual"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué obtener la fecha actual en programación Bash
+## ¿Por qué deberías obtener la fecha actual?
 
-Si estás aprendiendo a programar en Bash, es importante que sepas cómo obtener la fecha actual en tus scripts. Esta información puede ser útil para varias tareas, como la organización de archivos por fecha, la creación de logs o simplemente para fines de registro en tus programas.
+Obtener la fecha actual puede ser útil por varias razones, ya sea para mostrar la fecha en un programa, para realizar cálculos de tiempo, o simplemente para tener una referencia de cuándo se realizó una acción. En este artículo, aprenderás cómo obtener la fecha actual en Bash.
 
 ## Cómo hacerlo
 
-Para obtener la fecha actual en Bash, puedes usar el comando `date` seguido de una formato específico para la fecha que desees. Por ejemplo, si quieres obtener una salida con el formato "día-mes-año", puedes escribir lo siguiente en tu script:
+Para obtener la fecha actual en Bash, puedes utilizar el comando `date`. Este comando te mostrará la fecha y hora actuales en tu sistema.
 
 ```Bash
-fecha_actual=$(date +"%d-%m-%Y")
-echo "La fecha de hoy es $fecha_actual"
+date
 ```
 
-La variable `fecha_actual` almacenará el resultado del comando `date` y luego se mostrará en la consola el mensaje "La fecha de hoy es XX-XX-XXXX", donde XX son los números correspondientes al día, mes y año actual.
+La salida puede variar de acuerdo a tu zona horaria, pero el formato por defecto es `día semana mes día año hora:minuto:segundo zona horaria`.
 
-Otra opción es utilizar el comando `date` sin ningún formato específico, lo cual mostrará la fecha en un formato predeterminado, generalmente mes-día-año, pero esto puede variar dependiendo de la configuración de tu sistema.
+Si deseas cambiar el formato de salida, puedes utilizar opciones con el comando `date`. Por ejemplo, si solo deseas mostrar la fecha en formato año-mes-día, puedes utilizar la opción `-I`.
 
 ```Bash
-fecha_actual=$(date)
-echo "La fecha de hoy es $fecha_actual"
+date -I
 ```
 
-## Profundizando
+Esto mostrará la fecha en el formato requerido sin la hora o la zona horaria.
 
-Si quieres aprender más sobre cómo obtener la fecha actual en Bash, puedes explorar las opciones disponibles en el comando `date`. Por ejemplo, puedes incluir la hora o la zona horaria en la salida, así como especificar un formato personalizado utilizando caracteres especiales.
+Otra opción útil es la opción `-d`, que te permite obtener la fecha y hora de una fecha específica. Puedes utilizar esta opción para obtener la fecha dentro de una semana o dentro de un mes a partir de la fecha actual.
 
-Además, también puedes utilizar el comando `cal` para mostrar un calendario en la consola, lo cual puede ser útil si necesitas trabajar con fechas específicas.
+```Bash
+date -d "1 week"
+```
 
-En resumen, obtener la fecha actual en Bash es una tarea sencilla pero útil en tus scripts. Continúa explorando las opciones disponibles para personalizar la salida y aprovecha esta herramienta en tus proyectos.
+Esto mostrará la fecha dentro de una semana a partir de hoy.
 
-## Ver también
+## Profundizando en el comando `date`
 
-- Tutorial sobre los comandos `date` y `cal` en Bash: [https://likegeeks.com/es/tipos-de-formato-de-fecha-en-bash/](https://likegeeks.com/es/tipos-de-formato-de-fecha-en-bash/)
-- Documentación oficial de Bash sobre el comando `date`: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- Artículo sobre cómo utilizar el comando `cal` en Linux: [https://www.muylinux.com/2019/10/05/el-comando-cal-de-linux-y-sus-opciones/](https://www.muylinux.com/2019/10/05/el-comando-cal-de-linux-y-sus-opciones/)
+El comando `date` ofrece muchas más opciones que las mencionadas anteriormente. Puedes usar la opción `--help` para ver una lista completa de opciones disponibles o consultar la página de manual (`man date`).
+
+Una opción importante a tener en cuenta es la opción `-u`, que mostrará la fecha y hora en formato UTC (Coordinated Universal Time). Esto es útil si necesitas realizar cálculos de tiempo sin tener en cuenta la zona horaria.
+
+Además, también puedes cambiar el formato de salida utilizando la opción `+`. Por ejemplo, `+%A` te mostrará el día de la semana completo (Monday, Tuesday, etc.), mientras que `+%Y` te mostrará solo el año.
+
+## Ver También
+- [5 comandos Bash básicos que debes conocer](https://ejemplos.awebdeveloper.com/5-comandos-bash-basicos-que-debes-conocer/)
+- [Documentación de GNU `date` command](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Guía de referencia rápida para comandos Bash](https://www.linuxtrainingacademy.com/beginners-guide-bash-commands/)

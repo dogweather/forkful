@@ -1,60 +1,50 @@
 ---
-title:    "Clojure recipe: Generating random numbers"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/clojure/generating-random-numbers.md"
+title:                "Clojure recipe: Generating random numbers"
+programming_language: "Clojure"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# Why Generating Random Numbers in Clojure is Important
 
-Generating random numbers is a common task in programming. It allows developers to create unpredictable scenarios, simulate real-world randomness, and test code for robustness and edge cases.
+If you are a programmer, you may have heard or used the term "random numbers" before. Random numbers are essential for a variety of tasks, such as building games, simulations, and statistical analysis. In Clojure, generating random numbers is a crucial part of creating dynamic and unpredictable programs.
 
-## How To
+# How To Generate Random Numbers in Clojure
 
-To generate random numbers in Clojure, we can use the `rand` and `rand-int` functions. The `rand` function returns a floating-point number between 0 and 1, while the `rand-int` function returns an integer between 0 (inclusive) and the specified maximum value (exclusive).
-
-```Clojure
-(rand)        ; Outputs a random floating-point number 
-              ; between 0 and 1, e.g. 0.4687318356
-(rand 10)     ; Outputs a random integer between 0 and 9, e.g. 7
-(rand-int 50) ; Outputs a random integer between 0 and 49, e.g. 23
-```
-
-We can also use `rand-nth` to select a random item from a sequence.
+To generate a random number in Clojure, you can use the ```rand``` function. This function takes in a single argument, which represents the upper bound of the random number range. For example, to generate a random number between 1 and 10, you would use the following code:
 
 ```Clojure
-(def fruits ["apple" "orange" "banana" "grapes"])
-(rand-nth fruits) ; Outputs a random fruit from the list, e.g. "banana"
+(rand 10)
 ```
 
-To generate a sequence of multiple random numbers, we can use `repeatedly` and `take`.
+The output of this code might be something like 4.72882 or 9.00689. If you need to generate an integer instead of a decimal, you can wrap the ```rand``` function inside the ```int``` function, like this:
 
 ```Clojure
-(take 5 (repeatedly rand)) ; Outputs a sequence of 5 random floating-point numbers
-                           ; between 0 and 1, e.g. (0.1245323 0.9426413 0.636262 0.390202 0.822322)
+(int (rand 10))
 ```
 
-## Deep Dive
+This will return a whole number between 1 and 10, such as 3 or 8.
 
-The `rand` and `rand-int` functions use the Java `java.lang.Math/random` method to generate random numbers. This method uses the current time in milliseconds as a seed, meaning that running the function multiple times without any changes in the program may result in the same values being generated. This can be avoided by using the `set!` function to set a specific seed before calling `rand` or `rand-int`.
+You can also use the ```rand-int``` function to generate random integers within a specified range. This function takes in two arguments, the lower and upper bound of the range. For example, to generate a random number between 50 and 100, you would use the following code:
 
 ```Clojure
-; Sets the seed to 12345
-(set! java.util.Random/seed 12345)
-(rand) ; Outputs the same floating-point number every time, e.g. 0.6976311577
+(rand-int 50 100)
 ```
 
-In addition, we can also use the `Random` class from the `java.util` package to generate random numbers with a specific seed or range.
+The output of this code could be 72 or 94. You can also use the ```rand-nth``` function to generate a random element from a given collection, such as a list or vector.
 
-```Clojure
-(import java.util.Random) ; Import the Random class
-(def random (Random.))     ; Create an instance of the Random class
-(.nextInt random 10)      ; Outputs a random integer between 0 (inclusive) and 10 (exclusive), e.g. 7
-```
+# Deep Dive into Generating Random Numbers in Clojure
 
-## See Also
+Under the hood, the ```rand``` function uses Java's ```java.lang.Math.random()``` method to generate random numbers. This method uses a pseudorandom algorithm and depends on the current system time to generate its values.
 
-- [ClojureDocs: rand](https://clojuredocs.org/clojure.core/rand)
-- [ClojureDocs: rand-int](https://clojuredocs.org/clojure.core/rand-int)
-- [Oracle Java Documentation: java.util.Random](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html)
+Clojure also provides the ```random``` function, which allows you to specify the seed for your random number generator. This can be useful if you need to generate the same set of random numbers multiple times, or if you want to control the randomness in your program.
+
+Additionally, Clojure provides several other functions for generating random numbers, such as ```rand-long```, ```rand-float```, and ```rand-double``` for generating different types of numbers. You can also use these functions to create sequences of random numbers using the ```repeatedly``` function.
+
+# See Also
+
+- Official Clojure Documentation: https://clojure.org/reference/data_structures#_random_numbers
+- Clojure API Reference: https://clojuredocs.org/clojure.core/rand
+- Tutorialspoint article on Generating Random Numbers in Clojure: https://www.tutorialspoint.com/clojure/clojure_random_numbers.htm

@@ -1,64 +1,52 @@
 ---
-title:    "Python: Lesen von Befehlszeilenargumenten"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/reading-command-line-arguments.md"
+title:                "Python: : Lesen der Befehlszeilenargumente"
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Lesen von Befehlszeilenargumenten ist eine wichtige Fähigkeit für jeden Python-Programmierer. Es ermöglicht die Interaktion mit dem Benutzer und gibt die Möglichkeit, dynamische Parameter in das Programm einzubinden.
+Das Lesen von Befehlszeilenargumenten ist eine nützliche Fähigkeit in der Python-Programmierung. Es ermöglicht es uns, Benutzerinteraktion zu ermöglichen und unsere Programme an bestimmte Situationen anzupassen.
 
-## Wie man es macht
+# Wie geht das?
 
-Um Befehlszeilenargumente in Python zu lesen, müssen wir das `sys`-Modul importieren. Dann können wir die Argumente über die Liste `argv` abrufen.
+Wir können Befehlszeilenargumente in Python mithilfe der `sys` Bibliothek auslesen. Hier ist ein Beispielcode, der die Argumente ausgibt:
 
-```Python
+```python
 import sys
 
-# Lesen der Argumente
-arguments = sys.argv
-
-# Ausgabe des ersten Arguments (index 0 ist der Dateiname)
-print("Das erste Argument ist: " + arguments[1])
+argumente = sys.argv
+print(argumente)
 ```
 
-Die Ausgabe sieht dann folgendermaßen aus:
+Wenn wir nun dieses Skript mit dem Befehl `python script.py argument1 argument2` ausführen, wird unser Output `['script.py', 'argument1', 'argument2']` sein. Wie wir sehen können, werden die Argumente als Liste gespeichert und der Name des Skripts ist immer das erste Element in der Liste.
 
-```
-> python program.py hallo
-Das erste Argument ist: hallo
-```
+# Tiefer Einblick
 
-## Tiefergehende Analyse
+Wir können auch bestimmte Argumente gezielt auslesen, indem wir auf ihre Indexposition in der Argumentenliste zugreifen. Zum Beispiel, wenn wir nur den ersten Argumentwert ausgeben wollen, können wir `argumente[1]` verwenden. Wir können auch überprüfen, ob ein bestimmtes Argument vorhanden ist, indem wir es mit dem in Python üblichen `in` Operator überprüfen.
 
-Es gibt einige mögliche Optionen, wie wir die Argumente weiterverarbeiten können. Zum Beispiel können wir die `len()`-Funktion verwenden, um die Anzahl der Argumente zu bestimmen. Oder wir können die Methode `argv.pop(0)` verwenden, um das erste Argument (also den Dateinamen) auszuschließen.
+Ein weiterer wichtiger Aspekt ist die Verwendung von Argumentoptionen. Diese ermöglichen es uns, bestimmte Funktionen oder Einstellungen für unser Programm anzugeben. In Python können wir Argumentoptionen mithilfe der `argparse` Bibliothek auslesen. Hier ist ein Beispielcode:
 
-```Python
-import sys
+```python
+import argparse
 
-# Ausschließen des Dateinamens
-sys.argv.pop(0)
+parser = argparse.ArgumentParser()
+parser.add_argument("-n", "--name", help="Gibt den Namen des Benutzers aus.", type=str)
+parser.add_argument("-a", "--alter", help="Gibt das Alter des Benutzers aus.", type=int)
 
-# Ausgabe aller Argumente
-print("Alle Argumente: " + str(sys.argv))
+args = parser.parse_args()
 
-# Ausgabe der Anzahl der Argumente
-print("Anzahl der Argumente: " + str(len(sys.argv)))
-
+print("Name:", args.name)
+print("Alter:", args.alter)
 ```
 
-Die Ausgabe sieht dann beispielsweise so aus:
+Wenn wir nun `python script.py -n Max -a 24` ausführen, wird unser Output `Name: Max Alter: 24` sein. Wir können auch eine Hilfeseite für unsere Argumentoptionen erstellen, indem wir `parser.print_help()` verwenden.
 
-```
-> python program.py hello world
-Alle Argumente: ['hello', 'world']
-Anzahl der Argumente: 2
-```
+# Siehe auch
 
-## Siehe auch
-
-- [Python-Dokumentation zu `sys.argv`](https://docs.python.org/3/library/sys.html#sys.argv)
-- [Tutorial zu Befehlszeilenargumenten in Python](https://www.geeksforgeeks.org/command-line-arguments-in-python/)
-- [Beispiele für die Verwendung von `argv` in Python](https://www.tutorialspoint.com/python/python_command_line_arguments.htm)
+- [Python-Dokumentation: sys](https://docs.python.org/3/library/sys.html)
+- [Python-Dokumentation: argparse](https://docs.python.org/3/library/argparse.html)
+- [Ein Tutorial für das Lesen von Befehlszeilenargumenten in Python](https://realpython.com/command-line-interfaces-python-argparse/)

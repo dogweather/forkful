@@ -1,44 +1,49 @@
 ---
-title:    "Clojure: Sökning och ersättning av text"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/searching-and-replacing-text.md"
+title:                "Clojure: Söka och ersätta text"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att söka och ersätta text är en vanlig uppgift inom programmering, oavsett språk. Det kan hjälpa till att automatisera processer och effektivisera arbetsflöden. Med hjälp av Clojure kan man enkelt söka och ersätta text med hjälp av inbyggda funktioner och regex-uttryck. Det är användbart för att manipulera data, göra stora ändringar i en fil eller för att göra batch-uppdateringar.
+I dagens digitala värld är det ofta nödvändigt att kunna söka och byta ut text i stora mängder av data. Det kan handla om att korrigera stavfel i en text, ändra formatet på ett dokument eller helt enkelt ersätta ett ord med ett annat. I denna bloggpost kommer vi gå igenom hur du kan lösa detta i Clojure, ett funktionellt programmeringsspråk som blivit alltmer populärt i de senaste åren.
 
 ## Hur man gör
 
-För att söka och ersätta text i Clojure kan man använda sig av `replace`-funktionen tillsammans med ett regex-uttryck. Detta gör att man kan söka efter ett mönster i en sträng och ersätta det med en annan sträng.
-
-Här är ett exempel på hur man kan använda `replace` för att byta ut alla förekomster av ordet "hej" till "tjena" i en sträng:
+För att söka och byta ut text i Clojure kan du använda funktionen "replace" som tar emot tre argument: en sträng som du vill söka igenom, en söksträng och en ersättningssträng. Här är ett enkelt exempel:
 
 ```Clojure
-(replace #"hej" "tjena" "Hej, hur mår du?") ; => "Tjena, hur mår du?"
+(def str "Hej, jag heter Alice")
+(replace str "Alice" "Bob")
 ```
 
-Om man behöver söka efter ett mer komplext mönster kan man använda sig av `re-find`-funktionen tillsammans med ett regex-uttryck för att hitta den första matchningen och sedan använda `replace` på den.
+Outputen från detta kommer vara "Hej, jag heter Bob" då vi ersätter söksträngen "Alice" med "Bob". Det är även möjligt att söka och ersätta mer avancerade mönster med hjälp av reguljära uttryck. Till exempel, om vi vill byta ut alla siffror i en sträng med bokstäver, kan vi använda följande kod:
 
 ```Clojure
-(replace #"hel|god" "bra" (re-find #"h[eu]l|god" "Hej alla!" )) ; => "Bra alla!"
+(def str "123 abc 456")
+(replace str #"\d" "X")
 ```
 
-Man kan även använda sig av `replace` för att ersätta flera förekomster av ett mönster med en annan sträng. Detta kan man göra genom att använda sig av en `hash-map` där nycklarna representerar de sökta mönstren och värdena är de ersättande strängarna.
-
-```Clojure
-(replace {"hej" "tjena" "hallå" "tja"} "Hej, hallå!") ; => "Tjena, tja!"
-```
+Outputen blir då "XXX abc XXX" där alla siffror har ersatts med "X".
 
 ## Djupdykning
 
-I Clojure används regex-uttryck genom att placera dem mellan `#"` och `"` vilket gör att de tolkas som `java.util.regex`-objekt. Det finns många olika metakaraktärer och syntax som kan användas i regex-uttryck för att skapa mer avancerade mönster. En bra resurs för att lära sig mer om regex är [Regular-Expressions.info](https://www.regular-expressions.info/clojure.html).
+För att förstå mer om hur sökning och ersättning fungerar i Clojure kan vi titta på implementeringen av "replace" funktionen. Det finns flera olika sätt att göra det på, men en enkel lösning skulle kunna se ut så här:
 
-När man använder `replace` i Clojure är det också viktigt att komma ihåg att den returnerar en kopia av strängen och inte manipulerar den ursprungliga. Om man vill ersätta förekomster i en specifik del av en sträng kan man använda sig av den inbyggda `replace-first`-funktionen.
+```Clojure
+(defn replace [str search replace]
+  (->> (seq str) ; konverterar strängen till en sekvens av tecken
+    (map #(if (= % search) replace %)) ; byter ut tecknen som matchar söksträngen med ersättningstecknet
+    (apply str))) ; konverterar sekvensen tillbaka till en sträng
+```
+
+I denna kod används funktionerna "seq" för att konvertera strängen till en sekvens av tecken, "map" för att byta ut tecknen och "apply" för att återgå till en sträng igen. Dessa funktioner är grundläggande inom funktionell programmering och finns tillgängliga i Clojure.
 
 ## Se även
 
-- [Clojure regex-kodreferens](https://clojure.org/reference/regular_expressions)
-- [Learning Clojure: Part 4 - Regex](https://pretzl
+- Officiell Clojure hemsida: https://clojure.org/
+- Reguljära uttryck i Clojure: https://www.braveclojure.com/regular-expressions/
+- Bygg- och utvecklingsverktyg för Clojure: https://leiningen.org/

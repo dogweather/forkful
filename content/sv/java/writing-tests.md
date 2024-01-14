@@ -1,47 +1,57 @@
 ---
-title:    "Java: Skriva tester"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/writing-tests.md"
+title:                "Java: Att skriva tester"
+programming_language: "Java"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-Hej svenska läsare! Idag ska vi prata om varför det är viktigt att skriva tester i Java-programmering och hur man kan göra det på rätt sätt. För att följa med behöver du ha en grundläggande förståelse för Java och programmering i allmänhet.
+# Varför Skriva Tester Och Hur
+
+Det är ingen hemlighet att skriva tester är en viktig del av programmering. Men varför är det så viktigt och hur bör man gå till väga för att implementera tester i sin kod? I denna bloggpost kommer jag att förklara varför tester är nödvändiga och ge konkreta exempel på hur man kan skriva dem i Java.
 
 ## Varför
 
-Så, varför bör man bry sig om att skriva tester för sin kod? Det finns flera anledningar till det. Till att börja med bidrar tester till en bättre kvalitet på koden. Genom att skriva tester kan du hitta och åtgärda buggar och felaktigheter tidigt i utvecklingsprocessen, vilket sparar tid och undviker potentiella problem längre fram. Tester fungerar också som en slags dokumentation för din kod, vilket gör det lättare för andra utvecklare att förstå och använda den.
+Att skriva tester ger en trygghet och säkerhet till koden man utvecklar. Genom att testa koden regelbundet kan man hitta och rätta till buggar och felaktigheter innan de blir ett stort problem. Det sparar inte bara tid och pengar, utan ger också en mer robust och pålitlig kodbas. Dessutom är det ett viktigt verktyg för att säkerställa att koden fungerar som den ska och att den inte påverkar andra delar av programmet.
 
-## Hur man skriver tester i Java
+## Hur
 
-Nu när vi har pratat om varför tester är viktiga, låt oss titta på hur man faktiskt skriver dem i Java. Ett av de vanligaste ramverken för testning i Java är JUnit. Med JUnit kan du skriva tester för att kontrollera att din kod fungerar som den ska. Först måste du importera JUnit-biblioteket i ditt projekt. Sedan kan du skriva dina tester genom att skapa en ny klass och märka den med "@Test". Inuti den här klassen kan du skapa tester för olika aspekter av din kod, till exempel funktioner eller klasser. Låt oss titta på ett enkelt exempel:
+För att skriva tester i Java används ofta ett testramverk som JUnit. Det är en öppen källkodsbibliotek för enhetstester som är enkelt att använda och integrera med din kod. Här är ett enkelt exempel på hur man skriver ett test i Java:
 
-```Java
-import static org.junit.Assert.assertEquals;
+```java
+// Importera JUnit ramverk
+import org.junit.Test;
 
-public class CalculatorTest {
-
-  @Test
-  public void testAdd() {
-    Calculator cal = new Calculator();
-    int result = cal.add(2, 3);
-    assertEquals(5, result);
-  }
+// En enkel testklass
+public class MittProgramTest {
+	
+	// Testmetod som kör en assert som jämför två strängar
+	@Test
+	public void testMittProgram() {
+		String str1 = "Hej";
+		String str2 = "Hej";
+		Assert.assertEquals(str1, str2);
+	}
 }
 ```
 
-I detta exempel skapar vi en ny klass "CalculatorTest" och använder "@Test"-märkningen för att indikera att detta är en testklass. Inuti testklassen skapar vi en ny instans av vår "Calculator" klass och kör vår "add"-funktion med två tal som argument. Sedan använder vi "assertEquals"-funktionen för att kontrollera att resultatet är det förväntade. Om alla våra tester passerar utan problem är vår kod felfri.
+I detta exempel skapas en ny testklass som innehåller en testmetod. Metoden använder sig av Assert-klassen i JUnit för att jämföra två strängar och se om de är lika. Om de är det, går testet igenom, annars blir det ett felmeddelande.
 
-## Djupdykning
+Det här är bara ett enkelt exempel och det finns många olika sätt att skriva tester på beroende på vad man vill testa. Men grundprincipen är densamma - man skapar testfall som kontrollerar att koden fungerar som den ska.
 
-För att skriva effektiva tester finns det några viktiga principer att följa. För det första bör dina tester vara självständiga och inte påverkas av andra tester. Det betyder att om ett test misslyckas, så ska det inte påverka resultatet av andra tester. Du bör också testa alla möjliga gränsvärden och fall för att säkerställa att din kod är robust och kan hantera olika scenarier. Slutligen, se till att dina tester är lätta att förstå och underhålla, så att de kan användas som en dokumentation för din kod.
+## Deep Dive
+
+För att skriva bra tester är det viktigt att tänka på några saker. För det första bör testerna vara självständiga och inte haberoende av andra tester. Det är också viktigt att testa alla olika fall av en kod. Det kan vara frestande att bara testa det man tror ska fungera, men det är lika viktigt att testa det som man tror inte ska fungera.
+
+Det finns också andra testramverk som är värda att titta på, som Mockito för att skapa mock-objekt och PowerMockito för att testa statiska och privata metoder.
 
 ## Se även
 
-Här är några användbara länkar för att lära dig mer om testning i Java:
+Här är några användbara länkar för att lära dig mer om enhetstestning i Java:
 
-- [JUnit-dokumentationen](https://junit.org/junit5/docs/current/user-guide/)
-- [Tutorial om enhetstestning i Java med JUnit](https://www.tutorialspoint.com/junit/junit_environment_setup.htm)
-- [10 best practices för testning i Java](https://blog.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.html)
+- [JUnit](https://junit.org/junit5/)
+- [Mockito](https://site.mockito.org/)
+- [PowerMockito](https://github.com/powermock/powermock)
 
-Det var allt för idag, hoppas du har lärt dig något nytt om testning i Java. Kom ihåg, skriv tester tidigt och ofta för en bättre kod! Hej då!
+Genom att använda tester i din kod kan du förbättra kvaliteten och tillförlitligheten och på sikt spara både tid och pengar. Så var inte rädd för att börja skriva tester och utforska olika verktyg som kan hjälpa dig på vägen. Lycka till!

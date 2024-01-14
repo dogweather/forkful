@@ -1,36 +1,50 @@
 ---
-title:    "Clojure: בדיקת קיום תיקייה במחשב"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/clojure/checking-if-a-directory-exists.md"
+title:                "Clojure: לבדוק האם קובץ מאותחל קיים"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 # למה
 
-בכדי לבנות תוכניות יותר יעילות ומדויקות, חשוב לברר האם תיקייה קיימת לפני שמתחילים לכתוב קוד. בדיקה זו יכולה להציג שגיאות מוקדמות כדי שנוכל להתמודד איתן בזמן הוגן.
+בדיקת קיום תיקייה יכולה להיות תהליך בסיסי בתכנות בשפת Clojure. דרך זו תכולת חיונית בכדי לוודא שהתיקייה שהתוכנית שלנו מנסה לגשת אליה קיימת וזמינה.
 
-# איך לבדוק אם תיקייה קיימת
+## איך לבדוק אם תיקייה קיימת
+
+הבדיקה נעשית באמצעות הפונקציה `exists?` בתוך המארחון של `clojure.java.io`. המארחון הזה מכיל ספריות לטיפול בקבצים ותיקיות.
 
 ```Clojure
-;;להגדיר פונקציה שבודקת האם התיקייה קיימת
-(defn check-dir-exists [dir-path]
-  (.isDirectory (java.io.File. dir-path)))
+(ns my-namespace
+  (:require [clojure.java.io :as io]))
 
-;;זה יחזיר true אם התיקייה קיימת ושגיאה אחרת
-(check-dir-exists "/Users/username/Documents")
-
-;;העלתי תיקייה שלא קיימת כדי להראות את הפלט השגוי
-(check-dir-exists "/Users/username/FakeDocuments")
-;;שגיאה: FileNotFoundException לא נמצא קובץ או תיקייה בדרך
+(defn check-directory [directory]
+  (io/exists? directory))
 ```
 
-# לעבוד בעומק יותר
+אנו משתמשים בפונקציה `exists?` כדי לבדוק אם תיקייה קיימת או לא, והפונקציה מחזירה ערך בוליאני (true או false) בהתאם.
 
-אם אנחנו רוצים לעבוד עם תיקייה ספציפית ולא רק לבדוק האם היא קיימת, אפשר להשתמש בפונקציות נוספות כמו `.listFiles` כדי לקבל את רשימת הקבצים בתיקייה או `.mkdirs` כדי ליצור תיקייה חדשה.
+```Clojure
+(check-directory "path/to/directory") ;; => true
+(check-directory "non-existent/directory") ;; => false
+```
 
-# ראו גם
+## הערות נסתרות
 
-- למדו עוד על פונקציות של תיקיות בקלוג'ור: https://www.clojure.org/reference/java_interop#_java_io_file
-- בידור משתמשים בתיקיות בקלוג'ור: http://blogger.ziesemer.com/2010/07/clojure-file-directory-processing.html
-- דוגמאות למימוש של בדיקה אם תיקייה קיימת: https://boopathi.in/blog/clojure/2010/10/14/is-directory-exists-in-clojure/
+כדי להמשיך לבדוק את תיקיית הפקטורי, נוכל להשתמש בפונקציה `list-files` לבדיקת קבצים בתוך התיקייה. פונקציה זו מקבלת כפרמטר את התיקייה ומחזירה רשימת קבצים בפנים תיקייה.
+
+הנה דוגמה לאיך נוכל לבדוק את התיקייה תוך שימוש בפונקציה `list-files`:
+
+```Clojure
+(defn check-directory [directory]
+  (and (io/exists? directory) (seq (io/list-files directory))))
+```
+
+בהרחבה, אם אנו מעונים לבדוק גם אם התיקייה היא טכנית, אפשר להשתמש בפונקציה `file?` כדי לבדוק אם התוכנית מנסה לגשת לתיקייה או לקובץ.
+
+## חפירה עמוקה
+
+אחת הדרכים הנפוצות לבחור באיזו תיקייה תגש תוכנית היא להשתמש בפונקציה `resolve` כדי למצוא נתיב יתר דין על ידי קבלת התיקייה כקלט.
+
+למשל, אם אנו רוצים לברר נתיב יתר דין לתיקייה "src

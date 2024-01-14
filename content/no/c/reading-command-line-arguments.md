@@ -1,24 +1,26 @@
 ---
-title:    "C: Lesing av kommandolinje-argumenter"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/reading-command-line-arguments.md"
+title:                "C: Lesing av kommandolinje-argumenter"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Å forstå hvordan man leser kommandolinjeargumenter er viktig for å kunne skrive effektiv og brukervennlig kode. Ved å lese argumenter fra kommandolinjen, kan man lage programmer som er fleksible og tilpassbare basert på brukerens behov.
+## Hvorfor
 
-# Hvordan gjøre det
-For å lese kommandolinjeargumenter i C, må man bruke funksjonen `main()` og dens parametere `argc` og `argv`. `argc` inneholder det totale antallet argumenter som blir sendt med, mens `argv` er en liste av strenger som inneholder de faktiske argumentene.
+Har du noen gang lurt på hvordan du kan gjøre interaksjonen med et C-program mer fleksibelt og tilpassbart? Gjennom å lese kommandolinjeargumenter kan du gi brukerne dine muligheten til å påvirke programmet ditt på en enkel og effektiv måte. Les videre for å lære hvordan du kan implementere dette i ditt eget C-program.
 
-La oss se på et enkelt eksempel for å illustere dette:
+## Hvordan
+
+For å lese kommandolinjeargumenter i C-programmer, må du først inkludere <stdio.h> biblioteket i koden din. Deretter må du definere "int main(int argc, char *argv[])" for å kunne ta imot argumentene fra kommandolinjen i form av en array. Her er "argc" antall argumenter og "argv[]" er selve arrayen med argumentene.
+
+For å få tilgang til de ulike argumentene, kan du bruke en "for"-løkke som går gjennom hele arrayen og skriver ut dem til terminalen. Et eksempel på dette kan se slik ut:
 
 ```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    printf("Antall argumenter: %d\n", argc);
     for (int i = 0; i < argc; i++) {
         printf("Argument %d: %s\n", i, argv[i]);
     }
@@ -26,29 +28,25 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-La oss anta at vi kompilerer og kjører dette programmet med følgende kommandolinje-argumenter:
-
-```bash
-gcc example.c -o example
-./example hello world
-```
-
-Outputen vil da være:
+Når du kjører dette programmet og gir det noen argumenter fra kommandolinjen, vil det skrive ut argumentenes nummer og verdi til terminalen. For eksempel:
 
 ```
-Antall argumenter: 3
-Argument 0: ./example
+$ ./program.exe hello world
+Argument 0: ./program.exe
 Argument 1: hello
 Argument 2: world
 ```
 
-Her ser vi at `argc` er 3, og at `argv` inneholder de tre argumentene vi sendte med. For å kunne bruke argumentene i koden vår, kan vi for eksempel lagre dem i variabler og deretter gjøre operasjoner med dem.
+Du kan også bruke konverteringsfunksjoner som "atoi()" og "atof()" for å konvertere argumentene fra tekst til tall eller flyttall.
 
-# Dypdykk
-Nå som vi har sett et enkelt eksempel på hvordan man kan lese kommandolinjeargumenter i C, kan vi se litt dypere på hvordan dette fungerer. `argc` og `argv` er definert i headerfilen `stdlib.h`. `argv` er en peker til en peker (en liste av strenger), og alle strengene i denne listen er null-terminerte, noe som betyr at de avsluttes med `\0`-tegnet.
+## Dypdykk
 
-Det finnes også en annen måte å lese kommandolinjeargumenter på, ved bruk av funksjonen `getopt()`. Dette kan være nyttig dersom man har behov for en mer fleksibel argumentbehandling, men kan være litt mer avansert å implementere.
+En annen nyttig funksjon for å lese kommandolinjeargumenter er "getopt()". Denne funksjonen lar deg håndtere kommandolinjen mer effektivt ved å tillate bruk av flagg og opsjoner. For å bruke denne funksjonen må du inkludere <unistd.h> biblioteket i koden din.
 
-# Se også
-- [How To Use Command Line Arguments in C](https://www.digitalocean.com/community/tutorials/how-to-use-arguments-and-parameters-in-a-c-program)
-- [The getopt() function in C](https://www.gnu.org/s/libc/manual/html_node/Example-of-Getopt.html)
+I tillegg til å håndtere argumentene, bør du også sjekke om brukeren har gitt riktig antall argumenter og gi en feilmelding hvis dette ikke stemmer. Dette kan gjøres ved å sammenligne "argc" med antall forventede argumenter.
+
+## Se også
+
+- [Kommunikasjon med kommandolinjen i C-programmer](https://www.ntnu.no/studier/emner/IMT3005/2017/hjemmesider/oblig4/lesfracli.html)
+- [Getopt() dokumentasjon](https://www.gnu.org/software/libc/manual/html_node/Getopt-Long-Option-Example.html)
+- ["atof()" konverteringsfunksjonen](https://www.tutorialspoint.com/c_standard_library/c_function_atof.htm)

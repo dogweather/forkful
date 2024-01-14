@@ -1,37 +1,30 @@
 ---
-title:    "Swift: Sletting av tegn som matcher et mønster"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/deleting-characters-matching-a-pattern.md"
+title:                "Swift: Slette tegn som matcher et mønster"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+I programmering er det ofte nødvendig å manipulere tekst på ulike måter. En vanlig oppgave kan være å fjerne visse tegn som følger et mønster. Dette kan være nyttig når man for eksempel ønsker å rengjøre data eller formatere tekst på en spesifikk måte. Å slette tegn som matcher et mønster kan også være nyttig når man jobber med brukerinput eller data fra ulike kilder. 
 
-Noen ganger når vi arbeider med tekstbehandling i programmering, møter vi på utfordringer med å fjerne eller endre deler av en tekst som passer et bestemt mønster. Dette kan være en del av en større oppgave, for eksempel å lage en regEx som filtrerer ut uønsket tekst. I denne bloggposten vil jeg dele en enkel metode for å fjerne tegn som matcher et mønster i Swift.
-
-## Slik gjør du
-
-Først må vi definere en streng som inneholder teksten vi ønsker å filtrere. Deretter kan vi bruke en metode som heter `replacingOccurrences(of:with:)` for å slette tegn som matcher et mønster. La oss se på et eksempel:
+## Hvordan gjøre det
+Å slette tegn som følger et bestemt mønster innebærer å bruke visse funksjoner og metoder i Swift. La oss si vi ønsker å fjerne alle vokaler fra en streng. Da kan vi bruke følgende kode:
 
 ```Swift
-let tekst = "Hei! Håper du har en fin dag!"
-let filtrertTekst = tekst.replacingOccurrences(of: "[!?å]", with: "", options: .regularExpression)
-print(filtrertTekst)
+let word = "Programmering"
+let vowels = CharacterSet(charactersIn: "aeiouAEIOU")
+let result = word.components(separatedBy: vowels).joined()
+print(result) // Prgrmmrng
 ```
 
-I dette eksempelet ønsker vi å fjerne alle utropstegn, spørsmålstegn og bokstaven "å" fra teksten vår. Vi bruker derfor regEx-uttrykket `"[!?å]"` for å definere dette mønsteret. Når vi kjører koden, vil outputen bli "Hei Håper du har en fin dag", med de uønskede tegnene fjernet.
+Denne koden deler strengen "Programmering" inn i en rekke mindre strenger basert på vokalene, og deretter slår de sammen igjen for å danne den endelige resultatstrengen uten vokaler. Dette er bare ett eksempel, og det finnes mange ulike måter å slette tegn som følger et mønster på i Swift, avhengig av hva slags operasjon du ønsker å gjøre.
 
 ## Dypdykk
-
-Nå som vi har sett på et enkelt eksempel på å fjerne tegn som matcher et mønster, kan vi gå dypere inn i hvordan dette fungerer. `replacingOccurrences(of:with:)`-metoden tar to parametere: stringen vi ønsker å erstatte og stringen vi ønsker å erstatte den med. I tillegg kan vi bruke `options`-parameteren for å spesifisere hvordan teksten skal behandles. I eksempelet vårt brukte vi `.regularExpression`-alternativet for å definere et regEx-uttrykk.
-
-Vi kan også bruke `replacingOccurrences(of:with:,options:range:)`-metoden for å begrense hvor i teksten vi ønsker å gjøre endringene. Dette kan være nyttig hvis vi for eksempel bare ønsker å fjerne tegnene i en bestemt del av teksten.
+Hvis du ønsker å lære mer om å slette tegn som matcher et mønster i Swift, kan du lese mer detaljert om de ulike metodene og funksjonene som kan brukes. Det finnes også ulike tredjepartsbiblioteker som kan hjelpe deg med dette, så det kan være lurt å undersøke hva som finnes på markedet. Det er også viktig å være klar over at sletting av tegn som følger et mønster kan være en kompleks oppgave, spesielt hvis du jobber med tekst på flere språk eller med spesielle tegn.
 
 ## Se også
-
-1. [Apple Developer Documentation for replacingOccurrences(of:with:)](https://developer.apple.com/documentation/foundation/nsstring/1410144-replacingoccurrences)
-2. [Swift Regular Expressions Cheat Sheet](https://gist.github.com/telrod/824226)
-3. [Hvordan bruke Regular Expressions i Swift](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
-
-Takk for at du leste denne bloggposten om å fjerne tegn som matcher et mønster i Swift. Jeg håper det var nyttig og at det vil hjelpe deg i fremtidige programmeringsoppgaver! Lykke til videre med Swift-programmeringen!
+- [Swift documentation on CharacterSet](https://developer.apple.com/documentation/foundation/characterset)
+- [List of popular Swift libraries](https://www.slant.co/topics/1797/~best-swift-libraries)

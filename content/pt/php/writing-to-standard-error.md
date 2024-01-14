@@ -1,29 +1,39 @@
 ---
-title:    "PHP: Escrevendo para o erro padrão"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/writing-to-standard-error.md"
+title:                "PHP: Escrevendo no erro padrão"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever no standard error
-Escrever no standard error é uma prática comum na programação PHP. Ao enviar mensagens de erro para o standard error, você pode facilmente identificar os problemas em seu código para resolvê-los de forma eficiente. Isso é especialmente útil em projetos maiores, onde há muitas linhas de código e pode ser difícil identificar a causa de determinados erros.
+## Por que escrever no fluxo de erro padrão (standard error)?
 
-## Como fazer
-Para escrever no standard error em PHP, você pode utilizar a função `fwrite()`. Ela permite que você escreva diretamente no standard error, fornecendo uma mensagem de erro personalizada. Veja um exemplo de código abaixo:
+Escrever no fluxo de erro padrão é uma prática essencial para programadores PHP. Isso permite que você capture e manipule os erros lançados pelo seu código, tornando a depuração mais fácil e eficiente.
+
+## Como fazer:
+
+Para escrever no fluxo de erro padrão em PHP, você pode usar a função `fwrite()`. Veja um exemplo abaixo:
 
 ```PHP
-$mensagem = "Ocorreu um erro na linha 10!";
-fwrite(STDERR, $mensagem);
+// abrindo o arquivo de erro
+$handle = fopen('php://stderr', 'w');
+
+// escrevendo uma mensagem de erro
+fwrite($handle, 'Algo deu errado!');
+
+// fechando o arquivo
+fclose($handle);
 ```
 
-Ao executar esse código, a mensagem será enviada para o standard error e será exibida na tela do terminal ou do servidor. Isso ajudará a identificar o erro e facilitará a correção do código.
+O código acima abre o fluxo de erro padrão e escreve uma mensagem nele. Lembre-se de que o segundo argumento da função `fopen()` é definido como `'w'`, o que permite que você escreva no arquivo.
 
-## Aprofundando-se
-Escrever no standard error é uma forma de melhorar a depuração e o controle de erros no seu código PHP. Além disso, ao usar essa técnica, você pode imprimir mensagens de erro personalizadas ao lidar com exceções no seu código.
+## Mergulho profundo:
 
-É importante lembrar que o standard error é diferente do standard output (utilizado na função `echo`). Enquanto o standard output é usado para mensagens de sucesso, o standard error é destinado a mensagens de erro. Portanto, é essencial usá-los corretamente para uma depuração eficiente.
+Existem certos casos em que escrever no fluxo de erro padrão se torna ainda mais importante. Por exemplo, se você estiver executando scripts em um servidor sem interface gráfica, o fluxo de erro padrão é a única maneira de ver os erros. Além disso, é possível redirecionar o fluxo de erro padrão para um arquivo de log, permitindo que você mantenha um registro dos erros em suas aplicações.
 
-## Veja também
-- [Documentação oficial da função fwrite](https://www.php.net/manual/en/function.fwrite.php)
-- [Como lidar com erros em PHP](https://www.php.net/manual/en/errorfunc.configuration.php)
+## Veja também:
+
+- [Documentação oficial do PHP sobre fwrite()](https://www.php.net/manual/pt_BR/function.fwrite.php)
+- [Artigo sobre como redirecionar o fluxo de erro padrão](https://www.php.net/manual/pt_BR/errorfunc.configuration.php#ini.display-errors) (em inglês)
+- [Tutorial sobre depuração de código no PHP](https://www.php.net/manual/pt_BR/debugger.php) (em português)

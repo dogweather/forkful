@@ -1,60 +1,63 @@
 ---
-title:    "C: Ein Datum in der Zukunft oder Vergangenheit berechnen"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/calculating-a-date-in-the-future-or-past.md"
+title:                "C: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Berechnen von Daten in der Zukunft oder Vergangenheit kann in der Programmierung nützlich sein, um zum Beispiel die Lieferzeit einer Bestellung zu bestimmen oder die Gültigkeit eines Angebots zu überprüfen.
+Das Berechnen von zukünftigen oder vergangenen Datumsangaben ist eine wichtige Funktion in vielen Anwendungen. Ein Beispiel dafür ist das Erstellen von Kalendern oder Planungswerkzeugen. Durch das Verständnis dieser Fähigkeit können Sie Ihre eigenen Anwendungen effizienter und zuverlässiger gestalten.
 
-## Wie
+## Wie geht es
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, gibt es mehrere Schritte, die wir in C programmieren können. Zuerst müssen wir das aktuelle Datum erhalten, entweder durch die Verwendung der Funktion `time()` oder durch die Verwendung der `struct tm` Struktur. Dann können wir die `struct tm` Struktur manipulieren, indem wir Werte für Tag, Monat, Jahr und ggf. die Uhrzeit anpassen. Anschließend müssen wir die neue Struktur in ein lesbares Datum umwandeln, das wir dann auf dem Bildschirm ausgeben können.
+Die Berechnung von zukünftigen oder vergangenen Daten ist dank der Datentypen und Funktionen in C relativ einfach. Zunächst müssen wir das aktuelle Datum und die Anzahl der gesuchten Tage in Variablen speichern. Dies kann mit den Datentypen `struct tm` und `time_t` erfolgen.
+
+Danach können wir die Funktion `mktime()` verwenden, um die angegebenen Daten in ein `time_t` Objekt umzuwandeln. Das zurückgegebene Objekt enthält die Anzahl der Sekunden, die seit dem 01. Januar 1970 vergangen sind, auch bekannt als die "Unix Epoch".
+
+Im nächsten Schritt können wir diese Anzahl an Sekunden mit der Anzahl der Sekunden in einem Tag (86400) multiplizieren und entweder addieren oder subtrahieren, je nachdem ob wir zukünftige oder vergangene Daten berechnen möchten. Das Ergebnis können wir dann wieder mit `localtime()` in eine `struct tm` umwandeln und die gewünschten Datumsinformationen abrufen.
 
 ```C
+// Beispielausgabe für die Berechnung des Datums in 100 Tagen in der Zukunft
 #include <stdio.h>
 #include <time.h>
 
 int main()
 {
-    // Aktuelles Datum erhalten
-    time_t now = time(NULL);
+    // Initialisierung der Variablen
+    struct tm currentDate;
+    time_t currentTime;
 
-    // struct tm Struktur erstellen
-    struct tm *future_date;
+    // Eingabe des aktuellen Datums
+    printf("Geben Sie das aktuelle Datum ein (TT.MM.JJJJ): ");
+    scanf("%d.%d.%d", &currentDate.tm_mday, &currentDate.tm_mon, &currentDate.tm_year);
 
-    // Datumsänderung: 14 Tage in die Zukunft
-    now += 14*24*60*60;
+    // Konvertierung des Datums in ein time_t Objekt
+    currentTime = mktime(&currentDate);
 
-    // struct tm aktualisieren
-    future_date = localtime(&now);
+    // Berechnung des Datums in 100 Tagen in der Zukunft
+    currentTime += (86400 * 100);
 
-    // Lesbares Datum erzeugen
-    char future_str[20];
-    strftime(future_str, 20, "%d.%m.%Y", future_date);
+    // Konvertierung des zukünftigen Datums in eine struct tm
+    struct tm *futureDate = localtime(&currentTime);
 
-    // Ausgabe des zukünftigen Datums
-    printf("Das Datum in 14 Tagen wird sein: %s\n", future_str);
+    // Ausgabe des berechneten Datums
+    printf("Das Datum in 100 Tagen in der Zukunft ist: %02d.%02d.%04d", futureDate->tm_mday, futureDate->tm_mon + 1, futureDate->tm_year + 1900);
 
     return 0;
 }
 ```
 
-### Ausgabe:
+## Tiefer Einblick
 
-```
-Das Datum in 14 Tagen wird sein: 22.08.2021
-```
+Obwohl das Berechnen von Datumsangaben in C relativ einfach ist, gibt es einige wichtige Dinge zu beachten. Zum einen ist es wichtig, dass die eingegebenen Daten korrekt formatiert sind, da sonst falsche Ergebnisse erzielt werden können.
 
-## Deep Dive
-
-Beim Berechnen von Datumswerten in der Zukunft oder Vergangenheit muss man beachten, dass einige Monate weniger als 31 Tage haben und dass es Schaltjahre gibt. Dies kann zu Inkonsistenzen führen, wenn man einfach nur Werte zu einem Datum addiert oder subtrahiert. Daher ist es wichtig, sich mit der Struktur der Datumsberechnung vertraut zu machen und geeignete Funktionen wie `mktime()` und `strftime()` zu verwenden. Auch die Verwendung von verschiedenen Zeitzonen kann zu Problemen führen, weshalb es wichtig ist, einheitliche Standards wie UTC zu verwenden.
+Außerdem kann es durch Schaltjahre, Sommer- und Winterzeit sowie Zeitzonen zu Abweichungen in der berechneten Zeit kommen. Um diese zu vermeiden, ist es empfehlenswert, die Funktion `mktime()` mit der Funktion `gmtime()` (für die berechnete Zeit in GMT/UTC) oder `localtime()` (für die berechnete Zeit in der lokalen Zeitzone) zu kombinieren, um eine genauere Berechnung zu erreichen.
 
 ## Siehe auch
 
-- [Offizielle Dokumentation von strftime() (auf Deutsch)](https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time.html)
-- [Zeitzonen und deren Verwendung in Programmen (auf Deutsch)](https://de.wikipedia.org/wiki/Liste_von_Zeitzonen)
-- [Programm zum Berechnen von Datumsdifferenzen (auf Deutsch)](https://www.gm-d.de/aktuelle-und-zukuenftige-datum-differenz-in-tagen-berechnen/)
+- <https://www.tutorialspoint.com/c_standard_library/time_h.htm>
+- <https://www.programiz.com/c-programming/library-function/time/mktime>
+- <https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm>

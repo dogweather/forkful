@@ -1,39 +1,39 @@
 ---
-title:    "Swift: Видалення символів, що відповідають шаблону."
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/swift/deleting-characters-matching-a-pattern.md"
+title:                "Swift: Видалення символів, що відповідають взору."
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-##Чому
+## Чому
 
-Деякі завдання в програмуванні вимагають видалення символів, що відповідають певному шаблону. Це може бути корисно, наприклад, для фільтрації текстових даних або виправлення помилок. У цій статті ми розглянемо, як видалити символи, що відповідають певному шаблону, використовуючи мову програмування Swift.
+Часто, коли ми працюємо зі строками в Swift, нам потрібно виконати певні маніпуляції зі знаками. Іноді це означає видаляти певний символ або групу символів зі строки, щоб отримати бажаний результат. У цьому пості ми розглянемо, як видаляти символи, які відповідають певному шаблону, використовуючи Swift.
 
-##Як це зробити
+## Як
 
-Існує кілька способів видалення символів, що відповідають певному шаблону, в мові Swift. Найпростіше це зробити за допомогою методу ```replacingOccurrences(of:with:)``` у класі ```String```. Наприклад, ми можемо використати цей метод для заміни всіх голосних букв у рядку на певну фразу:
+Існує декілька способів видаляти символи з строки, але в даному випадку ми будемо використовувати метод `replacingOccurrences(of:with:)`. Цей метод дозволяє замінювати певний шаблон у строці іншими символами або навіть пустою строкою.
 
-```Swift
-let string = "Це рядок з деякими голосними буквами"
-let newString = string.replacingOccurrences(of: "[АЄІОУЮЯ]", with: "я люблю Swift", options: .regularExpression, range: nil)
-// newString = "Це рядк я люблю Swift ктрм я люблю Swift з дякум я люблю Swift бквм я люблю Swift"
+```Swift 
+let string = "Привіт, світ!"
+let newString = string.replacingOccurrences(of: "!", with: "")
+// newString тепер має значення "Привіт, світ"
 ```
 
-Ми також можемо використати оператор ```filter``` для видалення символів, що відповідають певному шаблону. Наприклад, ми можемо використати цей оператор для видалення всіх цифр у рядку:
+Для більш складних випадків можна використовувати регулярні вирази, щоб видаляти символи з конкретними властивостями. Наприклад, якщо нам потрібно видалити всі головні літери зі строки, ми можемо використати наступний код:
 
-```Swift
-let string = "Це рядок з десятком цифр 1234567890"
-let newString = string.filter { !$0.isNumber }
-// newString = "Це рядок з десятком цифр"
+```Swift 
+let string = "Hello, world!"
+let newString = string.replacingOccurrences(of: "[A-Z]", with: "", options: .regularExpression)
+// newString тепер має значення ", !"
 ```
 
-##Вдивімося глибше
+## Deep Dive
 
-У мові Swift є багато різних методів та операторів, що дозволяють видаляти символи, що відповідають певному шаблону. Також можна використовувати регулярні вирази для більш складних завдань. Розуміння роботи зі строками та використання методів та операторів допоможе вам ефективно вирішувати завдання, пов'язані з видаленням символів в мові Swift.
+Метод `replacingOccurrences(of:with:)` є дуже потужним і може використовуватися для видалення різних символів, будь яких шаблонів, а також для заміни символів на інші. Він підтримує використання регулярних виразів, що дозволяє здійснювати більш глибокі та складні маніпуляції зі строками.
 
-##Дивіться також
+## Дивись також
 
-- [Документація з методу replacingOccurrences в мові Swift](https://developer.apple.com/documentation/foundation/nsstring/1412661-replacingoccurrences)
-- [Розділ про згортання та фільтрацію в офіційному керівництві мови Swift](https://docs.swift.org/swift-book/LanguageGuide/CollectionTypes.html#ID102)
-- [Документація з регулярних виразів в мові Swift](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Офіційна документація Apple про метод `replacingOccurrences(of:with:)`](https://developer.apple.com/documentation/foundation/nsstring/1417518-replacingoccurrences)
+- [Підручник з регулярних виразів для Swift](https://www.raywenderlich.com/915-regular-expressions-in-swift-tutorial-getting-started)

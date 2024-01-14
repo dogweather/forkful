@@ -1,50 +1,50 @@
 ---
-title:    "Elm recipe: Starting a new project"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/starting-a-new-project.md"
+title:                "Elm recipe: Starting a new project"
+programming_language: "Elm"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Starting a new project with Elm is a great way to create modern, robust and reliable web applications. With its functional programming language and built-in static type system, Elm allows you to write code that is easy to maintain and test, making it a popular choice for both small and large-scale projects.
+Starting a new project can be daunting, but with Elm, it doesn't have to be. Elm is a functional programming language that allows for easy, scalable, and maintainable code. It also has a friendly and helpful community, making it a great choice for building web applications.
 
 ## How To
-Creating a new Elm project is a straightforward process. First, make sure you have Elm installed on your machine. Then, open your preferred code editor and follow these steps:
 
-1. Create a new directory for your project.
-2. Navigate to the newly created directory in your terminal.
-3. Run the command `elm init` to initialize the project.
-4. You can now start writing your code in the `src` directory.
+To start a new project in Elm, you will need to have Elm installed on your computer. Once you have Elm installed, you can follow these steps:
 
-Let's take a look at a simple example of defining a function in Elm:
+1. Create a new directory for your project and navigate to it in your terminal.
+2. Run the `elm init` command to set up your project's `elm.json` file.
+3. Start your project by creating a `Main.elm` file that contains your main function. This function should return a `Html msg` value, which is the starting point for your application.
+4. Write your code using the Elm syntax, which is simple and easy to understand. Keep in mind that Elm is a strongly typed language, so you will need to define your data types.
+5. Use the Elm REPL (Read-Eval-Print-Loop) to test your code and make sure it is working as expected.
+6. Once you are satisfied with your code, run the `elm reactor` command to start a local server and view your application in the browser.
 
-```Elm
-double : Int -> Int
-double x =
-    x * 2
-```
-
-In this code block, we have defined a function `double` that takes in an integer and returns its doubled value. The `->` arrow denotes the return type of the function.
-
-Now, let's see how we can call this function and print out the result:
+Here is an example of a simple Elm program:
 
 ```Elm
+module Main exposing (main)
+
+import Html exposing (text)
+
 main =
-    double 5 |> Debug.log
+  text "Hello, world!"
 ```
 
-The `main` function is the starting point of every Elm program. Here, we are calling our `double` function with an argument of `5` and using the `Debug.log` function to print the output to the console.
-
-Running the Elm code above will give us an output of `10` in the console.
+Running this code will display the text "Hello, world!" on your localhost:8000 port.
 
 ## Deep Dive
-In addition to its functional nature and static type system, Elm also offers features such as virtual DOM, time-travel debugging, and automatic code formatting that make it a powerful and efficient language for developing user interfaces. It also has a helpful and supportive community that offers resources and support for new users.
 
-If you want to learn more about starting a new Elm project, be sure to check out the official documentation and tutorials available online.
+When starting a new project in Elm, it is important to keep in mind that it follows the "model-view-update" (MVU) architecture. This means that the state of your application is managed by a model, and changes to the model are made through update functions. View functions then use the model to render the user interface.
+
+Additionally, Elm has a built-in package manager called `elm package`. This allows you to easily add external packages to your project, making it easy to incorporate features and functionality from other developers.
+
+Another great aspect of Elm is its error messages. Instead of cryptic lines of code, Elm provides clear and helpful error messages that make debugging much easier.
 
 ## See Also
-- Official Elm Documentation: https://guide.elm-lang.org/
-- Elm Tutorials: https://elm-tutorial.org/
-- Elm Community Forum: https://discourse.elm-lang.org/
+
+- [Official Elm website](https://elm-lang.org/)
+- [Elm Guide](https://guide.elm-lang.org/)
+- [Elm Packages](https://package.elm-lang.org/)

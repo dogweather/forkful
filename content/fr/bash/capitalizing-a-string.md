@@ -1,68 +1,49 @@
 ---
-title:    "Bash: Capitaliser une chaîne de caractères"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/capitalizing-a-string.md"
+title:                "Bash: Mettre en majuscule une chaîne de caractères"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Il y a plusieurs raisons pour lesquelles vous pourriez vouloir capitaliser une chaîne de caractères en Bash. Par exemple, cela pourrait être nécessaire pour respecter des conventions de nommage dans votre code ou pour formater des données avant de les utiliser dans une autre partie de votre programme.
+L'écriture du code peut sembler intimidante pour certains, mais il existe en fait des moyens simples de rendre le processus plus facile et plus efficace. Un de ces moyens est le fait de mettre en majuscule une chaîne de caractères. Dans cet article, nous allons voir pourquoi et comment effectuer cette action dans Bash. 
 
 ## Comment faire
 
-La méthode la plus simple pour capitaliser une chaîne en Bash est d'utiliser la commande `tr`. Voici un exemple de code avec une entrée et une sortie d'écran :
+La capitale d'une chaîne de caractères est essentiellement le fait de la convertir en lettres majuscules. Dans Bash, il existe plusieurs façons de le faire. Tout d'abord, nous pouvons utiliser la commande "tr" avec l'option "-s" (squeeze) pour supprimer les espaces inutiles et "-u" (upper) pour mettre en majuscule. Par exemple:
 
-```bash
-# Définir la chaîne d'entrée
-input_string="bonjour tout le monde"
-
-# Utiliser tr pour capitaliser la chaîne
-capitalized_string=$(echo "$input_string" | tr a-z A-Z)
-
-# Sortie : BONJOUR TOUT LE MONDE
-echo $capitalized_string
+```
+Bash code block:
+echo "bonjour tout le monde" | tr -s [:space:] | tr '[:lower:]' '[:upper:]'
 ```
 
-Vous pouvez également utiliser la commande `sed` pour capitaliser la première lettre d'une chaîne. Voici un autre exemple de code avec une entrée et une sortie d'écran :
+Cela produira la sortie suivante: "BONJOUR TOUT LE MONDE". Nous pouvons également utiliser la commande "awk" et la fonction "toupper" pour mettre en majuscule une chaîne de caractères. Par exemple:
 
-```bash
-# Définir la chaîne d'entrée
-input_string="hello world"
-
-# Utiliser sed pour capitaliser la première lettre
-capitalized_string=$(echo "$input_string" | sed -e "s/^./\U&/")
-
-# Sortie : Hello world
-echo $capitalized_string
+```
+Bash code block:
+echo "ceci est un exemple" | awk '{ print toupper($0) }'
 ```
 
-## Plongée profonde 
+Cela produira la sortie suivante: "CECI EST UN EXEMPLE". Enfin, nous pouvons également utiliser la commande "sed" avec l'option "y" pour effectuer une substitution de caractères en utilisant la table ASCII. Par exemple:
 
-Si vous souhaitez capitaliser une chaîne selon des règles spécifiques, vous pouvez utiliser des commandes telles que `cut` ou `awk` pour diviser la chaîne en plusieurs parties, puis les capitaliser individuellement.
-
-Par exemple, si vous voulez capitaliser uniquement les trois premières lettres d'une chaîne, vous pouvez utiliser le code suivant :
-
-```bash
-# Définir la chaîne d'entrée
-input_string="bonjour tout le monde"
-
-# Utiliser cut pour diviser la chaîne en trois parties
-first_letters=$(echo "$input_string" | cut -c1-3)
-
-# Utiliser tr pour capitaliser les trois premières lettres
-capitalized_string=$(echo "$first_letters" | tr a-z A-Z)
-
-# Concaténer les parties de la chaîne
-capitalized_string="$capitalized_string"$(echo "$input_string" | cut -c4-)
-
-# Sortie : BONjour tout le monde
-echo $capitalized_string
+```
+Bash code block:
+echo "cOmPter les cArActères" | sed 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'
 ```
 
-## Voir également
+Cela produira la sortie suivante: "COMPTER LES CARACTERES". 
 
-- [Guide Bash pour débutants](https://www.tecmint.com/learn-bash-rename-files/)
-- [Documentation officielle sur tr](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html#tr-invocation)
-- [Documentation officielle sur sed](https://www.gnu.org/software/sed/manual/sed.html)
+## Plongée Profonde
+
+Maintenant que nous avons vu différentes façons de mettre en majuscule une chaîne de caractères, il est important de comprendre comment cela fonctionne en profondeur. En Bash, les chaînes de caractères sont considérées comme des tableaux de caractères individuels. Ainsi, pour mettre en majuscule une chaîne, nous devons itérer sur tous les caractères et remplacer les lettres minuscules par leur équivalent majuscule en utilisant la table ASCII. C'est ce que les commandes "tr", "awk" et "sed" font en interne. 
+
+## Voir aussi
+
+Maintenant que vous avez appris comment mettre en majuscule une chaîne de caractères en Bash, vous pouvez également consulter les ressources suivantes pour améliorer vos compétences en programmation :
+
+- [Documentation officielle de Bash](https://www.gnu.org/software/bash/manual/)
+- [Guide de démarrage rapide de Bash](https://linuxconfig.org/bash-scripting-tutorial)
+- [Cours interactif sur Bash](https://www.learnshell.org/)

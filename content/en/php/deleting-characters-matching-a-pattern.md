@@ -1,49 +1,58 @@
 ---
-title:    "PHP recipe: Deleting characters matching a pattern"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/deleting-characters-matching-a-pattern.md"
+title:                "PHP recipe: Deleting characters matching a pattern"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Deleting characters is a common task in programming, but what about deleting characters that match a specific pattern? This technique can be useful for data cleaning, removing unwanted characters from user inputs, or even creating custom filters for text-based data. In this blog post, we will explore how to delete characters matching a pattern in PHP.
+There are times when we may need to delete certain characters from a string that matches a specific pattern in our PHP code. This can be a useful technique in cleaning up data or manipulating strings for various purposes. In this blog post, we will explore how to delete characters matching a pattern in PHP.
 
 ## How To
 
-Before diving into the code, let's define what we mean by "characters matching a pattern". In PHP, a pattern can be defined using regular expressions, also known as regex. Regex allows us to specify a set of characters to match in a string.
-
-Now, let's see how we can use regex to delete characters matching a certain pattern in PHP:
+To delete characters matching a pattern in PHP, we will use the `preg_replace()` function. This function searches a string for a specific pattern and replaces it with a different string. Let's take a look at an example:
 
 ```PHP
-// Create a string with unwanted characters
-$input = "Hello! How are you?";
+$text = "Hello, [world]!";
+$clean_text = preg_replace("/[^\w\s]/", "", $text);
 
-// Use preg_replace() function to remove non-alphanumeric characters
-$output = preg_replace("/[^a-zA-Z0-9 ]/i", "", $input); 
-
-// Output: Hello How are you
-echo $output;
+echo $clean_text;
 ```
 
-In the example above, we used the `preg_replace()` function with a regular expression pattern to remove all non-alphanumeric characters (such as `!` and `?`) from the string. The `i` at the end of the pattern means case-insensitive, so both uppercase and lowercase characters will be matched.
+In this example, we have a string with special characters such as brackets and an exclamation mark. We want to remove these characters and only keep letters, numbers, and spaces. The `preg_replace()` function takes two parameters - the pattern to search for and the replacement string. In our pattern, we use the brackets `[]` to specify the range of characters we want to keep, and the caret `^` to indicate negation. This means that all characters except for letters, numbers, and spaces will be replaced with an empty string. The output of this code will be:
 
-You can customize the pattern to fit your specific needs. For instance, if you only want to remove numbers, the pattern would be `"/[0-9]/"`. Or, if you want to remove all special characters, the pattern would be `"/[^a-zA-Z0-9]/i"`.
+```PHP
+Hello world
+```
+
+We can also use regular expressions in our pattern to match more complex patterns. For example, let's say we want to remove all numbers from a string. We can use the `\d` pattern which matches any digit from 0-9. 
+
+```PHP
+$text = "I have 3 cats and 2 dogs";
+$clean_text = preg_replace("/\d/", "", $text);
+
+echo $clean_text;
+```
+
+The output of this code will be:
+
+```PHP
+I have  cats and  dogs
+```
+
+We can use this technique to remove any characters or patterns that we do not want in our strings.
 
 ## Deep Dive
 
-Now that we know how to use regex to delete characters matching a pattern, let's take a closer look at the `preg_replace()` function. It takes three parameters: the pattern, the replacement, and the input string.
+When using regular expressions in our `preg_replace()` function, it's important to understand different modifiers that can affect the outcome. For example, the `i` modifier makes the pattern case-insensitive, `g` makes it search globally, and `m` makes it multi-line. You can read more about useful modifiers in the [PHP documentation](https://www.php.net/manual/en/reference.pcre.pattern.modifiers.php).
 
-The first parameter, pattern, is where we specify the characters we want to match using regex. The second parameter, replacement, is what we want to replace the matched characters with. In our previous example, we left the replacement parameter empty, so the matched characters were simply deleted.
-
-The third parameter, input, is the string we want to search and modify. This can be a variable or a string literal.
-
-Apart from the `preg_replace()` function, PHP also has other built-in functions for pattern matching and string replacement, such as `preg_match()` and `str_replace()`. These functions may have different syntaxes, but the underlying concept is the same - using patterns to match and manipulate strings.
+It's also worth mentioning that using regular expressions can be more resource-intensive than other string manipulation techniques. So if you are working with large amounts of data, it's important to keep this in mind and consider alternative solutions.
 
 ## See Also
 
-1. PHP manual on regular expressions: <https://www.php.net/manual/en/book.regex.php>
-2. Regex tutorials and cheat sheets: <https://www.regular-expressions.info/>, <https://www.rexegg.com/regex-quickstart.html>
-
-Deleting characters matching a pattern can be a useful skill to have in your PHP programming toolbox. Armed with the knowledge of regex, you can manipulate strings in more advanced and efficient ways. Try it out in your next project and see how it can improve your code!
+- [PHP preg_replace() function documentation](https://www.php.net/manual/en/function.preg-replace.php)
+- [Regex Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/php)
+- [PHP string manipulation functions](https://www.w3schools.com/php/php_ref_string.asp)

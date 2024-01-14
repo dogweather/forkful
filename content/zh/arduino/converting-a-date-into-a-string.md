@@ -1,54 +1,54 @@
 ---
-title:    "Arduino: 将日期转换为字符串"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/converting-a-date-into-a-string.md"
+title:                "Arduino: 将日期转换为字符串"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+为什么：
 
-首先，让我们来思考一下为什么我们需要将日期转换为字符串。在编程中，日期和时间通常以数字的形式存储，例如2021年7月1日。但是，当我们需要将它们显示给用户时，我们通常希望以友好的日期格式来呈现，例如“2021年7月1日”。因此，将日期转换为字符串可以让我们更方便地控制如何显示日期，并使用户更容易理解。
+很多时候，我们在Arduino程序中需要将日期转换成字符串，比如为了在显示屏上显示日期，或者将日期作为文件名保存数据。因此，了解如何在Arduino中完成这个过程是非常有用的。
 
-## 如何做
-
-在Arduino编程中，日期和时间都是通过标准库中的Time库来处理的。要将日期转换为字符串，首先我们需要将日期存储在一个tmElements_t结构中，该结构包含日期和时间的各个成员变量。例如，我们想将当前日期转换为字符串，我们可以这样做：
+## 如何：
 
 ```Arduino
-tmElements_t now;
-now.Year = 2021;
-now.Month = 7;
-now.Day = 1;
+// 第一个示例
+int day = 10;
+int month = 9;
+int year = 2021;
+
+String date = String(day) + "/" + String(month) + "/" + String(year); // 将日期转换成字符串
+Serial.println(date); // 将日期打印出来
+
+// 输出：10/9/2021
+
+// 第二个示例
+int hour = 12;
+int minute = 30;
+int second = 45;
+
+String time = String(hour) + ":" + String(minute) + ":" + String(second); // 将时间转换成字符串
+Serial.println(time); // 将时间打印出来
+
+// 输出：12:30:45
 ```
 
-接下来，我们使用函数`makeDateString()`来将tmElements_t结构中的日期转换为字符串。该函数接受四个参数：tmElements_t结构，日期格式，日期分隔符和是否包含星期几。例如，我们想将2021年7月1日转换为“2021-07-01（周四）”，我们可以这样做：
+在上面的示例中，我们先将日期和时间的各个部分（日、月、年、时、分、秒）转换成字符串，然后再使用字符串拼接的方式将它们组合在一起。这样就可以将日期和时间转换成字符串，方便在Arduino中进行操作和显示。
 
-```Arduino
-String dateString = makeDateString(now, "YYYY-MM-DD (DDD)");
-```
+## 深入了解：
 
-最后，我们可以使用`print()`函数来显示字符串日期：
+除了上面的示例中使用的方法，还有其他的方式可以将日期和时间转换成字符串。比如通过使用DateTime库中的函数，或者自定义函数来实现。另外，还可以对字符串进行格式化，比如设置日期的显示格式为yyyy-mm-dd，时间的显示格式为hh:mm:ss等。了解这些更多的方法可以帮助我们更灵活地在Arduino中处理日期和时间的字符串转换。
 
-```Arduino
-Serial.println(dateString);
-```
+## 参考链接：
 
-输出将是：“2021-07-01（周四）”。
+- [Arduino官方教程-String类型](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [使用DateTime库处理日期和时间](https://www.robotshop.com/community/forum/t/display-rtc-ds1307-date-and-time-arduino)
+- [自定义函数实现日期和时间的字符串转换](https://www.electronicwings.com/arduino/basics-string-functions-in-arduino-ide)
 
-## 深入探讨
+## 参见：
 
-在`makeDateString()`函数中，我们使用了C++的格式化字符串函数`strftime()`来实现日期格式的转换。该函数非常强大，可以根据我们传入的格式字符串来显示不同的日期格式。例如，我们可以使用“YY年第D天（DDD）”，将日期格式转换为“21年第182天（周四）”。
-
-值得注意的是，在Arduino中使用`strftime()`函数需要首先在sketch中添加`#include <TimeLib.h>`语句来包含Time库。
-
-## 参考链接
-
-- [Time Library - Arduino](https://www.arduino.cc/reference/en/libraries/time/)
-- [C++ String Formatting - cppreference.com](https://en.cppreference.com/w/cpp/io/c/fprintf)
-- [Strftime Functions - cppreference.com](https://en.cppreference.com/w/cpp/chrono/c/strftime)
-
----
-
-## 参见
-
-- [显示当前日期和时间 - 文档中心](https://www.arduino.cc/en/hacking/library-examples/time)
+- [Arduino官方教程-String类型](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [DateTime库文档](https://github.com/PaulStoffregen/DateTime)
+- [Arduino字符串函数指南](https://www.electronicwings.com/arduino/basics-string-functions-in-arduino-ide)

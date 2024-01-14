@@ -1,71 +1,56 @@
 ---
-title:    "Rust: 문자열 연결하기"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/concatenating-strings.md"
+title:                "Rust: 문자열 연결하기"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열을 연결하는 것이 중요한 이유는 프로그래밍에서 자주 사용되는 작업이므로, 이 작업을 효율적으로 수행하기 위해 연결 방법을 이해하는 것이 중요합니다.
+문자열  연결(concatenation) 을 실습하는 것의 이유는 Rust의 효율적이고 강력한 방식을 사용하여 문자열을 다루는 것을 배우기 위함입니다.
 
 ## 어떻게
 
-Rust에서 문자열을 연결하는 방법은 간단합니다. 기본적으로 `+` 연산자를 사용하면 됩니다.
+우선, Rust 를 설치하고 실행시키세요. 그리고 다음과 같이 `main.rs` 파일을 만들어서 문자열 연결을 해보세요.
 
 ```Rust
-let first_name = "예지";
-let last_name = "송";
+fn main() {
+  let string1 = "안녕하세요";
+  let string2 = "Rust 프로그래밍을 배워봅시다!";
+  let result = string1.to_string() + " " + string2;
 
-let full_name = first_name + " " + last_name;
-println!("나의 이름은 {}입니다.", full_name);
+  println!("{}", result);
+}
 ```
 
-출력:
+위의 코드를 실행하면 다음과 같은 출력을 볼 수 있습니다.
 
 ```
-나의 이름은 예지 송입니다.
+안녕하세요 Rust 프로그래밍을 배워봅시다!
 ```
 
-위 예제에서는 `+` 연산자로 두 개의 문자열을 연결했습니다. 하지만 더 많은 문자열을 연결해야 할 수도 있습니다. 이 경우 `format!` 매크로를 사용할 수도 있습니다.
+위의 코드에서 `result` 변수를 보면, 문자열을 연결하기 위해 `+` 연산자를 사용하고 있음을 알 수 있습니다. 이렇게 함으로써 우리는 간단하게 두 개의 문자열을 연결할 수 있습니다.
 
-```Rust
-let price = 5000;
-let currency = "원";
-let item = "맛있는 음식";
+## 더 깊이 들어가보기
 
-let message = format!("{} {}에 {}를 살 수 있습니다.", price, currency, item);
-println!("{}", message);
-```
+문자열 연결 작업은 Rust에서 여러 가지 방식으로 할 수 있습니다. 위의 예제에서는 `to_string` 함수를 사용해 문자열로 변환한 뒤 `+` 연산자를 사용했습니다. 하지만 이보다 더 효율적이고 강력한 방식으로도 할 수 있습니다.
 
-출력:
+예를 들어, `String::from` 함수를 사용해서 두 개의 문자열을 연결할 수도 있습니다. 또는 `format!` 매크로를 사용하여 여러 개의 변수를 문자열 내에 삽입하고 연결할 수도 있습니다.
 
-```
-5000 원에 맛있는 음식를 살 수 있습니다.
-```
+자세한 정보는 [Rust 공식 문서](https://doc.rust-lang.org/std/string/)를 참고하시기 바랍니다.
 
-## 딥 다이브
+## 더 알아보기
 
-Rust에서는 문자열을 연결하는 방법으로 세 가지가 있습니다. 첫 번째로, `+` 연산자를 사용하는 방법을 본 이전 예제대로입니다. 두 번째 방법은 `format!` 매크로를 사용하는 것입니다. 마지막으로, `String` 타입의 `push_str` 메소드를 사용하는 방법입니다.
+다른 Rust 기초 개념을 배우고 싶다면 다음의 링크들을 참고해보세요.
 
-```Rust
-let mut hello = String::from("안녕");
+- [변수 선언](https://doc.rust-lang.org/stable/book/ch03-01-variables-and-mutability.html)
+- [함수](https://doc.rust-lang.org/stable/book/ch03-03-how-functions-work.html)
+- [컬렉션](https://doc.rust-lang.org/stable/book/ch08-00-common-collections.html)
 
-hello.push_str("하세요!");
-println!("{}", hello);
-```
+## 참고 자료
 
-출력:
-
-```
-안녕하세요!
-```
-
-위 코드에서는 `String` 타입 변수인 `hello`에 `push_str` 메소드를 사용해 문자열을 추가했습니다. 이 방법은 메모리 사용 측면에서 더 효율적입니다.
-
-## 참고
-
-[Rust Book - Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)<br>
-[Rust by Example - Strings](https://doc.rust-lang.org/rust-by-example/primitives/string.html)<br>
-[Rust String Documentation](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Rust 공식 문서](https://www.rust-lang.org/learn)
+- [노마드 코더의 Rust 강좌](https://youtu.be/zF34dRivLOw)
+- [Rust 프로그래밍 기초 강의](https://www.youtube.com/watch?v=8kaduiI-JZY)

@@ -1,34 +1,29 @@
 ---
-title:    "PHP: 문자열의 길이 찾기"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/finding-the-length-of-a-string.md"
+title:                "PHP: 문자열의 길이 찾기"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 
-문자열의 길이를 찾는 일에 참여하는 이유는 프로그래밍에서 매우 중요한 작업이기 때문입니다. 문자열의 길이를 알면 다양한 작업을 할 수 있고, 데이터의 유효성을 검사하는데 도움이 됩니다. 또한 문자열의 길이는 프로그래밍 언어에서 매우 기본적인 작업이므로 반드시 알아야 합니다.
+# 왜
+가끔은 문자열의 길이를 알아야 할 때가 있습니다. 예를 들어, 사용자가 입력한 비밀번호가 최소한 8자리 이상이어야 한다면, 그것을 검증하기 위해 문자열의 길이를 알 수 있어야 할 것입니다.
 
-# 하는 방법
+## 하는 방법
 ```PHP
-$string = "안녕하세요?";
-
-// 내장 함수인 strlen()을 사용해 문자열의 길이를 찾는 방법
-$length = strlen($string);
-
-echo "문자열의 길이는 $length 입니다.";
+<?php
+$str = "안녕하세요";
+echo strlen($str); // 이 코드는 문자열 "안녕하세요"의 길이인 5를 출력합니다.
+?>
 ```
-출력 결과: "문자열의 길이는 7입니다."
 
-## 깊게 파고들기
-문자열의 길이를 찾는 방법에 대해 더 자세히 알아보겠습니다. PHP에서는 내장 함수인 `strlen()`을 사용하여 문자열의 길이를 확인할 수 있습니다. 이 함수는 대부분의 다른 프로그래밍 언어에서도 사용하는 일반적인 함수이므로, 여러분이 다른 언어를 배우더라도 동일한 방법으로 문자열의 길이를 찾을 수 있습니다. 그리고 `strlen()` 함수는 UTF-8과 같은 다양한 문자 인코딩에도 대처할 수 있도록 설계되어 있습니다.
+위의 예시 코드에서는 PHP 내장 함수인 `strlen()`을 사용하여 문자열의 길이를 구하는 방법을 보여줍니다. 이 함수는 인자로 받은 문자열의 길이를 반환해 줍니다. 참고로, 한글의 경우에는 영문과 달리 각 글자가 2바이트로 이루어져 있기 때문에, 실제로 10바이트의 길이를 가지지만, `strlen()` 함수는 글자 수를 기준으로 길이를 반환해 줍니다.
 
-# 참고 자료
-[PHP 공식 문서 - strlen() 함수](https://www.php.net/manual/en/function.strlen.php)
+## 깊이 파헤치기
+`strlen()` 함수는 매우 간단하고 유용한 함수이지만, 때로는 약간의 오류를 발생시킬 수 있습니다. 예를 들어, 문자열의 길이를 구하는 것이 아닌, 바이너리 데이터의 길이를 구하려 할 때 `strlen()`은 원하는 결과를 제공하지 못할 수 있습니다. 이럴 때에는 `mb_strlen()` 함수를 사용하는 것이 좋습니다. 이 함수는 문자열의 실제 길이를 확인하여 올바른 값을 반환해 줍니다.
 
-[ASCII 및 UTF-8 인코딩에 대한 더 자세한 설명](https://www.w3schools.com/charsets/ref_utf_basic_latin.asp)
-
-[다른 프로그래밍 언어에서 문자열의 길이를 찾는 방법들](https://www.guru99.com/string-length-function-php.html)
-
-# 같이 보기 
-[PHP에서 문자열을 다루는 다른 유용한 함수들](https://velog.io/@dcmnt/Different-Functions-in-PHP-For-Strings)
+# 같이 보기
+- [PHP 문자열 함수](https://www.php.net/manual/en/ref.strings.php)
+- [PHP mb_strlen() 함수 문서](https://www.php.net/manual/en/function.mb-strlen.php)
+- [한글 문자열에서의 문자열 길이 구하기 (in Stack Overflow)](https://stackoverflow.com/questions/16805543/how-to-get-string-length-of-hangul-in-php)

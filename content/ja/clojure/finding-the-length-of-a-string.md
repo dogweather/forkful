@@ -1,29 +1,39 @@
 ---
-title:    "Clojure: 「文字列の長さを求める」"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/finding-the-length-of-a-string.md"
+title:                "Clojure: 文字列の長さを見つける"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-文字列の長さを求めることに関心を持つ理由について説明します。
+## Why
 
-## 方法
+誰もがプログラミングに携わったことがあるかもしれませんが、文字列の長さを見つけることは非常によく使われるタスクです。文字列の長さを見つけることは、文字列操作や検証に必要な重要なスキルです。
+
+## How To
+
+今回はClojureを使って文字列の長さを見つける方法を紹介します。まずは文字列を定義してみましょう。
+
 ```Clojure
-; 文字列を定義
-(def s "こんにちは！")
-; 文字列の長さを求める
-(count s)
+(def str "こんにちは、世界！")
 ```
-このコードを実行すると、**6**という値が返されます。これは、文字列の長さが6であることを示しています。Clojureは文字列を文字のリストとして扱うので、count関数を使用することでリストのサイズを取得することができます。
 
-## 詳細
-文字列の長さを求めることは、プログラミングにおいて非常に一般的なタスクの一つです。文字列を操作する際に必要な情報を提供する上で非常に重要な機能です。Clojureでは、count関数を使用することで簡単に文字列の長さを取得することができますが、内部的には文字列をリストとして扱っていることに注意する必要があります。
+これで、文字列の長さを取得する準備ができました。次のコードを使って、文字列の長さを見つけることができます。
 
-## 参考リンク
-- [Clojureの公式ドキュメント](https://clojure.org/reference/strings)
-- [Clojureでの文字列操作について](https://clojure.or.jp/doc/strings.html)
-- [文字列操作のTips集](https://qiita.com/katsuyoshi_yz/items/7af5f4b21ff12507e684)
-- [Clojureでの数値変換と文字列長の関係](https://qiita.com/ironista444/items/503cebc97f788a30d576)
-- [テキスト処理についてのClojureチュートリアル](https://clojure.or.jp/doc/about_text_processing.html)
+```Clojure
+(count str)
+```
+
+これで、文字列「こんにちは、世界！」の長さである12が返されます。
+
+## Deep Dive
+
+Clojureでは、文字列の長さを見つけるために、主に組み込み関数であるcountを使います。この関数は、文字数や要素数を返します。また、文字列以外のコレクションやシーケンスに対しても、同様の動作をします。
+
+しかし、注意点としては、count関数は文字列内の1文字を1とカウントするため、マルチバイト文字を含む文字列の場合は、正確な文字数を返すことができません。そのため、マルチバイト文字を含む文字列の場合は、文字列を正規化してからcount関数を使用する必要があります。
+
+## See Also
+
+- [Clojure Documentation on count function](https://clojuredocs.org/clojure.core/count)
+- [Clojure中級者への道: 文字列を触る](https://qiita.com/angel_p_57/items/76eadedbae8fa77ca0bc)

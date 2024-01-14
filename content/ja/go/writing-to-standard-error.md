@@ -1,37 +1,47 @@
 ---
-title:    "Go: 「標準エラーへの書き込み」"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/writing-to-standard-error.md"
+title:                "Go: 標準エラーへの書き込み"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
-標準エラーに書き込む理由は、エラーメッセージやデバッグ情報を迅速に表示するためです。プログラムが実行されている際に発生したエラーをすばやく把握し、修正できるようにするためには、標準エラーへの書き込みは重要です。
+## なぜ
+
+プログラミングにおいて、エラー処理は非常に重要です。コンソール画面に表示されるエラーメッセージは、開発者にとって非常に役に立ちます。様々な言語で使われているGo言語でも、エラーメッセージを出力する方法があります。今回は、標準エラー出力について紹介します。
 
 ## 方法
-Go言語で標準エラーに書き込むには、"fmt"パッケージの"Println"関数を使用します。"\'os.Stderr\'"を渡すことで、標準エラーに書き込むことができます。以下の例を参考にしてください。
+
+標準エラー出力は、`os.Stderr`を使用して出力することができます。例えば、以下のようにコードを記述することで、エラーメッセージを出力することができます。
 
 ```Go
-package main 
+package main
 
-import "fmt"
-import "os"
+import (
+    "fmt"
+    "os"
+)
 
 func main() {
-    fmt.Fprintln(os.Stderr, "エラーメッセージ")
+    fmt.Fprint(os.Stderr, "エラーメッセージ")
 }
 ```
 
-上記のコードを実行すると、標準エラーに「エラーメッセージ」が表示されます。
+上記のコードを実行すると、コンソール画面に「エラーメッセージ」という文字列が出力されます。
 
-## ディープダイブ
-標準エラーに書き込むことは、非常に重要ですが、使用する前に注意することもあります。標準エラーに書き込むことで、プログラムのパフォーマンスが低下する可能性があるため、頻繁な書き込みは避けるべきです。また、標準エラーに書き込む際は、必ずエラー処理を行い、エラーが発生した場合は適切にハンドリングするようにしましょう。
+## 深堀り
 
-## 参考サイト
-- [Go言語のfmtパッケージドキュメンテーション](https://golang.org/pkg/fmt/)
-- [エラーハンドリングについてのベストプラクティス](https://blog.golang.org/error-handling-and-go)
-- [標準エラーに書き込む方法についての詳細情報](https://www.geeksforgeeks.org/how-to-write-data-to-standard-error-in-golang/)
+Go言語では、標準出力と標準エラー出力が分けられています。標準出力は、一般的なメッセージを出力する際に使用します。一方、標準エラー出力は、エラーメッセージを出力する際に使用します。このように分けることで、エラーメッセージがすぐにわかるようになっています。
 
-## 参考になるサイト
-- [Go言語のエラーハンドリングについてのチュートリアル](https://tutorialedge.net/golang/go-error-handling-tutorial/)
+また、`fmt`パッケージの`Fprint`関数以外にも、`Fprintln`や`Fprintf`などの関数もあります。それぞれ、異なる出力方法が可能ですので、詳しく知りたい方は公式ドキュメントを参照してください。
+
+## 詳しくはこちら
+
+- [fmtパッケージドキュメント](https://golang.org/pkg/fmt/)
+- [標準エラー出力について](https://gobyexample.com/stderr)
+- [例外処理について](https://blog.golang.org/error-handling-and-go)
+
+## 参考文献
+
+［[Using os.Stderr for efficient logging](https://stackoverflow.com/a/29260008)］by [Dave Cheney](https://stackoverflow.com/users/6209/dave-cheney) - [Stack Overflow](https://stackoverflow.com/)に投稿された回答の一部を引用しました。

@@ -1,56 +1,56 @@
 ---
-title:    "Arduino: Die Berechnung eines Datums in der Zukunft oder Vergangenheit."
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/calculating-a-date-in-the-future-or-past.md"
+title:                "Arduino: Futur oder Vergangenheitsdatum berechnen"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Berechnen von zukünftigen oder vergangenen Daten kann hilfreich sein, um Termine oder Ereignisse zu planen oder zu überwachen. Mit Arduino können wir dies auf einfache Weise programmieren und unser Projekt flexibler gestalten.
 
-## Wie geht das
-Das Berechnen von zukünftigen oder vergangenen Daten in Arduino ist leicht zu programmieren und erfordert nur wenige Zeilen Code. Hier ist ein Beispiel, wie wir das aktuelle Datum um eine Woche erhöhen können:
+Die Berechnung eines Datums in der Zukunft oder Vergangenheit kann hilfreich sein, um Zeitintervalle zu bestimmen oder Ereignisse zu planen. Mit Arduino ist dies möglich, und in diesem Blog-Beitrag werden wir uns ansehen, wie man dies umsetzen kann.
+
+## How To
+
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, kann man die `DateTime` Bibliothek in Arduino verwenden. Diese stellt verschiedene Funktionen zur Verfügung, um mit Datum und Uhrzeit zu arbeiten.
 
 ```Arduino
-#include <RTClib.h>
+#include <DateTime.h>
 
-RTC_DS1307 rtc;
-
-// Initialisiere den Real-Time Clock
 void setup() {
-  Serial.begin(9600);
+  // Datum und Uhrzeit festlegen (Jahr, Monat, Tag, Stunde, Minute, Sekunde)
+  DateTime jetzt(2020, 04, 20, 12, 00, 00);
 
-  // Starte den RTC und überprüfe die Verbindung
-  if (!rtc.begin()) {
-    Serial.println("RTC konnte nicht gefunden werden!");
-    while (1);
-  }
+  // Datum in der Zukunft berechnen (z.B. 30 Tage später)
+  DateTime zukunft = jetzt + TimeSpan(30, 0, 0, 0);
+  // Datum in der Vergangenheit berechnen (z.B. 2 Monate und 5 Tage vorher)
+  DateTime vergangenheit = jetzt - TimeSpan(0, 2, 5, 0);
 
-  // Setze das aktuelle Datum auf den 29. Juli 2021
-  DateTime now (2021, 7, 29, 12, 0, 0);
-  // Berechne das Datum um eine Woche erhöht
-  DateTime future = now + TimeSpan(7,0,0,0);
-
-  // Gib das zukünftige Datum aus
-  Serial.print("Das zukünftige Datum ist: ");
-  Serial.println(future.timestamp());
+  // Ausgabe des berechneten Datums (Tag, Monat, Jahr)
+  Serial.print(zukunft.day()).print(".");
+  Serial.print(zukunft.month()).print(".");
+  Serial.println(zukunft.year());
+  Serial.print(vergangenheit.day()).print(".");
+  Serial.print(vergangenheit.month()).print(".");
+  Serial.println(vergangenheit.year());
 }
 
 void loop() {
-  // Hier können weitere Aktionen ausgeführt werden
+
 }
 ```
 
-Die Ausgabe der Seriellen Monitor zeigt uns nun das zukünftige Datum in Form eines Unix-Timestamps an. Natürlich können wir auch andere Berechnungen durchführen, wie das Finden des Datums nach einer bestimmten Anzahl von Tagen oder das Zurückgehen in der Zeit.
+Der obige Code demonstriert, wie man mit der `DateTime` Bibliothek ein Datum in der Zukunft und Vergangenheit berechnen kann. Dabei wird zuerst ein `DateTime`-Objekt für das aktuelle Datum und die Uhrzeit erstellt. Anschließend kann man mithilfe der `TimeSpan` Klasse ein Zeitintervall angeben, welches auf das aktuelle Datum addiert oder subtrahiert werden soll. Das Ergebnis wird dann in einem neuen `DateTime`-Objekt gespeichert und kann auf verschiedene Arten ausgegeben werden.
 
-## Tiefer Einblick
-Um das aktuelle Datum in einem festgelegten Format auszugeben, können wir die `now.year()`, `now.month()`, `now.day()` Funktionen verwenden. Diese geben uns die aktuellen Werte von Jahr, Monat und Tag zurück. Wir können dann diese Werte in einem String zusammenfügen und ausgeben.
+## Deep Dive
 
-Um das Datum zurückzugehen, müssen wir die berechnete Zeitspanne als negativen Wert übergeben. Zum Beispiel: `DateTime past = now + TimeSpan(-10,0,0,0);`
+Die `DateTime` Bibliothek basiert auf dem Unix-Zeitformat, welches die Anzahl der Sekunden seit dem 1. Januar 1970 um 00:00 Uhr UTC angibt. Dadurch ist es möglich, Datumsberechnungen mit hoher Genauigkeit durchzuführen. Die Bibliothek stellt neben den oben genannten Funktionen auch weitere nützliche Methoden zur Verfügung, um beispielsweise auf Wochentage oder Zeitintervalle zu prüfen.
 
-Es ist auch möglich, die Zeit zu berücksichtigen und so ein genaues Datum und Zeit anzugeben, z.B. `DateTime now (2021, 7, 29, 12, 30, 0);`
+Man sollte jedoch beachten, dass Arduino keine Batterie oder Echtzeituhr besitzt, um die Zeit auch bei einem Neustart des Systems beizubehalten. Daher muss man das aktuelle Datum und die Uhrzeit bei jedem Start des Systems manuell setzen oder ein externes Modul verwenden.
 
 ## Siehe auch
-- [Offizielle Dokumentation zu Zeit- und Datumfunktionen in Arduino](https://www.arduino.cc/reference/en/libraries/rtclib/)
-- [Tutorial zum Berechnen von zukünftigen oder vergangenen Daten in Arduino](https://maker.pro/arduino/projects/how-to-calculate-date-in-arduino)
+
+- [Offizielle Dokumentation der `DateTime` Bibliothek](https://github.com/PaulStoffregen/DateTime)
+- [Beitrag im Arduino Forum zu Datumsberechnungen](https://forum.arduino.cc/index.php?topic=43462.0)
+- [Tutorial zur Verwendung von Arduino mit einer Echtzeituhr](https://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit?view=all)

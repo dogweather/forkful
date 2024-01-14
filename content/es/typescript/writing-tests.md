@@ -1,41 +1,54 @@
 ---
-title:    "TypeScript: Escribiendo pruebas"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/typescript/writing-tests.md"
+title:                "TypeScript: Escribiendo pruebas"
+programming_language: "TypeScript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir pruebas en TypeScript?
+## Por qué escribir pruebas en TypeScript?
 
-Escribir pruebas en TypeScript es una práctica común en el desarrollo de software ya que permite detectar errores y fallos en el código de manera temprana. También ayuda a mantener un código más limpio y organizado, lo cual facilita su mantenimiento y futuras modificaciones. Al escribir pruebas, se asegura que el código funcione correctamente y se reduce el riesgo de posibles errores en producción.
+Escribir pruebas en TypeScript es una manera efectiva de garantizar que nuestro código funcione correctamente y prevenir errores antes de que lleguen a producción. Además, el uso de pruebas automatizadas puede mejorar la eficiencia y velocidad en el proceso de desarrollo.
 
 ## Cómo escribir pruebas en TypeScript
 
-Para escribir pruebas en TypeScript, se puede utilizar una herramienta de pruebas como Jest. En este ejemplo, se mostrará cómo escribir una prueba sencilla para una función que suma dos números:
+Para escribir pruebas en TypeScript, primero necesitamos tener una unidad de código que queremos probar. En el siguiente ejemplo, vamos a escribir una prueba para una función que suma dos números:
 
-```TypeScript
+```Typescript
 function sum(a: number, b: number): number {
-  return a + b;
+    return a + b;
 }
+```
 
-it('should return the sum of two numbers', () => {
-  expect(sum(2, 2)).toBe(4);
+Ahora, vamos a crear una prueba utilizando la librería de pruebas Jest:
+
+```Typescript
+import { sum } from './sum';
+
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
 });
 ```
 
-Al utilizar `expect` y `toBe`, se verifica que el resultado de la función `sum` sea igual a 4. Si fuera diferente, la prueba fallaría y se señalaría un posible error.
-
-Otra forma de escribir pruebas en TypeScript es utilizando una librería de aserciones como Chai, que ofrece más métodos para realizar diferentes tipos de comprobaciones en el código.
+El código anterior crea una prueba que verifica si la función "sum" retorna correctamente la suma de dos números. El "test" toma dos argumentos: una descripción de la prueba y una función que contiene las expectativas. En este caso, esperamos que la suma de 1 y 2 sea igual a 3, y eso es lo que la función "expect" verifica. 
 
 ## Profundizando en la escritura de pruebas
 
-Para escribir pruebas efectivas, es importante considerar diferentes casos de uso y situaciones en las que el código puede fallar. Una buena práctica es escribir pruebas para cada función o componente del código, asegurando que todas las áreas estén cubiertas. Además, se pueden utilizar herramientas como Istanbul para medir la cobertura de las pruebas y garantizar que se esté probando el código de manera adecuada.
+Escribir pruebas en TypeScript implica el uso de conceptos como mocks, spies y assertions. Estas herramientas nos permiten probar una unidad de código de manera aislada y verificar su comportamiento sin afectar a otros componentes del sistema.
 
-También es importante recordar que las pruebas deben ser independientes y no deben depender de otras pruebas para funcionar correctamente. De esta manera, se asegura que cada prueba se ejecute de manera aislada y se puedan detectar errores específicos.
+Además, existen diferentes tipos de pruebas como las unitarias, de integración y de aceptación, cada una con su propio propósito y forma de implementación. También es importante tener en cuenta las buenas prácticas de escritura de pruebas, como tener una cobertura adecuada y nombres descriptivos para las pruebas.
 
-## Vea también
+## Ver también
 
-- [Jest](https://jestjs.io/)
-- [Chai](https://www.chaijs.com/)
-- [Istanbul](https://istanbul.js.org/)
+- [Jest documentation](https://jestjs.io/docs/en/getting-started)
+- [TypeScript testing with Jest](https://basarat.gitbooks.io/typescript/docs/testing/jest.html)
+- [Unit testing in TypeScript](https://medium.com/@Armno/unit-testing-typescript-classes-24d98e8784bd)
+
+_____
+
+## ¡Por qué escribir pruebas en TypeScript es importante!
+
+Escrito por [Tu Nombre]
+
+Escribir pruebas en TypeScript es esencial para asegurar que nuestro código sea confiable y esté libre de errores. Además, el proceso de escribir pruebas mejora nuestro entendimiento del código y nos ayuda a escribir un código más estructurado y mantenible. ¡Empieza a escribir tus pruebas hoy mismo y verás la diferencia en tu proceso de desarrollo!

@@ -1,48 +1,33 @@
 ---
-title:    "Java: प्रोग्रामिंग में टेस्ट लिखना"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/writing-tests.md"
+title:                "Java: टेस्ट लिखना"
+programming_language: "Java"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-##क्यों
-तो अपने कोड पर भरोसा कैसे करें? आखिरकार, हर कोडर के लिए उसके कोड के साथ खेलने के बिना अपना समय बर्बाद करना कठिन होता है। इसलिए, अपने कोड को सुरक्षित बनाने के लिए, टेस्टिंग करना बहुत आवश्यक है। यह आपको अपने कोड की सामग्री और एक्सपेक्टेशंस को समझने में मदद करेगा और सुनिश्चित करेगा कि आपका कोड उन चीजों को करता है जो आपने उसे करने के लिए प्रोग्राम किया था।
+## क्यों
 
-##कैसे करें
-टेस्ट केस कैसे लिखें? चिंता न करें, हम आपको इस प्रकार की फाइल में समझाएंगे और जिंदगी को स्ट्रेस-फ्री बनाएंगे। एक सरल उदाहरण के साथ, हम आपको दिखाएंगे कि आप कैसे कुछ बेहतरीन टेस्ट लिख सकते हैं और अपने कोड को कैसे सुनिश्चित कर सकते हैं। हम इसे एक "यूआरएल कनेक्शन टेस्टर" के साथ देखेंगे, जो दिए गए यूआरएल पर कनेक्शन करता है और सही या गलत यूआरएल होने की जांच करता है।
+क्या आपने कभी सोचा है कि आपके लिखे गए कोड काम कर रहा है या नहीं? या आपके आप्शन(आपसे) को खुश करने के लिए पूरा दिन काम कर रहे हैं, लेकिन बाद में खुद से पूछते हैं कि क्या आपके कोड में बग्स हैं? अगर हाँ, तो कंपनी और उपयोगकर्ताओं को आप पर भरोसा कैसे रख सकते है कि आपके कोड सही काम कर रहे हैं? इसीलिए, एक अच्छा तरीका है कि आप अपने कोड के टेस्ट लिखें। इससे आपको यकीन होगा कि आपके कोड में कोई प्रॉब्लम्स नहीं हैं और यह सही से काम कर रहा है।
+
+## कैसे
 
 ```Java
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-
-public class URLConnectionTester {
+public class Calculator {
+    public static int add(int num1, int num2) {
+        return num1 + num2;
+    }
 
     public static void main(String[] args) {
-        try {
-            //यूआरएल और उम्मीद
-            URL url = new URL("https://www.example.com");
-            String expected = "Success";
-
-            //कनेक्शन बनाएं
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-            //रिस्पॉन्स को प्राप्त करें
-            String response = connection.getResponseMessage();
-
-            //रिस्पॉन्स की जांच करें
-            if (response.equals(expected)) {
-                System.out.println("Success!");
-            } else {
-                System.out.println("Failure. Expected response: " + expected + ". Actual response: " + response);
-            }
-
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
-        }
+        int result = add(5, 7);
+        System.out.println(result); // Output: 12
     }
 }
 ```
-नोट: यह उदाहरण स्ट्रिंग कंपेरिसन के लिए सुंदर
+
+कोड लेखन करने से पहले, आपको टेस्ट केसेज (test cases) लिखने होंगे जो आपको यह बताते हैं कि क्या आपका कोड सही से काम कर रहा है या नहीं। इसके बाद, आप अपने कोड को debug कर सकते हैं और सुनिश्चित कर सकते हैं कि आपके कोड में कोई बग्स नहीं हैं। आपको टेस्ट केसेज के लिए विभिन्न स्टेटमेंट्स और इनपुट्स को परीक्षण करने की ज़रूरत होगी। अंत में, आपको अपने टेस्ट केसेज को अपनी कोड के साथ run करने के लिए आपको एक testing framework जैसे JUnit और Mockito का उपयोग करना होगा।
+
+## गहरी खोज
+
+टेस्ट केसेज लिखने से पहले, आपको समझना होगा कि आपके कोड में क्या परिवर्तन हो रहे हैं और यह कैसे काम करता ह

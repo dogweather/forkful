@@ -1,82 +1,34 @@
 ---
-title:    "Haskell: Перетворення рядка в нижній регістр"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/converting-a-string-to-lower-case.md"
+title:                "Haskell: Перетворення рядка на нижній регістр"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Часто в процесі написання програм, нам потрібно працювати з рядками тексту. Іноді необхідно привести ці рядки до одного стандартного формату для подальшої обробки. У цьому випадку, помінявши всі великі літери на малі, ми отримаємо єдиний формат для всіх рядків, що буде полегшувати їх подальшу обробку. 
+Перетворення рядка в нижній регістр є важливою функцією при роботі з текстовими даними в програмуванні. Вона дозволяє зробити дані більш узагальненими та універсальними для подальшого аналізу та обробки.
 
-## Як це зробити
+## Як виконати
 
-Існує багато способів переведення рядка до нижнього регістру в мові програмування Haskell. Розглянемо декілька з них.
-
+Щоб перетворити рядок в нижній регістр в мові Haskell, використовуйте функцію `toLower` з модуля `Data.Char`. 
 ```Haskell
-import Data.Char (toLower)
+import Data.Char
 
--- використання функції toLower
-toLowerString :: String -> String
-toLowerString = map toLower
+lowerCaseString = map toLower "HELLO WORLD"
 
--- використання конструкції do
-toLowerString2 :: String -> String
-toLowerString2 str = do
-    char <- str
-    return (toLower char)
-
--- використання рекурсії
-toLowerString3 :: String -> String
-toLowerString3 [] = []
-toLowerString3 (x:xs) = toLower x : toLowerString3 xs
+-- Output: "hello world"
 ```
+Для виконання цієї функції, спочатку імпортуйте модуль `Data.Char`, щоб мати доступ до неї. Потім використовуйте функцію `map` для застосування функції `toLower` до кожного символу у рядку. Це дозволить знизити регістр кожного символу у рядку.
 
-Приклад використання функції ```toLowerString```:
+## Глибокий занурення
 
-```Haskell
-main :: IO ()
-main = do
-    let myString = "Привіт, Haskell!"
-    putStrLn $ toLowerString myString
+Перетворення рядка в нижній регістр може стати складнішою задачею при роботі з мультибайтовими символами, такими як кирилиця. Це через те, що вони можуть мати різний код символу для верхнього та нижнього регістру. Для обробки таких символів необхідно використовувати додаткові функції, наприклад, `toLower'` з модуля `Data.Text`.
 
--- output:
--- привіт, haskell!
-```
+## Дивіться також
 
-Приклад використання конструкції ```do```:
-
-```Haskell
-main :: IO ()
-main = do
-    let myString = "Привіт, Haskell!"
-    putStrLn $ toLowerString2 myString
-
--- output:
--- привіт, haskell!
-```
-
-Приклад використання рекурсії:
-
-```Haskell
-main :: IO ()
-main = do
-    let myString = "Привіт, Haskell!"
-    putStrLn $ toLowerString3 myString
-
--- output:
--- привіт, haskell!
-```
-
-## Поглиблення
-
-У мові Haskell існує багато вбудованих і бібліотечних функцій для роботи з рядками. Наприклад, функція ```toLower``` з модуля ```Data.Char``` приймає у себе символ і повертає його в нижньому регістрі. Також, існує функція ```toLower``` з модуля ```Data.Text``` для роботи з Unicode символами.
-
-У нашому прикладі ми використовували функцію ```map```, щоб застосувати функцію ```toLower``` до кожного символу рядка. Ця функція знаходиться у модулі ```Prelude```, який автоматично підключається у кожному проекті.
-
-Крім цього, у Haskell існує також інтересна функція ```putStrLn```, яка приймає строку і виводить її на екран. Ця функція є членом класу типів ```Show```, що дозволяє зберігати вивід даних на консоль.
-
-## Дивись також
-
-- [Документація з функцією toLower з модуля Data.Char](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char
+- [Інструкція з перетворення рядка в нижній регістр в мові Haskell](https://www.geeksforgeeks.org/convert-string-to-lower-case-in-haskell/)
+- [Виділення та маніпулювання текстовими даними у мові Haskell](https://www.haskell.org/tutorial/strings.html)
+- [Документація по модулю `Data.Char` у мові Haskell](https://hackage.haskell.org/package/base/docs/Data-Char.html)

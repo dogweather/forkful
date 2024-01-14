@@ -1,44 +1,51 @@
 ---
-title:    "Python: Stringien yhdistäminen"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/concatenating-strings.md"
+title:                "Python: Merkkijonojen yhdistäminen"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluat yhdistää merkkijonoja Pythonilla? Joillakin ohjelmointitehtävillä on tarpeellista yhdistää merkkijonoja luomaan uusia, pidempiä merkkijonoja esimerkiksi tulosteiden tai käyttäjän syötteiden luomiseksi.
+Miksi haluaisit yhdistää merkkijonoja Python-ohjelmoinnissa? Yksinkertaisesti sanottuna, se on tapa yhdistää useita merkkijonoja yhdeksi isoksi merkkijonoksi. Tämä voi olla hyödyllistä esimerkiksi tekstinmuokkauksessa tai datan käsittelyssä.
 
-## Miten
+## Kuinka tehdä
 
-Yhdistämisen suorittaminen Pythonilla on helppoa käyttämällä `+` -operaattoria. Katso alla olevia esimerkkejä käyttötapauksista ja odotettuja tulosteita.
+Pythonissa merkkijonojen yhdistäminen tehdään helposti käyttämällä "+" -merkkiä. Tässä on esimerkki koodista ja tulosteesta:
 
 ```Python
-# Yksinkertainen merkkijonon yhdistäminen
-nimi = "Matti"
-tervehdys = "Hei " + nimi
-print(tervehdys)
-# TULOSTUS: Hei Matti
+# Luodaan kaksi erillistä merkkijonoa
+merkkijono1 = "Tämä on "
+merkkijono2 = "Python-ohjelmointia."
 
-# Yhdistäminen numeron kanssa
-luku = 42
-vastaus = "Universumin vastaus on " + str(luku)
-print(vastaus)
-# TULOSTUS: Universumin vastaus on 42
+# Yhdistetään merkkijonot ja tulostetaan tulos
+print(merkkijono1 + merkkijono2)
 
-# Käyttäjän syötteen yhdistäminen
-lempiväri = input("Mikä on lempivärisi? ")
-print("Minun lempivärini on " + lempiväri + " myös!")
-# KÄYTTÄJÄN SYÖTE: Sininen
-# TULOSTUS: Minun lempivärini on Sininen myös!
+# Tulostus: Tämä on Python-ohjelmointia.
 ```
 
-## Syvällisempi tarkastelu
+Yksi asia, joka kannattaa muistaa, on että merkkijonojen yhdistäminen luo aina uuden merkkijonon, eikä muuta alkuperäisiä merkkijonoja.
 
-Pythonin sisäänrakennettu `+` -operaattori toimii concatenation (yhdistäminen) nimisenä prosessina, jossa kaksi merkkijonoa yhdistetään yhdeksi kokonaisuudeksi. Tämä on erittäin hyödyllinen tapa luoda käyttäjän syötteitä, mallisanoja ja monia muita ohjelmointitehtäviä.
+## Syvempi sukellus
+
+Merkkijonojen yhdistäminen ei ole pelkästään "+" -merkin käyttöä. Pythonissa on myös mahdollista käyttää f-merkkijonoita, jotka ovat käteviä esimerkiksi muuttujien sisällyttämisessä merkkijonoon. Tässä on esimerkki koodista ja tulosteesta:
+
+```Python
+# Määritetään muuttuja
+nimi = "Maija"
+
+# Käytetään f-merkkijonoa, jossa muuttuja sisällytetään merkkijonoon
+print(f"Hei, olen {nimi}.")
+
+# Tulostus: Hei, olen Maija.
+```
+
+Lisäksi Pythonissa on myös muita tapoja yhdistää merkkijonoja, kuten käyttämällä "".join() -funktiota tai %-operaattoria. Kannattaa tutustua kaikkiin vaihtoehtoihin ja valita itselleen sopivin tapa.
 
 ## Katso myös
 
-- [Pythonin merkkijonojen dokumentaatio](https://docs.python.org/3/library/string.html)
-- [Pythonin perusoperaattorit](https://docs.python.org/3/library/operator.html)
+- [Pythonin virallinen dokumentaatio merkkijonojen yhdistämisestä](https://docs.python.org/3/library/stdtypes.html#str)
+- [Pythonin merkkijonojen käsittelyä käsittelevä opetusohjelma](https://www.digitalocean.com/community/tutorials/how-to-index-and-slice-strings-in-python-3)
+- [Video-opetusohjelma: Merkkijonojen käsittely Pythonissa](https://www.youtube.com/watch?v=rfscVS0vtbw)

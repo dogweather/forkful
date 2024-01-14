@@ -1,37 +1,46 @@
 ---
-title:    "Bash: उपनिषदों को निकालना"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/bash/extracting-substrings.md"
+title:                "Bash: सबस्ट्रिंग निकालना"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## इसका कारण क्या है
+## क्यों
 
-सबस्ट्रिंग्स को निकालने से आप अपने बैश प्रोग्राम को दूसरों के साथ शेयर करने में आसानी से मदद मिल सकती है। आप इससे दूसरों को अपने कोड का समय बचाने में भी सहायता कर सकते हैं।
+अपनी Bash programming skills को enhance करने के लिए, एक बहुत ही महत्वपूर्ण concept है substring extraction (सबस्ट्रिंग निकालना)। यह आपको लंबे टेक्स्ट strings को कम strings में ट्रीम करने में और आपके programs को optimize करने में मदद करता है। इसलिए, हम इस ब्लॉग पोस्ट में आपको सबस्ट्रिंग निकालना की विस्तृत जानकारी देंगे।
 
 ## कैसे करें
 
-आप निम्नलिखित स्टेप्स को फॉलो करके स्ट्रिंग्स का निकालना सीख सकते हैं:
-
-1. सबसे पहले, आपको अपने शब्द स्ट्रिंग को डेक्लेयर करना होगा। आप यह ध्यान रखें कि आपका शब्द स्ट्रिंग कोटेशन में होना चाहिए।
+अब आपको substring extraction (सबस्ट्रिंग निकालना) करने का तरीका बताते हैं। सबसे पहले, हम इसका syntax देखेंगे:
 
 ```Bash
-string="यह एक शब्द स्ट्रिंग है"
+${string:position:length}
 ```
 
-2. अब, आपको अपने स्ट्रिंग का सम्पूर्ण लेंथ पता करना होगा। इसके लिए आप `expr length "$string"` कमांड का इस्तेमाल कर सकते हैं।
-
-3. अगर आपको केवल कुछ हिस्से को ही निकालना है तो आप `expr substr "$string" startpos length` कमांड का इस्तेमाल कर सकते हैं। यहां, `startpos` निकालने शुरू करने के पोज़िशन को और `length` निकालने की लेंथ को दर्शाता है।
-
-4. अंत में, आप निकाले गए सबस्ट्रिंग को डिस्प्ले कर सकते हैं।
+यहां, "string" आपका original string है, "position" आपकी शुरुआती position है और "length" वह characters की संख्या है जो आपको extract करनी है। यहां कुछ examples हैं:
 
 ```Bash
-echo "सबस्ट्रिंग है: " ${string:startpos:length}
+ORIGINAL_STRING="This is a test string"
+echo "${ORIGINAL_STRING:0:4}" # output: This
+echo "${ORIGINAL_STRING:5:6}" # output: is a t
 ```
 
-इससे आपको शब्द स्ट्रिंग से उन अक्षरों को निकालने में सफलता मिलेगी।
+इसके अलावा, आप negative positions का भी इस्तेमाल कर सकते हैं। इनमें से सबसे आसान position है "-1" जो आपको आपके string का आखिरी character देगा। यहां यह कॉड है जो आपको आपके string का आखिरी character निकालेगा:
 
-## गहराई तक
+```Bash
+ORIGINAL_STRING="This is a test string"
+echo "${ORIGINAL_STRING: -1}" # output: g
+```
 
-अगर आपको शब्द स्ट्रिंग से सम्बंधित गहराई तक जानना है तो आपको `man expr` कमांड का इस्तेमाल करना होगा। इसमें आपको स्ट्रिंग से सम्बंधित और भी इस्तेमाल की जा सकती है ज
+## गहराई से जाने
+
+सबस्ट्रिंग निकालना (substring extraction) के बारे में अधिक जानकारी के लिए, आपको variables और parameters की घंटावाली जानकारी होनी चाहिए। आप variables के भीतर nested variables और parameters को access कर सकते हैं।
+
+आप हमारे लिए λेकिनग आर्टिकल "LinuxCommand - String Manipulation" पढ़ सकते हैं। इसमें अधिक जानकारी पाने के लिए और उपयोगी उदाहरण दिए गए हैं।
+
+## देखें भी
+
+- [LinuxCommand - String Manipulation](https://linuxcommand.org/lc3_man_pages/string-manipulation.1.html)
+- [Bash Substring Expansion](https://www.tldp.org/LDP/abs/html/refcards.html#AEN22634)

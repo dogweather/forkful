@@ -1,47 +1,53 @@
 ---
-title:    "TypeScript: Estrazione di sottostringhe"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/typescript/extracting-substrings.md"
+title:                "TypeScript: Estrazione di sottostringhe"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Estrarre sottostringhe è un'operazione comune nella programmazione di TypeScript. Ciò consente ai programmatori di accedere a parti specifiche di una stringa, come una parola o una frase, per eseguire operazioni su di essa. Estrarre sottostringhe è particolarmente utile quando si lavora con dati di input forniti dagli utenti, in cui è necessario eseguire controlli o manipolazioni su una stringa di input selezionata.
+L'estrazione di sottostringhe è una pratica comune nella programmazione TypeScript utilizzata per ottenere una parte specifica di una stringa più lunga. Questo può essere utile per manipolare e ottenere informazioni specifiche da una stringa, come ad esempio i caratteri in una posizione particolare o un numero di caratteri preciso. In questo articolo, esploreremo come e perché utilizzare la funzione di estrazione delle sottostringhe in TypeScript.
 
 ## Come Fare
 
-Per estrarre una sottostringa in TypeScript, è necessario utilizzare il metodo `substring()` su una variabile di tipo stringa. Questo metodo accetta due parametri: l'indice iniziale della sottostringa e l'indice finale desiderato. Ad esempio, supponiamo di avere una variabile di stringa chiamata `frase` che contiene "Ciao a tutti!" e vogliamo estrarre solo la parola "Ciao". Possiamo farlo utilizzando il seguente codice:
+Per estrarre una sottostringa da una stringa più grande, possiamo utilizzare il metodo `substring()` di TypeScript. Ecco un semplice esempio:
 
 ```TypeScript
-let frase = "Ciao a tutti!";
-let sottostringa = frase.substring(0, 4);
-console.log(sottostringa); // Output: Ciao
+let str: string = "Ciao mondo!";
+let substr: string = str.substring(0, 4);
+console.log(substr);
 ```
 
-Il primo parametro dell'`substring()` indica l'indice della prima lettera che vogliamo includere nella nostra sottostringa, mentre il secondo parametro indica l'indice della lettera successiva a quella che vogliamo includere. In questo caso, vogliamo iniziare dalla lettera "C" che ha un indice di 0 e terminare prima della lettera "a", che ha un indice di 4.
+In questo esempio, abbiamo una stringa di testo "Ciao mondo!" e utilizziamo il metodo `substring()` per estrarre i primi 4 caratteri, ovvero "Ciao". Questo perché il parametro `0` indica da quale posizione iniziare l'estrazione, mentre il parametro `4` indica quanti caratteri vogliamo estrarre.
 
-Alcune altre cose da tenere a mente quando si tratta di estrarre sottostringhe in TypeScript sono:
+Il metodo `substring()` è molto flessibile e offre diverse opzioni per l'estrazione di sottostringhe. Possiamo utilizzare anche due parametri, dove il primo indica la posizione di inizio e il secondo la posizione finale per estrarre la sottostringa. Vediamo un altro esempio:
 
-- Gli indici iniziano sempre da 0.
-- Se si omette il secondo parametro, il `substring()` estrarrà tutto fino alla fine della stringa.
-- Se si utilizza un numero negativo per l'indice iniziale o finale, questo verrà interpretato come una posizione dall'ultimo carattere della stringa. Ad esempio, -1 corrisponde all'ultimo carattere, -2 al penultimo e così via.
+```TypeScript
+let str: string = "Ciao amici!";
+let substr: string = str.substring(5, 11);
+console.log(substr);
+```
 
-Considerando l'esempio precedente, se utilizziamo un indice finale di -7, l'output sarebbe "Ciao a".
+In questo caso, stiamo estraendo la sottostringa "amici" a partire dalla posizione 5 (inclusa) fino alla posizione finale 11 (esclusa).
+
+Possiamo anche utilizzare il metodo `substring()` per estrarre una sottostringa a partire dalla fine di una stringa utilizzando numeri negativi. Ad esempio:
+
+```TypeScript
+let str: string = "Buongiorno";
+let substr: string = str.substring(-5);
+console.log(substr);
+```
+
+In questo esempio, il parametro `-5` indica che vogliamo estrarre una sottostringa di lunghezza 5 a partire dalla fine della stringa, ottenendo come risultato "giorno".
 
 ## Approfondimento
 
-Oltre al metodo `substring()`, TypeScript offre anche altri modi per estrarre sottostringhe da una stringa. Ad esempio:
+Oltre al metodo `substring()`, TypeScript offre anche altre funzioni per l'estrazione di sottostringhe, come `slice()`, `substr()` e `substring()`. Ognuna di queste funzioni ha delle differenze nella loro implementazione ed è importante comprendere le loro peculiarità per scegliere quella più adatta al nostro scopo. Inoltre, è sempre consigliabile effettuare controlli sulle posizioni e sulle lunghezze delle stringhe per evitare errori di compilazione.
 
-- Il metodo `slice()` funziona allo stesso modo del `substring()` ma accetta anche valori negativi come parametri.
-- Il metodo `substr()` accetta invece un indice iniziale e la lunghezza desiderata della sottostringa.
-- È possibile utilizzare anche la sintassi di array per accedere a singoli caratteri di una stringa. Ad esempio, `frase[0]` accederà alla prima lettera della stringa.
+## Vedi Anche
 
-Inoltre, TypeScript offre anche metodi per controllare la presenza di una sottostringa all'interno di una stringa, come `includes()`, `startsWith()` e `endsWith()`.
-
-## Vedi anche
-
-- [Documentazione ufficiale del metodo `substring()` di TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-substring)
-- [Esempi di utilizzo del `substring()`](https://www.javatpoint.com/typescript-substring)
-- [Video tutorial su come estrarre sottostringhe in TypeScript](https://www.youtube.com/watch?v=j_FnBFCi_cg)
+- [Documentazione ufficiale di TypeScript sulle sottostringhe](https://www.typescriptlang.org/docs/handbook/strings.html#substring-and-substr)
+- [Esempi di estrazione di sottostringhe in TypeScript](https://www.tutorialspoint.com/typescript/typescript_strings.htm)

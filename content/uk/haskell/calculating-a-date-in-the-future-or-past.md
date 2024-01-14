@@ -1,55 +1,45 @@
 ---
-title:    "Haskell: Обчислення дати у майбутньому або минулому"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/calculating-a-date-in-the-future-or-past.md"
+title:                "Haskell: Обчислення дати у майбутньому або минулому"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Урахування дати у майбутньому або минулому може бути корисним для багатьох програмних задач, наприклад, створення розкладу подій або обробка платіжних дат.
+Чи коли-небудь ви хотіли дізнатися яка буде дата через певну кількість днів? А можливо, вам потрібно було обчислити дату з минулого для звіту чи прогнозу? У цій статті ми покажемо вам, як використовувати Haskell для роботи з датами в майбутньому та минулому.
 
 ## Як
 
+Кодування дат в майбутньому та минулому за допомогою Haskell дуже просте. Ми можемо використовувати функцію `addDays` для додавання або віднімання днів від поточної дати.
+
 ```Haskell
-import Data.Time
+-- Для обчислення дати через 5 днів
+addDays 5 currentDate
 
--- код для отримання дати за 1 день до поточної дати
-getYesterday :: IO Day
-getYesterday = do
-  today <- getCurrentTime
-  let yesterday = addDays (-1) (utctDay today)
-  return yesterday
-
--- код для отримання дати через 1 рік від поточної дати
-getOneYearFromNow :: IO Day
-getOneYearFromNow = do
-  today <- getCurrentTime
-  let oneYearFromNow = addGregorianYearsClip 1 (utctDay today)
-  return oneYearFromNow
-
--- приклад використання функцій
-main :: IO ()
-main = do
-  yesterday <- getYesterday
-  oneYearFromNow <- getOneYearFromNow
-  print yesterday
-  print oneYearFromNow
+-- Для обчислення дати з 3 днів назад
+addDays (-3) currentDate
 ```
 
-Результат виконання програми буде виглядати так:
+Результатом буде нова дата в форматі `Year-Month-Day`.
 
+## Глибоке погруження
+
+Використання функції `addDays` може бути корисним, якщо ви хочете швидко обчислити дату в майбутньому або минулому, але що, якщо ви хочете використовувати більш структуровану форму дати? У Haskell, є багато різних типів для роботи з датами, такі як `Day`, `UTCTime`, `LocalTime` та інші.
+
+Наприклад, ми можемо використовувати параметризовану функцію `Day` для конвертації з рядка в об'єкт типу `Day`, що представляє дату.
+
+```Haskell
+-- Перетворення з рядка в об'єкт типу Day
+readTime defaultTimeLocale "%Y-%m-%d" "2000-01-01" :: Day
 ```
-2021-10-05
-2022-10-04
-```
 
-## Глибше поринемо
-
-В хаскелі існує багато корисних функцій для роботи з датами, таких як `addDays` для добавлення/віднімання днів, `addGregorianYearsClip` для добавлення/віднімання років в григоріанському календарі та багато інших. Також, для зручності, було створено бібліотеку `time`, яка містить багато корисних функцій для обробки дат. Рекомендується ознайомитись з документацією, щоб дізнатися більше про доступні функції та їх можливості.
+Це дасть нам об'єкт типу `Day`, який ми можемо використовувати для обчислення дати в майбутньому або минулому.
 
 ## Дивись також
 
-- [Документація по бібліотеці `time`](https://hackage.haskell.org/package/time)
-- [Приклади використання функцій для обробки дат](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/time)
+- [Функція `addDays` в стандартній бібліотеці Haskell](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html#v:addDays)
+- [Робота з датами в Haskell](https://www.haskell.org/hoogle/?hoogle=day)
+- [Конвертація дат в Haskell за допомогою `readTime`](https://stackoverflow.com/questions/52761599/how-to-convert-a-string-into-a-date-in-haskell)

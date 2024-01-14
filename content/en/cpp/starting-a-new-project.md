@@ -1,55 +1,45 @@
 ---
-title:    "C++ recipe: Starting a new project"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/starting-a-new-project.md"
+title:                "C++ recipe: Starting a new project"
+programming_language: "C++"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Starting a new programming project can be an exciting and daunting task at the same time. Whether you are a beginner or a seasoned programmer, it can be challenging to know where to start and how to approach the project. However, creating a new project can also be a great learning experience and opportunity to expand your knowledge and skills in the programming language of your choice.
+
+Starting a new project in C++ can be an exciting and rewarding experience. It allows you to explore your creativity and learn new skills in programming. Additionally, having a personal project can be a great addition to your portfolio and showcase your abilities to potential employers.
 
 ## How To
-To start a new C++ project, you will need a code editor and a compiler. The most popular code editor for C++ is Visual Studio, but there are also other options like Code::Blocks, Eclipse, and Sublime Text. Once you have your code editor set up, follow these steps:
 
-1. Create a new project: Open your code editor and create a new C++ project. Give it a name and select the location where you want to save it.
+To start a new C++ project, follow these simple steps:
 
-2. Write your code: Within the project, create a new source file and start writing your code. For example, you can create a simple "Hello World" program:
+1. Choose your IDE (Integrated Development Environment): The first thing you need to do is select an IDE that you feel comfortable working with. Some popular options for C++ include Visual Studio, Code::Blocks, and Eclipse. These IDEs provide a user-friendly interface and helpful features for coding.
 
-   ```C++
-   #include<iostream>
-   using namespace std;
+2. Create a new project: Once you have your IDE set up, create a new project. Most IDEs have a built-in project wizard that will guide you through the process.
 
-   int main() {
-     cout << "Hello World!" << endl;
-     return 0;
-   }
-   ```
+3. Write your code: Now comes the fun part - writing your code! Use the ```C++``` code block to write your code, and don't forget to add comments to explain your thought process and make your code more understandable.
 
-3. Save and compile: Save your code and then compile it. The compiler will turn your code into machine-readable instructions that the computer can understand.
+4. Test and debug: After writing your code, it's essential to test and debug it thoroughly. Use the built-in debugging tools in your IDE to identify and fix any errors in your code.
 
-4. Run your program: After successfully compiling, you can run your program and see the output. In this case, the output would be "Hello World!".
+5. Compile and run: Once your code is error-free, proceed to compile it. If there are no issues, you can run your program and see it in action.
 
-With these simple steps, you have successfully started a new C++ project and written your first program. Now you can continue adding more code and experimenting with different functions and features of the language.
+6. Refactor and optimize: As you become more comfortable with your code, you may want to go back and refactor it to make it more efficient. This process of improving your code is called optimization and is a crucial step in the development process.
 
 ## Deep Dive
-Before starting a new project, it is essential to have a clear understanding of what you want to achieve. Here are a few tips to keep in mind:
 
-1. Set clear goals: Clearly define your project's purpose and requirements. This will help you stay focused and determine what features and functions you need to include in your code.
+Starting a new project can seem overwhelming for beginners, but here are some tips to make it easier:
 
-2. Plan and organize: Plan out your project and break it down into smaller, manageable tasks. This will make it easier to tackle and help you keep track of your progress.
+- Choose a project idea that interests you and will motivate you to work on it.
+- Don't be afraid to ask for help and research solutions when you encounter problems.
+- Practice regularly and don't give up when things get challenging.
+- Take breaks and don't burn yourself out. It's important to have a healthy work-life balance.
 
-3. Research and learn: Take some time to research and learn about the different features and libraries available in C++. This can help you optimize your code and improve its efficiency.
-
-4. Test and debug: As you write your code, make sure to frequently test and debug to catch any errors or bugs. This will save you time and frustration in the long run.
+Remember, starting a new project is all about learning and growing as a programmer. So don't worry about making mistakes and enjoy the process!
 
 ## See Also
-Here are some useful resources for starting a new C++ project:
 
-- [C++ Tutorials](https://www.cplusplus.com/doc/tutorial/)
-- [Visual Studio](https://visualstudio.microsoft.com/)
-- [Code::Blocks](http://www.codeblocks.org/)
-- [Eclipse](https://www.eclipse.org/)
-- [Sublime Text](https://www.sublimetext.com/)
-
-Happy coding! Give it a try and see what amazing projects you can create with C++. Best of luck!
+- [C++ Tutorials for Beginners](https://www.learncpp.com/)
+- [10 Common Mistakes for C++ Beginners to Avoid](https://www.educba.com/10-common-mistakes-cplusplus-beginner/)
+- [Best C++ Books for Beginners](https://www.ubuntupit.com/best-c-plus-plus-books-for-beginners-experts/)

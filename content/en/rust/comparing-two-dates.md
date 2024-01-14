@@ -1,69 +1,58 @@
 ---
-title:    "Rust recipe: Comparing two dates"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/comparing-two-dates.md"
+title:                "Rust recipe: Comparing two dates"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When working with dates in programming, it is common to need to compare two dates. This can be useful for tasks such as finding the difference between two dates or determining if a certain date falls within a range. In this blog post, we will discuss how to compare two dates in Rust and the different methods available for doing so.
+When working with dates in programming, it's important to be able to compare them in different ways. This allows for tasks such as sorting events by date or checking if a certain time has passed. In this blog post, we will explore how to compare two dates in Rust.
 
 ## How To
 
-To compare two dates in Rust, we first need to create `DateTime` objects using the `chrono` crate. Let's take a look at a simple example:
+To begin, we need to import the `chrono` crate, which provides date and time functionality in Rust. Then, we can create two `DateTime` objects, representing the two dates we want to compare.
 
-```Rust
+```
 use chrono::{DateTime, Utc};
-use chrono::offset::TimeZone;
-
-let dt1 = Utc::now(); // current date and time
-let dt2 = Utc.ymd(2021, 10, 31).and_hms(12, 0, 0); // October 31st, 2021 at 12:00:00 PM
-
-if dt1 > dt2 {
-    println!("dt1 is after dt2");
-} else if dt1 < dt2 {
-    println!("dt1 is before dt2");
-} else {
-    println!("dt1 is the same as dt2");
-}
+let date1 = DateTime::parse_from_rfc3339("2021-07-18T12:00:00+00:00").unwrap();
+let date2 = DateTime::parse_from_rfc3339("2021-07-19T12:00:00+00:00").unwrap();
 ```
 
-In the example above, we first import the necessary types from the `chrono` crate. Then, we create two `DateTime` objects: `dt1` which is the current date and time using `Utc::now()`, and `dt2` which is a specific date and time using `Utc.ymd()` and `Utc.hms()`. Finally, we use conditional statements to compare the two dates and print out the result.
+Now that we have our dates, we can use various methods to compare them. For example, we can check if `date1` is before `date2`:
 
-We can also compare dates using specific methods like `is_equal()`, `is_before()` and `is_after()`. Let's take a look at another example:
-
-```Rust
-use chrono::{DateTime, Utc};
-use chrono::offset::TimeZone;
-
-let dt1 = Utc::now(); // current date and time
-let dt2 = Utc.ymd(2021, 10, 31).and_hms(12, 0, 0); // October 31st, 2021 at 12:00:00 PM
-
-if dt1.is_equal(&dt2) {
-    println!("dt1 is the same as dt2");
-}
-
-if dt1.is_before(&dt2) {
-    println!("dt1 is before dt2");
-}
-
-if dt2.is_after(&dt1) {
-    println!("dt2 is after dt1");
-}
+```
+println!("{}", date1 < date2);
+// Output: true
 ```
 
-In this example, we call different methods on the date objects to compare them and print out the result.
+We can also compare the dates using their individual components, such as the year, month, or day:
+
+```
+println!("{}", date1.year() < date2.year());
+// Output: true
+```
+
+Another useful method is `duration_since()`, which calculates the difference between two dates in terms of seconds, minutes, hours, etc. This can be helpful when checking if a certain amount of time has passed between two events:
+
+```
+let duration = date2.signed_duration_since(date1).num_hours();
+println!("{} hours have passed between the two dates.", duration);
+// Output: 24 hours have passed between the two dates.
+```
 
 ## Deep Dive
 
-The `DateTime` objects in Rust use UTC as the default time zone. However, we can also convert them to different time zones using the `with_timezone()` method. This can be helpful when comparing dates between different time zones.
+In addition to the methods mentioned above, there are many other ways to compare dates in Rust. For example, `date1.month()` and `date1.day()` can also be used to compare the months and days of the two dates.
 
-Additionally, we can also compare dates using other date formats like `NaiveDateTime` and `Date`. `NaiveDateTime` does not contain time zone information and is useful for scenarios when we only need to compare dates without considering time zones. `Date` only contains date information and can be useful for tasks such as finding the difference between two dates without considering time.
+It's also important to keep in mind that comparison of dates is affected by time zones. In the examples above, we used dates with an offset of +00:00, which is UTC time. If we were to change the time zone, the results may be different. Therefore, it's recommended to specify the time zone when creating `DateTime` objects.
 
 ## See Also
 
-- Official `chrono` crate documentation for [DateTime](https://docs.rs/chrono/0.4.19/chrono/struct.DateTime.html)
-- [Rust DateTime Cheat Sheet](https://devhints.io/datetime#rust)
-- [Comparing Datetimes in Rust](https://www.tutorialspoint.com/comparing-datetimes-in-rust)
+For more information on working with dates and times in Rust, check out the official `chrono` documentation and other related resources:
+
+- [chrono documentation](https://docs.rs/chrono/)
+- [Rust playground with examples](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=38b55765786e1b330d41709b1f74cfb9)
+- [Video tutorial on `chrono`](https://www.youtube.com/watch?v=L5GqGiKSoLI)

@@ -1,57 +1,45 @@
 ---
-title:    "Swift: Написання тестів"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/swift/writing-tests.md"
+title:                "Swift: Написання тестів"
+programming_language: "Swift"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-##Чому
+## Чому
+ Писання тестів є важливим етапом у розробці програмного забезпечення, тому що вони допомагають виявляти і виправляти помилки ще до того, як код буде відправлено в продакшн. Це забезпечує високу якість програми та зберігає час та ресурси у майбутньому.
 
-Написання тестів є важливою частиною розробки програмного забезпечення. Вони дозволяють переконатися в тому, що програма працює, як очікувалось, та запобігають появі багів у майбутньому. Також вони допомагають ефективніше вносити зміни та покращення до коду.
-
-##Як
-
-Щоб написати тести для своєї програми, необхідно знати основні концепції тестування у Swift. Ось кілька прикладів коду та їхній результат:
+## Як
+ Для написання тестів у Swift, спочатку необхідно використати фреймворк XCTest, який входить до стандартної бібліотеки Swift. Цей фреймворк містить у собі набір функцій та об'єктів, які допоможуть вам створити та виконати тести у вашому коді. Нижче наведені приклади коду, які показують, як створити тестову суіту та перевірити правильність повернення значень з вашої функції:
 
 ```Swift
-// Приклад тесту на перевірку додавання
-func testAddition() {
-  let calculator = Calculator()
-  let result = calculator.add(num1: 5, num2: 7)
-  XCTAssertEqual(result, 12)
+import XCTest //імпортуємо фреймворк
+
+class MyTests: XCTestCase { //створюємо клас, який буде містити тести
+    func testAddition() { //створюємо функцію, яка буде перевіряти умову
+        XCTAssertEqual(2+2, 4, "Сума має бути рівною 4") //функція, що порівнює два значення та виводить повідомлення, якщо вони не співпадають
+    }
 }
+
+//Виклик функції для тестування
+let testSuite = MyTests() //створення екземпляру класу
+testSuite.testAddition() //виклик функції для перевірки
 ```
-Результат: тест пройшов успішно
+
+При виконанні цього коду, ви побачите виведення, яке підтвердить правильність ваших тестів:
 
 ```Swift
-// Приклад тесту на перевірку віднімання
-func testSubtraction() {
-  let calculator = Calculator()
-  let result = calculator.subtract(num1: 10, num2: 5)
-  XCTAssertEqual(result, 5)
-}
+Test Suite 'All tests' started at 2020-10-28 16:12:12.432
+Test Suite 'MyTests' started at 2020-10-28 16:12:12.433
+Test Case '-[MyTests.MyTests testAddition]' started.
+Test Case '-[MyTests.MyTests testAddition]' passed (0.001 seconds).
+Test Suite 'MyTests' passed at 2020-10-28 16:12:12.434.
+	Test Suite 'MyTests' passed at 2020-10-28 16:12:12.434.
+	Executed 1 test, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'All tests' passed at 2020-10-28 16:12:12.435.
+	Executed 1 test, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
 ```
-Результат: тест пройшов успішно
 
-```Swift
-// Приклад тесту на перевірку ділення на нуль
-func testDivisionByZero() {
-  let calculator = Calculator()
-  let result = calculator.divide(num1: 10, num2: 0)
-  XCTAssertNil(result)
-}
-```
-Результат: тест пройшов успішно, тому що в результаті ділення на нуль повертається nil.
-
-##Глибокий погляд
-
-Написання тестів - це більше, ніж просто перевірка правильності роботи програми. Це також єдиний спосіб підтвердити, що зміни, які ви вносите до коду, не руйнують його функціональності. Крім того, написання тестів покращує структуру та читабельність коду, оскільки вимагає докладніших коментарів та розмежування логіки програми.
-
-Для ефективного тестування, важливо створювати тести для кожного блоку коду та використовувати функції, такі як `XCTAssert` для перевірки умов.
-
-##Дивись також
-
-- [Документація Apple для тестування у Swift](https://developer.apple.com/documentation/xctest)
-- [Книга "Test-Driven Development by Example" Е.Фримена](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530)
-- [Блог-пост "Цікаві факти про тестування у Swift" від Codeacademy](https://www.codecademy.com/articles/things-you-didnt-know-about-testing-in-swift)
+## Deep Dive
+ Для написання ефективних тестів, важливо дотримуватися декількох основних принципів. По-перше, тести повинні бути незалежними один від одного, тобто результати одного тесту не повинні впливати на результати іншого. Також важливо тестувати як позитивні, так і негативні сценарі

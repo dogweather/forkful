@@ -1,44 +1,43 @@
 ---
-title:    "Gleam recipe: Capitalizing a string"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/capitalizing-a-string.md"
+title:                "Gleam recipe: Capitalizing a string"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why Capitalize a String in Gleam
 
-Have you ever encountered a situation where you needed to capitalize a string in your code? Perhaps you are formatting user input or displaying data in a specific format. Whatever the reason may be, knowing how to capitalize a string in Gleam can come in handy. In this blog post, we will explore how to accomplish this task in a few simple steps.
+Capitalizing a string is a common task in programming and can be useful for various reasons. For example, when displaying user input or creating proper titles, it is important to have the first letter of each word capitalized. In this blog post, we will explore how to capitalize a string in Gleam and provide a deep dive into the process.
 
-## How To
+## How To Capitalize a String in Gleam
 
-To capitalize a string in Gleam, we will be using the `String.capitalize` function. This function takes in a string as its argument and returns a capitalized version of that string.
-
-Let's take a look at an example where we want to capitalize the first letter of a name:
+To capitalize a string in Gleam, we will use the `String.to_title_case` function. This function takes in a string as its parameter and returns the capitalized string. Let's take a look at an example:
 
 ```Gleam
-import gleam/String
-main =
-  let name = "jane"
-  String.capitalize(name)
+import String
+import Gleam.List
+
+let name = "john smith"
+
+let capitalized_name = String.to_title_case(name)
+
+Gleam.List
+  .map(String.to_list(capitalized_name), char_to_list)
+  # Output: ['J', 'o', 'h', 'n', ' ', 'S', 'm', 'i', 't', 'h']
 ```
 
-The output of this code will be `"Jane"`, with the first letter capitalized. Similarly, we can also capitalize every letter in a string by using the `String.to_uppercase` function:
+As we can see from the output, `String.to_title_case` has successfully capitalized the first letter of each word in our string. It is important to note that this function will not alter any other letters in the string - only the first letter of each word will be capitalized.
 
-```Gleam
-import gleam/String
-main =
-  let sentence = "this is a sentence."
-  String.to_uppercase(sentence)
-```
+## Deep Dive into Capitalizing a String
 
-The output of this code will be `"THIS IS A SENTENCE."` Note that this function does not just capitalize the first letter, but every letter in the string.
+Behind the scenes, the `String.to_title_case` function uses Unicode rules to determine which letters should be capitalized. This means that it can handle a variety of languages and special characters, making it a robust solution for capitalizing strings.
 
-## Deep Dive
-
-Behind the scenes, the `String.capitalize` function is using the `String.to_list` function to convert the string into a list of characters. It then uses the `List.head` function to get the first element in the list, which is then mapped to uppercase using the `Char.to_upper` function. Finally, the list is converted back to a string using the `String.from_list` function.
+It is also worth noting that the function works with not only single words, but with whole sentences as well. Each word in the sentence will be capitalized, while any other punctuation or symbols will remain unchanged. Additionally, if the string contains any non-letter characters, they will be preserved in the output.
 
 ## See Also
 
-- Gleam String module documentation: https://gleam.run/documentation/std-lib/string/
-- Capitalizing a string in Elixir: https://elixirschool.com/en/lessons/basics/string/#functions-and-modules
+- [Gleam Documentation on String](https://gleam.run/documentation/stdlib/string/)
+- [Unicode Character Database](https://unicode.org/ucd/)
+- [Gleam Discord Community](https://discord.gg/XzYcS2X)

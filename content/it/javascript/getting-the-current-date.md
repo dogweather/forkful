@@ -1,36 +1,41 @@
 ---
-title:    "Javascript: Ottenere la data corrente."
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/javascript/getting-the-current-date.md"
+title:                "Javascript: Ottenere la data attuale"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Molti sviluppatori Javascript potrebbero chiedersi perché sia importante ottenere la data corrente durante la programmazione. La risposta è semplice: la data è uno dei dati più utili e utilizzati nelle applicazioni e siti web moderni.
+La funzione di ottenere la data corrente è un'importante strumento di programmazione in Javascript che consente di aggiungere dinamicità alle applicazioni web. Con questa funzione, è possibile visualizzare la data attuale sulla pagina e utilizzarla per una varietà di scopi, come ad esempio aggiornare automaticamente le informazioni in base alla data.
 
-## Come fare
-Per ottenere la data corrente in Javascript, esistono diverse opzioni. La prima è utilizzare il metodo `getDate()` dell'oggetto `Date`, che restituisce il giorno del mese corrente. Ad esempio:
+## Come Fare
+Per ottenere la data corrente in Javascript, utilizzeremo l'oggetto Date(), che rappresenta la data e l'ora correnti. Questo oggetto fornisce vari metodi per accedere alle informazioni sulla data e sull'ora, come ad esempio getDate(), getMonth(), getFullYear(), getHours() e molti altri.
 
-```Javascript
-let today = new Date();
-let date = today.getDate();
+```
+// Creiamo un nuovo oggetto Date
+let dataCorrente = new Date();
 
-console.log("Oggi è il " + date + " del mese").  // Output: Oggi è il 28 del mese
+// Otteniamo la data
+let data = dataCorrente.getDate();
+
+// Otteniamo il mese
+let mese = dataCorrente.getMonth();
+
+// Otteniamo l'anno
+let anno = dataCorrente.getFullYear();
+
+// Stampiamo la data completa
+console.log(`La data di oggi è ${data}/${mese + 1}/${anno}`);
 ```
 
-Un'altra opzione è utilizzare il metodo `toLocaleDateString()` in combinazione con l'opzione `locale` per ottenere la data formattata secondo le impostazioni locali. Ad esempio:
-
-```Javascript
-let today = new Date();
-let date = today.toLocaleDateString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-
-console.log("Oggi è " + date); // Output: Oggi è lunedì 28 giugno 2021 
-```
+Questo codice restituirà la data corrente nel formato giorno/mese/anno e verrà stampato nella console come "La data di oggi è 22/12/2020".
 
 ## Approfondimento
-Ottenere la data corrente in Javascript può sembrare semplice, ma è importante conoscere alcuni dettagli. Per esempio, la data ottenuta tramite i metodi citati sopra dipende dalle impostazioni della macchina del cliente, quindi potrebbe essere formattata in modo diverso da un paese all'altro. Inoltre, è possibile aggiungere o sottrarre giorni, mesi o anni dalla data ottenuta per ottenere date future o passate. È anche importante prestare attenzione al fuso orario, poiché la data corrente dipende dalla posizione geografica del dispositivo.
+L'oggetto Date() in Javascript rappresenta la data e l'ora secondo il fuso orario del sistema in cui viene eseguito il codice. Tuttavia, è anche possibile impostare manualmente la data e l'orario specifici utilizzando i metodi set() dell'oggetto Date. Inoltre, esistono anche librerie esterne che consentono di formattare la data in modi diversi, come ad esempio Moment.js.
 
-## Vedi anche
-- [MDN - Date](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools - Dates](https://www.w3schools.com/js/js_date_methods.asp)
+## Vedi Anche
+- [Documentazione sull'oggetto Date in Javascript](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Tutorial su come utilizzare l'oggetto Date in Javascript](https://www.html.it/pag/32542/capire-javascript-date/)
+- [Libreria Moment.js per la gestione delle date in Javascript](https://momentjs.com/)

@@ -1,37 +1,54 @@
 ---
-title:    "Ruby: Programmieren von Tests"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/writing-tests.md"
+title:                "Ruby: Tests schreiben"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Warum sollte man sich die Mühe machen, Tests in Ruby zu schreiben? Nun, Tests sind ein entscheidender Bestandteil des Entwicklungsprozesses in Ruby. Sie helfen dabei, sicherzustellen, dass der Code korrekt funktioniert und verhindern Fehler und Bugs in der Zukunft. Außerdem ermöglichen sie es, den Code einfacher zu warten und zu erweitern.
+Warum sollte man sich die Mühe machen, Tests in Ruby zu schreiben? Die Antwort ist einfach: Tests sorgen für eine höhere Codequalität und helfen dabei, Fehler frühzeitig zu erkennen und zu beheben. Sie sparen also letztendlich Zeit und Nerven beim Entwickeln und Refaktorisieren von Code.
 
-## Wie man Tests schreibt
+## How to
 
-Um Tests in Ruby zu schreiben, gibt es einige grundlegende Schritte zu beachten. Zunächst müssen Sie ein Test-Framework wie RSpec oder MiniTest installieren. Dann erstellen Sie eine neue Datei mit der Endung ".rb" und fügen den folgenden Code ein:
+Um Tests in Ruby zu schreiben, verwenden wir das bekannte Framework "RSpec". Beginnen wir mit einem einfachen Beispiel, einem Test für eine einfache Rechenfunktion:
 
-```Ruby
-require "rspec/autorun" 
+```ruby
+# Definiere die Methode "add" und gebe die Summe von a und b zurück
+def add(a, b)
+  return a + b
+end
 
-describe "Beispieltest" do
-  it "sollte etwas tun" do
-    # Hier können Sie Ihren Code schreiben
+# Der Test mit RSpec
+describe "add" do
+  it "addiert zwei Zahlen und gibt das Ergebnis zurück" do
+    result = add(3, 5)
+    expect(result).to eq(8)
   end
 end
 ```
 
-In diesem Beispiel haben wir RSpec verwendet, um einen Test namens "Beispieltest" zu definieren, der etwas tun sollte. Sie können Ihren eigenen Code innerhalb der "it" -Anweisung schreiben und dann mit dem Befehl "rspec" in der Konsole ausführen, um Ihre Tests laufen zu lassen.
+Wenn wir diesen Code ausführen, sollte der Test erfolgreich sein und wir erhalten eine grüne Bestätigung. Wenn wir nun versehentlich einen Fehler in der `add` Methode eingebaut haben, wird der Test fehlschlagen und uns auf den Fehler hinweisen.
 
-## Tiefergehender Einblick
+Das `RSpec` Framework bietet uns noch viele weitere Möglichkeiten, um Tests zu schreiben und zu strukturieren. Es lohnt sich also, sich näher damit zu beschäftigen und die vielfältigen Funktionen zu nutzen, um die Qualität des Codes zu verbessern.
 
-Tests können viel mehr als nur den Code zu überprüfen. Sie können auch dazu beitragen, den Code zu refaktorisieren und die Lesbarkeit und Wartbarkeit zu verbessern. Indem Sie verschiedene Testfälle abdecken, können Sie sicherstellen, dass Ihr Code robust und fehlerfrei ist. Außerdem können Sie mit Mocking und Stubs komplexe Abhängigkeiten umgehen und sich auf Einzelteile des Codes konzentrieren.
+## Deep Dive
 
-## Siehe auch
+Es gibt einige wichtige Best Practices, die es zu beachten gilt, wenn man Tests in Ruby schreibt. Hier sind einige Tipps, die dir helfen können, qualitativ hochwertige Tests zu erstellen:
 
-- [RSpec Dokumentation auf Deutsch](http://rspec.info/documentation/)
-- [MiniTest Dokumentation auf Deutsch](https://docs.seattlerb.org/minitest/)
-- [Einführung in Ruby-Tests](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-testing)
+- Schreibe testspezifische Setup-Methoden, um die Testfälle vorzubereiten und zu vermeiden, dass sich der Code im Test wiederholt.
+- Verwende aussagekräftige Bezeichner für deine Tests, um deren Verständlichkeit zu erhöhen.
+- Versuche, deine Tests unabhängig voneinander zu gestalten. Ein Test sollte nicht von einem anderen abhängig sein.
+- Mache dir Gedanken darüber, welche Fälle du testen musst und welche nicht. Es macht keinen Sinn, jeden einzelnen Teil deines Codes zu testen.
+
+Indem du diese Best Practices befolgst, kannst du sicherstellen, dass deine Tests effektiv sind und dir bei der Entwicklung von stabilem und wartbarem Code helfen.
+
+## Sieh auch
+
+- [RSpec Dokumentation](https://rspec.info/documentation/)
+- [Ruby Testing Best Practices](https://github.com/testdouble/contributing-tests/wiki/Ruby-Testing-Best-Practices)
+- [Einführung in das Testen mit RSpec](https://semaphoreci.com/community/tutorials/getting-started-with-rspec)
+
+Danke, dass du meinen Blogbeitrag gelesen hast. Ich hoffe, du hast einen Einblick in die Welt des Testens in Ruby erhalten. Viel Spaß beim Schreiben von qualitativ hochwertigen Tests!

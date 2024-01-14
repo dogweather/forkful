@@ -1,33 +1,46 @@
 ---
-title:    "Swift: 正規表現を使用する"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/using-regular-expressions.md"
+title:                "Swift: Regular Expressionsを使用する"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-**Why: なぜ正規表現を使用すべきなのか？**
+## なぜ 
+ Regular Expressionsを使用するか
 
-正規表現は文字列を操作するための強力なツールです。文字列を検索したり、置換したり、一致するパターンを確認したりする際に便利です。また、パターンを定義することで、複雑な文字列を簡単に処理できます。
+正規表現は、文字列の処理や検索を行う際に非常に便利なツールです。Swiftを使用して開発を行う際に、文字列を扱う場面は非常に多いため、正規表現を学ぶことで開発効率を上げることができます。
 
-**How To: 正規表現の使用方法**
+## 初め方
 
-正規表現を使用するには、まずパターンを定義する必要があります。例えば、任意の数字の連続を表すパターンは「\d+」となります。次に、指定したパターンに対して操作を行います。以下は、文字列中から数字の連続を検索し、置換するコードの例です。
+正規表現を使用するには、まずは正規表現のパターンを定義する必要があります。このパターンを使用して、文字列を検索や置換することができます。下記のように、```Swift```ブロック内にパターンを定義し、文字列を操作してみましょう。
 
 ```Swift
-let str = "今日は2月14日です"
 let pattern = "\\d+"
-let replacement = "12月25日"
-let newStr = str.stringByReplacingOccurrences(of: pattern, with: replacement)
-print(newStr) // 出力: "今日は12月25日です"
+let string = "abc123"
+
+if let range = string.range(of: pattern, options: .regularExpression) {
+    let match = string.substring(with: range)
+    print(match)
+}
+
+// Output: 123
 ```
 
-**Deep Dive: 正規表現の詳細**
+文字列の中から、数字のみを抽出することができました。これは非常に便利ですね！正規表現には様々なパターンがあり、様々な文字列を検索や置換することができます。自分の開発に合わせたパターンを学ぶことで、より効率的に文字列を操作することができます。
 
-正規表現パターンには様々な特殊文字が含まれています。例えば、「\d」は数字を表し、「.」はどの1文字にも一致するという意味です。また、「+」や「*」などの量指定子を使用することで、繰り返しパターンを定義することができます。さらに、グループ化やキャプチャなどの機能もあり、より柔軟なパターンの定義が可能です。
+## 深く学ぶ
 
-**See Also: 関連リンク**
+正規表現に関する詳細な情報は、公式ドキュメントや書籍にて学ぶことができます。また、オンライン上には多くのサンプルコードやコミュニティが存在しており、他の開発者がどのように正規表現を使用しているかを学ぶこともできます。正規表現は一度学ぶとその知識は幅広い開発に応用することができるため、しっかりと学ぶことが重要です。
 
-- [正規表現チートシート](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [Swift正規表現ガイド](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [正規表現エディター](https://regex101.com/)
+## 参考リンク
+
+- [Swift正規表現チュートリアル](https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial)
+- [正規表現入門](https://www.amazon.co.jp/dp/4798060651)
+- [正規表現パターン](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID335) (公式ドキュメント) 
+
+## 参考にする
+
+- [Swiftで文字列操作をする際の Tips](https://qiita.com/YutaSaito1991/items/61933c87a431c2b02da7)
+- [正規表現を使った Swift の文字列操作方法](https://tmasuda37.net/archives/1213)

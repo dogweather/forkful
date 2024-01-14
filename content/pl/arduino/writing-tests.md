@@ -1,57 +1,62 @@
 ---
-title:    "Arduino: Pisanie testów"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/writing-tests.md"
+title:                "Arduino: Pisanie testów"
+programming_language: "Arduino"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto testować kod w Arduino?
+## Dlaczego pisać testy w programowaniu Arduino?
 
-Testowanie kodu jest kluczowym elementem w procesie pisania programów dla Arduino. Dzięki testom można upewnić się, że nasz kod działa poprawnie i uniknąć problemów w przyszłości. Jest to również ważne dla osób korzystających z naszego kodu, ponieważ testy dają pewność, że nasz projekt działa zgodnie z oczekiwaniami.
+Chociaż często pisanie testów może wydawać się czasochłonne i zbędne, to jest to jednak ważna część procesu programowania. Testy pomagają wychwycić błędy w kodzie oraz zapewniają większą pewność, że nasz program będzie działał poprawnie. W przypadku programowania Arduino, gdzie nasz kod może wpływać na fizyczne elementy, takie jak diody LED czy silnik, jeszcze ważniejsze jest, aby posiadać odpowiednie testy.
 
-## Jak testować kod w Arduino?
+## Jak pisać testy w Arduino?
 
-Aby rozpocząć testowanie kodu w Arduino, należy wykonać kilka kroków:
-
-1. Otwórz nowy projekt w Arduino IDE i nazwij go "Testowanie Kodu".
-2. Utwórz nowy plik z funkcją testującą i nazwij go "tests.ino".
-3. W pliku "tests.ino" umieść funkcję, którą chcesz przetestować, np. zmienną i funkcję odpowiadającą za jej zmianę.
-4. Następnie stwórz funkcję testującą, która będzie sprawdzać poprawność działania naszej zmiennej i jej funkcji.
-5. Skompiluj i przetestuj kod, upewniając się, że funkcja testująca wykrywa ewentualne problemy.
-
-Przykładowy kod wyglądałby następująco:
+Aby napisać testy w Arduino, musimy najpierw zainstalować bibliotekę Test na naszym komputerze. Wystarczy przejść do menadżera bibliotek w Arduino IDE i znaleźć bibliotekę Test. Następnie włączamy Test Suite Configuration i tworzymy nowy plik o nazwie test.ino.
 
 ```Arduino
-// funkcja odpowiadająca za zmianę wartości zmiennej
-int zmienWartosc(int x){
-  return x + 10; 
-} 
-// Funkcja testująca
-void testoweFunkcje(){
-  int testowaZmienna = 0; 
-  testowaZmienna = zmienWartosc(testowaZmienna); 
-  if(testowaZmienna != 10){
-    // wypisz błąd
-    Serial.println("Błąd: Wartość zmiennej nie została zmieniona!");
-  }
+#include <Test.h>
+
+void setup(){
+    Serial.begin(9600);
+}
+
+void loop(){
+    //kod testów
+    Test::run();
 }
 ```
 
-### Pamiętaj o poprawnym oznaczeniu pinów
+## Dogłębny wgląd w pisanie testów
 
-Podczas testowania kodu w Arduino ważne jest, aby pamiętać o poprawnym oznaczeniu pinów, szczególnie jeśli korzystamy z płytki z mikrokontrolerem o ograniczonej ilości pinów. W tym celu można wykorzystać funkcję "pinMode", która ustawia tryb pracy pinu jako wejście lub wyjście.
+Pozwólmy sobie teraz na trochę bardziej szczegółowy opis pisanie testów w Arduino. Po pierwsze, musimy zdefiniować wszystkie zmienne i funkcje, które chcemy przetestować. Możemy to zrobić, korzystając z metody `TEST()`. Musimy podać dwie wartości: nazwę testu oraz funkcję, którą chcemy przetestować.
 
-## Głębszy zanurzenie w pisaniu testów
+```Arduino
+TEST(nazwa_testu, funkcja_testowana){ 
+    //kod testów
+}
+```
 
-Pisanie testów dla kodu w Arduino może być złożonym procesem, szczególnie jeśli projekt jest rozbudowany i wykorzystuje wiele funkcji. Ważne jest, aby pamiętać o dokładnym sprawdzaniu poprawności każdej funkcji, aby uniknąć ewentualnych błędów w przyszłości.
+Wewnątrz funkcji definujemy warunki testu, jakie chcemy przetestować. Może to być sprawdzenie poprawności działania instrukcji warunkowych lub pętli, przypisanie wartości do zmiennych i sprawdzenie, czy zostały one poprawnie zapisane, lub po prostu sprawdzenie, czy nasz program działa zgodnie z oczekiwaniami. Do tego celu możemy użyć funkcji `ASSERT_*`, w zależności od tego, co chcemy sprawdzić.
 
-Jedną z zalet pisania testów jest możliwość wczesnego wykrywania błędów i szybszego ich naprawiania. W przypadku rozbudowanych projektów testowanie kodu może pomóc w zlokalizowaniu problemu, co ułatwia jego naprawę.
+```Arduino
+TEST(nazwa_testu, funkcja_testowana){
+    int x = 5;
+    int y = 10;
+    
+    //sprawdzenie, czy x jest mniejsze niż y
+    ASSERT_TRUE(x < y);
+    
+    //sprawdzenie, czy zmienna została poprawnie przypisana
+    ASSERT_EQUALS(x, 5);
+}
+```
 
-## Zobacz również
+Możemy też wykorzystać funkcję `ASSERT_*` do weryfikacji, czy nasz program poprawnie komunikuje się z innymi urządzeniami, takimi jak czujniki czy ekrany. W ten sposób sprawdzimy nie tylko poprawność samych instrukcji, ale też komunikacji pomiędzy różnymi elementami.
 
-Jeśli jesteś zainteresowany głębszym poznaniem tematu testowania kodu w Arduino, polecamy zapoznanie się z poniższymi artykułami:
+## Zobacz także
 
-- [Oficjalna dokumentacja testowania kodu w Arduino](https://www.arduino.cc/en/Reference/ArduinoUnit)
-- [Narzędzia do testowania kodu w Arduino](https://www.circuits.dk/tools-for-testing-your-arduino-sketch-routines/)
-- [Jak pisać testy dla kodu w Arduino](https://www.youtube.com/watch?v=SQmLtH9MpyA) (wideo)
+- Oficjalna dokumentacja biblioteki Test dla Arduino - https://playground.arduino.cc/Code/UnitTest
+- Podręcznik Test dla Arduino - https://create.arduino.cc/projecthub/radko9696/unipolar-stepper-with-arduino-b00815
+- Przykładowy projekt wykorzystujący bibliotekę Test - https://github.com/adafruit/Adafruit_TCS34725/tree/master/examples/test

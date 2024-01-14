@@ -1,43 +1,47 @@
 ---
-title:    "Rust: Päivämäärän muuttaminen merkkijonoksi"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/converting-a-date-into-a-string.md"
+title:                "Rust: Päivämäärän muuttaminen merkkijonoksi"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monet ohjelmat vaativat päivämäärän esittämistä merkkijonona, esimerkiksi tulostuksen yhteydessä. Rustin tarjoama DateTime-kirjasto tarjoaa hyödyllisiä toimintoja päivämäärän ja ajan manipulointiin, mukaan lukien päivämäärän muuntaminen merkkijonoksi. Seuraavassa kerromme, miten tämä onnistuu.
+Rust-ohjelmointikieli on noussut suosituksi vaihtoehdoksi monien muiden ohjelmointikielten rinnalla, ja yksi sen suosion syistä on sen kyky käsitellä päivämäärätietoja tehokkaasti. Tässä blogikirjoituksessa keskitymme tarkastelemaan, miksi ja miten päivämäärä voidaan muuntaa merkkijonoksi Rustissa.
 
-## Kuinka
+## Miten
 
-Converting a date into a string -toimintoa varten tarvitsemme ensin päivämäärämuuttujan, johon tallennetaan haluttu päivämäärä ja aika. Tämän jälkeen voimme käyttää DateTime-kirjastosta löytyviä toimintoja päivämäärän muuntamiseen merkkijonoksi. Alla on esimerkkikoodia, jossa haluamme tulostaa päivämäärän muodossa "päivä.kuukausi.vuosi".
+Rustilla on sisäänrakennettu DateTime-kirjasto, joka mahdollistaa päivämäärätiedon käsittelemisen. Alla olevassa koodiesimerkissä näytämme, miten voit ensin luoda DateTime-olion ja sitten muuntaa sen merkkijonoksi käyttämällä format!()-makroa:
 
 ```Rust
-use std::time::{SystemTime, UNIX_EPOCH};
-use chrono::prelude::*;
+use std::time::SystemTime;
+use chrono::{DateTime, Local};
 
-// Luodaan päivämäärämuuttuja
-let dt = Utc::now();
-
-// Muunnetaan päivämäärä merkkijonoksi
-let date_str = dt.format("%d.%m.%Y").to_string();
-
-// Tulostetaan kauniilla
-println!("Haluttu päivämäärä on: {}", date_str);
+fn main() {
+    let now: DateTime<Local> = DateTime::from(SystemTime::now());
+    let date_string = format!("{}", now.format("%Y-%m-%d"));
+    println!("{}", date_string);
+}
 ```
 
-Esimerkkitulostus:
+Koodin tuloste on tällainen:
 
 ```
-Haluttu päivämäärä on: 31.12.2021
+2021-07-20
 ```
 
-## Syväkatsaus
+Koodiesimerkissä käytetään `chrono`-kirjastoa, joka tarjoaa lisätoimintoja päivämäärätietojen käsittelyyn. Voit muuttaa format!()-makron avulla merkkijonon ulkoasua vaihtamalla `%Y-%m-%d`-osan haluamaasi muotoon.
 
-DateTime-kirjastosta löytyy useita erilaisia muotoilutoimintoja, joilla päivämäärä voidaan muuntaa haluttuun merkkijonon muotoon. Voit kokeilla esimerkissä käytetyn "%d.%m.%Y" sijasta esimerkiksi "%A, %B %e, %Y", jolloin saat tulokseksi viikonpäivän, kuukauden nimen, kuukauden päivän ja vuoden.
+## Syväsukellus
 
-See Also (Katso myös):
-- [DateTime kirjaston dokumentaatio](https://docs.rs/chrono/0.4.19/chrono/struct.DateTime.html)
-- [Rustin DateTime esimerkit](https://github.com/chronotope/chrono/blob/master/examples/clock.rs)
+Päivämäärätiedon muuntaminen merkkijonoksi voi olla hyödyllistä esimerkiksi silloin, kun haluat tallentaa päivämäärän tietokantaan tai tallentaa sen tiedostoon. Rustin DateTime-kirjasto takaa, että päivämäärätiedon käsittely on turvallista ja tehokasta.
+
+On myös huomionarvoista, että Rustin DateTime-kirjasto sisältää monia muita hyödyllisiä toimintoja, kuten päivämäärän lisäämisen, vähentämisen ja vertailun. Kannattaa tutustua dokumentaatioon ja löytää lisää tapoja käsitellä päivämääriä ohjelmissasi.
+
+## Katso myös
+
+- [Rustin virallinen DateTime-dokumentaatio](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
+- [Datetime kirjasto Rustilla](https://crates.io/crates/datetime)
+- [Ohjeet päivämäärätietojen käsittelyyn Rustissa](https://www.codementor.io/@riccardo_cardin/how-to-work-with-dates-and-time-with-rust-t2fls6enor)

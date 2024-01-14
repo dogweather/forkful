@@ -1,53 +1,51 @@
 ---
-title:    "Javascript recipe: Extracting substrings"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/extracting-substrings.md"
+title:                "Javascript recipe: Extracting substrings"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Substring extraction is a useful technique in Javascript programming that allows you to isolate and extract specific parts of a string. This can be helpful in situations where you need to manipulate and work with smaller sections of a larger string.
+As a programmer, one of the most common tasks we face is manipulating strings. And sometimes, we may need to extract a specific part of a string for further processing. This is where the concept of extracting substrings comes in. It allows us to extract a portion of a string based on certain conditions and use it in our code.
 
 ## How To
 
-To extract substrings in Javascript, we can use the `substring()` method. This method takes in two parameters: the starting index and the ending index of the substring you want to extract. For example, if we have the string "Hello World" and we want to extract the substring "World", we would use the following code:
+To extract substrings in Javascript, we can use the built-in substring() method. It takes two parameters: the starting index and the ending index of the substring. For example:
 
 ```Javascript
 let str = "Hello World";
-
-let substring = str.substring(6, 11);
-
-console.log(substring); // output: World
+let substr = str.substring(6, 11);
+console.log(substr); // Output: "World"
 ```
 
-In the above example, the starting index is 6 (corresponding to the first letter of "World") and the ending index is 11 (corresponding to the last letter of "World" plus 1). 
+In this example, we start extracting from index 6 (which corresponds to the letter "W" in "World") and end at index 11. It's important to note that the ending index is not included in the substring.
 
-We can also use negative numbers as the parameters for `substring()`, which indicates the starting index from the end of the string. For example, `str.substring(-5, -1)` would extract the substring "Worl" from "Hello World".
+We can also omit the second parameter and the substring will be extracted from the starting index till the end of the string. For instance:
 
-It's worth noting that the `substring()` method does not include the character at the ending index in the extracted substring. So in our first example, the character at index 11 (which is the letter "d") is not included in the extracted substring.
+```Javascript
+let substr = str.substring(3); // Output: "lo World"
+```
+
+Additionally, we can use negative numbers to count from the end of the string. For example, using -1 as the starting index will extract the last character of the string.
+
+```Javascript
+let str = "Hello World";
+let lastChar = str.substring(-1); // Output: "d"
+```
 
 ## Deep Dive
 
-There are a few other things to keep in mind when using the `substring()` method. If the starting index is greater than the ending index, the parameters will be swapped before the substring is extracted. This means that `str.substring(11, 6)` would still extract the substring "World" from "Hello World".
+Under the hood, the substring() method creates a new substring by copying characters from the original string based on the given parameters. It's worth mentioning that this method does not change the original string, but returns a new one instead.
 
-Additionally, if you omit the second parameter, the `substring()` method will extract the rest of the string starting from the specified index. For example, `str.substring(6)` would extract "World" from "Hello World".
+Another important thing to note is that the substring() method only works with positive indices. If we try to use a negative index as the starting position, it will be treated as 0.
 
-It's also possible to use the `substring()` method in combination with other string methods to extract more complex substrings. For example, we can use the `indexOf()` method to get the starting index of a specific string within a larger string, and then use that index in the `substring()` method to extract a substring. 
-
-```Javascript
-let str = "John Doe, age 25";
-
-let name = str.substring(0, str.indexOf(",")); // extracts "John Doe"
-let age = str.substring(str.indexOf("age")+4); // extracts "25"
-
-console.log(name); // output: John Doe
-console.log(age); // output: 25
-```
+Moreover, the substring() method is different from the slice() method in that it cannot handle negative indices or swap the starting and ending positions. It also does not accept regular expressions as parameters.
 
 ## See Also
 
-- [MDN documentation for the substring() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [String manipulation techniques in Javascript](https://www.w3schools.com/js/js_string_methods.asp)
-- [Using the substring() method to extract URLs from a string](https://stackoverflow.com/questions/27663501/extracting-urls-like-http-abc-com-using-javascript-regular-expression)
+- [MDN Web Docs on substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [W3Schools Tutorial on Substrings in JavaScript](https://www.w3schools.com/jsref/jsref_substring.asp)
+- [DevDocs Documentation on String Manipulation in JavaScript](https://devdocs.io/javascript/global_objects/string)

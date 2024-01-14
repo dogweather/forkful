@@ -1,60 +1,69 @@
 ---
-title:    "Elm: Hämta aktuellt datum"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/getting-the-current-date.md"
+title:                "Elm: Hämta aktuellt datum"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att få den nuvarande datumen kan vara en viktig del av många Elm-program. Det kan användas för att visa aktuell tidsstämpel, sätta deadlines eller kontrollera behörigheter.
+Att få den aktuella datumet är en vanlig uppgift i många program. Det kan användas för att visa tidsstämplar på inlägg, skapa kalendrar, eller helt enkelt för att hålla koll på dagens datum. I denna bloggpost kommer vi att titta på hur man enkelt kan få den aktuella datumet i Elm.
 
 ## Så här gör du
 
-För att få den nuvarande datumen i Elm, behöver vi använda paketet "time". För att installera paketet, skriv följande i din terminal:
+För att få den aktuella datumet i Elm använder vi funktionen `Date.now`, som returnerar ett datumobjekt. Vi kan sedan använda den inbyggda funktionen `toWeekday` för att få veckodagen och `toDay` för att få den aktuella dagen på månaden.
 
 ```Elm
-elm install time
+import Time exposing (..)
+
+date : Time.Posix
+date =
+    Date.now
+
+weekday : Number
+weekday =
+    Date.toWeekday date
+
+day : Number
+day =
+    Date.toDay date
 ```
 
-Nästa steg är att importera paketet i din Elm-fil:
+Om vi skulle köra detta skulle vi få en output som liknar detta:
 
 ```Elm
-import Time
+date: Time.Posix 1598774829847
+weekday: 3
+day: 29
 ```
 
-Nu kan vi använda "Time.now" funktionen för att få den nuvarande datumen som en "Posix" tidsstämpel:
+Som du kan se är `date` en Posix-värde, vilket är en vanlig representation av datum och tid i många programmeringsspråk. Vi kan använda den inbyggda funktionen `toString` för att konvertera det till ett mer läsbart format.
 
 ```Elm
-currentDate = Time.now
+import Time exposing (..)
+
+date : String
+date =
+    Date.toString date
 ```
 
-För att konvertera tidsstämpeln till ett mer läsbart format, kan vi använda "Time.toMillis" funktionen:
+Outputen skulle då se ut på följande sätt:
 
 ```Elm
-formattedDate = Time.toMillis currentDate
-```
-
-Detta kommer att ge oss den nuvarande datumen som en "Int" i millisekunder. Om du vill ha en mer specifik format, kan vi använda "Time.format" funktionen. Till exempel, om vi vill ha datumen i formatet ÅR-MÅNAD-DAG:
-
-```Elm
-formattedDate = Time.format "%Y-%m-%d" currentDate
-```
-
-Slutligen, om du vill ha en enklare strängversion av datumen, kan du använda "Time.Format.toHumanString" funktionen:
-
-```Elm
-formattedDate = Time.Format.toHumanString currentDate
+date: String "Thu Aug 06 2020 22:13:49 GMT+0200 (Central European Standard Time)"
 ```
 
 ## Djupdykning
 
-Paketen "Time" innehåller flera användbara funktioner för att hantera datum och tid i Elm. En viktig sak att notera är att alla funktioner arbetar med "Posix" tidsstämplar, vilket är antalet sekunder sedan 1 januari 1970. Detta möjliggör enkel omvandling till och från andra tidsformat och gör det enkelt att utföra beräkningar på datumen.
+En viktig sak att tänka på när man hanterar datum i Elm är att det stöder Internationalization and Localization (I18n). Det innebär att vi kan använda funktioner som `toStringWith`, `monthToString` och `dayOfWeekToString` för att konvertera datum- och tidsinformation till olika språk och format.
 
-En annan intressant funktion är "Time.millisToPosix", som gör omvandling från millisekunder till "Posix" tidsstämpel. Detta är användbart om du har datumen i en annan form och vill få dem i "Posix" format.
+För att fördjupa oss ännu mer kan vi också utforska den inbyggda modulen `Time` som ger oss fler funktioner för att hantera datum och tid, som `nowInUtc` för att få den aktuella tiden i UTC och `fromCalendarDate` för att skapa ett datumobjekt baserat på år, månad och dag.
 
 ## Se även
 
-- Officiell dokumentation för Time-paketet i Elm: https://package.elm-lang.org/packages/elm/time/latest/
-- Ett exemplariskt projekt som använder Time-paketet för att visa den nuvarande tidsstämpeln: https://github.com/elm/time-example
+- Elm's officiella dokumentation om Date: https://package.elm-lang.org/packages/elm/time/latest/Time#Date
+- Användning av Datum och Tid i Elm: https://www.elm-tutorial.org/en/04-managing-real-application/02-date-time.html 
+- Elm Spelprogrammering: Problemet med datum och tid: https://thoughtbot.com/blog/elm-gamedev-the-problem-with-time
+- Elm's dokumentation om Internationalization and Localization: https://package.elm-lang.org/packages/elm-lang/intl/latest/

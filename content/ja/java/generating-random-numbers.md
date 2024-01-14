@@ -1,50 +1,49 @@
 ---
-title:    "Java: ランダムな数字の生成"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/generating-random-numbers.md"
+title:                "Java: ランダムナンバーの生成"
+programming_language: "Java"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-ランダムな数値を生成することの意義は何でしょうか？プログラミングでは、さまざまな場面でランダムな数値を必要とすることがあります。例えば、ゲーム開発ではダイスやカードのようなランダムな要素を含むゲームプレイを実現するために、またシミュレーションやテストなどでランダムなデータを使用することがあります。そこでJavaでは、簡単にランダムな数値を生成する方法が提供されています。次のセクションでは、その方法を詳しく見ていきましょう。
+ランダムな数値を生成することの利点をご存知ですか？この記事では、なぜランダムな数値を生成することが重要であるかを説明します。
 
-## ランダムな数値の生成方法
+## ランダムな数値を生成する方法
 
-Javaでランダムな数値を生成するには、Randomクラスを使用します。以下の例では、nextInt()メソッドを使って0から10の間のランダムな整数を生成し、それをコンソールに出力しています。
-
-```Java
-Random random = new Random();
-int randomNumber = random.nextInt(11);
-System.out.println("ランダムな数値: " + randomNumber);
-```
-
-また、nextDouble()メソッドを使うことで、0から1の間のランダムな小数を生成することもできます。
+Javaでは、ランダムな数値を生成するための便利な方法がたくさんあります。例えば、Mathクラスのrandom()メソッドやRandomクラスを使用する方法などがあります。下記にそれぞれのコーディング例とサンプル出力を掲載します。
 
 ```Java
-double randomDouble = random.nextDouble();
-System.out.println("ランダムな小数: " + randomDouble);
+// Mathクラスのrandom()メソッドを使用する例
+double randomNumber = Math.random();
+System.out.println("ランダムな数値：" + randomNumber);
+
+// Randomクラスを使用する例
+Random rand = new Random();
+int randomInt = rand.nextInt(10);
+System.out.println("10以下のランダムな整数：" + randomInt);
 ```
 
-さらに、Randomクラスのコンストラクタにシード値を渡すことで、同じランダムな数値のシーケンスを生成することもできます。
+実行結果：
 
-```Java
-long seed = 12345; // シード値
-Random random = new Random(seed);
-// 同じシード値を使っているので、同じシーケンスの数値が生成される
-int randomNumber1 = random.nextInt(100);
-int randomNumber2 = random.nextInt(100);
-System.out.println("ランダムな数値1: " + randomNumber1);
-System.out.println("ランダムな数値2: " + randomNumber2);
+```
+ランダムな数値：0.3736403225463508
+10以下のランダムな整数：7
 ```
 
-## ランダムな数値の深堀り
+## ランダムな数値を生成する際の詳細
 
-Randomクラスで提供されているメソッドは、線形合同法というアルゴリズムを使用してランダムな数値を生成しています。このアルゴリズムでは、現在の時刻などの外部要因をシード値として使用し、そのシード値を基にして数値を生成します。そのため、特定のシード値を使うことで同じ数値の系列が生成されることがあります。また、ランダムな数値の生成には現在の操作システムのリソースも利用されるため、パフォーマンスに影響を与える可能性があります。そのため、繰り返し実行される処理であれば、同じRandomインスタンスを使い回すことでパフォーマンスを向上させることができます。
+ランダムな数値を生成する際には、乱数ジェネレーターと呼ばれるアルゴリズムが使用されます。これらのアルゴリズムには、線形合同法やメルセンヌ・ツイスター法などがあります。ただし、これらのアルゴリズムは完全にランダムな数値を生成するわけではないので、注意が必要です。
 
-## さらに見る
+## 参考リンク
 
-* [Randomクラスドキュメント](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-* [ランダムな数値の生成方法 | Java入門](https://java-beginner.com/java-random-numbers/)
-* [ランダムな数値の生成について知ろう | Qiita](https://qiita.com/youwht/items/a7941b4473e6a66b6d2c)
+- [Java Mathクラスのrandom()メソッドのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#random--)
+- [Java Randomクラスのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/util/Random.html)
+- [乱数ジェネレーターについての詳細な解説](https://ja.wikipedia.org/wiki/%E4%B9%B1%E6%95%B0%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC)
+
+## 関連リンク
+
+- [Javaの基本的なコーディングルール](https://qiita.com/opengl-8080/items/b78d101b1b371eee4d6a)
+- [ランダムな数値を生成する他の方法](https://techacademy.jp/magazine/48091)

@@ -1,49 +1,71 @@
 ---
-title:    "Java: Sammenligning av to datoer"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/comparing-two-dates.md"
+title:                "Java: Sammenligning av to datoer"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 # Hvorfor
 
-Å sammenligne to datoer er en vanlig oppgave i programmering, spesielt når man jobber med å lage applikasjoner som involverer datoer og tid. Dette kan være for å sjekke om en hendelse skjedde før eller etter en annen, eller å sortere data etter dato. Uansett hva årsaken måtte være, er det viktig å ha gode ferdigheter i å sammenligne datoer for å kunne lage pålitelige og nøyaktige programmer.
+Sammenligning av to datoer er en viktig del av Java-programmering. Det hjelper deg med å håndtere datoer og tidsstempel i din kode. Enten du jobber med å lage et tidsstempel for en bestilling eller beregne alderen til en bruker, er sammenligning av datoer en nøkkelkomponent. La oss se på hvordan du kan gjøre dette i Java.
 
 # Hvordan
 
-For å sammenligne to datoer i Java, kan man bruke klassen `LocalDate` fra `java.time` pakken. Her er et eksempel på hvordan du kan sammenligne to datoer og få ut en boolsk verdi som svar:
+For å sammenligne to datoer i Java, kan du bruke klassen "LocalDate" fra "java.time" pakken. La oss si at du har to datoer som du vil sammenligne:
 
 ```Java
-// Oppretter to lokale datoer
-LocalDate dato1 = LocalDate.of(2021, 10, 15);
-LocalDate dato2 = LocalDate.of(2021, 10, 18);
-
-// Sammenligner datoene og lagrer resultatet i en boolsk variabel
-boolean erDato1Tidligere = dato1.isBefore(dato2);
-
-// Printer ut resultatet
-System.out.println("Er dato1 tidligere enn dato2? " + erDato1Tidligere);
+LocalDate dato1 = LocalDate.of(2021, 5, 23);
+LocalDate dato2 = LocalDate.of(2021, 5, 25);
 ```
 
-Dette kodeeksempelet vil gi følgende utskrift:
+For å sammenligne disse datoene, kan du bruke metoden "compareTo" som returnerer en int-verdi. Hvis den første datoen er tidligere enn den andre, vil verdien være negativ. Hvis den første datoen er senere enn den andre, vil verdien være positiv. Hvis datoene er like, vil verdien være null.
 
-```
-Er dato1 tidligere enn dato2? true
+```Java
+int sammenligning = dato1.compareTo(dato2);
+
+if (sammenligning < 0) {
+    System.out.println("Dato 1 er tidligere enn dato 2");
+} else if (sammenligning > 0) {
+    System.out.println("Dato 1 er senere enn dato 2");
+} else {
+    System.out.println("Dato 1 og dato 2 er like");
+}
+
+// Output: Dato 1 er tidligere enn dato 2
 ```
 
-Det finnes også andre metoder som kan brukes til å sammenligne datoer, som for eksempel `isAfter()` og `isEqual()`. Disse vil returnere henholdsvis `true` hvis den første datoen er senere enn den andre, og `true` hvis de to datoene er like.
+Du kan også bruke den innebygde metoden "isEqual" for å sjekke om to datoer er like.
+
+```Java
+if (dato1.isEqual(dato2)) {
+    System.out.println("Dato 1 og dato 2 er like");
+} else {
+    System.out.println("Dato 1 og dato 2 er ikke like");
+}
+
+// Output: Dato 1 og dato 2 er ikke like
+```
 
 # Dypdykk
 
-Når man sammenligner to datoer, er det viktig å være klar over at datohåndtering kan være komplisert. Noen av de vanligste feilene man kan gjøre er å ikke ta hensyn til tidssoner eller sommertid, eller å ikke håndtere skuddår riktig. Det anbefales derfor å alltid være nøye når man arbeider med datoer og å bruke pålitelige biblioteker som `java.time` for å unngå feil.
+Når du sammenligner datoer, må du være oppmerksom på at datoer også inneholder en tidssone. Derfor kan to datoer som ser forskjellige ut, faktisk være like når du tar hensyn til tidssonen.
 
-Man bør også være klar over at når man sammenligner datoer som også har klokkeslett, vil disse bli tatt i betraktning. For eksempel, hvis man sammenligner datoene 2021-10-18 09:00 og 2021-10-18 10:00, vil det bli returnert `true` for `isBefore()` og `true` for `isAfter()`.
+Du kan også sammenligne datoer basert på forskjellige faktorer som år, måned eller dag. For å gjøre dette kan du bruke metoden "isBefore" eller "isAfter". Disse metodene sjekker om den første datoen kommer før eller etter den andre datoen basert på den spesifiserte faktoren.
 
-Det er også viktig å merke seg at klassen `LocalDate` bare representerer en dato og ikke et spesifikt klokkeslett. For å sammenligne to datoer som også inkluderer klokkeslett, kan man bruke klassen `LocalDateTime`.
+```Java
+if (dato1.isBefore(dato2)) {
+    System.out.println("Dato 1 kommer før dato 2");
+} else {
+    System.out.println("Dato 1 kommer etter dato 2");
+}
+
+// Output: Dato 1 kommer før dato 2
+```
 
 # Se også
 
-- [Java Documentation - LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Oracle Tutorial - Comparing Dates and Times in Java](https://docs.oracle.com/javase/tutorial/datetime/iso/compare.html)
-- [Baeldung - Comparing Dates in java.time](https://www.baeldung.com/java-compare-dates)
+- Java Offisiell Dokumentasjon - [Compare Dates in Java](https://docs.oracle.com/javase/tutorial/datetime/iso/compare.html)
+- TutorialsPoint - [Java LocalDate Class](https://www.tutorialspoint.com/java8/java8_localdate.htm)
+- W3Schools - [Java Date and Time](https://www.w3schools.com/java/java_date.asp)

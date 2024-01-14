@@ -1,29 +1,35 @@
 ---
-title:    "Kotlin: 표준 오류 작성하기"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/writing-to-standard-error.md"
+title:                "Kotlin: 표준 오류에 작성하기"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-표준 오류에 쓰기에 참여하는 이유는 무엇일까요? 오류 메시지를 기록하는 것은 프로그래밍 과정에서 발생할 수 있는 에러를 추적하고 디버깅하는 데에 매우 유용합니다.
+스탠다드 에러에 대한 글을 쓰는 이유는 무엇일까요? 에러 메시지는 프로그래밍의 필수 요소이지만, 올바른 처리가 이루어지지 않으면 불필요한 시간과 노력을 낭비하게 됩니다. 따라서 스탠다드 에러에 대한 이해는 프로그래밍의 중요한 부분이 됩니다.
 
-## 하는 법
+## 진행 방법
+프로그래밍 언어 Kotlin에서 스탠다드 에러를 작성하는 방법을 알아보겠습니다. 먼저 `System.err`를 사용하여 error 객체를 생성하고, `println()` 메서드를 통해 에러 메시지를 출력합니다. 아래는 간단한 예제 코드와 출력 결과입니다.
+
 ```Kotlin
-fun main() {
-    val num = 10
-    val result = num / 0 // Dividing by 0 will cause an error
-    System.err.println(result)
-}
+val error = System.err
+error.println("에러가 발생했습니다.")
 ```
 
-위의 예시 코드는 디버깅을 위해 0으로 나누는 간단한 연산을 수행하고 있습니다. 결과는 `Infinity`입니다. 그러나 이 코드를 실행하면 오류 메시지가 표준 오류 출력으로 출력됩니다. 이를 통해 프로그래머가 프로그램이 오류를 발생시키고 있다는 것을 알 수 있습니다.
+```
+에러가 발생했습니다.
+```
 
-## 심층 분석
-표준 오류 출력은 콘솔 창에 오류 메시지를 표시하는 데 사용되는 출력 스트림입니다. 이를 이용하여 에러를 추적하고 디버깅하는 것이 표준 방법이며, 코틀린에서는 `System.err`을 이용하여 접근할 수 있습니다. 또한 오류 메시지는 일반적으로 빨간색으로 강조되어, 사용자가 쉽게 구별할 수 있도록 도와줍니다.
+## 깊게 들어가기
+실제로 프로그래밍을 하면서 스탠다드 에러를 만나게 될 때, 에러 메시지가 어떤 내용을 담고 있는지 이해하는 것이 중요합니다. 에러 메시지는 프로그램의 동작에 대한 정보를 제공해주기 때문에, 적절한 대처를 할 수 있도록 반드시 확인해야 합니다. 또한 에러 메시지의 종류에 따라 처리 방법이 달라질 수 있으므로, 자세한 정보를 얻기 위해선 문서를 참고하는 것이 좋습니다.
 
-## 관련 링크들
-- [코틀린 공식 문서](https://kotlinlang.org/docs/reference/)
-- [코틀린으로 콘솔 애플리케이션 만들기](https://www.baeldung.com/kotlin/console-application)
-- [표준 출력, 표준 에러 출력 이해하기](https://jeong-pro.tistory.com/130)
+## 같이 보기
+다른 유용한 정보를 얻기 위해 아래 링크를 확인해보세요.
+
+* Kotlin 공식 문서 - [https://kotlinlang.org/docs/](https://kotlinlang.org/docs/)
+* 스탠다드 에러 처리 방법 - [https://www.javatpoint.com/exception-handling-in-kotlin](https://www.javatpoint.com/exception-handling-in-kotlin)
+* Kotlin 기초 문법 - [https://www.tutorialspoint.com/kotlin/index.htm](https://www.tutorialspoint.com/kotlin/index.htm)
+
+## 같이 보기

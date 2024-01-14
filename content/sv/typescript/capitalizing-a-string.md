@@ -1,55 +1,53 @@
 ---
-title:    "TypeScript: Att Stora en Sträng"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/capitalizing-a-string.md"
+title:                "TypeScript: Att göra en sträng stor"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att göra en sträng med stora bokstäver kan vara användbart för att förstärka eller markera en viss del av en sträng. Det kan också vara nödvändigt för att uppfylla specifika kodningsstandarder eller för att matcha sökningar som sker med hjälp av stora och små bokstäver.
+Att kunna konvertera text till versaler är en grundläggande funktion som är användbar för många olika programmeringsproblem. Genom att förstå hur man kapitaliserar en sträng kan du enkelt implementera det i dina projekt för att skapa mer professionella och enhetliga utskrifter.
 
 ## Hur man gör
 
-```TypeScript
-function capitalizeString(str: string): string {
-  return str.toUpperCase();
-}
-
-console.log(capitalizeString("hej världen")); // HEJ VÄRLDEN
-```
-
-I exemplet ovan använder vi den inbyggda `toUpperCase()` metoden i JavaScript för att ändra alla bokstäver i en sträng till stora bokstäver. Vi kan också skriva en egen funktion för att göra detta, som i exemplet nedan:
+För att konvertera en sträng till versaler i TypeScript kan du använda inbyggda funktionen `toUpperCase()` som är tillgänglig för alla strängar. Se nedan för ett exempel:
 
 ```TypeScript
-function capitalizeString(str: string): string {
-  let result = "";
-
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] >= "a" && str[i] <= "z") { // Kontrollerar om bokstaven är en liten bokstav
-      result += String.fromCharCode(str.charCodeAt(i) - 32); // Omvandlar till motsvarande stor bokstav och lägger till i resultatet
-    } else {
-      result += str[i]; // Om det inte är en bokstav läggs den till som den är
-    }
-  }
-
-  return result;
-}
-
-console.log(capitalizeString("hej världen")); // HEJ VÄRLDEN
+let sträng = "detta är en sträng som ska kapitaliseras";
+console.log(sträng.toUpperCase());
 ```
 
-Observera att den andra funktionen också kan användas i andra JavaScript-baserade språk, som till exempel vanlig JavaScript eller Java.
+Detta kommer att ge följande utskrift:
 
-## Djupdykning
+```
+DET ÄR EN STRÄNG SOM SKA KAPITALISERAS
+```
 
-Att ändra en sträng till stora bokstäver involverar ofta UTF-8-kodningen av bokstäver och specialtecken. Vissa tecken kan ha fler än en UTF-8-byte och därför kan det vara nödvändigt att använda en speciell funktion som `toUpperCodePoint()` för att hantera dem på rätt sätt.
+Det är också möjligt att konvertera en specifik del av en sträng genom att använda `toUpperCase()` tillsammans med `substring()` funktionen. Se exemplet nedan:
 
-Det är också viktigt att förstå skillnaden mellan `toLowerCase()` och `toUpperCase()` i JavaScript, eftersom vissa bokstäver inte har en tydlig motsvarighet i ett annat huvudbokstavsläge. Till exempel har bokstaven "ẞ" (tyskt stort dubbel-s) ingen motsvarighet i små bokstäver och skulle därför behållas oförändrad om funktionen `toLowerCase()` används.
+```TypeScript
+let sträng = "detta är en sträng som ska kapitaliseras";
+let delAvSträng = sträng.substring(20, 31).toUpperCase();
+console.log("Kapitaliserad del av strängen: " + delAvSträng);
+```
+
+Detta kommer att ge följande utskrift:
+
+```
+KAPITALISERAD DEL AV STRÄNGEN: SKA KAPITAL
+```
+
+## En djupdykning
+
+När `toUpperCase()` funktionen används på en sträng, skapar den en ny sträng istället för att modifiera den befintliga. Detta kan till en början verka onödigt men är faktiskt en viktig del av "immuniseringsprincipen" i programmering. Detta innebär att det är säkrare att inte göra förändringar på befintliga variabler eftersom det kan leda till oförutsägbara resultat.
+
+En annan intressant sak att notera är att `toUpperCase()` funktionen endast konverterar tecken som är bokstäver i det aktuella språket. Till exempel kommer den inte att förändra siffror eller specialtecken.
 
 ## Se även
 
-- [JavaScript `toUpperCase()` funktion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [UTF-8-teckenkodning](https://www.w3schools.com/charsets/ref_utf8.asp)
-- [Capitalization Standards and Styles in Software Development](https://www.upwork.com/resources/coding-standards-styles/)
+- [Lär dig TypeScript på 5 minuter](https://medium.com/better-programming/learn-typescript-in-5-minutes-13ea11dc2c0a)
+- [Effektiva programmeringsvanor för att undvika buggar](https://blog.usejournal.com/effective-programming-habits-to-avoid-bugs-a86a88f3112a)
+- [Officiell Typescript-dokumentation](https://www.typescriptlang.org/docs/home.html)

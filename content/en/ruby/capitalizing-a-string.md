@@ -1,63 +1,47 @@
 ---
-title:    "Ruby recipe: Capitalizing a string"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/ruby/capitalizing-a-string.md"
+title:                "Ruby recipe: Capitalizing a string"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Capitalizing a string may seem like a simple task, but it can have a significant impact on the readability and professionalism of your code. This seemingly small detail can make a big difference in the overall quality of your program.
+If you've ever worked with strings in Ruby, you may have come across the need to capitalize them. Capitalizing a string means converting the first letter of each word to uppercase, and it can be useful in various scenarios such as formatting names or creating titles. In this blog post, we'll delve into how you can easily capitalize a string in Ruby.
 
 ## How To
 
-To capitalize a string in Ruby, we can use the `upcase` method. This method converts all lowercase letters in a string to uppercase, leaving any uppercase letters unchanged.
+To capitalize a string in Ruby, we can make use of the `capitalize` method. This method takes no arguments and returns a copy of the string with the first letter capitalized. Let's see it in action:
 
-```
-Ruby String Example:
-
-name = "jennifer"
-puts name.upcase
-
-Output:
-JENNIFER
+```Ruby
+string = "hello, world"
+puts string.capitalize
 ```
 
-We can also use the `capitalize` method to only capitalize the first letter of a string, leaving the rest unchanged.
+The above code will output "Hello, world". As you can see, the first letter of the string has been converted to uppercase. However, it's important to note that the `capitalize` method only capitalizes the first letter of the string and leaves the rest of the letters unchanged.
 
-```
-Ruby String Example:
+If you want to capitalize all words in a string, you can use the `titleize` method from the ActiveSupport gem. This method takes care of capitalizing all words in a string and even handles special cases like acronyms. Here's an example:
 
-name = "john"
-puts name.capitalize
-
-Output:
-John
+```Ruby
+require 'active_support/core_ext/string'
+string = "ruby on rails"
+puts string.titleize
 ```
 
-It's important to remember that these methods will not alter the original string, but instead return a new string with the desired capitalization.
+The above code will output "Ruby on Rails". Notice how "on" is also capitalized, and "Rails" is not all uppercase.
 
 ## Deep Dive
 
-Behind the scenes, the `upcase` and `capitalize` methods use the `Unicode` standard to determine which characters should be converted to uppercase. This standard covers a vast range of characters from various alphabets, symbols, and even emojis.
+The `capitalize` method uses the rules of the unicode version of the Simple Default Case Algorithm to capitalize the first character of the string. It ensures that characters with accents or special characters are also capitalized correctly.
 
-It's also worth noting that these methods only work on individual characters within a string, not entire words or phrases. If we want to capitalize every word in a string, we can use the `titleize` method from the `titleize` string extension library.
-
-```
-Ruby String Example:
-
-require 'titleize'
-
-sentence = "hello world"
-puts sentence.titleize
-
-Output:
-Hello World
-```
+When it comes to the `titleize` method, it uses a more complex set of rules to capitalize strings. It takes into account special cases like acronyms and ignores certain words like "a", "an", and "the" unless they are the first or last word in the string. You can find the full list of rules in the official documentation for the ActiveSupport gem.
 
 ## See Also
 
-- [Ruby String Documentation](https://ruby-doc.org/core-2.7.2/String.html)
-- [Unicode Standard](https://www.unicode.org/)
-- [Titleize String Extension Library](https://www.rubydoc.info/gems/titleize/0.0.3)
+For more information on capitalizing strings in Ruby, check out the following resources:
+
+- [Ruby's String documentation](https://ruby-doc.org/core-3.0.0/String.html)
+- [Rails' ActiveSupport documentation](https://api.rubyonrails.org/v6.1.3.2/classes/String.html#method-i-titleize)
+- [Unicode Standard Case Mappings](https://unicode.org/reports/tr21/)

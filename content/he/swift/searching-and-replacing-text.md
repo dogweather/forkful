@@ -1,27 +1,31 @@
 ---
-title:    "Swift: חיפוש והחלפת טקסטים"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/swift/searching-and-replacing-text.md"
+title:                "Swift: כותב תכניות למחשב: חיפוש והחלפת טקסט"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-ארוויח בפוסט הפופולרי הזה למדעם לאיך חיפוש והחלפה של טקסט בתכנות בשפת Swift. אם אתם מתחילים את המסע קדימה שלכם לתכנת בשפת Swift, תהיו בטוחים כי אנחנו ארוויח בפוסטים הבאים לעזור לכם להתחיל בשלב הראשון ולתת לכם הפניות להמשך דרכם.
-
 ## למה
-
-חיפוש והחלפה של טקסט הוא כלי חיוני עבור מתכנתי Swift כאשר אתם מפתחים אפליקציות. הוא מאפשר לנו לשנות טקסט שלא מתאים לצרכים הנוכחיים, לבצע שינויים אוטומטיים ולכלול אותו כחלק מתהליך הפיתוח. אם תחזור ספירת Slug שלך אתה אתה אתת אחלחחמת אתכבה, כדאי שתלמד את דרך הביקור (ככל הנראה על כבד) לשנות את השמות שלך באופן אוטומטי ע"י שימוש בחיפוש והחלפה לערוך את הטקסט.
+כתיבת קוד יכולה להיות פעילות מאתגרת, אך לעתים קרובות דברים פשוטים חשבנויות כגון החיפוש וההחלפה של טקסט יכולים לחסוך המון זמן ומתן תוצאות מדויקות.
 
 ## כיצד לעשות זאת
+כדי לבצע את פעולת החיפוש וההחלפה של טקסט בסוויפט, צריך להשתמש בפונקציה `replacingOccurrences(of:with:)`. לדוגמא, אם נרצה להחליף את המילה "שלום" במשפט למילת "היי", נהפך לעשות כתוב `replacingOccurrences(of: "שלום", with: "היי")`. התוצאה הסופית תהיה "היי, איך לך?".
 
-אם אתם מוכנים לקחת את הכלי החדש הזה לשימוש, נכיר אותו יחד ונתחיש דוגמאות לכמה מתהליכים שונים כדי לחפש ולהחליף טקסט בשפת Swift. כדי להתחיל, נפתח את Xcode וניצור במהירות את פרויקט הפוך בשפת Swift. אם אתם לא מכירים את זה, מצאו יישור אחר של המאפייה של זה. אתה מבין איזה יישום היה בונה בדרך כלל.
-
-```Swift
-// ייצוא "Hello world!"
-print("Hello, world!")
-
-// יצוא "שלום, עולם!"
-print("שלום, עולם!")
+```
+let sentence = "שלום, איך לך?"
+let newSentence = sentence.replacingOccurrences(of: "שלום", with: "היי")
+print(newSentence)
+// היי, איך לך?
 ```
 
-כעת, כאשר הפרויקט שלכם מוכן, אתם יכולים להתחיל לחפש ולהחליף טקסט בשורות נוספות של הקוד שלכם. כדי לע
+ניתן להשתמש גם בפונקציה `replacingOccurrences(of:with:options:range:)` כדי לבצע החלפה בטווח מסוים בטקסט.
+
+## מה בעומק
+החיפוש וההחלפה של טקסט בסוויפט מבוסס על מודל ה-DOT (Document Object Text). כל מילה, רווח או תו בטקסט הוא אובייקט נפרד במודל זה. בכדי לבצע חיפוש והחלפה של טקסט, הסברט שיטת בדיקת הטקסט והחלפתו באמצעות פילטרים שונים.
+
+## ראו גם
+- [מדריך נוסף על חיפוש והחלפה בסוויפט](https://www.hackingwithswift.com/articles/131/how-to-use-regular-expressions-in-swift)
+- [מדריך נוסף על מודל DOT (Document Object Text)](https://www.swiftbysundell.com/articles/working-with-strings-in-swift/)
+- [מאמר על פונקצית `replacingOccurrences`](https://developer.apple.com/documentation/foundation/nsstring/1414832-replacingoccurrences)

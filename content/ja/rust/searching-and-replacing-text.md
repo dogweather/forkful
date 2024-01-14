@@ -1,39 +1,44 @@
 ---
-title:    "Rust: テキストの検索と置換"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/searching-and-replacing-text.md"
+title:                "Rust: テキストの検索と置換"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-テキストの検索と置換を行いたいと思う理由は、コンピュータやプログラミングにおいて、効率的に作業を行うためには欠かせないからです。正確なテキストの検索と置換を行うことで、作業のスピードや精度が向上し、プログラミングの生産性が高まります。
+# なぜRustによる検索と置換を学ぶ必要があるのか
 
-## 方法
-まずはRustコンパイラをインストールし、以下のコードをコピーしてコンパイルしてください。その後、検索対象のテキストファイルのパスを指定し、検索したい単語や置換後の単語を入力してください。
+検索と置換は、コンピューターやプログラマーにとって非常に重要なスキルです。特に、大規模なテキストファイルや複数のファイルを一括で操作する必要がある場合には、効率的に検索と置換を行うことが不可欠です。そのため、Rustによる検索と置換の方法を学ぶことは、プログラマーとしてのスキルアップにつながります。
+
+## どのように検索と置換をするのか
+
+まず、Rustの標準ライブラリに含まれている`str`モジュールの`replace()`メソッドを使用することで、文字列の中で一致する部分を指定した文字列に置換することができます。例えば、以下のようなコードを使用することで、文字列中の全ての`rust`を`RUST`に置換することができます。
 
 ```Rust
-use std::fs;
-use std::io::Write;
-
-fn main() {
-    let input_path = "テキストファイルのパス";
-    let output_path = "出力ファイルのパス";
-
-    let text = fs::read_to_string(input_path).expect("ファイルが見つかりません");
-    let replaced_text = text.replace("検索したい単語", "置換後の単語");
-
-    let mut output = fs::File::create(output_path).expect("出力ファイルが見つかりません");
-    output.write(replaced_text.as_bytes()).expect("書き込みに失敗しました");
-}
+let s = "I love rust programming.";
+let replaced_s = s.replace("rust", "RUST");
+println!("{}", replaced_s); // I love RUST programming.
 ```
 
-コンパイルが成功したら、指定した出力ファイルに検索と置換が行われたテキストが書き込まれます。
+また、正規表現を使用することで、柔軟な検索と置換を行うことも可能です。例えば、以下のようなコードを使用することで、文字列中の数字を全て`0`に置換することができます。
 
-## ディープダイブ
-テキストの検索と置換を行う際に、正規表現を使用することでより柔軟な検索が可能になります。Rustでは、regexライブラリを使用することで正規表現をサポートしています。また、検索と置換をより複雑な操作に拡張することもできます。
+```Rust
+use regex::Regex;
 
-## 他に見る
-- [Rustコンパイラのインストールガイド](https://www.rust-lang.org/tools/install)
-- [正規表現の基礎知識](https://www.atmarkit.co.jp/ait/articles/1708/01/news021.html)
-- [regexライブラリのドキュメンテーション](https://docs.rs/regex/1.4.3/regex/)
+let re = Regex::new(r"\d+").unwrap();
+let s = "I have 5 apples and 3 oranges.";
+let replaced_s = re.replace_all(s, "0");
+println!("{}", replaced_s); // I have 0 apples and 0 oranges.
+```
+
+## 検索と置換の深層への潜入
+
+検索と置換については、パターンマッチングや文字列操作など、様々なアルゴリズムや実装が存在します。Rustの`str`モジュールや正規表現ライブラリを使用することで、さまざまな方法で検索と置換を行うことができます。また、より高度な処理を行うためには、Rustの文字列スライスや文字コードに関する知識が必要になります。これらの知識を習得することで、より効率的な検索と置換を実現することができるでしょう。
+
+## 参考リンク
+
+- [Rustの標準ライブラリのドキュメント](https://doc.rust-lang.org/std/index.html)
+- [正規表現ライブラリ「regex」のドキュメント](https://docs.rs/regex/1.4.2/regex/)
+- [Rustの文字列スライスに関するドキュメント](https://doc.rust-lang.org/std/primitive.slice.html)
+- [文字コードに関する記事](https://qiita.com/tatsuya6502/items/6c3f69ea5d832db4f07c)

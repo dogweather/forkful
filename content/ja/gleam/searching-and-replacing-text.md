@@ -1,49 +1,45 @@
 ---
-title:    "Gleam: テキストの検索と置換"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/searching-and-replacing-text.md"
+title:                "Gleam: テキストの検索と置換"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？ 
+# なぜGleamでテキストの検索と置換を行うのか
 
-テキストの検索と置換をする理由は、文字列の変更や更新が必要な場合に便利であるためです。
+初心者からプロまで、ほとんどのプログラマーは書いたコードを繰り返し修正する必要があります。しかし、手作業でテキストを探して置換するのは非効率的であり、ヒューマンエラーも起こりえます。そこで、Gleamプログラミング言語が役に立ちます。Gleamはパターンマッチングや文字列操作などの様々な機能を提供しており、テキストの検索と置換をより簡単にすることができます。
 
-## 方法
+## Gleamでのテキストの検索と置換方法
 
-テキストの検索と置換を行うには、Gleamプログラミング言語を使用します。以下のコードブロックで実装例と出力を示します。
+まずはGleamのモジュールをインポートしましょう。
 
 ```Gleam
-// 文字列の置換
-let original = "こんにちは、世界!"
-let replaced = String.replace(original, "こんにちは", "Hello")
-// 出力：Hello、世界!
-
-// 正規表現による置換
-let original = "abc123def456"
-let pattern = Regex.compile("[0-9]+")
-let replaced = Regex.replace(pattern, original, "xyz")
-// 出力：abcxyzdefxyz
+import gleam/string
 ```
 
-## ディープダイブ
+次に、`gleam/string`モジュールの`replace`関数を使用して、テキストの検索と置換を行います。例えば、文字列の中から"hello"を"こんにちは"に置換する場合、以下のようにコードを書きます。
 
-テキストの検索と置換の際には、正規表現を使用することでより高度な操作が可能です。正規表現を使用する場合、以下の要素を考慮する必要があります。
+```Gleam
+gleam/string.replace("hello world", "hello", "こんにちは")
+```
 
-- 文字列パターンの作成方法
-- 置換結果の指定方法
-- 各種オプションの使用方法
+これにより、"hello world"が"こんにちは world"に置き換わります。もし複数の置換を行いたい場合は、タプルを使用して複数の置換内容を指定することができます。
 
-また、Gleamではパターンマッチングを使用して処理を簡潔にすることができます。例えば、特定の文字列を置換する際に特定の形式を持つ文字列のみを対象にするようにパターンマッチングを使用することができます。詳細な操作方法については、公式ドキュメントを参照してください。
+```Gleam
+gleam/string.replace("hello world", [("hello", "こんにちは"), ("world", "世界")])
+```
 
-## 参考リンク
+このように、Gleamでは簡単にテキストの検索と置換を行うことができます。
 
-- Gleam公式ドキュメント：https://gleam.run/
-- Gleamでテキスト検索と置換する方法：https://gleam.run/articles/regex.html
-- 正規表現チュートリアル：https://www.w3schools.com/jsref/jsref_obj_regexp.asp
+## テキストの検索と置換の詳細
 
-## もっと読む
+Gleamでは、`gleam/string`モジュールの他にも様々な方法でテキストの検索と置換を行うことができます。例えば、`gleam/string/regex`モジュールを使用することで正規表現を使った検索と置換が可能になります。また、パターンマッチングや文字列操作のための便利な関数も提供されています。
 
-- Gleamでの文書の操作方法について学ぶ：https://gleam.run/articles/files.html
-- より複雑なテキスト処理の方法について学ぶ：https://gleam.run/articles/pattern-matching.html
+さらに、文字列の検索と置換だけでなく、ファイルの中身の検索や置換も可能です。`gleam/fs`モジュールを使用することでファイルの読み込みや書き込みができ、その中で前述したテキストの検索と置換を行うことができます。
+
+## 関連リンク
+
+- [Gleamドキュメンテーション](https://gleam.run/documentation/)
+- [Gleam GitHubリポジトリ](https://github.com/gleam-lang/gleam)

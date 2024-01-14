@@ -1,63 +1,44 @@
 ---
-title:    "Ruby: 테스트 작성"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/writing-tests.md"
+title:                "Ruby: 테스트 작성하기"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-루비 프로그래밍에서는 테스트를 작성할 이유가 많이 있습니다. 예를 들어, 애플리케이션을 변경하거나 새로운 기능을 추가할 때 이전 코드에 이상이 없는지 확인하거나 버그를 발견하는 데 도움이 됩니다. 또한 테스트를 작성함으로써 코드의 가독성이 개선되고 유지 보수가 쉬워집니다.
+테스트를 작성하는 것이 왜 중요한지 궁금하신가요? 테스트는 코드의 신뢰성과 안정성을 보장하는 중요한 방법입니다. 테스트를 작성함으로써 코드의 버그를 미리 발견하고 수정할 수 있으며, 새로운 기능을 추가할 때 기존 코드가 올바르게 작동하는지 확인할 수 있습니다. 또한, 테스트를 통해 코드를 다른 사람과 협업하기 쉽게 만들 수 있습니다.
 
-## 어떻게
+## 하우 투
 
-루비에서는 테스트를 작성하고 실행하는 데 쉬운 방법이 있습니다. 다음 예제를 참고하여 실제로 테스트를 작성하는 방법을 배워보세요.
+테스트를 작성하는 방법을 알고 싶으신가요? 아래 코드 블록에는 Ruby 코드 예시와 예상되는 결과가 포함되어 있습니다.
 
 ```Ruby
-# 테스트를 위해 관례적으로 spec/ 폴더를 사용합니다.
-# spec/calculator_spec.rb 파일을 생성하고 테스트 코드를 작성합니다.
-
-require 'calculator' # 테스트할 코드 파일을 require 합니다.
-
-describe Calculator do # Calculator 클래스를 describe 블록으로 감싸서 테스트를 정의합니다.
-
-# #add 메소드를 테스트합니다.
-  describe '#add' do
-    it 'adds two numbers' do
-      result = Calculator.add(2, 3) # Calculator의 클래스 메소드인 add를 호출하여 결과값을 변수에 저장합니다.
-      expect(result).to eq(5) # 결과값이 5가 나오는지 검증합니다.
-    end
-  end
-
-# #subtract 메소드를 테스트합니다.
-  describe '#subtract' do
-    it 'subtracts one number from another' do
-      result = Calculator.subtract(5, 3)
-      expect(result).to eq(2)
-    end
-  end
+# 간단한 덧셈 함수의 예시
+def add(x, y) # 함수 선언
+  return x + y # 두 개의 인자를 더한 결과를 반환
 end
+puts add(3, 5) # 함수를 불러와서 실행하고 출력
+# Output: 8
 ```
 
-위 예제처럼 describe, it, expect 등의 키워드를 사용하여 테스트를 작성할 수 있습니다. 다음과 같이 콘솔에서 코드를 실행하면 테스트 결과를 확인할 수 있습니다.
+위의 코드 예시에서 함수를 실행하고 결과를 출력하는 방법을 보여주었습니다. 또한, 함수의 실제 코드와 결과를 확인할 수 있도록 코드 블록에 주석을 추가하였습니다. 이렇게 테스트를 작성한다면 새로운 기능을 추가했을 때 결과를 쉽게 확인할 수 있고, 예상하지 못한 버그를 발견할 수 있습니다.
 
-```
-$ rspec spec/calculator_spec.rb
-```
+## 딥 다이브
 
-테스트가 실패한 경우 적절한 오류 메시지와 함께 어떤 부분이 잘못되었는지 알려줍니다. 테스트가 모두 성공하면 코드를 안심하고 변경할 수 있습니다.
+테스트를 작성하는 더 깊은 정보를 알고 싶으신가요? 효율적인 테스트를 작성하기 위해서는 다음과 같은 요소들이 중요합니다.
 
-## 자세히 알아보기
+1. 적절한 테스트 레벨 선택하기: 단위 테스트(개별 함수나 모듈을 테스트)와 통합 테스트(여러 모듈을 통합해서 테스트) 두 가지 방법이 있으며, 목적에 맞게 선택해야 합니다.
+2. 각 테스트의 목적을 명확히 하기: 한 테스트 안에 여러 가지 기능을 테스트하기보다는 하나의 기능에 대해서만 테스트하는 것이 가독성과 유지 보수에 좋습니다.
+3. 불필요한 테스트는 작성하지 않기: 확인할 필요가 없는 부분까지 테스트를 작성하면 작성해야 하는 코드도 많아지고 유지 보수도 어려워집니다.
+4. 테스트를 독립적으로 작성하기: 각 테스트는 다른 테스트와 서로 영향을 주지 않고 독립적으로 실행될 수 있어야 합니다.
 
-테스트를 작성하는 방법은 다양하지만 일반적으로는 프로젝트의 각 부분을 테스트하는 여러 개의 파일을 작성합니다. 이렇게 하면 각각의 파일이 별도의 역할을 수행하며 코드를 이해하고 디버깅하기가 더 쉬워집니다.
+위의 요소들은 효율적이고 효과적인 테스트를 작성하기 위해 중요한 지침입니다. 조금 더 자세한 내용은 아래 링크를 참고해주세요.
 
-또한 테스트를 작성할 때는 테스트 가능한 코드를 작성해야 합니다. 예를 들어, 전역 변수나 랜덤 값에 의존하는 코드는 테스트하기가 어렵습니다. 따라서 테스트 가능한 코드를 작성하면 유지 보수가 더 쉬워집니다.
+## See Also
 
-마지막으로, 테스트하기 전에 코드를 작성하는 것과는 다른 마음가짐이 필요합니다. 코드를 작성할 때는 원하는 기능을 만들어내는 데 초점을 맞추지만, 테스트를 작성할 때는 코드가 제대로 작동하는지를 확인하는 데 초점을 맞추어야 합니다. 적절한 테스트를 작성하는 것이 코드의 신뢰성을 높이는 데 중요한 역할을 합니다.
-
-## 관련 링크
-
-- [RSpec 공식 홈페이지](https://rspec.info/)
-- [Ruby 테스팅 가이드](https://rubypapa.com/2020/09/12/ruby-testing-overview/)
-- [Ruby Step by Step: 테스
+- [Ruby 테스트 작성 방법](https://readysteadycode.com/howto-test-your-ruby-code)
+- [TDD(Test-Driven Development)란?](https://stackify.com/tdd-test-driven-development/)
+- [RSpec으로 Ruby 코드 테스트하기](https://semaphoreci.com/community/tutorials/getting-started-with-rspec)

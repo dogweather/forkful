@@ -1,59 +1,54 @@
 ---
-title:    "Python: Tarkistetaan löytyykö hakemistoa"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/checking-if-a-directory-exists.md"
+title:                "Python: Tarkista onko hakemisto olemassa."
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Kun kirjoitat Python-ohjelmia, saatat jossain vaiheessa joutua tarkistamaan, onko tietty hakemisto olemassa. Tämä on tärkeää esimerkiksi silloin, kun haluat tallentaa tiedostoja tiettyyn hakemistoon tai lukea sieltä tiedostoja. Tässä blogipostauksessa kerromme, miten voit tarkistaa hakemiston olemassaolon Pythonilla.
+Eräs yleinen ongelma, joka voi tulla vastaan Python-ohjelmoinnissa, on se, että haluat tarkistaa, onko jokin kansio olemassa vai ei. Tämä voi olla tarpeellista esimerkiksi skannattaessa tiedostojärjestelmää tai tarkistaessa, pystyykö ohjelma suorittamaan tarvittavia toimintoja.
 
-## Miten tehdä
+## Kuinka tehdä
 
-Python tarjoaa valmiin toiminnon hakemiston tarkistamiseen. Tämä toiminto on nimeltään `os.path.exists()` ja se tarkistaa, onko annetussa polussa oleva tiedosto tai hakemisto olemassa.
+Onneksi Pythonilla on sisäänrakennettu tapa tarkistaa, onko kansio olemassa. Tämä tapahtuu käyttämällä `os.path.exists()` -funktiota ja antamalla parametrina halutun kansion polku. Katso alla esimerkki, jossa tarkistetaan "tiedostot" -niminen kansio nykyisen työhakemiston sisältä:
 
-```Python
+```python
 import os
 
-# Määritellään polku, jossa haluamme tarkistaa olemassaolon
-polku = "/kansio/tiedosto.txt"
-
-# Tarkistetaan polun olemassaolo ja tallennetaan tulos muuttujaan
-tulos = os.path.exists(polku)
-
-# Tulostetaan tulos
-print(tulos)
+if os.path.exists("tiedostot"):
+    print("Kansio on olemassa!")
+else:
+    print("Kansiota ei löytynyt.")
 ```
 
-Tämä esimerkki tulostaa `True`, jos tiedosto tai hakemisto löytyy annetusta polusta, ja `False`, jos se ei ole olemassa. Voit myös käyttää tätä toimintoa hakemistopolkujen lisäksi myös tiedostopoluissa.
+**Tulostus:**
 
-```Python
+```python
+Kansio on olemassa!
+```
+
+Tämä tarkistus palauttaa `True` tai `False` riippuen siitä, löytyykö annettu kansio vai ei. Voit myös käyttää `try`-`except` -lohkoa käsittelemään mahdollisia virheitä, kuten esimerkissä alla:
+
+```python
 import os
 
-# Määritellään polku, jossa haluamme tarkistaa tiedoston tai hakemiston olemassaolon
-polku = "/kansio/tiedosto.txt"
-
-# Tarkistetaan polun olemassaolo ja tallennetaan tulos muuttujaan
-tulos = os.path.exists(polku)
-
-# Tulostetaan tulos
-print(tulos)
+try:
+    if os.path.exists("tiedostot"):
+        print("Kansio on olemassa!")
+    else:
+        print("Kansiota ei löytynyt.")
+except OSError:
+    print("Kansiota ei pystytty tarkistamaan.")
 ```
 
-Tämä koodi palauttaa saman tuloksen kuin ensimmäinen esimerkki, koska `os.path.exists()` tarkistaa sekä tiedostot että hakemistot.
+## Syvemmälle
 
-## Syvällisempi sukellus
-
-Jos haluat tarkemmin ymmärtää, miten `os.path.exists()` toimii, voit tutustua siihen, kuinka Python käsittelee tiedostoja ja hakemistoja.
-
-Kun käytät `os.path.exists()` -toimintoa, Python tarkistaa antamasi polun ja etsii sieltä tiedostoa tai hakemistoa, jonka nimeä olet antanut. Tämä toiminto palauttaa `True`-arvon, jos tiedosto tai hakemisto löytyy, ja `False`-arvon, jos sitä ei löydy.
-
-On myös tärkeää huomata, että `os.path.exists()` toimii absoluuttisella polulla, eli koko polku täytyy antaa. Jos haluat tarkistaa hakemiston tai tiedoston olemassaolon sitä ympäröivässä kansiossa, voit käyttää `os.path.abspath()` -toimintoa, joka muuttaa suhteellisen polun absoluuttiseksi.
+`os.path.exists()` -funktio toimii tarkistamalla, onko parametrina annetussa polussa oleva tiedosto tai kansio olemassa. Se ei sen sijaan tarkista, onko kyseisellä polulla myös oikeutta päästä tiedostoon tai kansioon. Tämän vuoksi on hyvä käyttää myös muita tarkistuksia, kuten `os.path.isdir()` tai `os.access()` -funktioita, mikäli tarvitaan tarkempaa tietoa tiedoston tai kansion ominaisuuksista.
 
 ## Katso myös
 
-- [Pythonin virallinen ohjeistus hakemistojen käsittelystä](https://docs.python.org/3/library/os.path.html)
-- [Lyhyt opas tiedostojen ja hakemistojen käsittelyyn Pythonissa](https://realpython.com/working-with-files-in-python/)
-- [Muut hyödylliset Python-toiminnot tiedostojen ja hakemistojen hallintaan](https://www.programiz.com/python-programming/file-operation)
+- Python `os` -dokumentaatio (https://docs.python.org/3/library/os.html)
+- "Tiedostojen tarkastelu ja manipulointi Pythonilla" (https://realpython.com/working-with-files-in-python/)

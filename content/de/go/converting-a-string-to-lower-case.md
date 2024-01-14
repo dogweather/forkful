@@ -1,42 +1,51 @@
 ---
-title:    "Go: Eine Zeichenfolge in Kleinbuchstaben umwandeln"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/converting-a-string-to-lower-case.md"
+title:                "Go: Umwandlung eines Strings in Kleinbuchstaben"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Konvertieren von Strings zu Kleinbuchstaben ist eine häufige Aufgabe in der Programmierung, besonders bei der Textverarbeitung oder der Validierung von Nutzereingaben. Es ermöglicht auch eine konsistente Behandlung von Daten, die in verschiedenen Schreibweisen vorliegen.
 
-## Wie geht's
-```Go
-// Konvertieren eines Strings zu Kleinbuchstaben
-s := "HALLO"
-fmt.Println(strings.ToLower(s))
-// Ausgabe: hallo
-```
-Um einen String zu Kleinbuchstaben zu konvertieren, können wir die Funktion `ToLower()` aus dem Paket `strings` verwenden. Diese Funktion nimmt einen String als Argument und gibt den konvertierten String zurück. In unserem Beispiel sehen wir, dass der String "HALLO" in "hallo" umgewandelt wurde.
+Wenn Sie schon einmal mit Texten in einer Programmiersprache gearbeitet haben, wissen Sie wahrscheinlich, dass Groß- und Kleinschreibung oft wichtig ist. Manchmal möchten Sie jedoch möglicherweise alle Buchstaben in einem String in Kleinbuchstaben umwandeln, um die Vergleichbarkeit zu erhöhen oder bestimmte Operationen durchzuführen. In diesem Artikel werden wir uns ansehen, wie wir in Go eine Zeichenfolge in Kleinbuchstaben konvertieren.
 
-Eine andere Möglichkeit ist die Verwendung der Methode `ToLower()` des Datentyps `strings.Builder`. Diese ermöglicht es, direkt auf einem String zu arbeiten, ohne eine neue Variable erstellen zu müssen.
+## So geht's
+
+Um in Go eine Zeichenfolge in Kleinbuchstaben umzuwandeln, können wir die `ToLower()` Funktion aus der `strings` Standardbibliothek verwenden. Hier ist ein Beispielcode, der eine Zeichenfolge mit Groß- und Kleinbuchstaben enthält und diese in eine neue Zeichenfolge mit allen Kleinbuchstaben konvertiert:
 
 ```Go
-// Verwendung von strings.Builder
-s := "Hallo"
-b := strings.Builder{}
-b.WriteString(s)
-b.WriteString(" Welt")
-fmt.Println(b.String())
-fmt.Println(b.String())
-// Ausgabe: hallo welt
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	str := "In Go schreiben wir nur coolen Code!"
+
+	lowerCaseStr := strings.ToLower(str)
+
+	fmt.Println(lowerCaseStr)
+}
 ```
 
-## Tiefergehende Informationen
-Ein wichtiger Punkt beim Konvertieren von Strings zu Kleinbuchstaben ist die Beachtung der Sprachunterstützung. Verschiedene Sprachen haben unterschiedliche Regeln für die Konvertierung, die beachtet werden müssen.
+Die Ausgabe dieses Codes ist: `in go schreiben wir nur coolen code!`
 
-Wir können auch die Unicode-Eigenschaften von Go nutzen, um sicherzustellen, dass unsere Konvertierung korrekt durchgeführt wird. Dies kann durch die Verwendung von `unicode.ToLower()` erfolgen. Diese Funktion wandelt einen einzelnen Rune (ein Zeichen im String) in einen Kleinbuchstaben um und gibt ihn zurück.
+Wenn Sie einen Blick unter die Haube werfen, können Sie sehen, dass die `ToLower()` Funktion jedes Zeichen in der Zeichenfolge über eine Unicode-Tabelle konvertiert. Dadurch wird sichergestellt, dass auch Sonderzeichen und Symbole in Kleinbuchstaben umgewandelt werden.
+
+## Tiefgründig
+
+Es ist wichtig zu beachten, dass die `ToLower()` Funktion keine Zeichenfolge im Original ändert, sondern eine neue zurückgibt. Dies bedeutet, dass Sie sicherstellen müssen, dass Sie die neue Zeichenfolge einer Variablen zuweisen oder sie in einer neuen Variablen speichern, um sie verwenden zu können.
+
+Außerdem bietet die `strings` Bibliothek noch andere nützliche Funktionen für die Bearbeitung von Zeichenfolgen, wie z.B. `ToUpper()`, `Trim()` und `Replace()`. Es lohnt sich also, sich mit den verschiedenen Funktionen vertraut zu machen, um Ihre Arbeit mit Zeichenfolgen zu erleichtern.
 
 ## Siehe auch
-- [Dokumentation zu strings.ToLower()](https://golang.org/pkg/strings/#ToLower)
-- [Dokumentation zu strings.Builder](https://golang.org/pkg/strings/#Builder)
-- [Dokumentation zu unicode.ToLower()](https://golang.org/pkg/unicode/#ToLower)
+
+Hier sind einige Links zu weiterführenden Ressourcen rund um die Verwendung von Zeichenfolgen in Go:
+
+- [Official Go documentation on strings package](https://golang.org/pkg/strings/)
+- [A Beginner's Guide to Strings Manipulation in Go](https://medium.com/better-programming/a-beginners-guide-to-strings-manipulation-in-go-9b2216e77b7d)
+- [Playing with Strings in Go](https://towardsdatascience.com/playing-with-strings-in-go-8baff6c43056)

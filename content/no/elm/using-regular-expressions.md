@@ -1,60 +1,50 @@
 ---
-title:    "Elm: Å bruke regulære uttrykk"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/using-regular-expressions.md"
+title:                "Elm: Å bruke regulære uttrykk"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-I mange programmeringsspråk, inkludert Elm, kan vi oppleve å måtte behandle tekststrenger for å gjøre spesielle operasjoner. En måte å effektivt håndtere slike strenger er ved hjelp av regulære uttrykk (regular expressions). Dette er mønstre som lar oss søke etter og manipulere tekststrenger basert på visse kriterier. Med dette verktøyet kan vi enkelt finne og erstatte deler av tekst, eller til og med validerere inndata fra brukere. Hvis du vil bli en mer effektiv Elm-programmerer, er det absolutt verdt å lære om regulære uttrykk.
+Hvorfor bry deg om å bruke regulære uttrykk i Elm? Vel, de kan være svært nyttige når du skal håndtere tekst og data på en effektiv måte. Regulære uttrykk gir deg en fleksibel måte å søke, filtrere og manipulere tekstbaserte data på.
 
 ## Hvordan
 
-For å bruke regulære uttrykk i Elm, må vi først importere Regex-modulen:
+For å bruke regulære uttrykk i Elm, må du først importere `Regex` biblioteket. Deretter kan du bruke funksjoner som `Regex.find` og `Regex.replace` for å søke og erstatte tekst i en streng.
 
-```Elm
-import Regex exposing (..)
+Her er et eksempel på å finne alle forekomster av et telefonnummer i en tekst og erstatte dem med "XXX-XXX-XXXX" ved hjelp av regulære uttrykk:
+
+```elm
+import Regex
+
+pattern = Regex.fromString "\\([0-9]{3}\\) ?[0-9]{3}-[0-9]{4}"
+
+text = "(123) 456-7890 is my phone number."
+
+output = Regex.replace pattern (\_ -> "XXX-XXX-XXXX") text
+
+-- output blir "XXX-XXX-XXXX is my phone number."
 ```
 
-Deretter kan vi bruke funksjoner som <code>find</code> og <code>replace</code> for å manipulere tekststrenger. La oss si at vi har en liste med e-postadresser og vi bare vil vise de som inneholder en bestemt domene:
-
-```Elm
-let
-    emails =
-        [ "test@test.com", "hello@world.com", "foo@bar.com" ]
-    
-    domain =
-        "world.com"
-    
-    filteredEmails =
-        List.filter (\email -> Regex.find (Regex.regex domain) email) emails
-in
-    filteredEmails
-
--- Output:
--- [ "hello@world.com" ]
-```
-
-Som du kan se, brukte vi <code>find</code> for å søke etter e-postadresser som inneholder "world.com". Det er også mulig å erstatte deler av tekststrenger med <code>replace</code> funksjonen. La oss si at vi ønsker å endre alle forekomster av "elm" til "Elm" i en tekststreng:
-
-```Elm
-let
-    text =
-        "dette er en tekst om elm-programmering"
-in
-    Regex.replace (Regex.regex "elm") (\_ -> "Elm") text
-
--- Output:
--- "dette er en tekst om Elm-programmering"
-```
+Som du kan se, hjelper regulære uttrykk deg med å finne spesifikke mønstre i en tekst og gjøre endringer basert på disse mønstrene. Dette kan være svært nyttig når du jobber med store tekstfiler eller når du trenger å utføre komplekse søk.
 
 ## Dypdykk
 
-Hvis du vil lære mer om regulære uttrykk i Elm, kan du sjekke ut dokumentasjonen på Elm sine nettsider. Der finner du en komplett oversikt over alle funksjoner og deres bruksområder. Det er også mange nyttige ressurser på nettet, som eksempler og tutorials, som kan hjelpe deg å forstå og mestre regulære uttrykk.
+Regulære uttrykk har et eget språk som brukes til å definere mønstre. For eksempel vil `\\([0-9]{3}\\)` i eksempelet over finne alle forekomster av et telefonnummer i formatet "(123)". Her er noen viktige "jokertegn" du kan bruke i regulære uttrykk i Elm:
+
+- `.` står for et hvilket som helst tegn
+- `+` betyr "én eller flere forekomster av", for eksempel `[0-9]+` vil finne alle tall i en tekst
+- `*` betyr "null eller flere forekomster av"
+- `[]` definerer et sett av tegn, for eksempel `[aeiou]` vil finne alle vokaler
+- `()` brukes til å gruppere mønstre og kan brukes sammen med `|` for å definere flere alternativer
+
+Det er mye å lære om regulære uttrykk, men med litt praksis kan de bli et kraftig verktøy i din programmeringsverktøykasse.
 
 ## Se også
 
-- [Elm sin dokumentasjon om regulære uttrykk](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Tutorial om regulære uttrykk i Elm](https://www.elm-tutorial.org/en/05-advanced/01-regular-expressions.html)
+- [Elm dokumentasjon for Regex](https://package.elm-lang.org/packages/elm/regex/latest/Regex)
+- [RegExr - verktøy for å teste og eksperimentere med regulære uttrykk](https://regexr.com/)
+- [Introduksjon til regulære uttrykk i Elm](https://dev.to/kristoffermh/regular-expressions-in-elm-6hh)

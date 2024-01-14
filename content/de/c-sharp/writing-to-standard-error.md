@@ -1,43 +1,53 @@
 ---
-title:    "C#: Schreiben in den Standardfehler"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/writing-to-standard-error.md"
+title:                "C#: Schreiben auf die Standardfehlerausgabe"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum?
 
-Wenn du in der Welt des C# Programmierens unterwegs bist, wirst du früher oder später auf die sogenannte "Standardfehlerausgabe" (*standard error*) stoßen. Diese Ausgabe ist eine wichtige Methode, um Fehler in deinem Code zu erkennen und zu debuggen. In diesem Blogbeitrag werden wir uns genauer damit befassen, warum es wichtig ist, zur Standardfehlerausgabe zu schreiben und wie man dies effektiv tun kann.
+In diesem Blogbeitrag werden wir untersuchen, warum es wichtig ist, in C# auf die Standardfehlerausgabe zu schreiben. Die Standardfehlerausgabe, auch als stderr bezeichnet, ist ein wichtiger Teil jeder Programmiersprache und kann bei der Fehlersuche und Debugging-Prozessen sehr hilfreich sein.
 
-## Wie man zur Standardfehlerausgabe schreibt
+## Wie geht das?
 
-Um zur Standardfehlerausgabe zu schreiben, musst du zunächst die `Console` Klasse aus der `System` Namespace importieren. Dann kannst du die Methode `Error.WriteLine()` verwenden, um eine Nachricht zur Standardfehlerausgabe zu senden.
-
-```C#
-using System;
-
-// ...
-
-Console.Error.WriteLine("Dies ist eine Fehlermeldung.");
-```
-
-Die Methode `Error.WriteLine()` akzeptiert eine beliebige Zeichenkette als Argument und gibt sie auf der Standardfehlerausgabe aus. Du kannst der Methode auch mehrere Argumente übergeben, die dann jeweils mit einem Leerzeichen zwischen ihnen ausgegeben werden.
+Um in C# auf die Standardfehlerausgabe zu schreiben, können wir die Methode `Console.Error.WriteLine()` verwenden. Diese Methode gibt eine Zeichenfolge auf die Standardfehlerausgabe aus, gefolgt von einem Zeilenumbruch. Hier ist ein Beispiel:
 
 ```C#
-Console.Error.WriteLine("Ein Fehler trat bei der Berechnung von {0} auf. Fehlernummer: {1}", berechnung, fehlernummer);
+Console.Error.WriteLine("Schwerwiegender Fehler aufgetreten!");
 ```
 
-Ein weiterer hilfreicher Tipp ist die Verwendung der `Error.SetOut()` Methode, um die Standardfehlerausgabe auf eine Datei oder einen Textwriter zu lenken. Dadurch kannst du Fehler in einer separaten Datei oder einem separaten Textbereich für eine einfachere Analyse speichern.
+Dieser Code gibt die Zeichenfolge "Schwerwiegender Fehler aufgetreten!" auf die Standardfehlerausgabe aus. Die Ausgabe könnte wie folgt aussehen:
 
-## Tiefer einsteigen
+```
+Schwerwiegender Fehler aufgetreten!
+```
 
-Nun, da du weißt, wie man zur Standardfehlerausgabe schreibt, lass uns einen tieferen Einblick in dieses Thema werfen. Im Grunde genommen ist die Standardfehlerausgabe eine spezielle Art der Konsolenausgabe, die dazu dient, Fehler und Ausnahmen in deinem Code anzuzeigen. Im Gegensatz dazu ist die Standardausgabe (*standard output*) für die reguläre Ausgabe zuständig, wie zum Beispiel das Anzeigen von Zeichenketten oder Werten.
+Um weitere Zeichenfolgen auf die Standardfehlerausgabe auszugeben, können wir die Methode `Console.Error.Write()` verwenden. Diese Methode gibt eine Zeichenfolge ohne Zeilenumbruch aus. Hier ist ein Beispiel:
 
-Es ist wichtig, die Standardfehlerausgabe zu nutzen, da sie eine effektive Methode ist, um Probleme in deinem Programm zu identifizieren. Wenn du nur die Standardausgabe verwendest, kannst du möglicherweise wichtige Fehlermeldungen verpassen, da sie zusammen mit anderen Ausgaben angezeigt werden.
+```C#
+Console.Error.Write("Details:");
+Console.Error.Write(" Keine Verbindung zum Server.");
+```
+
+Dieser Code gibt die Zeichenfolge "Details: Keine Verbindung zum Server." auf die Standardfehlerausgabe aus. Die Ausgabe könnte wie folgt aussehen:
+
+```
+Details: Keine Verbindung zum Server.
+```
+
+## Tieferes Eintauchen
+
+Es gibt verschiedene Situationen, in denen das Schreiben auf die Standardfehlerausgabe hilfreich sein kann. Zum Beispiel, wenn ein Programm viele Informationsausgaben hat, aber man möchte nur die Fehlermeldungen sehen, kann man die Standardfehlerausgabe nutzen. Auch beim Debugging kann es nützlich sein, auf die Standardfehlerausgabe zu schreiben, um gezielt nach bestimmten Fehlermeldungen zu suchen.
+
+Eine andere wichtige Anwendung für die Standardfehlerausgabe ist die Verwendung von Error-Log-Dateien. Diese Dateien enthalten alle Fehlermeldungen, die während der Programmausführung aufgetreten sind und können später zur Fehlersuche verwendet werden.
+
+Es ist auch erwähnenswert, dass die Standardfehlerausgabe von den meisten Konsolenanwendungen standardmäßig verwendet wird, um Fehlermeldungen auszugeben. Daher ist es wichtig, beim Programmieren von Konsolenanwendungen auf die Standardfehlerausgabe zu achten.
 
 ## Siehe auch
 
-- [Microsoft Dokumentation: Console.Error Property](https://docs.microsoft.com/en-us/dotnet/api/system.console.error?view=netcore-3.1)
-- [Tutorial: Fehlermeldung in C#](https://www.tutorialsteacher.com/csharp/csharp-console-application)
-- [Verwenden von Standardfehlerausgaben in C#](https://exceptionnotfound.net/using-strings-in-standard-error-and-standard-output-in-c-sharp-net/)
+- [Console-Klasse (System.Console) in der Microsoft-Dokumentation](https://docs.microsoft.com/de-de/dotnet/api/system.console?view=netcore-3.1)
+- [Tutorial: Fehlerbehandlung und Debugging in C#](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/exceptions/)
+- [Artikel über die Verwendung der Standardfehlerausgabe in C#](https://www.c-sharpcorner.com/article/understanding-standard-error-in-c-sharp/)

@@ -1,50 +1,55 @@
 ---
-title:    "Python: Imprimir salida de depuración"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/python/printing-debug-output.md"
+title:                "Python: Imprimiendo salida de depuración"
+programming_language: "Python"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-Si eres un programador o estás aprendiendo a programar, probablemente hayas escuchado sobre la importancia de imprimir el resultado de tu código y cómo puede ayudarte a detectar errores. Pero, ¿por qué realmente se recomienda imprimir la salida de depuración? En esta publicación de blog, explicaremos por qué es útil imprimir la salida de depuración en tus programas de Python.
+# ¿Por qué imprimir la salida de depuración en Python?
 
-## Cómo hacerlo
-Si estás utilizando Python 3, puedes imprimir la salida de depuración utilizando la función `print()`. Esta función acepta una o más expresiones como argumentos y las imprime en la consola. Por ejemplo, si quieres imprimir una cadena de texto, puedes hacerlo de la siguiente manera:
+Cuando se está programando en Python, es común encontrarse con errores o problemas en el código. En estos casos, imprimir la salida de depuración puede ser una herramienta útil para identificar y solucionar estos errores de manera eficiente.
 
-```Python
-print("¡Hola, mundo!")
+## Cómo hacerlo:
+La forma más fácil de imprimir la salida de depuración en Python es utilizando la función `print()`. A continuación, te presentamos un ejemplo de cómo se vería esta función en acción:
 ```
+# Creación de una lista de números
+numeros = [1, 2, 3, 4, 5]
 
-La salida de este código sería `¡Hola, mundo!`, que se mostrará en la consola. También puedes imprimir variables y expresiones matemáticas. Echa un vistazo a los siguientes ejemplos:
-
-```Python
-nombre = "Juan"
-edad = 28
-
-print("Mi nombre es", nombre)
-print("Mi edad es", edad)
-print("El doble de mi edad es", edad * 2)
+# Utilizando la función print para imprimir cada número en la lista
+for num in numeros:
+    print(num)
 ```
-
-La salida de este código sería:
-
+La salida de este código sería la siguiente:
 ```
-Mi nombre es Juan
-Mi edad es 28
-El doble de mi edad es 56
+1
+2
+3
+4
+5
 ```
+Como puedes ver, la función `print()` nos permite ver el valor de cada variable en un momento específico del código, lo que puede ser útil para detectar posibles errores.
 
-Esto puede ser muy útil para asegurarte de que tus variables están almacenando los valores correctos en diferentes puntos de tu programa.
+## Una mirada más profunda:
+Python también tiene una función llamada `pprint` que se utiliza para imprimir estructuras de datos de manera más organizada y fácil de leer. A continuación, se muestra un ejemplo de cómo se vería la salida de la función `pprint` para la misma lista de números utilizada anteriormente:
+```
+# Importando la librería pprint
+import pprint
 
-## Profundizando
-Imprimir la salida de depuración también puede ayudarte a detectar errores y comprender mejor cómo funciona tu código. Al imprimir diferentes valores y expresiones, puedes ver cómo cambian a medida que tu programa se ejecuta. Esto te brinda una forma más visual de seguir el flujo de tu programa, lo que puede ser especialmente útil cuando trabajas con ciclos y estructuras de control.
+# Creación de una lista de números
+numeros = [1, 2, 3, 4, 5]
 
-Además, imprimir la salida de depuración te permite comprender mejor el comportamiento de tu código y te ayuda a identificar problemas potenciales. Puedes utilizarlo para verificar si tus cálculos matemáticos son correctos o si tus funciones están retornando los valores correctos.
+# Utilizando la función pprint para imprimir la lista
+pprint.pprint(numeros)
+```
+La salida de este código sería la siguiente:
+```
+[1, 2, 3, 4, 5]
+```
+Como puedes ver, la función `pprint` nos da una salida mucho más organizada y legible, lo que puede ser útil cuando se trata de estructuras de datos más complejas.
 
-## Ver también
-¡Esperamos que hayas encontrado útil esta publicación sobre cómo imprimir la salida de depuración en Python! Si quieres seguir aprendiendo sobre debugueo y otras técnicas de programación, aquí hay algunos recursos adicionales para ti:
-
-- [Documentación de Python sobre la función `print()`](https://docs.python.org/es/3/library/functions.html#print)
-- [Python Debugging Techniques: Tips and Tricks](https://realpython.com/python-debugging-tips/), artículo de Real Python en inglés
-- [Depuración en Python: Guía básica](https://www.linuxjournal.com/content/python-debugging-basics), guía básica de Linux Journal en inglés
+# Ver también:
+- [Documentación oficial de Python sobre la función `print()`](https://docs.python.org/es/3/library/functions.html#print)
+- [Documentación oficial de Python sobre la función `pprint`](https://docs.python.org/es/3/library/pprint.html)
+- [Artículo de Real Python sobre la impresión de la salida de depuración en Python](https://realpython.com/python-debugging-pdb/)

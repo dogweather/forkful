@@ -1,57 +1,42 @@
 ---
-title:    "TypeScript: Merkkijonojen yhdistäminen"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/concatenating-strings.md"
+title:                "TypeScript: Merkkijonojen yhdistäminen"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Ohjelmoijat usein tarvitsevat yhdistää merkkijonoja jotta pystyvät luomaan monimutkaisempia tekstejä tai viestejä. Tämä on tärkeää myös silloin kun halutaan tulostaa tietoa käyttäjälle tai tallentaa se tietokantaan. TypeScriptin merkkijonojen yhdistämisominaisuus mahdollistaa tämän prosessin helposti.
+Jotkut saattavat ihmetellä, miksi ohjelmoinnissa tarvitaan merkkijonojen yhdistämistä. Yksinkertaisesti sanottuna, merkkijonojen yhdistäminen tarkoittaa useamman merkkijonon yhdistämistä yhdeksi suureksi merkkijonoksi. Tämä voi olla hyödyllistä esimerkiksi tekstin muotoilussa tai tiedon tallentamisessa.
 
-## Miten
+## Kuinka tehdä se
+
+TypeScriptillä on useita tapoja yhdistää merkkijonoja. Yksi tapa on käyttää konkreettista yhdistämisoperaattoria "+" kahden merkkijonon välillä.
 
 ```TypeScript
-const nimi = "Matti";
-const tervehdys = "Hei " + nimi + ", tervetuloa sivustollemme!";
+let nimi = "Matti";
+let tervehdys = "Hei " + nimi + "!";
 console.log(tervehdys);
 ```
 
-Tässä esimerkissä käytämme "+" -operaattoria yhdistämään kaksi merkkijonoa yhdeksi. Lopputuloksena tulostuu "Hei Matti, tervetuloa sivustollemme!" konsoliin. Voimme myös yhdistää useita merkkijonoja yhtäaikaisesti.
+Tämä tulostaa konsoliin "Hei Matti!". Voit myös käyttää String-interpolointia, joka mahdollistaa muuttujien käyttämisen suoraan merkkijonojen sisällä.
 
 ```TypeScript
-const kaupunki = "Helsinki";
-const maa = "Suomi";
-const yhteenveto = `Asun ${kaupunki}, joka sijaitsee maassa ${maa}.`;
-console.log(yhteenveto);
+let luku = 5;
+let tulos = `Kuusi plus ${luku} on ${6 + luku}`;
+console.log(tulos);
 ```
 
-Toisessa esimerkissä käytämme backtick-merkkejä (`) ja ${} -syntaksia luodaksemme yhden merkkijonon useiden muuttujien kanssa. Lopputuloksena tulostuu "Asun Helsinki, joka sijaitsee maassa Suomi." konsoliin.
+Tämä tulostaa konsoliin "Kuusi plus 5 on 11".
 
-## Syvällisempi sukellus
+## Syvempi sukellus
 
-Stringien yhdistämisessä on tärkeää huomata, että TypeScript osaa automaattisesti muuntaa muut tyypit merkkijonoksi. Tämä tarkoittaa sitä, että voimme yhdistää myös numeroita ja boolean-arvoja merkkijonoihin ilman että tarvitsee erikseen muuntaa niitä. Esimerkiksi:
-
-```TypeScript
-const ikä = 30;
-const tervetuloa = "Tervetuloa, olet " + ikä + " vuotta vanha!";
-
-console.log(tervetuloa);
-```
-
-Tulostuu "Tervetuloa, olet 30 vuotta vanha!" konsoliin.
-
-Voimme myös käyttää erilaisia operaattoreita osana merkkijonojen yhdistämistä.
-
-```TypeScript
-console.log("Tervetuloa sivustolle! " + "Jatka sivustomme selailua " + "saadaksesi lisää tietoa.");
-```
-
-Tämä tulostaa "Tervetuloa sivustolle! Jatka sivustomme selailua saadaksesi lisää tietoa." konsoliin.
+TypeScriptissä merkkijonojen yhdistäminen tehdään taustalla muuttujien muuntamisena String-tyyppisiksi. Tämän vuoksi on hyvä huomioida, että liiallinen merkkijonojen yhdistely voi hidastaa koodin suorituskykyä. Paras tapa toteuttaa merkkijonojen yhdistely on käyttää StringBuilder-luokkaa, joka pystyy tehokkaasti käsittelemään suuria määriä merkkijonoja.
 
 ## Katso myös
 
-- [TypeScriptin virallinen dokumentaatio merkkijonojen muotoilusta](https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html#string-formatting)
-- [W3Schools sivusto merkkijonojen yhdistämisestä Javascriptillä](https://www.w3schools.com/js/js_string_concat.asp)
-- [Vuoropuhelun artikkeli stringien yhdistämisestä](https://dev.to/codementor/how-to-concatenate-strings-in-typescript-24c8)
+- [TypeScriptin virallinen dokumentaatio](https://www.typescriptlang.org/docs/)
+- [StringBuilder-luokan käyttäminen merkkijonojen yhdistelyssä (eng)](https://www.tutorialsteacher.com/csharp/csharp-stringbuilder)
+- [String-interpolointi TypeScriptissä (eng)](https://flaviocopes.com/typescript-string-interpolation/)

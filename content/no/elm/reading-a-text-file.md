@@ -1,58 +1,44 @@
 ---
-title:    "Elm: Lese en tekstfil"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/reading-a-text-file.md"
+title:                "Elm: Lese en tekstfil"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-#Hvorfor
+## Hvorfor
 
-Hvis du er en nybegynner innenfor programmering eller en erfaren utvikler på jakt etter et nytt språk å lære, bør du ta en titt på Elm. Dette funksjonelle programmeringsspråket er enkelt å lære, og det har mange nyttige funksjoner. I denne bloggposten vil vi fokusere på hvordan du kan lese en tekstfil ved hjelp av Elm.
+Å lese og behandle tekstfiler er en vanlig oppgave i programmering, enten det er for å importere data eller for å håndtere brukerinput. I denne bloggposten vil vi se nærmere på hvordan vi kan bruke Elm for å lese en tekstfil og prosessere innholdet.
 
-#Slik gjør du det
+## Hvordan
 
-For å lese en tekstfil i Elm, må du følge disse trinnene:
-
-1. Importer File modulen ved å legge til dette øverst i filen din: ```import File exposing (readString)```
-
-2. Bruk funksjonen ```readString``` for å lese innholdet av tekstfilen. Denne funksjonen tar to argumenter: filbanen og en funksjon som beskriver hva som skal gjøres med tekststrengen (for eksempel å skrive den ut til konsollen). Et eksempel på hvordan du kan bruke denne funksjonen: 
+Først må vi importere `Text` modulen i vårt Elm-program. Deretter kan vi bruke funksjonen `File.toText` for å lese en tekstfil og lagre innholdet som en `String` i en `Result`-verdi. Her er et eksempel på hvordan dette kan gjøres:
 
 ```
-readString "minfil.txt" (\result -> 
-    case result of 
-        Ok content -> 
-            Debug.log "Tekstfilinnholdet er" content 
-        Err error -> 
-            Debug.log "Det oppsto en feil: " error 
-)
+Elm
+
+import Text exposing (..)
+import File
+    exposing
+        ( Error
+        , Ok
+        )
+
+fileContent : Result Error String
+fileContent =
+    File.toText "minTekstfil.txt"
 ```
 
-3. Nå kan du kjøre koden din for å se resultatet!
+Dette vil gi oss innholdet i tekstfilen `minTekstfil.txt` lagret i variabelen `fileContent`. Nå kan vi jobbe med innholdet på samme måte som vi ville gjort med en vanlig tekststreng.
 
-Eksempel på tekstfilinnhold (minfil.txt):
+## Dypdykk
 
-```
-Hei! Dette er en tekstfil.
-Den inneholder litt informasjon som vi skal lese med Elm.
-```
+Når vi leser en tekstfil i Elm, vil teksten bli lagret som en enkel `String`. Det betyr at vi kan bruke alle de vanlige funksjonene for strenger for å behandle teksten videre, for eksempel `String.split`, `String.contains` eller `String.trim`.
 
-Output i konsollen:
+Vi kan også implementere mer komplekse logikk for å håndtere spesifikke formater eller manipulere data på en spesifikk måte. Det viktige er å få teksten fra tekstfilen inn i vårt Elm-program, så kan vi jobbe med den på samme måte som vi ville gjort med en hvilken som helst annen tekststreng.
 
-```
-Tekstfilinnholdet er Hei! Dette er en tekstfil. Den inneholder litt informasjon som vi skal lese med Elm.
-```
+## Se også
 
-#Dykke dypere
-
-Nå som du vet hvordan du kan lese en enkel tekstfil i Elm, kan det være nyttig å vite om noen av de andre funksjonene og metodene for å lese filer. For eksempel kan du bruke ```readLines``` for å lese en tekstfil linje for linje, eller ```readAsStream```, som lar deg lese store filer stykkevis og kontinuerlig. 
-
-Du kan også bruke funksjonen ```readFile``` for å lese binærfiler, eller ```readDirectory``` for å lese innholdet av en hel mappe. Det er også mulig å lese filer fra internett ved å bruke funksjoner som ```Http.send```.
-
-Det er verdt å merke seg at disse funksjonene returnerer resultatet i form av en ```Task```, som må håndteres riktig for å unngå eventuelle feil.
-
-#Se også
-
-- Elm's offisielle dokumentasjon for File modulen: https://package.elm-lang.org/packages/elm/file/latest/
-- Enkel Elm guide for å lese tekstfiler: https://guide.elm-lang.org/effects/files.html
-- Elm tutorial for å lese og skrive filer: https://www.tutorialspoint.com/elm/elm_file_handling.htm
+- [Elm tekstmodulen dokumentasjon](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm File modulen dokumentasjon](https://package.elm-lang.org/packages/elm/file/latest/File)

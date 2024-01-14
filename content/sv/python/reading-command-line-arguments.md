@@ -1,43 +1,58 @@
 ---
-title:    "Python: Läsning av kommandoradsargument"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/python/reading-command-line-arguments.md"
+title:                "Python: Läsa kommandoradsargument"
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att läsa kommandoradsargument kan vara en ovärderlig kunskap för Python-programmerare. Det ger dig möjlighet att interagera med ditt program på ett enkelt och effektivt sätt genom att ange specifika inställningar och parametrar vid körning. Detta kan spara tid och ge en smidigare användarupplevelse.
+Att kunna läsa in kommandoradsargument är en viktig färdighet för varje programmerare. Det ger dig möjlighet att interagera med ditt Python-program på ett dynamiskt sätt genom att ange olika värden och inställningar från din terminal.
 
-# Hur man gör det
+## Hur man gör
 
-Först och främst behöver du importera modulen "sys" som ger tillgång till systemspecifika funktioner och variabler. Sedan kan du använda sys.argv för att få en lista med alla argument som skickas med när programmet körs från kommandoraden. Här är ett exempel:
-
-```Python
-import sys
-
-print("Antal argument:", len(sys.argv))
-print("Argument:", sys.argv)
-```
-
-Om du kör detta program med argumentet "hello world", kommer det att se ut så här när du kör det från kommandoraden:
+Att läsa in kommandoradsargument i Python är enkelt och kan åstadkommas med hjälp av argparse-modulen. För att använda denna modul, se till att du först importerar den i ditt Python-program.
 
 ```Python
-$ python program.py hello world
-Antal argument: 3
-Argument: ['program.py', 'hello', 'world']
+import argparse
 ```
 
-För att få åtkomst till ett specifikt argument kan du använda dess position i listan. Till exempel, om du vill få ut värdet "hello", kan du använda sys.argv[1]. Kom ihåg att sys.argv[0] alltid kommer att vara värdet på själva programfilen.
+Sedan behöver du definiera de argument som du vill kunna läsa in. Detta görs med hjälp av ArgumentParser-objektet och dess add_argument() -metod. Till exempel, om du vill läsa in ett tal och en sträng från kommandoraden så skulle du skriva:
 
-# Djupdykning
+```Python
+parser = argparse.ArgumentParser()
+parser.add_argument("--numeric", type=int, help="Enter a number.")
+parser.add_argument("--string", type=str, help="Enter a string.")
+```
 
-Det finns några viktiga saker att notera när du läser kommandoradsargument i Python. Först och främst måste du alltid konvertera argumenten till lämpliga datatyper. Standardvärdena i sys.argv-listan är alltid strängar, så om du behöver ett heltal eller en flyttal måste du konvertera det med hjälp av int() eller float(). Du bör också hantera felaktig eller otillräcklig användarinput genom att använda try-except-satser.
+För att faktiskt läsa in dina argument, kan du sedan använda parse_args() -metoden på ditt ArgumentParser-objekt och tilldela resultaten till en variabel. Till exempel:
 
-En annan användbar teknik är att använda modulen "argparse" som ger dig möjlighet att definiera och hantera kommandoradsargument på ett mycket mer strukturerat sätt. Detta kan vara särskilt användbart för större projekt som har många olika argument och alternativ.
+```Python
+args = parser.parse_args()
+```
 
-# Se även
+Nu kan du använda de inmatade värdena i ditt program genom att åtkomsta dem med hjälp av deras respektive argumentnamn. Till exempel:
 
-- [The Python sys module documentation](https://docs.python.org/3/library/sys.html)
-- [The Python argparse module documentation](https://docs.python.org/3/library/argparse.html)
+```Python
+print("Nummer: {}".format(args.numeric))
+print("Sträng: {}".format(args.string))
+```
+
+Om du kör det här programmet från din terminal och anger ett tal och en sträng som argument, kommer du att se följande utmatning:
+
+```console
+$ python program.py --numeric 10 --string "Hello!"
+Nummer: 10
+Sträng: Hello!
+```
+
+## Djupdykning
+
+Det finns många användbara funktioner inbyggda i argparse-modulen för att läsa in kommandoradsargument. Till exempel kan du använda required = True parameter för att tvinga användaren att ange ett visst argument. Du kan också använda action = "store_true" parameter för att skapa en sträng som är "True" om flaggan anges och "False" om den inte anges. Dessutom kan du lägga till hjälpbeskrivningar till dina argument för att ge användaren mer vägledning om hur de ska användas.
+
+## Se även
+
+- [Python dokumentation för argparse](https://docs.python.org/3/library/argparse.html)
+- [Real Python-artikel om att hantera kommandoradsargument i Python](https://realpython.com/command-line-interfaces-python-argparse/#other-argument-features)

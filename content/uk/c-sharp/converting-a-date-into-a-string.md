@@ -1,42 +1,49 @@
 ---
-title:    "C#: Перетворення дати у рядок"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/converting-a-date-into-a-string.md"
+title:                "C#: Перетворення дати у рядок."
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Багато з нас, ймовірно, знають, що деякі мови програмування (такі як C#) мають вбудовані функції для конвертації дати в рядок. Але чому це потрібно? Чому не можна просто використати число або стандартний формат дати? В цьому пості ми розглянемо ці питання та подивимося на практичні приклади.
+Один з найпоширеніших завдань для програмістів - це робота з датами. Однак, іноді нам потрібно перетворити дату на рядок для збереження або виведення її в форматі, зрозумілому людям. Саме тому в цій статті ми розглянемо, як перетворити дату у рядок в C#.
 
-## Як
+## Як це зробити
 
-Для початку, давайте подивимося на синтаксис для конвертації дати в рядок в C#:
-
-```C#
-DateTime now = DateTime.UtcNow;
-string dateString = now.ToString("dd.MM.yyyy");
-```
-Тут ми створюємо змінну `now`, яка містить поточну дату та час. Потім ми використовуємо метод `.ToString()` для конвертації її в рядок, вказуючи бажаний формат дати в аргументі методу. У цьому прикладі ми отримаємо рядок у форматі "дд.мм.рррр".
-
-Є також можливість використовувати вбудовані формати дати, які простіше і зручніше для користувачів. Наприклад:
+Найпростіший спосіб конвертувати дату в рядок - це використовувати метод `ToString()` з класу `DateTime`. Нижче наведений приклад коду, де ми перетворюємо дату у рядок у форматі MM/dd/yyyy.
 
 ```C#
-DateTime now = DateTime.UtcNow;
-string dateString = now.ToShortDateString(); // отримаємо "dd.MM.yyyy"
+DateTime date = new DateTime(2020, 12, 1);
+string dateString = date.ToString("MM/dd/yyyy");
+Console.WriteLine(dateString); // Виведе 12/01/2020
 ```
 
-У цьому прикладі ми використовуємо метод `.ToShortDateString()` для автоматичного форматування дати згідно з налаштуваннями користувача.
+Однак, метод `ToString()` може приймати різні параметри форматування, що дозволяє нам застосовувати більш розширені можливості. Наприклад, додавши літеру "d" до кінця формату, ми можемо вивести лише день місяця:
 
-## Deep Dive
+```C#
+DateTime date = new DateTime(2020, 12, 1);
+string dateString = date.ToString("d");
+Console.WriteLine(dateString); // Виведе 1
+```
 
-Тепер давайте більш детально розглянемо, як саме працює конвертація дати в рядок. При використанні методу `.ToString()` ми фактично використовуємо клас `DateTimeFormatInfo` для форматування дати. Цей клас містить внутрішні методи та формати для зчитування та обробки дати та часу.
+Ви також можете використовувати метод `ToString()` зі строковою змінною, яка містить формат дати, аби перетворити дату у рядок:
 
-Також важливо знати, що формат дати можна змінити, використовуючи спеціальні символи і замінюючи їх з різними значеннями. Наприклад, символ "d" використовується для відображення дня в місяці, а "M" - для відображення номера місяця. Більше інформації про можливі формати можна знайти в офіційній документації.
+```C#
+DateTime date = new DateTime(2020, 12, 1);
+string format = "dd/MM/yyyy";
+string dateString = date.ToString(format);
+Console.WriteLine(dateString); // Виведе 01/12/2020
+```
 
-## See Also
+## Глибоке занурення
 
-- [Офіційна документація C#](https://docs.microsoft.com/uk-ua/dotnet/csharp/)
-- [Робота з датою та часом в C#](https://www.tutorialsteacher.com/articles/working-with-datetime-in-csharp)
-- [Форматування дати та часу в C#](https://docs.microsoft.com/uk-ua/dotnet/standard/base-types/custom-date-and-time-format-strings)
+Якщо ви зацікавлені в більш глибокому вивченні перетворення дати в рядок в C#, вам варто ознайомитися з методом `ToString()` класу `DateTime` ближче. Цей метод має багато різноманітних параметрів форматування, які дозволяють вам сконструювати рядок з датою в будь-якому форматі, який вам знадобиться. Також варто зазначити, що є інші способи перетворення дати в рядок, такі як виконання ручної обробки за допомогою методів класу `DateTime`, але метод `ToString()` є найпростішим і найзручнішим.
+
+## Дивіться також
+
+- [DateTime.ToString() Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring)
+- [Custom DateTime Format Strings (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [How to convert DateTime to string in C# (Stack Overflow)](https://stackoverflow.com/questions/9395128/how-to-convert-datetime-to-string-in-c-sharp)

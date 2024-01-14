@@ -1,40 +1,35 @@
 ---
-title:    "Elixir: 날짜를 문자열로 변환하기"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/converting-a-date-into-a-string.md"
+title:                "Elixir: 날짜를 문자열로 변환하기"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Elixir로 날짜를 문자열로 변환하는 이유  
-Elixir는 다양한 데이터 유형을 처리할 수 있는 강력한 언어입니다. 따라서 Elixir 프로그래머라면 날짜를 문자열로 변환해야 할 일이 생길 수 있습니다. 이번 블로그 포스트에서는 날짜를 문자열로 변환하는 방법과 관련된 깊은 정보를 살펴보겠습니다. 
+## 왜
 
-## 왜 
-날짜를 문자열로 변환해야 하는 이유는 다양합니다. 예를 들어, 특정 날짜를 데이터베이스에 저장하기 위해 문자열 형식으로 변환해야 할 수도 있습니다. 또는 사용자에게 보여지는 날짜를 문자열로 표시해야 할 수도 있습니다. 이러한 경우에 날짜를 문자열로 변환해주는 기능은 매우 유용합니다.
+날짜를 문자열로 변환하는 것이 왜 필요한지 궁금하십니까? 당신은 날짜를 데이터베이스에 저장하거나 사용자에게 표시하기 위해 문자열로 변환해야 할 때가 있습니다. 또한 날짜를 형식화하여 원하는 형식으로 표시해야 할 수도 있습니다.
 
-## 어떻게 
-Elixir에서 날짜를 문자열로 변환하는 방법은 매우 간단합니다. 우선, ```~D[YYYY-MM-DD]``` 을 사용하여 원하는 날짜 형식을 지정합니다. 그리고 ```to_string/2``` 함수를 사용하여 날짜를 문자열로 변환합니다. 아래의 예제 코드를 살펴보면서 자세히 살펴보겠습니다.
+## 하는 방법
 
-```elixir
-date = ~D[2020-12-25]
-formatted_date = to_string(date, "~D[YYYY-MM-DD]")
-IO.puts(formatted_date)
-```
-```
-2020-12-25
+```Elixir
+# Date 데이터를 문자열로 변환하는 코드 예시
+date = ~D[2020-05-15] # 년-월-일 형식으로 날짜를 설정
+string = to_string(date) # 문자열로 변환
+IO.puts(string) # 결과: "2020-05-15"
 ```
 
-위의 예제에서는 ```~D[YYYY-MM-DD]``` 형식으로 날짜를 지정하고, ```to_string/2``` 함수를 사용하여 날짜를 문자열로 변환하였습니다. 이렇게 간단하게 날짜를 문자열로 변환할 수 있습니다.
+또한 Elixir는 다양한 형식의 날짜를 문자열로 변환하는 다양한 함수를 제공합니다. 예를 들어, `~D[2020-05-15]`대신 `~D[15-05-2020]`와 같이 다른 형식으로 날짜를 설정할 수 있습니다. 또한 날짜에 시간 정보를 추가하고 싶다면 `~N[2020-05-15 12:30:00]`와 같이 사용자 지정 시간 정보를 추가하여 날짜를 설정할 수도 있습니다.
 
-## 깊이 들어가기 
-날짜를 문자열로 변환하는 과정에서 발생할 수 있는 오류를 방지하기 위해 날짜 형식을 지정하는 방법에 대해 더욱 깊이 들어가보겠습니다. Elixir에서는 우선순위가 높은 형식을 사용하여 날짜를 처리합니다. 예를 들어, ```to_string(date, "~D[YYYY-MM-DD]")``` 코드에서는 ```YYYY-MM-DD``` 형식이 우선시되지만, ```to_string(date, "~D[YYYY-DD-MM]")``` 코드에서는 ```YYYY-DD-MM``` 형식이 우선시되어 이상한 날짜 형식이 출력됩니다. 따라서 정확한 날짜 형식을 지정하는 것이 중요합니다.
+## 심층 연구
 
-## 참고 자료 
-[Elixir Datetime](https://hexdocs.pm/elixir/DateTime.html)  
-[Elixir Date](https://hexdocs.pm/elixir/Date.html)  
-[Elixir String](https://hexdocs.pm/elixir/String.html)  
+Elixir에서 날짜를 문자열로 변환하는 데 사용하는 함수는 `to_string/1`입니다. 이 함수는 모든 타입의 데이터를 문자열로 변환하는 데 사용됩니다. 그러나 날짜를 형식화하는 데 사용되는 가장 일반적인 함수는 `~D` 형식 요소와 `to_string/2` 함수입니다.
 
-## 참고 자료 
-[Elixir Datetime](https://hexdocs.pm/elixir/DateTime.html)  
-[Elixir Date](https://hexdocs.pm/elixir/Date.html)  
-[Elixir String](https://hexdocs.pm/elixir/String.html)
+또한 Elixir에서는 `~U` 형식 요소를 사용하여 특정 시간 정보가 포함된 문자열을 파싱하여 날짜로 변환하는 것도 가능합니다. 예를 들어, `~U[2020-05-15 12:30:00]`와 같이 사용자가 입력한 시간 정보가 포함된 문자열을 지정한 날짜로 파싱할 수 있습니다.
+
+## 더 알아보기
+
+- [DateTime 모듈 문서](https://hexdocs.pm/elixir/DateTime.html)
+- [Elixir 날짜 형식 지정자 문서](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#~D/1)
+- [Elixir 문자열 파싱 문서](https://hexdocs.pm/elixir/String.html#module-parsing)

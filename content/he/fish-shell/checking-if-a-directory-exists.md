@@ -1,35 +1,60 @@
 ---
-title:    "Fish Shell: בדיקה אם תיקייה קיימת"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/checking-if-a-directory-exists.md"
+title:                "Fish Shell: בדיקת קיום תיקייה"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+## למה
 
-בדיקה אם תיקייה קיימת נחשבת לאחת מתפקידי התכנות הבסיסיים שכדאי ללמוד בשפת פיש של. בעזרת פקודת `test` והפונקציה `exists` ניתן לוודא אם תיקייה קיימת במערכת הקבצים שלנו, ובכך להתבסס על המידע הזה בתהליך התכנות שלנו.
+כשמבצעים תכנות של הַדריווכאת, חשוב לוודא שהַאיִדריי קיים והמידע המבוקש ימצא במקומו הנכון.
 
-## איך לבדוק אם תיקייה קיימת
+## איך לבדוק אם ספרייה קיימת בְ־Fish Shell
+
+כדי לבדוק אם ספרייה קיימת בְ־Fish Shell, ניתן להשתמש בפקודה הבאה:
 
 ```Fish Shell
+
 if test -d path/to/directory
-  echo "The directory exists!"
+
+    echo "The directory exists."
+
 else
-  echo "The directory does not exist."
+
+    echo "The directory does not exist."
+
 end
+
 ```
 
-פקודת `test` משתמשת במילה המפתח `exists` עבור בדיקת הנמצאות תיקייה בשמפת הנתיב שמספקים לפקודה. במקרה שהתיקייה קיימת, הפונקציה `exists` תחזיר את הערך `true` והשורה "The directory exists!" תודפס. ואם התיקייה אינה קיימת, הפונקציה תחזיר את הערך `false` והשורה "The directory does not exist." תודפס.
+תיאור הקוד: בעזרת הפקודה test והפרמטר -d, אנחנו בודקים אם הנתיב שמופנה קיים ואם כן, נדפיס הודעה מתאימה. אם הנתיב לא קיים, נדפיס הודעה אחרת.
 
-## טיפים לבדיקת תיקייה קיימת
+הנה דוגמא נוספת תוך שימוש ב־if-else ב־Fish Shell:
 
-לפני שנגשים לבדוק האם תיקייה קיימת בשמפת הנתיב שרצינו, חשוב לוודא שהנתיב הנמצא ברשותנו הוא אכן תיקייה ולא פשוט קובץ. זה יכול לקרות כאשר משתמשים בפקודת `test` גם עבור בדיקת נתיבים של קבצים. ניתן להוסיף את הפתח `-d` לפקודת הבדיקה כדי לוודא שהנתיב הנמצא באמת תיקייה.
+```Fish Shell
 
-## צלילה עמוקה
+if [ -d "path/to/directory" ]; then
 
-חשוב לזכור שבפיש של, פקודת `test` כוללת פונקציות נוספות לבדיקת קבצים ותיקיות, כמו `is-file` ו-`is-dir`. ניתן להשתמש בחיבור של הפונקציות הללו כדי לוודא גם את סוג הנתיב שאנחנו בודקים.
+    echo "The directory exists."
+
+else
+
+    echo "The directory does not exist."
+
+fi
+
+```
+
+בדוגמא זו, אנו משתמשים בסוג יותר מתקדם של if-else כדי לבדוק אם הנתיב קיים או לא.
+
+## לחקור עמוק יותר
+
+כעת שיעוררו הכיוונים בנוגע לבדיקת קיום ספרייה, נוכל להתעמק יותר ולדעת שפקודת test נועדה לבדוק גם קיום קבצים, לא רק ספריות. ניתן לשנות את הפרמטר המשתנה -d ל-p כדי לבדוק קיום קבצים במקום ספריות. כמו כן, ניתן להשתמש בפקודות אחרות כגון stat, כדי לקבל מידע מפורט יותר על קבצים או ספריות ספציפיות.
 
 ## ראה גם
 
-- [פיש וויקי - פקודת `test`](https://fishshell.com
+- [פקודת test ב־Fish Shell](https://fishshell.com/docs/current/cmds/test.html)
+- [עיצוב תכניות ב־Fish Shell](https://fishshell.com/docs/current/design.html)
+- [פקודת stat ב־Linux](https://linux.die.net/man/1/stat)

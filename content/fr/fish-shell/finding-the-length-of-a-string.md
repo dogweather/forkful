@@ -1,39 +1,48 @@
 ---
-title:    "Fish Shell: Trouver la longueur d'une chaîne"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/finding-the-length-of-a-string.md"
+title:                "Fish Shell: Trouver la longueur d'une chaîne de caractères"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Trouver la longueur d'une chaîne de caractères est une tâche courante en programmation. Que ce soit pour compter le nombre de lettres dans un mot ou pour vérifier si une entrée utilisateur respecte un certain format, savoir comment obtenir la longueur d'une chaîne est une compétence essentielle pour tout développeur.
+Trouver la longueur d'une chaîne de caractères est une tâche courante en programmation. Que ce soit pour vérifier la validité des données saisies ou pour manipuler des chaînes, connaître la longueur exacte d'une chaîne est essentiel. Dans cet article, nous allons vous montrer comment le faire facilement en utilisant Fish Shell.
 
 ## Comment faire
 
-Heureusement, avec Fish Shell, obtenir la longueur d'une chaîne est très simple. Il suffit d'utiliser la commande `string` avec l'option `-l`, suivi de la chaîne à évaluer.
+Pour trouver la longueur d'une chaîne en utilisant Fish Shell, nous allons utiliser la commande `string length`. Voici un exemple de code avec une chaîne de caractères 'Bonjour' :
 
 ```
-Fish Shell: string -l "Bonjour"
+Fish Shell
+string length 'Bonjour'
 ```
 
-Cette commande renverra la longueur de la chaîne "Bonjour", qui est de 7 caractères. Si vous souhaitez stocker cette valeur dans une variable, vous pouvez le faire de la manière suivante :
+Lorsque vous exécutez ce code, vous obtiendrez une sortie avec le nombre de caractères de la chaîne donnée :
 
 ```
-Fish Shell: set longueur (string -l "Bonjour")
+7
 ```
 
-Maintenant, vous pouvez utiliser cette variable `longueur` dans votre code, par exemple pour vérifier si une entrée utilisateur est assez longue.
+Vous pouvez également utiliser cette commande pour trouver la longueur de variables dans votre script :
+
+```
+set string 'Bonjour'
+string length $string
+```
+
+La sortie de ce code sera également 7.
 
 ## Plongée en profondeur
 
-Maintenant que vous savez comment trouver la longueur d'une chaîne en utilisant Fish Shell, il est intéressant de comprendre comment cela fonctionne réellement. En fait, la commande `string -l` utilise la fonction interne `__fish_len_string` pour calculer la longueur de la chaîne. Cette fonction utilise un algorithme efficace pour parcourir tous les caractères de la chaîne et compter leur nombre. 
+Si vous souhaitez en savoir plus sur la façon dont la commande `string length` fonctionne, voici quelques informations supplémentaires. Cette commande se base sur la variable interne `$argv` qui stocke les arguments fournis à Fish Shell. Elle compte simplement le nombre de caractères dans cette variable et renvoie le résultat.
 
-Il est important de noter que cette fonction ne compte que les caractères utilisant un seul code UTF-8. Les caractères combinés, tels que les accents ou les emojis, seront comptés comme un seul caractère. Si vous voulez une fonction plus précise pour compter ces combinaisons de caractères, vous pouvez utiliser la commande `string -c` à la place.
+Il est également important de noter que cette commande ne prend pas en compte les caractères spéciaux et les espaces blancs dans la chaîne de caractères.
 
-## Voir aussi
+# Voir aussi
 
-- [La documentation officielle de Fish Shell](https://fishshell.com/docs/current/cmds/string.html)
-- [La page Wikipédia sur UTF-8](https://fr.wikipedia.org/wiki/UTF-8)
-- [Des exemples de commandes utiles en Fish Shell](https://fishery.fish/tutorial/cheatsheet/)
+- [Documentation officielle Fish Shell](https://fishshell.com/docs/current)
+- [Tutoriel Fish Shell pour débutants](https://medium.com/@sergiomatta/fish-shell-tutorial-2-variables-and-functions-126e518a3a6f)
+- [Exemples de code Fish Shell](https://github.com/fish-shell/fish-shell/tree/master/share/examples)

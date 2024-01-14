@@ -1,66 +1,64 @@
 ---
-title:    "Swift recipe: Creating a temporary file"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/creating-a-temporary-file.md"
+title:                "Swift recipe: Creating a temporary file"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Creating temporary files is a common task in software development, especially when working with large amounts of data. These files are used for storing information temporarily and can be useful for various purposes, such as caching or uploading data to a remote server. In this blog post, we will explore how to create temporary files in Swift and why you may want to do so.
+Creating temporary files is a useful technique in Swift programming for handling temporary data or files that are only needed temporarily. It allows for efficient and secure management of data without cluttering up the permanent file system.
 
 ## How To
+To create a temporary file in Swift, we use the built-in `FileManager` class. First, we need to specify the `temporaryDirectory` property of the `FileManager` class as the destination for our temporary file.
 
-Creating a temporary file in Swift is a straightforward process. First, we need to import the `Foundation` framework which provides the `FileManager` class that allows us to create and manipulate files.
-
-```Swift
-import Foundation
 ```
-
-Next, we can use the `FileManager` class to create a temporary file with the `FileManager.temporaryDirectory` method. This method will return the URL of a temporary directory on the device.
-
-```Swift
 let fileManager = FileManager.default
-let temporaryDirectoryURL = fileManager.temporaryDirectory
+let temporaryDirectory = fileManager.temporaryDirectory
 ```
 
-Now, we can use the `URL` class to create a unique file name within the temporary directory. We can do this by appending a `UUID` (Universally Unique Identifier) to the temporary directory URL.
+Next, we can use the `FileManager` class's `createFile` method to create our temporary file. This method takes in two parameters, the file's path and the content we want to write to the file.
 
-```Swift
-let uniqueFileName = temporaryDirectoryURL.appendingPathComponent(UUID().uuidString)
+```
+let fileURL = temporaryDirectory.appendingPathComponent("tempFile.txt")
+let content = "This is a temporary file created using Swift!"
+try fileManager.createFile(atPath: fileURL.path, contents: content, attributes: nil)
 ```
 
-Finally, we can use the `FileManager` class to create the temporary file at the unique URL we just created.
+To confirm that our temporary file has been created, we can use the `contents(atPath)` method of the `FileManager` class to read the contents of the file and print it out to the console.
 
-```Swift
-let temporaryFileURL = fileManager.createFile(atPath: uniqueFileName.path, contents: nil, attributes: nil)
+```
+let fileContents = try fileManager.contents(atPath: fileURL.path)
+if let contents = fileContents {
+    let contentsString = String(data: contents, encoding: .utf8)
+    print(contentsString)
+}
 ```
 
-Congratulations, we have now successfully created a temporary file in Swift!
+The output in the console should be the content we specified earlier - "This is a temporary file created using Swift!"
 
 ## Deep Dive
+When creating a temporary file, it's important to consider how long the file will be needed for and how it will be used. This will help determine the appropriate method for creating the file.
 
-Now, let's dive deeper into creating temporary files in Swift. One thing to keep in mind is that the temporary file will only exist until the device is restarted or the app is closed. This is because the operating system will automatically delete temporary files in the temporary directory on a regular basis.
+One method is to use the `createFile` method as shown in the "How To" section. This method creates a file with a unique name in the specified directory. However, this file will not automatically be deleted and will remain in the temporary directory until manually deleted.
 
-We can also specify a file extension for our temporary file, which can be useful when interacting with other file processing APIs. For example, if we want to create a temporary text file, we can specify the "txt" extension when appending the `UUID` to the temporary directory URL.
+Another method is to use the `mkstemp()` function from the `stdlib` library. This function creates a temporary file with a unique name, but also returns a file descriptor that allows us to remove the file when it is no longer needed.
 
-```Swift
-let uniqueFileName = temporaryDirectoryURL.appendingPathComponent(UUID().uuidString.appending(".txt"))
+```
+guard let template = temporaryDirectory.path + "/tempFile.XXXXXX" cString(using: .utf8) else {
+    return
+}
+let fileDescriptor = mkstemp(template)
 ```
 
-Additionally, we can also add content to our temporary file by passing a `Data` object to the `createFile` method. This allows us to store any type of data, such as text, images, or audio, in our temporary file.
+Once the file is no longer needed, we can use the `close()` function to close the file descriptor and delete the temporary file.
 
-```Swift
-let content = "Example content"
-let data = content.data(using: .utf8)
-fileManager.createFile(atPath: uniqueFileName.path, contents: data, attributes: nil)
+```
+close(fileDescriptor)
 ```
 
 ## See Also
-
-For more information on creating temporary files in Swift, check out the following resources:
-
-- [Apple Developer Documentation: FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Swift.org Documentation: Using Swift with Cocoa and Objective-C (Part 1)](https://swift.org/documentation/#cocoa-and-objective-c)
-- [Ray Wenderlich Tutorial: How to Create and Save Files in Swift](https://www.raywenderlich.com/822-creating-and-saving-files-in-swift)
+- Official Apple Documentation for `FileManager`: https://developer.apple.com/documentation/foundation/filemanager
+- Useful resource for working with temporary files in Swift: https://www.swiftdevcenter.com/temporary-file-directory-in-swift/
+- Awesome Swift: A curated list of Swift resources: https://github.com/matteocrippa/awesome-swift

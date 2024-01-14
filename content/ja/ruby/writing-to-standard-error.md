@@ -1,43 +1,38 @@
 ---
-title:    "Ruby: 「標準エラーへの書き込み」"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/writing-to-standard-error.md"
+title:                "Ruby: 標準エラーへの書き込み"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-プログラミング言語Rubyを学ぶことは、多くの人にとって非常に魅力的です。それは非常に直感的で読みやすい構文を持ち、エレガントなコードを書くことができることが知られています。しかし、プログラムを作成する際には、時折エラーが発生します。そして、このエラーを検知して対処するために、標準エラー出力を使用することが重要です。
+## Why
 
-## なぜ
+プログラミングをする際、エラーが発生することはよくあります。このエラーを解決するためには、その原因を特定する必要があります。そのためには、標準エラーへの書き込みが非常に重要です。
 
-エラーは、プログラムを作成する上で避けて通ることができないものです。しかし、プログラマーにとってはエラーを素早く発見して修正することが重要です。そのため、エラーメッセージを表示するためには標準エラー出力を利用することが必要です。また、デバッグで使用されることが多いため、標準エラー出力を知っておくことは重要です。
+## How To
 
-## 方法
-
-標準エラー出力を使用するためには、Rubyで用意されている$stderrグローバル変数を使用します。例えば、以下のようにコードを書くことで、エラーメッセージを出力することができます。
+あなたがRubyでプログラミングをしている場合、標準エラーへの書き込みはとても簡単です。次の例をご覧ください。
 
 ```Ruby
-$stderr.puts "エラーが発生しました。"
+puts "This will be output to standard output!"
+
+$stderr.puts "This will be written to standard error!"
 ```
 
-実行すると、ターミナル上に「エラーが発生しました。」というメッセージが表示されます。また、エラーメッセージをファイルに書き込むことも可能です。その場合は、以下のようにコードを書きます。
+上記のコードを実行すると、標準出力には"This will be output to standard output!"という文が表示されますが、標準エラーには"This will be written to standard error!"という文が書き込まれます。
 
-```Ruby
-File.open("error.log", "a") do |file|
-  file.puts "エラーが発生しました。"
-end
-```
+このように、単純にputsコマンドをstderr.putsコマンドに変えるだけで、エラーが発生した場合にその原因を特定することができます。
 
-これにより、現在のディレクトリに"error.log"というファイルが作成され、その中にエラーメッセージが書き込まれます。
+## Deep Dive
 
-## 深堀り
+標準エラーへの書き込みは、プログラミングにおいて非常に重要です。なぜなら、標準出力と標準エラーは別々のストリームであり、標準エラーに書き込まれたエラーメッセージは標準出力に表示されません。そのため、プログラムを実行した際にエラーが出力された場合にも、正常な出力結果を確認することができます。
 
-標準エラー出力は、「$stderr.puts」以外にも様々なメソッドが用意されています。例えば、"print"や"write"などがあり、それぞれの違いや使い方を理解することも重要です。
+また、標準エラーには様々な情報を書き込むことができます。個人情報を含むようなデータを標準エラーに書き込むことで、標準出力には表示されないようなセキュリティ上の情報を保護することができます。
 
-また、標準エラー出力は通常の"puts"や"p"と同様に、文字列や変数を出力することもできます。そのため、エラーメッセージ以外にも、デバッグ用に使用することもできます。
+## See Also
 
-## 参考リンク
-
-- 標準エラー出力の使い方: https://docs.ruby-lang.org/ja/latest/method/Kernel/v/puts.html
-- $stderrグローバル変数: https://docs.ruby-lang.org/ja/latest/method/Kernel/g/e_003d_003d_003d_003d.html
-- その他のメソッド: https://docs.ruby-lang.org/ja/latest/method/?path=Kernel.html
+- [Official Ruby Documentation on stderr](https://ruby-doc.org/core-2.7.1/IO.html#method-c-stderr)
+- [Difference between STDERR and STDOUT in Ruby](https://stackoverflow.com/questions/664514/what-is-the-difference-between-stderr-and-stdout-in-ruby)
+- [Understanding Standard Streams in Ruby](https://www.rubyguides.com/2016/05/ruby-io/)

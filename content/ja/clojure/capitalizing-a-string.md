@@ -1,53 +1,51 @@
 ---
-title:    "Clojure: 文字列の大文字化"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/capitalizing-a-string.md"
+title:                "Clojure: 文字列の大小変換"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-文字列を大文字で表記するのに興味があるのはなぜでしょうか？私たちが慣れ親しんでいるテキストの一部を大文字で表すことで、より強調された印象を与えることができます。
+# なぜ「文字列のキャピタライズ」をするのか？
+
+文字列のキャピタライズは、文字列から文書を作成する際に非常に便利です。例えば、名前やタイトルをそれぞれの単語の最初の文字だけ大文字にしたい場合や、データベースから取得した情報を見やすくするためなどに使用されます。
 
 ## 方法
-Clojureでは、 `clojure.string/capitalize`関数を使用することで、文字列を簡単に大文字にすることができます。例を見てみましょう。
 
-```
-; 文字列の宣言
-(def str "hello world")
-; 文字列を大文字にする
-(clojure.string/capitalize str)
+Clojureでは、`capitalize`関数を使用して文字列をキャピタライズすることができます。以下のようなコードを書くことで、文字列をキャピタライズすることができます。
 
-; 出力
-"Hello world"
+```Clojure
+(capitalize "hello world")
 ```
 
-また、 `clojure.string/upper-case`関数を使用することで、すべての文字を大文字にすることもできます。
+このコードを実行すると、`"Hello world"`という結果が返されます。
 
-```
-; 文字列の宣言
-(def str "hello world")
-; 全ての文字を大文字にする
-(clojure.string/upper-case str)
+また、大文字と小文字を区別しない場合は、`capitalize`の代わりに`capitalize*`を使用することができます。
 
-; 出力
-"HELLO WORLD"
+```Clojure
+(capitalize* "hello world")
 ```
+
+この場合、`"Hello World"`という結果が返されます。
 
 ## 深堀り
-Clojureでは、文字列を大文字にする方法が複数用意されています。今回紹介した方法以外にも、 `clojure.string/-capitalize-first`関数を使用することで、最初の文字だけを大文字にすることもできます。
 
-```
-; 文字列の宣言
-(def str "hello world")
-; 最初の文字だけを大文字にする
-(clojure.string/-capitalize-first str)
+Clojureでは、`clojure.string`ライブラリを使用することで、より複雑な文字列操作を行うことができます。`capitalize`関数を含むさまざまな関数が定義されており、それらを組み合わせることで、より柔軟な文字列処理を行うことができます。
 
-; 出力
-"Hello world"
+例えば、全ての単語の先頭を大文字にしたい場合は、`clojure.string/capitalize-words`関数を使用することができます。
+
+```Clojure
+(clojure.string/capitalize-words "hello world")
 ```
 
-## 関連リンク
-- [Clojure Documentation - String Functions](https://clojuredocs.org/clojure.string)
-- [Clojure StringType Functions](https://www.tutorialspoint.com/clojure/clojure_string_functions.htm)
-- [Clojure String Functions Examples](https://www.javatpoint.com/clojure-string-functions-examples)
+この結果は、`"Hello World"`となります。
+
+## もっと知りたい方は以下を参考にしてください
+
+- [Clojureドキュメント - String functions](http://clojuredocs.org/clojure.string/capitalize)
+- [Clojure for the Brave and True - Manipulating Strings](https://www.braveclojure.com/strings/)
+
+# 関連記事
+
+- [Clojure 101 – Introduction to Clojure Programming](http://www.codedependents.com/2013/10/21/clojure-101-introduction-clojure-programming/)

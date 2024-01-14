@@ -1,33 +1,37 @@
 ---
-title:    "Javascript: Kuvion mukaisten merkkien poistaminen"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/deleting-characters-matching-a-pattern.md"
+title:                "Javascript: Hahmon yhdistävien merkkien poistaminen"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Monissa tilanteissa Javascript-ohjelmoijat joutuvat kohtaamaan tilanteen, jossa heidän täytyy poistaa merkkejä, jotka täyttävät tietyn kaavan. Tämä voi olla tarpeellista esimerkiksi käyttäjän tekstisyötön tarkistamisessa tai datan käsittelyssä.
+
+Monissa ohjelmointitilanteissa voi olla tarpeellista poistaa merkkejä, jotka vastaavat tiettyä kaavaa tai kriteeriä. Tämä voi johtua tiedon muotoilun tarpeesta, tiettyjen merkkien siivoamisesta tai muista syistä. Seuraavassa jaana käydään läpi Javasript-koodin avulla, kuinka voit helposti poistaa merkkejä vastaavat kaavat tai kriteerit.
 
 ## Miten
-Javascriptillä on erilaisia ​​metodeja ja funktioita, jotka mahdollistavat merkkien poistamisen kaavan perusteella. Yksi yleisimmin käytetyistä on `replace()`-funktio, joka ottaa vastaan kaksi parametria: poistettavan kaavan ja sen tilalle tulevan merkkijonon. Esimerkiksi seuraavalla koodilla voimme poistaa kaikki pisteet ja pilkut merkkijonosta:
+
+Käyttämällä `replace()`-funktiota ja säännöllisiä lausekkeita, voit poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Seuraavassa esimerkissä haluamme poistaa kaikki välilyönnit merkkijonosta.
 
 ```Javascript
-let teksti = "Tänään olemme juhlineet Suomen itsenäisyyttä.";
-let uusiTeksti = teksti.replace(/[,\.]/g, ""); // palauttaa "Tänään olemme juhlineet Suomen itsenäisyyttä"
-
-console.log(uusiTeksti);
+let merkkijono = "Tämä on esimerkki merkkijonosta, jossa on paljon välilyöntejä.";
+let uusiMerkkijono = merkkijono.replace(/ /g, "");
+console.log(uusiMerkkijono);
 ```
 
-Koodissa käytetään ns. regular expression -kaavaa, joka merkitsee pilkkua tai pistettä (`[,\.]`) ja `g`-lipuketta, joka merkitsee, että kaavaa sovelletaan kaikkiin merkkeihin merkkijonossa. Tämän ansiosta kaikki pisteet ja pilkut poistetaan ja lopputulokseksi saadaan alkuperäinen teksti ilman niitä.
+Tulostaa: "Tämäonesimerkkimerkkijonosta,jospaljonvälilyöntejä."
 
-## Syvällisempi tarkastelu
-`replace()`-funktion lisäksi Javascriptillä on muitakin käteviä metodeja, joilla voi poistaa merkkejä kaavan perusteella. `match()`-funktio esimerkiksi etsii annetusta merkkijonosta kaikki kaavan täyttävät merkit ja palauttaa ne taulukkona. `split()`-funktio puolestaan pilkkoo merkkijonon kaavan täyttävien merkkien kohdalta ja palauttaa siitä taulukon.
+Tässä esimerkissä `replace()`-funktio korvaa jokaisen välilyönnin merkkijonossa tyhjällä merkkijonolla `""` ja lisää parametrin `g` ansiosta kaikkiin välilyönteihin. Voit myös käyttää muita säännöllisiä lausekkeita ja kaavoja poistaaksesi tiettyjä merkkejä haluamallasi tavalla.
 
-On myös mahdollista käyttää erilaisia ​​kaavojen yhdistelmiä ja käyttää hyväkseen erilaisia metodeja yhtäaikaisesti löytääkseen ja poistaakseen tietystä merkkijonosta kaikki halutut merkit.
+## Syvällinen sukellus
+
+Säännölliset lausekkeet ovat tehokas ja monipuolinen työkalu merkkien ja kaavojen hallintaan. Niitä käytetään usein erilaisissa tietojenmuokkaus- ja tekstinkäsittelytilanteissa. Javasriptissä säännölliset lausekkeet ovat esineitä, joilla on predefinoidut tai käyttäjän määrittelemät kaavat. Ne koostuvat yksinkertaisista merkeistä ja operaattoreista, joiden avulla voit etsiä ja muokata merkkejä haluamallasi tavalla.
+
+Tässä esimerkissä käytimme vain yksinkertaista säännöllistä lauseketta, mutta voit syventää osaamistasi ja löytää monimutkaisempia ja hyödyllisempiä lausekkeita. Säännöllisten lausekkeiden oppiminen auttaa sinua ymmärtämään paremmin, kuinka käsittellä merkkejä ohjelmointikielissä, kuten Javasriptissä.
 
 ## Katso myös
-- [MDN Web Docs: replace()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/replace) (englanniksi)
-- [MDN Web Docs: match()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/match) (englanniksi)
-- [MDN Web Docs: split()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/split) (englanniksi)
-- [RegExr](https://regexr.com/) - verkkosivu, jolla voi testata ja luoda regular expression -kaavoja
+
+- [Javasriptin säännölliset lausekkeet -MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [RegExr - väline säännöllisten lausekkeiden kokeilemiseen ja testaamiseen](https://regexr.com/)

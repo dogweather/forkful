@@ -1,75 +1,61 @@
 ---
-title:    "C++: Å finne lengden av en streng"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/finding-the-length-of-a-string.md"
+title:                "C++: Å finne lengden på en streng"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å finne lengden til en streng er en viktig oppgave når du jobber med tekstbehandling og manipulasjon av data i C++. Ved å beregne lengden av en streng, kan du enkelt utføre forskjellige operasjoner, som å sammenslå strenger, finne bestemte tegn og mye mer. Det er derfor viktig å forstå hvordan man kan finne lengden til en streng i C++.
+Å finne lengden på en streng er en essensiell del av å programmere i C++. Det lar deg håndtere tekstdata og utføre operasjoner på den. Det er også en grundig måte å forstå hvordan strenger fungerer i C++.
 
-## Hvordan
+# Hvordan
 
-For å finne lengden til en streng i C++, kan du bruke funksjonen `strlen()` som finnes i `<cstring>`-biblioteket. Denne funksjonen tar inn en streng og returnerer antall tegn i strengen.
+For å finne lengden på en streng i C++, bruker vi funksjonen `strlen()`. La oss se på et eksempel:
 
 ```C++
 #include <iostream>
 #include <cstring>
 
-using namespace std;
-
 int main() {
-    // Definer en streng og beregn lengden
-    char streng[] = "Hei verden!";
-    int lengde = strlen(streng);
-
-    // Skriv ut resultatet
-    cout << "Lengden til strengen er: " << lengde << endl;
-
-    return 0;
+  char str[] = "Hei, verden!";
+  std::cout << "Lengden på strengen er: " << strlen(str) << std::endl;
+  return 0;
 }
 ```
 
-Output:
-```
-Lengden til strengen er: 12
-```
+Output: `Lengden på strengen er: 13`
 
-I tillegg til `strlen()` kan du også bruke funksjonen `.length()` på objekter av typen `string` for å finne lengden til en streng.
+Vi inkluderer først `<cstring>` for å få tilgang til `strlen()`-funksjonen. Deretter deklarerer vi en char-array med navnet `str` og gir den en verdi på "Hei, verden!". Vi bruker så `strlen()`-funksjonen til å finne lengden på strengen og skriver den ut til konsollen.
+
+Det er viktig å merke seg at `strlen()`-funksjonen returnerer et heltall, så hvis du vil lagre lengden på strengen i en variabel, må du bruke en `int`-variabel.
+
+# Deep Dive
+
+I C++, er strenger representert som en sekvens av tegn med en null-terminering (som er selve null-tegnet `'\0'` i spesifisert i ASCII-koden). I eksempelet ovenfor, har "Hei, verden!" en lengde på 13 tegn, med null-terminering inkludert.
+
+I tillegg til `strlen()`-funksjonen, finnes det også en annen måte å finne lengden på en streng på i C++. Dette er ved å bruke `std::string`-klassen og dens `size()`-metode. La oss se på et eksempel:
 
 ```C++
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 int main() {
-    // Definer en streng og beregn lengden
-    string streng = "Hei verden!";
-    int lengde = streng.length();
-
-    // Skriv ut resultatet
-    cout << "Lengden til strengen er: " << lengde << endl;
-
-    return 0;
+  std::string str = "Hei, verden!";
+  std::cout << "Lengden på strengen er: " << str.size() << std::endl;
+  return 0;
 }
 ```
 
-Output:
-```
-Lengden til strengen er: 12
-```
+Output: `Lengden på strengen er: 13`
 
-## Dykk dypere
+Som du kan se, kan vi også bruke `size()`-metoden på en `std::string`-variabel for å finne lengden på strengen.
 
-For å forstå hvordan `strlen()` fungerer, er det viktig å vite at C++ lagrer strenger som en sekvens av tegn, der hvert tegn er enkeltlagret i minnet. Når `strlen()` funksjonen går gjennom strengen, teller den antall tegn frem til den når et null-tegn (ASCII-verdi 0) som markerer slutten av strengen. Dette vil da være lengden til strengen.
+# Se også
 
-Det er viktig å merke seg at `strlen()` ikke vil telle med det null-tegnet i lengden. Dette kan føre til feil hvis du ønsker å manipulere strengen på en måte som krever at null-tegnet blir inkludert. I slike tilfeller bør du heller bruke `.length()` funksjonen på en `string`-streng.
-
-## Se også
-
-- [C++ programvareutvikling hos Udacity](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213)
-- [String manipulation i C++ på GeeksforGeeks](https://www.geeksforgeeks.org/string-manipulation-in-c/)
-- [C++ referansesider på cppreference.com](https://en.cppreference.com/w/)
+- [cppreference - strlen](https://en.cppreference.com/w/cpp/string/byte/strlen)
+- [cppreference - std::string](https://en.cppreference.com/w/cpp/string/basic_string)
+- [cplusplus.com - strlen](http://www.cplusplus.com/reference/cstring/strlen/)
+- [cplusplus.com - std::string](http://www.cplusplus.com/reference/string/string/)

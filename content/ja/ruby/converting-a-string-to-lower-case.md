@@ -1,37 +1,34 @@
 ---
-title:    "Ruby: 文字列を小文字に変換する"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/converting-a-string-to-lower-case.md"
+title:                "Ruby: 「文字列を小文字に変換する」"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文字列を小文字に変換することには、多くの理由があります。例えば、文字列を比較する際に大文字と小文字の違いを無視したい場合、またはデータの整形を行う際に一貫性を持たせたい場合などです。
+文字列を小文字に変換する理由は、プログラミングにおいてよく使われる操作の1つです。例えば、ユーザーの入力を検証する場合や、データベースの検索を行う場合に、大文字と小文字を区別せずに比較するために使用されます。
 
 ## 方法
 
-文字列を小文字に変換するには、Stringクラスのdowncaseメソッドを使用します。下記のように記述します。
+文字列を小文字に変換するには、Rubyの `downcase` メソッドを使用します。例えば、以下のようにコードを書くことで、文字列を小文字に変換することができます。
 
-```ruby
-"HELLO WORLD".downcase
+```Ruby
+str = "HELLO WORLD"
+puts str.downcase
 ```
 
-これにより、"hello world"という出力が得られます。
+このコードの出力結果は、`hello world`となります。
 
-## ディープダイブ
+## 詳細説明
 
-Rubyでは、文字列を変換する際にロケール（言語や地域）の差異を考慮することができます。例えば、日本語の場合は半角英数字を全角に変換する必要があります。このような場合、downcaseメソッドの引数にロケールを指定することができます。
+Rubyの `downcase` メソッドは、文字列を小文字に変換するだけでなく、国際的な文字列にも対応しています。つまり、半角の大文字や全角の大文字、アクセントのある文字なども正しく小文字に変換することができます。
 
-```ruby
-"ｈｅｌｌｏ ｗｏｒｌｄ".downcase(:ja)
-```
+また、`downcase` メソッドを使用する際に、文字列の先頭を大文字にする `capitalize` メソッドや、単語の先頭の文字を大文字にする `capitalize!` メソッドと組み合わせることで、最初の1文字を大文字にした後に計算された残りの文字を小文字に変換することもできます。
 
-上記の例では、"hello world"という出力が得られます。ただし、ロケールによって変換される文字列の種類や仕様は異なる場合がありますので、注意が必要です。
+## 他の参考情報
 
-## 関連リンク
-
-[Rubyドキュメント](https://ruby-doc.org/core-2.7.2/String.html#method-i-downcase)<br>
-[Rubyのロケールについて](https://ruby-doc.org/core-2.7.2/I18n.html)<br>
-[Ruby on Railsガイド](https://railsguides.jp/i18n.html)
+[オンラインRubyチュートリアル](https://www.learnrubyonline.org/ja/conditionals)
+[Ruby公式ドキュメント](https://docs.ruby-lang.org/ja/2.7.0/class/String.html#I_DOWNCASE)

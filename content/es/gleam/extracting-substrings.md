@@ -1,45 +1,37 @@
 ---
-title:    "Gleam: Extrayendo subcadenas"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/extracting-substrings.md"
+title:                "Gleam: Extrayendo subcadenas"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
- Extraer subcadenas o subconjuntos de una cadena de texto es una tarea común en la programación. Puede ser útil para separar información específica de una cadena o para manipular datos de manera más eficiente. En este artículo, exploraremos cómo podemos hacer esto utilizando la programación en Gleam. 
+# ¿Por qué extraer subcadenas es útil en Gleam?
+
+Extraer subcadenas es una técnica importante en la programación de Gleam que permite manipular cadenas de texto de manera eficiente. Puede ser útil en varias situaciones, como la validación de la entrada del usuario, el procesamiento de datos o la generación de informes.
 
 ## Cómo hacerlo
-En Gleam, podemos usar la función `String.substr` para extraer subcadenas de una cadena de texto. Esta función toma dos parámetros: el índice de inicio y el índice de fin de la subcadena que queremos extraer. Veamos un ejemplo de cómo extraer la palabra "Gleam" de una cadena de texto:
 
-``` Gleam
-let texto = "¡Hola desde Gleam!"
-let subcadena = String.substr(texto, 11, 16)
+Para extraer una subcadena en Gleam, podemos utilizar la función `String.slice`. Esta función toma dos parámetros: la cadena de origen y el rango (o índices) de la subcadena que queremos extraer. A continuación, se muestra un ejemplo:
+
+```Gleam
+let cadena = "¡Hola, mundo!"
+let subcadena = String.slice(cadena, 0, 4)
 ```
 
-En este ejemplo, el parámetro `11` es el índice de inicio y el `16` es el índice de fin, que corresponden a la posición de los caracteres "G" y "m" en la cadena original. La variable `subcadena` ahora contendrá la subcadena "Gleam". 
+En este caso, la variable `subcadena` contendría "¡Hola". Podemos especificar diferentes rangos para obtener diferentes subcadenas. Por ejemplo, si queremos empezar desde el tercer carácter y extraer los siguientes 5 caracteres, podemos utilizar `String.slice(cadena, 2, 6)`.
 
-También podemos usar la función `String.slice` para extraer subcadenas de forma similar, pasando el índice de inicio y el número de caracteres que queremos extraer. Veamos otro ejemplo:
+También podemos utilizar valores negativos para indicar el índice desde el final de la cadena. Por ejemplo, `String.slice(cadena, -5, -1)` extraería "undo" de la cadena original.
 
-``` Gleam
-let texto = "Este artículo es de Gleam"
-let subcadena = String.slice(texto, 19, 5)
-```
+## Profundizando en la extracción de subcadenas
 
-En este caso, la subcadena resultante sería "Gleam" nuevamente. 
+La función `String.slice` también puede tomar un tercer parámetro opcional, "step", que indica la cantidad de caracteres a saltar entre cada elemento de la subcadena. Por defecto, el valor de "step" es 1, pero podemos cambiarlo según sea necesario. Por ejemplo, si queremos extraer cada segundo carácter de una cadena, podemos utilizar `String.slice(cadena, 0, 10, 2)`.
 
-## Profundizando
-Si queremos ser más específicos al extraer subcadenas, podemos usar expresiones regulares en lugar de índices de inicio y fin. Por ejemplo:
+Además, podemos utilizar otros métodos para manipular las subcadenas extraídas, como `String.trim` para eliminar espacios vacíos al principio y al final, `String.to_upper_case` para convertir la subcadena a mayúsculas, o `String.reverse` para revertirla.
 
-``` Gleam
-let texto = "El número de teléfono es +123-456-789"
-let regex = regex.new("\\+[0-9]-[0-9]{3}-[0-9]{3}-[0-9]{3}")
-let subcadena = regex.match(texto) |> regex.captures |> List.get(0)
-```
+# Ver también
 
-En este ejemplo, hemos creado una expresión regular para encontrar el número de teléfono en el formato especificado. Luego, usamos el método `match` para encontrar la primera coincidencia en la cadena `texto`. Finalmente, usamos el método `captures` para obtener la lista de subcadenas coincidentes y la función `List.get` para obtener la primera subcadena (que en este caso sería el número de teléfono). 
-
-## Ver también
-- [Documentación de la función `String.substr` en la web de Gleam](https://gleam.run/std/string.html#substr)
-- [Documentación de la función `String.slice` en la web de Gleam](https://gleam.run/std/string.html#slice)
-- [Documentación de expresiones regulares en Gleam](https://gleam.run/book/standard-library.html#regular-expressions)
+- Documentación oficial de Gleam sobre las cadenas de texto: https://gleam.run/book/tour/modules/strings.html
+- Ejemplos de código de Gleam: https://github.com/gleam-lang/gleam/tree/master/examples
+- Tutoriales de Gleam en español: https://medium.com/@jlealtruiz/gleam-programaci%C3%B3n-funcional-en-erlang-98abbd35487

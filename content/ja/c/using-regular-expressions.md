@@ -1,69 +1,60 @@
 ---
-title:    "C: 正規表現の使用"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/using-regular-expressions.md"
+title:                "C: 正規表現を使用する"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ正規表現を使用するのか
+## なぜ
 
-正規表現は、文字列データを検索や置換する際に非常に有用なツールです。特定のパターンを持つ文字列を簡単に特定したり、難しい文字列操作を簡略化することができます。
+正規表現を使用する理由は様々ですが、主な目的は文字列のパターンを簡単に検索・置換することです。これにより、プログラミングの効率性が向上し、複雑な操作を簡単に行うことができます。
 
 ## 使い方
 
-正規表現を使用するには、まずC言語のヘッダーファイルである"regex.h"をインクルードする必要があります。その後、正規表現を扱うための構造体や関数を定義します。以下のようなサンプルコードをご覧ください。
+正規表現を使用するためには、まず```#include <regex.h>```を宣言する必要があります。次に、パターンの作成とコンパイルを行います。例えば、任意の数字にマッチするパターンを作成する場合、```regex_t pattern;```のように変数を宣言し、```regcomp(&pattern, "[0-9]", 0);```でコンパイルします。その後、マッチさせたい文字列を```regexec(&pattern, "sample123", 0, NULL, 0)```のように記述します。この場合、```"sample123"```は上記のパターンにマッチしているので、処理が成功し、```REG_NOMATCH```のようなエラーコードが返されることはありません。
 
 ```
-#include <regex.h>
 #include <stdio.h>
+#include <regex.h>
 
 int main()
 {
-  // 正規表現を扱うための構造体を定義
-  regex_t regex;
+    regex_t pattern;
+    int result;
+    char *str = "sample123";
 
-  // 正規表現にマッチするかどうかを判定するためのフラグを定義
-  int flag;
+    result = regcomp(&pattern, "[0-9]", 0);
 
-  // パターンを含む文字列を定義
-  char str[] = "Hello, World!";
+    if (result == 0)
+    {
+        result = regexec(&pattern, str, 0, NULL, 0);
 
-  // 正規表現のパターンを定義
-  char pattern[] = "Hello";
+        if (result == 0)
+        {
+            printf("%sはマッチしています。\n", str);
+        }
+        else if (result == REG_NOMATCH)
+        {
+            printf("%sはマッチしていません。\n", str);
+        }
+    }
 
-  // 正規表現をコンパイルする
-  regcomp(&regex, pattern, 0);
-
-  // 文字列に正規表現のパターンが含まれているかどうかを判定
-  flag = (regexec(&regex, str, 0, NULL, 0) == 0) ? 1 : 0;
-
-  if (flag) {
-    printf("正規表現にマッチしました。\n");
-  } else {
-    printf("正規表現にマッチしませんでした。\n");
-  }
-
-  // 正規表現構造体を解放する
-  regfree(&regex);
-
-  return 0;
+    return 0;
 }
 ```
+実行結果：
+```
+sample123はマッチしています。
+```
 
-上のコードでは、"Hello"というパターンを含む文字列を検索しています。もし文字列にマッチする場合は"正規表現にマッチしました。"という出力が、マッチしない場合は"正規表現にマッチしませんでした。"という出力が得られます。
+## 深く掘り下げる
 
-## 詳細を深く掘り下げる
+正規表現をより効率的に利用するためには、パターンの作成にあたっては「量指定子」の使用や「キャプチャグループ」の活用などに注目する必要があります。また、エスケープシーケンスや後方参照などの様々な機能もありますので、正規表現の詳細を学ぶことが重要です。
 
-正規表現には様々な特殊文字があります。例えば、"."は任意の一文字を表し、"^"は文字列の先頭を表します。これらの特殊文字を組み合わせることで、より複雑なパターンを作ることができます。
+## 参考記事
 
-また、正規表現はパフォーマンスが重要なアプリケーションではなるべく使用を避けるべきです。なぜなら、正規表現を使用すると文字列の検索や置換を行うために多くの計算量が必要になり、アプリケーションのパフォーマンスに影響を与える可能性があるためです。
-
-# 参考リンク
-
-- [正規表現入門](https://www.boost.org/doc/libs/1_47_0/libs/regex/doc/html/boost_regex/ref/regex_note.html)
-- [正規表現チュートリアル](https://www.regular-expressions.info/tutorial.html)
-- [正規表現のパフォーマンスについて](https://dzone.com/articles/regex-performance)
-- [正規表現の公式ドキュメント](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-
-# 他に見る
+- [正規表現入門 - Qiita](https://qiita.com/jnchito/items/893c887fbf19e17d3ff9)
+- [Cで正規表現利用 - 日々の記録](http://ushitora.net/archives/910)
+- [C言語で正規表現を使う方法 - HELLO IT LAB](https://hello-itlab.com/c-2102)

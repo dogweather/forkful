@@ -1,50 +1,50 @@
 ---
-title:    "Rust: Sammenligning av to datoer"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/comparing-two-dates.md"
+title:                "Rust: Sammenligning av to datoer"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når man jobber med datoer i programmering, kan det være nødvendig å sammenligne to datoer for å sjekke om de er like eller ulike. Dette kan gjøres på mange forskjellige måter, men i denne bloggposten vil jeg fokusere på hvordan man kan gjøre det i Rust.
+Mange programmerere står overfor utfordringen med å sammenligne to datoer. Dette kan være nyttig for å bestemme datoforskjeller eller sjekke om en dato er før eller etter en annen. Med Rust-programmeringsspråket kan du effektivt sammenligne datoer ved å bruke den innebygde bibliotekfunksjonen "chrono". I denne bloggposten vil vi se nærmere på hvordan man sammenligner datoer i Rust.
 
 ## Hvordan
 
-For å sammenligne to datoer i Rust, må man først importere biblioteket for dato og tid ved å legge til følgende linje i koden:
+For å sammenligne datoer i Rust, må vi først importere "chrono" biblioteket ved å legge til følgende kode i begynnelsen av filen:
 
-```
-use std::time::Duration;
-```
+```Rust
+extern crate chrono;
 
-Deretter må man definere to variabler med datatypen `Duration` og legge til verdier for å representere de to datoene man ønsker å sammenligne:
-
-```
-let date_1 = Duration::new(1616067600, 0); // 18. mars 2021
-let date_2 = Duration::new(1616067600, 0); // 18. mars 2021
+use chrono::{Datelike, NaiveDate};
 ```
 
-For å sammenligne disse to datoene, kan man bruke `Duration` sin innebygde metode `eq`, som returnerer `true` hvis datoene er like og `false` hvis de er ulike:
+Nå kan vi bruke "NaiveDate" struct for å opprette nye datoer og "Datelike" trait for å sammenligne dem. La oss si at vi ønsker å sammenligne 1. januar 2020 og 1. februar 2020. Vi kan gjøre det som følger:
 
-```
-println!("Er datoene like? {}", date_1.eq(&date_2)); // Output: Er datoene like? true
+```Rust
+let first_date = NaiveDate::from_ymd(2020, 1, 1); // Oppretter første dato
+let second_date = NaiveDate::from_ymd(2020, 2, 1); // Oppretter andre dato
+
+// Sammenligner datoene
+if first_date < second_date {
+    println!("{} er før {}", first_date, second_date);
+} else if first_date > second_date {
+    println!("{} er etter {}", first_date, second_date);
+} else {
+    println!("{} er den samme som {}", first_date, second_date);
+}
 ```
 
-Man kan også sammenligne datoer ved hjelp av operatøren `==`, som i dette tilfellet vil gi samme resultat:
-
-```
-println!("Er datoene like? {}", date_1 == date_2); // Output: Er datoene like? true
-```
+I dette tilfellet vil koden skrive ut "2020-01-01 er før 2020-02-01". 
 
 ## Dypdykk
 
-Når man sammenligner datoer i Rust, må man være oppmerksom på at de må være av samme datatypen `Duration` for å kunne sammenligne dem. Man bør også være nøye med å sørge for at man har korrekte verdier for å unngå feil i sammenligningen.
-
-En annen viktig ting å merke seg er at `Duration` representerer antall sekunder og nanosekunder siden Unix-timen. Dette kan være annerledes enn andre datatyper man er vant til å jobbe med, og det kan være lurt å gjøre seg kjent med dette før man begynner å sammenligne datoer i Rust.
+Når man sammenligner datoer i Rust, kan det være nyttig å være oppmerksom på at "chrono" biblioteket også har støtte for tidsstempel, tidsintervaller og tidsavstander. Dette kan være nyttig for mer avanserte sammenligninger av datoer. Dokumentasjonen for "chrono" biblioteket inneholder detaljert informasjon om hvordan man bruker disse funksjonene.
 
 ## Se også
 
-- [Dokumentasjon for Rust sin `std::time::Duration`-modul](https://doc.rust-lang.org/std/time/struct.Duration.html)
-- [Sammenligning av datoer i Java](https://www.baeldung.com/java-compare-dates)
-- [Sammenligning av datoer i Python](https://www.geeksforgeeks.org/comparing-dates-python/)
+- [Chrono dokumentasjon](https://docs.rs/chrono/0.4.11/chrono/)
+- [Rust språkguide](https://www.rust-lang.org/learn)
+- [Sammenligne datoer i andre programmeringsspråk](https://www.geeksforgeeks.org/comparing-two-dates-one-langugae/)

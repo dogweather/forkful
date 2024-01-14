@@ -1,49 +1,52 @@
 ---
-title:    "Arduino: Sjekking av om en mappe eksisterer"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/checking-if-a-directory-exists.md"
+title:                "Arduino: Sjekke om en mappe eksisterer"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å sjekke om en mappe eksisterer er en viktig del av programmering med Arduino. Det kan hjelpe deg med å organisere og sikre dataene dine på en mer effektiv måte.
+Å sjekke om en mappe eksisterer er en viktig del av Arduino-programmering, spesielt når man jobber med et større prosjekt. Dette er fordi det kan bidra til å organisere og strukturere koden bedre, og sikre at alt kjører som det skal.
 
 ## Slik gjør du det
 
-Det første du trenger å gjøre er å importere SD-kortbiblioteket. Dette gjøres ved å legge til følgende linjer på toppen av koden din:
+For å sjekke om en mappe eksisterer i Arduino, kan du bruke funksjonen `exists()` fra File-biblioteket. Her er et eksempel på hvordan du kan bruke denne funksjonen for å sjekke om en mappe med navnet "Bilder" eksisterer:
 
 ```Arduino
+#include <SPI.h>
 #include <SD.h>
-```
 
-Deretter kan du opprette et objekt for SD-kortet ditt ved å bruke følgende linjer:
+void setup() {
+  // Åpne Serial Monitor for å se utskrifter fra Arduino
+  Serial.begin(9600);
 
-```Arduino
-File root = SD.open("/");
-if (root) {
-  // do something
+  // Initialiser SD-kortet
+  SD.begin(10);
+
+  // Sjekk om mappen "Bilder" eksisterer
+  if (SD.exists("/Bilder")) {
+    Serial.println("Mappen Bilder eksisterer!");
+  } else {
+    Serial.println("Mappen Bilder eksisterer ikke...");
+  }
+}
+
+void loop() {
+  // Ingenting trenger å gjøres i hovedsløyfen
 }
 ```
 
-Nå kan du bruke `root`-objektet til å se etter en spesifikk mappe i SD-kortet ditt. For å sjekke om en mappe eksisterer, kan du bruke `exists()`-funksjonen som følger:
+Når dette eksempelet kjøres, vil Serial Monitor vise enten "Mappen Bilder eksisterer!" eller "Mappen Bilder eksisterer ikke...", avhengig av om mappen eksisterer eller ikke.
 
-```Arduino
-if (root.exists("/minmappe")) {
-    // do something
-}
-```
-Hvis mappen eksisterer, vil `exists()` returnere `true`, ellers vil den returnere `false`.
+## Dypdykk
 
-## Dykk ned i det
-
-Hvis du vil utdype dine kunnskaper om å sjekke om mapper eksisterer, kan du også se på andre funksjoner som er tilgjengelige i SD-kortbiblioteket. For eksempel kan du bruke `openNextFile()`-funksjonen til å åpne neste fil eller mappe i en gitt mappe. Du kan også bruke `rewindDirectory()`-funksjonen til å restarte lesingen av en mappe fra begynnelsen.
-
-En annen viktig ting å huske på er at SD-kortbiblioteket støtter både korte og lange filnavn, så du trenger ikke å bekymre deg for filnavnlengden når du sjekker mapper eller filer.
+Når du bruker funksjonen `exists()`, er det viktig å merke seg at den kan returnere både `true` og `false` selv om mappen tilsynelatende eksisterer. Dette kan skyldes filrettigheter eller at SD-kortet ikke er riktig formatert. Det kan også være lurt å inkludere betingelser som sjekker om SD-kortet er tilgjengelig og om du har skrivetilgang til mappen.
 
 ## Se også
 
+- [File Library Reference](https://www.arduino.cc/en/Reference/File)
 - [SD Library Reference](https://www.arduino.cc/en/Reference/SD)
-- [Interacting with SD cards using Arduino](https://www.arduino.cc/en/Tutorial/ReadWrite)
-- [Arduino and SD cards](https://learn.sparkfun.com/tutorials/arduino-and-sd-cards)
+- [How to Use Libraries in Arduino](https://www.arduino.cc/en/Guide/Libraries)

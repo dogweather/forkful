@@ -1,48 +1,46 @@
 ---
-title:    "Clojure: Отримання поточної дати"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/getting-the-current-date.md"
+title:                "Clojure: Отримання поточної дати"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Використання поточної дати є важливим аспектом багатьох програм, особливо у тих, що пов'язані з обробкою часу і дати. Отримання поточної дати може допомогти в різних сценаріях, від ведення журналу до розрахунків строків. У цій статті ми розберемося, як отримати поточну дату у мові Clojure.
+Не всім може здатися необхідним отримувати поточну дату у своїх програмах, проте це може бути дуже корисно. Наприклад, використання поточної дати допоможе у виведенні повідомлень, які мають відношення до конкретного дня або розрахунку періодів часу.
 
 ## Як
 
-```Clojure
-(def current-date (java.util.Date.)) ; створює новий об'єкт типу Date
-
-(defn today []
-  (let [date (java.util.Date.)
-        year (.getYear date)
-        month (.getMonth date)
-        day (.getDate date)]
-    (println (str month "/" day "/" year))))
-
-(today) ; виводить поточну дату у форматі "місяць/день/рік"
-; наприклад: 06/19/2021
-```
-
-## Глибоке вивчення
-
-Отримання поточної дати відбувається за допомогою стандартного Java класу "java.util.Date". У першому прикладі ми створюємо новий об'єкт цього класу, який включає у себе інформацію про поточну дату і час. Далі, ми використовуємо функцію today, яка використовує різні методи класу "java.util.Date" для отримання поточної дати і виводить цю інформацію у бажаному нами форматі. 
-
-Також, для отримання поточної дати можна використати стандартну бібліотеку Clojure "clojure.java.time". Наприклад:
+Для початку, потрібно імпортувати клас LocalDate з бібліотеки java.time, яка входить у стандартну бібліотеку Java. Потім, за допомогою функції now(), ми можемо отримати поточну дату. Наприклад:
 
 ```Clojure
-(require '[java-time :as t])
+(import '[java.time LocalDate])
 
-(def today (t/local-date)) ; створює об'єкт типу java.time.LocalDate з поточною датою
+(defn get-current-date []
+  (let [current-date (.now LocalDate)]
+    current-date))
 
-(t/format today "MM/dd/yyyy") ; виводить поточну дату у форматі "місяць/день/рік"
-; наприклад: 06/19/2021
+(get-current-date) ;; 2021-10-22
 ```
+
+Також, можна отримати поточну дату у різних форматах за допомогою функції format() і змінюючи параметри форматування. Наприклад:
+
+```Clojure
+(defn get-current-date-as-string []
+  (let [current-date (.now LocalDate)]
+    (.format current-date (java.time.format.DateTimeFormatter/ofPattern "dd-MM-yyyy"))))
+
+(get-current-date-as-string) ;; "22-10-2021"
+```
+
+## Глибше
+
+Є багато різних способів отримання поточної дати у Clojure, також існує багато різних форматів дати, які можна використовувати. Для отримання більш детальної інформації, можна ознайомитися з документацією на бібліотеку java.time.
 
 ## Дивись також
 
-- [Офіційна документація з Clojure](https://clojure.org/)
-- [Курс Clojure на Codeacademy](https://www.codecademy.com/learn/learn-clojure)
-- [Основи програмування на Clojure](https://clojure.org/guides/learn/syntax)
+- [Документація на java.time бібліотеку](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Стаття про роботу з часом та датою в Clojure](https://clojuredocs.org/clojure.java-time/index.html)
+- [Відео урок, що демонструє різні формати отримання поточної дати в Clojure](https://www.youtube.com/watch?v=ajX1rizbGJ4)

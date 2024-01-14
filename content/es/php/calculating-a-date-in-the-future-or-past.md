@@ -1,70 +1,47 @@
 ---
-title:    "PHP: Calculando una fecha en el futuro o pasado"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/calculating-a-date-in-the-future-or-past.md"
+title:                "PHP: Calculando una fecha en el futuro o en el pasado"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## Por qué
 
-¿Alguna vez te has preguntado cómo calcular una fecha en el futuro o en el pasado? Quizás necesitas programar una tarea o evento que suceda en una fecha específica, o simplemente estás interesado en aprender nuevas habilidades de programación. Sea cual sea la razón, calcular fechas en PHP puede ser una herramienta útil para tener en tu arsenal de programación.
+Calcular fechas en el pasado o futuro es una tarea común en la programación. Puede ser necesario para realizar tareas como establecer fechas de eventos, enviar recordatorios automáticos o generar informes programados. Aprender a hacerlo en PHP te permitirá agilizar tu trabajo y automatizar tareas repetitivas.
 
 ## Cómo hacerlo
 
-Para calcular una fecha en el futuro o en el pasado en PHP, podemos utilizar la función `strtotime()`. Esta función toma dos argumentos: una cadena de texto con la fecha deseada y un segundo argumento opcional que establece una fecha de referencia.
-
-Por ejemplo, si queremos calcular la fecha de mañana, podemos utilizar el siguiente código:
-
-````PHP
-<?php
-$manana = strtotime("tomorrow");
-echo "Mañana es " . date("d/m/Y", $manana);
-````
-
-La salida de este código sería:
+Para calcular una fecha en el futuro o pasado, podemos utilizar la función `date()` de PHP. Esta función toma dos parámetros, el primero es el formato de salida deseado y el segundo es un timestamp opcional que representa la fecha a la que queremos aplicar el formato. Utilizaremos el timestamp para indicar cuántos segundos queremos añadir o restar a la fecha actual. A continuación, se muestra un ejemplo de cómo calcular la fecha de hoy más 7 días:
 
 ```
-Mañana es 10/04/2020
+PHP print "La fecha dentro de 7 días es: ".date("d/m/Y", strtotime("+7 days"));
 ```
 
-También podemos establecer una fecha de referencia para calcular una fecha en el futuro o en el pasado en relación a esa fecha. Por ejemplo, si queremos calcular la fecha dentro de una semana, podemos utilizar el siguiente código:
+Este código imprimirá: "La fecha dentro de 7 días es: " seguido de la fecha dentro de 7 días en formato dd/mm/aaaa.
 
-````PHP
-<?php
-$proximaSemana = strtotime("+1 week");
-echo "La fecha dentro de una semana es " . date("d/m/Y", $proximaSemana);
-````
-
-La salida de este código sería:
+Para calcular fechas en el pasado, podemos utilizar el mismo método, pero utilizando valores negativos en el timestamp. A continuación, se muestra un ejemplo de cómo calcular la fecha de hoy menos 1 mes:
 
 ```
-La fecha dentro de una semana es 17/04/2020
+PHP print "La fecha hace 1 mes era: ".date("d/m/Y", strtotime("-1 month"));
 ```
 
-También podemos especificar una fecha de referencia utilizando la función `strtotime()` como segundo argumento. Por ejemplo, si queremos calcular la fecha dentro de dos semanas a partir de una fecha específica, podemos utilizar el siguiente código:
-
-````PHP
-<?php
-$fecha = strtotime("07-04-2020");
-$proximasDosSemanas = strtotime("+2 weeks", $fecha);
-echo "La fecha dentro de dos semanas es " . date("d/m/Y", $proximasDosSemanas);
-````
-
-La salida de este código sería:
-
-```
-La fecha dentro de dos semanas es 21/04/2020
-```
+Este código imprimirá: "La fecha hace 1 mes era: " seguido de la fecha de un mes atrás en formato dd/mm/aaaa.
 
 ## Profundizando
 
-La función `strtotime()` también nos permite calcular fechas utilizando formatos de tiempo más complejos, como por ejemplo "1st Thursday next month" (el primer jueves del mes próximo) o "first day of last month" (primer día del mes pasado). Puedes encontrar una lista completa de formatos válidos en la [documentación oficial de PHP](https://www.php.net/manual/es/datetime.formats.php).
+Además de la función `date()`, PHP también tiene otras funciones útiles para manejar fechas. Algunas de ellas son:
 
-Es importante tener en cuenta que la función `strtotime()` utiliza la zona horaria del servidor para calcular las fechas, por lo que es posible que debas especificar la zona horaria deseada utilizando la función `date_default_timezone_set()`. También es posible realizar cálculos entre diferentes zonas horarias utilizando la clase `DateTime` de PHP.
+- `strtotime()`: Permite convertir una cadena de texto en un timestamp, lo que facilita el cálculo de fechas en el futuro o pasado.
+- `mktime()`: Esta función permite crear un timestamp a partir de una fecha específica.
+- `date_create()`: Crea un objeto de fecha que luego puede ser formateado con la función `date()`.
+- `strtotime()` y `strftime()`: Estas dos funciones son similares a `date()`, pero permiten dar formato a fechas en diferentes idiomas.
+
+Con estos conocimientos, podemos realizar cálculos de fechas de manera rápida y sencilla en nuestros proyectos de PHP.
 
 ## Ver también
 
-- [Documentación de PHP sobre la función strtotime()](https://www.php.net/manual/es/function.strtotime.php)
-- [Documentación de PHP sobre la clase DateTime](https://www.php.net/manual/es/class.datetime.php)
-- [Lista de formatos válidos para strtotime()](https://www.php.net/manual/es/datetime.formats.php)
+- [Documentación de PHP sobre fechas](https://www.php.net/manual/es/book.datetime.php)
+- [Guía de formatos de fechas en PHP](https://www.php.net/manual/es/function.date.php)
+- [Tutorial de fechas en PHP](https://www.w3schools.com/php/php_date.asp)

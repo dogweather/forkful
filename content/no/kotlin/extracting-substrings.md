@@ -1,38 +1,46 @@
 ---
-title:    "Kotlin: Uthenting av delstrenger"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/extracting-substrings.md"
+title:                "Kotlin: Ekstrahering av delstrenger"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Noen ganger, når du jobber med tekstbehandling eller manipulering av data, kan det være nyttig å kunne ekstrahere deler av en streng. Dette kan være for å få tak i bestemte informasjon, fjerne uønskede tegn eller forenkle søk etter en viss sekvens av tegn. Å kunne ekstrahere substrings er et nyttig verktøy i din Kotlin programmeringsverktøykasse.
 
-Noen ganger i programmering er det nødvendig å hente ut deler av en tekststreng for å kunne jobbe videre med den. Dette kalles for å ekstrahere substrings. Dette kan være nyttig når man for eksempel trenger å finne et bestemt ord eller en del av et ord i en større tekst. 
+## Hvordan
+For å ekstrahere substrings i Kotlin, kan vi bruke funksjonen ```substring()```. Denne funksjonen tar inn to parametere, startindeksen og slutindeksen til den ønskede substringen. La oss se på et eksempel:
 
-## Slik gjør du det
-
-For å ekstrahere substrings i Kotlin kan man bruke funksjonen "substring" som tar inn to parametere: start og sluttindeks. Eksempelvis kan vi gjøre følgende:
-
-```Kotlin
-val tekst = "Dette er en tekststreng"
-val substring = tekst.substring(5,8)
-println(substring) // output: er
 ```
-I dette eksempelet har vi en tekststreng og ønsker å ekstrahere ordet "er". Siden "e" er på indeks 5 i strengen og "r" er på indeks 8, gir vi disse verdien som parametere til "substring" funksjonen. Vi printer så ut den ekstraherte substringen og får som ønsket resultatet "er". 
+val navn = "Emilie"
+val fornavn = navn.substring(0, 3)
+print(fornavn) // output: Emi
+```
 
-Dersom man ønsker å ekstrahere en del av et ord, kan man bruke funksjonen "indexOf" for å finne indeksene til start og slutt av den delen man vil ekstrahere. En annen måte å gjøre dette på er å bruke regulære uttrykk. For eksempel kan man bruke funksjonen "regex" og metoden "find" for å finne et bestemt ord i en tekststreng. 
+I dette tilfellet har vi en streng med navnet "Emilie". Ved å bruke ```substring()``` funksjonen, velger vi å dukke opp bare de tre første tegnene, som er "Emi". Vi kan også bruke negative tall for indeksene, som vil telle fra slutten av strengen. La oss se på et annet eksempel der vi fjerner siste bokstav i strengen:
 
-## Dykk dypere
+```
+val navn = "Emilie"
+val etternavn = navn.substring(0, navn.length-1)
+print(etternavn) // output: Emili
+```
 
-Det finnes flere metoder for å ekstrahere substrings i Kotlin, som for eksempel "substringBefore" og "substringAfter". Disse kan være nyttige dersom man ønsker å ekstrahere en del av en tekst før eller etter et spesifikt tegn eller ord.
+Her bruker vi ```length``` metoden for å få lengden på strengen og trekker deretter en for å få den nest siste indeksen. Dette vil resultere i at siste bokstav i strengen blir fjernet. Husk at indekser i Kotlin (og mange andre programmeringsspråk) starter på 0, så den første bokstaven vil ha indeks 0.
 
-En annen viktig ting å huske på er at indeksering i Kotlin starter på 0, altså at det første tegnet i en tekststreng har indeks 0. Dette kan være forvirrende for de som er vant til å jobbe med programmeringsspråk som starter indeksering på 1.
+## Dypdykk
+I tillegg til å bruke ```substring()``` funksjonen, har Kotlin også en egen type kalt ```CharSequence``` for å jobbe med strenger. Dette er en grensesnittstype som gjør det mulig å manipulere strenger på ulike måter. For eksempel kan vi bruke ```subSequence()``` metoden på en streng for å ekstrahere en del av den. La oss se på et eksempel:
 
-Det kan også være lurt å vurdere effektiviteten til substring funksjonen i forhold til minnebruk og ytelse, spesielt når man jobber med store tekststrenger.
+```
+val årstid = "Våren"
+val deler = årstid.subSequence(1,4)
+print(deler) // output: åre
+```
+
+I dette tilfellet bruker vi ```subSequence()``` metoden på strengen "Våren" for å få tak i tegnene fra indeks 1 til og med 3, som er "åre". Det er viktig å merke seg at denne metoden returnerer en CharSequence, så vi må kanskje konvertere det til en streng ved å bruke ```toString()``` metoden etterpå.
 
 ## Se også
-
-- [Kotlin documentation](https://kotlinlang.org/docs/reference/functions.html#substring) 
-- [Tutorial: An Introduction to Kotlin Substring](https://www.baeldung.com/kotlin/substring) 
-- [Kotlin String Cheat Sheet](https://programmingwithmosh.com/wp-content/uploads/2020/03/KotlinCheatSheet.pdf)
+- [Official Kotlin Documentation on Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Kotlin String Cheat Sheet](https://medium.com/@ealade/handy-kotlin-string-cheat-sheet-6576dfc9eef3)
+- [Kotlin Docs: CharSequence](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html)

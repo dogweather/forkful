@@ -1,49 +1,40 @@
 ---
-title:    "Gleam: חילוץ מחרוזות מתוך מחשבים"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/gleam/extracting-substrings.md"
+title:                "Gleam: השכפלת תת-מחרוזות"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-מה הסיבה לחקור את המחרוזת הממוזערת?
+מי שמעוניין לשלוט בשפת תכנות Gleam ולהיות ביכולת למצוא ולהפעיל מחרוזות מסוימות בתוך מחרוזת גדולה, יכול להשתמש בפונקציות כדי לחלץ תתי-מחרוזת ולכן לאפשר עיבוד מסודר ויעיל של מידע.
 
-לחיצה בהתחלה על זה, צריך להבין את היתרונות של שליפת תת מחרוזת. זה יכול לקלוט יצירתיות רבה יותר כאשר יש לך תחביב לרכש עבור ייעוץ או לרכות דרישות לפני שינוי של התוכנית שלך.
+## כיצד לעשות זאת
 
-## איך לעשות
-
-כדי להתחיל, נצטרך ליצור מחרוזת אותה אנו לא רוצים להפעיל בתוך משהו שיאומן אתכם על ידי המתמחים. כדי לעשות זאת, השתמשו במגבלות- המצד השמאלי יכול להיות שקוף לאנשי פוליטיקה, יא יא לא פלוס כל המגיפה הגדולה, אבל יצליח. הסידר ותחיל את התמאיין נשמר.
+השימוש בפונקציות לחילוץ תתי-מחרוזת בשפת Gleam הוא פשוט ונוח. להלן דוגמאות לקוד עם פלט משתנה:
 
 ```Gleam
-let original_string = "אני מדבר בעברית."
-
-\\ שליפת תת מחרוזת עם קוטר של 3
-let sub_string = string.sub(original_string, 6, 8)
-
-\\ תוצאה צפויה: "בעב"
+import gleam/string
+str = "שפת תכנות Gleam מגיעה מיעד לכיף!😊"
+substring = string.substring(str, 17, 27)
+println(substring) // "מיעד לכיף"
 ```
 
-ניתן גם לשנות את ההתחלה והסופי של התת מחרוזת לפי הצורך:
+ניתן גם להשתמש בפונקציות לחילוץ תתי-מחרוזת לעיבוד מסודר יותר של מחרוזות. לדוגמה, נבצע טיפול במספר טלפון ונחלץ את התחילת הקידומת והמספר הטלפון בנפרד:
 
 ```Gleam
-\\ שליפת תת מחרוזת עם התחלה מ-2 עד הסוף של המחרוזת המקורית
-let sub_string = string.sub(original_string, 2)
-
-\\ תוצאה צפויה: "י מדבר בעברית."
+import gleam/string
+phone_number = "+972-555-123456"
+prefix = string.substring(phone_number, 0, 4)
+number = string.substring(phone_number, 5)
+println(prefix) // "+972"
+println(number) // "555-123456"
 ```
 
-בנוסף, אם נרצה לבצע שליפות רבות במחרוזת, ניתן להשתמש בלולאת `for` בכדי לעבור על כל האינדקסים של המחרוזת:
+## Deep Dive
 
-```Gleam
-\\ שליפת כל התתי מחרוזות של 3 אותיות
-for index in [0..string.length(original_string)-3] do
-  let sub_string = string.sub(original_string, index, index+2)
-  \\ נתוני יצירת תת-מחרוזות (אנו יכולים לעבוד עליהם כאילו זה רושם בפתיחתנו הכי עבה).
-end
-```
+אם תרצו ללמוד עוד על התכנות בשפת Gleam וכיצד להשתמש בפונקציות לחילוץ תתי-מחרוזת, חשוב להבין שישנן פונקציות שונות עבור קבועים ומשתנים בפונקציה string.substring. לקבועים, הפונקציה תשלוט בתנאי ברור ולכן תעבוד בכל המצבים. לעומת זאת, במשתנים הפונקציה תעבוד רק כאשר המחרוזת מתאימה לתנאים המתאימים למשתנה.
 
-## נסיג לעומק
-
-כעת, נראה כמה נסיגה יותר עמוקה לשליפת תתי מחרוזות. למר
+אתם יכולים לקרוא עוד על עקרונות התכנות בשפת Gleam ועל פונקציות מתקדמות נוספות כדי לחלץ תתי-מחרוזת כאן: [פנקציות לחילוץ תתי-מחרוזת](https://gleam.run/documentation/std-lib-string#

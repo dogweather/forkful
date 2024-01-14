@@ -1,35 +1,44 @@
 ---
-title:    "Python: 날짜를 문자열로 변환하기"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/python/converting-a-date-into-a-string.md"
+title:                "Python: 날짜를 문자열로 변환하기"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-날짜를 문자열로 변환하는 것에는 어떤 이유가 있을까요? 예를 들어, 날짜 데이터를 사용자가 이해할 수 있는 형식으로 출력하기 위해서일 수 있습니다.
+## 왜?
+날짜를 문자열로 변환하는 일은 프로그래밍에서 자주 발생하게 됩니다. 예를 들어서, 데이터베이스에서 가져온 날짜를 웹사이트에서 보여줄 때 이를 문자열로 변환하여 보여주어야 합니다. 따라서 날짜를 문자열로 변환하는 것은 매우 중요한 일이며, 이를 효과적으로 할 수 있는 방법을 알고 있어야 합니다.
 
-## 방법
+## 어떻게?
 ```Python
 # datetime 모듈 불러오기
 import datetime
 
-# 현재 시간 불러오기
-now = datetime.datetime.now()
+# 현재 날짜 가져오기
+today = datetime.date.today()
 
-# 문자열로 변환하기
-now_string = now.strftime("%Y년 %m월 %d일 %H시 %M분")
+# 날짜를 문자열로 변환하고 출력
+print(str(today))
 
-# 출력
-print(now_string)
-
-# 결과
-2021년 10월 18일 15시 30분
+# 포맷 지정하여 문자열로 변환하고 출력
+print(today.strftime("%Y년 %m월 %d일"))
 ```
 
-## 깊이 파고들기
-날짜를 문자열로 변환하는 방법은 datetime 모듈의 strftime() 메소드를 사용하는 것입니다. 이 메소드는 특정 형식의 문자열을 반환하는데, %Y는 연도, %m은 월, %d는 일, %H는 시간, %M은 분을 나타내는 기호입니다. 이 기호들을 조합하여 원하는 형식의 날짜 문자열을 만들 수 있습니다.
+출력:
+```
+2021-01-01
+2021년 01월 01일
+```
+
+## 더 깊게
+날짜를 문자열로 변환하는 과정에서 발생할 수 있는 몇 가지 주의사항이 있습니다. 첫째, 날짜의 포맷을 지정할 때 주의해야 합니다. 특히, MM과 mm을 구분하는 것이 매우 중요합니다. MM은 월을 나타내며 01, 02, 03과 같이 0으로 시작하는 두자리 수로 표현됩니다. 반면에 mm은 분을 나타내며 00, 01, 02와 같이 0으로 시작하는 두자리 수로 표현됩니다.
+
+또한, 날짜를 문자열로 변환하면서 로케일(local)과 타임존(timezone)에 대한 고려도 필요합니다. 로케일은 사용자의 언어, 국가 등을 나타내는 설정을 말하며, 타임존은 해당 지역의 표준시간대를 나타냅니다. 이를 고려하지 않고 날짜를 변환하면 사용자의 설정과 달리 다른 포맷으로 날짜를 표시하게 될 수 있습니다. 따라서 로케일과 타임존 설정을 잘 파악하고 사용해야 합니다.
+
+## 더 알아보기
+[KoreanDatetime 모듈](https://pypi.org/project/korean-lunar-calendar/)  
+[strftime 포맷 문자열 참고 문서 (영문)](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)  
+[날짜와 시간 처리에 대한 더 많은 정보 (영문)](https://www.programiz.com/python-programming/datetime)  
 
 ## 참고하기
-https://docs.python.org/3/library/datetime.html  - datetime 모듈 문서
-https://strftime.org/  - strftime() 메소드에 사용되는 기호들의 목록

@@ -1,46 +1,44 @@
 ---
-title:    "Gleam: Skriva tester"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/writing-tests.md"
+title:                "Gleam: Att skriva tester"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att skriva tester är en viktig del av programmering, eftersom det hjälper dig att säkerställa att din kod fungerar som den ska och uppfyller de önskade resultat. Det är också ett bra sätt att upptäcka buggar och felaktigheter i koden, vilket sparar dig tid och frustration på lång sikt.
+Att skriva tester är en viktig del av utvecklingsprocessen i alla programmeringsspråk, och det gäller även för Gleam. Genom att skriva tester kan du säkerställa att ditt kod fungerar korrekt och undvika buggar och felaktig funktionalitet.
 
-## Hur man gör det
+# Hur man gör
 
-Att skriva tester i Gleam är enkelt och effektivt. Det första steget är att skapa en testmapp där du kan placera alla dina testfiler. Detta kan du göra genom att använda kommandot "mix new tests" i terminalen.
+För att skriva tester i Gleam behöver du först importera testbiblioteket genom att lägga till följande rad i din kod:
 
-Nästa steg är att skapa en testfil för varje del av din kod du vill testa. I dessa filer kan du använda Gleams inbyggda testbibliotek för att skriva dina tester. Ett exempel på detta kan se ut så här:
-
-```
-Gleam-tester
-
-  testar "Summera två tal" {
-    låt f = funktion (x, y) {
-      x + y
-    }
-
-    låt resultat = f(2, 3)
-    förväntat(resultat) == 5
-  }
+```Gleam
+import gleam/test
 ```
 
-I detta exempel skapar vi en funktion som summerar två tal och testar sedan att resultatet blir rätt. Om testet passerar kommer du att se ett grönt meddelande i terminalen, annars visas ett rött meddelande som indikerar att något gick fel.
+Sedan kan du skapa en testmodul och lägga till olika testfall med hjälp av `describe` och `test` funktionerna. Här är ett exempel på en testmodul som kontrollerar en funktion som lägger till två tal:
 
-Du kan också använda Gleams inbyggda mockningsfunktioner för att testa komplexa funktioner. Detta gör det möjligt att simulera data och testa olika scenarier utan att behöva skriva långdragna kodbaser.
+```Gleam
+test "additionstest" {
+  let result = addition(2, 3)
+  
+  test.assert_equal(result, 5)
+}
+```
 
-## En djupdykning
+När du kör testerna kommer du att se en output som visar om testerna har passerat eller misslyckats. Om alla testene passerar får du ett grönt meddelande, annars visas ett rött meddelande.
 
-Att skriva tester kan vara en djupdykning i din kod eftersom det tvingar dig att tänka på alla olika fall och potentiella problem som din kod kan stöta på. Det hjälper också till att förbättra din kod och göra den mer robust och lätt att underhålla.
+# Djupdykning
 
-Ett annat fördel med att skriva tester är att det gör det enklare att arbeta i team eftersom alla kan förstå och testa koden på samma sätt. Detta minskar risken för konflikter och felaktigheter vid samarbete.
+När du skriver tester är det viktigt att täcka alla möjliga scenarion och testa olika typer av input för att verifiera ditt kod. Gleam erbjuder många olika testfunktioner som du kan använda för att skriva omfattande tester för ditt kod. Det är även möjligt att skriva tester för dina egna moduler och funktioner för att säkerställa att de fungerar som förväntat.
 
-## Se också
+# Se även
 
-- [Gleam-tester dokumentation](https://gleam.run/testing)
-- [Gleam-tester exempelkod](https://github.com/gleam-lang/gleam/tree/main/examples/testing)
-- [Ett djupare dyk in i testning](https://www.chriskipp.com/blog/2018/02/test-driven-development-tutorial/)
+Här är några användbara länkar för mer information om att skriva tester i Gleam:
+
+- [Gleam testbibliotek] (https://gleam.run/libraries/test/) - officiell dokumentation för testbiblioteket
+- [En introduktion till testning i Gleam] (https://mattsparks.se/articles/gleam-testing/) - en praktisk guide till att skriva tester i Gleam
+- [Gleam forum] (https://gleam.run/community/) - diskussionsforum för Gleam där du kan ställa frågor och ta del av tips och råd från andra användare.

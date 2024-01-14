@@ -1,46 +1,38 @@
 ---
-title:    "Python: Capitaliser une chaîne de caractères"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/capitalizing-a-string.md"
+title:                "Python: Capitaliser une chaîne de caractères"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-La capitalisation d'une chaîne de caractères est une opération courante en programmation qui consiste à mettre en majuscule la première lettre de chaque mot dans une chaîne. Cette pratique est souvent utilisée pour rendre le texte plus lisible ou pour respecter les conventions de nommage dans un code.
+Vous vous demandez peut-être pourquoi il est important de mettre des majuscules dans une chaîne de caractères. Tout simplement pour des raisons d'esthétique et de lisibilité. Les majuscules permettent de distinguer clairement les différents mots dans une phrase et rendent le texte plus agréable à lire.
 
 ## Comment faire
 
-Il existe plusieurs façons de capitaliser une chaîne en Python. Voici quelques exemples en utilisant différentes méthodes :
+Si vous utilisez Python, il existe une méthode très simple pour mettre des majuscules dans une chaîne de caractères. Il suffit d'utiliser la fonction `upper()`. Voici un exemple de code qui vous montre comment l'utiliser:
 
 ```Python
-# Utilisation de la méthode capitalize()
-phrase = "bonjour tout le monde"
-print(phrase.capitalize()) 
-# Output: Bonjour tout le monde
-
-# Utilisation de la méthode title()
-phrase = "bonjour tout le monde"
-print(phrase.title()) 
-# Output: Bonjour Tout Le Monde
-
-# Utilisation de la méthode upper()
-phrase = "bonjour tout le monde"
-print(phrase.upper()) 
-# Output: BONJOUR TOUT LE MONDE
+ma_chaine = "python est génial"
+print(ma_chaine.upper())
 ```
 
-Il est important de noter que ces méthodes ne modifient pas la chaîne originale mais renvoient une copie de la chaîne capitalisée. Vous pouvez également utiliser une boucle et la méthode de slicing pour capitaliser une chaîne caractère par caractère. 
+Cela produira la sortie suivante: `PYTHON EST GÉNIAL`
 
 ## Plongée en profondeur
 
-La méthode capitalize() ne modifie que la première lettre de la chaîne, tandis que la méthode title() met en majuscule la première lettre de chaque mot dans la chaîne. La méthode upper() met quant à elle en majuscule toutes les lettres de la chaîne, ce qui peut être utile si vous souhaitez capitaliser une chaîne entière. 
+Maintenant que vous savez comment utiliser la fonction `upper()` pour mettre des majuscules dans vos chaînes de caractères, voici quelques informations supplémentaires pour vous aider à mieux comprendre. La méthode `upper()` est en fait une méthode de la classe `str` qui appartient à la bibliothèque standard de Python. Elle prend en paramètre une chaîne de caractères et renvoie une nouvelle chaîne avec toutes les lettres en majuscule.
 
-Il est important de noter que ces méthodes ne fonctionnent que pour les lettres de l'alphabet. Les caractères spéciaux, les chiffres ou les espaces ne seront pas modifiés. De plus, si une lettre est déjà en majuscule, elle ne sera pas modifiée par ces méthodes.
+Il est également intéressant de noter qu'il existe une autre méthode appelée `capitalize()` qui met uniquement la première lettre d'une chaîne en majuscule. Vous pouvez également utiliser la fonction `title()` pour mettre en majuscule la première lettre de chaque mot dans une chaîne de caractères.
 
 ## Voir aussi
 
-- [Documentation officielle Python pour la méthode capitalize()](https://docs.python.org/fr/3/library/stdtypes.html#str.capitalize)
-- [Documentation officielle Python pour la méthode title()](https://docs.python.org/fr/3/library/stdtypes.html#str.title)
-- [Documentation officielle Python pour la méthode upper()](https://docs.python.org/fr/3/library/stdtypes.html#str.upper)
+Maintenant que vous savez comment mettre des majuscules dans vos chaînes de caractères en utilisant Python, voici quelques liens pour approfondir vos connaissances:
+
+- [La documentation officielle de Python sur les chaînes de caractères](https://docs.python.org/fr/3/library/stdtypes.html#string-methods)
+- [Un tutoriel sur les chaînes de caractères en Python](https://www.programiz.com/python-programming/string)
+- [Une explication détaillée de la méthode `upper()`](https://pynative.com/python-string-upper-method/)
+- [Un aperçu de toutes les méthodes pour formater des chaînes en Python](https://realpython.com/python-strings/)

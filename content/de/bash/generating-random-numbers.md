@@ -1,46 +1,44 @@
 ---
-title:    "Bash: Erzeugung von Zufallszahlen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/generating-random-numbers.md"
+title:                "Bash: Erstellen von zufälligen Zahlen"
+programming_language: "Bash"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Generieren von Zufallszahlen ist ein wichtiges Konzept in der Programmierung, um zufällige Variationen in Code oder Anwendungen zu ermöglichen. Es kann nützlich sein, um Spiele zu erstellen, zufällige Testdaten zu generieren oder sogar Sicherheitsmaßnahmen zu implementieren.
+Das Erstellen von Zufallszahlen ist ein nützliches Werkzeug in der Bash-Programmierung, da es ermöglicht, zufällige Ergebnisse zu erzeugen und somit die Ausführung von Skripten abwechslungsreicher zu gestalten.
 
 ## Wie geht man vor
 
-Es gibt verschiedene Möglichkeiten, um in Bash Zufallszahlen zu generieren. Eine Möglichkeit ist die Verwendung des Befehls `shuf`. Dieser Befehl kann verwendet werden, um eine zufällige Anordnung von Zeilen in einer Datei zu erzeugen. Zum Beispiel:
+Um Zufallszahlen in Bash zu generieren, können wir die Befehle `shuf` oder `od` verwenden. Mit `shuf` können wir eine Liste von Zahlen mischen und dann die gewünschte Anzahl von zufälligen Elementen ausgeben. Zum Beispiel:
 
 ```Bash
-shuf datei.txt
+$ shuf -i 1-10 -n 3
+4
+8
+2
 ```
+Dies gibt eine zufällige Auswahl von drei Zahlen zwischen 1 und 10 aus.
 
-Dies wird eine zufällige Anordnung der Zeilen in der Datei `datei.txt` ausgeben. Eine weitere Möglichkeit ist die Verwendung des Befehls `od`, der den Inhalt einer Datei in eine binäre Darstellung konvertiert. Zum Beispiel:
+Eine andere Möglichkeit ist die Verwendung von `od` (octal dump), einem Befehl zum Konvertieren von Daten in eine andere Form, nämlich in Oktalzahlen. Wir können diesen Befehl nutzen, um zufällige Zahlen zu generieren, indem wir die Anzahl der Bits (-N) und den Typ der Ausgabe (-A) festlegen. Zum Beispiel:
 
 ```Bash
-od -An -N2 -t u2 /dev/urandom
+$ od -An -N4 -i /dev/random
+380767032
 ```
+Dies gibt eine zufällige vierstellige Zahl aus.
 
-Dies wird zwei zufällige Zahlen ausgeben, die mit einer Ganzzahl repräsentiert werden.
+## Tieferer Einblick
 
-## Tiefer Einblick
+Das Erstellen von Zufallszahlen in Bash basiert auf der Verwendung von Zufallsdaten aus verschiedenen Quellen wie der Prozess-ID, der Systemzeit oder dem Systemzustand. Diese Zufallsdaten werden dann verarbeitet und zu einer zufälligen Zahl vermischt und ausgegeben.
 
-Eine Möglichkeit, tiefere Kontrolle über die generierten Zufallszahlen zu haben, ist die Verwendung der integrierten Bash-Funktion `$RANDOM`. Diese Funktion gibt eine zufällige Ganzzahl zwischen 0 und 32767 zurück. Sie kann in einer Schleife verwendet werden, um eine bestimmte Anzahl von Zufallszahlen zu generieren. Zum Beispiel:
-
-```Bash
-for i in {1..10}
-do
-    echo $RANDOM
-done
-```
-
-Dies wird 10 zufällige Zahlen ausgeben, jedes Mal wenn die Schleife durchläuft. Eine weitere Option ist die Verwendung der Bash-Bibliothek `random`, die zusätzliche Funktionen zum Generieren von Zufallszahlen bietet.
+Wenn jedoch eine hohe Qualität der Zufallszahl erforderlich ist, sollte ein anderes Tool wie z.B. `rng-tools` verwendet werden, das Zufallszahlen generiert, indem es Hardware-Entropiequellen wie z.B. die CPU-Rauschkomponente nutzt.
 
 ## Siehe auch
 
-- [Bash-Dokumentation: shuf](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)
-- [Bash-Dokumentation: $RANDOM](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html)
-- [Bash-Bibliothek: random](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#index-RANDOM)
+- [GNU Coreutils: shuf](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)
+- [GNU Coreutils: od](https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html)
+- [Linuxize: How to Generate Random Numbers in Bash](https://linuxize.com/post/how-to-generate-random-numbers-in-bash/)

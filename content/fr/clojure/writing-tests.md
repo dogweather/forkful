@@ -1,56 +1,46 @@
 ---
-title:    "Clojure: Ecrire des tests"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/writing-tests.md"
+title:                "Clojure: Écriture de tests"
+programming_language: "Clojure"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-L'écriture de tests est une étape importante dans le développement de logiciels. Elle permet de s'assurer que le code fonctionne correctement et de détecter d'éventuelles erreurs plus rapidement. En outre, elle facilite la maintenance du code à long terme.
+Les tests sont un élément essentiel du processus de développement logiciel. Ils permettent de s'assurer que notre code fait exactement ce que nous voulons qu'il fasse et qu'il reste fonctionnel même lorsqu'il est modifié ou mis à jour. Écrire des tests solides peut également faciliter la détection et la résolution des bugs, ce qui peut être un gain de temps et d'efforts dans le long terme.
 
-# Comment faire
+## Comment Faire
 
-Pour écrire des tests en Clojure, il existe plusieurs outils disponibles tels que le framework de test intégré clojure.test ou encore le plugin CIDER pour l'IDE Emacs. Suivez ces étapes pour écrire des tests efficaces :
-
-1. Développez le code que vous souhaitez tester.
-2. Importez le framework de test ou le plugin CIDER.
-3. Ecrivez les tests en utilisant des assertions pour vérifier les résultats attendus.
-4. Exécutez les tests et vérifiez les résultats.
-
-Voici un exemple de code en Clojure avec un test utilisant clojure.test :
+Pour écrire des tests en Clojure, il faut utiliser le framework de test clojure.test. Il fournit des fonctions utiles pour créer des tests unitaires et d'intégration. Voici un exemple de fonction de test pour une fonction qui calcule la somme de deux nombres :
 
 ```Clojure
 (ns mon-projet.tests
-  (:require [clojure.test :refer :all]
-            [mon-projet.code :refer :all]))
+  (:require [clojure.test :refer [is]]))
 
-(deftest test-addition
-  (testing "Vérifier que l'addition fonctionne correctement"
-    (is (= (addition 2 3) 5))
-    (is (= (addition 0 0) 0))
-    (is (= (addition -1 1) 0))))
+(defn somme [a b]
+  (+ a b))
+
+(deftest test-somme
+  (is (= (somme 1 2) 3))
+  (is (= (somme 5 7) 12)))
+
+(run-tests)
 ```
 
-La sortie attendue serait la suivante :
+La fonction `deftest` nous permet de définir un test, et `is` vérifie que le résultat de notre fonction est égal à ce que l'on attend. Dans cet exemple, les tests `test-somme` vérifient que notre fonction renvoie correctement la somme de deux nombres. La dernière ligne `run-tests` exécute tous les tests définis dans ce fichier.
 
-```
-Testing mon-projet.tests
-Ran 1 tests containing 3 assertions.
-0 failures, 0 errors.
-```
+## Plongée Profonde
 
-# Approfondissement
+Pour écrire des tests efficaces, il est important de suivre certaines bonnes pratiques. Tout d'abord, il est essentiel de créer des scénarios de test complets et de couvrir autant de cas de bord que possible. Cela garantit que notre code est robuste et résiste aux différentes entrées que notre programme peut recevoir.
 
-Il est important de noter que les tests doivent être écrits de manière à être automatisés, c'est-à-dire qu'ils doivent pouvoir être exécutés de manière répétée sans nécessiter d'intervention manuelle. Cela permet de gagner du temps et de garantir la fiabilité des tests.
+De plus, il est préférable de garder nos tests le plus simples possible et de ne pas dépendre d'autres tests pour fonctionner. Cela permet une maintenance plus facile et évite aux tests de se casser si l'on modifie d'autres parties du code.
 
-De plus, les tests doivent être spécifiques et couvrir tous les cas possibles. Par exemple, pour l'addition, il serait judicieux de tester également la division par zéro pour s'assurer qu'elle renvoie bien une erreur.
+Enfin, il est recommandé d'écrire les tests avant d'écrire le code. Cela permet de s'assurer que notre implémentation est correcte et de se concentrer sur les cas de bord les plus importants dès le début du développement.
 
-Enfin, il est conseillé de suivre les principes du TDD (Test Driven Development) en écrivant les tests en premier, avant même le code. Cela permet de mieux cerner les fonctionnalités attendues et de s'assurer que le code répond bien à ces attentes.
+## Voir Aussi
 
-# Voir aussi
-
-- [Documentation officielle sur clojure.test] (https://clojure.org/guides/testing)
-- [Guide sur le TDD en Clojure] (https://blog.cleancoder.com/uncle-bob/2017/10/03/Testability.html)
-- [Tutoriel sur l'utilisation du plugin CIDER pour écrire des tests] (https://pedestal.io/guides/testing-with-emacs/)
+- [La documentation officielle de clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
+- [Un tutoriel sur l'écriture de tests en Clojure](https://www.tutorialspoint.com/clojure/clojure_testing.htm)
+- [Un article sur les bonnes pratiques pour écrire des tests en Clojure](https://www.stuartsierra.com/2014/10/03/clojure-workflow-reloaded-revisited/)

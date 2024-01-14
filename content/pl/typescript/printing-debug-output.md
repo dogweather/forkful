@@ -1,54 +1,37 @@
 ---
-title:    "TypeScript: Wyświetlanie danych diagnostycznych"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/printing-debug-output.md"
+title:                "TypeScript: Wydrukowanie wyników debugowania"
+programming_language: "TypeScript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wydaje się, że drukowanie informacji debugujących jest niepotrzebne, jednak może być bardzo przydatne w procesie tworzenia oprogramowania. Pozwala na wczesne wykrywanie błędów oraz ułatwia debugowanie kodu. Dlatego warto poznać tę technikę i nauczyć się jej używać.
+W programowaniu nieuniknione są błędy, które często sprawiają nam problemy. Jednym z najczęstszych sposobów na zdiagnozowanie problemów w naszym kodzie jest drukowanie wyjścia debugowania. Jest to proces wyświetlania wartości zmiennych i informacji o wykonaniu kodu w celu znalezienia błędów i zrozumienia, co dzieje się w trakcie działania programu. W tym artykule dowiesz się dlaczego warto wykorzystać drukowanie wyjścia debugowania w języku TypeScript.
 
 ## Jak to zrobić
 
-Aby wydrukować informacje debugujące w języku TypeScript, można skorzystać z funkcji `console.log()` lub `console.debug()`. Na przykład:
+Aby drukować wyjście debugowania w języku TypeScript, możesz skorzystać z wbudowanej funkcji `console.log()`. Jest to prosty i skuteczny sposób na wyświetlanie wartości zmiennych i informacji o kodzie. Przykładowy kod wyglądałby mniej więcej tak:
 
 ```TypeScript
-let number = 10;
-console.log("Wartość zmiennej number to: " + number);
+let name = "Jan";
+console.log("Witaj, " + name); // Wyjście: Witaj, Jan
 ```
 
-Powyższy kod spowoduje wydrukowanie w konsoli wartości zmiennej `number`, czyli w tym przypadku będzie to `10`.
+Dodatkowo, możesz wykorzystać również funkcję `console.error()`, która pozwala na drukowanie błędów w konsoli.
 
-Można również drukować więcej informacji w jednym wierszu, korzystając ze symbolu `%`, np.:
+## Głębsza analiza
 
-```TypeScript
-let firstName = "Anna";
-let lastName = "Kowalska";
-console.debug("Imię: %s, Nazwisko: %s", firstName, lastName);
-```
+Drukowanie wyjścia debugowania może być nie tylko pomocne przy znajdowaniu błędów w kodzie, ale także w lepszym zrozumieniu, w jaki sposób nasz program działa. Dzięki temu możemy śledzić wartości zmiennych i wykonanie poszczególnych części kodu w celu lepszego zapoznania się z jego działaniem. Jest to szczególnie przydatne przy programowaniu aplikacji o większym zakresie i złożoności.
 
-Powyższy kod spowoduje wydrukowanie `Imię: Anna, Nazwisko: Kowalska` w konsoli.
+## Zobacz również
 
-Inną przydatną funkcją jest `console.table()`, która pozwala na wydrukowanie zawartości tablic w czytelnej formie tabeli, np.:
+Jeśli jesteś zainteresowany/a dalszym rozwojem swojej wiedzy na temat drukowania wyjścia debugowania w języku TypeScript, polecamy zapoznać się z poniższymi linkami:
 
-```TypeScript
-let fruits = ["Apple", "Banana", "Orange"];
-console.table(fruits);
-```
+- [Oficjalna dokumentacja TypeScript](https://www.typescriptlang.org/docs/home.html)
+- [Przewodnik po drukowaniu wyjścia debugowania w TypeScript](https://www.digitalocean.com/community/tutorials/how-to-troubleshoot-with-console-log-in-typescript)
+- [Przykłady z wykorzystaniem funkcji console w TypeScript](https://www.geeksforgeeks.org/typescript-console/)
 
-Powyższy kod spowoduje wydrukowanie tabeli z trzema kolumnami: `Object`, `0` i `Apple`, `1` i `Banana`, `2` i `Orange`.
-
-## Głębszy zanurzenie
-
-Poza funkcjami `console.log()` i `console.debug()`, istnieje wiele innych przydatnych metod w obiekcie `console`. Niektóre z nich to `console.error()` do drukowania informacji o błędach, `console.info()` do wyświetlania informacji, `console.warn()` do ostrzegania przed potencjalnymi problemami oraz `console.group()` do grupowania informacji.
-
-Warto również wspomnieć o `console.trace()`, która pozwala na śledzenie kolejnych wywołań funkcji, co może być bardzo pomocne w analizie błędów.
-
-## Zobacz także
-
-- [Dokumentacja funkcji console w języku TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html)
-- [Przykłady wykorzystania informacji debugujących w TypeScript](https://www.digitalocean.com/community/tutorials/how-to-debug-typescript-with-vscode)
-
-Dzięki wykorzystywaniu informacji debugujących w języku TypeScript, możliwe jest szybsze i bardziej efektywne debugowanie kodu oraz uniknięcie wielu błędów. Polecam wypróbować tę technikę w swoim kolejnym projekcie.
+Dziękujemy za przeczytanie naszego artykułu. Mamy nadzieję, że dowiedziałeś/aś się czegoś nowego i będziesz mógł/mogła wykorzystać te informacje w swoim własnym kodzie.

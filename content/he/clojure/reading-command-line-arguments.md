@@ -1,43 +1,37 @@
 ---
-title:    "Clojure: תרגם לעברית:קריאת משתני שורת הפקודה"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/clojure/reading-command-line-arguments.md"
+title:                "Clojure: קריאת ארגומנטים של שורת פקודה"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-אם אתה מתעסק בכתיבת קוד בקלוז'ור, כנראה שפעם נתקלת בצורך לקרוא נתונים מפרמטרי שורת הפקודה (command line arguments). הפעולה הזאת נחשבת לנפוצה במערכת ההפעלה UNIX, אך היא רלוונטית גם למערכות ההפעלה האחרות. למה אנו עושים זאת? וכיצד ניתן לעשות את זה בקוד קלוז'ור?
+גישת השורת פקודה היא חלק חשוב ונפוץ בתכנות בשפת Clojure. קריאת פרמטרים שנמצאים בשורת הפקודה יכולה להיות אידיאלית להתאמות אישיות, חישובים מראש וכל מיני מטרות שונות. קריאת פרמטרים מצידה של המשתמש מאפשרת לנו לעבוד בדיוק עם המידע שציפינו לקבל, מה שמאפשר יכולות תכנות מתקדמות יותר ופתרונות מותאמים לצרכים שונים. בכתבה הזאת נביט לבסיסים לקריאת פרמטרים משורת פקודה ונראה דוגמאות שימושיות.
 
-## כיצד לעשות זאת
+## כיצד לקרוא פרמטרים משורת פקודה
 
-השיטה הפשוטה ביותר לקריאת נתונים מפרמטרי שורת הפקודה היא להשתמש בפונקציה *command-line-args*. תחילה ניצור משתנה עם השם *args* שיכיל את כל הארגומנטים שהועברו לתוכנית באמצעות שורת הפקודה. לדוגמה:
-
-```Clojure
-(def args *command-line-args*)
-```
-
-כעת נוכל להשתמש במשתנה *args* כדי לגשת לארגומנטים השונים. לדוגמה, אם השניים האחרונים מהארגומנטים הם מספרים, נוכל לגשת להם כ-integer על ידי המרה עם הפונקציה *Integer/parseInt*:
+כדי לקרוא פרמטרים משורת פקודה בשפת Clojure, נשתמש בפונקציה `clojure.tools.cli` מחבילת `tools.cli`. פונקציה זו מאפשרת לנו להגדיר את תבניות הפרמטרים שנמצאים בשורת הפקודה ולקבל את הערכים שנמצאים בהתאם. לדוגמה:
 
 ```Clojure
-(def num1 (Integer/parseInt (last args)))
-(def num2 (Integer/parseInt (last (rest args))))
+(ns example.core
+  (:require [clojure.tools.cli :as cli]))
+
+(def cli-options
+  [["-n" "--name NAME" "Your name" :required true]
+   ["-a" "--age AGE" "Your age" :required true]])
+
+(defn -main [& args]
+  (let [[opts args banner]
+        (cli/parse-opts args cli-options)]
+
+    (println (str "Hello " (:name opts) "!")))
 ```
 
-כעת נוכל לבצע פעולות מתמטיות עליהם ולהדפיס את התוצאות:
+פונקציית `parse-opts` מחזירה מפתח עם שמות הפרמטרים כמפתחות והערכים שנמצאים עבורם כערכים. בדוגמה שלנו, נגדיר שני פרמטרים חובה: `-n` עבור שם ו `-a` עבור גיל. כאשר משתמשים בתכנית, יש לספק את הפרמטרים עם התווים המתאימים. לדוגמה: `lein run -n Mickey -a 25`.
 
-```Clojure
-(println num1 "+ " num2 " = " (+ num1 num2))
-(println num1 "* " num2 " = " (* num1 num2))
-```
+## לחקור עמוק יותר
 
-לשם נוחות, ניתן להעביר את הארגומנטים ישירות לפונקציה, כמו כן ניתן להוסיף כל מספר של פונקציות על הנתונים שקיבלנו:
-
-```Clojure
-(println (apply + args))
-(println (apply * args))
-(println (apply max args))
-```
-
-בנוסף, אם אתם רוצים לקבל דיווחים וטיפול בשגיאות שיכולות להתרחש במהלך קריאת הנתונים מפרמטרי שורת הפקודה, ניתן להשתמש בפונקציות כמו *try* ו-*catch
+קריאת פרמטרים משורת פקודה היא נושא מעניין ומשתנה בשפת Clojure. בנוסף ל

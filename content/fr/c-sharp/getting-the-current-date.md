@@ -1,63 +1,56 @@
 ---
-title:    "C#: Obtenir la date actuelle"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/getting-the-current-date.md"
+title:                "C#: Obtenir la date actuelle"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La récupération de la date actuelle est une tâche courante lors de la programmation en C#. Ce processus peut sembler simple, mais comprendre comment obtenir la date actuelle peut être utile pour de nombreuses applications, telles que le suivi du temps de traitement ou la gestion d'abonnements basés sur la date.
+La date et l'heure actuelles sont des informations importantes dans la vie de tous les jours. Les programmeurs utilisent souvent cette information pour enregistrer des données, créer des horaires ou simplement pour afficher l'heure actuelle dans leur programme. Dans cet article, nous allons découvrir comment obtenir la date et l'heure actuelles en utilisant le langage de programmation C#.
 
 ## Comment faire
 
-Pour obtenir la date actuelle en C#, il existe plusieurs méthodes disponibles selon vos besoins.
+Pour obtenir la date et l'heure actuelles en C#, nous utilisons la classe `DateTime`. Cette classe contient de nombreuses méthodes et propriétés qui nous permettent de manipuler facilement les dates et heures.
 
-- Pour obtenir la date actuelle sous forme de chaîne de caractères dans un format spécifique, utilisez la méthode `DateTime.Now.ToString("dd/MM/yyyy")`.
-   ```C#
-       string currentDate = DateTime.Now.ToString("dd/MM/yyyy");
-       Console.WriteLine(currentDate);
-   ```
-   Résultat:
-   ```
-   23/02/2021
-   ```
+```
+C# var dateActuelle = DateTime.Now; 
+Console.WriteLine(dateActuelle); //Output: 06/07/2021 14:30:00
+```
 
-- Si vous avez besoin de la date actuelle dans un format par défaut, vous pouvez utiliser simplement la propriété `DateTime.Now`.
-   ```C#
-       DateTime currentDate = DateTime.Now;
-       Console.WriteLine(currentDate);
-   ```
-   Résultat:
-   ```
-   23/02/2021 11:54:12
-   ```
+Dans l'exemple ci-dessus, nous déclarons une variable `dateActuelle` de type `DateTime` et nous utilisons la propriété `Now` pour récupérer la date et l'heure actuelles. Ensuite, nous utilisons la méthode `WriteLine` pour afficher le résultat à l'écran. La sortie sera dans le format suivant : "MM / dd / yyyy HH: mm: ss".
 
-- Pour obtenir la date actuelle sous forme de nombre entier, utilisez la propriété `DateTime.Now.Day`, `DateTime.Now.Month` et `DateTime.Now.Year`.
-   ```C#
-       int day = DateTime.Now.Day;
-       int month = DateTime.Now.Month;
-       int year = DateTime.Now.Year;
+Nous pouvons également personnaliser le format de sortie en utilisant la méthode `ToString` avec un format spécifique en utilisant les symboles de formatage de date et heure.
 
-       Console.WriteLine($"{day}/{month}/{year}");
-   ```
-   Résultat:
-   ```
-   23/02/2021
-   ```
+```
+C# var dateActuelle = DateTime.Now; 
+Console.WriteLine(dateActuelle.ToString("dd-MM-yyyy")); //Output: 07-06-2021
+```
 
-## Deep Dive
+Il est également possible d'obtenir des informations spécifiques telles que le jour, le mois, l'année ou même le fuseau horaire en utilisant les propriétés de la classe `DateTime`.
 
-Maintenant que vous savez comment obtenir la date actuelle en C#, voici quelques informations supplémentaires à connaître:
+```
+C# var dateActuelle = DateTime.Now; 
+Console.WriteLine(dateActuelle.Day); //Output: 07
+Console.WriteLine(dateActuelle.Month); //Output: 06
+Console.WriteLine(dateActuelle.Year); //Output: 2021
+Console.WriteLine(dateActuelle.TimeOfDay); //Output: 14:30:00
+```
 
-- La méthode `DateTime.Now` retourne la date et l'heure actuelles de votre système selon le fuseau horaire local. Si vous avez besoin de la date et de l'heure dans un fuseau horaire spécifique, vous pouvez utiliser la méthode `DateTime.UtcNow` et spécifier le fuseau horaire désiré.
-- Si vous avez besoin de manipuler la date et l'heure, la classe `DateTime` offre de nombreuses méthodes utiles telles que `AddDays()`, `AddHours()`, `AddMinutes()`, etc.
-- Il est également possible d'utiliser la méthode `DateTime.Now.ToShortDateString()` pour obtenir uniquement la date sous forme de chaîne de caractères dans un format court.
+## Plongée en profondeur
+
+Maintenant que nous savons comment obtenir la date et l'heure actuelles en C#, il est important de comprendre comment cela fonctionne. Lorsque nous appelons la méthode `Now` ou toute autre méthode de la classe `DateTime`, le système d'exploitation fournira l'heure actuelle en fonction des paramètres régionaux du système. Cela signifie que si nous changeons les paramètres régionaux, nous obtiendrons des résultats différents.
+
+Il existe également d'autres méthodes dans la classe `DateTime` qui nous permettent de manipuler les dates et heures. Par exemple, la méthode `Add` nous permet d'ajouter une période spécifique à une date donnée, tandis que la méthode `Subtract` nous permet de soustraire une période.
 
 ## Voir aussi
 
-Maintenant que vous savez comment obtenir la date actuelle en C#, voici quelques ressources supplémentaires pour approfondir vos connaissances:
+Pour en savoir plus sur la classe `DateTime` en C# et ses différentes méthodes et propriétés, consultez la documentation officielle de Microsoft sur [DateTime](https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime?view=net-5.0).
 
-- [Documentation Microsoft sur DateTime (en français)](https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime?view=net-5.0)
-- [Tutoriel complet pour la manipulation des dates et heures en C# (en français)](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/dates-and-times/)
+Vous pouvez également consulter nos autres articles sur le langage de programmation C# en suivant l'un des liens ci-dessous :
+
+- [Comment créer et utiliser des constantes en C#](https://monsite.com/article/constantes-c-sharp)
+- [Les bases du traitement des exceptions en C#](https://monsite.com/article/exceptions-c-sharp)
+- [Manipuler des chaînes de caractères en C#](https://monsite.com/article/chaines-caracteres-c-sharp)

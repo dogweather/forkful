@@ -1,62 +1,88 @@
 ---
-title:    "Clojure: Lendo argumentos da linha de comando"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/reading-command-line-arguments.md"
+title:                "Clojure: Lendo argumentos da linha de comando"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que ler argumentos da linha de comando em Clojure?
 
-Em muitas linguagens de programação, é comum ter que lidar com argumentos de linha de comando, ou seja, parâmetros passados para o programa na hora de executá-lo. No Clojure não é diferente e entender como ler esses argumentos é essencial para construir aplicações eficientes e flexíveis.
+Ler argumentos da linha de comando é uma habilidade importante para programadores de Clojure, pois permite que você crie programas interativos e flexíveis. Além disso, ao ler argumentos da linha de comando, você pode acessar informações específicas do usuário e personalizar a execução do seu programa.
 
-## Como Fazer
+## Como fazer
 
-O Clojure possui uma função nativa chamada "command-line-args" que retorna uma lista contendo todos os argumentos passados na linha de comando. Vamos dar uma olhada em um exemplo de como podemos utilizá-la:
+Para ler argumentos da linha de comando em Clojure, você pode usar a função `command-line-opts` do namespace `clojure.core`. Essa função retorna uma lista com todos os argumentos passados na linha de comando.
 
-```Clojure
-(def args (command-line-args))
-(println "O primeiro argumento é:" (first args))
-(println "O segundo argumento é:" (second args))
-```
-
-Ao executar esse código com os seguintes argumentos na linha de comando:
-
-```
-java -jar meu_programa.jar arg1 arg2
-```
-
-O output será:
-
-```
-O primeiro argumento é: arg1
-O segundo argumento é: arg2
-```
-
-Podemos também utilizar a função "get-in" para acessar argumentos específicos passados com flags, por exemplo:
+Aqui está um exemplo de código que lê dois argumentos da linha de comando e os imprime na tela usando a função `println`:
 
 ```Clojure
-(def args (command-line-args))
-(println "O argumento da flag -l é:" (get-in args [1]))
+(ns meu-programa
+  (:require [clojure.core :refer [command-line-opts]]))
+
+(defn -main []
+  (let [argumentos (command-line-opts)]
+    (println "O primeiro argumento é:" (nth argumentos 0))
+    (println "O segundo argumento é:" (nth argumentos 1))))
 ```
 
-Ao executarmos o programa com o seguinte comando:
+Suponha que você tenha salvo este código em um arquivo chamado `meu-programa.clj` e queira executá-lo com os argumentos "olá" e "mundo". Você pode fazer isso executando o seguinte comando no seu terminal:
 
-```
-java -jar meu_programa.jar -l valor_da_flag
-```
-
-O output será:
-
-```
-O argumento da flag -l é: valor_da_flag
+```bash
+clj meu-programa.clj olá mundo
 ```
 
-## Mergulho Profundo
+O código acima irá imprimir na tela:
 
-Além da função "command-line-args", o Clojure também possui a biblioteca "tools.cli" que oferece mais recursos para lidar com argumentos de linha de comando. Ela inclui funções para definir flags, opções de ajuda e validação dos argumentos passados. Para utilizá-la, basta adicionar a dependência no seu projeto e seguir a documentação.
+```bash
+O primeiro argumento é: olá
+O segundo argumento é: mundo
+```
 
-## Veja Também
+## Mergulho profundo
 
-- [Documentação oficial do Clojure sobre "command-line-args"](https://clojuredocs.org/clojure.core/command-line-args)
-- [Documentação da biblioteca "tools.cli"](https://github.com/clojure/tools.cli)
+Além de usar a função `command-line-opts`, também é possível definir argumentos específicos que seu programa irá ler ao ser executado. Isso pode ser feito usando a biblioteca `tools.cli`. Para isso, você pode seguir os seguintes passos:
+
+1. Adicionar `[org.clojure/tools.cli "0.4.0"]` como dependência em seu arquivo `project.clj`.
+
+2. Importar a biblioteca no seu código: `(:require [clojure.tools.cli :refer [parse-opts]])`.
+
+3. Definir argumentos com a função `defcli`, onde você pode especificar opções, como nome, descrição e tipo de argumento.
+
+4. Usar a função `parse-opts` para ler os argumentos e executar sua lógica de acordo.
+
+Veja um exemplo de código usando a biblioteca `tools.cli`:
+
+```Clojure
+(ns meu-programa
+  (:require [clojure.tools.cli :refer [defcli parse-opts]]))
+
+(defcli programa
+  "Este é um programa de exemplo."
+  ["-n" "--nome"
+   "Nome do usuário."
+   :default "Desconhecido"
+   :argname "NOME"]
+  ["-i" "--idade"
+   "Idade do usuário."
+   :default 0
+   :argname "IDADE"])
+
+(defn -main [& args]
+  (let [{:keys [nome idade]} (parse-opts args)]
+    (println "Olá," nome)
+    (println "Você tem" idade "anos.")))
+```
+
+Ao executar o comando `clj meu-programa.clj -n João -i 30`, o código acima irá imprimir na tela:
+
+```bash
+Olá, João
+Você tem 30 anos.
+```
+
+## Veja também
+
+- [Documentação da função `command-line-opts`](https://clojuredocs.org/clojure.core/command-line-opts)
+- [Documentação da biblioteca `tools.cli`](https://github.com/clojure/tools.cli)

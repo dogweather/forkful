@@ -1,41 +1,28 @@
 ---
-title:    "Javascript: Å bruke regulære uttrykk"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/using-regular-expressions.md"
+title:                "Javascript: Å bruke regulære uttrykk"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Regulære uttrykk, også kjent som regex, er en viktig verktøy i Javascript-programmering. De tillater oss å finne, manipulere og validere tekst på en enkel og effektiv måte. Hvis du ønsker å skrive mer robuste og dynamiske applikasjoner, er å lære hvordan man bruker regulære uttrykk en viktig ferdighet å ha.
+Regulære uttrykk er et kraftig verktøy for å søke og manipulere tekst i programmering. Ved hjelp av mønstre og symboler kan du søke og erstatte tekst i en mer effektiv og fleksibel måte enn du ville være i stand til å gjøre manuelt. Hvis du jobber med tekstbaserte data eller brukergrensesnitt, er kunnskap om regulære uttrykk en essensiell ferdighet å ha i verktøykassen din.
 
 ## Hvordan
-
-For å bruke regulære uttrykk i Javascript, må du først opprette et RegExp-objekt ved å bruke en av to metoder: `new RegExp(pattern, flags)` eller `/pattern/flags`. Patternet er mønsteret du ønsker å finne i en tekststreng, og flaggene kan være "i" for å ignorere store og små bokstaver, "g" for å finne alle den samme forekomsten i stedet for bare den første, og "m" for å aktivere flerlinje-søk.
-
-Her er et eksempel på hvordan du kan bruke regulære uttrykk for å finne og erstatte ord i en tekststreng:
+Å lage et regulært uttrykk i Javascript er enkelt. Du bruker bare en liten brikke av kode for å definere et mønster og de nødvendige symbolene for å søke og erstatte tekst. For eksempel, hvis du ønsker å finne alle forekomster av ordet "hallo" i en streng, kan du bruke følgende uttrykk:
 
 ```Javascript
-let tekst = "Dette er en tekststreng som jeg ønsker å endre.";
-let regex = /tekststreng/;
-let nyTekst = tekst.replace(regex, "ny tekst");
-console.log(nyTekst); //Dette er en ny tekst som jeg ønsker å endre.
+/hallo/g
 ```
 
-I dette eksempelet erstatter vi ordet "tekststreng" med "ny tekst". Du kan også bruke variabler og metode-kall i mønsteret for mer avansert søk og manipulering.
+Outputen for dette uttrykket vil returnere en liste med alle forekomster av "hallo" i strengen.
 
 ## Dypdykk
-
-Regex er mye mer enn bare å finne og erstatte ord. Det gir deg muligheten til å søke etter bestemte mønstre som kan være uforutsigbare eller varierte. For eksempel kan du bruke "[]" for å finne alle karakterene som matcher et bestemt sett, "{}" for å angi repetisjoner, eller "\\b" for å matche ordgrenser.
-
-Her er noen nyttige ressurser for å lære mer om hvordan du bruker regulære uttrykk i Javascript:
-
-- [Eloquent Javascript](https://eloquentjavascript.net/09_regexp.html)
-- [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Regex101](https://regex101.com/)
+I tillegg til det grunnleggende, er det flere avanserte bruksområder for regulære uttrykk som kan forbedre effektiviteten og nøyaktigheten til koden din. For eksempel kan du bruke forespørselen "i" for å gjøre søket ditt case-insensitive, eller du kan bruke parenteser for å gruppere mønstrene dine. Det finnes også en rekke forskjellige symboler for å søke etter spesifikke mønstre som tall, bokstaver og spesifikke ord.
 
 ## Se også
-
-- [Hvordan bruke funksjoner i Javascript](https://kodesnutt.com/hvordan-bruke-funksjoner-javascript)
-- [Datastrukturer i Javascript](https://blogg.kodemaker.no/2014/12/datastrukturer-i-javascript/)
+- [MDN Web Docs: Regulære uttrykk i JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Regex Tutorial](https://regexone.com)
+- [Javascript Regulære Uttrykk Cheat Sheet](https://www.shortcutfoo.com/app/dojos/javascript-regex/cheatsheet)

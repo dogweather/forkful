@@ -1,38 +1,45 @@
 ---
-title:    "Arduino: Suchen und Ersetzen von Text"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/searching-and-replacing-text.md"
+title:                "Arduino: Suchen und Ersetzen von Text"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Bei der Programmierung mit Arduino kann es oft vorkommen, dass man Text in seinem Code ersetzen muss. Mögliche Gründe dafür können beispielsweise Programmierfehler, Änderungen an Variablennamen oder das Anpassen von Funktionsaufrufen sein. In diesem Blogbeitrag werden wir uns ansehen, wie man innerhalb des Arduino-Codes effektiv Text suchen und ersetzen kann.
+Das Austauschen von Text in einem Arduino Programm kann helfen, Fehler zu beheben, das Programm zu optimieren oder es an individuelle Bedürfnisse anzupassen. Es ist auch eine gute Möglichkeit, den Umgang mit Textverarbeitung in der Programmierung zu üben.
 
-## Wie geht das?
+## How To
 
-Das Suchen und Ersetzen von Text innerhalb des Arduino-Codes kann durch den Einsatz der `replace()` Funktion erreicht werden. Diese Funktion erwartet mindestens drei Parameter: Der zu durchsuchende Text, der Text, der an dessen Stelle eingefügt werden soll, und der String, in dem die Suche und Ersetzung durchgeführt werden soll. Ein Beispielcode könnte folgendermaßen aussehen:
+Das Austauschen von Text in einem Arduino Programm kann auf verschiedene Arten durchgeführt werden. Eine Möglichkeit ist die Verwendung der "replace()" Funktion. Hier ein Beispiel:
 
 ```Arduino
-
-// Beispielcode für die Verwendung der replace() Funktion
-String text = "Hallo Welt";
-String ersetzung = "Guten Morgen";
-text.replace("Welt", ersetzung);
-Serial.println(text); // Ausgabe: "Hallo Guten Morgen"
+char text[] = "Hallo Welt";
+replace(text, "Welt", "Arduino");
+Serial.println(text); // Output: Hallo Arduino
 ```
 
-In diesem Beispiel wird der Suchtext "Welt" durch den Text "Guten Morgen" ersetzt. Die `replace()` Funktion kann jedoch nicht nur einzelne Zeichen oder Wörter, sondern auch ganze Sätze oder sogar reguläre Ausdrücke ersetzen.
+Die "replace()" Funktion sucht nach einem bestimmten Text in einer Zeichenkette und ersetzt ihn durch einen neuen Text. In diesem Fall wird "Welt" durch "Arduino" ersetzt.
 
-## Tiefere Einblicke
+Eine andere Möglichkeit ist die Verwendung von regulären Ausdrücken mit der "regexReplace()" Funktion. Hier ein Beispiel:
 
-Um die `replace()` Funktion effektiv zu nutzen, ist es wichtig zu wissen, dass sie immer nur die erste Übereinstimmung im String ersetzt. Möchte man alle Übereinstimmungen ersetzen, muss man die Funktion innerhalb einer Schleife aufrufen. Außerdem kann die Funktion auch dazu verwendet werden, Text in anderen Datentypen wie beispielsweise Integer oder Float umzuwandeln. Hierfür wird der entsprechende Wert als String übergeben, in dem die Suche und Ersetzung durchgeführt wird. 
+```Arduino
+char text[] = "Ich habe 3 Äpfel und 4 Bananen";
+regexReplace(text, "\\d", "x");
+Serial.println(text); // Output: Ich habe x Äpfel und x Bananen
+```
 
-Neben der `replace()` Funktion gibt es auch noch andere Möglichkeiten, Text innerhalb des Arduino-Codes zu suchen und zu ersetzen. Eine Alternative ist beispielsweise die Verwendung der `indexOf()` und `substring()` Funktionen. Mit `indexOf()` kann man die Position eines bestimmten Textes im String ermitteln und mit `substring()` kann man einen Teil des Strings auslesen oder ersetzen. 
+Die "regexReplace()" Funktion sucht nach einer bestimmten Zeichenfolge, die dem regulären Ausdruck entspricht, und ersetzt sie durch den neuen Text. Im obigen Beispiel wird jede Zahl durch "x" ersetzt.
+
+## Deep Dive
+
+Wenn man tiefer in die Thematik des Austauschens von Text eintauchen möchte, gibt es noch weitere Funktionen und Techniken, die hilfreich sein können. Beispielsweise kann die "String" Klasse verwendet werden, um Texte miteinander zu verbinden oder zu ersetzen. Auch die Verwendung von Variablen und Schleifen kann hilfreich sein, um spezifische Textpassagen auszutauschen.
+
+Es ist auch wichtig zu beachten, dass in Arduino das Unicode System verwendet wird, was bedeutet, dass auf Zeichen mit diakritischen Zeichen, wie z.B. "ö", anders zugegriffen werden muss. Hierfür gibt es spezielle Funktionen, wie zum Beispiel "String::replaceChars()", die solche Sonderzeichen korrekt behandeln.
 
 ## Siehe auch
-
-- [Offizielle Arduino Referenz für die replace() Funktion](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-- [Tutorial: Text suchen und ersetzen mit Arduino](https://www.youtube.com/watch?v=804E2 JUtug0)
-- [Tutorial: Textmanipulation mit String-Methoden in Arduino](https://www.youtube.com/watch?v=4ylA5C8Mo48)
+- [Arduino String Klasse](https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/)
+- [Regex-Tutorial](https://www.regextutorial.org/)
+- [Unicode in Arduino](https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/#unicode)

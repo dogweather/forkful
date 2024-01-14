@@ -1,41 +1,48 @@
 ---
-title:    "Fish Shell: Usando expressões regulares"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/using-regular-expressions.md"
+title:                "Fish Shell: Utilizando expressões regulares"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar Expressões Regulares no Fish Shell?
+## Por que usar expressões regulares na programação?
 
-Expressões regulares são uma ferramenta poderosa para buscar e manipular texto em um editor de texto ou no terminal. No Fish Shell, elas podem ser especialmente úteis para filtrar e processar dados de maneira eficiente e automatizada. Se você quer aumentar a sua produtividade e se tornar um programador mais eficiente, é importante saber como utilizar expressões regulares no seu dia a dia.
+Uma das principais razões para utilizar expressões regulares na programação é para realizar buscas e manipulações de texto de forma mais eficiente e precisa. Com elas, é possível encontrar padrões específicos em um texto, substituir partes dele ou até mesmo extrair informações específicas, tornando o processo de desenvolvimento mais eficiente e rápido.
 
-## Como usar Expressões Regulares no Fish Shell
+## Como usar expressões regulares no Fish Shell?
 
-As expressões regulares são formadas por padrões de texto que são usados para buscar e manipular informações específicas em um texto. No Fish Shell, podemos utilizar o comando `string match` para aplicar expressões regulares a uma variável de texto. Por exemplo:
+O Fish Shell oferece suporte completo para expressões regulares, permitindo que os desenvolvedores utilizem essa ferramenta poderosa durante o desenvolvimento. Abaixo, estão alguns exemplos de como utilizar expressões regulares no Fish Shell:
 
-```Fish Shell 
-set texto "Hello World!"
+```
+Fish Shell ~> set name "John Doe"
 
-if string match -r "W.*d" $texto
+Fish Shell ~> echo $name
+John Doe
 
-echo "Encontramos um padrão que começa com 'W' e termina com 'd'!"
+Fish Shell ~> set name (string replace -r "Doe" "Smith" $name)
 
-end
+Fish Shell ~> echo $name
+John Smith
 ```
 
-Neste exemplo, o texto "Hello World!" é atribuído à variável `texto` e a expressão regular "W.*d" é utilizada para encontrar um padrão que começa com a letra "W" e termina com a letra "d". Como o texto corresponde a esse padrão, o comando `echo` é executado e a mensagem "Encontramos um padrão que começa com 'W' e termina com 'd'!" é exibida no terminal.
+Neste exemplo, o comando `set` é utilizado para atribuir um valor à variável `name`, que, em seguida, é exibido através do comando `echo`. Em seguida, é utilizada a função `string replace` com a opção `-r` para substituir o sobrenome "Doe" por "Smith", obtendo o resultado final de "John Smith" para a variável `name`.
 
-## Aprofundando-se nas Expressões Regulares
+## Mergulho profundo em expressões regulares
 
-A sintaxe utilizada para criar expressões regulares no Fish Shell é semelhante à de outras linguagens de programação, mas existem algumas diferenças importantes. Por exemplo, no Fish Shell, não é necessário utilizar delimitadores como `/` ou `#` para indicar o início e o final da expressão regular.
+Expressões regulares são, na verdade, um padrão específico de caracteres utilizados para realizar operações de busca e manipulação em um texto. Com elas, é possível realizar operações complexas de forma mais eficiente, já que existem diversos recursos e opções que permitem tornar a busca ainda mais precisa. Alguns desses recursos incluem:
 
-Além disso, existem diversos metacaracteres que podem ser utilizados para buscar padrões específicos em um texto, como `.` para qualquer caractere, `*` para indicar que um padrão pode se repetir zero ou mais vezes, e `[ ]` para delimitar um conjunto de possíveis caracteres.
+- Metacaracteres: são símbolos especiais que possuem um significado específico dentro de uma expressão regular, como o `*` que representa 0 ou mais caracteres.
 
-Para aprender mais sobre expressões regulares no Fish Shell, confira a documentação oficial e pratique criando diferentes padrões e utilizando-os em seu código.
+- Classes de caracteres: são usadas para especificar um conjunto de caracteres que desejamos encontrar em uma busca, como `[abc]` que correspondem a qualquer uma das letras "a", "b" ou "c".
+
+- Grupos de captura: são utilizados para identificar e armazenar partes específicas de uma expressão regular que foram encontradas durante a busca.
+
+Além disso, existem diversos recursos e opções específicas do Fish Shell para utilizar expressões regulares de forma ainda mais avançada. Para conferir a documentação completa e se aprofundar ainda mais nesse tema, confira o manual do Fish Shell.
 
 ## Veja também
 
-- [Documentação oficial do Fish Shell sobre Expressões Regulares](https://fishshell.com/docs/current/cmds/string-match.html)
-- [Tutorial de Expressões Regulares no Shell para iniciantes](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-fish-shell-configuration-files) 
-- [Lista de recursos para se aprofundar em Expressões Regulares](https://www.regular-expressions.info/fish.html)
+- [Documentação completa do Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Expressões regulares em 30 minutos](https://regexone.com/)
+- [Tutorial de expressões regulares no Fish Shell](https://medium.com/@krazy1kanu/expressions-regex-on-fish-shell-2d2a7c996c4f)

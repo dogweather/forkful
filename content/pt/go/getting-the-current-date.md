@@ -1,56 +1,52 @@
 ---
-title:    "Go: Obtendo a data atual"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/getting-the-current-date.md"
+title:                "Go: Obtendo a data atual."
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual em Go?
+## Por que obter a data atual em programação é importante
 
-Ao criar um programa em Go, é importante ser capaz de manipular datas e horários de forma eficiente. Isso pode ser útil para tarefas como agendar tarefas, registrar eventos e calcular o tempo de execução do programa. A obtenção da data atual é uma das habilidades básicas mais importantes em Go e pode ser feita de maneira simples e direta.
+Trabalhar com datas é um aspecto crucial da programação em qualquer linguagem. É importante ser capaz de obter a data atual em seu código para realizar diversas tarefas, como registrar eventos, calcular durações ou gerar relatórios. Neste artigo, vamos mostrar como fazer isso em Go.
 
-## Como fazer:
+## Como obter a data atual em Go
 
-Para obter a data atual em Go, podemos usar a função `time.Now()`. Esta função retorna um valor do tipo `time.Time`, que contém informações como data, hora e fuso horário. Veja abaixo um exemplo de código:
+Existem várias maneiras de obter a data atual em Go, mas a forma mais simples é usando a função `time.Now()`. Por exemplo:
 
-```
+```Go
 dataAtual := time.Now()
 fmt.Println(dataAtual)
 ```
+A saída desse código será algo como `2021-11-01 10:08:04.62391 +0000 UTC m=+0.000121771`.
 
-O código acima irá imprimir a data atual no seguinte formato:
+Se você quiser formatar a data, pode usar o método `Format()` da struct `Time`. Por exemplo:
 
-```
-2021-01-01 15:30:45.123456789 +0000 UTC m=+0.000000001
-```
-
-Podemos também formatar a data de acordo com nossas preferências, utilizando o método `Format()` da struct `time.Time`. Por exemplo, para exibir apenas a data no formato "dd/mm/aaaa", podemos fazer o seguinte:
-
-```
+```Go
 dataFormatada := dataAtual.Format("02/01/2006")
 fmt.Println(dataFormatada)
 ```
+A saída desse código será `01/11/2021`, seguindo o formato de dia/mês/ano.
 
-Isso irá imprimir "01/01/2021" no console. É importante notar que as letras utilizadas para a formatação seguem um padrão específico, e as referências para cada parte da data devem ser exatamente como no exemplo acima.
+Outra forma de obter a data atual em um formato especificado é usando o pacote `time` com constantes, como `time.RFC822` ou `time.RFC3339`. Por exemplo:
 
-## Aprofundando-se:
-
-Além de obter a data atual, também é possível fazer operações matemáticas e comparações com datas em Go. Por exemplo, podemos adicionar ou subtrair períodos de tempo ao valor `time.Time` utilizando o método `Add()`.
-
+```Go
+dataRFC822 := dataAtual.Format(time.RFC822)
+dataRFC3339 := dataAtual.Format(time.RFC3339)
+fmt.Println(dataRFC822)
+fmt.Println(dataRFC3339)
 ```
-dataFutura := dataAtual.AddDate(1, 0, 0) // Adiciona 1 ano à data atual
-```
+A saída desses códigos será, respectivamente, `01 Nov 21 10:08 UTC` e `2021-11-01T10:08:04Z`.
 
-Também podemos comparar duas datas utilizando os operadores `==`, `!=`, `<`, `>`, `<=` e `>=`, ou calcular a diferença entre elas em termos de segundos, minutos, horas, dias, etc.
+## Profundando no código
 
-```
-diferenca := dataFutura.Sub(dataAtual) // Calcula a diferença em termos de tempo
-```
+Por baixo dos panos, a função `time.Now()` utiliza o relógio do sistema para obter a data e hora atuais. O retorno dessa função é um objeto do tipo `Time`, que representa uma data e hora específicas e permite realizar diversas operações, como adicionar ou subtrair tempo, comparar com outras datas, entre outras.
 
-É importante lembrar que, ao trabalharmos com datas e horários em Go, é necessário levar em consideração questões como fuso horário e formatos de data/hora utilizados em diferentes locais.
+Vale mencionar também que a função `time.Now()` sempre retorna a hora no fuso horário UTC. Se você quiser obter a hora no fuso horário do seu sistema, pode usar o método `Local()` da struct `Time`.
 
-## Veja também:
+## Veja também
 
-- [Documentação oficial do pacote "time" em Go](https://golang.org/pkg/time/)
-- [Tutorial sobre manipulação de datas em Go](https://www.callicoder.com/golang-datetime-tutorial/)
+- [Documentação oficial do pacote time em Go](https://pkg.go.dev/time)
+- [Tutorial de datas e horas em Go](https://www.golangprograms.com/golang-get-current-date-time.html)
+- [Exemplo de código em Go para formatar datas](https://www.golangprograms.com/go-program-to-format-current-date-time-in-built-common-formats.html)

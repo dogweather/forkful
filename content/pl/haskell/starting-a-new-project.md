@@ -1,59 +1,39 @@
 ---
-title:    "Haskell: Rozpoczęcie nowego projektu"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/starting-a-new-project.md"
+title:                "Haskell: Rozpoczynanie nowego projektu"
+programming_language: "Haskell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Rozpoczęcie nowego projektu w Haskellu może być wyzwaniem dla wielu początkujących programistów. Jednak język ten oferuje wiele zalet, takich jak mocne typowanie, bezpieczeństwo typów, oraz możliwość późnego wiązania. Ponadto, jest to język funkcyjny, co oznacza, że jest bardzo elegancki i wyrażanie rozwiązań problemów jest intuicyjne.
+Pisanie kodu w Haskellu jest nie tylko wyzwaniem, ale również rewelacyjnym sposobem na naukę programowania funkcyjnego. Zbudowanie nowego projektu w Haskellu pozwala na lepsze zrozumienie jego silnych stron, a także na rozwijanie umiejętności programistycznych.
 
 ## Jak to zrobić
 
-Poniżej przedstawione są przykładowe kody i wyniki dla trzech podstawowych problemów, które mogą pojawić się na początku projektu w Haskellu.
+Aby rozpocząć nowy projekt w Haskellu, należy najpierw zainstalować narzędzia dostarczane przez platformę Haskell. Można to zrobić za pomocą menedżera pakietów, takiego jak Cabal lub Stack. Pamiętaj, aby regularnie aktualizować te narzędzia, aby wykorzystywać najnowsze wersje.
+
+Po zainstalowaniu narzędzi, czas na napisanie pierwszego programu w Haskellu. Poniższy kod wyświetla napis "Hello, World!" na ekranie:
 
 ```Haskell
--- Problem 1: Obliczanie sumy dwóch liczb
-sum :: Int -> Int -> Int
-sum x y = x + y
-
--- Przykładowe wywołanie:
-sum 5 7 -- Output: 12
+main = putStrLn "Hello, World!"
 ```
 
-```Haskell
--- Problem 2: Obliczanie silni liczby n
-factorial :: Integer -> Integer
-factorial 0 = 1
-factorial n = n * factorial (n-1)
+W pliku z rozszerzeniem .hs, wprowadź powyższy kod i uruchom program za pomocą komendy `runghc nazwa_pliku.hs`. Powinieneś zobaczyć rezultat Twojego kodu w konsoli.
 
--- Przykładowe wywołanie:
-factorial 5 -- Output: 120
-```
+Teraz, kiedy już zaczynasz pisać w Haskellu, warto poznać jego podstawowe składniki, takie jak deklaracje funkcji i typy danych. W drodze do tworzenia bardziej skomplikowanych projektów, możesz też korzystać z bibliotek zewnętrznych, które są dostępne w Hackage - repozytorium pakietów dla języka Haskell.
 
-```Haskell
--- Problem 3: Sortowanie listy liczb całkowitych
-sort :: [Int] -> [Int]
-sort [] = []
-sort (x:xs) = sort (filter (<x) xs) ++ [x] ++ sort (filter (>=x) xs)
+## Wnikliwa analiza
 
--- Przykładowe wywołanie:
-sort [5,2,8,1,3] -- Output: [1,2,3,5,8]
-```
+Zanim zabierzesz się za pisanie swojego pierwszego projektu w Haskellu, dobrze jest ponownie zapoznać się z konceptami podstawowymi, takimi jak lambda wyrażenia, currying, rekursja i struktury danych. Pamiętaj, że w Haskellu wszystko jest wartością i unikasz efektów ubocznych, co może być kluczowe dla wydajnego funkcjonowania Twojego programu.
 
-## Głębszy zanurzenie
+Głębokie zrozumienie tych idei pozwoli Ci na szybkie rozwiązywanie problemów i pisania czytelnego kodu. Dobrą praktyką jest również korzystanie z testów jednostkowych, aby upewnić się, że Twój program działa poprawnie.
 
-Aby zacząć nowy projekt w Haskellu, warto skorzystać z narzędzi, takich jak Stack lub Cabal, które pozwolą na łatwe zarządzanie zależnościami oraz budowanie i testowanie projektu. Istnieją również przydatne biblioteki, takie jak QuickCheck czy HSpec, które pomogą w testowaniu kodu w trakcie tworzenia projektu.
+## Zobacz też
 
-Należy pamiętać, że programowanie w Haskellu wymaga pewnego zmienia sposoby myślenia, szczególnie jeśli wcześniej pracowaliśmy w językach imperatywnych. Warto więc poświęcić trochę czasu na naukę i rozumienie podstawowych koncepcji takich jak funkcyjne już pierwszy. Początkowo może wydawać się to trudne, ale z czasem zaczniemy dostrzegać zalety i urok tego języka.
-
-## Zobacz także
-
-- [Oficjalna dokumentacja Haskella](https://www.haskell.org/documentation/)
-- [Książka "Learn You a Haskell for Great Good!"](http://learnyouahaskell.com/)
-- [Stack](https://docs.haskellstack.org/en/stable/README/)
-- [Cabal](https://www.haskell.org/cabal/)
-
-Dzięki tym wskazówkom i zasobom, rozpoczęcie nowego projektu w Haskellu nie musi być trudne. W krótkim czasie oswoimy się z tym językiem i zaczniemy czerpać przyjemność z programowania w nim.
+- Oficjalna dokumentacja Hackage: https://hackage.haskell.org/
+- Platforma Haskell: https://www.haskell.org/platform/
+- Przewodnik dla początkujących: https://wiki.haskell.org/Introduction
+- Projektowana baza danych w Haskellu: https://hackage.haskell.org/package/project-m36-atom

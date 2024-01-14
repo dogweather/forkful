@@ -1,56 +1,74 @@
 ---
-title:    "Gleam: Verwendung von regulären Ausdrücken"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/using-regular-expressions.md"
+title:                "Gleam: Die Verwendung von regulären Ausdrücken"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Reguläre Ausdrücke sind ein mächtiges Werkzeug in der Welt der Programmierung. Sie ermöglichen es Entwicklern, komplexe Muster in Texten zu suchen und zu manipulieren. Wenn du häufig mit Texten arbeitest und deinen Workflow verbessern möchtest, solltest du unbedingt lernen, wie man reguläre Ausdrücke benutzt.
+Möchtest du deine Programmieraufgaben schnell und effizient erledigen? Dann ist die Verwendung von regulären Ausdrücken in Gleam genau das Richtige für dich! Mit regulären Ausdrücken kannst du Muster in Texten suchen und ersetzen, was dir viel Zeit und Aufwand ersparen kann. Lass uns einen Blick darauf werfen, wie du reguläre Ausdrücke in Gleam verwenden kannst.
 
-## So geht's
+## Wie geht es?
 
-Mit Gleam kannst du reguläre Ausdrücke für verschiedene Aufgaben verwenden. Hier sind einige Beispiele:
-
-### Email-Adressen überprüfen
-
-Um zu überprüfen, ob eine Zeichenkette eine gültige E-Mail-Adresse ist, kannst du folgenden regulären Ausdruck verwenden:
+Um reguläre Ausdrücke in Gleam zu nutzen, musst du zuerst das Modul `re` importieren. Dann kannst du die Funktion `matches` nutzen, um zu überprüfen, ob ein Muster in einem Text vorhanden ist. Schauen wir uns ein Beispiel an:
 
 ```Gleam
-let email_regex = Regex.compile("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$")
-let result = Regex.test(email_regex, "example@example.com")
+import re
 
-io.print(result) // Output: true
+let text = "Hallo Welt!"
+
+if re.matches("\\w+", text) {
+    // Das Muster "\\w+" sucht nach allen Wörtern im Text
+    // Hier kannst du dann deine weiteren Aktionen ausführen
+    io.println("Das Text enthält ein Wort.")
+} else {
+    io.println("Das Text enthält keine Wörter.")
+}
 ```
 
-### Wörter zählen
+Die Ausgabe wäre in diesem Beispiel:
 
-Du kannst auch reguläre Ausdrücke verwenden, um die Anzahl der Wörter in einem Text zu zählen:
+```
+Das Text enthält ein Wort.
+```
+
+Nun schauen wir uns ein Beispiel für die Verwendung von regulären Ausdrücken bei der Textersetzung an:
 
 ```Gleam
-let word_regex = Regex.compile("\\w+")
-let sample_text = "Dies ist ein Beispieltext"
-let result = Regex.count_matches(word_regex, sample_text)
+import re
 
-io.print(result) // Output: 5
+let text = "Heute ist ein schöner Tag."
+
+let new_text = re.replace("schön", "regnerisch", text)
+
+io.println(new_text)
 ```
 
-Es gibt noch viele weitere Anwendungsfälle für reguläre Ausdrücke in Gleam, also lass deiner Kreativität freien Lauf!
+Die Ausgabe wäre in diesem Fall:
 
-## Tiefere Einblicke
+```
+Heute ist ein regnerischer Tag.
+```
 
-Reguläre Ausdrücke können komplex und verwirrend erscheinen, vor allem wenn man mit ihnen noch nicht vertraut ist. Aber keine Sorge, mit ein wenig Übung kannst du sie meistern! Hier sind einige wichtige Konzepte zu beachten:
+## Tiefentauchen
 
-- Zeichenklassen: Mit eckigen Klammern kannst du angeben, welche Zeichen in einer bestimmten Position erlaubt sind. Zum Beispiel kann `[aeiou]` auf einen beliebigen Vokal passen.
-- Quantifizierer: Diese Symbole geben an, wie oft ein bestimmtes Zeichen oder eine Zeichengruppe vorkommen muss. Zum Beispiel steht `+` für "ein oder mehrere" und `?` für "null oder eins".
-- Angrenzende Ziffern: Mit einer Gruppierung von Ziffern in Klammern kannst du bestimmte Teile des Ausdrucks auswählen und extrahieren. Diese Informationen können in deinem Code weiter verwendet werden.
+Reguläre Ausdrücke bieten viele Möglichkeiten und können sehr nützlich sein. Hier sind einige weitere Tipps und Tricks für die Verwendung von regulären Ausdrücken in Gleam:
 
-Für weitere Details und Beispiele empfehlen wir dir, die offizielle Gleam-Dokumentation zu regulären Ausdrücken zu konsultieren.
+- Verwende `^` am Anfang eines Musters, um nur Texte zu matchen, die mit dem Muster beginnen
+- Verwende `$` am Ende eines Musters, um nur Texte zu matchen, die mit dem Muster enden
+- Verwende `*` um eine beliebige Anzahl an Zeichen zu matchen (inklusive keiner)
+- Verwende `+` um mindestens ein Zeichen zu matchen
+- Verwende `?` um ein optionales Zeichen zu matchen
+- Verwende `.` um ein beliebiges Zeichen zu matchen
+- Verwende `{n}` um genau n Zeichen zu matchen
+- Verwende `{n,}` um mindestens n Zeichen zu matchen
+- Verwende `{n,m}` um zwischen n und m Zeichen zu matchen
 
 ## Siehe auch
 
-- [Offizielle Gleam-Dokumentation zu regulären Ausdrücken](https://gleam.run/documentation/guides/regular_expressions.html)
-- [Eine interaktive Einführung in reguläre Ausdrücke](https://www.regexone.com/)
-- [Weitere Gleam-Blog-Posts (auf Deutsch)](https://gleam.run/news/)
+- [Gleam Dokumentation über reguläre Ausdrücke](https://gleam.run/book/features/regex.html)
+- [Reguläre Ausdrücke Tutorial in Gleam](https://gleam.run/book/tutorials/regex.html)
+- [Online Reguläre Ausdrücke Tester für Gleam](https://regex-gleam.netlify.app/)

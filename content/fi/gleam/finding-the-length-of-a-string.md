@@ -1,45 +1,48 @@
 ---
-title:    "Gleam: Merkkijonon pituuden löytäminen"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/finding-the-length-of-a-string.md"
+title:                "Gleam: Merkkijonon pituuden löytäminen"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi sinun kannattaisi selvittää merkkijonon pituus? Yksinkertaisesti siksi, että se on tärkeä osa monia ohjelmointitehtäviä, kuten merkkien laskemista ja tekstianalyysejä.
+On monia tilanteita, joissa tarvitset selvittää merkkijonon pituuden. Ehkä kehität ohjelmaa, joka tarkistaa salasanasi pituuden, tai ehkä haluat tietää kuinka monta merkkiä voit lähettää tekstiviestissä. Olipa syy mikä tahansa, Gleamilla on helppo tapa löytää merkkijonon pituus.
 
-## Miten
+## Kuinka tehdä
 
-##### Gleamilla on helppo löytää merkkijonon pituus
-
-```Gleam
-let string = "Tämä on esimerkki merkkijonosta."
-let length = String.length(string)
-
-assert length == 31 // Varmista, että merkkijonon pituus on oikein
-```
-
-Tässä esimerkissä aloitamme määrittelemällä muuttujan "string", joka sisältää haluamamme merkkijonon. Sitten käytämme Gleamin funktiota "String.length" selvittääksemme merkkijonon pituuden.
-Lopuksi voimme käyttää "assert" -lauseketta varmistaaksemme, että oikea pituus on löydetty.
-
-Voit myös käyttää samaa funktiota suoraan tekstin sisällä, kuten tässä:
+Käytä Gleamin integroituja merkkijonon pituus -funktioita löytääksesi merkkijonon pituuden. Tässä on esimerkki koodista ja tulosteesta:
 
 ```Gleam
-let length = String.length("Tämä on esimerkki merkkijonosta.")
+let str = "Hei kaikki!"
+
+let length = String.length(str)
+
+/* Tuloste:
+ Kaikkien merkkien määrä on 11
+*/
 ```
 
-## Syväluotaus
+## Syvällinen sukellus
 
-Funktiomme "String.length" toimii käyttäen UTF-8 -koodausta, joka mahdollistaa merkkien, kuten kirjainten ja emoji-merkkien, käyttämisen merkkijonossa. Se myös käyttää "grapheme clusters" -termiä, joka tarkoittaa merkkien yhdistelmää, joka muodostaa yhden grafeemin kirjautumisjärjestelmässä. Esimerkiksi "ä" voi olla yksi "grapheme cluster" tai kuuluu kahden erillisen merkin yhdistelmään.
+Voit myös käyttää Gleamin nimikirjastoa löytääksesi merkkijonon pituuden. Tämä tarjoaa enemmän joustavuutta ja tarkkuutta merkkijonon pituuden määrittämisessä. Voit esimerkiksi ottaa huomioon myös välilyönnit ja erikoismerkit.
 
-Gleamissa on myös muita hyödyllisiä merkkijonofunktioita, kuten "String.is_empty", joka tarkistaa onko merkkijono tyhjä ja "String.reverse", joka kääntää merkkijonon kirjaimet ylösalasin.
-Voit tutustua näihin funktioihin Gleamin virallisessa dokumentaatiossa.
+```Gleam
+import gleam/string
+
+let str = "Hei kaikki!"
+
+let length = string.length(str)
+
+/* Tuloste:
+Kaikkien merkkien määrä on 10
+*/
+
+```
 
 ## Katso myös
 
-- [Gleamin dokumentaatio](https://gleam.run/docs)
-- [Merkkijonojen käsittely Gleamilla](https://gleam.run/articles/strings)
-
-Kiitos lukemisesta ja onnea Gleamin käytössä!
+- [Gleamin merkkijonon pituuden dokumentaatio](https://gleam.run/documentation/standard-library/string.html#length)
+- [Gleamin nimikirjaston dokumentaatio](https://gleam.run/documentation/standard-library/string.html)

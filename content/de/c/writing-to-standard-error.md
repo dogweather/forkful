@@ -1,43 +1,42 @@
 ---
-title:    "C: An das Standardfehler-Schreiben"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/writing-to-standard-error.md"
+title:                "C: Schreiben in die Standardfehlerausgabe."
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Schreiben auf die Standardfehlerausgabe ist eine wichtige Fähigkeit für jeden C-Programmierer. Es ermöglicht es uns, Fehler und andere wichtige Ausgaben während der Laufzeit eines Programms zu erfassen. Ohne diese Fähigkeit wäre es sehr schwierig, Probleme in unserem Code zu identifizieren und zu beheben.
+Das Schreiben in den Standardfehler ist ein wichtiger Aspekt der C-Programmierung, der oft übersehen wird. Es ist jedoch eine wichtige Methode, um Fehler und Debugging-Probleme zu identifizieren und zu beheben. Durch das Schreiben in den Standardfehler können Sie wichtige Informationen über den Status und die Ausführung Ihres Programms erhalten, die nicht durch das normale Drucken von Ausgaben angezeigt werden. In diesem Blogbeitrag werden wir uns mit der grundlegenden Verwendung von Standardfehler in C befassen und warum es wichtig ist, dies zu tun.
 
-## Wie man es macht
+# Wie man es macht
 
-Um auf die Standardfehlerausgabe zu schreiben, benötigen wir die Funktion `fprintf()`, die in der Standardbibliothek von C enthalten ist. Diese Funktion nimmt drei Argumente an: den Dateizeiger für die Ausgabe (hier "stderr" für die Standardfehlerausgabe), einen Formatstring und optional zusätzliche Argumente, die in den Formatstring eingefügt werden.
- 
-```C
+Um in den Standardfehler zu schreiben, müssen Sie die Funktion "fprintf" verwenden, die speziell zum Schreiben von Text in den angegebenen Stream entwickelt wurde. In diesem Fall wird der Standardfehler-Stream durch die Verwendung von "stderr" als Parameter angegeben. Hier ist ein Beispielcode:
+
+```
 #include <stdio.h>
 
-int main(){
-    fprintf(stderr, "Dies ist ein Beispiel für eine Ausgabe auf die Standardfehlerausgabe\n");
-    
-    // Kann auch mit Variablen verwendet werden
-    int zahl = 42;
-    fprintf(stderr, "Die Antwort auf alles ist %d\n", zahl);
-    
+int main()
+{
+    fprintf(stderr, "Dies ist ein Fehler!");
     return 0;
 }
 ```
 
-Dieses Beispiel zeigt, wie wir die `fprintf()`-Funktion verwenden können, um Text und Variablenwerte auf die Standardfehlerausgabe zu schreiben. Eine wichtige Sache zu beachten ist, dass die Ausgabe auf die Standardfehlerausgabe nicht gepuffert wird, was bedeutet, dass sie sofort auf dem Bildschirm angezeigt wird.
+Das obige Programm wird einfach den Text "Dies ist ein Fehler!" in den Standardfehler schreiben, wenn es ausgeführt wird. Beachten Sie, dass es wichtig ist, die übergeordnete Funktion "fprintf" zu verwenden, da dies dafür sorgt, dass der Text korrekt im Standardfehlerformat angezeigt wird.
 
-## Tiefentauchen
+Der Standardfehler ist besonders nützlich, wenn Sie versuchen, Fehler in Ihrem Programm zu identifizieren, da es Ihnen ermöglicht, spezifische Informationen über die Fehlerursachen zu erhalten.
 
-Wenn wir tiefer in die Funktion `fprintf()` eintauchen, werden wir feststellen, dass sie viel mächtiger ist als nur eine Ausgabe auf die Standardfehlerausgabe. Wir können verschiedene Modifier im Formatstring verwenden, um die Ausgabe zu steuern. Zum Beispiel können wir mit `%s` eine Zeichenkette, mit `%d` eine ganze Zahl und mit `%f` eine Gleitkommazahl in die Ausgabe einfügen.
+# Tiefer tauchen
 
-Es ist auch möglich, `fprintf()` zu verwenden, um auf andere Dateien zu schreiben, nicht nur auf die Standardfehlerausgabe. Indem wir den Dateizeiger für die Ausgabe ändern, können wir auf verschiedene Dateien schreiben. Dies kann nützlich sein, wenn wir Protokolldateien erstellen wollen, um die Ausführung unseres Programms zu verfolgen.
+Die Verwendung von Standardfehler ist nicht auf einfache Fehlermeldungen beschränkt. Sie können auch Formatierungsoptionen wie "printf" verwenden, um die Ausgabe zu verbessern. Darüber hinaus können Sie auch spezielle Funktionen wie "errno" und "strerror" verwenden, um detaillierte Informationen über die Fehler zu erhalten.
 
-## Siehe auch
+Da Fehlermeldungen oft auf unvorhergesehene Probleme hinweisen, können Sie mit der Verwendung von Standardfehler Ihre Codebasis verbessern, indem Sie die Fehlerbehandlungspfade aktualisieren oder erweitern. Dies kann dazu beitragen, zukünftige Fehler zu vermeiden und die Stabilität Ihres Programms zu verbessern.
 
-- [Die offizielle Dokumentation zu `fprintf()`](https://www.mkssoftware.com/docs/man3/fprintf.3.asp)
-- [Ein Tutorial zur Benutzung von Standard- und Fehlerausgabe in C](https://www.codingunit.com/c-tutorial-the-functions-printf-and-scanf)
-- [Weitere Informationen zu C-Programmierung und Fehlerbehandlung](https://www.geeksforgeeks.org/error-handling-c-programs/)
+# Siehe auch
+
+* [Offizielle Dokumentation zu Standardfehlern in C](https://www.gnu.org/software/libc/manual/html_node/Standard-Error-Streams.html)
+* [Fehlerbehandlung im C-Programmierung-Wiki](https://en.wikipedia.org/wiki/Error_handling)
+* [Verwenden von Standardfehlern in Python](https://docs.python.org/3.7/library/sys.html#sys.stderr)

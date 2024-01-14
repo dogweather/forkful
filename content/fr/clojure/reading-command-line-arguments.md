@@ -1,51 +1,54 @@
 ---
-title:    "Clojure: Lecture des arguments de ligne de commande"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/reading-command-line-arguments.md"
+title:                "Clojure: Lecture des arguments de ligne de commande"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-L'utilisation de lignes de commande dans la programmation peut sembler intimidante au premier abord, mais c'est en fait un outil très utile pour les développeurs. Apprendre à lire les arguments de ligne de commande peut grandement aider à personnaliser et à améliorer les programmes que vous créez en leur donnant une flexibilité supplémentaire.
+Lorsque vous écrivez des programmes en Clojure, il peut arriver que vous ayez besoin d'interagir avec l'utilisateur au moment de l'exécution plutôt que de simplement exécuter un script sans aucune entrée. C'est là que la lecture des arguments de ligne de commande entre en jeu. Cela permet à l'utilisateur de fournir des informations spécifiques afin que le programme puisse les utiliser dans son exécution.
 
-## Comment Faire
+# Comment faire
 
-Pour lire les arguments de ligne de commande en Clojure, vous pouvez utiliser la fonction "command-line-args". Elle prend en argument la ligne de commande entière, y compris le nom du programme. Voici un exemple de code avec un input et son output :
-
-```Clojure
-(def cmd (command-line-args))
-
-;; Input : le programme est appelé avec les arguments "hello world"
-(print "Bonjour" (first cmd) (last cmd))
-
-;; Output : Bonjour hello world
-```
-
-Vous pouvez également utiliser la bibliothèque "clojure.tools.cli" pour une meilleure gestion des arguments. Voici un exemple avec cette bibliothèque :
+Pour lire les arguments de ligne de commande en Clojure, vous pouvez utiliser la fonction `command-line-args` qui renvoie une liste des arguments passés lors de l'exécution du programme. Par exemple, si vous souhaitez passer un nom d'utilisateur et un mot de passe lors de l'exécution du programme, vous pouvez le faire de la manière suivante :
 
 ```Clojure
-(def opts [["-n" "--name NAME" "Votre nom"] ] ;; options possibles
-(def prg {:name "Bonjour" :summary "Programme de salutation" :opts opts}) ;; définir le programme avec ses différentes options
-(parse-opts (rest cmd) opts) ;; parse les options passées en paramètre
-(if (name params)
-    (println "Bonjour" (:name params))
-    (println "Bonjour le monde"))
-)
+(def username (nth (command-line-args) 0))
+(def password (nth (command-line-args) 1))
 
-;; Input : le programme est appelé avec les arguments "-n John"
-;; Output : Bonjour John
+(println "Bienvenue" username "! Votre mot de passe est" password)
 ```
 
-## Profondeur d'Analyse
+Lorsque vous exécutez ce programme et lui passez les arguments "Alice" et "1234", la sortie sera la suivante :
 
-En creusant un peu plus, vous pourrez découvrir différentes bibliothèques et outils qui vous permettront de gérer les arguments de ligne de commande avec encore plus de précision et de flexibilité. Par exemple, la bibliothèque "cli"-utils propose des fonctions pour lire les arguments de ligne de commande en utilisant des drapeaux (-n au lieu de --name) et pour gérer les valeurs par défaut pour les options non fournies.
+```
+Bienvenue Alice ! Votre mot de passe est 1234
+```
 
-Vous pouvez également vous pencher sur la gestion des options multiples, les validations d'options et la gestion des erreurs liées aux arguments de ligne de commande. Avec un peu de pratique et l'utilisation de ces outils, vous serez en mesure de gérer les arguments de ligne de commande en toute confiance.
+Vous pouvez également utiliser la fonction `count` pour vérifier le nombre d'arguments passés afin d'éviter les erreurs d'index hors limites.
 
-## Voir Aussi
+# Plongée en profondeur
 
-  - [Bibliothèque cli-utils] (https://github.com/ssanj/cli-utils)
-  - [Bibliothèque clojure.tools.cli] (https://github.com/clojure/tools.cli)
-  - [Article sur la lecture des arguments de ligne de commande avec Clojure] (https://purelyfunctional.tv/article/how-to-read-command-line-arguments-in-clojure/)
+Il est également possible d'utiliser une bibliothèque externe telle que `clojure.tools.cli` pour gérer les arguments de ligne de commande de manière plus avancée. Cette bibliothèque vous permet de définir des options avec des noms, des raccourcis et des descriptions, ainsi que de valider les arguments pour s'assurer qu'ils sont correctement formatés.
+
+Par exemple, si nous créons une option pour un argument `--age` qui doit être un nombre entier, nous pouvons l'utiliser comme ceci :
+
+```Clojure
+(def options
+  [["-a" "--age" "Âge de l'utilisateur" :validate #(and (number? (Integer/parseInt %)) (pos? (Integer/parseInt %))))]
+(def parsed-options (cli/parse-opts (command-line-args) options))
+
+(def age (:age parsed-options)) 
+(println "L'utilisateur a" age "ans")
+```
+
+Lorsque vous exécutez ce programme en passant un âge incorrect tel que "vingt" au lieu d'un nombre, il renverra une erreur car l'âge doit être un nombre entier positif.
+
+# Voir aussi
+
+- Référence officielle : https://clojure.org/reference/commandline
+- Tutoriel sur la lecture des arguments de ligne de commande : https://purelyfunctional.tv/guide/command-line-intro/
+- Documentation de la bibliothèque `clojure.tools.cli` : https://github.com/clojure/tools.cli

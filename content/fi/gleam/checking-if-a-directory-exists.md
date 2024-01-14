@@ -1,40 +1,38 @@
 ---
-title:    "Gleam: Tarkista, onko hakemisto olemassa"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/checking-if-a-directory-exists.md"
+title:                "Gleam: Kansion olemassaolon tarkistaminen"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi tarkistaa, onko hakemistoa olemassa?
+## Miksi tarkistaa, onko kansio olemassa?
 
-Hakemiston tarkistaminen on tärkeä osa ohjelmointia, koska se auttaa varmistamaan, että ohjelma toimii oikein. Tarkistamalla, onko hakemisto olemassa, voit varmistaa, että ohjelma ei aiheuta virheitä tai kaatumisia, kun se yrittää käyttää tätä hakemistoa.
+Kansioita tarvitaan usein ohjelmoinnissa tiedostojen järjestämiseen ja hallintaan. On tärkeää tarkistaa, onko tietty kansio olemassa ennen kuin yrität käsitellä sitä, jotta vältytään mahdollisilta virheiltä ja ohjelman kaatumiselta.
 
-## Kuinka: Ohjeet hakemiston olemassaolon tarkistamiseen Gleam-ohjelmassa
+## Kuinka tarkistaa, onko kansio olemassa
 
-```Gleam
-let directory = "/polku/hakemistoon"
-let exists = os.exists(directory)
-```
-
-Tämä koodilohko osoittaa, kuinka tarkistaa, onko hakemisto olemassa Gleam-ohjelmassa. `os.exists` -toiminto palauttaa `true` tai `false` -arvon riippuen siitä, onko hakemisto olemassa annetussa polussa. Voit myös käyttää tätä toimintoa ehdollisena lausekkeena, jotta ohjelma voi reagoida oikein, jos hakemistoa ei ole olemassa.
+Tässä esimerkissä käytämme Gleam-ohjelmointikieltä, joka soveltuu hyvin kansiohakemistojen käsittelyyn.
 
 ```Gleam
-if exists {
-  // Hakemisto on olemassa, tee jotain
-} else {
-  // Hakemistoa ei ole olemassa, tee jotain muuta
+import gleam/io
+
+// Tarkistetaan, onko kansio "hakemisto" olemassa ja vastataan sen perusteella
+match io.dir_exists("hakemisto") {
+  True -> io.println("Kansio on olemassa")
+  False -> io.println("Kansiota ei ole olemassa")
 }
 ```
 
-## Syvempi sukellus: Tietoa hakemiston olemassaolon tarkistamisesta
+Jos kansio "hakemisto" on olemassa, ohjelma tulostaa "Kansio on olemassa". Muussa tapauksessa tulostetaan "Kansiota ei ole olemassa".
 
-Hakemiston olemassaolon tarkistaminen liittyy läheisesti tiedostojen hallintaan ja järjestelmänvalvontaan. Kun ohjelma pyrkii käyttämään tiettyä hakemistoa, on tärkeää varmistaa, että se on olemassa ja että ohjelma pystyy käsittelemään mahdolliset virhetilanteet, kuten hakemiston puuttumisen.
+## Syventyvä tarkastelu
 
-Gleamissa `os` -kirjasto tarjoaa useita hyödyllisiä toimintoja tiedostojen ja hakemistojen tarkistamiseen, luomiseen ja muokkaamiseen. On myös mahdollista käyttää muita kirjastoja, kuten `filesystem` ja `rocket`, jotta tiedostojen ja hakemistojen käsittely olisi entistä helpompaa.
+Kansiohakemistojen käsittelyyn on myös muita tapoja Gleam-ohjelmointikielessä. Joihinkin menetelmiin sisältyy virhehallinta, joka tarjoaa mahdollisuuden reagoida ohjelman suoritusaikana tapahtuneisiin virheisiin. Voit myös tarkistaa, onko tietyssä hakemistopolussa tiedostoja tai alihakemistoja käyttämällä `io.file_exists()` tai `io.dir_children()` -funktioita.
 
-## Katso myös
+See Also:
 
-- [`os`-kirjasto Gleam-dokumentaatiossa](https://gleam.run/documentation/std/os) 
-- [`filesystem`-kirjasto Gleam-dokumentaatiossa](https://gleam.run/documentation/filesystem) 
-- [`rocket`-kirjasto Gleam-dokumentaatiossa](https://gleam.run/documentation/rocket)
+- [Gleam käyttöohjeet](https://gleam.run/)
+- [Pythonin hakemistonhallinta](https://docs.python.org/3/library/os.html#os.path.isdir)
+- [Rust kansiohakemiston käsittely](https://doc.rust-lang.org/std/fs/fn.metadata.html)

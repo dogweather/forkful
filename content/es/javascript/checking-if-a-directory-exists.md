@@ -1,40 +1,39 @@
 ---
-title:    "Javascript: Comprobando si existe un directorio"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/checking-if-a-directory-exists.md"
+title:                "Javascript: Comprobando si existe un directorio"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué comprobar si un directorio existe en Javascript
+## Por qué
 
-A medida que trabajamos en proyectos de Javascript cada vez más complejos, es inevitable que surjan problemas relacionados con la existencia de directorios en nuestro sistema. Por ello, es importante conocer cómo verificar si un directorio existe antes de intentar acceder a él en nuestro código.
+Al trabajar con Javascript, es importante asegurarse de que los directorios existan antes de intentar acceder a ellos en nuestro código. Esto nos ayuda a evitar errores y asegurar un funcionamiento correcto de nuestras aplicaciones.
 
 ## Cómo hacerlo
 
-Para comprobar si un directorio existe en Javascript, podemos utilizar la función `fs.existsSync()` del módulo `fs`. Esta función recibe como argumento la ruta del directorio que queremos verificar y devuelve un valor booleano indicando si el directorio existe o no.
+Para comprobar si un directorio existe en Javascript, podemos usar la función `fs.existsSync()` del módulo `fs`. Esta función devuelve un valor booleano, `true` si el directorio existe y `false` en caso contrario. A continuación, se muestra un ejemplo de cómo utilizar esta función:
 
 ```Javascript
 const fs = require('fs');
 
-const path = '/ruta/al/directorio';
-
-if(fs.existsSync(path)) {
-  console.log('El directorio existe');
+// Comprobamos si existe el directorio "miDirectorio"
+if (fs.existsSync("miDirectorio")) {
+    console.log("El directorio existe");
 } else {
-  console.log('El directorio no existe');
+    console.log("El directorio no existe");
 }
 ```
 
-Si el directorio existe, se imprimirá en la consola "El directorio existe", de lo contrario, se imprimirá "El directorio no existe".
+En este ejemplo, usamos la sentencia `if` para evaluar el valor devuelto por `fs.existsSync()` y mostrar un mensaje según corresponda. También podemos almacenar el valor devuelto en una variable y utilizarla más adelante en nuestro código.
 
-## Profundizando
+## Detalles técnicos
 
-Es importante tener en cuenta que la función `fs.existsSync()` solo comprueba la existencia del directorio, no si tenemos permisos para acceder a él. Para verificar los permisos, podemos utilizar la función `fs.accessSync()`, que recibe como argumento el directorio y el modo de acceso (lectura, escritura o ejecución).
-
-Otra consideración importante es que la función `fs.existsSync()` solo admite rutas relativas en sistemas Windows. Si necesitamos verificar la existencia de un directorio en un sistema Unix, es necesario utilizar la función `fs.statSync()`, que admite rutas absolutas.
+Para aquellos interesados en conocer cómo funciona el método `fs.existsSync()`, podemos profundizar un poco más en su implementación. Esta función realiza una llamada al sistema para comprobar si el directorio existe en el sistema de archivos. En caso de que exista, devuelve `true`, de lo contrario, devuelve `false`. Es importante destacar que esta función solo comprueba si el directorio existe, no si tenemos permisos para acceder a él.
 
 ## Ver también
 
-- [Documentación oficial de Node.js sobre la función fs.existsSync()](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
-- [Tutorial sobre el uso del módulo fs en Javascript](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+- Documentación oficial de `fs.existsSync()`: https://node.readthedocs.io/en/latest/api/fs/#fsnameexistsync
+- Ejemplos prácticos de uso de `fs.existsSync()`: https://www.geeksforgeeks.org/node-js-fs-existsync-method/
+- Tutorial en video sobre cómo comprobar la existencia de un directorio en Javascript: https://www.youtube.com/watch?v=jPui8ljm6Mw

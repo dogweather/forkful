@@ -1,53 +1,52 @@
 ---
-title:    "Ruby: Konvertering av en datum till en sträng"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/converting-a-date-into-a-string.md"
+title:                "Ruby: Omvandling av datum till sträng"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-Att konvertera ett datum till en sträng är en vanlig uppgift för många Ruby-programmerare. Detta gör det möjligt att visa datum i ett läsbart och förståeligt format för användare eller för att spara data till en databas eller fil.
+När man arbetar med Ruby-programmering, är det ofta nödvändigt att konvertera datum till en sträng eller textformat. Detta kan vara användbart när man till exempel behöver skriva ut datum i en rapport eller spara datuminformation i en databas. I denna artikel kommer vi att utforska hur man konverterar en datumvariabel till en sträng i Ruby.
 
-##Så här
+## Hur man gör det
 
-För att konvertera ett datum till en sträng kan du använda `strftime`-metoden. Den här metoden tar ett datumobjekt och en sträng med specifierare och returnerar en sträng med det önskade formatet.
+För att konvertera en datumvariabel till en sträng i Ruby, kan du använda metoderna `strftime` och `to_s`. `strftime` står för "format date and time" och används för att anpassa datum till ett specifikt format. `to_s` betyder "to string" och konverterar en variabel till en sträng.
 
-```Ruby
-date = Date.today
-date.strftime("%d-%m-%Y") # "01-09-2020"
+Låt oss säga att vi har en variabel som innehåller dagens datum:
+
+```Ruby 
+today = Date.today 
 ```
 
-Här är några vanliga specifierare som kan användas för att konfigurera det genererade datumet:
-
-- %d: Dag i månaden (1 till 31)
-- %m: Månad (1 till 12)
-- %Y: År med fyra siffror
-- %y: År med två siffror
-- %b: Kort månadsnamn (t.ex. "Jan")
-- %B: Fullständigt månadsnamn (t.ex. "Januari")
-- %a: Kort veckodagsnamn (t.ex. "Mån")
-- %A: Fullständigt veckodagsnamn (t.ex. "Måndag")
-
-Du kan också kombinera specifierarna för att skapa ett anpassat format. Till exempel, om du vill ha ett datum i formatet "YYYY-MM-DD", kan du använda `%Y-%m-%d`.
-
-Om du vill lägga till tider i din sträng kan du använda `%H` (timme), `%M` (minut) och `%S` (sekund) specifierare. Till exempel:
+För att konvertera detta datum till en sträng i formatet `ÅR-MÅNAD-DAG` skulle koden se ut såhär:
 
 ```Ruby
-date = Time.now
-date.strftime("%H:%M:%S") # "15:43:21"
+today.strftime("%Y-%m-%d")
 ```
 
-##Djupdykning
+Detta kommer att ge oss en sträng som ser ut såhär: `2021-03-15`.
 
-Bakom kulisserna använder Ruby-biblioteket `strftime`-metoden `strptime` för att konvertera datumet till en sträng. Den här metoden är förmågan att extrahera tider och datum från en sträng med hjälp av angivna specifierare. Detta kan vara särskilt användbart när du behöver konvertera en användarens inmatade sträng till ett datum.
+Du kan också kombinera flera delar av datumet för att få en mer detaljerad sträng. Till exempel, om du vill ha dagen på engelska och året i fyrsiffrigt format, kan du använda detta kodsnutt:
 
-För att se en fullständig lista över specifierare och deras betydelser kan du kolla på Ruby-dokumentationen för Time-klassen.
+```Ruby
+today.strftime("%A, %Y")
+```
 
-##Se även
+Detta kommer att ge oss en sträng som ser ut såhär: `Monday, 2021`.
 
-- [Date and Time i Ruby](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html)
-- [Time-klassen dokumentation](https://ruby-doc.org/core-2.7.1/Time.html)
-- [Ruby strftime formatter](https://www.garethrees.co.uk/2013/05/04/time-strftime)
-- [Ruby Date & Time Programming Guide](https://www.rubyguides.com/2015/05/ruby-time/)
+## DJupdykning
+
+I de tidigare kodsnutten har vi använt oss av metoden `strftime` tillsammans med ett argument som kallas för "formatsträngen". Denna sträng består av olika symboler som representerar olika delar av datumet. Till exempel, `%Y` står för året och `%m` står för månaden. För en mer detaljerad lista över dessa symboler kan du titta på Ruby dokumentationen.
+
+En annan viktig sak att tänka på är att `strftime` bara kan användas på datumvariabler och inte på tidsvariabler. Om du vill konvertera en tidsvariabel till en sträng kan du använda metoden `to_s`.
+
+## Se även
+
+Här är några länkar som kan vara användbara när du arbetar med datum och strängar i Ruby:
+
+- [Ruby dokumentation om `strftime`](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html#method-i-strftime)
+- [En guide till olika formatsträngar för datum i Ruby](https://alvinalexander.com/technology/how-to-use-date-time-format-string-ruby-rails/)
+- [Mer information om `to_s` metoden i Ruby](https://ruby-doc.org/core-2.7.2/Object.html#method-i-to_s)

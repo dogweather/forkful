@@ -1,68 +1,46 @@
 ---
-title:    "Clojure: Lesen von Befehlszeilenargumenten"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/reading-command-line-arguments.md"
+title:                "Clojure: Das Lesen von Befehlszeilenargumenten"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
 
-Das Lesen von Befehlszeilenargumenten ist eine wichtige Fähigkeit für jeden Programmierer, der mit der Entwicklung von Anwendungen in Clojure arbeitet. Es ermöglicht Ihnen, eine interaktive Schnittstelle mit Ihrer Anwendung zu schaffen und Benutzereingaben effektiv zu verarbeiten.
+Das Lesen von Befehlszeilenargumenten ist eine wichtige Fähigkeit für jeden, der mit der Programmiersprache Clojure arbeitet. Es ermöglicht das interaktive und flexible Einlesen von Daten in ein Programm und ermöglicht es, verschiedene Funktionen des Programms je nach den eingegebenen Argumenten auszuführen. In diesem Artikel werden wir uns damit beschäftigen, wie man in Clojure Befehlszeilenargumente liest und wie man sie in seinen Code integriert.
 
 # Wie geht man vor?
 
-Um Befehlszeilenargumente in Clojure zu lesen, können Sie die in der Standardbibliothek enthaltene Funktion `command-line-args` verwenden. Diese Funktion gibt eine Liste der Befehlszeilenargumente zurück, die dem Aufruf Ihrer Anwendung übergeben wurden.
-
-Lassen Sie uns anhand eines Beispiels sehen, wie diese Funktion funktioniert:
+In Clojure gibt es eine spezielle Funktion namens `command-line-args`, die verwendet wird, um die Befehlszeilenargumente auszulesen. Diese Funktion gibt eine Liste von Strings zurück, die die eingegebenen Argumente darstellen. Hier ist ein Beispiel:
 
 ```Clojure
-(defn print-args []
-  (println "Die übergebenen Argumente sind:" (str (command-line-args))))
-
-(print-args)
+(def args (command-line-args))
 ```
 
-Wenn wir nun unsere Datei mit dem Befehl `clojure datei.clj eins zwei drei` ausführen, erhalten wir die folgende Ausgabe:
+Das oben genannte Code-Beispiel liest die Befehlszeilenargumente in die Variable `args` ein. Um nun auf ein bestimmtes Argument zuzugreifen, können wir einfach den Index des gewünschten Arguments in der Liste angeben. Zum Beispiel, um das erste Argument zu erhalten, würden wir `args[0]` schreiben.
 
-```
-Die übergebenen Argumente sind: (eins zwei drei)
-```
+# Tiefergehende Analyse
 
-# Tiefergehende Erläuterung
+Der `command-line-args` Funktion kann auch ein optionaler Parameter übergeben werden, der bestimmt, wie die Argumente interpretiert werden sollen. Standardmäßig wird angenommen, dass die Argumente durch Leerzeichen getrennt sind. Wenn jedoch ein `-m` Parameter übergeben wird, wird angenommen, dass die Argumente durch Kommata getrennt sind.
 
-Die `command-line-args` Funktion ist sehr flexibel und kann mit optionalen Argumenten angepasst werden. Wenn Sie beispielsweise nur die nicht optionale Argumente zurückgeben möchten, können Sie die `:require-args` Option verwenden.
+Eine weitere nützliche Funktion ist `apply`, die eine Funktion auf eine Liste von Argumenten anwendet. Nehmen wir zum Beispiel an, wir haben eine Funktion `print-args`, die die Befehlszeilenargumente in der Reihenfolge, in der sie eingegeben wurden, ausdrucken soll. Wir können dies wie folgt erreichen:
 
 ```Clojure
-(defn print-args []
-  (println "Nicht optionale Argumente:" (str (command-line-args :require-args))))
+(defn print-args [args]
+  (doseq [arg args]
+    (println arg)))
 
-(print-args)
+(apply print-args args)
 ```
 
-Wenn wir nun unsere Datei mit dem Befehl `clojure datei.clj -a eins -b zwei` ausführen, erhalten wir die folgende Ausgabe:
-
-```
-Nicht optionale Argumente: (eins zwei)
-```
-
-Sie können auch die `:as` Option verwenden, um die zurückgegebene Liste in einen Hashmap mit Schlüssel-Wert-Paaren umzuwandeln.
-
-```Clojure
-(defn print-args []
-  (println "Argumente als Hashmap:" (str (command-line-args :as :options))))
-
-(print-args)
-```
-
-Wenn wir nun unsere Datei mit dem Befehl `clojure datei.clj -a eins -b zwei` ausführen, erhalten wir die folgende Ausgabe:
-
-```
-Argumente als Hashmap: {:a "eins", :b "zwei"}
-```
+In diesem Beispiel wird die `apply` Funktion verwendet, um die `print-args` Funktion auf die `args` Liste anzuwenden.
 
 # Siehe auch
 
-- Clojure Standardbibliothek Dokumentation für `command-line-args`: https://clojuredocs.org/clojure.core/command-line-args
-- Ein ausführliches Tutorial zum Lesen von Befehlszeilenargumenten in Clojure: https://www.tutorialspoint.com/clojure/clojure_command_line_arguments.htm
-- Eine Diskussion über die Verwendung von Befehlszeilenargumenten in Clojure: https://stackoverflow.com/questions/18547922/how-do-i-read-command-line-arguments-in-clojure
+- [Offizielle Dokumentation von Clojure zu Befehlszeilenargumenten](https://clojuredocs.org/clojure.core/command-line-args)
+- [Clojure Befehlszeilenargumente Tutorial von TutorialsPoint](https://www.tutorialspoint.com/clojure/clojure_command_line_arguments.htm)
+- [Clojure Cheat Sheet mit nützlichen Funktionen, einschließlich `command-line-args` und `apply`](https://clojure.org/api/cheatsheet)
+
+Vielen Dank für das Lesen dieses Artikels! Jetzt wissen Sie, wie Sie Befehlszeilenargumente in Ihren Clojure Code einbinden können. Wir hoffen, dass das in Ihren zukünftigen Projekten nützlich sein wird. Bis zum nächsten Mal!

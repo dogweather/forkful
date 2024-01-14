@@ -1,50 +1,59 @@
 ---
-title:    "Rust recipe: Writing a text file"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/writing-a-text-file.md"
+title:                "Rust recipe: Writing a text file"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Writing a text file is a fundamental task in programming that allows us to store and manipulate data in a human-readable format. In this blog post, we will explore how to write a text file in Rust and understand why it is an important skill for any developer.
+## Why 
+
+Writing a text file is an essential task in programming. It allows developers to create and store data in a readable format that can be easily accessed by their programs. Whether you need to save user input, log data, or export results, learning how to write a text file in Rust will greatly enhance your programming skills.
 
 ## How To
-Writing a text file in Rust is a relatively simple process. First, we need to open a file in write mode using the `File::create()` method from the `std::fs` module. This method takes in a path to the file as an argument and returns a `Result` type, which we can use to handle any errors that may occur.
 
-```
+First, we will need to import the `std::fs` module, which provides functions for working with files. We will also need the `std::io::Write` trait to handle writing operations. Let's start by creating a file named "output.txt" and opening it for writing:
+
+```Rust
 use std::fs::File;
+use std::io::Write;
 
-let file = File::create("data.txt").expect("Unable to create file");
+fn main() {
+    let mut file = File::create("output.txt").expect("Unable to create file");
+}
 ```
 
-Next, we can use the `write_all()` method to write data to the file. This method takes in a slice of bytes as an argument, so we need to convert our text into bytes using the `as_bytes()` method. Since this method returns a `Result` type, we can use the `?` operator to handle any potential errors.
+Next, we can use the `write!` macro to write data to our file. This macro takes in the file handle and the data to be written. Let's write the string "Hello World!" to our file:
 
-```
-let data = "Hello world!";
-file.write_all(data.as_bytes())?;
-```
-
-To ensure that all the data is written to the file, we need to flush the internal buffer using the `flush()` method.
-
-```
-file.flush()?;
+```Rust
+write!(file, "Hello World!").expect("Unable to write data to file");
 ```
 
-And finally, we need to close the file using the `close()` method to free up any system resources.
+Finally, we need to flush the changes to the file and close it using the `flush()` and `close()` functions respectively:
 
+```Rust
+file.flush().expect("Unable to flush changes to file");
 ```
-file.close()?;
+
+```Rust
+file.close().expect("Unable to close file");
 ```
+
+Congratulations, you have just written your first text file in Rust!
 
 ## Deep Dive
-Writing a text file in Rust is actually writing bytes to a file. Rust's `std::io` module provides various methods to convert data into bytes, including `as_bytes()` for strings and `to_le_bytes()` or `to_be_bytes()` for numeric types.
 
-It is also important to handle errors effectively when writing to a file. Rust's `Result` type allows us to easily handle errors using the `?` operator, which returns the error if one occurs or continues with the next line if no error occurs.
+In the previous section, we used the `expect()` function to handle potential errors while writing to the file. This function expects a value of type `Result` and will panic if the value is an `Err` enum. 
 
-Additionally, we can use the `write_fmt()` method to format data before writing it to a file. This method takes in a `fmt::Arguments` type, allowing us to use the `format!` macro to format our data.
+Additionally, we used the `mut` keyword to make the `file` variable mutable. This allows us to make changes to the file after its creation. We also used the `write!` macro instead of the `write()` function since it provides better error handling and formatting capabilities.
+
+It is also worth noting that in Rust, files are opened in "write-only" mode by default. This means that you cannot read from the file unless you explicitly open it in read mode. This is done for safety reasons, as it prevents unintentional overwriting of data.
 
 ## See Also
-- [Rust Standard Library Documentation](https://doc.rust-lang.org/std/)
-- [Writing Files in Rust](https://www.tutorialspoint.com/rust/rust_file_handling.htm)
-- [File::create() method](https://doc.rust-lang.org/std/fs/struct.File.html#method.create)
+
+For more information on file management in Rust, check out the official Rust documentation on the `std::fs` module [here](https://doc.rust-lang.org/std/fs/).
+
+You can also learn more about Rust syntax and coding conventions by reading the Rust Book [here](https://doc.rust-lang.org/book/).
+
+Happy coding!

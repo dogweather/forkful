@@ -1,47 +1,64 @@
 ---
-title:    "C: Convertire una data in una stringa"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/converting-a-date-into-a-string.md"
+title:                "C: Convertire una data in una stringa"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perchè convertire una data in una stringa?
 
-Il processo di convertire una data in una stringa è molto comune nella programmazione, in particolare quando si lavora con date e orari. È importante per garantire che le informazioni siano presentate in un formato facilmente leggibile per gli utenti.
+Quando si lavora con date in un programma, potrebbe essere necessario convertire la data in una rappresentazione più leggibile come una stringa di caratteri. La conversione da una data formattata a una stringa aiuta a visualizzare le informazioni in modo più comprensibile per l'utente finale.
 
-## Come Fare
+Ad esempio, se si sta creando un'applicazione di gestione delle prenotazioni per un ristorante, si può voler visualizzare la data della prenotazione come una stringa come "30 Gennaio 2020" invece di "30/01/2020".
 
-Per convertire una data in una stringa in linguaggio C, è necessario utilizzare la funzione `strftime ()`. Questa funzione prende in input variabili come la data e l'ora, insieme ad un formato di stringa specifico, e restituisce la data nel formato desiderato. Vediamo un esempio:
+## Come fare la conversione?
 
-```
+In linguaggio C, esistono diverse funzioni e librerie per convertire una data in una stringa. Uno dei modi più comuni è utilizzare la funzione `strftime()` che permette di formattare una data in una stringa secondo uno specifico formato.
+
+Ecco un esempio di codice che utilizza `strftime()` per convertire una data nel formato "DD/MM/YYYY" e poi stamparla a schermo utilizzando la funzione `printf()`:
+
+```C
 #include <stdio.h>
 #include <time.h>
 
 int main(void) {
-  time_t now = time(NULL);
-  struct tm *t = localtime(&now);
-  
-  char str_date[9];
-  strftime(str_date, sizeof(str_date), "%d/%m/%Y", t);
-  
-  printf("Data attuale: %s", str_date);
-  
-  return 0;
+    // ottieni la data corrente
+    time_t now = time(NULL);
+    
+    // inizializza una struttura tm con la data corrente
+    // (standard per la rappresentazione di date e orari)
+    struct tm *date = localtime(&now);
+    
+    // dichiara una stringa di 20 caratteri per contenere la data formattata
+    char date_str[20];
+    
+    // utilizza la funzione strftime per convertire la data in una stringa
+    // "%d/%m/%Y" definisce il formato della data (DD/MM/YYYY)
+    strftime(date_str, sizeof(date_str), "%d/%m/%Y", date);
+    
+    // stampa la stringa a schermo
+    printf("La data di oggi è: %s", date_str);
+    
+    return 0;
 }
 ```
 
-Output: `Data attuale: 02/09/2021` 
+Output:
 
-Il codice sopra utilizza le librerie standard `stdio.h` e `time.h`, quindi è necessario includerle nel nostro file. Inoltre, dichiariamo una variabile `time_t` per rappresentare la data e l'ora attuali utilizzando la funzione `time ()`. Con la funzione `localtime ()` possiamo ottenere una struttura `tm` con cui possiamo lavorare. Successivamente, utilizziamo la funzione `strftime ()` e specifica il formato desiderato (`%d/%m/%Y` per il formato GG/MM/AAAA) insieme alla nuova stringa in cui vogliamo che la data venga salvata. Infine, utilizziamo la funzione `printf ()` per stampare la stringa generata sulla console.
+```
+La data di oggi è: 30/01/2020
+```
 
-## Approfondimento
+## Approfondimenti sulla conversione di una data in una stringa
 
-Esistono molti altri designatori che possono essere utilizzati nella funzione `strftime ()` per ottenere una varietà di formati di data e ora. Alcuni esempi sono `%H` per l'ora in formato 24 ore, `%M` per i minuti e `%S` per i secondi. Inoltre, è possibile combinare più designatori per ottenere un formato personalizzato. Ad esempio, `%d/%m/%Y %H:%M:%S` produrrà un output come `02/09/2021 11:30:45` per la data e l'ora attuali.
+Mentre la funzione `strftime()` è utile per la maggior parte delle conversioni di date in stringhe, può essere utile conoscere alcune altre funzioni disponibili come `strptime()` per convertire stringhe in date o `asctime()` per ottenere una rappresentazione leggibile della data e dell'ora correnti.
 
-Un'altra cosa da tenere in considerazione è che la funzione `strftime ()` restituisce anche la rappresentazione della data e dell'ora in lingua locale. Ad esempio, se l'applicazione viene eseguita in Italia, il formato della data sarà "GG/MM/AAAA" invece di "MM/GG/AAAA".
+Inoltre, è importante tenere conto dei diversi formati di date accettati dalle funzioni di conversione e assicurarsi che la stringa di output sia abbastanza grande per contenere la data formattata.
 
-## Vedi Anche
+## Vedi anche
 
-- [Guida alla funzione strftime in C](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-- [Esempi di formato in strftime](https://www.cplusplus.com/reference/ctime/strftime/)
+- [Documentazione ufficiale di strftime()](https://www.cplusplus.com/reference/ctime/strftime/)
+- [Formati di data e ora in C](https://www.journaldev.com/32884/c-date-time-format-in-c)
+- [Esempi di codice per la conversione di una data in una stringa in C](https://www.techonthenet.com/c_language/standard_library_functions/strftime.php)

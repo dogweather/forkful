@@ -1,47 +1,53 @@
 ---
-title:    "Ruby: Eliminando caracteres que coinciden con un patrón"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/ruby/deleting-characters-matching-a-pattern.md"
+title:                "Ruby: Eliminando caracteres que coincidan con un patrón"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué eliminar caracteres que coinciden con un patrón?
 
-A veces, cuando escribimos código en Ruby, nos encontramos con la necesidad de eliminar caracteres que coinciden con un cierto patrón. Esto puede ser especialmente útil cuando estamos limpiando datos o trabajando con cadenas de texto que contienen información inútil.
+Eliminar caracteres que coinciden con un patrón es una técnica comúnmente utilizada en programación para limpiar y manipular cadenas de texto. Esto puede ser útil para eliminar caracteres innecesarios, como espacios en blanco o signos de puntuación, o para extraer información específica de una cadena. Aprender a hacer esto puede ser útil para mejorar la eficiencia y la legibilidad de tu código.
 
 ## Cómo hacerlo
 
-Para eliminar caracteres que coinciden con un patrón en Ruby, podemos utilizar el método `gsub` junto con una expresión regular. Veamos un ejemplo:
+Para eliminar caracteres que coinciden con un patrón en Ruby, puedes utilizar el método `gsub` (abreviación de "global substitution"). Este método busca en una cadena un patrón determinado y lo reemplaza con otro texto especificado.
 
-```Ruby
-string = "¡Hola! ¿Cómo estás?"
-string.gsub(/[!¡¿?]/, "")
+Supongamos que tenemos la siguiente cadena de texto:
+
+``` Ruby
+texto = "Hola, ¡aquí hay una frase con signos de puntuación! ;)"
 ```
 
-En este ejemplo, estamos utilizando un patrón de expresión regular que coincide con todos los signos de puntuación en la cadena `string`. Luego, usamos el método `gsub` para reemplazar todas las coincidencias con una cadena vacía. Esto nos devuelve la cadena `Hola Cómo estás`.
+Si queremos eliminar todos los signos de puntuación de esta cadena, podemos hacerlo de la siguiente manera:
 
-También podemos utilizar el método `gsub` para eliminar patrones específicos de la cadena. Por ejemplo, si queremos eliminar todas las letras mayúsculas de una cadena, podemos hacer lo siguiente:
+``` Ruby
+limpio = texto.gsub(/[[:punct:]]/, '')
+puts limpio
 
-```Ruby
-string = "Hola RUBY"
-string.gsub(/[A-Z]/, "")
+# Output: Hola aquí hay una frase con signos de puntuación
 ```
 
-En este caso, estamos eliminando todos los caracteres de la cadena que coinciden con el patrón de expresión regular `[A-Z]`, lo que nos devuelve `ola`.
+En este ejemplo, utilizamos una expresión regular para buscar cualquier carácter que sea un signo de puntuación y lo reemplazamos con una cadena vacía, lo que efectivamente elimina esos caracteres de la cadena original.
 
-## Profundizar en el tema
+Otro caso común es eliminar espacios en blanco de una cadena. En este caso, podemos utilizar la misma lógica pero cambiando el patrón para buscar cualquier espacio en blanco:
 
-Para aquellos que quieran profundizar en la eliminación de caracteres que coinciden con un patrón en Ruby, hay algunas cosas a tener en cuenta:
+``` Ruby
+sin_espacios = texto.gsub(/\s+/, '')
+puts sin_espacios
 
-- Las expresiones regulares pueden ser complicadas de entender al principio, pero una vez que entiendes cómo funcionan, pueden ser muy poderosas para manipular texto.
-- Además de `gsub`, también existen otros métodos en Ruby que nos permiten eliminar caracteres que coinciden con un patrón, como `sub` y `delete`.
-- Podemos utilizar el método `scan` para encontrar todas las ocurrencias de un patrón en una cadena y luego usar `gsub` para eliminarlas.
+# Output: Hola,aquíhayunafraseconsignosdepuntuación:)
+```
 
-Con un buen conocimiento de expresiones regulares y los métodos de manipulación de cadenas en Ruby, podemos hacer mucho más que simplemente eliminar caracteres que coinciden con un patrón. Podemos realizar cambios complejos en las cadenas y extraer información valiosa de ellas.
+## Profundizando
+
+Existen otras formas de eliminar caracteres que coinciden con un patrón en Ruby, como utilizar el método `delete` o `tr`. Sin embargo, `gsub` es el más versátil, ya que permite utilizar expresiones regulares más complejas para encontrar patrones específicos en una cadena.
+
+Es importante tener en cuenta que `gsub` cambiará la cadena original, por lo que si necesitas conservar la cadena original, puedes guardarla en una variable diferente antes de aplicar el método.
 
 ## Ver también
 
-- [Documentación de Ruby sobre expresiones regulares](https://ruby-doc.org/core-2.7.1/Regexp.html)
-- [Documentación de Ruby sobre el método `gsub`](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
-- [Guía de expresiones regulares en Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Documentación de `gsub`](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
+- [Tutorial de expresiones regulares en Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)

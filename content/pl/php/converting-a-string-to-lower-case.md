@@ -1,31 +1,35 @@
 ---
-title:    "PHP: Konwertowanie ciągu znaków na małe litery"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/converting-a-string-to-lower-case.md"
+title:                "PHP: Konwertowanie ciągu znaków na małe litery"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często zdarza się, że podczas pisania kodu w PHP potrzebujemy zmienić wszystkie litery w tekście na małe. Może to być przydatne przy walidacji danych użytkownika lub w przypadku konieczności porównania tekstu bez uwzględniania wielkości liter. W tym wpisie dowiesz się, jak łatwo dokonać takiej operacji w PHP.
+Konwersja tekstu na małe litery jest ważną częścią programowania, ponieważ pozwala na jednolite porównywanie tekstów bez względu na to, czy są napisane wielkimi czy małymi literami. Jest to szczególnie przydatne przy porównywaniu danych, takich jak hasła, gdzie wielkość liter ma znaczenie.
 
-## Jak to zrobić?
+## Jak to zrobić
+
+Aby skonwertować string na małe litery w PHP, możesz skorzystać z funkcji `strtolower()`. Poniższy przykład pokazuje jak użyć tej funkcji:
 
 ```PHP
-$string = "WIELKIE LITERY";
+<?php
+$string = "WITAJ W PROGRAMOWANIU W PHP!";
 echo strtolower($string);
 ```
 
-Wynik: `wielkie litery`
+W powyższym kodzie, wartość zmiennej `$string` zostanie przekonwertowana na małe litery i wyświetlona na ekranie jako "witaj w programowaniu w php!".
 
-W powyższym przykładzie wykorzystujemy funkcję `strtolower()` wbudowaną w PHP, która automatycznie konwertuje wszystkie litery w podanym tekście na małe. Dodatkowo, możemy również wykorzystać funkcję `mb_strtolower()`, która pozwala na konwersję znaków w wielu językach.
+## Głębsze spojrzenie
 
-## Głębszy zanurzenie
+Funkcja `strtolower()` używa standardowego zestawu znaków do konwersji liter na małe. Jednak w przypadku języków, gdzie występują litery specjalne, może to powodować błędy. Aby uniknąć tego problemu, zaleca się użycie funkcji `mb_strtolower()`, która pozwala na dopasowanie zestawu znaków do odpowiedniego języka.
 
-Podczas wykorzystywania funkcji `strtolower()` warto mieć na uwadze różnice między wielkościami liter w różnych językach. Na przykład, w języku angielskim `i` po zamianie na małe litery staje się `I`, jednak w języku polskim `I` po zamianie na małe litery staje się `i`. W przypadku, gdy kodujemy dla wielojęzycznej strony, warto wykorzystywać funkcję `mb_strtolower()` i określać w niej odpowiednie ustawienia dla konkretnych języków.
+Ponadto, warto pamiętać, że funkcja `strtolower()` bezpośrednio modyfikuje wartość zmiennej, podczas gdy `mb_strtolower()` zwraca nowy string. Dlatego należy wybrać odpowiednią funkcję w zależności od potrzeb.
 
-## Zobacz także
+## Zobacz też
 
-- [Oficjalna dokumentacja PHP o funkcji strtolower()](https://www.php.net/manual/en/function.strtolower.php)
-- [Podstawy kodowania w PHP - wideo tutorial](https://www.youtube.com/watch?v=bUCaVBO-2ms)
+- [Funkcja strtolower() w dokumentacji PHP](https://www.php.net/manual/en/function.strtolower.php)
+- [Funkcja mb_strtolower() w dokumentacji PHP](https://www.php.net/manual/en/function.mb-strtolower.php)

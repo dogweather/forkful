@@ -1,40 +1,35 @@
 ---
-title:    "Fish Shell: 임시 파일 만들기."
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/creating-a-temporary-file.md"
+title:                "Fish Shell: 임시 파일 생성하기"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
----
-파일을 임시로 생성하는 것이 중요한 이유는 다양합니다. 가끔은 프로그램이나 스크립트에서 임시 파일이 필요할 수 있기 때문입니다. 이 임시 파일은 저장해야 할 데이터가 많을 때, 롤백 시스템을 구현할 때 또는 간단한 텍스트를 저장해야 할 때 사용할 수 있습니다. 이러한 이유로 인해, 임시 파일 생성은 매우 유용한 기술입니다.
+## 왜
 
-# 어떻게
----
+프로그래밍을 하는 사람들이 일시적인 파일을 생성하는 이유는 여러 가지가 있습니다. 가령, 임시적으로 사용되는 데이터를 저장하기 위해서 일시적인 파일을 생성하거나, 파일을 사용하고 나서 삭제하면서 메모리를 절약하기 위해서입니다.
+
+## 만드는 방법
+
+Fish Shell의 `mktemp` 명령어를 사용하여 일시적인 파일을 생성할 수 있습니다. 아래는 그 예시입니다.
+
 ```Fish Shell
-# 임시 파일 생성
-set temporary_file (mktemp)
-echo "임시 파일 생성 완료: $temporary_file"
-
-# 파일에 데이터 저장
-echo "안녕하세요. 이것은 임시 파일에 저장된 데이터입니다." > $temporary_file
-
-# 파일 읽기
-cat $temporary_file
+set my_file (mktemp -u) # 임시 파일 이름 생성
+touch $my_file # 임시 파일 생성
+echo "임시 파일을 생성하였습니다." > $my_file # 파일에 내용 쓰기
+cat $my_file # 파일 내용 확인
+rm $my_file # 파일 삭제
 ```
 
-위 예제에서는 `mktemp` 명령어를 사용하여 임시 파일을 만들었습니다. 임시 파일 이름은 `$temporary_file` 변수에 저장되며, 마지막으로 파일에 데이터를 저장하고 읽어옵니다.
+위의 예시 코드에서 `mktemp`는 임시 파일 이름을 생성할 때 사용하는 명령어이며, `-u` 옵션은 중복되지 않는 파일 이름을 생성하도록 합니다. `touch` 명령어를 사용하여 생성된 임시 파일을 생성 후, 원하는 내용을 `echo`로 파일에 쓴 뒤 `cat` 명령어로 파일 내용을 확인할 수 있습니다. 마지막으로 `rm` 명령어로 파일을 삭제할 수 있습니다.
 
-# 딥 다이브
----
-임시 파일을 생성하는 또 다른 방법으로는 `mktemp` 대신 `open` 명령어를 사용하는 것입니다. 이 명령어는 동일한 기능을 수행하지만 파일을 열어서 작업할 수도 있습니다.
+## 깊이 파고들기
 
-또한, 임시 파일을 생성할 때 파일 이름으로 사용하는 `mktemp`의 기본 접두사가 `tmp.`이며, 이는 사용자가 원하는 대로 변경할 수 있습니다. 이를 통해 더 직관적인 파일 이름을 지정할 수 있습니다.
+임시 파일을 생성하는 방식은 여러 가지가 있을 수 있으며, `mktemp` 명령어 외에도 `mktemp -d` 명령어를 사용하여 디렉토리를 생성할 수도 있습니다. 또한, 생성된 임시 파일의 이름을 바꾸지 않고 사용하고 싶은 경우 `mktemp -k`를 사용하여 임시 파일을 생성할 수 있습니다. 여러분의 프로그램이 종료되더라도 임시 파일은 지속되기 때문에, `trap` 명령어를 사용하여 프로그램이 종료될 때 파일을 자동으로 삭제하도록 설정할 수도 있습니다.
 
-# 보기
----
-### 관련 링크
-- [Fish Shell 공식 문서: 임시 파일 생성](https://fishshell.com/docs/current/commands.html#mktemp)
-- [Fish Shell 공식 문서: open 명령어](https://fishshell.com/docs/current/commands.html#open)
-- [Temp 파일 (tmp/) Wiki](https://en.wikipedia.org/wiki/Temporary_file)
+## 또 다른 정보 보기
+
+- Official Fish Shell Documentation: https://fishshell.com/docs/current/
+- Understanding Temporary Files in Programming: https://opensource.com/article/20/4/temporary-files-programming

@@ -1,57 +1,48 @@
 ---
-title:    "Haskell: Användning av reguljära uttryck"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/using-regular-expressions.md"
+title:                "Haskell: Använda reguljära uttryck"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Regular expressions, även kallade regex, är ett mycket effektivt verktyg för att söka, matcha och manipulera textsträngar. Med hjälp av regex kan du snabbt och enkelt utföra komplexa sökningar och ersättningar i dina program. Detta gör det till ett ovärderligt verktyg för alla som arbetar med textbehandling, webbutveckling eller annan typ av datamanipulering.
+Reguljära uttryck, även kända som regex, är ett kraftfullt verktyg inom programmering för att söka, matcha och manipulera textsträngar. Genom att lära sig hur man använder regex kan du öka din programmeringskunskap och effektivitet.
 
-## Så här gör du
+## Hur man gör
 
-För att använda regular expressions i Haskell behöver du först importera modulen `Text.Regex.Posix`. Sedan kan du använda funktionerna `=~` och `=~~` för att söka, matcha och ersätta text baserat på ett regex-uttryck.
-
-```Haskell
--- Söka efter ett ord i en textsträng
-"Detta är en textsträng" =~ "text" :: Bool -- True
-
--- Söka efter ett ord som matchar oavsett storlek på bokstäver
-"Detta är en textsträng" =~ "TEXT" :: Bool -- True
-
--- Ersätta ett ord i en textsträng
-subRegex (mkRegex "text") "Detta är en textsträng" "ord" -- "Detta är en ordsträng"
-```
-
-Du kan också använda speciella symboler och uttryck för att göra mer avancerade sökningar. Till exempel:
+För att använda reguljära uttryck i Haskell, måste du importera modulen `Text.Regex.Posix`. Sedan kan du använda funktioner som `matchRegex` för att matcha strängar mot ditt reguljära uttryck. Se nedan för ett exempel:
 
 ```Haskell
--- Söka efter ett eller flera tecken
-"Detta är en textsträng" =~ "[a-z]+" :: Bool -- True
+import Text.Regex.Posix
 
--- Söka efter en sifferkombination på fyra tecken
-"123 Main Street" =~ "^[0-9]{4}$" :: Bool -- True
+-- Skapa ett reguljärt uttryck för att hitta alla mailadresser
+pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
 
--- Matcha en e-postadress
-"example@test.com" =~ "[a-zA-Z0-9_.]+@[a-zA-Z0-9_.]+" :: Bool -- True
+-- Skapa en sträng att matcha mot
+text = "Hej! Mitt mail är john_doe@example.com och jag är intresserad av Haskell."
+
+-- Använd matchRegex för att hitta alla matchningar
+matches = matchRegex (makeRegex pattern) text
+
+-- Skriv ut resultaten
+print matches
 ```
 
-Det finns många fler funktioner och möjligheter med regex i Haskell, men detta är bara ett smakprov för att komma igång.
+Output:
+
+`Just ["john_doe@example.com"]`
 
 ## Djupdykning
 
-Reguljära uttryck är ett kraftfullt verktyg, men samtidigt kan de vara komplicerade och svåra att läsa och förstå. Det är viktigt att du förstår grundläggande koncept som metakaraktärer, kvantifierare och gruppindelning om du vill utnyttja regex fullt ut.
+Reguljära uttryck kan vara svåra att förstå och skriva, men det finns många resurser där ute som kan hjälpa dig. En bra resurs är "Learn Regex the Hard Way" (https://regex.learncodethehardway.org/) som lär dig allt från grunderna till mer avancerade uttryck. Det är också viktigt att testa dina uttryck i ett regex-testverktyg för att se hur de matchar mot olika strängar.
 
-En annan viktig del i att använda regex är att välja rätt verktyg för jobbet. I Haskell kan du välja mellan två moduler `Text.Regex.Posix` och `Text.Regex.PCRE`. De båda stödjer liknande funktioner, men PCAE-modulen är mer avancerad och har bättre stöd för Unicode.
-
-Slutligen är det viktigt att känna till att använda regex inte är lösningen på alla problem. Ibland finns det bättre och enklare sätt att manipulera textsträngar, så se alltid till att överväga andra alternativ innan du börjar använda regex.
+Det finns också många olika funktioner och modifierare som kan användas med reguljära uttryck, såsom att göra matcher icke-greedy (till exempel `*?`) eller att ersätta text med `subRegex` funktionen. Utforska dessa möjligheter för att få en bättre förståelse för reguljära uttryck.
 
 ## Se även
 
-Här är några resurser som kan vara till hjälp när du vill lära dig mer om regular expressions:
-
-- [Haskell.org - Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix)
-- [Haskell.org - Text.Regex.PCRE](https://hackage.haskell.org/package/regex-pcre)
-- [Regular-Expressions.info - Tutorial om reguljära uttryck](https://www.regular-expressions.info/tutorial.html)
+- "Learn Regex the Hard Way": https://regex.learncodethehardway.org/
+- Regex-testverktyg: https://regexr.com/
+- Officiell dokumentation för `Text.Regex.Posix`: https://hackage.haskell.org/package/regex-posix/docs/Text-Regex-Posix.html

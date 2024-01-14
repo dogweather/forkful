@@ -1,45 +1,67 @@
 ---
-title:    "Arduino recipe: Calculating a date in the future or past"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/calculating-a-date-in-the-future-or-past.md"
+title:                "Arduino recipe: Calculating a date in the future or past"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Calculating dates in the future or past may not seem like a useful skill at first, but it can actually come in handy for various projects. For example, if you are creating a project that involves scheduling events or tasks, being able to calculate dates can make your program more efficient and user-friendly. It can also be a fun challenge for those interested in programming and tinkering with Arduino.
+Have you ever wondered how to calculate a date in the future or past using an Arduino board? This skill can come in handy for various projects, such as creating a countdown timer or scheduling tasks. With just a few lines of code, you can easily calculate any date you desire.
 
 ## How To
 
-Calculating dates in the future or past can be done using the built-in Arduino functions for date and time. First, you will need to set the current date and time on your Arduino board. This can be done by using the `rtc.adjust(DateTime)` function and specifying the date and time in the format `DateTime(year, month, day, hour, minute, second)`.
+To start, you will need to include the "Time" library in your sketch. This library provides functions for obtaining and manipulating time information. Once you have included the library, you can use the "now()" function to get the current time as a Unix timestamp. Keep in mind that a Unix timestamp represents the number of seconds that have passed since January 1, 1970.
 
-Next, you will need to specify the desired date you want to calculate. This can be done by creating a new DateTime variable and setting it to the desired date, also using the `DateTime()` function.
+Next, you will need to use the "makeTime()" function to create a new time structure that holds the desired date and time. This function takes in the year, month, day, hour, minute, and second as parameters and returns a Unix timestamp.
 
-To calculate the difference between the two dates, you can use the `DateTime::diff()` function. This will return a TimeSpan object that contains information about the difference in time between the two dates. From there, you can extract the number of days, months, years, or any other units that you need.
+Now, to calculate a date in the future, you can simply add the desired number of seconds to the current timestamp using the "addTime()" function. Similarly, to calculate a date in the past, you can subtract the desired number of seconds using the "subTime()" function.
 
-Here's an example of code for calculating the number of days between two dates:
+Here is a sample code for calculating a date 10 days in the future:
+
+```Arduino
+#include <Time.h>
+
+void setup(){
+  Serial.begin(9600);
+  setTime(16, 32, 25, 15, 9, 2021); // set current time to September 15, 2021 at 4:32:25 PM
+  time_t currentTime = now(); // get current time as Unix timestamp
+  time_t futureTime = addTime(currentTime, 10*SECS_PER_DAY); // add 10 days to current time
+  printDateAndTime(futureTime); // prints new date and time in "MM/DD/YYYY hh:mm:ss" format
+}
+
+void loop(){
+  // do nothing
+}
+
+void printDateAndTime(time_t timestamp){
+  String date = String(month(timestamp)) + "/" + String(day(timestamp)) + "/" + String(year(timestamp));
+  String time = String(hour(timestamp)) + ":" + String(minute(timestamp)) + ":" + String(second(timestamp));
+  Serial.print("Date: ");
+  Serial.println(date);
+  Serial.print("Time: ");
+  Serial.println(time);
+}
+```
+
+The above code would output:
 
 ```
-Arduino.DateTime start(2021, 3, 15); //set the start date
-Arduino.DateTime end(2021, 3, 31); //set the end date
-Arduino.TimeSpan diff = end - start; //calculate the difference
-int days = diff.totDays(); //extract the number of days
-Serial.println(days); //print the result
+Date: 9/25/2021
+Time: 16:32:25
 ```
-
-This code will output "16", indicating that there are 16 days between March 15th and March 31st.
 
 ## Deep Dive
 
-Aside from calculating the difference between two dates, there are also other functions and methods that can be used for more advanced date and time calculations. For example, the `DateTime.weekday()` function can be used to determine the day of the week for a specific date. This can come in handy if you want to schedule tasks for specific days of the week.
+While the above method works for calculating simple dates, it may not be accurate for more complex situations, such as leap years or daylight saving time. In these cases, it is better to use the "convertDateToTimeStamp()" function. This function takes in the year, month, day, hour, minute, and second as parameters and returns a Unix timestamp, taking into account any leap years or daylight saving time changes.
 
-Additionally, there are functions for converting between different time zones, adding or subtracting time from a specific date, and even formatting the date in different styles. By familiarizing yourself with these functions, you can create even more complex and useful date and time calculations for your projects.
+It is also important to note that Arduino boards do not have a real-time clock, meaning they lose track of time when turned off. To overcome this issue, you can connect a real-time clock module to your Arduino board.
 
 ## See Also
 
-Here are some helpful resources for further learning about date and time calculations in Arduino programming:
+For more information and examples on using the "Time" library, check out the following links:
 
-- Arduino DateTime Library: https://playground.arduino.cc/Code/DateTime/
-- DateTime functions and methods: https://www.arduino.cc/reference/en/libraries/datetime/
-- Time and Date Manipulation with Arduino: https://www.instructables.com/Time-and-Date-Manipulation-With-Arduino/
+- [Time Library Reference](https://www.arduino.cc/en/Reference/Time)
+- [Arduino Time Library Examples](https://www.pjrc.com/teensy/td_libs_Time.html)

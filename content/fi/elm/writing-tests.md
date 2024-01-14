@@ -1,67 +1,51 @@
 ---
-title:    "Elm: Testien kirjoittaminen"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/writing-tests.md"
+title:                "Elm: Testien kirjoittaminen"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Kirjoittaminen testien avulla on tärkeä osa ohjelmiston kehittämistä. Se auttaa varmistamaan, että koodi toimii oikein ja mahdollistaa muutosten tekemisen ilman pelkoa mahdollisista hajoamisista. Se myös helpottaa uusien kehittäjien pääsemistä nopeasti sisään projektiin ja ylläpitää koodin laatua.
 
-Miksi kirjoittaa testejä? Testien kirjoittaminen voi vaikuttaa ylimääräiseltä työltä, mutta se voi myös tuoda merkittäviä etuja. Testien avulla voit varmistaa, että koodisi toimii oikein ja vähentää bugeja sekä parantaa koodin laatua ja ylläpidettävyyttä. Testien avulla voit myös helposti havaita ongelmia ja virheitä, mikä säästää aikaa ja vaivaa kehitysprosessin aikana.
+## Miten
+Testien kirjoittaminen Elmillä on hyvin yksinkertaista hyödyntämällä sisäänrakennettuja Unit.testing moduuleja. Alla olevassa esimerkissä testataan funktiota, joka palauttaa saman arvon kuin annettu parametri:
 
-## Miten tehdä
+```Elm
+import Unit
 
-Testien kirjoittaminen Elm-kielellä on helppoa ja intuitiivista. Alla on esimerkki yksinkertaisesta testistä, joka tarkistaa, onko annettu numero parillinen vai ei.
+funktio x = x
 
-``` Elm
-module Main exposing (..)
-
-import Test exposing (..)
-import Test.Assertions exposing (expect)
-
-isEven : Int -> Bool
-isEven x =
-    x % 2 == 0
-
-tests : Test
-tests =
-    describe "Even Test"
-        [ test "4 is even" <|
-          \() -> expect (isEven 4) (equalTo True)
-        , test "3 is not even" <|
-          \() -> expect (isEven 3) (equalTo False)
-        ]
-
-main : Program Test
-main =
-    testRunner tests
+Unit.test "funktio palauttaa saman parametrin" <|
+    \_ -> 
+        let
+            tulos = funktio 5
+        in
+            tulos === 5 
 ```
 
-Käyttämällä `Test`-moduulia voit määrittää testitapaukset `describe`-funktiolla ja suorittaa testit `testRunner`-funktiolla. Voit myös käyttää `expect`-funktiota määrittämään odotetun tuloksen ja käyttämällä `equalTo`-funktiota määrittämään, millainen tulos tulisi olla.
+Tämä testi varmistaa, että funktio palauttaa odotetun arvon, 5. Voit myös testata vääriä tulosteita varmistamalla, että makron avulla kutsuttu virhe, kuten virhetilanne, nostetaan oikein.
 
-Ajamalla tämän esimerkkikoodin, saat seuraavan tulosteen:
+```Elm
+import Expect exposing (equal)
 
-```
-> TEST RUN PASSED
+funktio x = 
+    if x < 0 then
+        (Result.Err "Virhetilanne")
+    else
+        (Result.Ok x)
 
-  Even Test
-    ✓ 4 is even
-    ✓ 3 is not even
-
-  2 tests passed in 0ms
-  List []
-
-Tests passed
+Expect.equal "funktio tunnistaa negatiiviset arvot" <| funktio (-5) <|
+    Result.Err "Virhetilanne"
 ```
 
-## Syvempi sukellus
+Tässä käytetään Expect.equal -funktiota, joka varmistaa, että virhetilanne nostetaan oikein, kun annetaan negatiivinen luku.
 
-Testien kirjoittamisen lisäksi on tärkeää myös varmistaa, että testisi ovat tehokkaita ja kattavat kaikki tärkeät osat koodistasi. Tärkeitä asioita, joita tulisi ottaa huomioon testien kirjoittamisessa, ovat mm. testien nimeäminen selkeästi, erilaisten syötteiden ja reunaehtojen testaaminen sekä testikattavuus eli se, kuinka monta prosenttia koodistasi on testattu.
-
-Lisäksi on tärkeää huomata, että testien kirjoittaminen ei tarkoita sitä, että koodisi olisi täysin bugiton. Sen sijaan testien tarkoituksena on auttaa sinua havaitsemaan ja korjaamaan mahdollisia virheitä mahdollisimman varhaisessa vaiheessa. Siksi on tärkeää myös huolehtia siitä, että koodisi on mahdollisimman selkeää ja ymmärrettävää.
+## Syvällinen tutkimus
+Testien kirjoittaminen voi olla aikaa vievää, mutta se on tärkeä osa koodin laadun ylläpitämistä. On tärkeää kirjoittaa testit jokaiselle funktiolle ja varmistaa, että ne kattavat kaikki mahdolliset polut koodin suorituksessa. Lisäksi on hyvä myös järjestää testit niin, että ne koskevat spesifistä käyttäytymistä tai ominaisuutta, jolloin virheen paikantaminen ja korjaaminen on helpompaa.
 
 ## Katso myös
-
-- [Elm Test Library](https://package.elm-lang.org/packages/elm-explorations/test/latest/) - Testikirjasto, joka helpottaa testien kirjoittamista
-- [Testing Elm Applications](https://github.com/mpizenberg/mcget/Testing Elm Applications) - Opas testien kirjoittamiseen Elm-sovelluksissa
+- [Elm Test -dokumentaatio](https://elm-test.readme.io/)
+- [Jatkaava integrointi Elmissä](https://elm-test.readme.io/docs/continuous-integration)

@@ -1,48 +1,46 @@
 ---
-title:    "Ruby: Å konvertere en dato til en streng"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/converting-a-date-into-a-string.md"
+title:                "Ruby: Konvertere en dato til en streng"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å konvertere en dato til en streng er ofte nødvendig når man arbeider med datoer i en Ruby-applikasjon. Dette kan være nyttig for å vise datoer på en mer leselig måte eller for å lagre datoer på en spesifikk måte.
 
-Når du jobber med å konvertere datoer i Ruby, kan du noen ganger ønske å konvertere en dato til en streng. Dette kan være nyttig for å vise datoer på en bestemt måte, for å lagre dem i en database eller for annen manipulasjon av data.
-
-## Slik gjør du det
-
-For å konvertere en dato til en streng i Ruby, kan du bruke `.strftime` -metoden. Dette vil ta inn et spesifikt format og returnere en strengreprsentasjon av datoen. For eksempel: 
+## Hvordan
+Det er flere måter å konvertere en dato til en streng på i Ruby. En av de vanligste er å bruke metoden `strftime` som står for "string format time". Denne metoden tar inn et strengformat som argument og returnerer den konverterte datoen. La oss se på et eksempel:
 
 ```Ruby
-d = Date.new(2020, 05, 28) # Oppretter en ny dato for 28. mai 2020 
-d.strftime('%d.%m.%Y') # Konverterer datoen til streng og returnerer "28.05.2020"
+date = Date.today
+puts date.strftime("%d-%m-%Y")
 ```
+Output: 02-07-2021
 
-Du kan også bruke `.to_s` -metoden, som vil konvertere datoen til standardformatering i henhold til datamaskinens locale. For eksempel:
+Her konverterer vi dagens dato til en streng på formatet "dd-mm-åååå". Du kan også bruke metoden `to_s` som konverterer datoen til en standard strengformat:
 
 ```Ruby
-d = Date.new(2020, 05, 28) # Oppretter en ny dato for 28. mai 2020 
-d.to_s # Konverterer datoen til streng og returnerer "28/05/2020" hvis locale er satt til engelsk
+date = Date.new(2021, 12, 25)
+puts date.to_s
 ```
+Output: 2021-12-25
+
+Å konvertere en dato til en streng kan også gjøres ved hjelp av interpolasjon, hvor vi bruker vitkårlige formateringsstrenger for å lage den ønskede strengen:
+
+```Ruby
+date = Date.new(2021, 6, 15)
+puts "Datoen er #{date.month}-#{date.day}-#{date.year}"
+```
+Output: Datoen er 6-15-2021
 
 ## Dypdykk
+Når vi bruker `strftime` metoden for å konvertere en dato til en streng, kan vi være mer spesifikke med hvilken informasjon vi vil ha i strengen. For eksempel kan vi bruke `%a` for å få ukedagen som en forkortet streng, eller `%B` for å få måneden som en hel streng. Det finnes mange forskjellige formateringsstrenger å velge mellom, og du kan se en full liste i [Ruby dokumentasjonen](https://ruby-doc.org/core-3.0.2/Time/strftime.html).
 
-Det er også mulig å bruke `.to_formatted_s` -metoden for å konvertere datoen til streng med et spesifikt format. Denne metoden tar inn et symbol som representerer det ønskede formatet. For eksempel:
-
-```Ruby
-d = Date.new(2020, 05, 28) # Oppretter en ny dato for 28. mai 2020 
-d.to_formatted_s(:long) # Konverterer datoen til streng og returnerer "May 28, 2020"
-```
-
-I tillegg har Ruby en innebygd metode for å konvertere datoer til en lokal formatert streng ved hjelp av `.l` metoden. Dette vil returnere en lokal formatert streng basert på datamaskinens locale. For eksempel:
-
-```Ruby
-d = Date.new(2020, 05, 28) # Oppretter en ny dato for 28. mai 2020 
-d.l # Hvis locale er satt til engelsk, returnerer det "28 May 2020"
-```
+Det er også verdt å nevne at `strftime` er ikke begrenset til bare datoen, den kan også brukes på tidsobjekter. Du kan for eksempel skrive `Time.now.strftime("%H:%M")` for å få dagens klokkeslett som en streng.
 
 ## Se også
-
-- [Ruby Dokumentasjon: Date](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html) 
-- [Ruby Date Formatter](https://ruby-doc.org/core-2.5.0/Date.html#method-i-to_s)
+- [Ruby dokumentasjon - Tid og dato klasser](https://ruby-doc.org/core-3.0.2/Time.html)
+- [Artikkel: Dato og tid i Ruby](https://code.tutsplus.com/tutorials/dates-and-times-in-ruby--cms-26435)
+- [Video: Konvertering av datoer og tider i Ruby](https://www.youtube.com/watch?v=iXSvKYyeauE)

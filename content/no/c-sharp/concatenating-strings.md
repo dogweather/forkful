@@ -1,47 +1,41 @@
 ---
-title:    "C#: Sammenkjeding av strenger"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/concatenating-strings.md"
+title:                "C#: Sammenføying av strenger"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
-Noen ganger, i vår C# programmering, trenger vi å kombinere to strenger for å lage en ny og lengre streng. Dette kalles å "konkatenere" strenger og kan være nyttig for å lage dynamiske meldinger og tekstutskrifter.
+# Hvorfor
 
-##Slik gjør du det
-For å konkatenerere strenger i C#, kan du bruke "+" operatøren. For eksempel:
+Å kombinere eller sammenføye strenger er en viktig del av programmering, spesielt når det kommer til å jobbe med tekst og brukerinputs. Det lar deg enkelt kombinere flere strenger for å lage en lengre og mer meningsfull utgang.
 
-```C#
-string navn = "Per";
-string etternavn = "Andersen";
-
-string fulltNavn = navn + " " + etternavn;
-
-Console.WriteLine(fulltNavn);
-```
-
-Dette vil skrive ut "Per Andersen" i konsollen.
-
-Du kan også bruke String.Format metoden for å konkatenerere strenger på en mer strukturert måte:
+# Hvordan
 
 ```C#
-string navn = "Per";
-string etternavn = "Andersen";
+ string navn = "Andreas";
+ string alder = "25";
+ 
+ // En enkel måte å kombinere strenger på er ved å bruke "+" -operatøren
+ string brukerInfo = navn + " er " + alder + " år gammel.";
+ Console.WriteLine(brukerInfo);
 
-string fulltNavn = String.Format("{0} {1}", navn, etternavn);
+// Du kan også bruke string.Format () metoden for å kombinere strenger
+string brukerInfo2 = string.Format("{0} er {1} år gammel.", navn, alder);
+Console.WriteLine(brukerInfo2);
 
-Console.WriteLine(fulltNavn);
+// Resultat:
+// Andreas er 25 år gammel.
+// Andreas er 25 år gammel.
 ```
 
-Dette vil også skrive ut "Per Andersen" i konsollen.
+# Dypdykk
 
-##Dypdykk
-Når du konkatenere strenger i C#, må du være oppmerksom på at resultatet blir en ny streng hver gang. Dette betyr at hvis du gjør dette i en løkke eller i en større applikasjon, kan det føre til unødvendig bruk av minne og ressurser.
+Når du kombinerer strenger, kan det også være nyttig å bruke escape-tegn som "/" for å inkludere spesielle tegn som kan forstyrre koden. Det er også viktig å merke seg at å kombinere strenger kan forårsake problemer med ytelsen på applikasjonen din hvis det blir gjort i en løkke. I dette tilfellet bør du heller bruke StringBuilder-klasse, som er spesielt designet for å håndtere store mengder tekst.
 
-En annen ting å huske på er at du ikke kan konkatenere strenger med forskjellige datatyper. For eksempel kan du ikke legge til et tall og en streng sammen.
+# Se også
 
-##Se også
-- [Microsoft sin dokumentasjon om String.Concat metoden](https://docs.microsoft.com/en-us/dotnet/api/system.string.concat?view=netframework-4.8)
-- [C# string handling](https://www.csharp-station.com/Tutorial/CSharp/lesson14)
-- [Konkatenere strenger i C#](https://www.c-sharpcorner.com/article/concatenate-strings-in-C-Sharp/)
+- [MSDN om string.Concat () metoden](https://docs.microsoft.com/en-us/dotnet/api/system.string.concat)
+- [MSDN om string.Format () metoden](https://docs.microsoft.com/en-us/dotnet/api/system.string.format)
+- [MSDN om StringBuilder-klasse](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder)

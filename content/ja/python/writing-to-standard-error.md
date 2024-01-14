@@ -1,46 +1,45 @@
 ---
-title:    "Python: 標準エラーに書き込む"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/writing-to-standard-error.md"
+title:                "Python: 「標準エラーへの書き込み」"
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ標準エラーに書き込むか
-Pythonプログラミングでよく使用される関数の1つに、標準エラーへの書き込みがあります。この機能を使うことで、コードのデバッグやエラーの追跡が容易になります。では、どのようにして標準エラーへ書き込み、使用することができるのでしょうか。
+## なぜ
+
+プログラミングをする上で、エラーメッセージは非常に重要なものです。エラーメッセージが適切に表示されない場合、問題のトラッキングや修正が難しくなります。そのため、Pythonでは標準エラーに対して直接書き込むことができるようになっています。
 
 ## 方法
-例を交えながら標準エラーへの書き込み方法を紹介します。
+
+まずは標準エラーを使用するために、sysモジュールをインポートします。
 
 ```Python
 import sys
-sys.stderr.write("エラーが発生しました！")
 ```
 
-上記の例では、Pythonの標準モジュールであるsysをインポートし、stderr属性を用いてエラーメッセージを書き込んでいます。このようにすることで、エラーが発生した直接的な原因を特定し、修正することができます。
-
-また、より詳細なエラーメッセージを書き込むこともできます。
+次に、print関数の代わりに、sysモジュールのstderrオブジェクトを使用してエラーメッセージを出力します。
 
 ```Python
-import sys
-sys.stderr.write("エラーが発生しました！詳細：{}".format(error))
+sys.stderr.write("エラーが発生しました。")
 ```
 
-ここで、errorには具体的なエラー内容が格納されています。
+もしくは、フォーマット済みのエラーメッセージを出力することもできます。
 
-## 深堀り
-標準エラーへ書き込むことで、コードのデバッグ以外にもさまざまな用途があります。例えば、コンソールやログファイルにエラーメッセージを出力することで、プログラムの実行中に発生したエラーを追跡し、必要な情報を収集することができます。
+```Python
+error_message = "不正な入力です。"
+sys.stderr.write("エラー： {}".format(error_message))
+```
 
-また、標準エラーへの書き込みは、コードを実行している環境やシステムによって異なる場合があるため、環境によらずエラーを取得することができます。
+このように、標準エラーを使用することで、より詳細なエラーメッセージを出力することができます。
 
-# もっと詳しく知りたい方へ
-標準エラーへの書き込みに関するさらに詳しい情報は、以下のリンクを参考にしてください。
+## 深く掘り下げる
 
-- [Pythonドキュメント - sysモジュール](https://docs.python.org/ja/3.8/library/sys.html)
-- [Pythonチュートリアル - ファイル入力と出力](https://docs.python.org/ja/3.8/tutorial/inputoutput.html)
-- [Pythonプログラミングの基礎 - エラーハンドリング](https://python.keicode.com/advanced/errors.php)
+標準エラーは、標準出力と同じくファイルオブジェクトです。そのため、標準エラーに対してもwrite()やwritelines()メソッドを使用することができます。また、sysモジュールのseterr()関数を使用することで、標準エラーの挙動をカスタマイズすることもできます。
 
-# もっと詳しく見る
-- [Python標準ライブラリモジュール - sys](https://docs.python.org/ja/3.8/library/sys.html)
-- [Python公式チュートリアル - 入出力](https://docs.python.org/ja/3.8/tutorial/inputoutput.html)
-- [Pythonエラーハンドリング入門](https://python.civic-apps.com/try-except/)
+## 参考リンク
+
+- [Python公式ドキュメント - sysモジュール](https://docs.python.org/ja/3/library/sys.html)
+- [Python公式ドキュメント - 標準エラーと標準出力](https://docs.python.org/ja/3/tutorial/inputoutput.html#standard-error-and-standard-output)
+- [Yamaronのブログ - 標準出力と標準エラーの使い分け](https://blog.yamaron.net/entry/2015/02/10/210000)

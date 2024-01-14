@@ -1,62 +1,67 @@
 ---
-title:    "Rust recipe: Creating a temporary file"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/creating-a-temporary-file.md"
+title:                "Rust recipe: Creating a temporary file"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Creating temporary files in programming can be useful for many reasons. It allows us to store temporary data that is only needed for a short period of time, without cluttering up our main files or directory. In Rust, using temporary files can also help with memory management and performance.
+
+In Rust, temporary files are a useful tool for managing data that is only needed for a short period of time. This could include logging information, intermediate results in a complex computation, or any other data that is not necessary to permanently store.
 
 ## How To
-To create a temporary file in Rust, we can use the `tempfile` crate. First, let's add the `tempfile` dependency to our `Cargo.toml` file:
 
-```
-[dependencies]
-tempfile = "3.1"
-```
+Creating a temporary file in Rust requires a few steps, but it is a fairly straightforward process. First, we need to import the necessary libraries:
 
-Next, we can use the `tempfile::Builder` struct to specify the desired properties of our temporary file, such as the file name and extension. Let's create a temp file with the name "hello" and the `.txt` extension:
-
-```
-use tempfile::Builder;
-
-let temp_file = Builder::new()
-    .prefix("hello")
-    .suffix(".txt")
-    .tempfile()
-    .expect("Failed to create temp file");
-```
-
-We can also customize the location of our temporary file by specifying a specific directory using the `.rand_in()` method. Here's an example of creating a temp file in the user's home directory:
-
-```
+```Rust
+use std::io::prelude::*;
+use std::fs::File;
+use std::io::Result;
 use std::path::Path;
-
-let temp_file = Builder::new()
-    .rand_in(Path::new("/home/user/"))
-    .tempfile()
-    .expect("Failed to create temp file");
 ```
 
-Once we are done using the temporary file, we can call the `.close()` method to close and delete the file. This will also delete the file automatically if it goes out of scope.
+Next, we can use the `tempfile` crate to easily generate a temporary file. This crate provides a `Builder` struct that allows us to specify the prefix and suffix of the file name, as well as the directory where it will be created. Here's an example of creating a temporary file with a prefix of "temp" and a suffix of ".txt":
+
+```Rust
+let temp_file = tempfile::Builder::new()
+    .prefix("temp")
+    .suffix(".txt")
+    .tempfile()?;
+```
+
+The `tempfile()` method will return a `Result` type, so we use the `?` operator to handle any potential errors. Next, we can write data to the temporary file using a `File` object:
+
+```Rust
+let mut file = File::create(temp_file.path())?;
+file.write_all(b"Hello, World!")?;
+```
+
+Finally, we can read the contents of the temporary file back and print them to the console:
+
+```Rust
+let mut contents = String::new();
+let mut file = File::open(temp_file.path())?;
+file.read_to_string(&mut contents)?;
+
+println!("Temporary file contains: {}", contents);
+```
+
+The output of the above code will be:
 
 ```
-let temp_file = Builder::new()
-    .tempfile()
-    .expect("Failed to create temp file");
-
-// Do something with the temp file
-
-temp_file.close().expect("Failed to close temp file");
+Temporary file contains: Hello, World!
 ```
 
 ## Deep Dive
-Behind the scenes, the `tempfile` crate creates a file in the system's temporary directory and then removes it when the `tempfile::NamedTempFile` struct is dropped. The location of the temporary directory may vary depending on the operating system.
 
-There are also other methods in the `tempfile::Builder` struct that allow us to specify the desired permissions of the temporary file, such as `.mode()` and `.with_extension()`. Check out the `tempfile` crate documentation for more information on these methods.
+Behind the scenes, the `tempfile` crate uses the `mkstemp` system call to create the temporary file. This ensures that the file name is unique and that there are no race conditions when multiple processes are trying to create temporary files at the same time.
+
+Additionally, the `tempfile` crate automatically deletes the temporary file when the `File` object goes out of scope. This means we don't have to worry about manually deleting the file after we are done using it.
 
 ## See Also
-- [tempfile crate documentation](https://docs.rs/tempfile/3.1.0/tempfile/)
-- [Rust Programming Language Official Website](https://www.rust-lang.org/)
+
+- [Rust Documentation](https://doc.rust-lang.org/)
+- [tempfile crate](https://crates.io/crates/tempfile)
+- [The Rust Book](https://doc.rust-lang.org/stable/book/)

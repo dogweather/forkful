@@ -1,42 +1,41 @@
 ---
-title:    "Arduino: Utskrift av feilsøkingsresultater"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/printing-debug-output.md"
+title:                "Arduino: Utskrift av feilsøkingsutdata"
+programming_language: "Arduino"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å skrive koden din for Arduino kan være en givende og spennende opplevelse, men det kan også være utfordrende når det kommer til å finne og fikse feil. En måte å gjøre denne prosessen enklere er å skrive ut debug-informasjon under utviklingen. Dette gir deg muligheten til å se nøyaktig hva som skjer i programmet ditt, og hvor problemet ligger.
+Å printe debug-utdata er en viktig del av å programmere Arduino. Det hjelper deg med å finne og feilsøke problemer i koden din.
 
-# Hvordan gjøre det
+## Slik gjør du det
 
-For å skrive ut debug-informasjon i Arduino, bruker du funksjonen "Serial.print()". Dette vil skrive ut informasjonen du angir i parentesene, til det serielle monitoren i Arduino-programvaren. La oss si at du har en variabel kalt "sensorverdi" som inneholder en verdi du vil skrive ut. Koden din kan da se slik ut:
+For å printe debug-utdata i Arduino, kan du bruke funksjonen "Serial.print()". Du kan også bruke "Serial.println()" for å skrive ut en linje med tekst og gå til neste linje. Her er et eksempel på hvordan du kan bruke disse funksjonene:
 
-```arduino
-int sensorverdi = 10;
-Serial.print("Sensoren leser: ");
-Serial.println(sensorverdi);
+```Arduino
+int verdi = 42; // Opprett en variabel og gi den verdien 42
+
+Serial.print("Denne variabelen har verdien: "); // Skriv ut en tekstlinje
+Serial.println(verdi); // Skriv ut verdien av variabelen og gå til neste linje
 ```
 
-Når du nå åpner den serielle monitoren i Arduino-programvaren, vil du se følgende utskrift:
+Output vil se slik ut i Serial Monitor:
 
 ```
-Sensoren leser: 10
+Denne variabelen har verdien: 42
 ```
 
-Dette gjør at du enkelt kan se verdien til variabelen din, og om den endrer seg som forventet.
+## Dykker dypere
 
-# Dykk dypere
+Det finnes flere måter å bruke "Serial.print()" og "Serial.println()" på, som å skrive ut tekst, tall, og til og med verdien av sensorer som er koblet til Arduino. Du kan også bruke "Serial.begin()" for å initialisere Serial kommunikasjonen og sette et baudrate (datahastighet) for å sikre at utdata blir sendt og mottatt riktig.
 
-I noen tilfeller kan problemet ditt være mer komplekst enn å bare se på verdien til en variabel. I slike tilfeller kan du bruke flere Serial-kommandoer for å få mer detaljert informasjon. For eksempel kan du bruke "Serial.write()" for å skrive ut bokstavene i en tekststreng individuelt, eller "Serial.print()" for å skrive ut binære tall. Du kan også bruke "Serial.begin()" for å bestemme hastigheten på seriell kommunikasjon.
+En annen nyttig funksjon i debugging er "Serial.available()". Denne funksjonen lar deg sjekke om det er data tilgjengelig til å bli lest fra Serial monitor. Det er spesielt nyttig når du arbeider med seriell kommunikasjon mellom Arduino og en datamaskin.
 
-Det er også viktig å huske på at å skrive ut for mye informasjon kan føre til at Arduino henger seg opp. Derfor kan det være lurt å begrense debug-utskriftene dine eller å deaktivere dem når du er ferdig med utviklingen.
+## Se også
 
-# Se også
-
-- [Arduino Serial.print()](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [Arduino Serial.begin()](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
-- [Serial Communication in Arduino](https://www.arduino.cc/en/Tutorial/Serial)
-- [Arduino Troubleshooting](https://www.arduino.cc/en/Guide/Troubleshooting)
+- [Official Arduino Serial reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Arduino - Debugging](https://www.arduino.cc/en/Guide/Troubleshooting#debugging)
+- [Arduino Serial Monitor: Ultimate Guide](https://randomnerdtutorials.com/arduino-serial-monitor-ultimate-guide/)

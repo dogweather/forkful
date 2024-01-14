@@ -1,60 +1,47 @@
 ---
-title:    "Java: Usuwanie znaków pasujących do wzorca"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/deleting-characters-matching-a-pattern.md"
+title:                "Java: Usuwanie znaków odpowiadających wzorcowi"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jeśli pracujesz z dużymi ilościami tekstu lub stringów w swoim kodzie Java, być może zauważyłeś, że czasami musisz usuwać pewne znaki z tekstu. Na przykład, może chcesz usunąć wszystkie znaki interpunkcyjne z pewnego tekstu, aby móc lepiej analizować zawartość. W takich sytuacjach, możliwość usunięcia znaków dopasowanych do pewnego wzorca jest bardzo przydatna. W tym artykule dowiesz się, jak wykorzystać tę funkcję w języku Java.
+W dzisiejszych czasach, programiści często muszą zmagać się z dużymi i skomplikowanymi zbiorami danych. Często zdarza się, że te dane zawierają niepotrzebne znaki lub wzorce, które muszą zostać usunięte. Dzięki temu wpisowi dowiesz się, jak w łatwy sposób usunąć znaki, które odpowiadają określonemu wzorcowi, aby uprościć swoją pracę z danymi.
 
 ## Jak to zrobić
 
-Java zawiera wiele przydatnych funkcji do obsługi stringów. Jedną z nich jest metoda `replaceAll()`, która pozwala na usunięcie wszystkich wystąpień danego wzorca w tekście. Aby tego dokonać, używamy argumentu typu `regex`, czyli wyrażenia regularnego, które określa wzorzec, który chcemy usunąć.
+Do usuwania znaków dopasowanych do wzorca w języku Java, wykorzystać można metodę `replaceAll()` z klasy `String`.
+
+Przykładowy kod wyglądałby następująco:
 
 ```Java
-String text = "To jest przykładowy tekst! Czy widzisz, że zawiera dużo znaków interpunkcyjnych?";
-String updatedText = text.replaceAll("[!?,\\.\"]", ""); // usuwa wszystkie znaki interpunkcyjne
-System.out.println(updatedText);
-
-// Output:
-// To jest przykładowy tekst Czy widzisz że zawiera dużo znaków interpunkcyjnych
+String str = "Ala ma kota, a kot ma Ale.";
+String regex = "[aA]";
+String replacedString = str.replaceAll(regex, ""); //usuwa wszystkie znaki 'a' i 'A'
+System.out.println(replacedString); //Output: l m kot,  kot m le.
 ```
 
-Możemy również wykorzystać metody z klasy `Character` do sprawdzania pojedynczych znaków. Na przykład, jeśli chcemy usunąć wszystkie cyfry z tekstu, możemy użyć poniższego kodu:
+W powyższym przykładzie, wykorzystujemy metodę `replaceAll()`, aby zastąpić wszystkie wystąpienia znaków `a` i `A` pustym ciągiem znaków, tym samym usuwając je.
+
+Można także wykorzystać wyrażenia regularne, aby usunąć określone wzorce z tekstu. Na przykład, jeśli chcemy pozostawić tylko cyfry w danym tekście, można użyć wyrażenia regularnego `[\\d]`, które oznacza "dowolna cyfra".
 
 ```Java
-String text = "10, 20, 30... kilka liczb";
-StringBuilder stringBuilder = new StringBuilder();
-for (char c : text.toCharArray()) {
-    if (!Character.isDigit(c)) {
-        stringBuilder.append(c);
-    }
-}
-String updatedText = stringBuilder.toString();
-System.out.println(updatedText);
-
-// Output:
-// , ,  kilka liczb
+String str = "23Styczeń2020";
+String regex = "[^\\d]";
+String replacedString = str.replaceAll(regex, ""); //usuwa wszystkie znaki, które nie są cyframi
+System.out.println(replacedString); //Output: 23012020
 ```
 
-## Deep Dive
+## Głębsza analiza
 
-Funkcja usuwania znaków dopasowanych do wzorca może być również wykorzystywana do bardziej skomplikowanych zadań, takich jak konwersja tekstu na formatowanie CamelCase. Przykładowo, jeśli mamy tekst zapisany wyłącznie małymi literami, a chcemy go przekształcić do CamelCase, możemy zastosować metodę `replaceAll()` z odpowiednim wyrażeniem regularnym:
+Metoda `replaceAll()` korzysta z wyrażeń regularnych, które są narzędziem do manipulacji tekstem, pozwalającym na wyrażanie wzorców poszukiwanych w tekście.
 
-```Java
-String text = "przykładowy_tekst_do_zmiany";
-String updatedText = text.replaceAll("[_](\\w)", m -> m.group(1).toUpperCase());
-System.out.println(updatedText);
-
-// Output:
-// przykładowyTekstDoZmiany
-```
-
-Wyrażenie regularne `[_](\\w)` oznacza, że chcemy znaleźć wszystkie znaki `_` i zamienić każdą następującą po nim literę na jej wersję z dużej litery. Więcej informacji na temat wyrażeń regularnych można znaleźć w linkach w sekcji "Zobacz także".
+Należy pamiętać, że wyrażenia regularne są bardzo potężnym narzędziem, ale również mogą być bardzo skomplikowane. Właściwa wiedza i praktyka w ich wykorzystaniu jest kluczem do skutecznej pracy z tekstem.
 
 ## Zobacz także
-- [Java - Podstawy Stringów](https://javastart.pl/baza-wiedzy/java/typy-string/1153-wprowadzenie-do-klasy-string)
-- [Poradnik po wyrażeniach regularnych w Javie](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+
+- [Oficjalna dokumentacja Java - wyrażenia regularne](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+- [Poradnik wyrażeń regularnych w Java](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)

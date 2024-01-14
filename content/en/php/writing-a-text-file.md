@@ -1,40 +1,43 @@
 ---
-title:    "PHP recipe: Writing a text file"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/writing-a-text-file.md"
+title:                "PHP recipe: Writing a text file"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Writing a text file is a crucial skill for any PHP programmer. It allows you to save and store data, making it accessible for future use in your coding projects. Whether you need to store user information, log data, or simply create a text-based report, being able to write a text file is an essential tool in your coding arsenal.
+Writing a text file is a common task in programming and can serve various purposes. Whether you need to store data, create logs or generate reports, being able to write a text file is an essential skill in PHP programming.
 
 ## How To
 
-To write a text file in PHP, we will use the `fopen()` and `fwrite()` functions. The `fopen()` function opens the file, while the `fwrite()` function writes the data to the file. Let's take a look at an example:
+To write a text file in PHP, we will use the `fwrite()` function. This function takes two parameters: the file handle and the content to be written. Let's see an example of how to use it:
 
-```
+```PHP
 <?php
-$file = fopen("data.txt", "w") or die("Unable to open file!");
-$txt = "This is some sample data to be written to the file.";
-fwrite($file, $txt);
-fclose($file);
-?>
+$file_path = "sample.txt"; //create or open a file named "sample.txt"
+$file = fopen($file_path, "w"); //use "w" for write mode
+$content = "This is a sample text file."; //create a string to be written
+fwrite($file, $content); //write the content to the file
+fclose($file); //close the file
 ```
 
-In this example, we first use the `fopen()` function to open a file named "data.txt" in write mode. The "w" parameter specifies that we want to write to the file. Next, we use the `fwrite()` function to write the data stored in the `$txt` variable to the file. Finally, we close the file using the `fclose()` function.
-
-If we now open the "data.txt" file, we will see the text "This is some sample data to be written to the file." written inside.
+In this example, we first specify the path and name of the file we want to create or write to. Then, we use the `fopen()` function to open the file in write mode ("w"). Next, we create the content we want to write to the file and use the `fwrite()` function to write it. Finally, we use `fclose()` to close the file. This will save our content to the file and we can now access it as needed.
 
 ## Deep Dive
 
-When writing a text file, there are a few important things to keep in mind. Firstly, pay attention to the file permissions. Make sure that the file is writable by the PHP script, otherwise, the `fwrite()` function will not work and you will receive an error.
+There are a few things to keep in mind when writing a text file in PHP. 
 
-It is also important to properly format the data that you are writing to the file. Using functions like `PHP_EOL` can help ensure that your data is written on separate lines, making it easier to read and manipulate in the future.
+First, you can specify the file path and name when using `fopen()`, but if the file does not exist, it will be created. However, if the file already exists, it will be overwritten unless you use "a" mode for appending.
 
-Additionally, you can use the `file_put_contents()` function as an alternative to `fopen()` and `fwrite()`. This function will automatically open, write, and close the file for you, making it a more convenient option for writing simple text files.
+Second, when writing to a file, newline characters will not be automatically added. This means that if you want to write multiple lines of text, you will need to use `\n` to add line breaks.
+
+Lastly, you can also use `file_put_contents()` to write to a file in one line of code, without the need to use `fopen()` and `fwrite()` separately.
 
 ## See Also
 
-For more information on writing text files in PHP, check out the documentation on [PHP File Handling](https://www.php.net/manual/en/book.filesystem.php) and [PHP File I/O](https://www.php.net/manual/en/ref.filesystem.php). You can also explore other useful PHP functions such as `chmod()` for changing file permissions and `filesize()` for determining the size of a file.
+- Official PHP documentation for `fwrite()`: [PHP fwrite](https://www.php.net/manual/en/function.fwrite.php)
+- More information on `file_put_contents()`: [PHP file_put_contents](https://www.php.net/manual/en/function.file-put-contents.php)
+- Tutorial on reading and writing files in PHP: [PHP File Handling](https://www.w3schools.com/php/php_file_handling.asp)

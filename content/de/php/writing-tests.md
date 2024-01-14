@@ -1,54 +1,50 @@
 ---
-title:    "PHP: Tests schreiben"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/writing-tests.md"
+title:                "PHP: Tests schreiben"
+programming_language: "PHP"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Tests sind ein integraler Bestandteil der Softwareentwicklung, der oft übersehen oder vernachlässigt wird. Doch das Schreiben von Tests kann dazu beitragen, die Qualität und Stabilität einer Anwendung zu verbessern. In diesem Blogbeitrag werden wir uns ansehen, warum es wichtig ist, Tests in PHP-Anwendungen zu schreiben.
+# Warum Tests in der Programmierung wichtig sind
 
-## Wie
-Um mit dem Schreiben von Tests in PHP zu beginnen, müssen Sie zunächst eine Testframework wie PHPUnit installieren. Dann können Sie Ihre Tests in Methoden verpacken und Assertions hinzufügen, um die erwarteten Ergebnisse zu überprüfen. Hier ist ein Beispiel für das Testen einer einfachen Additionsfunktion:
+Jeder Programmierer kennt das unangenehme Gefühl, wenn der Code, den man stundenlang geschrieben hat, plötzlich nicht mehr funktioniert und man keine Ahnung hat, wo der Fehler liegt. Das kann zu viel Frustration und Zeitverlust führen. Hier kommen Tests ins Spiel - sie können helfen, solche Fehler frühzeitig zu erkennen und zu vermeiden. Aber warum sind Tests in der Programmierung eigentlich so wichtig?
+
+Tests sind eine Möglichkeit, den eigenen Code auf Herz und Nieren zu prüfen. Sie decken mögliche Fehler und Bugs auf und stellen sicher, dass das Programm wie erwünscht funktioniert. Außerdem sorgen sie für eine bessere Struktur im Code, da man sich intensiv mit jeder einzelnen Funktion auseinandersetzen muss, um sinnvolle Tests dafür zu schreiben. Das kann dabei helfen, Fehler von vornherein zu vermeiden.
+
+# Wie man Tests in PHP schreibt
+Zunächst sollte man sich überlegen, welche Teile des Codes es wert sind, getestet zu werden. Oft macht es Sinn, sich auf die Kernfunktionalitäten zu konzentrieren und nicht zu viele unwichtige Details zu testen. Dann kann man mit dem Schreiben der eigentlichen Tests beginnen.
+
+Ein Beispiel dafür könnte sein, dass man eine Funktion hat, die prüft, ob eine E-Mail-Adresse valide ist. Die Funktion könnte so aussehen:
 
 ```PHP
-<?php
-// zu testende Funktion
-function add($a, $b)
-{
-    return $a + $b;
-}
-
-// Testklasse
-class AddTest extends PHPUnit_Framework_TestCase
-{
-    public function testAdd()
-    {
-        // Arrange
-        $a = 5;
-        $b = 10;
-
-        // Act
-        $result = add($a, $b);
-
-        // Assert
-        $this->assertEquals(15, $result);
-    }
+function validateEmail($email) {
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 ```
 
-In diesem Beispiel haben wir eine einfache Funktion "add" geschrieben, die zwei Zahlen addiert. Dann haben wir eine Testklasse erstellt, die von PHPUnit_Framework_TestCase erbt und eine Testmethode "testAdd" enthält. Dort haben wir die benötigten Variablen initialisiert, die Funktion aufgerufen und mit einer Assertion überprüft, ob das Ergebnis der erwarteten Summe entspricht.
+Und so könnte ein Test dafür aussehen:
 
-## Deep Dive
-Es gibt viele verschiedene Arten von Tests in der Softwareentwicklung, wie z.B. Unit-Tests, Integrationstests und Akzeptanztests. Unit-Tests konzentrieren sich auf das Testen von einzelnen Funktionen oder Methoden, während Integrationstests sich mit der Zusammenarbeit von Komponenten beschäftigen. Akzeptanztests überprüfen, ob die Anwendung die vom Kunden gewünschten Anforderungen erfüllt.
+```PHP
+public function testValidateEmail() {
+    $this->assertTrue(validateEmail('test@test.com'), "Expecting 'true', email is valid");
+    $this->assertFalse(validateEmail('test@test'), "Expecting 'false', email is invalid");
+}
+```
 
-Beim Schreiben von Tests ist es wichtig, eine gute Coverage zu erreichen, d.h. sicherzustellen, dass möglichst alle Codepfade getestet werden. Eine Coverage von 100% zu erreichen ist zwar nicht immer realistisch, aber es lohnt sich, sich konstant zu verbessern.
+Mit diesen Tests kann man sicherstellen, dass die Funktion sowohl gültige als auch ungültige E-Mail-Adressen korrekt erkennt.
 
-Ein weiterer wichtiger Aspekt des Testens ist das Mocking, d.h. das Ersetzen von Abhängigkeiten wie Datenbankzugriffe oder externe APIs durch simulierten Verhaltensweisen. Dies ermöglicht es, Tests unabhängig voneinander durchzuführen und die Anwendung schneller und zuverlässiger zu testen.
+# Tiefere Einblicke in das Schreiben von Tests
+Tests können in verschiedenen Arten und Umfang geschrieben werden. Man kann beispielsweise Unit Tests schreiben, die einzelne Funktionen isoliert testen, oder Integration Tests, die das Zusammenspiel mehrerer Funktionen prüfen.
 
-## Siehe auch
-- [PHPUnit Dokumentation](https://phpunit.de/documentation.html)
-- [Test Driven Development mit PHPUnit](https://phpunit.de/getting-started/test-driven-development.html)
-- [10 Gründe, warum Tests wichtig sind](https://www.pmg.com/blog/10-reasons-why-testing-matters/)
-- [Test-Driven Development für Einsteiger](https://www.codeproject.com/Articles/1082055/Unit-Testing-for-Beginners)
+Außerdem gibt es verschiedene Frameworks und Tools, die das Schreiben und Ausführen von Tests erleichtern. Eine beliebte Wahl für PHP ist zum Beispiel PHPUnit.
+
+Es ist auch wichtig zu beachten, dass Tests kontinuierlich gepflegt und aktualisiert werden sollten. Wenn sich im Code Änderungen ergeben, müssen auch die entsprechenden Tests angepasst werden.
+
+Das Schreiben von Tests kann anfangs etwas zeitaufwendig sein, aber es lohnt sich auf lange Sicht. Es spart Zeit und Nerven, da man mögliche Fehler frühzeitig erkennt und behebt.
+
+# Siehe auch
+- [PHPUnit Dokumentation](https://phpunit.de/documentation.html) 
+- [Tutorial: Einführung in das Testen mit PHPUnit](https://www.codeception.com/docs/05-UnitTests) 
+- [The PHP Testing resource List](https://thephp.cc/directory/testing.html)

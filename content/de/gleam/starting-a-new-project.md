@@ -1,37 +1,40 @@
 ---
-title:    "Gleam: Ein neues Projekt beginnen"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/starting-a-new-project.md"
+title:                "Gleam: Ein neues Projekt starten"
+programming_language: "Gleam"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
+Gleam Programmierung für Anfänger – Start eines neuen Projekts
+
 ## Warum
 
-Warum sollte man sich dazu entscheiden, ein neues Projekt mit Gleam zu starten? Nun, Gleam ist eine funktionale und statisch typisierte Programmiersprache, die es Entwicklern ermöglicht, sichere und robuste Anwendungen zu erstellen. Mit Gleam können wir vermeiden, dass unerwartete Fehler auftreten, indem wir unser Programm bereits zur Compile-Zeit überprüfen und Fehler auffinden. Außerdem ist Gleam eine relativ junge Sprache, die ständig weiterentwickelt und verbessert wird, was es zu einem aufregenden Bereich für Entwickler macht.
+Warum sollte man überhaupt ein neues Projekt starten? Es gibt verschiedene Gründe, warum man sich mit der Programmiersprache Gleam beschäftigen sollte. Zum einen bietet sie eine statische Typisierung, die zu einer besseren Fehlererkennung und einem insgesamt robusteren Code führt. Zudem ist Gleam durch die Verwendung der funktionalen Programmierung gut für Parallelisierung geeignet. Auch die Unterstützung für Multi-Paradigma-Programmierung macht Gleam zu einer interessanten Sprache für Entwickler aller Erfahrungsstufen.
 
-## Wie man anfängt
+## Wie man startet
 
-Um mit Gleam zu beginnen, müssen wir zunächst die Gleam Runtime und den Compiler installieren. Dann erstellen wir eine neue Datei mit der Erweiterung ".gleam" und können mit dem Schreiben unseres Codes beginnen.
+Um ein neues Projekt in Gleam zu starten, gibt es verschiedene Möglichkeiten. Eine davon ist die Verwendung des Tools "rebar3", welches als Build- und Projektverwaltungstool für Gleam-Projekte dient. Um ein neues Projekt zu erstellen, muss man zunächst das Kommando `rebar3 new gleam_project` ausführen. Dies erstellt eine neue Gleam-Projektstruktur mit den notwendigen Dateien und Ordnern. Anschließend kann man das Projekt mit `rebar3 compile` compilieren und mit `rebar3 shell` ausführen.
 
 ```Gleam
-// Hello World Beispiel
-pub fn main() {
-   let message = "Hallo, Welt!"
-   IO.println(message)
+fn main() {
+  IO.println("Hallo, Welt!")
 }
 ```
 
-In diesem Beispiel definieren wir eine Hauptfunktion, die eine Nachricht speichert und mit Hilfe von IO.println auf der Konsole ausgibt. Um den Code auszuführen, können wir den Gleam-Compiler verwenden und dann die generierte ausführbare Datei starten.
+Nach der Ausführung dieses Codes sollte die Ausgabe "Hallo, Welt!" erscheinen. Dies ist ein einfaches Beispiel, um sicherzustellen, dass die Gleam-Umgebung korrekt eingerichtet wurde.
 
-## Tiefergehende Informationen
+## Eintauchen ins Projekt
 
-Bevor wir mit der Programmierung in Gleam loslegen, ist es wichtig zu wissen, dass Gleam auf der Erlang VM läuft und somit von der umfangreichen Standardbibliothek und den Leistungsmerkmalen von Erlang profitiert. Wir können auch Gleam-Module in andere Sprachen wie Elixir oder Ruby einbinden, was die Anwendungsmöglichkeiten von Gleam erweitert.
+Wenn man tiefer in die Welt von Gleam eintauchen möchte, gibt es einige wichtige Aspekte zu beachten. Zum einen handelt es sich bei Gleam um eine funktionale Programmiersprache, was bedeutet, dass Funktionen als First-Class-Citizens betrachtet werden. Das heißt, sie können als Parameter an andere Funktionen übergeben und von diesen zurückgegeben werden.
 
-Um ein neues Gleam-Projekt zu starten, können wir den Build-Manager Rebar3 verwenden, der automatisch die notwendigen Dateien und Befehle erstellt. Von dort aus können wir unsere Anwendung mithilfe der zahlreichen von Gleam unterstützten Werkzeuge wie Tests, Formatierung und Dokumentation weiter verbessern.
+Eine weitere wichtige Eigenschaft ist die strikte statische Typisierung. Das bedeutet, dass jeder Wert in Gleam einen festen Datentyp hat und dieser zur Kompilierzeit überprüft wird. Dies führt zu weniger Fehlern während der Laufzeit und zu einem insgesamt robusteren Code.
+
+Es gibt auch viele Bibliotheken, die für die Verwendung in Gleam- Projekten verfügbar sind, von Datenbanktreibern bis hin zu Web-Frameworks. Es lohnt sich, die verschiedenen Möglichkeiten zu erkunden und herauszufinden, welche am besten zu Ihrem Projekt passt.
 
 ## Siehe auch
 
-- [Offizielle Gleam Dokumentation](https://gleam.run/getting-started/)
-- [Erlang Homepage](https://www.erlang.org/)
-- [Rebar3 Homepage](https://www.rebar3.org/)
+- [Offizielle Gleam Dokumentation](https://gleam.run/)
+- [Gleam Beispiele](https://github.com/gleam-lang/gleam/)
+- [Gleam Community Forum](https://elixirforum.com/c/gleam-lang/)

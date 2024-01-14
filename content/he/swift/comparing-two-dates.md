@@ -1,33 +1,51 @@
 ---
-title:    "Swift: השוואת שתי תאריכים"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/swift/comparing-two-dates.md"
+title:                "Swift: השוואת שתי תאריכים"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-##למה
-השוואת שתי תאריכים היא כלי חשוב בתכנות של שפת Swift כי יכולה להיות מאוד שימושית לבדיקה וטיפול בתאריכים שונים במערכת הפעלה.
+איחוי: למה לזהות תאריכים מסוימים?
 
-## כיצד לעשות זאת
-עבור השוואת שתי תאריכים ניתן להשתמש בפעולת השוואה "==", ">=", "<=" וכו'. לדוגמא:
-```Swift
-let date1 = Date() //תאריך היום
-let date2 = Date(timeIntervalSinceReferenceDate: 634119038) //תאריך כלשהו לדוגמא: 12 בנובמבר 2020
+בעולם התכנות, לזהות תאריכים שונים יכול להיות חשוב לטובת פיתוח אפליקציות חכמות ואפקטיביות. אם אתם מחפשים דרך להשוות בין שני תאריכים ב-Swift, זה המדריך המתאים לכם!
 
-if date1 >= date2 {
-    print("התאריך הראשון מאוחר יותר מהתאריך השני.")
-} else {
-    print("התאריך הראשון מוקדם יותר מהתאריך השני.")
+כיצד: דוגמאות תכנות ופלט נגזר " ```Swift ... ```"
+
+כדי להשוות בין שני תאריכים ב-Swift, ישנם מספר פעולות ומחלקות שיכולות לעזור לנו בכך. ניתן להשתמש בפעולה "compare" להשוואת תאריכים ולקבל את התוצאה בתור אחת משלושת הראשונות לקיומן: תאריך ראשון קטן מתאריך שני, שני זהה לאחד ושני גדול מראשון. לדוגמה:
+
+```
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd/MM/yyyy"
+let date1 = dateFormatter.date(from: "01/01/2020")
+let date2 = dateFormatter.date(from: "01/01/2021")
+
+if let date1 = date1, let date2 = date2 {
+    switch date1.compare(date2) {
+    case .orderedAscending:
+        print("\(date1) הוא קטן מתאריך \(date2)")
+    case .orderedSame:
+        print("\(date1) זהה לתאריך \(date2)")
+    case .orderedDescending:
+        print("\(date1) הוא גדול מתאריך \(date2)")
+    }
 }
 
-// תוצאה: התאריך הראשון מאוחר יותר מהתאריך השני.
+//תוצאה: 01/01/2020 זהה לתאריך 01/01/2021
 ```
 
-## עומק
-כאשר משווים שני תאריכים, ניתן להשתמש גם בפונקציות נוספות כמו "compare" ו-"timeIntervalSince". כמו כן, קיימים גם מודפים לתאריכים כגון פורמט ואיזור זמן שימושיים לטיפול בתאריכים בצורה מדויקת יותר.
+כמו כן, ישנם גם מחלקות נוספות כמו "Calendar" ו"DateComponents" שמאפשרות לנו לבצע השוואות מדויקות יותר בין תאריכים. ניתן להשתמש בהן לצורך חישוב כמו ימי חופשה שנותרים בשנת העבודה, למשל. הנה דוגמה:
 
-##ראה גם
-- [תיעוד רשמי של שפת Swift על מנת לדעת כיצד להשתמש בפונקציות קיצון](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID331)
-- [מדריך על שימוש בפונקציות זמן בשפת Swift](https://medium.com/better-programming/time-functions-in-swift-7e94daf5b1f8)
-- [מפרט רשמי של מודפים לתאריכים בשפת Swift](https://github.com/apple/swift-evolution/blob/master/proposals/0088-libdispatch-for-swift3.md#new-apis-for-date-and-time-handling)
+```
+let startDate = Date()
+let endDate = Calendar.current.date(byAdding: .month, value: 6, to: startDate)
+let daysRemaining = Calendar.current.dateComponents([.day], from: startDate, to: endDate!).day
+
+print("נותרו \(daysRemaining!) ימי החופשה הקובעים לשנת העבודה.")
+//תוצאה: נותרו 181 ימי החופשה הקובעים לשנת העבודה.
+```
+
+יותר עמוק: מידע נוסף על השוואת תאריכים
+
+הש

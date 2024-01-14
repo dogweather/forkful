@@ -1,57 +1,59 @@
 ---
-title:    "Ruby: Zusammenfügen von Zeichenketten"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/concatenating-strings.md"
+title:                "Ruby: Verknüpfen von Zeichenfolgen"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Stellen Sie sich vor, Sie wollen einen kurzen Text in Ihrem Programm erstellen, der aus mehreren einzelnen Wörtern oder Sätzen besteht. Anstatt jede einzelne Zeile zu schreiben, können Sie diese einfach miteinander verbinden. Das nennt man auch "String-Konkatenation". 
+Ah, und noch ein weiterer Tag, an dem du dich mit dem Kampf der Zeichenketten auseinandersetzen musst. Aber warum eigentlich? Warum sollte jemand Zeit damit verbringen, Strings zu verbinden? Nun, es gibt viele Gründe dafür, aber der Hauptgrund ist die Manipulation von Daten. Wenn du mit Strings arbeitest, ist es oft notwendig, sie zu kombinieren, um eine bestimmte Formatierung zu erreichen oder um sie in bestimmten Funktionen oder Algorithmen zu verwenden. Also wenn du dich schon einmal gefragt hast, warum du ständig auf Zeichenketten-Konkatenation stößt, hier ist deine Antwort.
 
-## Wie geht's
+## Wie geht man vor?
 
-Es gibt verschiedene Möglichkeiten, Strings in Ruby zu konkatenieren. Die einfachste Methode ist die Verwendung des `+` Operators:
-
-```Ruby
-"Hello" + " " + "World" 
-```
-
-Das Ergebnis dieser Zeile wäre "Hello World". Sie können auch den `concat` Befehl verwenden:
+Um Zeichenketten in Ruby zu verbinden, gibt es mehrere Möglichkeiten, aber die einfachste ist die Verwendung des `+` Operators. Stell dir zum Beispiel vor, du hast zwei Variablen, `name` und `greeting`, und du möchtest den Namen mit einer Grußnachricht verbinden. Hier ist ein Beispielcode mit Ausgabe:
 
 ```Ruby
-"Hello".concat(" ").concat("World") 
-```
-Die Ausgabe wäre ebenfalls "Hello World".
+name = "Anna"
+greeting = "Hallo"
 
-Eine weitere Möglichkeit ist die Verwendung des `<<` Operators, um Strings zu einer bestehenden Variable hinzuzufügen:
+puts greeting + " " + name
+```
+
+Die Ausgabe hier wäre:
+
+```
+Hallo Anna
+```
+
+Eine andere Möglichkeit, Zeichenketten zu verbinden, ist die Verwendung der `<<` Methode. Schau dir das folgende Beispiel an:
 
 ```Ruby
-word = "World"
-"Hello" << " " << word
+fruit1 = "Apfel"
+fruit2 = "Birne"
+
+fruit1 << fruit2
 ```
 
-Die Ausgabe wäre auch hier "Hello World".
+In diesem Fall wird `fruit2` an `fruit1` angehängt, so dass `fruit1` jetzt "ApfelBirne" lautet.
 
-## Tiefer Einblick
+## Tief tauchen
 
-Wichtig ist, dass bei der String-Konkatenation die Reihenfolge der Wörter oder Sätze beachtet wird. Wenn Sie beispielsweise ein Leerzeichen am Anfang oder Ende vergessen, wird dies nicht automatisch hinzugefügt. Hier müssen Sie manuell darauf achten.
-
-Außerdem können Sie auch Variablen und andere Datentypen in die Konkatenation einbeziehen. Zum Beispiel:
+Jetzt wo wir wissen, wie man Zeichenketten verbindet, schauen wir uns etwas tiefer in die Materie an. Du hast vielleicht bemerkt, dass wir bei Verwendung des `+` Operators Leerzeichen hinzufügen mussten, um die Namen und Grüße getrennt zu halten. Aber was wäre, wenn wir ein Leerzeichen an eine Variable anhängen möchten, ohne es explizit in den Code zu schreiben? Hier kommt die `concat` Methode ins Spiel. Schau dir dieses Beispiel an:
 
 ```Ruby
-name = "Max"
-age = 25
-"Hello, my name is " + name + " and I am " + age.to_s + " years old."
+name = "Maria"
+greeting = "Hallo"
+
+greeting.concat(" ", name)
 ```
 
-Die Ausgabe wäre dann "Hello, my name is Max and I am 25 years old." Wie Sie sehen, müssen wir die Zahl `age` mit `.to_s` in einen String umwandeln, damit sie mit den anderen Strings konkateniert werden kann.
+Die Ausgabe wäre die gleiche wie beim vorherigen Beispiel, aber dieses Mal haben wir das Leerzeichen durch die `concat` Methode hinzugefügt. Diese Methode fügt das Argument am Ende des ursprünglichen Strings an, ohne eine neue Kopie des Strings zu erstellen.
 
 ## Siehe auch
 
-Hier sind einige hilfreiche Links, die Sie bei der weiteren Lernphase unterstützen können:
-
-- [Offizielle Ruby-Dokumentation zur String-Konkatenation](https://ruby-doc.org/core-3.0.2/String.html#method-i-2B)
-- [Tutorial zur Ruby-Syntax](https://www.ruby-lang.org/de/documentation/quickstart/)
-- [Beispiele für String-Konkatenation in Ruby](https://www.rubyguides.com/2019/03/ruby-string-concatenation/)
+- [Ruby String Klasse Dokumentation](https://ruby-doc.org/core-2.7.2/String.html)
+- [Concatenating Strings in Ruby (Englisch)](https://www.rubyguides.com/2019/06/ruby-string-concat)
+- [Ruby Methoden: Unterschied zwischen `+` und `<<` (Englisch)](https://thoughtbot.com/blog/ruby-methods-add-vs-eql-less-than-less-than)

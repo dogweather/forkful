@@ -1,50 +1,54 @@
 ---
-title:    "Haskell: Calculer une date dans le futur ou le passé."
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/calculating-a-date-in-the-future-or-past.md"
+title:                "Haskell: Calcul d'une date dans le futur ou le passé."
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Il y a de nombreuses raisons pour lesquelles vous pourriez trouver utile de calculer une date dans le futur ou dans le passé en utilisant Haskell. Peut-être que vous travaillez sur un projet où vous avez besoin de planifier des tâches ou des événements à venir, ou peut-être que vous voulez simplement tester vos compétences de programmation en résolvant un défi de calcul de date. Quelle que soit la raison, il est toujours bon de savoir comment le faire en utilisant Haskell.
+Dans la programmation, il est souvent nécessaire de calculer une date dans le futur ou dans le passé afin d'effectuer des tâches spécifiques, telles que la planification d'événements ou la gestion de rappels. Heureusement, en utilisant Haskell, cela peut être réalisé facilement et de manière élégante.
 
-## Comment faire
+# Comment faire
 
-Le calcul de dates en utilisant Haskell est assez facile grâce à quelques fonctions de manipulation de temps intégrées. Pour commencer, importez le module "Data.Time" et utilisez les fonctions "addDays" et "addGregorianYearsClip" pour ajouter ou soustraire des jours ou des années à une date spécifique. Voici un exemple de code :
+Pour calculer une date dans le futur ou dans le passé en Haskell, il faut d'abord utiliser le type de données `UTCTime` du module `Data.Time`. Ce type de données représente un point dans le temps sous forme de nombre de secondes écoulées depuis le 1er janvier 1970. En utilisant ce type de données, il est possible de manipuler facilement les dates en utilisant les fonctions du module `Data.Time.Calendar`.
+
+Voici un exemple de code qui calcule la date dans deux semaines à partir d'aujourd'hui :
 
 ```Haskell
 import Data.Time
 
-date = fromGregorian 2021 10 15
-futureDate = addDays 30 date
-pastDate = addGregorianYearsClip (-2) date
+main = do
+  let startDate = getCurrentTime
+  let futureDate = addUTCTime (7*24*60*60*2) startDate
+  print futureDate
+```
+
+Ce code utilise la fonction `getCurrentTime` pour obtenir la date actuelle et utilise la fonction `addUTCTime` pour ajouter 2 semaines (14 jours) à la date actuelle. Le résultat sera une nouvelle date représentée par le type `UTCTime`.
+
+Un autre exemple pourrait consister à calculer la date d'hier en utilisant la fonction `addDays` :
+
+```Haskell
+import Data.Time
 
 main = do
-    putStrLn $ "La date actuelle est : " ++ show date
-    putStrLn $ "La date dans 30 jours sera : " ++ show futureDate
-    putStrLn $ "La date il y a 2 ans était : " ++ show pastDate
+  let startDate = getCurrentTime
+  let pastDate = addDays (-1) startDate
+  print pastDate
 ```
 
-Et voici la sortie du code :
+Dans ce cas, nous utilisons la fonction `addDays` avec un argument négatif pour soustraire un jour à la date actuelle et obtenir la date d'hier.
 
-```
-La date actuelle est : 2021-10-15
-La date dans 30 jours sera : 2021-11-14
-La date il y a 2 ans était : 2019-10-15
-```
+# Plongée en profondeur
 
-Vous pouvez également utiliser d'autres fonctions telles que "addGregorianMonthsClip" ou "addGregorianHours" en utilisant des valeurs négatives pour calculer des dates dans le passé. N'hésitez pas à jouer avec ces fonctions et à créer votre propre logique de calcul de date en fonction de vos besoins.
+Il est également possible de calculer une date dans le futur ou dans le passé en utilisant des unités de temps plus petites, telles que les heures ou les minutes. Pour ce faire, il suffit d'utiliser une combinaison de plusieurs fonctions telles que `addUTCTime`, `addSeconds`, `addMinutes`, etc.
 
-## Plongée en profondeur
+Il est également important de noter que toutes les fonctions de manipulation de temps en Haskell utilisent le type de données `UTCTime`, qui représente le temps universel coordonné (UTC). Cela signifie qu'il n'y a pas de prise en compte automatique des fuseaux horaires, il est donc important de prendre cela en compte lors du calcul d'une date pour un fuseau horaire spécifique.
 
-Si vous voulez aller encore plus loin dans votre exploration de la manipulation de dates en Haskell, il est utile de connaître les types de données utilisés pour représenter les dates et les heures. Haskell utilise les types "UTCTime" et "Day" pour les dates et "TimeOfDay" pour les heures. Vous pouvez également utiliser des types abstraits tels que "UTCTime" et "LocalTime" pour une représentation plus précise des dates et heures.
+# Voir aussi
 
-En outre, vous pouvez également trouver utile d'utiliser le type "DiffTime" pour représenter la différence entre deux heures ou "NominalDiffTime" pour représenter la différence entre deux dates. Ces types peuvent être utilisés avec les fonctions de manipulation de temps pour effectuer des calculs plus complexes.
-
-## Voir aussi
-
-- [Documentation sur la manipulation de dates et de temps en Haskell](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- [Exemples de calcul de date en Haskell](https://wiki.haskell.org/Date_and_time)
-- [Défis de programmation en utilisant la manipulation de dates en Haskell](https://exercism.io/my/tracks/haskell)
+- [Documentation Haskell sur les dates et le temps](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [Article sur la manipulation de dates en Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Safe-Concurrent-Time-and-Data-Time)
+- [Exemple de code pour calculer la différence entre deux dates en Haskell](https://gist.github.com/khandelwal/master/dbb689f9545d33b1f0837bd9f2d58271)

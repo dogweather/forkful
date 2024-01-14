@@ -1,48 +1,48 @@
 ---
-title:    "Elixir: Lese en tekstfil"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/reading-a-text-file.md"
+title:                "Elixir: Å lese en tekstfil"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
+Hvorfor vil noen lese en tekstfil? Det kan være mange grunner til dette, enten det er for å hente ut informasjon, behandle data, eller bare for å lære.
 
-Å lese og behandle tekstfiler er en nødvendighet for de fleste programmerere. Enten du jobber med store datafiler eller bare trenger å analysere logger, vil du sannsynligvis måtte lese en tekstfil på et tidspunkt. I denne bloggposten vil vi utforske hvordan du kan lese en tekstfil ved hjelp av Elixir-programmeringsspråket.
+Å kunne lese en tekstfil er en grunnleggende ferdighet som kan være nyttig for mange programmeringsspråk, inkludert Elixir. I denne bloggposten vil vi utforske hvordan vi kan lese tekstfiler ved hjelp av Elixir.
 
-# Hvordan lese en tekstfil med Elixir
+## Hvordan
+For å lese en tekstfil i Elixir, trenger vi å bruke funksjonen `File.read/1`. Denne funksjonen tar inn filbanen som en argument, og returnerer innholdet av filen som en streng. La oss se på et eksempel:
 
-Elixir har et innebygd bibliotek kalt `File` som lar oss lese og skrive til filer. For å lese en tekstfil, må vi først åpne filen ved hjelp av `File.open/2`-funksjonen. Denne funksjonen tar to argumenter - filbanen og modusen. Modusen brukes til å avgjøre om filen skal åpnes for lesing eller skriving. I vårt tilfelle vil vi bruke modusen `:read` for å åpne filen for lesing.
-
-For å lese innholdet i filen, bruker vi `IO.read/2`-funksjonen og passerer inn filhandelen som et argument. Dette vil returnere innholdet i filen som en streng. Hvis vi vil ha filinnholdet linje for linje, kan vi bruke `IO.stream/2`-funksjonen og deretter `Stream.each/2`-funksjonen for å skrive ut hver linje i filen.
-
-Her er et eksempel på hvordan vi kan lese en tekstfil med Elixir:
-
-```elixir
-# Åpne filen for lesing
-{:ok, file} = File.open("min_fil.txt", [:read])
-
-# Les innholdet i filen som streng
-innhold = IO.read(file)
-
-# Skriv ut filinnholdet linje for linje
-IO.stream(file) |> Stream.each(&IO.puts(&1))
+```
+Elixir
+content = File.read("min_fil.txt")
+IO.puts(content)
 ```
 
-Output:
+Her har vi en tekstfil som heter `min_fil.txt`, som inneholder tekstlinjer. Når vi kjører koden, vil `content` variabelen inneholde innholdet av filen som en streng, og deretter skriver vi ut denne strengen ved hjelp av `IO.puts` funksjonen.
+
+Vi kan også lese filen linje for linje ved hjelp av `File.stream!/1` funksjonen. Denne funksjonen returnerer en strøm av linjer fra filen, som vi kan behandle videre. La oss se på et eksempel:
+
 ```
-Dette er en testtekst
-som jeg har lagt til i filen.
-Du kan også bruke `line`-funksjonen
-for å lese en linje av gangen.
+Elixir
+lines = File.stream!("min_fil.txt")
+Enum.each(lines, fn line ->
+  IO.puts(line)
+end)
+```
 
-# Dypdykk
+Her har vi brukt `Enum.each` funksjonen til å gå gjennom hver linje i filen og bruke `IO.puts` for å skrive den ut. Dette er nyttig hvis vi ikke ønsker å laste hele filen inn i minnet på en gang.
 
-I tillegg til å lese filer på tradisjonell måte, har Elixir også et kraftig bibliotek kalt `File.Stream` som lar deg behandle filer som en strøm av data. Dette gjør det enkelt å behandle store datafiler uten å måtte lese hele filen inn i minnet.
+## Dypdykk
+Når vi leser en tekstfil, er det viktig å huske på at det kan være forskjellige tegnsett som brukes i filen. For å unngå eventuelle problemer med tegnsett, kan vi bruke `File.read!/1` og `File.stream!/1` funksjonene og angi ønsket tegnsett som et argument.
 
-For å bruke dette biblioteket, må vi først åpne filen som en strøm ved hjelp av `File.Stream.open/2`-funksjonen. Deretter kan vi bruke funksjoner som `File.Stream.unfold/3` og `File.Stream.map/2` for å behandle dataene i filen. Dette kan være nyttig for å filtrere, transformere eller aggregere data på en effektiv måte.
+Vi kan også lese og behandle data i strukturert format som JSON eller CSV ved hjelp av tilleggsbiblioteker som `Poison` eller `CSV`. Disse bibliotekene gjør det enkelt å lese og behandle slike filformater.
 
-# Se også
+## Se også
+- [Elixir offisiell dokumentasjon](https://hexdocs.pm/elixir/File.html#read/1)
+- [Poison bibliotek](https://hexdocs.pm/poison/1.2.0/overview.html)
+- [CSV bibliotek](https://hexdocs.pm/csv/CSV.html)
 
-- [Elixir File Module](https://elixir-lang.org/getting-started/basic-types.html#file-module)
-- [Elixir File.Stream Module](https://hexdocs.pm/elixir/File.Stream.html)
+Med disse kunnskapene bør du nå være klar til å lese tekstfiler i Elixir. Ha det gøy med programmering!

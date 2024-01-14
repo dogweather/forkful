@@ -1,63 +1,100 @@
 ---
-title:    "Java recipe: Printing debug output"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/java/printing-debug-output.md"
+title:                "Java recipe: Printing debug output"
+programming_language: "Java"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Debugging is an essential part of the software development process. It helps us identify and fix errors in our code, ensuring that our programs run smoothly. One way to aid in debugging is by using print statements to output information about the code as it runs. In this blog post, we will explore the importance of printing debug output and how it can improve our coding experience.
+Debugging is an inevitable part of any programming journey, and it can be a frustrating process at times. As developers, it is our responsibility to find and fix any errors or bugs in our code. One way to make this process smoother and more efficient is by using debug output. Printing debug output lets us see what's happening in our code at certain points and helps us understand how our program is running. It can save us valuable time and effort, making it a crucial technique to learn for any programmer.
 
 ## How To
 
-To print debug output in Java, we can use the `System.out.println()` method. Let's take a simple example of a program that calculates the average of two numbers.
+To start printing debug output in Java, we can use the built-in method `System.out.println()`. This method takes in a parameter and prints the value to the console. Let's take a look at an example:
 
 ```Java
-public class AverageCalculator {
-    public static void main(String[] args) {
-        int num1 = 5;
-        int num2 = 10;
-        int average = (num1 + num2) / 2;
-        System.out.println(average); 
-    }
-}
+int num1 = 10;
+int num2 = 5;
+System.out.println("The sum of " + num1 + " and " + num2 + " is " + (num1 + num2));
 ```
 
-In the above code, we have used the `println()` method to output the calculated average. This will display the value of `average` on the console when we run the program. We can also use `System.out.print()` to print the output without a new line, which can be helpful in certain situations.
+The output of this code would be: `The sum of 10 and 5 is 15`.
 
-Another way to use print statements is by concatenating the information we want to print with a string using the `+` operator. For example, we can modify our previous code to include a message before the average output.
+Alternatively, we can also use the `System.out.printf()` method to format the output. This method takes in a format string and corresponding variables to print out. For example:
 
 ```Java
-public class AverageCalculator {
-    public static void main(String[] args) {
-        int num1 = 5;
-        int num2 = 10;
-        int average = (num1 + num2) / 2;
-        System.out.println("The average of " + num1 + " and " + num2 + " is " + average); 
-    }
-}
+String name = "John";
+int age = 25;
+System.out.printf("%s is %d years old.", name, age);
 ```
 
-The above code will output the following:
+The output of this code would be: `John is 25 years old.`
+
+We can also combine these methods for more complex debug output, such as printing out the value of variables at different points in our code. For instance:
+
+```Java
+int num1 = 5;
+int num2 = 10;
+System.out.println("num1 value: " + num1);
+System.out.println("num2 value: " + num2);
+num1 += 5;
+num2 -= 5;
+System.out.println("New num1 value: " + num1);
+System.out.println("New num2 value: " + num2);
+```
+
+The output of this code would be:
 
 ```
-The average of 5 and 10 is 7
+num1 value: 5
+num2 value: 10
+New num1 value: 10
+New num2 value: 5
 ```
 
 ## Deep Dive
 
-Printing debug output can be helpful in various ways. It allows us to track the flow of our program and see the value of variables at different points. By strategically placing print statements, we can easily identify which part of our code is causing an issue. Additionally, we can also use print statements to verify our assumptions about the code and make sure it is running as expected.
+While printing simple output like in the examples above can be helpful, we can also use debug output to dive deeper into our code's logic and find any errors. For instance, we can use `if` statements to only print certain output when a condition is met. Let's look at an example:
 
-However, it is important to use print statements sparingly and remove them after debugging is complete. Having too many print statements can clutter our code and make it difficult to read and understand. It is also recommended to use a proper debugging tool instead of relying solely on print statements.
+```Java
+int num1 = 5;
+int num2 = 10;
+if (num1 < num2) {
+    System.out.println("num1 is less than num2");
+}
+```
+
+The output of this code would be: `num1 is less than num2`.
+
+We can also use debug output in loops to see the values of variables each time the loop runs. This can be particularly useful when we have a loop that is not working as expected. Let's take a look at an example:
+
+```Java
+for (int i = 1; i <= 5; i++) {
+    System.out.println("i value: " + i);
+}
+```
+
+The output of this code would be:
+
+```
+i value: 1
+i value: 2
+i value: 3
+i value: 4
+i value: 5
+```
+
+This can help us understand how the loop is working and identify any mistakes we may have made.
 
 ## See Also
 
-- [Java Print Statements Guide](https://www.baeldung.com/java-print-statements)
-- [Debugging Techniques in Java](https://www.geeksforgeeks.org/debugging-techniques-in-java/)
-- [Using System.out.println() Statements as a Debugging Tool](https://www.cl.cam.ac.uk/teaching/1011/OOProgTutorial/debugging.html#printf)
+Here are some additional resources to help you master debugging in Java:
 
----
+- [Debugging: The Art of Finding and Fixing Bugs](https://www.ccs.neu.edu/home/matthias/Debugging/DEBUG.html)
+- [Debugging Tips and Tricks for Java Developers](https://stackify.com/debugging-tips-and-tricks-for-java-developers/)
+- [Debugging in Java: A Practical Approach](https://www.baeldung.com/java-debugging)
 
-*Note: This blog post assumes basic knowledge of the Java programming language. If you are new to Java, it is recommended to first familiarize yourself with the syntax and concepts before diving into debug output.*
+So go ahead and start incorporating debug output into your coding process. It will save you time, headaches, and will ultimately make you a better programmer. Happy debugging!

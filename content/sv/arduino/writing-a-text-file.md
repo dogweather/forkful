@@ -1,38 +1,42 @@
 ---
-title:    "Arduino: Att skriva en textfil"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/writing-a-text-file.md"
+title:                "Arduino: Skriva en textfil"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att skriva en textfil är en viktig del av att utveckla och skapa projekt med Arduino. Genom att skriva välfungerande textfiler kan du enkelt spara och läsa nödvändig information till och från dina projekt. Det kan också underlätta felsökningen och förbättra prestandan hos dina kretskort. Läs vidare för att lära dig mer om hur du kan skriva textfiler med Arduino!
+Att kunna skriva en textfil är en viktig färdighet för alla Arduino-programmerare. Det gör det möjligt att spara och lagra viktig information och data för användning i dina projekt. Det kan också hjälpa till med felsökning och felrapportering.
 
-## Så här gör du
+# Hur man gör
 
-När vi använder Arduino för att skriva en textfil börjar vi med att öppna en fil med namnet vi vill använda oss av. Sedan öppnar vi filen och använder kommandot "```Arduino createTXTfile(filename) ```" för att skapa en ny fil med det namnet. Sedan kan vi skriva i filen genom att använda funktionen "```Arduino write(file, data)```". Här är ett exempel på hur koden kan se ut:
+För att skriva en textfil på Arduino behöver du först skapa en ny instans av klassen "File". Sedan kan du använda funktionen "open" för att öppna en ny fil. Till exempel:
 
-"```Arduino
-createTXTfile("minfil.txt");
-write(file, "Hej! Det här är en textfil skapad med Arduino.");
+```arduino
+File minFil = SD.open("mitttextdokument.txt", FILE_WRITE);
 ```
 
-Det kan också vara användbart att läsa från en textfil med Arduino. Detta kan göras med hjälp av funktionen "```Arduino read(file) ```". Om det finns något innehåll i filen kommer det att returneras som en sträng som vi kan använda i vår kod. Här är ett exempel på hur man kan läsa en textfil med Arduino:
+Genom att ange "FILE_WRITE" som andra argumentet kommer filen att öppnas för skrivning. Om du vill öppna en befintlig fil för att läsa, behöver du bara ändra argumentet till "FILE_READ". Nu när filen är öppen kan du skriva text till den med hjälp av funktionen "println". Till exempel:
 
-"```Arduino
-read("minfil.txt");
+```arduino
+minFil.println("Jag älskar att programmera med Arduino!");
 ```
 
-## Djupdykning
+För att spara filen och stänga den kan du använda funktionen "close". Det är viktigt att komma ihåg att stänga filen efter att du är klar med den.
 
-När vi skriver en textfil med Arduino kan vi också ange en parameter för att bestämma hur informationen ska skrivas till filen. Defaultvärden inställningar för filen är "WRITE" och "APPEND". "Write" betyder att filen kommer att öppnas och skrivas över med den nya informationen, medan "append" betyder att den nya informationen kommer att läggas till i slutet av filen utan att skriva över den befintliga informationen. Om detta inte specificeras kommer Arduino att använda defaultvärdet " WRITE" som standard.
+# Djupdykning
 
-Det finns också möjlighet att lägga till fler parameterar för att anpassa din textfil ytterligare, till exempel "CREATE" för att skapa en ny fil om den inte redan existerar, eller "BINARY" för att skriva binär data till filen. Det är viktigt att förstå vilken parameter som behövs för ditt specifika projekt för att skapa och manipulera textfiler på rätt sätt.
+Det finns några viktiga saker att tänka på när du skriver en textfil på Arduino. För det första är det viktigt att se till att du inte öppnar för många filer samtidigt eftersom det kan orsaka minnesproblem. Det är också viktigt att stänga filer när du är klar med dem för att frigöra minne.
 
-## Se även
+En annan viktig sak att tänka på är filnamnet och var du lagrar filen. Om du använder ett SD-kort, se till att du använder det korrekta filsystemet för att kunna läsa och spara filer. Det är också bra att använda unika filnamn för varje fil du skapar för att undvika konflikter eller överlappning.
 
-- [Arduino Reference - createTXTfile()](https://www.arduino.cc/en/Reference/SeeAlso/createTXTfile)
-- [Arduino Reference - write()](https://www.arduino.cc/en/Reference/SeeAlso/write)
-- [Arduino Reference - read()](https://www.arduino.cc/en/Reference/SeeAlso/read)
+En sista viktig punkt är att förstå vilken typ av data du sparar. Om du vill spara numeriska värden måste du konvertera dem till text med hjälp av funktionen "toString". Om du inte gör det kan data sparas på ett ofullständigt sätt.
+
+# Se också
+
+- [Filbiblioteket i Arduino](https://www.arduino.cc/en/Reference/SD)
+- [Öppna filer på SD-kort med Arduino](https://www.arduino.cc/en/Tutorial/ReadWrite)
+- [Filskrivningsövning med Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite)

@@ -1,35 +1,55 @@
 ---
-title:    "Ruby: स्ट्रिंग को छोटे अक्षर में बदलना"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/converting-a-string-to-lower-case.md"
+title:                "Ruby: स्ट्रिंग को लोअर केस में बदलना"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-वर्तमान में, प्रोग्रामिंग भाषाओं के कई उपयोग होते हैं जो हमें टेक्स्ट और स्ट्रिंग डेटा को संसाधित करने में मदद करते हैं। इनमे से एक है रूबी, जो एक अत्यंत सुधार से भरा भाषा है जो प्रयोक्ताओं को बेहतर और अधिक प्रभावी कोड लिखने में सक्षम बनाती है। इस ब्लॉग पोस्ट में, हम देखेंगे कि रूबी में स्ट्रिंग को लोअर केस में कैसे बदला जाता है और इसका उपयोग क्यों किया जाता है।
+##Kyu: 
 
-## क्यों?
+Kisi bhi programming language mein, hum string manipulation se waqif hote hai. Kabhi kabhi, hume upper case ke saath problem ho sakti hai, jaise ki website URLs ko lower case mein convert karna ya fir passwords ko case-sensitive banane ke liye. Iska ek solution hai string ko lower case mein convert karne ka. Is blog post mein hum is process ko Ruby programming language ke through explore karenge.
 
-स्ट्रिंग डेटा में बड़े और छोटे अक्षरों के परिवर्तन को लोअर केस बनाने से कई फायदे हो सकते हैं। यह डेटा की समीक्षा और तुलना करने में आसानी से मदद कर सकता है और बड़े अक्षरों की वजह से होने वाली गलतियाँ भी कम हो सकती हैं।
-
-## कैसे करें?
-
-यदि हमें एक स्ट्रिंग को लोअर केस में बदलना है, तो हम रूबी के `.downcase` मेथड का उपयोग कर सकते हैं। इसका उपयोग निम्नवत रूप में किया जाता है:
+##Kaise Kare:
 
 ```Ruby
-string = "Hindi Readers"
-lower_case_string = string.downcase
-puts lower_case_string
+puts "Hello World!".downcase
 ```
 
-आउटपुट:
+```
+irb(main):001:0> puts "Hello World!".downcase
+hello world!
+=> nil
+```
+
+Jaisa ki humne dekha, `downcase` method humare string ko lower case mein convert kar deta hai. Isko hum variable mein bhi store kar sakte hai:
+
+```Ruby
+my_string = "Hindi Blog Post".downcase
+puts my_string
+```
 
 ```
-hindi readers
+irb(main):001:0> my_string = "Hindi Blog Post".downcase
+=> "hindi blog post"
+irb(main):002:0> puts my_string
+hindi blog post
+=> nil
 ```
 
-इस प्रकार, हम अपनी स्ट्रिंग को सरलता से लोअर केस में बदल सकते हैं।
+Is tarah hum apne strings ko aasani se lower case mein convert kar sakte hai.
 
-## गहराई में जाएं
+##Gehraai Mein Jaae:
 
-हम आगे जाकर देख सकते हैं कि रूबी में स्ट्रिंग को लोअर केस में कैसे बदला जाता है। हमारी पहली स्ट्रिंग "Hindi Readers" है, जिसमें 2 कैपिटल अक्षर हैं। जब हम `.downcase` मेथड को इस पर लागू करते ह
+Ruby mein `downcase` method ka use karne se pehle, hume kuch important baatein dhyaan mein rakhni chahiye. Sabse pehle, ye method sirf strings ko lower case mein convert kar sakta hai. Agar hum isko numbers, symbols ya spaces ke saath upyog karenge to iska koi effect nahi hoga. Isliye, humare string ke content ko dhyaan se dekhna hoga.
+
+Ek aur important point hai ki `downcase` method original string ko change nahi karta hai. Balki woh ek naya string return karta hai. Isliye, dyan rahe original string ka value same hi rahega.
+
+##Dekhiye Agar:
+
+Agar aapko sorting ya searching ke liye lower case string chahiye, toh aap `downcase` method ka use kar sakte hai. Iske alawa, aap password security aur data validation mein bhi iska upyog kar sakte hai.
+
+##Aur Padhiye:
+
+- [Ruby String Documen

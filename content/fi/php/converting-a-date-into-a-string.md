@@ -1,50 +1,53 @@
 ---
-title:    "PHP: Päivämäärän muuntaminen merkkijonoksi"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/converting-a-date-into-a-string.md"
+title:                "PHP: Muuntaminen päivämääräksi merkkijonona"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monissa tapauksissa on tarpeen muuntaa päivämäärä merkkijonoksi. Esimerkiksi, jos haluat näyttää käyttäjälle päivämäärän eri muodossa kuin se on tallennettu tietokantaan. PHP tarjoaa monia eri tapoja muuntaa päivämäärä merkkijonoksi, joten seuraavaksi käymme läpi muutamia niistä.
+Monissa ohjelmointitehtävissä saattaa olla tarvetta muuttaa päivämäärät tekstiksi. Tämä voi olla tarpeellista esimerkiksi silloin, kun halutaan tulostaa päivämäärä verkkosivulle tai tallentaa se tietokantaan. PHP:lla tämä on helppoa tehdä ja tässä blogikirjoituksessa kerromme, miten se tapahtuu.
 
 ## Miten
 
-Aloitetaan käyttämällä PHP:n valmista date() -funktiota. Tämä funktio ottaa kaksi parametria: päivämäärämuodon ja aikaleiman. Seuraavassa esimerkissä käytetään muotoa "d.m.Y", joka tarkoittaa päivämäärän päivä.kuukausi.vuosi muotoa:
+Päivämäärien muuttaminen tekstin onnistuu PHP:lla date() -funktiolla. Tämä funktio hyödyntää käyttöjärjestelmän kellonaikaa ja oletusarvoisesti tulostaa päivämäärän muodossa "kuukausi/päivä/vuosi". Esimerkiksi:
+
+```PHP 
+<?php
+$date = date('m/d/Y');
+echo date;
+```
+
+Tämän tulostusten näyttäisi seuraavalta:
+
+```
+04/18/2020
+```
+
+Voit myös muuttaa päivämäärän muotoa antamalla date() -funktiolle toisen parametrin, joka määrittelee halutun muodon. Esimerkiksi:
 
 ```PHP
-$date = date("d.m.Y", time());
-
+<?php
+$date = date('d.m.y', strtotime("2020-04-18"));
 echo $date;
-// Output: 20.08.2021
 ```
 
-Voit myös käyttää strtotime() -funktiota muuntaaksesi päivämäärän merkkijonoksi. Tämä funktio ottaa yhden parametrin, joka on päivämäärä merkkijonona. Seuraavassa esimerkissä käytetään samaa päivämäärämuotoa kuin edellisessä esimerkissä:
+Tulostus olisi tällöin:
 
-```PHP
-$date = strtotime("20.08.2021");
-
-echo date("d.m.Y", $date);
-// Output: 20.08.2021
+```
+18.04.20
 ```
 
-PHP:n DateTime-luokka tarjoaa myös mahdollisuuden muuntaa päivämäärä merkkijonoksi. Tämä on hyödyllistä erityisesti, jos haluat käsitellä päivämääriä enemmän. Seuraavassa esimerkissä luodaan uusi DateTime-olio, jossa on sama päivämäärä kuin edellisissä esimerkeissä:
+## Syvemmälle
 
-```PHP
-$date = new DateTime("20.08.2021");
+PHP:n date() -funktion avulla voit muuttaa päivämäärän lisäksi myös muita aikamuotoja, kuten esimerkiksi kellonajan tai viikonpäivän. Voit myös käyttää muita parametreja muokataksesi tulostettavaa muotoa esimerkiksi lisäämällä tekstiä tai numeroita haluttuun kohtaan.
 
-echo $date->format("d.m.Y");
-// Output: 20.08.2021
-```
-
-## Syvempää sukellusta
-
-Päivämäärän muuntamisen yhteydessä on tärkeää huomioida myös aikavyöhykkeet ja mahdolliset päivämääränmuodostusongelmat. Kannattaa tutustua PHP:n dokumentaatioon ja etsiä itselle sopivin tapa muuntaa päivämäärä merkkijonoksi.
+Voit tutustua tarkemmin date() -funktioon PHP:n virallisesta dokumentaatiosta.
 
 ## Katso myös
 
-- [PHP:n date()-funktio](https://www.php.net/manual/en/function.date.php)
-- [PHP:n strtotime()-funktio](https://www.php.net/manual/en/function.strtotime.php)
-- [PHP:n DateTime-luokka](https://www.php.net/manual/en/class.datetime.php)
+- [PHP:n virallinen dokumentaatio date() -funktiosta](https://www.php.net/manual/en/function.date.php)
+- [W3Schoolsin opas päivämäärän muuttamiseen PHP:lla](https://www.w3schools.com/php/php_date.asp)

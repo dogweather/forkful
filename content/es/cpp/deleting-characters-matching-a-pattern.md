@@ -1,56 +1,59 @@
 ---
-title:    "C++: Eliminando caracteres que coinciden con un patrón"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/deleting-characters-matching-a-pattern.md"
+title:                "C++: Eliminando caracteres que coinciden con un patrón."
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué borrar caracteres que coinciden con un patrón?
 
-Eliminar caracteres que coinciden con un patrón es una tarea común en la programación. Ya sea para limpiar datos, filtrar entradas o manipular cadenas de texto, esta técnica puede ser útil en una variedad de situaciones.
+A menudo, cuando trabajamos con cadenas de texto, podemos encontrarnos con la necesidad de eliminar ciertos caracteres que coinciden con un patrón específico. Esto puede ser útil si estamos limpiando datos o filtrando información no deseada. Afortunadamente, en C++ existen varias formas de realizar esta tarea de manera eficiente.
 
 ## Cómo hacerlo
+
+Existen diferentes maneras de eliminar caracteres que coinciden con un patrón en C++. Aquí presentaremos dos opciones: utilizando la función `erase()` y utilizando expresiones regulares.
+
+### Utilizando la función `erase()`
+
+La función `erase()` nos permite eliminar un conjunto de caracteres de una cadena de texto, indicando el índice de inicio y la cantidad de caracteres a borrar. Por ejemplo:
 
 ```C++
 #include <iostream>
 #include <string>
-#include <algorithm>
 using namespace std;
 
-int main() {
-   string str = "ababacdaba"; // cadena de ejemplo
-   char pattern = 'a'; // patrón a eliminar
-
-   cout << "Cadena original: " << str << endl;
-
-   // eliminando caracteres
-   str.erase(remove(str.begin(), str.end(), pattern), str.end());
-
-   cout << "Cadena después de eliminar el patrón '" << pattern << "': " << str << endl;
-   return 0;
-}
+string palabra = "programación";
+palabra.erase(3, 6); // elimina los caracteres desde la posición 3 hasta la posición 6
+cout << palabra; // muestra "pama"
 ```
 
-**Salida:**
+En este ejemplo, la palabra "programación" se convierte en "pama" al eliminar los caracteres que van desde la posición 3 (incluida) hasta la posición 6 (no incluida).
 
+### Utilizando expresiones regulares
+
+Las expresiones regulares son patrones que nos permiten buscar y manipular cadenas de texto de manera más avanzada. En C++, podemos utilizar la librería `<regex>` para trabajar con expresiones regulares.
+
+Por ejemplo, si queremos eliminar todas las vocales de una palabra, podemos utilizar la función `regex_replace()`, indicando como parámetro el patrón a buscar (en este caso, las vocales) y el carácter de reemplazo (en este caso, una cadena vacía):
+
+```C++
+#include <iostream>
+#include <string>
+#include <regex>
+using namespace std;
+
+string palabra = "programación";
+regex vocales("[aeiou]");
+palabra = regex_replace(palabra, vocales, ""); // elimina todas las vocales de la palabra
+cout << palabra; // muestra "prgrmcn"
 ```
-Cadena original: ababacdaba
-Cadena después de eliminar el patrón 'a': bbcdb
-```
 
-En este código, se utiliza la función `erase()` de la biblioteca `<algorithm>` para eliminar todos los caracteres que coinciden con el patrón proporcionado. Esta función toma como parámetros los iteradores al inicio y al final de la sección de la cadena que se desea eliminar y devuelve un iterador al final de la cadena resultante.
+## Profundizando en la eliminación de caracteres
 
-Además, se usa también la función `remove()` para mover todos los elementos que no coinciden con el patrón al comienzo de la cadena y devuelve un iterador al primer elemento en el nuevo arreglo. Por último, se usan los iteradores devueltos por `remove()` y `erase()` para eliminar efectivamente los caracteres no deseados de la cadena.
-
-## Profundizando
-
-Este método de eliminar caracteres que coinciden con un patrón se basa en la función `remove_if()` de la biblioteca `<algorithm>`. Esta función también toma dos iteradores como parámetros pero permite una mayor flexibilidad al definir el patrón a eliminar a través de una función de predicado. Esto significa que se puede proporcionar una función que determine si un carácter debe ser eliminado o no, en lugar de especificar un carácter específico.
-
-Además, la función `erase()` no solo se puede usar para eliminar caracteres, sino que también es útil para eliminar cualquier elemento en una cadena que cumpla cierta condición, como por ejemplo, eliminar valores duplicados en un arreglo.
+Existen muchas otras funciones y métodos en C++ que nos permiten eliminar caracteres que coinciden con un patrón, como por ejemplo `substr()`, `replace()` y `remove_if()`. Cada una de ellas tiene sus ventajas y es importante familiarizarse con ellas para poder elegir la mejor opción para cada caso.
 
 ## Ver también
 
-- [Función `erase()` (en inglés)](https://www.cplusplus.com/reference/string/string/erase/)
-- [Función `remove()` (en inglés)](https://www.cplusplus.com/reference/algorithm/remove/)
-- [Función `remove_if()` (en inglés)](https://www.cplusplus.com/reference/algorithm/remove_if/)
+- [Documentación de C++ sobre la función `erase()`](https://es.cppreference.com/w/cpp/string/basic_string/erase)
+- [Tutoriales de C++ sobre expresiones regulares](https://www.tutorialspoint.com/cpp_standard_library/cpp_regular_expressions.htm)

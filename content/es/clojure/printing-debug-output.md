@@ -1,64 +1,69 @@
 ---
-title:    "Clojure: Impresión de salida de depuración"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/printing-debug-output.md"
+title:                "Clojure: Imprimiendo salida de depuración"
+programming_language: "Clojure"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-¿Alguna vez te has encontrado en una situación en la que tu código no funciona como debería y no tienes ni idea de por qué? Esa es la razón por la que imprimir salida de depuración (debug output) puede ser útil. Al imprimir el valor de variables y hacer un seguimiento del flujo de tu programa, podrás identificar fácilmente dónde está el error y cómo solucionarlo.
+Imprimir mensajes de depuración es una técnica comúnmente utilizada en programación para identificar y solucionar errores en el código. Esta práctica permite a los desarrolladores obtener una mejor comprensión de cómo se están ejecutando sus programas y qué valores están siendo procesados en cada paso. En esta publicación, aprenderemos cómo imprimir mensajes de depuración en Clojure y cómo puede ayudarnos en nuestro proceso de desarrollo.
 
 ## Cómo hacerlo
 
-Utilizar la función `println` es la forma más básica de imprimir debug output en Clojure. Por ejemplo:
+Imprimir mensajes de depuración en Clojure es muy sencillo. Simplemente podemos utilizar la función `println` y pasarle como argumento el valor que queremos imprimir. Por ejemplo:
 
 ```Clojure
-(defn suma [a b]
-  (println "El valor de a es" a)
-  (println "El valor de b es" b)
-  (+ a b))
-
-(suma 2 3)
+(let [num 5]
+  (println "El valor de num es:" num))
 ```
 
-La salida sería:
+La salida de este código sería:
 
 ```
-El valor de a es 2
-El valor de b es 3
-5
+El valor de num es: 5
 ```
 
-También puedes utilizar `prn` para imprimir valores sin ninguna información adicional, o `pr-str` para obtener una representación en forma de string de un valor. Ambas funciones aceptan múltiples argumentos y los imprimen en una sola línea.
+Podemos incluso imprimir varios valores en una sola línea, separándolos por comas:
+
+```Clojure
+(println "El valor de num es:" num ", y el valor de otro es:" otro)
+```
+
+La salida de este código sería:
+
+```
+El valor de num es: 5, y el valor de otro es: "texto"
+```
 
 ## Profundizando
 
-Además de las funciones mencionadas anteriormente, también puedes utilizar la macro `dbg` del librería tools.cli, que te permite especificar qué valores quieres imprimir en tu código. Por ejemplo:
+Además de `println`, también podemos utilizar otras funciones como `pr` y `pprint` para imprimir mensajes de depuración en diferentes formatos. Por ejemplo, `pr` imprime de forma más legible para los humanos, mientras que `pprint` nos permite controlar la indentación y la presentación de los datos impresos. También podemos utilizar la macro `ensure` para imprimir un mensaje de error si una condición no se cumple. Por ejemplo:
 
 ```Clojure
-(ns example.core
-  (:require [clojure.tools.cli :refer [dbg]]))
-
-(defn suma [a b]
-  (let [a (dbg a)
-        b (dbg b)]
-    (+ a b)))
-
-(suma 2 3)
+(ensure condition "Error: La condición no se cumple")
 ```
 
-La salida sería:
+Otra técnica útil es utilizar el operador `>>` para imprimir un valor y continuar ejecutando el código. Por ejemplo:
+
+```Clojure
+(>> (println "Este mensaje se imprimirá")
+    (println "Este también")
+    (+ 1 2))
+```
+
+La salida de este código sería:
 
 ```
-a=2  b=3
-5
+Este mensaje se imprimirá
+Este también
+3
 ```
-
-También puedes utilizar un deshabilitador de debug output en producción para evitar que se impriman valores innecesarios y así mejorar el rendimiento de tu programa.
 
 ## Ver también
 
-- [Documentación oficial de Clojure sobre imprimir valores](https://clojuredocs.org/clojure.core/println)
-- [Artículo en CódigoFacilito sobre la depuración de programas en Clojure](https://codigofacilito.com/articulos/debug-clojure)
+- [Documentación oficial de Clojure sobre mensajes de depuración](https://clojure.org/reference/other_functions#Debugging_Forms)
+- [Artículo sobre técnicas avanzadas de depuración en Clojure](https://medium.com/@vvkchandra/top-5-debugging-techniques-in-clojure-ba31de40b829)
+- [Artículo sobre la importancia de los mensajes de depuración en el proceso de desarrollo](https://blog.jetbrains.com/idea/2012/09/why-debug/)

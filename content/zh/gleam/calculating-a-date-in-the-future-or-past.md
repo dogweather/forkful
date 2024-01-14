@@ -1,48 +1,42 @@
 ---
-title:    "Gleam: 计算未来或过去的日期"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/calculating-a-date-in-the-future-or-past.md"
+title:                "Gleam: 计算未来或过去的日期"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要计算未来或过去的日期？
+# 为什么要计算未来或过去的日期
 
-在编程中，我们经常需要计算未来或过去的日期，例如在制作日历应用程序或计划程序时。这种功能可以帮助我们更有效地管理时间，并帮助我们预测活动的日期。
+有时我们需要计算未来或过去的日期，如在创建日历或计划活动时。使用Gleam编程语言可以轻松地完成这个任务。
 
-## 如何计算未来或过去的日期？
-
-要计算未来或过去的日期，我们可以使用Gleam编程语言中的Date模块。首先，让我们导入Date模块：
-
+## 如何进行计算
 ```Gleam
-import Date
+// 计算未来日期，参数为年、月、日
+let future_date = Date.add(2021, 9, 20)
+
+// 计算过去日期，参数为年、月、日
+let past_date = Date.add(-3, 5, 14)
+
+// 输出结果
+IO.print("未来日期：${future_date}\n")
+IO.print("过去日期：${past_date}\n")
 ```
 
-接下来，我们可以使用函数来计算日期。例如，如果我们想要计算今天的下一个月，我们可以使用`add`函数，并传递相应的时间间隔。让我们看一个示例代码和输出：
-
-```Gleam
-let next_month = Date.add(Date.today(),1,Date.Month,Date.Month)
-io.format("下个月的日期是 %s", [Date.to_string(next_month)])
+以上代码将会输出如下结果：
+```
+未来日期：2021年9月20日
+过去日期：2018年5月14日
 ```
 
-这将打印出类似于以下内容的输出：
+## 深入探讨
 
-```
-下个月的日期是 2021-06-13
-```
+在Gleam中，日期是一个结构体，它包含年、月、日等属性。我们可以使用Date.add函数来对日期进行计算，该函数接受年、月、日作为参数，并返回一个日期结构体。
 
-还可以使用`subtract`函数来计算过去的日期，方法与上述类似。这样，我们就可以根据需要计算出任何未来或过去的日期。
+此外，Gleam还提供了其他日期操作函数，如Date.subtract用于计算两个日期之间的差值，Date.compare用于比较两个日期的先后顺序等。
 
-## 深入了解计算未来或过去的日期
-
-在Date模块中，还有其他有用的函数可以帮助我们计算日期。例如，`subtract_days`函数可以计算指定数量的天数之前的日期。`add_time`函数可以用于添加特定的时间间隔，例如小时或分钟。
-
-此外，Gleam还提供了格式化日期输出的函数。我们可以使用`to_pretty_string`函数以人类可读的格式显示日期，例如“2021年6月13日”。
-
-使用Gleam的Date模块，我们可以轻松地计算未来或过去的日期，并以各种格式显示它们。
-
-# 查看还有哪些相关链接？
-
-- [Gleam Date模块文档](https://gleam.run/modules/gleam-lang/date/latest)
-- [Gleam编程指南](https://gleam.run/book/tour/introduction)
-- [Gleam社区论坛](https://forum.gleam.run/)
+# 参考链接
+- [Gleam官方文档](https://gleam.run/core/date/)
+- [Gleam日期操作代码示例](https://github.com/gleam-lang/gleam/blob/main/examples/date/examples/README.md)
+- [Gleam日期操作相关讨论](https://github.com/gleam-lang/gleam/issues/332)

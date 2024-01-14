@@ -1,53 +1,61 @@
 ---
-title:    "Bash: 「文字列を小文字に変換する」"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/converting-a-string-to-lower-case.md"
+title:                "Bash: 「文字列を小文字に変換する」"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文字列を小文字に変換することの利点の一つは、入力を簡単に正規化することができることです。たとえば、ユーザーが大文字で入力した場合でも、テキスト処理やデータベース検索などで期待通りに結果を得ることができます。これにより、プログラミングの作業がスムーズになります。
+文字列を小文字に変換することに興味があるかもしれません。それは、文字列の大文字と小文字を区別せずに比較したり、特定の形式の入力を正規化するために役立つからです。
 
 ## 使い方
 
-```Bash
-# 変数に文字列を代入
-str="Hello World"
-
-# 文字列を小文字に変換
-lower_str=${str,,}
-
-# 結果を表示
-echo $lower_str
-
-# 出力: hello world
-```
-
-上記の例では、変数に代入された文字列を小文字に変換し、出力する方法を示しています。変換には、```${variable,,}```の形式を使用します。
-
-## 深堀り
-
-文字列を小文字に変換する方法には、2つの主な方法があります。1つは、上記の例で使用した```${variable,,}```を使用する方法です。もう1つは、Bashのビルトインコマンドである```tr```を使用する方法です。
+文字列を小文字に変換するには、`tr`コマンドを使用します。以下の例をご覧ください。
 
 ```Bash
-# 変数に文字列を代入
-str="Hello World"
+# 変換前の文字列を変数に代入
+str="HeLLo wOrLD"
 
-# trコマンドを使用して小文字に変換
-lower_str=$(echo $str | tr '[A-Z]' '[a-z]')
+# `tr`コマンドを使用して文字列を小文字に変換
+lowercase_str=$(echo $str | tr '[:upper:]' '[:lower:]')
 
-# 結果を表示
-echo $lower_str
+# 変換後の文字列を出力
+echo $lowercase_str 
 
-# 出力: hello world
+# 出力結果: hello world
 ```
 
-上記の例では、パイプを使って変数に代入された文字列を```tr```コマンドに渡し、文字を小文字に変換しています。この方法は、文字列内に特定の文字が含まれている場合に有用です。
+## ディープダイブ
 
-## See Also
+文字列を小文字に変換する方法はいくつかありますが、今回は`tr`コマンドに焦点を当てて説明します。このコマンドは、第一引数で指定した文字を第二引数で指定した文字に置き換えるという動作をします。つまり、`tr`コマンドを使用すると、大文字を小文字に置き換えることができます。
 
-Markdownの基本 - https://www.markdownguide.org/basic-syntax/
+さらに、`tr`コマンドは正規表現を使用することもできます。例えば、以下のように記述することで、全ての文字を小文字に変換することができます。
 
-BashのString Manipulation - https://www.tldp.org/LDP/abs/html/string-manipulation.html#LOWERUPPER
+```Bash
+lowercase_str=$(echo $str | tr '[A-Z]' '[a-z]') 
+```
+
+また、`tr`コマンドはパイプを使用することで、他のコマンドの出力結果を処理することもできます。例えば、`ls`コマンドで取得したファイル名を全て小文字に置き換えてリストを表示することができます。
+
+```Bash
+ls | tr '[A-Z]' '[a-z]'
+```
+
+## 参考リンク
+
+- [tr command in Bash](https://www.geeksforgeeks.org/tr-command-in-unix-linux-with-examples/)
+- [Using tr command](https://linuxize.com/post/linux-tr-command/)
+- [Bash scripting tutorial – A second programming language](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [10 Bash tips you should know for your job as a sysadmin](https://opensource.com/article/18/5/bash-tricks)
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
+
+## 参考文献
+
+1. [tr command in Bash](https://www.geeksforgeeks.org/tr-command-in-unix-linux-with-examples/)
+2. [Using tr command](https://linuxize.com/post/linux-tr-command/)
+3. [Bash scripting tutorial – A second programming language](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+4. [10 Bash tips you should know for your job as a sysadmin](https://opensource.com/article/18/5/bash-tricks)
+5. [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)

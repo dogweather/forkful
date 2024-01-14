@@ -1,44 +1,59 @@
 ---
-title:    "C#: Wyszukiwanie i zamiana tekstu"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/searching-and-replacing-text.md"
+title:                "C#: Wyszukiwanie i zamiana tekstu"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Każdy programista wie, że przeszukiwanie i zamienianie tekstu to częsta i nieodzowna czynność w procesie tworzenia oprogramowania. Czasami należy zmienić tylko jeden mały fragment tekstu, a czasami konieczne jest dokonanie wielu zmian na raz. W takich sytuacjach używanie funkcji wyszukiwania i zamieniania może zaoszczędzić dużo czasu i wysiłku.
+W dzisiejszych czasach programowanie jest nieodłączną częścią naszego życia. Bez względu na to, czy chcesz zostać programistą czy nie, czasem napotykamy sytuacje, w których musimy zmienić pewien fragment tekstu lub wyrażenia w naszym kodzie. W takim przypadku, niezbędne jest umiejętne posługiwanie się narzędziami do wyszukiwania i zastępowania tekstu. W tym artykule dowiesz się jak można to zrobić w języku C#.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Python oferuje prosty i wydajny sposób na wyszukiwanie i zamienianie tekstu w kodzie. Możesz użyć wbudowanej funkcji `Replace()`, która pozwala na szybką i precyzyjną zmianę tekstu w wybranym obszarze. Przeczytaj poniższy przykład, aby zobaczyć, jak to działa w praktyce:
+W języku C# mamy dostęp do różnych metod i funkcji, które pozwalają nam na wygodne i precyzyjne przeszukiwanie i zmienianie tekstu. Poniżej przedstawione są trzy przykłady wykorzystania tych funkcji, wraz ze zrzutem ekranu wyjścia programu.
 
 ```C#
+// Przykład 1: Wyszukiwanie i zastępowanie pojedynczego wyrażenia
 string text = "Witaj, świecie!";
-string newText = text.Replace("Witaj", "Cześć");
-Console.WriteLine(newText);
+text = text.Replace("świecie", "moje drogie czytelniki");
+Console.WriteLine(text);
 ```
 
-**Output:** Cześć, świecie!
-
-W tym przykładzie zastępujemy wyraz "Witaj" wyrażeniem "Cześć". Funkcja `Replace()` znajduje wszystkie wystąpienia danego tekstu i zamienia je na nowy. To proste rozwiązanie działa także w przypadku, gdy chcemy zmienić wiele fragmentów tekstu. Wystarczy po prostu wywołać funkcję `Replace()` z różnymi parametrami dla każdej potrzebnej zmiany.
+![Przykład 1](https://i.imgur.com/pYZADHy.png)
 
 ```C#
-string text = "To jest przykładowy tekst do zamiany";
-string newText = text.Replace("jest", "był")
-                      .Replace("przykładowy", "inny")
-                      .Replace("do", "dla");
-Console.WriteLine(newText);
+// Przykład 2: Wyszukiwanie i zastępowanie z wykorzystaniem wyrażeń regularnych
+string text = "Witaj, 1 stycznia 2021!";
+text = Regex.Replace(text, @"\d{1,2} \w+ \d{4}", "jutro");
+Console.WriteLine(text);
 ```
 
-**Output:** To aktualnie inny tekst dla zamiany.
+![Przykład 2](https://i.imgur.com/cx7x6Fn.png)
 
-## Dogłębne zagłębianie się
+```C#
+// Przykład 3: Wyszukiwanie i zastępowanie z wykorzystaniem indeksów
+string text = "Dzisiaj jest 1 stycznia 2021";
+int index = text.IndexOf("1 stycznia");
+text = text.Remove(index, "1 stycznia".Length);
+text = text.Insert(index, "2 stycznia");
+Console.WriteLine(text);
+```
 
-Ważne jest, aby zwrócić uwagę na kilka ważnych szczegółów, gdy korzystasz z funkcji wyszukiwania i zamieniania tekstu. Po pierwsze, funkcja ta jest wrażliwa na wielkość liter. To znaczy, że przy zamianie tekstu nie będzie uwzględniana wielkość liter, a więc słowo "Kot" nie zostanie zamienione na "pies". Po drugie, funkcja ta zwróci tylko pierwsze wystąpienie danego tekstu. Jeśli chcesz zamienić wszystkie wystąpienia, musisz użyć funkcji `Replace()` kilka razy lub skorzystać z innej metody.
+![Przykład 3](https://i.imgur.com/fAOjggl.png)
 
-## Zobacz również
+## Deep Dive
 
-- Dokumentacja Microsoft o funkcji Replace(): https://docs.microsoft.com/pl-pl/dotnet/api/system.string.replace
-- Inne sposoby na wyszukiwanie i zamienianie tekstu w C#: https://www.tutorialsteacher.com/csharp/csharp-string-replace
+W języku C# do wyszukiwania i zastępowania tekstu możemy wykorzystać kilka różnych funkcji, takich jak `Substring`, `IndexOf`, `Regex.Replace` czy `StringBuilder`. Każda z nich ma swoje specyficzne zastosowanie, dlatego warto zapoznać się z dokumentacją i wybrać odpowiednią w danym przypadku.
+
+Ponadto, istnieją również różne sposoby przeszukiwania tekstu, takie jak wykorzystanie wyrażeń regularnych czy indeksów, co pozwala nam na jeszcze większą precyzję w zastępowaniu tekstu.
+
+Takie narzędzia są nieocenione w codziennej pracy programisty i mogą zaoszczędzić nam dużo czasu i wyrzeczeń. Dlatego warto poświęcić trochę czasu na poznanie tych funkcji i wykorzystywanie ich w praktyce.
+
+## Zobacz także
+
+- [Dokumentacja języka C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/)
+- [Przewodnik po wyrażeniach regularnych w C#](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [Artykuł o wykorzystaniu funktionu IndexOf w C#](https://www.geeksforgeeks.org/indexof-method-in-c-sharp/)

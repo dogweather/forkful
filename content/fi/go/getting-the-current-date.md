@@ -1,52 +1,45 @@
 ---
-title:    "Go: Vastaanottaa nykyinen päivämäärä."
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/getting-the-current-date.md"
+title:                "Go: Nykyisen päivämäärän saaminen"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi Päivämäärän Haku Kannattaa
+## Miksi
 
-Päivämäärän hakeminen on tärkeä osa monia ohjelmointiprojekteja. Se mahdollistaa ajankohdan tallentamisen ja käsittelemisen, mikä puolestaan tarjoaa käyttömahdollisuuksia esimerkiksi tapahtumien aikajärjestyksen seuraamiseen.
+Kun kehität sovelluksia Go-ohjelmointikielellä, voi olla tarpeellista saada ajantasainen päivämäärä tietoon. Tässä blogikirjoituksessa käymme läpi, miten voit helposti hankkia nykyisen päivämäärän Go-kielellä.
 
-## Kuinka Tehdä Se Go-Ohjelmointikielellä
+## Miten
 
-Go tarjoaa sisäänrakennetun ajanmuutoksen toiminnon nimeltään `time.Now()`. Tämä palauttaa nykyisen ajan ja päivämäärän `time.Time` -muodossa. Seuraavassa esimerkissä tallennetaan paikallinen aika muuttujaan `nykyinenAika` ja tulostetaan se:
+Päivämäärän hankkiminen Go-kielellä on yksinkertaista käyttäen time-pakettia. Voit aloittaa tuomalla tämän paketin käytettäväksi seuraavasti:
 
-```Go
-nykyinenAika := time.Now()
-fmt.Println(nykyinenAika)
+```Go 
+import "time" 
 ```
 
-Tämä antaa seuraavan tulosteen:
+Tämän jälkeen voit luoda uuden muuttujan, joka sisältää nykyisen ajan tietoon käyttämällä time.Now()-funktiota. Listataan esimerkiksi päivämäärä ja kellonaika seuraavassa koodikatkelmassa:
 
-```
-2021-08-17 20:30:00.123456789 +0300 MSK m=+0.000000001
-```
-
-Voit myös muokata tulosteen ulkoasua esimerkiksi käyttämällä `Format` -toimintoa. Tässä esimerkissä tulostetaan nykyinen aika muodossa "tunti:minuutti":
-
-```Go
-nykyinenAika := time.Now()
-muokattuAika := nykyinenAika.Format("15:04")
-fmt.Println(muokattuAika)
+```Go 
+now := time.Now() 
+fmt.Println(now.Format("2.1.2006 15:04:05")) 
 ```
 
-Tuloste:
+Tämä tulostaisi esimerkiksi seuraavanlaisen tuloksen:
 
 ```
-20:30
+9.4.2021 14:12:36
 ```
 
-## Syventävä Sukellus Päivämäärän Hakuun
+Voit myös halutessasi muotoilla päivämäärän ja kellonajan haluamallasi tavalla käyttämällä Format()-funktiota. Voit tarkastella kaikkia käytettävissä olevia muotoiluvaihtoehtoja Go:n dokumentaatiosta.
 
-Päivämäärän hakeminen voi olla monimutkaisempaa kuin pelkän `time.Now()` -toiminnon käyttö. Esimerkiksi tarvittaessa voit määrittää päivämäärän tarkan aikavyöhykkeen ja aikaleiman. Samoin voit käyttää erilaisia muotoiluvaihtoehtoja tulostetulle päivämäärälle.
+## Syvällisempi tarkastelu
 
-Voit löytää lisätietoja ja esimerkkejä Go:n ajanmuutoksen toiminnon käytöstä [Go:n dokumentaatiosta](https://pkg.go.dev/time#Now).
+Time-paketti sisältää myös muita hyödyllisiä toimintoja, kuten ajastimen ja tarkempia aikavälin laskentaominaisuuksia. Voit tutustua näihin syvemmin Go:n dokumentaatiosta.
 
-# Katso Myös
+## Katso myös
 
-- [Go:n dokumentaatio ajanmuutoksen toiminnosta](https://pkg.go.dev/time#Now)
-- [Blogikirjoitus Go:n ajanmuutoksen toiminnon käytöstä](https://blog.golang.org/time)
-- [Esimerkkejä Go:n ajanmuutoksen toiminnon käytöstä](https://golangdocs.com/go-time-now-get-current-time-in-go)
+- Go:n time-paketin dokumentaatio: https://golang.org/pkg/time/
+- Go-ohjelmoinnin perusteet: https://www.golang-book.com/books/intro
+- Go:n virallinen nettisivu: https://golang.org/

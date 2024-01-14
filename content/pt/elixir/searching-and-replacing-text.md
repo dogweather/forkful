@@ -1,39 +1,45 @@
 ---
-title:    "Elixir: Busca e substituição de texto"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/searching-and-replacing-text.md"
+title:                "Elixir: Buscando e substituindo texto"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-##Porque
+## Por que
+Neste artigo, vamos explorar o poder da substituição de texto em Elixir. Aprenderemos por que é importante saber esta habilidade e como utilizá-la em nossos projetos.
 
-Ao escrever código em Elixir, muitas vezes é necessário fazer alterações em textos para torná-los mais legíveis ou corrigir erros. A busca e substituição de texto é uma técnica útil para realizar essas mudanças rapidamente e com precisão.
+## Como Fazer
+Em Elixir, a substituição de texto é geralmente feita através da função `String.replace/4`. Esta função aceita quatro parâmetros: a string de entrada, o padrão a ser procurado, o padrão de substituição e as opções de busca. Vamos ver alguns exemplos:
 
-##Como Fazer
-
-Para fazer uma busca e substituição de texto em Elixir, usamos a função `String.replace/4`. Esta função recebe quatro parâmetros: o texto original, o texto a ser substituído, o novo texto e, opcionalmente, uma opção de `global` para substituir todas as ocorrências.
-
-```Elixir
+```
 iex> String.replace("Olá, mundo!", "mundo", "Elixir")
 "Olá, Elixir!"
 ```
 
-Você também pode usar expressões regulares para fazer a substituição. No exemplo abaixo, usamos a expressão regular `\d+` para corresponder a qualquer dígito e substituí-lo por `#`.
+No exemplo acima, usamos a função `String.replace/4` para substituir a palavra "mundo" por "Elixir" na string "Olá, mundo!". O resultado é a nova string "Olá, Elixir!".
 
-```Elixir
-iex> String.replace("O número de telefone é (123) 456-7890", ~r/\d+/, "#")
-"O número de telefone é (#) # #-#"
+Além da substituição simples, também podemos usar regex para encontrar e substituir padrões em uma string:
+
+```
+iex> String.replace("Elixir é muito legal", ~r/muito/, "incrível")
+"Elixir é incrível legal"
 ```
 
-##Mergulho Profundo
+A função `String.replace/4` também aceita opções de busca, como ignorar letras maiúsculas ou minúsculas, substituição global e substituição apenas da primeira ocorrência. Para obter mais detalhes sobre as opções disponíveis, consulte a documentação de `String.replace/4`.
 
-A função `String.replace/4` usa uma chamada de função `:unicode.replace/4` internamente para fazer a substituição de texto. Isso significa que a busca e substituição de texto em Elixir é compatível com Unicode e pode lidar com diferentes conjuntos de caracteres.
+## Mergulho Profundo
+Em alguns casos, pode ser necessário realizar substituições mais avançadas em strings. Nesses casos, podemos usar a função `Regex.replace/3` que nos permite usar expressões regulares para encontrar e substituir padrões em uma string.
 
-Além disso, você ainda pode usar certas opções de expressão regular, como `ignorecase` e `extended` ao usar essa função. Isso pode ser útil para casos em que você precisa fazer substituições sem diferenciar entre letras maiúsculas e minúsculas ou quando precisa usar espaços em branco e comentários em suas expressões.
+```
+iex> Regex.replace("2007.04.05", ~r/\./, "/", global: true)
+"2007/04/05"
+```
 
-##Veja Também
+Neste exemplo, usamos regex para substituir todos os pontos por barras na data "2007.04.05". Podemos também passar uma função como terceiro parâmetro para `Regex.replace/3`, permitindo ainda mais flexibilidade na substituição de padrões em uma string.
 
-- Documentação oficial de Elixir sobre `String.replace/4`: https://hexdocs.pm/elixir/String.html#replace/4
-- Artigo do site Elixir School sobre expressões regulares: https://elixirschool.com/pt/lessons/advanced/regex/
-- Guia de expressões regulares em Elixir da ThoughtBot: https://thoughtbot.com/blog/elixir-regex-tutorial
+## Veja Também
+- [Documentação oficial de String](https://hexdocs.pm/elixir/String.html)
+- [Documentação oficial de Regex](https://hexdocs.pm/elixir/Regex.html)
+- [Guia rápido de Regex em Elixir](https://dev.to/leperf/a-quick-and-dirty-regex-introduction-for-elixir-software-engineers-mnl)

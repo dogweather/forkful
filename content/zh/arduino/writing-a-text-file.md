@@ -1,46 +1,85 @@
 ---
-title:    "Arduino: 编写文本文件"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/writing-a-text-file.md"
+title:                "Arduino: 编写文本文件"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要编写文本文件？
+## 为什么
 
-在编程中，我们经常需要保存一些数据或者设置，这些数据不能仅仅停留在我们的程序里。通过编写文本文件，我们可以将这些数据保存下来，方便以后的使用和分享。
+编写文本文件在Arduino编程中是一个常见的任务。通过将数据保存到文本文件，我们可以轻松地在内存和外部存储器之间传输数据，并在需要时将其读取回来。此外，文本文件也可以用来保存我们的程序的设置和状态，使得程序更加灵活和可靠。
 
-## 如何编写文本文件
+## 如何
 
-编写文本文件是一件非常简单的事情，只需要几行代码就能实现。首先，在代码中引入 ```SD.h``` 库，然后使用 ```SD.begin()``` 来初始化SD卡。接着使用 ```File dataFile = SD.open("data.txt", FILE_WRITE)``` 打开一个名为data.txt的文本文件，并指定我们要写入的模式。最后，使用 ```dataFile.println("Hello World!")``` 来写入我们想要保存的数据。最后不要忘记使用 ```dataFile.close()``` 来关闭文件。下面是完整的代码示例：
+编写一个文本文件需要使用Arduino的文件系统命令。首先，我们需要在```setup()```函数中使用```SD.begin()```命令来初始化SD卡或外部存储设备。然后，我们可以使用```SD.open()```命令来打开一个具有指定名称和文件模式（如读、写或追加）的文本文件。接下来，我们可以使用```<<```操作符来将数据写入文件，最后使用```close()```命令来关闭文件。
+
+下面是一个例子，它将一个字符串写入名为"data.txt"的文本文件，然后重新打开该文件并将其内容读取出来：
 
 ```Arduino
+#include <SPI.h>
 #include <SD.h>
 
+const int chipSelect = 4;
+
 void setup() {
-  SD.begin();
+  Serial.begin(9600);
+  while (!Serial) {
+    ; // 等待串口连接
+  }
+
+  if (!SD.begin(chipSelect)) {
+    Serial.println("SD 卡初始化失败");
+    return;
+  }
+
   File dataFile = SD.open("data.txt", FILE_WRITE);
-  dataFile.println("Hello World!");
-  dataFile.close();
+
+  if (dataFile) {
+    dataFile << "Hello World!" << endl;
+    dataFile.close();
+    Serial.println("文件已写入");
+  } else {
+    Serial.println("无法打开文件");
+  }
+
+  dataFile = SD.open("data.txt");
+
+  if (dataFile) {
+    while (dataFile.available()) {
+      Serial.write(dataFile.read());
+    }
+    dataFile.close();
+    Serial.println("文件已读取");
+  } else {
+    Serial.println("无法打开文件");
+  }
 }
 
 void loop() {
-
+  // 空函数，仅初始化一次
 }
 ```
 
-当我们运行这段代码后，便会在SD卡中生成一个名为data.txt的文本文件，其中包含一行 "Hello World!" 的内容。
+运行上面的代码后，串口监视器将会输出：
 
-## 深入探讨文本文件写入
+```
+文件已写入
+文件已读取
+Hello World!
+```
 
-除了上面简单的示例外，我们还可以使用更多的方法来控制文本文件的写入。例如，我们可以使用 ```dataFile.print()``` 方法来替代 ```dataFile.println()```，这样我们就可以在同一行写入多个数据。另外，我们也可以使用 ```dataFile.write()``` 方法来直接输入字节数据，这对于保存二进制数据非常有用。
+## 深入了解
 
-同时，我们也可以在打开文件时指定其他的模式，如 ```FILE_APPEND``` 来追加数据，或者 ```FILE_READ``` 来读取数据。更多关于文件操作的详细信息，可以查看Arduino官方文档。
+在编写文本文件时，需要注意一些问题。首先，我们需要选择适当的文件模式来打开文件，以确保数据被正确写入或读取。此外，如果文件已经存在，我们可以选择追加模式来将数据附加到文件的末尾，而不是覆盖文件中的数据。其次，由于文件系统有限的写入次数，我们需要小心谨慎地使用文件写入命令，避免过多的写入操作导致SD卡损坏。
 
-# 查看更多资源
+## 参考资料
 
-如果你想了解更多关于编写文本文件的内容，推荐阅读以下资源：
+- [Arduino SD库参考手册](https://www.arduino.cc/reference/en/libraries/sd/)
+- [使用Arduino写入文本文件](https://create.arduino.cc/projecthub/rafael-aurelio/create-a-text-file-using-arduino-4c855f)
 
-- [Arduino官方文档](https://www.arduino.cc/reference/zh/)
-- [Arduino文本文件操作教程](https://www.arduino.cn/thread-13574-1-1.html)
-- [SD卡模块使用教程](https://blog.csdn.net/gd244814387/article/details/83663983)
+## 参见
+
+- [Arduino编程入门教程](https://www.arduino.cc/en/Tutorial/HomePage)
+- [外部存储器和Arduino数据传输指南](https://www.arduino.cc/en/Guide/ArduinoSD)

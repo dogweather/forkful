@@ -1,59 +1,35 @@
 ---
-title:    "Ruby: 문자열 대문자로 변환하기"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/capitalizing-a-string.md"
+title:                "Ruby: 문자열 대문자로 변환하기"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜?
+문자열의 첫 글자를 대문자로 바꾸는 것이 왜 중요한지 궁금하신가요? 이번에는 Ruby의 대문자화 함수에 대해 알아보겠습니다!
 
-캐피탈라이징(captializing)은 루비(Ruby) 프로그래밍에서 매우 유용한 기능입니다. 문자열을 변경하거나 서식을 지정할 때 사용할 수 있어서, 코드의 유연성을 높여줍니다.
-
-## 하우 투
-
-먼저, `capitalize` 메소드를 사용하여 문자열을 대문자로 바꿀 수 있습니다. 아래의 코드를 참조하세요.
-
+## 어떻게 하나요?
+문자열의 첫 글자를 대문자로 바꾸는 방법은 간단합니다. 바로 `capitalize` 함수를 사용하는 것입니다. 아래 예제 코드를 확인해보세요.
 ```Ruby
-"hello world".capitalize # output: "Hello world"
+string = "hello world"
+puts string.capitalize
 ```
+출력 결과: `Hello world`
 
-이렇게 하면 첫 번째 단어만 대문자로 바뀝니다. 모든 단어를 대문자로 바꾸는 방법은 `upcase` 메소드를 사용하는 것입니다. 아래 코드를 확인하세요.
-
+## 심층적인 분석
+`capitalize` 함수는 문자열의 첫 글자를 대문자로 바꾸는 데에만 사용되는 것이 아니라 전체 문자열 중 첫 번째 단어의 첫 글자만 대문자로 바꾸는데에도 사용됩니다. 또한, 영문 이외의 다른 언어에서도 사용할 수 있습니다. 예를 들어, 영어가 아닌 언어의 경우, 다음과 같은 출력 결과가 나옵니다.
 ```Ruby
-"hello world".upcase # output: "HELLO WORLD"
+string = "여름"
+puts string.capitalize
 ```
-
-만약 첫 글자를 제외하고 나머지 문자를 소문자로 바꾸고 싶다면 `downcase` 메소드를 사용하세요. 아래 코드를 참고하세요.
-
-```Ruby
-"HELLO WORLD".downcase # output: "hello world"
-```
-
-한 글자만 대문자로 바꾸고 싶을 때는 `capitalize!` 메소드를 사용하세요. 아래는 예제 코드입니다.
-
-```Ruby
-"hello world".capitalize! # output: "Hello world"
-```
-
-마지막으로, 모든 단어에서 첫 글자만 대문자로 바꾸는 경우 `capitalize` 메소드에 `each_word` 메소드를 추가하면 됩니다. 아래 코드를 참조하세요.
-
-```Ruby
-"hello world".capitalize.each_word {|word| puts word} # output: "Hello World"
-```
-
-## 딥 다이브
-
-위의 예제로는 간단한 문자열만 다루었지만, `capitalize` 메소드는 문자열의 길이를 확장하여 사용할 수 있습니다. 다양한 조건에 따라 문자열을 변경할 수 있으며, 여러 기능과 함께 사용할 수 있습니다. 더 자세한 정보는 공식 문서를 참조해주세요.
+출력 결과: `여름`
 
 ## 더 알아보기
+`capitalize` 함수는 내부적으로 `gsub` 라는 메소드를 사용하여 첫 글자를 대문자로 바꾸는데, 이를 사용하지 않고 직접 구현하는 방법도 있습니다. 자세한 내용은 아래 링크를 확인해주세요.
 
-만약 루비의 문자열 관련 메소드에 대해 더 알아보고 싶다면 아래 링크들을 참고해주세요.
-
-- https://ruby-doc.org/core-2.7.1/String.html
-- https://ko.wikipedia.org/wiki/루비_(프로그래밍_언어)
-- https://www.fun-coding.org/PL&OOP5-Ruby.html
-
-## 참고하기
-
-이 글은 `ruby` 패키지의 `markdown` 형식으로 작성되었습니다. 자세한 사항은 `github`의 `markdown` 문서를 참고해주세요.
+## 관련 링크
+- [String#capitalize 메소드 문서](https://docs.ruby-lang.org/en/2.6.0/String.html#method-i-capitalize)
+- [String#capitalize 메소드 소스 코드](https://github.com/ruby/ruby/blob/master/string.c#L2745)
+- [Ruby의 대문자화 함수에 대해 알아보는 글](https://www.justinamon.com/code/capitalize-a-string-in-ruby-using-the-correct-encoding-for-i18n/)

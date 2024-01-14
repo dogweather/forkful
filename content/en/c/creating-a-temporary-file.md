@@ -1,55 +1,70 @@
 ---
-title:    "C recipe: Creating a temporary file"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/creating-a-temporary-file.md"
+title:                "C recipe: Creating a temporary file"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Creating temporary files is a common practice in programming, especially in C. These files serve as temporary storage for data during runtime and can be useful in managing memory and improving performance. In this blog post, we will explore the reasons why creating temporary files is important and how to implement it in C.
+Creating temporary files is a useful technique in many programming scenarios. These files provide a temporary solution for tasks such as caching data, storing temporary results, or passing data between processes.
 
 ## How To
 
-Creating a temporary file in C is a simple process. We will be using the `tmpfile()` function from the `stdio.h` library. This function creates a temporary file in the default temporary directory and returns a `FILE` pointer to it.
+To create a temporary file in C, we can use the `tmpfile()` function from the `stdio.h` library. This function takes no arguments and returns a pointer to a FILE object, which can then be used to read and write to the temporary file.
 
-First, we need to include the `stdio.h` library in our C program.
+Let's take a look at an example:
 
-````C
-#include<stdio.h>
-````
+```C
+#include <stdio.h>
 
-Then, we can use the `tmpfile()` function to create a temporary file and assign it to a `FILE` pointer.
+int main() {
 
-````C
-FILE *temp_file = tmpfile();
-````
+    // create a temporary file
+    FILE *tempFile = tmpfile();
 
-We can then use this `FILE` pointer to access and manipulate the temporary file. For example, we can write data to the file using the `fwrite()` function.
+    // write data to the file
+    fprintf(tempFile, "This is some sample data\n");
 
-````C
-char data[100] = "This is a temporary file.";
-fwrite(data, sizeof(char), 100, temp_file);
-````
+    // read data from the file
+    rewind(tempFile);
+    char data[100];
+    fgets(data, 100, tempFile);
+    printf("%s", data);
 
-Once we are done using the temporary file, we can close it using the `fclose()` function. This will automatically delete the file from the temporary directory.
+    // close the file
+    fclose(tempFile);
 
-````C
-fclose(temp_file);
-````
+    return 0;
+}
+```
+
+We start by including the `stdio.h` library, which contains the `tmpfile()` function. Then, we create a function called `main()` where all our code will be contained.
+
+Inside the `main()` function, we use the `tmpfile()` function to create a temporary file and assign the returned FILE pointer to the variable `tempFile`.
+
+Next, we use the `fprintf()` function to write some sample data to the file. We then use the `rewind()` function to set the file position indicator back to the beginning of the file. Finally, we use the `fgets()` function to read the data from the file and print it to the console.
+
+Once we are done using the temporary file, we can close it using the `fclose()` function. This will automatically delete the temporary file from the system.
+
+Running this program will output:
+
+```
+This is some sample data
+```
 
 ## Deep Dive
 
-Behind the scenes, the `tmpfile()` function creates a unique file name by appending a random string of characters to the end of a template string. This template string can be accessed using the `P_tmpdir` macro.
+Under the hood, the `tmpfile()` function creates a temporary file with a unique filename in the system's temporary directory. This directory can vary depending on the operating system, but it is usually located in the `/tmp` or `\temp` directory.
 
-Using this approach, the possibility of accidentally overwriting an existing file or conflict with other processes is minimized. Additionally, the temporary file is not visible to the user, making it more secure.
+It is important to note that temporary files created using the `tmpfile()` function will be automatically deleted when the program exits. This makes it a convenient way to create temporary files without having to worry about cleaning them up afterwards.
 
-It is worth noting that the temporary file is not persisted on the disk, meaning it will be automatically deleted when the program terminates. This makes it an ideal way to store sensitive data that should not be stored permanently.
+However, there are situations where we may want to keep the temporary file even after the program has finished running. In those cases, we can use the `tmpnam()` function to create a temporary file with a unique filename and handle its deletion manually.
 
 ## See Also
 
-- [C - Create a File](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
-- [C Programming Language](https://en.wikipedia.org/wiki/C_(programming_language))
-
-Creating temporary files is a useful skill to have in your programming arsenal. It can greatly improve the efficiency and security of your code. We hope this blog post has given you a better understanding of creating temporary files in C. Happy coding!
+- [Temporary File in C](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
+- [Creating and Using Temporary Files in C](https://www.geeksforgeeks.org/creating-using-temporary-files-c/)
+- [Temporary Directory in Different Operating Systems](https://en.wikipedia.org/wiki/Temporary_folder)

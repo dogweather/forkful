@@ -1,44 +1,30 @@
 ---
-title:    "Haskell: Merkkijonon pituuden löytäminen"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/finding-the-length-of-a-string.md"
+title:                "Haskell: Merkkijonon pituuden löytäminen"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
+Stringin pituuden etsiminen voi olla hyödyllistä, kun haluat tarkistaa tekstin pituuden esimerkiksi lukeaksesi user inputtia tai tulostaa merkkijonon alueen.
 
-Miksi kukaan haluaisi selvittää merkkijonon pituuden? Yksinkertaisesti sanottuna, se on tärkeä perustaito ohjelmoinnissa. Monta kertaa meille tulee vastaan merkkijonoja, kuten käyttäjän syötteitä tai tiedostoja, ja niiden käsittely on välttämätöntä monissa sovelluksissa.
-
-## Miten?
-
+## Miten
 ```Haskell
--- Määritellään funktio merkkijonon pituuden laskemiseksi
-length :: String -> Int
-length str = sum [1 | _ <- str]
+pituus:: String -> Int
+pituus s = length s
+
+pituus "Hei maailma" 
+-- Palauttaa 11
 ```
 
-Alla on esimerkki koodin toiminnasta ja sen tuottamasta tulosteesta:
+Voit käyttää `length` funktiota saadaksesi merkkijonon pituuden. Tämä funktio ottaa argumentiksi merkkijonon ja palauttaa sen pituuden kokonaislukuna.
 
-```Haskell
-length "Tämä on merkkijono"
---> 20
-```
-
-Edellä olevassa koodissa käytetään listan listansiirtymää `_` ja listan tiivistämistä `[1 | _ <- str]` laskeaksesi jokaisen listan arvon pituuden yhdeksi ja summataksesi ne yhteen. Tämä antaa meille merkkijonon pituuden Int-muodossa. Voit myös käyttää valmista `length` -funktiota, kuten alla olevassa esimerkissä:
-
-```Haskell
-length "Hello world!"
---> 12
-```
-
-## Syvempi muistiinpano
-
-Merkkijonon pituuden laskennassa on tärkeää huomata, että se voi vaihdella eri kielistä ja merkistöistä riippuen. Esimerkiksi japaninkielisessä merkkijonossa käytetään kahta bittiä jokaisen merkin esittämiseen, mikä vaikuttaa merkkijonon kokonaispituuteen.
-
-Lisäksi, vaikka ad hoc -fanit voivat käyttää listan pituuden laskemisen `length`-funktiota, joissakin tekniikoissa sitä ei suositella, koska se käyttää iteraatiota ja on siten hidas. Suositeltavaa on käyttää `Data.Text` -moduulia, joka on tarkoitettu erityisesti merkkijonojen käsittelyyn ja tarjoaa nopeamman `length` -funktion.
+## Syvällisesti
+Stringin pituus lasketaan siirtämällä jokainen merkki merkkijonossa yksi kerrallaan ja lisäämällä laskuri, joka pitää kirjaa merkkien määrästä. Tätä prosessia jatketaan kunnes merkkijono on käyty läpi ja laskuri on saavuttanut merkkijonon pituuden. Tämä tapahtuu rekursiivisesti eli funktio kutsuu itseään kunnes laskuri on valmis.
 
 ## Katso myös
-
-- [Haskell-ohjelmointikielen virallinen verkkosivusto] (https://www.haskell.org)
-- [Data.Text-moduuli] (https://hackage.haskell.org/package/text/docs/Data-Text.html)
+- [Haskellin standardikirjaston dokumentaatio `length` funktiosta](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:length)
+- [Artikkeli Haskellin rekursiivisesta laskennasta](https://en.wikibooks.org/wiki/Haskell/Recursion)
+- [Lyhyt esimerkki Rekursiosta](https://www.haskell.org/tutorial/functions.html#functions-and-pattern-matching)

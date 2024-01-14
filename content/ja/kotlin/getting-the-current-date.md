@@ -1,50 +1,54 @@
 ---
-title:    "Kotlin: 「現在の日付を取得する」"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/getting-the-current-date.md"
+title:                "Kotlin: 日付の取得方法"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
-現在の年月日を取得する理由は、アプリケーションやウェブサイトでタイムスタンプを使用する場合や、特定の機能を制限するための期限日を設定する場合などがあります。
+## なぜ
+現在の日付を取得することに関わる理由を説明するための1〜2文です。
 
-## 方法: 
+## 方法
+「```Kotlin ...```」コードブロック内のコーディング例とサンプル出力を含みます。
+
 ```Kotlin
-// 現在の日付を取得する 
-val date = LocalDate.now()
-println("今日の日付は ${date}")
-
-// 現在の時刻を取得する
-val time = LocalTime.now()
-println("現在の時刻は ${time}")
-
-// 現在の日時を取得する
-val dateTime = LocalDateTime.now()
-println("現在の日時は ${dateTime}")
-
-// カスタムフォーマットで現在の日時を取得する
-val formatter = DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH:mm:ss")
-val customDateTime = LocalDateTime.now().format(formatter)
-println("現在の日時は ${customDateTime}")
+fun main() {
+    // 現在の日付を取得する
+    val today = LocalDate.now()
+    // 年、月、日を表示する
+    println("今日の日付は ${today.year}年 ${today.monthValue}月 ${today.dayOfMonth}日 です。")
+}
 ```
 
-出力:
-
+**出力:**
 ```
-今日の日付は 2021-01-01
-現在の時刻は 18:30:00.123456
-現在の日時は 2021-01-01T18:30:00.123456
-現在の日時は 2021年01月01日 18:30:00
+今日の日付は 2021年 6月 20日 です。
 ```
 
-## ディープダイブ:
-現在の日時を取得するには、Kotlinの`LocalDate`、`LocalTime`、`LocalDateTime`クラスを使用します。これらは、日付や時刻をカスタマイズするための各種メソッドを提供しています。また、`DateTimeFormatter`クラスを使用することで、日付や時刻のフォーマットをカスタマイズすることができます。詳細な使い方については、公式ドキュメントを参照してください。
+## 詳細を深める
+現在の日付を取得する方法についての詳細な情報です。
 
-## おわり:
-ここでは、Kotlinで現在の日時を取得する方法についてご紹介しました。タイムスタンプや期限日を設定する際に必要な知識であるため、覚えておくと便利です。Kotlinを使って日時を取得する際は、ぜひこの方法を使用してみてください。
+### 日付オブジェクト
+日付を表すためには、Kotlinの`LocalDate`クラスを使用します。このクラスには、日付を操作するための便利なメソッドがたくさんあります。
 
-## 関連リンク:
-- [Java Time API | Oracle](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Kotlin | Accessing Current Date and Time | GeeksforGeeks](https://www.geeksforgeeks.org/kotlin-accessing-current-date-and-time/)
-- [Kotlin | Date Time Formatting | javatpoint](https://www.javatpoint.com/kotlin-date-time-formatting)
+### フォーマット
+`LocalDate`クラスでは、日付を様々なフォーマットで表示することができます。例えば、日付を「YYYY/MM/DD」の形式で表示するには、`DateTimeFormatter`クラスを使用します。
+
+```Kotlin
+val formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd")
+val today = LocalDate.now()
+// 日付を指定したフォーマットで表示する
+println("今日の日付は ${today.format(formatter)} です。")
+```
+
+**出力:**
+```
+今日の日付は 2021/06/20 です。
+```
+
+## 参考リンク
+- [Kotlinの日付と時刻](https://kotlinlang.org/docs/datetime.html)
+- [Java 8の日付と時刻APIの使用](https://www.oracle.com/java/technologies/javase8-64-bit-downloads.html)
+- [日付と時刻のフォーマットについてのチュートリアル](https://www.codevoila.com/post/85/java-working-with-datetime-type-formatting-datatime)

@@ -1,36 +1,45 @@
 ---
-title:    "Gleam: Tietokoneohjelmointi: Kirjoittaminen standardivirheeseen"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/writing-to-standard-error.md"
+title:                "Gleam: Tietokoneohjelmointi: Kirjoittaminen standardivirheeseen"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa standardi virheen syöttöön
-Kirjoittaminen standardi virheen syöttöön voi olla hyödyllistä, kun haluat tallentaa virheitä ja ilmoituksia ohjelman suorituksen aikana. Tämä voi auttaa sinua tunnistamaan ja korjaamaan mahdollisia ongelmia ja virheitä koodissasi.
+Miksi: Miksi kirjoittaa koodia virhesyötteelle?
 
-## Kuinka tehdä se
-```Gleam
-fn write_to_stderr(message) {
-    io.stderr.write(message)
-}
+Kirjoittaminen virhesyötteelle on tärkeä osa ohjelmointia, sillä se auttaa vianmäärityksessä ja -korjauksessa. Kun sovellus tai ohjelma törmää ongelmaan, se usein tulostaa virhetiedot standardivirhesyötteelle. Tämä auttaa kehittäjiä löytämään ja korjaamaan virheet.
 
-let error_message = "Tämä on virheilmoitus."
-write_to_stderr(error_message)
-```
+Kuinka: Koodiesimerkit ja tulosteet ```Gleam...``` lohkoissa
 
-Tämä koodi esimerkki näyttää, miten voit määritellä toiminnon kirjoittamaan viestin standardi virheen syöttöön ja kutsua sitä haluamallasi viestillä. Alla oleva tulos näyttää, miten viesti tulostuu standardi virheen syöttöön:
+Kirjoittaessa koodia, jossa halutaan tulostaa virheet standardivirhesyötteelle, on tärkeää käyttää oikeaa syntaksia ja oikeita funktioita. Tässä on esimerkki koodilohkosta käyttäen Gleam-kieltä:
 
 ```
-Tämä on virheilmoitus.
+Gleam standarderror
+Gleam.stdio.write_stderr("Virheellinen syöte")
 ```
 
-Tämä toiminnallisuus voi olla erityisen hyödyllinen silloin, kun ajetaan koodia komentokehotteessa ja halutaan tallentaa mahdollisia virheilmoituksia talteen myöhempää tarkastelua varten.
+Tämä koodi tulostaa lauseen "Virheellinen syöte" standardivirhesyötteelle. Tämän avulla kehittäjät voivat helposti tunnistaa virheen ja aloittaa sen selvittämisen. On myös tärkeää huomata, että standardivirhesyöte voi tulostaa myös muutakin kuin vain tekstimuotoisia virheilmoituksia.
 
-## Syvempi sukellus
-Kun kirjoitat standardi virheen syöttöön Gleamissa, huomioi että viestin tulostaminen standardi virheen syöttöön ei pysäytä ohjelman suoritusta. Jos haluat pysäyttää suorituksen, voit käyttää `error!` toimintoa, joka tulostaa viestin ja pysäyttää ohjelman suorituksen.
+Syvennys: Tarkempaa tietoa standardivirhesyötteen kirjoittamisesta
 
-## Katso myös
-- Gleam virallinen dokumentaatio: https://gleam.run/
-- Gleam virallinen GitHub sivusto: https://github.com/gleam-lang/gleam
-- Gleam virallisilla keskustelufoorumeilla: https://gleam.run/chat
+Kun ohjelmassa on useita lokitus- tai virheenkäsittelytoimintoja, on tärkeää harkita, mihin nämä tiedot tulostetaan. Joskus voi olla hyödyllistä tulostaa virheilmoitukset eri tiedostoon kuin muut lokitiedot, jotta niitä on helpompi seurata ja käsitellä.
+
+Lisäksi tulee huomioida myös virheilmoitusten muotoilu ja selkeys. Yksinkertainen ja selkeä virheilmoitus auttaa kehittäjiä nopeammin tunnistamaan ja korjaamaan ongelman.
+
+Katso myös:
+
+Katso myös näitä linkkejä lisäresursseiksi:
+
+- Gleamin virallinen dokumentaatio standardivirhesyötteen kirjoittamisesta: https://gleam.run/documentation/error_handling.html#standard-error
+- Esimerkkejä ja opetusvideoita Gleam-kielen käytöstä: https://gleam.run/documentation/examples_and_videos.html
+- Lisätietoa virheiden käsittelystä ja lokittamisesta ohjelmoinnissa: https://www.freecodecamp.org/news/error-handling-and-logging-best-practices-for-large-nodejs-and-javascript-applications/ 
+
+Katso myös
+
+Jos haluat oppia lisää Gleam-ohjelmoinnista ja sen ominaisuuksista, suosittelemme tutustumaan seuraaviin linkkeihin:
+
+- Gleam-kielen virallinen verkkosivusto: https://gleam.run/
+- Gleam-kielen yhteisöfoorumi: https://forum.gleam.run/
+- Gleam-kielen GitHub-sivusto: https://github.com/gleam-lang/gleam

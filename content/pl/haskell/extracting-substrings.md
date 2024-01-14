@@ -1,55 +1,54 @@
 ---
-title:    "Haskell: Wyodrębnianie podłańcuchów"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/extracting-substrings.md"
+title:                "Haskell: Wycinanie podciągów"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-W dziennym programowaniu często musimy pracować z tekstowymi danymi i czasami potrzebujemy wyodrębnić pewne części tych danych. W tym wpisie na blogu dowiesz się, jak w języku Haskell wyodrębniać podłańcuchy, aby ułatwić sobie pracę z tekstami.
+Extrakcja podciągów jest jedną z podstawowych operacji w programowaniu. Pozwala na wycinanie fragmentów tekstu, co może być przydatne w różnych zastosowaniach. Przeczytaj ten artykuł, aby dowiedzieć się dlaczego warto poznać tę technikę w języku Haskell.
 
 ## Jak to zrobić
 
-Wyodrębnienie podłańcucha w Haskellu jest bardzo proste i wygodne dzięki wbudowanej funkcji "take" oraz "drop". Oto kilka przykładów kodu z użyciem tych funkcji:
+Extrakcja podciągów w Haskell jest bardzo prosta dzięki funkcji `take` i `drop`, które przyjmują odpowiednio ilość elementów do wycięcia z początku i końca listy.
 
 ```Haskell
--- Utworzenie przykładowego tekstu
-tekst = "To jest przykładowy tekst"
-
--- Pobranie pierwszych 10 znaków
-take 10 tekst
--- Wynik: "To jest pr"
-
--- Pominięcie pierwszych 5 znaków
-drop 5 tekst
--- Wynik: " jest przykładowy tekst"
+take 3 "abcdefg" -- zwraca "abc"
+drop 2 "12345" -- zwraca "345"
 ```
 
-Możemy także wykorzystać funkcję "takeWhile" i "dropWhile" do wyodrębnienia podłańcucha spełniającego określone warunki. Przykłady użycia tych funkcji:
+Możemy też wykorzystać `take` i `drop` jako argumenty funkcji `splitAt`, aby podzielić listę na dwie części.
 
 ```Haskell
--- Utworzenie przykładowej listy liczb
-liczby = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+splitAt 4 "Haskellers" -- zwraca ("Hask", "ellers")
+```
 
--- Pobranie liczb mniejszych niż 5
-takeWhile (<5) liczby
--- Wynik: [1, 2, 3, 4]
+Aby wyciąć podciąg o konkretnej długości z dowolnego miejsca w tekście, możemy wykorzystać funkcję `substr` z biblioteki `Text`.
 
--- Pominięcie liczb większych niż 7
-dropWhile (>7) liczby
--- Wynik: [1, 2, 3, 4, 5, 6, 7]
+```Haskell
+import Data.Text (substr)
+
+substr 4 6 "Hello World!" -- zwraca "o Worl"
+```
+
+Jeśli potrzebujemy wyciąć podciąg o wybranym początku i końcu, możemy skorzystać z funkcji `dropWhile` i `takeWhile`.
+
+```Haskell
+takeWhile (/= 'c') "abcde" -- zwraca "ab"
+dropWhile (/= 'c') "abcde" -- zwraca "cde"
 ```
 
 ## Głębszy zanurzenie
 
-Istnieją również inne sposoby na wyodrębnienie podłańcucha w Haskellu, takie jak korzystanie z funkcji "substring" z modułu Data.Text lub wykorzystanie wyrażeń regularnych z pomocą modułu Text.Regex. Dokładniejsze informacje na ten temat można znaleźć w dokumentacji języka Haskell.
+Operacje na listach w Haskell są wyjątkowo wydajne, dlatego funkcje `take` i `drop` oraz ich pochodne działają szybko nawet na bardzo długich listach. Wykorzystanie funkcji z biblioteki `Text` może być korzystne, gdy chcemy wyciąć podciąg z bardzo dużego tekstu.
 
-## Zobacz także
+Ponadto, funkcje te mogą być wykorzystywane w wielu różnych kontekstach. Na przykład, wykorzystując `take` i `drop`, możemy implementować tzw. "paginację" w aplikacjach internetowych, aby wyświetlać tylko określoną część zawartości na stronie.
 
-Jeśli jesteś zainteresowany/a nauką języka Haskell i programowaniem funkcyjnym, polecam zapoznać się z następującymi linkami:
+## Zobacz też
 
-- [Oficjalna dokumentacja języka Haskell](https://www.haskell.org/documentation/)
-- [Kurs programowania funkcyjnego w Haskellu](https://www.seas.upenn.edu/~cis194/spring13/)
-- [Nauka programowania funkcyjnego w języku Haskell z projektami](https://www.codewars.com/collections/fun-with-func-templates-courses-middle-level)
+- Dokumentacja funkcji `take` i `drop`: https://hackage.haskell.org/package/base/docs/Prelude.html#v:take
+- Biblioteka `Text`: https://hackage.haskell.org/package/text/docs/Data-Text.html
+- Przykładowa implementacja paginacji w aplikacji internetowej: https://github.com/jirutka/gitter-paginate/blob/master/src/Gitter/Paginate.hs

@@ -1,38 +1,40 @@
 ---
-title:    "Gleam: Extraindo subcadeias de caracteres"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/extracting-substrings.md"
+title:                "Gleam: Extraindo subcadeias"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que extrair substrings?
 
-Extrair substrings é uma habilidade importante para ter em sua caixa de ferramentas de programação. Ela permite que você manipule e trabalhe com partes específicas de uma string, o que pode ser útil em várias situações, como formatação de dados ou filtragem de informações.
+Extrair substrings é uma tarefa comum em muitos projetos de programação e pode ser útil por diversos motivos. Algumas possibilidades incluem extrair informações específicas de uma string, como um nome ou um número de telefone, ou realizar manipulações em uma parte específica de uma string.
 
-## Como fazer
+## Como extrair substrings em Gleam
 
-Para extrair substrings em Gleam, você pode usar o módulo `String` e sua função `slice`. Essa função aceita três argumentos: a string original, o índice inicial e o índice final da substring desejada. Aqui está um exemplo de como usar essa função:
+Extrair substrings em Gleam é uma tarefa simples e pode ser feita usando a função `substring` da biblioteca padrão. Primeiro, devemos declarar a string original que desejamos extrair a substring:
 
 ```Gleam
-import String
-
-fn main() {
-  let my_string = "Olá, mundo!"
-  let substring = String.slice(my_string, 5, 10)
-  // o valor de substring será "mundo"
-}
+let input = "Este é um exemplo de string"
 ```
 
-Você também pode usar índices negativos para extrair substrings a partir do final da string. Por exemplo, `String.slice(my_string, -6, -1)` resultaria em "mundo". Além disso, a função `len` do módulo `String` pode ser usada para obter o tamanho de uma string, o que pode ser útil para determinar os índices corretos para a sua substring.
+Em seguida, podemos usar a função `substring` para extrair uma substring a partir da posição inicial e com o comprimento desejado:
 
-## Profundidade
+```Gleam
+let output = input.substring(5, 10)
+```
 
-Extrair substrings em Gleam é relativamente simples, mas há algumas coisas a se ter em mente. Primeiro, os índices são baseados em zero, o que significa que o primeiro caractere de uma string tem o índice 0. Além disso, o índice final não é incluído na substring, ou seja, `String.slice(my_string, 0, 2)` resultaria em apenas o primeiro e o segundo caractere da string original.
+O resultado será a substring "é um exe", pois começando do quinto caractere ("é") e contando 10 caracteres, chegamos até o décimo quinto caractere ("e").
 
-Também é importante mencionar que, embora possa parecer mais eficiente usar índices negativos para extrair substrings a partir do final da string, isso pode resultar em resultados inesperados se a string contiver caracteres Unicode complexos.
+## Uma olhada mais profunda
+
+Existem algumas coisas a serem consideradas ao extrair substrings em Gleam. Primeiro, a posição inicial da substring deve estar dentro dos limites da string original. Caso contrário, a função `substring` retornará um erro. Além disso, o comprimento da substring deve ser um inteiro positivo e também deve ser uma posição dentro dos limites da string original.
+
+Outro ponto importante é que a função `substring` retorna uma nova string, ou seja, a string original não é modificada. Sempre devemos atribuir o resultado da função a uma nova variável.
 
 ## Veja também
 
-- Documentação oficial de `String.slice` em Gleam: https://gleam.run/core/string.html#slicestring-int-int
-- Exemplos de uso de `String.slice` em Gleam: https://github.com/gleam-lang/gleam/blob/main/stdlib/core/tests/string.gleam#L37
+- Documentação da função `substring` em Gleam: https://gleam.run/core/string.html#substring
+- Tutorial de programação em Gleam: https://gleam.run/book/getting-started.html
+- Comunidade Gleam no Discord: https://discord.gg/J6d3KD5A

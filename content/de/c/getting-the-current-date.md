@@ -1,38 +1,21 @@
 ---
-title:    "C: Das aktuelle Datum abrufen"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/getting-the-current-date.md"
+title:                "C: Die aktuelle Datum erhalten"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Jeder kennt das Gefühl, wenn man sich fragt, welcher Tag heute ist. Oder man muss in einem Programm die aktuelle Datum und Uhrzeit anzeigen lassen. Hier kommt die Programmierung ins Spiel, um uns das Leben etwas einfacher zu machen. In diesem Blog-Beitrag werden wir uns damit beschäftigen, wie man in der Programmiersprache C das aktuelle Datum und Uhrzeit ausgeben kann.
+Das aktuelle Datum zu erhalten, kann für viele Anwendungen hilfreich sein, sei es für die Organisation von Dateien, die Überprüfung von Garantiefristen oder einfach nur, um den Tag nicht zu vergessen. In dieser Blog-Post werden wir uns anschauen, wie man dies in C programmieren kann.
 
 ## Wie
 
-Um das aktuelle Datum und Uhrzeit in C zu bekommen, benötigen wir Bibliotheken. Eine davon ist `time.h`, die uns Funktionen zur Manipulation von Datum und Zeit zur Verfügung stellt. Wir müssen sie in unserem Code importieren, indem wir `#include <time.h>` am Anfang unseres Programms hinzufügen.
+Um das aktuelle Datum in C zu erhalten, müssen wir die Header-Datei ```<time.h>``` importieren. Diese enthält die Funktionen, die wir benötigen, um das Datum und die Uhrzeit zu erhalten.
 
-Als nächstes müssen wir eine Variable vom Typ `time_t` erstellen, um das Datum und die Uhrzeit zu speichern. Dann können wir die Funktion `time()` aufrufen, um den aktuellen Zeitstempel in diese Variable zu speichern.
-
-```C
-#include <stdio.h>
-#include <time.h>
-
-int main()
-{
-    // Variable vom Typ time_t erstellen
-    time_t currentTime;
-    
-    // Aktuellen Zeitstempel in die Variable speichern
-    currentTime = time(NULL);
-
-    return 0;
-}
-```
-
-Jetzt haben wir den aktuellen Zeitstempel bekommen, aber wie können wir ihn in ein lesbares Datum und Uhrzeitformat umwandeln? Dafür gibt es die Funktion `localtime()`, die uns eine Struktur vom Typ `tm` zurückgibt, die Jahr, Monat, Tag, Stunde, Minute und Sekunde enthält. Mit `printf()` können wir nun diese Werte ausgeben und das aktuelle Datum und die Uhrzeit anzeigen.
+Zunächst müssen wir eine Variable vom Typ ```struct tm``` deklarieren. Diese wird verwendet, um die aufgeschlüsselten Informationen des Datums (Jahr, Monat, usw.) zu speichern. Dann rufen wir die ```time()``` Funktion auf, die uns die Anzahl an Sekunden seit dem 1. Januar 1970 zurückgibt. Diese Zahl können wir dann an die ```gmtime()``` Funktion übergeben, die dann die entsprechenden Werte in unserer ```struct tm``` Variable aktualisiert. Schließlich können wir diese Werte in unserem Programm beliebig verwenden. Hier ist ein Beispielcode:
 
 ```C
 #include <stdio.h>
@@ -40,38 +23,53 @@ Jetzt haben wir den aktuellen Zeitstempel bekommen, aber wie können wir ihn in 
 
 int main()
 {
-    // Variable vom Typ time_t erstellen
-    time_t currentTime;
-    
-    // Aktuellen Zeitstempel in die Variable speichern
-    currentTime = time(NULL);
-    
-    // Struktur vom Typ tm erstellen und Zeitstempel übergeben
-    struct tm *currentDateTime = localtime(&currentTime);
-
-    // Ausgabe des aktuellen Datums und Uhrzeit
-    printf("Aktuelles Datum: %d.%d.%d\n", currentDateTime->tm_mday, currentDateTime->tm_mon + 1, currentDateTime->tm_year + 1900);
-    printf("Aktuelle Uhrzeit: %d:%d:%d\n", currentDateTime->tm_hour, currentDateTime->tm_min, currentDateTime->tm_sec);
-
+    struct tm current_date; // Deklariere eine Variable vom Typ struct tm
+    time_t seconds = time(NULL); // Rufe die time() Funktion auf und speichere die Rückgabe in seconds
+    current_date = *gmtime(&seconds); // Aktualisiere die Werte in der current_date Variable
+    printf("Heute ist der %d.%d.%d\n", current_date.tm_mday, current_date.tm_mon+1, current_date.tm_year+1900); // Gib das aktuelle Datum aus (ACHTUNG: tm_mon beginnt bei 0)
     return 0;
 }
 ```
 
-Die Ausgabe sieht dann ungefähr so aus:
+Mit dem obigen Code können wir das aktuelle Datum im Format Tag.Monat.Jahr ausgeben. Hier ist ein Beispieloutput:
 
 ```
-Aktuelles Datum: 22.04.2021
-Aktuelle Uhrzeit: 16:30:00
+Heute ist der 12.9.2021
 ```
 
 ## Deep Dive
 
-Die Funktionen `time()` und `localtime()` sind sehr nützlich, um das aktuelle Datum und die Uhrzeit zu bekommen. Sie verwenden den sogenannten Unix-Epoch-Zeitstempel, der die Anzahl der vergangenen Sekunden seit dem 1. Januar 1970 um 00:00 Uhr GMT darstellt. Dieser Zeitstempel wird verwendet, um Datum und Uhrzeit zu berechnen, da sie unabhängig von Zeitzonen und Sommerzeit sind.
+Die ```time()``` Funktion gibt uns die Anzahl an Sekunden seit dem 1. Januar 1970 zurück, auch bekannt als Unix-Zeitstempel. Dies ist eine gemeinsame Methode, um Datum und Uhrzeit in vielen Programmiersprachen zu speichern, da es eine einfache und standardisierte Möglichkeit bietet, damit zu arbeiten.
 
-Je nach Bedarf kann die Struktur vom Typ `tm` auch bearbeitet werden, um andere Zeitangaben zu erhalten, z.B. die Wochentage oder die Datum und Uhrzeit in einer bestimmten Zeitzonen.
+```gmtime()``` gibt uns die Werte in Koordinierter Weltzeit (UTC) zurück. Wenn du die lokale Zeit deines Standorts benötigst, kannst du die ```localtime()``` Funktion anstelle von ```gmtime()``` verwenden.
+
+Es ist auch möglich, das aktuelle Datum in einem bestimmten Format auszugeben, indem man die Funktion ```strftime()``` verwendet. Diese erlaubt es uns, ein benutzerdefiniertes Datumsformat anzugeben, wie zum Beispiel ```"%A, %d %b %Y"```, welches uns den Wochentag, den Tag, die abgekürzte Monatsbezeichnung und das Jahr zurückgibt. Hier ist ein Beispielcode:
+
+```C
+#include <stdio.h>
+#include <time.h>
+
+int main()
+{
+    struct tm current_date;
+    time_t seconds = time(NULL);
+    current_date = *gmtime(&seconds);
+    char date_string[50]; // Deklariere ein Array für die Ausgabe
+    strftime(date_string, 50, "%A, %d %b %Y", &current_date); // Verwende strftime() um das Datum in einem bestimmten Format auszugeben
+    printf("%s", date_string);
+    return 0;
+}
+```
+
+Hier ist der entsprechende Beispieloutput:
+
+```
+Sunday, 12 Sep 2021
+```
+
+Für eine vollständige Liste der möglichen Formatierungsoptionen kannst du die [offizielle Dokumentation](https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time-Strings.html) der ```strftime()``` Funktion konsultieren.
 
 ## Siehe auch
 
-- [C-Bibliothek <time.h> (de.wikipedia.org)](https://de.wikipedia.org/wiki/C-Bibliothek_source)
-- [C time() Funktion (c-programmieren.com)](https://www.c-programmieren.com/c-programmiersprache/c-funktion-time.php)
-- [Gibt es eine Möglichkeit, mit C das aktuelle Datum und die Uhrzeit zu erhalten? (stackoverflow.com)](https://stackoverflow.com/questions/1442116/how-to-get-the-date-and-time-values-in-a-c-program)
+- [Unix-Zeitstempel auf Wikipedia](https://de.wikipedia.org/wiki/Unixzeit)
+- [Offizielle Dokumentation der <time.h> Header-Datei](https://www.gnu.org/software/libc/manual/html_node/Time_002dRelated-Types.html#Time_002dRelated-Types)

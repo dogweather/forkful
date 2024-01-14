@@ -1,38 +1,37 @@
 ---
-title:    "Fish Shell: 디렉토리가 존재하는지 확인하기"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/checking-if-a-directory-exists.md"
+title:                "Fish Shell: 디렉토리 유무 확인"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 디렉토리가 존재하는지 확인해야 하는지
 
-모든 프로그래머들은 자신의 코드가 오류 없이 잘 작동하길 바랍니다. 그중 한 가지 방법이 디렉토리의 존재 유무를 확인하는 것입니다. 디렉토리 유무 체크하는 법을 배워보세요!
+만약 당신이 프로그래머이거나 개발자라면, 디렉토리가 존재하는지 확인하는 것은 중요한 일입니다. 이 작업은 특정 작업을 수행하기 전에 특정 디렉토리가 있는지 여부를 알기 위해 필요합니다. 예를 들어, 만약 당신이 어떤 파일을 생성하려면, 그 파일을 생성할 디렉토리가 있는지 확인해야 할 것입니다. 따라서 디렉토리가 존재하는지 확인하는 것은 중요한 첫걸음입니다.
 
-## 어떻게
+## Fish Shell에서 디렉토리가 존재하는지 확인하는 방법
 
-Fish Shell에서 디렉토리가 존재하는지 확인하는 방법은 간단합니다. ```test -d 디렉토리주소```라는 명령어를 사용하면 됩니다. 아래의 예제를 통해 살펴보겠습니다.
+만약 당신이 Fish Shell 사용자라면, 디렉토리가 존재하는지 확인하는 것은 매우 쉬운 일입니다. 다음과 같은 코드를 사용할 수 있습니다:
 
+```Fish Shell
+# 만약 디렉토리가 존재한다면
+if test -d "경로/디렉토리"
+    echo "디렉토리가 존재합니다"
+else
+    echo "디렉토리가 존재하지 않습니다"
+end
 ```
-test -d /Users/사용자명/Documents
-and echo "디렉토리가 존재합니다"
-```
 
-위 코드는 디렉토리가 존재할 경우 "디렉토리가 존재합니다"라는 메시지를 출력합니다. 만약 디렉토리가 존재하지 않는다면 아무런 출력도 하지 않습니다.
+위의 예시에서, `test`는 디렉토리가 존재하는지 확인하는 Fish Shell 내장 명령어입니다. 만약 디렉토리가 존재하면 `test` 명령어는 참값을 반환하고, 존재하지 않으면 거짓값을 반환합니다.
 
-## 깊이 들어가보기
+## 디렉토리가 존재하는지 확인하는 깊은 탐구
 
-만약 여러분이 디렉토리가 존재하는지 여부를 확인하기만 하고 싶지 않다면, 다른 옵션을 사용할 수도 있습니다. ```test``` 명령어에는 여러 옵션이 있으며, ```-d``` 옵션 외에도 ```-f```, ```-e```, ```-L``` 등이 있습니다.
+실제로 디렉토리가 존재하는지 확인하는 것은 매우 간단한 작업이지만, 이 작업은 매우 중요한 개념을 다루고 있습니다. 따라서 이 작업을 이해하기 위해서는 파일 시스템의 동작 원리를 이해하는 것이 필요합니다. 예를 들어, 디렉토리가 존재하는지 확인하기 위해서는 파일 시스템 내부의 인덱스를 검색하여 해당 디렉토리가 존재하는지 여부를 알아야 하는 것입니다. 이렇게 파일 시스템을 공부하면서 디렉토리가 존재하는지 확인하는 방법도 이해할 수 있을 것입니다.
 
-- ```-f``` 옵션은 파일이 존재하는지 확인합니다.
-- ```-e``` 옵션은 로컬 파일/디렉토리가 존재하는지 확인합니다.
-- ```-L``` 옵션은 심볼릭 링크가 존재하는지 확인합니다.
+# 참고 자료
 
-따라서 여러분은 ```test -f 파일주소```와 같은 방식으로 파일 존재 여부를 확인할 수 있습니다.
-
-## See Also
-
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Fish Shell: Using Test Expressions](https://fishshell.com/docs/current/commands.html#test)
-- [How to Check if a File or Directory Exists using Fish Shell](https://linuxize.com/post/how-to-check-if-a-file-or-directory-exists-using-fish-shell/)
+1. [Fish Shell 공식 사이트](https://fishshell.com/): Fish Shell의 다양한 기능과 사용법을 확인할 수 있습니다.
+2. [Fish Shell 명령어 가이드](https://fishshell.com/docs/current/commands.html): Fish Shell의 다양한 명령어와 옵션을 살펴볼 수 있습니다.
+3. [파일 시스템 입문 자료](https://www.oss.kr/info_techtip/show/88d6f14d-726b-4aae-b40c-ef050a442825): 파일 시스템의 기본 개념과 동작 원리를 알 수 있는 입문용 자료입니다.

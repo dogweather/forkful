@@ -1,42 +1,45 @@
 ---
-title:    "Haskell: Eliminazione di caratteri corrispondenti a un pattern"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/deleting-characters-matching-a-pattern.md"
+title:                "Haskell: Cancellazione di caratteri corrispondenti a un modello"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Quando si scrive codice in Haskell, può capitare di trovarsi in situazioni in cui è necessario eliminare dei caratteri che corrispondono a un determinato pattern. Questo può essere fatto per una serie di ragioni, ad esempio per la pulizia dei dati o per manipolare testo in modo specifico.
+C'è un'operazione comune nella programmazione che spesso ci troviamo ad affrontare: la cancellazione di caratteri che corrispondono a un determinato modello. Ma perché dovremmo farlo? A volte è necessario pulire i dati inseriti dagli utenti, altre volte dobbiamo manipolare stringhe complesse per ottenere i risultati desiderati. In ogni caso, avere gli strumenti per eliminare facilmente i caratteri di cui non abbiamo bisogno può fare la differenza nel nostro lavoro di sviluppo.
 
-## Come Fare
+## Come fare
 
-Per eliminare dei caratteri che soddisfano un certo pattern, è possibile utilizzare la funzione `deleteBy` della libreria `Data.List`. Questa funzione accetta come parametri una funzione che confronta due elementi e una lista in cui cercare i corrispondenti da eliminare. Esempio di codice:
+Fortunatamente, Haskell offre un modo semplice ed elegante per gestire la cancellazione di caratteri che corrispondono a un modello utilizzando la funzione `filter`. Questa funzione prende come input una funzione di predicato e una lista, e restituisce una nuova lista contenente solo gli elementi che soddisfano il predicato. Per esempio, se volessimo eliminare tutte le vocali da una stringa, potremmo utilizzare il predicato `not . (`elem` "aeiou")`, che restituisce `True` solo quando il carattere non è una vocale, come mostrato di seguito:
 
 ```Haskell
-import Data.List
-
--- Definizione della funzione che controlla se un carattere è uguale a una vocale
-isVowel :: Char -> Bool
-isVowel c = c `elem` "aeiou"
-
--- Lista di caratteri di esempio
-characters = "haskell"
-
--- Eliminazione di tutte le vocali dalla lista
-output = deleteBy isVowel characters
+filteredString = filter (not . (`elem` "aeiou")) "Ciao, come stai?"
 ```
 
-L'output sarà: `"hskll"`, poiché tutte le vocali sono state eliminate dalla lista di caratteri.
+L'output di questa esecuzione sarebbe "C, cm st?"
+
+Un altro modo per eliminare i caratteri è utilizzare la funzione `delete` del modulo `Data.List`. Questa funzione prende come input un elemento e una lista e restituisce una nuova lista in cui viene eliminato il primo elemento che corrisponde a quello dato. Utilizzando `delete`, potremmo eliminarlo caratteri `"a"` e `"e"` dalla nostra stringa in questo modo:
+
+```Haskell
+deletedString = delete 'a' $ delete 'e' "Ciao, come stai?"
+```
+
+E l'output sarebbe lo stesso di quello precedente.
 
 ## Approfondimento
 
-La funzione `deleteBy` è un esempio di "higher-order function", ovvero una funzione che prende come parametro un'altra funzione. Questo è uno dei concetti fondamentali della programmazione funzionale, su cui si basa il linguaggio Haskell. Utilizzando funzioni come parametri, è possibile scrivere codice più generico e riutilizzabile.
+Ora che abbiamo visto come implementare rapidamente la cancellazione di caratteri che corrispondono a un determinato modello, è importante comprendere che le funzioni come `filter` e `delete` non modificano direttamente i dati di input, ma creano una nuova lista con i risultati filtrati o eliminati. Pertanto, è necessario assegnare l'output di queste funzioni a una nuova variabile se si vuole accedere ai risultati filtrati o eliminati.
 
-Oltre alla funzione `deleteBy`, esistono altre funzioni nella libreria `Data.List` che permettono di eliminare elementi da una lista basandosi su patterns, come ad esempio `delete` o `filter`. Ogni funzione ha un suo specifico utilizzo e quindi è consigliato studiarle e capirne le differenze per poter scegliere quella più adatta al proprio caso d'uso.
+Inoltre, esiste un modo per combinare più funzioni in una sola per ottenere lo stesso risultato. Ad esempio, per eliminare sia le vocali che le virgole dalla stringa, potremmo utilizzare il seguente codice:
 
-## Vedi Anche
+```Haskell
+eliminatedString = filter (not . (`elem` "aeiou")) . delete ',' "Ciao, come stai?"
+```
 
-* [Documentazione sulla funzione `deleteBy` su Hoogle](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:deleteBy)
-* [Ulteriori esempi e spiegazioni sull'utilizzo di funzioni di alta-ordine in Haskell](https://wiki.haskell.org/Higher_order_function)
+## Vedi anche
+
+- [Haskell Wiki - Introduzione alle liste](https://wiki.haskell.org/Lists_Introduction)
+- [Haskell Hoogle - Riferimento alle funzioni del modulo Data.List](https://hoogle.haskell.org/?hoogle=Data.List)

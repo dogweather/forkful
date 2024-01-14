@@ -1,48 +1,52 @@
 ---
-title:    "Elixir: Pisanie do standardowego błędu"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/writing-to-standard-error.md"
+title:                "Elixir: Pisanie do standardowego wyjścia błędów"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego pisać do standardowego błędu w Elixirze?
 
-Zapis do standardowego błędu (standard error) jest ważnym elementem programowania w Elixir. Pozwala on na wyświetlenie błędów i informacji diagnostycznych w sposób niezależny od standardowego wyjścia (standard output), co jest szczególnie przydatne w przypadku niektórych problemów związanych z wyjątkami. 
+Pisanie do standardowego błędu (lub stderr) jest istotną częścią tworzenia oprogramowania w Elixirze. Jest to przydatne narzędzie do debugowania i przechwytywania błędów w naszych programach. Dzięki temu możemy szybciej znaleźć i naprawić potencjalne problemy w naszym kodzie.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby zapisać do standardowego błędu w Elixir, wystarczy użyć funkcji `IO.write/2` lub `IO.puts/2`. Poniżej znajdują się przykłady kodu wraz z odpowiadającym im wyjściem:
-
-```elixir
-IO.write(:stderr, "To jest przykładowy błąd.")
-```
+Poniżej znajdują się przykłady kodu i wyjścia, które pokazują, jak pisać do stderr w Elixirze.
 
 ```
-To jest przykładowy błąd.
+Elixir a = 1/0
+** (ArithmeticError) bad arror in arithmetic expression: a = 1/0
 ```
-
-```elixir
-IO.puts(:stderr, "Ta linijka zostanie wyświetlona na standardowym błędzie.")
-```
+W powyższym przykładzie używamy błędu arytmetycznego, aby wyświetlić błąd w konsoli. Możemy również korzystać z funkcji ```IO.write/2``` i ```IO.puts/2``` do wyświetlenia wiadomości w terminalu.
 
 ```
-Ta linijka zostanie wyświetlona na standardowym błędzie.
+IO.write(:stderr, "To jest błąd\n")
+To jest błąd
+:ok
+```
+Możemy również używać stderr wewnątrz wyjątków, aby przechwytywać i logować błędy w naszym kodzie.
+
+```
+try do
+  raise "To jest błąd"
+rescue
+  e in Exception ->
+    IO.write(:stderr, "#{try e.why rescue nil}\n")
+end
+To jest błąd
+:ok
 ```
 
-## Wielkie zanurzenie
+## Dogłębny przegląd
 
-Zapis do standardowego błędu może być użyteczny nie tylko w przypadku wyjątków, ale również do śledzenia działania programu i diagnostyki problemów. Może być on również stosowany w celach edukacyjnych, aby wyjaśnić określone koncepty lub sposób działania kodu. 
+Istnieje wiele przydatnych funkcji wbudowanych w Elixir, które pomagają nam w obsłudze i wyświetlaniu błędów w naszych programach. Możemy również używać modułu `Logger` do logowania błędów do plików lub do wysyłania powiadomień do naszych systemów monitoringu.
 
-Możliwe jest również przekierowanie wyjścia standardowego do pliku za pomocą komendy `exec`, na przykład:
-
-```elixir
-exec ["elixir", "my_script.exs"], stderr: "log.txt"
-```
-
-Jest to szczególnie użyteczne w przypadku skryptów, które wymagają regularnego zapisywania wyjścia lub błędów do pliku.
+Pamiętaj, aby używać zamienników do standardowego wyjścia, takich jak stderr, zamiast prostego drukowania do konsoli. W przeciwnym razie możemy stracić ważne informacje lub niezamierzonych efektów ubocznych.
 
 ## Zobacz także
 
-- Dokumentacja funkcji `IO.write/2` i `IO.puts/2`: [https://hexdocs.pm/elixir/IO.html#write/2](https://hexdocs.pm/elixir/IO.html#write/2)
-- Przekierowywanie wyjścia w Elixir: [https://elixir-lang.org/getting-started/basic-usage.html#redirecting-inputoutput](https://elixir-lang.org/getting-started/basic-usage.html#redirecting-input-output)
+- [Dokumentacja Elixir - Debugowanie i obsługa błędów](https://elixir-lang.org/getting-started/debugging.html)
+- [Książka - "Elixir w akcji"](https://www.manning.com/books/elixir-in-action)
+- [Blog - "Wyjątki, błędy i debugger w Elixirze"](https://www.mojdigital.pl/2017/09/exeption-try-catch-debugger-elsixir/)

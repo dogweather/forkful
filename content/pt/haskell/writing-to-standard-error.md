@@ -1,38 +1,34 @@
 ---
-title:    "Haskell: Escrevendo para o erro padrão"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/writing-to-standard-error.md"
+title:                "Haskell: Escrevendo no erro padrão"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o stderr?
+## Por que escrever para o padrão de erro?
 
-Às vezes, como programadores Haskell, queremos ter controle total sobre as saídas do nosso código. Escrever para o stderr permite que exibamos mensagens de erro ou avisos específicos durante a execução do programa.
+Escrever para o padrão de erro em Haskell pode ser extremamente útil para os programadores. Isso permite que os erros sejam exibidos de uma maneira mais clara e legível, facilitando a detecção e resolução de bugs em seus códigos.
 
 ## Como fazer
 
-Para escrever para o stderr em Haskell, podemos usar a função `hPutStrLn` do módulo `System.IO`. Esta função recebe como parâmetro uma alça (handle) para o stderr e uma string que será exibida. Veja um exemplo:
+Para escrever para o padrão de erro em Haskell, você precisará importar o módulo "System.IO" e usar a função "hPutStrLn" para imprimir sua mensagem de erro. Veja um exemplo abaixo:
 
 ```Haskell
 import System.IO
 
 main = do
-  h <- openFile "/dev/stderr" WriteMode
-  hPutStrLn h "Mensagem de erro"
-  hClose h
+  hPutStrLn stderr "Ocorreu um erro: Não foi possível encontrar o arquivo."
 ```
 
-Aqui, usamos a função `openFile` para abrir uma alça para o stderr, informando que queremos escrever nele (WriteMode). Em seguida, chamamos a função `hPutStrLn` para exibir a mensagem desejada e, por fim, fechamos a alça com `hClose`.
+A saída do código acima será algo como: "Ocorreu um erro: Não foi possível encontrar o arquivo." na saída de erro.
 
-## Mergulho profundo
+## Profundidade
 
-Uma coisa interessante sobre escrever para o stderr é que podemos usar a mesma lógica para escrever em qualquer outra fonte, como um arquivo ou um socket. Basta abrir uma alça para o desejado e usar a função `hPutStrLn`.
-
-Também é importante lembrar que, se estivermos escrevendo uma aplicação que será executada em um terminal, o stderr será a única forma de exibir informações para o usuário. Portanto, é importante fazer bom uso dessa ferramenta para fornecer uma experiência de usuário mais amigável.
+Além da função "hPutStrLn", existem outras funções úteis que podem ser usadas para escrever em padrão de erro em Haskell, como "hPutStr" e "hPutChar". Além disso, é importante ter em mente que o padrão de erro é um fluxo de saída diferente do padrão de entrada e de saída, portanto, é preciso ter cuidado ao manipulá-lo em seus códigos.
 
 ## Veja também
 
-- [Documentação oficial do módulo System.IO](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Tutorial sobre IO em Haskell](https://wiki.haskell.org/IO_inside)
-- [Exemplo de código usando a função hPutStrLn](https://rosettacode.org/wiki/Window_creation/X11#Haskell)
+- Documentação do módulo "System.IO" em Haskell: https://hackage.haskell.org/package/base/docs/System-IO.html
+- Tutorial básico sobre escrita para o padrão de erro em Haskell: https://www.haskell.org/tutorial/io.html

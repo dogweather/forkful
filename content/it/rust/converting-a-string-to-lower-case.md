@@ -1,34 +1,37 @@
 ---
-title:    "Rust: Convertire una stringa in minuscolo"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/rust/converting-a-string-to-lower-case.md"
+title:                "Rust: Trasformare una stringa in minuscolo"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Se stai scrivendo un programma in Rust e hai bisogno di manipolare delle stringhe, potresti trovarvi nella situazione in cui hai bisogno di convertire una stringa in minuscolo. Ci sono diverse ragioni per cui potresti aver bisogno di farlo: forse devi confrontare due stringhe per controllare se sono identiche, o forse vuoi semplicemente rendere il tuo output più uniforme e leggibile. In ogni caso, è utile sapere come eseguire questa operazione in Rust.
+
+Se sei nuovo alla programmazione in Rust, potresti chiederti perché dovresti preoccuparti di convertire una stringa in caratteri minuscoli. La risposta è semplice: spesso è necessario trattare le stringhe come dati, e convertirle in minuscolo può facilitare la loro elaborazione e confronto.
 
 ## Come fare
-Per convertire una stringa in minuscolo in Rust, puoi utilizzare il metodo `to_lowercase()`. Questo metodo prende in input una stringa e restituisce una nuova stringa con tutti i caratteri in minuscolo. Ad esempio:
+
+È possibile convertire una stringa in minuscolo utilizzando il metodo `to_lowercase()` della struttura `String`. Ecco un esempio di codice che mostra come utilizzarlo:
 
 ```Rust
-let stringa = "Ciao Mondo";
-let stringa_minuscola = stringa.to_lowercase();
+let stringa = String::from("Ciao a tutti!");
+let minuscolo = stringa.to_lowercase();
 
-println!("{}", stringa_minuscola);
-
-// Output: ciao mondo
+println!("{}", minuscolo); //stamperà "ciao a tutti!"
 ```
 
-Come puoi vedere dall'esempio sopra, semplicemente chiamando il metodo `to_lowercase()` sulla tua stringa, il risultato verrà restituito in minuscolo.
+Come puoi vedere, il risultato di `to_lowercase()` è una nuova stringa in cui tutti i caratteri sono in minuscolo. Vale anche la pena notare che questo metodo utilizza il formato Unicode per la conversione, quindi funzionerà con caratteri di qualsiasi alfabeto.
 
 ## Approfondimento
-Se desideri saperne di più sul processo di conversione delle stringhe in minuscolo in Rust, puoi esplorare il funzionamento interno del metodo `to_lowercase()`. Quando questo metodo viene chiamato, viene creata una nuova stringa vuota che viene quindi popolata da un ciclo che itera su ogni carattere della stringa originale. Ogni carattere viene convertito in minuscolo utilizzando la funzione `to_ascii_lowercase()` e quindi aggiunto alla nuova stringa. Infine, la nuova stringa viene restituita come output.
 
-È importante notare che questo metodo utilizza il sistema di codifica ASCII per convertire i caratteri in minuscolo. Ciò significa che i caratteri speciali o di accenti potrebbero non essere correttamente convertiti. Per gestire questi casi, è possibile utilizzare la libreria di terze parti `unicode-segmentation` che supporta diverse codifiche, ma questo va al di là dello scopo di questo articolo.
+Se vuoi approfondire la conversione di una stringa in minuscolo, ci sono alcuni aspetti importanti da considerare. Per esempio, la tua stringa potrebbe contenere caratteri speciali o lettere accentate. In questi casi, dovrai fare attenzione a quale metodo usi per la conversione, poiché alcuni potrebbero non gestire correttamente questi casi particolari.
+
+Inoltre, è importante ricordare che la stringa originale non verrà modificata, ma verrà creata una nuova stringa in minuscolo. Questo può essere utile per evitare errori durante l'elaborazione dei dati, ma potrebbe consumare più memoria se hai a che fare con grandi quantità di stringhe.
 
 ## Vedi anche
-- [Documentazione Rust su stringhe](https://doc.rust-lang.org/std/string/)
-- [Libreria Unicode-segmentation per gestire diverse codifiche](https://crates.io/crates/unicode-segmentation)
-- [Funzioni di manipolazione delle stringhe in Rust](https://www.rust-lang.org/it/learn/strings)
+
+* Documentazione ufficiale di Rust sull'utilizzo di `to_uppercase()`: https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase
+* Un tutorial su come manipolare le stringhe in Rust: https://www.sheshbabu.com/posts/rust-string-manipulation/
+* Un esempio di utilizzo di `to_lowercase()` per confrontare stringhe in maniera case-insensitive: https://stackoverflow.com/questions/29829453/using-string-contains-in-a-case-insensitive-manner-in-rust

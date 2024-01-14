@@ -1,47 +1,42 @@
 ---
-title:    "C#: Ekstrahering av substringer"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/extracting-substrings.md"
+title:                "C#: Uttrekking av substringer"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Hvorfor vil noen ønske å trekke ut substringer fra en tekststreng? Det kan være flere årsaker til dette, men et vanlig tilfelle er å manipulere data eller søke etter spesifikke mønstre i en tekststreng. Dette kan være nyttig i programmering og databehandling, spesielt når man arbeider med store datamengder.
+Å hente ut delstrenger fra tekststrenger kan være nyttig når du jobber med tekstbehandling i C#. Dette kan hjelpe deg med å håndtere og manipulere tekst på en mer effektiv måte.
 
-# Slik gjør du det
+## Hvordan gjøre det
 
-For å trekke ut substringer i C#, trenger vi å bruke metoden "Substring". Denne metoden tar to argumenter - startindeks og lengde. Startindeks angir i hvilket tegn vi skal starte å trekke ut substringen, mens lengden angir hvor mange tegn vi vil trekke ut. La oss se på et eksempel på hvordan vi kan bruke denne metoden:
+For å hente ut en delstreng fra en tekststreng i C#, kan du bruke metoden `Substring()`. Denne metoden tar to parametere - startindeks og lengden på delstrengen du ønsker å hente ut.
 
 ```C#
 string tekst = "Dette er en tekststreng";
-string utdrag = tekst.Substring(8, 2);
-Console.WriteLine(utdrag);
-// Output: en
+string delstreng = tekst.Substring(5, 2); // 5 er startindeksen til "er" og 2 er lengden på delstrengen
+Console.WriteLine(delstreng); // Output: er
 ```
 
-I dette eksempelet trekker vi ut de to tegnene som starter på indeks 8, som i dette tilfellet er "e" og "n". Vi kan også trekke ut substringen fra en bestemt indeks til slutten av strengen ved å bare oppgi ett argument, som i dette tilfellet:
+Du kan også bruke `Substring()`-metoden til å hente ut en del av en tekststreng basert på en gitt indeks, uten å spesifisere lengden på delstrengen.
 
 ```C#
-string utdrag = tekst.Substring(13);
-Console.WriteLine(utdrag);
-// Output: tekststreng
+string tekst = "Dette er en tekststreng";
+string delstreng = tekst.Substring(11); // 11 er indeksen til "tekststreng"
+Console.WriteLine(delstreng); // Output: tekststreng
 ```
 
-# Dypdykk
+## Dypdykk
 
-I eksemplene våre brukte vi bare en startindeks og lengde for å trekke ut substringen. Men i virkeligheten kan vi også bruke negative tall som startindeks, noe som betyr at vi teller baklengs fra slutten av teksten. Vi kan også kombinere dette med den andre versjonen av "Substring" metoden hvor vi bare oppgir startindeks, og la den trekke ut resten av teksten. La oss se på et eksempel på dette:
+Når du bruker `Substring()`-metoden, er det viktig å huske på at indeksene starter med 0. Dette betyr at første tegn i en tekststreng vil ha indeksen 0, det neste vil ha indeksen 1, og så videre.
 
-```C#
-string utdrag = tekst.Substring(-8);
-Console.WriteLine(utdrag);
-// Output: tekststreng
-```
+En annen viktig ting å merke seg er at `Substring()`-metoden ikke endrer den opprinnelige tekststrengen, men returnerer en ny tekststreng med den utvalgte delen. Derfor må du lagre den returnerte verdien i en ny variabel eller bruke den umiddelbart.
 
-Her teller vi åtte tegn baklengs fra enden av teksten, som betyr at vi starter på "t" og trekker ut resten av teksten. Dette kan være nyttig i tilfeller der vi ikke vet nøyaktig lengden på substringen vi trenger å trekke ut.
+## Se også
 
-# Se også
-
-- [Microsoft sin dokumentasjon om "Substring" metoden](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
-- [En tutorial om hvordan man bruker "Substring" i C#](https://www.tutlane.com/tutorial/csharp/csharp-substring)
+- [C# String.Substring() metode (på engelsk)](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
+- [C# Tutorials (på engelsk)](https://www.tutorialspoint.com/csharp/index.htm)
+- [C# String Handling (på engelsk)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)

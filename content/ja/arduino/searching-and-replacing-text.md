@@ -1,45 +1,44 @@
 ---
-title:    "Arduino: テキストの検索と置換"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/searching-and-replacing-text.md"
+title:                "Arduino: テキストの検索と置換"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-なぜ私たちはテキストの検索と置換に取り組むのでしょうか？テキストの検索と置換は、Arduinoプログラミングにおいて非常に重要な機能です。テキストを検索して置換することで、データを簡単に変更したり、特定の文字列を見つけて処理したりすることができます。この機能はArduinoプログラムをより柔軟に、そして強力にするのに役立ちます。
+プログラムを書いていると、文字列の中に間違った単語や誤字脱字があった場合、手作業で修正するのはとても面倒です。また、同じコードを何度もコピー＆ペーストして使用する際にも、複数の場所で同じ変数名や定数を使用したいと思うかもしれません。そのような場合、検索＆置換を使用すると、簡単かつ効率的に文字列を修正することができます。
 
 ## 方法
 
-ここでは、テキストの検索と置換を行うための基本的なコード例を紹介します。まず、テキストを検索して特定の文字列を置換する例を見てみましょう。
+Arduinoでは、テキストエディタを使用して検索＆置換を行うことができます。以下のようなコードをテキストエディタに入力し、「Find and Replace」の機能を使用して文字列の一部を置換することができます。
 
-```Arduino
-String text = "Hello World";
-text.replace("World", "Arduino");
+``` Arduino
+int ledPin = 9;
+int switchPin = 2;
+int buttonState = 0;
+int pressedState = 1;
 
-Serial.println(text);
+buttonState = digitalRead(switchPin);
+if(buttonState == pressedState) {
+  digitalWrite(ledPin, HIGH);
+} else {
+  digitalWrite(ledPin, LOW);
+}
 ```
-上記の例では、変数`text`に保存されている文字列`Hello World`の中の`World`という文字列が`Arduino`に置換されます。コードを実行すると、`Hello Arduino`という文字列がシリアルモニターに表示されます。
 
-次に、文字列の中から特定の文字を検索してその文字を置換する例を見てみましょう。
+上記のコードを見ると、「int」や「digitalRead」、「if」といった単語が複数回使用されていることがわかります。これらの単語を一括で置換することができれば、複数の箇所で同じ変数や関数を使用しても、手間が少なくなります。
 
-```Arduino
-String text = "I love Arduino";
-text.replace("love", "use");
+## ディープダイブ
 
-Serial.println(text);
-```
-上記のコードでは、変数`text`の中から`love`という文字列を検索して、その文字列を`use`に置換します。実行すると、`I use Arduino`という文言が表示されます。
+検索＆置換はただ単語を置き換えるだけではありません。正規表現を使用することで、部分的に一致した文字列をすべて置き換えることも可能です。例えば、```.```という表現は任意の1文字に一致するので、``` myVar.```という文字列を``` myVar = 0;```という文字列に一括置換することができます。
 
-## 詳細を掘り下げる
+さらに、コラムや行数などを指定することで、特定の範囲内の文字列のみを置換することもできます。これらの応用技術を使用することで、より詳細な検索＆置換を行うことができます。
 
-テキストの検索と置換には様々な方法があります。例えば、正規表現を使うことでより複雑な検索や置換が可能になります。また、マルチバイト文字を扱う場合は、`replace()`ではなく`replaceAll()`を使用する必要があります。さらに、Arduinoの不思議な文字コードの扱いも影響してくることがあります。そのため、テキストの検索と置換を行う際には、十分に文書を読み込み、詳細を理解することが重要です。
+## 参考になるリンク
 
-## 参考リンク
-
-- [Arduino Reference - replace()](https://www.arduino.cc/reference/en/language/functions/strings/stringfunctions/replace/)
-- [Arduino Reference - replaceAll()](https://www.arduino.cc/reference/en/language/functions/strings/stringfunctions/replaceall/)
-- [正規表現を使ったテキストの検索と置換](https://www.geosite.info/programming/regexp/search-replace.html)
-- [マルチバイト文字を扱う際の注意点](https://stackoverflow.com/questions/5400197/arduino-how-to-replace-multiple-bytes-string-in-a-large-single-bytes-string)
-- [Arduinoでの日本語文字コードの扱いについて](https://futurismo.biz/archives/3044)
+- [Arduino公式サイト](https://www.arduino.cc/)
+- [正規表現チートシート](https://www.debuggex.com/cheatsheet/regex/javascript)
+- [TextWranglerの検索＆置換機能の使い方](https://www.codepile.net/pile/LdzQ0Q02)

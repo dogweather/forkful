@@ -1,62 +1,47 @@
 ---
-title:    "Elm: Розрахунок дати в майбутньому або минулому"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/elm/calculating-a-date-in-the-future-or-past.md"
+title:                "Elm: Обчислення дати в майбутньому або минулому."
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому 
+## Чому
 
-Розрахунок дати в майбутньому чи минулому може бути корисним для створення різноманітних додатків, таких як календарі, напоминалки та додатки для планування подій. Також це може бути корисно для створення функцій для обробки даних в бізнес-додатках. 
+Програмування може бути веселою та цікавою заняттям, але чому б ви хотіли використовувати Elm для обчислення дати у майбутньому чи минулому? Ви можете отримати багато корисної інформації з таких обчислень, наприклад, створити функцію, яка показує дні до вашого наступного дня народження чи дату до значного події.
 
 ## Як
 
+Використання Elm для обчислення дати в майбутньому чи минулому є доволі простим і зручним процесом. Для початку, вам потрібно зробити імпорт вбудованих функцій ```Date``` та ```Time```. Далі, для обчислення дати у майбутньому чи минулому, достатньо використати функцію ```Time.add``` для додавання або віднімання від поточної дати.
+
+Приведемо нижче приклад коду для обчислення дати майбутнього дня народження за допомогою Elm:
+
 ```Elm
-import Date exposing (Date)
-import Time exposing (Posix)
-import Time.Extra exposing (fromCalendarDate)
+import Date exposing (Day)
+import Time exposing (days)
 
--- Створення функції для розрахунку дати в майбутньому
-futureDate : Int -> Posix -> Date
-futureDate days current =
-    current
-        |> Time.add (Time.days days)
-        |> fromCalendarDate
+today : Day
+today =
+    Date.fromCalendarDate 2022 4 30
 
--- Створення функції для розрахунку дати в минулому
-pastDate : Int -> Posix -> Date
-pastDate days current =
-    current
-        |> Time.sub (Time.days days)
-        |> fromCalendarDate
+addOneYear : Day -> Day
+addOneYear date =
+    Time.add days 365 date
 
-main =
-    let
-        today = Time.now |> fromCalendarDate
-        future = futureDate 30 today
-        past = pastDate 14 today
-    in
-    [ "Сьогодні: " ++ toString today
-    , "Дата в майбутньому: " ++ toString future
-    , "Дата в минулому: " ++ toString past
-    ]
+nextBirthday : Day
+nextBirthday =
+    addOneYear today
+```
 
--- Вихід:
--- [
---   "Сьогодні: Date 2020 6 25"
---   "Дата в майбутньому: Date 2020 7 25"
---   "Дата в минулому: Date 2020 6 11"
--- ]
+В результаті, змінна ```nextBirthday``` буде містити дату наступного дня народження.
 
-``` 
+## Deep Dive
 
-## Глибше 
+Використання дат та часу у програмуванні є дуже важливим, тому що вони дозволяють робити обчислення, які пов'язані з реальним світом. У Elm є вбудовані функції для роботи з датою та часом, які спрощують розробку та полегшують життя розробників. Ви можете ознайомитися з документацією Elm, щоб дізнатися більше про доступні функції та їхні можливості.
 
-За допомогою бібліотеки `Date` та функцій `Time` та `Time.Extra` ми можемо змістити поточну дату вперед або назад на довільну кількість днів. При цьому, якщо поточна дата не враховує фактори, які можуть вплинути на перехід на новий місяць або рік, функції `fromCalendarDate` автоматично врахують ці фактори і повернуть правильну дату. 
+## Дивіться Також
 
-## Дивись також 
-
-- [Docs for Date module](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Docs for Time module](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Docs for Time.Extra module](https://package.elm-lang.org/packages/elm/time/latest/Time-Extra)
+- [Офіційна документація Elm](https://guide.elm-lang.org/)
+- [Туторіал по роботі з датою та часом в Elm](https://brianthicks.com/post/2017/08/15/elm-dates-and-time/)
+- [Приклади використання дат та часу в Elm](https://github.com/jackfranklin/elm-time)

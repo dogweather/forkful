@@ -1,50 +1,47 @@
 ---
-title:    "Arduino: Lettura di argomenti della riga di comando"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/reading-command-line-arguments.md"
+title:                "Arduino: Lettura degli argomenti della linea di comando"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché 
+Scrivere codice in un linguaggio di programmazione può sembrare intimidatorio, ma se stai lavorando con Arduino, non c'è niente di cui preoccuparsi! Imparare a leggere gli argomenti della riga di comando è fondamentale per poter creare codice più avanzato per controllare i tuoi dispositivi.
 
-Se sei un appassionato di tecnologia e programmazione, probabilmente hai sentito parlare del microcontrollore Arduino. Questo piccolo dispositivo è ampiamente utilizzato per creare progetti di elettronica e robotica. Una delle funzionalità più interessanti di Arduino è la possibilità di leggere gli argomenti dalla riga di comando. Ma perché dovresti leggere gli argomenti dalla riga di comando? Continua a leggere per scoprirlo!
-
-## Come fare
-
-Per leggere gli argomenti dalla riga di comando in Arduino, dovrai utilizzare la funzione `Serial.readString()`. Questa funzione consente di leggere una stringa di testo dalla porta seriale del tuo dispositivo. Ecco un semplice esempio di codice che mostra come utilizzare questa funzione:
+## Come Fare
+Per prima cosa, assicurati di avere accesso alla console di Arduino sul tuo computer. Quindi, puoi iniziare a scrivere codice per leggere gli argomenti della riga di comando utilizzando la seguente sintassi: 
 
 ```Arduino
-String input = Serial.readString();
-Serial.println("Hai inserito: " + input);
+int argc = 0; 
+char* argv[] = null; 
 ```
 
-In questo esempio, la variabile `input` conterrà la stringa che è stata inserita nella riga di comando. Puoi anche utilizzare la funzione `Serial.available()` per verificare se ci sono dati disponibili sulla porta seriale prima di leggerli. Ecco un esempio che ti mostrerà come farlo:
+Questo ti consente di dichiarare una variabile per contare il numero di argomenti passati e un'array di caratteri per memorizzarli. 
+
+Per esempio, se vuoi passare due argomenti nella tua riga di comando, puoi farlo scrivendo: 
 
 ```Arduino
-if (Serial.available() > 0) {
-  String input = Serial.readString();
-  Serial.println("Hai inserito: " + input);
-}
+./programma_arduino arg1 arg2
 ```
 
-Oltre a leggere gli argomenti dalla riga di comando, puoi anche utilizzare la funzione `Serial.println()` per stamparli sulla console seriale. Ad esempio, il seguente codice stampa il messaggio "Ciao mondo!" sulla console seriale:
+Se vuoi ottenere questi due argomenti nel tuo codice, puoi farlo usando il seguente codice: 
 
 ```Arduino
-Serial.println("Ciao mondo!");
+argc = 2; 
+argv[0] = "arg1"; 
+argv[1] = "arg2"; 
 ```
 
-## Approfondimenti
+In questo modo, puoi accedere ai tuoi argomenti e utilizzarli nel tuo codice per controllare i tuoi dispositivi.
 
-Ora che hai imparato come leggere gli argomenti dalla riga di comando in Arduino, potresti essere curioso di saperne di più su questa funzionalità. Una delle cose più interessanti che puoi fare è impostare dei parametri per il tuo sketch direttamente dalla riga di comando. Ad esempio, puoi impostare un valore specifico per una variabile durante l'esecuzione del tuo programma utilizzando gli argomenti. Inoltre, puoi utilizzare questa funzionalità per creare programmi più interattivi, che consentono all'utente di inserire dati direttamente dalla riga di comando.
+## Deep Dive 
+Ora che hai imparato come leggere gli argomenti della riga di comando, potresti chiederti come puoi utilizzarli in modo più avanzato. Una delle possibilità è quella di utilizzare questi argomenti per personalizzare le impostazioni del tuo codice in base alle preferenze dell'utente. Ad esempio, se stai creando un dispositivo che può cambiare colore, puoi utilizzare gli argomenti della riga di comando per permettere all'utente di selezionare il colore desiderato.
 
-Inoltre, è possibile combinare la funzione `Serial.readString()` con altre funzioni di controllo degli input, come `Serial.parseInt()` per leggere input numerici. In questo modo, puoi realizzare programmi che richiedono all'utente di inserire dati numerici direttamente dalla riga di comando.
+Un'altra opzione è quella di utilizzare gli argomenti per passare informazioni cruciali al tuo codice, come un indirizzo IP o una porta per la connessione a una rete. In questo modo, puoi creare un codice più dinamico e modulare.
 
-## Vedi anche
-
-Per ulteriori informazioni sull'utilizzo di funzioni e comandi in Arduino, consulta questi utili link:
-
-- [Documentazione ufficiale di Arduino](https://www.arduino.cc/reference/en/)
-- [Comandi della riga di comando di Arduino](https://www.arduino.cc/en/Main/CommandLineArguments)
-- [Esempi di progetti con Arduino](https://create.arduino.cc/projecthub)
-- [Forum di supporto di Arduino](https://forum.arduino.cc/)
+## Vedi Anche
+- [Documentazione di Arduino](https://www.arduino.cc/reference/en/language/variables/environment-variables/argc/)
+- [Guasti di Arduino: lettura degli argomenti dalla riga di comando](https://www.learncpp.com/cpp-tutorial/arguments-to-main/) 
+- [Come utilizzare gli argomenti della riga di comando con Arduino su Raspberry Pi](https://www.tomshardware.com/how-to/use-arduino-command-line-interface)

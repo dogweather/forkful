@@ -1,44 +1,71 @@
 ---
-title:    "Elm: Tulevaisuuden tai menneen päivämäärän laskeminen"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/calculating-a-date-in-the-future-or-past.md"
+title:                "Elm: Sekunneista tulevaisuuteen tai menneisyyteen laskenta"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi laskisit aikaa tulevaisuudessa tai menneessä?
 
-Miksi kukaan haluaisi laskea tulevaisuuden tai menneen päivän? Elm-kielinen päivämäärälaskenta voi auttaa sinua muotoilemaan ja näyttämään päivämääriä eri tavoin. Esimerkiksi voit lisätä sivustollesi ominaisuuden, joka näyttää käyttäjän syntymäpäivän viikonpäivän tai lasketun viimeisen maksupäivän.
+Calculating dates in the future or past is a common task in many programming projects. It allows us to plan and keep track of important events, deadlines, or recurring events. In Elm, we can use the built-in `Date` module to easily calculate dates, making it a useful skill for any Elm programmer.
 
-## Miten
+## Miten tehdä
 
-```Elm
-import Date
-
-Date.fromIsoString "2021-04-20" -- saa takaisin 20. huhtikuuta 2021
-Date.fromParts 2021 April 20 -- saa takaisin 20. huhtikuuta 2021
-```
-
-Voit myös lisätä päiviä, kuukausia tai vuosia olemassa olevaan päivämäärään:
+Ajan laskeminen tulevaisuudessa tai menneisyydessä vaatii muutaman vaiheen, jotka on helppo toteuttaa Elm-kielellä. Ensimmäinen vaihe on tuoda käyttöön `Date`-moduuli, joka sisältää tarvittavat työkalut ajan laskemiseen.
 
 ```Elm
-Date.add Days 5 (Date.fromIsoString "2021-04-20") -- saa takaisin 25. huhtikuuta 2021
-Date.add Months 2 (Date.fromIsoString "2021-04-20") -- saa takaisin 20. kesäkuuta 2021
-Date.add Years (-3) (Date.fromIsoString "2021-04-20") -- saa takaisin 20. huhtikuuta 2018
+import Date exposing (Date, toTime, fromTime, add, subtract, millisecond)
 ```
 
-Voit myös tarkistaa, onko päivämäärä ennen vai jälkeen toisen päivämäärän:
+Seuraavaksi, voimme luoda `Date`-tyypin oliorakenteen valitulla päivämäärällä, tällä kertaa tulevaisuuteen 10 päivää eteenpäin. Tämä voidaan tehdä käyttämällä `add`-funktiota ja antamalla haluttu luku ja aikayksikkö.
 
 ```Elm
-Date.isBefore (Date.fromIsoString "2021-04-20") (Date.fromIsoString "2021-04-21") -- saa takaisin True
-Date.isAfter (Date.fromIsoString "2021-04-25") (Date.fromIsoString "2021-04-20") -- saa takaisin True
+futureDate : Date
+futureDate = add 10 millisecond Date.now
 ```
 
-## Syventävä sukellus
+Tuloksena saamme päivämäärän 10 päivän päästä tästä hetkestä.
 
-Elm-kielinen päivämäärälaskenta käyttää sisäisesti JavaScriptin `Date`-objektia, joten se tukee samoja toimintoja kuin JavaScriptissa. Voit tutkia tarkemmin `Date`-objektin dokumentaatiota löytääksesi muita käyttökelpoisia toimintoja päivämäärälaskentaan.
+```
+2100-01-11T00:00:00.000Z
+```
+
+Voimme myös laskea aikaa menneisyydessä käyttämällä `subtract`-funktiota. Esimerkiksi, jos haluamme laskea päivämäärän 5 päivää sitten, käytämme seuraavaa koodia:
+
+```Elm
+pastDate : Date
+pastDate = subtract 5 millisecond Date.now
+```
+
+Tässä tapauksessa saamme päivämäärän 5 päivää taaksepäin tästä hetkestä.
+
+```
+2099-12-27T00:00:00.000Z
+```
+
+## Syvällinen sukellus
+
+`Date`-moduuli sisältää myös muita hyödyllisiä funktioita, jotka antavat meille enemmän kontrollia päivämäärien laskemisessa. Esimerkiksi `fromTime`-funktio muuttaa millisekunnit `Date`-tyypin olioksi.
+
+```Elm
+fromTime : Time -> Date
+```
+
+Voimme käyttää tätä yhdessä `toTime`:n kanssa muuttaaksemme `Date`-tyypin takaisin millisekunneiksi.
+
+Toinen hyödyllinen funktio on `difference` joka laskee aikaeron kahden päivämäärän välillä ja palauttaa sen millisekunteina.
+
+```Elm
+difference : Date -> Date -> Time
+```
+
+Tämä auttaa meitä laskemaan päivien, tuntien ja minuuttien eroja eri päivämäärien välillä.
 
 ## Katso myös
 
-- [Elm-kielen virallinen dokumentaatio](https://guide.elm-lang.org/)
-- [JavaScriptin `Date`-objektin dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Elm Date -dokumentaatio](https://package.elm-lang.org/packages/elm/time/latest/Date)
+- [Elm Language Guide](https://guide.elm-lang.org/)
+
+Kiitos lukemisesta! Toivottavasti tämä opas auttoi sinua ymmärtämään, kuinka lasketaan aikaa tulevaisuudessa tai menneisyydessä käyttäen Elm-kielellä. Muista tutustua lisäresursseihin jatkaaksesi oppimista. Onnea Elm-ohjelmoinnissa!

@@ -1,44 +1,46 @@
 ---
-title:    "Python: 텍스트 파일 읽기"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/python/reading-a-text-file.md"
+title:                "Python: 텍스트 파일 읽기"
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
+텍스트 파일을 읽는 방법에 대해 배우는 것은 프로그래밍의 기본 기술 중 하나입니다. 이 작업을 숙련하게 할 수 있으면 더 복잡한 작업을 수행하는 데 필요한 기초를 다질 수 있고, 코드를 이해하고 수정하는 데 있어서도 중요한 기반을 마련할 수 있습니다.
 
-파일을 읽는 것이 왜 중요한지 궁금하셨나요? 파일을 읽는 것은 컴퓨터 프로그래밍의 기초 중 하나입니다. 파일은 다양한 유형의 데이터를 저장할 수 있기 때문에, 파이썬을 포함한 다양한 프로그래밍 언어에서 파일을 읽는 방법을 배우는 것은 매우 유용합니다.
+## 어떻게 하나요?
+우리가 흔히 쓰는 텍스트 파일에는 여러 가지 형식이 있을 수 있습니다. 여기서는 가장 기본적인 형태인 .txt 파일을 읽는 방법을 살펴보겠습니다. 우선, 파일을 읽을 때 사용할 수 있는 개별 명령어를 배우겠습니다.
 
-# 어떻게 하나요?
+```python
+# 파일 열기
+file = open('example.txt', 'r')
 
-파이썬에서 파일을 읽는 것은 매우 간단합니다. 먼저 파일을 읽고자 하는 경로를 지정해야 합니다. 그 후, `open()` 함수를 사용하여 파일을 열고, `read()` 함수를 사용하여 파일을 읽을 수 있습니다. 아래 예시를 살펴보세요.
+# 파일 내용 읽기
+contents = file.read()
+print(contents)
 
-```Python
-file_path = "text_file.txt" # 파일 경로 설정
-file = open(file_path) # 파일 열기
-text_data = file.read() # 파일 읽기
-print(text_data) # 파일 내용 출력
+# 파일 닫기
+file.close()
 ```
 
-위 코드의 결과는 파일 `text_file.txt`의 내용을 출력할 것입니다. 또 다른 방법으로는, `with` 구문을 사용하여 파일을 열고, `readlines()` 함수를 사용하여 파일의 각 줄을 읽을 수 있습니다. 아래 예시를 살펴보세요.
+다음은 실제로 파일 내용을 읽을 수 있는 방법입니다. 위 코드를 입력해보고, 다음과 같은 텍스트 파일이 있는지 확인해보세요.
 
-```Python
-file_path = "text_file.txt" # 파일 경로 설정
-with open(file_path) as file: # 파일 열기
-    lines = file.readlines() # 파일의 각 줄 읽기
-    for line in lines: # 각 줄 출력
-        print(line)
+**example.txt** 파일 내용:
 ```
+Hello, world!
+This is a sample text file.
+```
+위 코드를 이용하면 텍스트 파일의 내용을 출력할 수 있습니다. 텍스트 파일이 아니라 다른 형식의 파일을 읽는 방법은 다소 다를 수 있으므로, 해당 파일 형식에 맞는 방법을 찾아보시기 바랍니다.
 
-# 깊이 파고들기
+## 깊게 들어가보기
+텍스트 파일을 읽는 방법은 간단해 보이지만, 실제로는 파일을 읽는 과정에서 여러 가지 문제가 발생할 수 있습니다. 예를 들어, 파일이 너무 크면 메모리 부족 오류가 발생할 수 있습니다. 이런 경우에는 파일을 잘게 나누어 처리하는 방법이 필요합니다.
 
-파일을 읽는 것은 항상 간단하지는 않습니다. 파일에 대한 추가적인 작업이 필요할 수도 있습니다. 예를 들어, 파일 내의 데이터를 분석하거나 원하는 특정 부분을 추출하고 싶을 수 있습니다. 이를 위해 정규표현식을 사용하는 방법 등 파일을 읽는 것에 대한 더 많은 정보를 알아볼 수 있습니다. 또 파일을 읽는 것에서 발생할 수 있는 오류에 대해 알아봄으로써 더 강력한 코드를 작성할 수도 있습니다.
+또는 파일의 인코딩 형식이 다를 경우 문제가 발생할 수도 있습니다. 이런 경우에는 파일을 열 때 인코딩 형식을 지정해주는 것이 중요합니다.
 
-# 관련 링크
+아직은 모든 상황을 대처할 수는 없지만, 위에서 배운 기본적인 방법과 여러 가지 팁을 적용하여 파일을 잘 읽는 마스터가 되어보세요!
 
-[파이썬 입문자를 위한 파일 입출력](https://wikidocs.net/26)
-
-[파이썬으로 파일 다루기](https://codeit.kr/learn/courses/python-intermediate/files)
-
-[정규표현식으로 파일 다루기](https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial)
+## 참고하기
+- [파이썬 파일 관리 기능](https://dojang.io/mod/page/view.php?id=2208)
+- [파일 열기, 쓰기, 닫기](http://pythonstudy.xyz/python/article/201-%ED%8C%8C%EC%9D%BC-%EC%97%B4%EA%B8%B0,-%EC%93%B0%EA%B8%B0,-%EB%8B%AB%EA%B8%B0)

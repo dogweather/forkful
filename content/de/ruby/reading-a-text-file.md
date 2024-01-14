@@ -1,46 +1,68 @@
 ---
-title:    "Ruby: Ein Textdokument lesen"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/reading-a-text-file.md"
+title:                "Ruby: Eine Textdatei lesen."
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Lesen von Textdateien ist eine wichtige Fähigkeit, die jeder Ruby-Programmierer beherrschen sollte. Mit dieser Funktion können Sie Daten aus externen Quellen in Ihr Programm einbinden und verarbeiten. Das kann hilfreich sein, wenn Sie beispielsweise Benutzereingaben aus einer Datei lesen oder externe Daten in Ihrem Programm verwenden möchten. In diesem Blogpost erfahren Sie, wie Sie Textdateien in Ruby lesen und welche Vorteile dies bietet.
+Lesen von Textdateien ist eine wichtige Fähigkeit, die jeder Ruby-Programmierer beherrschen sollte. Es ermöglicht das Einlesen und Verarbeiten von großen Mengen an Daten, die in Form von Textdateien vorliegen.
 
-## Wie man es macht
+## Wie geht das?
 
-Das Lesen einer Textdatei in Ruby ist relativ einfach und erfordert nur wenige Zeilen Code. Zunächst müssen Sie die Datei mit dem Befehl `File.open()` öffnen und eine Variable zuweisen, um auf die Datei zugreifen zu können. Zum Beispiel:
-
-```Ruby
-file = File.open("textfile.txt")
-```
-
-Anschließend können Sie die Daten aus der Datei lesen, indem Sie die `read` Methode verwenden. Diese Funktion gibt den gesamten Inhalt der Datei zurück. Eine mögliche Implementierung könnte folgendermaßen aussehen:
+Das Lesen einer Textdatei in Ruby ist ein relativ einfacher Prozess. Zunächst muss die Datei mit der entsprechenden Erweiterung (.txt oder .csv) im richtigen Verzeichnis platziert werden. Dann kann der folgende Code verwendet werden, um die Datei zu öffnen:
 
 ```Ruby
-file = File.open("textfile.txt")
-puts file.read
+file = File.open("textdatei.txt")
 ```
 
-Dies würde den gesamten Inhalt der Datei auf der Konsole ausgeben.
+Um den Inhalt der Datei zu lesen, können wir die `each`-Methode verwenden, die eine Schleife durchläuft und jede Zeile der Datei als `line`-Variable speichert. 
 
-## Tiefergehende Informationen
+```Ruby
+file.each do |line|
+puts line
+end
+```
 
-Beim Lesen einer Textdatei gibt es einige Dinge zu beachten. Zum Beispiel müssen Sie sicherstellen, dass die Datei, auf die Sie zugreifen möchten, an der richtigen Stelle im Dateisystem liegt. Sie können auch angeben, ob Sie die Datei nur zum Lesen oder zum Schreiben öffnen möchten, indem Sie die entsprechenden Parameter an `File.open()` übergeben. Darüber hinaus können Sie mit der `readlines` Methode die Datei zeilenweise lesen und mit der `foreach` Methode jede Zeile der Datei iterativ verarbeiten.
+Dieser Code liest jede Zeile der textdatei.txt-Datei und gibt sie in der Konsole aus. Wenn wir beispielsweise den Inhalt der Datei "textdatei.txt" haben:
 
-In Ruby gibt es auch einige eingebaute Methoden und Funktionen, mit denen Sie den Inhalt der Datei verarbeiten können, indem Sie z.B. Zeichenketten suchen, ersetzen oder trennen.
+```
+Hallo! 
+Wie geht es dir? 
+Schön dich kennenzulernen.
+```
 
-Nun wissen Sie, wie einfach es ist, eine Textdatei in Ruby zu lesen und wie Sie die Daten weiterverarbeiten können.
+Die Ausgabe des obigen Codes wäre:
+
+```
+Hallo!
+Wie geht es dir?
+Schön dich kennenzulernen.
+```
+
+## Tiefer eintauchen
+
+Es gibt verschiedene Methoden, um eine Textdatei in Ruby zu lesen, je nach den Anforderungen des Codes. Eine andere Möglichkeit ist die Verwendung der `gets`-Methode, die es uns ermöglicht, Benutzereingaben direkt aus der Konsole zu lesen:
+
+```Ruby
+puts "Bitte gib deinen Namen ein:"
+name = gets.chomp
+puts "Hallo #{name}, schön dich kennen zu lernen!"
+```
+
+Wenn wir nun den Namen "Anna" als Eingabe eingeben, wäre die Ausgabe:
+
+```
+Bitte gib deinen Namen ein:
+Anna
+Hallo Anna, schön dich kennen zu lernen!
+```
 
 ## Siehe auch
 
-Hier sind einige hilfreiche Links, um weitere Informationen über das Lesen von Textdateien in Ruby zu erhalten:
-
-- [Offizielle Ruby Dokumentation](https://ruby-doc.org/core-2.7.0/File.html)
-- [Tutorial zum Lesen und Schreiben von Dateien in Ruby](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
-- [GNU Ruby Text Editor (Regexp)](http://rubyregexp.sourceforge.net/)
-
-Viel Spaß beim Programmieren mit Ruby!
+- <a href="https://www.geeksforgeeks.org/ruby-file-io-methods/" target="_blank">Ruby File IO Methods</a>
+- <a href="https://www.rubyguides.com/2015/05/working-with-files-ruby/" target="_blank">Working with Files in Ruby</a>
+- <a href="https://www.tutorialspoint.com/ruby/ruby_input_output.htm" target="_blank">Ruby Input/Output</a>

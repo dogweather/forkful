@@ -1,49 +1,28 @@
 ---
-title:    "Java: חילוץ חתיכות מחרוזת"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/extracting-substrings.md"
+title:                "Java: ייצוא תת-מחרוזות"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-למה כדאי לדוברי העברית ללמוד כיצד לחלץ תת-מחרוזות ב-Java? כי חלץ תת-מחרוזות הוא כלי חשוב בשפת תכנות זו ומאפשר לנו לטפל במחרוזות מסובכות בצורה יעילה ויצירתית.
+כתיבת קוד היא דבר פשוט וכיפי, אבל יש פעמים שאנו צריכים לטפל במחרוזת גדולה ומורכבת. במקרים כאלה, לא תהיה תמיד הצורך להשתמש במחרוזת שלמה, אלא רק בחלק ממנה. למזלנו, יש לנו בחירה מגוונת של כלים בתוך כל תוכנית פותחתן כדי לקלוט חלק מהמחרוזת כפי שאנחנו זקוקים. אחד הכלים האלה הוא הפעולה הקצצה, אשר מאפשרת לנו לחלץ מחרוזת חלק רלוונטי לצורך הקוד שלנו. במאמר הזה, אנחנו נראה את השימוש בהפעולה הקציצת מחרוזת באמצעות שפת ג'אווה.
 
-## כיצד
+## איך לעשות זאת
 
-תחילה, נגדיר מחרוזת עיקרית עם השם "str". לאחר מכן, נשתמש בפקודות המתאימות כדי לחלץ תת-מחרוזות מ-"str". לדוגמה, אם נרצה לחלץ את התת-מחרוזת "Java" מהמחרוזת העיקרית "Welcome to Java programming", נשתמש בפקודה str.substring(11, 15). המספרים 11 ו-15 מציינים את המיקום של התווים במחרוזת העיקרית מהם נרצה לחלץ את התת-מחרוזת.
-
-```Java
-String str = "Welcome to Java programming";
-System.out.println(str.substring(11, 15));
-// Output: Java
-```
-
-בנוסף, ניתן להשתמש בפקודת str.indexOf("Java") כדי למצוא את המיקום הראשון של המחרוזת "Java" במחרוזת העיקרית ולשים אותו כמוצא לפקודת str.substring().
+בקוד שלנו, נתחיל עם מחרוזת רחבה כדי להראות איך משתמשים בפעולה הקצצה. נגדיר את המחרוזת במשתנה כדי שנוכל לעבוד איתה:
 
 ```Java
-String str = "Welcome to Java programming";
-int start = str.indexOf("Java");
-System.out.println(str.substring(start, start+4));
-// Output: Java
+String originalString = "זוהי מחרוזת לדוגמה";
 ```
 
-לנוחיותכם, ניתן לכתוב פקודת חלץ תת-מחרוזת כמתודה ולהשתמש בה כמקור עבור יותר מחרוזת אחת.
+עם זאת, אנחנו רוצים לחלץ רק את המילה הראשונה מתוך המחרוזת. בפעולה הקודמת, אנחנו השתתפו בפעולה זו, אלא שאנחנו משתמשים בסימן טקסט פשוט אלא שאנחנו ממיינים את תוכן מסוים שתוכל להיות מפרידים בהפעלה הקודמת שלנו. נשתמש בפרמטרים של פעולת הקוד כדי לקבוע את המיקום של מילת המחרוזת השנייה בשביל שנוכל לחלץ אותה.
 
 ```Java
-public static String substring(String mainStr, String subStr) {
-    int start = mainStr.indexOf(subStr);
-    int end = start + subStr.length();
-    return mainStr.substring(start, end);
-}
-
-String str = "Welcome to Java programming";
-String subStr = "Java";
-System.out.println(substring(str, subStr));
-// Output: Java
+String substring = originalString.substring(0, originalString.indexOf(" "));
 ```
 
-## חפירה עמוקה
-
-חלץ תת-מחרוזת הוא פעולה חשובה בעיבוד מחרוזות בשפת תכנות Java. המאמר הזה הסביר כיצד לממש את פקודת החלץ בצורה פשוטה וברורה, אך חשוב להיזהר מאיזושהי בעיות אפשריות. לדוגמה, אם התיחסות למיקום התת-מחרוזת במקור העיקרי תיעשה ללא עיוותים, כדי ל
+הפעולה ```substring``` נקבל את הפרמטרים שלו באופן הבא: האינדקס של תחילת התת-מחרוזת והאינדקס של סיום התת-מחרוזת. אנחנו גם משתמשים בפעולת הקוד ```indexOf``` כדי למצוא את

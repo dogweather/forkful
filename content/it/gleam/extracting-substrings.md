@@ -1,42 +1,41 @@
 ---
-title:    "Gleam: Estrazione di sottostringhe"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/extracting-substrings.md"
+title:                "Gleam: Estrazione di sottostringhe"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perchè
+## Perché
 
-Estrarre sottostringhe è una pratica comune nella programmazione, specialmente quando si lavora con stringhe di testo. Se sei nuovo alla programmazione o vuoi ampliare le tue conoscenze su questo argomento, continua a leggere per scoprire come estrarre sottostringhe utilizzando il linguaggio di programmazione Gleam.
+L'estrazione di sottostringhe è un'operazione utile durante la manipolazione di stringhe in Gleam. Permette di estrarre parti specifiche di una stringa per utilizzarle in altre operazioni o per analizzarle in modo più dettagliato.
 
-## Come fare
+## Come Fare
 
-Per estrarre una sottostringa in Gleam, puoi utilizzare la funzione `String.substr(start, length)` dove `start` è l'indice iniziale della sottostringa e `length` è la lunghezza della sottostringa desiderata. Ad esempio, se vogliamo estrarre una sottostringa da "Hello World!" che contiene solo la parola "World", possiamo utilizzare il seguente codice:
-
-```Gleam
-let original_string = "Hello World!"
-let extracted_string = String.substr(6, 5)
-```
-
-Il valore di `extracted_string` sarà "World". È importante notare che gli indici delle stringhe in Gleam iniziano da 0, quindi il primo carattere ha indice 0.
-
-Puoi anche estrarre una parte di una stringa utilizzando una sintassi simile a quella delle liste. Ad esempio, se vogliamo estrarre una sottostringa che contiene solo "Hello" da "Hello World!", possiamo utilizzare il seguente codice:
+Per estrarre una sottostringa in Gleam, possiamo utilizzare la funzione `String.sub`, specificando la stringa originale, l'indice di inizio e la lunghezza della sottostringa desiderata.
 
 ```Gleam
-let original_string = "Hello World!"
-let extracted_string = String.substr(0, 5)
+let stringa_originale = "Ciao a tutti!"
+let sottostringa = String.sub(stringa_originale, 5, 3)
 ```
 
-Il valore di `extracted_string` sarà "Hello".
+In questo caso, la sottostringa sarebbe "a t".
 
 ## Approfondimento
 
-Oltre alla funzione `String.substr`, Gleam offre anche altre funzioni per estrarre sottostringhe in modo più specifico. Ad esempio, `String.left(number)` restituisce i primi `number` caratteri di una stringa, mentre `String.right(number)` restituisce gli ultimi `number` caratteri. Inoltre, la funzione `String.slice(start, end)` consente di estrarre una sottostringa specificando l'indice di inizio e l'indice finale della stringa desiderata.
+La funzione `String.sub` è molto utile per estrarre parti specifiche di una stringa, ma è importante tenere a mente che l'indice di inizio include anche lo spazio vuoto all'inizio della stringa.
 
-Inoltre, è possibile utilizzare l'operatore di concatenazione `++` per combinare due o più stringhe insieme e quindi estrarre una sottostringa dal risultato finale.
+Per estrarre una sottostringa senza lo spazio vuoto, possiamo utilizzare la funzione `String.trim`. Inoltre, possiamo anche specificare un indice di fine anziché la lunghezza della sottostringa desiderata.
 
-## Vedi anche
+```Gleam
+let stringa_originale = "Ciao a tutti!"
+let sottostringa = stringa_originale |> String.trim |> String.sub(4, 2)
+```
 
-- La documentazione ufficiale di Gleam sulla manipolazione delle stringhe: https://gleam.run/documentation/libraries/string.html
-- Un tutorial su come utilizzare le stringhe in Gleam: https://youtu.be/IlOw1y8WxSg
+In questo caso, la sottostringa sarebbe "a t", senza lo spazio vuoto all'inizio.
+
+## Vedi Anche
+
+- [Documentazione di Gleam sulla gestione delle stringhe](https://gleam.run/documentation/stdlib/string/)
+- [Articolo su come utilizzare le funzioni di manipolazione delle stringhe in Gleam](https://www.blogdelsito.com/manipolazione-stringhe-gleam/)

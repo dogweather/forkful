@@ -1,56 +1,54 @@
 ---
-title:    "Haskell: Iniciando um novo projeto"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/starting-a-new-project.md"
+title:                "Haskell: Iniciando um novo projeto"
+programming_language: "Haskell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que começar um novo projeto em Haskell?
 
-Começar um novo projeto em Haskell é uma ótima maneira de aprimorar suas habilidades de programação funcional e explorar novas formas de resolver problemas. Além disso, Haskell é uma linguagem altamente expressiva e elegante, o que torna a codificação muito mais divertida e desafiadora.
+Haskell é uma linguagem de programação funcional pura que oferece diversos benefícios, como segurança de tipos de dados, expressividade e modularidade. Começar um novo projeto em Haskell pode ser uma ótima escolha para aqueles que desejam desenvolver softwares confiáveis e escaláveis.
 
-## Como Fazer
+## Como fazer isso?
 
-Para começar um novo projeto em Haskell, você precisa ter o compilador GHC instalado no seu computador. Em seguida, crie um arquivo com extensão ".hs" e escreva seu código dentro deste arquivo.
+Para iniciar um novo projeto em Haskell, você pode seguir os seguintes passos:
 
-```
-Haskell
---Exemplo de código
-module Main where
+1. Instale o compilador GHC e o gerenciador de pacotes Cabal em sua máquina.
+2. Crie um novo diretório para o seu projeto e navegue até ele pelo terminal.
+3. Inicie um novo projeto Haskell com o comando `cabal init`.
+4. Escolha um nome para o seu pacote, preencha as informações solicitadas e selecione as dependências necessárias.
+5. Comece a codificar! Você pode usar o editor de texto de sua preferência ou até mesmo IDEs especializadas em Haskell, como o Visual Studio Code com a extensão "Haskell Language Features".
 
---Função para somar dois números
-soma :: Int -> Int -> Int
-soma x y = x + y
+Aqui está um exemplo simples de código Haskell no qual é solicitado um número ao usuário e, em seguida, é exibida a sua raiz quadrada:
 
---Função principal que imprime o resultado da soma
-main :: IO ()
+```haskell
+import Text.Read
+
 main = do
-  let resultado = soma 5 10
-  putStrLn ("O resultado da soma é: " ++ show resultado)
+    putStrLn "Digite um número:"
+    input <- getLine
+    let number = readMaybe input :: Maybe Double
+    case number of
+        Just n -> putStrLn ("A raiz quadrada de " ++ show n ++ " é " ++ show (sqrt n))
+        Nothing -> putStrLn "Número inválido!"
 ```
 
-O código acima declara uma função `soma` que recebe dois argumentos do tipo `Int` e retorna a soma desses valores. Em seguida, na função principal, chamamos a função `soma` passando os valores 5 e 10 como argumentos e imprimimos o resultado na tela.
+O programa acima solicita um número ao usuário através do terminal e, em seguida, converte essa entrada para um número do tipo `Double`. Se a conversão for bem-sucedida, o programa usa a função `sqrt` para calcular a raiz quadrada do número e exibe o resultado na tela. Caso contrário, uma mensagem de erro é exibida.
 
-Para compilar e executar o código acima, abra o terminal e navegue até o diretório onde seu arquivo ".hs" está localizado. Em seguida, execute os seguintes comandos:
+## Mergulho profundo
 
-```
-ghc -o meu_programa meu_codigo.hs
-./meu_programa
-```
+Ao iniciar um novo projeto em Haskell, é importante ter em mente algumas boas práticas para garantir um desenvolvimento mais suave e eficiente. Aqui estão algumas dicas úteis:
 
-Isso irá gerar um arquivo executável chamado "meu_programa" e executá-lo, imprimindo na tela o resultado "O resultado da soma é: 15".
+- Planeje seu código antes de começar a codificar. Haskell é uma linguagem muito expressiva, mas é sempre melhor ter uma visão geral do problema e das soluções antes de escrever o código.
+- Use tipos de dados personalizados para representar suas entidades e dados. Isso ajudará a tornar seu código mais legível e manutenível.
+- Faça uso de funções de ordem superior, como `map`, `filter` e `fold`, para manipular listas de forma concisa e elegante.
+- Teste seu código constantemente. Haskell possui uma forte tipagem estática, o que significa que os erros só são detectados em tempo de compilação. Testar seu código ajudará a encontrar possíveis bugs e garantir a qualidade do seu software.
 
-## Mergulho Profundo
+## Veja também
 
-Ao começar um novo projeto em Haskell, é importante considerar alguns aspectos, como a estrutura do projeto e as bibliotecas necessárias. Uma boa prática é dividir seu código em módulos e utilizar o sistema de tipos de Haskell para garantir que seu código seja seguro e livre de erros.
-
-Também é importante pesquisar e utilizar bibliotecas de terceiros sempre que possível, pois elas podem economizar tempo e permitir que você se concentre na lógica do seu código.
-
-Outra dica importante é sempre testar seu código de forma exaustiva usando o framework de testes HUnit, que é especialmente projetado para testes de unidade em Haskell.
-
-## Veja Também
-
-- [Documentação oficial do GHC](https://www.haskell.org/ghc/)
-- [Aprenda Haskell](https://learn.haskell.org/)
-- [Hackage - Repositório de bibliotecas Haskell](https://hackage.haskell.org/)
+- [Documentação oficial do Haskell](https://www.haskell.org/documentation/)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+- [How to Haskell](https://github.com/bitemyapp/learnhaskell)
+- [Haskell for all - Comprehensive Haskell tutorials](https://www.haskellforall.com/)

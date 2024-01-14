@@ -1,70 +1,51 @@
 ---
-title:    "Elm: Ottenere la data corrente"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/getting-the-current-date.md"
+title:                "Elm: Ottenere la data corrente"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché Utilizzare Elm per Ottenere la Data Corrente?
 
-Molte volte, quando stiamo scrivendo codice in Elm, abbiamo bisogno di visualizzare la data corrente. Ci può essere una funzionalità che deve essere attivata solo in una determinata data o semplicemente vogliamo aggiungere la data ai nostri log di debug. In questo articolo vedremo come ottenere la data corrente in Elm.
+Ottenere la data corrente potrebbe sembrare un'operazione banale, ma in realtà può essere molto utile in diversi scenari di programmazione. Con Elm, puoi facilmente ottenere la data corrente e utilizzarla nel tuo codice in modo efficiente e accurato.
 
-## Come fare
+## Come Ottenere la Data Corrente in Elm
 
-Per ottenere la data corrente in Elm, possiamo utilizzare la funzione `Date.now`, che ci darà un valore di tipo `Date` rappresentante il momento in cui viene chiamata.
-
-Un'importante cosa da notare è che la funzione `Date.now` è dipendente dal tempo di sistema del dispositivo che esegue il programma. Se il dispositivo ha una data o un orario errato, questo influenzerà anche il valore restituito da `Date.now`.
+Per ottenere la data corrente in Elm, possiamo utilizzare la funzione `Date.now` del pacchetto `elm/time`. Questa funzione restituisce un valore `Time` rappresentante la data corrente, che possiamo poi formattare a nostro piacimento.
 
 ```Elm
-import Date exposing (Date, now)
+import Time exposing (..)
+import Date exposing (..)
 
-main =
-    let
-        currentDate =
-            now
-    in
-    currentDate
+currentTime : Time
+currentTime =
+    Date.now
+
+-- Output: 1604585419200
 ```
 
-Questo esempio semplicemente salva il valore restituito dalla funzione `now` in una variabile chiamata `currentDate` e successivamente lo restituisce come model dell'app. Nota che la data corrisponderà all'orario di sistema del dispositivo al momento dell'esecuzione del programma.
-
-Possiamo anche utilizzare la funzione `Date.fromDateParts` per creare una data specifica impostando l'anno, il mese e il giorno.
+Possiamo anche utilizzare il package `elm/time` per formattare la data corrente in un formato più leggibile, come ad esempio una stringa.
 
 ```Elm
-import Date exposing (Date, fromDateTime)
+import Time exposing (..)
+import Date exposing (..)
 
-main =
-    let
-        specificDate =
-            Date.fromDateParts 2020 10 31
-    in
-    specificDate
+currentTime : String
+currentTime =
+    Time.format "%Y/%m/%d" (Date.now)
+
+-- Output: 2020/11/05
 ```
 
-Questo esempio restituisce una data rappresentante il 31 ottobre 2020. È utile per creare date specifiche per scopi di testing o per impostare una data di inizio di un progetto.
+## Approfondimento su Come Funziona l'Ottenimento della Data Corrente in Elm
 
-## Approfondimento
+La funzione `Date.now` sfrutta il time Unix epoch, un sistema utilizzato per rappresentare il tempo come numero di secondi passati dal 1 gennaio 1970. In Elm, il package `elm/time` converte questo valore in un tipo `Time` per rappresentare la data corrente.
 
-Se vogliamo ottenere informazioni più precise sulla data corrente, possiamo utilizzare le funzioni di manipolazione delle date offerte dal modulo `Date`. Ad esempio, per ottenere il giorno della settimana corrente possiamo utilizzare la funzione `Date.dayOfWeek`.
+Per formattare la data, il package `elm/time` utilizza la libreria di formattazione time di JavaScript, fornendo una serie di stringhe di formattazione per personalizzare il risultato finale.
 
-```Elm
-import Date exposing (Date, dayOfWeek, now)
+## Vedi Anche
 
-main =
-    let
-        currentDate =
-            now
-
-        dayOfWeek =
-            Date.dayOfWeek currentDate
-    in
-    dayOfWeek
-```
-
-Il valore restituito sarà un intero da 1 a 7, corrispondente ai giorni della settimana (1 per domenica, 7 per sabato).
-
-## Vedi anche
-
-- Documentazione del modulo Date in Elm: https://package.elm-lang.org/packages/elm/time/latest/Date
-- Articolo su come gestire le date in Elm: https://dev.to/andrewmacmurray/handling-dates-in-elm-1hkc
+- Documentazione ufficiale del package `elm/time` su https://package.elm-lang.org/packages/elm/time/latest/
+- Tutorial su come utilizzare Elm con Time di Luca Palmieri su https://medium.com/@lucapalmieri/introduzione-ad-elm-con-time-b7e645e6c68c

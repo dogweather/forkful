@@ -1,46 +1,60 @@
 ---
-title:    "TypeScript: Omvandla ett datum till en sträng"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/converting-a-date-into-a-string.md"
+title:                "TypeScript: Omvandling av ett datum till en sträng"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför konvertera ett datum till en sträng?
+## Varför
+Att kunna konvertera en datum till en sträng är en viktig färdighet för alla TypeScript-programmerare. Det ger möjlighet att visa datum på ett mer läs-vänligt sätt och att göra det enklare att hantera datum i din kod.
 
-Att konvertera ett datum till en sträng är ett vanligt förekommande problem i programmering. Ofta behöver vi presentera datumet på ett läsbart format för användaren eller spara det i en databas. I den här bloggposten kommer vi att utforska olika sätt att konvertera ett datum till en sträng med hjälp av TypeScript.
+## Hur man gör det
 
-## Så här gör du
+```TypeScript
+const datum = new Date("2021-09-15");
+const datumString = datum.toDateString();
+console.log(datumString); // Output: Wed Sep 15 2021
+```
 
-För att konvertera ett datum till en sträng i TypeScript kan du använda `toString()` metoden på ett `Date` objekt. Här är ett enkelt exempel:
+Att konvertera ett datum till en sträng är relativt enkelt med hjälp av inbyggda metoder i JavaScripts Date-objekt. Först måste du skapa ett Date-objekt med ett specifikt datum, antingen genom att ange datumet som en string eller med hjälp av olika metoder som `getDay()` och `getFullYear()`. Sedan kan du använda `toDateString()` för att få ett läs-vänligt format för datumet.
 
 ```TypeScript
 const datum = new Date();
-const sträng = datum.toString();
-console.log(sträng); // Output: Mon Aug 23 2021 10:00:00 GMT+0200 (Central European Summer Time)
+const dag = datum.getDay(); // Returnerar dagen i veckan som ett nummer
+const manad = datum.getMonth(); // Returnerar månaden som ett nummer
+const ar = datum.getFullYear(); // Returnerar året som ett fyrsiffrigt nummer
+
+const datumString = dag + "/" + manad + "/" + ar; // Format: DD/MM/YYYY
+console.log(datumString); // Output: 15/9/2021
 ```
 
-Om du vill ha en mer läsbar formatering kan du använda `toLocaleDateString()` metoden och ange vilket språk och region du vill ha datumet på. Till exempel:
-
-```TypeScript
-const datum = new Date();
-const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-const sträng = datum.toLocaleDateString('sv-SE', options);
-console.log(sträng); // Output: måndag, 23 augusti 2021
-```
-
-Du kan även använda tredjepartsbibliotek som Moment.js eller date-fns för mer avancerade funktioner och formateringar.
+För att skapa ett mer specifikt format kan du använda andra inbyggda metoder som `getHours()`, `getMinutes()` och `getSeconds()` för att inkludera tiden i din sträng.
 
 ## Djupdykning
+När du konverterar ett datum till en sträng kan det vara användbart att känna till några olika format-alternativ. Ett sätt är att använda den globala `Intl`-modulen, som ger möjlighet att skapa datum och tid på olika språk och format.
 
-När vi konverterar ett datum till en sträng, så omvandlar vi i grund och botten ett datumobjekt till en läsbar sträng med hjälp av olika formatteringsregler. Detta kan inkludera information som veckodag, månad, år, timmar, minuter och sekunder.
+```TypeScript
+const datum = new Date();
+const lokalTid = new Intl.DateTimeFormat("sv-SE").format(datum);
+console.log(lokalTid); // Output: 15/9/2021
+```
 
-Det är viktigt att tänka på vilket språk och region datumsträngen kommer att användas i för att få rätt formatering. Till exempel kan datumet 11/12 vara den 11 december i USA, men den 12 november i Sverige.
+Du kan också använda metoder som `getDate()`, `getMonth()` och `getFullYear()` tillsammans med `toLocaleDateString()` för att skapa en sträng baserat på olika lokala inställningar.
 
-Det är också möjligt att konvertera en sträng till ett datumobjekt genom att använda `new Date(sträng)`. Detta kan vara användbart om du vill läsa in ett datum från en textfil eller en API-förfrågan.
+```TypeScript
+const datum = new Date();
+const dag = datum.getDate(); // Returnerar dagen i månaden
+const manad = datum.getMonth() + 1; // Returnerar månaden som ett nummer
+const ar = datum.getFullYear(); // Returnerar året som ett fyrsiffrigt nummer
 
-## Se även
+const lokalTid = new Intl.DateTimeFormat("sv-SE").format(datum);
+const datumString = dag + "/" + manad + "/" + ar; // Format: DD/MM/YYYY
+console.log(datumString); // Output: 15/9/2021
+```
 
-- [Moment.js](https://momentjs.com/)
-- [date-fns](https://date-fns.org/)
-- [MDN webbdokumentation om Date](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/Date)
+## Se också
+- [MDN web docs: Datum API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [MDN web docs: Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)
+- [Date-fns - Ännu en JS datum-bibliotek](https://date-fns.org/)

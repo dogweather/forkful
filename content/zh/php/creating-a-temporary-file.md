@@ -1,75 +1,42 @@
 ---
-title:    "PHP: 创建临时文件"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/php/creating-a-temporary-file.md"
+title:                "PHP: 创建临时文件"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+##为什么？
+ 创建临时文件对于PHP程序员来说是一个常见的操作。它可以用来存储临时数据，如用户上传的文件，在处理过程中需要暂时存储的数据等。临时文件还可以用来在程序中存储一些中间结果，以便将来可以继续使用。总而言之，创建临时文件是为了更有效地处理数据。
 
-我们在编写PHP代码时，经常会遇到需要操作临时文件的情况。可能是为了保存一些临时数据，或者处理一些复杂的任务。但是为什么要使用临时文件呢？让我们来深入了解一下。
-
-## 如何做
-
-我们在PHP中可以通过使用`tmpfile()`函数来创建一个临时文件。
+##如何做到？
+要创建一个临时文件，首先需要使用PHP内置函数`tempnam()`来生成一个唯一的临时文件名，并指定一个目录进行存储。接下来，可以使用`fopen()`函数以写入模式打开该文件，这样就可以像操作通常的文件一样进行写入。下面是一个简单的示例代码：
 
 ```PHP
-$file = tmpfile();
+<?php
+// 创建临时文件
+$tempFile = tempnam('/tmp', 'temp_');
+
+// 打开文件进行写入
+$handle = fopen($tempFile, "w");
+fwrite($handle, "这是临时数据");
+fclose($handle);
+
+// 读取此临时文件并打印内容
+echo file_get_contents($tempFile);
+// 输出：这是临时数据
+
+// 删除临时文件
+unlink($tempFile);
+?>
 ```
 
-使用该函数会在操作系统临时目录下创建一个临时文件，并返回一个资源类型的文件指针。如果我们需要将一些数据写入到临时文件中，可以使用`fwrite()`函数。
+##深入探讨
+当使用`tempnam()`函数创建临时文件时，可以指定一个前缀来标识该文件。这一点在处理多个临时文件时很有用。另外，使用`tempnam()`返回的临时文件名称是绝对路径，因此我们不必担心文件名称冲突的问题。一旦不再需要使用临时文件，我们可以使用`unlink()`函数将其删除，以节省磁盘空间。
 
-```PHP
-fwrite($file, "Hello World!");
-```
+另外，PHP还提供了`tmpfile()`函数来直接创建临时文件，而无需指定存储目录。这个方法会返回一个文件句柄，对于需要立即打开临时文件进行写入的场景很有用。同样，在使用完毕后也可以使用`fclose()`和`unlink()`函数来关闭和删除临时文件。
 
-最后，记得要关闭临时文件的指针。
-
-```PHP
-fclose($file);
-```
-
-现在我们可以查看临时文件的内容了。
-
-```PHP
-$file = tmpfile();
-fwrite($file, "Hello World!");
-fseek($file, 0); // 将文件指针移动到开始位置
-echo fread($file, filesize('tmpfile.txt')); // 输出临时文件的内容
-fclose($file);
-```
-
-输出结果为：
-
-```
-Hello World!
-```
-
-## 深入
-
-除了使用`tmpfile()`函数，我们还可以使用另一个函数`tmpnam()`来创建一个临时文件。与`tmpfile()`不同的是，它会返回一个字符串类型的临时文件路径。
-
-```PHP
-$file = tmpnam(sys_get_temp_dir(), "prefix");
-echo $file; // 输出结果为：/tmp/prefix.随机字符串
-```
-
-我们可以通过`touch()`函数来创建这个临时文件。
-
-```PHP
-touch($file);
-```
-
-如果我们需要指定临时文件的扩展名，可以使用`sys_get_temp_dir()`函数来获取系统的临时目录。
-
-```PHP
-$file = sys_get_temp_dir().'/prefix.tmp';
-echo $file; // 输出结果为：/tmp/prefix.tmp
-```
-
-## 参考资料
-
-- [PHP官方文档-创建临时文件](https://www.php.net/manual/en/function.tmpfile.php)
-- [PHP官方文档-获取临时目录](https://www.php.net/manual/en/function.sys-get-temp-dir.php)
-- [W3School-PHP fwrite函数](https://www.w3school.com.cn/php/func_filesystem_fwrite.asp)
+##参考链接
+- PHP官方文档：[创建临时文件](https://www.php.net/manual/zh/function.tempnam.php)
+- 《PHP设计模式与最佳实践》：[创建临时文件](https://design-patterns.readthedocs.io/zh_CN/latest/print_PDF/temporary_file.html)

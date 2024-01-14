@@ -1,98 +1,59 @@
 ---
-title:    "Gleam recipe: Printing debug output"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/printing-debug-output.md"
+title:                "Gleam recipe: Printing debug output"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Debug output is an essential tool for any programmer, as it allows for easier troubleshooting and understanding of code flow. By printing out the value of certain variables or function outputs, we can better understand what is happening behind the scenes in our programs. In this blog post, we will explore how to effectively use debug output in Gleam programming.
+Debug output is an important tool for programmers to understand how their code is running. It allows them to track the flow of the program and identify any potential errors or bugs. In Gleam, printing debug output can be a useful technique for developers to troubleshoot their code and improve its performance.
 
 ## How To
-To print debug output in Gleam, we can use the `io.fmt` module. Let's take a look at an example:
+To print debug output in Gleam, you can use the `io.println` function. This function takes in a string argument and prints it to the standard output. Let's say we have a function that adds two numbers and we want to print the result for debugging purposes. We can do so with the following code:
 
 ```
-Gleam
-// Import the io.fmt module
-import io.fmt
-
-// Define a function that takes in a string parameter
-pub fn greet(name: String) {
-    // Use `fmt.println` to print a greeting message
-    fmt.println("Hello, " ++ name)
+Gleam> let add = fn(x, y) {
+  x + y
 }
-
-// Call the `greet` function with "John" as the argument
-greet("John")
+Gleam> let result = add(3, 5)
+Gleam> io.println("The result is: " ++ result)
 ```
+The output of this code would be: `The result is: 8`
 
-After compiling and running this code, we will see the following output:
-
-```
-Hello, John
-```
-
-We can also print out the value of a variable by using `fmt.println` and the `debug` function from the `strings` module. Let's modify our previous example to include a variable:
+Now, let's say we want to print out the individual steps of our function. We can do that by adding multiple `io.println` statements within our function code block, like this:
 
 ```
-Gleam
-import io.fmt
-import strings
-
-pub fn greet(name: String) {
-    // Use `debug` from the `strings` module to get the value of `name`
-    let greeting = "Hello, " ++ name
-    println(debug(greeting))
+let add = fn(x, y) {
+  io.println("Adding " ++ x ++ " and " ++ y)
+  x + y
 }
-
-greet("John")
 ```
-
-The output of this code will be:
-
-```
-"Hello, John"
-```
+This will print out the steps of the function as it is executed, making it easier to identify any bugs or issues in the code.
 
 ## Deep Dive
-In Gleam, we can also use debug output to print out the values of custom types. This can be achieved by implementing the `fmt::Debug` trait for our custom types. Let's see an example:
+In Gleam, you can also use the `io.inspect` function for more detailed output. This function takes in any type of argument and prints it out in a structured format. Let's use the same add function from above and add an inspect statement to print out the arguments and result:
 
 ```
-Gleam
-import io.fmt
-
-// Define a custom type called `Person`
-type Person(name: String, age: Int)
-
-// Implement the `fmt::Debug` trait for `Person`
-impl Pp for Person {
-    // Define the `pp` function to print out the values of `name` and `age`
-    fn pp(self) {
-        fmt.println(self.name)
-        fmt.println(self.age)
-    }
+let add = fn(x, y) {
+  io.inspect("x is: " ++ x)
+  io.inspect("y is: " ++ y)
+  x + y
 }
-
-// Create a new `Person` instance
-let john = Person("John", 30)
-
-// Print out the values of `john`
-println(debug(john))
+let result = add(3, 5)
+io.inspect("The result is: " ++ result)
 ```
 
-The output of this code will be:
-
+The output of this code would be:
 ```
-"John"
-30
+x is: 3
+y is: 5
+The result is: 8
 ```
 
-As we can see, by implementing the `fmt::Debug` trait, we can print out the values of our custom types without explicitly defining how they should be formatted.
+This can be especially helpful when working with complex data structures such as lists or records, as it allows you to see the contents of each element or field.
 
 ## See Also
-- Official Gleam documentation on debugging: https://gleam.run/book/tour/debugging.html
-- An in-depth article on the importance of debug output: https://www.techrepublic.com/article/why-debug-output-is-vital-to-your-code/
-- Another blog post on how to effectively use debug output in Python: https://realpython.com/python-debugging-pdb/
-
-[John on Twitter](https://twitter.com/johnsmith)
+- [Gleam documentation on IO](https://gleam.run/documentation/docs-builtin-io)
+- [Blog post on debugging in Gleam](https://dennmart.me/posts/debugging-in-gleam/)

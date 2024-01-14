@@ -1,69 +1,68 @@
 ---
-title:    "Arduino recipe: Searching and replacing text"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/searching-and-replacing-text.md"
+title:                "Arduino recipe: Searching and replacing text"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever found yourself typing the same text over and over again in your Arduino code? Or maybe you have a large block of code that needs to be changed in multiple places. This is where the "search and replace" function comes in handy. It allows you to quickly and easily update your code without the hassle of manually changing each instance.
+As an Arduino programmer, you may come across the need to search and replace text within your code. This can be useful for making changes to multiple lines of code at once or fixing typos quickly. In this blog post, we will explore the process of searching and replacing text in Arduino programming.
 
 ## How To
 
-To use the "search and replace" function in your Arduino code, simply follow these steps:
+To search and replace text in your Arduino code, follow these simple steps:
 
-1. Open your Arduino code in the IDE.
-2. Click on the "Edit" tab at the top of the screen.
-3. Select "Find and Replace" from the drop-down menu.
-4. In the pop-up window, enter the text you want to search for in the "Find" field.
-5. Then, enter the replacement text in the "Replace" field.
-6. You can choose to either replace all instances at once or go through them one by one.
-7. Once you're satisfied with the changes, click the "Replace" or "Replace All" button.
+1. Open your Arduino IDE and open the sketch or code where you want to make changes.
+2. Click on "Edit" in the toolbar and then select "Find and Replace" from the drop-down menu.
+3. In the search bar, type the text you want to replace and in the "Replace with" bar, type the new text you want to use.
+4. Click on "Replace All" to replace all instances of the old text with the new one.
 
-Here's an example of using the "search and replace" function in a simple Arduino sketch:
+Here is an example of searching and replacing the word "Hello" with "Hi" in an Arduino sketch:
 
 ```Arduino
-int ledPin = 13; //setting the pin for the LED
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
 void setup() {
-  pinMode(ledPin, OUTPUT); //set the pin as an output
+  lcd.begin(16, 2);
+  //Searching and replacing text
+  lcd.print("Hello, world!");
 }
 
 void loop() {
-  digitalWrite(ledPin, HIGH); //turn the LED on
-  delay(500); //wait for half a second
-  digitalWrite(ledPin, LOW); //turn the LED off
-  delay(500); //wait for half a second
+  //nothing to see here
 }
 ```
 
-We want to change the pin number for our LED, which is currently set to 13, to 9. This can easily be done using the "search and replace" function by searching for "ledPin = 13" and replacing it with "ledPin = 9". The revised code would look like this:
+After using the "Find and Replace" tool, the output on the LCD screen would be:
 
 ```Arduino
-int ledPin = 9; //setting the pin for the LED
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
 void setup() {
-  pinMode(ledPin, OUTPUT); //set the pin as an output
+  lcd.begin(16, 2);
+  //Searching and replacing text
+  lcd.print("Hi, world!");
 }
 
 void loop() {
-  digitalWrite(ledPin, HIGH); //turn the LED on
-  delay(500); //wait for half a second
-  digitalWrite(ledPin, LOW); //turn the LED off
-  delay(500); //wait for half a second
+  //nothing to see here
 }
 ```
 
 ## Deep Dive
 
-The "search and replace" function is a powerful tool for making changes in your code. Here are a few things to keep in mind when using it:
+While searching and replacing text may seem simple, there are a few things to keep in mind. First, the "Find and Replace" tool is case sensitive, so be sure to double-check your spelling and capitalization. Second, using the "Replace All" button will make changes throughout the entire file, so use this feature with caution.
 
-- Make sure you use unique words or phrases in your search query to avoid changing unintended code.
-- You can use the keyboard shortcut "Ctrl + F" on Windows or "Cmd + F" on Mac to quickly open the "Find and Replace" window.
-- Regular expressions can be used in the search field, allowing for more advanced search and replace options.
-- The "Replace All" function can be used to quickly make all changes without having to go through each instance manually.
+In addition, the "Find and Replace" tool also allows you to use regular expressions for more advanced search and replace functions. Regular expressions are a powerful tool for finding text patterns and replacing them with new text. You can learn more about regular expressions and how to use them in Arduino programming from the links in the "See Also" section below.
 
 ## See Also
 
-- [Arduino IDE Documentation](https://www.arduino.cc/en/guide/)
-- [Regular Expressions in Arduino](https://www.arduino.cc/reference/en/language/functions/programming/math/regression-curve-fitting/)
+- [Arduino Find and Replace Feature](https://www.arduino.cc/en/Tutorial/FindReplace)
+- [Regular Expressions in Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/serial-available/)

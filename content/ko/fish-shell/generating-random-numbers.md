@@ -1,51 +1,42 @@
 ---
-title:    "Fish Shell: 랜덤 숫자 생성"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/generating-random-numbers.md"
+title:                "Fish Shell: 랜덤 숫자 생성"
+programming_language: "Fish Shell"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜: 무작위 숫자를 생성하는 이유
 
-난수를 생성하는 것은 프로그래밍에서 일상적인 일입니다. 우리는 무작위의 값을 사용하여 다양한 알고리즘을 테스트하고, 게임에서 랜덤 문제를 만들고, 데이터를 랜덤하게 샘플링하는 등 다양한 목적으로 난수를 사용합니다. 오늘은 Fish Shell에서 난수를 생성하는 방법을 알아보겠습니다.
+무작위 숫자를 생성하는 것은 프로그래밍에서 매우 유용합니다. 예를 들어, 게임에서 랜덤한 이벤트를 발생시키거나, 데이터를 무작위로 샘플링하거나, 보안을 강화하기 위해 무작위 암호를 생성할 수 있습니다. 또한 머신러닝에서 데이터를 무작위로 섞는 등 다양한 용도로 사용될 수 있습니다.
 
-## 어떻게
+## 방법: Fish Shell을 사용하여 무작위 숫자 생성하기
 
-우선 `random` 명령어를 사용하여 랜덤한 정수를 생성할 수 있습니다. 예를 들어, 다음 명령어는 1부터 10까지의 정수를 랜덤하게 출력합니다.
+무작위 숫자를 생성하는 것은 Fish Shell에서 매우 간단합니다. ```math``` 함수를 사용하여 원하는 범위의 숫자를 생성할 수 있습니다. 예를 들어, 1부터 10까지의 숫자 중 무작위로 한 숫자를 출력하려면 다음과 같이 코드를 작성할 수 있습니다.
 
-```Fish Shell
-random -l 1 10
+```Fish Shell 
+set random_num (math rand -l 1 10)
+echo "무작위 숫자: $random_num"
 ```
 
-출력 예시:
+이 코드를 실행하면 매번 다른 숫자가 출력됩니다. 
 
-```Fish Shell
-6
+또한, ```shuf``` 명령어를 사용하여 파일 내의 내용을 무작위로 섞을 수도 있습니다. 다음의 코드를 사용하면 ```numbers.txt``` 파일에 있는 숫자들이 무작위로 섞인 후 출력됩니다.
+
+```Fish Shell 
+shuf -n 1 numbers.txt
 ```
 
-또는 `random` 명령어를 사용할 때 `seq` 명령어를 함께 사용하여 원하는 개수의 난수를 생성할 수도 있습니다. 예를 들어, 다음 명령어는 1부터 10까지의 정수 중 5개를 랜덤하게 출력합니다.
+## 깊이 있는 내용: 무작위 숫자 생성 방법
 
-```Fish Shell
-seq 5 | xargs random -l 1 10
-```
+Fish Shell에서는 일반적으로 ```rand``` 함수보다 더 많은 옵션을 제공하는 ```math rand``` 함수를 사용하는 것이 좋습니다. 이 함수를 사용하면 생성할 숫자의 타입, 최소값과 최대값의 범위, 그리고 생성할 숫자의 갯수를 지정할 수 있습니다. 또한, 난수 발생기의 시드값을 설정하여 난수의 패턴을 조절할 수도 있습니다.
 
-출력 예시:
+또 다른 방법으로는 ```$RANDOM``` 변수를 사용하는 것입니다. 이 변수는 쉘이 실행될 때마다 매번 무작위로 생성되는 숫자를 담고 있습니다. 따라서 이 변수를 사용하여 무작위 숫자를 생성할 수 있습니다.
 
-```Fish Shell
-10
-7
-2
-8
-5
-```
+## See Also
 
-## 심층 탐구
+- [Fish Shell 메뉴얼- math rand](https://fishshell.com/docs/current/cmds/math-rand.html)
+- [Fish Shell 메뉴얼- $RANDOM](https://fishshell.com/docs/current/cmds/set.html#variable-substitutions)
 
-Fish Shell에서 `random` 명령어는 `/dev/random`과 `/dev/urandom` 디바이스를 사용하여 난수를 생성합니다. 이들 디바이스는 컴퓨터의 시스템 엔트로피를 사용하여 랜덤한 데이터를 생성합니다. 따라서 시스템 엔트로피가 부족할 경우 더 낮은 품질의 난수를 생성할 수 있습니다. 이를 방지하기 위해 `/dev/urandom` 디바이스를 사용하여 일정한 시스템 엔트로피 수준을 유지할 수 있습니다.
-
-## 관련 링크
-
-- [Fish Shell 공식 홈페이지](https://fishshell.com)
-- [Fish Shell GitHub 저장소](https://github.com/fish-shell/fish-shell)
-- [Fish Shell 랜덤 난수 생성 예제](https://stackoverflow.com/questions/3239018/random-six-digit-number-with-fish-shell)
+이제는 Fish Shell을 사용하여 무작위 숫자를 쉽게 생성할 수 있을 것입니다. 다양한 옵션을 활용하여 원하는 방식으로 무작위 숫자를 생성해 보세요!

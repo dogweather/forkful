@@ -1,43 +1,50 @@
 ---
-title:    "Gleam: Comenzar un nuevo proyecto."
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/starting-a-new-project.md"
+title:                "Gleam: Comenzando un nuevo proyecto"
+programming_language: "Gleam"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué empezar un nuevo proyecto en Gleam
+# Por qué comenzar un nuevo proyecto en Gleam?
 
-Si estás buscando un lenguaje de programación moderno y eficiente para trabajar en tus proyectos, Gleam es la opción perfecta. Con su tipado estático, alto rendimiento y sintaxis amigable, Gleam te permite desarrollar aplicaciones robustas y escalables. En este artículo, aprenderás cómo dar tus primeros pasos en este emocionante lenguaje.
+Comenzar un nuevo proyecto en Gleam puede ser una gran elección para aquellos que buscan un lenguaje de programación moderno y seguro. Con su tipado estático y su enfoque en la concurrencia, Gleam es una herramienta poderosa para crear aplicaciones robustas y escalables. Además, tiene una sintaxis elegante y fácil de aprender, lo que lo convierte en una excelente opción para desarrolladores de todos los niveles de experiencia.
 
-## Cómo comenzar un nuevo proyecto en Gleam
+## Cómo iniciar un proyecto en Gleam
 
-Para empezar un nuevo proyecto en Gleam, primero debes asegurarte de tener instalado el compilador y el gestor de paquetes de Gleam en tu computadora. A continuación, sigue estos pasos:
+Antes de comenzar a escribir código en Gleam, tendremos que instalar el compilador y configurar un entorno de desarrollo. Para hacerlo, podemos seguir estos pasos:
 
-1. Crea una nueva carpeta para tu proyecto y ábrela en tu editor de código favorito. Luego, inicia el gestor de paquetes con `gleam.exe new`.
+1. Instalar el compilador de Gleam utilizando el administrador de paquetes de nuestra elección.
+2. Crear una estructura de carpetas para nuestro proyecto y navegar hasta ella.
+3. Inicializar el proyecto con el comando `gleam new <nombre_del_proyecto>`.
+4. Esto creará una estructura básica de archivos para nuestro proyecto, incluyendo un archivo `src/main.gleam`, que es donde escribiremos nuestro código.
 
-2. Se te guiará a través de unas pocas preguntas para configurar tu proyecto. Esto incluye elegir un nombre para tu proyecto, una descripción, una licencia y si quieres incluir soporte para herramientas de calidad de código como formateadores y analizadores estáticos.
+Ahora que tenemos nuestro proyecto configurado, podemos comenzar a escribir código en Gleam. Aquí hay un ejemplo simple de un programa que imprime "¡Hola mundo!" en la consola:
 
-3. Una vez que hayas respondido todas las preguntas, el gestor de paquetes creará una estructura básica para tu proyecto, incluyendo un archivo `gleam.toml` con todas las configuraciones necesarias.
+```Gleam
+import gleam/io
 
-4. Ahora puedes empezar a escribir tu código en el archivo `src/main.gleam` que se ha creado para ti. Puedes utilizar cualquiera de las librerías disponibles en el repositorio de paquetes de Gleam o incluso crear tus propias librerías.
+pub fn main() {
+  io.print("¡Hola mundo!")
+}
+```
 
-5. Una vez que hayas terminado de escribir tu código, puedes compilarlo con `gleam.exe build` y ejecutarlo con `gleam.exe run`.
+Podemos compilar y ejecutar este código utilizando el comando `gleam run` y deberíamos ver el mensaje impreso en la consola.
 
-¡Felicidades! Has creado tu primer proyecto en Gleam.
+## Profundizando
 
-## Profundizando en la creación de proyectos en Gleam
+Al iniciar un nuevo proyecto en Gleam, también es importante tener en cuenta algunas prácticas recomendadas para mantener nuestro código organizado y escalable. Algunos de estos incluyen:
 
-En Gleam, un proyecto se estructura en módulos, que son como bloques de construcción para tus aplicaciones. Puedes crear tantos módulos como necesites en tu proyecto y luego utilizarlos en otros módulos o incluso en otros proyectos.
+- Utilizar módulos y namespaces para estructurar nuestro código de manera lógica.
+- Escribir pruebas unitarias para asegurarnos de que nuestro código funciona correctamente y poder realizar cambios con confianza.
+- Utilizar patrones de concurrencia como actors y procesos para aprovechar al máximo las capacidades de Gleam.
+- Familiarizarnos con los diferentes tipos de datos y operadores disponibles en Gleam.
 
-Al crear un proyecto, se te proporciona un archivo `gleam.toml` que contiene información sobre el proyecto y sus dependencias. Puedes modificar este archivo para agregar nuevas dependencias o cambiar la configuración de tu proyecto.
-
-También puedes utilizar la herramienta de formateo de Gleam para asegurarte de que tu código esté bien escrito y fácil de leer. Solo necesitas ejecutar `gleam.exe format` en la terminal y el formateador hará el resto por ti.
-
-¡Ahora estás listo para dar rienda suelta a tu creatividad y comenzar a desarrollar aplicaciones increíbles en Gleam!
+Además, siempre podemos consultar la documentación y unirse a la comunidad de Gleam para obtener más información sobre cómo escribir código eficiente y elegante en este lenguaje.
 
 ## Ver también
 
-- [Documentación de Gleam](https://gleam.run/getting-started/)
-- [Repositorio de paquetes de Gleam](https://gleam.run/libraries/)
-- [Proyectos de ejemplo en Gleam](https://github.com/gleam-lang/gleam/tree/master/examples)
+- Documentación oficial de Gleam: https://gleam.run/
+- Comunidad de Gleam en Discord: https://discord.com/invite/gleam-lang
+- Ejemplos de código en Gleam: https://github.com/gleam-lang/gleam/tree/master/examples

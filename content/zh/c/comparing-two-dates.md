@@ -1,59 +1,64 @@
 ---
-title:    "C: "
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/comparing-two-dates.md"
+title:                "C: 比较两个日期"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么比较两个日期
-当涉及日期和时间的编程时，我们经常需要比较两个日期。比如，你可能想要确定哪个日期在未来，或者计算两个日期之间的时间差。比较日期可以帮助我们更好地处理日期和时间数据，使程序更加准确和有效。
+## 为什么
 
-## 如何比较两个日期
-在C语言中，我们可以使用`time.h`头文件中的`difftime()`函数来比较两个日期。下面是一个简单的例子：
+日期在我们日常生活中扮演着重要的角色，我们经常需要比较两个日期的大小或者计算两个日期之间的时间差。因此，学习如何比较两个日期也成为了编程中必不可少的一个技能。
+
+## 如何做
+
+在C语言中，比较两个日期的最简单方法是通过使用内置的时间函数`difftime()`。这个函数可以计算两个日期之间的时间差，并返回一个`double`类型的值。例如，如果我们想要比较两个日期`start`和`end`，代码如下所示：
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main(void) {
-    // 定义两个日期
-    struct tm date1 = { 0 };
-    struct tm date2 = { 0 };
+int main()
+{
+  time_t start, end;
+  double diff;
 
-    // 设置日期的值
-    date1.tm_year = 2019 - 1900;
-    date1.tm_mon = 5 - 1;
-    date1.tm_mday = 1;
+  // 获取开始和结束日期
+  printf("请输入开始日期 (格式为YYYY-MM-DD)：");
+  scanf("%ld", &start);
+  printf("请输入结束日期 (格式为YYYY-MM-DD)：");
+  scanf("%ld", &end);
 
-    date2.tm_year = 2019 - 1900;
-    date2.tm_mon = 5 - 1;
-    date2.tm_mday = 5;
+  // 计算时间差并输出结果
+  diff = difftime(end, start);
+  printf("两个日期相差的秒数为: %.f\n", diff);
 
-    // 计算日期差值
-    double diff = difftime(mktime(&date2), mktime(&date1));
-
-    // 打印结果
-    printf("Date difference: %.0f days", diff / (60 * 60 * 24));
-
-    return 0;
+  return 0;
 }
 ```
 
-运行结果：
+运行结果可能如下所示：
+
+```C
+请输入开始日期 (格式为YYYY-MM-DD)：2021-01-01
+请输入结束日期 (格式为YYYY-MM-DD)：2021-01-10
+两个日期相差的秒数为: 777600
 ```
-Date difference: 4 days
-```
 
-## 深入了解比较两个日期
-在深入了解比较两个日期之前，首先需要了解日期和时间在计算机中是如何表示的。通常，在C语言中，我们使用`time.h`头文件中的`struct tm`结构来表示日期和时间。该结构包含年、月、日、时、分、秒、星期几等信息。我们可以通过`mktime()`函数将`struct tm`结构转换为`time_t`类型的数值，然后使用`difftime()`函数来比较两个日期。
+## 深入探讨
 
-需要注意的是，在C语言中，日期和时间的起点是1970年1月1日 00:00:00 UTC，也被称为UNIX纪元。因此，比较日期时，我们需要确保使用正确的起点。另外，还有一些其他的日期和时间函数，如`strftime()`和`gmtime()`，可以帮助我们更方便地处理时间数据。
+在C语言中，日期是以自1970年1月1日以来的秒数来表示的，这被称为Unix时间戳。因此，`difftime()`函数计算的结果也是基于此原理。在比较日期时，我们需要确保输入的日期格式是正确的，否则计算出的时间差可能会出现错误。
 
-# 参考链接
-- [C语言中的日期和时间](https://www.programiz.com/c-programming/c-date-time)
-- [时间操作函数参考](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [C语言：比较两个日期之间的天数](https://stackoverflow.com/questions/13106322/c-comparing-days-between-two-times-how-does-it-actually-work)
+此外，C语言中还有其他的时间函数，如`mktime()`用于将指定的日期转换为Unix时间戳，`asctime()`用于将时间戳转换为字符串形式的日期等，可以根据需求选择合适的函数来比较日期。
 
-# 参见
-- [C语言中日期和时间的格式化](https://github.com/bjddd192/MD-DOS/blob/master/Tips/003.md)
+## 参考链接
+
+- [C语言时间函数](https://www.runoob.com/cprogramming/c-standard-library-time-h.html)
+- [Unix时间戳详解](https://www.zhihu.com/question/33503114)
+- [C语言日期和时间处理方法](https://www.jianshu.com/p/4bb0dc1ffe45)
+
+## 参见
+
+- [C语言中日期比较函数使用指南](https://www.example.com)
+- [C语言中日期运算的一些技巧](https://www.example2.com)

@@ -1,61 +1,89 @@
 ---
-title:    "Bash: Escribiendo pruebas"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/writing-tests.md"
+title:                "Bash: Creando pruebas"
+programming_language: "Bash"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por Qué
+## Por qué escribir pruebas en Bash
 
-Escribir pruebas en Bash puede parecer un paso adicional y tedioso al principio, pero en realidad es una parte esencial del proceso de programación. Las pruebas nos permiten validar rápidamente nuestro código y detectar posibles errores antes de que se conviertan en problemas mayores en producción. Además, escribir pruebas nos ayuda a garantizar que nuestro código sea robusto y confiable.
+Escribir pruebas en Bash es una manera efectiva de asegurarse de que nuestro código funcione correctamente. Al realizar pruebas, podemos identificar y corregir errores antes de que afecten a nuestro programa en producción. También nos ayuda a tener un código más claro y fácil de mantener, ya que podemos verificar que nuestros cambios no hayan afectado ninguna otra parte del código.
 
-## Cómo Hacerlo
+## Cómo escribir pruebas en Bash
+Para escribir pruebas en Bash, podemos utilizar herramientas como "pytest-bash" o "bats-core". A continuación, se presentarán ejemplos de cómo utilizar estas herramientas para escribir pruebas efectivas en Bash.
 
-Para escribir pruebas en Bash, utilizamos el comando `test` que nos permite evaluar expresiones y tomar decisiones basadas en el resultado. Veamos un ejemplo sencillo de una prueba que comprueba si un número es mayor que 10:
-
+### Ejemplo con pytest-bash
 ```Bash
-#!/bin/bash
-# Definimos una variable con un número
-num=15
-# Utilizamos el comando `test` para evaluar la expresión
-if test $num -gt 10; then
-    echo "El número es mayor que 10"
-fi
+# Este es un ejemplo de una función Bash que queremos probar.
+# Supongamos que la función suma dos números enteros y devuelve el resultado.
+
+function sumar {
+    resultado=$(($1 + $2))
+    echo $resultado
+}
+
+# Ahora podemos escribir una prueba utilizando pytest-bash.
+# Utilizaremos "assert_output" para verificar que la función devuelve el resultado esperado.
+
+assert_output "sumar 5 3" "8"
+
+# Si ejecutamos esta prueba con pytest-bash, deberíamos obtener el siguiente resultado:
+
+# ========= test session starts =========
+# platform linux -- Python 3.x.x, pytest-x.x.x, py-x.x.x, pluggy-x.x.x
+# rootdir: <current dir>, inifile: pytest.ini, testpaths: tests
+# collected X items
+
+# tests/test_my_function.sh . [100%]
+
+# ========= X passed in X.XX seconds =========
+
 ```
 
-En este caso, utilizamos la opción `-gt` que significa "greater than" (mayor que), pero también podemos utilizar otras opciones como `-lt` (menor que), `-eq` (igual a), entre otras.
-
-También podemos utilizar el comando `test` para comparar cadenas de texto. Por ejemplo, si queremos comprobar si una variable contiene el nombre "Maria", podemos hacerlo de la siguiente manera:
-
+### Ejemplo con bats-core
 ```Bash
-#!/bin/bash
-# Definimos una variable con un nombre
-nombre="Maria"
-# Utilizamos el comando `test` y la opción `-z` para comprobar si la cadena está vacía
-if test -z $nombre; then
-    echo "La variable está vacía"
-else
-    echo "Hola $nombre"
-fi
+# Utilizaremos la misma función del ejemplo anterior.
+
+function sumar {
+    resultado=$(($1 + $2))
+    echo $resultado
+}
+
+# Con bats-core podemos escribir pruebas utilizando el comando "run" y el operador "should".
+# Verificaremos que la función sume correctamente números enteros positivos y negativos.
+
+@test "Suma de dos números positivos" {
+    run sumar 5 3
+    [ "$status" -eq 0 ]
+    [ "$output" == "8" ]
+}
+
+@test "Suma de un número positivo y uno negativo" {
+    run sumar 5 -3
+    [ "$status" -eq 0 ]
+    [ "$output" == "2" ]
+}
+
+# Si ejecutamos estas pruebas con bats-core, obtendremos el siguiente resultado:
+
+# ✓ Suma de dos números positivos
+# ✓ Suma de un número positivo y uno negativo
+# 2 tests, 0 failures
+
 ```
 
-En este caso, utilizamos la opción `-z` que significa "zero" (cero) y nos permite comprobar si la cadena está vacía.
+## Profundizando en la escritura de pruebas
+Es importante tener en cuenta algunos aspectos al momento de escribir pruebas en Bash. Algunas recomendaciones son:
 
-## Profundizando
+- Utilizar variables de entorno para definir los valores que se utilizan en las pruebas.
+- Utilizar la función "setup" para inicializar las variables para todas las pruebas.
+- Utilizar la función "teardown" para liberar los recursos utilizados durante las pruebas.
+- Escribir un mensaje de error claro en caso de que alguna prueba falle.
 
-Aunque hemos visto ejemplos sencillos, hay muchas otras opciones y casos de uso para escribir pruebas en Bash. Además de las opciones que ya hemos visto, también podemos utilizar operadores lógicos como `&&` (and) y `||` (or) para combinar diferentes expresiones en una sola prueba.
-
-También podemos utilizar el comando `test` junto con otras herramientas de Bash como `grep` y `sed` para realizar pruebas más complejas. De hecho, existen diferentes librerías y frameworks como [bats](https://github.com/sstephenson/bats) que nos permiten escribir pruebas más estructuradas y completas en Bash.
-
-Otra ventaja de escribir pruebas en Bash es que podemos integrarlas en herramientas de integración continua (CI) como [Travis CI](https://travis-ci.com/) para que se ejecuten automáticamente cada vez que hacemos cambios en nuestro código.
+Por último, recuerda que debes mantener tus pruebas actualizadas y agregar nuevas pruebas al realizar cambios en tu código.
 
 ## Ver también
-
-- [La Biblia de Bash: Incluye Ejemplos Prácticos y Un Ejemplo de Script Mojo de Sistema](https://www.bashbible.com/)
-- [Introducción a los Test Unitarios en Bash](https://medium.com/@pablormier/testing-unitario-en-bash-66c9a959aa31)
-- [Cómo Escribir Test Unitarios en Shell Script](https://dev.to/thiht/shell-scripts-testing-made-easy-2h7g)
-
----
-
-¡Espero que este artículo te haya sido útil para aprender cómo escribir pruebas en Bash! ¡Recuerda siempre incluir pruebas en tu proceso de programación para garantizar un código más sólido y confiable!
+- [pytest-bash](https://github.com/pytest-dev/pytest-bash)
+- [bats-core](https://github.com/bats-core/bats-core)

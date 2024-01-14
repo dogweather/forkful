@@ -1,39 +1,47 @@
 ---
-title:    "C#: Obtendo a data atual"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/getting-the-current-date.md"
+title:                "C#: Obtendo a data atual"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual é importante
+## Por que obter a data atual em C#
 
-Ao desenvolver um programa, muitas vezes é necessário acessar o horário e data atuais. Isso pode ser útil para várias tarefas, como registrar a hora de uma transação ou criar um agendamento. Aprender a obter a data atual em um programa em C# pode ser extremamente útil em diversas situações.
+Se você é novo na programação em C#, pode se perguntar por que precisamos obter a data atual em nossos programas. Bem, a resposta é simples - a data atual é uma informação essencial em muitos programas, pois pode ser usada para registrar transações, ordem de eventos ou apenas para fins informativos. Portanto, é importante saber como obter a data atual em seus projetos de C#.
 
-## Como obter a data atual em C#
+## Como fazer
 
-Para obter a data atual em C#, existem várias maneiras de realizar essa tarefa. Uma opção é utilizar a classe DateTime, que possui um método chamado Now. Esse método retorna a data e hora atuais no formato correto. Veja o exemplo abaixo:
+Em C#, existem várias maneiras de obter a data atual, dependendo do que você está procurando. Aqui estão alguns exemplos de código que você pode usar em seus programas:
 
 ```C#
+// Obtendo a data atual como uma string no formato "DD-MM-AAAA"
+string dataAtual = DateTime.Now.ToString("dd-MM-yyyy");
+
+// Obtendo a data atual como um objeto DateTime
 DateTime dataAtual = DateTime.Now;
+
+// Obtendo apenas o dia atual como um inteiro
+int diaAtual = DateTime.Now.Day;
 ```
 
-Se você quiser formatar a saída da data de uma maneira específica, pode usar o método ToString e passar o formato desejado como parâmetro. Por exemplo:
+E aqui está o que você pode esperar como saída desse código:
 
-```C#
-Console.WriteLine(dataAtual.ToString("dd/MM/yyyy"));
+```
+28-07-2021 // para o primeiro exemplo
+28/07/2021 10:30:55 // para o segundo exemplo
+28 // para o terceiro exemplo
 ```
 
-Isso irá imprimir a data no formato dia/mês/ano, como por exemplo 22/06/2021.
+## Profundidade
 
-## Aprofundando na obtenção da data atual
+Agora, vamos falar um pouco mais sobre como a data atual é obtida em C#. Ao usar o método `DateTime.Now`, o sistema operacional do computador é consultado para retornar a data e hora atuais. Isso significa que a data e a hora obtidas serão baseadas na configuração do sistema do usuário. Portanto, se você estiver em um país diferente, poderá ver a data e hora no seu próprio fuso horário.
 
-Além da classe DateTime, também é possível obter a data atual utilizando a classe DateTimeOffset, que é semelhante, mas permite especificar o fuso horário. Outra opção é utilizar a classe TimeZoneInfo, que permite acessar informações sobre diferentes fusos horários e converter a data atual para um fuso específico.
-
-Também é importante mencionar que a classe DateTime possui vários métodos e propriedades que podem ser utilizados para manipular e formatar a data e hora. Vale a pena explorá-los para entender melhor como trabalhar com datas e horas em C#.
+Além disso, o objeto `DateTime` em C# também fornece muitos outros métodos úteis que podem ajudá-lo a manipular a data e a hora de várias maneiras. Por exemplo, você pode adicionar ou subtrair dias, meses ou anos à data atual usando os métodos `Add()` ou `Subtract()`. Você também pode formatar a data de várias maneiras, usando o método `ToString()` e passando um argumento com o formato desejado, conforme mostrado nos exemplos acima.
 
 ## Veja também
 
-- [Documentação oficial do C# sobre a classe DateTime](https://docs.microsoft.com/pt-br/dotnet/api/system.datetime?view=net-5.0)
-- [Tutorial sobre como trabalhar com datas em C#](https://www.c-sharpcorner.com/blogs/using-datetime-with-c-sharp-c-sharp-programming)
-- [Artigo sobre a classe TimeZoneInfo em C#](https://www.c-sharpcorner.com/article/getting-time-zone-information-in-c-sharp/)
+- [Documentação oficial do método DateTime.Now em C#](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.now?view=net-5.0)
+- [Tutorial sobre manipulação de datas e horas em C#](https://www.c-sharpcorner.com/UploadFile/mahesh/manipulatingdatetime09032005130008PM/manipulatingdatetime.aspx) (em inglês)
+- [Vídeo tutorial sobre como obter a data atual em C#](https://www.youtube.com/watch?v=tIv6dRFmH6A&t=91s) (em português)

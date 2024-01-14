@@ -1,42 +1,45 @@
 ---
-title:    "Swift: Skriver til standardfeil"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/writing-to-standard-error.md"
+title:                "Swift: Skriver til standardfeil"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive til standard error kan være nyttig for å feilsøke og forbedre programmet ditt. I stedet for å bare skrive ut feilmeldinger til vanlig utgang, kan du skrive dem til standard error for å få mer detaljert og tydelig informasjon om hva som er galt. Dette kan hjelpe deg med å finne og rette feil raskere.
+Å skrive til standardfeil (standard error) kan være en nyttig teknikk når du jobber med Swift-programmering. Det kan hjelpe deg med å feilsøke og finne problemområder i koden din. Det er også nyttig når du ønsker å logge feilmeldinger til en fil eller til konsollen for senere analyse.
 
-## Hvordan du gjør det
+## Hvordan
 
-Du kan enkelt skrive til standard error i Swift ved å bruke `print()` funksjonen og spesifisere `to: .standardError` som parameter. Her er et eksempel på hvordan du kan gjøre dette i et program som regner ut gjennomsnittet av to tall:
+Det er flere måter å skrive til standardfeil i Swift på, avhengig av hva som passer best for din situasjon. Den enkleste måten er å bruke metoden `print(_:to:)`, som tar to argumenter - en verdi som skal skrives ut og en flyttbar buffer som den skal skrives til. Her er et eksempel på hvordan du kan bruke denne metoden:
 
 ```Swift
-let tall1 = 10
-let tall2 = 5
-
-let gjennomsnitt = (tall1 + tall2) / 2
-
-if gjennomsnitt < 4 {
-  print("Gjennomsnittet er for lavt", to: .standardError)
-} else {
-  print("Gjennomsnittet er \(gjennomsnitt)")
-}
+let errorMessage = "Det har oppstått en feil!"
+print(errorMessage, to: &stderr)
 ```
 
-Denne koden vil skrive ut feilmeldingen "Gjennomsnittet er for lavt" til standard error dersom gjennomsnittet er mindre enn 4. Ellers vil den skrive ut gjennomsnittet som en vanlig utgang.
+Dette vil skrive ut feilmeldingen "Det har oppstått en feil!" til standardfeil-buffert (stderr). Du kan også bruke retningstegnet `>>` for å skrive ut direkte til standardoutput-bufferten (stdout):
+
+```Swift
+print("Denne meldingen vil skrives til standardfeil!", to: &stderr)
+```
+
+Du kan også velge å logge feilmeldinger til en fil ved å først åpne en filstrøm og deretter sende denne som argument til `print(_:to:)` metoden:
+
+```Swift
+let file = FileHandle(forWritingAtPath: "errors.txt")!
+let errorMessage = "Det har skjedd en uventet feil."
+print(errorMessage, to: &file)
+```
 
 ## Dypdykk
 
-I tillegg til å gi mer detaljert informasjon, kan skriving til standard error også være nyttig for å skille mellom forskjellige typer meldinger som skrives ut. Dette kan gjøres ved å bruke en egen `print()` funksjon som spesifiserer `.standardError` som parameter. Dette gjør det mulig å filtrere ut eller håndtere standard error-data separat fra annen utgang.
-
-Et annet bruksområde for skriving til standard error er å fange feilmeldinger og håndtere dem på en bestemt måte. Dette kan være spesielt nyttig når du arbeider med nettverk, filer eller andre eksterne ressurser.
+Når du skriver til standardfeil, vil det alltid skilles fra standardoutput ved at meldingene skrives ut i rødt. Dette gjør det enkelt å skille mellom vanlige meldinger og feilmeldinger i konsollen. Det er også viktig å merke seg at skriving til standardfeil kan føre til ytelsesproblemer i større programmer, så det bør bare brukes når det er absolutt nødvendig.
 
 ## Se også
 
-- [Error handling in Swift](https://blog.nordiskconetent.com/error-handling-in-swift)
-- [Printing to standard error in Swift](https://www.swiftbysundell.com/articles/printing-to-standard-error-in-swift)
-- [Standard streams](https://en.wikipedia.org/wiki/Standard_streams)
+- [Swift print(_:to:) metod](https://developer.apple.com/documentation/swift/1541063-print)
+- [Feilhåndtering i Swift](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)
+- [Swift standardbiblioteket](https://developer.apple.com/documentation/swift)

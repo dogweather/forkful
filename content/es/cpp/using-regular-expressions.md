@@ -1,58 +1,50 @@
 ---
-title:    "C++: Utilizando expresiones regulares"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/using-regular-expressions.md"
+title:                "C++: Utilizando expresiones regulares"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué utilizar expresiones regulares en C++
 
-Si eres un programador de C++ en busca de una forma más eficiente de manejar patrones de texto, entonces las expresiones regulares son una herramienta invaluable a tener en tu arsenal de programación. Con las expresiones regulares, puedes buscar y manipular patrones de texto de manera precisa y rápida, lo que te ahorra tiempo y esfuerzo en tus proyectos de programación.
+Las expresiones regulares son una herramienta poderosa para la manipulación de cadenas de texto en cualquier lenguaje de programación, incluyendo C++. Con su ayuda, podemos buscar patrones específicos de caracteres y realizar diferentes acciones en función de los resultados obtenidos. Esto nos permite realizar tareas más complejas y ahorrar tiempo y esfuerzo en la manipulación de cadenas de texto.
 
 ## Cómo utilizar expresiones regulares en C++
 
-Para utilizar expresiones regulares en C++, primero debes incluir la biblioteca de expresiones regulares en tu programa utilizando `#include <regex>`. Luego, puedes utilizar la clase `std::regex` para crear una expresión regular y buscar patrones en un texto determinado.
-
-Aquí hay un ejemplo de cómo usar expresiones regulares para buscar una dirección IP en un texto:
+Para utilizar expresiones regulares en C++, primero debemos incluir la biblioteca "regex". A continuación, definimos un objeto de tipo "regex" con el patrón que deseamos buscar. Luego, usamos la función "regex_match" para buscar el patrón en una cadena de texto y devolver un valor booleano que indica si se encuentra o no. A continuación, se muestra un ejemplo de cómo utilizar expresiones regulares en C++:
 
 ```C++
 #include <iostream>
 #include <regex>
 
-using namespace std;
-
 int main() {
-    string texto = "La dirección IP de mi servidor es 192.168.1.1";
-
-    // Crear una expresión regular 
-    regex expresion("\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}");
-
-    // Buscar la dirección IP en el texto utilizando expresiones regulares 
-    smatch resultados;
-    regex_search(texto, resultados, expresion);
-
-    // Imprimir el resultado
-    cout << "La dirección IP encontrada es: " << resultados.str(0) << endl;
-
-    return 0;
+  std::string texto = "¡Hola, este es un ejemplo de texto con un número de teléfono! El número es 123-456-7890.";
+  std::regex patron("[0-9]{3}-[0-9]{3}-[0-9]{4}"); // patrón para buscar números de teléfono
+  bool encontrado = std::regex_match(texto, patron);
+  
+  if (encontrado) {
+    std::cout << "¡Se encontró un número de teléfono en el texto!" << std::endl;
+  } else {
+    std::cout << "No se encontró ningún número de teléfono." << std::endl;
+  }
+  
+  return 0;
 }
 ```
 
-El resultado de este programa sería:
+La salida de este código será: "¡Se encontró un número de teléfono en el texto!". Esto demuestra cómo podemos utilizar expresiones regulares para buscar patrones en una cadena de texto y tomar decisiones basadas en los resultados obtenidos.
 
-```
-La dirección IP encontrada es: 192.168.1.1
-```
+## Profundizando en el uso de expresiones regulares
 
-## Profundizando en el uso de expresiones regulares en C++
+Las expresiones regulares en C++ también nos ofrecen una variedad de funciones para realizar diferentes acciones en una cadena de texto. Podemos usar "regex_search" para buscar el patrón en todo el texto y devolver un resultado, "regex_replace" para reemplazar el patrón con una cadena de texto diferente, y muchas más. También podemos utilizar metacaracteres, como "." para representar cualquier carácter y "?" para hacer que un carácter sea opcional en el patrón.
 
-Las expresiones regulares en C++ tienen una sintaxis similar a otros lenguajes como Perl o Python, pero con algunas diferencias importantes. Por ejemplo, en C++, el uso de `raw string` puede facilitar el manejo de patrones que incluyen caracteres especiales. Además, puedes utilizar diferentes métodos de la clase `std::regex` para buscar coincidencias, reemplazar las coincidencias encontradas o validar un texto.
-
-Es importante tener en cuenta que las expresiones regulares pueden ser bastante complejas y es posible que requieras un tiempo para entender su sintaxis y utilizarlas eficientemente en tus proyectos de programación. Sin embargo, una vez que las domines, serán una herramienta muy útil para manejar patrones de texto.
+Es importante tener en cuenta que la sintaxis y las funciones de las expresiones regulares pueden variar ligeramente dependiendo del lenguaje de programación que estemos utilizando. Por lo tanto, es importante consultar la documentación específica del lenguaje que estamos utilizando para obtener una comprensión completa y correcta del uso de expresiones regulares.
 
 ## Ver también
+- [Documentación de C++ sobre expresiones regulares](https://www.cplusplus.com/reference/regex/)
+- [Tutorial de expresiones regulares en C++](https://www.tutorialspoint.com/cpp_standard_library/regex.htm)
+- [Ejemplos prácticos de uso de expresiones regulares en C++](https://www.GeeksForGeeks.org/regular-expressions-in-Cpp/)
 
-- [Documentación de expresiones regulares en C++](https://www.cplusplus.com/reference/regex/)
-- [Tutorial de expresiones regulares en C++ en YouTube](https://www.youtube.com/watch?v=_92HUuPUvM0)
-- [Ejemplos de expresiones regulares en C++](https://bawi.org/regex/cppregex.html)
+¡Ahora que hemos aprendido sobre el uso de expresiones regulares en C++, es hora de poner en práctica nuestro conocimiento en nuestros proyectos! ¡Buena suerte!

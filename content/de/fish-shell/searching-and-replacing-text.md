@@ -1,48 +1,36 @@
 ---
-title:    "Fish Shell: Suchen und Ersetzen von Text"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/searching-and-replacing-text.md"
+title:                "Fish Shell: Suchen und ersetzen von Text"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Wenn Sie häufig mit der Bearbeitung von Texten oder Code arbeiten, wissen Sie wahrscheinlich, wie nützlich die Funktion zum Suchen und Ersetzen ist. Mit der Fish Shell können Sie diese Aufgabe schnell und einfach erledigen. Lesen Sie weiter, um zu erfahren, wie Sie Text in der Fish Shell suchen und ersetzen können.
 
-## Wie geteilt
+Suchen und Ersetzen von Text ist eine wichtige Fähigkeit für jeden, der mit der Fish Shell programmiert. Es erlaubt dir, Text effizient zu bearbeiten und zu manipulieren, um deinen Code besser lesbar und effektiver zu machen.
 
-### Eine einfache Suche und Ersetzung durchführen
-Die Fish Shell bietet die Befehle `grep` und `sed` zur Textsuche und -ersetzung. Um nach einem bestimmten Begriff in einem Text zu suchen und ihn zu ersetzen, können Sie den folgenden Befehl verwenden:
+## Wie man Text sucht und ersetzt
 
-```
-Fish Shell Code:
+Der fish-Befehl `sed` ist dein Werkzeug der Wahl für das Suchen und Ersetzen von Text in der Shell. Hier ist ein Beispiel für die Verwendung von `sed`, um alle Vorkommen des Wortes "Hallo" in einer Datei mit "Guten Tag" zu ersetzen:
 
-grep -l "zu-ersetzen-wort" dateiname | xargs sed -i "s/zu-ersetzen-wort/ersatz-text/"
-```
+```Fish Shell
 
-In diesem Beispiel wird das Wort "zu-ersetzen-wort" im angegebenen Dateinamen gesucht und durch "ersatz-text" ersetzt. Beachten Sie, dass das `-i` Flag in `sed` verwendet wird, um die Datei direkt zu ändern. Wenn Sie die Änderungen in einer neuen Datei speichern möchten, können Sie stattdessen das Flag `-c` verwenden.
-
-### Die Laufzeitumgebung von Fish in vim einbinden
-Falls Sie den Texteditor vim verwenden, können Sie die Fish-Shell-Befehle auch direkt in vim verwenden, um Texte zu suchen und zu ersetzen. Fügen Sie einfach die folgenden Zeilen in Ihre vim-Konfigurationsdatei `~/.vimrc` ein:
+sed -i 's/Hallo/Guten Tag/g' datei.txt
 
 ```
-Fish Shell Code:
 
-" Die Laufzeitumgebung von Fish in vim einbinden
-function! RunFish(cmd)
-  let fish_output = system("fish -c '" . a:cmd . "'")
-  return trim(fish_output)
-endfunction
-command! -nargs=1 F run RunFish('<args>')
-```
+In diesem Beispiel wird `sed` verwendet, um in der Datei `datei.txt` zu suchen und das Wort "Hallo" durch "Guten Tag" zu ersetzen. Das Flag `-i` sorgt dafür, dass die Datei direkt bearbeitet wird, anstatt die Änderungen auf der Standardausgabe auszugeben.
 
-Nachdem Sie die Datei gespeichert haben, können Sie die Befehle `:F grep` und `:F sed` verwenden, um eine Suche oder Ersetzung auszuführen.
+## Tiefer Einblick
 
-## Tiefentauchgang
-Die Fish Shell verwendet standardmäßig die `awk`-Sprache für Suche und Ersetzung, aber Sie können auch andere Sprachen wie `sed`, `perl` oder `grep` für komplexere Fälle verwenden. Sie können auch reguläre Ausdrücke verwenden, um die Suche und Ersetzung weiter zu verfeinern.
+`sed` verwendet reguläre Ausdrücke, um zu bestimmen, welche Textteile ersetzt werden sollen. Zusätzlich zu einfachen Textersetzung können reguläre Ausdrücke auch verwendet werden, um komplexere Muster zu erkennen und zu manipulieren.
 
-Eine weitere nützliche Funktion der Fish Shell ist das "Fishing" - ein interaktives Such- und Ersetzungstool. Um es zu verwenden, führen Sie einfach den Befehl `fish_vi_mode` aus und drücken Sie dann `Ctrl-R`. Geben Sie Ihren Suchbegriff ein und anschließend die Eingabetaste, um durch das Dokument zu navigieren und ihn zu ersetzen.
+Eine andere nützliche Funktion von `sed` ist die Verwendung von Gruppierungen in regulären Ausdrücken. Mit Gruppierungen kannst du Teile eines Musters miteinander verknüpfen und später darauf zurückgreifen. Zum Beispiel kann `\(Hallo\)` verwendet werden, um das Wort "Hallo" zu gruppieren und auf die Gruppierung in der Ersetzung zuzugreifen.
 
 ## Siehe auch
-- Fish Shell Dokumentation über `grep` und `sed`: https://fishshell.com/docs/current/commands.html#grep
-- vim Online-Hilfe zu Regulären Ausdrücken: https://vimhelp.org/pattern.txt.html
+
+- [Fish Shell Dokumentation zur Verwendung von `sed`](https://fishshell.com/docs/current/cmds/sed.html)
+- [Reguläre Ausdrücke in der Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_regex)
+- [Einführung in die Verwendung von `sed`](https://www.gnu.org/software/sed/manual/sed.html)

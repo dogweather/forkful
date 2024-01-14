@@ -1,33 +1,38 @@
 ---
-title:    "Elm: 寻找字符串的长度"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elm/finding-the-length-of-a-string.md"
+title:                "Elm: 提取字符串的长度"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##为什么
-字符串长度的计算在编程中是一个常见的需求，它可以帮助我们更好地理解和处理数据。在 Elm 编程中，学习如何计算字符串长度也是非常有用的基础知识。
+# 为什么
+有时候在编程过程中，我们需要知道一个文本字符串的长度，这可以帮助我们在处理数据时更加精确和有效。在Elm中，您可以很容易地找到字符串的长度，并在所需的情况下使用它。
 
-##如何做
-在 Elm 中，我们可以使用`String.length`函数来计算一个字符串的长度。让我们来看一个简单的例子：
-
+# 如何进行
 ```Elm
-import String
+-- 定义一个文本字符串
+myString = "Hello World"
 
-name = "Elm编程"
+-- 使用String.length函数来找到字符串的长度
+lengthOfMyString = String.length myString
 
-String.length name -- output: 4
+-- 打印输出
+Debug.log "长度是" lengthOfMyString
 ```
 
-在这个例子中，我们首先导入`String`模块，然后创建一个字符串变量`name`，它的值为"Elm编程"。最后，我们使用`String.length`函数来计算`name`字符串的长度，并将结果打印出来。很简单吧？
+这段代码输出的结果应该是`11`，因为字符串中共有11个字符。
 
-##深入探讨
-在 Elm 中，字符串被表示为一个包含字符的列表。当我们使用`String.length`函数时，它实际上是在计算字符串列表的长度，而不是直接在原始字符串上进行计算。这也是为什么`String.length`函数的返回值是一个整数而不是一个字符的数量。
+# 深入
+在Elm中，字符串是一种特殊类型的数据，它由字符组成，每个字符都有一个相应的码点（code point）来表示它的值。在计算字符串的长度时，Elm会自动考虑每个字符的码点，因此它可以正确地返回字符串的实际长度。
 
-此外，在 Elm 中，我们还可以使用`String.toCharList`函数将一个字符串转换为一个字符列表，然后使用`List.length`函数来计算字符列表的长度。这个方法和直接使用`String.length`函数的结果是一样的。
+如果您想要更加深入了解Elm中字符串的处理，您可以学习如何使用码点（code points）来操作字符串，并尝试使用更多的字符串函数来处理不同类型的字符串数据。
 
-##参考链接
-- [Elm官方文档：String模块](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm官方文档：List模块](https://package.elm-lang.org/packages/elm/core/latest/List)
-- [Elm编程入门教程](https://guide.elm-lang.org/)
+# 参考链接
+- Elm语言官方文档：https://guide.elm-lang.org
+- Elm字符串函数列表：http://package.elm-lang.org/packages/elm-lang/core/latest/String
+
+# 参见
+- [`String.length`文档](http://package.elm-lang.org/packages/elm-lang/core/latest/String#length)
+- 字符串处理技巧：https://medium.com/@theobot/elm-tricks-string-dealings-533d8233757

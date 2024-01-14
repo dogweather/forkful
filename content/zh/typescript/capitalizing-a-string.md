@@ -1,57 +1,50 @@
 ---
-title:    "TypeScript: 字符串大写化"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/capitalizing-a-string.md"
+title:                "TypeScript: 大写字符串"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-在编程过程中，有时候我们需要将字符串中的第一个字母大写，这是因为在某些情况下，保持标准的大写格式可以使代码更易读且符合规范。同时，也可以避免出现因为大小写不一致而导致的错误。
+在编写一个应用程序时，经常会遇到需要对字符串进行大小写转换的情况。通过将字符串的首字母大写，可以让字符串更具可读性和清晰度。在TypeScript中，也有提供一种方便的方法来实现这一功能。接下来，我们将会讲解如何使用TypeScript来对字符串进行首字母大写的操作。
 
-## 如何
+## 如何操作
 
-在TypeScript中，我们可以通过使用内置方法`toUpperCase()`来实现字符串的大写化。具体实现代码如下所示：
-
-```TypeScript
-let word = "apple";
-let capitalizedWord = word.charAt(0).toUpperCase() + word.slice(1);
-
-console.log(capitalizedWord);
-```
-输出结果为：
-```
-Apple
-```
-以上代码的思路是先使用`charAt()`方法获取字符串中的第一个字母，然后使用`toUpperCase()`将其转换为大写，最后再使用`slice()`方法将剩余部分拼接起来。
-
-## 深入探讨
-
-除了使用内置方法外，我们也可以自己实现一个函数来完成字符串的大写化。具体实现代码如下所示：
+首先，我们需要创建一个字符串变量，并赋值为需要转换的字符串。例如：
 
 ```TypeScript
-function capitalizeString(str: string): string {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
+let str: string = "hello world";
+```
 
-let word = "banana";
-let capitalizedWord = capitalizeString(word);
+然后，我们可以使用内置的`.toUpperCase()`方法来将字符串转换为大写，并将其赋值给一个新的变量，例如：
 
-console.log(capitalizedWord);
+```TypeScript
+let newStr: string = str.toUpperCase();
 ```
-输出结果为：
+
+最后，我们可以使用`.charAt()`方法来获取字符串的第一个字符，并使用`.toUpperCase()`方法将其转换为大写，然后使用`.slice()`方法来获取剩余的字符串，并将两者拼接在一起，以达到字符串首字母大写的效果。示例如下：
+
+```TypeScript
+let newStr: string = str.charAt(0).toUpperCase() + str.slice(1);
 ```
-Banana
+
+最后，我们可以通过`console.log()`来打印出转换后的字符串，例如：
+
+```TypeScript
+console.log(newStr);
 ```
-通过自己实现函数，我们可以更加灵活地控制字符串的大写化过程，同时也便于复用和维护。
+
+运行以上代码，我们将会得到输出结果为“Hello world”。
+
+## 深入讨论
+
+在深入讨论首字母大写的操作时，我们需要注意字符串的不可变性。在TypeScript中，字符串属于不可变的数据类型，也就是说，我们不能直接修改字符串的某一部分，而是需要通过截取、替换等操作来实现修改。因此，当我们使用`str.charAt(0).toUpperCase()`来转换字符串的第一个字符时，并不会改变原始字符串，而是创建了一个新的字符串并将其赋值给`newStr`变量。这也是为什么我们需要使用`.slice()`方法来获取剩余的字符串，并将两者拼接在一起来完成整个字符串的首字母大写操作。
 
 ## 参考链接
 
-- [TypeScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
-- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
-- [How to capitalize the first letter of a string in JavaScript](https://stackoverflow.com/questions/1026069/how-to-capitalize-the-first-letter-of-a-string-in-javascript)
-
-## 更多资源
-
-[TypeScript 中文网站](https://www.tslang.cn/index.html)
+- [String.toUpperCase()](https://www.runoob.com/jsref/jsref-touppercase.html)
+- [String.charAt()](https://www.runoob.com/jsref/jsref-charat.html)
+- [String.slice()](https://www.runoob.com/jsref/jsref-slice-string.html)

@@ -1,51 +1,58 @@
 ---
-title:    "Rust recipe: Writing to standard error"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/writing-to-standard-error.md"
+title:                "Rust recipe: Writing to standard error"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When writing code, it is important to have robust error handling in order to ensure that your program runs smoothly and any potential issues are caught. Writing to standard error allows you to display error messages to the user, making it easier to understand and troubleshoot any errors that may occur.
+Writing to standard error is a common task in programming, especially in Rust. By outputting to standard error, instead of standard output, developers can quickly and easily identify and debug errors in their code.
 
 ## How To
 
-To write to standard error in Rust, you can use the `eprintln!` macro. This macro works similarly to `println!`, but it prints to standard error instead of standard output. Let's take a look at an example:
+To write to standard error in Rust, we can use the `eprintln!` macro. This macro works similar to the `println!` macro, but instead outputs to standard error. Let's look at an example:
 
-```rust
+```Rust
 fn main() {
-  let x = 10;
-  let y = 0;
-
-  if y == 0 {
-    eprintln!("Error: Cannot divide by 0");
-  } else {
-    let result = x / y;
-    println!("Result: {}", result);
-  }
+    let error_message = "Oops, something went wrong.";
+    eprintln!("Error: {}", error_message);
 }
 ```
 
-In this code, we are attempting to divide `x` by `y`. However, since `y` is 0, it will result in a division by 0 error. Instead of using `println!` to display the error message, we use `eprintln!` to print it to standard error. The output of this code will be:
+This will output the following to standard error:
 
 ```
-Error: Cannot divide by 0
+Error: Oops, something went wrong.
+```
+
+Notice how the `eprintln!` macro works the same as `println!`, but the output is directed to standard error instead of standard output.
+
+We can also use the `format!` macro to format our error message before passing it to `eprintln!`. For example:
+
+```Rust
+fn main() {
+    let error_code = 404;
+    let error_message = format!("Page not found. Error code: {}", error_code);
+    eprintln!("{}", error_message);
+}
+```
+
+This will output the following to standard error:
+
+```
+Page not found. Error code: 404
 ```
 
 ## Deep Dive
 
-While using `eprintln!` is a simple and effective way to print to standard error, there are other ways to accomplish this as well. For more advanced error handling, you can use the `std::io::Write` trait to write directly to standard error. You can also use the `std::io::stderr` function to get a handle to standard error and then use methods such as `write` or `writeln` to write to it.
+In Rust, standard error is represented by the `std::io::stderr` stream. This stream is automatically created and available for use in our code. The `eprintln!` macro uses this stream to output our error messages.
 
-It is also worth noting that writing to standard error will result in a line break at the end of the message, while using `eprint!` will not include a line break. This can be useful if you want to display multiple error messages on the same line.
+It's also worth noting that writing to standard error is not only limited to error messages. We can use it to output any kind of information that we want to be displayed to the user, even if it's not an error.
 
 ## See Also
 
-For more information on writing to standard error in Rust, check out the following resources:
-
-- [The Rust Standard Library](https://doc.rust-lang.org/std/io/struct.Stderr.html)
-- [Rust By Example: Error Handling](https://doc.rust-lang.org/rust-by-example/error/multiple_error_types/boxing_errors.html)
-- [The Rust Book: Standard Input and Output](https://doc.rust-lang.org/book/ch09-03-slices.html#using-an-io-project-for-more-than-just-development)
-
-Happy coding!
+- [Rust Documentation on `eprintln!`](https://doc.rust-lang.org/std/macro.eprintln.html)
+- [Rust Documentation on standard IO streams](https://doc.rust-lang.org/std/io/index.html)

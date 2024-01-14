@@ -1,63 +1,58 @@
 ---
-title:    "Java recipe: Writing to standard error"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/java/writing-to-standard-error.md"
+title:                "Java recipe: Writing to standard error"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-When writing a Java program, it's important to know how to handle errors and debugging. One way to do this is by utilizing the standard error stream. Writing to standard error allows for any errors or exceptions in the code to be displayed, making it easier to identify and solve issues during development.
+
+When developing Java programs, it is important to have a way to handle error and exception messages. Writing to standard error allows developers to display more detailed and specific error messages to help with troubleshooting and debugging. It is also a common practice to write to standard error when dealing with server or console applications.
 
 ## How To
-To write to standard error in Java, you will need to use the "System.err" object and the "println()" method. This method is similar to the regular "System.out.println()" method, but it prints to standard error instead of the standard output. Let's look at an example:
+
+Writing to standard error in Java is a simple process. First, import the necessary packages:
 
 ```Java
-public class ErrorExample {
-    public static void main(String[] args) {
-        System.err.println("This is an error message");
-        System.out.println("This is a regular output");
-    }
-}
-```
-When running this code, the error message will be displayed in red text while the regular output will be displayed in default color. This makes it easy to differentiate between the two.
-
-```
-This is an error message
-This is a regular output
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 ```
 
-You can also use the "System.err" object to print the errors and exceptions thrown by the program. For example:
+Then, create a PrintStream object that points to the standard error output stream:
 
 ```Java
-public class DivideByZero {
-    public static void main(String[] args) {
-        int num = 10;
-        int divideBy = 0;
-        try {
-            int result = num / divideBy;
-        } catch (ArithmeticException e) {
-            System.err.println("Cannot divide by zero");
-        }
-    }
-}
+PrintStream err = System.err;
 ```
-In this case, since we are dividing by zero, the program will throw an ArithmeticException. However, by using the "System.err" object, we are able to catch the exception and display a meaningful error message to the user.
 
+After that, you can use the `println` method to write your error message:
+
+```Java
+err.println("Error: File not found.");
 ```
-Cannot divide by zero
+
+This will print the message to the standard error output. You can also use the `printf` method to format the message:
+
+```Java
+err.printf("Error: Invalid input '%s' on line %d.", userInput, lineNum);
 ```
+
+The above code will print a formatted error message with the user's input and the line number where the error occurred.
 
 ## Deep Dive
-When writing to standard error, it's important to keep in mind the difference between the standard output and standard error streams. The standard output stream is used for regular program output while the standard error stream is used for error messages and debugging information.
 
-Another thing to note is that the standard error stream is unbuffered, meaning it is printed immediately when called. This is different from the standard output stream, which is buffered and may not be displayed until the buffer is flushed or the program terminates.
+Standard error is a separate output stream from standard output (`System.out`) and is used specifically for error and exception messages. It is useful to separate error messages from regular program output so that they can be easily identified and handled accordingly.
 
-Additionally, it's worth mentioning that the "System.out" and "System.err" objects are not limited to just printing to the console. They can also be used to write to a file or another output stream, making them even more versatile in handling program errors.
+In addition, developers can redirect the standard error stream to a file instead of the console by using the `setErr` method:
+
+```Java
+System.setErr(new PrintStream(new FileOutputStream("error.log")));
+```
+
+This will direct all error messages to the specified file, allowing for easier tracking and analysis of errors in a production environment.
 
 ## See Also
-- [Java Exceptions Tutorial](https://www.baeldung.com/java-exceptions)
-- [The Java Tutorials: Handling Errors](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
-- [Java Standard Error Stream Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-
-By utilizing the standard error stream in your Java programs, you can easily display error messages and exceptions, making it easier to debug and improve your code's functionality. Don't underestimate the power and importance of writing to standard error in your development process.
+- [Java PrintStream Documentation](https://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html)
+- [Java System class Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html)
+- [Understanding Error Messages in Java](https://www.baeldung.com/java-error-messages)

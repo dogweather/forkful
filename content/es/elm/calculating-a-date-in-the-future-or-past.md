@@ -1,49 +1,52 @@
 ---
-title:    "Elm: Calculando una fecha en el futuro o pasado."
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/calculating-a-date-in-the-future-or-past.md"
+title:                "Elm: Calculando una fecha en el futuro o en el pasado"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué
+## Por qué
+¿Alguna vez has necesitado calcular una fecha en el futuro o en el pasado? Puede ser para programar una tarea en tu calendario o para mostrar una fecha específica en una aplicación. En cualquier caso, saber cómo calcular fechas en Elm te será de gran ayuda.
 
-Calcular fechas en el futuro o en el pasado puede ser una tarea útil cuando se están construyendo aplicaciones que requieren de funcionalidades como recordatorios, eventos programados, o simplemente para mostrar la fecha en un formato más fácil de entender para el usuario.
+## Cómo hacerlo
+Lo primero que debes tener en cuenta es que en Elm, las fechas se representan como `Date` en lugar de `DateTime` como en otros lenguajes. Para calcular una fecha en el futuro o en el pasado, podemos utilizar la función `add` que toma dos argumentos: la unidad de tiempo que queremos agregar y la cantidad de esa unidad de tiempo. Veamos un ejemplo:
 
-# Cómo hacerlo
+```elm
+import Date exposing (..)
 
-En Elm, hay varias maneras de calcular fechas en el futuro o en el pasado. Una manera sencilla es utilizar la función `add` del módulo `Time`. Por ejemplo, si queremos calcular la fecha de hoy más una semana, podemos escribir lo siguiente:
-
-```Elm
-add (-1 * 7 * Time.day) (Time.now)
+-- Vamos a calcular la fecha de hoy en dos días
+hoy = Date.fromText "2021-10-14"
+fechaFutura = add Days 2 hoy 
+-- salida: 2021-10-16
 ```
 
-Este código toma la fecha actual (utilizando `Time.now`) y le suma un número de días (en este caso, 7) multiplicado por el valor de `Time.day` (que representa un día en milisegundos). El resultado será la fecha de hoy más una semana.
+En este ejemplo, estamos importando el módulo `Date` y utilizando la función `fromText` para crear una fecha a partir de una cadena de texto específica en formato ISO, en este caso, "2021-10-14". Luego, utilizando la función `add` agregamos `2` días a esa fecha, lo que nos da una nueva fecha en el futuro.
 
-Si queremos calcular la fecha en el pasado, podemos simplemente cambiar el signo del número de días. Por ejemplo:
+También podemos calcular fechas en el pasado utilizando números negativos como `add Days -2 hoy` que nos devolvería "2021-10-12".
 
-```Elm
-add (3 * Time.day) (Time.now)
+Además de `Days`, también podemos utilizar otras unidades de tiempo como `Minutes`, `Hours`, `Months`, `Years`, entre otras.
+
+## Profundizando
+En Elm, cada vez que se realiza una operación de fecha, se crea una nueva instancia de `Date` en lugar de modificar la existente. Esto permite tener un código más seguro ya que evita mutaciones inesperadas. Además, Elm cuenta con un módulo `Time` que permite trabajar con intervalos de tiempo en lugar de fechas específicas.
+
+Otra función útil para calcular fechas es `diff` que nos permite calcular la diferencia en días entre dos fechas. Por ejemplo:
+
+```elm
+import Date exposing (..)
+
+hoy = Date.fromText "2021-10-14"
+ayer = Date.fromText "2021-10-13"
+
+diferencia = diff hoy ayer
+-- salida: 1
 ```
 
-Este código nos devolverá la fecha de hoy más tres días en el futuro.
+`diff` también tiene en cuenta el cambio de hora y funciona correctamente en diferentes zonas horarias.
 
-Otra opción es utilizar el módulo `Date` para trabajar exclusivamente con fechas. Por ejemplo, si queremos calcular la fecha de hoy más un mes, podemos utilizar la función `addMonth` del módulo `Date`. El código se vería así:
+## Ver también
+- [Documentación oficial de Date en Elm](https://package.elm-lang.org/packages/elm/time/latest/Time)
+- [Tutorial de Elm en español](https://elm-tutorial.org/es/)
 
-```Elm
-Date.fromTime (addMonth 1 (Time.now))
-```
-
-Este código toma la fecha actual, la pasa a una fecha de tipo `Date` y luego le suma un mes.
-
-# Profundizando
-
-Existen varias funciones y módulos en Elm que pueden ser de utilidad para calcular fechas en el futuro o en el pasado, como por ejemplo `isBefore` y `isAfter` del módulo `Time`, que nos permiten comparar fechas para ver si una es anterior o posterior a otra. Otra función útil es `toMonthName` del módulo `Date` que nos devuelve el nombre del mes correspondiente a una fecha dada.
-
-Sin embargo, es importante tener en cuenta que trabajar con fechas puede ser complejo debido a la variabilidad de los calendarios, zonas horarias y cambios en las políticas de horario de verano. Por esta razón, es recomendable utilizar librerías o módulos creados específicamente para trabajar con fechas y evitar posibles errores.
-
-# Ver también
-
-- Documentación oficial de Elm sobre fechas y tiempo: https://package.elm-lang.org/packages/elm/time/latest/
-- Librería `ianmackenzie/elm-time-extra` que ofrece funciones adicionales para trabajar con fechas y tiempo en Elm: https://package.elm-lang.org/packages/ianmackenzie/elm-time-extra/latest/
-- Tutorial de Elm sobre cómo trabajar con fechas y tiempo: https://elmprogramming.com/dates-and-time-in-elm.html
+Ahora que sabes cómo calcular fechas en Elm, ¡puedes utilizar esta habilidad en tus proyectos o resolver problemas en tus aplicaciones! Recuerda siempre optar por una programación funcional y segura con Elm. ¡Hasta la próxima!

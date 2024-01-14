@@ -1,84 +1,57 @@
 ---
-title:    "C++: Leyendo argumentos de línea de comandos"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/reading-command-line-arguments.md"
+title:                "C++: Leyendo argumentos de línea de comando"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué leer argumentos de línea de comandos en C++?
+## Por qué leer argumentos de línea de comando?
 
-La lectura de argumentos de línea de comandos es una habilidad esencial para cualquier programador en C++. Permite que el usuario proporcione información al programa cuando se ejecuta, lo cual es muy útil en casos como la personalización de opciones o la interacción con otras aplicaciones.
+Lee este blog post si estás buscando aprender cómo utilizar argumentos de línea de comando en tus programas de C++. La utilización de argumentos de línea de comando puede hacer que tus programas sean más flexibles y dinámicos, permitiéndote personalizar la ejecución del programa según tus necesidades.
 
-## Cómo leer argumentos de línea de comandos en C++
+## Cómo hacerlo
 
-En C++, la función `main` toma dos parámetros: `argc` y `argv`. `argc` es el número de argumentos ingresados por el usuario, mientras que `argv` es un arreglo de cadenas con los argumentos. A continuación, se muestra un ejemplo de cómo leer y mostrar los argumentos de línea de comandos en C++:
+Para leer argumentos de línea de comando en C++, primero debes incluir la biblioteca `iostream` y `string` en tu programa. A continuación, utiliza la función `int main(int argc, char* argv[])` para leer los argumentos de línea de comando. El parámetro `argc` contendrá el número de argumentos ingresados y `argv` será un array con los argumentos.
+
+Aquí tienes un ejemplo de cómo puedes utilizar argumentos de línea de comando para imprimir un mensaje personalizado en la consola:
 
 ```C++
 #include <iostream>
+#include <string>
 
 int main(int argc, char* argv[]) {
-    std::cout << "Se han ingresado " << argc << " argumentos:" << std::endl;
-    for (int i = 0; i < argc; i++) {
-        std::cout << "Argumento " << i + 1 << ": " << argv[i] << std::endl;
-    }
-    return 0;
+  if (argc > 1) {
+    std::string nombre = argv[1];
+    std::cout << "Hola " << nombre << ", bienvenido/a a mi programa!";
+  } else {
+    std::cout << "Bienvenido al programa!";
+  }
+  return 0;
 }
 ```
 
-Si ejecutamos este programa con los argumentos `hola mundo`, obtendremos la siguiente salida:
+Si ejecutas el programa anterior en la línea de comando ingresando `./programa.exe Juan`, obtendrás el siguiente resultado:
 
 ```
-Se han ingresado 3 argumentos:
-Argumento 1: ./programa
-Argumento 2: hola
-Argumento 3: mundo
+Hola Juan, bienvenido/a a mi programa!
 ```
 
-## Profundizando en la lectura de argumentos de línea de comandos
+Si no ingresas ningún argumento, el programa imprimirá:
 
-Además de la función `main`, existen otras formas de leer argumentos de línea de comandos en C++. Una de ellas es mediante el uso de la librería `getopt`, que permite definir opciones y argumentos en un formato más estructurado.
-
-Por ejemplo, podríamos tener un programa que acepte las opciones `-h` para mostrar ayuda y `-n` para especificar un nombre, junto con el argumento obligatorio del nombre de la persona. A continuación, se muestra un ejemplo de cómo utilizar `getopt` para lograr esto:
-
-```C++
-#include <iostream>
-#include <unistd.h>
-
-int main(int argc, char *argv[]) {
-    int opt;
-    bool showHelp = false;
-    char* name;
-    
-    // Definir las opciones y argumentos esperados
-    const char* optString = "hn:";
-    // Iterar hasta haber procesado todos los argumentos
-    while ((opt = getopt(argc, argv, optString)) != -1) {
-        switch(opt) {
-            case 'h':
-                // Si se ingresa "-h", se activa el flag
-                showHelp = true;
-                break;
-            case 'n':
-                // Si se ingresa "-n", se obtiene el argumento después de la opción
-                name = optarg;
-                break;
-        }
-    }
-    // Imprimir la ayuda si se pasó la opción "-h" o si no se especificó un nombre
-    if (showHelp || name == NULL) {
-        std::cout << "Uso: programa -n <nombre>" << std::endl;
-        return 0;
-    }
-    std::cout << "¡Hola, " << name << "!" << std::endl;
-    return 0;
-}
+```
+Bienvenido al programa!
 ```
 
-Si ejecutamos este programa con los argumentos `-n María`, obtendremos la salida `¡Hola, María!`.
+## Profundizando
+
+Ahora que sabes cómo leer argumentos de línea de comando, es importante tener en cuenta algunos detalles adicionales. El primer argumento ingresado (`argv[0]`) siempre será el nombre del programa en ejecución. Por lo tanto, si necesitas acceder únicamente a los argumentos ingresados por el usuario, debes empezar a recorrer el array a partir de `argv[1]`.
+
+Otro aspecto importante es que los argumentos de línea de comando siempre se leerán como cadenas de texto, incluso si son números o caracteres especiales. Si necesitas convertir los argumentos a un tipo de datos específico, como un `int` o un `char`, deberás hacerlo utilizando funciones de conversión.
 
 ## Ver también
 
-- [Documentación sobre la función `main` en C++](https://www.cplusplus.com/reference/cstdlib/main/)
-- [Documentación sobre la librería `getopt` en C++](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
-- [Ejemplos de uso de la función `main` y `getopt`](https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm)
+- [Documentación oficial de C++ sobre la función `main`](https://es.cppreference.com/w/cpp/language/main_function)
+- [Tutorial de DevC++ sobre argumentos de línea de comando](https://www.devdungeon.com/content/using-command-line-arguments-paper-c)
+- [Tutorial de Programiz sobre argumentos de línea de comando en C++](https://www.programiz.com/cpp-programming/main-function-argc-argv)

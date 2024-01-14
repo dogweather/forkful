@@ -1,56 +1,52 @@
 ---
-title:    "Ruby: 「一時ファイルの作成」"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/creating-a-temporary-file.md"
+title:                "Ruby: 一時ファイルの作成"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+"## なぜ"
 
-あなたがプログラミングを学んでいるならば、おそらく一度は一時ファイルを作成する必要性に遭遇したことがあるでしょう。一時ファイルは、プログラムがデータを保存するための一時的な場所です。ここでは、Rubyを使って一時ファイルを作成して保存する方法をご紹介します。
+Rubyで一時ファイルを作成するのはなぜ？
 
-## 作り方
+一時ファイルを作成する理由は様々です。一時的にデータを保存する必要がある場合や、ファイルを操作するための一時的な手段として使用することができます。また、一時ファイルを作成することで、プログラムのパフォーマンスを向上させることもできます。
 
-一時ファイルを作成するには、`Tempfile`クラスを使います。まずは、必要なライブラリを読み込みます。
+## 方法
+
+一時ファイルを作成するには、`Tempfile`クラスを使用します。以下のようにコードを記述することで、一時ファイルを作成することができます。
 
 ```Ruby
 require 'tempfile'
+
+file = Tempfile.new('example')
+
+# 一時ファイルにデータを書き込む
+file.write("This is a temporary file.")
+
+# 一時ファイルの読み込み
+puts file.read
+
+# 一時ファイルを閉じる
+file.close
+
+# 一時ファイルを削除
+file.unlink
 ```
 
-次に、`Tempfile.new`メソッドを使って一時ファイルを作成します。このメソッドは、引数にファイル名のプレフィックスを取ります。その後、ファイルを編集するために`open`メソッドを使います。
+上記のコードでは、`Tempfile`クラスの`new`メソッドを使用して、`example`という名前の一時ファイルを作成しています。その後、`write`メソッドを使用してファイルにデータを書き込み、`read`メソッドを使用してデータを読み込みます。そして、ファイルを閉じてから`unlink`メソッドを使用して削除することで、一時ファイルを完全に破棄することができます。
 
-```Ruby
-tempfile = Tempfile.new('sample')
-tempfile.open
-```
+## もっと深く
 
-ファイルに書き込むには、`puts`メソッドを使います。
+一時ファイルを作成する際には、注意しなければならない点があります。まず、ファイルを閉じることなくプログラムを終了してしまうと、一時ファイルが残ってしまいます。そのため、必ずファイルを閉じてから削除するようにしましょう。
 
-```Ruby
-tempfile.puts "Hello, World!"
-```
+また、一時ファイルを作成する際には、`Tempfile`クラスのオプションを適切に設定することも重要です。例えば、`Tempfile.new('example')`のように引数を1つだけ渡した場合、一時ファイルが作成されるディレクトリはデフォルトで`Dir.tmpdir`を使用します。しかし、特定のディレクトリにファイルを作成したい場合には、`Tempfile.new('example', '/path/to/directory')`のようにすることでディレクトリを指定することができます。
 
-最後に、`close`メソッドを使ってファイルを閉じます。
+さらに、一時ファイルを作成する際には、ファイルのパーミッションも適切に設定する必要があります。デフォルトでは、一時ファイルのパーミッションは`0600`（所有者のみが読み書き可能）になるように設定されていますが、必要に応じて適切なパーミッションを指定することができます。
 
-```Ruby
-tempfile.close
-```
+## 関連記事
 
-これで、一時ファイルが作成され、"Hello, World!"という文字列が書き込まれます。
-
-## 深堀
-
-一時ファイルを作成するときには、ファイルのオープンやクローズを手動で行う必要はありません。`Tempfile.open`メソッドを使うと、ファイルをオープンしてブロック内の処理が終了した後に自動的にクローズします。
-
-また、作成した一時ファイルのパスを取得するには、`tempfile.path`メソッドを使います。その他のオプションや詳細な使い方については、公式ドキュメントを参照してください。
-
-## さらに詳しく知りたい方へ
-
-ここでは、一時ファイルを作成する方法について簡単に説明しましたが、実際には様々な方法があります。他にも、ファイルを削除する方法やファイルのモードを指定する方法など、さらに詳しく知りたい方は以下のリンクを参考にしてください。
-
-- [Rubyドキュメント - Tempfileクラス](https://docs.ruby-lang.org/ja/latest/class/Tempfile.html)
-- [一時ファイルの作成方法 | TechAcademyマガジン](https://techacademy.jp/magazine/32801)
-- [一時ファイルを作成する方法 | Qiita](https://qiita.com/sukepachi/items/cabf9b1f368cc1531311)
-
-## 関連記事を見る
+- [RubyのTempfileクラスの使い方 \- Qiita](https://qiita.com/maisuto/items/755a4fb362b4a5d13673)
+- [一時ファイルを作成する方法（OpenURI使用編） \- Qiita](https://qiita.com/melissatanaka/items/1eb2d13e77c589819fe8)
+- [Rubyのファイル操作メソッド \- TechAcademyマガジン](https://techacademy.jp/magazine/18885

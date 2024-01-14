@@ -1,59 +1,56 @@
 ---
-title:    "C++: Comparando duas datas"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/comparing-two-dates.md"
+title:                "C++: Comparando duas datas"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que comparar datas em um programa C++?
+## Por que
+Ao trabalhar com datas em programas de computador, pode ser necessário comparar duas datas para determinar qual delas é maior ou se são iguais. Isso pode ser útil em diversas situações, como em sistemas de reservas ou controle de estoque.
 
-Comparar datas é uma tarefa comum em programas de computador, especialmente em aplicativos relacionados a calendários, cronogramas ou eventos. Ao comparar duas datas, podemos determinar qual é a mais recente, qual é a mais antiga ou se elas são iguais. Isso é importante para garantir que nosso programa funcione corretamente e gere resultados precisos.
-
-## Como comparar duas datas em C++
-
-Para comparar duas datas em um programa C++, precisaremos usar algumas funções e operadores específicos. Vamos supor que temos duas variáveis do tipo `tm struct` que representam datas e queremos compará-las. Podemos fazer isso utilizando o operador de comparação `>` ou `<` para verificar se uma data é maior ou menor do que a outra.
+## Como
+Em C++, podemos comparar duas datas utilizando o operador de comparação "==" (igual) ou "!=" (diferente). Porém, para isso, é preciso que as datas sejam representadas em uma forma que o compilador possa entender, como por exemplo, utilizando o formato "dd/mm/aaaa" ou "mm/dd/aaaa". Vejamos um exemplo de código:
 
 ```C++
-// Declaração das variáveis de data
-tm data1, data2;
+#include<iostream>
+using namespace std;
 
-// Atribuição de valores às variáveis
-data1.tm_mday = 15;
-data1.tm_mon = 5;
-data1.tm_year = 2021;
+int main()
+{
+	// Declarando e inicializando duas datas
+	string data1 = "15/05/2021";
+	string data2 = "20/05/2021";
 
-data2.tm_mday = 10;
-data2.tm_mon = 5;
-data2.tm_year = 2021;
+	// Comparando as datas utilizando o operador !=
+	if(data1 != data2)
+	{
+		cout << "As datas sao diferentes." << endl;
+	}
 
-// Comparando as datas
-if (data1 > data2) {
-    // Data1 é mais recente que Data2
-    cout << "Data1 é mais recente que Data2";
-}
-else if (data1 < data2) {
-    // Data1 é mais antiga que Data2
-    cout << "Data1 é mais antiga que Data2";
-}
-else {
-    // As datas são iguais
-    cout << "Data1 e Data2 são iguais";
+	// Comparando as datas utilizando o operador ==
+	if(data1 == data2)
+	{
+		cout << "As datas sao iguais." << endl;
+	}
+
+	return 0;
 }
 ```
-Saída:
+
+A saída deste código será:
+
 ```
-Data1 é mais recente que Data2
+As datas sao diferentes.
 ```
 
-## Mais informações sobre a comparação de datas
+## Deep Dive
+Ao utilizar o operador de comparação "==" com datas, é importante ter em mente que ele irá comparar os valores do tipo `string` em ordem alfabética. Por isso, se as datas forem representadas em formato "dd/mm/aaaa", é preciso garantir que o dia venha primeiro, seguido do mês e, por último, o ano. Caso contrário, a comparação pode não ser precisa. 
 
-Além de usar os operadores de comparação `<` e `>`, também podemos usar a função `difftime()` para calcular a diferença entre duas datas em segundos. Essa função leva em consideração os anos bissextos e o número de segundos em cada mês.
-
-Podemos também fazer comparações mais precisas, como verificar se uma data é exatamente igual à outra, levando em consideração não apenas o dia, mês e ano, mas também a hora, minuto e segundo. Para isso, podemos usar a função `mktime()` para converter as variáveis `tm struct` em valores do tipo `time_t` e então compará-las usando o operador `==`.
+Além disso, é importante lembrar que essa comparação será feita apenas com base no texto das datas, e não em seu valor numérico. Ou seja, se tivermos duas datas representadas em texto como "05/2021" e "10/2020", a primeira será considerada maior por ter o valor "05" antes do valor "10" na ordem alfabética.
 
 ## Veja também
-
-- [Documentação da linguagem C++ sobre a estrutura tm](https://www.cplusplus.com/reference/ctime/tm/)
-- [Tutorial sobre manipulação de datas em C++](https://www.geeksforgeeks.org/date-time-manipulations-in-c/)
-- [Exemplos de código de comparação de datas em C++](https://www.bitdegree.org/learn/date-and-time-in-c-plus-plus#comparing-time-t-vs-time-t-objects-in-c)
+- [Documentação oficial da linguagem C++ sobre operadores de comparação](http://www.cplusplus.com/doc/oldtutorial/operators/)
+- [Tutorial sobre manipulação de datas em C++](https://www.geeksforgeeks.org/date-manipulation-in-c-c-and-python/)
+- [Artigo sobre a importância de comparar datas em sistemas de informática](https://blog.cobli.co/a-impotancia-de-comparar-datas-em-sistema/)

@@ -1,30 +1,33 @@
 ---
-title:    "Fish Shell: Å skrive en tekstfil"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/writing-a-text-file.md"
+title:                "Fish Shell: Å skrive en tekstfil"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å skrive en tekstfil kan virke som en enkel oppgave, men det er faktisk en viktig del av programmering med Fish Shell. Ved å skrive en tekstfil kan du enkelt organisere og lagre informasjon som kan brukes i programmer eller som en del av en større prosess.
+
+Å skrive en tekstfil er en viktig del av programmeringsverdenen. Det lar deg lagre og organisere informasjon på en strukturert måte. Med Fish Shell, en populær og brukervennlig kommandolinje, kan du enkelt og raskt opprette tekstfiler.
 
 ## Hvordan
-Å skrive en tekstfil med Fish Shell er enkelt og kan gjøres ved hjelp av noen få kommandoer. La oss se på et eksempel der vi skal skrive ut noen velkomstmeldinger til en tekstfil:
 
-```
-fish << END | tee greeting.txt
-    echo "Hei, hva heter du?"
-    read name
-    echo "Velkommen, $name!"
-END
-```
+For å opprette en tekstfil i Fish Shell, kan du følge disse enkle trinnene:
 
-Etter å ha kjørt dette kodeblokk, vil du få opp et spørsmål om å skrive inn ditt navn. Deretter vil det bli laget en tekstfil med navnet "greeting.txt" som inneholder en personlig velkomstmelding. Du kan også legge til flere kommandoer etter "END" for å legge til flere linjer i tekstfilen.
+1. Åpne terminalen og naviger til ønsket mappe.
+2. Skriv inn kommandoen ```touch filnavn.txt``` for å opprette en tom tekstfil med navnet du ønsker.
+3. Skriv inn kommandoen ```echo "Tekst du ønsker å legge til i filen" >> filnavn.txt``` for å legge til tekst i filen.
+4. For å se innholdet i filen, skriv inn ```cat filnavn.txt```.
 
-## Dypdykk
-Nå som du har lært hvordan du kan skrive en tekstfil med Fish Shell, kan du utforske flere muligheter for å bruke denne funksjonaliteten. For eksempel kan du bruke en tekstfil som et alternativ til å skrive inn flere kommandoer manuelt. Du kan også bruke tekstfiler til å lagre konfigurasjonsinnstillinger eller til og med skrive ut rapporter basert på data fra andre filer.
+## Deep Dive
+
+Fish Shell har også flere nyttige funksjoner for tekstbehandling. En av dem er muligheten til å tilordne variabler i en tekstfil. Dette kan gjøres ved å bruke kommandoen ```set variabelnavn = verdi``` og deretter bruke variabelnavnet i filen ved hjelp av ```$variabelnavn```.
+
+En annen nyttig funksjon er å telle antall linjer, ord og tegn i en tekstfil. Dette kan gjøres ved å bruke kommandoen ```wc -l ordnavn.txt``` for å telle antall linjer, og tilsvarende for ord og tegn ved å bruke ```wc -w``` og ```wc -c```.
 
 ## Se også
-- [Offisiell Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Ulike måter å skrive tekstfiler på med Fish Shell](https://linuxize.com/post/how-to-write-data-to-a-file-in-fish/)
+
+- [Fish Shell nettside](https://fishshell.com/)
+- [Offisiell Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
+- [Fish Shell på GitHub](https://github.com/fish-shell/fish-shell)

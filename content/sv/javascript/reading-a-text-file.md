@@ -1,68 +1,50 @@
 ---
-title:    "Javascript: Läsa en textfil"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/reading-a-text-file.md"
+title:                "Javascript: Läsa en textfil"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför du bör läsa en textfil
 
-Att läsa en textfil är en mycket användbar färdighet för alla som programmerar i Javascript. Det gör det möjligt att lagra och läsa in data på ett strukturerat sätt och kan hjälpa till med att lösa många programmeringsproblem.
+Att läsa en textfil kan vara en viktig del av att bli en bättre Javascript-programmerare. Att förstå hur man hanterar och bearbetar textfiler kan öppna dörrar till nya projekt och utvecklingsmöjligheter.
 
-## Hur man gör
+Förutom att det är en viktig färdighet att ha, kan läsning av textfiler också vara användbart i många olika situationer. Till exempel kan du hämta data från en annan applikation eller skapa en enkel databas med information som behöver sparas utanför din kod. Oavsett vilket är det en förmåga som alla Javascript-utvecklare bör ha.
 
-För att läsa en textfil i Javascript behöver du först skapa en instans av ett filsystem-objekt genom att använda `require('fs')` metoden. Därefter kan du använda `readFile()` metoden för att läsa in filen och lagra den i en variabel.
+# Hur man läser en textfil
 
-```Javascript
-let fs = require('fs');
-let data = fs.readFileSync('textfil.txt', 'utf8'); 
-```
+För att läsa en textfil i Javascript behöver du först och främst en fil att läsa ifrån. Du kan skapa en textfil manuellt eller använda en befintlig fil. Sedan använder du inbyggda funktioner i Javascript för att öppna och läsa filen.
 
-Den första parametern i `readFile()` är namnet på den fil som ska läsas in och den andra parameter är teckenkodningen för filen (i detta fall är det "utf8"). Den lästa filen sparas i variabeln `data`.
-
-För att konvertera den lästa filen till en array, kan du använda `.split()` metoden:
+Här är ett enkelt exempel som visar hur man kan läsa en textfil och skriva ut innehållet till konsolen:
 
 ```Javascript
-let dataArr = data.split('\n');
-```
+var fs = require('fs'); // importerar "fs" biblioteket för att läsa filer
 
-Detta kommer att dela upp filen vid varje radbrytning och lagra den som en array. Om du istället vill läsa in en CSV-fil och konvertera den till en array av objekt, kan du använda en loop tillsammans med `.split()` metoden för att dela upp datan och skapa objekt med de olika värdena:
-
-```Javascript
-let dataObj = [];
-for (let i = 0; i < dataArr.length; i++) {
-    let row = dataArr[i].split(',');
-    let obj = {
-        name: row[0],
-        age: row[1],
-        city: row[2]
-    };
-    dataObj.push(obj);
-}
-```
-
-Detta kommer att läsa in en CSV-fil där varje rad innehåller ett namn, en ålder och en stad och konvertera den till en array av objekt.
-
-Slutligen kan du använda `.writeFile()` metoden för att skriva ut data till en textfil:
-
-```Javascript
-let newData = "Hello world!";
-fs.writeFile('nyfil.txt', newData, (err) => {
-    if (err) throw err;
-    console.log('Filen har skapats!');
+fs.readFile('textfil.txt', 'utf8', function(err, data){ // öppnar filen och anger teckenkodning
+    if(err){
+        console.log(err); // om det finns ett fel, skriver ut det till konsolen
+    } else{
+        console.log(data); // om inga fel uppstår, skriver ut filens innehåll till konsolen
+    }
 });
 ```
 
-## Deep Dive (Djupdykning)
+I det här exemplet används funktionen `fs.readFile` för att öppna och läsa filen `textfil.txt`. Den andra parametern är teckenkodningen, som i de flesta fall är `utf8`. Om filen läses korrekt, kommer innehållet att skrivas ut till konsolen.
 
-När du läser in en textfil i Javascript, är det viktigt att vara medveten om teckenkodningen på filen. Om filen har en annan teckenkodning än "utf8", måste du ange den korrekta teckenkodningen i `readFile()` metoden för att få korrekta resultat.
+Det finns också andra sätt att läsa en textfil, som att använda funktionen `fs.readFileSync` för att läsa filen synkront eller använda `stream` för att läsa filen bit för bit. Beroende på dina behov och det specifika projektet, kan det finnas olika metoder som fungerar bäst för dig.
 
-Det kan också vara viktigt att hantera eventuella fel som kan uppstå vid inläsning och skrivning av filer. Det är därför som i exempelkoden ovan använder vi `try-catch` block för att fånga eventuella fel som kan uppkomma.
+# Deep Dive - Djupdykning
 
-## Se även
+Att läsa en textfil kan verka enkelt, men det finns faktiskt mer som händer bakom kulisserna. När du öppnar en fil i Javascript, skapar du en `File Descriptor`. Detta objekt innehåller information om filen och används för att läsa eller skriva till filen.
 
-- [Node.js file system](https://nodejs.org/api/fs.html)
-- [Dokumentation för fs.readFileSync()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options)
-- [Dokumentation för fs.writeFile()](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
-- [Dokumentation för fs.Split()](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options)
+När du använder funktionerna `fs.readFile` eller `fs.readFileSync`, händer flera saker bakom kulisserna. Det första som händer är att filen öppnas och din data läses in i ett `Buffer` objekt. Därefter översätts buffern till den valda teckenkodningen (t.ex. `utf8`) och sedan returneras den till din kod.
+
+Att förstå denna process kan hjälpa dig att felsöka problem som kan uppstå när du läser en fil, som felaktiga teckenkodningar eller felaktigt formatterade filer.
+
+# Se även
+
+- [Javscript filsystem - Node.js Dokumentation](https://nodejs.org/api/fs.html)
+- [FileStream i Node.js - DigitalOcean Tutorial](https://www.digitalocean.com/community/tutorials/nodejs-reading-writing-files)
+- [Öppna filer i Node.js - W3Schools Tutorial](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)

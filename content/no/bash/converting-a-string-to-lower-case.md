@@ -1,55 +1,44 @@
 ---
-title:    "Bash: Å konvertere en streng til små bokstaver"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/converting-a-string-to-lower-case.md"
+title:                "Bash: Oversettelse av en streng til små bokstaver."
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det kan være mange grunner til å ønske å konvertere en tekststreng til små bokstaver. Kanskje du jobber med et program som forventer at alle navn skal være på samme format, eller kanskje du ønsker å sammenligne to strenger uavhengig av store eller små bokstaver. Uansett årsak, så er det enkelt å gjøre i Bash-programmering.
+Konvertering av en streng til små bokstaver kan være nyttig når du jobber med tekstbehandling eller manipulering av data. Det kan også være nødvendig når du samarbeider med andre programmer eller systemer som bruker små bokstaver som standard. Ved å ha en funksjon for konvertering til små bokstaver i bash-programmering, kan du effektivt håndtere og behandle tekstdata.
 
-## Hvordan
+## Hvordan gjøre det
 
-Den enkleste måten å konvertere en tekststreng til små bokstaver i Bash er ved å bruke kommandoen `tr`. Her er et eksempel på hvordan man kan gjøre dette:
-
-```Bash
-original_string="Hei PÅ DEG"
-lowercase_string=$(echo "$original_string" | tr '[:upper:]' '[:lower:]')
-echo "$lowercase_string"
-```
-
-I dette eksempelet oppretter vi først en variabel kalt `original_string` som inneholder teksten vi ønsker å konvertere. Deretter bruker vi `tr`-kommandoen til å konvertere alle store bokstaver til små bokstaver. Det gjør vi ved å bruke parameteren `[:upper:]` for å angi hvilke bokstaver vi ønsker å konvertere, og `[:lower:]` for å angi hvilken formatt vi ønsker å konvertere dem til. Til slutt lagrer vi resultatet i en ny variabel kalt `lowercase_string` og skriver den ut ved hjelp av `echo`-kommandoen.
-
-Dersom man ønsker å bare konvertere en enkeltstreng i Bash, kan man også bruke kommandoen `tr` alene uten å lagre resultatet i en variabel. Her er et eksempel på hvordan man kan gjøre det:
+For å konvertere en streng til små bokstaver i bash, kan du bruke kommandoen "tr". Denne kommandoen endrer tegnene i en streng basert på et gitt sett med regler. I dette tilfellet vil vi bruke regelen "[:upper:]" til å bytte ut alle store bokstaver med tilsvarende små bokstaver.
 
 ```Bash
-echo "Hei PÅ DEG" | tr '[:upper:]' '[:lower:]'
+echo "HELLO WORLD" | tr '[:upper:]' '[:lower:]'
 ```
 
-Dette vil skrive ut teksten "hei på deg" til terminalen.
+Dette vil gi følgende output: "hello world"
+
+Du kan også bruke denne kommandoen i kombinasjon med andre kommandoer, som for eksempel å lese en fil og konvertere alle bokstaver til små bokstaver.
+
+```Bash
+cat file.txt | tr '[:upper:]' '[:lower:]'
+```
 
 ## Dypdykk
 
-I tillegg til å bruke `tr`-kommandoen, finnes det også andre måter å konvertere en tekststreng til små bokstaver i Bash. Her er to eksempler:
+For å gjøre en mer detaljert konvertering av en streng til små bokstaver, kan du også bruke kommandoen "sed". Dette vil tillate deg å kontrollere nøyaktig hvilke bokstaver som blir konvertert og hvordan.
 
 ```Bash
-# Ved hjelp av variabel subtring
-original_string="Hei PÅ DEG"
-lowercase_string="${original_string,,}"
-echo "$lowercase_string"
-
-# Ved hjelp av triggere
-original_string="Hei PÅ DEG"
-shopt -s extglob
-lowercase_string="${original_string//[![:alnum:]]/_}"
-echo "$lowercase_string"
+echo "hello world" | sed -e 's/./\L&/g'
 ```
 
-I det første eksempelet bruker vi en variabel substring for å konvertere teksten, og i det andre eksempelet bruker vi triggere for å fjerne alle tegn som ikke er små bokstaver eller tall fra teksten. Begge disse eksemplene vil gi samme resultat som det første eksempelet med `tr`-kommandoen.
+I dette tilfellet bruker vi "sed" til å endre hvert tegn i strengen til små bokstaver. Dette gjøres ved å bruke "s/" for å erstatte hvert tegn og "\L&/" for å gjøre det om til små bokstaver. Dette vil produsere den samme outputen som i eksemplene over.
 
 ## Se også
 
-- [Bash-programmering: Introduksjon](http://www.example.com)
-- [Bash-programmering: Variabler](http://www.example.com)
+- [Bash-tråden til omgjøring av store og små bokstaver](https://stackoverflow.com/questions/2264428/how-to-convert-uppercase-letters-to-lowercase) 
+- [Tr-kommandoen dokumentasjon](https://www.gnu.org/software/sed/manual/html_node/The-_0022tr_0022-Command.html)
+- [Sed-kommandoen dokumentasjon](https://www.gnu.org/software/sed/manual/sed.html)

@@ -1,55 +1,43 @@
 ---
-title:    "Kotlin: वर्तमान तारीख प्राप्त करना"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/getting-the-current-date.md"
+title:                "Kotlin: वर्तमान तारीख प्राप्त करना"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
+कोटलिन में मौजूदा तारीख प्राप्त करने में क्या लाभ है, इसके बारे में है।
 
-अभी की तारीख जानने के लिए किसी ने क्यों संलग्न होना चाहिए। यह करने का कारण है कि यह प्रोग्रामिंग का एक महत्वपूर्ण हिस्सा है। 
+## कैसे करें
+कोटलिन में संपूर्ण तारीख प्राप्त करने के लिए, आपको `java.time.LocalDate` का उपयोग करना होगा। निम्न उदाहरण में, हम `LocalDate.now()` का उपयोग करके वर्तमान तारीख प्राप्त करेंगे और प्रिंट करेंगे।
 
-## कैसे करना है
-
-डेटा एंड टाइम को देखने के लिए, आपको कुछ संगठन और सूचनाओं का मुकाबला करना होगा। यहां हम कुछ उदाहरण प्रस्तुत कर रहे हैं जो Kotlin में तारीख का उपयोग करते हैं।
-
-उदाहरण 1: वर्तमान तारीख के साथ एक स्ट्रिंग मिलाना (Concatenate)
-
-```kotlin
-val currentDate = LocalDate.now()
-
-// Output: 14 नवंबर 2021
-println("${currentDate.dayOfMonth} ${currentDate.month} ${currentDate.year}")
+```Kotlin
+val localDate = LocalDate.now()
+println("वर्तमान तारीख: $localDate")
+```
+आउटपुट:
+```
+वर्तमान तारीख: 2021-09-23
 ```
 
-उदाहरण 2: वर्तमान तारीख और समय दिखाएं (Show current date and time)
+आप इस तरीके से `java.time.format.DateTimeFormatter` का भी उपयोग करके तारीख को अपने अनुभव के अनुसार प्रिंट कर सकते हैं। निम्न उदाहरण में, हम `DateTimeFormatter.ofPattern("dd MMMM yyyy", Locale("hi"))` का उपयोग करके अंग्रेजी से हिंदी में तारीख को प्रिंट करते हुए इसका उदाहरण देख सकते हैं। 
 
-```kotlin
-val currentDateTime = LocalDateTime.now()
-
-// Output: 14-11-2021 05:30 PM
-println("$currentDateTime.toLocalDate()} ${currentDateTime.hour}:${currentDateTime.minute toLong()} ${currentDateTime.toLocalTime}")
+```Kotlin
+val localDate = LocalDate.now()
+val dateFormat = DateTimeFormatter.ofPattern("dd MMMM yyyy", Locale("hi"))
+val formattedDate = localDate.format(dateFormat)
+println("वर्तमान तारीख: $formattedDate")
 ```
-
-उदाहरण 3: प्रत्येक महीने की संख्या दिखाएं (Show the number of days in each month)
-
-```kotlin
-val currentYear = Year.now()
-val months = Month.values()
-
-for (month in months) {
-    val days = month.length(currentYear isLeap)
-    
-    // Output: नवंबर के देश में 30 दिन होते हैं
-    println("${month} में ${days} दिन होते हैं")
-}
+आउटपुट:
+```
+वर्तमान तारीख: २३ सितंबर २०२१
 ```
 
 ## गहराई में जाएं
-
-वर्तमान तारीख आपके प्रोग्राम के लिए आवश्यक होने के साथ-साथ अन्य उपयोगिता के लिए भी महत्वपूर्ण है। Kotlin में, इसके लिए कई इनबिल्ट फंक्शन के साथ आप दिन, महीने, साल, और अन्य कैलेंडरिक इकाइयों से जुड़ी जानकरी प्राप्त कर सकते हैं। आप यह भी संभव होगा कि आप अपने आवश्यकताओं के लिए अपने तारीख प्रस्तुतव्य प्रारूप आयोजित करें।
+`java.time.LocalDate` कोटलिन में विशिष्ट तारीख को संजोने और प्रस्तुत करने के लिए उपयोगी एक श्रेणी है। आप `java.time.format.DateTimeFormatter` के साथ आगे बढ़कर तारीखों को अधिक संवेदनशील ढंग से प्रस्तुत कर सकते हैं। इसके अलावा, आप अपने एप्लिकेशन में तारीखों के साथ विभिन्न गणनाएं कर सकते हैं और उनको अपने उदाहरणों में शामिल कर सकते हैं। 
 
 ## देखें भी
-
-- [कोट्लिन डॉक्यूम
+- [Kotlin documentation for LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/)
+- [Java documentation for LocalDate](https://docs.oracle.com

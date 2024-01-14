@@ -1,45 +1,31 @@
 ---
-title:    "Elixir: 未来または過去の日付の計算"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/calculating-a-date-in-the-future-or-past.md"
+title:                "Elixir: 将来または過去の日付を計算する"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-
-日付を未来や過去に計算することは、Elixirプログラミングでよく行われるタスクの一つです。例えば、日付を操作してイベントのスケジュールを作成したり、休日を計算したりすることができます。
+今日はElixirで将来や過去の日付を計算することについて説明します。私たちは、生活の中で日付を計算する必要があります。例えば、予定を立てたり、期限を追加したり、誕生日を計算したりします。Elixirを使えば、このような日付計算を簡単に実装することができます。
 
 ## 方法
-
-日付を未来や過去に計算するために、Elixirには2つの主要な関数があります。一つは `Date.add/2` で、もう一つは `Date.subtract/2` です。この記事では、それぞれの関数の使い方をコード例と共に示します。
+まず、`Date`モジュールを使って現在の日付を取得します。例えば、`Date.utc_today()`は現在の日付をUTCで取得することができます。次に、`Date.add()`関数を使って、現在の日付から指定した日数を足したり引いたりすることができます。例えば、`Date.add(Date.utc_today(), 7)`は現在の日付から7日後の日付を計算します。
 
 ```Elixir
-# 今日から10日後の日付を計算する
-today = Date.today()
-future_date = Date.add(today, 10)
-IO.puts "10日後の日付は #{future_date} です。"
-# Output: 10日後の日付は 2021-10-27 です。
-
-# 昨日から1ヶ月前の日付を計算する
-yesterday = Date.today()
-past_date = Date.subtract(yesterday, 30, :day)
-IO.puts "1ヶ月前の日付は #{past_date} です。"
-# Output: 1ヶ月前の日付は 2021-09-29 です。
+current_date = Date.utc_today()
+future_date = Date.add(current_date, 7) # 今日の日付から7日後の日付を計算
+past_date = Date.add(current_date, -7) # 今日の日付から7日前の日付を計算
 ```
 
-## ディープダイブ
+このようにして、現在の日付から任意の日数を加算または減算することで、将来や過去の日付を簡単に計算することができます。
 
-日付を未来や過去に計算する際に注意すべき点があります。まず、 `Date.add/2` と `Date.subtract/2` は第二引数で指定した単位に日付を加えたり引いたりするため、単位を指定することが重要です。また、日付を操作する際にはタイムゾーンにも気を配る必要があります。
+## 深堀り
+さらに興味を持っている方には、`Calendar`モジュールを使ってさまざまな日付計算を行うことができます。例えば、`Calendar.DateTime`を使うことで、特定の時刻を含む日付を計算することができます。また、`Calendar.Date`を使うことで、特定の日付を含む週や月を計算することができます。
 
-さらに、Elixirでは日付を扱うために `Date` モジュールの他に、 `DateTime` モジュールや `NaiveDateTime` モジュールなども利用することができます。それぞれのモジュールには異なるメソッドがあり、日付操作のニーズに合わせて使い分けることができます。
+また、`Calendar`モジュールには多くの便利な関数が用意されていますので、ぜひ使ってみてください。
 
 ## 参考リンク
-
-- [Elixir公式ドキュメント - Elixir.DateTime](https://hexdocs.pm/elixir/DateTime.html)
-- [Elixir公式ドキュメント - Elixir.Date](https://hexdocs.pm/elixir/Date.html)
-- [Elixir公式ドキュメント - Elixir.NaiveDateTime](https://hexdocs.pm/elixir/NaiveDateTime.html)
-
-## 関連リンク
-
-- [Elixirプログラミング入門記事一覧](https://www.example.com/elixir-programming)
+- [Elixir Dateモジュールの公式ドキュメント（英語）](https://hexdocs.pm/elixir/master/Date.html)
+- [Elixir Calendarモジュールの公式ドキュメント（英語）](https://hexdocs.pm/elixir/master/Calendar.html)

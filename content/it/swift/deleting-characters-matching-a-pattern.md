@@ -1,47 +1,43 @@
 ---
-title:    "Swift: Eliminazione di caratteri corrispondenti a un modello"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/swift/deleting-characters-matching-a-pattern.md"
+title:                "Swift: Eliminazione di caratteri corrispondenti a un modello"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché
+## Perché
 
-Eliminare i caratteri corrispondenti a un determinato modello può essere utile quando si vuole filtrare o modificare una stringa, ad esempio per rimuovere spazi vuoti o simboli di punteggiatura.
+C'è un'utilissima funzione in Swift che permette di eliminare i caratteri corrispondenti a un certo pattern. Scopriamo insieme come usarla per semplificare il nostro codice!
 
 ## Come fare
 
-È possibile utilizzare il metodo `replacingOccurrences(of:with:)` sulla stringa di cui si desidera eliminare i caratteri. Ad esempio, se si vuole rimuovere tutti gli spazi vuoti dalla stringa `hello world`, si può scrivere:
+Per eliminare i caratteri che corrispondono a un pattern, dobbiamo utilizzare la funzione `replacingOccurrences(of:with:)` sul nostro stringa. Segui il codice di esempio qui sotto e guarda l'output per vedere come funziona:
 
 ```Swift
-let stringa = "hello world"
-let nuovaStringa = stringa.replacingOccurrences(of: " ", with: "")
-print(nuovaStringa)
+let string = "Questa è una stringa di prova!"
+let newString = string.replacingOccurrences(of: "a", with: "")
+print(newString) // Output: Quest è un string di prov!
 ```
 
-Output:
-`helloworld`
-
-## Approfondimento
-
-Esistono diversi metodi per eliminare caratteri in Swift, come utilizzare l'operatore `!`, utilizzare la funzione globale `replace(_:with:options:range:)` o utilizzare espressioni regolari con il framework `Foundation`.
-
-Un'altro modo per eliminare caratteri da una stringa è utilizzare il metodo `filter()` sulle sue caratteristiche:
+Come puoi vedere, abbiamo eliminato tutti i caratteri "a" dalla nostra stringa originale. Ovviamente, possiamo cambiare il pattern e il carattere di sostituzione a nostro piacimento.
 
 ```Swift
-let stringa = "This is a sentence."
-let caratteriDaRimuovere = "aeiou"
-let nuovaStringa = stringa.filter { !caratteriDaRimuovere.contains($0) }
-print(nuovaStringa)
+let string = "009 8765 4321"
+let newString = string.replacingOccurrences(of: "[0-9]", with: "-", options: .regularExpression)
+print(newString) // Output: --- ---- -----
 ```
 
-Output:
-`Ths s sntnc.`
+In questo esempio, abbiamo utilizzato una espressione regolare per sostituire tutti i numeri con il carattere "-". Ci sono molte altre possibilità di utilizzo, quindi assicurati di fare qualche ricerca per scoprire cosa puoi fare con questa funzione.
 
-# Vedi anche
+## Deep Dive
 
-- [metodo `replacingOccurrences(of:with:)`](https://developer.apple.com/documentation/foundation/nsstring/1417296-replacingoccurrences)
-- [funzione globale `replace(_:with:options:range:)`](https://developer.apple.com/documentation/swift/string/1641127-replace)
-- [framework `Foundation`](https://developer.apple.com/documentation/foundation)
-- [metodo `filter()`](https://developer.apple.com/documentation/swift/array/2945498-filter)
+La funzione `replacingOccurrences(of:with:)` è estremamente utile in molti casi, sopratutto quando abbiamo bisogno di manipolare le stringhe. Essendo in grado di utilizzare espressioni regolari come pattern, ci permette di effettuare operazioni molto complesse in modo semplice.
+
+Un'altra interessante caratteristica di questa funzione è che non modifica la stringa originale, ma ne restituisce una copia modificata. Questo è particolarmente utile quando dobbiamo lavorare con dati sensibili, evitando di modificarli accidentalmente.
+
+## Vedi anche
+
+- [Documentazione Apple su `replacingOccurrences(of:with:)`](https://developer.apple.com/documentation/foundation/nsstring/1413213-replacingoccurrences)
+- [Tutorial su espressioni regolari in Swift](https://www.appcoda.com/regular-expression-swift/)

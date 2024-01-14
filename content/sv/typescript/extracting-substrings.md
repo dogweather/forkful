@@ -1,48 +1,65 @@
 ---
-title:    "TypeScript: Extrahering av delsträngar"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/extracting-substrings.md"
+title:                "TypeScript: Uttagna delsträngar"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför extrahera substrängar i TypeScript?
+## Varför
 
-I TypeScript, precis som i andra programmeringsspråk, kan det ibland vara nödvändigt att extrahera en del av en sträng, även kallad en substräng. Detta kan vara användbart när man behöver bearbeta och manipulera strängar för att få önskat resultat. I denna bloggpost kommer vi att utforska hur man extraherar substrängar i TypeScript och varför detta kan vara användbart.
+Att extrahera delsträngar från en större sträng är en vanlig uppgift inom programmering, särskilt när man arbetar med textbaserade data eller behöver bearbeta användaringångar. Genom att kunna extrahera specifika delar av en sträng kan man effektivisera sin kod och få tillgång till viktig information på ett snabbt och enkelt sätt.
 
-## Så här extraherar du en substräng i TypeScript
+## Hur man gör det
 
-För att extrahera en substräng i TypeScript kan vi använda en metod som heter `slice()`. Denna metod tar två parametrar - den första parametern är positionen där substrängen ska börja och den andra parametern är positionen där substrängen ska sluta. Här är ett exempel på hur vi kan använda `slice()` för att extrahera en substräng från en sträng:
-
-```TypeScript
-let str = "Hej! Den här bloggposten handlar om TypeScript.";
-
-let substring = str.slice(4, 18);
-
-console.log(substring); // Resultat: "Den här bloggposten"
-```
-
-I detta exempel extraherar vi substrängen "Den här bloggposten" från den ursprungliga strängen genom att ange startpositionen `4` (som motsvarar positionen för bokstaven "D") och slutpositionen `18` (som motsvarar positionen för bokstaven "n"). Observera att den andra parametern är exkluderande, vilket innebär att den inte kommer att inkluderas i den resulterande substrängen.
-
-Förutom att ange positionerna manuellt kan vi också använda en negativ position för att extrahera en substräng från slutet av strängen. Till exempel kan vi använda `str.length` för att extrahera de sista 5 karaktärerna från strängen:
+För att extrahera en delsträng från en större sträng i TypeScript använder man "slice()" metoden. Denna metod tar två parametrar, startindex och slutindex, och returnerar en ny sträng som endast innehåller tecken mellan de angivna indexen (inklusive startindex men exklusive slutindex).
 
 ```TypeScript
-let str = "Detta är en sträng med många karaktärer.";
+let sträng = "Detta är en textsträng.";
 
-let substring = str.slice(-5);
+// Extrahera "en"
+let delsträng = sträng.slice(11, 14);
+console.log(delsträng); // "en"
 
-console.log(substring); // Resultat: "ärter"
+// Extrahera sista ordet
+delsträng = sträng.slice(18);
+console.log(delsträng); // "textsträng."
 ```
 
-I detta exempel extraherar vi de sista 5 karaktärerna från strängen genom att använda en negativ position `-5` som motsvarar de fem sista karaktärerna "ärter".
+För att undvika att ange slutindexet kan man istället ange ett negativt tal som motsvarar antal tecken från slutet av strängen. Detta är särskilt användbart när man vill hämta en del av en sträng som ligger långt in i strängen.
 
-## Djupdykning i substrängsextraktion
+```TypeScript
+// Hämta sista fyra tecknen
+delsträng = sträng.slice(-4);
+console.log(delsträng); // "äng."
+```
 
-Förutom `slice()` finns det också andra sätt att extrahera substrängar i TypeScript. Till exempel kan vi använda metoden `substring()` som fungerar på samma sätt som `slice()` men den tar bara en startposition som parameter. Vi kan också använda `substr()` som tar en startposition och en längd på substrängen som parametrar.
+## Djupdykning
 
-Det är också viktigt att notera att substrängsextraktion i TypeScript är icke-destruktiv, vilket innebär att den ursprungliga strängen inte förändras när vi extraherar en substräng. Istället returneras en helt ny sträng som innehåller den önskade substrängen.
+Utöver "slice()" metoden finns det även andra sätt att extrahera delsträngar i TypeScript. Man kan använda "substring()" metoden som fungerar på liknande sätt men tar istället två index som parametrar och returnerar en sträng mellan dessa index (inklusive båda).
 
-## Se också
+```TypeScript
+// Extrahera "är en"
+delsträng = sträng.substring(5, 10);
+console.log(delsträng); // "är en"
+```
 
-- [TypeScript String API](https://www.typescriptlang.org/docs/handbook/string.html)
-- [Substring extraction in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+En annan metod är "substr()" som tar två parametrar, startindex och antal tecken, och returnerar en sträng med det angivna antalet tecken från och med startindexet.
+
+```TypeScript
+// Hämta de tre första tecknen
+delsträng = sträng.substr(0, 3);
+console.log(delsträng); // "Det"
+```
+
+Slutligen kan man även använda en kombination av "indexOf()" och "substring()" metoden för att extrahera specifika delar av en sträng baserat på förekomsten av ett visst tecken eller en viss sträng.
+
+Se mer om dessa metoder och deras användning i den officiella dokumentationen för TypeScript.
+
+## Se även
+
+- [`slice()` metod i TypeScript dokumentationen](https://www.typescriptlang.org/docs/handbook/strings.html#the-substring-method)
+- [`substring()` metod i TypeScript dokumentationen](https://www.typescriptlang.org/docs/handbook/strings.html#the-substring-method)
+- [`substr()` metod i TypeScript dokumentationen](https://www.typescriptlang.org/docs/handbook/strings.html#the-substr-method)
+- [`indexOf()` metod i TypeScript dokumentationen](https://www.typescriptlang.org/docs/handbook/strings.html#the-indexof-method)

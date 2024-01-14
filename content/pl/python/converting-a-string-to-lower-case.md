@@ -1,53 +1,47 @@
 ---
-title:    "Python: Konwersja ciągu znaków na małe litery"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/converting-a-string-to-lower-case.md"
+title:                "Python: Konwertowanie ciągu znaków na małe litery"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często w programowaniu jest potrzebne zmniejszanie wielkości liter w ciągu znaków (string). Może to być przydatne przy porównywaniu lub sortowaniu tekstu. 
+Często w programowaniu spotykamy się z koniecznością zmiany tekstu na małe litery. Może to być potrzebne do porównania ciągów znaków, ujednolicenia danych lub wygodniejszego wyświetlania tekstu w aplikacji. W tym artykule dowiecie się jak w prosty sposób przekonwertować string na małe litery za pomocą języka Python.
 
 ## Jak to zrobić
 
-Można użyć metody `lower()` aby skonwertować ciąg znaków na małe litery. Należy pamiętać, że ta metoda nie zmienia oryginalnego ciągu i zwraca nowy ciąg z małymi literami.
+Przekonwertowanie tekstu na małe litery w języku Python jest bardzo prostym procesem. Wystarczy użyć metody `lower()` na obiekcie typu string, która zwróci nowy string złożony z małych liter.
 
-```Python
-text = "Witaj Świecie!"
-print(text.lower())
+```.py
+string = "PROGRAMOWANIE W PYTHONIE"
+print(string.lower())
+# Output: programowanie w pythonie
 ```
 
-Output: witaj świecie!
+Możemy także użyć tej metody na zmiennych typu string, co pozwala na dowolne manipulacje z tekstem w programie. Przetestujmy to na przykładzie poniższego kodu:
 
-Jeśli chcemy zmienić oryginalny ciąg, musimy przypisać wynik metody `lower()` do zmiennej.
-
-```Python
-text = "Witaj Świecie!"
-text = text.lower()
-print(text)
+```.py
+tekst1 = "HeLLo WoRLD"
+tekst2 = "H3LL0 W0RLD"
+print(tekst1.lower())
+print(tekst2.lower())
+# Output: hello world
+#         h3ll0 w0rld
 ```
 
-Output: witaj świecie!
+Jak widać, metoda `lower()` automatycznie konwertuje wszystkie znaki na małe litery, niezależnie od tego czy są one literami czy cyframi.
 
-## Głębsza analiza
+## Deep Dive
 
-Podczas konwersji na małe litery, należy pamiętać o różnicach między językiem angielskim a polskim. W języku angielskim, po zmianie na małe litery, litera `i` przed spółgłoskami `j`, `z` i `w` będzie wyświetlana jako `I`, podczas gdy w języku polskim będzie to `i`.
+Funkcja `lower()` działa w oparciu o tzw. tabela ASCII, która określa wartości numeryczne dla poszczególnych znaków. Każda litera posiada swoją unikalną wartość, a w przypadku liter z alfabetów nielatynoamerykańskich również mogą występować różnice w kodowaniu.
 
-Przykładowo, jeśli skonwertujemy ciąg "AbcZw" na małe litery, wynikiem w języku angielskim będzie "abczw", a w języku polskim "abcżw". Dzieje się tak, ponieważ w języku polskim litera `z` zmienia się na `ż` po przecinku, co jest preferowanym sposobem zapisu w języku polskim.
+Innym ważnym aspektem jest fakt, że metoda `lower()` nie zmienia oryginalnego stringa, a jedynie zwraca nowy z konwersją. Dlatego też ważne jest, aby przypisać nowy string do zmiennej, aby móc dalej pracować na przekonwertowanym tekście.
 
-Z drugiej strony, jeśli użyjemy metody `casefold()` zamiast `lower()`, zostaną uwzględnione szerokości litery i odpowiednio skonwertowany zostanie na małe litery.
+## Zobacz także
 
-```Python
-text = "Witaj Świecie!"
-print(text.casefold())
-```
-
-Output: witaj świecie!
-
-## Zobacz też
-
-- Dokumentacja Pythona: https://docs.python.org/3/library/stdtypes.html#string-methods
-- Porównywanie ciągów znaków (string comparison): https://www.programiz.com/python-programming/methods/string/casefold
-- Sortowanie ciągów znaków (string sorting): https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/
+- [Tutorial: Ściągawka Python](https://www.python.org/about/gettingstarted/)
+- [Dokumentacja języka Python](https://docs.python.org/3/)
+- [Kurs programowania w Pythonie na Codecademy](https://www.codecademy.com/learn/learn-python)

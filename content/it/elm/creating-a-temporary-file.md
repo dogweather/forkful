@@ -1,48 +1,48 @@
 ---
-title:    "Elm: Creazione di un file temporaneo"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/creating-a-temporary-file.md"
+title:                "Elm: Creazione di un file temporaneo"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché creare file temporanei con Elm
+## Perché
+Una delle sfide più comuni quando si scrive codice è gestire i file temporanei. Che si tratti di archivi compressi, file di configurazione o semplicemente file temporanei per l'elaborazione dei dati, doverli creare e gestire può essere una seccatura. Fortunatamente, Elm ha un modo semplice e potente per gestire i file temporanei: il package `elm/file`.
 
-Creare file temporanei può essere utile per svariati motivi, come ad esempio la gestione di dati temporanei o la creazione di file di backup durante la modifica di un progetto. Inoltre, con Elm è possibile creare file temporanei in modo semplice e sicuro grazie alla sua natura funzionale e al controllo degli effetti collaterali.
+## Come
+Usando il package `elm/file`, è possibile creare un file temporaneo con pochi semplici passaggi. Innanzitutto, è necessario importare il modulo `File` e definire una Funzione chiamata `temporary`.
 
-## Come creare un file temporaneo con Elm
+```Elm
+import File exposing (..)
 
-Per creare un file temporaneo con Elm, è necessario utilizzare la libreria `elm/file` che permette di gestire l'accesso ai file di sistema. Innanzitutto, è necessario definire un modello che rappresenti il file temporaneo, ad esempio:
-
-```elm
-type alias TempFile =
-    { name : String
-    , content : String
-    }
+temporary : Task x FilePath
+temporary =
+    Temp.file "mytempfile.txt"
 ```
 
-Successivamente, è possibile utilizzare la funzione `tempFile` per creare il file temporaneo:
+Successivamente, è possibile utilizzare la funzione `perform` per eseguire la task e ottenere il percorso del file temporaneo creato.
 
-```elm
-tempFile : String -> String -> Cmd Msg
-tempFile fileName tempData =
-    Cmd.map FileCreated (File.tempFile fileName tempData)
+```Elm
+perform temporary
+    (File.map
+        (\path ->
+            -- fai qualcosa con il percorso del file temporaneo
+            )
+        (File.onError
+            (\error ->
+                -- gestisci eventuali errori
+                )
+            )
+        )
 ```
 
-Infine, è possibile gestire la ricezione del file temporaneo tramite il `Msg` corrispondente:
+## Deep Dive
+Una volta creato il file temporaneo, è possibile utilizzarlo come se fosse un file normale all'interno della propria applicazione. Ciò significa che è possibile leggerlo, scrivere su di esso e anche cancellarlo una volta che non è più necessario.
 
-```elm
-type Msg
-    = FileCreated (Maybe File.Result)
-```
+Per ulteriori informazioni sulle operazioni disponibili, controlla la documentazione completa di `elm/file`.
 
-## Approfondimenti sulla creazione di file temporanei
-
-Per ottenere maggior controllo sulla creazione di file temporanei con Elm, è possibile utilizzare la funzione `tempFileWith` che permette di specificare alcune opzioni aggiuntive, come il percorso in cui salvare il file temporaneo o le autorizzazioni di lettura e scrittura.
-
-Inoltre, è possibile utilizzare la libreria `elm/random` per generare nomi casuali di file, così da evitare di sovrascrivere eventuali file esistenti.
-
-# Vedi anche
-- [Documentazione ufficiale della libreria elm/file](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Esempio di creazione di file temporanei con Elm](https://gist.github.com/evancz/2bfcba262f318fbd5895ab0f0a4d5120)
-- [Libreria elm/random per la generazione di nomi casuali](https://package.elm-lang.org/packages/elm/random/latest/)
+## Vedi anche
+- Documentazione ufficiale `elm/file`: https://package.elm-lang.org/packages/elm/file/latest/
+- Articoli sulla gestione dei file in Elm: https://css-tricks.com/introduction-to-elm-and-file-operations-part-1/
+- Esempi pratici di utilizzo di `elm/file`: https://github.com/vilic/elm-file/tree/master/example

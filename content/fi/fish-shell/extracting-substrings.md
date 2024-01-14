@@ -1,56 +1,42 @@
 ---
-title:    "Fish Shell: Merkkijonojen erottaminen"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/extracting-substrings.md"
+title:                "Fish Shell: Alimerkkijonojen erottaminen"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi haluaisit poimia osastringejä?
+## Miksi
 
-Osastringien poimiminen on tärkeä osa Fish Shell -ohjelmoinnissa, koska se mahdollistaa tietyn osan merkkijonosta erottamisen ja käyttämisen. Tämä voi olla hyödyllistä esimerkiksi tiedostojen tai muuttujien nimien käsittelyssä.
+Miksi haluat erottaa alijonoja Fish Shell -ohjelmointikielen avulla? Yksinkertaisesti sanottuna, se on erittäin kätevä tapa työstää merkkijonoja ja pystyt käyttämään erilaisia tapoja manipuloida niitä.
 
-## Kuinka: Koodiesimerkkejä ja tulosteita "```Fish Shell ... ```" -koodilohkoissa.
+## Miten
 
-#### Koodiesimerkki 1:
-```
-set name "Fish Shell"
-echo $name[5..-2]
-```
-#### Tuloste:
-```
-Shel
+Fish Shellilla on helppo erottaa alijonoja. Se tehdään `string` komennolla, jossa annetaan haluttu merkkijono ja sen jälkeen väleinä yksittäisiä merkkejä tai merkkijonoja, jotka haluat erottaa alkuperäisestä merkkijonosta.
+
+```Fish Shell
+string="Tämä on esimerkki merkkijonosta"
+echo $string[5,-1] # Tulostaa "on esimerkki merkkijonosta"
+echo $string[1,3] # Tulostaa "Täm"
 ```
 
-Tässä esimerkissä "Fish Shell" -merkkijonosta poimitaan osastringi "Shel" käyttämällä sulkumerkkejä ja indeksiä.
+Substrnign erottamista voidaan käyttää myös esimerkiksi muuttamaan olemassa olevaa merkkijonoa. Alla olevassa esimerkissä poistetaan välilyönnit merkkijonon alusta ja lopusta käyttäen `sub` komentoa.
 
-#### Koodiesimerkki 2:
-```
-set filename "blog_post.md"
-echo $filename[-5..]
-```
-#### Tuloste:
-```
-post.md
+```Fish Shell
+string=" Hei, tämä on teksti "
+echo $string # Tulostaa "Hei, tämä on teksti"
+sub "^[ ]*" "" $string; string=$REPLY
+sub "[ ]*$" "" $string; string=$REPLY
+echo $string # Tulostaa "Hei, tämä on teksti"
 ```
 
-Tässä esimerkissä tiedostonimessä poimitaan osastringi "post.md" käyttämällä negatiivista indeksiä.
+## Syvällinen sukellus
 
-## Syvemmälle: Tietoa osastringien poimimisesta.
+Fish Shellin `string` komento tukee myös monia muita hyödyllisiä toimintoja, kuten merkkijonon jakamista eri osiin käyttäen esimerkiksi `cut` tai `split` komentoja. Lisäksi voit käyttää regular expressioneita erottamaan alijonoja haluamallasi tavalla.
 
-Fish Shell tarjoaa erilaisia tapoja poimia osastringejä merkkijonoista. Alla on muutamia esimerkkejä eri tavoista ja niiden selitykset.
+## Katso myös
 
-#### Sulkumerkkejä ja indeksejä käyttäminen:
-Sulkumerkkejä [] voidaan käyttää määrittämään tietty indeksi tai indeksien alue, josta halutaan poimia osastringi. Indeksit voivat olla myös negatiivisia, mikä tarkoittaa, että laskeminen tapahtuu merkkijonon lopusta.
-
-#### Otsikon poimiminen merkkijonon alusta:
-Jos haluat poimia osastringin merkkijonon alusta, voit käyttää seuraavaa syntaksia: ```$merkkijono[indeksi..]```
-
-#### Otsikon poimiminen merkkijonon lopusta:
-Jos haluat poimia osastringin merkkijonon lopusta, voit käyttää seuraavaa syntaksia: ```$merkkijono[..indeksi]```
-
-Syvemmät tiedot ja esimerkit löydät Fish Shellin virallisilta verkkosivuilta dokumentaatiosta.
-
-## Katso myös:
-- [Fish Shell -dokumentaatio](https://fishshell.com/docs/current/)
-- [Substring Extraction in Fish Shell](https://dzone.com/articles/substring-extraction-in-fish-shell)
+- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Fish Shellin syvällisempi opas](https://fishshell.com/docs/current/tutorial.html)
+- [Merkkistringien muokkaaminen Fish Shellillä](https://medium.com/noob-programming/%C3%A4lykk%C3%A4%C3%A4sti-merkkijonojen-k%C3%A4sittely-ohjelmallasi-fish-shellill%C3%A4-sa1i-o1k-a1e66c6abad0)

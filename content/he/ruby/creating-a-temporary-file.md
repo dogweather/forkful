@@ -1,35 +1,34 @@
 ---
-title:    "Ruby: יצירת קובץ זמני"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/ruby/creating-a-temporary-file.md"
+title:                "Ruby: יצירת קובץ זמני"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
-יצירת קובץ זמני היא כלי חיוני בתכנות רובי שמטרתו ליצור קובץ זמני שימושי במשך אותו הפעולה. זה משמש לא רק לכתיבה וקריאה של נתונים מתוך קובץ, אלא גם כדי לבצע פעולות כמו יצירת קבצים, עריכת קבצים ומחיקתם.
+# למה
 
-## איך לעשות זאת
-הביצוע של יצירת קובץ זמני ברובי הוא פשוט ונוח, והוא מתבצע בעזרת הפעולה `Tempfile.new` והמחלקה Tempfile. ניתן לבצע על הקובץ הזמני כל פעולה שאפשר לבצע על קובץ רגיל, ולאחר מכן יש למחוק אותו באמצעות הפעולה `delete`.
+יצירת קובץ זמני היא כלי שימושי עבור מתכנתים המצליח ליצור קבצים זמניים בסרטון והיעילות תלויה ביותר.
+
+## איך לעשות
 
 ```Ruby
-tempfile = Tempfile.new('example.txt') 
-tempfile << "זוהי מחרוזת נכתבת לקובץ הזמני"
-tempfile.rewind
-puts tempfile.read #=> "זוהי מחרוזת נכתבת לקובץ הזמני"
-tempfile.close
-tempfile.unlink #=> הקובץ הזמני נמחק
+תיאור = "קובץ זמני"
+קובץ = Tempfile.new(תיאור)
+הדפס קובץ.נתונים.נתונים
+קובץ.קרע!
+```
+```
+תקציב.txt
 ```
 
-## חקר עמוק
-כאשר משתמשים בפעולה `Tempfile.new`, הקובץ הזמני יוצר בתיקיית הפעילות. באופן כללי, הנתיב לתיקיית הפעילות היא כזו: `Dir.tmpdir` אבל ניתן לבדוק באמצעות `Tempfile.open` איפה הקובץ הזמני שלך נוצר בפועל.
+## חפירה עמוקה
 
-בנוסף, ניתן להגדיר את הקיבוץ הזמני כפרט של מחלקת Tempfile תחת פרמטר `:tmpdir`. כך תוכלו להגדיר תיקיית קובץ זמנה ספציפית ולתת שם לקובץ הזמני שלכם.
+יצירת קובץ זמני מאפשרת למתכנתים ליצור קבצים זמניים בסיסיים שיכולים להשתמש כדי לקבל נתונים, לפתוח תיקיות ולעשות שינויים זמניים לנתונים ללא פגיעה בקבצי המקור. קבצים זמניים נוצרים למטרה מסוימת ונמחקים באופן אוטומטי כאשר הפעולה שבאים נגמרת.
 
-מתוך מחלקת Tempfile, ניתן גם למצוא שדה `@tmpfile` המכיל את הקובץ הזמני עצמו.
+# ראה גם
 
-```Ruby
-tmpdir = File.join(__dir__, 'tmp') #=> יצירת התיקייה tmp באותו התיקייה כמו קובץ הראשי
-tempfile = Tempfile.new('example.txt', tmpdir)
-puts tempfile.path #=> "/home/user/your_project/tmp/example.txt"
-puts
+- https://ruby-doc.org/stdlib-3.0.1/libdoc/tempfile/rdoc/Tempfile.html
+- https://www.rubyguides.com/2015/05/working-with-files-ruby/
+- https://ruby-doc.org/core-2.7.0/Tempfile.html

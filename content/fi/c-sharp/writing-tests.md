@@ -1,59 +1,42 @@
 ---
-title:    "C#: Testien kirjoittaminen"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/writing-tests.md"
+title:                "C#: Testien kirjoittaminen"
+programming_language: "C#"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Miksi kukaan haluaisi kirjoittaa testejä? Testien kirjoittaminen voi tuntua turhalta lisätyöltä, mutta se voi todella säästää aikaa ja parantaa koodin laatua pitkällä tähtäimellä. Hyvin suunniteltujen ja toteutettujen testien avulla voit varmistaa, että koodisi toimii oikein ja vähentää virheiden esiintymistä tuotantoympäristössä.
 
-## Kuinka
-Koodin testaaminen C#-kielessä voi tuntua haastavalta, mutta se on erittäin tärkeä osa kehitysprosessia. Alla on muutamia esimerkkejä, jotka auttavat sinua aloittamaan.
+Ohjelmointi on taito, jota voidaan jatkuvasti parantaa ja kehittää. Yksi tapa parantaa omaa kykyämme on kirjoittaa testejä. Testien kirjoittaminen auttaa varmistamaan, että koodimme toimii oikein ja vähentää mahdollisia bugien määrää. Se myös auttaa meitä ymmärtämään paremmin omaa koodiamme ja miten se toimii.
+
+## Miten
+
+Testaamisen avulla voimme varmistaa, että koodimme toimii oikein erilaisilla syötteillä ja eri tilanteissa. C# -kielellä testien kirjoittaminen on hyvin helppoa käyttämällä valmiita testikirjastoja, kuten NUnit tai xUnit. Alla on esimerkkikoodi, jossa testataan yksinkertaista metodia, joka laskee kahden numeron summan.
 
 ```C#
-// Luodaan luokka Calculator
-public class Calculator
+[Test]
+public void SumTest()
 {
-    // Metodi, joka laskee kahden luvun summan
-    public int Sum(int a, int b)
-    {
-        return a + b;
-    }
-}
+    // Alustetaan testattava metodi
+    Calculator calculator = new Calculator();
 
-// Luodaan luokka testejä varten
-// Tässä esimerkissä käytämme NUnit-testauskirjastoa
-[TestFixture]
-public class CalculatorTests
-{
-    // Luodaan testimetodi Sum-metodille
-    [Test]
-    public void SumTest()
-    {
-        // Luodaan instanssi Calculator-luokasta
-        Calculator calculator = new Calculator();
-        
-        // Kutsutaan Sum-metodia ja varmistetaan, että saatu tulos on oikea
-        Assert.AreEqual(4, calculator.Sum(2,2));
-    }
+    // Testataan metodia annetulla syötteellä ja odotetulla tuloksella
+    Assert.AreEqual(calculator.Sum(2, 3), 5);
 }
 ```
 
-Kun ajat testin, saat seuraavanlaisen tulosteen:
+Mikäli testit eivät mene läpi, saatamme huomata, että metodi ei toimi odotetulla tavalla. Voimme korjata koodia ja ajaa testit uudelleen, kunnes kaikki testit menevät läpi.
 
-```bash
-SumTest:
-  Expected: 4
-  But was:  5
-```
+## Syväsukellus
 
-Tässä tapauksessa testi epäonnistui, sillä summan pitäisi olla 4, mutta tulokseksi tuli 5. Tämä osoittaa, että jotain on vialla ja nyt voit korjata virheen ennen kuin se pääsee tuotantoympäristöön.
+Testien kirjoittaminen auttaa myös tekemään koodin parannuksia ja uusien ominaisuuksien lisäämistä helpommaksi ja turvallisemmaksi. Kun meillä on kattava testikokoelma, voimme olla varmoja siitä, että koodimme toimii joka kerta, kun teemme muutoksia.
 
-## Syvempi sukellus
-Testien kirjoittaminen ei rajoitu vain yksikkötestaamiseen. On myös tärkeää testata integraatioita ja käyttöliittymää, jotta varmistetaan, että kaikki toimii yhteen halutulla tavalla. Testien kirjoittaminen auttaa myös dokumentoimaan koodin toimintaa ja parantamaan sen ylläpidettävyyttä.
+Lisäksi testit voivat auttaa dokumentoimaan koodia. Kun kirjoitamme testejä, kirjoitamme käytännössä myös spesifikaation siitä, miten koodin tulisi toimia. Tämä tekee koodin ymmärtämisestä helpompaa ja nopeampaa myös muille tiimin jäsenille.
 
 ## Katso myös
-- [NUnit-testauskirjasto](https://nunit.org/)
-- [Microsoftin ohjeet testien kirjoittamiseen C#-koodissa](https://docs.microsoft.com/en-us/dotnet/core/testing/?tabs=windows)
+
+- [NUnit](https://nunit.org/)
+- [xUnit](https://xunit.net/)
+- [Test Driven Development (TDD)](https://fi.wikipedia.org/wiki/Test_Driven_Development)

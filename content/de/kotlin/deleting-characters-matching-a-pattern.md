@@ -1,52 +1,51 @@
 ---
-title:    "Kotlin: Löschen von Zeichen, die einem Muster entsprechen"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/deleting-characters-matching-a-pattern.md"
+title:                "Kotlin: Löschen von Zeichen, die einem Muster entsprechen"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+#Warum
 
-Das Entfernen von Zeichen, die einem bestimmten Muster entsprechen, ist eine nützliche Technik in der Programmierung. Es kann verwendet werden, um unerwünschte Zeichen aus einer Zeichenkette zu entfernen oder um bestimmte Teile einer Zeichenkette zu formatieren.
+Manchmal müssen Sie möglicherweise bestimmte Zeichen aus einem Text entfernen, die einem bestimmten Muster entsprechen. Dies kann hilfreich sein, um unerwünschte Zeichen in einem String zu entfernen oder um einen Text zu bereinigen, bevor er weiterverarbeitet wird.
 
-## How To
-Hier ist ein Beispiel, wie man in Kotlin Zeichen löscht, die einer bestimmten Bedingung entsprechen:
+#Wie löscht man Zeichen, die einem Muster entsprechen
 
-```Kotlin
-fun main() {
-    val input = "Diese Zeichen sind alle unnötig!#$% "
-    
-    // Entferne alle Zeichen, die nicht Buchstaben oder Zahlen sind
-    val output = input.filter { it.isLetterOrDigit() }
-    
-    println(output)
-}
-```
-
-Output: `DieseZeichensindalleunötig`
-
-Dies ist nur ein einfaches Beispiel, wie die `filter`-Funktion verwendet werden kann, um Zeichen zu entfernen. Es gibt viele verschiedene Möglichkeiten, wie dies in der Praxis angewendet werden kann.
-
-### Noch tiefer eintauchen
-Wenn Sie tiefer in das Entfernen von Zeichen in Kotlin einsteigen möchten, können Sie die `regex`-Bibliothek verwenden, um ein reguläres Ausdrucksmuster zu verwenden, anstatt nur eine einfache Bedingung. Mit dem regulären Ausdruck können Sie dann noch spezifischere Zeichen löschen. Hier ein Beispiel:
+Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, können Sie die `replace()` Funktion in Kotlin verwenden. Diese Funktion nimmt zwei Parameter an: das zu ersetzende Muster und den Ersatztext. Im folgenden Beispiel entfernen wir das Sonderzeichen `@` aus einem String:
 
 ```Kotlin
-fun main() {
-    val input = "Dieser Text enthält <b>HTML-Tags</b> wie <span>diesen</span>."
-    
-    // Entferne alle HTML-Tags aus dem Eingabetext
-    val output = input.replace(Regex("<.*?>"), "")
-    
-    println(output)
-}
+val text = "Hallo@Welt"
+val bereinigterText = text.replace("@","")
 ```
 
-Output: `Dieser Text enthält HTML-Tags wie diesen.`
+Das Ergebnis ist der String "HalloWelt", in dem das `@` durch einen leeren String ersetzt wurde.
 
-In diesem Beispiel haben wir die `replace`-Funktion verwendet, um alle Zeichen, die zwischen `<` und `>` stehen, zu löschen. Dies zeigt, wie leistungsstark reguläre Ausdrücke sein können, wenn es darum geht, bestimmte Zeichen zu entfernen.
+Auch die Verwendung von regulären Ausdrücken ist möglich, um Zeichenmuster zu identifizieren und zu löschen. Die `replace()` Funktion nimmt auch reguläre Ausdrücke als Parameter an. Im folgenden Beispiel entfernen wir alle Zahlen aus einem String:
 
-## Siehe auch
-- [Kotlin-Dokumentation: filter](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/filter.html)
-- [Kotlin-Dokumentation: regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/index.html)
-- [Java-Tutorial: reguläre Ausdrücke](https://docs.oracle.com/javase/tutorial/essential/regex/)
+```Kotlin
+val text = "Das ist 123 ein Beispiel 456 Text"
+val bereinigterText = text.replace("[0-9]".toRegex(),"")
+```
+
+Das Ergebnis ist der String "Das ist ein Beispiel Text", in dem alle Zahlen durch einen leeren String ersetzt wurden.
+
+#Tiefere Einblicke
+
+In Kotlin können Sie auch die `replaceAll()` Funktion verwenden, um ein Zeichenmuster zu identifizieren und zu ersetzen. Diese Funktion nimmt ähnlich wie die `replace()` Funktion zwei Parameter an, jedoch kann sie auch mehrere Vorkommen des Musters ersetzen.
+
+```Kotlin
+val text = "Das ist 123 ein Beispiel 456 Text"
+val bereinigterText = text.replaceAll("[0-9]+","")
+```
+
+Das Ergebnis ist der String "Das ist ein Beispiel Text", in dem alle Zahlen durch einen leeren String ersetzt wurden. Im Vergleich zur `replace()` Funktion, die nur das erste Vorkommen des Musters ersetzt hätte, können mit `replaceAll()` alle Vorkommen ersetzt werden.
+
+Eine weitere nützliche Funktion ist `trim()`, die am Anfang und Ende eines Strings alle Leerzeichen oder ein spezifiziertes Zeichen entfernt. Diese Funktion kann hilfreich sein, wenn Sie zum Beispiel eine E-Mail-Adresse bereinigen möchten, um sie in einem String zu verwenden.
+
+#Siehe auch
+
+- [Kotlin String Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+- [Kotlin Regex Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/index.html)
+- [Kotlin String Funktionen](https://kotlinlang.org/docs/reference/string.html)

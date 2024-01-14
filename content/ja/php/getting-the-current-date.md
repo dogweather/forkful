@@ -1,61 +1,65 @@
 ---
-title:    "PHP: 現在の日付の取得"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/getting-the-current-date.md"
+title:                "PHP: 現在の日付を取得する"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ「現在の日付」を取得したいのか
+## なぜ？
 
-プログラミングにおいて、時折現在の日付が必要になることがあります。例えば、ブログの投稿日時を表示したり、アプリケーションのログに記録したりする際には、現在の日付が欠かせません。また、タイムスタンプを生成したり、アプリケーションの特定の機能を特定の日付に設定したりする際にも必要です。つまり、現在の日付を取得することは、プログラミングにおいて非常に重要なことなのです。
+プログラミングを勉強している人であれば、現在の日付を取得することはよく知られたタスクです。しかし、それがなぜ重要なのか、そしてどうやって実行するのか、今回はご紹介します。
 
-## 方法：現在の日付を取得するには
-
-PHPでは、現在の日付を取得するために、date関数を使用します。date関数は、指定したフォーマットに基づいて日付をフォーマットして返します。以下のコードを見てみましょう。
+## 方法
 
 ```PHP
 <?php
-$date = date('Y-m-d');
-echo $date;
+// 現在の日付を取得する
+$currentDate = date("Y-m-d");
+echo $currentDate;
+// Output: 2021-02-18
 ```
 
-上記のコードを実行すると、現在の日付が「2021-10-05」のような形式で返されます。フォーマットを変更したい場合は、一番最後の引数にフォーマットを指定することができます。例えば、以下のように変更することができます。
+まず、「date()」関数を使って、現在の日付を取得しましょう。この関数は指定したフォーマットで現在の日付を返します。上記の例では、「Y-m-d」を指定したため、年-月-日の形式で出力されます。
+
+また、日時の操作や計算を行う場合は、「strtotime()」関数が便利です。例えば、今日の日付から1日後の日付を取得するには、以下のように記述できます。
 
 ```PHP
-//日付を「10月5日 2021年」という形式で取得する
-$date = date('m月d日 Y年');
-echo $date; //出力結果：10月5日 2021年
+<?php
+// 今日の日付から1日後の日付を取得する
+$tomorrow = date("Y-m-d", strtotime("+1 day"));
+echo $tomorrow;
+// Output: 2021-02-19
 ```
 
-さらに、現在の日付だけでなく、時間も取得することができます。例えば、以下のように「時:分:秒」という形式で取得できます。
+さらに、「mktime()」関数を使うことで、指定した日時をタイムスタンプとして取得することができます。
 
 ```PHP
-//現在の時刻を「時:分:秒」の形式で取得する
-$time = date('H時:i分:s秒');
-echo $time; //出力結果：16時20分35秒
+<?php
+// 2021年12月25日のタイムスタンプを取得する
+$timestamp = mktime(0, 0, 0, 12, 25, 2021);
+echo $timestamp;
+// Output: 1640371200
 ```
 
-## ディープダイブ：現在の日付についてさらに詳しく
+## 詳細解説
 
-date関数は、他にも様々なオプションを持っています。例えば、特定のタイムゾーンで日付を取得することもできます。また、引数に指定することで、現在の日付に対して加減算を行うこともできます。
+これらの関数を使うことで、プログラマーは柔軟に日時を操作することができます。また、現在の日付を取得することは、データベースのテーブルに日時を追加する際や、ブログや掲示板などの投稿でタイムスタンプを表示する際などにも重要です。
 
-さらに、PHPのDateTimeクラスを使用することで、より複雑な操作を行うこともできます。例えば、2つの日付の差を計算したり、特定の日付の曜日を取得したりすることができます。
+さらに、タイムゾーンを指定して日時を操作することもできます。例えば、アメリカのシアトルのタイムゾーンを指定して日時を取得するには、以下のように記述できます。
 
-現在の日付を取得する方法は、プログラミング初心者から上級者まで、どのレベルの人にも役立つ知識です。ぜひ、試してみてください。
+```PHP
+<?php
+// タイムゾーンを指定して現在の日時を取得する
+date_default_timezone_set('America/Los_Angeles');
+$currentDate = date("Y-m-d H:i:s");
+echo $currentDate;
+// Output: 2021-02-17 22:10:00
+```
 
-## その他の情報
+## 参考リンク
 
-#### 他の言語における現在の日付の取得方法
-[JavaScriptでの現在の日付の取得方法](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-
-[Pythonでの現在の日付の取得方法](https://www.w3schools.com/python/python_datetime.asp)
-
-#### 参考リンク
-[PHPのdate関数について](https://www.php.net/manual/en/function.date.php)
-
-[PHPのDateTimeクラスについて](https://www.php.net/manual/en/datetime.format.php)
-
-[PHPのタイムゾーンリスト](https://www.php.net/manual/en/timezones.php)
-
-## 参考になるリン
+- [PHPのdate()関数の使い方 - 日付の書式を指定して日時を取得する方法【初心者向け】](https://techacademy.jp/magazine/31504)
+- [PHPのstrtotime()で日付の加減算や任意の日時を取得する方法【初心者向け】](https://techacademy.jp/magazine/31528)
+- [PHPのmktime()で日付や時間を指定してタイムスタンプを取得する方法【初心者向け】](https://techacademy.jp/magazine/31562)

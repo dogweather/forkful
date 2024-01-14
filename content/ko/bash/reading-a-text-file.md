@@ -1,42 +1,41 @@
 ---
-title:    "Bash: 텍스트 파일 읽기"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/reading-a-text-file.md"
+title:                "Bash: 텍스트 파일 읽기"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-왜 텍스트 파일을 읽는 것이 중요할까요? 텍스트 파일은 우리가 일상적으로 사용하는 많은 소프트웨어에서 중요한 역할을 합니다. 예를 들어, 당신의 컴퓨터에 저장된 문서나 이메일은 모두 텍스트 파일로 이루어져 있습니다. 따라서 텍스트 파일을 이해하고 읽는 것은 중요한 프로그래밍 기술입니다.
+당신이 텍스트 파일을 읽는 것에 대해 관심을 가지고 있을까요? 텍스트 파일을 읽는 것은 프로그래밍에서 매우 중요합니다. 이 기술을 배우면, 당신은 더 많은 정보를 분석하고 가공할 수 있습니다. 게다가, 텍스트 파일을 읽는 것은 쉽고 빠르며 유용합니다.
 
-## 어떻게
+# 방법
+
+텍스트 파일을 읽는 가장 기본적인 방법은 `read` 명령어를 사용하는 것입니다. 예를 들면, 다음과 같은 코드를 사용할 수 있습니다.
 
 ```Bash
-# 새 파일 생성
-touch sample.txt
-
-# 파일에 내용 추가하기
-echo "안녕하세요, 하루입니다!" >> sample.txt
-
-# 파일 읽기
-cat sample.txt
-```
-출력:
-```
-안녕하세요, 하루입니다!
+file="example.txt"
+while read line; do
+  echo "$line"
+done < "$file"
 ```
 
-이 예제에서 우리는 우선 sample.txt라는 새 파일을 생성하고, 그 파일에 "안녕하세요, 하루입니다!"라는 문구를 추가하였습니다. 그리고 마지막으로 cat 명령어를 이용하여 파일의 내용을 화면에 출력하는 것을 볼 수 있습니다.
+위의 코드는 텍스트 파일의 모든 줄을 한 줄씩 읽어서 화면에 출력합니다. 여기서 `example.txt`는 당신이 읽고 싶은 파일의 이름입니다. 또 다른 방법으로는 `cat` 이용하여 텍스트 파일의 전체 내용을 확인하는 것입니다. 예를 들면, 다음과 같이 사용할 수 있습니다.
 
-## 딥 다이브
+```Bash 
+cat example.txt
+```
 
-텍스트 파일을 읽는 방법은 다양하지만 가장 기본적인 방법은 cat 명령어를 사용하는 것입니다. 하지만 이 외에도 다른 유용한 도구들이 있습니다. 예를 들어, grep 명령어를 사용하면 파일에서 특정 단어나 문구를 찾을 수 있습니다. 또한, awk와 sed와 같은 명령어를 이용하여 파일의 내용을 가공하고 원하는 형태로 출력할 수 있습니다.
+이 명령어는 그저 텍스트 파일의 내용을 확인하는 것이지만, 당신은 여기서 추가적인 가공을 수행할 수도 있습니다. 예를 들면, `grep` 명령어를 사용하여 특정 패턴이나 키워드를 검색할 수 있습니다. 이외에도 `awk` 또는 `sed`를 사용하여 특정 줄 또는 문자열만 추출할 수 있습니다.
 
-## 참고자료
+# 딥 다이브
 
-* [Bash 프로그래밍 기초](http://codetorial.net/bash/index.html)
-* [grep 명령어 사용법](https://www.hypertextstories.co.kr/%EA%B9%83%EB%9D%BC%EC%A0%80-%EA%B8%B0%EC%B6%9C/%EC%8B%A4%ED%96%A5-%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0/6-%EA%B7%B8%EB%A6%AC%ED%94%84-%EB%AA%85%EB%A0%B9%EC%96%B4%EA%B0%80-%EA%B0%80%EC%9E%A5-%EC%99%84%EB%A3%AC%ED%95%98%EA%B2%8C-%EB%B3%B4%EB%82%98%EC%9A%94)
-* [awk 명령어 사용법](https://zetawiki.com/wiki/Bash_%EC%9C%A0%EC%82%AC%EC%9A%B0_awk)
-* [sed 명령어 사용법](https://m.blog.naver.com/PostView.nhn?blogId=aiins/personal/20100151630)
-* [GNU/Linux 명령어 정리](https://brownbears.tistory.com/151)
+텍스트 파일을 읽는 것은 단순한 작업처럼 보일 수 있지만, 실제로는 많은 작업과 원리가 있습니다. 텍스트 파일을 읽을 때, 우리는 파일을 조각조각 나누어 읽는 것입니다. 이러한 조각을 버퍼(Buffer)라고 부릅니다. 파일의 크기가 클 경우, 우리는 버퍼를 여러 번 사용하여 파일을 읽어야 할 수도 있습니다. 또한, 특정 인코딩 방식을 사용하는 파일을 읽을 때 문제가 생기기도 합니다. 이러한 문제들을 해결하기 위해서는 파일 관련 함수들에 대한 깊은 이해가 필요합니다.
+
+# 관련 정보
+
+- [Bash 공식 문서: 파일 읽기](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
+- [Bash Academy: 파일과 스트림 사용하기](https://guide.bash.academy/input-output.html)
+- [셸 프로그래밍에 대한 초보자 가이드](https://www.shellscript.sh/)

@@ -1,47 +1,42 @@
 ---
-title:    "TypeScript: パターンにマッチする文字を削除する"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/deleting-characters-matching-a-pattern.md"
+title:                "TypeScript: パターンに一致する文字を削除する"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-##なぜ
+## なぜ
 
-あなたが文字のパターンにマッチする文字を削除することに興味があるかもしれません。この記事では、TypeScriptを使用して文字を削除する方法をご紹介します。
+文字のパターンに合致する文字を削除することのメリットについて説明します。
 
-##方法
+## 使い方
 
-まず、文字列のpatternとreplacementを引数として取る`replace()`メソッドを使います。例えば、次のようになります。
-
-```TypeScript
-const originalString = "Hello World!";
-const newString = originalString.replace(/o/g, "");
-console.log(newString); // "Hell Wrld!"
-```
-
-この例では、文字列から`o`の文字を全て削除しました。`g`はRegExpオプションで、文字列内の全てのマッチを置換することを指定します。
-
-また、`replace()`メソッドを使う際には、文字列を直接変更するのではなく、新しい文字列を返すことに注意しましょう。
-
-##ディープダイブ
-
-`replace()`メソッドは、第一引数に正規表現を、第二引数に置換する文字列を指定することもできます。例えば、`/\d+/g`という正規表現は、文字列内の数字の列にマッチします。
+例として、以下のコードを使用して文字のパターンに合致する文字を削除する方法をご紹介します。
 
 ```TypeScript
-const originalString = "I have 10 apples.";
-const newString = originalString.replace(/\d+/g, "five");
-console.log(newString); // "I have five apples."
+const text = "Hello World!";
+const pattern = /[aeiou]/gi;
+const newText = text.replace(pattern, "");
+console.log(newText);
 ```
+このコードは、`Hello World!`という文字列から、母音を含む文字を削除して`Hll Wrld!`という文字列を出力します。
 
-このように、正規表現を使用することで、より詳細なパターンにマッチする文字を選択することができます。
+## 詳細を深く掘り下げる
 
-##参考リンク
+パターンに合致する文字を削除する際、場合によっては文字列の中の特定の文字を取り除くという必要性があります。その場合は、`replace()`メソッドを使用して、特定の文字だけを削除することができます。例えば、以下のコードを使用すると、大文字の`O`を削除することができます。
 
-- [MDN Web Docs: String.prototype.replace()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [RegExp tutorial](https://javascript.info/regexp-introduction)
-- [正規表現30分入門](https://www.slideshare.net/moonpine/js-regular-expression-2012)
+```TypeScript
+const text = "Hello World!";
+const pattern = /O/gi;
+const newText = text.replace(pattern, "");
+console.log(newText);
+```
+これにより、`Hell Wrld!` という文字列が出力されます。
 
-##もっと見る
+## See Also
 
-この記事で紹介した`replace()`メソッドを応用して、さまざまなパターンにマッチする文字を削除することができます。ぜひ実際にコーディングして試してみてください。
+- [JavaScriptの正規表現を使って文字列から特定の文字を削除する方法](https://qiita.com/riku-shiru/items/c8da48103ebaff0df3c2)
+- [TypeScriptで正規表現を使って文字列を置換する方法](https://zenn.dev/finny/th121uxtsp)
+- [正規表現の基礎知識](https://www.webprofessional.jp/getting-started-with-javascript-regular-expressions-正規表現の基礎4/)

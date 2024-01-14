@@ -1,67 +1,39 @@
 ---
-title:    "Elm: קבלת תאריך נוכחי"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/getting-the-current-date.md"
+title:                "Elm: קבלת תאריך נוכחי"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-### למה
+## מדוע
 
-תאר לעצמך את הסצנה הבאה: אתה מתחיל לפתח אפליקציה מרתקת ב-Elm, אך נתקלת בצורך להציג למשתמש את התאריך הנוכחי. לפעמים זה יכול להיות כמו להסתובב בתעלומות מבלי לדעת איך לעשות את זה, אבל אין צורך לדאוג יותר! ב-Elm זה פשוט ביותר לקבל את התאריך הנוכחי ובמאמר הזה אני אראה לך כיצד.
+קבלת תאריך נוכחי היא פעולה חשובה בתכנות של כל שפת תכנות. תאריך נוכחי מאפשר לנו להציג בצורה נוחה נתונים כגון תאריך ושעה, או לבדוק את המספר הנוכחי של היום בחודש. כללי, כל יישום המשתמש בזמן חייב לצורך דבר את תאריך היום הנוכחי.
 
-### איך לעשות
+## איך לעשות
 
-תחילה ניצור פונקציה פשוטה שקוראת "getDate" ומחזירה את התאריך הנוכחי כמחרוזת.
+תאריך נוכחי ניתן לקבל באמצעות פונקציית `Date.now` בשפת תכנות Elm. בלוק הקוד הבא מציג דוגמה לאיך להציג את התאריך הנוכחי:
 
-```Elm
-getDate : String
-getDate = 
-   let
-      today = Js.Date.today()
-      day = toString(today.getDate())
-      month = toString(today.getMonth() + 1)
-      year = toString(today.getFullYear())
-   in
-      day ++ "/" ++ month ++ "/" ++ year
+```elm
+Date.now
+|> Date.toYearMonthDay
+|> toString
 ```
 
-זו פונקציה פשוטה שמשתמשת בחבילת JS.Date שיש בכל הדפדפנים ומחזירה את התאריך הנוכחי בפורמט יום/חודש/שנה.
+בתוצאה המשתנה ניתן לראות את התאריך הנוכחי בפורמט שנבחר. הנה דוגמה לתוצאה שאולי נרצה לקבל:
 
-למשל, אם נקרא לפונקציה זו ב-html כך:
+`"1/10 האפריל של שנת 2021"`
 
-```Elm
-getDate
-```
+## לחקור
 
-התוצאה המשומשת תהיה:
+למרבה המזל, קבלת תאריך נוכחי לא נוראי כמו שהעולם נותן לנו להאמין. היישום שלה לפעולות זמן מחשב יכול להיות מורכב ומיוחד לתנאי השימוש שלך. אם אתה רוצה לחשוב עוד יותר על הנושא הזה, הנה כמה משאבים נהדרים לקריאה:
 
-```html
-03/09/2020
-```
+- [תיעוד: פונקציית Date.now של אלם](https://package.elm-lang.org/packages/elm/time/latest/Time#now)
+- [דוגמה לכתיבת יישום כדי להציג את התאריך הנוכחי](https://github.com/elm/projects/tree/master/elm-time/examples/iso8601)
+- [מאמר מעניין על תוכניות זמן מניפולציות בתכנות באמצעות אלם](https://dev.to/ilonacodes/time-travel-manipulating-date-and-time-with-elmectron-33hb)
 
-אפשר גם להתאים את הפורמט של התאריך לפי צורך, למשל, להציג את התאריך במבנה "יום|חודש|שנה" או כל פורמט אחר.
+## ראה גם
 
-### מטען עמוק
-
-אם אתה מעוניין להשתמש בפונקציה מעט יותר מתקדמת, אני יפתח עבורך פונקציה שמקבלת את הפורמט והשפה המקומית של המשתמש ומחזירה את התאריך הנוכחי בפורמט מתאים.
-
-```Elm
-getLocalizedDate : String -> String -> String
-getLocalizedDate format locale =
-   let
-      options =
-         { weekday = Nothing, year = "numeric", month = "long", day = "numeric" }
-
-      result =
-         Js.Date.toLocaleDateString(locale, options)
-
-   in
-      case format of
-         "day-month-year" ->
-            String.join "/" <| String.split "," result
-         _ ->
-            result
-```
-
-פונקציה זו מקבלת שני פרמטרים - האחד הוא הפורמט, כמו "יום|חודש|שנה" והשני הוא הש
+- [רדיקס כתבה הפועל על נושא דומה](https://redux.js.org/recipes/using-external-apis)
+- [תחזוקת אלם דוקומנטציה של תמיכה בזמן זיכרון](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode-Extra#parseFlexibleDate)

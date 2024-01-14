@@ -1,45 +1,51 @@
 ---
-title:    "Java: Łączenie ciągów znaków"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/concatenating-strings.md"
+title:                "Java: Szeregowanie ciągów znaków"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-W programowaniu w języku Java często spotykamy się z potrzebą łączenia (konkatenacji) łańcuchów znaków. Jest to nieodzowna część tworzenia skomplikowanych aplikacji, gdzie dane muszą być wyświetlane w czytelnej formie dla użytkownika. W tym artykule dowiesz się, dlaczego łączenie łańcuchów jest tak ważne i jak to zrobić w praktyce.
+Jeśli programujesz w języku Java, prawdopodobnie już spotkałeś/aś się z koniecznością łączenia ze sobą ciągów znaków (ang. string concatenation). Może się wydawać to prostym zadaniem, ale warto poznać dokładniejsze informacje na ten temat, aby uniknąć błędów i zoptymalizować swój kod.
 
 ## Jak to zrobić
 
-Java posiada wiele sposobów na konkatenację łańcuchów znaków. Najprostszym i najczęściej używanym jest operator "+", który pozwala łączyć dwa lub więcej łańcuchów w jeden. Przykładowe użycie tego operatora wygląda następująco:
+Aby połączyć dwa lub więcej ciągów znaków w jedną linię, w języku Java używa się operatora `+`. Przykładowy kod wyglądałby następująco:
 
 ```Java
-String imie = "Anna";
-String nazwisko = "Kowalska";
-String pelneImie = imie + " " + nazwisko;
-System.out.println(pelneImie);
+String firstName = "Jan";
+String lastName = "Kowalski";
+String fullName = firstName + " " + lastName;
+System.out.println(fullName);
 ```
-Wynik działania powyższego kodu będzie wyglądał tak: "Anna Kowalska". Możemy również użyć metody `concat()`, która działa podobnie jak operator "+":
+
+Oczekiwanym wynikiem będzie wyświetlenie `Jan Kowalski` na konsoli.
+
+W przypadku, gdy chcemy połączyć więcej niż dwa ciągi znaków, można użyć metody `concat()` z klasy `String`. Przykładowy kod wyglądałby tak:
 
 ```Java
-String imie = "Jan";
-String nazwisko = "Nowak";
-String pelneImie = imie.concat(" ").concat(nazwisko);
-System.out.println(pelneImie);
+String firstName = "Jan";
+String middleName = "Nowak";
+String lastName = "Kowalski";
+String fullName = firstName.concat(" ").concat(middleName).concat(" ").concat(lastName);
+System.out.println(fullName);
 ```
-Ten przykład również wyświetli na ekranie "Jan Nowak". Ważne jest, aby pamiętać o tym, że konkatenacja łańcuchów jest wykonywana od lewej do prawej strony, dlatego należy uważać na kolejność wyrażeń.
 
-## Głębsza analiza
+Oczekiwanym wynikiem jest ponownie `Jan Nowak Kowalski`.
 
-Podczas konkatenacji łańcuchów znaków, w rzeczywistości tworzona jest zupełnie nowa wartość, ponieważ łańcuchy są typem niemutowalnym w języku Java. Oznacza to, że po utworzeniu łańcucha, nie można go zmienić - każde jego modyfikacje będą skutkowały utworzeniem nowego obiektu. Dlatego też należy uważać na wydajność dla bardziej skomplikowanych operacji konkatenacji, ponieważ każda zmiana będzie generować nowy obiekt.
+Warto również zwrócić uwagę na to, że w przypadku łączenia ciągów znaków z liczbami, konieczne jest wykorzystanie metody `toString()` w celu zamiany liczby na ciąg znaków.
 
-Warto również pamiętać, że konkatenacja nie ogranicza się tylko do łańcuchów znaków, ale może być użyta także do łączenia innych typów danych, np. liczb czy zmiennych typu boolean.
+## Deep Dive
 
-## Zobacz także
+Istnieją pewne rzeczy, o których warto pamiętać, aby uniknąć błędów i zoptymalizować swój kod przy łączeniu ciągów znaków w języku Java:
 
-Jeśli jesteś zainteresowany/na pogłębienie swojej wiedzy na temat konkatenacji łańcuchów w Javie, polecam przeczytać:
+- Operator `+` działa po lewej stronie od prawej, dlatego lepiej nie używać go do łączenia dużej ilości ciągów znaków.
+- Jeśli zamieniamy wiele razy wartość ciągu znaków, lepiej użyć `StringBuffer` lub `StringBuilder` zamiast operatora `+`, ponieważ jest to bardziej wydajne.
 
-- ["Concatenation" w Java documentation](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)
-- ["String concatenation in Java" na GeeksForGeeks](https://www.geeksforgeeks.org/string-concatenation-in-java/)
-- ["Performance of String Concatenation in Java" na Baeldung](https://www.baeldung.com/java-string-concatenation-performance)
+## Zobacz również
+
+- Dokumentacja języka Java na temat string concatenation: https://docs.oracle.com/javase/tutorial/java/data/strings.html
+- Porównanie wydajności String, StringBuffer i StringBuilder: https://www.javatpoint.com/StringBuilder-vsStringBuffer

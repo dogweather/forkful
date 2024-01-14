@@ -1,37 +1,49 @@
 ---
-title:    "TypeScript: Leggere gli argomenti della riga di comando"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/typescript/reading-command-line-arguments.md"
+title:                "TypeScript: Lettura degli argomenti della linea di comando"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Molte volte, come programmatori, abbiamo bisogno di accedere direttamente ai dati del nostro programma senza dover modificare il codice sorgente. Questo può essere utile per eseguire operazioni diverse o per fare test rapidi senza dover riscrivere il codice ogni volta. Una delle migliori e più semplici soluzioni per questo è utilizzare gli argomenti della linea di comando.
+Spesso, quando scriviamo un programma, ci troviamo nella situazione in cui vogliamo passare dei parametri direttamente dalla riga di comando. Questi parametri sono chiamati "command line arguments" e consentono di fornire al programma delle informazioni specifiche che verranno utilizzate durante l'esecuzione. In questo post, esploreremo come leggere e gestire i command line arguments utilizzando TypeScript.
 
-## Come Usare
+## Come fare
 
-Per leggere gli argomenti della linea di comando in TypeScript, possiamo utilizzare la classe "process" che ci consente di accedere a variabili di ambiente, argomenti e altro ancora. Vediamo un esempio semplice:
+Per leggere i command line arguments, dobbiamo prima di tutto importare il modulo `process` di Node.js. Questo ci permette di accedere all'array di stringhe contenente i parametri passati dalla riga di comando. Vediamo un esempio pratico:
 
 ```TypeScript
-const args = process.argv.slice(2);
+import * as process from 'process';
+
+const args: string[] = process.argv;
+
 console.log(args);
 ```
-Questo codice ci permette di ottenere tutti gli argomenti della linea di comando, escludendo i primi due (che corrispondono al percorso del nodo e al percorso dello script). Ad esempio, se eseguiamo il nostro programma con `node index.ts hello world`, l'output sarà `[ 'hello', 'world' ]`.
+L'esempio sopra stamperà su console l'array `args` contenente tutti i parametri passati dalla riga di comando. Nota che il primo elemento dell'array è sempre il percorso del file TypeScript in cui stiamo lavorando.
 
-Inoltre, per accedere a argomenti specifici, possiamo utilizzare gli indici dell'array di "args". Ad esempio, se vogliamo accedere solo al primo argomento (in questo caso, "hello"), possiamo farlo con `args[0]`.
+Possiamo anche passare dei parametri specifici nella riga di comando, come ad esempio `--nome=Marco`:
 
-## Deep Dive
+```TypeScript
+import * as process from 'process';
 
-La classe "process" offre molte altre funzionalità utili per leggere e gestire gli argomenti della linea di comando. Ad esempio, possiamo utilizzare il metodo "process.exit()" per uscire dal nostro programma con un determinato codice di uscita. Inoltre, possiamo utilizzare la proprietà "process.env" per accedere alle variabili di ambiente e utilizzarle come argomenti.
+// Leggiamo il secondo parametro
+const nome: string = process.argv[2];
 
-Inoltre, TypeScript ci consente di definire tipi per i nostri argomenti, rendendo il nostro codice più sicuro e leggibile. Ad esempio, se vogliamo assicurarci che il nostro primo argomento sia una stringa, possiamo specificarlo come `args[0]: string`.
+console.log(`Ciao ${nome}!`);
+```
 
-Infine, possiamo utilizzare librerie esterne per rendere la lettura e la gestione degli argomenti ancora più semplice. Alcuni esempi di queste librerie sono "yargs" e "commander".
+L'esempio sopra stamperà `Ciao Marco!` se eseguito dalla riga di comando `ts-node app.ts --nome=Marco`.
 
-## Vedi Anche
+## Un po' più in profondità
 
-- [Documentazione di TypeScript su "process" (in inglese)](https://nodejs.org/api/process.html)
-- [Libreria "yargs" per la gestione degli argomenti (in inglese)](https://www.npmjs.com/package/yargs)
-- [Libreria "commander" per la gestione degli argomenti (in inglese)](https://www.npmjs.com/package/commander)
+Oltre ad accedere ai singoli parametri, esistono anche alcune funzionalità interessanti nel modulo `process`. Ad esempio, possiamo verificare il numero totale di parametri passati con la proprietà `process.argc`. Possiamo anche utilizzare la funzione `process.execArgv` per ottenere un array dei parametri passati all'avvio di Node.js.
+
+Inoltre, è possibile utilizzare il modulo `yargs` per gestire in maniera più strutturata i command line arguments. Questo modulo ci permette di definire dei parametri richiesti, opzionali e anche dei comandi specifici per il nostro programma.
+
+## Vedi anche
+
+- [Documentazione ufficiale di Node.js su `process`](https://nodejs.org/dist/latest-v14.x/docs/api/process.html)
+- [Documentazione ufficiale di `yargs`](https://github.com/yargs/yargs)

@@ -1,64 +1,37 @@
 ---
-title:    "Kotlin: Skrive en tekstfil"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/writing-a-text-file.md"
+title:                "Kotlin: Skriver en tekstfil"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive tekstfiler kan være en viktig del av programmering i Kotlin. Det lar deg lagre og behandle data på en effektiv måte, og kan være nyttig for mange forskjellige oppgaver innen utvikling av applikasjoner.
+Det kan være mange gode grunner til å skrive en tekstfil i Kotlin. Kanskje ønsker du å lagre data på en måte som er enkel å lese og endre for deg selv eller andre programmere. Eller kanskje du bare vil øve deg på å bruke Kotlin til å håndtere filer. Uansett årsak, å kunne skrive til en tekstfil kan være en nyttig ferdighet å ha.
 
 ## Hvordan
 
-Det er enkelt å skrive en tekstfil i Kotlin ved hjelp av innebygde funksjoner og metoder. Først må du åpne en tekstfil ved å opprette et `File` objekt med filbanen som argument. Deretter kan du bruke `FileWriter` klassen til å skrive data til filen.
-
-Her er et eksempel på hvordan du kan skrive en tekstfil med noen linjer av tekst:
+Skriving til en tekstfil i Kotlin kan gjøres ved å bruke et `FileWriter` objekt og en `write()` metode. Først må du opprette et `File` objekt som representerer tekstfilen du vil skrive til. Deretter kan du initialisere `FileWriter` objektet og bruke `write()` metoden til å skrive til filen. Her er et eksempel:
 
 ```Kotlin
-val fil = File("tekstfil.txt") // Oppretter File objekt
-val skriver = FileWriter(fil) // Åpner en FileWriter for å skrive til filen
-skriver.write("Dette er en tekstfil") // Skriver en linje til filen
-skriver.write("med noen ekstra linjer") // Skriver en annen linje
-skriver.close() // Lukker FileWriter objektet
+val file = File("navn_pa_fil.txt") // opprett et File objekt for å representere filen
+val fileWriter = FileWriter(file) // initialiser FileWriter objektet
+fileWriter.write("Dette er en tekst som blir skrevet til filen.") // skriv til filen
+fileWriter.close() // lukk FileWriter objektet
 ```
 
-For å skrive ut data fra tekstfilen kan du bruke `readLines()` metoden, som leser alle linjene fra filen og returnerer dem som en liste:
+Når du kjører dette eksemplet, vil teksten bli skrevet til en fil med navn `navn_pa_fil.txt` som blir lagret i samme mappe som Kotlin-koden din.
 
-```Kotlin
-val linjer = fil.readLines() // Leser alle linjene fra filen
-linjer.forEach { linje -> println(linje) } // Skriver ut hver linje til konsollen
-```
+## Dypdykk
 
-Dette vil produsere følgende output:
+Nå som du har lært å skrive en enkel tekstfil i Kotlin, kan du også utforske flere muligheter. For eksempel kan du bruke `BufferedWriter` og `println()` metoden til å skrive til filen, noe som kan gjøre koden din mer lesbar. Du kan også bruke `FileReader` og `BufferedReader` til å lese fra filer på en lignende måte.
 
-```
-Dette er en tekstfil
-med noen ekstra linjer
-```
+## Se også
 
-Merk at du må inkludere `FileReader` og `IOException` i import-setningen din for å få dette til å fungere.
+For mer informasjon om å håndtere filer i Kotlin, kan du sjekke ut disse ressursene:
 
-## Deep Dive
-
-Når du skriver en tekstfil i Kotlin, kan du også spesifisere hvilken tegnkoding som skal brukes for å lagre dataene. Dette er spesielt viktig hvis du skal jobbe med tekstfiler på forskjellige plattformer, siden standard tegnkoding kan variere.
-
-Du kan spesifisere tegnkoding ved å bruke `charset` argumentet når du oppretter `FileWriter` objektet. Her er et eksempel på å skrive en tekstfil i UTF-8 tegnkoding:
-
-```Kotlin
-val skriver = FileWriter(fil, Charset.forName("UTF-8")) // Bruker UTF-8 tegnkoding
-```
-
-Du kan også lese tekstfiler med en spesifisert tegnkoding ved å bruke `Charsets` objektet når du kaller `readLines()` metoden:
-
-```Kotlin
-val linjer = fil.readLines(Charset.forName("UTF-8")) // Leser filen med UTF-8 tegnkoding
-```
-
-For mer informasjon om forskjellige tegnkodinger og hvordan du bruker dem i Kotlin, kan du se offisiell Kotlin dokumentasjon.
-
-## Se Også
-
-- [Offisiell Kotlin Dokumentasjon](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Kotlin Tegnkoding Dokumentasjon](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/java.nio.charset.-charset/)
+- [Offisiell Kotlin dokumentasjon for filbehandling](https://kotlinlang.org/docs/reference/basic-types.html#classes-and-inheritance)
+- [Kotlin Filbehandler Tutorial](https://www.tutorialkart.com/kotlin/kotlin-read-write-plain-text-file/)
+- [Kotlin for Android: Filbehandling](https://www.raywenderlich.com/686603-android-file-management-with-kotlin)

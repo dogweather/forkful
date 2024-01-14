@@ -1,55 +1,60 @@
 ---
-title:    "Javascript: Die Länge eines Strings ermitteln"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/finding-the-length-of-a-string.md"
+title:                "Javascript: Die Länge eines Strings finden"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Länge einer Zeichenkette in Javascript zu finden, mag auf den ersten Blick wie eine einfache Aufgabe erscheinen. Doch es ist eine grundlegende Funktion, die in vielen Programmiersprachen verwendet wird und auch für Javascript-Entwickler von großer Bedeutung ist. Die Länge einer Zeichenkette zu kennen, kann dabei helfen, bestimmte Operationen auszuführen oder Bedingungen zu überprüfen. In diesem Artikel werde ich dir zeigen, wie du mithilfe von Javascript die Länge einer Zeichenkette finden kannst und warum dies hilfreich sein kann.
+Das Finden der Länge eines Strings ist eine grundlegende Fähigkeit, die jeder Javascript Entwickler beherrschen sollte. Es ermöglicht uns, die Anzahl der Zeichen in einem Text zu bestimmen, was in vielen Programmieraufgaben hilfreich ist.
 
-# Wie
+## Wie man die Länge eines Strings findet
 
-Um die Länge einer Zeichenkette in Javascript zu finden, gibt es mehrere Methoden. Eine der einfachsten Möglichkeiten ist die Verwendung der `length`-Eigenschaft. Diese Eigenschaft gibt die Anzahl der Zeichen in einer Zeichenkette zurück.
+Um die Länge eines Strings in Javascript zu finden, können wir die Methode `.length` verwenden. Diese Methode gibt uns die Anzahl der Zeichen in einem String zurück. Schauen wir uns ein Beispiel an:
 
-```
-// Beispiel 1
-const zeichenkette = "Hallo Welt";
-console.log(zeichenkette.length); // Ausgabe: 11
-
-// Beispiel 2
-const leereZeichenkette = "";
-console.log(leereZeichenkette.length); // Ausgabe: 0
+```Javascript
+let string = "Hallo";
+console.log(string.length);
 ```
 
-Eine andere Methode ist die Verwendung der `substring`-Methode. Diese Methode gibt einen Teil der Zeichenkette zurück, abhängig von den angegebenen Start- und Endpositionen. Wenn du jedoch nur die Länge der Zeichenkette benötigst, kannst du die Startposition auf 0 setzen und die Länge der Zeichenkette als Endposition verwenden.
+Dieses Beispiel wird "5" ausgeben, da "Hallo" insgesamt fünf Zeichen hat. Wir können auch eine Variable verwenden, um einen String zu speichern und dann die Länge dieses Strings zu finden:
 
-```
-// Beispiel
-const zeichenkette = "Hello World";
-const laenge = zeichenkette.substring(0, zeichenkette.length);
-console.log(laenge); // Ausgabe: 11
-```
-
-Eine weitere Option ist die Verwendung der `split`-Methode, die die Zeichenkette in ein Array umwandelt und dann die Länge des Arrays zurückgibt.
-
-```
-// Beispiel
-const zeichenkette = "JavaScript ist toll!";
-const laenge = zeichenkette.split("").length;
-console.log(laenge); // Ausgabe: 20
+```Javascript
+let string = "Ich bin ein String!";
+let length = string.length;
+console.log(length);
 ```
 
-# Deep Dive
+In diesem Beispiel wird "18" ausgegeben, da der String 18 Zeichen lang ist. Wir können die Methode `.length` auch auf andere Datentypen anwenden, wie zum Beispiel auf Arrays oder Objekte. Hier ist ein Beispiel mit einem Array:
 
-Bei der Suche nach der Länge einer Zeichenkette gibt es einige wichtige Dinge zu beachten. Eine Zeichenkette kann nicht nur aus Buchstaben bestehen, sondern auch aus anderen Zeichen wie Leerzeichen, Zahlen oder Sonderzeichen. Diese werden alle bei der Ermittlung der Länge berücksichtigt. Auch Umlaute oder nicht lateinische Zeichen können die Länge einer Zeichenkette beeinflussen, da sie aus mehreren Bytes bestehen können.
+```Javascript
+let array = [1, 2, 3, 4, 5];
+console.log(array.length);
+```
 
-Es ist auch wichtig zu beachten, dass die `length`-Eigenschaft die Anzahl der Zeichen in der Zeichenkette und nicht die Anzahl der Wörter zurückgibt. Dies bedeutet, dass Leerzeichen und Satzzeichen ebenfalls in die Länge einbezogen werden.
+Dieses Beispiel wird "5" ausgeben, da das Array insgesamt fünf Elemente hat.
 
-# Siehe auch
+## Tiefergehende Informationen
 
-- [MDN web docs: String length](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [W3Schools: Javascript string length](https://www.w3schools.com/jsref/jsref_length_string.asp)
-- [Javascript.info: Unterstriche, um Zahlen lesbar zu machen](https://javascript.info/advanced-operators#ufeff-to-make-numbers-readable)
+Obwohl es einfach erscheinen mag, die Länge eines Strings zu finden, gibt es doch einige wichtige Dinge zu beachten. Zum Beispiel zählen Leerzeichen und Satzzeichen auch als Zeichen in einem String. Das bedeutet, dass ein String wie "Hallo!" eine Länge von sechs hat, da das Ausrufezeichen als ein Zeichen gezählt wird.
+
+Eine weitere wichtige Sache zu beachten ist, dass die Methode `.length` auf Unicode basiert. Das bedeutet, dass einige Zeichen, wie zum Beispiel ä, ü oder ö, nicht als einzelnes Zeichen gezählt werden, sondern als zwei Zeichen. Dies kann zu unerwarteten Ergebnissen führen, wenn man die Methode `.length` auf Zeichen mit diesen speziellen Zeichen anwendet.
+
+Wenn wir die Länge eines Strings finden, werden wir manchmal auch eines Zeichens überführt (englisch: truncate), was bedeutet, dass wir den String auf eine bestimmte Länge kürzen. Hier ist ein Beispiel, wie wir dies mit der Methode `.slice()` tun können:
+
+```Javascript
+let string = "Dieser String ist viel zu lang.";
+let newString = string.slice(0, 10);
+console.log(newString); // Ausgabe: "Dieser Str"
+```
+
+Hier haben wir die ersten zehn Zeichen des Strings in eine neue Variable gespeichert. Auf diese Weise können wir die Länge unseres Strings auf eine bestimmte Anzahl von Zeichen begrenzen.
+
+## Siehe auch
+
+- [W3Schools - String Length Property](https://www.w3schools.com/jsref/jsref_length_string.asp)
+- [MDN Web Docs - String.length](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [Javascript.info - String length](https://javascript.info/string/length)

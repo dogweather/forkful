@@ -1,26 +1,48 @@
 ---
-title:    "PHP: Utskrift av feilsøkingsdata"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/printing-debug-output.md"
+title:                "PHP: Utskrift av feilrettingsutdata"
+programming_language: "PHP"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Det å skrive ut feilsøkingsutdata i PHP-kode er en nyttig måte å identifisere og løse problemer i koden din. Det kan hjelpe deg med å finne ut nøyaktig hvor feilen oppstår og hva som forårsaker den, noe som kan gjøre feilsøkingsprosessen mye enklere og mer effektiv.
+Hvis du noen gang har støtt på en feil mens du programmerer i PHP, har du sikkert brukt print eller echo for å få ut debug output. Men hvorfor er det en nyttig teknikk å lære? 
 
-## Hvordan gjøre det
-For å skrive ut feilsøkingsutdata i PHP, kan du bruke funksjonen ```print_r()``` eller ```var_dump()```. Disse funksjonene skriver ut en detaljert representasjon av variabler eller objekter i koden din, noe som kan være spesielt nyttig når du jobber med komplekse datasett.
+## Hvordan
+Å printe debug output er en enkel måte å finne ut hva som skjer i koden din. Det kan hjelpe deg med å identifisere hvor feilen ligger og hva som forårsaker den.
 
-La oss si at du har en variabel som heter ```$navn``` og du vil vite hva verdien av denne variabelen er. Du kan enkelt skrive ut den ved å bruke ```print_r($navn)```. Dette vil skrive ut verdien av variabelen og dens datatype, noe som kan hjelpe deg å finne ut om det er der problemet ligger.
+```PHP
+<?php 
+// Enkelt eksempel 
+$navn = "Maria";
+print "Hei, mitt navn er $navn"; 
+```
 
-Et annet nyttig verktøy er ```error_log()``` funksjonen, som lar deg skrive ut egendefinerte feilmeldinger til en fil eller konsollen. Dette kan være svært nyttig når du jobber med større prosjekter og trenger å fange opp feilmeldinger fra forskjellige deler av koden din.
+```output
+Hei, mitt navn er Maria
+```
+
+Du kan også printe ut verdier i variabler for å se hva som skjer med dem i løpet av koden din. Dette kan hjelpe deg med å forstå hvorfor koden din ikke fungerer som forventet. 
+
+```PHP
+<?php 
+// Eksempel med variabel
+$tall = 10;
+print "Tallet er $tall";
+```
+
+```output
+Tallet er 10
+```
 
 ## Dypdykk
-Å skrive ut feilsøkingsutdata er ikke bare nyttig når du må finne feil i koden din, det kan også hjelpe deg å forstå hvordan koden din fungerer og hvordan variabler og objekter endres underveis i programmet.
+Det finnes flere metoder for å printe debug output i PHP, inkludert die(), var_dump() og error_log(). Disse metodene kan være nyttige i ulike situasjoner, for eksempel når du jobber med kompleks kode eller i et større prosjekt.
 
-En annen ting å huske på er at oljen som brukes til å skrive ut feilsøkingsutdata kan påvirke ytelsen til koden din. Det er derfor viktig å ikke la utdaten være en del av koden din i produksjon, men heller fjerne den når du er ferdig med feilsøkingen.
+Det er også viktig å huske på å begrense bruken av print og echo, da for mye debug output kan gjøre koden din tregere og vanskeligere å lese.
 
 ## Se også
-- [PHP Manual: Debugging](https://www.php.net/manual/en/debugger.php)
-- [Debugging PHP with XDebug](https://xdebug.org/docs/remote)
+- [PHP.net - Debugging](https://www.php.net/manual/en/debugger.php)
+- [PHP Debugging Tips](https://www.tutorialspoint.com/php/php_debugging.htm)
+- [5 Debugging Tips for PHP Developers](https://www.sitepoint.com/5-debugging-tips-php-developers/)

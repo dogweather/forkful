@@ -1,54 +1,56 @@
 ---
-title:    "Go: Konkatenacja ciągów znaków"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/concatenating-strings.md"
+title:                "Go: Laczenie stringow"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jeśli chcesz tworzyć programy w języku Go, z pewnością natknąłeś się na potrzebę łączenia łańcuchów znaków. W tym artykule pokażemy Ci, dlaczego ten proces jest tak ważny i jak można go łatwo wykonać.
+Concatenation jest jedną z podstawowych operacji w programowaniu. W języku Go, łączenie ciągów (ang. strings) jest bardzo proste i wydajne. W tym artykule dowiesz się dlaczego warto użyć tej operacji oraz jak wykorzystać ją w swoich projektach.
 
 ## Jak to zrobić
 
-Aby połączyć dwa łańcuchy znaków w języku Go, możesz użyć wbudowanej funkcji `+`. Przykładowy kod wyglądałby tak:
+Aby skonkatenować (połączyć) dwa ciągi tekstowe w języku Go, możemy skorzystać z operatora `+` lub funkcji `fmt.Sprint()`.
 
 ```Go
-name := "John"
-greeting := "Welcome to our blog, "
-fmt.Println(greeting + name)
+str1 := "Hello"
+str2 := "World"
+
+// Użycie operatora +
+result := str1 + " " + str2
+
+// Użycie funkcji fmt.Sprint()
+result := fmt.Sprint(str1, " ", str2)
+
+fmt.Println(result)
+// Output: Hello World
 ```
- 
-Wynik:
 
-`Welcome to our blog, John`
-
-Możesz również użyć funkcji `fmt.Sprintf()` do połączenia wielu zmiennych w jednym łańcuchu znaków. Przykładowy kod wyglądałby tak:
+Możemy również skorzystać z funkcji `strings.Join()`, która pozwala na połączenie wielu ciągów w jednym wywołaniu.
 
 ```Go
-name := "John"
-age := 30
-info := fmt.Sprintf("Name: %s, Age: %d", name, age)
-fmt.Println(info)
+str1 := "Go"
+str2 := "Programming"
+str3 := "Language"
+
+// Użycie funkcji strings.Join()
+result := strings.Join([]string{str1, str2, str3}, " ")
+
+fmt.Println(result)
+// Output: Go Programming Language
 ```
 
-Wynik:
+## Deep Dive
 
-`Name: John, Age: 30`
+W języku Go, operacja concatenacji jest bardzo wydajna dzięki temu, że ciągi są niemutowalne (niezmienne) i wewnętrznie reprezentowane jako tablice bajtów. Dzięki temu unikamy potrzeby tworzenia nowych ciągów przy każdej operacji concatenacji.
 
-## Głębsze zagadnienia
-
-Podczas łączenia łańcuchów znaków w języku Go, ważne jest, aby pamiętać o wydajności. Dlatego zaleca się używanie funkcji `bytes.Buffer` lub `strings.Builder` zamiast operatora `+` lub funkcji `fmt.Sprintf()`. Powodem jest fakt, że funkcje te alokują nową pamięć za każdym razem, gdy są wywoływane, co może spowolnić działanie programu.
-
-Innym ważnym elementem jest pamiętanie o prawidłowym formatowaniu łańcuchów znaków, szczególnie jeśli zawierają one znaki specjalne, takie jak cudzysłowy czy znaki nowej linii. W takich przypadkach należy użyć znaku ucieczki `\` przed tymi znakami, aby uniknąć błędów i nieprawidłowego formatowania.
+Istnieje również wiele funkcji w pakiecie `strings`, które pozwalają na manipulację i porównywanie ciągów tekstowych, co sprawia, że język Go jest bardzo przyjazny dla programistów pracujących z tekstami.
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o łączeniu łańcuchów znaków w języku Go, polecamy zapoznanie się z oficjalną dokumentacją i innymi artykułami na ten temat:
-
-- [Dokumentacja języka Go - operacje na łańcuchach znaków](https://golang.org/pkg/strings/)
-- [Blog Gopher Guides - Concatenating Strings in Go](https://gopherguides.com/articles/concatenating-strings-in-go/)
-- [Medium - The Art of Concatenating Strings in Go](https://medium.com/better-programming/the-art-of-concatenating-strings-in-go-4c3a39e867c8)
-
-Dziękujemy za przeczytanie tego artykułu. Mamy nadzieję, że teraz wiesz, dlaczego i jak łączyć łańcuchy znaków w języku Go. Życzymy Ci powodzenia w nauce tego języka i tworzeniu w nim wspaniałych aplikacji!
+- [Dokumentacja języka Go](https://golang.org/doc/)
+- [Tutorial: Rozpoczęcie pracy z językiem Go](https://www.digitalocean.com/community/tutorials/how-to-install-go-and-set-up-a-local-programming-environment-on-ubuntu-18-04)
+- [Oficjalny blog języka Go](https://blog.golang.org/)

@@ -1,51 +1,39 @@
 ---
-title:    "PHP: Kahden päivämäärän vertailu"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/comparing-two-dates.md"
+title:                "PHP: Kahden päivämäärän vertailu"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi vertailla kahta päivämäärää?
+## Miksi
 
-Vertailemalla kahta päivämäärää, voit selvittää, kumpi päivämäärä on aikaisempi tai myöhempi. Tämä voi olla hyödyllistä esimerkiksi tapahtumien järjestämisessä tai tietyn ajanjakson laskemisessa.
+Vertailemalla kahta päivämäärää on mahdollista selvittää ajanjaksoja ja päivämäärien välistä eroa. Tämä on erityisen hyödyllistä, kun käsitellään aikaperusteisia tapahtumia tai tehdään laskutoimituksia ajan suhteen.
 
-## Miten vertailla kahta päivämäärää?
+## Kuinka
 
-Käytä PHP: n sisäänrakennettua "strtotime" -toimintoa muuntaaksesi päivämäärät Unix-ajaksi ja vertaile sitten niitä käyttämällä "if" -lauseketta.
+Vertaillessa kahta päivämäärää PHP:ssä käytetään usein `strtotime()`-funktiota, joka muuttaa päivämäärän merkkijonoksi. Tämän jälkeen merkkijonoihin voi käyttää `strtotime` ja `strtotime`-funktioiden välillä, joka palauttaa päivien tai sekuntien muodostaman eron.
 
 ```PHP
-$date1 = strtotime("2020-01-01");
-$date2 = strtotime("2020-02-01");
+$paivamaara1 = "2020-01-01";
+$paivamaara2 = "2020-01-15";
+$paivienero = strtotime($paivamaara2) - strtotime($paivamaara1);
 
-if ($date1 < $date2) {
-  echo "Ensimmäinen päivämäärä on aikaisempi kuin toinen.";
-} else {
-  echo "Toinen päivämäärä on aikaisempi kuin ensimmäinen.";
-}
+echo "Päivien ero: " . round($paivienero / (60 * 60 * 24));
 ```
 
-Tämä koodi tulostaisi "Ensimmäinen päivämäärä on aikaisempi kuin toinen."
+**Tulostus:**
 
-## Syventävä sukellus
-
-Päivämäärän vertailuun voi liittyä monia eri tekijöitä, kuten aikavyöhykkeet ja kesäaika. On tärkeää varmistaa, että päivämäärät on muunnettu samassa aikavyöhykkeessä vertailua varten.
-
-Voit myös käyttää erityistä "diff" -toimintoa, joka laskee päivien, kuukausien ja vuosien erot kahden päivämäärän välillä.
-
-``PHP
-$date1 = strtotime("2020-01-01");
-$date2 = strtotime("2020-02-01");
-
-$diff = date_diff($date1, $date2);
-
-echo "Ero on " . $diff->format("%m") . " kuukautta.";
+```
+Päivien ero: 14
 ```
 
-Tämä koodi tulostaisi "Ero on 1 kuukausi."
+## Syvenny
+
+Päivämäärien vertailu voi olla monimutkaisempaa, kun otetaan huomioon esimerkiksi aikavyöhykkeet ja kesäaikaan liittyvät muutokset. Tarkkojen tulosten saavuttamiseksi kannattaa perehtyä PHP:n virallisiin dokumentaatioihin ja ottaa huomioon myös mahdolliset virheelliset arvot.
 
 ## Katso myös
 
-- [PHP Manuaali - strtotime](https://www.php.net/manual/en/function.strtotime.php)
-- [PHP Manuaali - if statement](https://www.php.net/manual/en/control-structures.if.php)
-- [PHP Manuaali - date_diff](https://www.php.net/manual/en/function.date-diff.php)
+- https://www.php.net/manual/en/function.strtotime.php
+- https://www.php.net/manual/en/datetime.diff.php

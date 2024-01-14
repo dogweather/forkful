@@ -1,51 +1,41 @@
 ---
-title:    "Elm: Utilizando expressões regulares"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/using-regular-expressions.md"
+title:                "Elm: Usando expressões regulares"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar Expressões Regulares em Elm?
+## Por que usar Expressões Regulares em Elm?
 
-As expressões regulares são uma ferramenta poderosa para manipulação de strings em Elm. Elas permitem encontrar e manipular padrões de texto de forma eficiente, economizando tempo e esforço do programador. Além disso, o uso de expressões regulares pode deixar o código mais organizado e legível.
+As expressões regulares são uma poderosa ferramenta usada para manipulação de texto e são amplamente utilizadas em diversas linguagens de programação, incluindo Elm. Com elas, é possível realizar buscas, substituições e validações de padrões em texto de forma simples e eficiente. Em Elm, é possível utilizar expressões regulares através da biblioteca `elm/regex`, que fornece funções e tipos de dados específicos para trabalhar com elas.
 
-## Como utilizar Expressões Regulares em Elm
+## Como usar Expressões Regulares em Elm
 
-Em Elm, podemos utilizar expressões regulares através do módulo Regex. Para começar, é preciso importar este módulo no arquivo Elm:
-
-```Elm
-import Regex exposing (Regex)
-```
-
-Uma vez que o módulo está importado, podemos criar uma expressão regular utilizando a função `regex` e passando um padrão entre aspas:
+Para utilizar expressões regulares em Elm, primeiro é necessário importar a biblioteca `elm/regex` em nosso código. Em seguida, podemos criar um objeto Regex utilizando a função `Regex.fromString`, passando como argumento uma string contendo a expressão regular desejada. Podemos, então, utilizar os métodos proporcionados por essa biblioteca para realizar as operações desejadas.
 
 ```Elm
-regex "padrão"
+import Regex exposing (..)
+
+-- Criando uma expressão regular para buscar email
+regexEmail = Regex.fromString "[a-zA-Z0-9_.]+@[a-z]+\\.[a-z]+"
+
+-- Realizando uma busca em uma string
+Regex.contains regexEmail "meuemail@exemplo.com" // True
+Regex.contains regexEmail "meuemail.com" // False
+
+-- Substituindo texto utilizando expressões regulares
+Regex.replace regexEmail (\_ -> "Endereço de email inválido") "meuemailcom" // "Endereço de email inválido"
 ```
 
-Para encontrar um padrão em uma string, utilizamos a função `find` e passamos a expressão regular e a string como parâmetros:
+## Aprofundando no uso de Expressões Regulares em Elm
 
-```Elm
-Regex.find (regex "padrão") "exemplo de string"
-```
+No exemplo acima, utilizamos uma expressão regular simples para buscar e validar um endereço de email. Porém, as expressões regulares possuem uma sintaxe complexa e poderosa, permitindo a criação de padrões mais específicos. É possível utilizar caracteres especiais, quantificadores, grupos e muito mais para construir expressões regulares mais precisas e eficientes.
 
-Este código irá retornar um valor do tipo `Maybe Regex.Result`, que contém informações sobre o resultado da busca. Para obter o resultado em si, podemos utilizar a função `Maybe.map` e passar uma função que irá manipular o resultado, caso ele exista:
-
-```Elm
-Maybe.map (\result -> Regex.Result.matchedText result) (Regex.find (regex "padrão") "exemplo de string")
-```
-
-Este código irá retornar uma string contendo o texto encontrado pelo padrão na string original.
-
-## Explorando mais a fundo as Expressões Regulares em Elm
-
-O uso de expressões regulares em Elm vai além de simples comparação de padrões. Com o módulo Regex, podemos encontrar e substituir padrões em strings, extrair grupos de uma expressão e até mesmo validar a formatação de uma string.
-
-Além disso, é possível criar expressões regulares mais complexas utilizando símbolos e metacaracteres. É importante ter conhecimento sobre esses recursos para utilizar expressões regulares de forma eficiente em Elm.
+Além disso, em Elm é possível utilizar `Regex.replace` para realizar substituições múltiplas em uma única string, passando uma função como segundo argumento. Essa função receberá o resultado da busca e poderá retornar o texto substituto, permitindo, por exemplo, a correção automática de erros ortográficos.
 
 ## Veja também
-
-- Documentação oficial do módulo Regex em Elm: https://package.elm-lang.org/packages/elm/regex/latest/
-- Tutorial sobre expressões regulares em Elm: https://dev.to/soenke/material-design-for-angular-6-565j
-- Repositório com exemplos de uso de expressões regulares em Elm: https://github.com/JoelQ/elm-regex-examples
+- Documentação oficial do pacote `elm/regex`: https://package.elm-lang.org/packages/elm/regex/latest/
+- Tutorial sobre expressões regulares em Elm: https://guide.elm-lang.org/interop/regex.html
+- Exemplos de uso de expressões regulares em Elm: https://github.com/elm-community/regex-examples

@@ -1,60 +1,47 @@
 ---
-title:    "Elixir: 使用正则表达式"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/using-regular-expressions.md"
+title:                "Elixir: 使用正则表达式"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要使用正则表达式
+## 为什么使用正则表达式？
 
-在编程过程中，我们经常需要处理文本数据。而对于文本数据的处理，正则表达式是一种非常强大的工具。它可以帮助我们快速有效地搜索、替换和提取文本数据。因此，掌握正则表达式是提高编程效率的必备技能。
+正则表达式是一种强大的工具，它可以在字符串中搜索和匹配特定的模式。它们在编程中经常被用于验证输入，过滤数据，和搜索特定的文本。使用正则表达式可以节省时间和提高代码的可读性，因此成为潜在的编程利器。
 
-## 如何使用正则表达式
-
-在Elixir中，我们可以使用Regex模块来进行正则表达式的处理。首先需要使用`~r`来定义一个正则表达式，然后再使用`Regex.match?`来检查文本数据是否匹配该正则表达式。接下来是一些示例代码和输出：
+## 如何使用 Elixir 编写正则表达式？
 
 ```Elixir
-# 检查是否包含4位数字
-~r/\d{4}/
+# 使用 =~ 运算符来匹配字符串和模式
+"hello" =~ ~r/hello/
 
-text = "今天是2020年12月1日"
-Regex.match?(~r/\d{4}/, text) # 输出 true
-```
+# 也可以使用 Regex 模块来创建正则表达式
+regex = Regex.compile(~r/hello/)
+"hello" =~ regex
 
-```Elixir
-# 检查是否为邮箱地址
-~r/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+# 使用 |> 和 match? 函数来在管道中匹配字符串
+"hello elixir" |> match?(~r/elixir/)
 
-email = "example@mail.com"
-Regex.match?(~r/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, email) # 输出 true
-```
+# 使用正则表达式替换字符串中的文本
+"hello" |> Regex.replace(~r/hello/, "ola")
 
-```Elixir
-# 替换字符串中的特定内容
-~r/cat/
-
-text = "I love my cute cat!"
-Regex.replace(~r/cat/, text, "dog") # 输出 "I love my cute dog!"
+# 可以使用 =~ 运算符的 ! 版本来抛出错误，便于处理错误情况
+input = "12345"
+~r/\d{5}/ =~ input || raise("Invalid input format") 
 ```
 
 ## 深入了解正则表达式
 
-正则表达式包含了许多特殊符号和语法，可以用来构建复杂、精确的匹配规则。掌握这些符号和语法，可以帮助我们更灵活地处理文本数据。例如：
+正则表达式提供了许多特殊的字符和表达式来方便匹配和搜索字符串。例如，可以使用 "[]" 来匹配一组特定的字符，使用 "*" 表示匹配前一个字符零次或多次，使用 "+" 表示匹配前一个字符一次或多次。regex 模块还提供功能强大的选项如全局匹配和忽略大小写。
 
-- `.` : 匹配任意单个字符
-- `|` : 匹配两个正则表达式中的任何一个
-- `+` : 匹配前面的模式一次或多次
-- `*` : 匹配前面的模式零次或多次
-- `?` : 匹配前面的模式零次或一次
-- `()` : 创建一个捕获组
-- `^` : 匹配输入字符串的开始位置
-- `$` : 匹配输入字符串的结束位置
+## 参考链接
 
-如果想要了解更多关于正则表达式的内容，可以参考[Elixir官方文档](https://hexdocs.pm/elixir/Regex.html)。
+[正则表达式教程（Elixir）](https://elixir-lang.org/getting-started/advanced/string-patterns.html)
 
-# 参考链接
+[正则表达式无痛入门指南（Mandarin）](https://qnimate.com/an-introduction-to-regular-expressions-regex-in-elixir/)
 
-- [Elixir官方文档-Regex模块](https://hexdocs.pm/elixir/Regex.html)
-- [正则表达式入门教程](https://wangdoc.com/javascript/stdlib/regexp.html)
-- [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
+[官方 Regex 模块文档](https://hexdocs.pm/elixir/Regex.html)
+
+## 参见

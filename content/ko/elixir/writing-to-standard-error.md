@@ -1,51 +1,62 @@
 ---
-title:    "Elixir: 표준 오류에 쓰는 것"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/writing-to-standard-error.md"
+title:                "Elixir: 표준 오류에 쓰는 방법"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-Erlang 가상 머신의 언어인 Elixir는 함수형 프로그래밍 언어로, 현대적인 웹 개발에서 인기 있는 언어입니다. Elixir는 많은 기능을 제공하지만 중요한 한 가지 기능은 표준 오류로의 쓰기입니다. 이 기능의 이점을 알아보기 전에 가상 머신의 디버깅 체계를 이해하는 것이 중요합니다.
-
 ## 왜
 
-코드를 작성하다가 에러가 발생한다면, 그 에러 메시지를 콘솔에서 볼 수 있을 것입니다. 하지만 어떤 경우에는 이 에러를 파일에 기록하는 것이 더 유용한 경우도 있습니다. 또는 프로그램이 종료되기 전에 일부 정보를 콘솔에 출력해야 할 필요가 있을 수 있습니다. 이런 경우에는 표준 오류로의 쓰기가 도움이 됩니다.
+표준 에러에 대한 쓰기에 참여하는 이유를 간단히 설명합니다. 
 
-## 사용 방법
+코드를 디버깅하거나 오류를 파악할 때, 표준 에러에 쓰는 것은 매우 중요합니다.
 
-우선, Elixir의 **IO** 모듈에서 **stderr** 함수를 불러올 수 있습니다. 이 함수에 쓰기를 원하는 데이터를 넘겨주면 됩니다. 예를 들어, 다음과 같은 코드를 작성할 수 있습니다.
+## 어떻게 하면 될까요?
 
-```Elixir
-IO.stderr("This is an error message") 
-```
+다음은 Elixir에서 표준 에러에 쓰는 예제 코드와 샘플 출력입니다. 
 
-위 코드를 실행하면, 콘솔에 "This is an error message"가 출력되는 것이 아니라, **STDERR** 파일에 기록될 것입니다. 이 파일을 통해 프로그램이 종료되었을 때도 이 메시지를 확인할 수 있습니다. 또한, 이 함수를 사용하면 특정 파일을 지정하여 에러 메시지를 기록할 수도 있습니다.
-
-더 나은 디버깅을 위해, Elixir에서는 **raise** 키워드를 사용하여 예외를 발생시킬 수 있습니다. 이 예외는 프로그램을 중단시키지 않고 콘솔에 출력되고, 표준 오류 파일에도 기록될 것입니다. 예를 들어,
+먼저, `IO.write/2` 함수를 사용하여 표준 에러에 쓰는 방법을 살펴보겠습니다. 
 
 ```Elixir
-raise "This is an exception"
+IO.write(:stderr, "This is an error message.")
+
+# 샘플 출력:
+# This is an error message.
 ```
 
-위 코드를 실행하면, "This is an exception"이 출력되는 것이 아니라, 예외가 발생했음을 나타내는 메시지가 표준 오류 파일에 기록될 것입니다.
-
-더 나은 디버깅을 위해, Elixir에서는 예외를 발생시키는 대신 **Logger** 모듈에서 **error** 함수를 사용하여 로그를 남길 수도 있습니다.
+다음으로, `Kernel.>>/2` 연산자를 사용하여 표준 에러로 값을 보낼 수 있습니다. 
 
 ```Elixir
-Logger.error("This is a log message")
+"Error" >> File.stream!("errors.txt")
+
+# errors.txt 파일에 저장됨:
+# Error
 ```
 
-위 코드를 실행하면, 콘솔에 로그 메시지가 출력되지 않고, 대신 **stderr.log** 파일에 기록될 것입니다.
+마지막으로, `Logger.error/3` 함수를 사용하여 로그를 표준 에러에 쓸 수 있습니다. 
+
+```Elixir
+Logger.error("This is an error message.", tags: [:error])
+
+# 샘플 출력:
+# 12:34:56.789 [error] This is an error message.
+```
 
 ## 깊이 파고들기
 
-표준 오류로의 쓰기는 디버깅에 유용하기만 한 것은 아닙니다. 프로그램을 실행하는 동안 중요한 정보를 콘솔에 보여주려는 경우에도 사용될 수 있습니다. 예를 들어, **HTTPoison** 모듈과 함께 **stderr** 함수를 사용하여 웹 요청을 디버깅할 수 있습니다.
+표준 에러에 쓰기는 코드 디버깅에 필수적입니다. 따라서 Elixir에서는 여러 가지 방법을 제공하여 개발자들이 효율적으로 디버깅할 수 있도록 도와줍니다. 
 
-더 나은 프로그램 로깅을 위해, Elixir에서는 강력한 로그 라이브러리인 **Elixir에 logfmt**를 사용할 수 있습니다.
+먼저, `IO.write/2` 함수를 사용하여 표준 에러에 쓴 메시지는 커널 모듈에 의해 자동으로 출력됩니다. 이는 로그 메시지보다 디버깅에 더 유용합니다. 
 
-## See Also
+또한, `Kernel.>>/2` 연산자를 사용하여 파일에 값을 쓰는 것은 디버깅 용도로 사용할 때 유용한 방법입니다. 파일에 오류 메시지를 쓰면 로그 파일만으로 디버깅을 할 수 있으며, 코드를 재실행할 필요도 없습니다. 
 
-- [Elixir의 IO 모듈](https://hexdocs.pm/elixir/IO.html)
-- [Elixir의 Logger 모듈](https://hexdocs.pm/logger/Logger.html)
-- [HTTPoison과 함께 디버깅하기](https://hexdocs.pm/httpoison/readme.html#debugging-with-io-puts)
+마지막으로, `Logger.error/3` 함수를 사용하여 로그를 표준 에러에 쓰는 것은 로그나 파일에 쓰는 것보다 더 유용합니다. 이 함수는 로그 레벨을 지정할 수 있기 때문입니다. 따라서 오류가 발생한 위치나 상황에 따라 로그 레벨을 다르게 설정하여, 디버깅을 더 쉽게 할 수 있습니다.
+
+## 참고 자료
+
+- [Elixir 공식 문서 - IO 모듈](https://hexdocs.pm/elixir/master/IO.html)
+- [Elixir 공식 문서 - File 모듈](https://hexdocs.pm/elixir/master/File.html)
+- [Elixir 공식 문서 - Kernel 모듈](https://hexdocs.pm/elixir/master/Kernel.html)
+- [Elixir 공식 문서 - Logger 모듈](https://hexdocs.pm/logger/Logger.html)

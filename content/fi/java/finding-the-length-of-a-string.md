@@ -1,36 +1,43 @@
 ---
-title:    "Java: Merkkijonon pituuden löytäminen"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/finding-the-length-of-a-string.md"
+title:                "Java: Merkkijonon pituuden löytäminen"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?
 
-Miksi haluaisit selvittää merkkijonon pituuden? Yksi yleinen syy on, että se on osa monimutkaisempaa ohjelmaa, joka vaatii tietyn merkkijonon pituuden laskemista. Tämä voi olla esimerkiksi tärkeää tekstianalyysin tai datan käsittelyn kannalta.
+Miksi haluaisit löytää merkkijonon pituuden? Monissa ohjelmointitehtävissä on tarpeen tietää merkkijonon pituus, jotta sen käsittely olisi mahdollista. Merkkijonon pituuden etsiminen on siis tärkeä taito, jota jokaisen Java-ohjelmoijan tulisi hallita.
 
-## Miten
+## Miten?
 
-Java tarjoaa yksinkertaisen tavan selvittää merkkijonon pituus käyttämällä String-luokan length()-metodia. Tämä metodi palauttaa merkkijonon pituuden eli merkkien määrän. Alla on esimerkki Java-koodista, jossa lasketaan merkkijonon "Tervetuloa" pituus ja tulostetaan se konsoliin:
+Käyttämällä Javan String-luokan length-metodia voit löytää helposti merkkijonon pituuden. Alla on esimerkki koodista ja siihen liittyvä tulostus:
 
 ```Java
-String teksti = "Tervetuloa";
-System.out.println(teksti.length());
+// Luo muuttuja merkkijonolle ja sijoittaa siihen teksti "Hei"
+String merkkijono = "Hei";
 
-// Output: 10
+// Käytä length-metodia saadaksesi merkkijonon pituuden ja tallenna se muuttujaan
+int pituus = merkkijono.length();
+
+// Tulosta tulos
+System.out.println("Merkkijonon pituus on: " + pituus);
+
+// Tulostus: "Merkkijonon pituus on: 3"
 ```
 
-Merkkijonon pituus on siis 10 merkkiä.
+## Syventyvä tarkastelu
 
-## Syvempi sukellus
+Merkkijonojen pituuden laskeminen perustuu niiden sisältämiin merkkeihin. Javan String-luokka tallentaa merkkijonot merkkijonotaulukkona, jota kutsutaan myös merkkipuskuriksi. Tämän taulukon avulla ohjelma pystyy laskemaan merkkijonon pituuden length-metodin avulla.
 
-Merkkijonot ovat olennainen osa ohjelmointia, ja Java tarjoaa monia hyödyllisiä metodeja niiden käsittelyyn. Jokaisella merkkijonolla on oma pituus, joka voi vaihdella tilanteesta riippuen. Esimerkiksi tyhjä merkkijono on pituudeltaan 0, kun taas Unicode-merkkijonolla voi olla huomattavasti suurempi pituus kuin sen näkyvä tulostus. On myös hyvä muistaa, että merkkijonon pituutta ei tule sekoittaa sen indeksin kanssa. Indeksi kertoo, missä kohtaa merkkijonoa tietty merkki sijaitsee, kun taas pituus kertoo vain merkkijonon kokonaispituuden.
+Oletusarvoisesti String-luokka käyttää UTF-16-koodausta, jossa jokainen kirjain tai merkki vie 16 bittiä muistissa. Tästä johtuen myös merkkijonon pituus lasketaan merkkijonotaulukon pituudeksi.
 
-Jos haluat tutustua syvemmin merkkijonojen käsittelyyn Javassa, voit tutustua Java String API:n dokumentaatioon. Sieltä löydät kaikki tarvittavat tiedot ja tarkemmat esimerkit merkkijonojen pituuden laskemisesta ja muista käsittelymetodeista.
+On myös tärkeää huomata, että length-metodi palauttaa merkkijonon todellisen pituuden, eli ilman mahdollisia tyhjiä välilyöntejä.
 
 ## Katso myös
 
-- [Java String API](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Merkkijonot Javassa](https://www.javatpoint.com/java-string)
-- [Java-merkkijonon pituuden laskeminen](https://stackabuse.com/get-string-length-in-java/)
+- [Javan String-luokka ja sen toiminnot (Tietokoneturvallisuus-opas)](https://tietokoneturvallisuus.fi/ohjeet/java-string/)
+- [Merkkijonon käsittely Javassa (Tietokone osaamista.io)](https://www.tietokoneosaamista.io/merkkijonojava/ominaisuudet/)
+- [Java String-luokan JavaDoc (Oracle)](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)

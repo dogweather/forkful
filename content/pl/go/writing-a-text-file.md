@@ -1,59 +1,55 @@
 ---
-title:    "Go: Tworzenie pliku tekstowego"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/writing-a-text-file.md"
+title:                "Go: Tworzenie pliku tekstowego"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisanie plików tekstowych jest ważne
+## Dlaczego
 
-Pisanie plików tekstowych jest ważnym elementem procesu tworzenia oprogramowania. Pozwala ono na przechowywanie i przetwarzanie danych, a także na komunikację między różnymi systemami. W dzisiejszych czasach, gdy programiści często współpracują z innymi osobami lub urządzeniami, umiejętność pisania plików tekstowych jest niezbędna.
+Pisanie pliku tekstowego przy użyciu języka programowania Go może być niezbędne w wielu przypadkach, takich jak tworzenie raportów, zapisywania plików konfiguracyjnych lub generowania plików źródłowych dla innych programów. Poniżej przedstawimy kilka prostych przykładów, jak to zrobić przy użyciu Go.
 
 ## Jak to zrobić
 
-Poniżej znajdują się przykładowe kody w języku Go, które pozwolą Ci na naukę pisania plików tekstowych. Przykładowe dane wyświetlane będą w tzw. blokach kodu ```Go ...```, co pozwoli Ci lepiej zrozumieć sposób działania kodu.
+Poniżej znajduje się przykład kodu w języku Go, który tworzy nowy plik tekstowy o nazwie "sample.txt" i wpisuje do niego tekst. Następnie zapisuje plik i zamyka go.
 
 ```Go
-package main 
+package main
 
 import (
-	"fmt"
-	"io/ioutil"
+    "fmt"
+    "os"
 )
- 
-func main() {
-	// Tworzenie pliku i uzupełnienie go danymi
-	f := []byte("Hello world!")
-	err := ioutil.WriteFile("sample.txt", f, 0644)
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println("Plik tekstowy został utworzony pomyślnie.")
-	}
 
-	// Odczytywanie danych z pliku
-	data, err := ioutil.ReadFile("sample.txt")
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println(string(data))
-	}
+func main() {
+
+    // utworzenie pliku
+    file, err := os.Create("sample.txt")
+    if err != nil {
+        fmt.Println(err)
+    }
+    defer file.Close()
+
+    // wpisanie tekstu do pliku
+    fmt.Fprintln(file, "Cześć, to jest przykładowy plik tekstowy")
+
+    // zapisanie i zamknięcie pliku
+    file.Sync()
 }
 ```
 
-Po uruchomieniu tego kodu, w katalogu, w którym znajduje się plik programu, zostanie utworzony plik tekstowy o nazwie "sample.txt" i jego zawartość zostanie wyświetlona w konsoli.
+Po uruchomieniu powyższego kodu, w folderze projektu zostanie utworzony plik tekstowy o nazwie "sample.txt", a w nim wpisany będzie nasz przykładowy tekst.
 
-## Głębszy zanurz się w temat
+## Deep Dive
 
-Umiem pisać pliki tekstowe jest ważnym aspektem programowania, dlatego warto poświęcić więcej czasu na zgłębienie tego tematu. Poniżej znajdują się kilka przydatnych linków, które pozwolą Ci pogłębić swoją wiedzę na ten temat:
+Pisanie plików tekstowych w języku Go jest możliwe dzięki modułowi "os", który w swojej funkcjonalności obsługuje operacje związane z systemem operacyjnym, takie jak tworzenie i edycja plików.
 
-- [Dokumentacja języka Go](https://golang.org/)
-- [Poradnik tworzenia plików w języku Go](https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-in-go)
-- [Blog Go In Action - praktyczne porady dla programistów języka Go](https://blog.golang.org/)
+W funkcji "main" najpierw używamy funkcji "Create" z modułu "os" by utworzyć nasz plik tekstowy. Następnie, za pomocą funkcji "Fprintln" z modułu "fmt", możemy wpisać tekst do pliku. Na końcu wykorzystujemy funkcję "Sync" do zapisania i zamknięcia pliku.
 
 ## Zobacz również
 
-- [Inne przydatne informacje o języku Go](https://www.django-cms.org/pl/blog/y/lekcja-3-wprowadzenie-do-go/)
-- [Kurs języka Go dla początkujących](https://www.udemy.com/course/the-complete-golang-bootcamp/)
-- [Społeczność języka Go - forum i grupy dyskusyjne](https://forum.golangbridge.org/)
+- Dokumentacja języka Go: https://golang.org/doc/
+- Przykłady kodu w języku Go: https://gobyexample.com/
+- Ucz się programowania w języku Go: https://tour.golang.org/welcome/1

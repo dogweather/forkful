@@ -1,35 +1,45 @@
 ---
-title:    "Bash: Skriva till standard fel"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/writing-to-standard-error.md"
+title:                "Bash: Skriva till standardfel"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna skriva till standard error är en viktig del av Bash-programmering. Det gör det möjligt för utvecklare att fånga och hantera felmeddelanden som uppstår under körning av sina program.
 
-## Hur man gör det
-För att skriva till standard error i Bash, används kommandot `>&2` tillsammans med `echo`. Detta skickar utdatan från `echo` till standard error istället för standard output.
+Att skriva till standard error är en viktig del av Bash-programmering eftersom det hjälper till att hantera felmeddelanden och felsökning. Genom att skriva till standard error kan du skilja mellan felmeddelanden och vanlig utdata, vilket gör det lättare att identifiera problem i din kod.
 
-Ett exempel på kod:
+## Så här gör du
+
+För att skriva till standard error i Bash, används kommandot `echo` tillsammans med flaggan `>&2`. Detta kommer att omdirigera utdata till standard error istället för standard utdata. Här är ett enkelt exempel:
+
 ```Bash
 echo "Detta är ett felmeddelande" >&2
 ```
+Detta kommer att skriva ut "Detta är ett felmeddelande" till standard error och det kommer att bli markerat med röd text i konsolen. Detta hjälper dig att enkelt skilja mellan vanlig utdata och felmeddelanden.
 
-Output:
+Du kan också använda `echo` tillsammans med andra kommandon för att skriva till standard error. Till exempel:
+
+```Bash
+ls not_a_directory 2>&1
 ```
-Detta är ett felmeddelande
-```
 
-## Deep Dive
-När ett program körs i Bash, finns det tre standard strömmar av data: standard input, standard output och standard error. Standard input är där användaren kan skicka in data, standard output är där programmet skriver ut sina resultat, och standard error är där felmeddelanden och andra felaktiga utskrifter skickas till.
+I det här fallet kommer `ls` kommandot att försöka lista ut innehållet i en mapp som inte finns och skriva ut felmeddelandet till standard error. `2>&1` betyder att all utdata, både standard out och standard error, kommer att omdirigeras till samma ställe, vilket i det här fallet är tillbaka till konsolen.
 
-Genom att skriva till standard error, kan utvecklare separera felmeddelanden från vanliga resultat, vilket gör det lättare att felsöka och hantera eventuella problem i sina program. Dessutom är det möjligt att omdirigera standard error till en annan fil för att spara felmeddelanden för senare analys.
+## Djupdykning
 
-Det är också viktigt att använda `>&2` istället för bara `>`, eftersom `>` bara omdirigerar standard output och inte standard error.
+Skriva till standard error är ett sätt att hantera felmeddelanden, men det finns också andra sätt att hantera dem. Till exempel kan du använda kommandot `trap` för att fånga felmeddelanden och hantera dem på ett mer strukturerat sätt.
 
-## Se också
-- [Bash Guide for Beginners (på engelska)](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [Bash Dokumentation (på engelska)](https://www.gnu.org/software/bash/manual/bash.html)
-- [Shell Scripting Tutorial (på engelska)](https://www.shellscript.sh/index.html)
+För att lära dig mer om hantering av felmeddelanden i Bash, rekommenderas att läsa på om `trap` kommandot och dess möjligheter. Det är ett kraftfullt verktyg som kan hjälpa dig att effektivt hantera fel i din kod.
+
+## Se även
+
+Här är några användbara länkar för att lära dig mer om skriver till standard error i Bash:
+
+- [Bash tutorial: Writing to standard error](https://linuxize.com/post/bash-write-to-file-and-stdout-stderr/#writing-to-standard-error)
+- [Trap command in Bash](https://www.tecmint.com/using-bash-trap-commands/)
+- [Working with standard error in Bash](https://opensource.com/article/19/6/working-standard-error-bash)
+
+Lycka till med att skriva till standard error i dina Bash-program!

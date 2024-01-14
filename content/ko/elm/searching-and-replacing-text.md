@@ -1,47 +1,41 @@
 ---
-title:    "Elm: 텍스트 검색 및 대체하기"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/searching-and-replacing-text.md"
+title:                "Elm: 텍스트 검색 및 교체"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 # 왜
 
-텍스트를 검색하고 교체하는 것이 왜 중요한지에 대한 이유는 무엇일까요? Elm으로 프로그래밍할 때, 특히 작업을 더 쉽게 만들어주는 요령에 대해 알아봅시다.
+Elm에서 텍스트 검색과 대체를 하는것은 여러 이유들이 있습니다. 주요 이유는 다음과 같습니다:
+1. 프로그래머들은 코드를 작성하거나 유지보수 할 때 자주 특정 텍스트를 한번에 모두 바꾸기를 원합니다.
+2. 프로그래머들은 오타를 수정하거나 일괄 변경할 필요가 있을때 검색과 대체를 사용합니다.
 
 ## 어떻게
 
-검색 및 교체 기능을 활용하려면 ```String``` 라이브러리를 사용해야 합니다. 이 라이브러리는 텍스트 조작을 위한 다양한 함수를 제공합니다. 예를 들어, "Hello world!"라는 문자열에서 "world"를 "Elm"으로 교체하는 코드는 다음과 같이 작성할 수 있습니다:
+검색과 대체를 Elm에서 하기 위해서는 `String.replace` 함수를 사용할 수 있습니다. 다음과 같은 형식으로 사용할 수 있습니다:
 
 ```Elm
-import String exposing (replace)
-
-replace "Hello world!" "world" "Elm"
--- output: "Hello Elm!"
+String.replace "찾을 문자열" "바꿀 문자열" "원본 문자열"
 ```
 
-이 코드는 "Hello world!"라는 문자열에서 "world"를 "Elm"으로 교체한 뒤 "Hello Elm!"을 출력합니다.
-
-또 다른 예시로, "Elm is awesome!"라는 문자열에서 "awesome"를 "fun"으로 교체하는 코드는 다음과 같이 작성할 수 있습니다:
+이 함수는 원본 문자열에서 찾을 문자열을 발견하면 그 문자열을 바꿀 문자열로 대체합니다. 예를 들어, `"안녕하세요"`라는 문자열에서 `"하"`를 `"하마"`로 바꾸고 싶으면 다음과 같이 쓸 수 있습니다:
 
 ```Elm
-import String exposing (replace)
-
-replace "Elm is awesome!" "awesome" "fun"
--- output: "Elm is fun!"
+String.replace "하" "하마" "안녕하세요"
 ```
 
-이렇게 하면 "Elm is awesome!"라는 문자열에서 "awesome"를 "fun"으로 교체한 뒤 "Elm is fun!"을 출력합니다.
+이 코드의 결과는 `"안녕마세요"`가 됩니다.
 
-## 깊은 곳으로
+## 더 깊이 들어가기
 
-검색 및 교체 기능은 텍스트를 다루는 작업에서 매우 유용합니다. 이를 통해 특정 단어나 구문을 빠르게 찾을 수 있고, 필요한 경우 교체할 수 있습니다. 또한 이 기능을 활용하여 텍스트를 정제하거나 언어 번역 등 다양한 작업을 수행할 수 있습니다.
+Elm에는 `String.replace` 함수 이외에도 다양한 검색과 대체를 할 수 있는 함수들이 있습니다. 예를 들어, `String.replaceRegex` 함수를 사용하면 정규표현식을 이용해 더 복잡한 규칙으로 검색과 대체를 할 수 있습니다. 또한 `String.contains` 함수를 사용하면 문자열에 특정 문자열이 포함되어 있는지를 확인할 수 있습니다. 이런 함수들을 조합하면 보다 다양한 검색과 대체를 할 수 있습니다.
 
-예를 들어, 검색 및 교체 기능을 활용하여 맞춤법 검사를 자동으로 수행할 수도 있습니다. 특정 단어가 검색되면 해당 단어를 언어 번역 API를 통해 자동으로 교체하거나, 맞춤법 검사를 위해 따로 프로그램을 작성할 필요 없이 검색 기능만으로도 해당 단어를 찾아 수정할 수 있습니다.
+# 참고 자료
 
-## 관련 정보
-
-- [Elm 공식 홈페이지](https://elm-lang.org/)
-- [Elm 커뮤니티 포럼](https://discourse.elm-lang.org/)
-- [String 라이브러리 문서](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm 공식 사이트](https://elm-lang.org/)
+- [Elm 표준 라이브러리 문서](https://package.elm-lang.org/packages/elm/core/latest/)
+- [정규표현식 간단히 알아보기](https://velog.io/@hss930622/Regexp%EC%9D%80-%EB%AD%90-%EB%82%B4-%EC%84%A4%EB%AA%85-%EC%9E%85%EB%A0%A5-%EB%93%B1%EB%A1%9D%EC%9D%84-%EC%9C%84%ED%95%B4%ED%95%98%EB%8A%94-%EC%84%A4%EB%AA%85)
+- [정규표현식 메타문자 참고 사이트](https://metadocs.net/re2/master/01-introduction.md.html#metacharacters)

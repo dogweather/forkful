@@ -1,38 +1,54 @@
 ---
-title:    "Clojure: Tekstitiedoston kirjoittaminen"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/writing-a-text-file.md"
+title:                "Clojure: Tekstitiedoston kirjoittaminen"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi kirjoittaa tekstitiedostoa? Tekstiedostot ovat erittäin hyödyllisiä työkaluja, kun haluat tallentaa tietoa tekstimuodossa. Ne ovat myös hyvä tapa tallentaa ja jakaa koodia, jotta sen muokkaaminen ja ylläpitäminen olisi helpompaa.
+Tekstin kirjoittaminen on tärkeä osa ohjelmointia, sillä se mahdollistaa datan tallentamisen ja käsittelyn helpommin. Lisäksi tekstitiedoston avulla voi luoda käyttäjäystävällisiä ohjelmia.
 
 ## Miten
 
+Tekstin kirjoittaminen Clojurella on yksinkertaista. Tässä on esimerkki, kuinka voit luoda uuden tekstitiedoston ja kirjoittaa siihen tekstin:
+
 ```Clojure
-;; Luodaan uusi tiedosto nimeltä "tekstitiedosto.txt"
-(def tiedosto (io/file "tekstitiedosto.txt"))
-
-;; Kirjoitetaan tekstiä tiedostoon
-(with-open [stream (io/writer tiedosto)]
-    (.write stream "Tämä on tekstiä!"))
-
-;; Suljetaan tiedosto
-(.close stream)
+(with-open [file (clojure.java.io/writer "testi.txt")]
+    (.write file "Tervetuloa ohjelmoimaan Clojurella!"))
 ```
 
-Kun avaat "tekstitiedosto.txt" tiedoston, näet sen sisältävän tekstin "Tämä on tekstiä!". Voit myös käyttää `(.writeLine stream "Tämä on eri rivi!")` lisätäksesi tekstin eri riveille.
+Tämän jälkeen tekstitiedosto "testi.txt" sisältää tekstin "Tervetuloa ohjelmoimaan Clojurella!".
 
 ## Syvällinen sukellus
 
-Tekstitiedoston luominen ja kirjoittaminen on erittäin hyödyllistä, mutta on tärkeää muistaa myös tiedoston sulkeminen käytön jälkeen. Tämä estää mahdolliset muutokset tiedostoon ja vapauttaa resursseja.
+Clojure tarjoaa mahdollisuuden kirjoittaa monimutkaisempiakin tekstitiedostoja. Voit esimerkiksi käyttää Clojuren lukijoita ja kirjoittajia (readers and writers) luodaksesi CSV-tiedostoja tai jopa JSON-tiedostoja.
 
-Voit myös käyttää `(.flush stream)` ennen tiedoston sulkemista, jotta kaikki voimassa olevat muutokset kirjoitetaan tiedostoon.
+Esimerkiksi, luodaan JSON-tiedosto, joka sisältää listan henkilöistä heidän nimiensä ja ikänsä kanssa:
+
+```Clojure
+(require '[clojure.data.json :as json])
+
+(def henkilot [{:nimi "Matti" :ika 30}
+               {:nimi "Maija" :ika 28}])
+
+(with-open [writer (clojure.java.io/writer "henkilot.json")]
+  (.write writer (str (json/write-str henkilot))))
+```
+
+Tämän jälkeen voit nähdä "henkilot.json" -tiedostossa JSON-muotoisen listan:
+
+```JSON
+[{"nimi": "Matti", "ika": 30},
+{"nimi": "Maija", "ika": 28}]
+```
+
+Tämä on vain yksi esimerkki siitä, kuinka tekstiä voidaan käyttää monipuolisesti Clojurella.
 
 ## Katso myös
 
-- [Clojure io -kirjasto](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Tekstitiedoston kirjoittaminen ohjeet](https://clojure.org/guides/io)
+1. [Clojuren tekstien käsittely](https://clojuredocs.org/clojure.string)
+2. [Lisätietoa Clojuressa tekstin käsittelystä](https://www.braveclojure.com/sequences/)
+3. [JSON-tiedostojen luominen Clojurella](https://clojuredocs.org/clojure.data.json)

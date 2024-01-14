@@ -1,49 +1,44 @@
 ---
-title:    "Javascript: Utilizando expresiones regulares"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/using-regular-expressions.md"
+title:                "Javascript: Utilizando expresiones regulares"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué utilizar expresiones regulares en programación
+## ¿Por qué utilizar expresiones regulares?
 
-Las expresiones regulares son una herramienta muy útil en la programación, ya que permiten buscar y manipular patrones de texto de manera eficiente y precisa. Con ellas, se pueden realizar tareas como validar datos de entrada, extraer información específica de un texto y realizar búsquedas y reemplazos en grandes conjuntos de datos. Por estas razones, el uso de expresiones regulares es muy común en todo tipo de proyectos de desarrollo.
+Las expresiones regulares son una herramienta poderosa en la programación que te permiten buscar y manipular texto de manera efectiva. Son especialmente útiles cuando tienes que trabajar con grandes cantidades de texto o realizar acciones específicas en un conjunto de datos. Con el aprendizaje de expresiones regulares, podrás hacer tus programas más eficientes y precisos.
 
-## Cómo utilizar expresiones regulares en Javascript
+## Cómo utilizar expresiones regulares
 
-Para utilizar expresiones regulares en Javascript, se pueden utilizar los métodos `match()`, `test()`, `replace()` y `split()` del objeto `RegExp`. A continuación se presentan algunos ejemplos de cómo utilizar estas expresiones:
+Las expresiones regulares se escriben entre dos barras (//) y pueden incluir caracteres especiales para buscar patrones en el texto. Por ejemplo, si quieres encontrar todos los correos electrónicos en un texto, puedes utilizar la siguiente expresión regular:
 
 ```Javascript
-// Validar si una cadena contiene un número de teléfono con el formato xxx-xxx-xxxx
-var string = "555-555-5555";
-var regex = /\d{3}-\d{3}-\d{4}/;
-console.log(regex.test(string));  // output: true
-
-// Extraer el código de área de una dirección de correo electrónico
-string = "johndoe@example.com";
-regex = /@(.*)\./;
-console.log(regex.exec(string)[1]);  // output: example
-
-// Reemplazar todos los espacios en blanco por guiones en una URL
-string = "https://www.example.com/my page.html";
-regex = /\s/g;
-console.log(string.replace(regex, "-"));  // output: https://www.example.com/my-page.html
-
-// Dividir una cadena en un arreglo utilizando un carácter delimitador
-string = "1, 2, 3, 4, 5";
-regex = /\s*,\s*/;
-console.log(string.split(regex));  // output: ["1", "2", "3", "4", "5"]
+/[\w\.]+@[\w\.]+/g
 ```
 
-## Un vistazo más profundo a las expresiones regulares
+Esto buscará todas las combinaciones de letras, números y puntos seguidos de un símbolo "@" y otra combinación de letras, números y puntos. La "g" al final de la expresión indica que la búsqueda debe ser global, es decir, para todo el texto.
 
-Las expresiones regulares incluyen un conjunto de caracteres especiales que representan patrones específicos, como dígitos `\d`, letras `\w` o espacios en blanco `\s`. Estos caracteres pueden combinarse con cuantificadores como `+` o `*` para especificar la cantidad de veces que un patrón debe aparecer en un texto. Además, se pueden aplicar modificadores como `i` para hacer que la búsqueda sea insensible a mayúsculas y minúsculas. La utilización de grupos de captura y retrocesos permite extraer información específica de un patrón identificado.
+Otro uso común de las expresiones regulares es para validar datos de entrada en un formulario. Puedes utilizar una expresión regular para asegurarte de que un campo de correo electrónico, número de teléfono o código postal tenga el formato correcto antes de enviarlo.
 
-Es importante tener en cuenta que una expresión regular puede ser muy poderosa, pero también puede ser compleja y difícil de entender. Por esta razón, es recomendable utilizar recursos como expresionesregulares.info, regex101.com o el método `debug()` de la consola de desarrollo para ayudar en la construcción y depuración de expresiones regulares.
+## Profundizando en el uso de expresiones regulares
+
+Las expresiones regulares pueden parecer un poco intimidantes al principio, pero a medida que las vayas utilizando, te darás cuenta de su gran utilidad. Además de los caracteres especiales, también puedes utilizar cuantificadores para buscar patrones repetitivos, como "+" para indicar una o más repeticiones y "*" para indicar cero o más repeticiones.
+
+También puedes utilizar grupos en tus expresiones regulares para buscar patrones específicos dentro de una cadena de texto. Por ejemplo, para buscar los números de teléfono en un texto en el formato (123) 456-7890, puedes utilizar la siguiente expresión regular:
+
+```Javascript
+/(\d{3}) \d{3}-\d{4}/g
+```
+
+El primer paréntesis indica que solo quieres buscar los tres primeros dígitos y el resto de la expresión busca el formato restante. Los resultados se devolverán en grupos para que puedas acceder a cada parte del número de teléfono.
 
 ## Ver también
 
-- [Documentación de expresiones regulares en Javascript en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-- [Expresiones regulares en Javascript: una guía para principiantes](https://www.freecodecamp.org/news/regex-guide-es/)
-- [Expresiones regulares en Javascript: cómo escribirlas y depurarlas](https://www.digitalocean.com/community/tutorials/how-to-write-effective-regular-expressions-in-javascript)
+Si quieres seguir aprendiendo sobre expresiones regulares, aquí te dejamos algunos recursos interesantes:
+
+- [Documentación sobre expresiones regulares de Mozilla](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Tutorial interactivo de expresiones regulares en Codecademy](https://www.codecademy.com/courses/web-beginner-en-bH5s3/0/1)
+- [Expresiones regulares en 30 minutos en RegexOne (en inglés)](https://regexone.com/)

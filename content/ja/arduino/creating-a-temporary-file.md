@@ -1,71 +1,40 @@
 ---
-title:    "Arduino: 一時ファイルの作成"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/creating-a-temporary-file.md"
+title:                "Arduino: 一時ファイルの作成"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-一時的なファイルを作成することの利点は、非常に便利であることです。プログラマーは、データを一時的に保存することができます。また、プログラムを実行する際に、一時的なファイルを使用することにより、メモリの使用量を減らすことができます。
+あなたがアンドソンプログラミングを行う理由は多数ありますが、その中で一つは一時ファイルの作成です。一時ファイルを作成することで、プログラムの実行に必要な一時データを格納し、プログラムを効率的に実行することができます。
 
-## 作り方
+## How To
 
-一時的なファイルを作成するには、ArduinoのFileクラスを使用することができます。これにより、ファイルオブジェクトを作成し、その中で一時的なファイルを作成することができます。以下の例を参考にしてください。
+一時ファイルを作成するには、以下のようなArduinoコードを使用します。
 
-```Arduino
-#include <SD.h>
+```
+Arduinoファイルを作成する();
 
-File myFile;
+Arduinoファイルにデータを書き込む();
 
-// 一時的なファイルを作成して、"temp.txt"に書き込む
-void createTempFile(){
-  myFile = SD.open("temp.txt", FILE_WRITE);
-  if (myFile) {
-    myFile.println("This is a temporary file.");
-    myFile.close();
-  } else {
-    // エラー処理
-  }
-}
-
-// 一時的なファイルを読み込んでシリアルモニターに出力する
-void readTempFile(){
-  myFile = SD.open("temp.txt");
-  if (myFile) {
-    while (myFile.available()) {
-      Serial.println(myFile.read());
-    }
-    myFile.close();
-  } else {
-    // エラー処理
-  }
-}
-
-void setup() {
-  Serial.begin(9600);
-  // SDカードの初期化
-  if (!SD.begin()) {
-    // エラー処理
-  }
-  createTempFile();
-  readTempFile();
-}
-
-void loop() {
-  //何もしない
-}
+Arduinoファイルを閉じる();
 ```
 
-実行すると、シリアルモニターに「This is a temporary file.」というテキストが表示されます。これが一時的なファイルから読み込まれたものです。
+上記の例では、最初に`Arduinoファイルを作成する()`関数を使用して一時ファイルを作成し、次に`Arduinoファイルにデータを書き込む()`関数を使用して必要なデータをファイルに書き込みます。最後に、`Arduinoファイルを閉じる()`関数を使用してファイルを閉じます。
 
-## 深い掘り下げ
+一時ファイルを作成する際には、ファイル名や保存場所を指定することもできます。また、作成したファイルを後で使用する必要がない場合は、`Arduinoファイルを削除する()`関数を使用して削除することができます。
 
-一時的なファイルには、ファイル名を付けなくても作成することができます。その場合、SDライブラリは自動的に一意のファイル名を付けます。また、一時的なファイルはプログラムの終了時に自動的に削除されます。これにより、メモリの使用量を管理することができます。
+## Deep Dive
 
-## また見る
+一時ファイルを作成することでプログラムの実行速度を向上させることができるのは、ファイルがハードドライブやメモリよりも高速であるためです。一時ファイルはプログラムが実行される間だけ存在し、プログラムが終了すると自動的に削除されます。
 
-- [Arduino SDライブラリのドキュメント](https://www.arduino.cc/en/Reference/SD)
-- [Fileクラスのドキュメント](https://www.arduino.cc/en/Reference/SDFile)
-- [一時的なファイルの作成方法（英語）](https://stackoverflow.com/questions/423802/creating-a-temporary-file-in-arduino)
+一時ファイルを作成する際には、使用するファイルシステムやメモリの容量に注意する必要があります。また、ファイルが大きすぎる場合や、使用しなくなったファイルが残っている場合は、メモリやストレージ容量の消費が大きくなる可能性があります。
+
+## See Also
+
+- [Arduinoファイルシステム](https://www.arduino.cc/en/Reference/FileSystem)
+- [Arduino SDライブラリ](https://www.arduino.cc/en/Reference/SD)
+- [Arduino EEPROMライブラリ](https://www.arduino.cc/en/Reference/EEPROM)

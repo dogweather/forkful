@@ -1,31 +1,73 @@
 ---
-title:    "Bash: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/converting-a-string-to-lower-case.md"
+title:                "Bash: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi joku haluaisi muuttaa merkkijonon pienaakkosiksi? Yksinkertaisesti sanottuna, se voi auttaa tekstin vertailussa tai kauniiden tulosteiden luomisessa.
+## Miksi?
 
-## Miten
-Tämä artikkeli käsittelee kuinka muuttaa Bash-skriptissä olevan merkkijonon pienaakkosiksi.
- 
-```Bash 
-str="Tämä On Merkkijono"
-echo "Pienaakset ovat: ${str,,}"
+Miksi haluat muuntaa merkkijonon pieniksi kirjaimiksi? Tämä voi olla hyödyllistä esimerkiksi silloin, kun haluat vertailla merkkijonoja tai etsiä tiettyä sanaa merkkijonosta.
+
+## Miten?
+
+### Bash-komentorivi
+
+Voit käyttää Bash-komentorivillä `tr`-komennolla pienentämään kaikki merkkijonossa olevat kirjaimet.
+
+```Bash
+merkkijono="TÄMÄ ON ESIMERKKI"
+echo "$merkkijono" | tr '[:upper:]' '[:lower:]'
 ```
+
 Tämä tulostaa:
-`Pienaakset ovat: tämä on merkkijono`
 
+```Bash
+tämä on esimerkki
+```
 
-Merkkijonon muuttaminen pienaakkosiksi on helppoa Bashissa käyttämällä syntaksia `${variable,,}`. Tämä tapahtuu asettamalla valittu muuttuja ensimmäisellä kirjaimella "$" -merkillä ja lisäämällä kaksi pilkkua jäljessä. Lauseketta voidaan käyttää myös leikkaamaan merkkijonoja numeroiden, erikoismerkkien tai sanojen perusteella.
+Voit myös käyttää `awk`-komennolla pienentämään vain tiettyä osaa merkkijonosta, esimerkiksi toisen sanan.
 
-## Syväsukellus
-Bashissa tulee useita sisäänrakennettuja merkkijonotoimintoja, jotka helpottavat kaikkien kirjainten muuttamista pienaakkosiksi. Käyttämällä `tr` -komentoa voidaan muuttaa merkkijonon kaikki kirjaimet pienaakkosiksi ja `sed`-komennolla voidaan muuttaa vain ensimmäinen kirjain. Kaikkien kirjainten muuttamiseksi pienaakkosiksi voidaan myös käyttää komentoa `awk` ja `tr '[A-Z]' '[a-z]'` joka tulostaa merkkijonon pienaakkosina. Bashilla on myös komento `fold` joka muuttaa merkkijonon suurin osa pienaakkosiksi.
+```Bash
+merkkijono="TÄMÄ ON ESIMERKKI"
+echo "$merkkijono" | awk '{ print tolower($2) }'
+```
+
+Tämä tulostaa:
+
+```Bash
+on
+```
+
+### Bash-skripti
+
+Voit myös luoda Bash-skriptin, joka muuntaa merkkijonon pieniksi kirjaimiksi käyttäen `tr`-komennon sijaan `sed`-komentoa.
+
+```Bash
+#!/bin/bash
+
+echo "Anna merkkijono:"
+read merkkijono
+
+pieni_merkkijono=$(echo $merkkijono | sed 's/.*/\L&/')
+
+echo "$pieni_merkkijono"
+```
+
+Skripti kysyy käyttäjältä merkkijonoa ja tulostaa sen pienissä kirjaimissa.
+
+## Syvällisempi sukellus
+
+Merkkijonon muuntaminen pieniksi kirjaimiksi ei ole monimutkaista, mutta voit syventää ymmärrystäsi siitä, miten muuntaminen tapahtuu.
+
+`tr`-komennolla muuntaminen perustuu merkkilistaan, johon määritetään merkit, jotka muunnetaan pieniksi kirjaimiksi ja merkit, joita ei muunneta. Voit tutustua tarkemmin merkkilistojen rakentamiseen `man tr`-komennolla.
+
+`sed`-komennolla tapahtuva muuntaminen perustuu säännöllisiin lausekkeisiin. Esimerkiksi `[A-Z]` tarkoittaa kaikkia isoja kirjaimia ja `(?<!\\)\L` muuntaa edellisen säännöllisen lausekkeen mukaiset merkit pieniksi kirjaimiksi. Voit lukea lisää säännöllisistä lausekkeista `man sed`-komennolla.
 
 ## Katso myös
-- Bashin virallinen dokumentaatio merkkijonojen manipulointiin: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion
-- Bash-skriptien opetusohjelma, joka käsittelee merkkijonojen käsittelyä: https://debian-administration.org/article/316/Manipulating_strings_in_Bash
-- Pienaksi muuttamisen syvempää tarkastelua: http://tldp.org/LDP/abs/html/string-manipulation.html
+
+- [Bash-komentorivin perusteet](https://www.datacamp.com/community/tutorials/bash-shell-tutorial)
+- [Merkkilistojen rakentaminen `tr`-komennossa](https://www.computerhope.com/unix/utr.htm)
+- [Säännölliset lausekkeet `sed`-komennossa](https://linuxhint.com/regex_sed_command/)

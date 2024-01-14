@@ -1,37 +1,41 @@
 ---
-title:    "Elm: डाइरेक्ट्री की उपस्थिति की जाँच करना"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/elm/checking-if-a-directory-exists.md"
+title:                "Elm: डायरेक्टरी मौजूद है की जाँच करना"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-एक डायरेक्टरी मौजूद है या नहीं यह जाँचने में व्यक्ति क्यों लगने को उत्सुक होगा कुछ उत्तर देती हैं।
 
-## कैसे करें
-डायरेक्टरी का अस्तित्व जांचने के लिए विभिन्न प्रोग्रामिंग भाषाओं में से Elm में किस तरहतो सेतुप किया जा सकता है।
+दिनचर्या के दौरान हम अक्सर फ़ाइल या फ़ोल्डर की उपस्थिति की जाँच करते हैं, लेकिन क्या आपने कभी सोचा है कि आप अपने Elm प्रोग्राम में भी इसे कैसे कर सकते हैं? इस ब्लॉग पोस्ट में हम आपको बताएंगे कि Elm में निर्देशित करें कि फ़ोल्डर या डायरेक्टरी मौजूद है या नहीं।
+
+
+## कैसे करे
+
+फ़ोल्डर या डायरेक्टरी की उपस्थिति की जाँच करने के लिए, हम आसानी से निम्नलिखित मेथड का उपयोग कर सकते हैं:
 
 ```Elm
+import Task exposing (Task)
 import File
 
-doesDirectoryExist : String -> Cmd msg
-doesDirectoryExist path =
-    Task.perform DoesDirectoryExist (File.exists path)
+isDirectoryExists : String -> Task Never Bool
+isDirectoryExists path =
+  File.exists path
 
-type Msg
-    = DoesDirectoryExist Bool
 ```
 
-आउटपुट:
+ऊपर दिए गए उदाहरण में, हमने `Task` मॉड्यूल से `Task Never Bool` टाइप का एक मेथड `isDirectoryExists` बनाया है जो कि फ़ोल्डर या डायरेक्टरी की जाँच को असिस्तेड करता है। उसके साथ हमने Elm के `File` मॉड्यूल से `exists` फ़ंक्शन को कॉल किया है जो कि दिए गए पथ पर फ़ोल्डर या डायरेक्टरी की मौजूदगी की जाँच करता है।
+
+अब हम इस मेथड का उपयोग करके फ़ोल्डर या डायरेक्टरी की जाँच कर सकते हैं, जैसे ही उपयोगकर्ता इसे दर्ज करेंगे:
+
 ```Elm
-DoesDirectoryExist False
+isDirectoryExists "documents/"
+
+-- Output:
+-- If "documents/" directory exists: Task.Ok True
+-- If "documents/" directory doesn't exist: Task.Ok False
 ```
 
-## गहराई से जांचें
-डायरेक्टरी का अस्तित्व जांचने के लिए हमें पहले से ही जानना चाहिए कि एक डायरेक्टरी की विशेषताएं क्या हैं और कैसे हम इसे उपयोग कर सकते हैं। Elm में हम डायरेक्टरी को अस्तित्व जांचने के लिए File लाइब्रेरी का उपयोग कर सकते हैं। हम उसी कोड के माध्यम से कैसे हमें डायरेक्टरी के अस्तित्व का पता लगा सकते हैं, इस बारे में गहराई से जानते हैं।
-
-## देखें
-- [Elm लाइब्रेरी मानव अभिव्यक्ति के लिए एक फंक्शनल प्रोग्रामिंग भाषा](https://guide.elm-lang.org/)
-- [Elm में हम परिवर्तनात्मक और स्थाई डाटा को कैसे प्रबंधित कर सकते हैं](https://www.elm-tutorial.org/en/)
-- [Elm Community हैंडबुक](https://elm-community.github.io/elm-faq/)
+ऊपर दिए गए उदाहरण में, यदि "documents/" नामक फ़ोल्डर मौजूद होता है तो हमें टास्क की सफलता सकारात्मक `True` मिलेगा और अगर यह मौजूद नहीं होता है तो प्रस्तुति रूप में उपयोगकर्ता को `False` की तरह रिटर्न क

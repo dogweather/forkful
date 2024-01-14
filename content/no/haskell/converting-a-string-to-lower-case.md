@@ -1,43 +1,52 @@
 ---
-title:    "Haskell: Konvertere en streng til små bokstaver"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/converting-a-string-to-lower-case.md"
+title:                "Haskell: Konvertere en streng til små bokstaver"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-I denne bloggposten vil vi se på hvordan man kan konvertere en streng til små bokstaver i Haskell. Dette kan være nyttig for å gjøre tekstbehandling enklere, for eksempel når man skal sammenligne to tekster uten å måtte ta hensyn til store og små bokstaver.
+Mange programmerere ønsker å konvertere en streng til små bokstaver av ulike årsaker. Noen ganger kan det være for å sammenligne tekster uten hensyn til store og små bokstaver, eller for å få en mer konsistent og ensartet formatering i en applikasjon. Uansett årsak, er det nyttig å kunne konvertere en streng til små bokstaver i Haskell.
 
-## Hvordan gjøre det
+## Hvordan Du Gjør Det
 
-Å konvertere en streng til små bokstaver i Haskell er en enkel prosess. Vi kan bruke funksjonen `toLower` fra modulen `Data.Char` for å gjøre dette. La oss se på et eksempel:
-
-```Haskell
-import Data.Char
-
-konverterTekst :: String -> String
-konverterTekst tekst = map toLower tekst
-```
-Her bruker vi `map`-funksjonen til å bruke `toLower` på hver bokstav i teksten vår. Resultatet vil være en ny streng med alle bokstavene i små bokstaver.
-
-La oss prøve å kjøre koden med en tekst og se på resultatet:
+Det er flere måter å konvertere en streng til små bokstaver i Haskell, men en av de enkleste metodene er ved å bruke funksjonen "map" sammen med funksjonen "toLower". Her er et eksempel på hvordan du kan gjøre det:
 
 ```Haskell
-*Main> konverterTekst "HeLLo Haskell"
-"hello haskell"
+import Data.Char (toLower) 
+map toLower "Norsk"
 ```
 
-Som du kan se, blir alle bokstavene i teksten vår omgjort til små bokstaver, og vi kan bruke denne funksjonen på alle typer strenger.
+Dette resulterer i en output på "norsk", med alle bokstavene i den opprinnelige strengen konvertert til små bokstaver. Du kan også bruke funksjonen "toLower" på en liste av tegn, som vist i dette eksemplet:
 
-## Dykk dypere
+```Haskell
+map toLower "Hei! Hvordan går det?"
+```
 
-Som nevnt tidligere, bruker vi funksjonen `toLower` fra modulen `Data.Char` for å konvertere bokstavene til små bokstaver. Denne funksjonen tar inn en bokstav som et argument og returnerer tilsvarende bokstav i små bokstaver.
+Output her vil være "hei! hvordan går det?".
 
-Det som er spesielt med denne funksjonen er at den også konverterer bokstaver fra språk som bruker andre alfabet, som for eksempel det greske alfabetet. Dette betyr at uansett hvilket språk eller tegnsett teksten din er på, vil denne funksjonen fungere som den skal.
+En annen måte å konvertere en streng til små bokstaver på er ved å bruke funksjonen "map" og "toLower" sammen med funksjonen "lines", som separerer strengen basert på linjeskift. Her er et eksempel på hvordan du gjør det:
 
-## Se også
+```Haskell
+import Data.Char (toLower)
+map (map toLower . line) "Hei! Hvordan går det?\nBra, takk."
+```
 
-- [Haskell-dokumentasjon for Data.Char-modulen](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html)
-- [Tutorial om strenger og teksthåndtering i Haskell](https://learnyouahaskell.com/starting-out#reading-and-writing-files)
+I dette tilfellet vil output være en liste av linjer hvor hver bokstav er konvertert til små bokstaver.
+
+## Dypdykk
+
+I Haskell er strenger egentlig bare lister av tegn. Derfor kan du bruke alle funksjoner og metoder som er tilgjengelige for lister på strenger. For eksempel kan du bruke "head" funksjonen for å få den første bokstaven i en streng, eller "length" funksjonen for å finne lengden på en streng.
+
+Det finnes også andre metoder for å konvertere strenger til små bokstaver i Haskell, som å bruke funksjonen "toLower" på individuelle tegn ved hjelp av "map" funksjonen. Det er også mulig å bruke biblioteket "Data.Text" for mer effektive operasjoner på tekster.
+
+## Se Også
+
+[Data.Char dokumentasjon](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html)
+
+[Haskell Tutorial: Strings](https://www.haskell.org/tutorial/strings.html)
+
+[Haskell Formatting Strings](https://stackoverflow.com/questions/3128517/haskell-formatting-strings)

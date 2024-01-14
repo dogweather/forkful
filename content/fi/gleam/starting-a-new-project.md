@@ -1,46 +1,30 @@
 ---
-title:    "Gleam: Uuden projektin aloittaminen"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/starting-a-new-project.md"
+title:                "Gleam: Aloittaen uuden projektin"
+programming_language: "Gleam"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi aloittaa uusi projekti Gleamissa?
 
-Aloittaessa uuden projektin, usein kysytään itseltään miksi? Miksi aloittaa tyhjästä ja luoda jotain uutta? Syitä voi olla monia, mutta yksi tärkeimmistä on halu oppia uutta ja haastaa itsensä. Gleam tarjoaa mahdollisuuden luoda tehokasta ja turvallista koodia, joka voi olla erittäin motivoivaa ja antoisaa.
+On monia syitä aloittaa uusi projekti Gleam-kielellä. Yksi tärkeimmistä on Gleamin puhtaus ja yksinkertaisuus, jotka tekevät koodauksesta helpompaa ja intuitiivisempaa. Lisäksi Gleam on suunniteltu skaalautuvaksi ja luotettavaksi, mikä tekee siitä erinomaisen vaihtoehdon monimutkaisten projektien toteuttamiseen.
 
-## Miten
+## Kuinka aloittaa Gleam-projekti?
 
-Gleam on selkeästi ja yksinkertaisesti kirjoitettu ohjelmointikieli, joka käyttää funktionaalista ohjelmointiparadigmaa. Tämä tarkoittaa, että koodi koostuu pienistä toiminnallisista palikoista, jotka tekevät yhden asian hyvin. Alla on esimerkki siitä, miten voit luoda uuden moduulin Gleamissa:
+Ensinnäkin, sinun tulee asentaa Gleam-kääntäjä käyttöjärjestelmääsi. Tämän jälkeen voit luoda uuden Gleam-projektin komennolla ```gleam new project_name```. Tämä luo projektikansioon rakenteen, jossa on ```src```- ja ```test```-kansiot. Kaikki koodisi tulee sijoittaa ```src```-kansioon ja testit ```test```-kansioon.
 
-```Gleam
-// Tämä on uusi moduuli, joka tulostaa tervehdyksen
-moduuli Tervehdys {
-    uloskirjautuminen tervehdys() {
-        konsoli.loggaus("Hei Gleam lukijat!");
-    }
-}
+Seuraavaksi, voit aloittaa koodaamisen luomalla uuden tiedoston ```src```-kansioon esimerkiksi komennolla ```touch src/main.gleam```. Tämän jälkeen voit kirjoittaa koodia uuteen tiedostoon käyttäen Gleamin syntaksia ja rakentaa projektisi käyttäen komentoa ```gleam build```. Tämä generoi ```.beam```-tiedoston, joka sisältää Gleam-koodisi käännöksen.
 
-```
+## Syvemmälle uuden projektin aloittamiseen
 
-Kun olet luonut tämän moduulin, voit suorittaa sen komentoriviltä ja näet seuraavan tuloksen:
+Jotta voit aloittaa uuden projektin Gleamissa, on tärkeää ymmärtää moduulit, funktiot ja tyypit. Gleam käyttää moduuleja järjestämään ja jakamaan koodia. Moduuli voi sisältää yhden tai useampia funktioita ja tietorakenteita, jotka ovat tärkeitä oleellisia osia Gleam-ohjelmoinnissa. Lisäksi Gleamissa on vahvat staattiset tyypit, jotka auttavat vähentämään virheitä ja lisäämään ohjelman luotettavuutta.
 
-```Gleam
-`henkilökohtaisen tervehdyksen()
-Hei Gleam lukijat!
-```
-
-Gleamin yleinen syntaksi on hyvin samanlainen kuin muissa ohjelmointikielissä, joten sen oppiminen ei vaadi paljon aikaa. Voit tutustua Gleamin viralliseen oppaaseen [täältä](https://gleam.run/book/introduction.html) ja aloittaa uuden projektin luomisen.
-
-## Syväsukellus
-
-Syvemmälle sukeltaessasi uuden projektin luomiseen Gleamissa, huomaat, että sen paketinhallinta ja riippuvuuksien hallinta ovat erittäin tehokkaita ja helposti ymmärrettäviä. Voit luoda uuden projektin luomalla uuden kansion ja suorittamalla komennon `gleam init`. Tämä luo Gleam-projektillesi rakenteen ja automaattisesti luo `gunglefile.toml`-tiedoston, johon voit lisätä haluamasi riippuvuudet.
-
-Gleamin yhteisö on myös hyvin aktiivinen ja siellä on paljon resursseja, kuten [Github-repositorioita](https://github.com/gleam-lang) ja [Slack-kanavia](https://gleam-lang.slack.com/), joissa voit saada apua uuden projektisi kanssa.
+Toinen tärkeä asia aloittaessa uutta projektia Gleamissa on ymmärtää Gleamin standardikirjasto ja sen tarjoamat toiminnot. Tämä laajentaa Gleamin käyttömahdollisuuksia ja auttaa sinua tehokkaammassa koodin kirjoittamisessa.
 
 ## Katso myös
 
-- [Gleamin virallinen opas](https://gleam.run/book/introduction.html)
-- [Github-repositorioita Gleam-projekteista](https://github.com/gleam-lang)
-- [Slack-kanava Gleam-yhteisölle](https://gleam-lang.slack.com/)
+- Gleamin virallinen dokumentaatio (https://gleam.run/)
+- Gleamin GitHub-sivu (https://github.com/gleam-lang/gleam)
+- Gleamin Reddit-yhteisö (https://www.reddit.com/r/gleamlang/)

@@ -1,45 +1,48 @@
 ---
-title:    "Elm: Satunnaislukujen generointi"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/generating-random-numbers.md"
+title:                "Elm: Satunnaislukujen generointi"
+programming_language: "Elm"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi käyttää satunnaislukugeneraattoria?
 
-Miksi haluaisit käyttää satunnaislukujen generoimista ohjelmoinnissa? Satunnaislukujen avulla voit luoda mielenkiintoisia ja arvaamattomia toimintoja tai pelien mekaniikkoja.
+Satunnaislukujen luominen on tärkeä osa monia ohjelmointitehtäviä, kuten pelien ja simulaatioiden kehittämistä. Elmissä on sisäänrakennettu tapa generoida satunnaislukuja ja tässä blogikirjoituksessa käymme läpi miten se tapahtuu ja miten sitä voi hyödyntää omassa koodissa.
 
-## Miten
+## Kuinka käyttää satunnaislukugeneraattoria Elmissä?
 
-Käyttääksesi Elm-kielellä satunnaislukujen generaattoria, sinun tulee ensin tuoda käyttöön Random-moduuli koodissa.
+Elmissä satunnaislukuja voidaan generoida käyttäen `Random` -moduulia ja sen `generate` -funktiota. Alla on yksinkertainen esimerkki satunnaisen luvun generoimisesta ja sen tulostamisesta konsolille:
 
 ```Elm
 import Random
+
+randomNumber = 
+    Random.generate
+        Random.int 0 100
+
+main = 
+    randomNumber
+        |> Random.map (\num -> "Satunnainen luku: " ++ String.fromInt num)
+        |> Random.map Debug.log
 ```
 
-Sitten voit luoda kaksi funktiota: yhden, joka generoi tietyn välillä olevia kokonaislukuja ja toisen, joka generoi tietyn välillä olevia liukulukuja.
+Tämä koodinpätkä generoi luvun väliltä 0-100 ja tulostaa sen konsolille muodossa "Satunnainen luku: [luvun arvo]". Alla on mahdollinen tuloste tästä koodista:
 
-```Elm
--- Generoi kokonaisluku 1-10 välillä
-Random.int 1 10
-
--- Generoi liukuluku 0-1 välillä
-Random.float 0 1
+```
+Satunnainen luku: 32
 ```
 
-Voit myös määrittää haluamasi satunnaislukugeneraattorin koon, jolloin saat aina saman sarjan satunnaislukuja.
+Elm-maailman sisällä `Random` -moduulia käytetään yleensä yhdessä `Cmd.map` -funktion kanssa, joka mahdollistaa satunnaislukujen generoimisen asynkronisesti ja niiden käsittelyn `Msg` -tiedonkulussa.
 
-```Elm
--- Satunnaislukugeneraattori, jossa on 5 lukua, välinä 0-10
-Random.list 5 (Random.int 0 10)
-```
+## Syvemmälle satunnaislukujen generoimiseen Elmissä
 
-## Syvempi sukellus
+`Random` -moduulissa on monia hyödyllisiä funktioita satunnaislukujen generoimiseen, kuten `float`, `bool` tai jopa `pair` kahden satunnaisen luvun generoimiseen. On myös mahdollista määrittää oma tapa generoida lukuja `Generator` -tyypin avulla.
 
-Random-moduulin lisäksi Elm-kielellä on myös tarkkaan määriteltävissä olevia Random.Generator- ja Random.Value -tyyppejä. Random.Generator -tyyppiä voi käyttää luomaan tarkemmin määritettyjä satunnaislukugeneraattoreita, kun taas Random.Value -tyyppiä voi käyttää satunnaislukujen generoimiseen jo olemassa olevien tyyppien, kuten String ja Char, perusteella.
+Elm tarjoaa myös mahdollisuuden hallita satunnaislukugeneraattoreita ja niiden tilaa `Seed` -tyypin avulla. Tämä on erityisen hyödyllistä, kun tarvitaan toistettavia satunnaislukuja esimerkiksi testauksessa.
 
 ## Katso myös
 
-- [Elm Random-moduuli](https://package.elm-lang.org/packages/elm/random/latest/Random)
-- [Elm Random API](https://elm-lang.org/docs/packages/elm/random/latest/Random)
+- [Elm-satunnaislukugeneraattorin dokumentaatio](https://package.elm-lang.org/packages/elm/random/latest/)
+- [Satunnaislukujen generointi JavaScriptillä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)

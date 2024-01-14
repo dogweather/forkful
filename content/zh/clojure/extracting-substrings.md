@@ -1,49 +1,45 @@
 ---
-title:    "Clojure: 提取子字符串"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/extracting-substrings.md"
+title:                "Clojure: 提取子字符串"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要提取子字符串？
+# 为什么？
 
-提取子字符串是在编程中常见的操作，它可以帮助我们从一个大的字符串中获取我们想要的信息。通过提取子字符串，我们可以更轻松地处理和操作文本数据，使得编程更加高效。
+在Clojure编程中，我们经常需要从一个字符串中提取一个小片段，这也被称为提取子字符串。这种操作非常有用，因为它允许我们从大量的数据中获取我们需要的部分。无论是处理文本还是数据处理，提取子字符串都是一个常见的任务。
 
-# 如何提取子字符串？
+# 如何？
 
-要提取子字符串，我们可以使用Clojure中提供的`substr`函数。它的语法如下：
+我们可以使用Clojure内置的`subs`函数来提取子字符串。让我们看一个例子：
 
-```Clojure
-(substring s start end?)
+```
+Clojure
+(let [str "这是一个例子字符串"]
+  (subs str 4 6))
 ```
 
-其中，`s`是要提取子字符串的原始字符串，`start`是要开始提取的索引位置，`end`是可选的参数，表示要结束提取的索引位置，默认值为字符串的长度。下面是一个例子：
+这个例子中，我们首先定义了一个字符串变量`str`，然后使用`subs`函数从第4个字符开始提取2个字符。在这个例子中，输出将是`例子`。
 
-```Clojure
-(def sentence "我爱编程") 
-(substring sentence 1 3) 
+我们也可以通过使用`:end`关键字来指定最后一个字符的位置，例如：
+
+```
+Clojure
+(let [str "这也是一个例子字符串"]
+  (subs str 3 :end))
 ```
 
-这段代码的输出将会是`爱编`，因为我们从索引位置1开始，一直提取到索引位置3之前的字符。如果没有指定`end`参数，那么默认会提取到字符串的最后一个字符。
+这个例子中，我们从第3个字符开始提取到字符串的末尾，输出将是`也是一个例子字符串`。
 
-# 深入挖掘
+# 深入探讨
 
-除了提取固定位置的子字符串外，我们还可以通过Clojure中提供的`re-find`函数来提取符合特定条件的子字符串。它可以使用正则表达式来搜索并提取字符串中符合条件的子字符串。
+除了使用常规的`subs`函数外，Clojure还提供了更多功能丰富的函数来提取子字符串，例如`substring`和`clojure.string/substring`。这些函数提供了更多的选项来处理不同的情况，例如，使用负数来指定从字符串末尾开始提取。
 
-下面是一个例子，假设我们有一个字符串列表，其中包含了不同国家的电话号码，我们希望提取出所有的中国手机号码：
+此外，我们也可以使用正则表达式来提取子字符串，通过使用`re-find`和`re-matches`函数来匹配字符串并提取对应的子字符串。
 
-```Clojure
-(def phone-list ["+8613912345678" "+447812345678" "+8613576543210"])
-(def regex #"\+86\d{11}")
+# 请参阅
 
-(filter #(re-find regex %) phone-list)
-```
-
-上述代码中，我们定义了一个正则表达式来匹配中国手机号码的格式，并将它保存在`regex`变量中。然后我们使用`filter`函数来遍历字符串列表，并使用`re-find`函数来判断每个字符串是否符合正则表达式的条件。最终，我们可以得到一个只包含中国手机号码的列表。
-
-# 查看也许感兴趣的内容
-
-- [Clojure官方网站（中文）](https://clojure.org/guides/getting_started)
-- [正则表达式在Clojure中的应用](https://clojuredocs.org/clojure.string/re-find)
-- [提取子字符串的更多方法和技巧](https://www.baeldung.com/string-substring-performances)
+- [Clojure字符串函数文档](https://clojuredocs.org/clojure.string)
+- [正则表达式在Clojure中的使用](https://clojuredocs.org/clojure.core/re-find)

@@ -1,48 +1,47 @@
 ---
-title:    "C++: Skriva tester"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/writing-tests.md"
+title:                "C++: Skriva tester"
+programming_language: "C++"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför skriva tester i C++
 
-Att skriva tester är en viktigt del av utvecklingsprocessen i C++. Det hjälper dig att säkerställa att din kod fungerar korrekt och minskar risken för buggar och felaktigt beteende.
+Det finns många anledningar till varför det är viktigt att skriva tester när man programmerar i C++. Det är ett sätt att säkerställa att koden fungerar enligt förväntningarna och att den är robust och hållbar. Tester kan också hjälpa till att hitta och lösa buggar på ett tidigt stadium, vilket sparar både tid och pengar i längden.
 
-## Så här gör man
+##Hur man skriver tester i C++
 
-För att skriva tester i C++, behöver du använda ett ramverk som till exempel Google Test eller Catch2. Låt oss se ett enkelt exempel på hur du kan använda Catch2 för att skriva en testfunktion:
+För att skriva tester i C++ behöver du en testningsramverk, som till exempel "Catch2". Först måste du skapa ett separat testfil där du importerar testningsramverket och de filer som du vill testa. Sedan kan du skapa olika testfall med hjälp av assertioner, som kontrollerar om ett visst uttryck är sant eller falskt.
+
+Ett exempel på hur det kan se ut:
 
 ```C++
-TEST_CASE("Addition") {
-  int result = add(2, 3);
-  REQUIRE(result == 5);
+#include <catch2/catch2.hpp>
+#include "minKod.hpp"
+
+TEST_CASE("Test av funktionen addera") {
+    REQUIRE(addera(1, 2) == 3);
+    REQUIRE(addera(5, 10) == 15);
+    REQUIRE(addera(0, 0) == 0);
 }
 ```
 
-I detta exempel testas en funktion "add" som tar två heltal som parametrar och returnerar summan av dem. Med hjälp av "TEST_CASE" definierar vi en testfunktion med ett namn och sedan testar vi funktionen med hjälp av "REQUIRE" som kontrollerar att resultatet är det förväntade.
+I det här fallet testar vi funktionen "addera" som vi har skapat i vår kodfil "minKod.hpp". Vi använder oss av assertionen "REQUIRE" för att säkerställa att resultatet är det förväntade.
 
-När vi kör detta test med hjälp av Catch2 kommer vi att se följande output:
+##Djupdykning i skrivandet av tester
 
-```text
-===============================================================================
-All tests passed (1 assertion in 1 test case)
-```
+För att skriva effektiva tester är det viktigt att tänka på några grundläggande principer. En av dessa är att testerna ska vara isolerade från varandra, vilket betyder att ett test inte ska påverka ett annat test. Detta förhindrar oönskade bieffekter och gör det enklare att hitta och lösa problem.
 
-Detta visar att vårt test har gått igenom och allt fungerar som vi förväntar oss.
+Det är också viktigt att skapa testfall för olika scenarion, både för de förväntade och oönskade resultaten. På så sätt kan du vara säker på att din kod fungerar som den ska i olika situationer.
 
-## Djupdykning
+Testdriven utveckling (TDD) är en metod där man skriver tester först och sedan utvecklar koden utifrån dessa tester. Detta hjälper till att skapa en tydlig struktur och förhindrar onödiga buggar i koden.
 
-När du skriver tester är det viktigt att tänka på olika scenarier och gränsvärden för att täcka så mycket av din kod som möjligt. Det är också viktigt att kontrollera att felhantering fungerar korrekt och att dina tester är tillförlitliga.
+##Se även
 
-Ett annat tips för att skriva bra tester är att använda sig av "AAA"-principen, vilket står för "Arrange, Act, Assert". Det innebär att du ska förbereda testet genom att sätta upp ett scenario, utföra testet och sedan kontrollera att resultatet är det förväntade.
+- [An Introduction to Catch2](https://github.com/catchorg/Catch2/blob/devel/docs/tutorial.md)
+- [Test-Driven Development with Catch2](https://blog.jetbrains.com/clion/2017/05/test-driven-development-with-catch/)
+- [Google Test and Google Mock](https://github.com/google/googletest)
 
-Det finns många olika tekniker och strategier för att skriva tester och det bästa sättet är att utforska och experimentera för att hitta det som fungerar bäst för dig och ditt projekt.
-
-## Se även
-
-- [Google Test](https://github.com/google/googletest)
-- [Catch2](https://github.com/catchorg/Catch2)
-- [TDD i C++](https://www.bitdegree.org/learn/tdd-cpp)
-- [Test-driven development för nybörjare](https://www.freecodecamp.org/news/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2/)
+Testning är en viktig del av utvecklingsprocessen och det är värt att lägga tid och resurser på att skapa bra tester. Med rätt verktyg och metoder kan du försäkra dig om att din kod är stabil och hållbar. Lycka till med dina tester!

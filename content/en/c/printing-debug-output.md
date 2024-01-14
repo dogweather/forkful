@@ -1,48 +1,82 @@
 ---
-title:    "C recipe: Printing debug output"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/printing-debug-output.md"
+title:                "C recipe: Printing debug output"
+programming_language: "C"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-Debugging is an essential part of the software development process, and printing debug output is a crucial tool for identifying and fixing errors in code. It allows developers to see the state of variables, the flow of execution, and any potential errors that may occur during runtime. Without debug output, it can be challenging to pinpoint the exact cause of a problem, leading to longer debugging times and frustration.
+Have you ever encountered a bug in your code and spent hours trying to figure out what went wrong? Debug output can be a lifesaver in these situations. By printing out specific variables or messages during program execution, you can gain insights into the code and identify the root cause of the bug.
 
-## How To
+## How To 
 
-To print debug output in C, we use the `printf()` function from the standard input-output library `stdio.h`. It takes in a string of characters (known as format string) and optional arguments, which are then formatted and displayed on the screen. Let's see an example:
+Printing debug output in C is a simple process. You can use the `printf()` function to display the value of a variable or a message on the console. Let's take a look at a simple example:
 
-```
+```C
 #include <stdio.h>
 
 int main()
 {
-    int num = 10;
-    printf("The value of num is %d\n", num);
-    return 0;
+  int num1 = 10;
+  int num2 = 5;
+
+  printf("The value of num1 is %d\n", num1);
+  printf("The value of num2 is %d\n", num2);
+
+  return 0;
 }
 ```
 
-In the above code, we use the `%d` specifier in the format string to indicate that we want to print an integer value, which is provided as an argument after the comma. The output of this code would be:
+Output:
 
 ```
-The value of num is 10
+The value of num1 is 10
+The value of num2 is 5
 ```
 
-We can also use other specifiers, such as `%f` for floating-point values, `%c` for characters, and `%s` for strings. Additionally, we can use escape sequences like `\n` or `\t` to format the output.
+In the above code, we use the `%d` format specifier to print the value of the `num1` and `num2` variables. You can also use other format specifiers according to the data type of the variable, such as `%f` for floating-point numbers and `%c` for characters.
 
-## Deep Dive
+Besides displaying variable values, you can also print out messages to provide additional information about the program's execution. For example:
 
-While `printf()` is the standard way to print debug output, there are other options available, such as `fprintf()` and `sprintf()`. `fprintf()` allows us to print to a specific output stream, such as a file, while `sprintf()` allows us to store the formatted output in a string variable instead of printing it on the screen.
+```C
+#include <stdio.h>
 
-Another useful function is `assert()`, which is used for debugging by checking if a condition is true and stopping the program if it is not. This can help catch bugs early on, instead of spending hours trying to find the cause of a runtime error.
+int main()
+{
+  int age = 25;
 
-Using preprocessor macros like `#define DEBUG` and using an `#ifdef` statement, we can selectively print debug output only when needed. This is particularly useful when working with large projects where printing too much output can be overwhelming.
+  if(age >= 18)
+    printf("You are eligible to vote!\n");
+  else
+    printf("You are not eligible to vote yet.\n");
 
-## See Also
+  return 0;
+}
+```
 
-- [Debugging in C - GeeksforGeeks](https://www.geeksforgeeks.org/debugging-c-set-1-simple-macro/)
-- [C Debugging Tools for Linux - IBM Developer](https://developer.ibm.com/technologies/systems/articles/au-dmdebug-linux/)
-- [Debugging Tutorials for C/C++ Programmers - Tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_debugging.htm)
+Output:
+
+```
+You are eligible to vote!
+```
+
+## Deep Dive 
+
+There are a few best practices to keep in mind when using debug output in your C programs. 
+
+First, it's essential to use meaningful variable names. This makes it easier to understand the output and reduces confusion. Additionally, you can use comments to explain the purpose of each `printf()` statement.
+
+Second, you can use conditional statements to control when debug output is displayed. This way, you can turn off the debug output when you no longer need it.
+
+Lastly, remember to remove all debug output statements before releasing your code. Leaving them in the final version can impact performance and lead to cluttered code.
+
+## See Also 
+
+- [Debugging Guide for C Programmers](https://www.learnc.org/c-programming/debugging)
+- [The Importance of Good Variable Naming in C](https://medium.com/swlh/the-importance-of-good-variable-naming-in-c-f58e175f6939)
+- [Tips for Debugging in C](https://barrgroup.com/embedded-systems/how-to/debugging-c-program-cortex-m)
+
+By using these techniques, you can effectively use debug output to troubleshoot your code and streamline the debugging process. Happy coding!

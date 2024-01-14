@@ -1,51 +1,42 @@
 ---
-title:    "C++: Sammanslagning av strängar"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/concatenating-strings.md"
+title:                "C++: Sammanslagning av strängar"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att sammanslå strängar, även kallat konkatinering, är en vanlig teknik inom C++ programmering. Det kan användas för att skapa mer dynamiska och anpassningsbara textutmatningar i ditt program.
+Att sammanslå strängar är en viktig del av programmering, särskilt i C++. Det låter dig kombinera flera bitar av text till en och använda den för olika ändamål, som att skapa dynamiska meddelanden eller formulär.
 
-## Hur man gör det
+## Hur man gör
 
-I C++ finns det två olika sätt att sammanslå strängar: med hjälp av betingade operationer (+=) eller med en särskild funktion som heter strängkonkatinering. Här är ett exempel på hur man kan använda båda metoderna:
+Det finns flera sätt att sammanfoga strängar i C++. Ett sätt är genom att använda inbyggda funktioner, som `std::string::append()` eller operatorn `+`. Här är ett exempel på hur man använder `<string>` biblioteket för att sammanslå två strängar:
 
 ```C++
-//Betingad operation
-string förnamn = "Lisa";
-string efternamn = "Andersson";
-förnamn += efternamn;
-cout << förnamn << endl;
+#include <iostream>
+#include <string>
 
-//Strängkonkatinering
-string förnamn = "Lisa";
-string efternamn = "Andersson";
-string namn = förnamn.append(efternamn);
-cout << namn << endl;
+int main() {
+  std::string förnamn = "Emil";
+  std::string efternamn = "Johansson";
+  std::string namn = förnamn + " " + efternamn;
+  std::cout << namn << std::endl;
+}
 ```
+*Output: Emil Johansson*
 
-Det första exemplet använder betingad operation för att sammanslå strängarna "Lisa" och "Andersson" och lagra resultatet i variabeln "förnamn". Det andra exemplet använder strängkonkatinering för att göra samma sak, men lagrar resultatet i en ny variabel "namn". Båda kodexemplen ger samma utmatning: "LisaAndersson".
+Det finns också andra metoder som `std::stringstream` eller `sprintf()` som kan användas för att sammanslå strängar på ett mer effektivt sätt.
 
 ## Djupdykning
 
-När man sammanslår strängar i C++ är det viktigt att förstå att de olika metoderna har olika egenskaper. Betingad operation lägger till strängar på slutet av en befintlig sträng medan strängkonkatinering faktiskt skapar en helt ny sträng. Detta kan påverka prestandan i ditt program, speciellt om du sammanslår strängar inuti en loop.
-
-Det finns också vissa aspekter av sammansättning av strängar som man bör vara medveten om:
-
-- Strängkonkatinering är effektivare när man behöver sammanslå flera strängar
-- Det är viktigt att ha rätt datatyp på variablerna när man använder betingad operation, annars kan det leda till oförutsedda resultat
-- Olika programmeringsplattformar kan ha olika sätt att hantera specialtecken och teckentabeller när man sammanslår strängar, se till att ha koll på detta om ditt program behöver skriva ut specialtecken
+När du sammanslår strängar är det viktigt att se till att du hanterar minnesallokering och avslutning av strängen på rätt sätt, särskilt när du hanterar stora mängder data. I C++ kan fel hantering av dynamiska strängar leda till minnesläckor eller bufferöverskridningar. Det är därför viktigt att förstå och använda rätt metoder för att undvika sådana problem när du sammanslår strängar.
 
 ## Se också
 
-Om du vill lära dig mer om sammanslagning av strängar i C++, kolla gärna på dessa länkar:
-
-- [C++ String Concatenation Guide (engelska)](https://www.techiedelight.com/concatenate-strings-cpp/)
-- [C++ String Concatenation Tutorial (engelska)](https://www.programiz.com/cpp-programming/string-concatenation)
-- [C++ String Concatenation - All You Need to Know (engelska)](https://www.educba.com/string-concatenation-in-cpp/)
-
-Lycka till med din strängkonkatinering!
+* [C++ - Strings](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
+* [C++ String Concatenation](https://www.programiz.com/cpp-programming/library-function/cin)
+* [C++ String Streams](https://www.geeksforgeeks.org/converting-strings-numbers-cc/)
+* [C++ String Formatting](https://www.cplusplus.com/reference/cstdio/printf/)

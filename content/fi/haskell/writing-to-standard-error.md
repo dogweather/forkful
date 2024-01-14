@@ -1,45 +1,38 @@
 ---
-title:    "Haskell: Kirjoittaminen standardi virheeseen"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/writing-to-standard-error.md"
+title:                "Haskell: Kirjoittaminen standardivirheeseen"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi kirjoittaa standardivirheeseen?
 
-Haskellissa on useita tapoja kirjoittaa tietoa ulos ohjelmasta. Yksi tärkeä tapa on kirjoittaa tietoa standardivirheelle (standard error). Tässä blogikirjoituksessa käymme läpi, miksi kirjoittaminen standardivirheelle voi olla hyödyllistä ja kuinka se tehdään Haskellissa.
+Kirjoittaminen standardivirheeseen on tärkeä osa Haskell-ohjelmointia. Se antaa mahdollisuuden näyttää käyttäjälle virheilmoituksia ja suorituksen aikana tapahtuvia ilmoituksia, jotka auttavat tunnistamaan ja korjaamaan mahdolliset ongelmat ohjelmassa.
 
-## Kuinka tehdä se
+## Kuinka kirjoittaa standardivirheeseen
 
-Kirjoittaminen standardivirheelle on yksinkertaista Haskellissa. Käytämme siihen `putStrLn`-funktiota ja välittäämme sille virheilmoituksen merkkijonona.
-
-```Haskell
-putStrLn "Tämä on virheilmoitus standardivirheelle!"
-```
-
-Kun ohjelma suoritetaan, tämä merkkijono tulostuu standardivirheelle. Voimme myös yhdistää useita merkkijonoja `++`-operaattorilla ja välittää ne yhtenä virheilmoituksena.
+Haskellissa standardivirheeseen kirjoittaminen tapahtuu käyttämällä funktiota `hPutStrLn` ja tuoden sisään `stderr` -moduulin. Alla on yksinkertainen esimerkki ohjelmasta, joka kirjoittaa "Hei maailma!" standardivirheeseen.
 
 ```Haskell
-putStrLn $ "Virhe: " ++ "Tämä on virheilmoitus."
+import System.IO
+
+main :: IO ()
+main = do
+    hPutStrLn stderr "Hei maailma!"
 ```
 
-Tämä tulostaa "Virhe: Tämä on virheilmoitus." standardivirheelle.
+Tämän ohjelman tulosteessa näkyy "Hei maailma!" standardivirheessä.
 
-Voimme myös käyttää `fail`-funktiota toteuttamaan oman virheenkäsittelylogiikkamme. `fail` ottaa argumenttina virheilmoituksen ja palauttaa `IO`-tyypin arvon, joka sisältää kyseisen virheen.
+## Syvempää tietoa standardivirheeseen kirjoittamisesta
 
-```Haskell
-fail "Tämä on virheilmoitus."
-```
+On hyvä huomioida, että standardivirheessä kirjoittaminen on yleensä kätevämpi tapa käsitellä virheitä ja poikkeuksia kuin standarditulosteen käyttäminen. Tämä johtuu siitä, että standardivirheen sisältö ei sekoitu varsinaisen tulosteen kanssa ja se pysyy käytettävissä koko ohjelman suorituksen ajan.
 
-## Syvällisempi sukellus
+Kaikkien Haskell-ohjelmien tulisi ottaa huomioon mahdolliset virhetilanteet ja ilmoittaa niistä käyttäjälle standardivirheen avulla. Siten käyttäjä saa tietoa mahdollisista ongelmista ja osaa korjata ne tarvittaessa.
 
-Mutta miksi kirjoittaa tietoa standardivirheelle? Usein haluamme erottaa normaalit tulostukset ja virheilmoitukset toisistaan. Virheilmoituksia käytetään usein silloin, kun jotain on mennyt pieleen ohjelman suorituksessa. Tällöin virheen ilmoittaminen standardivirheelle erottaa sen muista tulostuksista ja helpottaa virheen löytämistä.
+# Katso myös
 
-Lisäksi kirjoittaminen standardivirheelle on hyödyllistä silloin, kun haluamme käsitellä virheitä jollakin tavalla. Voimme lukea standardivirhettä toisessa osassa ohjelmaa ja käsitellä virheet erikseen. Tämä auttaa meitä tekemään ohjelmistamme luotettavampia.
-
-## Katso myös
-
-[Täydellinen opas Haskellin tulostusominaisuuksiin](https://www.haskell.org/tutorial/io.html#output)
-
-[Haskellin dokumentaatio standardovirhelogiikasta](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO-Error.html)
+- [Haskellin virallinen dokumentaatio standardivirheen käytöstä](https://www.haskell.org/documentation/library/base-4.15.0.0/System-IO.html#v:hPutStrLn)
+- [Haskellin virallinen dokumentaatio virheenhallinnasta ja poikkeusten käsittelystä](https://wiki.haskell.org/Error_codes)
+- [Hyödyllisiä vinkkejä standardivirheen käyttöön Haskellissa](https://www.stackbuilders.com/blog/exception-handling-pattern-haskell)

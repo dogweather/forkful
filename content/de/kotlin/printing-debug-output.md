@@ -1,96 +1,59 @@
 ---
-title:    "Kotlin: Ausgabe von Fehlersuche ausdrucken"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/printing-debug-output.md"
+title:                "Kotlin: Ausgabe von Debug-Daten"
+programming_language: "Kotlin"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Debug-Sausgaben sind eine hilfreiche Methode, um den Programmierfluss zu verstehen, Fehler zu finden und die Funktionalität von Code zu überprüfen. Sie ermöglichen es, Variablenwerte und Codefortschritt zu verfolgen, um sicherzustellen, dass das Programm wie erwartet funktioniert.
+Beim Programmieren tritt man oft auf Fehler oder unerwartete Ergebnisse. Das Hinzufügen von Debug-Ausgaben (Ausgaben zur Fehlerbehebung) kann dabei helfen, diese schnell zu identifizieren und zu beheben. Mit Kotlin können Sie einfach und effektiv Debug-Ausgaben erstellen.
 
-## Wie geht's?
+## Wie man Debug-Ausgaben druckt
 
-Um Debug-Sausgaben in Ihrem Kotlin-Code zu verwenden, müssen Sie zuerst die Standardbibliothek `kotlin.io` importieren. Dann können Sie die `println()`-Funktion verwenden, um eine Ausgabe auf der Konsole zu erstellen.
-
-```Kotlin
-import kotlin.io
-
-fun main() {
-    val name = "Sabine"
-    println("Hallo, $name!")
-}
-
-// Ausgabe: Hallo, Sabine!
-```
-
-Sie können auch mehrere Variablen in einer Debug-Sausgabe kombinieren:
+Verwenden Sie die Standardbibliotheksfunktion `println()` oder `print()` in Kombination mit der `run()` Funktion, um schnell Debug-Ausgaben zu erstellen. Hier ist ein Beispiel:
 
 ```Kotlin
-val num1 = 5
-val num2 = 7
-println("Die Summe von $num1 und $num2 ist ${num1 + num2}.")
-
-// Ausgabe: Die Summe von 5 und 7 ist 12.
+val number = 5
+println("Die Nummer ist $number")
 ```
 
-Wenn Sie Ihre Ausgabe übersichtlicher gestalten möchten, können Sie auch die `println()`-Funktion mit der `if`-Anweisung verwenden:
+Dies würde die folgende Ausgabe erzeugen: "Die Nummer ist 5". Beachten Sie die Verwendung von `$`, um die Variable `number` in den String einzufügen.
+
+Sie können auch das `debug()` Statement verwenden, um Debug-Ausgaben zu spezifischen Eigenschaften oder Variablen zu erstellen. Hier ist ein Beispiel:
 
 ```Kotlin
-val num = 8
-println("Die Zahl ist ${if (num % 2 == 0) "gerade" else "ungerade"}.")
-
-// Ausgabe: Die Zahl ist gerade.
+val text = "Hallo!"
+debug(text)
 ```
 
-## Tiefer eintauchen
+Dies würde die folgende Ausgabe erzeugen: "text = Hallo!". Beachten Sie, dass `debug()` eine Erweiterungsfunktion von `println()` ist, die es ermöglicht, Variablen und Eigenschaften direkt zu übergeben.
 
-Es gibt viele Möglichkeiten, Debug-Sausgaben in Ihrem Kotlin-Code zu verwenden. Sie können auch die `readLine()`-Funktion verwenden, um Variableneingaben vom Benutzer zu erhalten und sie dann in einer Debug-Sausgabe zu verwenden.
+## Tiefere Einblicke
+
+Sie können die Debug-Ausgaben auch mithilfe von Anführungszeichen und Dollarzeichen formatieren. Hier ist ein Beispiel:
 
 ```Kotlin
-println("Bitte geben Sie Ihren Namen ein:")
-val name = readLine()
-println("Hallo, $name!")
-
-// Eingabe "Sabine"
-// Ausgabe: Bitte geben Sie Ihren Namen ein:
-// Sabine
-// Hallo, Sabine!
+val radius = 5.0
+println("Der Radius beträgt ${"%.2f".format(radius)}")
 ```
 
-Debug-Sausgaben sind auch nützlich, wenn Sie komplexe Funktionen oder Schleifen in Ihrem Code haben. Sie können Ihre Ausgaben in verschiedenen Bereichen platzieren, um zu überprüfen, ob der Code wie erwartet funktioniert oder um Fehler zu finden:
+Dies würde die folgende Ausgabe erzeugen: "Der Radius beträgt 5.00". Beachten Sie die Verwendung von `%.2f` innerhalb von `{}`, um den Radius auf zwei Dezimalstellen zu formatieren.
+
+Es ist auch möglich, mehrere Variablen oder Eigenschaften in eine Debug-Ausgabe einzufügen. Hier ist ein Beispiel:
 
 ```Kotlin
-fun calculateAverage(numbers: List<Int>) {
-    // Debug-Sausgabe vor der Schleife
-    println("Die Liste enthält folgende Zahlen: $numbers.")
-    var sum = 0
-    for (num in numbers) {
-        // Debug-Sausgabe innerhalb der Schleife
-        println("Die Summe beträgt derzeit $sum.")
-        sum += num
-    }
-    // Debug-Sausgabe nach der Schleife
-    println("Die Summe der Zahlen ist $sum.")
-    val average = sum / numbers.size
-    println("Der Durchschnitt der Zahlen ist $average.")
-}
-
-calculateAverage(listOf(5, 9, 12, 4, 8))
-
-// Ausgabe: Die Liste enthält folgende Zahlen: [5, 9, 12, 4, 8].
-// Die Summe beträgt derzeit 0.
-// Die Summe beträgt derzeit 5.
-// Die Summe beträgt derzeit 14.
-// Die Summe beträgt derzeit 26.
-// Die Summe beträgt derzeit 30.
-// Die Summe der Zahlen ist 30.
-// Der Durchschnitt der Zahlen ist 6.
+val vorname = "Max"
+val nachname = "Mustermann"
+val alter = 25
+println("$vorname $nachname, Alter: $alter")
 ```
+
+Dies würde die folgende Ausgabe erzeugen: "Max Mustermann, Alter: 25".
 
 ## Siehe auch
 
-- [Offizielle Kotlin-Dokumentation zur `kotlin.io`-Bibliothek](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
-- [Tutorial zur Verwendung von Debug-Sausgaben in Kotlin](https://www.baeldung.com/kotlin/print-calls)
-- [Weitere Ressourcen zum Debugging in Kotlin](https://www.raywenderlich.com/1161814-kotlin-debugging-tutorial)
+- [Kotlin - Standardbibliothek](https://kotlinlang.org/api/latest/jvm/stdlib/)
+- [Kotlin - Debugging](https://kotlinlang.org/docs/reference/debugging.html)

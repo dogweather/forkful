@@ -1,50 +1,78 @@
 ---
-title:    "Kotlin: パターンに一致する文字を削除する"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/deleting-characters-matching-a-pattern.md"
+title:                "Kotlin: Patten ni matawaru moji no sakujo"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+### なぜ
+なぜあるパターンに合致する文字を削除する必要があるのでしょうか？その理由を簡単に説明します。
 
-あなたはプログラミングをするとき、時々文字のパターンに合致する文字を削除したくなることがあります。この記事では、Kotlinを使って文字のパターンに合致する文字を削除する方法を紹介します。
+文字列の処理において、不要な文字を削除することは非常に一般的な操作です。例えば、入力された文字列から数字のみを取り出したい場合や、特定の文字を含んでいる行を削除したい場合などに利用されます。
 
-## 方法
+しかし、単純な文字列削除ではなく、あるパターンに合致する文字を削除する場合もあります。これはより複雑な処理であり、その必要性を感じることもあるでしょう。
 
-まず、削除したい文字列を含む変数を作成します。
-
-```Kotlin
-var sentence = "私はカフェでコーヒーを飲むのが好きです。"
-```
-
-次に、削除したい文字のパターンを正規表現で定義します。例えば、文字列から「カフェで」を削除したい場合、正規表現としては「カフェで」の部分を指定する必要があります。
+### 方法
+まずは、Kotlinで文字列の中から特定のパターンに合致する文字を削除する方法を見ていきましょう。下記のコードは、regexを使用して特定のパターンに合致する文字を置換するものです。
 
 ```Kotlin
-var pattern = "カフェで"
+fun main() {
+    val str = "abc123def456ghi789"
+    val pattern = Regex("[0-9]")
+    val result = str.replace(pattern, "")
+    println(result)
+}
 ```
 
-最後に、`replace()`関数を使って削除したい文字を指定し、新しい文字列を得ることができます。
+上記のコードを実行すると、出力結果は以下のようになります。
+
+```
+abcdefghijkl
+```
+
+このように、数字だけが置換され、文字列から削除されました。このように、Regexを使用することで、特定のパターンに合致する文字を効率的に削除することができます。
+
+次に、文字列の中から特定の文字を削除する方法を見てみましょう。こちらはreplace関数を使用して行います。
 
 ```Kotlin
-var newSentence = sentence.replace(pattern, "")
-println(newSentence)
+fun main() {
+    val str = "I love Kotlin programming!"
+    val result = str.replace(" ", "")
+    println(result)
+}
 ```
 
-実行すると、以下のような結果が得られます。
+出力結果は以下のようになります。
 
 ```
-私はコーヒーを飲むのが好きです。
+IloveKotlinprogramming!
 ```
 
-## 詳細
+今度は、空白の代わりに別の文字を置換する方法を見てみましょう。次のコードは、空白を「-」に置き換えるものです。
 
-`replace()`関数は、正規表現にマッチする文字列を削除するだけでなく、別の文字列に置き換えることもできます。また、`replace()`関数は文字列だけでなく、StringBuilderやRegexクラスオブジェクトでも使用することができます。
+```Kotlin
+fun main() {
+    val str = "I love Kotlin programming!"
+    val result = str.replace(" ", "-")
+    println(result)
+}
+```
 
-`replace()`関数の他にも、`replaceFirst()`や`replaceAfter()`などの関数があります。これらの関数は指定した文字列を最初の1つや最後の1つだけ置き換えることができます。詳しくは公式ドキュメントを参照してください。
+出力結果は以下のようになります。
 
-## 関連記事
+```
+I-love-Kotlin-programming!
+```
 
-- [Kotlin String manipulation](https://dev.to/ecorrea/kotlin-string-manipulation-c6o)
-- [Kotlin Regular Expressions](https://www.baeldung.com/kotlin-regular-expressions)
-- [Kotlin Strings](https://kotlinlang.org/docs/basic-syntax.html#strings)
+今回も、必要な文字を含めて置換されました。このように、Stringクラスのreplace関数を利用することで、文字列内の特定の文字を効率的に削除することができます。
+
+### 深堀り
+では、前述のコードで使用したRegexやreplace関数の詳細について深く掘り下げてみましょう。
+
+まず、Regexクラスは、正規表現を扱うことができるクラスです。正規表現とは、特定のパターンを表現するための文字列のことです。例えば、[0-9]という正規表現は0から9までの数字のいずれかに合致することを意味します。
+
+Regexクラスを使用することで、特定のパターンに合致する文字を見つけることができます。そして、replace関数を使用することで、見つかった文字を別の文字で置き換えることができます。
+
+また、replace関数は利用する際にRegExpパラメータを指定することができます。これにより、置き換える文字をより細かく指定するこ

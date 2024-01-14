@@ -1,74 +1,44 @@
 ---
-title:    "Bash: Ekstrakcja podciągów"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/extracting-substrings.md"
+title:                "Bash: Wyodrębnianie podłańcuchów"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często w programowaniu w Bash zdarza się, że potrzebujemy wyodrębnić tylko część tekstu z danego stringa. To może być na przykład nazwa pliku lub kawałek tekstu ze zmiennej. W takich sytuacjach przydatne jest wykorzystanie funkcji do wydobywania podciągów.
+Jeśli zajmujesz się programowaniem w Bash lub masz w planach zacząć, to na pewno natknąłeś się na potrzebę wyodrębnienia fragmentów tekstu. To często przydatne w różnych scenariuszach, na przykład podczas przetwarzania dużych plików tekstowych lub analizy danych. W tym artykule dowiecie się, jak wykorzystać to narzędzie do ekstrakcji podciągów w Bash.
 
-## Jak to zrobić?
+## Jak To Zrobić
 
-W Bash istnieją różne sposoby na wyciągnięcie podciągu ze stringa, a wszystkie opierają się na wykorzystaniu operatora nawiasów kwadratowych `[]` lub podwójnych nawiasów kwadratowych `[[]]`. Przykładowa składnia wygląda następująco:
+Kodowanie w Bash jest proste i szybkie, dlatego osoby pracujące w tym środowisku często wybierają je do ekstrakcji podciągów. Aby wyodrębnić fragment tekstu, wystarczy użyć funkcji `cut` lub `awk`. Poniżej znajdują się przykładowe kody z wynikami dla obu tych opcji, wykorzystując polecenie `echo` do wyświetlenia tekstu.
 
-```Bash
-$ string="To jest przykładowy string"
+### Przykład 1: Wykorzystanie funkcji `cut`
 
-# Przykład 1: Wyodrębnienie podciągu zaczynając od indeksu 3
-$ echo ${string:3}
- jest przykładowy string
-
-# Przykład 2: Wyodrębnienie podciągu zaczynając od indeksu 3 i zawierającego tylko 6 znaków
-$ echo ${string:3:6}
- jest p
-
-# Przykład 3: Wyodrębnienie podciągu od końca (należy podać liczby ujemne)
-$ echo ${string: -6}
-string
+```
+Bash echo "Lorem ipsum dolor sit amet" | cut -d ' ' -f 2-4
+# Output: ipsum dolor sit
 ```
 
-W powyższych przykładach `string` jest zmienną, a liczby po dwukropku oznaczają konkretny indeks, od którego ma zacząć lub kończyć się wyodrębnianie podciągu.
+W powyższym przykładzie wykorzystaliśmy funkcję `cut` z argumentami `-d` (delimiter) ustawionym na spację oraz `-f` (field) ustawionym na zakres pól od drugiego do czwartego, co pozwala nam na wyodrębnienie wybranego fragmentu tekstu.
 
-Istnieje również możliwość użycia operatora `%` i `%%` oraz `#` i `##` do wyodrębnienia podciągów na podstawie wystąpienia danego znaku lub ciągu znaków. Przykłady:
+### Przykład 2: Wykorzystanie funkcji `awk`
 
-```Bash
-$ file="file_name.txt"
-
-# Przykład 1: Wyodrębnienie nazwy pliku bez rozszerzenia
-$ echo ${file%.*}
-file_name
-
-# Przykład 2: Wyodrębnienie nazwy pliku bez rozszerzenia od końca (należy podać liczbę ujemną)
-$ echo ${file%-*}
-file
+```
+Bash echo "Lorem ipsum dolor sit amet" | awk '{print $3,$4,$5}'
+# Output: dolor sit amet
 ```
 
-## Głębszy wgląd
+W drugim przykładzie skorzystaliśmy z funkcji `awk` z poleceniem `print` w celu wyświetlenia wybranych pól tekstu, w tym przypadku trzeciego, czwartego i piątego.
 
-W przypadku bardziej skomplikowanych operacji na podciągach, można wykorzystać komendę `sed` lub `awk`. Na przykład, aby usunąć wszystkie cyfry z danego ciągu znaków można wykorzystać poniższą komendę z wykorzystaniem `sed`:
+## Głębsza Analiza
 
-```Bash
-$ string="The 16 awesome 1 things"
+Ekstrakcja podciągów jest możliwa dzięki funkcji `cut` lub `awk`, które są w stanie przetwarzać duże ilości tekstu w krótkim czasie. Aby uzyskać lepsze zrozumienie działania tych funkcji, warto zapoznać się z dodatkowymi opcjami, na przykład wybieraniem konkretnych znaków lub wykorzystaniem separatora innych niż spacja.
 
-# Wyświetlanie stringa bez cyfr
-$ echo $string | sed 's/[0-9]//g'
-The  awesome  things
-```
+## Zobacz Również
 
-Można również wykorzystać `awk` do zaawansowanego przetwarzania podciągów na podstawie warunków i separacji na podstawie danego znaku lub słowa. Przykład:
-
-```Bash
-$ string="Hello,World,Code"
-
-# Wyświetlanie pierwszego słowa
-$ echo $string | awk -F "," '{print $1}'
-Hello
-```
-
-## Zobacz także
-
-- [Bash String Manipulation](https://www.baeldung.com/linux/bash-string-manipulation)
-- [Useful Bash String Manipulation Techniques](https://linuxize.com/post/bash-string-manipulation/)
+1. [Dokumentacja polecenia cut](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html)
+2. [Dokumentacja polecenia awk](https://www.gnu.org/software/gawk/manual/html_node/index.html)
+3. [Wstęp do programowania w Bash](https://programminghistorian.org/en/lessons/intro-to-bash)

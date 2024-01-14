@@ -1,48 +1,67 @@
 ---
-title:    "Rust: Erstellung einer temporären Datei"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/creating-a-temporary-file.md"
+title:                "Rust: Erstellen einer temporären Datei"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Das Erstellen temporärer Dateien ist in vielen Programmen ein wichtiger Bestandteil. Es ermöglicht die temporäre Speicherung von Daten, ohne dass dauerhafte Dateien erstellt werden müssen. Dadurch können Programme effizienter arbeiten und Speicherplatz wird optimal genutzt.
+##Warum
 
-## Wie funktioniert das?
-Das Erstellen einer temporären Datei in Rust ist ein einfacher Prozess. Zunächst muss das Modul "std::fs" importiert werden. Dann kann die Funktion "std::fs::tempfile()" aufgerufen werden, um eine neue temporäre Datei zu erstellen.
+Das Erstellen von temporären Dateien kann in vielen Anwendungsfällen nützlich sein. Zum Beispiel kann es hilfreich sein, um temporäre Daten zu speichern, während ein Programm läuft, oder um vorübergehend Daten zwischen verschiedenen Prozessen auszutauschen. In Rust gibt es verschiedene Möglichkeiten, um temporäre Dateien zu erstellen, die in diesem Blogbeitrag näher erläutert werden.
 
-```Rust
-use std::fs;
+##Wie man in Rust temporäre Dateien erstellt
 
-let temp_file = fs::tempfile().expect("Konnte keine temporäre Datei erstellen.");
-```
-
-Die Funktion gibt ein Objekt vom Typ "std::fs::File" zurück, das auf die erstellte temporäre Datei verweist. Nun können Daten in diese Datei geschrieben werden, indem die Funktionen "write()" oder "write_all()" aufgerufen werden.
+Um in Rust eine temporäre Datei zu erstellen, gibt es mehrere Optionen. Eine Möglichkeit ist die `tempfile`-Bibliothek, die vom Rust-Team bereitgestellt wird.
 
 ```Rust
-temp_file.write(b"Hallo Welt!").expect("Konnte nicht in die Datei schreiben.");
+use tempfile::NamedTempFile;
+
+let mut temp_file = NamedTempFile::new().expect("Konnte keine temporäre Datei erstellen");
+let file_path = temp_file.path();
+
+println!("Dateipfad: {:?}", file_path);
 ```
 
-Das "b" vor dem String zeigt an, dass es sich um einen Byte-String handelt. Dies ist notwendig, da die Funktionen "write()" und "write_all()" nur mit Byte-Daten arbeiten.
+Dieses Beispiel importiert die `NamedTempFile`-Struktur aus der `tempfile`-Bibliothek und erstellt dann eine temporäre Datei mit der `new()`-Methode. Mit der `path()`-Methode können wir den Pfad zur erstellten temporären Datei abrufen und diesen dann beispielsweise für weitere Operationen verwenden.
 
-## Tiefgründige Analyse
-Wenn eine temporäre Datei erstellt wird, wird sie automatisch im vom System vorgegebenen temporären Verzeichnis gespeichert. Dieses Verzeichnis kann mithilfe der Funktion "tmpdir()" aus dem Modul "std::fs" abgerufen werden.
+Eine weitere Möglichkeit, temporäre Dateien in Rust zu erstellen, ist über die `fs`-Bibliothek des Standardpakets.
 
 ```Rust
-let temp_dir = fs::tmpdir();
-println!("Temporäres Verzeichnis: {}", temp_dir.to_str().unwrap());
+use std::fs::File;
+use std::io::prelude::*;
+
+let mut temp_file = File::create("temp.txt").expect("Konnte temporäre Datei nicht erstellen");
+
+temp_file.write_all(b"Dies ist eine temporäre Datei").expect("Konnte nicht in Datei schreiben");
 ```
 
-Es ist auch möglich, die Datei in einem bestimmten Verzeichnis zu erstellen, indem man der Funktion "tempfile()" einen Pfad als Argument übergibt.
+Dieses Beispiel erstellt eine temporäre Datei mit dem Namen "temp.txt" und schreibt dann einen Text in diese Datei.
+
+##Eintauchen in die Erstellung von temporären Dateien
+
+Beim Erstellen von temporären Dateien gibt es einige Dinge zu beachten. Zum einen sollten wir sicherstellen, dass wir die Datei nach ihrer Verwendung wieder löschen, um Ressourcen zu sparen und mögliche Konflikte zu vermeiden. Dazu können wir die `unlink()`-Methode verwenden.
 
 ```Rust
-fs::tempfile("/home/benutzer/temp/datei.txt");
+use tempfile::NamedTempFile;
+
+let mut temp_file = NamedTempFile::new().expect("Konnte keine temporäre Datei erstellen");
+
+// Hier können wir Operationen mit der Datei durchführen
+
+temp_file.unlink().expect("Konnte Datei nicht löschen");
 ```
 
-Es ist wichtig zu beachten, dass temporäre Dateien automatisch gelöscht werden, sobald sie aus dem Speicherbereich des Programms entfernt werden. Dies geschieht normalerweise beim Schließen des entsprechenden File-Objekts oder beim Beenden des Programms. Wenn jedoch eine temporäre Datei dauerhaft gespeichert werden soll, muss sie explizit umbenannt werden.
+Zum anderen ist es wichtig zu beachten, dass temporäre Dateien automatisch gelöscht werden, wenn sie ihren Scope verlassen. Das bedeutet, dass wir in Rust keine explizite Methode zum Löschen von temporären Dateien verwenden müssen, es sei denn, wir möchten dies ausdrücklich tun.
 
-## Siehe auch
-- [Offizielle Rust Dokumentation zu temporären Dateien](https://doc.rust-lang.org/std/fs/fn.tempfile.html)
-- [Weitere Informationen zu std::fs-Modul](https://doc.rust-lang.org/std/fs/index.html)
-- [Diskussion über die Verwendung von temporären Dateien in Rust](https://users.rust-lang.org/t/creating-a-temporary-file/10524)
+##Weitere Ressourcen
+
+* [Dokumentation zu tempfile](https://docs.rs/tempfile/3.1.0/tempfile/)
+* [Beispiel für die Erstellung von temporären Dateien in Rust](https://gist.github.com/leshow/25fdb37bd4e232b74ba1)
+* [Artikel über das Erstellen und Verwalten von temporären Dateien in Rust](https://stevedonovan.github.io/rust-gentle-intro/6-temp-files.html)
+
+##Siehe auch
+
+* [Rust Dokumentation auf Deutsch](https://www.rust-lang.org/de-DE/)
+* [Rust Beginners Guide auf Deutsch](https://www.besterkirchberg.de/rust/doc/Rust-Introduction-A-Deutsche-Einführung/8/index.html)

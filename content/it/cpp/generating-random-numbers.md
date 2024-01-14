@@ -1,44 +1,63 @@
 ---
-title:    "C++: Generare numeri casuali"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/cpp/generating-random-numbers.md"
+title:                "C++: Generazione di numeri casuali"
+programming_language: "C++"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Generare numeri casuali è un'attività molto comune nella programmazione, sia per scopi ludici che per fini più seri, come la creazione di dati di prova o la simulazione di eventi casuali. Inoltre, aiuta a rendere i programmi più dinamici e interessanti per l'utente.
 
-## Come fare
-Per generare numeri casuali in C++, è necessario utilizzare la funzione `rand()` dalla libreria standard `cstdlib`. Questa funzione restituisce un numero intero casuale compreso tra 0 e `RAND_MAX`, una costante definita nella libreria. Per ottenere un numero in un determinato intervallo, è possibile utilizzare il seguente codice:
+Generare numeri casuali è una capacità fondamentale che ogni programmatore dovrebbe avere. Questo può essere utile per creare dati di prova o per simulare situazioni randomiche all'interno del software. Inoltre, può essere un'ottima abilità per programmi di gioco o altre applicazioni che richiedono numeri casuali.
 
-```C++
-int random_number = rand() % (max - min + 1) + min;
-```
+## Come Fare
 
-Dove `max` e `min` rappresentano rispettivamente il valore massimo e minimo dell'intervallo desiderato. Ad esempio, per generare un numero casuale compreso tra 1 e 100, si potrebbe utilizzare il codice:
+Ci sono diversi modi per generare numeri casuali in C++. Uno dei più comuni è utilizzare la funzione `rand()` dalla libreria `cstdlib`. Questa funzione genera un numero intero casuale tra 0 e `RAND_MAX`, una costante definita nella libreria.
 
-```C++
-int random_number = rand() % 100 + 1;
-```
+Per utilizzare questa funzione, è necessario includere la libreria `cstdlib` nella parte superiore del file e inizializzare il generatore di numeri casuali utilizzando la funzione `srand()`, che richiede un valore intero come seed. Ad esempio, si può utilizzare il valore di tempo corrente come seed per ottenere una sequenza sempre diversa di numeri casuali.
 
-È importante inizializzare il generatore di numeri casuali con un seme, altrimenti gli stessi numeri verranno generati ogni volta che il programma viene eseguito. Per fare ciò, è possibile utilizzare il valore del tempo corrente come seme iniziale:
+Una volta inizializzato il generatore, è possibile utilizzare la funzione `rand()`, che restituirà un numero casuale ogni volta che viene chiamata. Per ottenere un numero all'interno di un range specifico, è possibile utilizzare l'espressione `min + rand() % (max - min + 1)`, dove `min` e `max` sono i limiti del range desiderato.
+
+Un esempio di codice che genera 5 numeri casuali compresi tra 1 e 10 potrebbe essere il seguente:
 
 ```C++
-srand(time(0));
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+
+int main() {
+  // Inizializza il generatore di numeri casuali
+  srand(time(0));
+  
+  // Genera e stampa i numeri casuali
+  for (int i = 0; i < 5; i++) {
+    int num = 1 + rand() % (10 - 1 + 1);
+    std::cout << num << std::endl;
+  }
+  
+  return 0;
+}
 ```
 
-Esempio di output:
+L'output potrebbe essere ad esempio:
 
 ```
-56
-12
-89
+3
+10
+7
+5
+1
 ```
 
-## Approfondimento
-La funzione `rand()` non è totalmente casuale, poiché utilizza un algoritmo per generare i numeri. Inoltre, il generatore di numeri casuali potrebbe non essere distribuito in modo uniforme, ovvero alcuni numeri possono essere più probabili di altri. Per ovviare a questi problemi, è possibile utilizzare librerie esterne che offrono funzioni di generazione di numeri casuali più sofisticate e accurate, come ad esempio la libreria Boost.Random.
+## Deep Dive
 
-## Vedi anche
-- [Documentazione della funzione `rand()`](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [Libreria Boost.Random](https://www.boost.org/doc/libs/1_70_0/doc/html/boost_random.html)
+La funzione `rand()` non è l'unica opzione per generare numeri casuali in C++. È possibile utilizzare anche la libreria `<random>` che offre diversi generatori di numeri casuali avanzati, come `mt19937` o `minstd_rand`.
+
+Inoltre, è importante ricordare che non tutti i generatori di numeri casuali sono effettivamente completamente casuali, ma si basano su algoritmi matematici. Quindi, se è necessario un alto livello di casualità, potrebbe essere utile utilizzare librerie di terze parti che offrono generatori basati su fenomeni fisici, come il rumore ambientale o l'attività delle radiazioni.
+
+## Vedi Anche
+
+- [Funzione `rand()` nella documentazione di C++](https://it.cppreference.com/w/cpp/numeric/random/rand)
+- [Libreria `<random>` nella documentazione di C++](https://it.cppreference.com/w/cpp/numeric/random)
+- [Libreria TrueRandom per generatori basati su fenomeni fisici](https://github.com/Bigjoe714/TrueRandom)

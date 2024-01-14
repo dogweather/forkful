@@ -1,40 +1,45 @@
 ---
-title:    "C#: Poistetaan kuvion mukaiset merkit"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/deleting-characters-matching-a-pattern.md"
+title:                "C#: Kuviota vastaavien merkkien poistaminen"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi poistaa merkkejä vastaavat kuvion?
 
-Miksi joku haluaisi poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Yksi syy voisi olla tietojen puhdistaminen tai muotoilu ennen niiden tallentamista tai käyttämistä. Tämä on erityisen hyödyllistä, kun käsitellään suuria määriä tekstidataa ja halutaan poistaa tiettyjä merkkejä tai sanoja, jotka häiritsevät analysointia.
+Joskus ohjelmointitehtävissä voi ilmetä tarve poistaa merkkejä tietyllä kuviossa, esimerkiksi tietyt kirjaimet tai numerot. Tämä voi olla tarpeellista esimerkiksi tietojen käsittelyssä tai tietokantojen hallinnassa. Tässä artikkelissa opit kuinka voit helposti poistaa merkkejä vastaavia kuvioita C# -ohjelmointikielen avulla.
 
-## Miten
+## Miten tehdä se?
 
-Voimme käyttää C # -kielen Replace-metodia poistamaan merkkejä, jotka täsmäävät tiettyyn kaavaan. Tämä metodi korvaa kaikki vastaavat merkit tyhjällä merkinnällä, jolloin ne poistetaan kokonaan. Katso esimerkki alla olevasta koodista ja sen tuottamasta tulosteesta.
+Poistaaksesi merkkejä vastaavia kuvioita voit käyttää C# string-olioiden Replace() -metodia. Tämä metodi ottaa vastaan kaksi parametria, ensimmäisenä merkkijonon joka halutaan korvata ja toisena korvaavan merkkijonon. Katso alla oleva koodiesimerkki, jossa merkki "a" korvataan tyhjällä merkkijonolla ("").
 
 ```C#
-// Alkuperäinen merkkijono
-string teksti = "Tervetuloa harrastamaan ohjelmointia!";
-
-// Korvataan välilyönnit tyhjällä merkkijonolla
-string puhdistettuTeksti = teksti.Replace(" ", "");
-
-// Tulostaa: Tervetuloaharrastamaanohjelmointia!
-Console.WriteLine(puhdistettuTeksti);
+string sana = "kissa";
+string korvattu = sana.Replace("a", "");
+Console.WriteLine(korvattu); // Tulostaa "kiss"
 ```
 
-Huomaa, että Replace-metodi ottaa parametreinaan haettavan kaavan ja sen korvaavan merkkijonon. Tämä antaa meille joustavuutta tietojen puhdistamisessa, sillä voimme korvata poistettavat merkit haluamallamme sisällöllä.
+Tässä tapauksessa "a" -kirjaimet poistetaan sanasta "kissa" ja saadaan lopputulokseksi "kiss". Voit käyttää tätä metodia myös muilla merkkejä vastaavilla kuvioilla, kuten numeroilla tai välilyönneillä.
 
-## Syväsukellus
+Voit myös käyttää Regular Expression -kirjastoa, joka tarjoaa laajemman valikoiman kuvioihin perustuvia hakemistoja ja merkkien poistoja. Alla olevassa koodiesimerkissä käytetään Regular Expression -kirjastoa poistamaan kaikki numerot merkkijonosta.
 
-Replace-metodi käyttää säännöllisiä lausekkeita etsimään vastaavia merkkejä. Tämä tarkoittaa, että voimme käyttää monimutkaisempia kaavoja, jotka vastaavat tiettyjä merkkijonon osia. Esimerkiksi voimme poistaa kaikki isot kirjaimet merkkijonosta käyttämällä seuraavaa kaavaa: "[A-Z]". Tämä korvaa kaikki isot kirjaimet tyhjällä merkkijonolla, jolloin ne poistetaan kokonaan.
+```C#
+using System.Text.RegularExpressions;
 
-Tämän lisäksi Replace-metodi on hyödyllinen myös monissa muissa tiedonkäsittelytehtävissä, kuten tietojen muotoilussa tai korvaamisessa. Kannattaa tutustua ohjelmointikielen dokumentaatioon ja kokeilla erilaisia säännöllisiä lausekkeita saadaksesi täyden hyödyn irti Replace-metodista.
+string sana = "Puhnro: 123-456-789";
+string puhelin = Regex.Replace(sana, @"[0-9]", "");
+Console.WriteLine(puhelin); // Tulostaa "Puhnro: --"
+
+```
+
+## Syvemmälle aiheeseen
+
+Tässä artikkelissa esitellyt esimerkit ovat vain pintaraapaisu merkkejä vastaavista kuvioista ja niiden poistamisesta C# -ohjelmointikielellä. On hyvä tutustua myös Regular Expression -kirjaston muihin hyödyllisiin toimintoihin ja syvempiin ominaisuuksiin, kuten capture groups ja regular expression options.
 
 ## Katso myös
 
-- Tietoja Replace-metodin säännöllisistä lausekkeista: https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference
-- Lisätietoja merkkijonojen käsittelystä C#:ssa: https://docs.microsoft.com/en-us/dotnet/csharp/how-to/manipulate-strings
-- Esimerkkejä Replace-metodin käytöstä: https://www.c-sharpcorner.com/blogs/stringreplace-characters-in-c-sharp1
+- [C# Replace() -metodin dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
+- [C# Regular Expression -kirjaston dokumentaatio](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [C# string-olion dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netcore-3.1)

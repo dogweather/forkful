@@ -1,39 +1,44 @@
 ---
-title:    "C#: Päivämäärän muuttaminen merkkijonoksi"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/converting-a-date-into-a-string.md"
+title:                "C#: Päivämäärän muuntaminen merkkijonoksi"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-### Miksi muuttaa päivämäärä merkkijonoksi?
+## Miksi
 
-Päivämäärien muuttaminen merkkijonoiksi on tärkeä osa ohjelmointia, joka mahdollistaa päivämääräarvojen tallentamisen ja käsittelyn tietokannoissa ja tekstitiedostoissa. Merkkijonoiksi muuttaminen myös helpottaa päivämääräarvojen tulkintaa ja näyttämistä käyttäjille.
+Monissa C# -sovelluksissa on tarve muuttaa päivämäärä muotoon, joka voidaan esittää merkkijonona. Tämä voi olla tarpeellista esimerkiksi, kun päivämäärällä halutaan näyttää käyttäjälle tietoa joltakin tietyltä ajalta.
 
-### Kuinka muuttaa päivämäärä merkkijonoksi?
+## Näin teet sen
+
+Date-luokka tarjoaa erilaisia ​​menetelmiä päivämäärän muuttamiseen merkkijonoksi. Tässä esimerkissä käytämme ToShortDateString()-menetelmää, joka muuttaa päivämäärän lyhyeksi merkkijonoksi. Koodilohko näyttää, kuinka tämä tehdään:
 
 ```C#
-// Alustetaan DateTime-tyyppinen muuttuja, joka sisältää nykyisen päivämäärän.
-DateTime tänään = DateTime.Today;
-// Muutetaan päivämäärä merkkijonoksi käyttämällä ToString-metodia.
-string merkkijonoPäivästä = tänään.ToString();
-// Tulostetaan merkkijono konsoliin.
-Console.WriteLine(merkkijonoPäivästä);
+// Luodaan uusi DateTime-olio  
+DateTime date = new DateTime(2020, 10, 15);
+
+// Muutetaan päivämäärä merkkijonoksi
+string dateString = date.ToShortDateString();
+
+// Tulostetaan tulos
+Console.WriteLine(dateString);
+
 ```
 
-**Tulos:**
+Tulostus tästä koodilohkosta olisi: 15.10.2020. Voit myös muuttaa päivämäärän erilaiseen muotoon, kuten esimerkiksi ToLongDateString()-menetelmällä, joka tulostaisi esimerkiksi "15. lokakuuta 2020".
 
-```
-02/10/2021 00:00:00
-```
+## Syvempää tietoa
 
-### Syventävä tarkastelu
+C# tukee erilaisia ​​kielellisiä ominaisuuksia päivämäärämuunnoksia varten. Esimerkiksi voit käyttää muotoilumerkkijonoja määrittämään tarkemman muotoilun haluamallesi päivämäärän esitystavalle. Voit myös käyttää CultureInfo-luokkaa, joka tarjoaa tietoja eri kulttuureiden päivämäärän kirjoitus- ja lukutavasta. Täällä on lisää esimerkkejä eri päivämäärän muunnoksiin:
 
-Päivämäärän muuttaminen merkkijonoksi ei ole aina yksiselitteinen prosessi, vaan siihen liittyy erilaisia muotoilu- ja lokalisaatio-ongelmia. Esimerkiksi koodin pitäisi tuottaa eri formaattia eri kielissä. Lisäksi merkkijonon sisältö ja muotoilu voivat vaihdella sen mukaan, onko päivämäärä esimerkiksi ennen vai jälkeen puolenyön.
+- [C# DateTime -päivämäärän muunnos](https://www.w3schools.com/cs/cs_date_tostring.asp)
+- [Muotoilumerkkijonot C# päivämäärämuunnoksille](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [CultureInfo-luokan käyttö päivämäärämuunnoksissa](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netcore-3.1)
 
-C# tarjoaa kuitenkin laajan valikoiman erilaisia muotoiluvaihtoehtoja päivämäärän muuttamiseen merkkijonoksi, kuten päivämäärän esittäminen tiettynä viikonpäivänä tai vuoden päivämäärän järjestysnumerona.
+## Katso myös
 
-### Katso myös
-
-- [DateTime.ToString Method (System) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=net-5.0)
-- [Standard Numeric Format Strings - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings?view=net-5.0)
+- [Päivämäärän muuntaminen SQL:stä stringiksi C#](https://www.c-sharpcorner.com/UploadFile/mahesh/converting-datetime-to-string-and-vice-versa-in-c-Sharp/)
+- [C# -päivämääräluokat ja niiden käyttö](https://www.tutorialspoint.com/csharp/csharp_date_time.htm)
+- [Päivämäärän validointi C# -sovelluksissa](https://www.c-sharpcorner.com/article/validate-datetime-in-c-sharp/)

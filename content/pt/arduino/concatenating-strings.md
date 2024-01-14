@@ -1,62 +1,39 @@
 ---
-title:    "Arduino: Concatenando strings"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/concatenating-strings.md"
+title:                "Arduino: Concatenação de strings"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# Por que utilizar a concatenação de strings no Arduino
+Se você está trabalhando com strings no seu projeto do Arduino e precisa juntar várias delas para formar uma mensagem ou dado específico, a concatenação é a melhor opção. Ela é uma forma de combinar strings de forma eficiente e pode ser muito útil para criar outputs personalizados e dinâmicos. 
 
-Concatenar strings é uma habilidade importante ao programar em Arduino, pois permite a criação de mensagens e informações mais complexas a partir de várias partes menores. Isso pode ser útil em projetos que envolvem exibição de dados em um display ou comunicação com outros dispositivos.
-
-## How To
-
-Para concatenar strings no Arduino, nós utilizamos a função `concat()` da biblioteca `String`. Veja um exemplo abaixo:
+## Como utilizar a concatenação de strings no Arduino
+Para concatenar strings no Arduino, você precisará primeiro definir as variáveis que irão armazenar as strings que serão combinadas. Em seguida, você pode utilizar o operador "+" para juntar as variáveis e formar uma nova string. Veja um exemplo de código abaixo:
 
 ```Arduino
-// Declarando duas variáveis do tipo String
-String nome = "João";
+String nome = "José";
 String sobrenome = "Silva";
 
-// Concatenando as strings
-String nomeCompleto = nome.concat(sobrenome);
-
-// Imprimindo o resultado
-Serial.println(nomeCompleto); // Saída: João Silva
+String nomeCompleto = nome + " " + sobrenome;
 ```
+O código acima irá atribuir o valor "José Silva" à variável "nomeCompleto". Você pode então utilizar essa nova string para exibir uma mensagem ou realizar outras operações.
 
-No exemplo acima, utilizamos a função `concat()` para juntar as strings "João" e "Silva" em uma única variável chamada `nomeCompleto`. Essa variável, por sua vez, pode ser utilizada em outras partes do código, como por exemplo, para exibir o nome completo em um display LCD.
-
-É importante ressaltar que a função `concat()` não altera o valor das variáveis originais, apenas cria uma nova variável com a string concatenada.
-
-Além disso, é possível também concatenar mais de duas strings ao mesmo tempo, basta adicioná-las como parâmetros dentro da função `concat()`. Veja o exemplo abaixo:
+## Aprofundando na concatenação de strings
+Existem algumas coisas que é importante saber sobre a concatenação de strings no Arduino. Primeiramente, é importante notar que é possível combinar mais de duas strings utilizando o operador "+". Por exemplo:
 
 ```Arduino
-// Declarando três variáveis do tipo String
-String nome = "João";
-String sobrenome = "da Silva";
-String apelido = "Bolacha";
+String palavra1 = "Olá";
+String palavra2 = "mundo";
+String palavra3 = "!";
 
-// Concatenando as strings
-String perfil = nome.concat(sobrenome, " (apelido: ", apelido, ")");
-
-// Imprimindo o resultado
-Serial.println(perfil); // Saída: João da Silva (apelido: Bolacha)
+String saudacao = palavra1 + " " + palavra2 + palavra3;
 ```
 
-Nesse segundo exemplo, concatenamos as três strings e adicionamos alguns caracteres extras, criando uma mensagem mais elaborada.
+Também é importante lembrar que apenas as strings podem ser concatenadas dessa forma. Se você tentar combinar um número inteiro (int) ou um caractere (char) com uma string, você pode obter um resultado indesejado. Para isso, é necessário converter esses tipos de dados em strings antes de concatená-los.
 
-## Deep Dive
-
-Concatenar strings pode parecer uma tarefa simples, mas é importante entender como essa operação funciona por trás dos bastidores. Em Arduino, as strings são tratadas como objetos do tipo `String`, que possuem vários métodos e propriedades para manipulação.
-
-Quando utilizamos a função `concat()`, o Arduino cria uma nova string maior e copia todo o conteúdo das strings originais para essa nova string. Isso pode causar um consumo maior de memória, especialmente se as strings forem grandes.
-
-Portanto, é importante utilizar a concatenação de strings com cautela e evitar o uso desnecessário dessa operação. Em alguns casos, pode ser mais eficiente utilizar outras técnicas, como por exemplo, o uso de caracteres coringa (%d, %s, %f) em uma string formatada.
-
-## See Also
-
-- [Referência da função concat() da biblioteca String](https://www.arduino.cc/reference/pt/libraries/string/object/concat/)
-- [Exemplos de uso da função concat()](https://www.arduino.cc/en/Tutorial/StringAdditionalOperators)
-- [Tutorial sobre formatação de strings em Arduino](https://www.arduino.cc/en/Tutorial/TextStringformatting)
+## Veja Também
+- [Documentação oficial do Arduino sobre a string concatenation](https://www.arduino.cc/reference/pt/language/variables/data-types/string/)
+- [Tutorial sobre como utilizar a concatenação de strings no Arduino](https://create.arduino.cc/projecthub/Arduino_Genuino/strings-df38c3)

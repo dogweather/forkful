@@ -1,36 +1,55 @@
 ---
-title:    "Haskell: Raderar tecken som matchar ett mönster"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/deleting-characters-matching-a-pattern.md"
+title:                "Haskell: Radera tecken som matchar ett mönster"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att ta bort tecken som matchar ett visst mönster är en vanlig uppgift inom programmering, särskilt inom Haskell. Genom att förstå hur man kan ta bort dessa tecken kan du effektivisera din kod och göra den mer läsbar och kompakt.
 
-I Haskell-programmering kan det ibland vara nödvändigt att ta bort vissa tecken som matchar ett visst mönster. Detta kan göras av flera olika anledningar, såsom att rensa bort onödiga tecken i en sträng eller matcha användarinput mot ett specifikt mönster.
-
-## Hur man gör
-
-För att ta bort karaktärer som matchar ett mönster i Haskell, kan vi använda funktionen `deleteBy`. Denna funktion tar emot ett predikat och en lista och returnerar en ny lista utan element som matchar predikatet.
+## Så här gör du
+Att ta bort tecken som matchar ett visst mönster i Haskell är en relativt enkel process, tack vare den kraftfulla "filter" funktionen. Först måste vi definiera en lista med tecken vi vill ta bort från en given sträng.
 
 ```Haskell
-deleteBy :: (a -> a -> Bool) -> a -> [a] -> [a]
-
-deleteBy (==) 'a' "Haskell" -- Output: "Hskell"
-deleteBy (>=) 3 [1,2,3,4,5] -- Output: [1,2]
+pattern :: [Char]
+pattern = "aeiou"
 ```
 
-I det första exemplet använder vi funktionen för att ta bort alla förekomster av bokstaven 'a' i strängen "Haskell". I det andra exemplet tar vi bort alla tal som är större än eller lika med 3 i listan [1,2,3,4,5].
+I detta exempel har vi definierat en lista med vokaler som vi vill ta bort från en sträng. Nästa steg är att skapa en funktion som tar emot en sträng och använder "filter" funktionen för att ta bort de önskade tecknen.
+
+```Haskell
+removePattern :: String -> String
+removePattern str = filter (\x -> not (elem x pattern)) str
+```
+
+I denna funktion använder vi "filter" tillsammans med en anonym funktion som kollar om varje tecken i strängen finns i vår definierade lista "pattern". Om tecknet finns i listan tas det bort från strängen, annars behålls det. Låt oss testa funktionen med en enkel sträng:
+
+```Haskell
+removePattern "Hello world!"
+```
+
+Output:
+
+```
+Hll wrld!
+```
+
+Som vi ser har alla vokaler tagits bort från strängen enligt vårt definierade mönster. Detta är en enkel och effektiv metod för att ta bort tecken som matchar ett visst mönster i Haskell.
 
 ## Djupdykning
+Ett annat sätt att ta bort tecken som matchar ett visst mönster är att använda funktionen "delete" från "Data.List" modulen. Denna funktion tar emot ett element och en lista och tar bort alla förekomster av det givna elementet från listan.
 
-`deleteBy` är en allmän funktion som tar emot ett predikat som jämför två element. Detta innebär att vi kan använda den för att lösa många olika problem som involverar att ta bort element från en lista baserat på ett visst kriterium.
+```Haskell
+removePattern' :: String -> String
+removePattern' str = foldl (flip delete) str pattern
+```
 
-För att se en detaljerad implementering av `deleteBy`, kan du kolla på [Haskells dokumentation](https://hackage.haskell.org/package/base-4.15.0.0/docs/src/Data.OldList.html#deleteBy). Det finns också flera andra funktioner inom Haskell som kan användas för att ta bort element från listor, såsom `filter` och `delete`.
+Här använder vi "foldl" funktionen tillsammans med "flip delete" för att ta bort varje tecken från strängen som matchar vårt definierade mönster. Denna metod kan vara lite mer avancerad än den föregående, men det är alltid bra att ha flera alternativ att använda i din kod.
 
-## Se även
-
-- [Haskell-funktionen `deleteBy` på Haskells dokumentation](https://hackage.haskell.org/package/base-4.15.0.0/docs/src/Data.OldList.html#deleteBy)
-- [Haskells dokumentation om listor och listfunktioner](https://www.haskell.org/onlinereport/standard-prelude.html#list-functions) 
-- [En tutorial om grundläggande funktionell programmering i Haskell](https://medium.com/@erinbarker/functional-programming-in-haskell-443f3914f56)
+## Se också
+- [List Comprehensions in Haskell](https://wiki.haskell.org/List_comprehension)
+- [Haskell Documentation](https://downloads.haskell.org/~ghc/8.8.1/docs/html/libraries/)
+- [Real World Haskell](http://book.realworldhaskell.org/)

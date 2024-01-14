@@ -1,68 +1,46 @@
 ---
-title:    "Swift: Kansion olemassaolon tarkistaminen"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/checking-if-a-directory-exists.md"
+title:                "Swift: Kansiovapauden tarkistaminen"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi tarkistaa onko kansio olemassa?
+## Miksi tarkistaa hakemiston olemassaolo?
 
-Monissa ohjelmointiprojekteissa on tärkeää varmistaa, että tiedostojärjestelmässä käytettävät kansiot ovat olemassa ennen kuin niihin yritetään tallentaa tai niistä yritetään lukea. Tämä varmistaa ohjelman sujuvan toiminnan ja välttää mahdollisia virheitä. Tässä blogikirjoituksessa kerromme miten tarkistaa, onko kansio olemassa käyttäen Swift-ohjelmointikieltä.
+Hakemistojen tarkistaminen on tärkeä osa ohjelmointia, sillä se mahdollistaa tiedostojärjestelmän hallinnan ja tiedostojen käsittelyn. Tarkistamalla hakemiston olemassaolon varmistetaan, että ohjelma toimii suunnitellusti ja että kaikki tarvittavat tiedostot ovat saatavilla.
 
-## Miten tarkistaa onko kansio olemassa?
+## Miten tarkistaa hakemiston olemassaolo?
 
-Tarkistaaksesi onko kansio olemassa, käytä `fileManager`-luokan `fileExists(atPath:)`-metodia. Tämä metodi ottaa parametrinaan polun tarkistamaan kansiotiedostoon. Jos kansio on olemassa, palauttaa metodi totuusarvon `true` ja jos kansioa ei ole olemassa, palauttaa metodi totuusarvon `false`. 
-
-```Swift
-import Foundation
-
-let fileManager = FileManager.default // Luodaan fileManager-objekti
-
-let directory = "/Users/testikansio" // Määritellään kansion polku
-
-// Tarkistetaan onko kansio olemassa
-if fileManager.fileExists(atPath: directory) {
-    print("Kansio on olemassa.")
-} else {
-    print("Kansiota ei ole olemassa.")
+```
+Swift func checkDirectoryExists(atPath path: String) -> Bool {
+    let fileManager = FileManager.default
+    var isDirectory: ObjCBool = true
+    return fileManager.fileExists(atPath: path, isDirectory: &isDirectory)
 }
+```
+Tämä koodiesimerkki näyttää yksinkertaisen funktion tarkistamaan, onko hakemisto olemassa annetussa polussa. Funktion avulla voidaan helposti tarkistaa, onko hakemisto olemassa ja saada tieto siitä, onko kyseessä hakemisto vai tiedosto.
 
-// Tulostaa:
-// Kansiota ei ole olemassa.
+Käyttöesimerkki:
+```
+Swift let directoryExists = checkDirectoryExists(atPath: "/Users/Name/Documents")
+if directoryExists {
+    print("Hakemisto löytyy.")
+} else {
+    print("Hakemisto ei ole olemassa.")
+}
+```
+Tulostus:
+```
+Hakemisto löytyy.
 ```
 
-## Syväsukellus
+## Syvempi sukellus
 
-Tässä esimerkissä käytämme `directory`-muuttujaa, jossa määritellään kansiomme polku. Tämän jälkeen `fileManager`-objektia käytetään tarkistamaan onko kyseinen kansio olemassa. Tulostamme sitten viestin sen mukaan, oliko kansio olemassa vai ei.
-
-On myös mahdollista tarkistaa, onko kansio olemassa käyttäen `fileManager`-luokan `enumerator(atPath:)`-metodia, joka palauttaa kaikki kansion sisältämät tiedostot ja alikansiot.
-
-```Swift
-import Foundation
-
-let fileManager = FileManager.default // Luodaan fileManager-objekti
-
-let directory = "/Users/testikansio" // Määritellään kansion polku
-
-// Tarkistetaan onko kansio olemassa
-if let enumerator = fileManager.enumerator(atPath: directory) {
-    print("Kansio on olemassa ja se sisältää seuraavat tiedostot ja kansiot:")
-    while let file = enumerator.nextObject() as? String {
-        print(file)
-    }
-} else {
-    print("Kansiota ei ole olemassa.")
-}
-
-// Tulostaa:
-// Kansio on olemassa ja se sisältää seuraavat tiedostot ja kansiot:
-// tiedosto1.txt
-// tiedosto2.pdf
-// alikansio
-```
+Hakemistojen tarkistaminen voi olla hyödyllistä myös muiden tehtävien yhteydessä, kuten tiedostojen luomisessa tai poistamisessa. On myös hyvä muistaa, että joskus hakemisto saattaa olla olemassa, mutta siinä ei ole tarvittavia oikeuksia tiedostojen käsittelemiseen. Tällöin tarkistaminen auttaa välttämään mahdollisia virheitä.
 
 ## Katso myös
 
-- [File Manager Documentation](https://developer.apple.com/documentation/foundation/filemanager)
-- [How to Check if a Directory Exists in Swift](https://stackoverflow.com/questions/45106514/how-to-check-if-a-directory-exists-in-swift)
+- [Apple Developer Documentation: FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Swift by Sundell: Working with files and directories in Swift](https://www.swiftbysundell.com/basics/working-with-files-and-directories/)

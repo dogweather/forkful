@@ -1,58 +1,86 @@
 ---
-title:    "Javascript: Rozpoczynanie nowego projektu"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/starting-a-new-project.md"
+title:                "Javascript: Zaczynając nowy projekt"
+programming_language: "Javascript"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego zacząć nowy projekt?
 
-Tworzenie nowych projektów w języku Javascript może być bardzo satysfakcjonujące i wciągające. Jest to również świetny sposób na rozwijanie swoich umiejętności programistycznych oraz wykorzystanie swojej kreatywności. Dzięki temu można również poszerzać swoje portfolio i zwiększyć swoje szanse na znalezienie pracy w przyszłości.
+Nie ma nic bardziej satysfakcjonującego dla programisty niż zaczęcie nowego projektu. Jest to szansa na wykorzystanie wiedzy i umiejętności w praktyce oraz stworzenie czegoś nowego i użytecznego. Przeczytaj dalszą część, aby dowiedzieć się jak rozpocząć nowy projekt w języku Javascript.
 
 ## Jak to zrobić?
 
-Język Javascript jest bardzo popularny i używany przez wiele firm i organizacji, więc znajomość tego języka jest bardzo wartościowa. Jeśli chcesz zacząć nowy projekt w Javascript, oto kilka kroków, które mogą Ci pomóc:
+### Tworzenie podstawowego pliku HTML
+
+Na początku potrzebujemy pustego pliku HTML, który będzie podstawą dla naszego projektu. W tym celu otwórz swoje ulubione IDE (np. Visual Studio Code) i utwórz plik o nazwie "index.html". Następnie wpisz poniższy kod:
 
 ```Javascript
-// Tworzenie pustego projektu w VSCode
-npm init
-
-// Dodawanie zależności np. React
-npm install react react-dom
-
-// Importowanie biblioteki React
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-// Tworzenie komponentu w React
-function App() {
-  return (
-    <div>
-      <h1>Witaj na mojej stronie!</h1>
-    </div>
-  )
-}
-
-// Renderowanie komponentu na stronie
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// Używanie innych bibliotek i frameworków do tworzenia projektu
-import Bootstrap from 'bootstrap';
-import JQuery from 'jquery';
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Mój projekt</title>
+</head>
+<body>
+    <h1>Witaj, świecie!</h1>
+</body>
+</html>
 ```
 
-## Tylko niebo jest ograniczeniem
+### Dodawanie arkusza stylów CSS
 
-Rozpoczęcie projektu w języku Javascript to nie tylko nauka konkretnych funkcji i bibliotek, ale również możliwość eksperymentowania i rozwijania swojej kreatywności. Można wykorzystać właściwości języka Javascript, takie jak animacje czy interaktywne efekty, aby nadać swojemu projektowi unikalny wygląd. Możesz również użyć różnych narzędzi, takich jak React lub Angular, aby stworzyć aplikację internetową lub nawet mobilną.
+Jeśli chcesz dodać trochę stylu do swojego projektu, możesz stworzyć nowy plik CSS o nazwie "style.css". Następnie w pliku "index.html" należy dodać odwołanie do tego pliku używając tagu ```<link>```, jak pokazano poniżej:
 
->Uwaga: Należy pamiętać, że skupienie się na jednym projekcie na raz może być bardziej efektywne niż rozpoczynanie wielu na raz.
+```Javascript
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Mój projekt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Witaj, świecie!</h1>
+</body>
+</html>
+```
+
+### Dodawanie kodu Javascript
+
+Jeśli chcesz dodać interaktywność do swojego projektu, możesz użyć języka Javascript. W pliku "index.html" możesz dodać tag ```<script>``` i umieścić w nim kod Javascript, jak poniżej:
+
+```Javascript
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Mój projekt</title>
+</head>
+<body>
+    <h1>Witaj, świecie!</h1>
+    <script>
+        let name = "Jan";
+        console.log("Cześć, " + name + "!");
+    </script>
+</body>
+</html>
+```
+
+### Podgląd wyniku
+
+Aby zobaczyć efekt swojego kodu, możesz otworzyć plik "index.html" w przeglądarce internetowej. Powinna się otworzyć strona z napisem "Witaj, świecie!" oraz wyświetlić w konsoli przeglądarki wiadomość "Cześć, Jan!".
+
+## Dogłębne wgląd
+
+* Warto zacząć od zaplanowania swojego projektu i ustalenia celów, które chcesz osiągnąć.
+* Niezbędne jest zrozumienie podstaw języka Javascript, takich jak zmienne, funkcje czy pętle.
+* Wykorzystanie bibliotek i frameworków może znacznie ułatwić pracę z językiem Javascript.
 
 ## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej o rozpoczynaniu projektów w języku Javascript, polecamy zapoznać się z poniższymi linkami:
-
-- [Dokumentacja React](https://pl.reactjs.org/docs/getting-started.html)
-- [Dokumentacja Angular](https://angular.io/docs)
-- [Kursy wideo na Udemy](https://www.udemy.com/topic/javascript/)
-- [Strona programowania w języku Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript)
+* [Wprowadzenie do języka Javascript](https://developer.mozilla.org/pl/docs/Wprowadzenie_do_języka_JavaScript)
+* [Początek z JavaScript](https://www.w3schools.com/js/)
+* [10 kroków do rozpoczęcia nauki języka JavaScript](https://medium.com/@ibejalon/how-to-start-learning-javascript-in-10-basic-steps-bfa632f4c06)

@@ -1,49 +1,74 @@
 ---
-title:    "Bash: コマンドライン引数を読む"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/reading-command-line-arguments.md"
+title:                "Bash: 「コマンドライン引数の読み込み」"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
-Bashプログラミングをしている方々がコマンドライン引数を読み込むことに興味を持つ理由は何でしょうか？コマンドライン引数は、プログラムに対して柔軟性をもたらすために使用することができる重要な要素です。
+## なぜ
 
-## やり方
-コマンドライン引数を読み込むには、まずは「$@」を使用して引数を取得することができます。そして、「$1」や「$2」を使用して、引数の位置を指定することができます。以下のコード例を参考にしてください。
+ コマンドライン引数を読み込むことの重要性を説明します。コマンドライン引数は、シェルスクリプトをより柔軟にするために使用される有用なツールです。
+
+## 使い方
+
+コマンドライン引数を読み込む方法を、簡単なコーディング例と共に説明します。
 
 ```Bash
-# 引数を取得する
-echo "引数1: $1"
-echo "引数2: $2"
-
-# 実行結果
-# 引数1: arg1
-# 引数2: arg2
+# 引数を表示する例
+echo "第1引数：$1"
+echo "第2引数：$2"
+```
+出力：
+```
+第1引数：Hello
+第2引数：World
 ```
 
-また、引数の数や特定の引数が与えられているかどうかをチェックすることもできます。以下のコード例を参考にしてください。
+```Bash
+# 引数の数を表示する例
+echo "引数の数：$#"
+```
+出力：
+```
+引数の数：3
+```
 
 ```Bash
-# 引数の数が2つ以上かどうかをチェック
-if [ $# -ge 2 ]; then
-    echo "引数の数は2つ以上です。"
-else
-    echo "引数の数は1つ以下です。"
-fi
+# 引数をループ処理する例
+for arg in "$@"
+do
+    echo "引数： $arg"
+done
+```
+出力：
+```
+引数：学校
+引数：仕事
+引数：勉強
+```
 
-# 特定の引数が与えられたかどうかをチェック
-if [ "$1" = "-c" ]; then
-    echo "引数-cが与えられました。"
-fi
+```Bash
+# デフォルト値を設定する例
+FILE_NAME=${1:-"default_file.txt"}
+echo "ファイル名： $FILE_NAME"
+```
+出力：
+```
+ファイル名： default_file.txt
 ```
 
 ## ディープダイブ
-コマンドライン引数を読み込む際に、必要な注意点があります。例えば、スペースや特殊文字が含まれる引数を正しく取得するためには、クォーテーションやエスケープを使用する必要があります。また、引数にデフォルト値を設定したり、引数をオプションとして扱う方法などもあります。コマンドライン引数をより詳しく理解するためには、さらに学習する必要があります。
 
-## 他の参考資料
-- [Bashコマンドライン引数のハンドリングに関するドキュメント](https://www.gnu.org/software/bash/manual/html_node/Using-Positional-Parameters.html)
-- [Steve's Shell Scripting Tutorial - Command Line Arguments](https://www.shellscript.sh/functions.html)
-- [LinuxHint - Bash Command Line Arguments](https://linuxhint.com/bash_command_line_arguments/)
-- [UNIX Tutorial - Command Line Arguments](https://www.tutorialspoint.com/unix/unix-command-line-arguments.htm)
-- [BashScripting.info - Positional parameters](https://www.bashscripting.info/oshp/chp-4-sect-1.html)
+コマンドライン引数をより詳しく理解するための情報を提供します。コマンドライン引数は、スクリプト内の任意の位置で指定することができ、スクリプト内で変数として使用することができます。また、引数を使ってスクリプトを実行する際に、引数には順番があります。この順番は、数値が割り当てられます。例えば、第1引数に指定した引数は$1、第2引数に指定した引数は$2となります。
+
+また、引数にはオプションを付けることもできます。例えば、"-l"というオプションを使って引数を指定することができます。スクリプト内でオプションを認識するためには、getoptsコマンドを使用する必要があります。
+
+## 詳細を見る
+
+以下のリンクを参考に、より詳細な情報を確認することができます。
+
+- [コマンドライン引数を使ったシェルスクリプトの作成方法](https://www.tutorialspoint.com/unix/shell_scripting.htm)
+- [コマンドライン引数の活用方法](https://unix.stackexchange.com/questions/261244/using-arguments-with-functions-and-getopts-bash)
+- [コマンドライン引数を取得する方法](https://www.geeksforgeeks.org/how-to-pass-command-line-arguments-in-shell-script/)

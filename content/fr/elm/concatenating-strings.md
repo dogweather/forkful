@@ -1,59 +1,44 @@
 ---
-title:    "Elm: Concaténer des chaînes de caractères"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/concatenating-strings.md"
+title:                "Elm: Concaténation de chaînes de caractères"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Lorsque l'on programme en Elm, il est parfois nécessaire de combiner plusieurs chaînes de caractères en une seule. La concaténation de chaînes peut sembler un concept simple, mais elle peut s'avérer très utile dans certaines situations.
+
+Concaténer des chaînes de caractères (ou strings en anglais) est une tâche très commune en programmation, surtout lorsqu'on travaille avec des données. Cela permet de combiner différentes chaînes pour créer une seule chaîne plus complexe et complète.
 
 ## Comment faire
-La concaténation de chaînes en Elm se fait à l'aide de l'opérateur `++`. Voici un exemple de code utilisant cet opérateur :
+
+En Elm, la concaténation de chaînes se fait en utilisant l'opérateur "+" entre deux chaînes, comme dans l'exemple suivant :
 
 ```Elm
 nom = "Jean"
 prenom = "Dupont"
-nomComplet = prenom ++ " " ++ nom
+nomComplet = nom + " " + prenom
 
--- Résultat : nomComplet = "Jean Dupont"
 ```
 
-On peut également concaténer des chaînes avec des nombres en utilisant la fonction `toString` :
-
-```Elm
-nb1 = 1
-nb2 = 2
-resultat = "Le résultat est : " ++ (toString (nb1 + nb2))
-
--- Résultat : resultat = "Le résultat est : 3"
-```
-
-Il est important de noter que l'ordre des opérations est important lors de la concaténation de plusieurs éléments. Par exemple, si on veut inclure une chaîne de caractères entre deux autres, il faudra la placer entre des parenthèses pour éviter tout problème :
-
-```Elm
-nom = "Jean"
-prenom = "Dupont"
-nomComplet = "Bonjour, je m'appelle " ++ (prenom ++ " " ++ nom) ++ ", ravie de vous rencontrer !"
-
--- Résultat : nomComplet = "Bonjour, je m'appelle Jean Dupont, ravie de vous rencontrer !"
-```
+Dans cet exemple, la variable "nomComplet" contiendra la chaîne "Jean Dupont". On peut aussi concaténer des chaînes avec des valeurs numériques, en les convertissant en chaîne grâce à la fonction "String.fromInt" pour les entiers et "String.fromFloat" pour les décimaux.
 
 ## Plongée en profondeur
-La concaténation de chaînes en Elm se fait en temps constant, c'est-à-dire que peu importe la longueur des chaînes à concaténer, le temps de traitement sera toujours le même. Cela peut avoir un impact positif sur les performances de votre application.
 
-Il est également possible de concaténer des listes de chaînes en utilisant la fonction `List.concat` :
+Il est important de noter que la concaténation de chaînes peut être un processus gourmand en ressources, surtout lorsque l'on travaille avec de grandes quantités de données. Cela peut ralentir l'exécution du code et causer des problèmes de performances. Pour cette raison, il est conseillé d'utiliser la fonction "++" pour concaténer plus de deux chaînes en une seule fois. Par exemple :
 
 ```Elm
-listes = [["Bonjour", "hey"], ["c'est", "ça"], ["moi", "toi"]]
-resultat = List.concat listes
-
--- Résultat : resultat = ["Bonjour", "hey", "c'est", "ça", "moi", "toi"]
+baseUrl = "https://monsite.com/"
+endpoint = "/users"
+params = "?page=1"
+url = baseUrl ++ endpoint ++ params
 ```
 
-Il existe également d'autres fonctions pratiques pour travailler avec des chaînes de caractères en Elm, telles que `String.split` pour diviser une chaîne en une liste de sous-chaînes, ou `String.join` pour joindre une liste de chaînes en une seule.
+Cette méthode est plus efficace car elle combine toutes les chaînes en une seule, plutôt que d'exécuter plusieurs opérations de concaténation à la suite.
 
 ## Voir aussi
-- [Documentation officielle d'Elm sur la concaténation de chaînes](https://elm-lang.org/docs/string#append)
-- [Le guide complet d'Elm sur les chaînes de caractères](https://guide.elm-lang.org/interop/strings.html)
+
+- [Documentation officielle Elm sur la concaténation de chaînes](https://elm-lang.org/docs/strings#concatenation)
+- [Exemples de manipulation de chaînes en Elm](https://package.elm-lang.org/packages/mpizenberg/elm-string-utils/latest/String.Utils)
+- [Tutoriel sur la manipulation de données en Elm](https://www.elm-tutorial.org/fr/03-saisie-utilisateur/01-listes-et-vue.html)

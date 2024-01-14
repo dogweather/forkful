@@ -1,59 +1,78 @@
 ---
-title:    "C++: Generación de números aleatorios"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/generating-random-numbers.md"
+title:                "C++: Generando números aleatorios"
+programming_language: "C++"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-##¿Por qué generar números aleatorios en C++?
+## Por qué
 
-Al escribir programas en C++, es posible que en algún momento necesitemos generar números aleatorios. Ya sea para crear juegos, simular situaciones o realizar pruebas, la generación de números aleatorios es una herramienta esencial en la programación. En esta publicación, exploraremos cómo generar números aleatorios en C++ y por qué es importante.
+El uso de números aleatorios en programación puede ser útil en una variedad de situaciones, como en juegos, sorteos, generación de contraseñas y pruebas de rendimiento. Los números aleatorios también pueden agregar un elemento de sorpresa y diversión a una aplicación.
 
 ## Cómo hacerlo
 
-La generación de números aleatorios en C++ se basa en una función incorporada llamada `rand()`, que devuelve un número entero aleatorio cada vez que se llama. Sin embargo, para obtener resultados más precisos y controlar el rango de los números generados, podemos utilizar otras funciones y técnicas.
+La generación de números aleatorios en C++ es bastante sencilla con la ayuda de la biblioteca estándar <string> y la función rand (). Primero, asegúrese de incluir la biblioteca:
 
 ```C++
-// Incluir la biblioteca de funciones para generación de números aleatorios
-#include <cstdlib> 
-
-// Utilizar la función srand() para sembrar la secuencia de números aleatorios
-// Ingrese un número entero como semilla para que los números generados sean diferentes cada vez
-srand(1234); 
-
-// Utilizar la función rand() para generar un número aleatorio en un rango específico
-int random_num = rand() % 100; // Generará un número aleatorio entre 0 y 99
+#include <cstdlib>
 ```
 
-Para obtener más control sobre los números generados, podemos utilizar la biblioteca `random` que ofrece C++, que incluye funciones para generar números aleatorios en diferentes rangos, distribuciones y tipos de datos.
+Luego, para generar un número aleatorio, simplemente llame a la función rand () y asigne el resultado a una variable:
 
 ```C++
-// Incluir la biblioteca de geración de números aleatorios
-#include <random>
-
-// Crear un objeto de tipo random engine
-std::default_random_engine generator; 
-
-// Utilizar una distribución normal para generar un número aleatorio tipo double
-std::normal_distribution<double> distribution(5.0, 2.0); // Generará un número aleatorio con una media de 5 y una desviación estándar de 2
-
-// Utilizar el objeto del motor para generar el número aleatorio
-double random_num = distribution(generator);
+int randomNumber = std::rand();
 ```
 
-Con estas funciones y técnicas, podemos generar números aleatorios de manera más precisa y controlada en nuestros programas.
+Para limitar el rango de los números generados, puede utilizar el operador de módulo con el número máximo deseado más 1:
 
-## Profundizando en la generación de números aleatorios
+```C++
+int randomNumber = std::rand() % 20; // generará un número entre 0 y 19
+```
 
-Para aquellos interesados en sumergirse más en el mundo de la generación de números aleatorios en C++, existen muchos conceptos y algoritmos que se pueden explorar. Algunos de ellos incluyen:
+Para obtener una secuencia de números diferentes cada vez que se ejecute el programa, puede utilizar la función srand () para establecer una semilla diferente. Una opción es utilizar el tiempo actual como semilla:
 
-- Semillas y su importancia en la generación de números aleatorios
-- Distribuciones estadísticas y cómo afectan a los números generados
-- Comparación de las diferentes funciones y técnicas para generar números aleatorios en C++
+```C++
+std::srand(time(0)); // establece la semilla como el tiempo actual
+```
+
+Este es un ejemplo completo de un programa que genera 10 números aleatorios entre 1 y 100 y los imprime en la pantalla:
+
+```C++
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+    std::srand(time(0));
+
+    for (int i = 0; i < 10; i++) {
+        int randomNumber = std::rand() % 100 + 1;
+        std::cout << randomNumber << " ";
+    }
+
+    return 0;
+}
+```
+
+El resultado podría ser algo como:
+
+```bash
+57 4 76 29 96 12 88 71 62 99
+```
+
+## Profundizando
+
+La función rand () en sí no es realmente aleatoria, sino que utiliza un algoritmo para generar una secuencia pseudorandom. Esto significa que, aunque los números parecen aleatorios, realmente son deterministas y se pueden reproducir utilizando la misma semilla.
+
+Para obtener números verdaderamente aleatorios, se puede utilizar una fuente externa, como un dispositivo de hardware especializado o la entrada del usuario. Sin embargo, esto puede disminuir la velocidad de su programa.
+
+Además, en lugar de usar la biblioteca estándar de C++, se pueden explorar otras bibliotecas de generación de números aleatorios más avanzadas, como Boost.Random y C++11 `<random>`. Estas bibliotecas ofrecen una mayor flexibilidad y control sobre la generación de números aleatorios.
 
 ## Ver también
 
-- [Librería <random> en C++ (en inglés)](https://www.cplusplus.com/reference/random/)
-- [Tutorial sobre generación de números aleatorios en C++ (en español)](https://programandala.net/es.program.random_in_c.plus.plus.html)
-- [Ejemplos de generación de números aleatorios en C++ (en inglés)](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+- [Documentación de C++ sobre rand ()](https://www.cplusplus.com/reference/cstdlib/rand/)
+- [Tutorial de random en C++](https://www.learncpp.com/cpp-tutorial/random-number-generation/)
+- [Boost.Random](https://www.boost.org/doc/libs/1_76_0/doc/html/boost_random.html)
+- [Biblioteca `<random>` en C++11](https://en.cppreference.com/w/cpp/header/random)

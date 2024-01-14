@@ -1,41 +1,45 @@
 ---
-title:    "Python: Recherche et remplacement de texte"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/python/searching-and-replacing-text.md"
+title:                "Python: Recherche et remplacement de texte"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La recherche et le remplacement de texte sont des outils extrêmement utiles pour tout programmeur Python. Avec ces outils, vous pouvez facilement modifier de grandes quantités de texte dans vos scripts, ce qui peut vous faire gagner un temps précieux lors du développement.
+Dans le monde de la programmation, il est souvent nécessaire de modifier une grande quantité de texte dans un fichier ou une chaîne de caractères. Cela peut être fastidieux et chronophage si fait manuellement, c'est pourquoi il est essentiel de savoir comment rechercher et remplacer du texte à l'aide d'un langage de programmation tel que Python.
 
 ## Comment faire
 
-La recherche et le remplacement de texte sont réalisables en utilisant la méthode ```.replace()```. Cette méthode prend deux paramètres: le texte à rechercher et le texte de remplacement. Par exemple, si vous voulez remplacer tous les espaces par des tirets dans une chaîne de caractères, vous pouvez utiliser la ligne de code suivante:
+La recherche et le remplacement de texte peuvent être réalisés facilement en utilisant la fonction `replace()` de Python. Voici un exemple de code qui remplace toutes les occurrences de "Bonjour" par "Hello" dans une chaîne de caractères :
 
-```
-texte_modifie = texte_original.replace(" ", "-")
-```
-
-Dans cet exemple, nous avons défini la variable ```texte_original``` contenant notre texte et nous avons utilisé la méthode ```.replace()``` pour remplacer chaque espace par un tiret. Le nouveau texte modifié sera stocké dans la variable ```texte_modifie```.
-
-En plus de remplacer, vous pouvez également utiliser la méthode ```.find()``` pour rechercher un texte spécifique dans une chaîne de caractères. Cette méthode renverra l'index du premier caractère du texte recherché. Par exemple, si vous voulez trouver l'index du premier "e" dans une chaîne de caractères, vous pouvez utiliser la ligne de code suivante:
-
-```
-index = texte_original.find("e")
+```Python
+texte = "Bonjour le monde"
+nouveau_texte = texte.replace("Bonjour", "Hello")
+print(nouveau_texte)
 ```
 
-Si le texte recherché n'est pas trouvé, la méthode renverra -1.
+La sortie de ce code sera : "Hello le monde". On peut également utiliser la méthode de chaîne `find()` pour rechercher un mot ou une phrase spécifique dans un texte et la remplacer par une autre valeur. Voici un autre exemple de code qui utilise la méthode `find()` pour rechercher le mot "bonjour" et le remplacer par "hello" :
 
-## Plongez plus profondément
+```Python
+texte = "Bonjour le monde, bonjour tout le monde"
+if "bonjour" in texte:
+  nouveau_texte = texte.find("bonjour").replace("bonjour", "hello")
+print(nouveau_texte)
+```
 
-Il existe plusieurs paramètres optionnels que vous pouvez ajouter à la méthode ```.replace()``` pour personnaliser votre recherche et remplacement. Par exemple, vous pouvez spécifier le nombre maximum de remplacements à effectuer en ajoutant un troisième paramètre à la méthode. Vous pouvez également utiliser la méthode avec des chaînes de caractères plus complexes, telles que des expressions régulières, pour des remplacements plus avancés.
+La sortie de ce code sera également : "Hello le monde, bonjour tout le monde".
 
-De plus, il est important de noter que la méthode ```.replace()``` ne modifiera pas directement la chaîne de caractères d'origine. Elle renverra une nouvelle chaîne de caractères modifiée, qui peut être ensuite assignée à une nouvelle variable ou être utilisée directement.
+## Plongée en profondeur
+
+Lorsqu'on travaille avec de grandes quantités de texte, il est important de comprendre comment rechercher et remplacer de manière efficace et précise. Python offre de nombreuses fonctions et méthodes qui peuvent être utilisées pour cela, telles que `re.sub()`, `str.format()` et `str.replace()`.
+
+Il est également utile de connaître les expressions régulières, qui sont des séquences de caractères utilisées pour rechercher et remplacer du texte dans une chaîne. Ces expressions sont très puissantes et peuvent être utilisées pour rechercher des formats spécifiques, des dates, des adresses email, etc.
 
 ## Voir aussi
 
-- [Documentation officielle de Python sur la méthode .replace()](https://docs.python.org/fr/3/library/stdtypes.html#str.replace)
-- [Autres méthodes de recherche et de remplacement de texte en Python](https://www.tutorialspoint.com/python/string_replace.htm)
-- [Un guide complet sur les expressions régulières en Python](https://realpython.com/regex-python/)
+- [Documentation officielle sur la méthode de chaîne `replace()` en Python](https://docs.python.org/fr/3/library/stdtypes.html#str.replace)
+- [Guide des expressions régulières en Python](https://docs.python.org/fr/3/howto/regex.html)
+- [Tutoriel vidéo sur la recherche et le remplacement de texte en Python](https://www.youtube.com/watch?v=vd46rz2wvV4)

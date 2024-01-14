@@ -1,49 +1,47 @@
 ---
-title:    "Kotlin: Tekstitiedoston kirjoittaminen"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/writing-a-text-file.md"
+title:                "Kotlin: Tiedostotiedoston kirjoittaminen"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Kirjoittaminen on yksi tärkeimmistä taidoista ohjelmoinnissa, ja tekstitiedostojen kirjoittaminen on keskeinen osa sitä. Tekstitiedostojen kirjoittamisen avulla voit tallentaa ja säilyttää tietoja eri ohjelmien välillä.
+Tekstitiedoston kirjoittaminen on olennainen osa ohjelmistokehitystä. Se mahdollistaa tiedon tallentamisen ja lukemisen ohjelman sisältä ja tämä voi olla hyödyllistä monissa sovelluksissa.
 
-## Miten
+## Kuinka tehdä
 
-Kotlin-ohjelmointikieli tarjoaa helpon tavan kirjoittaa tekstitiedostoja. Se käyttää Java IO-kirjastoa, joka tarjoaa joukon luokkia ja metodeja tiedostojen käsittelyyn.
+Kotlinilla on monia tapoja kirjoittaa tekstitiedostoja, mutta yksi yksinkertainen tapa on käyttää `FileWriter` -luokkaa. Tässä esimerkissä kirjoitamme yksinkertaisen tekstin `"Hei maailma!"` tiedostoon nimeltä `"teksti.txt"`:
 
+```Kotlin
+import java.io.FileWriter
+
+fun main() {
+  val teksti = "Hei maailma!"
+  
+  val tiedosto = FileWriter("teksti.txt")
+  // Kirjoitetaan tiedostoon
+  tiedosto.write(teksti)
+  // Suljetaan tiedosto
+  tiedosto.close()
+}
 ```
-Kotlin
-val tiedosto: File = File("tietoja.txt") // Luo uuden tiedoston
-tiedosto.writeText("Hei, tämä on esimerkki tekstiä.") // Kirjoittaa tiedostoon tekstin
-println(tiedosto.readText()) // Tulostaa tiedostoon tallennetun tekstin
-```
 
-Tässä esimerkissä luomme ensin uuden tiedoston nimeltä "tietoja.txt". Sitten käytämme `writeText()`-metodia kirjoittamaan tiedostoon otsikon "Hei, tämä on esimerkki tekstiä". Lopuksi tulostamme tiedostosta luetun tekstin käyttäen `readText()`-metodia.
+Tämän jälkeen tiedostomme sisältää tekstin "Hei maailma!". Voit avata sen tekstieditorilla ja tarkistaa sen sisällön.
 
-```
-Kotlin
-Hei, tämä on esimerkki tekstiä.
-```
+On kuitenkin tärkeää huomata, että tiedoston kirjoitus voi aiheuttaa virheitä, joten on tärkeää käsitellä mahdolliset poikkeukset. Aina on myös hyvä sulkea tiedosto `close()`-metodilla varmistaaksesi, että kaikki muutokset tallentuvat.
 
-## Syventävä tarkastelu
+## Syvällinen sukellus
 
-Kun kirjoitat tekstitiedostoja Kotlinilla, on hyvä myös huolehtia siitä, että tiedostot suljetaan ja virheenkäsittely tapahtuu asianmukaisesti. Tämä voi vaikuttaa ohjelman suorituskykyyn ja varmistaa, että tiedostoista ei tule jumiutuneita.
+Tiedoston kirjoittaminen voi olla monimutkaisempi prosessi, riippuen siitä millaista tietoa haluat tallentaa. Voit käyttää `BufferedWriter`-luokkaa kirjoittaaksesi suurempia määriä dataa tai `PrintWriter`-luokkaa kirjoittaaksesi muotoiltua tekstiä.
 
-Lisäksi on hyödyllistä käyttää `FileWriter`-luokkaa, joka tarjoaa enemmän vaihtoehtoja tiedoston kirjoittamiseen, kuten lisätä tiedostoon sisältöä sen sijaan, että korvaisi sen kokonaan.
+Voit myös käyttää `FileWriter`-luokan erilaisia konstruktoreita määrittääksesi haluatko kirjoittaa tiedoston loppuun (`FileWriter(String, true)`) vai aloittaa uuden tiedoston (`FileWriter(String, false)`).
 
-```
-Kotlin
-val tiedosto: File = File("lisays.txt")
-val lisays: String = "Lisää tekstiä tiedostoon."
-val fileWriter: FileWriter = FileWriter(tiedosto, true) // Toinen parametri tarkoittaa, että sisältöä lisätään eikä korvata
-fileWriter.use { it.write(lisays) } // "use" metodi sulkee tiedoston automaattisesti
-```
+Kaiken kaikkiaan on tärkeää tutustua erilaisiin vaihtoehtoihin ja valita ne jotka parhaiten sopivat tarpeisiisi.
 
 ## Katso myös
 
-- [Kotlin ohjelmointikielen viralliset sivut](https://kotlinlang.org/docs/jvm-get-started.html)
-- [Java IO-kirjaston dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html)
-- [Kotin IO-kirjaston dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
+- [Tiedostojen lukeminen ja kirjoittaminen Kotlinilla](https://kotlinlang.org/docs/tutorials/kotlin-for-py/reading-writing-files.html)
+- [Kotlinin java.io-paketin dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file-writer/index.html)

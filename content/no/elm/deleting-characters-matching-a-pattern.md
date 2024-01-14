@@ -1,45 +1,67 @@
 ---
-title:    "Elm: Sletting av tegn som matcher et mønster"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/deleting-characters-matching-a-pattern.md"
+title:                "Elm: Sletting av tegn som matcher et mønster"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å slette tegn som matcher et mønster kan være nyttig når du jobber med strenger i Elm. Dette kan bidra til å organisere og filtrere data på en effektiv måte.
+Å slette tegn som matcher et mønster kan være en viktig del av enhver programmeringsoppgave. Det kan hjelpe deg med å rydde opp i tekststrenger og finne feil eller uønskede tegn.
 
-## Hvordan du gjør det
+## Hvordan
 
-For å slette tegn som matcher et mønster, kan du bruke `String.filter` funksjonen i Elm. Dette tar imot en funksjon som returnerer en Bool verdi, og fjerner alle tegn som returnerer True fra funksjonen.
-
-```Elm
-import String exposing (filter)
-
-filter (\c -> c /= "a") "Elm is amazing" -- "Elm is mzing" 
-```
-
-I dette eksempelet, vil alle "a" karakterer bli fjernet fra strengen "Elm is amazing". Du kan også bruke mer kompliserte funksjoner for å slette tegn som passerer et gitt mønster.
+For å slette tegn som matcher et mønster i Elm kan du bruke funksjonen `String.filter`. Denne funksjonen tar inn en funksjon som parameter, som bestemmer hvilke tegn som skal slettes. La oss se på et eksempel:
 
 ```Elm
-import String exposing (filter)
+import String exposing (..)
 
-hasEvenIndex c index =
-    index % 2 == 0
+text = "Hei, verden!"
 
-filter (\c -> hasEvenIndex c 0) "Elm is amazing" -- "m i szn"
+filteredText = filter (\c -> c /= 'e') text
+
+-- Utdata: "Hi, vrdn!"
 ```
 
-Her bruker vi en hjelpefunksjon `hasEvenIndex` som returnerer True for tegn med partall indeks. Dette vil fjerne alle tegn på partallsindeks fra strengen "Elm is amazing".
+Her har vi et enkelt eksempel der vi fjerner alle små bokstaver "e" fra en tekststreng. Ved å bruke `filter` funksjonen og sammenligne hvert enkelt tegn med "e", kan vi enkelt slette dem fra strengen.
+
+En annen nyttig funksjon for å slette tegn basert på et mønster er `String.replace`. Denne funksjonen tar inn to tekststrenger som parametere og erstatter alle forekomster av den første strengen med den andre. La oss se på et annet eksempel:
+
+```Elm
+import String exposing (..)
+
+text = "Den raske reven hoppet over den late hunden"
+
+replacedText = replace "en" "e" text
+
+-- Utdata: "Dn rask rev hoppet over d lat hund"
+```
+
+Her erstatter vi alle forekomster av "en" med "e" i teksten vår, og vi ender opp med en forenklet versjon av setningen uten at mening eller grammatikk er påvirket.
 
 ## Dypdykk
 
-Det er verdt å merke seg at `String.filter` funksjonen vil returnere en ny streng i stedet for å endre den originale strengen. Dette gjør at operasjonen er trygg og ikke forandrer dataen din.
+Nå som vi har sett på noen enkle eksempler på hvordan du kan slette tegn som matcher et mønster, kan vi også utforske mer avanserte tilnærminger. Ett av disse er å bruke regulære uttrykk i kombinasjon med `String.split` og `String.join` for å slette deler av en tekststreng som matcher et mønster. For eksempel:
 
-Du kan også bruke `String.replace` funksjonen for å erstatte tegn som matcher et gitt mønster med et annet tegn. Dette kan være nyttig hvis du ønsker å bytte ut spesifikke tegn i en streng.
+```Elm
+import String exposing (..)
+import Regex exposing (..)
+
+text = "Jeg har 10 epler, men bare 5 appelsiner"
+
+numbersOnly = text
+    |> split (regex "[^0-9]+")
+    |> join ""
+
+-- Utdata: "105"
+```
+
+I dette tilfellet bruker vi først `split` funksjonen til å splitte teksten vår basert på alle ikke-numeriske tegn. Deretter bruker vi `join` funksjonen for å sette sammen det som er igjen, som bare er tallene i teksten vår.
 
 ## Se også
 
-- [Elm Docs: String.filter](https://package.elm-lang.org/packages/elm-lang/core/3.0.0/String#filter)
-- [Elm Docs: String.replace](https://package.elm-lang.org/packages/elm-lang/core/3.0.0/String#replace)
+- [Elm Offisiell Dokumentasjon](https://elm-lang.org/docs)
+- [String modulen](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Regex modulen](https://package.elm-lang.org/packages/elm/core/latest/Regex)

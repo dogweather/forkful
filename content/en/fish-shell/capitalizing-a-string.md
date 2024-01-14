@@ -1,56 +1,52 @@
 ---
-title:    "Fish Shell recipe: Capitalizing a string"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/capitalizing-a-string.md"
+title:                "Fish Shell recipe: Capitalizing a string"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Have you ever needed to capitalize a string in your Fish Shell programming? Perhaps you want to make the first letter of a name or sentence uppercase, or maybe you need to follow strict capitalization rules for a project. Whatever the reason, using Fish Shell's built-in function can quickly and easily transform your text.
+As a Fish Shell programmer, you may come across situations where you need to capitalize a string. For example, when dealing with user inputs or generating titles for your scripts. In these cases, it is important to know how to properly capitalize a string to ensure consistency and readability in your code.
 
-## How To 
-We'll start by creating a simple string variable with the text we want to capitalize:
+## How To
 
-```
-fish
-set my_string "hello world"
-```
-Next, we'll use the `string capitalize` function to make the first letter of our string uppercase:
+Capitalizing a string in Fish Shell is a simple process that can be achieved in a few different ways, depending on your specific needs and preferences.
+
+One method is by using the `string match` command. This will take a given string and convert the first character to uppercase. Here's an example:
 
 ```
-fish
-set my_string (string capitalize $my_string)
+string match --capitalize "hello world"
 ```
-Let's see the result by printing our variable to the terminal:
 
-```
-fish
-echo $my_string
-Hello world
-```
-As you can see, our string now starts with a capital "H" instead of a lowercase "h". But what if we want to capitalize every word in our string? We can use a combination of the `string capitalize` and `string join` functions:
+This will output "Hello world".
+
+Another option is to use the `string toupper` command. This will convert all characters in a string to uppercase. For instance:
 
 ```
-fish
-set my_string "this is a sentence"
-set words (string split " " $my_string)
-set capitalized_words (string capitalize $words)
-set capitalized_string (string join " " $capitalized_words)
-echo $capitalized_string
-This Is A Sentence
+string toupper "fish shell"
 ```
-In this example, we split our string into individual words, capitalized each word, and then joined them back together to create a new string with all words capitalized.
 
-## Deep Dive 
-The `string capitalize` function uses the `strtoupper()` C function to capitalize the first character of a string. However, this function only works for ASCII characters, so it may not work as expected for non-English strings. In these cases, it's best to use a third-party library like `capitalize` or `string.macro` to handle Unicode characters.
+The output will be "FISH SHELL".
 
-It's also worth noting that the `string capitalize` function will not change any characters other than the first one to uppercase. So if your string includes numbers, symbols, or already capitalized words, they will remain unchanged.
+You can also use the `tr` command to achieve the same result. Here's an example:
 
-## See Also 
-- [Fish Shell documentation on string manipulation](https://fishshell.com/docs/current/commands.html#string-manipulation)
-- [Fish Shell tutorial on strings and variables](https://fishshell.com/docs/current/tutorial.html#tutorial-string-variables)
-- [GNU Fish reference manual for more advanced string techniques](https://fishshell.com/docs/current/index.html#Reference-manual)
+```
+echo "fish shell" | tr "[:lower:]" "[:upper:]"
+```
 
-Thank you for reading! Happy coding with Fish Shell!
+This will also result in "FISH SHELL".
+
+## Deep Dive
+
+While the above methods are suitable for most cases, it's important to note that they may not work as expected for strings that contain special characters or foreign characters. In these situations, it may be necessary to use regular expressions or more advanced methods to properly capitalize the string.
+
+Additionally, it's important to consider the language and intended use of the string when deciding on the capitalization method. For example, in some languages, only the first letter of a sentence should be capitalized, while in others, proper nouns and acronyms may also be capitalized.
+
+## See Also
+
+- [Fish documentation on string manipulation](https://fishshell.com/docs/current/cmds/string.html)
+- [Fish tutorial on regular expressions](https://fishshell.com/docs/current/tutorial.html#using-regular-expressions)
+- [List of supported languages in Fish Shell](https://fishshell.com/docs/current/#supported-languages)

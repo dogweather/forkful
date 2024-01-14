@@ -1,53 +1,62 @@
 ---
-title:    "Java: Å starte et nytt prosjekt"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/starting-a-new-project.md"
+title:                "Java: Å starte et nytt prosjekt"
+programming_language: "Java"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å starte et nytt programmeringsprosjekt kan være en spennende og givende opplevelse. Det gir deg muligheten til å utvikle dine ferdigheter, løse problemer og lage noe som er unikt og personlig. Enten det er for personlig vekst eller for å hjelpe andre, så er det alltid en god grunn til å starte et nytt prosjekt.
+Det er mange grunner til å starte et nytt Java-prosjekt. Kanskje du har en ny idé for en applikasjon eller et program som du vil utvikle. Eller kanskje du ønsker å lære mer om Java og trenger et praktisk prosjekt å jobbe med. Uansett motivasjon, er det alltid spennende å starte et nytt prosjekt og se hvor det fører deg.
 
-# Hvordan
+## Slik gjør du det
 
-For å starte et nytt Java-prosjekt, trenger du først og fremst en god idé. Deretter er det viktig å strukturere prosjektet på en fornuftig måte og velge passende verktøy og biblioteker. Her er et eksempel på hvordan du kan opprette et nytt Java-prosjekt i IntelliJ IDEA:
+Før du begynner å kode, er det viktig å ha en klar forståelse av hva du ønsker å oppnå med prosjektet ditt. Skisser ut funksjonaliteten og strukturen til programmet ditt, og tenk på hvilke verktøy og ressurser du trenger. Når du har en plan, kan du følge disse enkle trinnene for å sette i gang med ditt nye Java-prosjekt:
 
 ```Java
-public class Main {
-
+public class MinProsjekt {
     public static void main(String[] args) {
-        System.out.println("Velkommen til ditt nye prosjekt!");
+        // Sørg for at Java er installert på datamaskinen din
+        // Husk å importere nødvendige biblioteker
+        // Skriv koden din her
     }
+}
+```
 
+Etter å ha satt opp prosjektets struktur, kan du begynne å skrive koden din. Bruk riktig syntaks og følg beste praksis for å skrive ren og effektiv kode. Husk også å kommentere koden din for å gjøre den lettere å forstå for andre brukere eller for deg å referere til senere.
+
+Når koden din er klar, kan du teste den ved å kjøre programmet og se på resultatet:
+
+```Java
+public class MinProsjekt {
+    public static void main(String[] args) {
+        int tall1 = 5;
+        int tall2 = 10;
+        int sum = tall1 + tall2;
+
+        System.out.println("Summen av " + tall1 + " og " + tall2 + " er " + sum);
+    }
 }
 ```
 
 Output:
 
 ```
-Velkommen til ditt nye prosjekt!
+Summen av 5 og 10 er 15
 ```
 
-Det neste steget er å sette opp en GitHub-repository for prosjektet ditt, slik at du kan dele koden med andre og beholde en sikkerhetskopi. Eksempel på hvordan du kan gjøre dette:
+Du kan også bruke debug-funksjonaliteten i din IDE for å finne og løse eventuelle feil i koden din.
 
-```Java
-git init
-git add .
-git commit -m "Første commit"
-git remote add origin git@github.com:brukernavn/prosjektnavn.git
-git push -u origin master
-```
+## Dypdykk
 
-# Dykk dypere
+Når du starter et Java-prosjekt, er det viktig å også tenke på noen andre aspekter som kan påvirke arbeidet ditt. Dette inkluderer valg av utviklingsmiljø, versjonshåndtering og testing av koden din. Det er også viktig å sørge for at du følger sikkerhetsstandarder og beste praksis for å unngå potensielle sårbarheter.
 
-Når du har startet prosjektet ditt, er det viktig å holde deg organisert og følge beste praksis når det gjelder kodestruktur og dokumentasjon. Du bør også jevnlig teste koden din for å sikre at den fungerer som den skal. Og husk, det er ingenting galt i å søke hjelp fra andre programmerere når du støter på problemer eller trenger inspirasjon.
+En annen viktig del av et prosjekt er også dokumentasjon. Selv om det kan virke kjedelig, er det viktig å dokumentere koden din for å gjøre det lettere for andre å forstå og bruke den. Dette inkluderer å skrive kommentarer i koden, lage README-filer og eventuelt utvikle en brukermanual.
 
-Det kan også være lurt å følge et metodisk utviklingsmønster, for eksempel Agile, som fremmer effektivitet og samarbeid. Og ikke glem å ha det gøy mens du jobber med prosjektet ditt!
+## Se også
 
-# Se også
-
-- [Offisiell Java-dokumentasjon](https://docs.oracle.com/javase/8/docs/api/index.html)
-- [IntelliJ IDEA dokumentasjon](https://www.jetbrains.com/help/idea/discover-intellij-idea.html)
-- [Agile-metoden](https://en.wikipedia.org/wiki/Agile_software_development)
+- [Offisiell Java-dokumentasjon](https://docs.oracle.com/javase/tutorial/)
+- [GitHub: Beste praksis for Java-prosjekter](https://github.com/oojacoboo/guide_to_clean_java)
+- [Javaboka - Introduksjon til Java-programmering](https://bokbasen.janets.no/webread/read/id/113629/slug/javaboka)

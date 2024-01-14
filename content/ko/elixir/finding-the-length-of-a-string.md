@@ -1,40 +1,43 @@
 ---
-title:    "Elixir: 문자열의 길이 찾기"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/finding-the-length-of-a-string.md"
+title:                "Elixir: 문자열의 길이 찾기"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열의 길이를 찾는 것에 대해 관심을 가질 이유는 여러 가지가 있습니다. 예를 들어, 사용자 입력을 검증하거나 문자열 처리를 위해 필요할 수 있습니다.
+문자열의 길이를 찾게 되는 이유는 데이터를 다룰때 중요한 부분 중 하나입니다. 프로그래머는 자주 다양한 유형의 데이터를 다루게 되는데, 그 중에는 문자열 또한 포함됩니다. 따라서 문자열의 길이를 정확히 파악하는 것은 중요한 스킬입니다.
 
-## 어떻게
+## 방법
 
-문자열의 길이를 찾는 가장 간단한 방법은 Elixir 내장 함수인 `String.length()`를 사용하는 것입니다. 이 함수는 문자열의 길이를 정수로 반환합니다.
+``` Elixir
+# 문자열의 길이 구하기
+input = "안녕하세요"
+IO.puts String.length(input)
 
-```Elixir
-text = "안녕하세요!"
-String.length(text)
-# 출력: 6
+# 출력결과
+5
 ```
 
-또 다른 방법은 문자열을 리스트로 변환한 후 `length()` 함수를 사용하는 것입니다. 이 경우에는 띄어쓰기도 한 글자로 카운트되므로 조심해야 합니다.
+위의 예제에서 볼 수 있듯이, Elixir에서는 `String.length` 함수를 사용하여 간단하게 문자열의 길이를 구할 수 있습니다. 또한 입력한 문자열 내에 공백 또한 길이에 포함되므로 유의해야 합니다.
 
-```Elixir
-text = "Hello, world!"
-text |> String.graphemes() |> length()
-# 출력: 13
-```
+## 깊이 파고들기
 
-## 깊게 들어가기
+문자열의 길이를 구하는 방법은 내부적으로 어떻게 작동할까요? Elixir에서는 문자열을 바이트로 저장하므로, `String.length` 함수는 문자열의 바이트 수를 반환합니다.
 
-문자열의 길이를 어떻게 정의할 수 있을까요? 실제로는 문자열이 저장된 방식에 따라 달라질 수 있습니다. Elixir에서는 문자열을 유니코드 코드 포인트의 리스트로 표현합니다. 따라서 `String.length()` 함수는 리스트의 길이를 반환합니다.
+예를 들어, "안녕하세요"라는 문자열의 경우 한글은 3바이트로 되어있기 때문에 `String.length` 함수는 5를 반환합니다. 이는 각 문자를 나타내는 코드 포인트가 2바이트이고, 마지막 공백은 1바이트로 이루어져 있기 때문입니다. 따라서 문자열의 길이를 구할 때에는 바이트 수를 주의 깊게 살펴보는 것이 중요합니다.
 
-만약, 한글과 같이 다중 바이트 문자를 사용하는 문자열을 다룬다면, `String.length()`의 결과가 예상과 다를 수 있습니다. 이를 방지하기 위해서는 `String.grapheme_length()` 함수를 사용하여 문자 그래프의 수를 반환해야 합니다.
+## 관련 정보
+
+- [Elixir 문서](https://hexdocs.pm/elixir/Kernel.html#String.length/1)
+- [문자열 다루는 방법](https://elixirschool.com/kr/lessons/basics/string/)
+- [바이트와 코드 포인트의 차이점](https://medium.com/@joaodlf/understanding-bytes-code-points-and-graphemes-in-elixir-and-erlang-60d9b323fd46)
 
 ## 참고 자료
 
-- [Elixir 문자열 관련 문서](https://hexdocs.pm/elixir/String.html#functions)
-- [유니코드 그래프의 정의](https://www.unicode.org/reports/tr29/#Grapheme_Cluster_Boundary_Rules)
+- [Elixir 공식 문서](https://elixir-lang.org/)
+- [Elixir School](https://elixirschool.com/kr/)
+- [Elixir 커뮤니티 사이트](https://elixir-lang.org/community/)

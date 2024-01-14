@@ -1,40 +1,56 @@
 ---
-title:    "Kotlin: Пошук та заміна тексту"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/searching-and-replacing-text.md"
+title:                "Kotlin: Пошук та заміна тексту"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Можливо, вам знадобилося замінити определений текст у вашому коді або текстовому файлі. Це може бути важко і час-consuming, якщо робити це вручну. Тому варто вивчити як швидко та ефективно замінювати текст за допомогою Kotlin.
+Програмування може бути важливою і потужною навичкою, яка полегшує роботу. Заміна тексту є однією з найбільш корисних можливостей для програмістів, яка допомогає пришвидшити та полегшити процес кодування.
 
-## Як це зробити
+## Як
 
-Для початку, давайте розберемося з основними функціями, які нам потрібні для заміни тексту в Kotlin. Перш за все, нам знадобиться функція "replace", яка приймає два параметри: текст, який ми хочемо замінити, і текст, на який ми хочемо його замінити. Наприклад:
+Приклади використання методів заміни тексту в мові програмування Kotlin в рамках "```Kotlin ... ```" кодових блоків та результати виводу:
 
-```Kotlin
-val text = "Добрий день"
-val newText = text.replace("Добрий", "Вечір")
-```
-
-Цей код замінить слово "Добрий" на "Вечір" у змінній "newText". Також, можна використовувати регулярні вирази для заміни більш складних шаблонів. Наприклад:
+- Заміна старої назви змінної на нову:
 
 ```Kotlin
-val regex = Regex("([A-Z])\\w+")
-val text = "Hello World"
-val newText = regex.replace(text, "Bye $1")
+var username = "UkrainianDev"
+username = username.replace("UkrainianDev", "KyivCoder")
+println(username)
+
+// Output: KyivCoder 
 ```
 
-В цьому прикладі ми використовуємо регулярний вираз, щоб замінити слово "Hello" на "Bye" і додати до нього першу букву верхнього регістру ("W").
+- Заміна всіх літер "a" на "e" у рядку:
 
-## Глибоке вивчення
+```Kotlin
+val sentence = "Цей документ містить лише літери A."
+val result = sentence.replace("a", "e")
+println(result)
 
-У більш складних випадках, можливо, вам знадобиться використовувати більше функцій, які надає Kotlin для заміни тексту. Наприклад, функцію "replaceFirst", яка замінює лише перше входження тексту, або "replaceAfter", яка замінює текст після першого входження. Також, можна використовувати функцію "replaceEach" для заміни кількох текстів одночасно. Для детальнішої інформації про ці функції, будь ласка, ознайомтеся з документацією Kotlin.
+// Output: Цей документ містить лише літери e. 
+```
+
+- Видалення символів пунктуації з рядку:
+
+```Kotlin
+val text = "Привіт! Я український програміст."
+val cleanText = text.replace("[^A-Za-z0-9 ]".toRegex(), "")
+println(cleanText)
+
+// Output: Привіт Я український програміст 
+```
+
+## Глибокий погляд
+
+Заміна тексту може бути використана не лише для простих рядків, але й для більш складних структур даних, таких як масиви та колекції. Крім того, Kotlin має багато інших методів для роботи з текстом, які можуть бути корисними для заміни та маніпуляції даними у вашому коді.
 
 ## Дивіться також
 
-- [Документація Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Регулярні вирази в Kotlin](https://kotlinlang.org/docs/reference/regular-expressions.html)
-- [Функції для роботи з текстом в Kotlin](https://kotlinlang.org/docs/reference/string-manipulation.html)
+- [Документація Kotlin: Методи заміни](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/#replace)
+- [Туторіал на YouTube про заміну тексту в Kotlin](https://www.youtube.com/watch?v=HcSIMZcow9k)
+- [Стаття Medium про основи роботи з Kotlin та заміну тексту](https://medium.com/@UkrainianDev/kotlin-for-beginners-searching-and-replacing-text-1eb0ad4f5a64)

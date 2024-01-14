@@ -1,54 +1,53 @@
 ---
-title:    "C: Zdobycie aktualnej daty"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/getting-the-current-date.md"
+title:                "C: Pobieranie aktualnej daty"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy zastanawiałeś się kiedykolwiek, jak programy na Twoim komputerze potrafią wyświetlić aktualną datę? Programowanie jest sztuką tworzenia kodu, który wykonuje różne zadania - a jednym z takich zadań może być pobieranie aktualnej daty. W tym artykule dowiesz się, jak można łatwo uzyskać bieżącą datę w języku C.
+Otrzymywanie aktualnej daty jest ważnym elementem wielu programów. Często musimy wiedzieć, jaka jest bieżąca data, aby wykonać pewne działania, takie jak generowanie raportów lub tworzenie datowników.
 
 ## Jak to zrobić
 
-Aby uzyskać aktualną datę w języku C, możemy skorzystać z biblioteki "time.h". Ta biblioteka zawiera funkcję "time()", która zwraca bieżący czas w sekundach od 1 stycznia 1970 roku. Następnie możemy przetworzyć ten czas i przedstawić go w bardziej przyjaznym dla użytkownika formacie, za pomocą funkcji "localtime()".
-
-Oto przykładowy kod, który pokazuje, jak uzyskać bieżącą datę w formacie dzień-miesiąc-rok:
+W języku C istnieje kilka sposobów na uzyskanie aktualnej daty. Jednym z nich jest użycie funkcji `time()`, która zwraca liczbę sekund, które upłynęły od 1 stycznia 1970 roku (tzw. Epoce Unixa). Aby przekazać tę liczbę na bieżącą datę, możemy użyć funkcji `localtime()`, która konwertuje tę liczbę na strukturę `tm` zawierającą informacje o dacie i czasie. Poniżej znajduje się przykładowy kod:
 
 ```C
-#include <stdio.h> 
-#include <time.h> 
+#include <stdio.h>
+#include <time.h>
 
-int main() 
-{ 
-    // pobranie bieżącego czasu
-    time_t now = time(NULL); 
+int main(void)
+{
+    // uzyskanie liczby sekund od epoki Unix-a
+    time_t current_time = time(NULL);
 
-    // przetworzenie czasu do lokalnej strefy czasowej
-    struct tm *local = localtime(&now); 
+    // konwersja do struktury tm
+    struct tm *t = localtime(&current_time);
 
     // wyświetlenie bieżącej daty
-    printf("Bieżąca data: %02d-%02d-%d\n", local->tm_mday, local->tm_mon + 1, local->tm_year + 1900); 
+    printf("Bieżąca data: %d.%d.%d\n", t->tm_mday, t->tm_mon+1, t->tm_year+1900);
 
-    return 0; 
-} 
+    return 0;
+}
 ```
 
-Po uruchomieniu powyższego kodu, powinniśmy uzyskać wyjście:
+Wyjście z powyższego kodu może wyglądać następująco, w zależności od bieżącej daty:
 
 ```
-Bieżąca data: 27-10-2021
+Bieżąca data: 10.11.2021
 ```
 
-## Deep Dive
+## Głębsze zagadnienia
 
-Funkcje "time()" i "localtime()" wykorzystują wewnętrznie struktury czasu, aby przetworzyć bieżący czas. Struktura ta zawiera wiele pól, takich jak rok, miesiąc, dzień, godzina, minuta, sekunda, itp. Dzięki temu możemy uzyskać różne informacje o bieżącej dacie i godzinie.
+W przypadku uzyskiwania bieżącej daty mogą pojawić się pewne problemy związane z różnymi strefami czasowymi i zmianami czasu letniego. W takim przypadku warto sięgnąć po bardziej zaawansowane funkcje takie jak `gettimeofday()` lub `localtime_r()`.
 
-Możemy również zmienić strefę czasową, w której chcemy wyświetlić datę, poprzez ustawienie odpowiedniego pola struktury lokalnego czasu "tm_zone". Możemy również zmienić format wyjściowy używając innych funkcji z biblioteki "time.h", takich jak "strftime()".
+Jednym z problemów związanych ze zmianą czasu letniego jest to, że w niektórych przypadkach funkcja `localtime()` może zwrócić niepoprawną datę, ponieważ pole `tm_isdst` w strukturze `tm` może być ustawione na wartość `1` lub `0` zamiast oczekiwanej `-1`. Aby tego uniknąć, warto użyć funkcji `localtime_r()`, która pozwala na wykorzystanie dodatkowego parametru umożliwiającego określenie, czy system używa czasu letniego czy nie.
 
 ## Zobacz także
 
-- [Dokumentacja funkcji time() i localtime() w języku C](https://www.cplusplus.com/reference/ctime/)
-- [Przewodnik po programowaniu w języku C](https://www.programuj.com/kursy/c/jak-zaczac-programowanie-w-c?gclid=CjwKCAjwiLGGBhAqEiwAgq3q_407TsylY816hDsRXGzif8_Q-tA28Eg0wPsPfAssmasfQjrGlpqVQRoCkkEQAvD_BwE)
-- [Książka "Język ANSI C" autorstwa B. W. Kernighan i D. M. Ritchie](https://helion.pl/ksiazki/jezyk-ansi-c-brian-w-kernighan-dennis-m-ritchie,jansc.htm#format/e)
+- Oficjalna dokumentacja języka C: https://en.cppreference.com/w/c
+- Praca z datami i czasem w języku C: https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm
+- Problem ze zmianą czasu letniego w funkcji `localtime()`: http://man7.org/linux/man-pages/man3/localtime.3.html

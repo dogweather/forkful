@@ -1,18 +1,19 @@
 ---
-title:    "C#: Pisanie testów."
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/writing-tests.md"
+title:                "C#: Pisanie testów"
+programming_language: "C#"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto pisać testy w C#?
+# Dlaczego pisanie testów jest ważne w programowaniu?
 
-Testowanie jest nieodzownym elementem procesu tworzenia oprogramowania. Jest to potwierdzenie, że nasz kod działa prawidłowo i spełnia założone wymagania. Pisanie testów w języku C# jest kluczowym krokiem w zapewnieniu jakości naszego kodu. W tym artykule omówimy, dlaczego warto pisać testy w C# oraz jak to zrobić.
+Pisanie testów jest nieodłączną częścią procesu pisania oprogramowania. Sprawdzenie, czy kod działa poprawnie i ma poprawne wyniki jest nie tylko pomocne w znalezieniu i naprawieniu błędów, ale też pozwala na utrzymanie wysokiej jakości kodu. W tym wpisie dowiesz się, jak napisać skuteczne testy w języku C#.
 
-## Jak pisać testy w C#
+## Jak to zrobić?
 
-Aby napisać testy w języku C#, należy w pierwszej kolejności zdefiniować przestrzeń nazw "using NUnit.Framework;". Następnie, przy użyciu atrybutów "TestFixture" i "Test", można utworzyć nowe klasy i metody testowe. Poniższy przykład pokazuje, jak przetestować metodę dodawania:
+Najważniejszym krokiem w pisaniu testów jest wybranie odpowiedniego narzędzia. W języku C# popularnym wyborem jest framework NUnit. Poniżej przedstawiamy przykładowy kod testu przy użyciu tego narzędzia:
 
 ```C#
 using NUnit.Framework;
@@ -20,32 +21,33 @@ using NUnit.Framework;
 [TestFixture]
 public class CalculatorTests
 {
-    [Test]
-    public void Add_TwoNumbers_ReturnsCorrectSum()
-    {
-        // arrange
-        Calculator calc = new Calculator();
-        int num1 = 2;
-        int num2 = 3;
-        int expectedSum = 5;
-
-        // act
-        int actualResult = calc.Add(num1, num2);
-
-        // assert
-        Assert.AreEqual(expectedSum, actualResult);
-    }
+  [Test]
+  public void Add_ShouldReturnCorrectResult()
+  {
+    // Arrange
+    var calculator = new Calculator();
+    
+    // Act
+    var result = calculator.Add(5, 10);
+    
+    // Assert
+    Assert.AreEqual(15, result);
+  }
 }
 ```
 
-W powyższym przykładzie, najpierw tworzymy instancję klasy "Calculator", która zawiera metodę dodawania. Następnie definiujemy dwie zmienne, które będą argumentami metody "Add". W kolejnym kroku, wykonujemy metodę "Add" na obiekcie "calc", a następnie sprawdzamy czy otrzymany wynik jest zgodny z oczekiwanym.
+W powyższym przykładzie tworzymy klasę zawierającą testy oraz metodę testującą dodawanie dwóch liczb przy użyciu klasy Calculator. W fazie "Arrange" tworzymy instancję tej klasy, a w fazie "Act" wywołujemy metodę Add z odpowiednimi parametrami. Następnie w fazie "Assert" sprawdzamy, czy zwrócony wynik jest zgodny z oczekiwanym.
 
-## Głębszy wgląd w pisanie testów
+Pamiętaj, że testy powinny być pisane w taki sposób, by były możliwie najbardziej niezależne od siebie, czyli testy nie powinny zależeć od wyników innych testów.
 
-Pisanie testów w C# wymaga znajomości różnych metod asercji, takich jak "Assert.AreEqual()" czy "Assert.IsTrue()". Warto także zapoznać się z pojęciem mockowania obiektów przy użyciu biblioteki Moq. Pozwala to na symulowanie różnych scenariuszy i testowanie przypadków brzegowych. Należy również pamiętać o stosowaniu dobrej praktyki test-driven development (TDD), czyli pisaniu testów przed kodem właściwym.
+## Głębszy przegląd
 
-# Zobacz również
+Niezbędne jest, aby testy były łatwe w utrzymaniu i modyfikowaniu. Dlatego ważne jest, aby pisać testy tak, jakbyśmy pisali normalny kod. Identyfikowanie odpowiednich asercji i testowanie krytycznych ścieżek kodu jest kluczowe dla skutecznych testów.
 
-- [Tutorial: NUnit](https://nunit.org/)
-- [Moq documentation](https://www.nuget.org/packages/Moq/)
-- [Test-driven development: A Practical Guide](https://www.amazon.com/Test-Driven-Development-Microsoft-Professional/dp/0735619484)
+Istotną rzeczą jest też to, aby testy były pisane przed napisaniem właściwego kodu. Nazywa się to podejściem TDD (Test-Driven Development) i pomaga w tworzeniu lepszego i lepiej przetestowanego kodu.
+
+## Zobacz też
+
+- [Dokumentacja NUnit](https://nunit.org/)
+- [Podstawowe zasady pisania testów w C#](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices)
+- [Wpływ pisania testów na jakość kodu](https://blog.codinghorror.com/i-pity-the-fool-who-doesnt-write-unit-tests/)

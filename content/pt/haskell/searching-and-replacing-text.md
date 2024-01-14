@@ -1,59 +1,58 @@
 ---
-title:    "Haskell: Buscando e substituindo texto"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/searching-and-replacing-text.md"
+title:                "Haskell: Procurando e substituindo texto"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que procurar e substituir texto em Haskell?
 
-A tarefa de buscar e substituir texto é uma das tarefas mais comuns e úteis na programação, especialmente em linguagens funcionais como Haskell. Ao dominar essa habilidade, você poderá economizar tempo e aumentar sua produtividade na escrita de código.
+A busca e substituição de texto pode ser uma tarefa tediosa e demorada quando realizada manualmente. No entanto, em linguagens de programação funcional, como Haskell, podemos aproveitar o poder e a facilidade da programação para automatizar e simplificar esse processo. Além disso, a busca e substituição de texto é especialmente útil em casos onde temos um grande volume de dados para processar.
 
-## Como fazer
+## Como fazer em Haskell
 
-Existem várias maneiras de buscar e substituir texto em Haskell, mas uma das maneiras mais simples é usando a função `replaceAll` da biblioteca `Data.Text`, que recebe uma lista de pares de texto: o texto a ser substituído e o texto substituto.
-
-```
-Haskell
-import Data.Text (unpack, replaceAll)
-import qualified Data.Text as T
-
--- uma string de exemplo
-texto = "Olá, mundo!"
-
--- substituindo "mundo" por "Haskell"
-novoTexto = replaceAll (T.pack "mundo") (T.pack "Haskell") (T.pack texto)
-
-unpack novoTexto -- imprime "Olá, Haskell!"
-```
-
-Você também pode usar expressões regulares para realizar buscas e substituições em texto. A biblioteca `Data.Text.Regex` possui funções úteis para lidar com expressões regulares em Haskell. Aqui está um exemplo de como usar a função `subRegex` para substituir todas as ocorrências de números por asteriscos em uma string:
+Haskell possui uma função útil chamada `replace`, que nos permite substituir uma sequência de caracteres por outra em uma string. Vejamos um exemplo:
 
 ```
-Haskell
-import Data.Text (unpack)
-import qualified Data.Text as T
-import Text.Regex.Posix (subRegex)
-
--- uma string de exemplo
-texto = "Existem 123 coisas na lista."
-
--- substituindo números por asteriscos
-novoTexto = subRegex (makeRegex "([0-9]+)") (unpack texto) "*"
-
-unpack novoTexto -- imprime "Existem * coisas na lista."
+replace :: ByteString -> ByteString -> ByteString -> ByteString
+replace old new target = intercalate new . split (string old) $ target
 ```
 
-## Aprofundando
+Neste exemplo, utilizamos o pacote `bytestring` para lidar com as strings em bytes. A função `replace` recebe três parâmetros: a sequência de caracteres que queremos substituir, a nova sequência de caracteres e a string em que desejamos realizar a substituição. Em seguida, utilizamos a função `intercalate` para unir as strings resultantes após a substituição e a função `split` para separar a string em uma lista de strings, utilizando a sequência de caracteres original como delimitador.
 
-Além das funções mencionadas, há muitas outras maneiras de realizar buscas e substituições de texto em Haskell. Você pode explorar as inúmeras bibliotecas disponíveis na comunidade Haskell, como `Data.String.Utils` e `Data.List.Utils`, que possuem funções úteis para manipulação de strings.
+Suponha que temos a seguinte string:
 
-Se você estiver interessado em aprender mais sobre expressões regulares em Haskell, a documentação oficial da linguagem possui um bom tutorial sobre o assunto. Além disso, você pode explorar as funcionalidades de substituição de texto nas bibliotecas mencionadas, como `Data.Text.Regex`, para ter um melhor entendimento sobre como elas funcionam.
+```
+"Olá, vamos substituir algumas vogais?"
+```
 
-## Veja também
+Se desejarmos substituir todas as vogais por asteriscos, podemos fazer da seguinte forma:
 
-- Documentação oficial sobre expressões regulares em Haskell (em inglês): https://www.haskell.org/onlinereport/regexps.html
-- Biblioteca `Data.Text.Regex` (em inglês): https://hackage.haskell.org/package/regex-base
-- Biblioteca `Data.String.Utils` (em inglês): https://hackage.haskell.org/package/missingh-1.4.0.1/docs/Data-String-Utils.html
-- Biblioteca `Data.List.Utils` (em inglês): https://hackage.haskell.org/package/list-utils-0.1.0/docs/Data-List-Utils.html
+```
+replace "aeiou" "*" "Olá, vamos substituir algumas vogais?"
+```
+
+O resultado seria:
+
+```
+"Ol*, v*m*s s*bst*t**r *lg*n*s v*g**s?"
+```
+
+Note que as vogais foram substituídas pela sequência de caracteres "*" conforme esperado.
+
+## Mergulho Profundo
+
+Além da função `replace`, Haskell possui várias outras funções e ferramentas que podem ser úteis para realizar busca e substituição de texto. Algumas delas são:
+
+- A função `replaceAll`, do pacote `text`, que recebe uma expressão regular para buscar e uma string substituta;
+- O módulo `Text.Regex.TDFA`, que permite utilizar expressões regulares para busca e substituição;
+- A ferramenta `sed`, disponível através do pacote `shelly`, que permite realizar busca e substituição em arquivos utilizando expressões regulares.
+
+## Veja Também
+
+- [Documentação da função `replace`](https://hackage.haskell.org/package/bytestring/docs/Data-ByteString.html#v:replace)
+- [Documentação da função `replaceAll`](https://hackage.haskell.org/package/text/docs/Data-Text-Internal.html#v:replaceAll)
+- [Documentação do módulo `Text.Regex.TDFA`](https://hackage.haskell.org/package/regex-tdfa/docs/Text-Regex-TDFA.html)
+- [Documentação do pacote `shelly`](https://hackage.haskell.org/package/shelly/docs/Shelly.html)

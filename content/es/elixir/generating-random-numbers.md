@@ -1,53 +1,35 @@
 ---
-title:    "Elixir: Generación de números aleatorios"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/generating-random-numbers.md"
+title:                "Elixir: Generación de números aleatorios"
+programming_language: "Elixir"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-Generar números aleatorios es una habilidad importante para cualquier programador en Elixir. En muchos casos, necesitamos simular datos aleatorios para pruebas o para crear juegos y aplicaciones. Afortunadamente, en Elixir hay una manera fácil de generar números aleatorios, lo que hace que nuestro código sea más eficiente y dinámico.
+Las Generación de números aleatorios es una habilidad importante en la programación de Elixir. Puede ser utilizada para juegos, experimentos, pruebas y otras aplicaciones donde se requiere una entrada aleatoria.
 
 ## Cómo hacerlo
-
-Elixir tiene una función incorporada llamada `rand/0` que nos permite generar un número entero aleatorio. Por ejemplo, si queremos generar un número aleatorio entre 1 y 10, podemos usar `rand(1..10)`.
-
 ```Elixir
-iex> rand(1..10)
-6
-```
+# Generar un número entero aleatorio entre 1 y 10
+Random.rand(1..10) 
+#=> 7
 
-También podemos generar un número aleatorio de coma flotante entre 0 y 1 usando `Float.random/0`.
+# Generar un número de punto flotante aleatorio entre 0 y 1
+Random.float 
+#=> 0.45322
 
-```Elixir
-iex> Float.random()
-0.8323526955950203
-```
-
-Si queremos generar una lista de números aleatorios, podemos usar la función `Enum.map/2` junto con `rand/0`.
-
-```Elixir
-iex> 1..10 |> Enum.map(fn(_) -> rand(1..100) end)
-[34, 56, 10, 78, 43, 23, 89, 61, 5, 93]
-```
-
-También podemos especificar un número de elementos para nuestra lista aleatoria usando `Enum.map/3` y `Enum.reduce/3`.
-
-```Elixir
-iex> Enum.map(1..10, fn(_) -> rand(1..100) end, 0, &+/2)
-416
+# Generar un número de punto flotante aleatorio entre 10 y 100
+Random.float(10..100) 
+#=> 84.6576
 ```
 
 ## Profundizando
+La función `Random.rand/1` toma un rango como argumento y genera un número entero aleatorio dentro de ese rango. Mientras tanto, la función `Random.float/1` genera un número de punto flotante aleatorio entre 0 y 1 si no se proporciona ningún argumento. Sin embargo, si se proporciona un rango, generará un número de punto flotante aleatorio dentro de ese rango.
 
-Si bien `rand/0` es fácil de usar, no siempre es eficiente en cuanto a rendimiento. Elixir también ofrece una librería llamada `:rand`, que se centra en la generación de números aleatorios más eficiente.
-
-Además, podemos especificar una semilla para nuestro generador de números aleatorios usando `Random.seed/1`, lo que nos permite generar los mismos números aleatorios en diferentes ejecuciones del código.
+Elixir también tiene otras funciones útiles para generar números aleatorios, como `Random.uniform/2`, que genera un número aleatorio dentro de un rango especificado, y `Random.hex/1`, que genera una cadena hexadecimal aleatoria. Estas funciones pueden ser útiles para diferentes situaciones dependiendo de la aplicación.
 
 ## Ver también
-
-- Documentación oficial de Elixir sobre la generación de números aleatorios: https://hexdocs.pm/elixir/Kernel.html#rand/1
-- Blog post sobre la generación de números aleatorios con Elixir: https://www.badykov.com/elixir-random-number-generation/
-- Ejemplos de código para generar números aleatorios en Elixir: https://github.com/xtuc/Elixir-Random-Number-Generation
+- [Documentación oficial de Elixir sobre generación de números aleatorios](https://hexdocs.pm/elixir/Random.html)
+- [Artículo de blog sobre generación de números aleatorios en Elixir](https://happyteamlabs.com/blog/generating-random-numbers-with-elixir/)

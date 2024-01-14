@@ -1,36 +1,45 @@
 ---
-title:    "C#: Slette tegn som matcher et mønster"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/deleting-characters-matching-a-pattern.md"
+title:                "C#: Slette tegn som matcher et mønster"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å slette tegn som matcher et mønster kan være nyttig i situasjoner der man ønsker å fjerne uønskede tegn fra en streng, for eksempel i et tekstbehandlingsprogram eller en database. Dette kan også være en viktig del av å validere brukerinput i et program.
+Noen ganger kan det være nødvendig å fjerne visse karakterer fra en streng som følger et bestemt mønster. Dette kan være nyttig for å lage et filter for sensitiv informasjon, eller for å forenkle dataene vi jobber med. I denne artikkelen skal vi se på hvordan vi kan slette karakterer som matcher et mønster i C#.
 
-## Hvordan Gjøre Det
+# Hvordan
 
-For å slette tegn som matcher et mønster, kan man bruke metoden `Regex.Replace()`. Dette er en innebygd metode i C# som tar inn tre parametre: en streng, et mønster og det nye tegnet man ønsker å erstatte det gamle med. La oss se på et eksempel:
+For å fjerne karakterer som matcher et mønster i C#, kan vi bruke metoden `Regex.Replace()`. Denne metoden tillater oss å erstatte en eller flere strenger som følger et bestemt mønster med en tom streng, som i praksis vil fjerne disse karakterene.
+
+La oss se på et eksempel der vi ønsker å fjerne alle tallene fra en streng:
 
 ```C#
-string input = "d0g c@t f1sh";
-string pattern = "[^a-zA-Z0-9]"; // Dette mønsteret matcher alle tegn som ikke er bokstaver eller tall
-string output = Regex.Replace(input, pattern, "");
-Console.WriteLine(output); // Output vil være "d0g c@t f1sh"
+var input = "Denne strengen inneholder tall: 12345";
+var pattern = @"\d+"; // Dette er mønsteret for tall
+var output = Regex.Replace(input, pattern, ""); // output vil nå være "Denne strengen inneholder tall:"
 ```
 
-I dette eksempelet bruker vi metoden til å slette alle tegn som ikke er bokstaver eller tall i den opprinnelige strengen `input`. Resultatet blir lagret i strengen `output` og deretter skrevet ut til konsollen.
+Her ser vi at vi har brukt `\d` for å representere tall, og `+` for å indikere at vi ønsker å fjerne alle tall som består av flere enn én siffer. Dette er et enkelt eksempel, men `Regex.Replace()` metoden har mange muligheter for å spesifisere mer komplekse mønstre.
 
-## Dypdykk
+Vi kan også bruke denne metoden til å fjerne bokstaver eller andre symboler. For eksempel kan vi fjerne alle vokaler fra en streng ved å bruke mønsteret `[aeiou]`:
 
-Vi kan også bruke `Regex.Replace()` til å erstatte tegn med andre tegn eller strenger. For eksempel kan vi slette alle mellomrom i en streng ved å bruke følgende mønster: `\s+`. Dette vil matche alle mellomrom og erstatte dem med ingenting, noe som vil resultere i en streng uten mellomrom.
+```C#
+var input = "Dette er en streng med mange vokaler";
+var pattern = "[aeiou]"; // Mønsteret for vokaler
+var output = Regex.Replace(input, pattern, ""); // output vil nå være "Dtt r n strng mng vklr"
+```
 
-Det er også verdt å nevne at man kan bruke regulære uttrykk i stedet for en streng som mønster. Dette gir større fleksibilitet og mulighet for mer avanserte mønstre.
+# Dypdykk
 
-## Se Også
+Når vi bruker `Regex.Replace()` metoden, er det viktig å være oppmerksom på at den tar imot et regulært uttrykk som et argument. Regulære uttrykk er en spesialisering innen string matching, som tillater oss å søke etter visse mønstre eller sekvenser i en streng.
 
-- [Microsofts offisielle dokumentasjon for Regex.Replace()](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=netcore-3.1)
-- [En guide til regulære uttrykk i C#](https://www.regular-expressions.info/dotnet.html)
-- [En oversikt over ASCII-tegn](https://www.ascii-code.com/)
+Det finnes flere ulike metoder og symboler for å lage regulære uttrykk, og dette går utover omfanget av denne artikkelen. Men det er verdt å nevne at det kan være lurt å øve seg på å lage og lese regulære uttrykk for å bli mer effektiv i å bruke `Regex.Replace()` (og andre metoder relatert til string matching).
+
+# Se også
+
+* [Microsoft sin dokumentasjon om `Regex.Replace()`](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace)
+* [En guide til regulære uttrykk i C#](https://www.c-sharpcorner.com/article/the-basics-of-regular-expression-part-1/)

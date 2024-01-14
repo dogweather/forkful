@@ -1,50 +1,46 @@
 ---
-title:    "Go: Utskrift av felsökningsresultat"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/printing-debug-output.md"
+title:                "Go: Utskrift av felsökningsutdata"
+programming_language: "Go"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva ett program kan vara roligt, men ibland kan det också vara frustrerande när du stöter på fel eller buggar. Och det är där utskrift av felsökningsinformation kommer in i bilden. Genom att skriva ut debug-utmatning får du bättre förståelse för vad som händer i ditt program och kan effektivt hitta och lösa problem.
+Att skriva kod är en process som är full av utmaningar och ibland kan det vara svårt att hitta fel och buggar i vår kod. För att enkelt hitta och åtgärda dessa problem kan vi använda oss av debug-utskrifter. I denna blogginlägg ska vi utforska hur man kan använda debug-utskrifter i Go-programmering.
 
 ## Hur man gör
 
-För att skriva ut debug-utmatning i Go kan du använda sig av funktionen "fmt.Printf()" eller "fmt.Println()". Dessa funktioner gör det möjligt för dig att skriva ut värden för olika variabler i ditt program. Låt oss ta ett exempel:
+För att skriva ut debug-meddelanden i Go kan vi använda oss av funktionen `fmt.Printf()`. Denna funktion används för att skriva ut en formaterad sträng till standardutdata. Låt oss ta en titt på ett exempel där vi behöver debugga vår kod:
 
-```
+```Go
 package main
 
 import "fmt"
 
 func main() {
-    nummer := 10
-    namn := "Johan"
-
-    fmt.Printf("Värdet av variabeln nummer är: %d\n", nummer)
-    fmt.Println("Namnet på användaren är: ", namn)
+    total := 0
+    for i := 0; i < 10; i++ {
+        total += i
+    }
+    fmt.Printf("Totalt värde: %d\n", total)
 }
 ```
 
-I detta exempel skriver vi ut värdet av variabeln "nummer" genom att använda funktionen "fmt.Printf()" och vi skriver ut värdet av variabeln "namn" genom att använda funktionen "fmt.Println()". Utmatningen för detta program kommer att vara:
+I detta exempel skriver vi ut värdet på den totala summan i vår loop. Detta kan vara en hjälpsam utskrift för att följa värdet på `total` variabeln och se om det stämmer med våra förväntningar.
 
-```
-Värdet av variabeln nummer är: 10
-Namnet på användaren är: Johan
-```
+Det finns också en annan funktion i Go som heter `log.Print()`. Denna funktion skriver ut en sträng till standardutdata, men dessutom inkluderar den tidsstämpel och filinformation om var utskriften skedde. Detta kan vara särskilt användbart när man debuggar flera delar av kod och vill hålla reda på vilka utskrifter som är relaterade till vilken del av koden.
 
-Notera att vi har använt "%d" för att representera värdet av "nummer" och inte "%s" som är den vanliga sträng-ersättaren. Det är viktigt att förstå skillnaden mellan de olika ersättarna för att kunna skriva ut korrekt information.
+## Fördjupning
 
-## Deep Dive
+Att använda debug-utskrifter i Go kan vara en enkel och effektiv metod för att hitta och åtgärda buggar. Dock bör man tänka på att det kan vara lätt hänt att glömma bort att ta bort utskrifterna innan man skickar in sin kod för produktion. Detta kan leda till oönskade utskrifter och eventuellt minska prestandan på vår applikation.
 
-Som du kanske har märkt kan du använda dig av flera "fmt" funktioner för att skriva ut variabler i ditt program. Några andra användbara funktioner är "fmt.Sprintf()" som gör det möjligt för dig att formatera en sträng och spara den i en variabel och "fmt.Fprintf()" som skriver ut till en IO-strömm eller fil istället för till standardutmatningen.
+Det finns också andra sätt att debugga vår kod, som t.ex. att använda debugger-verktyg eller loggningsramverk. Det är viktigt att hitta den metod som passar bäst för vår kod och arbetssätt.
 
-En viktig aspekt att tänka på när du skriver ut debug-utmatning är att ta hänsyn till prestanda. Om ditt program är mycket stort och du skriver ut massor av information till din terminal eller fil kan det påverka prestandan negativt. Det är därför viktigt att endast skriva ut den information som behövs och att ta bort utskrifterna när de inte längre behövs.
+## Se också
 
-## Se även
-
-* [Officiell dokumentation för fmt-paketet på Go's webbplats](https://golang.org/pkg/fmt/)
-* [Detaljerad guide om debug-utmatning i Go](https://www.digitalocean.com/community/tutorials/how-to-debug-go-code)
-* [Go's community forum för support och diskussioner](https://forum.golangbridge.org/)
+- [Officiell Go-dokumentation om fmt](https://golang.org/pkg/fmt/)
+- [How to Debug Go Programs](https://www.digitalocean.com/community/tutorials/how-to-debug-go-programs)
+- [Debugging Techniques in Go](https://medium.com/@enricofoltran/debugging-techniques-in-go-d337195fc865)

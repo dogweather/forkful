@@ -1,73 +1,51 @@
 ---
-title:    "Elm: Å starte et nytt prosjekt"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/starting-a-new-project.md"
+title:                "Elm: Å starte et nytt prosjekt"
+programming_language: "Elm"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å starte et nytt programmeringsprosjekt kan være en spennende og utfordrende oppgave. Med Elm, et funksjonelt programmeringsspråk utviklet for å lage webapplikasjoner, kan du få en annerledes og kraftig tilnærming til å lage nettsider og applikasjoner. I denne bloggposten vil vi gi en oversikt over hva Elm er og hvordan du kan komme i gang med å lage dine egne prosjekter.
+Å starte et nytt programmeringsprosjekt kan virke skremmende for noen, spesielt hvis du ikke er kjent med Elm-programmeringsspråket. Men det kan også være en spennende mulighet til å utforske nye måter å bygge nettapplikasjoner på. Med sin funksjonelle og deklarative tilnærming, er Elm et flott verktøy for å skrive robust og feilfri kode. I tillegg er det et blomstrende samfunn av utviklere som er villige til å hjelpe og dele sine kunnskaper.
 
-## Slik gjør du det
+# Hvordan
 
-For å komme i gang med Elm, trenger du først å installere det på datamaskinen din. Dette kan gjøres ved å følge instruksjonene på Elm sine offisielle nettsider. Når Elm er installert, kan du åpne et nytt prosjekt ved å skrive følgende i terminalen din:
+For å starte et nytt prosjekt i Elm, må du først installere Elm-plattformen på datamaskinen din. Deretter kan du følge disse enkle trinnene:
 
-```Elm init```
+1. Opprett en ny mappe for prosjektet ditt og naviger til den i terminalen din.
+2. Skriv ```elm package install``` for å installere alle avhengigheter som er nødvendige for prosjektet.
+3. Opprett en fil med navnet ```Main.elm``` og legg til følgende kode inne i den:
 
-Dette vil opprette en ny mappe med all kode du trenger for å begynne å kode i Elm. Deretter kan du åpne denne mappen i en teksteditor og begynne å skrive din første kode.
+```
+module Main exposing (..)
 
-Et eksempel på en enkel Elm-applikasjon kan være å lage en side med en knapp som, når den blir trykket på, endrer en tekst på siden. Her er en enkel kode som gjør akkurat det:
+import Html
 
-```Elm
-import Browser exposing (element, Html)
-import Html exposing (..)
-import Html.Events exposing (onClick)
+view : Html.Html
+view =
+  Html.text "Hei, verden!"
 
-type Msg = ButtonClicked
-
-update: Msg -> Model -> Model
-update msg model =
-  case msg of
-    ButtonClicked ->
-      { model | buttonText = "Ny tekst på siden!" }
-
-view: Model -> Html Msg
-view model =
-  div []
-    [ button [ onClick ButtonClicked ] [ text "Trykk meg!" ]
-    , div [] [ text model.buttonText ]
-    ]
-
-main: Program () Model Msg
 main =
-  Browser.element
-    { init = { buttonText = "Hei fra Elm!" }
-    , view = view
-    , update = update
-    , subscriptions = \_ -> Sub.none
-    }
+  view
 ```
 
-Koden over vil gi en nettside med en knapp som endrer teksten på siden når den blir trykket på. Dette er en enkel måte å vise Elm sin funksjonelle tilnærming til webutvikling.
+4. Kjør ```elm reactor``` i terminalen din for å starte en lokal server.
+5. Åpne nettleseren din og gå til ```http://localhost:8000```. Du bør nå se teksten "Hei, verden!".
 
-## Dypdykk
+# Dypdykk
 
-For å lære enda mer om Elm og hvordan du kan få mest mulig ut av det, anbefaler vi å utforske dokumentasjonen på deres offisielle nettsider. Her finner du alt du trenger å vite om språket og hvordan du kan bruke det til å lage fantastiske webapplikasjoner.
+Når du har satt opp ditt første prosjekt i Elm, kan du begynne å utforske språket og dets funksjoner. Her er noen ressurser som kan være nyttige når du starter:
 
-Her er noen andre ressurser som kan være nyttige å sjekke ut når du starter med Elm:
-
-- Elm slack community: https://elmlang.slack.com/
+- Elm-dokumentasjonen: https://guide.elm-lang.org/
 - Elm forum: https://discourse.elm-lang.org/
-- Elm skoleringsressurser: https://elm-lang.org/resources
-- Offisiell Elm dokumentasjon: https://guide.elm-lang.org/
+- Elm slack-kanal: https://elmlang.herokuapp.com/
 
-Lykke til med å lage spennende prosjekter med Elm!
+Det er også mange gode Elm-baserte prosjekter og biblioteker tilgjengelig på GitHub som du kan bruke som referanse og læremateriell for å utvide din kunnskap om språket.
 
-## Se også
-
-- Offisiell Elm nettside: https://elm-lang.org/
-- Elm eksempelprosjekter: https://github.com/elm-lang/examples/
-- Elm pakker og moduler: https://package.elm-lang.org/
-- Elm community ressurser: https://elm-community.github.io/
+# Se også
+- Elm offisiell nettside: https://elm-lang.org/
+- Elm-sider på norsk: https://elm-lang.org/translate/no
+- Elm subreddit: https://www.reddit.com/r/elm/

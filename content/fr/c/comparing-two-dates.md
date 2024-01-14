@@ -1,74 +1,61 @@
 ---
-title:    "C: Comparer deux dates"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c/comparing-two-dates.md"
+title:                "C: Comparaison de deux dates"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-La comparaison de deux dates est une étape importante dans la programmation en C, car cela permet de déterminer l'ordre chronologique entre deux événements ou de vérifier si une date est antérieure ou postérieure à une autre. Cela est particulièrement utile dans les applications de suivi de temps, de réservation de rendez-vous, ou simplement pour afficher une date correcte dans un format spécifique.
+Comparer les dates est une tâche courante en programmation, que vous travailliez sur un projet personnel ou professionnel. Cela permet de déterminer si une date est antérieure, postérieure ou égale à une autre, et peut être utile pour la gestion de données ou la mise en œuvre de fonctionnalités spécifiques.
 
-## Comment faire
+# Comment faire
 
-La comparaison de deux dates peut être réalisée en utilisant les fonctions prédéfinies de la bibliothèque standard du C telles que `time()` et `difftime()`. Voici un exemple de code qui compare deux dates et affiche le résultat:
+Pour comparer deux dates en C, nous utilisons les fonctions de la bibliothèque standard "time.h". Tout d'abord, nous devons convertir les dates en deux variables de type "struct tm", qui stockent les informations de date, telles que l'année, le mois, le jour, etc.
 
-```C
-#include <stdio.h>
-#include <time.h>
+```C 
+struct tm date1, date2;
+```
 
-int main()
-{
-    time_t date1, date2;
-    double diff;
+Ensuite, nous pouvons utiliser la fonction "mktime()" pour convertir ces structures en valeurs de type "time_t", qui représentent le nombre de secondes écoulées depuis le 1er janvier 1970.
 
-    // Obtenez les dates sous forme de nombres de type time_t
-    date1 = time(NULL);
-    printf("La première date est: %ld\n", date1);
+```C 
+time_t converted_date1 = mktime(&date1);
+time_t converted_date2 = mktime(&date2);
+```
 
-    // Vous pouvez également utiliser la fonction mktime() pour créer une date à partir de chiffres spécifiques
-    struct tm timeinfo = { .tm_year=2021, .tm_mon=0, .tm_mday=1 };
-    date2 = mktime(&timeinfo);
+À partir de là, nous pouvons simplement utiliser des opérateurs de comparaison tels que "==", "<", ">" pour comparer les dates converties.
 
-    printf("La deuxième date est: %ld\n", date2);
-
-    // Comparez les deux dates en utilisant la fonction difftime()
-    diff = difftime(date1, date2);
-
-    if (diff > 0) {
-        printf("La première date est postérieure à la deuxième date.\n");
-    } else if (diff < 0) {
-        printf("La première date est antérieure à la deuxième date.\n");
-    } else {
-        printf("Les deux dates sont identiques.\n");
-    }
-
-    return 0;
+```C 
+if (converted_date1 == converted_date2) {
+    printf("Les deux dates sont égales.");
+} else if (converted_date1 < converted_date2) {
+    printf("La date 1 est antérieure à la date 2.");
+} else {
+    printf("La date 2 est antérieure à la date 1.");
 }
 ```
 
-Output :
+Voici un exemple de sortie pour la date 1 = 1er janvier 2020 et la date 2 = 1er février 2020 :
 
 ```
-La première date est: 1627628395
-La deuxième date est: 1609459200
-La première date est postérieure à la deuxième date.
+La date 1 est antérieure à la date 2.
 ```
 
-## Plongée en profondeur
+# Approfondissement
 
-Il est important de noter que les fonctions de la bibliothèque standard du C utilisent les dates sous forme de nombres de type time_t qui représentent le nombre de secondes écoulées depuis le 1er janvier 1970 à 00:00:00 UTC. Cela signifie que lors de la comparaison de deux dates, une conversion de ces nombres en une structure de type `tm` est nécessaire pour pouvoir faire des comparaisons en termes de jours, mois et années.
+Pour une comparaison plus précise, nous pouvons également utiliser la fonction "difftime()" pour calculer la différence en secondes entre les deux dates. Cela peut être utile pour déterminer la différence entre deux événements, par exemple.
 
-De plus, la fonction `difftime()` renvoie la différence entre les deux dates en secondes, ce qui peut être inutile pour les comparaisons avec de grandes différences de temps. Dans de tels cas, il peut être préférable d'utiliser des fonctions de traitement de date telles que `gmtime()` et `localtime()` qui convertissent le nombre de temps en une structure de type `tm` lisible par l'homme.
+```C 
+double difference = difftime(converted_date2, converted_date1);
+```
 
-## Voir aussi
+Nous pouvons également utiliser les fonctions de la bibliothèque "localtime" pour travailler avec les dates locales ou "gmtime" pour les dates en temps universel (GMT).
 
-Pour en savoir plus sur les manipulations de dates en C et les différentes fonctions à utiliser, consultez les liens suivants :
+# Voir aussi
 
-- [La bibliothèque standard du C - Les fonctions de date et heure](https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_standard_du_C#Fonctions_de_date_et_heure)
-- [Documentation de la fonction time()](https://www.cplusplus.com/reference/ctime/time/)
-- [Documentation de la fonction difftime()](https://www.cplusplus.com/reference/ctime/difftime/)
-- [Documentation de la fonction mktime()](https://www.cplusplus.com/reference/ctime/mktime/)
-- [Documentation de la fonction gmtime()](https://www.cplusplus.com/reference/ctime/gmtime/)
-- [Documentation de la fonction localtime()](https://www.cplusplus.com/reference/ctime/localtime/)
+- [Documentation de la bibliothèque "time.h"](https://www.gnu.org/software/libc/manual/html_node/Date-and-Time.html)
+- [Tutoriel sur le traitement des dates en C](https://www.programiz.com/c-programming/c-date-time-functions)
+- [Exemple de programme comparant deux dates en C](https://www.tutorialspoint.com/compare-two-dates-in-c-language)

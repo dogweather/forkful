@@ -1,56 +1,48 @@
 ---
-title:    "Gleam: Användning av reguljära uttryck"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/using-regular-expressions.md"
+title:                "Gleam: Att använda reguljära uttryck"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför använda reguljära uttryck i Gleam
 
-Reguljära uttryck är ett kraftfullt verktyg för att söka, matcha och manipulera textsträngar i din Gleam-programmering. Genom att lära dig hur du använder reguljära uttryck kan du effektivt hantera stora mängder data och automatisera uppgifter.
+Att kunna använda reguljära uttryck är ett mycket kraftfullt verktyg för att hantera textsträngar i Gleam. Med hjälp av reguljära uttryck kan du söka, extrahera och manipulera text på ett effektivt sätt. Det är ett viktigt verktyg för programmerare som vill hantera data i en strukturerad och effektivt sätt.
 
-## Så här gör du
+# Hur man använder reguljära uttryck i Gleam
 
-För att använda reguljära uttryck i Gleam, behöver du importera modulen `Regex`. När modulen är importerad, kan du skapa ett reguljärt uttryck genom att använda funktionen `Regex.compile()` och passa in en sträng som beskriver mönstret du vill matcha. Till exempel, om du vill hitta alla förekomster av "programmering" i en textsträng kan du använda följande kod:
-
-```Gleam
-let regex = Regex.compile("programmering")
-```
-
-Nästa steg är att använda funktionen `Regex.find()` för att söka efter matchningar av mönstret i en textsträng. Om det finns en matchning, returnerar funktionen en tupel med matchningen och dess position i textsträngen. Om ingen matchning hittas, returnerar funktionen `none`. 
-
-För att bättre förstå hur detta fungerar, låt oss titta på ett enkelt exempel. Antag att vi har en variabel `text` som innehåller följande sträng:
+För att kunna använda reguljära uttryck i Gleam behöver du först importera modulen ```gleam/regex``` och använda funktionen ```match``` för att matcha ett reguljärt uttryck mot en textsträng. Här är ett exempel på hur du kan använda reguljära uttryck för att hitta en e-postadress i en textsträng:
 
 ```Gleam
-let text = "Jag älskar programmering! Gleam är mitt favoritspråk."
+import gleam/regex
+
+let text = "Kontakta mig på john.doe@example.com för mer information"
+let regex = regex.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")
+
+match regex with
+  | Ok(matcher) ->
+    case regex.find_first(text) with
+      | Some(result) -> 
+        let email = result.original()
+        let _ = log.info("Hittade denna e-postadress: " ++ email)
+      | None -> 
+        let _ = log.warn("Kunde inte hitta någon e-postadress i texten.")
+  | Error(_) -> 
+    let _ = log.error("Ogiltigt reguljärt uttryck")
 ```
 
-För att hitta alla förekomster av ordet "programmering" i denna text kan vi använda följande kod:
+I exemplet ovan kompileras ett reguljärt uttryck för att söka efter e-postadresser. Sedan används funktionen ```find_first``` för att hitta den första matchningen i texten. Om det finns en matchning, loggas e-postadressen till konsolen.
 
-```Gleam
-let regex = Regex.compile("programmering")
-let match = Regex.find(text)
+# Djupdykning i användningen av reguljära uttryck
 
-pub fn main() {
-  case match {
-    Just(result) -> io.print(result)
-    Nothing -> io.println("Ingen matchning hittades")
-  }
-}
-```
+Reguljära uttryck kan verka komplicerade och svåra att förstå till en början, men när du väl lärt dig grunderna kan de vara mycket användbara. Det finns många olika funktioner som finns tillgängliga i ```gleam/regex```-modulen, såsom ```replace``` för att ersätta text och ```split``` för att dela upp en sträng baserat på ett reguljärt uttryck. Det är också möjligt att använda grupperingar i reguljära uttryck för att extrahera specifika delar av en textsträng.
 
-I detta exempel kommer funktionen `print()` att skriva ut matchningen "programmering" till konsolen. Om det inte finns någon matchning, kommer vi att få ett meddelande som säger "Ingen matchning hittades".
+Ett tips för att bli bättre på att använda reguljära uttryck är att använda ett verktyg som Regex101 för att testa och experimentera med olika uttryck. Det finns också många resurser och guider tillgängliga online för att hjälpa dig att komma igång med reguljära uttryck.
 
-## Djupdykning
+# Se även
 
-Reguljära uttryck kan vara mycket mer avancerade än bara att hitta en enkel sträng. Genom att använda olika metatecken och operatorer, kan du skapa mer dynamiska och precisa mönster för att matcha textsträngar. Till exempel kan du använda `^` för att matcha en sträng som börjar med ett visst mönster och `$` för att matcha en sträng som slutar med ett visst mönster.
-
-En annan användbar funktion är `Regex.replace()`, som låter dig byta ut matchade mönster i en textsträng med en annan sträng. Detta kan vara användbart för att rensa upp formatering i text eller för att göra massaändringar i stora datamängder.
-
-Det finns mycket mer att lära sig om reguljära uttryck, men dessa grundläggande koncept bör hjälpa dig att komma igång.
-
-## Se även
-
-- [Gleam dokumentation om reguljära uttryck](https://gleam.run/modules/regex.html)
-- [Ett interaktivt reguljärt uttryck-verktyg](https://regexr.com/)
+- [Gleam dokumentation för regex modulen](https://gleam.run/packages/gleam/1.0.0/regex.html)
+- [RegExr - RegEx tester och referens](https://regexr.com/)
+- [Regex101 - Interaktivt verktyg för testning av reguljära uttryck](https://regex101.com/)

@@ -1,40 +1,72 @@
 ---
-title:    "C: בדיקת קיום תיקייה"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c/checking-if-a-directory-exists.md"
+title:                "C: האם תיקייה קיימת - מאמר על תכנות מחשבים"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
-כתיבת תעודת זהות גורם לאנשים להיות נמצאים להתקשרות עם קבצים ותיקים במערכת הפעלה. חשוב לאמוד את קיום הספרייה כדי לוודא שהקבצים נמצאים במקום הנכון ולמנוע איבוד נתונים.
 
-## כיצד לבדוק אם ספרייה קיימת
+במאמר זה אני אסביר איך ולמה כדאי לבדוק אם תיקייה קיימת בשפת תכנות C. לעיתים קרובות, יש לנו צורך לבצע פעולות מסוימות על תיקיות על מנת לנהל את המידע שלנו ולשלוט בתהליך התכנות שלנו. כדאי לבדוק אם תיקייה קיימת לפני שממשיכים לבצע פעולות עליה כדי לוודא שאנו עובדים על מבנה מסודר ושהקוד שלנו יפעל כראוי.
+
+## איך לבדוק אם תיקייה קיימת
+
+כאשר נרצה לבדוק אם תיקייה קיימת בשפת תכנות C, נצטרך להשתמש בפונקציה המתאימה - `opendir()`. זאת הפונקציה המשמשת לפתיחת תיקייה ומחזירה מצב של תיקייה מאוחר. אם התיקייה לא קיימת, הפונקציה תחזיר NULL ואנו נצטרך לטפל בזה בקוד שלנו. להלן דוגמא של קוד שבו אנו בודקים אם תיקייה קיימת:
+
 ```C
 #include <stdio.h>
-#include <stdlib.h>
+#include <dirent.h>
+ 
+int main(void) {
+    DIR *dir = opendir("my_directory");
+ 
+    if (dir) {
+        printf("תיקייה זו קיימת.\n");
+        closedir(dir);
+    } else {
+        printf("תיקייה זו לא קיימת.\n");
+    }
+ 
+    return 0;
+ }
+```
 
-int main() {
-	char path[] = "/home/user/folder"; // הגדרת נתיב לספרייה
-	int result = system(path); // נכנס לתיקייה באמצעות הפונקציה system()
-	if (result == 0) { // בדיקת ערך החזרה
-		printf("%s is existing", path); // אם ערך הפונקציה הוא 0, המערכת מדליקה שהנתיב קיים
-	}
-	else {
-		printf("%s is not existing", path); // אם ערך הפונקציה הוא שונה מ0, המערכת דרסה שהנתיב אינו קיים
-	}
-	return 0;
+הפלט של מכונת המחשב יראה כך:
+
+```
+תיקייה זו לא קיימת.
+```
+
+ואם נרצה לעשות את הבדיקה בפונקציה נפרדת ולקבל תשובה זהה, נשנה את הקוד כך:
+
+```C
+#include <stdio.h>
+#include <dirent.h>
+
+int directory_exists(const char *path) {
+    DIR *dir = opendir(path);
+
+    if (dir) {
+        closedir(dir);
+        return 1;
+    }
+
+    return 0;
+}
+
+int main(void) {
+    if (directory_exists("my_directory")) {
+        printf("תיקייה זו קיימת.\n");
+    } else {
+        printf("תיקייה זו לא קיימת.\n");
+    }
+
+    return 0;
 }
 ```
-### פלט:
-```
-/home/user/folder is existing
-```
 
-### נכנסים לפרק העמוק
-בנוסף לבדיקת קיום ספרייה באמצעות הפונקציה system(), ניתן להשתמש גם בפונקציות מובנות כגון stat(), access() וכו'. הפונקציות הללו עוזרות לבדוק את האטריביוטים של התיקייה כגון הרשאות קריאה וכתיבה, גודל התיקייה, תאריך יצירת התיקייה וכו'.
+כאן אנו משתמשים בפונקציה נפרדת `directory_exists()` לבדיקת הקיום של התיקייה.
 
-## ראה גם
-- [כתיבת תעודת זהות עם שפת סי](https://he.wikipedia.org/wiki/%D7%AA%D7%A2%D7%95%D7%93%D7%AA_%D7%96%D7%94%D7%95%D7%AA_%D7%A1%D7%99)
-- [פונקציות מובנות לניהול קבצים בשפת סי](https://www.geeksforgeeks.org/built-function-c/)
-- [מדריך לכתיבת תעודת זהות בספריית הסטנדרטית בשפת סי](https://www.tutorialspoint.com/c_standard_library/c_function_system.htm)
+## מעמ

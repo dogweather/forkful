@@ -1,38 +1,37 @@
 ---
-title:    "Rust: Konvertera en sträng till små bokstäver"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/converting-a-string-to-lower-case.md"
+title:                "Rust: Omvandla en sträng till små bokstäver"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att konvertera en sträng till gemener (lower case) kan vara en vanlig uppgift när man arbetar med textbaserade applikationer eller webbutveckling. Genom att använda Rusts inbyggda funktioner för stränghantering kan man enkelt omvandla en sträng till gemener. Nedan kan du lära dig hur du gör det.
+I många programmeringsprojekt har man behov av att konvertera en sträng till små bokstäver. Det kan vara för att göra sökningar eller jämförelser mer enhetliga eller för att skapa en enhetlig utdata. I denna artikel kommer vi att titta på hur man enkelt kan konvertera en sträng till små bokstäver i programmeringsspråket Rust.
 
-## Så här gör du
+## Hur man gör det
 
-För att konvertera en sträng till gemener i Rust, behöver du först importera standardbiblioteket "str". Därefter kan du använda funktionen "to_lowercase()", som tillämpas på en variabel som innehåller en sträng. Exempelvis:
+För att konvertera en sträng till små bokstäver i Rust använder man funktionen `to_lowercase()`. Detta är en inbyggd funktion i standardbiblioteket som kan användas på en sträng för att returnera en ny sträng med alla bokstäver i små bokstäver. Nedan följer ett exempel på hur man kan använda funktionen:
 
 ```Rust
-use std::str;
+let string = String::from("DET HÄR ÄR EN STRÄNG MED STORA BOKSTÄVER");
+let new_string = string.to_lowercase();
 
-let text = "HEJ HEJ";
+println!("{}", new_string);
 
-let gemener = str::to_lowercase(&text);
-
-println!("{}", gemener);
+// Output: det här är en sträng med stora bokstäver
 ```
 
-Output: hej hej
-
-Som du kan se, använder vi funktionen "to_lowercase()" för att omvandla vår variabel "text" till gemener och sedan skriver ut resultatet. Det är så enkelt det är att konvertera en sträng till gemener i Rust!
+Funktionen `to_lowercase()` tar emot en referens till en sträng och returnerar en ny sträng i små bokstäver. Detta betyder att den ursprungliga strängen förblir oförändrad och en ny sträng skapas med de konverterade bokstäverna.
 
 ## Djupdykning
 
-Vad händer egentligen när vi använder funktionen "to_lowercase()"? Först och främst utför den en iteration genom varje tecken i strängen och kontrollerar om det är ett stort bokstav genom att använda "is_uppercase()" funktionen. Om tecknet i fråga är en stor bokstav så konverteras det till gemener genom att subtrahera 32 från dess ASCII-värde. Därefter lagras den omvandlade strängen i en ny variabel och returneras till användaren.
+När man använder funktionen `to_lowercase()` är det viktigt att tänka på att den endast konverterar bokstäver som finns i ASCII-tabellen. Detta betyder att specialtecken eller bokstäver från andra språk kan behöva konverteras på andra sätt. Det är också viktigt att notera att konverteringen kan påverka prestandan i vissa fall, eftersom det kan innebära att en ny sträng måste skapas. Därför kan det vara bra att utföra tester på olika implementeringar för att hitta den som är mest effektiv för specifika syften.
 
-## Se även
+## Se också
 
-- [Rust String Library](https://doc.rust-lang.org/std/string/)
-- [ASCII Table](https://www.rapidtables.com/code/text/ascii-table.html)
+- [Rust dokumentation om `to_lowercase()`](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
+- [En diskussion om konvertering av specialtecken i Rust](https://stackoverflow.com/questions/31760928/how-can-i-convert-non-ascii-characters-from-a-string-to-their-ascii-counterpar)
+- [En benchmarking av olika metoder för att konvertera strängar i Rust](https://users.rust-lang.org/t/speeding-up-string-conversions-lower-upper-case/12135)

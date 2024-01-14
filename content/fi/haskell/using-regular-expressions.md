@@ -1,43 +1,42 @@
 ---
-title:    "Haskell: Säännöllisten lausekkeiden käyttö"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/using-regular-expressions.md"
+title:                "Haskell: Säännöllisten lausekkeiden käyttö"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi käyttää säännöllisiä lausekkeita?
 
-Miksi koodaajat ympäri maailmaa käyttävät säännöllisiä ilmaisuja (regular expressions) ohjelmoinnissaan? Yksi syy on, että ne tarjoavat tehokkaan ja monipuolisen tavan löytää ja manipuloida tekstiä tai merkkijonoja. Tämän avulla koodaajat voivat käsitellä suuria määriä dataa nopeasti ja tarkasti.
+Säännölliset lausekkeet ovat erittäin hyödyllisiä työkaluja, kun käsitellään merkkijonoja. Ne mahdollistavat monimutkaisten etsintä- ja korvaustoimintojen suorittamisen helposti ja tehokkaasti. Käyttämällä säännöllisiä lausekkeita voidaan esimerkiksi tarkistaa, vastaavatko syötteet tietylle muotolle tai suorittaa laaja kirjo hakutoimintoja, kuten merkkijonojen haku ja muuttaminen.
 
-## Kuinka käyttää säännöllisiä ilmaisuja Haskelliin
+# Miten käyttää säännöllisiä lausekkeita Haskellissa?
 
-Käyttääksesi säännöllisiä ilmaisuja Haskelliin, sinun täytyy tuoda ```Text.Regex.Posix``` kirjasto moduulisi alkuun. Tämän jälkeen voit käyttää erilaisia funktioita, kuten ```match```, ```subRegex``` ja ```splitRegex``` käsittelemään merkkijonoja säännöllisten ilmaisujen avulla.
+Säännölliset lausekkeet ovat kiinteä osa Haskellin standardikirjastoa ja niiden käyttö on helppoa. Ensimmäiseksi tulee tuoda ```Text.Regex.Posix``` moduuli, jossa säännöllisten lausekkeiden toiminnot sijaitsevat. Tämän jälkeen voidaan käyttää joko ```=~``` tai ```=~~``` operaattoria säännöllisen lausekkeen ja syötteen vertailuun.
 
-### Esimerkki:
-
-Esimerkiksi, jos haluat löytää kaikki kirjaimet merkkijonosta ja muuttaa niiden isoiksi kirjaimiksi, voit käyttää seuraavaa koodia:
+Esimerkiksi, jos haluamme tarkistaa vastaako syöte muotoa "ABC123", käytämme seuraavaa koodia:
 
 ```Haskell
-import Text.Regex.Posix
+import Text.Regex.Posix 
 
-let teksti = "Tervetuloa ohjelmointimaailmaan!"
-
-let uusiTeksti = subRegex (makeRegex "[a-z]") teksti (\match -> toUpper (fst match))
-
-print uusiTeksti
+checkPattern :: String -> Bool
+checkPattern input = input =~ "ABC123"
 ```
 
-Tämä tulostaa: "T2RV2TUL04 0HJELM01NT100LMA00N!"
+Tämän jälkeen voimme suorittaa funktiota käyttämällä esimerkiksi seuraavaa syötettä:
 
-## Syväluotaus säännöllisiin ilmaisuihin
+```Haskell
+checkPattern "ABC123" --> True
+```
 
-Säännölliset ilmaisut koostuvat erilaisista symboleista ja operaattoreista, jotka mahdollistavat monimutkaisten haku- ja muokkaustoimintojen suorittamisen tekstissä. Esimerkiksi ```[a-z]``` tarkoittaa minkä tahansa pienikirjaimen löytämistä, kun taas ```[0-9]``` tarkoittaa minkä tahansa numeron löytämistä. Lisäksi voit käyttää erilaisia määreitä, kuten ```*``` ja ```+```, jotka tarkoittavat vastaavasti edellisen symbolin nolla tai useampaa esiintymää.
+# Syvemmät tiedot säännöllisten lausekkeiden käytöstä
 
-On myös olemassa monia erilaisia symboleja ja operaattoreita, jotka antavat sinulle lisää mahdollisuuksia säännöllisten ilmaisujen käsittelyyn. Voit lukea lisää näistä esimerkiksi [täältä](https://www.regular-expressions.info/tutorial.html).
+Säännöllisten lausekkeiden mallikieli on tiivis ja tehokas, mutta samalla myös monimutkainen. Sen opetteleminen ja vakioiden ja ominaisuuksien ymmärtäminen voi vaatia aikaa ja harjoittelua. Yksi huomionarvoinen seikka on se, että Haskellin säännölliset lausekkeet noudattavat POSIX-standardia, mikä voi poiketa joistakin muista ohjelmointikielistä.
 
-## Katso myös
+Voit opetella säännöllisten lausekkeiden syvempiä ominaisuuksia ja käyttötapoja tutustumalla POSIX-standardiin tai lukemalla lisätietoja Haskellin dokumentaatiosta.
 
-- [Haskell Text.Regex.Posix dokumentaatio](https://hackage.haskell.org/package/regex-posix/docs/Text-Regex-Posix.html)
-- [Säännölliset ilmaisut opetusohjelma](https://www.regular-expressions.info/tutorial.html)
-- [Haskell ohjeet ja oppaat](https://www.haskell.org/documentation/)
+# Katso myös
+
+- [Haskellin tekstikäsikirja, säännölliset lausekkeet](https://hackage.haskell.org/package/regex-posix-0.95.2/docs/Text-Regex-Posix.html)
+- [POSIX-säännölliset lausekkeet](https://www.regular-expressions.info/posix.html)

@@ -1,43 +1,70 @@
 ---
-title:    "Arduino recipe: Concatenating strings"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/concatenating-strings.md"
+title:                "Arduino recipe: Concatenating strings"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever needed to combine multiple pieces of information into one string? Perhaps you want to create a more dynamic output or display a message with variable inputs. That's where string concatenation comes in! By combining strings, you can create more versatile and personalized outputs in your Arduino programs.
+If you're new to Arduino programming, you may have come across the concept of concatenating strings. But what does it actually mean and why would you want to use it? Simply put, concatenating strings allows you to combine multiple strings into one, which can be helpful for creating more dynamic and flexible code.
 
 ## How To
 
-Coding string concatenation in Arduino is actually quite simple. First, you'll need to declare your strings using the `String` data type. For example, `String greeting = "Hello ";` and `String name = "John";` Then, you can combine them using the `+` symbol. For example, `String message = greeting + name;` will result in the string "Hello John".
-
-Let's try a more practical example. Say you want to display the temperature on an LCD display along with the unit of measurement. You can use concatenation to achieve this. First, declare your variable for temperature using `int` data type, and set it to a value (e.g. `int temp = 25;`). Then, declare a string for the unit of measurement (e.g. `String unit = "°C";`). Finally, combine them using `+` symbol and display the output on the LCD screen. Here's the code:
+First, let's start with a basic example using the `+` operator to combine two strings:
 
 ```Arduino
-#include <LiquidCrystal.h> //include library for LCD display
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2); //set LCD pins
+String greeting = "Hello ";
+String name = "John";
+String message = greeting + name; 
 
-int temp = 25; //declare temperature variable
-String unit = "°C"; //declare unit of measurement
-String message = "Temperature: " + String(temp) + unit; //combine strings
-lcd.print(message); //display on LCD
+Serial.println(message); // Output: Hello John
 ```
 
-The output on the LCD screen will be "Temperature: 25°C". As you can see, concatenating strings allows us to dynamically include the value of a variable in our output.
+As you can see, we have combined the `greeting` and `name` strings to create a new `message` string. This can be useful if you want to personalize your message for different users.
+But what if you want to include a numerical value in your string? You can use the `String()` function to convert any data type to a string, and then concatenate it with other strings. Take a look at this example:
+
+```Arduino
+int age = 25;
+String name = "Jane";
+String message = "Hi " + name + ", you are " + String(age) + " years old!"; 
+
+Serial.println(message); // Output: Hi Jane, you are 25 years old!
+```
+
+You can also use the `concat()` function to concatenate multiple strings together. This can be helpful if you have a longer string that you want to add to. Let's see an example:
+
+```Arduino
+String sentence = "Today is a beautiful day.";
+String ending = "Let's make the most of it!";
+sentence.concat(ending);
+
+Serial.println(sentence); // Output: Today is a beautiful day. Let's make the most of it!
+```
+
+And finally, if you want to save memory, you can use the `c_str()` function to convert your concatenated string into a character array:
+
+```Arduino
+String first = "Hello";
+String last = "World";
+String combined = first + last;
+
+char result[12];
+combined.toCharArray(result, 12); // 12 is the max length of the array
+
+Serial.println(result); // Output: HelloWorld
+```
 
 ## Deep Dive
 
-Concatenating strings in Arduino does have some limitations to keep in mind. First, the `String` data type in Arduino has a maximum length of 255 characters. If your combined strings exceed this limit, it could cause issues. Additionally, using `String` data type can take up more memory than other data types, so it's important to be mindful of memory usage in your program.
+It's important to note that while concatenating strings may seem simple, there are a few things to keep in mind. One is the use of the `String` data type. While it may be convenient, it can also consume a lot of memory on your Arduino board. This can become an issue if you are dealing with large amounts of data. In that case, it may be better to use character arrays instead.
 
-There are also some useful functions that can be used with concatenation in Arduino. The `concat()` function allows you to combine multiple strings at once, and the `remove()` function allows you to remove certain characters from a string. These functions can be helpful for more complex string manipulation.
+Another thing to consider is the use of the `+` operator. While it works fine for smaller strings, it can become inefficient for longer strings as it creates a new string object every time it's used. This can slow down your program. So if possible, it's better to use the `concat()` function instead.
 
 ## See Also
 
-To learn more about string concatenation and other useful functions in Arduino, check out these resources:
-
-- [Official Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Arduino String Concat Function](https://www.arduino.cc/reference/en/language/functions/communication/serial/concat/)
-- [Arduino String Remove Function](https://www.arduino.cc/reference/en/language/functions/communication/serial/remove/)
+- [Arduino Reference: String](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Arduino Forum: String Performance](https://forum.arduino.cc/index.php?topic=395840.0)
+- [Arduino Tutorial: Character Arrays](https://www.arduino.cc/en/Tutorial/CharArray)

@@ -1,56 +1,49 @@
 ---
-title:    "Java: Odczytywanie argumentów wiersza poleceń"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/reading-command-line-arguments.md"
+title:                "Java: Odczytywanie argumentów wiersza poleceń"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto poznać odczytywanie argumentów wiersza poleceń?
 
-Czy kiedykolwiek zdarzyło Ci się chcieć wprowadzić pewne zmienne lub opcje do swojego programu po uruchomieniu go? Może chcesz umożliwić użytkownikowi wybór języka w swojej aplikacji lub dostosować zachowanie programu do warunków środowiska, w którym jest uruchamiana? To właśnie wtedy przydają się argumenty z wiersza poleceń. Czytanie tych argumentów może być bardzo pomocne, aby dostosować program do aktualnych potrzeb użytkownika lub maszyny, na której jest uruchomiony.
+W dzisiejszych czasach programiści muszą być wszechstronni i umieć obsługiwać różne narzędzia. Odczytywanie argumentów wiersza poleceń jest jedną z umiejętności, które mogą okazać się niezbędne w codziennej pracy. W tym artykule dowiesz się, dlaczego warto poznać tę funkcjonalność oraz jak ją wykorzystać w swoich projektach.
 
-## Jak To Zrobić
+## Jak to zrobić?
 
-Aby odczytać argumenty z wiersza poleceń w języku Java, możemy skorzystać z klasy `java.lang.String[] args`, która reprezentuje tablicę ciągów znaków (argumentów). Przykładowo, jeśli chcemy przekazać odpowiedzi do quizu podczas uruchamiania programu, możemy użyć poniższego kodu:
+Aby odczytać argumenty wiersza poleceń w języku Java, wystarczy użyć klasy `java.lang.String[] args`, która jest przekazywana jako parametr metody `main()`. Poniżej znajduje się przykładowy kod, który wyświetla argumenty wiersza poleceń w konsoli:
 
-```Java
-public class Quiz {
-    public static void main(String[] args) {
-        // pobranie argumentów z wiersza poleceń
-        String response1 = args[0]; // odpowiada argumentowi podanemu jako pierwszy
-        String response2 = args[1]; // odpowiada argumentowi podanemu jako drugi
-
-        // wyświetlenie dostarczonych odpowiedzi
-        System.out.println("Twoja pierwsza odpowiedź to: " + response1);
-        System.out.println("Twoja druga odpowiedź to: " + response2);
+```java
+public static void main(String[] args) {
+    for(String arg : args) {
+        System.out.println(arg);
     }
 }
 ```
 
-Jeśli uruchomimy powyższy program z podanymi argumentami `tak` oraz `nie`, otrzymamy następujący wynik:
+Przykładowy wynik dla wywołania `java Program arg1 arg2 arg3` będzie wyglądał następująco:
 
-```bash
-$ java Quiz tak nie
-Twoja pierwsza odpowiedź to: tak
-Twoja druga odpowiedź to: nie
+```
+arg1
+arg2
+arg3
 ```
 
-## Głębokie Nurkowanie
+Zauważ, że argumenty są oddzielane spacją i są dostępne w postaci tablicy `String[]`. Oznacza to, że możesz przetwarzać je tak samo, jak inne tablice w Javie, na przykład za pomocą pętli `for` lub metod klasy `Arrays`.
 
-W powyższym przykładzie używaliśmy tylko dwóch argumentów, ale jesteśmy w stanie przekazać dowolną liczbę argumentów. Aby odczytać ich wartości, możemy skorzystać z pętli `for-each`, jak w poniższym przykładzie:
+## Glebokość
 
-```Java
-// pobranie i wyświetlenie wszystkich argumentów
-for (String arg : args) {
-    System.out.println("Kolejny argument to: " + arg);
-}
-```
+Odczytywanie argumentów wiersza poleceń może okazać się przydatne w wielu przypadkach. Na przykład, gdy tworzysz program, który wymaga podania danych wejściowych przez użytkownika lub gdy chcesz wywołać dany skrypt z różnymi parametrami. Dodatkowo, możesz przekazywać do programu flagi, które zmieniają jego działanie w zależności od wybranej opcji.
 
-Możemy również przekazywać argumenty w formie flag lub opcji, używając znaku `-` lub `--` przed nazwą argumentu, które następnie możemy odczytać i odpowiednie obsłużyć w naszym programie.
+Ważne jest również zapewnienie poprawności wprowadzonych argumentów. Możesz na przykład sprawdzać, czy użytkownik podał odpowiednią ilość argumentów lub czy są one w odpowiednim formacie. W przypadku błędów, możesz wyświetlić użytkownikowi odpowiednie komunikaty lub przerwać działanie programu.
+
+Innym ciekawym zastosowaniem jest tworzenie skryptów, które będą wykonywać określone zadania w zależności od podanych argumentów. Dzięki temu, możesz wykorzystać te same skrypty w różnych scenariuszach bez konieczności ich modyfikowania.
 
 ## Zobacz również
 
-- Dokumentacja klasy `java.lang.String[] args`: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
-- Przykłady użycia argumentów z wiersza poleceń w języku Java: https://www.javatpoint.com/command-line-arguments-in-java
-- Poradnik odczytu argumentów z wiersza poleceń w języku Java: https://www.baeldung.com/java-command-line-arguments
+Jeśli chcesz dowiedzieć się więcej o odczytywaniu argumentów wiersza poleceń w Java, koniecznie zajrzyj na poniższe strony:
+
+- Dokumentacja klasy `java.lang.String[] args` w języku Java: https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html
+- Przykładowe projekty wykorzystujące odczytywanie argumentów wiersza poleceń: https://www.codejava.net/java-se/command-line/parse-command-line-arguments-using-apache-commons-cli-library

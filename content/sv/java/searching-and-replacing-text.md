@@ -1,41 +1,55 @@
 ---
-title:    "Java: Sökning och ersättning av text"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/searching-and-replacing-text.md"
+title:                "Java: Söka och byta ut text"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att söka och ersätta text är en vanlig uppgift i programmering och kan hjälpa till att effektivisera och förbättra koden. Genom att lära sig denna färdighet kan du enkelt göra stora ändringar i din kod, spara tid och undvika mänskliga fel.
+
+Att söka och ersätta text är en vanlig uppgift inom programmering. Genom att använda denna funktion kan du enkelt ändra eller uppdatera stora mängder text i din kod. Det är också ett bra sätt att snabbt hitta och åtgärda felaktig eller föråldrad kod.
 
 ## Så här gör du
-Det finns flera sätt att söka och ersätta text i Java, men det mest grundläggande sättet är med hjälp av `String`-klassens `replace()`-metod. Du kan använda den på följande sätt:
 
-```Java
-String originalText = "Detta är en textsträng.";
-String newText = originalText.replace("en", "ett");
+För att söka och ersätta text i Java kan du använda den inbyggda metoden `.replace()`. Detta tar två parametrar: den text du vill byta ut och den nya texten du vill ersätta den med. Till exempel:
 
-System.out.println(newText); // Utskrift: Detta är ett textsträng.
+```java
+String original = "Hej! Välkommen till min blogg!";
+String updated = original.replace("Hej", "Hallå");
+System.out.println(updated);
 ```
-Som du kan se har vi ersatt "en" med "ett" i den ursprungliga textsträngen. Om du vill ersätta alla förekomster av en viss text kan du använda `replaceAll()`-metoden istället.
 
-För att söka efter ett specifikt mönster i en textsträng kan du använda `Pattern` och `Matcher`-klasserna. Här är ett exempel på hur du kan söka efter alla siffror i en textsträng och ersätta dem med en @-symbol:
+Detta kommer att skriva ut: `Hallå! Välkommen till min blogg!`
 
-```Java
-String originalText = "Det finns 123 äpplen i korgen.";
-String newText = originalText.replaceAll("\\d", "@");
+Du kan också använda `.replace()` för att ta bort viss text genom att byta ut den med en tom sträng. Till exempel:
 
-System.out.println(newText); // Utskrift: Det finns @@@ äpplen i korgen.
+```java
+String original = "Det är fredag idag!";
+String updated = original.replace("fredag", "");
+System.out.println(updated);
 ```
-I detta exempel använder vi reguljära uttryck för att söka efter alla siffror och ersätta dem med en @-symbol.
 
-## Djupdykning
-När du söker och ersätter text i Java finns det några saker som är viktiga att tänka på. Till exempel är `replace()` och `replaceAll()`-metoderna mycket känsliga för skillnader i gemener och versaler. Det är också viktigt att komma ihåg att dessa metoder returnerar en ny sträng och inte ändrar den ursprungliga strängen.
+Detta kommer att skriva ut: `Det är idag!`
 
-Det finns också andra metoder som är specifika för olika typer av objekt, som `StringBuilder` och `StringBuffer`, som kan användas för att modifiera en textsträng på plats istället för att skapa en ny kopia.
+## Fördjupning
+
+För att söka och ersätta mer avancerade mönster i din kod kan du använda regular expressions (Regex). Dessa mönster gör det möjligt att hitta och ersätta text som är mer komplex än en enkel sträng.
+
+För att använda Regex i Java, använd `Pattern` och `Matcher` klasserna. Här är ett exempel på hur du kan använda det för att byta ut alla siffror i en sträng med "X":
+
+```java
+String original = "Din lösenord är 1234";
+Pattern pattern = Pattern.compile("\\d");
+Matcher matcher = pattern.matcher(original);
+String updated = matcher.replaceAll("X");
+System.out.println(updated);
+```
+
+Detta kommer att skriva ut: `Ditt lösenord är XXXX`
 
 ## Se även
-- [Java String-klassen](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java Pattern-klassen](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
-- [Java Matcher-klassen](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html)
+
+- Java String API: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+- Java Matcher API: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Matcher.html

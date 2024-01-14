@@ -1,46 +1,43 @@
 ---
-title:    "Elm: Utvinning av substrenger"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/extracting-substrings.md"
+title:                "Elm: Uthenting av delstrenger"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor ekstrahere substrings i Elm
+# Hvorfor
 
-Det kan være en utrolig praktisk funksjon å være i stand til å ekstrahere substrings fra en streng i Elm. Dette kan være nyttig for å manipulere og bearbeide data, eller for å vise deler av en tekst på en mer leselig måte. Uansett hva årsaken er, kan substrings være en uvurderlig funksjon å ha i verktøykassen din som en Elm programmerer.
+Å utvinne substrings fra en streng kan være en viktig del av programmering, spesielt når det kommer til behandling av tekstdata. Det lar deg manipulere og arbeide med deler av en streng, i stedet for å måtte gjøre endringer på hele strengen.
 
-## Slik gjør du det i praksis
+# Slik gjør du det
 
-For å ekstrahere substrings i Elm, må du bruke funksjonen `String.slice` og angi start- og sluttposisjoner.
-
-```Elm
-String.slice start stop streng
-```
-
-La oss se på et eksempel der vi ønsker å ekstrahere de tre første bokstavene i strengen "katten min":
+For å utvinne substrings i Elm, kan du bruke funksjonen `String.slice start stop string`. Her er et eksempel:
 
 ```Elm
-String.slice 0 3 "katten min"
+import String
+
+main =
+    let
+        originalString = "Dette er en eksempelstreng."
+        substring = String.slice 0 5 originalString
+    in
+        substring
 ```
 
-Dette vil gi oss resultatet "kat" som output. Merk at startposisjonen er inkludert, mens sluttposisjonen ikke er det.
+Dette vil resultere i output "Dette".
 
-Du kan også bruke en negativ verdi for å angi sluttposisjonen, slik at substrings blir ekstrahert fra slutten av strengen. Her er et eksempel på å ekstrahere de tre siste bokstavene i samme streng:
+# Utforsking av utvinning av substrings
 
-```Elm
-String.slice 0 -3 "katten min"
-```
+`String.slice` -funksjonen tar tre argumenter: `start`, `stop` og `string`. `Start` er indeksen hvor du vil begynne å utvinne substring fra, mens `stop` er indeksen rett før hvor du vil stoppe utvinning. `String` er selve strengen du vil utvinne substrings fra.
 
-Output vil da være "min" i dette tilfellet.
+En annen måte du kan utvinne substrings på er ved å bruke `String.dropLeft` eller `String.dropRight` for å fjerne en bestemt del av strengen til venstre eller høyre for en gitt indeks. Du kan også bruke `String.takeLeft` eller `String.takeRight` for å få en del av strengen til venstre eller høyre for en gitt indeks.
 
-## Dypdykk i substrings
+Det er også muligheten for å bruke regulære uttrykk for å utvinne substrings fra en streng basert på et mønster.
 
-Som nevnt tidligere, kan substrings være nyttige for å manipulere data eller gjøre tekst mer leselig. Men det er også viktig å være oppmerksom på at det også kan være en utfordring å håndtere endringer i strengen du ekstraherer fra. Hvis start- eller sluttposisjonen endres, kan det hende at du ikke får den ønskede substrings som output.
+# Se også
 
-En annen ting å huske på er at substrings funksjonen ikke fungerer på Unicode-tegn. Dette betyr at hvis strengen din inneholder Unicode-tegn, kan du oppleve uventede resultater når du prøver å ekstrahere substrings.
-
-## Se også
-
-- Offisiell Elm dokumentasjon for `String.slice`: https://package.elm-lang.org/packages/elm/core/latest/String#slice
-- Andre nyttige funksjoner for å håndtere strenger i Elm: https://package.elm-lang.org/packages/elm/core/latest/String
+- [Elm's String documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [String functions in Elm](https://elmprogramming.com/functions/string-functions-in-elm.html)
+- [Extracting Substrings in Elm](https://medium.com/@joeydeluca13/extracting-substrings-in-elm-e994d3917d04)

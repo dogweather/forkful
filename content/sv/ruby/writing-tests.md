@@ -1,39 +1,46 @@
 ---
-title:    "Ruby: Skriva tester"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/writing-tests.md"
+title:                "Ruby: Att skriva tester"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför skriva tester i Ruby?
 
-Att skriva tester är en viktig del av utvecklingsprocessen för programvara. Genom att skriva tester kan du säkerställa att din kod fungerar korrekt och att eventuella buggar upptäcks tidigt. Det hjälper också till att förbättra kvaliteten på din kod och gör det enklare att göra ändringar i framtiden.
+Att skriva tester är en viktig del av programmering i Ruby. Tester hjälper till att säkerställa att koden fungerar som den ska, förbättrar kodkvaliteten och tillåter utvecklare att lättare identifiera och lösa eventuella fel och buggar.
 
-## Så här gör du
+# Hur man skriver tester i Ruby
 
-För att skriva tester i Ruby behöver du använda ramverket RSpec. Detta verktyg erbjuder en enkel och elegant syntax för att skapa tester. Här är ett exempel på hur du kan skriva ett test för en metod som lägger till två tal:
+Det första steget för att börja skriva tester är att installera testningsverktyget "RSpec". Det är en av de mest populära testningsramverken för Ruby och kan enkelt installeras via "gem install rspec" kommandot.
+
+När du väl har RSpec installerat är det dags att skapa din första testfil. Här är ett exempel på en enkel testfil som testar en funktion som lägger ihop två tal:
 
 ```Ruby
-describe "add method" do
-  it "returns the sum of two numbers" do
-    expect(add(2, 3)).to eq(5)
+require_relative 'calculator.rb'
+
+RSpec.describe Calculator do
+  describe '#add' do
+    it 'adds two numbers correctly' do
+      calculator = Calculator.new # skapar ett nytt objekt av Calculator-klassen
+      result = calculator.add(2, 3) # anropar add-metoden och sparar resultatet i en variabel
+      expect(result).to eq(5) # förväntar oss att resultatet är lika med 5
+    end
   end
 end
 ```
 
-I detta exempel skapas en beskrivning av "add method" och ett testfall för att säkerställa att metoden returnerar rätt summa. Den inbyggda metoden "expect" används för att definiera förväntat resultat och "eq" används för att jämföra den faktiska summan.
+Efter att ha skapat din testfil kan du köra den genom att skriva "rspec namn_pa_testfil.rb" i terminalen. Om allt fungerar som det ska, ska du få ett grönt godkännande från RSpec.
 
-## Djupdykning
+# Djupdykning i skrivande av tester
 
-För att skriva effektiva tester är det viktigt att ha en bra förståelse för din kod och dess syfte. Det är också en bra idé att skriva tester innan du börjar koda, så att du har en klar bild av vad din kod ska göra.
+När du väl har kommit igång med att skriva tester kan du lära dig mer om de olika typerna av tester som finns, såsom enhetstester, integrationstester och acceptanstester. Du kan också lära dig att använda fler funktioner och metoder inom RSpec för att skapa mer robusta tester.
 
-En annan viktig aspekt av att skriva tester är att testa olika scenarion. Till exempel kan du skriva tester för olika inmatningsvärden eller förväntade fel för att se hur din kod hanterar dem.
+Ett annat viktigt koncept att förstå är "test-driven development" (TDD). Det innebär att skriva tester innan du faktiskt skriver koden för en funktion, vilket hjälper till att skapa mer stabil och kvalitativ kod.
 
-Slutligen är det viktigt att kontinuerligt uppdatera och underhålla dina tester. Som din kod utvecklas och förändras måste även dina tester göras för att återspegla eventuella ändringar.
+# Se även
 
-## Se även
-
-- [RSpec dokumentation](https://www.rubydoc.info/gems/rspec-core/)
-- [Ruby on Rails: Testing Overview](https://guides.rubyonrails.org/testing.html)
-- [The importance of testing in software development](https://blog.newrelic.com/engineering/effective-test-driven-development/)
+- RSpec: https://rspec.info/
+- Test Driven Development in Ruby: https://medium.com/@jenweber/intro-to-tdd-test-driven-development-in-ruby-f565e3ea51f4
+- Ruby on Rails Tutorial: https://www.railstutorial.org/chapters/beginning

@@ -1,64 +1,41 @@
 ---
-title:    "Swift: テキストの検索と置き換え"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/searching-and-replacing-text.md"
+title:                "Swift: テキストの検索と置換"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-あなたがテキストを検索して置換する必要があるかもしれません。検索して置換することで、複数の文字列を効率的に変更することができます。これは、大規模なプロジェクトや複数のファイルで同じテキストを使用する場合に特に役立ちます。
+##なぜ
+テキストを検索して置換するのにどうしてSwiftプログラミングを使うのか、その理由をご紹介します。
 
-## なぜ
+テキストを検索して置換することは、プログラミングにおいて非常に重要な機能です。例えば、大量のテキストデータの中から特定の文字列を見つけて修正する場合、手作業では非常に手間がかかります。しかし、Swiftプログラミングを使えば簡単に自動化することができます。この機能を活用すれば、より効率的に作業を行うことができます。
 
-テキストを検索して置換することで、手動で複数の箇所を変更する作業を省くことができます。これにより、時間と労力を節約することができます。
-
-## 方法
-
-検索して置換する方法は非常に簡単です。まず、`replaceOccurrences(of:with:)`メソッドを使用して、変更したい文字列と変更後の文字列を指定します。次に、`options`パラメーターに`[]`を渡し、検索と置換を行う範囲を指定します。最後に、`replacingOccurrences(of:with:options:)`メソッドを使用して、実際に置換を行います。
-
-例えば、次のようにコードを書くことで、全ての"Hello"を"こんにちは"に置換することができます。
+##方法
+テキストの検索と置換をするには、Stringクラスの`replacingOccurrences(of:with:)`メソッドを使用します。以下の例をご覧ください。
 
 ```Swift
-let originalString = "Hello, Swift!"
-let newString = originalString.replacingOccurrences(of: "Hello", with: "こんにちは", options: [])
-print(newString)
+let originalText = "今日はいい天気です。"
+let newText = originalText.replacingOccurrences(of: "いい", with: "最高")
 
-// Output:
-// こんにちは, Swift!
+print(newText)
 ```
 
-## 詳細を調べる
+このコードを実行すると、次のような出力が得られます。
 
-検索して置換を行う時には、パターンマッチングを使用することもできます。これにより、より柔軟な検索が可能になります。例えば、次のように正規表現を使用して、全ての数字を"*"に置換することができます。
-
-```Swift
-let originalString = "1234abc"
-let regex = try NSRegularExpression(pattern: "[0-9]", options: [])
-let newString = regex.stringByReplacingMatches(in: originalString, options: [], range: NSRange(location: 0, length: originalString.count), withTemplate: "*")
-print(newString)
-
-// Output:
-// ****abc
+```
+今日は最高天気です。
 ```
 
-さらに、複数の条件を指定することもできます。例えば、次のように複数の単語を検索して一つの単語に置換することができます。
+ここでは、`originalText`という文字列を`replacingOccurrences(of:with:)`メソッドを使って「いい」を「最高」に置換しています。
 
-```Swift
-let originalString = "The sky is blue and the grass is green."
-let replacements = ["sky": "ocean", "grass": "field"]
-for (word, replacement) in replacements {
-    let regex = try NSRegularExpression(pattern: word, options: [])
-    let newString = regex.stringByReplacingMatches(in: originalString, options: [], range: NSRange(location: 0, length: originalString.count), withTemplate: replacement)
-}
-print(newString)
+##深堀り
+`replacingOccurrences(of:with:)`メソッドは、指定した文字列を全て置換します。しかし、この方法では、大文字と小文字を区別することができません。その場合は、`replacingOccurrences(of:with:options:)`メソッドを使い、`options`パラメータに`.caseInsensitive`を指定することで、大文字と小文字を区別しない置換を行うことができます。
 
-// Output:
-// The ocean is blue and the field is green.
-```
+また、正規表現を使って複雑なパターンの置換も可能です。`replacingOccurrences(of:with:options:range:locale:)`メソッドを使い、`locale`パラメータに`nil`を指定し、`options`パラメータに`.regularExpression`を指定することで、正規表現を使った置換を行うことができます。
 
-## もっと詳しく知りたい場合は
-
-検索して置換に関する詳細を知りたい場合は、以下のリンクを参考にしてください。
-
-- [Apple Developer Documentation: String and Text](https://developer.apple.com/documentation/swift/string_and_text)
-- [NSHipster: Regular Expressions](https://nshipster.com/nsregularexpression/)
+##参考リンク
+- [Swift String Cheat Sheet](https://iosdevcenters.blogspot.com/2018/11/swift-string-cheat-sheet.html)
+- [Apple Developer Documentation: String](https://developer.apple.com/documentation/swift/string)
+- [Swift Regular Expressions](https://www.hackingwithswift.com/articles/108/swift-regular-expressions-cheat-sheet)

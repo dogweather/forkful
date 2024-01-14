@@ -1,40 +1,53 @@
 ---
-title:    "TypeScript: Beräkna en datum i framtiden eller det förflutna"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/calculating-a-date-in-the-future-or-past.md"
+title:                "TypeScript: Beräkning av ett datum i framtiden eller det förflutna"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att beräkna datum i framtiden eller förflutet kan vara till nytta i många olika situationer. Det kan hjälpa till att planera möten, resor eller att få en överblick över viktiga händelser i ens liv.
+Att kunna beräkna ett datum i framtiden eller i det förflutna kan vara väldigt användbart för en programmerare. Det kan hjälpa till att skapa dynamiska applikationer som bygger på specifika datum, såsom en kalender eller en påminnelsefunktion. Det kan också vara användbart för att beräkna hur lång tid det tar mellan två datum eller för att hantera olika tidszoner.
 
-# Hur man gör det
+## Så här gör du
 
-För att beräkna ett datum i framtiden eller förflutet kan man använda sig av TypeScript Date-klassen och dess metoder. Nedan följer ett exempel på en funktion som tar in ett antal dagar och returnerar det beräknade datumet:
+För att kunna beräkna ett datum i TypeScript behöver du använda dig av det inbyggda Date-objektet och dess metoder. Här nedan är ett exempel på hur du kan beräkna ett datum som ligger en vecka framåt från dagens datum:
 
 ```TypeScript
-function calculateDate(days: number): Date {
-  let currentDate = new Date(); // Skapar ett nytt Date-objekt som representerar dagens datum
-  currentDate.setDate(currentDate.getDate() + days); // Använder setDate-metoden för att lägga till det angivna antalet dagar till currentDate
-  return currentDate;
-}
+let idag = new Date();
+let ett_vecka_fram = new Date();
 
-console.log(calculateDate(7)); // Output: 2021-08-11T23:01:59.856Z
+ett_vecka_fram.setDate(idag.getDate() + 7);
+
+console.log(ett_vecka_fram.toDateString());
+// Output: "Tue Nov 16 2021"
 ```
 
-I detta exempel används setDate-metoden för att ändra värdet på dagarna i det existerande Date-objektet. Detta gör att vi kan beräkna ett datum x antal dagar från dagens datum.
+För att beräkna ett datum i det förflutna använder du istället metoden `setDate()` med ett negativt värde. Här är ett exempel på hur du kan beräkna ett datum som ligger en vecka bakåt från dagens datum:
 
-Det finns också flera andra användbara metoder i Date-klassen, såsom `getFullYear()` (returnerar året i ett Date-objekt), `getMonth()` (returnerar månaden i ett Date-objekt) och `getDay()` (returnerar vilken dag i veckan ett Date-objekt representerar).
+```TypeScript
+let idag = new Date();
+let ett_vecka_bak = new Date();
 
-# Djupdykning
+ett_vecka_bak.setDate(idag.getDate() - 7);
 
-För att beräkna ett datum i förflutet eller framtiden kan man även använda sig av olika bibliotek som tillhandahåller mer avancerade funktioner och möjligheter. Ett exempel på ett sådant bibliotek är Moment.js, som erbjuder enkla och användarvänliga metoder för beräkning av datum.
+console.log(ett_vecka_bak.toDateString());
+// Output: "Tue Oct 26 2021"
+```
 
-Djupdykningar i dessa bibliotek kan vara användbara för att lära sig mer om de olika datumenheter och format som finns, eller för att få en bättre förståelse för hur man kan hantera tidszoner och sommartider.
+För att hantera olika tidszoner kan du använda metoden `setUTCDate()` istället för `setDate()`. Detta kommer att se till att datumet inte påverkas av din aktuella tidszon.
 
-# Se också
+## Djupdykning
 
-- [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/)
+Date-objektet i JavaScript och TypeScript följer specifikationerna från ISO 8601, vilket innebär att det följer den gregorianska kalendern. Detta kan vara viktigt att tänka på om du behöver hantera olika kalendrar i din applikation.
+
+Det finns också flera olika metoder inom Date-objektet som kan vara användbara för att manipulera och hämta information från datum, såsom `setMonth()`, `setFullYear()` och `getDay()`. Det kan vara värt att utforska dessa för att få en djupare förståelse för hur man kan hantera datum i JavaScript och TypeScript.
+
+## Se även
+
+- [Date-objektet i TypeScript dokumentationen](https://www.typescriptlang.org/docs/handbook/date-and-time.html)
+- [Moment.js biblioteket för att hantera datum och tider](https://momentjs.com/)
+- [ISO 8601 specifikationer för datum och tider](https://www.iso.org/iso-8601-date-and-time-format.html)
+- [Klockrena tips för hantering av datum och tider i JavaScript](https://css-tricks.com/everything-you-need-to-know-about-date-in-javascript/)

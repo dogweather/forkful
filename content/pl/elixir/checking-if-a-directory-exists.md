@@ -1,57 +1,39 @@
 ---
-title:    "Elixir: Sprawdzanie czy istnieje folder"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/checking-if-a-directory-exists.md"
+title:                "Elixir: Sprawdzanie, czy istnieje katalog"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często w trakcie pisania aplikacji w Elixirze chcemy upewnić się, czy dany katalog istnieje przed wykonaniem operacji na plikach wewnątrz niego. Warto więc poznać, jak w prosty sposób można sprawdzić, czy dany katalog istnieje w naszym systemie plików.
+Sprawdzanie, czy istnieje katalog, jest ważną umiejętnością dla każdego programisty Elixir. Dzięki temu narzędziu możemy upewnić się, że nasz program działa poprawnie i jest odporny na nieoczekiwane błędy. W tym artykule dowiesz się, jak sprawdzić istnienie katalogu w języku Elixir.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Sprawdzenie, czy dany katalog istnieje w Elixirze jest bardzo proste. Należy skorzystać z funkcji `:file.cwd/0`, która będzie zwracać aktualną ścieżkę do katalogu roboczego, i porównać ją z poszukiwanym katalogiem. Kod będzie wyglądał następująco:
+Sprawdzenie istnienia katalogu w Elixir jest bardzo proste. Wystarczy użyć funkcji `File.dir` i podać nazwę katalogu jako argument. Przykładowy kod poniżej pokaże, jak to zrobić:
 
-```
-# Wczytanie biblioteki :file
-:file.cwd()
-
-# Sprawdzenie, czy katalog "images" znajduje się w aktualnym katalogu roboczym
-if :file.cwd() == "images" do
-  IO.puts "Katalog 'images' istnieje."
-else
-  IO.puts "Katalog 'images' nie istnieje."
-end
+```elixir
+File.dir?("nazwa_katalogu")
 ```
 
-Output dla powyższego kodu będzie wyglądał następująco:
+Jeśli katalog istnieje, funkcja zwróci `true`, w przeciwnym wypadku zwróci `false`. Sprawdzenie można również wykonać w bardziej bezpośredni sposób, używając funkcji `File.ls` i sprawdzając, czy nazwa katalogu jest na liście plików. Przykładowy kod poniżej:
 
-```
-Katalog 'images' nie istnieje.
-```
-
-## Głębszy wgląd
-
-Warto również wiedzieć, że funkcja `:file.cwd/0` zwraca ciąg znaków, a niebezpiecznie jest polegać na konkretnych ścieżkach w kodzie. Lepiej jest wykorzystać funkcję `:file.expand_path/1`, aby przekonwertować ścieżkę na absolutną. W ten sposób nasz kod będzie bardziej niezawodny.
-
-```
-# Wczytanie biblioteki :file
-:file.cwd()
-
-# Przekonwertowanie ścieżki na absolutną
-:file.expand_path("images")
-
-# Sprawdzenie, czy katalog "images" znajduje się w aktualnym katalogu roboczym
-if :file.cwd() == "images" do
-  IO.puts "Katalog 'images' istnieje."
-else
-  IO.puts "Katalog 'images' nie istnieje."
-end
+```elixir
+"nazwa_katalogu" in File.ls(".")
 ```
 
-## Zobacz również
+W obu przypadkach używa się nazwy oraz ścieżki katalogu w postaci stringa, jednak warto pamiętać, że w przypadku użycia `File.dir?` ścieżka musi być zaczynająca się od kropki.
 
-- [Dokumentacja Elixir: :file.cwd/0](https://hexdocs.pm/elixir/File.html)
-- [Dokumentacja Elixir: :file.expand_path/1](https://hexdocs.pm/elixir/File.html#expand_path/1)
+## Deep Dive
+
+Sprawdzenie istnienia katalogu jest często wykorzystywane w testowaniu programów, aby upewnić się, że wszystkie niezbędne katalogi istnieją przed uruchomieniem aplikacji. Można również wykorzystać tę funkcję w celu dodatkowej ochrony przed błędami, sprawdzając, czy katalog jest pusty lub czy zawiera odpowiednie pliki.
+
+Warto również wspomnieć, że funkcja `File.dir?` zwróci `false` jeśli nie uda się otworzyć katalogu, na przykład w przypadku braku odpowiednich uprawnień. Dzięki temu możemy uniknąć potencjalnych błędów w naszym programie.
+
+## Zobacz Również
+
+- [Dokumentacja Elixir na temat sprawdzania istnienia plików](https://hexdocs.pm/elixir/File.html#dir?/1)
+- [Poradnik Elixir na temat operacji na plikach](https://elixir-lang.org/getting-started/io-and-the-file-system.html)

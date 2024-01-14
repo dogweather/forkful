@@ -1,51 +1,38 @@
 ---
-title:    "Haskell: כתיבה לתקליט שגיאה סטנדרטי"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/haskell/writing-to-standard-error.md"
+title:                "Haskell: כתיבה אל תוך השגיאה התקנית"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-כתיבת הודעות לשגיאה תוך שימוש בHaskell היא כלי חשוב כאשר מתכנת רוצה להציג את הודעת השגיאה בצורה מפורטת ומובנת למשתמש. זה מאפשר למשתמש להבין מה מסובך את התוכנית ואיפה צריך להתחיל התיקון.
+כתיבה למטרת שכיתה שונה בכינונים ושהיא בטוחה יותר למחברת עם פלט תקין ונתונים.
 
 ## איך לעשות זאת
 
-שימוש בפונקציית `hPutStrLn` בספריית `System.IO` יאפשר לנו לכתוב את הודעת השגיאה לפלטר של שגיאות הסיסטם. לדוגמה:
-
 ```Haskell
+main :: IO ()
 main = do
-    putStrLn "הקלד את המספר שלך:"
-    input <- getLine
-    let number = read input :: Int
-    if number <= 0
-        then hPutStrLn stderr "מספר לא חוקי נכנס!"
-        else putStrLn $ "המספר שלך הוא: " ++ show number
+  let x = 5
+      y = 10
+  putStrLn $ "כינון " ++ show x ++ " הוא " ++ show (x * y)
 ```
 
-פלט עבור קלט לא חוקי יהיה:
+פלט:
 
 ```
-הקלד את המספר שלך:
--3
-מספר לא חוקי נכנס!
+כינון 5 הוא 50
 ```
 
-פלט עבור קלט חוקי יהיה:
+## חקירה מעמיקה
 
-```
-הקלד את המספר שלך:
-12
-המספר שלך הוא: 12
-```
-
-## טיפול עמוק
-
-שימוש במכשיר הפלט של שגיאות הסיסטם יכול להיות שימושי כאשר רוצים לחזור על תהליך כל הפעולות שנעשו לפני קריסת התכנית. בנוסף, זה יכול להיות שימושי כאשר רוצים להציג את מיקום השגיאה בקוד כדי שיהיה קל יותר לתקן.
+כאשר נכנסים לעולם של Haskell, נתקלים במונחים כמו "IO" ו "putStrLn" שבעצם מבצעים את פעולת הכתיבה ל-standard error. זה מאפשר לנו להפעיל את הפונקציות בתוך ה-IO context ולתפוס פלט שלהם במקום הנכון. כדי לפנות לנתונים לכתיבה ל-standard error, ניתן להשתמש בפונקציות כמו "hPutStrLn" או "hPutStr".
 
 ## ראה גם
 
-- [נסלקה עמוקה ב-Haskell IO](https://wiki.haskell.org/Deep_inside_your_IO)
-- [חלקיקים מהעגה: IO](https://mmhaskell.com/blogs/monads/monadic-io)
-- [ממיר טבלאות IO](https://blog.feabhas.com/2017/10/c-using-casts-to-convert-an-i-o-table-project-to-freertos/)
+- [המדריך המבואי ל-Haskell](https://wiki.haskell.org/Introduction)
+- [הספר "Real World Haskell"](http://book.realworldhaskell.org/read/)
+- [מדריך לשפת Haskell בעברית](https://yalh.io/he/)

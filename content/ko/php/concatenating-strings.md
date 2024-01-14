@@ -1,59 +1,59 @@
 ---
-title:    "PHP: 문자열 연결하기"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/concatenating-strings.md"
+title:                "PHP: 문자열 연결하기"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-[Korean Translation of Title: PHP 프로그래밍에서 문자열 연결하는 법]
+# 왜 스트링 합성을 사용해야 할까요?
 
-## 왜 문자열 연결을 해야 할까요?
+일반적으로 프로그래밍에서 스트링 합성은 컴퓨터가 문자열을 조합하여 새로운 문자열을 만들어내는 과정을 의미합니다. 이는 텍스트 처리 및 문자열 조작에 매우 유용하며, PHP에서도 이와 관련된 여러 기능을 제공합니다. 스트링 합성을 사용하면 프로그래머는 보다 간편하게 문자열을 다룰 수 있고 원하는 결과를 더 빠르게 얻을 수 있습니다.
 
-문자열 연결은 PHP 프로그래밍에서 매우 중요한 부분입니다. 이는 문자열을 서로 결합하여 더 긴 문자열을 만들기 위한 것입니다. 이를 통해 더 복잡한 문자열 표현이 가능해지며, 코드를 더 효율적으로 만들 수 있습니다.
+## 사용 방법
 
-## 어떻게 문자열을 연결할 수 있을까요?
-
-PHP에서 문자열을 연결하는 가장 쉬운 방법은 `.` 연산자를 사용하는 것입니다. 다음은 `.` 연산자를 사용하여 두 문자열을 연결하는 예제 코드입니다.
+스페이스를 추가하고 싶은 경우, 아래와 같이 `.` 연산자를 이용하여 두 개의 문자열을 합칠 수 있습니다.
 
 ```PHP
-$first_name = "John";
-$last_name = "Smith";
-
-echo $first_name . " " . $last_name;
+echo "안녕" . "하세요";
 ```
 
-**Output:**
-John Smith
+출력 결과는 `안녕하세요`가 됩니다. 또한, 변수와 문자열을 함께 사용할 수도 있습니다.
+```PHP
+$name = "철수";
+echo $name . "의 나이는 20살 입니다.";
+```
 
-위 예제 코드에서는 `.` 연산자를 사용하여 `$first_name`과 `$last_name`을 연결한 후, 공백 문자열을 추가하여 전체 이름을 출력하였습니다.
-
-### 더 깊이 들어가보자
-
-PHP에서는 더 복잡한 문자열을 연결하는 다양한 방법을 제공합니다. 예를 들어, `sprintf()` 함수를 사용하여 서식화된 문자열을 만들 수 있고, `str_replace()` 함수를 사용하여 특정 문자열을 다른 문자열로 대체할 수도 있습니다.
-
-또한, 반복문을 사용하여 여러 개의 문자열을 결합할 수도 있습니다. 예를 들어, 다음과 같이 `for` 루프를 사용하여 숫자를 문자열로 변환하고 연결할 수 있습니다.
+위 코드의 출력 결과는 `철수의 나이는 20살 입니다`가 됩니다. 또한, PHP에서는 여러 문자열을 한 번에 합성하는 방법도 제공됩니다. 아래와 같이 `UseImplode()` 함수를 사용하여 배열의 문자열들을 합칠 수 있습니다.
 
 ```PHP
-$nums = [1, 2, 3, 4, 5];
-$str = "";
-
-for($i = 0; $i < count($nums); $i++){
-    $str .= strval($nums[$i]);
-}
-
-echo $str;
+$animals = array("고양이", "강아지", "토끼");
+echo implode(", ", $animals);
 ```
 
-**Output:**
-12345
+출력 결과는 `고양이, 강아지, 토끼`가 됩니다. 또한, 문자열 안에 변수를 포함할 때는 다음과 같이 `{}`로 감싸야 합니다.
 
-## 더 자세한 내용은?
+```PHP
+$weather = "흐림";
+echo "오늘 날씨는 {$weather}입니다.";
+```
 
-PHP에서 문자열을 연결하는 다양한 방법을 배우고 싶다면, 공식 PHP 문서를 참조하는 것이 가장 좋은 방법입니다. 또한 PHP 커뮤니티에서도 다양한 자료를 찾아볼 수 있습니다.
+출력 결과는 `오늘 날씨는 흐림입니다.`가 됩니다.
 
-[Korean Translation of See Also: 더 알아보기]
+## 더 깊게 들어가보기
 
-- [PHP 문자열 연결 문서](https://www.php.net/manual/en/function.strcat.php)
-- [sprintf() 함수 정보](https://www.php.net/manual/en/function.sprintf.php)
-- [str_replace() 함수 정보](https://www.php.net/manual/en/function.str-replace.php)
+PHP에서는 보다 복잡한 문자열 합성을 위해 `str_replace()` 함수를 제공합니다. 이 함수를 사용하면 문자열에서 특정 패턴을 찾아서 다른 패턴으로 바꿀 수 있습니다. 예를 들어, 다음과 같이 이름을 가진 사람에게 인사하는 메시지를 만들 수 있습니다.
+
+```PHP
+$name = "영희";
+$message = "안녕, {name}야. 뭐하고 지내?";
+$final_message = str_replace("{name}", $name, $message);
+```
+
+위 예제에서 `str_replace()` 함수는 `$message` 변수에서 `{name}`이라는 패턴을 `$name` 변수의 값으로 바꾸어 `$final_message` 변수에 저장합니다. 출력 결과는 `안녕, 영희야. 뭐하고 지내?`가 됩니다.
+
+# See Also
+
+- [PHP 문자열 합성 관련 문서](https://www.php.net/manual/en/language.operators.string.php)
+- [PHP 문자열 함수들](https://www.php.net/manual/en/ref.strings.php)

@@ -1,59 +1,61 @@
 ---
-title:    "Go: Capitalizando uma string"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/capitalizing-a-string.md"
+title:                "Go: Capitalizando uma string"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que capitalizar uma string em Go?
+## Por que capitalizar strings em Go?
 
-Capitalizar uma string em Go é uma operação muito comum e útil em muitos cenários de programação. Ela pode ajudar a melhorar a legibilidade do código, a organizar e formatar dados e a garantir a consistência e correção dos dados manipulados pelo programa.
+Capitalizar uma string é um processo comum em programação, e pode ser útil em diversas situações, como, por exemplo, quando é necessário padronizar a escrita de dados inseridos pelo usuário. Em Go, existem diversas maneiras de capitalizar uma string, e neste artigo vamos explorar algumas delas.
 
-## Como capitalizar uma string em Go?
+## Como capitalizar uma string em Go
 
-Existem algumas maneiras diferentes de capitalizar uma string em Go, dependendo do objetivo e do contexto do programa. Aqui estão alguns exemplos usando a função `strings.Title` e seu uso dentro de um loop:
+Abaixo, mostraremos alguns exemplos de código em Go para capitalizar uma string. Nas linhas de código, utilizaremos um comentário para explicar o funcionamento de cada solução, e logo em seguida, mostraremos o output resultante dessa solução.
 
 ```Go
-package main
+// Usando a função strings.Title(), que capitaliza a primeira letra de cada palavra
+fmt.Println(strings.Title("meu nome é João"))
+// Output: Meu Nome É João
 
-import (
-    "fmt"
-    "strings"
-)
-
-func main() {
-    // Criando uma string
-    str := "esta é uma string a ser capitalizada"
-
-    // Usando a função strings.Title para capitalizar a string
-    capitalized := strings.Title(str)
-
-    // Imprimindo o resultado
-    fmt.Println(capitalized) // Saída: Esta É Uma String A Ser Capitalizada
-
-    // Criando um slice de strings
-    words := []string{"maçã", "banana", "cereja"}
-
-    // Usando um loop para capitalizar cada elemento do slice
-    for i, word := range words {
-        fmt.Println(strings.Title(word)) // Saída: Maçã, Banana, Cereja
-        words[i] = strings.Title(word) // Substituindo os elementos do slice pelos valores capitalizados
-    }
-
-    // Imprimindo o slice após a capitalização
-    fmt.Println(words) // Saída: [Maçã Banana Cereja]
-}
+// Usando a função strings.ToUpper(), que converte todas as letras para maiúsculas
+fmt.Println(strings.ToUpper("ola, mundo!"))
+// Output: OLA, MUNDO!
 ```
 
-## Deep Dive: Entendendo o processo de capitalização em Go
+Outra forma de capitalizar uma string é percorrer cada caractere e utilizar a função strings.ToUpper() apenas na primeira letra. Para isso, podemos usar um loop e um contador para identificar a primeira letra de cada palavra.
 
-O processo de capitalização em Go é baseado na função `strings.Title`, que utiliza as regras Unicode para capitalizar a primeira letra de cada palavra em uma string. Além disso, essa função também irá respeitar letras maiúsculas já existentes em uma palavra. Por exemplo, se a string contém a palavra "iPhone", essa palavra será mantida como "iPhone" após a aplicação da função.
+```Go
+texto := "ola, mundo!"
+novotexto := ""
+contador := 0
 
-É importante mencionar que a capitalização de letras em Go é sensível a acentos e caracteres especiais, então é preciso estar atento a isso ao utilizar essa função em suas aplicações.
+for _, letra := range texto {
+    if contador == 0 {
+        novotexto += strings.ToUpper(string(letra))
+        contador++
+    } else {
+        novotexto += string(letra)
+    }
+}
+
+fmt.Println(novotexto)
+// Output: Ola, Mundo!
+```
+
+## Aprofundando no processo de capitalizar uma string em Go
+
+Além das soluções apresentadas acima, existem outras maneiras de capitalizar uma string em Go, como utilizar expressões regulares ou até mesmo criar uma função personalizada que identifique e capitalize a primeira letra de cada palavra. É importante entender as diferentes opções e escolher a melhor solução para cada cenário.
+
+Outro ponto importante ao capitalizar strings é estar atento a características específicas do idioma, como por exemplo, o fato de que em português, letras como "ç" e "ã" também devem ser capitalizadas corretamente. Nesse caso, pode ser necessário utilizar funções específicas que considerem essas particularidades.
 
 ## Veja também
 
 - [Documentação oficial do pacote strings em Go](https://golang.org/pkg/strings/)
-- [Tutorial sobre strings em Go](https://gobyexample.com/strings)
-- [Exemplos de capitalização de strings em Go](https://www.programming-books.io/essential/go/string-capitalize-e95fadf769504989bce31d468f161e62)
+- [Tutorial de strings em Go no site TutorialsPoint](https://www.tutorialspoint.com/go/go_strings.htm)
+- [Exemplos de expressões regulares em strings em Go](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go-pt)
+
+seo-import "fmt"
+seo-import "strings"

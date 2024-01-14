@@ -1,58 +1,46 @@
 ---
-title:    "Ruby: 「未来または過去の日付を計算する方法」"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/calculating-a-date-in-the-future-or-past.md"
+title:                "Ruby: 未来または過去の日付の計算"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-### なぜ
-プログラマーにとって、日付の計算は非常に重要です。未来や過去の日付を正確に計算することで、アプリケーションやシステムの動作を予測することができます。そのため、Rubyで日付を計算する方法を知ることは非常に役に立ちます。
+## なぜ
+日付を未来や過去に計算することに関わる理由は、様々です。例えば、その日から何日後や前の日付を知りたい場合や、特定のイベントの開始日や終了日を正確に把握したい場合などが挙げられます。Rubyのプログラミングを学ぶことで、日付を計算することが簡単になり、より効率的なコードを書くことができるようになります。
 
-### ハウトゥ
-日付を計算するためには、Rubyの日付クラスである`Date`を使用します。まず、計算したい日付を`Date`オブジェクトに変換します。その後、`Date`オブジェクトの`+`や`-`演算子を使用して、未来や過去の日付を計算することができます。
+## 方法
+Rubyを使って日付を計算するには、Dateクラスを使用することができます。Dateクラスは日付を表すオブジェクトです。以下のコードを使用することで、今日の日付を取得することができます。
 
-```Ruby
-require 'date'
-
-# 今日の日付を取得
-today = Date.today
-
-# 未来の日付を計算（1日後）
-future_date = today + 1
-
-puts future_date #=> 2021-05-05
-
-# 過去の日付を計算（1日前）
-past_date = today - 1
-
-puts past_date #=> 2021-05-03
+```ruby
+Date.today
 ```
 
-### ディープダイブ
-日付を計算する際には、`Date`クラスに用意されている様々なメソッドを使用することができます。例えば、`next_day`や`prev_day`メソッドを使用することで、次の日や前の日を計算することができます。また、`strftime`メソッドを使用することで、日付のフォーマットをカスタマイズすることもできます。
+日付を計算するには、Dateオブジェクトに対して```+```や```-```を使用します。例えば、2日後の日付を計算したい場合は、以下のように記述します。
 
-```Ruby
-require 'date'
-
-# 今日の日付を取得
-today = Date.today
-
-# 次の日を計算
-next_day = today.next_day
-puts next_day.strftime("%d/%m/%Y") #=> 04/05/2021
-
-# 前の日を計算
-prev_day = today.prev_day
-puts prev_day.strftime("%d/%m/%Y") #=> 02/05/2021
+```ruby
+Date.today + 2
 ```
 
-`Date`クラスの詳細な情報については、公式ドキュメントを参照することができます。
+また、過去の日付を計算したい場合は、負の数を使用します。例えば、一週間前の日付を計算する場合は、以下のように記述します。
 
-### ぜひ参考にしてみてください
-この記事を参考にして、Rubyで日付を計算する方法をマスターしてください。また、`Date`クラス以外にも、`Time`クラスや`DateTime`クラスなど、日付を扱うためのさまざまなクラスが用意されていますので、ぜひ深堀りしてみてください。
+```ruby
+Date.today - 7
+```
 
-### 関連リンク
-- [Ruby公式ドキュメント](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
-- [Dateクラスの使い方](https://www.techscore.com/blog/2015/03/02/double_date/)
-- [Rubyで日付を扱う方法](https://qiita.com/yamacraft/items/691cc64bcaf6b5f3b4b4)
+さらに、日付に関する様々な情報を取得することもできます。例えば、オブジェクトの曜日を知りたい場合は、```wday```メソッドを使用します。曜日は0から6の数字で表され、日曜日から土曜日まで順番に0から6になります。
+
+```ruby
+Date.today.wday
+```
+
+詳しい情報や他のメソッドについては、公式ドキュメントを参考にしてください。
+
+## ディープダイブ
+日付の計算は、Dateクラス以外にもDateTimeやTimeクラスを使用することでも行うことができます。また、コードブロックの外でも日付の計算を行うことができるため、より複雑なプログラムでも応用することができます。日付の計算を行う際は、データのフォーマットにも注意しなければなりません。様々なメソッドを組み合わせることで、より柔軟な日付の計算を行うことができます。
+
+## 参考リンク
+- [公式ドキュメント](https://ruby-doc.org/stdlib-2.6.3/libdoc/date/rdoc/Date.html)
+- [DateTimeクラスの使い方](https://techacademy.jp/magazine/35749)
+- [Timeクラスを使って日付を計算する](https://pikawaka.com/ruby/time/strftime)

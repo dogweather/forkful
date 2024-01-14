@@ -1,50 +1,57 @@
 ---
-title:    "C#: Komentoriviparametrien lukeminen"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/reading-command-line-arguments.md"
+title:                "C#: Komentoriviparametrien lukeminen"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-### Miksi lukea komentorivin argumentteja?
+## Miksi lukea komentorivivaihtoehtoja
 
-Komentorivin argumenttien lukeminen on tärkeä taito kaikille C#-ohjelmoijille. Se mahdollistaa ohjelman suorittamisen erilaisilla parametreilla, jolloin ohjelma voi toimia joustavammin ja tarjota käyttäjälle enemmän vaihtoehtoja. Lisäksi se tekee ohjelman ajoittamisesta helpompaa, koska eri skenaarioiden testaaminen ei vaadi koodimuutoksia.
+Komentorivivaihtoehtojen lukeminen on tärkeä taito C#-ohjelmoijille, sillä se mahdollistaa ohjelmien dynaamisen toiminnan ja antaa käyttäjille mahdollisuuden muokata ohjelman toimintoja. Tämä on erityisen tärkeää, kun halutaan tehdä monipuolisempia ja interaktiivisempia sovelluksia.
 
-### Kuinka lukea komentorivin argumentteja?
+## Näin luet komentorivivaihtoehtoja
 
-Komentorivin argumenttien lukeminen C#-kielellä on helppoa. Ensin luodaan Main-metodi, joka on ohjelman aloituspiste ja ottaa vastaan taulukon komentorivin argumenteista. Tämän jälkeen voidaan käyttää string-taulukon indeksöintiä, jotta halutut argumentit saadaan talteen. Tässä esimerkissä luetaan ja tulostetaan ensimmäinen ja toinen komentorivin argumentti:
+Komentorivivaihtoehtojen lukeminen C#-ohjelmassa on helppoa. Komentoriviparametrit tallentuvat ohjelman suorittamisen yhteydessä string-taulukkoon (```string[]```). Ne voi käsitellä ```foreach```-silmukalla tai indeksien avulla.
+
+Esimerkiksi seuraavassa koodissa luetaan komentoriviparametrit ja tulostetaan ne yksi kerrallaan:
 
 ```C#
-static void Main(string[] args)
+foreach (string arg in args)
 {
-    string argument1 = args[0];
-    string argument2 = args[1];
-    Console.WriteLine(argument1);
-    Console.WriteLine(argument2);
+  Console.WriteLine(arg);
 }
 ```
 
-Ohjelma voi myös lukea useita argumentteja ja suorittaa erilaisia toimintoja riippuen annetuista parametreista. Esimerkiksi jos halutaan tarkistaa, onko komentorivillä annettu "-help" argumentti, voidaan käyttää seuraavaa koodia:
+Jos haluamme, että ohjelma tulostaa viestin, jos parametreja ei anneta, voimme käyttää ```Length```-ominaisuutta tarkastellaksemme taulukon koon:
 
 ```C#
-static void Main(string[] args)
+if (args.Length == 0)
 {
-    if (args.Contains("-help"))
-    {
-        Console.WriteLine("Ohjeet:");
-        Console.WriteLine(" -help: Näyttää tämän viestin");
-    }
+  Console.WriteLine("Komentoriviparametreja ei annettu.");
 }
 ```
 
-Tässä tapauksessa ohjelma tulostaa ohjeet, mikäli komentorivillä on annettu "-help" argumentti. Muussa tapauksessa mitään ei tulosteta.
+## Syvempää tietoa komentorivivaihtoehtojen lukemisesta
 
-### Syvällinen tarkastelu komentorivin argumenttien lukemisesta
+Komentoriviparametreilla voidaan myös antaa ohjelmalle erilaisia toimintoja ja arvoja. Esimerkiksi ohjelmaa voi ajaa seuraavasti:
 
-Kuten edellä mainituista esimerkeistä huomataan, komentorivin argumenttien lukeminen on yksinkertaista C#-kielellä. Argumentteja voidaan käyttää monipuolisesti ohjelman suorittamisessa ja vaihtoehtojen tarjoamisessa käyttäjälle. On myös mahdollista käsitellä useita argumentteja ja suorittaa tarkempia tarkistuksia, mikä tekee ohjelmasta joustavamman ja dynaamisemman.
+```
+dotnet ohjelma.exe -tulosta tiedosto.txt
+```
 
-### Katso myös
+Tässä tapauksessa ohjelma tulostaa tiedoston ```tiedosto.txt``` sisällön. Tämä tapahtuu, koska komentoriviparametreissa määritelty ```-tulosta``` kertoo ohjelmalle, mitä sen tulee tehdä, ja ```tiedosto.txt``` on tässä tapauksessa parametrin arvo.
 
-- [C#-voimakkuuden perusteet: Komentorivin argumentit](https://docs.microsoft.com/fi-fi/dotnet/csharp/fundamentals/program-structure/main-command-args)
-- [Komentorivin argumenttien käsittely C#-kielellä](https://www.geeksforgeeks.org/command-line-arguments-in-c-sharp/) 
-- [Miten käyttää komentorivin argumentteja C#-koodissa](https://www.c-sharpcorner.com/UploadFile/pranayamr/working-with-command-line-arguments-in-C-Sharp/)
+Komentoriviparametreja voi myös antaa ohjelmalle haluamassaan järjestyksessä. Esimerkiksi edellisen komennon tulostus voitaisiin määritellä myös näin:
+
+```
+dotnet ohjelma.exe tiedosto.txt -tulosta
+```
+
+Syvempi ymmärrys komentorivivaihtoehtojen lukemisesta auttaa rakentamaan monipuolisempia ja käyttäjäystävällisempiä sovelluksia.
+
+## Katso myös
+
+- [Microsoftin ohjeet komentorivivaihtoehtojen lukemiseen](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+- [Stack Overflow: How to read command line arguments in C#](https://stackoverflow.com/questions/1365407/how-to-read-command-line-arguments-in-c-sharp)

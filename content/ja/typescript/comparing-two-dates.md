@@ -1,49 +1,32 @@
 ---
-title:    "TypeScript: 「日付を比較する」"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/comparing-two-dates.md"
+title:                "TypeScript: 「2つの日付を比較する」"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ日付を比較するのか
-
-プログラミングにおいて、日付を比較することは非常に重要です。例えば、あなたのアプリケーションにおいて、特定の日付が過去なのか未来なのかを判断する必要があります。そのような場合、日付の比較が必要になります。また、日付をソートする際にも日付の比較が使用されます。日付を比較することで、プログラムをより正確で効率的に動作させることができます。
+## なぜ
+日常生活やビジネスの中で、時期や期限を把握することは非常に重要です。そのため、プログラマーは時系列のデータを扱う際に、日時を比較する必要があります。それでは、TypeScriptを使用して日時の比較を行う方法を紹介します。
 
 ## 方法
+日付を比較するには、Dateオブジェクトを使います。まず最初に、比較したい2つの日付をそれぞれDateオブジェクトに変換します。次に、以下のようなコードを使用して日付の比較を行います。
 
-TypeScriptを使用して日付を比較する方法を紹介します。まず、比較したい2つの日付をDateオブジェクトとして定義します。次に、比較演算子を使用して、2つの日付を比較します。
+```TypeScript
+const date1: Date = new Date("2021-01-01");
+const date2: Date = new Date("2020-12-31");
 
+if (date1 > date2) {
+  console.log("date1の方が未来の日付です");
+} else if (date1 < date2) {
+  console.log("date2の方が未来の日付です");
+} else {
+  console.log("両方の日付が同じです");
+}
 ```
-// 日付の定義
-let firstDate: Date = new Date(2021, 5, 1);
-let secondDate: Date = new Date(2021, 5, 15);
-// 比較
-console.log(firstDate > secondDate); // false
-console.log(firstDate < secondDate); // true
-console.log(firstDate == secondDate); // false
-```
 
-上記のコードでは、firstDateがsecondDateよりも未来の日付なので`>`演算子は`false`を返します。また、`<`演算子を使用することでfirstDateがsecondDateよりも過去の日付かどうかを判定することができます。さらに、`==`演算子を使用することで日付が完全に一致するかどうかを判定することができます。
+上記のように、Dateオブジェクト同士を比較することで、日付の大小や等しさを判定することができます。また、年、月、日、時、分、秒など、より詳細な情報を比較することも可能です。詳細なコードの例は、[こちら](https://www.typescriptlang.org/play?#code/PTAFwKgAQhgcgYygFgBQEMBPgVwAUBXZAI3aa2aBTAQwBdUO6QG8A4SAzgCNGMLADZACxCMAmiqdwBjRwDCAMxBKvAAxnNAGWNNYABcA5JZAVy20j7joAoAPQDm5LJAO6ZbhfXZG0eeAE5igJNWqaG4NnaAB8qO3lAJ4rdhhAWeBkYkGRkZmZg4dGZ3dXQIAwAslPCYoPXyC5qh CEQNOKkXCesNkMXd+7ALZAZQkKgei4Hzk2ZFBjHkZmDQ871s7rDj4WTWWb26bITgDOZRgACQgkCxCEALw+CdJAK1yABiIUAizgDAEQhBhBS5CEYaFgIgUAhxg0Ai koCkpu+Cg5YQgNAFUw-AEpRbly8iGJAEYXlRMLGPMMIACHD4VpeAJlBhQAEZcJAcAAgAv5MGHKmDhWqkZgAewBXJWFpMIClS1Nx2KrKAA)でご確認いただけます。
 
 ## ディープダイブ
-
-実際には、日付を比較する際には単純な演算子だけではなく、より複雑な条件を使用することもあります。そのような場合、Dateオブジェクトのメソッドを使用することができます。例えば、`getDate()`メソッドを使用することで日付の数字を取得することができます。また、`getFullYear()`メソッドを使用することで年を取得することができます。
-
-```
-// 日付の定義
-let today: Date = new Date();
-let checkDate: Date = new Date(2021, 5, 5);
-// 比較
-console.log(today.getDate() == checkDate.getDate()); // true
-console.log(today.getFullYear() == checkDate.getFullYear()); // true
-```
-
-日付を比較する際には、以上のようなメソッドを組み合わせて使用することで、より複雑な条件を含む比較を行うことができます。
-
-## 参考リンク
-
-- [TypeScript 公式サイト](https://www.typescriptlang.org/)
-- [Date クラス (MDN Web Docs)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [TypeScript における演算子の使用方法 (TechAcademy)](https://techacademy.jp/magazine/18736)
-- [日付の比較方法について (Qiita)](https://qiita.com/@fukunaga-takumi/items/f0595c221b85ae2d7bc8)
+さらに、Dateオブジェクトを使用してより複雑な比較を行うことも可能です。例えば、ある日付が特定の範囲内に収まるかどうか、ある日付が何日後・前であるかなど、様々な条件を比較することができます。詳細なコードの例は、[こちら](https://www.typescriptlang.org/play?#code/JYOwLgpgTgZghgYwgAgGIHtUB2GBcWAdgKJYDWEAUFKAnqQL4AXgwFZpLUGoHGAEwALKZbDIAGYKgC+HCD2MIA8MR8AmysoAXUWzFAGYIEADgBSToYIAlEVAL7QSwJygKJUaVGkg8AmlC3mlPy2bEF83CwZ-Rw3JlLA29JQAL4bl5

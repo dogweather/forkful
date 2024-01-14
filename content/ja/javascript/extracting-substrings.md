@@ -1,34 +1,34 @@
 ---
-title:    "Javascript: 部分文字列を抽出する"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/extracting-substrings.md"
+title:                "Javascript: 部分文字列の抽出"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-##なぜ？
+## なぜ
+サブストリングを抽出する理由を説明するためには、文字列の特定の部分を取得したい場合があるからです。たとえば、あなたが作業しているテキストエディタが特定の言語の文法ハイライトをサポートしている場合、その単語の文字列を取得して、特定の色やスタイルを適用する必要があります。これは、一般的なプログラムの特定の部分から情報を抽出する必要がある場合も同様です。
 
-文字列から部分文字列を抜き出すことのメリットはたくさんあります。例えば、文字列内の特定の単語や文字の出現回数を数える場合や、必要な情報を抜き出して新しい文字列を作成する場合に便利です。また、文字列が長すぎて読みづらい場合に、特定の部分のみを取り出して表示することで見やすくすることもできます。
-
-##抜き出し方の例
-
-文字列から部分文字列を抜き出す方法はいくつかありますが、ここではJavaScriptの標準メソッドである`substring()`を使った例を見ていきましょう。
+## 方法
+サブストリングを抽出する方法についてはいくつかのオプションがあります。最も一般的な方法の1つは、標準のJavaScriptの```substring ()```メソッドを使用することです。このメソッドは、指定された開始位置と終了位置の間で、元の文字列から部分文字列を切り出します。例えば、以下のコードを使用して、"hello"文字列の最初の3文字を抽出することができます。
 
 ```Javascript
-let str = "Hello world";
-console.log(str.substring(0, 5)); // Output: "Hello"
-console.log(str.substring(6, 11)); // Output: "world"
-console.log(str.substring(3)); // Output: "lo world"
+let str = "hello";
+let sub = str.substring(0, 3); // "hel"
+console.log(sub); // "hel"
 ```
 
-この例では、`substring()`メソッドに抜き出したい部分文字列の開始位置と終了位置を引数として渡しています。第三引数を省略することで、開始位置から文字列の最後までを抜き出すことができます。戻り値として抜き出した部分文字列が返されるため、そのままコンソールに表示することで確認することができます。
+また、```slice ()```メソッドも同様の機能を提供します。このメソッドでは、負のインデックスを使用することで、末尾からの文字列の抽出も可能です。詳細な使い方については、公式のドキュメントを参照してください。
 
-##深堀り
+## ディープダイブ
+サブストリング抽出のさまざまな方法を調べる際には、文字列を操作する様々な方法を学ぶことが重要です。例えば、正規表現を使用してマッチングパターンを作成し、特定の文字列の部分を抽出することができます。また、特定の文字列を分割して、部分文字列の配列を作成することもできます。
 
-`substring()`メソッド以外にも、文字列から部分文字列を抜き出す方法はあります。例えば、`slice()`メソッドや正規表現を使う方法があります。また、抜き出した文字列を変数に格納することで、後の処理に活用することもできます。このように、抜き出し方や利用方法は様々なので、自分のアプリケーションに合った最適な方法を選ぶことが重要です。
+さらに、サブストリングをより高度に取得する必要がある場合は、文字列操作ライブラリを使用することもできます。これらのライブラリには、さまざまな便利なメソッドが用意されており、より複雑な操作を行うことができます。例えば、LodashやStrmanなどがあります。
 
-##参考リンク
-
-- [MDN Web Docs - substring()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN Web Docs - slice()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [正規表現入門](https://www.webprofessional.jp/regex-character-classes-beginner/)
+## See Also
+- [JavaScriptのsubstring（）メソッドの詳細について](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [JavaScriptのslice()メソッドの詳細について](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [正規表現の基本について学ぶ](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [より高度な文字列操作を行うためのライブラリ](https://github.com/lodash/lodash)
+- [サブストリングの使用例と使い方ガイド](https://www.w3schools.com/jsref/jsref_substr.asp)

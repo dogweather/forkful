@@ -1,73 +1,43 @@
 ---
-title:    "Ruby: Calculando uma data no futuro ou no passado"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/calculating-a-date-in-the-future-or-past.md"
+title:                "Ruby: Calculando uma data no futuro ou passado"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+# Por que calcular uma data no futuro ou passado?
 
-Muitas vezes, precisamos calcular uma data específica no futuro ou no passado durante a programação. Pode ser para agendar um evento, definir um lembrete ou simplesmente para realizar cálculos de datas. Saber como fazer isso pode ser útil em diversas situações.
+Muitas vezes em programação, precisamos trabalhar com datas e muitas vezes precisamos calcular uma data específica no futuro ou no passado. Isso pode ser necessário para criar lembretes, agendar tarefas ou fazer cálculos de prazos. Felizmente, a linguagem Ruby tem algumas ótimas ferramentas para nos ajudar a calcular essas datas.
 
-## Como fazer
+## Como fazer isso
 
-Para calcular uma data no futuro ou no passado, podemos utilizar o método `advance` da classe `Date` do Ruby. O método pode receber três argumentos: o número de dias, o número de meses e o número de anos que queremos avançar ou retroceder na data atual. Vamos ver um exemplo prático:
-
-```Ruby
-# Importando a classe Date
-require 'date'
-
-# Definindo a data atual como 1º de janeiro de 2021
-data_atual = Date.new(2021, 1, 1)
-
-# Avançando 30 dias a partir da data atual
-data_futura = data_atual.advance(days: 30)
-
-# Retrocedendo 1 ano e 2 meses a partir da data atual
-data_passada = data_atual.advance(years: -1, months: -2)
-
-# Imprimindo as datas calculadas
-puts "Data futura: #{data_futura}"
-puts "Data passada: #{data_passada}"
-```
-
-O código acima irá imprimir:
-
-```
-Data futura: 2021-01-31
-Data passada: 2019-10-01
-```
-
-Além disso, o método `advance` também pode ser utilizado com outras classes de data, como `DateTime` e `Time`.
-
-## Mergulho profundo
-
-O método `advance` também permite que avancemos ou retrocedamos uma data de forma mais precisa, utilizando frações de dias, meses e anos. Por exemplo, se quisermos avançar 1,5 mês a partir da data atual, podemos fazer o seguinte:
+Para calcular uma data no futuro ou passado em Ruby, podemos usar o método `+` e passar como argumento um número de dias que desejamos adicionar ou subtrair da data atual. Vamos dar uma olhada em um exemplo:
 
 ```Ruby
-# Importando a classe Date
-require 'date'
-
-# Definindo a data atual como 1º de janeiro de 2021
-data_atual = Date.new(2021, 1, 1)
-
-# Avançando 1,5 mês a partir da data atual
-data_futura = data_atual.advance(months: 1.5)
-
-# Imprimindo a data calculada
-puts "Data futura: #{data_futura}"
+future_date = Time.now + 7 # adicionando 7 dias à data atual
+puts future_date.strftime("%d/%m/%Y") # output: 14/09/2021
 ```
 
-O código acima irá imprimir:
+Neste exemplo, usamos o método `strftime` para formatar nossa data de acordo com o padrão de dia/mês/ano. É importante observar que, além de dias, também podemos adicionar meses e anos à data atual usando o método `+`.
 
+No entanto, se quisermos calcular uma data em específico no futuro ou passado, podemos usar o método `parse` da classe `Date`. Vamos ver um exemplo:
+
+```Ruby
+past_date = Date.parse("01/01/2021") - 30 # subtraindo 30 dias da data especificada
+puts past_date.strftime("%d/%m/%Y") # output: 02/12/2020
 ```
-Data futura: 2021-02-16
-```
 
-Isso pode ser útil em casos onde precisamos avançar datas de forma mais precisa, como em cálculos financeiros.
+Neste exemplo, usamos o método `parse` para converter nossa string em um objeto de data e, em seguida, usamos o método `strftime` para formatar a data de acordo com o padrão de dia/mês/ano.
 
-## Veja também
-- [Documentação do método `advance` (em inglês)](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html#method-c-advance)
-- [Exemplos práticos de cálculo de datas (em inglês)](https://www.mikhyel.com/blog/calculating-future-dates-with-ruby-date)
-- [Artigo sobre manipulação de datas no Ruby (em português)](https://tableless.com.br/manipulacao-de-datas-no-ruby/)
+## Profundidade
+
+Além dos métodos mencionados acima, Ruby também tem uma biblioteca de classes de datas mais avançadas, como `Date`, `DateTime` e `Time`. Cada uma dessas classes tem suas próprias vantagens e métodos específicos para calcular datas no futuro ou passado. Se você quiser se aprofundar nesse assunto e aprender mais sobre como essas classes funcionam, recomendo verificar a documentação oficial do Ruby (links na seção "Veja também").
+
+# Veja também
+
+- Documentação oficial do Ruby: https://www.ruby-lang.org/pt/documentation/
+- Ruby Date class: https://ruby-doc.org/core-3.0.1/Date.html
+- Ruby DateTime class: https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/DateTime.html
+- Ruby Time class: https://ruby-doc.org/core-3.0.1/Time.html

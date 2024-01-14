@@ -1,33 +1,30 @@
 ---
-title:    "Gleam: 日付を文字列に変換する"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/converting-a-date-into-a-string.md"
+title:                "Gleam: 「日付を文字列に変換する」"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-日付を文字列に変換することのメリットは何でしょうか？日付を文字列に変換することで、プログラム内でより柔軟に日付を扱うことができるようになります。例えば、ユーザーから入力された日付をデータベースに保存する際に、文字列に変換するとデータの整合性を保つことができます。また、特定のフォーマットに日付を表示したい場合にも役立ちます。
+日付を文字列に変換する必要があるかもしれません。例えば、データベースに日付を保存する場合や、日付を指定したフォーマットで表示したい場合などです。
 
 ## 方法
 
-日付を文字列に変換するには、Gleamの標準ライブラリであるdatetimeモジュールを使用します。まず、日付を表す```Date```型の変数を用意します。次に、```Date.to_string```関数を使い、指定したフォーマットに従って日付を文字列に変換します。例としては、以下のようになります。
-
-```Gleam
-import gleam/datetime
-
-let date = datetime.parse(2020, 12, 31)
-let formatted_date = datetime.to_string(date, "%Y/%m/%d")
+```
+Gleam.Date.to_string(Date.new(2021, 7, 15))
 ```
 
-このコードでは、2020年12月31日を表す```date```変数を、"年/月/日"のフォーマットに従って文字列に変換しています。
+上記のように、`Gleam.Date.to_string`関数を使用して日付を文字列に変えることができます。上記のコードを実行すると、`2021-07-15`という文字列が返されます。
 
-## 深堀り
+## 詳しく学ぶ
 
-Gleamのdatetimeモジュールでは、日付を文字列に変換する際にさまざまなフォーマットオプションを利用することができます。例えば、曜日や午前/午後の表記、0埋めなどの設定をカスタマイズすることができます。また、日本語表記に対応しているため、日本語の曜日や月名を表示することもできます。細かい設定方法は公式ドキュメントを参照してください。
+日付を文字列に変換するには、まず`Gleam.Date.to_string`関数で日付を文字列に変換できるようにします。その際には、Gleamで標準的に使われているISO 8601形式（YYYY-MM-DD）が使用されます。もし、異なるフォーマットで日付を文字列に変換したい場合は、`Gleam.Date.format`関数を使用することで、指定したフォーマットで日付を文字列に変換できます。
 
-## 参考
+## 参考リンク
 
-[datetime module - Gleam公式ドキュメント](https://gleam.run/modules/gleam_datetime.html)  
-[Date and Time Formatting - Unicode CLDR](https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/dates_times.html)
+- [Gleam 公式ドキュメント](https://gleam.run/getting-started/getting-started)
+- [Gleam コミュニティフォーラム](https://forum.gleam.run/)
+- [ISO 8601 形式を理解する](https://ja.wikipedia.org/wiki/ISO_8601)

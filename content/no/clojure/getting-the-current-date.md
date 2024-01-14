@@ -1,62 +1,72 @@
 ---
-title:    "Clojure: Hente nåværende dato"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/getting-the-current-date.md"
+title:                "Clojure: Få dagens dato"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å få dagens dato kan være en essensiell del av mange programmeringsprosjekter. Enten det er for å holde styr på tidssensitive data eller for å generere rapporter basert på dags dato, så er det viktig å kunne få tilgang til dagens dato i et program på en enkel og nøyaktig måte.
+Det er ofte nyttig å ha tilgang til nåværende dato i programmering. Dette kan være nyttig for å lage tidsstemplinger, oppdatere databaser, eller generelt brukes til å håndtere informasjon som er datostyrt. I Clojure, er det enkelt å få tak i nåværende dato ved hjelp av innebygde funksjoner og biblioteker.
 
-# Hvordan
+## Hvordan
 
-Det er flere måter å få dagens dato i Clojure. En måte å gjøre det på er ved å bruke funksjonen `java.util.Date`. Ved å importere denne i namespace, kan du bruke funksjonen `now` for å få dagens dato som en instans av `java.util.Date`:
-
-```Clojure
-(ns min-prosjekt.core
-  (:require [java.util.Date :as date]))
-
-(def dagsdato (date/now))
-```
-
-Dette vil returnere en instans av `java.util.Date` som du deretter kan jobbe med. Hvis du ønsker å få dagens dato i en spesifikk tidsone, kan du også bruke funksjonen `now-in-time-zone`:
+Først må vi importere `java.util.Date` biblioteket, som lar oss arbeide med dato og tid.
 
 ```Clojure
-(def dagsdato (date/now-in-time-zone "Europe/Oslo"))
+(ns minprosjekt.core
+    (:import [java.util Date]))
 ```
 
-Dette vil returnere dagens dato i din lokale tidsone, i dette tilfellet i Oslo sin tidsone.
-
-For å formatere dagens dato på en bestemt måte, kan du bruke funksjonen `java.text.SimpleDateFormat`. Dette lar deg formatere dato og klokkeslett på en enkel og fleksibel måte:
+Deretter kan vi bruke funksjonen `new` fra `Date` biblioteket for å få tak i nåværende dato og lagre det i en variabel.
 
 ```Clojure
-(defn formatert-dato [dato]
-  (let [format (java.text.SimpleDateFormat. "dd.MM.yyyy")]
-    (.format format dato)))
-
-(formatert-dato dagsdato) ;; returnerer f.eks. "11.09.2021"
+(def nåværende-dato (new Date))
 ```
 
-# Dypdykk
-
-Bak kulissene bruker Clojure de samme Java-klassene og metoder for å få dagens dato som i eksemplene over. Det er derfor også mulig å bruke Java-kode direkte i Clojure ved å bruke funksjonen `clojure.lang.Reflector`.
-
-For eksempel, hvis du ønsker å få dagens dato som en streng på formatet "YYYY-MM-DD", kan du gjøre det slik:
+Vi kan også bruke biblioteket `date-time` fra Clojures standardbibliotek for å få en mer leselig datoformat.
 
 ```Clojure
-(defn dato-streng []
-  (clojure.lang.Reflector/invokeInstanceMethod
-    (java.util.Date.) "toString" (into-array []))) ;; => "2021-09-11"
+(ns minprosjekt.core
+    (:require [clojure.java-time :as time]))
+
+(def nåværende-dato (time/now))
 ```
 
-Det er også verdt å nevne at det finnes flere tredjepartsbiblioteker tilgjengelig for å håndtere datoer og klokkeslett i Clojure, som f.eks. `clj-time` og `time-lib`.
+Dette vil gi oss en dato i ISO 8601 format, for eksempel `#inst "2021-08-12T14:00:00.000-00:00"`. Hvis vi ønsker å konvertere dette til en mer leselig streng, kan vi bruke funksjonen `formatter` fra samme bibliotek.
 
-# Se også
+```Clojure
+(ns minprosjekt.core
+    (:require [clojure.java-time :as time]))
 
-- [java.util.Date dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [java.text.SimpleDateFormat dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [clojure.lang.Reflector dokumentasjon](https://clojuredocs.org/clojure.core/with-meta)
-- [clj-time bibliotek](https://github.com/clj-time/clj-time)
-- [time-lib bibliotek](https://github.com/andersmurphy/time-lib)
+(def nåværende-dato (time/now))
+(def formatering (time/formatter "dd MMM yyyy"))
+(str (formatering nåværende-dato))
+```
+
+Dette vil gi oss en streng som ser slik ut: `12 Aug 2021`.
+
+## Deep Dive
+
+Den nåværende datoen er representert av en `java.util.Date`-objekt i Clojure. Hvis vi ønsker å jobbe mer detaljert med datoen, for eksempel endre tidszonen eller justere for forskjeller mellom Gregorian og Julian kalender, må vi bruke Java's `java.time` bibliotek.
+
+Vi kan gjøre dette ved å konvertere vårt `java.util.Date`-objekt til et `java.time.Instant`-objekt, som representerer en punkt i tid. Deretter kan vi jobbe med dette objektet ved hjelp av `java.time` funksjoner.
+
+```Clojure
+(ns minprosjekt.core
+    (:require [java.time :as time]))
+
+(def nåværende-tidspunkt (time/Instant/ofEpochMilli (.getTime nåværende-dato)))
+(def sone (time/ZoneId/of "Europe/Oslo"))
+(def justert-tid (time/ZonedDateTime/ofInstant nåværende-tidspunkt sone))
+```
+
+Her har vi konvertert vår nåværende dato til et `java.time.ZonedDateTime`-objekt, som representerer en dato og tid med en spesifikk tidsone. Vi kan nå bruke denne til å hente mer informasjon, som for eksempel dag i uken, time, minutt, osv.
+
+## Se også
+
+- https://clojure.org/api/java.time
+- https://clojure.org/guides/java_time
+- https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html

@@ -1,32 +1,34 @@
 ---
-title:    "Clojure: पैटर्न से मेल खाने वाले चरित्रों को हटाना"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/deleting-characters-matching-a-pattern.md"
+title:                "Clojure: पैटर्न को मिलाने वाले अक्षरों को हटाना"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyon
 
-चलिए आज हम देखें की किसी भी पैटर्न के साथ मेल खाते वर्णों को कैसे हटाना है। यह काम करनें का कौन सा लाभ है?
+Kabhi kabhi hume ek pattarn se milta julta character hataana hota hai, jaise ki email addresses mein se "@" ko hataana ya HTML tags ko hataana apne string se.
 
-## कैसे करें
+## Kaise Kare
 
-```Clojure
-;; चलिए उदाहरण साथ हम देखते हैं 
-;; स्लोट फंक्शंन जो कतिपय जानकारी पांडुल  False स्थान पर हनतां है
-(defn remove-false [coll]
-  (remove #(if (= % false) false true) coll))
+Iss situation mein, hum `clojure.string/replace` function ka use kar sakte hain jo humare string mein se humare dwara specify kiye gaye character ya pattern ko hata deta hai. Yeh function teen parameters leta hai - original string, pattern, aur replacement string. Dusron ke sath alag hai, replacement string mein koi character replace nahi kiya jata, yeh sirf match huye characters ko hataata hai.
 
-(remove-false [1 2 false "भारत" false 4 "पाकिंस्तान"]) ;; output: [1 2 "भारत" 4 "पाकिंस्तान"]
+```
+;;; `clojure.string/replace` ka example
+(clojure.string/replace "Hey, this is my email: example@example.com" #"@" "")  ;=> "Hey, this is my email: exampleexample.com"
+
+(clojure.string/replace "This is a <strong>bold</strong> statement." #"<[^>]+>" "") ;=> "This is a bold statement."
 ```
 
-## ज्यादा विस्तृत 
+## Gehri Jhaank
 
-पैटर्न पर कोडिंग करते समय, हमें कुछ वर्णों को हटाने की आवश्यकता हो सकती है। इसलिए, हमें एक विशेष फंक्शन की आवश्यकता होती है जो मेल खाते वर्णों को हटाने में मदद कर सके। Clojure में, हम `remove` फंक्शन का प्रयोग कर सकते हैं। यह फंक्शन दो पैरामीटर लेता है- पहला है प्रैडिकेट (फंक्शन जो टेस्ट करेगा कि कौन से वर्ण रखने हैं और किसे हटाने हैं) और दूसरा है संग्रह। हमें फंक्शन `remove-false` के अंदर एक प्रैडिकेट पास कर रहे हैं, जो `false` स्थान पर हनतां है। यदि प्रैडिकेट सत्य होता है, तो वह वर्ण संग्रह से हटा दिया जाता है। यदि प्रैडिकेट असत्य होता है, तो वह वर्ण संग्रह में शामिल रहता है। हमें `remove-false` फंक्शन को `remove` के अंदर पास करना होगा और इसका बहुत आहुति होगा। 
+Yeh function `replace` function par based hai jo `java.util.regex.Matcher` object ka use karke matches ko replace karta hai. Yadi aap replacement string mein regex groups ka use karna chahte hain, toh aap `"$1"` ki tarah use kar sakte hain, jaha `$1` pehla group hota hai aur `$2` dusra group.
 
-## देखें भी
+Iske alawa, agar hume sirf match huye characters ko replace karna hai aur replacement string nahi, toh hum `""` ki jagah `nil` bhi use kar sakte hain.
 
-- [ओषो लेसन्स फ्रॉम उर फेवरिटे 클ोजे फंक्शन](https://lispcast.com/learn-your-favorite-clojure-function/)
+## Dekhein Bhi
 
-- [क्लोजू
+- [Clojure.org - String Functions](https://clojure.org/reference/java_interop#_string_functions)
+- [ClojureDocs - String](https://clojuredocs.org/clojure.core/string)

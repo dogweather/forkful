@@ -1,35 +1,51 @@
 ---
-title:    "Arduino: Porównywanie dwóch dat"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/comparing-two-dates.md"
+title:                "Arduino: Porównywanie dwóch dat"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Funkcja porównywania dat jest bardzo przydatna w programowaniu, ponieważ pozwala na dokładne określenie odstępów czasowych między wydarzeniami. Można ją wykorzystać do tworzenia prostych algorytmów, które są niezbędne w wielu projektach z wykorzystaniem Arduino.
+Porównywanie dwóch dat jest istotną umiejętnością w programowaniu Arduino, ponieważ pozwala na stworzenie bardziej zaawansowanych, dynamicznych programów. Dzięki temu można bez trudu monitorować różne zdarzenia, takie jak zmiana czasu, lub akcja wywołana określoną datą. 
 
 ## Jak to zrobić
 
-Aby porównać dwie daty w Arduino, należy użyć funkcji `compareDates`. Przyjmuje ona dwa argumenty: pierwszym jest pierwsza data do porównania, a drugim druga data. Następnie wywołuje się tę funkcję i przechowuje jej wynik w zmiennej. Na przykład:
+Aby porównywać daty w Arduino, używamy funkcji `if` oraz operatora logicznego `==` w celu porównania wartości. Na przykład, jeśli chcemy sprawdzić, czy dana data jest równa 1 stycznia, używamy następującego kodu:
 
 ```Arduino 
-int firstDate = "2020-01-05";
-int secondDate = "2020-02-10";
-
-int comparison = compareDates(firstDate, secondDate);
-
-Serial.print("Wynik porównania: "); 
+if (data == 0101) {
+  Serial.println("Dzisiaj jest pierwszy stycznia!");
+}
 ```
 
-W powyższym przykładzie, wynik porównania będzie wynosił `-36`, co oznacza, że od pierwszej daty minęło 36 dni więcej w porównaniu z drugą datą.
+Jeśli chcesz wyświetlić bieżącą datę, można także użyć funkcji `millis()` oraz odpowiedniego formatowania:
 
-## Pełny zanurzenie
+```Arduino
+unsigned long czas = millis();
+String data = String(czas, DEC);
+Serial.print("Aktualna data to: ");
+Serial.println(data.substring(data.length() - 4, data.length()));
+```
 
-Funkcja `compareDates` nie tylko porównuje daty, ale również uwzględnia różnice w miesiącach i latach. Dzięki temu można dokładnie określić odstępy czasu między dwoma datami. Jeśli pierwsza data jest wcześniejsza niż druga, wynik porównania będzie ujemny. Jeśli druga data jest wcześniejsza, wynik będzie dodatni.
+Powyższy kod używa funkcji `millis()` do pobrania aktualnego czasu w milisekundach, a następnie zamienia go na string i wypisuje tylko ostatnie 4 liczby, czyli rok.
+
+## Głębszy zanurzenie
+
+W przypadku bardziej złożonych porównań dat, można skorzystać z funkcji `time` oraz `timeStruct` w bibliotece Time. Pozwala to na tworzenie struktur zawierających informacje o dacie i czasie, co ułatwia porównywanie wartości. Przykładowy kod wykonujący to zadanie wyglądałby tak:
+
+```Arduino
+#include <Time.h>
+time_t now = time(23, 59, 59, 31, 12, 2020);
+timeStruct czas = breakTime(now);
+if (czas.year == 2020) {
+  Serial.println("Ta data jest w roku 2020!");
+}
+```
 
 ## Zobacz także
 
-- Dokumentacja Arduino dotycząca porównywania dat: https://www.arduino.cc/reference/en/language/functions/time/compare/
-- Przydatne tutorial i projekty z wykorzystaniem porównywania dat na Arduino: https://randomnerdtutorials.com/arduino-compare-dates-timeunit-library/
+- Dokumentacja funkcji Time: https://www.arduino.cc/en/Reference/Time
+- Przewodnik po porównywaniu danych w Arduino: https://www.arduino.cc/reference/en/language/functions/comparison-and-type-testing/

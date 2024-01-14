@@ -1,50 +1,75 @@
 ---
-title:    "Arduino: Rozpoczynanie nowego projektu"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/starting-a-new-project.md"
+title:                "Arduino: Rozpoczynanie nowego projektu"
+programming_language: "Arduino"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wiele osób może zastanawiać się, dlaczego warto zaangażować się w rozpoczęcie nowego projektu z użyciem Arduino. Jedną z głównych przyczyn jest to, że Arduino jest niesamowitym narzędziem do nauki programowania, elektroniki i robotyki. Może być również świetnym sposobem na rozwijanie swoich umiejętności technicznych i tworzenie ciekawych urządzeń.
+Zacząć nowy projekt z Arduino może być ekscytującym wyzwaniem dla każdego, kto lubi programowanie i elektronikę. Dzięki Arduino możesz stworzyć różnorodne urządzenia, od prostych czujników po skomplikowane roboty.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby rozpocząć nowy projekt z Arduino, potrzebne będą następujące kroki:
+Aby rozpocząć projekt z Arduino, musisz najpierw pobrać i zainstalować środowisko Arduino IDE na swoim komputerze. Następnie wybierz odpowiedni model płytki Arduino dla swojego projektu i podłącz ją do komputera za pomocą kabla USB.
 
-1. Zakup zestawu startowego Arduino lub wszystkich niezbędnych komponentów.
-2. Zainstaluj oprogramowanie Arduino IDE na swoim komputerze.
-3. Podłącz płytkę Arduino do komputera za pomocą kabla USB.
-4. Wybierz odpowiedni model Arduino i port komunikacyjny w Arduino IDE.
-5. Napisz kod w języku Arduino i przetestuj go, używając wbudowanego emulatora lub wbudowanej diody LED.
-6. Po zakończeniu kodowania, przełącz się na tryb wgrania i prześlij kod na płytkę Arduino.
-7. Sprawdź, czy projekt działa zgodnie z oczekiwaniami.
-
-Poniższy kod przykładu demonstruje, jak zaprogramować Arduino, aby zapalić diodę LED przez 1 sekundę:
+Następnie możesz przejść do pisania kodu w języku Arduino, który jest oparty na języku C++. Wprowadź swoje poniższyhino Arduino używając odpowiedniej składni:
 
 ```Arduino
 void setup() {
-    pinMode(LED_PIN, OUTPUT);
+  // kod inicjalizujący, wykonuje się tylko raz
 }
 
 void loop() {
-    digitalWrite(LED_PIN, HIGH); // włącz diodę
-    delay(1000); // poczekaj 1 sekundę
-    digitalWrite(LED_PIN, LOW); // wyłącz diodę
-    delay(1000); // poczekaj 1 sekundę
+  // kod, który będzie wykonywany w pętli
 }
 ```
 
-Po wgraniu tego kodu na płytkę Arduino, dioda powinna zapalić się i gaśnieć co 1 sekundę.
+W sekcji "setup" umieść kod, który jest potrzebny do inicjalizacji projektu, taki jak ustawienie pinów wejściowych/wyjściowych czy połączenie z modułem WiFi. W sekcji "loop" umieść kod, który ma być wykonywany w pętli przez cały czas działania projektu.
 
-## Głębsze zanurzenie
+Możesz też używać różnorodnych funkcji i bibliotek, aby rozszerzyć funkcjonalność swojego projektu. Na przykład, jeśli potrzebujesz obsługi czujnika temperatury, możesz skorzystać z biblioteki "OneWire" i "DallasTemperature". Poniżej znajduje się przykładowy kod, który wykorzystuje te biblioteki do odczytu temperatury z czujnika DS18B20:
 
-Ponieważ Arduino jest tak wszechstronnym narzędziem, możliwości tworzenia projektów są praktycznie nieograniczone. Możesz tworzyć proste projekty, takie jak automatycznie uruchamiany przekaźnik lub termometr, a także bardziej zaawansowane, takie jak roboty czy oświetlenie zintegrowane w inteligentnym domu. W Internecie można znaleźć wiele tutoriali, projektów i przydatnych informacji, które pomogą Ci rozpocząć przygodę z Arduino.
+```Arduino
+#include <OneWire.h>
+#include <DallasTemperature.h>
 
-## Zobacz także
+// ustawienie pinu dla czujnika
+#define ONE_WIRE_BUS 2
 
-- [Oficjalna strona Arduino](https://www.arduino.cc/)
-- [Artykuły dla początkujących w języku polskim](https://flychip.pl/constats/arduino/%20arduino-artykuly-dla-poczatkujacych)
-- [Seria tutoriali na YouTube "Arduino w pigułce"](https://www.youtube.com/playlist?list=PLjeI44aoEiBiCq8KYbOrlCIO5Nu2q-wkk)
+// inicjalizacja obiektów OneWire i DallasTemperature
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
+
+// zmienna, do której zostanie zapisana odczytana temperatura
+float temperature = 0;
+
+void setup() {
+  // inicjalizacja komunikacji i czujnika
+  sensors.begin();
+}
+
+void loop() {
+  // odczytanie temperatury i zapisanie wartości do zmiennej
+  sensors.requestTemperatures();
+  temperature = sensors.getTempCByIndex(0);
+  
+  // wyświetlenie odczytanej temperatury na monitorze szeregowym
+  Serial.println(temperature);
+  delay(1000); // opóźnienie w ms
+}
+```
+
+## Głębsze Wnioskowanie
+
+Aby zacząć nowy projekt z Arduino, musisz mieć pomysł i wiedzę na temat programowania oraz elektroniki. Jeśli jesteś nowicjuszem w tym temacie, warto przejrzeć dostępne na internecie tutoriale i poradniki, aby zrozumieć podstawowe zagadnienia. Wiele błędów w kodzie można uniknąć poprzez dokładne zapoznanie się z dokumentacją i przykładami, dostępnymi na oficjalnej stronie Arduino oraz innych zasobach online.
+
+Niektóre projekty z Arduino mogą wymagać również użycia płytki rozszerzeń, takiej jak shield, aby zwiększyć ilość dostępnych pinów i dodatkowych funkcji. Ważne jest, aby wybrać odpowiednią płytkę dla swojego projektu, aby wszystko działało bez problemów.
+
+## Zobacz Również
+
+- Oficjalna strona Arduino (https://www.arduino.cc/)
+- Dokumentacja Arduino (https://www.arduino.cc/reference/en/)
+- Instrukcje i poradniki (https://create.arduino.cc/projecthub)
+- Kursy i szkolenia online (https://www.coursera.org/courses?query=arduino)

@@ -1,47 +1,58 @@
 ---
-title:    "Swift: Łączenie ciągów znaków"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/concatenating-strings.md"
+title:                "Swift: Łączenie ciągów znaków."
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie stanowi nieodłączną część naszego życia. Dzięki niemu tworzymy aplikacje mobilne, strony internetowe, gry i wiele innych. W tym artykule skupimy się na jednym z podstawowych elementów języka Swift - łączeniu ciągów tekstowych (concatenating strings). Będziemy dokładniej przyglądać się dlaczego jest to ważne oraz jak to zrobić.
+Ciągłe operacje na łańcuchach znaków są nieodłączną częścią programowania w języku Swift. Wiele z nas korzysta z funkcji concat (konkatenacji) do połączenia dwóch lub więcej łańcuchów. Ale dlaczego właściwie powinniśmy używać konkatenacji i jak to zrobić w praktyce? W tym artykule dowiesz się dlaczego stosowanie konkatenacji jest ważne i jak wykorzystać ją w swoich projektach.
 
 ## Jak to zrobić
 
-W Swift łączenie ciągów tekstowych jest bardzo proste i wykorzystuje operator "+" oraz metody "append()". Przede wszystkim musimy zdefiniować dwa ciągi tekstu, które chcemy połączyć. Następnie, używając operatora "+" możemy je połączyć w jeden ciąg, np:
-
+Do konkatenacji używamy operatora "+" lub metody "append()". Przykładowo, chcąc połączyć imię i nazwisko, możemy napisać:
 ```Swift
-let imie = "Kasia"
-let nazwisko = "Kowalska"
-let pelneImie = imie + " " + nazwisko
-```
-W wyniku otrzymamy ciąg tekstu "Kasia Kowalska". Możemy również wykorzystać metodę "append()", która pozwala na dodawanie kolejnych fragmentów tekstu do już istniejącego ciągu. Przykład:
+let firstName = "Jan"
+let lastName = "Kowalski"
 
+let fullName = firstName + " " + lastName
+print(fullName)
+// Output: Jan Kowalski
+
+var fullName2 = ""
+fullName2.append(firstName)
+fullName2.append(" ")
+fullName2.append(lastName)
+print(fullName2)
+// Output: Jan Kowalski
+```
+Możemy także konkatenować łańcuchy w miejscu, bez potrzeby tworzenia nowych zmiennych:
 ```Swift
-var zwierzeta = "Koty"
-zwierzeta.append(", psy, chomiki")
+var fullName = "Jan"
+fullName += " Kowalski"
+print(fullName)
+// Output: Jan Kowalski
 ```
-
-W rezultacie, zmienna "zwierzeta" będzie zawierać ciąg "Koty, psy, chomiki". Warto również wspomnieć o funkcji "join()", która pozwala na łączenie ciągów tekstowych z tablic lub kolekcji. Przykład:
-
+Kolejną przydatną funkcją jest interpolacja łańcuchów, czyli wstawianie wartości zmiennych bezpośrednio do tekstu. W tym celu używamy znaku "\\" przed nazwą zmiennej wewnątrz łańcucha.
 ```Swift
-let lista = ["jabłka", "banany", "truskawki"]
-let rozdzielacz = ", "
-let listaOwocow = lista.joined(separator: rozdzielacz)
+let points = 50
+let message = "Gratulacje! Zdobyłeś \(points) punktów."
+print(message)
+// Output: Gratulacje! Zdobyłeś 50 punktów.
 ```
+Warto również pamiętać o używaniu opcji string interpolation (Interpolacji łańcuchów) zamiast konkatenacji, jeśli potrzebujemy wstawiać więcej niż 2-3 zmienne do naszego łańcucha.
 
-Wynikiem będzie ciąg "jabłka, banany, truskawki".
+## Deep Dive
 
-## Głębszy wgląd
+Podczas konkatenacji łańcuchów należy uważać na wydajność naszego kodu. Jeśli do naszej zmiennej typu String będziemy dodawać kolejne łańcuchy w pętli, każdy z tych łańcuchów będzie tworzony od nowa, co jest bardzo nieefektywne. W takim przypadku lepiej korzystać z typu NSMutableString, który pozwala na modyfikację jednego łańcucha bez potrzeby tworzenia nowych.
 
-Warto wiedzieć, że proces łączenia ciągów tekstowych może być kosztowny dla naszej aplikacji, szczególnie jeśli wykorzystujemy go w pętlach lub w skomplikowanych operacjach. W takich przypadkach zamiast łączyć ciągi z użyciem operatora "+", lepiej skorzystać z metody "append()". Co więcej, istnieje również inny operator - "&", który jest bardziej wydajny w łączeniu większej ilości ciągów.
+Należy również pamiętać o używaniu odpowiednich separatorów, takich jak spacja czy przecinek, w celu poprawnego wyświetlenia danych. Przykładowo, jeśli nie dodamy spacji między imieniem a nazwiskiem, nasz łańcuch może wyglądać niepoprawnie.
 
-## Zobacz również
+## Zobacz także
 
-- [Oficjalna dokumentacja Swift dotycząca łączenia ciągów tekstowych](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID285)
-- [Codility: Concatenating Strings](https://codility.com/media/train/ConcatenatingStrings.pdf)
-- [Ray Wenderlich: Swift Strings and Characters](https://www.raywenderlich.com/731-swift-strings-and-characters-cheat-sheet)
+- Dokumentacja Swift dotycząca konkatenacji łańcuchów (https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID290)
+- Poradnik "Jak efektywnie korzystać z konkatenacji w Swift" (https://www.appcoda.com/swift-string-concatenation/)
+- Wideo tutorial "Swift Basics: String Concatenation and Interpolation" (https://www.youtube.com/watch?v=iE5hh2aY50U)

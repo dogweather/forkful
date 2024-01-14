@@ -1,39 +1,70 @@
 ---
-title:    "Java: Merkkijonojen yhdisteleminen"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/concatenating-strings.md"
+title:                "Java: Merkkijonojen yhdistäminen"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit yhdistää merkkijonoja Java-ohjelmoinnissa? Merkkijonon yhdistäminen on kätevä tapa luoda yksi kokonainen teksti useista osista. Tämä voi olla erityisen hyödyllistä, kun haluat rakentaa dynaamisia käyttöliittymiä tai tarkentaa tulosteita. Merkkijonojen yhdistäminen myös auttaa pitämään koodin siistinä ja helposti luettavana.
+Miksi Java-ohjelmiston kehittäjän tulisi yhdistää merkkijonoja? Merkkijonojen yhdistäminen on erittäin kätevä tapa luoda dynaamisia ja monipuolisia viestejä ja tietokenttiä sovelluksissa. Se antaa ohjelmoijalle mahdollisuuden käyttää muuttuvia arvoja ja luoda monimutkaisempia tekstejä käyttäjien nähtäväksi. 
 
 ## Kuinka
 
-Javassa merkkijonojen yhdistäminen tapahtuu käyttämällä plus-merkkiä (+) tai concat()-metodia. Kumpikin vaihtoehto tuottaa saman lopputuloksen, mutta concat()-metodi on hieman tehokkaampi.
+Ohessa esimerkki miten yhdistää merkkijonoja käyttäen Java-ohjelmointikieltä:
 
 ```Java
-// Plus-merkki (+)
-String nimi = "Maija";
-String tervehdys = "Hei " + nimi + "!";
+// Luodaan kaksi merkkijonoa
+String nimi = "Laura";
+String tervehdys = "Hei ";
 
-// concat()-metodi
-String nimi = "Maija";
-String tervehdys = "Hei ".concat(nimi).concat("!");
+
+// Yhdistetään merkkijonot yhteen
+String tervetuloaViesti = tervehdys + nimi;
+
+
+// Tulostetaan viesti
+System.out.println(tervetuloaViesti);
+
+// Output: Hei Laura
 ```
 
-Tässä esimerkissä olemme yhdistäneet merkkijonot "Hei ", "Maija" ja "!". Lopputuloksena saamme merkkijonon "Hei Maija!".
+Tässä esimerkissä yhdistimme kaksi merkkijonoa yhteen käyttäen plus-merkkiä (+). Toinen merkkijonoista sisälsi muuttujan, jonka arvo voitiin vaihtaa haluttaessa. Näin voimme luoda monipuolisempia viestejä tarpeen mukaan.
 
-## Syvällinen sukellus
+## Syvempi sukellus
 
-Merkkijonojen yhdistäminen voi olla tehokasta, mutta on myös tärkeää pitää mielessä muutama asia. Ensinnäkin, on tärkeää muistaa, että merkkijonot ovat pysyviä ja niitä ei voi muuttaa. Siksi joka kerta kun yhdistämme merkkijonon, luodaan uusi merkkijono-objekti. Tämä voi aiheuttaa suorituskykyongelmia, jos käytämme merkkijonojen yhdistämistä suurissa määrin.
+Merkkijonojen yhdistäminen voidaan toteuttaa myös käyttäen `StringBuilder`-luokkaa, joka on tarkoitettu nimenomaan tekstin muokkaamiseen. Tämä voi olla tehokkaampi ratkaisu erityisesti silloin, kun on tarve muokata suurempia määriä tekstiä.
 
-On myös tärkeää huomata, että merkkijonojen yhdistäminen voi olla hidas prosessi. Tämä johtuu siitä, että Javan String-luokkaa ei ole suunniteltu käsittelemään suuria merkkijonoja tehokkaasti. Jos tarvitset suurien merkkijonojen käsittelyä, harkitse StringBuilder- tai StringBuffer-luokkia.
+Tässä esimerkki miten `StringBuilder`-luokkaa voi käyttää merkkijonojen yhdistämiseen:
+
+```Java
+StringBuilder sb = new StringBuilder();
+
+// Luodaan muuttujat
+String etunimi = "Laura";
+String sukunimi = "Kivinen";
+int ika = 25;
+
+// Lisätään tekstiä StringBuilder-olioon
+sb.append("Hei, olen ")
+  .append(etunimi)
+  .append(" ")
+  .append(sukunimi)
+  .append(" ja olen ")
+  .append(ika)
+  .append(" vuotta vanha.");
+
+// Tulostetaan lopullinen viesti
+System.out.println(sb.toString());
+
+// Output: Hei, olen Laura Kivinen ja olen 25 vuotta vanha.
+```
+
+Tässä esimerkissä yhdistimme neljä erillistä merkkijonoa yhteen käyttäen `StringBuilder`-luokkaa. Huomaa, että tällä tavalla viestin muokkaaminen ja uusien tietojen lisääminen on paljon helpompaa ja selkeämpää kuin perinteisellä plus-merkillä yhdistämällä.
 
 ## Katso myös
 
-- [Javan String-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Javan StringBuilder-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
-- [Javan StringBuffer-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html)
+- [Java-merkkijonot (Oracle)](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
+- [StringBuilder-luokka (Oracle)](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)

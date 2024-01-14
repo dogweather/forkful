@@ -1,19 +1,21 @@
 ---
-title:    "Go: Zmiana liter w ciągu znaków"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/capitalizing-a-string.md"
+title:                "Go: Zakładanie wielkich liter w ciągu znaków"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Dlaczego ktoś chciałby zmienić wielkość liter w ciągu znaków? Czasami może być to konieczne, np. w celu stworzenia spójnego formatowania tekstu lub w przypadku sprawdzania danych wprowadzonych przez użytkownika.
+Mimo że wydaje się to nieistotne, kapitalizowanie łańcucha znaków jest często niezbędne w programowaniu. W tym artykule dowiesz się, dlaczego warto nauczyć się tego prostego zabiegu.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Istnieje prosty sposób na zmianę wielkości liter w ciągu znaków przy użyciu języka Go. Możemy to zrobić za pomocą funkcji `strings.ToUpper()` lub `strings.ToLower()`, w zależności od tego, czy chcemy zmienić wszystkie litery na duże czy małe. Przykładowy kod wyglądałby następująco:
-```Go
+```Go 
+// Podstawowa funkcja w Go do kapitalizowania łańcuchów znaków jest strings.ToUpper()
+
 package main
 
 import (
@@ -22,23 +24,43 @@ import (
 )
 
 func main() {
-    fmt.Println(strings.ToUpper("Cześć Świecie!"))
-    fmt.Println(strings.ToLower("Cześć Świecie!"))
+    myString := "hello world"
+    fmt.Println(strings.ToUpper(myString))
 }
+
+// Outputs: HELLO WORLD
 ```
-Oto jak wyglądałby wynik tego kodu:
+
+> W powyższym przykładzie użyliśmy funkcji `strings.ToUpper()` aby przekształcić łańcuch znaków "hello world" na "HELLO WORLD". Jest to najprostszy sposób na kapitalizowanie łańcuchów znaków w Go.
+
+Można także użyć biblioteki "unicode" do złożonych operacji na tekstach. W poniższym przykładzie wykorzystamy funkcję `Title` aby zmienić pierwsze litery wyrazów na wielkie.
+
+```Go
+package main
+
+import (
+    "fmt"
+    "unicode"
+)
+
+func main() {
+    myString := "this is a sentence"
+    fmt.Println(unicode.ToTitle(myString))
+}
+
+// Outputs: This Is A Sentence
 ```
-CZEŚĆ ŚWIECIE!
-cześć świecie!
-``` 
-W ten sposób możemy szybko i łatwo zmienić wielkość liter w ciągu znaków w naszych programach.
 
-## Głębszy zanurzenie
+## Wchodzimy w szczegóły
 
-Aby lepiej zrozumieć, jak funkcje `ToUpper()` i `ToLower()` działają w języku Go, warto przyjrzeć się szczegółom. Funkcja `ToUpper()` wykorzystuje standardową bibliotekę `strings`, która zawiera wiele przydatnych metod do manipulacji tekstem. W przypadku zmiany wielkości liter, funkcja ta przeszukuje cały ciąg znaków i zamienia każdą małą literę na wielką. Funkcja `ToLower()` działa w podobny sposób, ale zamienia wszystkie litery na małe.
+Kapitalizowanie łańcuchów znaków może wydawać się prostym zadaniem, ale w niektórych przypadkach może być bardziej skomplikowane. Na przykład, warto zwrócić uwagę na kulturowe różnice w stosowaniu wielkich liter, zwłaszcza w językach, gdzie nie ma tradycji kapitalizowania wyrazów na początku zdania.
 
-## Zobacz też
+Innym wyzwaniem może być kapitalizowanie akronimów lub skrótów, gdzie nie wszystkie litery są zawsze zapisywane wielkimi literami.
 
-Biblioteka `strings` w języku Go oferuje wiele innych przydatnych funkcji do pracy z tekstem. Możesz przeczytać więcej o niej na stronie dokumentacji: [https://golang.org/pkg/strings/](https://golang.org/pkg/strings/)
+## Zobacz także
 
-Jeśli interesują Cię inne sposoby manipulacji tekstem w języku Go, możesz również zapoznać się z tym artykułem: [https://golangnews.com/stories/2019-go-how-to-pad-print-strings](https://golangnews.com/stories/2019-go-how-to-pad-print-strings)
+- Dokumentacja funkcji `strings.ToUpper()` w Go: https://golang.org/pkg/strings/#ToUpper
+- Przykłady użycia funkcji `strings.Title()` w Go: https://gobyexample.com/string-functions
+- Informacje o użyciu biblioteki `unicode` w Go: https://blog.golang.org/strings
+
+Dziękujemy za przeczytanie tego artykułu. Mamy nadzieję, że teraz lepiej rozumiesz dlaczego i jak kapitalizować łańcuchy znaków w języku Go. Pamiętaj, że ta umiejętność może okazać się bardzo przydatna w Twoich przyszłych projektach!

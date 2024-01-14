@@ -1,54 +1,54 @@
 ---
-title:    "Rust: Escribir pruebas"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/rust/writing-tests.md"
+title:                "Rust: Escribiendo pruebas"
+programming_language: "Rust"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por Qué
+## Por qué escribir pruebas en Rust
 
-La escritura de pruebas es una parte crucial del proceso de programación en Rust. Ayuda a garantizar que nuestro código sea robusto y confiable. Además, nos permite identificar errores y problemas potenciales antes de que se conviertan en problemas en la producción.
+Escribir pruebas es una práctica esencial en el desarrollo de software en cualquier lenguaje, y Rust no es la excepción. Aunque pueda parecer tedioso o innecesario, las pruebas juegan un papel crucial en la garantía de la calidad del código y en la detección temprana de posibles errores.
 
-## Cómo
+## Cómo escribir pruebas en Rust
 
-Para escribir pruebas en Rust, primero debemos importar el módulo "prueba" usando la palabra clave `use`. Luego, podemos usar el atributo `#[test]` para indicar que una función es una prueba.
+Escribir pruebas en Rust es relativamente sencillo gracias a su sistema de pruebas integrado. A continuación, se presenta un ejemplo de una función que calcula el área de un triángulo y su respectiva prueba:
 
-```
-Rust
-use prueba::assert_eq;
- 
+```rust
+// Función que calcula el área de un triángulo
+fn area_triangulo(base: f32, altura: f32) -> f32 {
+    (base * altura) / 2.0
+}
+
+// Prueba de la función area_triangulo
 #[test]
-fn suma_debería_ser_correcta() {
-    let resultado = suma(2, 3);
-    assert_eq!(resultado, 5);
+fn test_area_triangulo() {
+    assert_eq!(area_triangulo(5.0, 10.0), 25.0);
 }
 ```
 
-En el código anterior, estamos probando la función `suma`, que debería devolver la suma de dos números. Usamos la macro `assert_eq` para comparar el resultado de la función con el valor esperado. Si son iguales, la prueba se pasará. De lo contrario, fallará y nos indicará que algo no está funcionando como se espera.
+En este ejemplo, se definió una función `area_triangulo` que recibe la base y altura del triángulo como parámetros y retorna su área. Luego, se escribió una prueba utilizando el atributo `#[test]`, que indica que estamos escribiendo una prueba. Dentro de la prueba, utilizamos la macro `assert_eq`, que compara el resultado de la función con el valor esperado (en este caso, 25.0).
 
-También podemos usar la macro `assert!` para verificar una condición específica en una prueba, como por ejemplo:
+Para correr las pruebas, solo necesitamos ejecutar el siguiente comando en la terminal:
 
+```sh
+cargo test
 ```
-Rust
-assert!(precio_total > 0, "El precio total debe ser mayor que cero");
-```
 
-Por último, es importante asegurarse de que nuestras pruebas sean deterministas, es decir, que siempre produzcan el mismo resultado. Para lograr esto, podemos usar la función `seed` del módulo `rand` para generar valores aleatorios controlados.
+Esto ejecutará todas las pruebas del proyecto y nos mostrará el resultado de cada una. Si alguna prueba falla, nos indicará el lugar exacto donde ocurrió el error.
 
 ## Deep Dive
 
-Escribir pruebas efectivas no se trata solo de verificar el correcto funcionamiento de nuestro código, sino también de identificar posibles casos de borde y asegurarse de que nuestro código sea escalable y mantenible en el futuro.
+Aparte de las pruebas unitarias, en Rust también podemos escribir pruebas de integración, que verifican la interacción entre varios componentes de nuestro código. Además, Rust también cuenta con herramientas y bibliotecas para realizar pruebas de rendimiento y pruebas de propiedad.
 
-Algunas buenas prácticas para escribir pruebas en Rust incluyen:
+Es importante destacar que escribir pruebas no reemplaza la necesidad de realizar pruebas manuales, pero sí ayuda a encontrar errores de manera más temprana y a tener una mayor confianza en nuestro código.
 
-- Nombrar adecuadamente nuestras pruebas para que sea fácil de entender qué función se está probando.
-- Usar casos de prueba para cubrir diferentes escenarios y casos de borde.
-- Revisar el código en busca de posibles problemas de lógica o errores de sintaxis.
-- Actualizar y agregar pruebas a medida que el código evoluciona.
+## Ver también
 
-## Ver También
+- [Documentación de Rust sobre pruebas](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
+- [Ejemplos de pruebas en el repositorio oficial de Rust](https://github.com/rust-lang/rust/tree/master/src/test/ui)
+- [Biblioteca de pruebas `assert`](https://doc.rust-lang.org/std/macro.assert.html)
+- [Biblioteca de pruebas de propiedad `quickcheck`](https://github.com/BurntSushi/quickcheck)
 
-- Documentación oficial de Rust sobre escritura de pruebas: https://doc.rust-lang.org/book/ch11-02-running-tests.html
-- Ejemplos de pruebas en Rust: https://github.com/rust-lang/rust/tree/master/src/test/ui
-- Librería de pruebas TDD en Rust: https://github.com/rust-lang-nursery/tokio-test
+Gracias por leer este post y espero que te sea útil en tu aprendizaje de Rust. ¡Hasta la próxima!

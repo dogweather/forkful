@@ -1,36 +1,36 @@
 ---
-title:    "Arduino: Extrahieren von Teilzeichenketten"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/extracting-substrings.md"
+title:                "Arduino: Extrahieren von Teilstrings"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Das Extrahieren von Teilstrings ist eine nützliche Fähigkeit in der Arduino Programmierung, die es ermöglicht, bestimmte Abschnitte von Strings oder Zeichenketten zu isolieren. Dies kann hilfreich sein, um bestimmte Informationen aus einem größeren Datensatz zu erhalten oder um eine effizientere Verarbeitung von Daten durchzuführen.
+## Warum 
 
-## So geht's
-Um einen Teilstring in Arduino zu extrahieren, verwenden wir die Funktion `substring()`. Diese Funktion erwartet zwei Parameter: den Startindex und die Länge des zu extrahierenden Teilstrings. Beispiel:
+In der Arduino-Programmierung gibt es viele nützliche Funktionen, die dabei helfen, komplexe Aufgaben mit Leichtigkeit zu bewältigen. Eine dieser Funktionen ist das Extrahieren von Teilzeichenketten oder Teilstrings aus einer größeren Zeichenkette. Diese Funktion ist besonders hilfreich, wenn man nur bestimmte Teile einer Zeichenkette benötigt, anstatt die gesamte Zeichenkette zu verarbeiten.
+
+## Wie man Teilzeichenketten extrahiert 
+
+Die Arduino-Programmiersprache bietet eine eingebaute Funktion namens `substring()`, die es ermöglicht, Teilzeichenketten zu extrahieren. Diese Funktion erfordert zwei Parameter: den Startindex und die Anzahl der zu extrahierenden Zeichen. Um die `substring()`-Funktion zu verwenden, muss man zuerst eine Zeichenkette erstellen und sie einer Variablen zuweisen. Schauen wir uns ein Beispiel an, um dies besser zu verstehen:
+
 ```Arduino
-String s = "Hallo Welt";
-String sub = s.substring(0, 5); // sub enthält jetzt "Hallo"
+String zeichenkette = "Hallo Welt";
+String teilzeichenkette = zeichenkette.substring(6, 4);
 ```
 
-Um herauszufinden, welcher Teilstring extrahiert werden soll, können wir die Funktion `indexOf()` verwenden, die den Index des ersten Vorkommens eines bestimmten Zeichens oder einer Zeichenkette zurückgibt. Beispiel:
-```Arduino
-String s = "Berlin, Germany";
-int index = s.indexOf(","); // index enthält jetzt den Wert 7
-```
-Um einen Teilstring ab einem bestimmten Index zu erhalten, können wir die `substring()` Funktion mit dem Index als erstem Parameter aufrufen und die Länge des Teilstrings als zweiten Parameter angeben. Beispiel:
-```Arduino
-String s = "Berlin, Germany";
-String sub = s.substring(0, 6); // sub enthält jetzt "Berlin"
-```
+In diesem Beispiel wird eine Zeichenkette namens "Hallo Welt" erstellt und einer Variablen namens `zeichenkette` zugewiesen. Dann wird mithilfe der `substring()`-Funktion eine Teilzeichenkette aus der Variable `zeichenkette` extrahiert. Der erste Parameter `6` gibt den Startindex an, an dem die Teilzeichenkette beginnen soll (in diesem Fall das Leerzeichen zwischen den Wörtern "Hallo" und "Welt"). Der zweite Parameter `4` gibt an, wie viele Zeichen extrahiert werden sollen (in diesem Fall 4 Zeichen, was "Welt" ausgibt). Die Teilzeichenkette wird dann der Variablen `teilzeichenkette` zugewiesen.
 
-## Tiefere Einblicke
-Beim Extrahieren von Teilstrings gibt es einige Dinge zu beachten. Zum einen müssen wir sicherstellen, dass der angegebene Index nicht außerhalb der Länge des ursprünglichen Strings liegt. Andernfalls wird ein leerer String zurückgegeben. Außerdem ist es wichtig zu wissen, dass die Indizes in der `substring()` Funktion bei 0 beginnen. Das heißt, der erste Buchstabe hat einen Index von 0 und der letzte Buchstabe hat einen Index, der um 1 kleiner als die Länge des Strings ist.
+Die Ausgabe dieses Beispiels wäre "Welt", da die `substring()`-Funktion die Teilzeichenkette ab dem Startindex bis zum angegebenen Anzahl an Zeichen extrahiert.
 
-## Siehe auch
-- [String-Referenz für Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [substring() Funktion in der Arduino-Dokumentation](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [indexOf() Funktion in der Arduino-Dokumentation](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/indexof/)
+## Tiefergehende Informationen 
+
+Beim Extrahieren von Teilzeichenketten sollte man einige Dinge beachten. Der Startindex sollte immer kleiner als die Länge der Zeichenkette sein, da sonst ein Fehler auftritt. Darüber hinaus ist es wichtig zu beachten, dass der Startindex bei 0 beginnt, nicht bei 1. Das heißt, der erste Buchstabe hat den Index 0, der zweite den Index 1 und so weiter. Wenn man also beispielsweise den Buchstaben "o" in der Zeichenkette "Hallo Welt" extrahieren möchte, muss man den Index 4 angeben, nicht 5.
+
+## Siehe auch 
+
+- [Die offizielle Arduino-Dokumentation zu `substring()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
+- [Ein Tutorial zum Extrahieren von Teilzeichenketten in der Arduino-Programmierung](https://howtomechatronics.com/tutorials/arduino/extracting-a-substring-from-a-string-in-arduino/)
+
+Vielen Dank fürs Lesen! Wir hoffen, dass dieser Artikel Ihnen geholfen hat, zu verstehen, wie man Teilzeichenketten in der Arduino-Programmierung extrahiert. Happy coding!

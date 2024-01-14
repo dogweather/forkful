@@ -1,44 +1,40 @@
 ---
-title:    "Elm: Uuden projektin aloittaminen"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/starting-a-new-project.md"
+title:                "Elm: Uuden projektin aloittaminen"
+programming_language: "Elm"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monet ohjelmointikielet tarjoavat erilaisia mahdollisuuksia, mutta mitä tekee Elmista niin erityisen? Miksi sinun kannattaisi aloittaa uusi projekti Elmilla?
+Onko sinulla innostava idea uudesta projektista? Elm on loistava valinta kielenä, joka auttaa sinua luomaan upeita web-sovelluksia. 
 
-Elm on funktionaalinen ohjelmointikieli, joka korostaa virheiden ennaltaehkäisemistä ja helpottaa suurten projektien hallintaa. Sen vahva tyyppijärjestelmä ja yksinkertainen syntaksi tekevät siitä helposti luettavan ja ymmärrettävän. Elmilla on myös vakaat ja vääjäämättömät päivitykset, mikä tekee siitä luotettavan ja pysyvän valinnan tuleville projekteille.
+## Kuinka aloittaa
 
-## Kuinka aloittaa projekti
-
-Ensimmäinen askel Elm projektiin on asentaa Elm-ympäristö ja sen tarvitsemat paketit. Voit tehdä tämän käyttämällä npm paketinhallintajärjestelmää tai manuaalisesti asentamalla Elm ympäristön. Kun olet asentanut Elm-ympäristön, voit luoda uuden projektin käyttämällä `elm init` komentoa.
-
-Seuraavaksi sinun kannattaa tutustua Elm-moduuleihin ja niiden käyttöön. Moduulit ovat tärkeä osa Elm ohjelmointia ja niitä voidaan käyttää monien eri ominaisuuksien, kuten listojen, merkkijonojen ja HTTP-pyyntöjen, toteuttamiseen. Voit tuoda moduuleja käyttämällä `import` komentoa.
-
-```elm
-import Html exposing (text, div)
-
-main =
-  div [] [
-    text "Hello, World!"
-  ]
+Elm on helppo päästä alkuun, vaikka sinulla ei olisi aiempaa kokemusta ohjelmoinnista. Aloita lataamalla Elm Compiler:
 ```
+Elm install elm
+```
+Jälkeenpäin voit luoda uuden projektin kirjoittamalla:
+```
+Elm init
+```
+Seuraa terminaalilta saatavia ohjeita ja anna projektillesi nimeksi haluamasi nimi.
 
-Tämä yksinkertainen koodiesimerkki luo HTML-sivun, jossa on teksti "Hello, World!". Koodissa käytetään Html moduulia, joka tarjoaa valmiita toimintoja HTML-sivujen luomiseen.
+Seuraavaksi voit luoda yksinkertaisen Hello World -sovelluksen käyttäen Elm:n syntaksia:
+```
+Elm -< HelloWorld.elm
+```
+Voit ajaa sovelluksen selaimessa avaamalla hello_world.html-tiedoston, joka syntyy komennon suorittamisen jälkeen.
 
-## Syventyminen
+## Syvällinen sukellus
 
-Elm tarjoaa myös vahvoja työkaluja projektin hallintaan. Yksi näistä työkaluista on Elm-pakettien hallinta Elm-kielen paketinhallintajärjestelmän avulla. Pakettien hallinta helpottaa koodin uudelleenkäyttöä ja mahdollistaa projektin laajentamisen ulkopuolisten työkalujen ja kirjastojen avulla.
-
-Lisäksi Elm tarjoaa yksityiskohtaisen virheenraportointijärjestelmän, joka auttaa sinua löytämään ja korjaamaan virheitä koodistasi. Tämä tekee koodin kehittämisestä nopeampaa ja helpompaa.
-
-Elmilla on myös vahva yhteisö ja resurssit, jotka auttavat aloittelijoita oppimaan ja kehittämään taitojaan ohjelmoinnissa. Voit löytää paljon oppimateriaaleja, kuten verkkokursseja ja blogikirjoituksia, jotka auttavat sinua aloittamaan uuden projektin Elmilla.
+Elm on funktionaalinen ohjelmointikieli, mikä tarkoittaa sitä että se pyrkii minimoimaan muuttujien käyttöä. Se käyttää myös mallipohjaista lähestymistapaa. Kannattaa tutustua Elm:n viralliseen dokumentaatioon ja opetella käyttämään sen toimintoja.
 
 ## Katso myös
 
-- [Elm verkkosivusto](https://elm-lang.org/)
-- [Elm oppimateriaalit](https://guide.elm-lang.org/)
-- [Elm-paketit ja -kirjastot](https://package.elm-lang.org/)
+- [Elm:n kotisivut](https://elm-lang.org/)
+- [Elm:n virallinen dokumentaatio](https://guide.elm-lang.org/) 
+- [Elm:n yhteisöfoorumi](https://discourse.elm-lang.org/)

@@ -1,42 +1,36 @@
 ---
-title:    "Gleam: Pisanie do standardowego wyjścia błędów"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/writing-to-standard-error.md"
+title:                "Gleam: Pisanie do standardowego błędu"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Dlaczego warto pisać do standardowego błędu przy programowaniu w Gleam? To proste - ponieważ standardowy błąd (ang. standard error) jest jednym z najważniejszych sposobów wyświetlania błędów i komunikatów diagnostycznych w programach. Bez tego narzędzia trudniej byłoby nam znajdować i naprawiać błędy w naszym kodzie.
+Gleam jest językiem programowania, który staje się coraz bardziej popularny. Jedną z jego wielkich zalet jest umożliwienie programistom zapisywania informacji i błędów do standardowego wyjścia błędów. W tym poście dowiesz się, dlaczego warto korzystać z tego mechanizmu.
 
 ## Jak to zrobić
 
-Aby napisać do standardowego błędu w programie w Gleam, wystarczy użyć funkcji `log.error` i przekazać do niej wiadomość lub zmienną, którą chcemy wyświetlić. Przykładowy kod może wyglądać następująco:
+Aby pisać do standardowego wyjścia błędów w Gleam, wystarczy użyć funkcji `stderr()` wewnątrz bloku `try...catch`. Można również ustawić różne poziomy błędów, np. `error` lub `warning`, aby dostosować zapisywanie do swoich preferencji.
 
 ```Gleam
-log.error("Witaj, to jest wiadomość błędu!")
+try {
+  // kod, który może wygenerować błąd
+} catch(err) {
+  stderr("Błąd: {}", [err])
+}
 ```
 
-Po uruchomieniu tego kodu, w konsoli powinien pojawić się komunikat "Witaj, to jest wiadomość błędu!". Możemy także przekazać więcej niż jedną wiadomość lub użyć zmiennych, jak w poniższym przykładzie:
+W powyższym przykładzie używamy funkcji `stderr()` wraz z argumentem `[err]`, aby przekazać informacje o błędzie do standardowego wyjścia.
 
-```Gleam
-let liczba = 5
-let błąd = "nieprawidłowa wartość"
+## Głębszy zanurk
 
-log.error("Błąd! Liczba ", liczba, " jest ", błąd, ".")
-```
+Istnieje wiele powodów, dla których warto pisać do standardowego wyjścia błędów w Gleam. Może pomóc w monitorowaniu i debugowaniu aplikacji, a także ułatwić szybkie znalezienie problemów i błędów w kodzie. Dodatkowo, zapisywanie błędów do standardowego wyjścia umożliwia wykrywanie potencjalnych problemów i ostrzeżenia już na etapie pisania kodu.
 
-W efekcie otrzymamy komunikat "Błąd! Liczba 5 jest nieprawidłowa wartość.".
+## Zobacz również
 
-## Głębsze zagadnienia
-
-Pisanie do standardowego błędu to jednak nie tylko prosty sposób na wyświetlanie komunikatów. Możemy także kontrolować, które informacje wyświetlamy, używając różnych funkcji z poziomem logowania. Na przykład, funkcja `log.error` wyświetla komunikaty tylko w przypadku błędu, natomiast funkcja `log.info` może służyć do wyświetlania ważnych informacji dla użytkownika.
-
-Możliwości jest wiele, a dokładne poznanie wszystkich funkcji związanych z wyświetlaniem błędów i komunikatów jest kluczowe do efektywnego debugowania aplikacji w Gleam.
-
-## Zobacz także
-
-- Dokumentacja Gleam dotycząca wyświetlania błędów: https://gleam.run/book/tour/logging.html
-- Przykłady użycia logów w Gleam: https://github.com/search?q=language%3Agleam+logging&type=Repositories
-- Wiedza na temat używania standardowego błędu w innych językach programowania: https://www.digitalocean.com/community/tutorials/how-to-use-the-standard-error-stream-to-handle-errors-in-bash
+- [Dokumentacja Gleam](https://gleam.run)
+- [Przykładowy projekt w Gleam](https://github.com/gleam-lang/gleam_stdlib)
+- [Blog o Gleam](https://gleam-lang.org/blog/)

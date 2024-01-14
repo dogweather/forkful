@@ -1,43 +1,49 @@
 ---
-title:    "Ruby: 日付を文字列に変換する"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/converting-a-date-into-a-string.md"
+title:                "Ruby: 「日付を文字列に変換する」"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## Why
 
-日付を文字列に変換する理由は、プログラム内で日付を扱う必要があるためです。日付を文字列に変換することで、データベースに保存したり、ユーザーに表示したりすることができます。
+日付を文字列に変換することは、日付情報をより見やすく表示したり、データベースに保存したりするために重要なことです。 Rubyプログラムで日付を扱う際には、よく使われる機能の一つです。
 
-## 方法
-
-Rubyでは、日付を`strftime`メソッドを使って任意のフォーマットに変換することができます。例えば、以下のように書きます。
+## How To
 
 ```Ruby
-date = Date.today
-date.strftime("%Y年%m月%d日")
+# 今日の日付を取得
+today = Date.today
+
+# 日付を文字列に変換（デフォルトフォーマット）
+puts today.to_s
+=> "2020-10-08"
+
+# 日付を文字列に変換（指定したフォーマット）
+puts today.strftime("%Y年%m月%d日")
+=> "2020年10月08日"
 ```
 
-このコードでは、今日の日付をフォーマット`年-月-日`に変換して表示します。出力結果は`2020年07月22日`となります。
+## Deep Dive
 
-## 深堀り
+日付を文字列に変換する際には、strftimeメソッドを使用します。このメソッドは、日付を指定したフォーマットに従って文字列に変換してくれます。フォーマットに使用できる記号はたくさんありますが、よく使われるものは次のようなものです。
 
-`strftime`メソッドの引数には、フォーマットを指定する文字列を渡します。たとえば、`%Y`は4桁の西暦、`%m`は2桁の月、`%d`は2桁の日の数字を表します。詳しいフォーマットの一覧は公式ドキュメント[^1]を参照してください。
+- %Y: 年（4桁）
+- %m: 月（2桁）
+- %d: 日（2桁）
+- %H: 時間（24時間制、2桁）
+- %M: 分（2桁）
+- %S: 秒（2桁）
+- %p: AM/PM
+- %a: 曜日の省略形
+- %A: 曜日の全称
 
-また、`strptime`メソッドを使うことで、文字列を日付オブジェクトに変換することもできます。例えば、以下のように書きます。
+日付を文字列に変換する際には、必要に応じてこれらの記号を組み合わせてフォーマットを作成してください。詳細な記号の一覧や使用例は、公式ドキュメントを参照すると良いでしょう。
 
-```Ruby
-date_str = "2020-07-22"
-Date.strptime(date_str, "%Y-%m-%d")
-```
+## See Also
 
-このコードでは、文字列`2020-07-22`をフォーマット`年-月-日`に従って日付オブジェクトに変換します。
-
-## 参考リンク
-
-* [Ruby Core Reference: Date モジュール][^1]
-* [Rubyドキュメント: strftime と strptime][^2]
-
-[^1]: https://docs.ruby-lang.org/ja/latest/class/Date.html
-[^2]: https://docs.ruby-lang.org/ja/latest/method/Date/i/strftime.html
+- Date and Time class documentation: https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html
+- strftime method documentation: https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html#method-i-strftime
+- strftime formatting guide: https://apidock.com/ruby/DateTime/strftime

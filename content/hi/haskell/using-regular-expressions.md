@@ -1,34 +1,45 @@
 ---
-title:    "Haskell: नियमित अभिव्यक्तियों का उपयोग"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/using-regular-expressions.md"
+title:                "Haskell: नियमित अभिव्यक्तियों का उपयोग"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-आपने कभी सोचा है कि डेटा को सही तरीके से छांटने और प्रसंस्करण करने के लिए आपको किसी ऐसे युक्ति की आवश्यकता है, जो अपेक्षित पैटर्न को खोजने और मैच करने में मदद कर सकती है? अगर हां, तो आपको वास्तव में Regular Expressions का सही उपयोग करने की जरूरत है।
+क्या आप ने कभी सोचा है कि क्या हैं वे रेगुलर एक्सप्रेशन्स और आप इनका उपयोग क्यों करेंगे? इस ब्लॉग पोस्ट में, हम आपको हैस्कल में रेगुलर एक्सप्रेशन्स का उपयोग करने के कारण बताएंगे।
 
-## कैसे करें
+## कैसे
 
-आइए हम एक उदाहरण की सहायता से हैस्केल में Regular Expressions का उपयोग करने का तरीका समझते हैं।
+हैस्कल में रेगुलर एक्सप्रेशन्स का उपयोग बहुत ही आसान है। नीचे उदाहरण सहित हैस्कल कोड ब्लॉक में हमने बताया है कि आप कैसे एक सरल रेगुलर एक्सप्रेशन का उपयोग कर सकते हैं और उसके आउटपुट क्या होगा।
 
-```
+```Haskell
+-- सरल रेगुलर एक्सप्रेशन उदाहरण
+import Text.Regex.Posix
+
+-- एक स्ट्रिंग से प्रथम अंक पाएं
+findFirstNumber :: String -> Maybe String
+findFirstNumber str = (=~"[0-9]+") str
+
 main = do
-  let str = "मैं हिन्दी भाषा सीख रहा हूँ"
-  let pattern = "हिन्दी"
-  if str =~ pattern
-    then putStrLn "पैटर्न मैच हुआ।"
-    else putStrLn "पैटर्न मैच नहीं हुआ।"
+  let str = "a1b2c3"
+  print $ findFirstNumber str
 ```
 
-उपरोक्त कोड अनुमानित रूप से उपयोगकर्ता को आउटपुट "पैटर्न मैच हुआ।" दिखाएगा क्योंकि `str` नामक स्ट्रिंग में `pattern` नामक मौजूदा पैटर्न है।
+आउटपुट:
+```
+Just "1"
+```
 
-## गहराई में जाएं
+## गहराई तक
 
-Regular Expressions हैस्केल में आसानी से इस्तेमाल किए जा सकते हैं और इस साधन को यथासंभव परिचित होना चाहिए। वे इस्तेमाल किए जाते हैं जब हमें डेटा से पैटर्न खोजने और सार्वजनिक तरीके से उपयोग करने की जरूरत होती है। आप इन्हें अपने कोड में सीधे डाल सकते हैं या एक स्ट्रिंग को `=~` ऑपरेटर के साथ मैच करने के लिए उपयोग कर सकते हैं। इस तरह से आपको बहुत अधिक कन्फिगरेशन या प्रोग्राम को इस्तेमाल करने की आवश्यकता नहीं होती है।
+हमारे पास रेगुलर एक्सप्रेशन्स काफी गहराई तक जानकारी है। आप हैस्कल में समान पैटर्न को पकड़ने के लिए विभिन्न फंक्शन जैसे (=~), (=~~), (=~~~) आदि का उपयोग कर सकते हैं। इनके अलावा, आप भी स्ट्रिंग पर अनेक पैटर्न को एक साथ चेक करने के लिए ग्रुपिंग और बैकरेफ्रंस का उपयोग कर सकते हैं। यह बेहद उपयोगी है जब आपको अनेक पैटर्न को पकड़ना हो और आप उन पैटर्न्स के क्रम को रखना चाहते हो।
 
 ## देखें भी
 
-- [Haskell Documentation on Regular Expressions
+- [Haskell Wiki - Regular Expressions](https://wiki.haskell.org/Regular_expressions)
+- [A Gentle Introduction to Regular Expressions in Haskell](https://haskell.fpcomplete.com/library/doc/parsing-and-regex)
+- [Haskell Regular Expressions Cheat Sheet](https://devhints.io/haskell-regex)
+- [Online Haskell Regular Expression Tester](https://regex-haskell.com/)

@@ -1,71 +1,43 @@
 ---
-title:    "Python: Komentoriviparametrien lukeminen"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/reading-command-line-arguments.md"
+title:                "Python: Komentoriviparametrien lukeminen"
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Pythonilla ohjelmointia opettavat artikkelit usein sisältävät ohjeita, joiden avulla voit syöttää erilaisia arvoja koodiisi. Tiedät ehkä jo, miten syötät arvoja suoraan koodiin, mutta oletko koskaan miettinyt, miten voit syöttää arvoja koodiisi käyttämällä komentoriviparametrejä? Tässä blogikirjoituksessa opetan sinulle, miksi ja miten kannattaa lukea komentoriviparametreja Pythonissa.
 
-Monet ohjelmat ovat ohjelmoitu ottamaan vastaan käyttäjän antamia argumentteja komentokehotteessa. Näitä argumentteja voidaan käyttää ohjelman toiminnan määrittämiseen ja sen avulla voidaan suorittaa erilaisia ohjelmointityökaluja. On tärkeää ymmärtää, miten lukea nämä komentorivin argumentit, jotta voit käyttää ohjelmia tehokkaasti.
-
-## Miten
-
-Lue komentorivin argumentit Pythonissa käyttämällä `sys.argv` -moduulia. Tällä moduulilla voi käsitellä komentokehotteessa annetut argumentit ja käyttää niitä ohjelman suorituksessa.
-
-```Python
-import sys
-
-# Tulostaa kaikki annetut argumentit
-for arg in sys.argv:
-    print(arg)
-```
-
-Esimerkki antaa argumentteja käyttämällä `python` -komentoa komentokehotteessa. Käytä `python filename.py argument1 argument2 ...` komennota antaaksesi ohjelmalle argumentteja. Ohjelma tulostaa kaikki annetut argumentit.
-
-```
-python example.py Hello World!
-```
-
-Output:
-
-```
-example.py
-Hello
-World
-```
-
-## Syvällisempi Tutustuminen
-
-`sys.argv` -moduuli voidaan myös yhdistää muihin Pythonin moduuleihin, kuten `argparse` -moduuliin, joka antaa käyttäjän määrittää argumenttien tyypin ja käyttää niitä tiettyn tavalla.
+## Kuinka
+Pythonissa on sisäänrakennettu kirjasto, joka mahdollistaa komentoriviparametrien lukemisen. Tämä kirjasto on nimeltään "argparse". Alla olevassa esimerkissä näytän, kuinka voit lukea komentoriviparametreja ja käsitellä niitä yksinkertaisessa ohjelmassa.
 
 ```Python
 import argparse
 
-# Luo argparse -parseri
-parser = argparse.ArgumentParser(description='Laskee summan kahdelle numeroille.')
+parser = argparse.ArgumentParser()
+parser.add_argument("--nimi", help="Anna nimesi")
+parser.add_argument("--paiva", help="Anna syntymäpäiväsi")
 
-# Lisää tarvittavat argumentit parseriin
-parser.add_argument('number1', type=int, help='Ensimmäinen numero')
-parser.add_argument('number2', type=int, help='Toinen numero')
-
-# Luo args -muuttuja, johon tallennetaan argumentit
 args = parser.parse_args()
 
-# Tulosta argumenttien antamien arvojen summa
-print(args.number1 + args.number2)
+print("Hei {}, syntymäpäiväsi on {}".format(args.nimi, args.paiva))
 ```
 
-Tämä esimerkki ottaa vastaan kaksi numeroa komentorivolta ja laskee niiden summan. Argumenttien antamiseen tarvitaan `python` -komennon lisäksi myös ohjelman nimi sekä argumentit kuten `python example.py 5 10`.
+Jos suoritat tämän koodin komentoriviltä antamalla "--nimi" ja "--paiva" komentoriviparametrit, voit nähdä, miten ne otetaan vastaan ja tulostetaan näytölle.
 
-Output:
-
+```sh
+python ohjelma.py --nimi Liisa --paiva 5.10.
+Hei Liisa, syntymäpäiväsi on 5.10.
 ```
-15
-```
 
-## Katso Myös
+Voit myös lisätä komentoriviparametreihin muita ominaisuuksia, kuten oletusarvoja, mahdollisia arvoja ja lyhyempiä vaihtoehtoja. Näitä ominaisuuksia voit tutkia lisää Pythonin argparse-dokumentaatiosta.
 
-- [Python `sys` -moduulin dokumentaatio](https://docs.python.org/3/library/sys.html)
-- [Python `argparse` -moduulin dokumentaatio](https://docs.python.org/3/library/argparse.html)
+## Syvällinen tarkastelu
+Nyt kun olet oppinut perusteet komentoriviparametrien lukemiseen Pythonissa, voit syventyä vieläkin enemmän. Huomaat ehkä, että saman ohjelman voi tehdä myös ilman "argparse"-kirjastoa ja lukemalla parametrit suoraan "sys.argv"-muuttujasta. Syvällisempi tarkastelu auttaa sinua ymmärtämään, miksi "argparse"-kirjastoa kannattaa käyttää ja mitä muita etuja se tarjoaa.
+
+## Katso myös
+- [Pythonin argparse-dokumentaatio](https://docs.python.org/3/library/argparse.html)
+- [Johdatus Pythoniin - Komentoriviparametrit](https://www.learnpython.org/en/Command_Line_Arguments)
+- [Pythonin sisäänrakennetun "sys" -moduulin dokumentaatio](https://docs.python.org/3/library/sys.html)

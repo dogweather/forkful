@@ -1,37 +1,53 @@
 ---
-title:    "Bash: 文字列の長さを見つける"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/finding-the-length-of-a-string.md"
+title:                "Bash: 文字列の長さを見つける"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
+## なぜ
 
-文字列の長さを求めることには、プログラミングでは重要な理由があります。例えば、入力されたデータの正当性をチェックするためや、特定の処理を実行するためなどです。
+文字列の長さを求めることに興味を持つ理由は、簡単なタスクから複雑なプログラムまで、コーディングのあらゆる側面で利用できるためです。また、文字列の長さを知ることで、文字列を処理する上でのミスを防ぐことができます。
 
 ## 方法
 
-まず、文字列の長さを求める方法について説明します。Bashでは、```${#string}```という記述を使うことで、文字列の長さを取得することができます。以下は、実際にBashで文字列の長さを求める例です。
+文字列の長さを求めるには、いくつかの方法があります。例えば、`echo`コマンドに`$`をつけて文字列を囲めば、文字列の長さを表示することができます。`echo ${#string}`というコマンドで、変数`string`の文字列の長さを表示することができます。
 
 ```Bash
-string="こんにちは世界"
+string="こんにちは"
 echo ${#string}
 ```
-出力結果は、```11```となります。これは、日本語の文字数は一文字あたり3バイトなので、11文字の文字列であるためです。
 
-また、空白や改行なども1文字としてカウントされるので、注意が必要です。文字列の長さを求める際には、適切に空白や改行を除去してからカウントするようにしましょう。
+出力結果は`5`となります。
 
-## 詳細を掘り下げる
+また、`len`関数を使うこともできます。例えば、下記のようにして、`len`関数を定義し、引数として与えた文字列の長さを求めることができます。
 
-文字列の長さを求める際、Bashでは内部的にどのような処理が行われているのでしょうか。実際には、Bashが文字列を扱う際に、特殊な変数である```$@```や、配列を使用しています。また、演算子の```#```を使うことで、文字列の長さを取得することができます。
+```Bash
+len () {
+        echo ${#1}
+}
 
-このように、Bashでは内部的に様々な処理が行われていますが、私たちが使用する際には簡単に文字列の長さを取得することができるので、便利です。
+string="こんにちは"
+len $string
+```
 
-## 併せて読みたい
+出力結果は`5`となります。
 
-- [Bashの変数](https://qiita.com/rikumty/items/4d226791c33d1a0f3cfe)
-- [文字列操作の基本](https://qiita.com/tkjds130/items/18350b5adf680e2c5625)
-- [Bashのスクリプトを書く際の基礎知識](https://qiita.com/takerutakeru/items/40c735c62bf3086fd526)
+## ディープダイブ
 
-# 参考リンク
+さらに詳しく調べると、文字列の長さを求める方法として、`tr`コマンドによる処理があります。`tr`コマンドを使用することで、文字列から特定の文字を除去することができ、その後、`wc -c`コマンドで残った文字数を数えることができます。例えば、下記のようにします。
+
+```Bash
+string="Hello, World"
+len=$(echo $string | tr -d "," | wc -c)
+echo $len
+```
+
+出力結果は`11`となり、`Hello, World`の文字数を正しく求めることができます。
+
+## 参考文献
+
+- [Find length of a string in Bash](https://www.hacksparrow.com/string-length-in-bash.html)
+- [How do you tell how long a string is in Bash?](https://stackoverflow.com/questions/17368067/how-do-you-tell-how-long-a-string-is-in-bash)

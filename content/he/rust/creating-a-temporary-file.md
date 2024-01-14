@@ -1,37 +1,37 @@
 ---
-title:    "Rust: יצירת קובץ זמני"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/rust/creating-a-temporary-file.md"
+title:                "Rust: יצירת קובץ זמני"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+# למה
 
-יצירה של קובץ זמני בשפת Rust נחשבת לאחד הדרכים המומלצות לניהול מניפולציות עם קבצים ותיק ורב עובדי. זה יכול להיות שימושי במצבים רבים, כגון בנית בוטים, פענוח, ניפוי באגים ועוד.
+יצירת קובץ זמני נחשבת לצעד חשוב בעת פיתוח תוכניות ב-Rust. הקובץ יכול לשמש כדי לשמור נתונים משניים ולאסוף תוצאות מסוימות.
 
-## איך לעשות זאת
+במאמר זה נתאר כיצד ליצור קבץ זמני בשפת תכנות Rust ונעזור בדוגמאות קוד כדי להמחיש את הפעולות הדרושות.
 
-ליצור קובץ זמני בשפת Rust ניתן באמצעות הפעולה `fs::File::create()` והשיטות המתאימים לניהול קבצים. ניתן להשתמש בפנקציה `rand::thread_rng().gen()` כדי ליצור שם רנדומלי לקובץ, ואת השם הזה ניתן להשתמש בו כדי ליצור את הקובץ. לדוגמה:
+## איך ליצור קובץ זמני
+
+כדי ליצור קובץ זמני ב-Rust, נשתמש בתוכנית File::create() עבור קובץ המכיל את הנתונים שנרצה לשמור בקובץ הזמני.
 
 ```Rust
 use std::fs::File;
-use rand::{thread_rng, Rng};
 
-fn main() {
-    let file_name: String = thread_rng().gen_ascii_chars().take(10).collect();
-    let mut temp_file = File::create(&file_name).expect("Could not create file");
-}
+let temp_file = File::create("temp.txt").expect("Unable to create temporary file");
 ```
 
-ברגע שהפעולה נכשלת תפלט שגיאה למסך. אפשר להשתמש גם בפקודת `remove()` כדי למחוק את הקובץ הזמני כאשר הוא יוכל או לא נדרש יותר.
+בדוגמה הזאת אנחנו משתמשים בפונקציה File::create() ליצירת קובץ עם שם "temp.txt". במקרה של אי אפשרות ליצור את הקובץ הזמני, print נחזיר הערת שגיאה.
 
-## Deep Dive
+## לחקור עומק יותר
 
-כאשר תיצור קובץ זמני, Rust יצר סמן ויחד עם ה-File Descriptor ניתן לכן גם לנהל את הקובץ באמצעות מתודות אחרות על הקובץ. ניתן לקרוא יותר על ה-File Descriptor באתר הרשמי של Rust.
+לאחר שנוצר קובץ זמני ניתן להוסיף אליו נתונים ולכתוב קוד לפי הצורך. כשהתוכנית מפסיקה לרוץ, הקובץ הזמני יימחק אוטומטית מתוך המערכת.
 
-## ראה גם
+עוד יתרון של קבץ זמני הוא שניתן להשתמש בו גם עבור ניסויים שלפעמים יכולים להיות מסוכנים לשתולב לקוד המקור הראשי. במקרה של שגיאה או בעיות עם הנתונים, הקוד המקור יישאר בטוח ולא יתפרק.
 
-- [קבצים ותיקים בשפת Rust](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
-- [נהלנו קבצים בשפת Rust](https://doc.rust-lang.org/book/ch12-01-writing-to-a-file.html)
-- [הוראות הפעלה כברירת מחדל בשפת Rust](https://doc.rust-lang.org/std/fs/struct.OpenOptions.html#method.create_new)
+# ראה גם
+
+- [Rust שפת התכנות הזמנית](https://rust-lang.org)
+- [דוגמאות נוספות ליצירת קובץ זמני ב-Rust](https://doc.rust-lang.org/std/fs/struct.File.html#method.create)

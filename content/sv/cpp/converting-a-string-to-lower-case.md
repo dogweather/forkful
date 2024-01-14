@@ -1,58 +1,70 @@
 ---
-title:    "C++: Omvandla en sträng till gemener"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/converting-a-string-to-lower-case.md"
+title:                "C++: Omvandla en sträng till gemener"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Det är vanligt i programmering att behöva konvertera en sträng till små bokstäver, även kallat "lower case". Detta kan behövas av olika anledningar, till exempel för att jämföra strängar eller för att upprätthålla en enhetlig kodstandard. I denna bloggpost kommer vi att utforska hur man konverterar en sträng till små bokstäver i C++.
 
-## Så här gör du
-För att konvertera en sträng till små bokstäver i C++ kan vi använda funktionen `tolower()` från standardbiblioteket `<cctype>`. Detta förutsätter att teckenuppsättningen som används är ASCII. Om vi vill kunna hantera andra teckenuppsättningar kan vi använda den mer mångsidiga funktionen `std::transform()` från biblioteket `<algorithm>`.
+Att konvertera en sträng till gemener (lower case) kan vara användbart i olika situationer inom programmering, som till exempel när man vill jämföra strängar utan att ta hänsyn till storleksskillnader, eller när man vill standardisera inmatade användardata.
 
-Först behöver vi inkludera rätt bibliotek och skapa en sträng som vi vill konvertera:
+## Hur man gör
+
+En enkel och smidig metod för att konvertera en sträng till gemener är genom att använda sig av den inbyggda funktionen `tolower()` tillsammans med en `for`-loop som loopar över varje tecken i strängen och använder `tolower()` för att byta ut eventuella versaler till gemener.
 
 ```C++
 #include <iostream>
 #include <string>
-#include <cctype> // innehåller tolower()
-#include <algorithm> // innehåller std::transform()
+using namespace std;
 
-std::string str = "Ett Sträng";
-```
+int main() {
+    // Input sträng som ska konverteras
+    string str = "Hej på dig";
 
-För att konvertera strängen till små bokstäver med `tolower()`, kan vi använda en for-loop för att gå igenom varje tecken i strängen och tillämpa funktionen på det:
+    // Loopar över varje tecken i strängen
+    for (int i = 0; i < str.length(); i++) {
+        // Om nuvarande tecken är en versal, byt ut det med en gemen
+        str[i] = tolower(str[i]);
+    }
 
-```C++
-for (int i = 0; i < str.length(); i++) {
-    str[i] = tolower(str[i]);
+    // Skriver ut den konverterade strängen
+    cout << str; // hej på dig
+
+    return 0;
 }
 ```
 
-Alternativt, om vi vill använda `std::transform()`, kan vi använda en lambda-funktion som gör att vi enkelt kan tillämpa `tolower()` på varje tecken:
+En annan metod är att använda den inbyggda funktionen `transform()` tillsammans med `tolower()` och `begin()` samt `end()` för att konvertera hela strängen till gemener på en rad.
 
 ```C++
-std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c) {
-    return std::tolower(c);
-});
-```
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
 
-Efter detta steg kommer vår sträng att vara i små bokstäver. För att se resultatet kan vi skriva ut strängen i konsolen:
+int main() {
+    // Input sträng som ska konverteras
+    string str = "Hallå där";
 
-```C++
-std::cout << str; // "ett sträng"
+    // Använder transform() för att konvertera hela strängen
+    transform(str.begin(), str.end(), str.begin(), ::tolower);
+
+    // Skriver ut den konverterade strängen
+    cout << str; // hallå där
+
+    return 0;
+}
 ```
 
 ## Djupdykning
-Att konvertera en sträng till små bokstäver kan verka som en enkel uppgift, men det finns några saker att tänka på. Som nämnts ovan fungerar `tolower()` bara med ASCII-teckenuppsättningar. Om vi vill hantera andra teckenuppsättningar, såsom Unicode, behöver vi använda en annan metod eller ett tredjepartsbibliotek.
 
-En annan viktig sak att notera är effektiviteten hos de olika metoderna. Att använda en for-loop kan vara enklare att förstå och göra för mindre strängar, men för större mängder data, kan `std::transform()` vara snabbare. Det finns också andra sätt att konvertera en sträng till små bokstäver, såsom att använda bitmanipulering eller använda den inbyggda funktionen `std::tolower()` i stället för `tolower()`.
-
-Slutligen är det viktigt att tänka på effekterna av att ändra en sträng permanent. Om vi vill behålla den ursprungliga strängen kan vi skapa en kopia och applicera konverteringen på den i stället.
+I C++ finns det flera inbyggda funktioner och metoder som kan vara användbara för att manipulera strängar till gemener. En sådan funktion är `toupper()` som istället konverterar en sträng till versaler, och `isalpha()` som kollar om ett tecken är en bokstav eller inte. Det kan även vara värt att titta närmare på hur olika teckenuppsättningar och teckenkodning påverkar konvertering av strängar till gemener.
 
 ## Se även
-- [C++ Standardbibliotek referens - tolower()](https://www.cplusplus.com/reference/cctype/tolower/)
-- [C++ Standardbibliotek referens - std::transform()](https://www.cplusplus.com/reference/algorithm/transform/)
-- [Utforska C++ Strängar](https://www.learncpp.com/cpp-tutorial/6-11-problems-with-c-style-strings-and-how-to-solve-them/)
+
+- C++ String Methods: https://www.w3schools.com/cpp/cpp_strings.asp
+- ASCII table: https://ascii.cl/
+- Unicode and UTF-8 Explanation: https://www.ibm.com/support/knowledgecenter/ssw_aix_72/com.ibm.aix.nlsgdrf/utf-8.htm

@@ -1,51 +1,51 @@
 ---
-title:    "Python: Extrair Substrings"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/extracting-substrings.md"
+title:                "Python: Extraindo substrings"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings?
+## Por que
+Extração de substrings é uma habilidade fundamental para programadores Python, pois permite manipular e extrair partes específicas de uma string. Isso pode ser útil em diversas situações, como tratamento de dados e criação de algoritmos.
 
-A extração de substrings é uma tarefa comum em programação Python e pode ser útil por vários motivos, como a manipulação de dados de texto ou a validação de entradas de usuário. Ao dominar essa técnica, você pode melhorar suas habilidades de programação e tornar seu código mais eficiente.
+## Como Fazer
+Para extrair uma substring em Python, é preciso utilizar a sintaxe de "slicing", que consiste em definir um intervalo de índices para capturar a parte desejada da string. Por exemplo, se tivermos a string "Python é uma linguagem de programação", podemos extrair apenas a palavra "linguagem" utilizando o seguinte código:
 
-## Como fazer
+```Python
+string = "Python é uma linguagem de programação"
 
-Para extrair substrings em Python, podemos usar o método "substring()" ou a notação de fatiamento do Python, que permite especificar a posição inicial e final do substring desejado. Vamos dar uma olhada em alguns exemplos de código para entender melhor:
+substring = string[13:22]
 
-```
-# Usando o método "substring()"
-string = "Bem-vindo ao meu blog!"
-substring = string.substring(9, 17) # A substring será extraída a partir da posição 9 até a posição 16
-print(substring) # Saída: "ao meu b"
-
-# Usando a notação de fatiamento
-string = "Hello, world!"
-substring = string[3:6] # A substring será extraída a partir da posição 3 até a posição 5
-print(substring) # Saída: "lo," 
+print(substring) # output: linguagem
 ```
 
-Como você pode ver nos exemplos acima, o método "substring()" requer o uso de valores numéricos para especificar as posições inicial e final, enquanto a notação de fatiamento permite usar índices negativos, que contam a partir do final da string.
+No código acima, especificamos o intervalo de índices do 13 ao 22, que corresponde à posição inicial e final da palavra "linguagem". É importante destacar que o primeiro índice é sempre incluído na substring, enquanto o último índice não é.
 
-## Mergulho profundo
+É possível também utilizar índices negativos para extrair substrings a partir do final da string. Por exemplo, se quisermos extrair apenas a última palavra da string acima, podemos fazer o seguinte:
 
-Além dos métodos e notações mencionados, também podemos extrair substrings usando expressões regulares (regex). Isso permite que você procure um padrão específico na string e extraia a parte correspondente. Por exemplo:
+```Python
+substring = string[-13:-1]
 
-```
-import re
-string = "Meu número de telefone é (123)456-7890."
-pattern = re.compile(r'\(\d{3}\)\d{3}-\d{4}') # O padrão corresponde ao formato de um número de telefone
-substring = re.search(pattern, string).group() # "search()" encontra a primeira ocorrência do padrão na string
-print(substring) # Saída: "(123)456-7890"
+print(substring) # output: programação
 ```
 
-Você também pode usar métodos de string adicionais, como "find()" ou "index()", para encontrar a posição de um determinado caractere ou substring, e, em seguida, usar a notação de fatiamento para extrair a parte desejada da string.
+Além disso, é possível utilizar a sintaxe de "slicing" para extrair caracteres específicos de cada palavra. Por exemplo, se quisermos obter apenas as letras "o" de cada palavra da string acima, podemos utilizar o seguinte código:
 
-## Veja também
+```Python
+string = "Python é uma linguagem de programação"
 
-- [Documentação oficial do Python sobre strings](https://docs.python.org/3/library/stdtypes.html#str)
-- [Documentação oficial do Python sobre expressões regulares](https://docs.python.org/3/howto/regex.html)
-- [Outro artigo sobre extração de substrings em Python](https://www.geeksforgeeks.org/python-ways-to-extract-number-from-string/)
+substring = string[1::2]
 
-Espero que este artigo tenha ajudado você a entender melhor como extrair substrings em Python. Agora você pode aplicar esse conhecimento em seus próprios projetos e melhorar suas habilidades de programação. Obrigado por ler e até a próxima!
+print(substring) # output: yhnumaimegemd orgaç
+```
+
+No exemplo acima, utilizamos o operador de passo (2) para pular um caractere a cada iteração, resultando apenas nas letras "o" de cada palavra.
+
+## Mergulho Profundo
+A sintaxe de "slicing" pode ser utilizada em diferentes formas para extrair substrings em Python. Além disso, é possível combinar o uso de índices com métodos de manipulação de strings, como o método `.split()` que divide uma string em uma lista de substrings. Isso permite uma maior versatilidade e flexibilidade ao manipular e extrair informações de strings em Python.
+
+## Veja Também
+- [Documentação Oficial do Python](https://docs.python.org/3/tutorial/introduction.html)
+- [Artigo sobre "slicing" em strings](https://www.programiz.com/python-programming/methods/string/slice)

@@ -1,54 +1,69 @@
 ---
-title:    "Bash: Convertendo uma data em uma string"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/converting-a-date-into-a-string.md"
+title:                "Bash: Convertendo uma data em uma string"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Há muitas vezes em que precisamos manipular datas em nossos programas Bash. Por exemplo, podemos querer renomear um arquivo com a data em que foi criado ou inserir a data atual em um arquivo de log. Para fazer isso, precisamos converter a data em formato de string, tornando-o legível para nós e para outros programas.
+Você pode precisar converter uma data em formato de string ao escrever um script em Bash. Isso pode ser necessário para lidar com diferentes entradas de usuários ou para integração com outros sistemas que exigem uma data em formato de string.
 
-## Como fazer
+## Como Fazer
 
-Existem algumas maneiras de converter uma data em uma string no Bash, mas a mais comum é usando o comando `date` em conjunto com o parâmetro `-I` para retornar a data em formato ISO 8601 (AAAA-MM-DD). Vamos ver um exemplo:
+Para converter uma data em formato de string, podemos usar o comando `date` em conjunto com opções específicas de formatação. Por exemplo, se quisermos exibir a data atual na forma de "YYYY-MM-DD", podemos usar o seguinte código:
 
-```Bash
-data=$(date -I)
-echo "Hoje é $data"
+```
+Bash
+date +%Y-%m-%d
 ```
 
-A saída será algo como:
+Isso irá retornar o seguinte output:
 
-`Hoje é 2021-08-25`
-
-Podemos especificar o horário junto com a data, adicionando o parâmetro `-Iseconds` ao comando `date`. Por exemplo:
-
-```Bash
-data_hora=$(date -Iseconds)
+```
+2021-09-23
 ```
 
-A saída será algo como:
+Outra opção útil é a de incluir o dia da semana na string, que pode ser feito adicionando `%A` à opção de formatação. Por exemplo:
 
-`2021-08-25T13:25:00+02:00`
-
-## Mergulho profundo
-
-Além do formato ISO 8601, o comando `date` também suporta uma ampla variedade de formatos. Podemos especificar o formato desejado usando o parâmetro `+` seguido de códigos de formato. Por exemplo, para retornar a data em formato "dia/mês/ano", podemos usar o parâmetro `+%d/%m/%Y`.
-
-```Bash
-data=$(date +%d/%m/%Y)
-echo "Data atual: $data"
+```
+Bash
+date +%A, %Y-%m-%d
 ```
 
-A saída será algo como:
+Isso irá retornar o seguinte output:
 
-`Data atual: 25/08/2021`
+```
+Thursday, 2021-09-23
+```
 
-Você pode encontrar uma lista completa dos códigos de formato suportados no manual do comando `date` ou online.
+Há muitas outras opções de formatação disponíveis, como exibir o mês por extenso, exibir o horário, entre outros. Experimente diferentes opções e veja qual se encaixa melhor nas suas necessidades.
+
+## Deep Dive
+
+O comando `date` é uma importante ferramenta no Bash, pois permite o uso de diferentes opções de formatação para retornar a data e a hora atuais conforme desejado. Porém, é importante notar que a saída retornada pode variar de acordo com o sistema operacional e sua configuração de data e hora. Portanto, é importante ter isso em mente ao utilizar o comando em seus scripts.
+
+Além disso, é possível também usar o comando `printf` para formatar a saída da data em formato de string. Por exemplo:
+
+```
+Bash
+printf "Hoje é %(%A, %Y-%m-%d)T\n"
+```
+
+Isso irá retornar o seguinte output:
+
+```
+Hoje é Thursday, 2021-09-23
+```
+
+Esse comando é útil quando precisamos armazenar a data em uma variável para ser usada posteriormente em nosso script.
 
 ## Veja também
 
-- [Manual do comando date](https://man7.org/linux/man-pages/man1/date.1.html)
-- [ISO 8601:2004 - Data e hora - Representação da data e da hora](https://www.iso.org/standard/40874.html)
+- [Documentação oficial do comando `date` no Bash](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Como converter uma data em formato de string no Bash](https://www.shellhacks.com/pt/date-shell-script-linux-format-howto/)
+- [Tutorial em vídeo sobre o uso do comando `date` no Bash](https://www.youtube.com/watch?v=JXRfgRKrlE8)
+
+O comando `date` é um recurso poderoso no Bash que pode ser usado em diversas situações. Combiná-lo com o `printf` pode trazer ainda mais possibilidades de formatação. Esperamos que este mini-tutorial tenha sido útil e que você possa aplicar esse conhecimento em seus projetos futuros.

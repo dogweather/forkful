@@ -1,48 +1,50 @@
 ---
-title:    "Elm: Convertir une date en chaîne de caractères"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/converting-a-date-into-a-string.md"
+title:                "Elm: Transformation d'une date en chaîne de caractères"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous programmez en Elm, il est fort probable que vous ayez besoin à un moment donné de convertir une date en une chaîne de caractères. Cela peut sembler un peu intimidant, mais en réalité, c'est une tâche assez simple à accomplir. Dans cet article, nous allons explorer pourquoi vous pourriez avoir besoin de convertir des dates en chaînes et comment le faire efficacement en Elm.
+Si vous êtes nouveau dans le monde de la programmation Elm, vous vous demandez peut-être pourquoi il serait important de convertir une date en une chaîne de caractères. Eh bien, cela peut sembler être une tâche simple et banale, mais cela peut être très utile lorsque vous travaillez avec des données temporelles dans votre application. La conversion d'une date en une chaîne de caractères peut vous permettre de l'afficher de manière conviviale pour l'utilisateur ou d'effectuer des opérations de recherche et de tri sur des dates.
 
 ## Comment faire
 
-Il existe plusieurs façons de convertir une date en une chaîne en Elm, mais la méthode la plus simple consiste à utiliser la fonction `Date.toString`. Cette fonction prend une date en tant que premier argument et un format de chaîne en tant que second argument. Voici un exemple de comment utiliser cette fonction :
+Pour convertir une date en une chaîne de caractères en Elm, vous pouvez utiliser la fonction `toString` du module `Time`. Elle prend en paramètre une date et un format de chaîne de caractères et renvoie la date au format spécifié.
 
-```Elm
-import Date exposing (Day, Month, Year, fromCalendarDate)
-import Date.Extra as Date
-import Time exposing (Posix)
+```
+-- Import du module Time
+import Time exposing (Date, Day(..), Apr, Year, toString)
 
--- On crée une date avec les valeurs Year, Month et Day
-date = fromCalendarDate 2021 10 21
+-- Définition d'une date
+date = Date 2021 4 1
 
--- On utilise la fonction Date.toString avec un format de chaîne spécifique
-stringDate = Date.toString "yyyy-MM-dd" date
-
--- On affiche la sortie
-main = stringDate -- Résultat : "2021-10-21"
+-- Convertir en chaîne de caractères au format "mm/dd/yyyy"
+toString "mm/dd/yyyy" date -- Output : "04/01/2021"
 ```
 
-Comme vous pouvez le voir, nous avons utilisé le format "yyyy-MM-dd", qui donne une chaîne de caractères dans le format année-mois-jour. Mais vous pouvez également utiliser d'autres formats tels que "dd/MM/yyyy" ou "M/d/yyyy". La liste complète des formats disponibles peut être trouvée dans la documentation officielle d'Elm.
+Vous pouvez également utiliser le module `Time.Format` pour plus de flexibilité dans la mise en forme de votre date en chaîne de caractères. Ce module offre également plus d'options pour les mois et jours abrégés, ainsi que pour les fuseaux horaires.
 
-## Plongée profonde
+```
+-- Import du module Time et Time.Format
+import Time exposing (Date, Day(..), Apr, Year)
+import Time.Format exposing (..)
 
-Maintenant que vous savez comment convertir une date en une chaîne, il est important de comprendre comment fonctionne cette conversion. En Elm, toutes les dates sont représentées en tant que nombres entiers. Plus précisément, elles sont représentées en tant que nombres de secondes écoulées depuis le 1er janvier 1970 à minuit, heure UTC.
+-- Définition d'une date
+date = Date 2021 4 1
 
-Lorsque vous utilisez la fonction `Date.toString`, le format de chaîne que vous fournissez est utilisé pour formater la date en utilisant un objet `Date.Format`, qui contient les informations nécessaires telles que le séparateur entre jour, mois et année, ainsi que l'ordre dans lequel ils doivent apparaître dans la chaîne finale.
+-- Convertir en chaîne de caractères au format "JJJ d, AAAA"
+format format {year = Full, month = ThreeLetter, day = Digit, hour = Numeric 12, minute = TwoDigit, second = None, amPm = Capitalized, dayName = Abbreviated, zone = TimezoneName} date -- Output : "Apr 1, 2021"
+```
 
-Il est également important de noter qu'en raison de la nature immuable de la programmation en Elm, la fonction `Date.toString` ne modifie pas la date originale et renvoie plutôt une nouvelle chaîne.
+## Plongée en profondeur
+
+Il est important de noter que lors de la conversion d'une date en chaîne de caractères, il est crucial d'utiliser le bon format pour éviter toute confusion ou tout dysfonctionnement de votre application. Par exemple, si vous utilisez le format "mm/dd/yyyy" et que vous utilisez une date avec le mois en lettres, cela peut entraîner une erreur lors de l'affichage de la date. Il est donc important de comprendre les différents formats disponibles et de choisir celui qui convient le mieux à votre projet.
 
 ## Voir aussi
 
-Pour en savoir plus sur les dates et les formats de chaîne en Elm, n'hésitez pas à consulter ces ressources :
-
-- Documentation officielle d'Elm : <https://elm-lang.org/docs>
-- Exemples de formats de chaîne : <https://package.elm-lang.org/packages/elm/time/latest/Time#toString>
-- Tutoriel sur les dates en Elm : <https://becoming-functional.com/working-with-dates-in-elm-79cf3a6475ee>
+- [Documentation sur le module Time](https://package.elm-lang.org/packages/elm/time/latest/Time)
+- [Documentation sur le module Time.Format](https://package.elm-lang.org/packages/elm-lang/core/latest/Time-Format)

@@ -1,37 +1,47 @@
 ---
-title:    "Gleam: Säännöllisten lausekkeiden käyttö"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/using-regular-expressions.md"
+title:                "Gleam: Säännöllisten lausekkeiden käyttö"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttäisimme säännöllisiä lausekkeita?
+### Miksi käyttää säännöllisiä lausekkeita Gleam-ohjelmoinnissa?
 
-Säännölliset lausekkeet ovat erittäin hyödyllisiä Gleam-ohjelmoijille, koska ne mahdollistavat tietyn kaavan tai mallin määrittämisen merkkijonoille. Tämä on erityisen hyödyllistä, kun halutaan analysoida ja muokata suuria määriä tietoa, kuten tekstidokumentteja tai HTML-sivustoja. Säännölliset lausekkeet myös säästävät aikaa ja vaivaa, kun samanlaista toimintoa tarvitaan useaan kertaan koodissa.
+Säännölliset lausekkeet ovat tehokas työkalu tekstien käsittelyyn ja haun suorittamiseen Gleam-ohjelmoinnissa. Niiden avulla voimme löytää ja muokata tiettyjä merkkijonoja nopeasti ja helposti. Ne ovat erityisen hyödyllisiä, kun käsittelemme suuria määriä dataa ja meidän täytyy suorittaa monimutkaisia hakuja tai muokkauksia.
 
-## Kuinka käyttää säännöllisiä lausekkeita Gleam-ohjelmoinnissa?
+### Kuinka käyttää säännöllisiä lausekkeita Gleam-ohjelmoinnissa?
 
-Gleamilla on käytössä Perl-yhteensopivat säännölliset lausekkeet, jotka ovat helppokäyttöisiä ja joustavia. Voit aloittaa käyttämällä säännöllisiä lausekkeita "```re```" moduulista, joka on osa Gleam-ydintä. Alla on esimerkki koodista, joka hakee kaikki numerot merkkijonosta ja tulostaa ne:
+Gleam tarjoaa sisäänrakennetun moduulin nimeltä `Regex`, joka sisältää kaikki tarvittavat toiminnot säännöllisten lausekkeiden käyttämiseen. Ensimmäiseksi meidän täytyy tuoda tämä moduuli tiedostoomme.
 
-```Gleam
-let input_string = "Viisi merkkiä on enemmän kuin kolme."
-let numbers = re.find_all("\\d+", input_string)
-io.println(numbers)
+```
+import Regex
 ```
 
-Tulos:
+Säännöllisen lausekkeen luomiseksi käytämme `Regex.make`-funktiota ja annamme sille kaksi parametria: säännöllisen lausekkeen ja sen valitsimen. Valitsin määrittää, kuinka laajasti säännöllinen lauseke otetaan huomioon haussa. Esimerkiksi jos käytämme valitsinta `global`, haku tehdään kaikilta merkkijonoilta, ei vain ensimmäiseltä.
 
-```Gleam
-Some([|Some("Viisi"), None, None, Some("Kolme")|])
+```
+let pattern = Regex.make("gleam", Regex.global)
 ```
 
-## Syvempi sukellus säännöllisten lausekkeiden käyttöön
+Seuraavaksi voimme käyttää `Regex.replace`-funktiota muuttaaksemme säännöllisen lausekkeen osumat joksikin toiseksi merkkijonoksi. Voimme myös käyttää `Regex.match`-funktiota tarkistaaksemme, löytyykö säännöllinen lauseke annetusta merkkijonosta.
 
-Perusmuotojen lisäksi säännöllisillä lausekkeilla on paljon erilaisia ​​yksityiskohtia ja ominaisuuksia, jotka voivat tehdä niistä tehokkaita työkaluja tiedonkäsittelyyn. Voit esimerkiksi käyttää muuttujia ja summittaisia ilmauksia lisätaksonomian luomiseksi tai käyttää "```|```" -operaatiota etsimään useita erilaisia ​​merkkijonoja yhdellä kertaa. Tutustu Gleam-dokumentaatioon lisätietoja ja esimerkkejä erilaisista säännöllisten lausekkeiden käytöistä.
+```
+let result = Regex.replace(pattern, "Gleam is the best programming language!", "Elixir")
+let match = Regex.match(pattern, "I love Gleam programming language!")
+```
 
-## Katso myös
+### Syvällinen tutustuminen säännöllisten lausekkeiden käyttöön Gleam-ohjelmoinnissa
 
-- [Säännöllisten lausekkeiden opas Gleam-docsissa](https://gleam.run/documentation/refs/regular_expressions)
-- [Säännölliset lausekkeet Perlissä](https://perldoc.perl.org/perlre.html)
-- [RegExr - työkalu säännöllisten lausekkeiden testaamiseen ja oppimiseen](https://regexr.com/)
+Säännöllisten lausekkeiden käyttö Gleamissa on samanlaista kuin muissakin ohjelmointikielissä, mutta Gleam tarjoaa turvallisuutta ja luettavuutta parantavia ominaisuuksia. Ensinnäkin, kaikki säännölliset lausekkeet tarkistetaan Gleamissa käännösaikana, joten mahdolliset virheet havaitaan aikaisin. Lisäksi Gleamissa on vahva tyyppijärjestelmä, joka auttaa meitä varmistamaan, että käytämme oikeita parametreja ja että tulokset ovat oikean tyyppisiä.
+
+Toiseksi, Gleamissa säännölliset lausekkeet käsitellään muuttumattomina tietorakenteina, mikä tarkoittaa, että muokatessamme säännöllistä lauseketta se palauttaa uuden säännöllisen lausekkeen sen sijaan, että muokkaisi alkuperäistä. Tämä on tärkeää, koska meidän täytyy olla tarkkoja siitä, ettei alkuperäistä dataa muuteta vahingossa.
+
+### Katso myös
+
+- [Gleam-kielen virallinen verkkosivusto](https://gleam.run/)
+- [Gleam-kielen dokumentaatio](https://gleam.run/documentation)
+- [Regex-moduulin dokumentaatio](https://gleam.run/modules/regex/latest/)
+
+Kiitos lukemisesta ja onnea säännöllisten lausekkeiden käyttöön Gleam-ohjelmoinnissa!

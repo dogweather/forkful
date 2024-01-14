@@ -1,43 +1,36 @@
 ---
-title:    "TypeScript: La génération de nombres aléatoires"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/generating-random-numbers.md"
+title:                "TypeScript: Création de nombres aléatoires"
+programming_language: "TypeScript"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi générer des nombres aléatoires en TypeScript?
+## Pourquoi
 
-La génération de nombres aléatoires est une fonctionnalité couramment utilisée dans la programmation. Elle peut être utilisée pour créer des jeux, générer des données aléatoires pour les tests ou tout simplement pour ajouter une variabilité à votre code. En TypeScript, il existe plusieurs méthodes pour générer des nombres aléatoires, en fonction de vos besoins et de votre environnement de développement.
+La génération de nombres aléatoires est utile pour créer des simulations, des jeux ou tout autre programme nécessitant une composante aléatoire. Cela permet également de tester le comportement de certains algorithmes dans des conditions variées.
 
-## Comment générer des nombres aléatoires en TypeScript?
+## Comment faire
 
-Pour générer des nombres aléatoires en TypeScript, nous pouvons utiliser la fonction Math.random(), qui renvoie un nombre aléatoire entre 0 (inclus) et 1 (exclus). Nous pouvons ensuite multiplier ce nombre par le nombre maximal que nous voulons obtenir et l'arrondir à l'aide de Math.floor() pour obtenir un nombre entier aléatoire.
-
-```
-TypeScript
-const randomNumber = Math.floor(Math.random() * 100); // génère un nombre aléatoire entre 0 et 99
-```
-
-Nous pouvons également utiliser la fonction Math.round() pour obtenir un nombre entier arrondi au plus proche. Pour générer un nombre aléatoire dans une plage spécifique, nous pouvons utiliser la formule suivante:
+Générer un nombre aléatoire en TypeScript est facile grâce à la fonction `Math.random()`. Cette fonction renvoie un nombre compris entre 0 et 1 (exclus). En multipliant ce nombre par un autre nombre et en utilisant `Math.floor()` pour arrondir à l'entier inférieur, vous pouvez générer un nombre aléatoire dans une plage définie.
 
 ```
 TypeScript
-const randomNumberInGivenRange = Math.floor(Math.random() * (max - min + 1)) + min;
+// Générer un nombre aléatoire entre 1 et 10
+const randomNumber = Math.floor(Math.random() * 10) + 1;
+
+console.log(randomNumber); // Output: Un nombre aléatoire entre 1 et 10
 ```
 
-Il existe également des bibliothèques TypeScript dédiées à la génération de nombres aléatoires, telles que Random.js et Chance.js, qui offrent une plus grande flexibilité et des fonctionnalités supplémentaires.
+## Plongée en profondeur
 
-## Plongée en profondeur sur la génération de nombres aléatoires
+Il est important de noter que la fonction `Math.random()` ne génère pas réellement des nombres aléatoires, mais plutôt une séquence pseudo-aléatoire basée sur une graine interne. Cela signifie que si vous appelez la fonction à plusieurs reprises, vous obtiendrez la même séquence de nombres. Pour éviter cela, vous pouvez utiliser `Math.random()` pour générer une graine aléatoire pour d'autres fonctions de génération de nombres aléatoires plus complexes.
 
-La fonction Math.random() utilise un générateur de nombres pseudo-aléatoires (PRNG en anglais) pour créer des nombres aléatoires. Cela signifie que les nombres générés ne sont pas vraiment aléatoires, mais plutôt une séquence de nombres déterministe qui peut être reproduite si nécessaire. Pour obtenir des nombres vraiment aléatoires, nous devons utiliser des sources externes, telles que le temps ou les entrées utilisateur, comme seed (graine) pour le générateur PRNG.
-
-Il est également important de noter que la génération de nombres aléatoires en TypeScript peut être différente selon l'environnement de développement dans lequel vous travaillez. Par exemple, lors de l'exécution du code dans un navigateur, il peut y avoir des différences dans la manière dont les PRNG sont initialisés et utilisés par rapport à l'exécution du code dans un environnement Node.js.
+De plus, il existe d'autres bibliothèques et modules en TypeScript qui offrent un contrôle plus avancé sur la génération de nombres aléatoires, tels que `random-js` ou `seedrandom`.
 
 ## Voir aussi
 
-- [Documentation officielle TypeScript sur la fonction Math.random()](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#mathrandom-seedable)
-- [Bibliothèque Random.js](https://randomjs.com/)
-- [Bibliothèque Chance.js](https://chancejs.com/)
-
-Merci d'avoir lu cet article sur la génération de nombres aléatoires en TypeScript. Vous pouvez maintenant utiliser cette fonctionnalité pour rendre votre code plus intéressant et dynamique. N'hésitez pas à explorer d'autres méthodes et bibliothèques pour trouver celle qui correspond le mieux à vos besoins. Amusez-vous à coder en TypeScript !
+- [Documentation officielle TypeScript sur Math.random()](https://www.typescriptlang.org/docs/handbook/stdlib.html#mathrandom)
+- [Exemple de génération de nombres aléatoires en TypeScript](https://codepen.io/kirbyedy/pen/NWgoVOr?editors=0012)
+- [Bibliothèque random-js pour générer des nombres aléatoires en TypeScript](https://github.com/ckknight/random-js)

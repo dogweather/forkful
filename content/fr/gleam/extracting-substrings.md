@@ -1,59 +1,57 @@
 ---
-title:    "Gleam: Extraction de sous-chaînes"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/extracting-substrings.md"
+title:                "Gleam: Extraction de sous-chaînes"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-L'extraction de sous-chaînes de caractères est une tâche courante en programmation, que ce soit pour manipuler des données ou pour effectuer des opérations sur des chaînes de caractères. Dans cet article, nous allons explorer comment effectuer cette opération en utilisant le langage de programmation Gleam.
+L'extraction de sous-chaînes est une pratique courante en programmation pour obtenir une partie spécifique d'une chaîne de caractères. Cela peut être utile lorsque vous avez besoin d'analyser ou de manipuler une chaîne de données plus grande. Dans cet article, nous allons voir comment utiliser la bibliothèque Gleam pour extraire des sous-chaînes en toute simplicité.
 
-## Comment faire
+## Comment Faire
 
-Pour extraire une sous-chaîne de caractères en utilisant Gleam, nous allons utiliser la fonction `substring()` et spécifier l'index de début et de fin de la sous-chaîne.
-
-```Gleam
-let chaine = "Bonjour tout le monde"
-let sous_chaine = substring(chaine, 8, 12)
-// sous_chaine = "tout"
-```
-
-La fonction `substring()` prend trois paramètres : la chaîne de caractères d'origine, l'index de début de la sous-chaîne et l'index de fin de la sous-chaîne. Il est important de noter que l'indexage des chaînes de caractères en Gleam commence à partir de zéro.
-
-Pour extraire une sous-chaîne à partir de la fin de la chaîne, nous pouvons utiliser l'index négatif. Par exemple, pour obtenir les 3 derniers caractères de la chaine d'origine, nous pouvons utiliser l'index `-3` pour l'index de début de la sous-chaîne.
+Pour extraire une sous-chaîne, vous devez utiliser la fonction `substring` de la bibliothèque Gleam. Cette fonction prend trois arguments : la chaîne de départ, l'index de début et l'index de fin. Voici un exemple de code qui montre comment extraire une sous-chaîne à partir d'une chaîne donnée :
 
 ```Gleam
-let chaine = "Bonjour tout le monde"
-let sous_chaine = substring(chaine, -3, -1)
-// sous_chaine = "nd"
+import gleam/strings
+
+// Définir la chaîne d'origine
+let chaine = "Bonjour le monde"
+
+// Extraire de l'index 8 à la fin de la chaîne
+let sous_chaine = strings.substring(chaine, 8, strings.length(chaine))
+
+// Afficher la sous-chaîne
+io.println(sous_chaine)
 ```
 
-Nous pouvons également utiliser l'opérateur de tranche (`[start..end]`) pour extraire une sous-chaîne de caractères.
+Dans cet exemple, la sortie sera `le monde`, car nous avons extrait la portion de la chaîne à partir de l'index 8 jusqu'à la fin.
+
+Vous pouvez également donner un index de début négatif pour extraire une sous-chaîne à partir de la fin de la chaîne. Par exemple, si vous voulez extraire les 5 derniers caractères d'une chaîne, vous pouvez utiliser `-5` comme index de début.
 
 ```Gleam
-let chaine = "Bonjour tout le monde"
-let sous_chaine = chaine[8..12]
-// sous_chaine = "tout"
+let chaine = "Bienvenue sur Gleam"
+
+// Extraire les 5 derniers caractères
+let sous_chaine = strings.substring(chaine, -5, strings.length(chaine))
+
+// Afficher la sous-chaîne
+io.println(sous_chaine)
 ```
 
-En utilisant l'opérateur de tranche, nous pouvons également spécifier un pas, ce qui nous permet d'extraire chaque x caractères de la chaîne de caractères d'origine.
+La sortie sera `Gleam`, car nous avons extrait les 5 derniers caractères de la chaîne.
 
-```Gleam
-let chaine = "Bonjour tout le monde"
-let sous_chaine = chaine[0..-1:2]
-// sous_chaine = "Bjnru o eoe"
-```
+## Plongée Profonde
 
-## Plongée en profondeur
+La fonction `substring` fonctionne en créant un nouveau tableau de caractères à partir de la chaîne donnée. Cette méthode peut sembler inefficace pour les grandes chaînes, car elle nécessite de copier les caractères dans un nouveau tableau. Cependant, grâce à la gestion automatique de la mémoire par Gleam, cette opération n'a pas un impact significatif sur les performances.
 
-Il est important de noter que la fonction `substring()` utilise un algorithme qui copie une partie de la chaîne de caractères d'origine dans une nouvelle chaîne de caractères. Cela signifie que si la chaîne de caractères d'origine est très grande, l'algorithme devra allouer beaucoup de mémoire pour stocker la sous-chaîne.
+Il est également important de noter que la fonction `substring` utilise les indices UTF-8 pour extraire les sous-chaînes. Cela signifie que les caractères multibits sont correctement gérés et que la fonction ne coupera pas un caractère en deux lors de l'extraction d'une sous-chaîne.
 
-Il y a également des opérations plus avancées que nous pouvons effectuer en utilisant l'opérateur de tranche. Par exemple, nous pouvons utiliser l'opérateur de tranche pour remplacer une sous-chaîne spécifique dans une chaîne de caractères.
+## Voir Aussi
 
-## Voir aussi
-
-- La documentation officielle de Gleam sur l'extraction de sous-chaînes : [lien vers la documentation officielle](https://gleam.run/documentation/#string-substring)
-- Un exemple de projet utilisant Gleam pour extraire des sous-chaînes : [lien vers le projet](https://github.com/username/exemple-gleam-sous-chaines)
-- Une discussion approfondie sur les performances de l'extraction de sous-chaînes en Gleam : [lien vers l'article de blog](https://mon-blog.com/deep-dive-extraction-sous-chaines-gleam)
+- Documentation officielle de la bibliothèque Gleam Strings : https://gleam.run/modules/strings.html
+- Tutoriel sur les chaînes de caractères en Gleam : https://medium.com/analytics-vidhya/gleaming-with-gleam-strings-1533e2507dd1
+- Exemples de code pour les fonctions de manipulation de chaînes : https://github.com/gleam-lang/gleam/blob/master/lib/strings/src/strings.gleam

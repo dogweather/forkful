@@ -1,53 +1,99 @@
 ---
-title:    "Bash: Leyendo argumentos de línea de comandos"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/reading-command-line-arguments.md"
+title:                "Bash: Leyendo argumentos de línea de comando"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Antes de sumergirnos en cómo leer argumentos de línea de comando en Bash, es importante entender por qué es una habilidad importante para cualquier programador. Al utilizar argumentos de línea de comando, podemos aumentar la eficiencia y flexibilidad de nuestros programas al permitir que los usuarios personalicen su funcionamiento a través de la entrada de comandos específicos. Además, el uso de argumentos de línea de comando también puede facilitar la automatización de tareas y procesos en nuestro flujo de trabajo.
+¿Te has preguntado alguna vez cómo los programas en la terminal reciben la información que les proporcionas? Una de las formas en las que esto ocurre es a través de los argumentos de línea de comando. En este artículo, te explicaremos por qué es importante saber leer y utilizar correctamente estos argumentos.
 
 ## Cómo hacerlo
 
-Para leer argumentos de línea de comando en Bash, podemos utilizar el built-in variable `$@` en nuestro código. Esta variable contiene una lista de todos los argumentos ingresados por el usuario al ejecutar el programa. A continuación, podemos utilizar la estructura de control `for` para iterar a través de los argumentos y realizar acciones basadas en ellos. Veamos un ejemplo:
+Leer los argumentos de línea de comando puede parecer intimidante para aquellos que recién empiezan en la programación de la terminal. Pero en realidad, es muy sencillo. Para empezar, necesitas saber que los argumentos de línea de comando se pasan al programa como cadenas de texto y se pueden acceder a ellos a través de las variables especiales "$1", "$2", "$3", etc. Estas variables almacenan los diferentes argumentos en el orden en que se ingresaron.
+
+Veamos un ejemplo. Supongamos que tenemos un programa llamado "saludo.sh" y queremos pasarle dos argumentos: un nombre y un saludo. El código se vería así:
 
 ```Bash
-for arg in "$@"
-do
-    case $arg in
-        -h|--help)
-            echo "Este es un mensaje de ayuda."
-            ;;
-        -v|--version)
-            echo "La versión del programa es 1.0."
-            ;;
-        *)
-            echo "Argumento desconocido: $arg. Utilice -h o --help para ver las opciones disponibles."
-            exit 1
-            ;;
-    esac
+#!/bin/bash
+echo "¡Hola $1! $2"
+```
+
+Si ejecutamos el programa de la siguiente manera:
+
+```Bash
+./saludo.sh Juan "Buenos días"
+```
+
+El resultado sería:
+
+```Bash
+¡Hola Juan! Buenos días
+```
+
+Como puedes ver, el primer argumento que colocamos ("Juan") se asigna a la variable "$1" y el segundo ("Buenos días") a la variable "$2".
+
+Pero ¿qué pasa si queremos pasar más de dos argumentos? Podemos acceder a ellos utilizando un bucle "for". Por ejemplo:
+
+```Bash
+#!/bin/bash
+echo "¡Hola $1! $2"
+echo "También saludamos a:"
+for arg in $@; do
+  echo "- $arg"
 done
 ```
 
-En este ejemplo, estamos utilizando la estructura de control `case` para realizar diferentes acciones según el argumento ingresado por el usuario. Si se proporciona el argumento `-h` o `--help`, se imprimirá un mensaje de ayuda. Si se ingresa `-v` o `--version`, se mostrará la versión del programa. Y si se proporciona cualquier otro argumento, se imprimirá un mensaje de error y el programa se terminará.
+En este caso, "$@" representa todos los argumentos pasados al programa. Entonces, si ejecutamos el programa con los argumentos "Juan", "Buenos días" y "María", el resultado sería:
+
+```Bash
+¡Hola Juan! Buenos días
+También saludamos a:
+- Juan
+- Buenos días
+- María
+```
 
 ## Profundizando
 
-Además de la estructura de control `for`, también podemos utilizar la variable `$#` para obtener el número total de argumentos ingresados. Además, podemos acceder a cada argumento individualmente utilizando `$1`, `$2`, `$3`, etc. Esto puede ser útil cuando necesitamos trabajar con argumentos específicos en nuestro código. También podemos utilizar la estructura de control `if` para realizar acciones basadas en la presencia o ausencia de ciertos argumentos. Por ejemplo:
+Ahora que sabes cómo leer los argumentos de línea de comando y cómo utilizarlos en tu código, podemos profundizar un poco más en su funcionamiento. Los argumentos de línea de comando pueden ser opciones o parámetros. Las opciones suelen comenzar con un guión "-" y pueden tener un valor asociado después de un espacio, como en "-c 10". Los parámetros, en cambio, son valores directos sin ningún tipo de indicador.
+
+Por ejemplo, si quisiéramos que nuestro programa "saludo.sh" también permita recibir un argumento opcional que indique cuántas veces queremos que se repita el saludo, podríamos utilizar la opción "-n" y un parámetro después de ella. El código se vería así:
 
 ```Bash
-if [ $# -lt 2 ]; then
-    echo "Se requieren al menos dos argumentos para ejecutar este programa."
-    exit 1
-fi
+#!/bin/bash
+
+nombre=$1
+mensaje=$2
+num_rep=1
+
+# Utilizamos un bucle "while" para verificar si encuentra la opción "-n"
+while getopts "n:" opt; do
+  # Si encuentra la opción, asignamos el valor a la variable "num_rep"
+  case $opt in
+    n) num_rep=$OPTARG;;
+  esac
+done
+
+# Utilizamos un bucle "for" para repetir el saludo según el valor de "num_rep"
+for ((i=1; i<=$num_rep; i++)); do
+  echo "¡Hola $nombre! $mensaje"
+done
 ```
 
-En este caso, estamos utilizando un condicional para verificar si se han ingresado al menos dos argumentos. Si no es así, se imprimirá un mensaje de error y el programa se terminará.
+Ahora, si ejecutamos el programa con los argumentos "Juan", "Buenos días" y "-n 3", obtendremos el siguiente resultado:
+
+```Bash
+¡Hola Juan! Buenos días
+¡Hola Juan! Buenos días
+¡Hola Juan! Buenos días
+```
 
 ## Ver también
 
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Tutorial de argumentos de línea de comando en Bash](https://linuxize.com/post/how-to-use-getopts-to-parse-a-script-options/)
+- [Introducción a la programación de la terminal en Bash](https://www.freecodecamp.org/news/writing-a-bash-script-a-beginners-guide/)
+- [Documentación oficial de Bash](https://www.gnu.org/software/bash/)
+- [Tutorial de argumentos de línea de comando en Bash](https://ryanstutorials.net/bash-scripting-tutorial/bash-arguments.php)

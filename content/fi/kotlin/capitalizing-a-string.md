@@ -1,47 +1,35 @@
 ---
-title:    "Kotlin: Merkkijonon kirjoittaminen isolla alkukirjaimella"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/capitalizing-a-string.md"
+title:                "Kotlin: Merkkijonon ensimmäisen kirjaimen muuttaminen isoksi kirjaimeksi"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi haluaisit muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi? Tämä voi olla hyödyllistä esimerkiksi silloin, kun käsittelet käyttäjältä syötettyjä sanoja tai lauseita ja haluat varmistaa niiden oikeanlaisen muotoilun.
+# Miksi: Miksi pääasisin päästäisitä tällaiseen koodiin?
 
-## Miten
-Merkkijonon ensimmäisen kirjaimen isoksi muuttamiseksi Kotlinissa voit käyttää sisäänrakennettua capitalize() -funktiota. Se ottaa merkkijonon ja palauttaa uuden merkkijonon, jossa ensimmäinen kirjain on muutettu isoksi. Alla on esimerkki koodista ja sen tulostus.
+Pääsisin stringicityä suurella virhemarginaaliliikleväksiin kilkeesi suuressa koodausprojektissa ja Citationyö vene ne ektradoona asumamuotoissa kykysuisiin vaativia pääsisi. Lisäksi caplesthirnirerettaiikalle tyypillisten piirteiden osaamiseen kannattaa tutustua!
+
+## Kuinka tehdä: Esimerkiksi
 
 ```Kotlin
-val sana = "tervehdys"
+val sana = "kirjoitin tähän sana, jonka haluan muuttaa isolla alkukirjaimella"
 val uusiSana = sana.capitalize()
-
 println(uusiSana)
-
-// Tulostaa "Tervehdys"
 ```
 
-## Syvällinen tarkastelu
-Voit myös suorittaa capitalize()-funktion itse, rakentamalla oman koodin sen ympärille. Tämä voi olla hyödyllistä, jos haluat esimerkiksi muuttaa useamman kuin yhden kirjaimen isoksi tai ottaa huomioon erilaiset kielisäännöt. Alla on esimerkki toiminnasta, jossa funktio noudattaa englannin kielen sääntöjä.
+Tulostus: "Kirjoitin tähän sana, jonka haluan muuttaa isolla alkukirjaimella"
 
-```Kotlin
-fun capitalize(word: String): String {
-    val firstChar = word[0].toUpperCase()
-    val restOfWord = word.substring(1, word.length).toLowerCase()
-    return firstChar + restOfWord
-}
+## Syvällisempi tarkastelu
 
-val lause = "tämä on esimerkki"
-val uusiLause = lause.split(" ")
-    .map { capitalize(it) } 
-    .joinToString(" ")
+Caplestirinin käyttö on erittäin hyödyllistä, kun työskentelet kotlinin kanssa ja haluat muuttaa muuttujan arvoa isommaksi. Tämä metodi hyödyntää kielen sisäistä capitalize-metodia ja palauttaa uuden merkkijonon, jossa ensimmäinen kirjain on iso ja muut samat kuin alkuperäisessä merkkijonossa.
 
-println(uusiLause)
+Tämä metodi on myös erittäin kätevä, kun joudut käsittelemään käyttäjän syötteitä tai luomaan käyttäjälle informatiivisia viestejä. Esimerkiksi "Tervetuloa" -viestiä on paljon miellyttävämpi lukea kuin "tervetuloa", ja tämä voidaan helposti saada aikaan capitalize-metodilla.
 
-// Tulostaa "Tämä On Esimerkki"
-```
+On myös huomattava, että capitalize-metodi ei muuta alkuperäistä merkkijonoa, vaan luo uuden. Tämä tarkoittaa, että alkuperäistä merkkijonoa ei muokata, jos sitä käytetään uudestaan myöhemmin koodissa.
 
 ## Katso myös
-- [Kotlin - Merkkijonon muotoilu](https://kotlinlang.org/docs/reference/strings.html#string-formatting)
-- [Stack Overflow - How to capitalize the first letter of a string in Kotlin](https://stackoverflow.com/questions/6699115/how-to-capitalize-the-first-character-of-a-string-in-java)
-- [Baeldung - Capitalizing Strings in Kotlin](https://www.baeldung.com/kotlin/capitalize-strings)
+
+- [Kotlinin strchrini -dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-strings/-generated-string-capitalize.html)
+- [Muut kotlinin stringien muokkausmetodit](https://kotlinlang.org/docs/reference/basic-types.html#string-literals)

@@ -1,55 +1,48 @@
 ---
-title:    "Java: Uzyskiwanie aktualnej daty"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/getting-the-current-date.md"
+title:                "Java: Pobieranie aktualnej daty"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Pobranie aktualnej daty jest jedną z podstawowych czynności w wielu programach Java. Wiele aplikacji wymaga dostępu do aktualnego czasu, aby wykonywać różne operacje na danych. Bez aktualnej daty moglibyśmy mieć trudności w śledzeniu wydarzeń i wykonywaniu określonych zadań. W artykule tym przyjrzymy się temu, jak przy pomocy prostych kroków możemy uzyskać aktualną datę w Javie.
+W dzisiejszych czasach istnieje wiele powodów, dla których ktoś chciałby uzyskać aktualną datę. Może być to potrzebne do śledzenia czasu wykonywania pewnych operacji w programach, do wyświetlania aktualnej daty w interfejsie użytkownika lub do wyliczenia wieku osoby na podstawie jej daty urodzenia. Dzięki otrzymaniu aktualnej daty, można również sprawdzić, czy się zgadza z datami w plikach lub bazach danych. 
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby pobrać aktualną datę w Javie, wykorzystamy klasę `LocalDate` z pakietu `java.time`. Oto przykładowy kod, który wyświetli bieżącą datę w formacie `yyyy-MM-dd`:
+Aby uzyskać aktualną datę w języku Java, należy użyć klasy `LocalDate` z biblioteki `java.time`. Możemy to zrobić za pomocą dwóch prostych linijek kodu:
 
-```Java
+```java
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
-public class AktualnaData {
-    public static void main(String[] args) {
-        // pobranie aktualnej daty
-        LocalDate data = LocalDate.now();
-        // użycie formattera do zmiany formatu na yyyy-MM-dd
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        // wyświetlenie daty w określonym formacie
-        System.out.println("Aktualna data: " + formatter.format(data));
-    }
-}
+LocalDate currentDate = LocalDate.now();
 ```
 
-Po uruchomieniu programu powinniśmy zobaczyć następujący wynik:
+Pierwsza linijka importuje klasę `LocalDate`, a druga tworzy nowy obiekt `LocalDate` o nazwie `currentDate` i przypisuje mu aktualną datę. Możemy również użyć metody `now()` bezpośrednio bez tworzenia obiektu, ale wtedy nie będziemy mieć możliwości odwołania się do daty w późniejszej części programu.
 
+Możemy również uzyskać aktualny czas wraz z datą przez użycie klasy `LocalDateTime` i metody `now()` z klasy `LocalDateTime`.
+
+```java
+import java.time.LocalDateTime;
+
+LocalDateTime currentDateTime = LocalDateTime.now();
 ```
-Aktualna data: 2021-06-14
-```
 
-Możemy także utworzyć własny wybrany format daty, korzystając z innych liter formatujących, takich jak `d` dla dnia, `M` dla miesiąca czy `y` dla roku. Wybór zależy od naszych potrzeb i wymagań.
+W obu przypadkach, jeśli uruchomimy nasz kod, otrzymamy aktualną datę i czas w formacie `yyyy-MM-dd` (na przykład `2020-11-05`) lub `yyyy-MM-dd-HH-mm-ss` (na przykład `2020-11-05-14-30-10`).
 
-## Głębsza Analiza
+## Deep Dive 
 
-Klasa `LocalDate` posiada wiele przydatnych metod do manipulowania datami, takich jak `plusDays()`, `minusMonths()` czy `withYear()`. Możemy także użyć innych klas, takich jak `LocalDateTime` czy `ZonedDateTime`, aby uzyskać bieżącą datę w określonej strefie czasowej.
+Klasa `LocalDate` i `LocalDateTime` z biblioteki `java.time` zostały wprowadzone w Java 8 jako część pakietu `java.time` wraz z wieloma innymi klasami, takimi jak `LocalTime` czy `ZonedDateTime`. Te klasy zapewniają nowoczesne i elastyczne podejście do obsługi dat i czasu w języku Java.
 
-Klasa `DateTimeFormatter` pozwala nam na jeszcze większą kontrolę nad formatowaniem daty, na przykład dodając nazwę miesiąca lub dnia tygodnia.
+Klasy te opierają się na koncepcji czasowej FourTen (opracowanej przez Stephena Colebourne'a) i umożliwiają obsługę stref czasowych, w tym uwzględnienie zmiany czasu, zmian czasowych w różnych krajach oraz różnych metody obliczania wieku na podstawie daty urodzenia.
 
-Możemy również pobrać aktualny czas lub strefę czasową używając odpowiednich klas, takich jak `LocalTime` czy `ZoneId`.
+Klasy `LocalDate` i `LocalDateTime` są również całkowicie niezmiennicze (ang. immutable), co oznacza, że nie mogą zostać zmienione po utworzeniu. To ważne w kontekście wielowątkowości, ponieważ zapewnia to bezpieczeństwo w przypadku jednoczesnego dostępu do tych obiektów.
 
-## Zobacz Również
+## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o pobieraniu daty w Javie, polecamy Ci zapoznanie się z następującymi materiałami:
-
-- Dokumentacja klasy `LocalDate`: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
-- Poradnik o formatowaniu daty w Javie: https://www.baeldung.com/java-string-to-date
-- Opis klas do obsługi daty i czasu w Javie: https://www.tutorialspoint.com/java8/java8_date_time_api.htm
+- [Java 8 Date and Time API](https://www.baeldung.com/java-8-date-time-intro)
+- [LocalDate documentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [SimpleDateFormat vs DateTimeFormatter](https://joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html)

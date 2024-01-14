@@ -1,41 +1,53 @@
 ---
-title:    "TypeScript recipe: Checking if a directory exists"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/typescript/checking-if-a-directory-exists.md"
+title:                "TypeScript recipe: Checking if a directory exists"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-As developers, there may come a time when we need to check if a directory exists within our code. This could be for various reasons, such as verifying if a specific folder exists before creating a new one, or handling file operations related to that directory. Whatever the reason may be, understanding how to check for the existence of a directory in TypeScript is a valuable skill to have.
+## Why
 
-## How To 
-To check if a directory exists in TypeScript, we can use the built-in `fs` module. This module provides a wide range of functionalities related to file operations. Specifically, we will be using the `existsSync()` method to check for the existence of a directory synchronously. This method takes in the path to the directory as an argument and returns a `boolean` value indicating whether the directory exists or not.
+When writing a TypeScript program that needs to access files, it's important to first check if a directory exists before attempting to read or write to it. This is necessary to avoid errors and ensure that the program runs smoothly.
 
-```TypeScript 
-import * as fs from 'fs';
+## How To
 
-// specify the path to the directory we want to check
-const directoryPath = './myDirectory';
+```typescript
+// Import the fs module
+import fs from 'fs';
 
-// check if the directory exists using the fs.existsSync() method
-const directoryExists: boolean = fs.existsSync(directoryPath);
+// Define the directory path
+const directoryPath = 'path/to/directory';
 
-if (directoryExists) {
-  console.log('Directory exists!'); // output: Directory exists!
+// Use fs.existsSync() to check if the directory exists
+if (fs.existsSync(directoryPath)) {
+  console.log('Directory exists!');
 } else {
-  console.log('Directory does not exist!'); // output: Directory does not exist!
+  console.log('Directory does not exist!');
 }
 ```
 
-In the above example, we have used the `existsSync()` method to check if the `myDirectory` folder exists in our project. If the directory does exist, the code will log `Directory exists!` to the console. Otherwise, it will log `Directory does not exist!`. This allows us to handle different scenarios based on the existence of the target directory.
+The code above shows a simple example of using the `fs.existsSync()` method to check if a directory exists. The method takes in a path as its argument and returns a boolean value indicating whether the directory exists or not. 
 
-## Deep Dive 
-Under the hood, the `existsSync()` method makes use of the `fs.accessSync()` method which checks for the accessibility of a given file or directory. However, unlike `existsSync()`, the `accessSync()` method throws an error if the file or directory does not exist. To handle this, we can wrap the `accessSync()` method in a `try/catch` block to catch the error and return `false` instead of throwing it.
+It's important to note that the `fs.existsSync()` method does not differentiate between a file and a directory, so it's possible to get a `true` response even if a file exists at the specified path. To check specifically for a directory, we can use the `fs.lstatSync()` method and check for the "isDirectory()" property.
 
-Additionally, it's important to note that the `existsSync()` method performs a synchronous operation, meaning it will block the execution of the code until the directory is checked. This can impact the performance of our application, especially if we have to check for multiple directories. In such cases, it's recommended to use the asynchronous version of the method, `exists()`, to avoid blocking the execution of the code.
+```typescript
+if (fs.lstatSync(directoryPath).isDirectory()) {
+  console.log('Directory exists!');
+} else {
+  console.log('Directory does not exist!');
+}
+```
 
-## See Also 
-- Official `fs` module documentation: https://nodejs.org/api/fs.html
-- MDN web Docs for `existsSync()` method: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/fs/existsSync
-- Blog post on asynchronous directory existence check in TypeScript: https://blog.logrocket.com/check-if-a-directory-exists-in-typescript/
+## Deep Dive
+
+Behind the scenes, the `fs.existsSync()` method uses the `fs.lstatSync()` method to gather information about the given path. `fs.lstatSync()` returns an fs.Stats object that contains information about the path, including whether it is a file or directory.
+
+By using `fs.lstatSync()` instead of `fs.existsSync()`, we have access to more information about the path which can be helpful in certain situations. For example, we can use the `fs.Stats` object to check the size, ownership, and permissions of the underlying file or directory.
+
+## See Also
+
+* [Node.js Documentation on fs module](https://nodejs.org/api/fs.html)
+* [TypeScript Documentation on fs module](https://www.typescriptlang.org/docs/handbook/nodejs.html#working-with-files)
+* [Tutorial on checking if a directory exists in TypeScript](https://www.digitalocean.com/community/tutorials/how-to-verify-if-a-file-or-directory-exists-in-a-node-js-application)

@@ -1,57 +1,65 @@
 ---
-title:    "Kotlin recipe: Comparing two dates"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/comparing-two-dates.md"
+title:                "Kotlin recipe: Comparing two dates"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When working with dates in a Kotlin program, it is often necessary to compare two different dates. This could be for tasks such as checking if a certain date has passed or determining which of two dates is earlier. By understanding how to compare dates in Kotlin, you can ensure that your program accurately handles all types of date comparisons.
+Determining the relationship between two dates is a common task in programming, especially when working with data that contains timestamps. Whether you need to check if a date is before or after another date, or calculate the difference between two dates, understanding how to compare dates is an essential skill for any Kotlin programmer.
 
 ## How To
 
-To compare two dates in Kotlin, we will use the `compareTo()` method. This method is available on the `LocalDate` class and allows us to compare two dates based on their chronological order. Let's see this in action with some code examples:
+To compare two dates in Kotlin, we can use the `compareTo()` method. This method returns an integer value that indicates the relationship between the two dates. Let's take a look at a simple example:
 
 ```Kotlin
-// Create two date objects
-val date1 = LocalDate.of(2021, 10, 10)
-val date2 = LocalDate.of(2021, 10, 11)
+val date1 = LocalDate.of(2020, 10, 8)
+val date2 = LocalDate.of(2020, 10, 10)
+val relationship = date1.compareTo(date2)
 
-// Compare the dates using the compareTo() method
-val result = date1.compareTo(date2)
-
-// Output: -1, which means that date 1 comes before date 2
-println(result)
+println(relationship) // Output: -2
 ```
 
-In this example, we create two `LocalDate` objects, `date1` and `date2`, representing October 10th and 11th of 2021. We then use the `compareTo()` method to compare them, which returns an integer value representing the chronological order of the dates. In this case, -1 is returned, indicating that `date1` comes before `date2`.
+In this example, we have two `LocalDate` objects representing October 8th and 10th of 2020. We then use the `compareTo()` method to check their relationship and store the result in the `relationship` variable. According to the [Java Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html#compareTo-java.time.LocalDate-), the integer value returned by this method will be negative if the first date is before the second date, zero if they are equal, and positive if the first date is after the second date. Therefore, in our example, the output is -2, indicating that date1 is two days before date2.
 
-We can also use the `compareTo()` method to compare dates based on equality. Let's see this with another example:
+We can also compare dates based on other units of time, such as months and years. For example:
 
 ```Kotlin
-// Create two date objects
-val date1 = LocalDate.of(2021, 4, 1)
-val date2 = LocalDate.of(2021, 4, 1)
+val date1 = LocalDate.of(2020, 10, 8)
+val date2 = LocalDate.of(2020, 11, 8)
+val monthDifference = date1.compareTo(date2, ChronoUnit.MONTHS)
 
-// Compare the dates using the compareTo() method
-val result = date1.compareTo(date2)
-
-// Output: 0, which means that date 1 and date 2 are equal
-println(result)
+println(monthDifference) // Output: -1
 ```
 
-In this example, both `date1` and `date2` are representing the same date, April 1st of 2021. When we use the `compareTo()` method to compare them, it returns 0, indicating that the two dates are equal.
+In this example, we use the `compareTo()` method with the `ChronoUnit.MONTHS` parameter, which compares the two dates based on their difference in months. The output, -1, indicates that date1 is one month before date2.
 
 ## Deep Dive
 
-Under the hood, the `compareTo()` method is using the `compareTo()` method from the `Comparable` interface. This interface allows objects to be compared and sorted based on their natural order. In the case of `LocalDate` objects, this order is chronologically. If you want to compare dates based on a different criteria, you can also use the `compare()` method from the `Comparator` interface.
+Under the hood, the `compareTo()` method uses the `isBefore()` and `isAfter()` methods to compare the dates. These methods, along with the `isEqual()` method, are used to check the specific relationship between two dates. For example, we can use `isBefore()` to check if a date is before another date:
 
-Additionally, the `compareTo()` method in Kotlin also accounts for different time zones and daylight savings time. This ensures that your date comparisons are accurate and take into consideration the potential differences in time zones.
+```Kotlin
+val date1 = LocalDate.of(2020, 10, 8)
+val date2 = LocalDate.of(2020, 10, 10)
+
+println(date1.isBefore(date2)) // Output: true
+```
+
+We can also use `isEqual()` to check if two dates are equal, regardless of the time:
+
+```Kotlin
+val date1 = LocalDateTime.of(2020, 10, 8, 10, 30)
+val date2 = LocalDateTime.of(2020, 10, 8, 12, 0)
+
+println(date1.isEqual(date2)) // Output: true
+```
+
+Understanding these methods can be useful when building more complex date comparison logic.
 
 ## See Also
 
-- [Official Kotlin documentation on LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/)
-- [Java documentation on the Comparable interface](https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html)
-- [Java documentation on the Comparator interface](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html)
+- [Java Documentation for LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/index.html)

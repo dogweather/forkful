@@ -1,51 +1,89 @@
 ---
-title:    "C++: Umwandeln einer Zeichenfolge in Kleinbuchstaben"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/converting-a-string-to-lower-case.md"
+title:                "C++: Umwandeln eines Strings in Kleinschreibung"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Es gibt viele Gründe, warum jemand sich dafür entscheiden könnte, einen String in Kleinbuchstaben umzuwandeln. Möglicherweise müssen Benutzereingaben validiert werden, um sicherzustellen, dass sie nicht case sensitive sind. Oder es kann auch verwendet werden, um Strings für den Vergleich zu normalisieren. Egal aus welchem Grund, die Konvertierung eines Strings in Kleinbuchstaben ist eine grundlegende Fähigkeit, die jeder Programmierer beherrschen sollte.
+Das Konvertieren eines Strings in Kleinbuchstaben kann in verschiedenen Situationen nützlich sein, wie zum Beispiel bei der Eingabe von Benutzernamen oder bei der Vergleich von Strings. Es ermöglicht auch eine konsistente Formatierung von Text.
 
-## Wie man es macht
+## Wie man es tut
 
-Um einen String in Kleinbuchstaben umzuwandeln, gibt es verschiedene Ansätze. Eine Möglichkeit ist die Verwendung der `transform()` Funktion aus der Standard Template Library (STL). Schauen wir uns ein Beispiel an:
+Das Konvertieren eines Strings in Kleinbuchstaben kann auf verschiedene Arten erreicht werden. Eine Möglichkeit ist die Verwendung von C++ Standardbibliotheksfunktionen, wie z.B. `tolower()`. Hier ist ein Beispielcode, der einen benutzergespeicherten String in Kleinbuchstaben konvertiert:
 
 ```C++
 #include <iostream>
-#include <algorithm> // Für std::transform
-#include <string> // Für std::string
-
-using namespace std;
+#include <algorithm>
+#include <string>
 
 int main() {
-    // String definieren
-    string name = "GUSTAV";
-
-    // String in Kleinbuchstaben umwandeln
-    transform(name.begin(), name.end(), name.begin(), ::tolower); // ::tolower ist ein Funktionszeiger
-
-    // Ausgabe
-    cout << name << endl;
-    
-    return 0;
+  // Benutzereingabe abfragen
+  std::cout << "Geben Sie einen String ein: ";
+  std::string input;
+  std::getline(std::cin, input);
+  
+  // Umwandlung in Kleinbuchstaben
+  std::transform(input.begin(), input.end(), input.begin(), ::tolower);
+  
+  // Ausgabe des konvertierten Strings
+  std::cout << "Konvertierter String: " << input << std::endl;
+  
+  return 0;
 }
-
-// Output: gustav
 ```
 
-In diesem Beispiel verwenden wir `transform()` zusammen mit dem `tolower` Funktionszeiger, um jede einzelne Buchstabe des Strings in Kleinbuchstaben umzuwandeln. Beachten Sie, dass wir `name.begin()` und `name.end()` als Bereich für die `transform()` Funktion angeben. Das Ergebnis wird direkt im `name` String gespeichert.
+### Beispieloutput
 
-## Tiefergehende Erklärung
+```
+Geben Sie einen String ein: HALLO WELT
+Konvertierter String: hallo welt
+```
 
-Die `transform()` Funktion gehört zur Algorithmusbibliothek der STL und akzeptiert drei Argumente: einen Startbereich, einen Endbereich und eine Zielzeichenkette, in die das Ergebnis gespeichert wird. Der optionale vierte Argument ist eine Funktionszeiger, die angibt, welche Operation auf jedes Element im Bereich angewendet wird. In unserem Beispiel verwenden wir `::tolower`, ein vordefinierter Funktionszeiger aus der `<string.h>` Header-Datei, um jeden Buchstaben in Kleinbuchstaben umzuwandeln.
+Es gibt auch andere Möglichkeiten, einen String in Kleinbuchstaben zu konvertieren, wie z.B. die Verwendung von Schleifen und ASCII-Wertmanipulation. Hier ist ein Beispielcode, der dasselbe Ergebnis wie oben erzielt:
 
-Es ist auch möglich, eine benutzerdefinierte Funktion zu verwenden, anstatt den `tolower` Funktionszeiger. Hierbei macht es Sinn, eine Funktion mit einer char übergabe zu erstellen, anstatt eine Referenz auf einen char. Dies liegt daran, dass der `transform()` Algorithmus ein Element des Bereichs als Kopie übergeben wird. Aus diesem Grund sollte die Funktion eine Kopie akzeptieren, auch wenn Sie eine Referenz auf char als Argument verwenden.
+```C++
+#include <iostream>
+#include <string>
+
+int main() {
+  // Benutzereingabe abfragen
+  std::cout << "Geben Sie einen String ein: ";
+  std::string input;
+  std::getline(std::cin, input);
+  
+  // Umwandlung in Kleinbuchstaben
+  for (int i = 0; i < input.length(); i++) {
+    if (input[i] >= 65 && input[i] <= 90) {
+      input[i] = input[i] + 32;
+    }
+  }
+  
+  // Ausgabe des konvertierten Strings
+  std::cout << "Konvertierter String: " << input << std::endl;
+  
+  return 0;
+}
+```
+
+Es ist wichtig zu beachten, dass diese Methode möglicherweise nicht für alle Sonderzeichen und diakritischen Zeichen funktioniert und daher nicht immer zuverlässig ist.
+
+## Tief einsteigen
+
+Die grundlegende Idee hinter der Konvertierung eines Strings in Kleinbuchstaben besteht darin, den ASCII-Wert jedes Zeichens im String zu manipulieren. ASCII (American Standard Code for Information Interchange) ist ein Zeichensatz, der jedem Zeichen eine numerische Darstellung zuweist. Die Kleinbuchstaben im ASCII-Zeichensatz beginnen bei 97 und enden bei 122. Wenn wir also zum ASCII-Wert jedes Großbuchstaben 32 addieren, erhalten wir den entsprechenden Kleinbuchstaben.
+
+Eine Alternative zur ASCII-Wertmanipulation ist die Verwendung von `tolower()` aus der C++ Standardbibliothek. Diese Funktion gibt das entsprechende Kleinbuchstaben-Äquivalent zurück, wenn ein Großbuchstabe übergeben wird.
+
+Es ist auch wichtig zu beachten, dass die Ergebnisse der Konvertierung von Strings in Kleinbuchstaben von der verwendeten Sprache abhängen können. Wenn bestimmte Sonderzeichen oder diakritische Zeichen verwendet werden, ist eine manuelle Manipulation möglicherweise nicht ausreichend und es kann erforderlich sein, spezielle Bibliotheken oder Funktionen zu verwenden.
 
 ## Siehe auch
 
-- [C++ Standard Template Library (STL)](https://de.wikibooks.org/wiki/C%2B%2B-Programmierung:_STL)
-- [std::transform Dokumentation](https://www.cplusplus.com/reference/algorithm/transform/)
+Weitere Informationen und Beispiele zur Konvertierung von Strings in Kleinbuchstaben finden Sie unter:
+
+- https://www.cplusplus.com/reference/cctype/tolower/
+- https://www.geeksforgeeks.org/c-program-convert-string-lower-case/
+- https://www.techiedelight.com/convert-string-to-uppercase-lowercase-cplusplus/
+- https://www.geeksforgeeks.org/c-program-convert-string-lower-case/

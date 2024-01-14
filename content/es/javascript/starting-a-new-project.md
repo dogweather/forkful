@@ -1,39 +1,57 @@
 ---
-title:    "Javascript: Iniciar un proyecto nuevo"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/starting-a-new-project.md"
+title:                "Javascript: Comenzando un nuevo proyecto"
+programming_language: "Javascript"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué comenzar un nuevo proyecto de programación?
+## ¿Por qué deberías empezar un nuevo proyecto?
 
-Empezar un nuevo proyecto de programación puede ser emocionante y desafiante al mismo tiempo. Puede ser una gran oportunidad para aprender nuevas habilidades, trabajar en un proyecto personal o colaborar con otros desarrolladores. ¡Pero lo más importante es que es una manera divertida de expresar tu creatividad y desarrollar tus habilidades de resolución de problemas!
+Empezar un nuevo proyecto puede ser una oportunidad emocionante para expandir tus habilidades de programación, aprender nuevas tecnologías y crear algo que te apasiona. Además, puede ser una buena manera de mostrar tu creatividad y construir un portfolio impresionante.
 
-## Cómo empezar un nuevo proyecto de programación
+## Cómo comenzar un nuevo proyecto en Javascript
 
-Antes de comenzar a escribir código, es importante tener una idea clara y concreta de lo que deseas lograr con tu proyecto. Aquí hay algunos pasos que puedes seguir para comenzar:
+Antes de comenzar a escribir código, es importante tener claro el objetivo del proyecto y cuáles son los requisitos y funcionalidades que deseas incluir. Una vez que tengas una idea clara de lo que quieres lograr, puedes seguir estos pasos para iniciar tu proyecto:
 
-1. Elige un lenguaje de programación: Dependiendo de tus habilidades y objetivos, elige un lenguaje de programación que sea adecuado para tu proyecto.
+```javascript
+// Paso 1: Inicializar el proyecto
+mkdir nombre-proyecto
+cd nombre-proyecto
+npm init
 
-2. Establece un objetivo: Define claramente lo que deseas lograr con tu proyecto. Asegúrate de que sea un objetivo realista y alcanzable.
+// Paso 2: Instalar dependencias
+npm install express
 
-3. Crea un plan: Hacer un plan detallado te ayudará a mantener tu proyecto organizado y en el buen camino.
+// Paso 3: Crear archivo de entrada
+touch index.js
 
-4. Haz la investigación necesaria: Antes de comenzar a escribir código, investiga sobre herramientas y recursos que puedan ayudarte con tu proyecto. ¡Pueden ser de gran ayuda!
+// Paso 4: Importar dependencias y configurar servidor
+const express = require("express");
+const app = express();
 
-Una vez que hayas completado estos pasos, ¡es hora de comenzar a programar!
+// Paso 5: Crear endpoints
+app.get("/", (req, res) => {
+  res.send("¡Hola mundo!");
+});
 
-## Profundizando en el inicio de un nuevo proyecto
+// Paso 6: Iniciar servidor
+app.listen(3000, () => {
+  console.log("Servidor corriendo en el puerto 3000");
+});
+```
 
-Antes de comenzar a escribir código, es importante tener una buena comprensión de los fundamentos de programación, como bucles, condicionales y funciones. Asegúrate de que tus conocimientos básicos sean sólidos antes de adentrarte en un nuevo proyecto.
+Después de seguir estos pasos, podrás ejecutar el archivo `index.js` en tu navegador y ver el mensaje "¡Hola mundo!".
 
-Además, es importante tener en cuenta las mejores prácticas de codificación, como escribir un código limpio y organizado, utilizar comentarios y realizar pruebas regulares para asegurarte de que todo funcione como debería.
+## Profundizando en el proceso de iniciar un nuevo proyecto
 
-También puede ser útil buscar la ayuda de otros desarrolladores a medida que avanza en tu proyecto. Puedes unirte a comunidades en línea o asistir a eventos de programación donde puedas recibir comentarios y consejos de otros profesionales.
+Empezar un nuevo proyecto no se trata solo de escribir código, también es importante tener en cuenta ciertos aspectos como la estructura del proyecto, la organización de archivos y el control de versiones. Además, es crucial documentar tu código para que otros puedan entenderlo y colaborar contigo en el futuro.
 
-# Ver también
+Una buena práctica es seguir patrones de diseño y utilizar herramientas como NPM y Git para gestionar las dependencias y el control de versiones de tu proyecto.
 
-- [10 consejos para convertirte en un mejor programador](https://www.techrepublic.com/blog/10-things/10-tips-for-becoming-a-better-programmer/)
-- [Las mejores prácticas de codificación en Javascript](https://codeburst.io/javascript-best-practices-523af2b9fef8)
-- [Consejos para colaborar en proyectos de código abierto](https://opensource.com/article/18/7/tips-collaborating-open-source-projects)
+## Ver también
+
+- [Guía de inicio rápido de Node.js](https://developer.mozilla.org/es/docs/Learn/Server-side/Express_Nodejs/Introduction)
+- [Documentación de Express.js](https://expressjs.com/es/)
+- [Patrones de diseño en Javascript](https://github.com/fbeline/Design-patterns-JS)

@@ -1,31 +1,65 @@
 ---
-title:    "C#: Kirjoittaminen standardivirheelle"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/writing-to-standard-error.md"
+title:                "C#: Kirjoittaminen standardivirheeseen"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On monia erilaisia syitä, miksi haluat kirjoittaa standardeihin virheisiin ohjelmoinnissa. Yleisimpiä syitä ovat virheiden havaitseminen ja korjaaminen sekä ongelmanratkaisu ohjelmoinnissa.
+Miksi haluaisit kirjoittaa standard error -tulostusvirtaan?
+
+Standard error on tärkeä osa ohjelmoinnin virheenkorjausta. Se mahdollistaa ohjelmalle antamasi ilmoitukset ja virheilmoitukset näkyvän selkeästi terminaalissa tai muussa komentokehotteessa. Tämä auttaa sinua paikantamaan ja korjaamaan ohjelman mahdolliset virheet nopeasti ja tehokkaasti.
 
 ## Miten
 
-Käyttämällä C# -kieltä, voit helposti kirjoittaa esimerkkilausekkeita ja -tulosteita käyttämällä "```C# ... ```" -koodilohkoja.
+### Esimerkki 1: Yksinkertainen virheilmoitus
+
+Seuraava koodiesimerkki näyttää yksinkertaisen tavan kirjoittaa virheilmoitus standard error -tulostusvirtaan:
 
 ```C#
-Console.WriteLine("Tämä on virheilmoitus!"); // Tulostaa tekstin "Tämä on virheilmoitus!" standardeihin virheisiin.
+Console.Error.WriteLine("Ohjelma törmäsi virheeseen!");
 ```
 
-Kun tämä koodi suoritetaan, se tulostaa tekstin "Tämä on virheilmoitus!" standardeihin virheisiin, jolloin voit havaita ja korjata mahdollisia virheitä koodissasi.
+Tämän koodin suorituksen jälkeen näet virheilmoituksen komentokehotteessa.
 
-## Syvällinen sukellus
+```
+Ohjelma törmäsi virheeseen!
+```
 
-Standardeihin virheisiin kirjoittaminen on tärkeä osa ohjelmoinnin ongelmanratkaisuprosessia. Se mahdollistaa virheiden havaitsemisen ja korjaamisen, mikä johtaa parempaan ohjelmiston laatuun. Lisäksi standardin virheilmoitukset auttavat myös muiden kehittäjien ymmärtämään ja työskentelemään koodisi kanssa.
+### Esimerkki 2: Virheilmoituksen lisääminen poikkeuskäsittelyyn
+
+Useimmissa tapauksissa haluat kirjoittaa virheilmoituksen standard error -tulostusvirtaan, kun ohjelmassa tapahtuu virhe. Tämä voidaan tehdä poikkeuskäsittelyllä seuraavasti:
+
+```C#
+try
+{
+  // Suorita jotain ohjelmaa
+}
+catch (Exception ex)
+{
+  Console.Error.WriteLine("Virhe: " + ex.Message);
+}
+```
+
+Tässä esimerkissä, jos ohjelma törmää virheeseen, näet virheilmoituksen, joka sisältää kyseisen virheen viestin.
+
+```
+Virhe: Ohjelma kohtasi odottamattoman virheen.
+```
+
+## Syventävä sukellus
+
+### Erot standard outputin ja standard errorin välillä
+
+On tärkeää ymmärtää ero standard outputin (Console.WriteLine) ja standard errorin (Console.Error.WriteLine) välillä. Standard output käytetään normaaliin ohjelman tulostukseen, kun taas standard erroria käytetään virheilmoituksissa ja poikkeuskäsittelyssä.
+
+Jos ohjelman suorittamisessa ei tapahdu virhettä, standard output ja standard error molemmat ohjautuvat yleensä samaan paikkaan, esimerkiksi terminaaliin tai komentokehotteeseen. Jos ohjelma kuitenkin kohtaa virheen, standard outputin tulostama tieto saattaa hävitä tai sekoittua virheilmoitusten joukkoon. Tästä syystä on tärkeää käyttää standard erroria virheilmoituksissa, jotta ohjelman suorituksen tulos olisi selkeä ja helppo tarkistaa.
 
 ## Katso myös
 
-- [C#:n kirjastoluokka Console](https://docs.microsoft.com/fi-fi/dotnet/api/system.console?view=net-5.0)
-- [Virheiden hallinta C#:ssa](https://docs.microsoft.com/fi-fi/dotnet/csharp/fundamentals/exceptions/)
-- [Ohjelmoinnin ongelmanratkaisun vinkkejä](https://www.hackerrank.com/domains/tutorials/30-days-of-code)
+- [C# Console.Error Property](https://docs.microsoft.com/en-us/dotnet/api/system.console.error?view=net-5.0)
+- [C# Exception Class](https://docs.microsoft.com/en-us/dotnet/api/system.exception?view=net-5.0)
+- [Debugging in C#: Basic Techniques](https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-in-csharp-basic-techniques?view=vs-2019)

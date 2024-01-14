@@ -1,37 +1,35 @@
 ---
-title:    "Javascript: Omvandla en sträng till gemener"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/converting-a-string-to-lower-case.md"
+title:                "Javascript: Omvandla en sträng till gemener"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Är du nybörjare inom programmering och undrar varför det är viktigt att kunna konvertera en sträng till gemena bokstäver? Eller är du en erfaren programmerare som behöver repetera? Oavsett din nivå, så är det viktigt att förstå varför detta är en viktig funktion inom Javascript.
+Att konvertera en sträng till gemener är en vanlig uppgift när man arbetar med Javascript. Det kan komma till nytta när man behöver jämföra strängar eller när man vill justera användarinput för att säkerställa konsistens.
 
-## Hur man gör
-Konvertering av en sträng till gemena bokstäver är enkelt med hjälp av Javascripts inbyggda funktion "toLowerCase()". Se kodexemplen nedan för att se hur det fungerar och vilken output som förväntas.
-
+## Hur man gör det
+Du kan enkelt konvertera en sträng till gemener genom att använda metoden `toLowerCase()`. Se nedan för ett exempel:
 ```Javascript
-// 1. Gör strängen "Hej!" till gemena bokstäver
-let sträng = "Hej!";
-let gemenaBokstäver = sträng.toLowerCase();
-
-console.log(gemenaBokstäver); // output: "hej!"
-
-// 2. Konvertera en användares input till gemena bokstäver
-let användarInput = prompt("Skriv en text:");
-let gemenaBokstäver = användarInput.toLowerCase();
-
-console.log(gemenaBokstäver); // input: "JavaScript", output: "javascript"
+var str = "Hej Världen!";
+var lowerStr = str.toLowerCase();
+console.log(lowerStr);
+// Output: "hej världen!"
 ```
 
-Som du kan se i exemplen ovan så är det mycket enkelt att konvertera en sträng till gemena bokstäver. Genom att använda "toLowerCase()" funktionen så kommer du alltid att få en sträng med alla gemena bokstäver.
+Du kan också använda `toLowerCase()` tillsammans med en variabel, som i exemplet nedan:
+```Javascript
+var name = "Anna";
+var lowerName = name.toLowerCase();
+console.log("Hej, " + lowerName + "!");
+// Output: "Hej, anna!"
+```
 
-## Djupdykning
-Förutom att konvertera en sträng till gemena bokstäver så finns det andra användbara metoder för strängmanipulering i Javascript. Till exempel "toUpperCase()" som gör om alla bokstäver till versala bokstäver och "replace()" som byter ut en viss del av en sträng med en annan del. Det är viktigt att ha koll på olika metoder för strängmanipulering för att kunna skapa funktionella och effektiva program.
+## En djupdykning
+När du använder `toLowerCase()` skapar du en ny sträng som innehåller samma tecken som den ursprungliga strängen, men alla bokstäver är omvandlade till gemener. Detta kan vara användbart när du vill ignorera skillnader i storlek när du jämför strängar.
 
-## Se även
-- [W3Schools - Javascript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
-- [MDN Web Docs - String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) 
-- [MDN Web Docs - String Manipulation](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Strings)
+## Se också
+- [Javascript String toLowerCase() metod](https://www.w3schools.com/jsref/jsref_tolowercase.asp)
+- [String.prototype.toLowerCase() MDN-dokumentation](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

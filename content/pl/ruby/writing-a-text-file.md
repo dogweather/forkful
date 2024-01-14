@@ -1,51 +1,49 @@
 ---
-title:    "Ruby: Tworzenie pliku tekstowego"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/writing-a-text-file.md"
+title:                "Ruby: Pisanie pliku tekstowego"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego Pisać Plik Tekstowy?
 
-Dlaczego warto tworzyć pliki tekstowe w języku Ruby?
+Pisanie pliku tekstowego jest ważną umiejętnością w programowaniu, ponieważ pozwala na zapisywanie danych w czytelnej i łatwej do przetworzenia formie. Jest to przydatne w wielu różnych przypadkach, na przykład tworzenie raportów, zapisywanie ustawień aplikacji lub przetwarzanie danych do analizy. W tym wpisie dowiesz się, jak napisać plik tekstowy w Ruby i na czym polega ta umiejętność.
 
-Dzięki plikom tekstowym możemy przechowywać dane w formacie łatwym do czytania i modyfikacji przez komputer. Jest to szczególnie przydatne w przypadku przechowywania dużej ilości informacji, takich jak bazy danych lub konfiguracje.
+## Jak napisać plik tekstowy w Ruby?
 
-# Jak to zrobić
+Aby napisać plik tekstowy w Ruby, musisz użyć metody "File.open" oraz "puts". W pierwszym kroku musisz określić nazwę pliku, w którym chcesz zapisać dane, a następnie utworzyć pusty plik poprzez otwarcie go w trybie "w". Następnie za pomocą metody "puts" możesz przekazać do pliku dane w postaci tekstu. Na przykład:
 
-Aby utworzyć plik tekstowy w języku Ruby, wystarczy użyć funkcji "File.new". Przykładowy kod możesz znaleźć poniżej:
-
-```Ruby
-plik = File.new("tekstowy_plik.txt", "w+")
-plik.puts "Przykładowy tekst"
-plik.close
+``` Ruby
+File.open("moj_plik.txt", "w") do |plik|
+  plik.puts "To jest przykładowy tekst, który zostanie zapisany w pliku."
+end
 ```
 
-Powyższy kod utworzy plik o nazwie "tekstowy_plik.txt" i zapisze w nim napis "Przykładowy tekst". Zwróć uwagę na drugi argument funkcji "w+", który oznacza, że chcemy nadpisać zawartość pliku, jeśli już istnieje.
+Po wykonaniu tej operacji, na naszym dysku pojawi się plik "moj_plik.txt", który zawiera nasz tekst. Możesz także użyć pętli lub tablic do zapisywania większej ilości danych. Na przykład:
 
-Możesz również wykorzystać funkcję "File.open" do otwarcia istniejącego pliku i dopisywania do niego zawartości. Przykład:
-
-```Ruby
-plik = File.open("tekstowy_plik.txt", "a")
-plik.puts "Kolejny tekst"
-plik.close
+``` Ruby
+imiona = ["Kasia", "Tomek", "Ania"]
+File.open("imiona.txt", "w") do |plik|
+  imiona.each do |imie|
+    plik.puts "Witaj, #{imie}!"
+  end
+end
 ```
 
-# Wprowadzenie w teorię
+W takim przypadku, plik "imiona.txt" będzie zawierał trzy linijki tekstu: "Witaj, Kasia!", "Witaj, Tomek!" i "Witaj, Ania!".
 
-Istnieje kilka ważnych pojęć związanych z tworzeniem plików tekstowych w języku Ruby, które warto zrozumieć.
+## Głębszy wgląd w pisanie plików tekstowych
 
-### Pola tekstowe i znaki kontrolne
+Podczas pisania plików tekstowych warto pamiętać kilka ważnych rzeczy. Po pierwsze, zawsze warto otwierać plik w trybie "w" (zastępowanie), jeśli chcesz mieć pewność, że zapisany tekst będzie w pełni poprawny. Jeśli użyjesz trybu "a" (dodawanie), nowe dane zostaną dopisane na końcu pliku, ale jeśli plik ten jest już istniejący, może to spowodować niepożądane wyniki. 
 
-Początkowo plik tekstowy może wydawać się po prostu zbiorowiskiem liter i cyfr, ale istnieją również tzw. "znaki kontrolne". Są to specjalne znaki, które wykorzystywane są do wywoływania określonych akcji, takich jak zmiana linii czy wcięcie tekstu.
+Dodatkowo, ważne jest, aby pamiętać o zamykaniu pliku po zakończeniu zapisywania danych. Można to zrobić poprzez wykorzystanie metody "close", lub jeszcze lepiej - korzystając z bloku "File.open". Blok ten automatycznie zamknie plik po jego użyciu, co jest bardziej bezpieczną opcją.
 
-### Kodowanie znaków
+## Zobacz także
 
-Ważnym aspektem plików tekstowych jest kodowanie znaków. Język Ruby domyślnie stosuje kodowanie UTF-8, które obsługuje większość znaków używanych w różnych językach. Jednak w przypadku pracy z plikami tekstowymi w innym kodowaniu, należy zwrócić uwagę na odpowiednie deklaracje w kodzie.
+- [Dokumentacja Ruby na temat plików tekstowych](https://ruby-doc.org/core-2.7.1/File.html)
+- [Artykuł na temat zapisywania danych do pliku tekstowego w Ruby](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+- [Poradnik dla początkujących: Pisanie plików w języku Ruby](https://rubyinrails.com/2019/05/10/newbies-guide-how-to-write-files-in-ruby/)
 
-# Zobacz także
-
-- Dokumentacja języka Ruby - [https://ruby-doc.org/](https://ruby-doc.org/)
-- Kurs Ruby w Codecademy (w języku polskim) - [https://www.codecademy.com/learn/learn-ruby](https://www.codecademy.com/learn/learn-ruby)
-- Historia języka Ruby - [https://en.wikipedia.org/wiki/Ruby_(programming_language)#History](https://en.wikipedia.org/wiki/Ruby_(programming_language)#History)
+Dziękujemy za przeczytanie naszego wpisu na temat pisania plików tekstowych w języku Ruby. Mamy nadzieję, że ten krótki przewodnik pomoże Ci w przyszłych projektach. Teraz czas na Ciebie - spróbuj napisać swój pierwszy plik tekstowy i zobacz jakie cudowne możliwości daje Ci programowanie w Ruby!

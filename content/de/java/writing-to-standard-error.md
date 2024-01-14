@@ -1,33 +1,59 @@
 ---
-title:    "Java: Schreiben in die Standardfehlerausgabe"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/writing-to-standard-error.md"
+title:                "Java: Schreiben auf den Standardfehler"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Schreiben in den Standardfehler oder die System Fehlerausgabe (stderr) ist ein wichtiger Aspekt der Java-Programmierung. Es ermöglicht uns, Fehler und Debugging-Informationen zu erfassen und anzuzeigen, die für die Entwicklung und Fehlerbehebung unserer Anwendungen entscheidend sein können.
+Das Schreiben auf den Standardfehler kann sehr nützlich sein, um Fehler und Warnungen in einem Java-Programm zu erkennen. Es ermöglicht auch die schnelle Diagnose von Problemen während der Entwicklung oder beim Debuggen von Code.
 
-## Wie geht's
+## Wie man es macht
 
-Um in den Standardfehler zu schreiben, müssen wir zuerst die Klasse "System" verwenden und die Methode "err" aufrufen. Dann können wir die Methode "println" verwenden, um unseren gewünschten Text auszugeben.
+Das Schreiben auf den Standardfehler ist einfach und kann mit der Methode `System.err.println()` erreicht werden. Hier ist ein Beispiel, wie man einen String auf den Standardfehler schreibt:
 
 ```Java
-System.err.println("Dieser Text wird in den Standardfehler geschrieben.");
+System.err.println("Dies ist ein Beispiel");
 ```
 
-Die Ausgabe erscheint dann rot in der Konsole und wird immer angezeigt, auch wenn die Standardausgabe (stdout) umgeleitet wird.
+Die Ausgabe wird dann auf der Konsole in roter Farbe angezeigt, um anzuzeigen, dass es sich um einen Fehler oder eine Warnung handelt. Hier ist ein Beispiel für die Ausgabe:
 
-## Tiefer Tauchen
+```Java
+Dies ist ein Beispiel
+```
 
-Im Hintergrund nutzt Java die sogenannte "System.err" PrintStream-Instanz, um Ausgaben in den Standardfehler zu schreiben. Diese kann auch durch die Verwendung der "setErr()" Methode geändert werden, um z.B. auf eine Datei oder einen Logger umzuleiten.
+## Tiefer Eintauchen
 
-Es ist auch wichtig zu beachten, dass Schreiboperationen in den Standardfehler teurer sind als in die Standardausgabe, da sie durch das System synchronisiert werden. Aus diesem Grund sollten wir sie nur für besonders wichtige oder fehlerhafte Nachrichten verwenden.
+Das Schreiben auf den Standardfehler ermöglicht es auch, zusätzliche Informationen wie den Stacktrace eines Fehlers oder die Zeitstempel auszugeben. Hier ist ein Beispiel, wie man dies erreichen kann:
+
+```Java
+try {
+    // Code ausführen, der einen Fehler verursacht
+} catch (Exception e) {
+    // Stacktrace auf den Standardfehler schreiben
+    e.printStackTrace(System.err);
+
+    // Aktuelles Datum und Zeit auf den Standardfehler schreiben
+    System.err.println("Zeitpunkt des Fehlers: " + new Date());
+}
+```
+
+Die Ausgabe wird dann folgendermaßen aussehen:
+
+```Java
+java.lang.NullPointerException
+    at MyProgram.method(MyProgram.java:10)
+    at MyProgram.main(MyProgram.java:5)
+Zeitpunkt des Fehlers: Mon Sep 27 14:30:21 CEST 2021
+```
+
+Durch das Schreiben auf den Standardfehler wird die Fehlerbehandlung erleichtert und die Debugging-Zeit verkürzt.
 
 ## Siehe auch
 
-- [Java Dokumentation zu der "System" Klasse](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [Tutorial zu Standard Streams in Java](https://www.baeldung.com/java-standard-Streams)
-- [Artikel über das Schreiben in den Standardfehler in Java](https://stackify.com/java-system-out-println-vs-system-err-println/)
+- [Oracle Dokumentation zu System.out und System.err](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- [Artikel von Baeldung über das Schreiben auf den Standardfehler](https://www.baeldung.com/java-standard-error-output)
+- [Tutorial von Java Code Geeks zur Verwendung von System.err](https://www.javacodegeeks.com/2015/03/java-io-tutorial-4-3-what-when-and-how-to-use-system-err-for-logging.html)

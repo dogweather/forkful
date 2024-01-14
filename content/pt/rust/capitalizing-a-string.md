@@ -1,50 +1,49 @@
 ---
-title:    "Rust: Maiúsculas em uma string"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/capitalizing-a-string.md"
+title:                "Rust: Capitalizando uma String"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que capitalizar uma string em Rust?
+## Por que capitalizar uma string?
 
-Em programação, é comum precisar modificar strings de texto para torná-las mais legíveis ou formatá-las para determinados propósitos. Em Rust, uma das formas de fazer isso é através da capitalização de strings. Neste artigo, explicaremos o porquê disso ser importante e como podemos fazer isso em Rust.
+Capitalizar uma string pode ser útil em diversas situações. Por exemplo, quando estamos trabalhando com nomes próprios ou títulos, é importante que a primeira letra esteja em maiúscula. Além disso, capitalizar uma string pode ser um requisito para o funcionamento de alguns algoritmos ou APIs.
 
-## Como fazer em Rust
+## Como fazer?
 
-Em Rust, podemos capitalizar uma string de duas maneiras: utilizando o método `to_uppercase()` ou `to_lowercase()`, ambos pertencentes à classe `String`. Vejamos um exemplo de como utilizá-los:
-
-```Rust
-let minha_string = "exemplo de string";
-let string_capitalizada = minha_string.to_uppercase();
-println!("{}", string_capitalizada);
-// Output: "EXEMPLO DE STRING"
-
-let minha_string = "exemplo de string";
-let string_capitalizada = minha_string.to_lowercase();
-println!("{}", string_capitalizada);
-// Output: "exemplo de string"
-```
-
-Também é possível utilizar esses métodos juntamente com a função `format!()` para capitalizar apenas a primeira letra da string, por exemplo:
+Em Rust, podemos capitalizar uma string usando o método `to_uppercase()`. Veja um exemplo abaixo:
 
 ```Rust
-let minha_string = "exemplo de string";
-let primeira_letra = minha_string[0..1].to_uppercase();
-let resto_da_string = minha_string[1..].to_lowercase();
-let string_final = format!("{}{}", primeira_letra, resto_da_string);
-println!("{}", string_final);
-// Output: "Exemplo de string"
+let string = "olá mundo";
+let string_capitalizada = string.to_uppercase();
+println!("String original: {}", string);
+println!("String capitalizada: {}", string_capitalizada);
 ```
 
-## Profundidade na capitalização de strings
+A saída deste código seria:
 
-Quando utilizamos os métodos `to_uppercase()` e `to_lowercase()`, é importante lembrar que eles retornam uma nova string, não modificando a original. Além disso, esses métodos seguem as regras de capitalização do sistema operacional em que o código está sendo executado. Portanto, se o sistema operacional estiver em inglês, as letras maiúsculas serão diferentes do que se estivesse em português, por exemplo.
+```
+String original: olá mundo
+String capitalizada: OLÁ MUNDO
+```
 
-Outra maneira de capitalizar strings em Rust é utilizando a biblioteca `Inflector`, que tem suporte para diferentes idiomas e pode ser encontrada no [crates.io](https://crates.io/crates/inflector). Com essa biblioteca, podemos usar o método `to_title_case()` que é mais preciso ao seguir as regras de capitalização da língua específica.
+## Aprofundando-se
+
+Ao usar o método `to_uppercase()`, é importante ter em mente que ele irá capitalizar todas as letras da string, incluindo as já maiúsculas. Para evitar isso, podemos usar o método `to_lowercase()` primeiro.
+
+Outro ponto interessante é que o método `to_uppercase()` só funciona corretamente com caracteres ASCII. Se sua string contiver caracteres Unicode, é necessário usar o método `chars()` para iterar sobre cada caractere e aplicar a capitalização individualmente.
 
 ## Veja também
 
-- [Documentação oficial do Rust sobre strings](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Biblioteca Inflector no crates.io](https://crates.io/crates/inflector)
-- [Exemplos de uso do Inflector no Github](https://github.com/whatisinternet/inflections-rs/blob/master/doc/Inflector.md)
+Para mais informações sobre como trabalhar com strings em Rust, confira a documentação da linguagem:
+
+- [Documentação do tipo String em Rust](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Tutorial sobre strings em Rust](https://doc.rust-lang.org/book/ch08-02-strings.html)
+
+Se você quer aprender mais sobre Rust, confira estes recursos:
+
+- [Rust Brasil - Comunidade de desenvolvedores brasileiros em Rust](https://rust-br.org/)
+- [Rust by Example - Uma coleção de exemplos práticos em Rust](https://doc.rust-lang.org/rust-by-example/index.html)
+- [The Rust Programming Language - Livro oficial sobre Rust](https://doc.rust-lang.org/book/)

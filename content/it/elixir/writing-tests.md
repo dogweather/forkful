@@ -1,46 +1,37 @@
 ---
-title:    "Elixir: Scrivere test"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elixir/writing-tests.md"
+title:                "Elixir: Scrivere test"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché scrivere test in Elixir
+Scrivere test è un'ottima pratica per assicurarsi che il proprio codice funzioni correttamente. Inoltre, i test possono aiutare a individuare eventuali bug o errori nel codice prima che venga utilizzato in produzione.
 
-Scrivere test è un aspetto fondamentale della programmazione di Elixir, in quanto permette di verificare la correttezza del codice e di prevenire errori futuri. Inoltre, aiuta a mantenere una maggiore qualità del software e a facilitare la collaborazione all'interno del team di sviluppo.
+## Come scrivere test in Elixir
+Scrivere test in Elixir è molto semplice grazie alla sua sintassi pulita e alla sua capacità di gestire il concetto di "pura funzione". Iniziamo con un semplice esempio di test che verifica se una funzione restituisce il risultato corretto.
 
-## Come Fare
+```elixir
+defmodule Test do
+  use ExUnit.Case
 
-Per scrivere test in Elixir, è necessario utilizzare il modulo di test nativo della libreria standard, chiamato "ExUnit". Inizialmente, è necessario importare il modulo nel file di test, utilizzando il comando `use ExUnit.Case` all'interno di una definizione di modulo.
-
-Di seguito, è possibile creare una funzione di test utilizzando la macro `test/2`, passando come primo parametro una descrizione del test e come secondo parametro una funzione anonima contenente il codice del test. Ad esempio:
-
-```Elixir
-test "la somma di due numeri" do
-  assert 2 + 2 == 4
+  test "somma corretta" do
+    assert Sum.sum(1, 2) == 3
+  end
 end
+
 ```
 
-Per eseguire il test, è sufficiente chiamare il comando `mix test` da linea di comando, che rileverà tutti i file di test presenti nella directory `test` e li eseguirà.
+In questo esempio, stiamo utilizzando il modulo integrato "ExUnit" per scrivere il nostro test. Utilizziamo il costrutto "defmodule" per definire un modulo chiamato "Test". All'interno del modulo, utilizziamo il costrutto "use ExUnit.Case" per includere il modulo ExUnit nelle nostre funzioni di test. Infine, utilizziamo il costrutto "test" per definire il nostro test, che controlla se la funzione "sum" del modulo "Sum" restituisce il risultato corretto. Nel caso in cui la somma sia corretta, il test passerà senza errori.
 
-Inoltre, è possibile utilizzare le macro `assert` e `refute` per definire asserzioni specifiche di un test e verificare se un'asserzione è vera o falsa. Ad esempio:
+## Approfondimento sui test
+Scrivere test in Elixir è estremamente importante per garantire la qualità del nostro codice. Oltre a verificare che il codice funzioni correttamente, i test ci aiutano a identificare eventuali bug o errori che potrebbero essere passati inosservati durante la fase di sviluppo. Inoltre, utilizzando la funzione `assert`, possiamo scrivere test più complessi che verificano una serie di risultati diversi per una determinata funzione.
 
-```Elixir
-assert 10 > 5
-refute 5 > 10
-```
+Inoltre, Elixir offre una serie di librerie per aiutare a scrivere test più avanzati, come "ExMachina" per la generazione di dati falsi e "ExCoverage" per valutare la copertura dei test del nostro codice.
 
-## Approfondimento
-
-Esistono diverse pratiche e tecniche per scrivere test efficaci in Elixir. Una di queste è la separazione del codice di produzione dal codice di test, che consente di mantenere una maggiore leggibilità e facilita il debugging.
-
-Inoltre, è buona pratica utilizzare il TDD (Test Driven Development), ovvero scrivere i test prima di scrivere il codice di produzione. In questo modo, si garantisce che il codice scritto corrisponda alle aspettative dei test e che il software funzioni correttamente.
-
-Infine, è importante testare diversi scenari e casi limite per garantire un'adeguata copertura dei test e rilevare eventuali errori o anomalie.
-
-## Vedi Anche
-
-- [Documentazione ufficiale di ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Elixir School - Testing](https://elixirschool.com/it/lessons/basics/testing/)
-- [Articolo sul TDD in Elixir](https://beam-wisdoms.clau.se/en/latest/testing/tdd/the_absolute_minimum_of_tdd_in_elixir.html)
+## Vedi anche
+- [Documentazione ufficiale sui test in Elixir](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Elixir School: Writing Tests](https://elixirschool.com/it/lessons/basics/testing/)
+- [GitBook: Testing Phoenix Applications](https://elixir-lang.gitbook.io/testing-phoenix/)

@@ -1,48 +1,53 @@
 ---
-title:    "Gleam: Suchen und Ersetzen von Text"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/searching-and-replacing-text.md"
+title:                "Gleam: Suchen und Ersetzen von Text"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum?
 
-Wenn du ein Programmierer bist, der mit Texten arbeitet, stößt du oft auf die Notwendigkeit, bestimmte Wörter oder Ausdrücke in deinem Code zu finden und zu ersetzen. Dies kann aus verschiedenen Gründen erforderlich sein, zum Beispiel um Fehler zu beheben oder um deinen Code effizienter zu machen. Hier kommt die Gleam-Programmiersprache ins Spiel, die eine robuste Such- und Ersetzungsfunktion bietet, die dir dabei hilft, diese Aufgabe schnell und effektiv zu erledigen.
+Für Programmierer ist das Suchen und Ersetzen von Text eine alltägliche Aufgabe. Es ist ein wichtiger Teil des Programmierprozesses und kann dabei helfen, effizienter und schneller zu arbeiten. In diesem Blogpost werden wir uns genauer mit der Such- und Ersetzungsfunktion in Gleam befassen und zeigen, wie sie eingesetzt werden kann, um Zeit und Mühe zu sparen.
 
-## Wie geht das?
+## Wie
 
-Die Gleam-Syntax für die Suche und Ersetzung von Text verwendet Mustererkennung und reguläre Ausdrücke, um die entsprechenden Textpassagen zu identifizieren. Hier ist ein Beispiel, um alle Vorkommen von "Gleam" in einem Text zu ersetzen:
+Die Such- und Ersetzungsfunktion in Gleam ist sehr einfach zu bedienen. Man kann sie auf verschiedene Arten aufrufen: entweder über die eingebaute ```.replace()``` Funktion oder über das Modul ```String.replace()```.
 
-```Gleam
-match text {
-    "Gleam" => "Programmieren"
-    text -> text
-}
-```
-
-In diesem Beispiel haben wir das Muster "Gleam" definiert und ihm den Ersatzwert "Programmieren" zugewiesen. Die Variante `text -> text` stellt sicher, dass alle anderen Passagen im Text unverändert bleiben. Das Ergebnis dieses Codes sind alle Vorkommen von "Gleam", die jetzt mit "Programmieren" ersetzt werden.
-
-Ein weiteres wichtiges Merkmal der Gleam-Syntax ist die Möglichkeit, reguläre Ausdrücke zu verwenden. Dies ist besonders nützlich, wenn du nach bestimmten Mustern suchen und ersetzen möchtest. Hier ist ein Beispiel, um alle Vorkommen von Zahlen in einem Text zu ersetzen:
+Ein Beispiel für die Verwendung von ```.replace()``` könnte wie folgt aussehen:
 
 ```Gleam
-import gleam/regexp
-
-match text {
-    regexp.match([0-9]+) -> "Zahl"
-    text -> text
-}
+let original_text = "Dies ist ein Beispieltext."
+let replaced_text = original_text.replace("Beispieltext", "neuer Text")
 ```
 
-In diesem Beispiel importieren wir das Regexp-Modul von Gleam und verwenden es, um alle zusammenhängenden Zahlen (es können auch längere Zahlen sein) zu identifizieren und durch den Ersatzwert "Zahl" zu ersetzen.
+Das Ergebnis wird in der Variablen ```replaced_text``` gespeichert und lautet "Dies ist ein neuer Text." Wir können auch reguläre Ausdrücke verwenden, um gezielt Text zu suchen und zu ersetzen. Ein Beispiel dafür wäre:
 
-## Tiefere Einblicke
+```Gleam
+let original_text = "Dies ist ein Beispieltext."
+let replaced_text = original_text.replace([regex"\s+", "g"], "")
+```
 
-Die Gleam-Suche und -Ersetzungsfunktion bietet auch erweiterte Optionen, wie zum Beispiel die Möglichkeit, die Groß- und Kleinschreibung zu ignorieren oder einen globalen Austausch durchzuführen. Sie bietet auch verschiedene Funktionen, um die Such- und Ersetzungslogik anzupassen.
+In diesem Fall würden alle Leerzeichen im Text durch nichts ersetzt werden, was zu der Ausgabe "DiesisteinBeispieltext." führen würde.
 
-Wenn du weitere Informationen und Beispiele zum Suchen und Ersetzen in Gleam benötigst, schaue dir die offizielle Dokumentation an.
+Ein weiteres nützliches Beispiel für die Such- und Ersetzungsfunktion ist die Verwendung von Mustern und Backreferenzen. Mit diesen können wir gezielt nach bestimmten Textmustern suchen und sie ersetzen. Ein Beispiel dafür wäre:
+
+```Gleam
+let original_text = "Heute ist der 20. Juni."
+let replaced_text = original_text.replace([regex"(\d+)\.", "g"], [pattern"$1. Tag", ""])
+```
+
+Das Ergebnis wäre "Heute ist der 20. Tag Juni."
+
+## Deep Dive
+
+Für fortgeschrittenere Anwendungen gibt es auch die Möglichkeit, benutzerdefinierte Such- und Ersetzungsfunktionen zu schreiben. Diese können dann in verschiedenen Szenarien eingesetzt werden, zum Beispiel beim Entwickeln von Textverarbeitungsprogrammen oder bei der Verarbeitung großer Datensätze.
+
+Um eine benutzerdefinierte Funktion zu schreiben, können wir das Gleam-Modul ```String.Match``` verwenden. Dieses bietet Funktionen wie ```replace_first()``` und ```replace_all()```, die für komplexe Such- und Ersetzungsvorgänge nützlich sein können.
 
 ## Siehe auch
 
-- Gleam offizielle Dokumentation: https://gleam.run/
-- Reguläre Ausdrücke in Gleam: https://gleam.run/articles/regular-expressions-in-gleam/
+- Offizielle Gleam-Dokumentation: https://gleam.run/
+- Eine Einführung in reguläre Ausdrücke: https://tutorialedge.net/golang/go-regex-tutorial/
+- Dieser Blogpost auf GitHub: https://github.com/username/article.md

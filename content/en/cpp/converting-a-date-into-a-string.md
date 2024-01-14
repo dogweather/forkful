@@ -1,59 +1,63 @@
 ---
-title:    "C++ recipe: Converting a date into a string"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/converting-a-date-into-a-string.md"
+title:                "C++ recipe: Converting a date into a string"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Converting a date into a string may seem like a trivial task, but it can actually be quite useful in certain scenarios. For example, if you're working with an API that requires a date to be in string format, or if you want to display a date in a specific format for your user interface, then this skill will come in handy.
+As a programmer, you may often encounter situations where you need to convert a date into a string. This can be useful for displaying dates in a specific format or for storing dates in a database. In this blog post, we will explore how to do this in C++.
 
-## How To
+## How To 
 
-To convert a date into a string, we will be using the `strftime()` function from the `<ctime>` header. This function takes in two parameters: a format specifier and a `tm` struct that contains the date and time information.
-
-Let's take a look at an example of converting the current date into a string in the format of `MM/DD/YYYY`.
+Converting a date into a string in C++ involves using the `std::stringstream` class. This class allows us to convert different types of data into strings. Firstly, we will need to include the `<sstream>` header file in our program. Then, we can use the `std::stringstream` object to convert the date into a string as shown in the code below.
 
 ```C++
 #include <iostream>
-#include <ctime>
+#include <sstream>
 
-int main() {
-    // get current date and time
-    time_t now = time(0);
+int main()
+{
+    // Create a date object
+    int day = 12;
+    int month = 9;
+    int year = 2021;
 
-    // convert to tm struct
-    tm *today = localtime(&now);
+    // Create a stringstream object
+    std::stringstream ss;
 
-    // create char array to store string
-    char date_str[11];
+    // Insert the date into stringstream object
+    ss << day << "/" << month << "/" << year;
 
-    // use strftime to format date
-    strftime(date_str, 11, "%m/%d/%Y", today);
+    // Convert the stringstream object into a string
+    std::string date_str = ss.str();
 
-    std::cout << "Today's date is: " << date_str << std::endl;
+    // Print the output
+    std::cout << "Date in string format: " << date_str << std::endl;
 
     return 0;
 }
 ```
 
-Output:
+**Output:**
 
 ```
-Today's date is: 12/09/2021
+Date in string format: 12/9/2021
 ```
-
-Here, we use the `%m` for month, `%d` for day, and `%Y` for year in our format specifier. It's important to note that the `tm` struct contains other elements such as hours, minutes, and seconds, but we only use these three for our desired format. You can check out the [strftime documentation](https://www.cplusplus.com/reference/ctime/strftime/) for more format specifiers and their meanings.
 
 ## Deep Dive
 
-If you're curious about how the `strftime()` function actually works, let's take a deeper look. The function takes in a format string, which is essentially a combination of literal text and conversion specifiers, and converts it into a string representation of the `tm` struct. It does this by iterating through the format string and replacing any conversion specifiers with their corresponding values from the `tm` struct.
+The `std::stringstream` class allows us to perform operations on strings just like we do with streams of characters. This means we can use functions like `<<` (insertion) and `>>` (extraction) to modify the string. In the above code, we inserted the date values into the `ss` object using the `<<` operator. Then, we used the `str()` function to convert the `ss` object into a string.
 
-For example, in the previous code sample, the `%m` conversion specifier is replaced with the current month, which is December (represented by 12). It then stores this value in the `date_str` array. This process is repeated for every conversion specifier in the format string.
+It is also important to note that the format of the date string will depend on the locale of your system. If you want to convert the date into a specific format, you can use other functions like `std::put_time` or `strftime` from the `<ctime>` library to format the date before converting it into a string.
 
 ## See Also
 
-- [strftime documentation](https://www.cplusplus.com/reference/ctime/strftime/)
-- [tm struct documentation](https://www.cplusplus.com/reference/ctime/tm/)
+If you want to learn more about converting data types in C++, you may find these resources useful:
+
+- [String streams in C++](https://www.geeksforgeeks.org/string-stream-in-c/)
+- [C++ Date and Time](https://www.programiz.com/cpp-programming/library-function/ctime)
+- [Converting data types in C++](https://www.cplusplus.com/doc/tutorial/typecasting/)

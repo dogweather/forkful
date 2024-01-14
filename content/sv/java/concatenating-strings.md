@@ -1,89 +1,62 @@
 ---
-title:    "Java: Sammanslående strängar"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/concatenating-strings.md"
+title:                "Java: Sammanslagning av strängar"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Den här bloggposten handlar om att sammanfoga strängar i Java, en grundläggande men viktig del av programmering. Genom att lära sig hur man sammanfogar strängar kan du skapa mer dynamiska och användarvänliga program.
 
-## Hur man gör
-Det finns flera sätt att sammanfoga strängar i Java, men det enklaste och vanligaste sättet är att använda operatorn "+".
+Att sammanslå strängar är en grundläggande men viktig del av programmering. Genom att kombinera flera strängar till en kan du skapa mer dynamiska och komplett utskrifter. Det är en användbar kunskap som kan hjälpa dig att skriva mer effektiv och läsbar kod.
 
-```Java
-// Skapar två strängar
-String str1 = "Hej ";
-String str2 = "världen!";
+## Hur man gör det
 
-// Sammanfogar strängarna med "+" operatorn
-String resultat = str1 + str2;
-
-// Skriver ut resultatet
-System.out.println(resultat);
-
-// Output: Hej världen!
-```
-
-Det går också att använda metoden `concat()` för att sammanfoga strängar.
+Att sammanslå strängar är relativt enkelt i Java. Det finns flera sätt att göra det på, men det vanligaste är genom att använda metoden `concat()` eller operatorn `+`. Här är ett exempel på hur du skulle göra det med `concat()`:
 
 ```Java
-// Skapar två strängar
-String str1 = "Hej ";
-String str2 = "världen!";
+String firstName = "Johan";
+String lastName = "Andersson";
+String fullName = firstName.concat(lastName);
 
-// Sammanfogar strängarna med `concat()` metoden
-String resultat = str1.concat(str2);
-
-// Skriver ut resultatet
-System.out.println(resultat);
-
-// Output: Hej världen!
+System.out.println(fullName);
 ```
 
-Det är också möjligt att sammanfoga flera strängar på en gång med hjälp av `StringBuilder` klassen.
+Output:
+
+```
+JohanAndersson
+```
+
+Här är samma exempel med `+` operatorn:
 
 ```Java
-// Skapar en `StringBuilder` objekt
-StringBuilder sb = new StringBuilder();
+String firstName = "Johan";
+String lastName = "Andersson";
+String fullName = firstName + lastName;
 
-// Lägger till strängar till objektet
-sb.append("Tack ");
-sb.append("för ");
-sb.append("att ");
-sb.append("ni ");
-sb.append("läser ");
-
-// Omvandlar `StringBuilder` till en sträng och skriver ut resultatet
-System.out.println(sb.toString());
-
-// Output: Tack för att ni läser
+System.out.println(fullName);
 ```
 
-## Deep Dive
-Närmanvänder sig av "+" operatorn eller `concat()` metoden för att sammanfoga strängar, skapar man faktiskt en ny sträng objekt varje gång. Det innebär att om du har många strängar att sammanfoga, så kommer det att finnas många onödiga objekt i minnet. För att undvika det så är det bättre att använda `StringBuilder` klassen när man sammanfogar flera strängar. `StringBuilder` är mer effektiv och lägger inte till onödiga objekt i minnet.
+Output:
 
-Det går också att använda `String.format()` för att sammanfoga strängar på ett mer dynamiskt sätt. Här kan du infoga variabler och text på ett enkelt sätt.
-
-```Java
-// Skapar en variabel för namn
-String namn = "Anna";
-
-// Använder `String.format()` för att skapa en ny sträng
-String hälsning = String.format("Hej %s, välkommen!", namn);
-
-// Skriver ut resultatet
-System.out.println(hälsning);
-
-// Output: Hej Anna, välkommen!
+```
+JohanAndersson
 ```
 
-## Se även
-För mer information och exempel på hur man kan sammanfoga strängar i Java, rekommenderar vi att ni tittar på följande länkar:
+Som du kan se ger båda metoderna samma resultat. Det viktigaste är att du förstår konceptet bakom sammanslagning av strängar.
 
-- [Java String concatenation](https://www.javatpoint.com/string-concatenation-in-java)
-- [String Concatenation in Java](https://www.geeksforgeeks.org/string-concatenation-java/)
-- [StringBuilder Class in Java](https://www.tutorialspoint.com/java/lang/stringbuilder_append_string.htm)
+## Djupdykning
 
-Tack för att ni läste och lycka till med att sammanfoga strängar i Java!
+När du använder `concat()` metoden, skapas en ny sträng som innehåller de två ursprungliga strängarna. Det betyder att både `firstName` och `lastName` fortsätter att existera som separata strängar.
+
+När det kommer till operatorn `+`, sker en automatisk konvertering av datatypen till `StringBuilder`, vilket gör det lättare och mer effektivt att sammanslå flera strängar.
+
+Det finns också andra metoder för att sammanslå strängar, som `StringBuilder` och `StringBuffer`, vilket kan vara användbart för mer komplexa manipulationer av strängar.
+
+## Se också
+
+- [Java String Docs](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+- [Java StringBuilder Docs](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html)
+- [Java StringBuffer Docs](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuffer.html)

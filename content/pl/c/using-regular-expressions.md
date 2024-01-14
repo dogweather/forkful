@@ -1,59 +1,75 @@
 ---
-title:    "C: Użycie wyrażeń regularnych"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/using-regular-expressions.md"
+title:                "C: Użycie wyrażeń regularnych"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego warto używać wyrażeń regularnych w C?
 
-Regularne wyrażenia są potężnym narzędziem w programowaniu C, które pozwalają na sprawdzenie i manipulowanie tekstem w sposób precyzyjny. Dzięki nim można szybko i skutecznie przetwarzać dane, a także wykonywać złożone operacje na tekście.
+Wyrażenie regularne jest potężnym narzędziem do manipulowania danymi i tekstami w języku C. Użycie ich może znacząco ułatwić i przyspieszyć proces programowania.
 
-## Jak to zrobić?
+## Jak używać wyrażeń regularnych w C?
 
-Aby używać regularnych wyrażeń w języku C, najpierw musimy zaimportować bibliotekę <regex.h>. Poniżej znajduje się prosty przykład pokazujący, jak użyć wyrażenia regularnego do znalezienia wszystkich liczb w tekście:
+Użycie wyrażeń regularnych w C jest bardzo proste. Wystarczy zaimportować bibliotekę `regex.h`, aby móc używać funkcji i wyrażeń regularnych. Poniżej znajdują się przykładowe kody i ich wyjście.
 
 ```C
 #include <stdio.h>
 #include <regex.h>
- 
-int main()
-{
-    regex_t regex; // deklaracja zmiennej typu regex
-    int result; // deklaracja zmiennej przechowującej wynik
-    char text[] = "Witaj, mam na imię Jan i urodziłem się w 1985 roku."; // przykładowy tekst
-    char pattern[] = "[0-9]+"; // wyrażenie regularne wyszukujące liczby
- 
-    result = regcomp(&regex, pattern, 0); // kompilacja wyrażenia regularnego
-    if (result) {
-        printf("Błąd kompilacji wyrażenia regularnego\n");
-        return 1;
+
+int main() {
+
+    // Przykładowy tekst do wyszukania
+    char *tekst = "Witaj w świecie C programming";
+
+    // Utworzenie obiektu wyrażenia regularnego
+    regex_t wyrazenie;
+
+    // Kompilacja wyrażenia regularnego
+    int result = regcomp(&wyrazenie, "C programming", 0);
+
+    // Wyszukanie wystąpienia wyrażenia w tekście
+    result = regexec(&wyrazenie, tekst, 0, NULL, 0);
+
+    // Sprawdzenie czy wystąpiło dopasowanie
+    if (result == 0) {
+        printf("Wyrażenie zostało dopasowane w tekście!");
+    } else {
+        printf("Wyrażenie nie zostało dopasowane w tekście!");
     }
- 
-    // użycie funkcji regexec do wyszukania pasujących fragmentów
-    result = regexec(&regex, text, 0, NULL, 0);
-    if (!result) {
-        printf("Podałeś swoje urodziny w tekście!\n");
-    }
-    
-    regfree(&regex); // zwolnienie pamięci
+
+    // Zwalnianie pamięci
+    regfree(&wyrazenie);
+
     return 0;
 }
 ```
 
-Powyższy kod wyświetli na ekranie komunikat "Podałeś swoje urodziny w tekście!", ponieważ wyrażenie regularne zostało dopasowane do liczby 1985 w tekście.
+Wyjście:
+```
+Wyrażenie zostało dopasowane w tekście!
+```
 
-## Wnikliwszy ogląd
+## Głębszy wgląd w użycie wyrażeń regularnych w C
 
-Wyrażenia regularne w języku C są oparte na standardzie IEEE 1003.1, który definiuje ich składnię i funkcje. Do składni należą m.in. specjalne znaki, które określają reguły dopasowania, takie jak "^" (znak początku tekstu) i "$" (znak końca tekstu). Ponadto, funkcje takie jak *regcomp* i *regexec* służą do kompilowania i wykonywania wyrażeń regularnych.
+Wyrażenia regularne w C pozwalają nie tylko na wyszukiwanie tekstu, ale również na jego podstawianie (zamiana) oraz dzielenie na części. Można również wykorzystać specjalne symbole i wyrażenia regularne, takie jak `+`, `*`, `?` czy `^`, aby bardziej precyzyjnie definiować wzorzec do wyszukania.
 
-Możemy również wykorzystać grupy w wyrażeniu regularnym, aby zawęzić zakres wyszukiwanych danych. Na przykład, "[A-Z]+[0-9]+" dopasuje dowolną sekwencję dużych liter, a następnie dowolną sekwencję cyfr.
+Przykładowo, można użyć następującego wyrażenia regularnego do wyszukania wszystkich liczb całkowitych z tekstu:
 
-Powyższe przykłady tylko zaczynają zgłębiać temat regularnych wyrażeń w programowaniu C. Istnieje wiele więcej zaawansowanych funkcji i opcji, które są dostępne do wykorzystania. Dlatego zachęcamy do pogłębiania swojej wiedzy na ten temat poprzez dokumentację i inne źródła.
+```
+[0-9]+
+```
+
+Ponadto, w przypadku potrzeby bardziej zaawansowanych operacji, można również skorzystać z funkcji `regexec` z argumentem `REG_EXTENDED`, aby używać wyrażeń regularnych ze składnią zgodną z POSIX.
+
+Warto również wspomnieć, że istnieją różnice w składni i możliwościach wyrażeń regularnych w różnych językach programowania, więc dokładne zapoznanie się z dokumentacją jest zalecane.
 
 ## Zobacz także
 
-- Dokumentacja regularnych wyrażeń w języku C: https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
-- Przykładowe zastosowania regularnych wyrażeń w programowaniu C: https://www.geeksforgeeks.org/regular-expressions-in-c/
-- Kurs online z wykorzystaniem regularnych wyrażeń w programowaniu C: https://www.cprogramming.com/tutorial/regular-expressions-c.html
+- [Dokumentacja wyrażeń regularnych w języku C](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- [Wprowadzenie do wyrażeń regularnych w języku C](https://www.keycdn.com/support/regex-tutorial#c-code-example)
+- [Wyrażenia regularne w C++](https://www.geeksforgeeks.org/regular-expressions-in-c-c/)
+
+Dzięki użyciu wyrażeń regularnych w C, programowanie może stać się znacznie wygodniejsze i efektywniejsze. Zachęcam do eksperymentowania z nimi i wykorzystywania w swoich projektach!

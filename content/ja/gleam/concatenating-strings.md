@@ -1,45 +1,49 @@
 ---
-title:    "Gleam: 文字列の連結"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/concatenating-strings.md"
+title:                "Gleam: 「文字列の連結」"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+Gleamプログラミングのブログへようこそ！
 
-文字列の連結を行う理由は、プログラミングにおいてよく使用される一つの基本的なタスクです。文字列は、プログラム内でデータを表現するために使用されるため、複数の文字列を効率的に結合することは非常に重要です。
+## Why（なぜ）
 
-## 方法
+文字列の連結を行う理由は、異なる文字列を組み合わせて新しい文章を作成するためです。例えば、ある文字列に名前を組み合わせることで、個人に合わせたメッセージを作ることができます。
 
-文字列の連結を行う方法はいくつかありますが、Gleamでは "+" 演算子を使用して簡単に実装することができます。例えば、文字列 "Hello" と "World" を連結するには、次のようにコードを書きます。
-
-```Gleam
-"Hello" + "World"
-```
-
-これにより、"HelloWorld" という出力が得られます。また、文字列の変数を使用して連結することもできます。
+## How To（方法）
 
 ```Gleam
-name = "Gleam"
-"Hello, " + name
+fn concatenate_strings(string1, string2) {
+  string1 ++ string2
+}
+
+let name = "太郎"
+let message = concatenate_strings("こんにちは、", name)
+
+println(message)
 ```
 
-この場合、出力は "Hello, Gleam" となります。
+出力：こんにちは、太郎
 
-## ディープダイブ
+## Deep Dive（更に深く）
 
-Gleamでは、文字列のマイクロ言語を使用して文字列を連結することもできます。これは、より複雑な文字列の操作を行う場合に便利です。例えば、"Hello World" という文字列を "Hello, World!" に変更するには、次のようにコードを書きます。
+Gleamでは、2つの文字列を連結するには`++`演算子を使用します。また、複数の文字列を連結することも可能です。また、文字列の連結には`String.concat()`関数を使用することもできます。この関数は、リスト内のすべての文字列を連結して1つの文字列に変換します。
 
 ```Gleam
-string = "Hello {name}"
-string = string.append("!")
+let list_of_strings = ["私の", "名前は", "次郎", "です"]
+
+let message = String.concat(list_of_strings)
+
+println(message)
 ```
 
-これにより、変数 "{name}" が "Gleam" で置換され、"Hello, Gleam!" という出力が得られます。
+出力：私の名前は次郎です
 
-## 関連情報
+## See Also（関連リンク）
 
-[Gleamドキュメンテーション](https://gleam.run/documentation)  
-[Gleam GitHubリポジトリ](https://github.com/gleam-lang/gleam)  
-[Gleamコミュニティチャット](https://github.com/gleam-lang/gleam/discussions)
+- [Gleam公式ドキュメント](https://gleam.run)
+- [文字列の連結の例](https://github.com/gleam-lang/gleam/blob/master/examples/strings.gleam)
+- [文字列操作についての解説](https://www.blacksamurai.org/guide/1-69.html)

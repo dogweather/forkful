@@ -1,53 +1,47 @@
 ---
-title:    "TypeScript: Komentoriviparametrien lukeminen"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/reading-command-line-arguments.md"
+title:                "TypeScript: Komentoriviparametrien lukeminen"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Komentorivin argumenttien lukeminen on tärkeä taito TypeScript-ohjelmoijille. Tämä mahdollistaa käyttäjän antamien parametrien hyödyntämisen ohjelmassa ja tekee siitä interaktiivisemman ja joustavamman.
+Komentoriviparametrien lukeminen on tärkeä taito kaikille TypeScript-ohjelmoijille. Se mahdollistaa ulkoisten tietojen syöttämisen ohjelmalle suoraan komentoriviltä, mikä on erittäin hyödyllistä erilaisten sovellusten ja skriptien kehittämisessä.
 
-## Miten tehdä se
+## Miten
 
-Komentorivin argumenttien lukeminen TypeScriptilla on helppoa! Sinun tarvitsee vain seurata näitä yksinkertaisia vaiheita:
-
-1. Luo uusi TypeScript-tiedosto
-2. Lisää komentorivin argumenttien lukemisesta vastaava kirjasto npm:n kautta `import * as arg from 'arg';`
-3. Luodaan argumenttiluettelo määrittelemällä objekti, jonka avaimet ovat argumentit ja arvot ovat kuvaus niistä. Esimerkiksi: `const args = arg({ '--nimi': String, '--ika': Number });`
-4. Voit sitten käyttää argumenttien arvoja ohjelmassa esimerkiksi `args.nimi` ja `args.ika`
-
-Alla on esimerkki TypeScript-koodista, jossa luetaan komentorivin argumentteja ja tulostetaan ne konsoliin:
+Komentoriviparametrien lukemiseen TypeScriptissä on olemassa valmiita työkaluja, kuten `yargs` ja `commander`. Alla on esimerkki yksinkertaisesta TypeScript-ohjelmasta, joka lukee komentoriviltä annettuja parametreja ja tulostaa ne konsoliin:
 
 ```TypeScript
-import * as arg from 'arg'; 
+import yargs from "yargs";
 
-const args = arg({ '--nimi': String, '--ika': Number });
+// Määritellään komentoriviltä hyväksytyt parametrit
+const argv = yargs.options({
+  nimi: { type: "string", demandOption: true, alias: "n" },
+  ikä: { type: "number", demandOption: true, alias: "i" },
+  osoite: { type: "string", demandOption: true, alias: "o" }
+}).argv;
 
-console.log(args.nimi); // tulostaa käyttäjän antaman nimen
-console.log(args.ika); // tulostaa käyttäjän antaman iän
+// Tulostetaan parametrit konsoliin
+console.log("Hei, olen " + argv.nimi + ", " + argv.ikä + " vuotta vanha ja asun osoitteessa " + argv.osoite);
 ```
 
-Ja tässä on mitä tapahtuu, kun suoritat ohjelmaa komentorivillä:
+Kun suoritat tämän ohjelman komentoriviltä antamalla sille nimen, iän ja osoitteen, näet tuloksen konsolissa:
 
-`$ node tiedoston_nimi.js --nimi Johanna --ika 27`
-
-Tulostus:
-
-`Johanna 27`
-
-Ja siinä se on! Komentorivin argumenttien lukeminen TypeScriptilla on nyt helppoa kuin mikä!
+```
+$ ts-node index.ts -n Johanna -i 25 -o Esimerkkikatu 1
+Hei, olen Johanna, 25 vuotta vanha ja asun osoitteessa Esimerkkikatu 1
+```
 
 ## Syvempi sukellus
 
-Kun olet oppinut lukemaan komentorivin argumentteja TypeScriptilla, voit alkaa tehdä monimutkaisempia ohjelmia, joissa otetaan huomioon erilaiset käyttäjän antamat parametrit. Voit myös kokeilla erilaisia argumenttien lukemisen kirjastoja ja löytää ne, jotka sopivat parhaiten tarpeisiisi.
-
-Kokeile myös käyttää argumenttiluettelon määrittelyssä erilaisia arvotyyppejä, kuten Boolean, Array tai Object, riippuen siitä, millaisia tietoja haluat käyttäjän antavan.
+Kun käytämme `yargs`-työkalua komentoriviparametrien lukemiseen, voimme myös määrittää parametrien lajin, pakollisuuden ja aliaksen lisäksi muita ominaisuuksia. Esimerkiksi voimme lisätä parametriin kuvauksen, joka näytetään käyttäjälle, jos hän pyytää apua komennolla `--help`. Voimme myös rajata parametrien arvoja tietylle välille tai muokata niitä ennen niiden tallentamista. `yargs`-työkalun dokumentaatiossa on lisätietoja näistä mahdollisuuksista.
 
 ## Katso myös
 
-- [arg-kirjaston dokumentaatio](https://www.npmjs.com/package/arg)
-- [TypeScriptin perusteet](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [Komentorivin argumenttien lukeminen muiltakin ohjelmointikieliltä](https://www.digitalocean.com/community/tutorials/about-command-line-arguments-and-flags#other-languages)
+- [yargs dokumentaatio](https://www.npmjs.com/package/yargs)
+- [commander dokumentaatio](https://www.npmjs.com/package/commander)
+- [TypeScriptin opiskelu alusta alkaen](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)

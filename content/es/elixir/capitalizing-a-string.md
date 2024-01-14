@@ -1,47 +1,53 @@
 ---
-title:    "Elixir: Capitalización de una cadena"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/capitalizing-a-string.md"
+title:                "Elixir: Capitalizando una cadena"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué capitalizar una cadena de texto en Elixir?
+## Por qué
 
-Capitalizar una cadena de texto puede ser útil para mejorar la legibilidad y presentación de datos en una aplicación. Además, puede ser necesario cuando se trabaja con información sensible, como nombres de usuarios o contraseñas.
+Uno de los aspectos más básicos en cualquier lenguaje de programación es la capacidad de manipular cadenas de texto. Una de estas tareas comunes es la capitalización de una cadena. En este artículo, exploraremos cómo podemos lograrlo utilizando Elixir.
 
-## Cómo hacerlo
+## Cómo Hacerlo
 
-Utilizar la función `String.capitalize/1` es la forma más sencilla de capitalizar una cadena en Elixir. Aquí hay un ejemplo de código que capitaliza una cadena y muestra el resultado en la consola:
+Para capitalizar una cadena en Elixir, podemos utilizar la función `String.capitalize/1`, que acepta una cadena como argumento y devuelve una versión capitalizada de la misma. Veamos un ejemplo de código:
 
-```Elixir 
-cadena = "hola mundo"
-capitalizado = String.capitalize(cadena)
-IO.puts(capitalizado)
+```elixir
+String.capitalize("hola mundo")
 ```
 
-Salida: "Hola mundo"
+Este código producirá la salida `"Hola mundo"`, con la primera letra de cada palabra en mayúscula. Podemos incluso capitalizar solo la primera letra de la cadena:
 
-También se puede utilizar `String.upcase/1` para convertir una cadena en mayúsculas o `String.downcase/1` para convertirla en minúsculas. Aquí hay un ejemplo de código que convierte una cadena a mayúsculas:
-
-```Elixir 
-cadena = "hola mundo"
-mayusculas = String.upcase(cadena)
-IO.puts(mayusculas)
+```elixir
+String.capitalize("hola mundo", :first)
 ```
 
-Salida: "HOLA MUNDO"
+Esta vez, la salida será `"Hola mundo"`, ya que solo se capitalizó la primera letra.
+
+También podemos utilizar `String.capitalize/2` para especificar un conjunto de caracteres diferentes como capitalización. Por ejemplo:
+
+```elixir
+String.capitalize("hola mundo", ["o"])
+```
+
+En este caso, solo la letra "o" será capitalizada, produciendo la salida `"hOla mundO"`.
 
 ## Profundizando
 
-Elixir ofrece varias funciones para manipular y formatear cadenas de texto. Además de `String.capitalize/1`, también se pueden utilizar `String.capitalize_first/1` y `String.capitalize_words/1`. Estas funciones proporcionan más opciones para capitalizar cadenas en diferentes contextos.
+Si queremos tener un mayor control sobre cómo se capitaliza una cadena, podemos utilizar `String.titlecase/1`, que acepta una cadena y devuelve una versión capitalizada con cada palabra en mayúscula, excepto las palabras especiales como "a", "el", "y" que permanecen en minúsculas.
 
-Además, Elixir también ofrece el módulo `String.Case` que contiene varias funciones para manipular el formato de las cadenas de texto, incluyendo la mayoría de las funciones de capitalización.
+Otra función útil es `String.upcase/1`, que convierte todas las letras de una cadena en mayúsculas. Por ejemplo:
 
-Para obtener más información sobre cómo manipular cadenas en Elixir, se recomienda revisar la documentación oficial del lenguaje o buscar ejemplos y tutoriales en línea.
+```elixir
+String.upcase("hola mundo")
+```
+produciendo la salida `"HOLA MUNDO"`.
 
-## Ver también
+## Ver También
 
-- [Documentación oficial de Elixir sobre cadenas de texto](https://elixir-lang.org/getting-started/string.html)
-- [Ejemplos de manipulación de cadenas en Elixir](https://blog.lelonek.me/elixir-strings-in-depth-4ef7a4188aaa)
-- [Tutorial de Elixir sobre cadenas y patrones de texto](https://elixirschool.com/es/lessons/basics/basics/#cadenas-y-patrones-de-texto-en-elixir)
+- [Elixir String Functions](https://hexdocs.pm/elixir/String.html)
+- [Mastering Elixir Strings](https://blog.appsignal.com/2018/06/12/elixir-alchemy-mastering-elixir-strings.html)
+- [Elixir Tutorial: Basic Operations with Strings](https://www.freecodecamp.org/news/elixir-tutorial-basic-operations-with-strings-9d0609eae20b/)

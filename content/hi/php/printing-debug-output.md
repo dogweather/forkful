@@ -1,30 +1,32 @@
 ---
-title:    "PHP: डिबग आउटपुट प्रिंट करना"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/php/printing-debug-output.md"
+title:                "PHP: डीबग आउटपुट प्रिंट करना"
+programming_language: "PHP"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyon
-Debug output print karne ka karan hai ki yeh aapko code mein kisi bhi tarah ke error ya bug ko dhoondhne aur use fix karne mein madad karta hai.
+## क्यों
 
-## Kaise Kare
-Agar aapko apne code mein kisi bug ko dhoondhna hai, toh aapko debug output print karna hai. Iske liye aapko `print_r()` ya `var_dump()` jaise functions ka upyog karna hoga. Iske baad aapko apne code mein un variables ko include karna hai jinhe aap debug output mein dekhna chahte hain.
+डीबग आउटपुट को प्रिंट करने का मतलब यह है कि हम अपनी कोड को देख और समझ सकते हैं कि वह कैसे काम कर रहा है और किसी भी समस्या को सुलझा सकते हैं। यह हमें अपने कोड को और बेहतर बनाने में मदद करता है।
+
+## कैसे करें
+
+जब हम कोई काम करते हैं, तो हमारे पास आमतौर पर अनुमान होता है कि वह काम करेगा। लेकिन अक्सर हमारा कोड गलत है और हम इसे सही करने के लिए बहुत समय खर्च करते हैं। इस समस्या को सुलझाने के लिए, हम डीबग आउटपुट को प्रिंट करके उसमें गलती का पता लगा सकते हैं। नीचे दिए गए PHP कोड ब्लॉक में एक उदाहरण दिया गया है:
 
 ```PHP
 <?php
-   $name = "Rohit";
-   $age = 27;
-   print_r($name);
-   print_r($age);
-?>
+
+// टेक्स्ट स्ट्रिंग बनाएं
+$message = "नमस्ते दोस्तों!";
+
+// डीबग आउटपुट प्रिंट करें
+print "मैसेज: " . $message;
 ```
-Output: Rohit27
 
-## Gehra Jaanch
-Debug output ko print karna kaafi faydemand hai kyunki isse aapko woh line of code pata chalti hai jahan par error ho raha hai. Aur yeh aapko code ki gehrai mein jaane aur errors ko find karne mein madad karta hai. Iske alawa, agar aapki website ya application slow chal rahi hai, toh aap debug output ke through performance issues ko bhi dhoondh sakte hain.
+उपरोक्त कोड टेक्स्ट स्ट्रिंग "नमस्ते दोस्तों!" को प्रिंट करेगा, जो हमारे डीबग आउटपुट को सही होने का संकेत देगा। इस तरह से हम अपने कोड में गलती को पता लगा सकते हैं और उसे सही कर सकते हैं।
 
-## Dekhein Bhi
-[PHP documentation on var_dump()](https://www.php.net/manual/en/function.var-dump.php),
-[PHP documentation on print_r()](https://www.php.net/manual/en/function.print-r.php)
+## गहराई में जाओ
+
+डीबग आउटपुट प्रिंट करना एक बहुत ही महत्वपूर्ण और उपयोगी कौशल है। इससे हम अपने कोड को सुधार सकते हैं और समस्याओं को समझने में आसानी होती है। अधिक अनुभवी प्रोग्रामर्स यह टेक्निक अपनाते हैं जो विकास के साथ अधिक से अधिक समय बितात

@@ -1,70 +1,53 @@
 ---
-title:    "Elm: 테스트 작성하기"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/writing-tests.md"
+title:                "Elm: 테스트 작성하기"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-테스트를 작성하는 것에 참여하는 이유는 무엇일까요? 테스트를 작성함으로써 코드의 신뢰성을 높이고 버그를 방지할 수 있습니다. 또한 작성한 테스트는 코드 수정 및 리팩토링 시 도움이 될 수 있습니다.
+프로그래밍을 할 때 우리는 종종 버그를 발견하게 됩니다. 이러한 버그로 인해 소프트웨어가 예기치 않게 동작하거나 시스템이 충돌할 수 있습니다. 이러한 문제들을 방지하기 위해서는 **테스트**가 필수적입니다. 테스트를 작성함으로써 이메일을 보낼 때나 웹사이트를 만들 때 쉽게 예측할 수 없는 버그를 발견할 수 있습니다.
 
-## 작성하는 방법
+## 어떻게 작성할까요?
 
-테스트를 작성하는 방법은 매우 간단합니다. 우선 ```elm-test``` 패키지를 설치해야 합니다. 그리고 코드에서 테스트할 함수를 불러오고, ```expect``` 함수를 사용하여 예상되는 결과를 입력하면 됩니다. 아래는 간단한 예제 코드입니다.
+테스트를 작성하는 것은 어려울 수 있지만, Elm 언어를 사용하면 쉽게 작성할 수 있습니다. 아래의 코드 블록을 보면서 함께 따라해보세요.
 
 ```elm
-module Example exposing (..)
+import Html exposing (div, text)
 
-import Expect
-import Test
 
-divide : Int -> Int -> Int
-divide a b =
-    a // b
+-- 테스트를 위한 add 함수
+add : Int -> Int -> Int
+add x y =
+    x + y
 
-tests =
-    describe "Divide function"
-        [ test "Correct result" <| \() ->
-            expect (divide 10 2) |> toEqual 5
-        , test "Zero division" <| \() ->
-            expect (divide 5 0) |> toEqual 0
-        ]
 
 main =
-    Test.run tests
+    div []
+        [ text (toString (add 2 3)) -- 결과는 5가 나와야 합니다.
+        ]
 ```
 
-위 코드를 실행하면 아래와 같은 결과를 볼 수 있습니다.
+위의 코드를 실행하면 `5`가 나와야 합니다. 하지만 새로운 버전의 `add` 함수를 아래와 같이 변경하면 결과는 `6`이 나와야 합니다.
 
 ```
-Divide function
-❌ Correct result
-Expected 5, but got 10
-
-😁 Zero division
-Passed 0 out of 1 tests
-Ran 2 tests of 2 total
+add : Int -> Int -> Int
+add x y =
+    x + y + 1
 ```
 
-예상한 결과와 일치하지 않는 경우 잘못된 값이 출력됩니다. 이렇게 테스트를 작성하면 코드 수정 시 예상한 결과와 다른 값이 나오는지 확인할 수 있습니다.
+이렇게 테스트를 작성하면 어떤 버그가 발생하는지 쉽게 알 수 있습니다.
 
-## 더 깊게 들어가기
+## 깊이 파고들기
 
-테스트를 작성하는 더 깊은 내용은 여러 가지가 있습니다. 예를 들어, 테스트 케이스에서 임의의 값을 생성할 수 있는 ```Random``` 모듈을 사용할 수 있습니다. 또한 ```describe``` 함수를 사용하여 테스트 케이스를 그룹화하고, ```only``` 함수를 사용하여 특정 테스트 케이스만 선택적으로 실행할 수도 있습니다.
-
-더 많은 정보는 공식 Elm 문서를 참고하시기 바랍니다.
+물론 테스트는 프로그래밍에 대해 깊이 이해하고 있는 것을 요구합니다. 하지만 Elm 언어를 사용하면 테스트를 쉽게 작성할 수 있습니다. 이 외에도 Elm 언어에는 테스트를 작성하기 위한 다양한 함수와 기능들이 있습니다. 더 깊이 공부하면서 더욱 효율적인 테스트를 작성해보세요.
 
 ## 더 알아보기
 
-이 글에서는 간단한 예제 코드를 통해 Elm에서 테스트를 작성하는 방법에 대해 알아보았습니다. 더 많은 정보를 알고 싶다면 아래의 링크들을 참고하시기 바랍니다.
+"See Also"로 추가로 알아볼만한 링크들을 모아보았습니다.
 
-#### 참고 링크
-
-- https://guide.elm-lang.org/testing/
-- https://package.elm-lang.org/packages/elm-explorations/test/latest/
-- https://dev.to/petrbela/unit-testing-in-elm-4g86 (영문)
-- https://medium.com/@kristyjy/elm-unit-testing-for-side-effects-e1c5bf8be049 (영문) 
-
-## 더 알아보기
+- [Elm 공식 홈페이지](https://elm-lang.org/)
+- [Elm 테스트 관련 문서](https://guide.elm-lang.org/testing/)

@@ -1,36 +1,39 @@
 ---
-title:    "Gleam: Convertire una stringa in minuscolo"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/converting-a-string-to-lower-case.md"
+title:                "Gleam: Convertire una stringa in minuscolo"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché
+## Perché
 
-La conversione di una stringa in minuscolo è un'operazione comune nella programmazione che può essere utile in diverse situazioni, come ad esempio quando si vuole confrontare o ordinare stringhe alfabeticamente senza tener conto delle maiuscole e minuscole.
+Convertire una stringa in minuscolo può essere utile in tante situazioni diverse, come ad esempio per facilitare il confronto tra stringhe o per rendere il testo uniforme.
 
-# Come fare
+## Come fare
 
-Per convertire una stringa in minuscolo in Gleam, possiamo utilizzare la funzione `String.to_lower` seguita dal parametro `string` contenente la stringa che vogliamo convertire. Ad esempio:
+Per convertire una stringa in minuscolo in Gleam, possiamo utilizzare il metodo `String.to_lowercase` e fornire come argomento la stringa da convertire. Possiamo poi visualizzare il risultato utilizzando la funzione `IO.println` come mostrato nell'esempio seguente:
 
 ```Gleam
-let str = "Gleam è un linguaggio di programmazione funzionale"
-
-let lower = String.to_lower(string=str)
-
-io.print(lower)
+my_string = "STRINGA IN MAIUSCOLO"
+IO.println(String.to_lowercase(my_string))
 ```
 
-L'output di questo codice sarà: `gleam è un linguaggio di programmazione funzionale`.
+Questo codice stamperà a schermo "stringa in maiuscolo".
 
-# Approfondimenti
+## Approfondimento
 
-Esistono diverse tecniche per la conversione di una stringa in minuscolo, in particolare è importante considerare la codifica utilizzata per la stringa. Se si lavora con stringhe multibyte (come ad esempio quelle contenenti caratteri unicode), è consigliato l'utilizzo della funzione `String.to_lower_utf8` al posto di `String.to_lower`.
+Il metodo `String.to_lowercase` si basa sull'algoritmo Unicode standard per la conversione di una stringa in minuscolo. Ciò significa che funziona correttamente anche per caratteri speciali o di diverse lingue.
 
-È anche importante notare che la funzione `String.to_lower` non modifica la stringa originale, ma crea una nuova stringa in minuscolo. Quindi, se si vuole modificare direttamente la stringa originale, è necessario riassegnare il valore della variabile alla nuova stringa.
+Ad esempio, in alcune lingue come il tedesco, alcune lettere quando convertite in minuscolo possono avere dei caratteri speciali aggiuntivi, come accenti o puntini. Il metodo `String.to_lowercase` gestisce automaticamente questi casi e restituisce il risultato corretto.
 
-# Vedi anche
+Inoltre, se vogliamo convertire solo la prima lettera di una stringa in minuscolo, possiamo utilizzare il metodo `String.to_lowercase_first`, che restituirà una nuova stringa con la prima lettera convertita ma mantenedo le altre lettere inalterate.
 
-- Documentazione ufficiale di Gleam sulla funzione `String.to_lower`: <https://gleam.run/stdlib/string/#to_lower>
-- Esempi di utilizzo di `String.to_lower` su Gleam Playgrounds: <https://play.gleam.run/?gist=0e9c7ca0f739e97ecf5f5d96e83fe5c1>
+## Vedi anche
+
+- Documentazione ufficiale di Gleam su come lavorare con le stringhe: [https://gleam.run/book/core-modules#strings](https://gleam.run/book/core-modules#strings)
+
+- Altri esempi di conversione di stringhe in minuscolo in Gleam: [https://github.com/gleam-lang/gleam-examples/blob/master/string_manipulation/string_case.gleam](https://github.com/gleam-lang/gleam-examples/blob/master/string_manipulation/string_case.gleam)
+
+- Blog post su come utilizzare l'algoritmo Unicode per la conversione di stringhe in minuscolo: [https://unicode.org/faq/casemap_charprop.html](https://unicode.org/faq/casemap_charprop.html)

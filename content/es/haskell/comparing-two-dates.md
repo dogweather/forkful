@@ -1,44 +1,69 @@
 ---
-title:    "Haskell: Comparando dos fechas"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/comparing-two-dates.md"
+title:                "Haskell: Comparando dos fechas"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué comparar dos fechas en Haskell?
+## Por qué
 
-Comparar fechas es una tarea común en la programación, ya sea para verificar si una fecha es anterior o posterior a otra, o para ordenar una lista de eventos cronológicamente. En este artículo, exploraremos cómo podemos hacerlo en el lenguaje funcional Haskell y aprenderemos por qué es importante dominar esta habilidad.
+Comparar dos fechas puede ser una tarea común en la programación, especialmente al trabajar con datos temporales. En Haskell, existen varias formas de comparar fechas, cada una con sus propias ventajas y aplicaciones. En este artículo, exploraremos cómo comparar dos fechas en Haskell.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo
 
-Antes de profundizar en la comparación de fechas en Haskell, necesitamos entender cómo se representan las fechas en este lenguaje. Haskell tiene un tipo de datos llamado `Data.Time.Day` que se usa para almacenar fechas. Para crear una fecha específica, podemos usar la función `fromGregorian` que toma tres argumentos: año, mes y día.
+Para comparar dos fechas en Haskell, podemos utilizar la función `compare` de la biblioteca `Data.Time` de Haskell. Esta función toma dos valores de tipo `UTCTime` (que representan fechas y horas en formato UTC) y devuelve un valor de tipo `Ordering` que indica si la primera fecha es anterior, igual o posterior a la segunda fecha.
 
-Veamos un ejemplo de cómo podemos comparar dos fechas en Haskell usando la función `compare`.
+Tomemos como ejemplo dos fechas hipotéticas, "10 de abril de 2021" y "15 de mayo de 2021". Primero, importemos la biblioteca `Data.Time`:
 
 ```Haskell
 import Data.Time
-
--- Creamos dos fechas
-fecha1 = fromGregorian 2020 5 15
-fecha2 = fromGregorian 2020 5 20
-
--- Comparamos las fechas y almacenamos el resultado en una variable
-resultado = compare fecha1 fecha2
-
--- Imprimimos el resultado
-print resultado
 ```
 
-La salida de este código será `LT`, que significa "menor que" en Haskell. Esto nos indica que la `fecha1` es anterior a la `fecha2`. Otros posibles resultados de la función `compare` incluyen `GT` (mayor que) y `EQ` (igual a).
+Luego, definamos dos valores `UTCTime` con las fechas mencionadas:
 
-## Un poco más profundo
+```Haskell
+let fecha1 = UTCTime 2021 4 10 0 0 0
+let fecha2 = UTCTime 2021 5 15 0 0 0
+```
 
-En Haskell, la comparación de fechas se basa en el número de días transcurridos desde una fecha de referencia. Este número de días se conoce como el número de días julianos y está relacionado con el sistema de calendario gregoriano. Debido a esto, no podemos comparar fechas anteriores al 1 de enero de 1753.
+Finalmente, utilicemos la función `compare` para comparar las dos fechas:
 
-Además, si queremos comparar también las horas y los minutos de dos fechas, podemos usar el tipo de datos `Data.Time.LocalTime` que incluye la hora del día. Podemos combinar este tipo de datos con la función `compare` para obtener una comparación más precisa de dos fechas.
+```Haskell
+compare fecha1 fecha2
+```
+
+El resultado que obtendremos es `GT`, que significa "mayor que", indicando que la primera fecha es posterior a la segunda.
+
+Aparte de `compare`, también existen otras funciones en la biblioteca `Data.Time` que nos permiten comparar fechas, como `(<)`, `(<=)`, `(>)` y `(>=)`. Estas se pueden utilizar de manera similar a `compare`.
+
+## Inmersión profunda
+
+Además de comparar fechas, también podemos realizar otras operaciones con ellas, como sumar o restar una cantidad de tiempo determinada. Por ejemplo, si tenemos una fecha y queremos sumarle 3 días, podemos utilizar la función `addDays` de la biblioteca `Data.Time`:
+
+```Haskell
+addDays 3 fecha1
+```
+
+El resultado será una nueva fecha que represente la fecha original más 3 días adicionales.
+
+Otra forma de comparar fechas en Haskell es utilizando la biblioteca `Data.Time.Calendar` y su función `diffDays`. Esta función toma dos valores `Day` (que representan fechas sin la hora) y devuelve la diferencia en días entre las dos fechas.
+
+```Haskell
+import Data.Time.Calendar
+
+let fecha1 = fromGregorian 2021 4 10
+let fecha2 = fromGregorian 2021 5 15
+
+diffDays fecha1 fecha2
+```
+
+El resultado en este caso sería `35`, indicando que hay 35 días de diferencia entre las dos fechas.
+
+En resumen, comparar fechas en Haskell puede ser muy útil y hay varias formas de hacerlo dependiendo de nuestras necesidades y la biblioteca que estemos utilizando. Es importante leer la documentación de cada función para asegurarnos de utilizarla correctamente.
 
 ## Ver también
 
-- [Documentación oficial de Haskell sobre Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Guía de programación de Haskell en español](https://wiki.haskell.org/Espa%C3%B1ol)
+- Documentación oficial de la biblioteca `Data.Time`: https://hackage.haskell.org/package/time/docs/Data-Time.html
+- Documentación oficial de la biblioteca `Data.Time.Calendar`: https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html

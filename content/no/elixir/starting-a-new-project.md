@@ -1,43 +1,46 @@
 ---
-title:    "Elixir: Å starte et nytt prosjekt"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/starting-a-new-project.md"
+title:                "Elixir: Å starte et nytt prosjekt"
+programming_language: "Elixir"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor starte et nytt prosjekt med Elixir?
+## Hvorfor starte et nytt prosjekt med Elixir?
 
-Elixir er et voksende og populært programmeringsspråk som tilbyr en rekke fordeler for utviklere. Det er skalerbart, robust og basert på funksjonell programmering, noe som gjør det ideelt for å håndtere komplekse og høytrafikerte applikasjoner. Å starte et nytt prosjekt med Elixir kan også hjelpe deg med å utvide dine programmeringsferdigheter og bygge innovative løsninger.
+Elixir er et spennende programmeringsspråk som brukes til å lage skalerbare, feiltolerante og distribuerte systemer. Det er inspirert av språket Erlang og bygger på funksjonell programmering. Å starte et prosjekt med Elixir gir mulighet for å bygge et holdbart og pålitelig system som kan håndtere store mengder data og brukere.
 
-## Hvordan starte et nytt prosjekt med Elixir
+## Slik gjør du det
 
-For å starte et nytt prosjekt med Elixir, må du først installere Elixir og Erlang på datamaskinen din. På Mac eller Linux, kan du bruke Homebrew for å installere disse avhengighetene. På Windows, kan du laste ned og installere de nødvendige pakkene fra deres respektive nettsider.
+For å starte et nytt prosjekt med Elixir, må du først installere språket og Elixir-miljøet på datamaskinen din. Deretter kan du følge disse enkle stegene:
 
-Når Elixir og Erlang er installert, kan du begynne å skrive kode ved hjelp av en hvilken som helst tekstredigerer eller IDE som støtter Elixir. En enkel måte å starte et nytt prosjekt på er ved å bruke Elixir sin innebygde pakkebehandling, Mix.
+1. Lag en ny mappe for prosjektet ditt og naviger til denne mappen i terminalen.
+2. Kjør kommandoen `mix new project_name` for å lage et nytt Elixir-prosjekt.
+3. Nå er det på tide å sette i gang med kode! Åpne filen `lib/project_name.ex` og begynn å eksperimentere med din første funksjon.
 
-For å opprette et nytt prosjekt, kan du kjøre følgende kommando i terminalen:
+Her er et eksempel på hvordan en enkel funksjon kan se ut i Elixir:
 
+```Elixir
+def hello(name) do
+  "Hei, #{name}!"
+end
 ```
-mix new project_navn
-```
+I denne funksjonen tar vi inn et navn som parameter, og returnerer en streng med en hilsen. For å teste dette, kan du kjøre kommandoen `iex -S mix` i terminalen for å åpne Elixir sin interaktive skall, og deretter kjøre `Hello.hello("Navn")` for å se output.
 
-Dette vil generere et grunnleggende prosjektskjelett med alt du trenger for å begynne å skrive din første Elixir-applikasjon.
+## Dykk dypere
 
-## Deep Dive: Dypere informasjon om å starte et nytt prosjekt med Elixir
+Etter å ha fått en smakebit på Elixir sin syntaks og funksjonaliteter, er det på tide å dykke dypere inn i språket og utforske dets mange unike funksjoner. Elixir har for eksempel et robust mønstermatching-system og et kraftig asynkront jobbsystem ved hjelp av "beverages". Å utforske disse og andre funksjoner vil hjelpe deg å bygge mer effektive og skalerbare applikasjoner.
 
-Ved å bruke Mix, kan du også opprette en applikasjon for å kjøre webserveren Phoenix. Dette gjøres ved å kjøre følgende kommando i din prosjektmappe:
-
-```
-mix phx.new navn_på_applikasjonen
-```
-
-Dette vil generere et komplett prosjektskjelett for en Phoenix-applikasjon, inkludert nødvendig oppsett og filstruktur for å bygge en moderne webapplikasjon.
-
-I tillegg til Mix, kan du også bruke Hex - Elixir sin pakkebehandler for å legge til funksjonalitet til din applikasjon. For å legge til en pakke, må du først søke etter den på Hex-nettstedet, og deretter oppgi navnet på pakken som en avhengighet i ditt `mix.exs`-fil. Installering av pakker gjøres deretter ved å kjøre `mix deps.get`.
+En annen fordel med å bruke Elixir er at det kjører på Erlang virtuell maskin (BEAM) som er kjent for å være svært stabilt og feiltolerant. Dette betyr at applikasjonene dine vil kunne håndtere feil og kjøre jevnt uten å krasje.
 
 ## Se også
 
-* [Elixir Homebrew-installasjonsguide](https://elixir-lang.org/install.html#mac-os-x)
-* [Elixir for Windows](https://elixir-lang.org/install.html#windows)
-* [Hex-nettstedet](https://hex.pm/)
+Du kan lære mer om Elixir og begynne å bygge dine egne prosjekter ved å sjekke ut disse ressursene:
+
+- [Offisiell Elixir-nettside](https://elixir-lang.org/)
+- [Elixir School](https://elixirschool.com/no/)
+- [Elixir forum](https://elixirforum.com/)
+- [Elixircast podcast](https://elixircast.com/)
+
+Lykke til med ditt Elixir-prosjekt! 😉

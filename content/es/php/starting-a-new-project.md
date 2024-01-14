@@ -1,49 +1,42 @@
 ---
-title:    "PHP: Comenzando un nuevo proyecto"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/starting-a-new-project.md"
+title:                "PHP: Comenzando un nuevo proyecto"
+programming_language: "PHP"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## ¿Por qué empezar un nuevo proyecto?
 
-Empezar un nuevo proyecto en PHP puede ser una forma emocionante de expandir tus habilidades de programación y crear algo nuevo y único. Además, puede ser una gran oportunidad de aprender nuevas técnicas y herramientas de desarrollo.
+Es posible que te hayas dado cuenta de que siempre estás utilizando las mismas herramientas y tecnologías en tus proyectos, y que ha llegado el momento de probar algo nuevo. Tal vez quieras ampliar tus habilidades o simplemente explorar nuevas posibilidades. Cualquiera que sea la razón, empezar un nuevo proyecto puede ser una experiencia emocionante y enriquecedora.
 
-## Cómo hacerlo:
+## Cómo empezar un nuevo proyecto en PHP
 
-Para empezar un nuevo proyecto en PHP, simplemente debes seguir estos pasos:
+Para empezar un nuevo proyecto en PHP, lo primero que debes hacer es asegurarte de tener instalado PHP en tu equipo. Puedes descargar la última versión desde el sitio oficial de PHP. Una vez que tengas instalado PHP, puedes crear una nueva carpeta para tu proyecto y empezar a escribir código.
 
-1. Instalar un entorno de desarrollo PHP en tu computadora.
-2. Familiarizarte con los conceptos básicos de PHP, como variables, bucles y funciones.
-3. Crear un archivo `.php` para escribir tu código.
-4. Utilizar las etiquetas de apertura y cierre `<?php` y `?>` para delimitar tu código.
-5. Guardar y ejecutar tu código para ver el resultado.
+A continuación, te mostramos un ejemplo de un código básico en PHP que muestra "¡Hola Mundo!" en la página web:
 
-```PHP 
-<!-- Ejemplo de código PHP -->
+```php
 <?php
-   // Definir una variable y asignarle un valor
-   $nombre = "María";
-   
-   // Imprimir el valor de la variable
-   echo "¡Hola " . $nombre . "!";
+echo "¡Hola Mundo!";
 ?>
 ```
 
-¡Felicitaciones! Acabas de escribir tu primer código en PHP. Ahora puedes seguir construyendo tu proyecto utilizando otras características y funcionalidades de PHP.
+Una vez que tengas tu código escrito, puedes ejecutarlo abriendo tu navegador web y escribiendo la dirección URL de tu archivo PHP. Si todo funciona correctamente, deberías poder ver el mensaje "¡Hola Mundo!" en tu pantalla.
 
-## Profundizando:
+## Sumérgete más en el mundo de PHP
 
-Si quieres profundizar más en la creación de tu proyecto en PHP, aquí hay algunas cosas que puedes hacer:
+Si quieres profundizar en tus conocimientos de PHP, hay muchas herramientas y recursos disponibles en línea. Puedes explorar la documentación oficial de PHP, unirte a comunidades en línea de programadores de PHP y seguir tutoriales y ejemplos en línea.
 
-- Aprender sobre estructuras de datos en PHP, como arrays y objetos.
-- Utilizar funciones predefinidas de PHP para realizar tareas comunes, como `strlen()` para obtener la longitud de una cadena.
-- Aprender a manejar errores y excepciones en tu código para asegurarte de que funcione correctamente.
-- Utilizar librerías y frameworks de PHP para ampliar las funcionalidades de tu proyecto.
+Además, también puedes considerar utilizar un framework de PHP, como Laravel o Symfony, para facilitar el proceso de desarrollo. Estos frameworks ofrecen una estructura y herramientas adicionales para crear aplicaciones web más complejas.
 
-## Ver también:
+Incluso puedes explorar otras ramas de PHP, como WordPress, para crear sitios web y blogs dinámicos.
 
-- [Documentación oficial de PHP](https://www.php.net/manual/es/)
-- [Curso básico de PHP en Platzi](https://platzi.com/clases/php/)
-- [Frameworks populares de PHP](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
+## Ver también
+
+- [Sitio oficial de PHP](https://www.php.net/)
+- [Documentación oficial de PHP](https://www.php.net/docs.php)
+- [Laravel - framework de PHP](https://laravel.com/)
+- [Symfony - framework de PHP](https://symfony.com/)
+- [WordPress](https://wordpress.org/)

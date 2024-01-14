@@ -1,47 +1,50 @@
 ---
-title:    "Ruby: Obtendo a data atual."
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/getting-the-current-date.md"
+title:                "Ruby: Obtendo a data atual"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual?
+# Por que precisamos da data atual?
 
-Obter a data atual é uma tarefa bastante utilizada na programação. Isso é especialmente importante para programas que precisam se atualizar constantemente com base na data ou para registrar informações em um banco de dados com a data atual. Além disso, obter a data atual também é útil para fins de visualização de dados em aplicativos ou sites.
+É muito comum em qualquer linguagem de programação a necessidade de obter a data atual. Isso pode ser útil para diversas situações, como registros de eventos, análises de dados, entre outros. Neste artigo, vamos explorar como obter a data atual em Ruby.
 
-## Como Fazer:
+## Como fazer isso em Ruby
 
-Para obter a data atual em Ruby, podemos usar o método `Time.now`. Este método retorna um objeto `Time`, que contém informações sobre a data e hora atual. Aqui está um exemplo:
+Em Ruby, podemos utilizar o objeto `DateTime` para obter a data e hora atual. Para isso, precisamos primeiro exigir `date` como uma biblioteca em nosso código:
 
-```ruby
-# Retorna o objeto Time atual
-data = Time.now
-
-# Imprime o objeto Time no formato padrão
-puts data
-
-# Imprime a data atual em um formato personalizado
-puts data.strftime("%d/%m/%Y")
+```Ruby
+require 'date'
 ```
 
-A saída deste código seria:
+Em seguida, podemos usar o método `now` do objeto `DateTime` para obter a data e hora atuais:
 
+```Ruby
+DateTime.now
 ```
-2021-04-05 15:30:12 +0300
-05/04/2021
+
+Podemos também especificar o formato em que desejamos que a data seja exibida, utilizando o método `strftime`. Por exemplo, se quisermos exibir a data atual no formato dd/mm/aaaa, podemos fazer o seguinte:
+
+```Ruby
+DateTime.now.strftime("%d/%m/%Y")
 ```
 
-Podemos ver que o objeto `Time` contém informações como data, hora, fuso horário e formato de data e hora. Ao usar o método `strftime`, podemos especificar um formato personalizado para a data e hora, como mostrado no exemplo acima. Para obter mais informações sobre os formatos possíveis, você pode consultar a [documentação oficial](https://ruby-doc.org/core-3.0.0/Time.html#method-i-strftime) do método `strftime`.
+Isso irá resultar em uma string contendo a data atual no formato desejado, como por exemplo: 29/07/2021.
 
-## Profundidade:
+## Aprofundando mais sobre a obtenção da data atual
 
-O método `Time.now` é bastante simples, mas sua implementação pode ser um pouco complicada. Ele utiliza o sistema operacional subjacente para obter a data e hora atual. Outro fator importante a ser mencionado é que a data e hora dependem da configuração do fuso horário no sistema operacional. Isso significa que, se a configuração do fuso horário estiver incorreta, a data e hora que você obterá também será incorreta.
+Em Ruby, o objeto `DateTime` é derivado do objeto `Date`, que por sua vez é derivado do objeto `Object`. Isso significa que ele herda diversos métodos e propriedades dos objetos pais.
 
-Além disso, o método `Time.now` também é afetado pelas mudanças de horário de verão. Isso significa que, se você obtiver a data atual durante a mudança de horário de verão, a hora obtida pode não ser a correta. Para evitar esses problemas, é recomendável utilizar um serviço de tempo externo, como o [Network Time Protocol (NTP)](https://pt.wikipedia.org/wiki/Network_Time_Protocol).
+Além disso, é importante ressaltar que ao utilizar o método `now`, obtemos a data e hora atual com base no fuso horário do sistema em que o código está sendo executado. Se quisermos especificar um fuso horário diferente, podemos utilizar o método `at_time` e passar como parâmetro o fuso horário desejado.
 
-## Veja também:
+Outro detalhe importante é que ao utilizar o método `strftime`, é possível especificar diversos formatos diferentes para a data e hora, como por exemplo: dia da semana, mês, ano, hora, entre outros.
 
-- [Documentação do Ruby sobre a classe Time](https://ruby-doc.org/core-3.0.0/Time.html)
-- [Documentação do método strftime](https://ruby-doc.org/core-3.0.0/Time.html#method-i-strftime)
-- [Como obter o horário atual a partir de um servidor NTP em Ruby](https://stackoverflow.com/questions/31318483/get-current-time-from-ntp-server-in-ruby)
+# Veja também
+
+- [Documentação oficial do Ruby sobre DateTime](https://ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/DateTime.html)
+- [Tutorial sobre manipulação de datas em Ruby](https://www.tutorialspoint.com/ruby/time_date.htm)
+- [Exemplo prático de utilização do objeto DateTime em Ruby](https://www.rubyguides.com/2017/02/ruby-date-format/)
+
+Esperamos que este artigo tenha sido útil e possa facilitar a obtenção da data atual em suas aplicações em Ruby. Divirta-se programando!

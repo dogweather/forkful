@@ -1,40 +1,51 @@
 ---
-title:    "Elm: משרשר תווים"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/concatenating-strings.md"
+title:                "Elm: מחבר מחרוזות"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-תיאור מקוצר של הסיבה לבחירה בשימוש בקיבוץ תווים (string concatenation).
+קיצור על ידי חיבור מחרוזות היא טכניקה חשובה וחסכונית לשימוש בתכנות השפה Elm. חיבור מחרוזות מאפשר לנו ליצור מחרוזות חדשות בצורה נוחה ומהירה, ובכך לשפר את חוויית התכנות שלנו.
 
-הקיבוץ של תווים (string concatenation) הינו פעולה שוה בעיר החישובית להקדמה של מחרוזת לתוך מחרוזת אחרת. זה נחמד כשאתם רוצים ליצור מחרוזות דינמיות או כדי להציג מידע בצורה מאורגנת.
+## איך לעשות זאת
 
-...elm
--- קביצי
+תחילה, נגדיר את המחרוזות שברצוננו לחבר כארגומנטים לפונקציה הפנימית "String.concat". למשל:
 
-import Html exposing (text)
+```Elm
+myStrings = ["שלום ", "עולם"]
+String.concat myStrings  --"שלום עולם"
+```
 
-mishloachManot : String -> String -> String
-mishloachManot sender recipient =
-    "Hello " ++ recipient ++ "! " ++ sender ++ " sent you a mishloach manot for Purim."
+אם נרצה להוסיף תו או מחרוזת בין המחרוזות שמחברים, אנחנו יכולים להשתמש בפונקציה "String.join". למשל:
 
-main =
-  text (mishloachManot "Leah" "Ruth")
+```Elm
+myStrings = ["שלום ", "עולם"]
+String.join ", " myStrings  --"שלום, עולם"
+```
 
--- Output:
--- Hello Ruth! Leah sent you a mishloach manot for Purim.
+עוד פונקציה שימושית היא "String.append", שמאפשרת לנו להוסיף מחרוזת או תו לסוף מחרוזת קיימת. למשל:
 
-## Deep Dive
+```Elm
+myString = "שלום"
+String.append " לכולם!" myString  --"שלום לכולם!"
+```
 
-כאשר משתמשים בקיבוץ תווים, יש לקחת בחשבון את הסדר. בתוך הקיבוץ אתם יכולים להשתמש במשתנים או להוסיף תווים קבועים כדי להרחיב את המחרוזת. כמו כן, חשוב לזכור שלמחרוזת משתנה אפשר להוסיף רק מחרוזות נוספות ולא ערכים מספריים או אחרים.
+## ירוקה לעומק
 
-עוד פעולות שניתן לבצע על מחרוזות הם חיתוך (slicing), החלפת תווים (replace), וחיפוש (search). את כל אלו ניתן לבצע גם בתוך הקיבוץ תווים וזה משמעותי בעיקר כאשר יש מספר גדול של מחרוזות לעבודה.
+כאשר אנחנו משתמשים בפונקציה "String.concat", נשים לב שהיא מקבלת כארגומנט רשימת מחרוזות. ניתן להשתמש בפונקציה "List.map" כדי לבנות רשימת מחרוזות מתוך רשימת ערכים אחרים. למשל, אם נרצה לחבר את מספרי השנה מ-2000 עד 2020, אנחנו יכולים לעשות זאת כך:
 
-## ראו גם
+```Elm
+numbers = List.range 2000 2020
+String.concat (List.map toString numbers)  --"200020012002200320042005200620072008200920102011201220132014201520162017201820192020"
+```
 
-[מדריך לשפת Elm בעברית](https://www.elm-tutorial.org/he/introduction.html)
-[הרחבות לשפת Elm](https://package.elm-lang.org/)
-[מאמרים על שפת Elm](https://elm-lang.org/blog)
+כמו כן, ניתן להשתמש בפונקציה "String.filter" כדי לסנן מחרוזת לפי תנאי מסוים. למשל, אם נרצה להסיר את כל האותיות הקטנות ממחרוזת, נוכל לעשות זאת כך:
+
+```Elm
+myString = "AbCdEfG"
+String.filter Char.isUpper myString  --"ACEG"
+```

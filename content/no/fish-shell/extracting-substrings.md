@@ -1,65 +1,37 @@
 ---
-title:    "Fish Shell: Utvinning av understrenger"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/extracting-substrings.md"
+title:                "Fish Shell: Utvinning av delstrenger"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Har du noen gang ønsket å hente ut en del av en tekststreng, men visste ikke hvordan? Da er å ekstrahere substrings noe som kan være nyttig for deg! Det lar deg enkelt og raskt hente ut deler av en tekststreng basert på bestemte kriterier.
+Når vi jobber med tekstbehandling og manipulering i programmer, kan det være nyttig å kunne ekstrahere deler av en tekststreng basert på bestemte kriterier. Dette kan være for å finne og erstatte spesifikke ord, trekke ut data fra en større tekst eller lage nye variabler basert på eksisterende tekst. Å kunne ekstrahere substrings kan være en nyttig ferdighet å ha i verktøykassen din som programmerer.
 
-## Hvordan
+## Hvordan du gjør det
 
-For å ekstrahere substrings i Fish Shell, bruker vi kommandoen "string" etterfulgt av et kolon (:) og deretter et tall eller en bokstav som indikerer hvilken del av tekststrengen du ønsker å hente ut. La oss si for eksempel at vi har en tekststreng, "Hei, jeg er en Fish bruker", og vi ønsker å hente ut "Fish" fri for teksten. Her er et eksempel på hvordan du kan gjøre dette:
-
-```Fish Shell
-set sentence "Hei, jeg er en Fish bruker"
-echo $sentence:string condition
-```
-
-Dette vil gi oss følgende utskrift:
-
-```
-Fish
-```
-
-Vi brukte "string" for å indikere at vi ønsker å hente ut en del av $setningen, og deretter fulgte vi med "condition" som er den delen vi ønsker å ekstrahere.
-
-Vi kan også bruke en tallverdi etter kolon, for eksempel hvis vi ønsker å hente ut de første fire bokstavene i teksten:
+For å ekstrahere substrings i Fish Shell, må vi bruke funksjonen `string sub`. Her er et eksempel på hvordan vi kan bruke denne funksjonen:
 
 ```Fish Shell
-echo $sentence:string 0 4
+set tekst "Dette er en testtekst"
+echo (string sub -s 6 -l 2 $tekst)
 ```
 
-Output vil være:
+I dette eksempelet lar `string sub` oss velge startposisjonen og lengden på substringen vi ønsker å ekstrahere. I dette tilfellet begynner vi på posisjon 6 (som tilsvarer det første bokstavet i ordet "en") og trekker ut 2 bokstaver, som gir oss "en" som output.
 
-```
-Hei,
-```
+Dette er en veldig enkel måte å ekstrahere substrings på, men man kan også bruke regex-uttrykk for å være mer spesifikk i utvelgelsen av substringer.
 
 ## Dypdykk
 
-Hvis du ønsker å ekstrahere en substring basert på et annet mønster enn en tallverdi eller bokstav, kan du bruke "contains" kommandoen. Denne lar deg hente ut en del av tekststrengen som inneholder et bestemt ord eller uttrykk.
+Dersom du ønsker å lære mer om å ekstrahere substrings i Fish Shell, kan du ta en titt på [`string sub` dokumentasjonen](https://fishshell.com/docs/current/cmds/string.html#string-sub) for å få en oversikt over alle tilgjengelige funksjoner og muligheter. Du kan også eksperimentere med forskjellige regex-uttrykk for å finne den beste måten å ekstrahere ønsket tekst på.
 
-La oss si at vi har en tekststreng, "Jeg elsker å spise sushi", og vi ønsker å hente ut "sushi". Her er et eksempel på hvordan vi kan gjøre dette:
+Et annet godt verktøy for å lære mer om substring-ekstraksjon er å lese og forstå hvordan forskjellige programmerer bruker denne funksjonen i sine prosjekter. Dette kan gi deg en bedre forståelse av hvordan du kan bruke det i egne prosjekter.
 
-```Fish Shell
-set sentence "Jeg elsker å spise sushi"
-echo $sentence:contains sushi
-```
+## Se også
 
-Dette vil gi oss følgende output:
-
-```
-sushi
-```
-
-Vi brukte "contains" for å indikere at vi ønsker å hente ut en del av $setning som inneholder ordet "sushi".
-
-## Se Også
-
-- Fish Shell sine offisielle dokumentasjon om substrings: https://fishshell.com/docs/current/cmds/string.html
-- En tutorial om hvordan å ekstrahere substrings i Fish Shell: https://www.fosslinux.com/38506/how-to-extract-substrings-from-string-in-fish-shell.htm
-- En Stack Overflow-tråd om ekstrahering av substrings: https://stackoverflow.com/questions/39295678/how-to-get-first-letter-of-string-in-fish-shell
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Regex-tutorial for nybegynnere](https://regexone.com/)
+- [Eksempel på Fish Shell-prosjekt som bruker `string sub`](https://github.com/fish-shell/fish-shell/blob/master/share/functions/__fish_print_hostname.fish)

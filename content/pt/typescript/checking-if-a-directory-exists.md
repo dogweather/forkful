@@ -1,40 +1,41 @@
 ---
-title:    "TypeScript: Verificando se um diretório existe"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/checking-if-a-directory-exists.md"
+title:                "TypeScript: Verificando se um diretório existe"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que verificar se um diretório existe?
+## Por que verificar se um diretório existe?
 
-Verificar se um diretório existe é uma tarefa importante em projetos de programação. Isso permite que você garanta que o diretório necessário esteja presente antes de executar determinadas funções. Além disso, pode ajudar a evitar erros e garantir que o código seja mais robusto.
+Verificar se um diretório existe é uma tarefa comum em programação. Isso é importante porque permite que o programa faça verificações e tome decisões com base na presença ou ausência de um diretório específico no sistema de arquivos.
 
-## Como fazer?
+## Como fazer
 
-Para verificar se um diretório existe em TypeScript, podemos usar a biblioteca nativa 'fs'. Primeiro, importamos a função 'statSync' desta biblioteca, que permite verificar as estatísticas de um determinado arquivo ou diretório. Em seguida, usamos o método 'existsSync' para verificar se o diretório existe ou não.
+Verificar se um diretório existe em TypeScript é relativamente simples. Primeiro, precisamos importar o módulo "fs" (File System) para ter acesso às funções relacionadas ao sistema de arquivos.
 
 ```TypeScript
-import fs from 'fs';
-// Verificar se o diretório existe
-const dirExists = (path: string) => {
-  try {
-    fs.statSync(path);
-    return true;
-  } catch (err) {
-    return false;
-  }
-};
-// Exemplo de uso
-console.log(dirExists('./meuDiretorio')); // Retorna true se existir, false se não existir
+import * as fs from "fs";
 ```
 
-## Mergulho Profundo
+Em seguida, podemos usar a função "existsSync" para verificar se um diretório existe no caminho especificado. Esta função retorna um valor booleano, true se o diretório existir e false se não existir.
 
-Ao verificar se um diretório existe, é importante entender que o método 'existsSync' pode retornar 'true' mesmo se o argumento fornecido for um arquivo e não um diretório. Além disso, o diretório em si pode existir, mas pode não estar acessível devido a permissões de arquivo ou disco. Portanto, é recomendado usar o método 'isDirectory' para garantir que o caminho fornecido seja de fato um diretório antes de prosseguir com certas operações no código.
+```TypeScript
+const directoryExists = fs.existsSync("caminho/do/diretório");
+console.log(directoryExists); // Saída: true ou false
+```
 
-# Veja também
+## Deep Dive
 
-- [Documentação oficial da biblioteca 'fs' em Node.js](https://nodejs.org/api/fs.html)
-- [Guia para verificar se um diretório existe em TypeScript](https://www.geeksforgeeks.org/how-to-check-if-a-directory-or-a-file-exists-in-system/)
-- [Exemplos práticos de uso do método 'existsSync'](https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm)
+Ao verificar se um diretório existe, é importante entender o que pode interferir no resultado. Algumas coisas a serem consideradas são:
+
+- Erros de permissão: se o programa não tiver permissão para acessar o diretório, a função "existsSync" retornará false.
+- Caminho absoluto vs caminho relativo: é importante fornecer o caminho correto para o diretório. Se o caminho for relativo, ele será resolvido em relação à localização do arquivo TypeScript. Se for absoluto, ele deve ser fornecido da forma exata.
+- Erros de digitação: verifique se o caminho fornecido está correto e livre de erros de digitação, pois isso pode resultar em um resultado inesperado.
+
+## Veja também
+
+- [Documentação do módulo fs](https://nodejs.org/api/fs.html)
+- [Tutorial: Como usar o módulo fs em TypeScript](https://www.digitalocean.com/community/tutorials/nodejs-fs-module-typescript)
+- [Artigo: Sistema de arquivos em Node.js](https://www.luiztools.com.br/post/tutorial-de-node-js-sistema-de-arquivos/)

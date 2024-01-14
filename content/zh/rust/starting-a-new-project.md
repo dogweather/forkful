@@ -1,35 +1,21 @@
 ---
-title:    "Rust: 开始一个新项目"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/rust/starting-a-new-project.md"
+title:                "Rust: 开始一个新项目"
+programming_language: "Rust"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么选择Rust来开始一个新项目
+为什么：为什么会去开始一个新项目？可能是因为对Rust语言的兴趣、想要学习新的编程语言、或者需要一个高效的解决方案来构建大型应用程序。
 
-如果你是一个有经验的程序员，估计你一定听说过Rust这门语言。它是一种高效、安全和现代的语言，为了解决C和C++存在的缺陷而设计。所以，如果你正在考虑开始一个新的项目，不妨考虑使用Rust来编写它。下面会为你提供如何使用Rust来开始一个新项目的方法，以及如何更深入地了解这门语言。
+如何开始：首先，您需要从官方网站下载并安装Rust编译器。然后，您可以建立自己的项目文件夹，并使用命令行工具来初始化项目。下一步，您可以使用任何喜欢的文本编辑器来编写代码，并使用```Rust ... ```代码块来展示Rust语言的语法。最后，您可以使用Rust编译器来编译并运行您的程序。
 
-## 如何开始一个新的Rust项目
+深入了解：在开始一个新的项目之前，还有一些重要的事项需要注意。首先，您需要确定项目的目的，并制定清晰的计划和目标。其次，您需要考虑使用哪些模块和库来实现您的项目需求。最后，您需要遵循Rust的最佳实践，并使用合适的数据结构和算法来最大化程序的性能。
 
-如果你已经安装了Rust工具链，只需要在命令行中输入`cargo new <项目名>`即可创建一个新的Rust项目。这条命令会生成一个包含了`src`文件夹和`Cargo.toml`文件的项目目录结构。`src`文件夹中的`main.rs`文件就是你的项目的入口文件，你可以在这里编写你的代码。下面是一个使用Rust打印"Hello, world!"的例子：
+请参阅：如果您想要深入学习Rust语言，您可以查看官方文档或者参考一些优秀的教程。同时，您也可以加入Rust社区，与其他开发者交流经验和学习更多有趣的项目。
 
-```Rust
-fn main() {
-    println!("Hello, world!");
-}
-```
-
-如果你想运行代码，可以使用`cargo run`命令。如果想编译代码而不运行它，可以使用`cargo build`命令。Rust还有一个非常方便的工具来测试代码，就是`cargo test`命令。当然，这只是Rust提供的一小部分功能，更多有关Rust的内容请移步下一节。
-
-## 深入了解如何开始一个新的Rust项目
-
-如果你想了解Rust语言的更多细节，可以阅读官方文档或者看一些相关的视频教程。学习Rust的最佳方式就是尝试编写一些项目来实践你的知识。同时，Rust也有一个强大的社区，你可以参与其中，与其他Rust开发者交流经验。总的来说，学习Rust需要耐心和持久的精神，因为它不像其他语言那么容易学习，但一旦掌握了它的特性，你将会发现它的强大之处。
-
-## 请参阅
-
-- [Rust官方文档](https://www.rust-lang.org/zh-CN/)
-- [Rust学习资源汇总](https://github.com/freedomofkeima/rust-learning/)
-- [Rust语言中文社区](https://rust.cc/)
-
-感谢阅读这篇关于使用Rust来开始一个新项目的博文，希望对你有所帮助！
+请参阅：
+- 官方Rust语言文档：https://www.rust-lang.org/
+- Rust学习网站：https://learnxinyminutes.com/docs/zh-cn/rust-cn/
+- Rust中文社区：https://www.rust.cc/

@@ -1,35 +1,43 @@
 ---
-title:    "Kotlin: Eliminando personajes que coinciden con un patrón."
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/deleting-characters-matching-a-pattern.md"
+title:                "Kotlin: Eliminando caracteres que coinciden con un patrón"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# ¿Por qué borrar caracteres que coinciden con un patrón?
 
-Eliminar caracteres que coinciden con un patrón puede ser una tarea útil y necesaria en la programación de Kotlin. Esto puede ahorrar tiempo y mejorar la eficiencia al trabajar con grandes cantidades de texto o datos.
+A menudo, en la programación, necesitamos manejar cadenas de texto que contienen caracteres que no son deseados o no son relevantes para nuestro propósito. Por ejemplo, puede que necesitemos eliminar caracteres de espacio en blanco, espacios, guiones, etc. en una dirección o número de teléfono antes de almacenarlos en una base de datos o mostrarlos en un formulario. En estos casos, borrar caracteres que coinciden con un patrón puede ahorrarnos tiempo y esfuerzo.
 
-## Cómo
+## Cómo hacerlo
 
-Para eliminar caracteres con un patrón específico en Kotlin, podemos utilizar la función `replace` en la cadena de texto a la que queremos aplicar el cambio. Por ejemplo, si queremos eliminar todas las vocales de una palabra, podríamos escribir lo siguiente en nuestro código:
+Para borrar caracteres que coinciden con un patrón en Kotlin, podemos utilizar el método `replace()` de la clase `String`. Este método toma dos parámetros: el primer parámetro es el patrón de caracteres que queremos eliminar y el segundo parámetro es el reemplazo que queremos utilizar en su lugar.
 
 ```Kotlin
-val palabra = "Hola"
-val nuevaPalabra = palabra.replace("[aeiou]".toRegex(), "")
-println(nuevaPalabra) // imprime "Hl"
+val direccion = "123 Calle Principal"
+val direccionLimpia = direccion.replace("\\s".toRegex(), "")
 ```
 
-Este código utiliza una expresión regular para encontrar y eliminar cualquier vocal de la palabra original. Podemos utilizar diferentes patrones y expresiones regulares para adaptar la función a nuestras necesidades específicas.
+En el ejemplo anterior, utilizamos el patrón `\\s` para representar cualquier espacio en blanco y reemplazamos esos espacios con una cadena vacía `""`, lo que da como resultado `123CallePrincipal`.
 
-## Deep Dive
+Podemos utilizar múltiples `replace()` para borrar diferentes patrones de caracteres en una sola cadena. Además, también podemos utilizar estos métodos para reemplazar caracteres con otros diferentes o con caracteres especiales, como la `ñ` o `á`.
 
-La función `replace` también nos permite reemplazar los caracteres que coinciden con nuestro patrón con otro texto. Además, podemos utilizar el parámetro `ignoreCase` para que la búsqueda de caracteres sea insensible a mayúsculas y minúsculas.
+## Profundizando en el tema
 
-Además, es importante tener en cuenta que la función `replace` devuelve una nueva cadena de texto con los cambios realizados, pero no modifica la cadena original. Esto es útil para mantener la integridad de nuestros datos originales.
+Si queremos ser más específicos al borrar caracteres que coinciden con un patrón, podemos utilizar expresiones regulares en lugar de cadenas de texto simples en el primer parámetro del método `replace()`. Las expresiones regulares nos permiten definir patrones más complejos utilizando una sintaxis específica.
 
-## Ver También
+Por ejemplo, si queremos borrar todos los caracteres que no sean letras o números de una cadena de texto, podemos utilizar la expresión regular `[^A-Za-z0-9]`, que indica "todo lo que no sea una letra de la A a la Z, mayúscula o minúscula, o un número del 0 al 9".
 
-- [Documentación oficial de Kotlin sobre la función replace](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/replace.html)
-- [Ejemplos de expresiones regulares en Kotlin](https://android.jlelse.eu/a-guide-to-regular-expressions-in-kotlin-78e753a1302b)
-- [Tutorial interactivo sobre expresiones regulares en Kotlin](https://www.resocoder.com/2019/07/18/kotlin-regular-expressions-complete
+```Kotlin
+val numero = "(555) 123-4567"
+val numeroLimpio = numero.replace("[^0-9]".toRegex(), "")
+```
+
+En este caso, utilizamos la expresión regular `[^0-9]` para representar todos los caracteres que no sean números y los reemplazamos con una cadena vacía, lo que dará como resultado `5551234567`.
+
+## Ver también
+
+- [Apuntes de expresiones regulares en Kotlin](https://kotlinlang.org/docs/regex.html)
+- [Método `replace()` en la documentación de Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)

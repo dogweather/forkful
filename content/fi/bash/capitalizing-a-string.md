@@ -1,40 +1,44 @@
 ---
-title:    "Bash: Tekstin muuttaminen isoin kirjaimin"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/capitalizing-a-string.md"
+title:                "Bash: Merkkijonon muuttaminen isoin kirjaimin"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Joskus Bash-ohjelmoijana sinun on ehkä tarvinnut muuttaa merkkijonon kirjainten kokoa. Tämä voi olla hyödyllistä esimerkiksi kun haluat korostaa tai erottaa tietyn osan merkkijonosta. Seuraavaksi kerron sinulle kuinka voit tehdä tämän Bash-ohjelmointikielen avulla.
+On monia syitä, miksi joku haluaisi käyttää Bash-ohjelmointia. Bash-ohjelmointi on yksi suosituimmista ohjelmointityökaluista Linux-käyttöjärjestelmän käyttäjille, sillä se on helppo oppia ja käyttää. Yksi yleinen tehtävä Bash-ohjelmoinnissa on merkkijonojen suur- tai pientekirjoittaminen. Tässä blogikirjoituksessa keskitymme nimenomaan siihen, miten merkkijonon voi muuttaa isoiksi kirjaimiksi.
 
-## Kuinka tehdä
+## Kuinka tehdä se
 
-Voit muuttaa merkkijonon kirjainten kokoa yhdellä komennolla: `tr "[:lower:]" "[:upper:]" < file.txt` Tämä komento muuttaa kaikki file.txt -tiedostossa olevat pienimmät kirjaimet suuriksi kirjaimiksi. Voit myös käyttää tätä komentoa suoraan komentoriviltä.
+Bash-ohjelmoinnin avulla merkkijonon suur- tai pientekirjoittaminen on helppo tehtävä. Tämä tapahtuu erityisen komennon avulla, nimeltään "tr". Seuraavassa esimerkissä näet, kuinka voit käyttää tätä komentoa muuttaaksesi merkkijonon "Hello World!" isoiksi kirjaimiksi:
 
-```
-Bash
-#!/bin/bash
-
-string="Tervetuloa suomeen"
-echo "Alkuperäinen merkkijono: $string"
-
-upper=$(echo "$string" | tr "[:lower:]" "[:upper:]")
-echo "Suuri kirjain nyt: $upper"
-
-lower=$(echo "$upper" | tr "[:upper:]" "[:lower:]")
-echo "Pienet kirjaimet nyt: $lower"
+```Bash
+echo "Hello World!" | tr '[:lower:]' '[:upper:]'
 ```
 
-Tässä esimerkissä luomme uuden merkkijonon `upper` ja `lower` -muuttujilla. Ensimmäisessä komennossa käytämme `tr` -toimintoa muuttaaksemme pienet kirjaimet suuriksi ja tallennamme sen uuteen muuttujaan `upper`. Toisessa komennossa muutamme suuret kirjaimet takaisin pieniksi käyttämällä `lower` -muuttujaa. Voit kokeilla tätä esimerkkiä omassa Bash-ympäristössäsi.
+Tämän komennon avulla merkkijono "Hello World!" muutetaan muotoon "HELLO WORLD!". Tämä johtuu siitä, että "tr"-komento muuttaa jokaisen kirjaimen merkkijonossa vastaavaan toiseen. Ensimmäinen joukko määrittelee pienet kirjaimet ja toinen joukko suuret kirjaimet.
 
-## Syväsukellus
+Voit myös käyttää "tr"-komentoa muuttamaan merkkijonon toisinpäin, eli suuriksi kirjaimiksi pieniksi kirjaimiksi. Seuraavassa esimerkissä näet, kuinka tämä tehdään:
 
-Käyttämällä `tr` -komennon "[:lower:]" ja "[:upper:]" parametreja voit muokata muitakin merkkijonon ominaisuuksia. Esimerkiksi jos haluat muuttaa tekstissä esiintyvät numerot kirjaimiksi, voit käyttää "[:digit:]" ja "[:alpha:]" parametreja. Voit myös yhdistellä erilaisia ​​parametreja saadaksesi monimutkaisempia muokkauksia.
+```Bash
+echo "Hello World!" | tr '[:upper:]' '[:lower:]'
+```
+
+Esimerkin tulostus olisi "hello world!".
+
+## Syvempää tietoa
+
+Monet Bash-ohjelmoijat saattavat ihmetellä, miksi "tr"-komennon käskyt "[:lower:]" ja "[:upper:]" kirjoitetaan juuri tuolla tavalla. Tämä johtuu siitä, että Bash käyttää POSIX-standardia, joka määrittelee nämä merkinnät merkistöjen luokille. Merkistöjen luokkia käytetään määrittelemään, mitä merkkejä halutaan muuttaa. Esimerkiksi jos haluat muuttaa vain tietyn maan merkkijonon merkkejä, voit käyttää merkistöluokkaa, joka vastaa tuon maan merkkejä.
+
+Toinen hyvä ominaisuus, joka liittyy "tr"-komennon käyttöön, on säännöllisten lausekkeiden käyttö. Säännölliset lausekkeet mahdollistavat monimutkaisempien merkistöjen määrittämisen, tietyille "tr"-komennon suorittamille muutoksille.
 
 ## Katso myös
 
-- [Linux-komentorivin opas](https://help.ubuntu.com/community/UsingTheTerminal)
-- [Bash-skriptaus opas](https://en.wikibooks.org/wiki/Bash_Shell_Scripting)
+Tässä blogikirjoituksessa kävimme läpi yhden tavan muuttaa merkkijonon isoiksi tai pieniksi kirjaimiksi Bash-ohjelmoinnilla. On kuitenkin monia muita tapoja tehdä tämä sama tehtävä. Suosittelemme tutustumaan seuraaviin linkkeihin, joissa voit löytää lisätietoa ja muita vaihtoehtoisia tapoja käsitellä merkkijonoja Bashilla.
+
+- Täydellinen Bash-ohjelmointiopas (englanniksi): https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html 
+- Säännölliset lausekkeet Bashissa (englanniksi): https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Regular_Expressions 
+- Bash-kirjasto, j

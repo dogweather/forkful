@@ -1,48 +1,43 @@
 ---
-title:    "C++: Satunnaislukujen generoiminen"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/generating-random-numbers.md"
+title:                "C++: Satunnaisten lukujen luominen"
+programming_language: "C++"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi 
+## Miksi
 
-Tervehdys kaikille! Oletko koskaan miettinyt, miksi C++ -ohjelmointikielellä tehdään satunnainen numeroiden generointi? Satunnaiset numerot ovat hyödyllisiä monissa ohjelmoinnin sovelluksissa, kuten peleissä ja salausalgoritmeissa. Joten älä huoli, tämä blogikirjoitus selittää kaiken tarvittavan.
+Monilla ohjelmoijilla voi olla tarve generoida satunnaisia numeroita erilaisten sovellusten ja tehtävien parissa. Satunnaiset numerot voivat auttaa esimerkiksi simuloimaan tilanteita, laatimaan testidataa tai tarjoamaan vaihtelua pelissä.
 
-## Miten
+## Kuinka
 
-Satunnaisien numeroiden generointi C++:lla on helppoa ja nopeaa! Käytämme siihen standardikirjaston <random> ja <iostream>. Alla olevassa koodiesimerkissä käytämme satunnaisen luvun generoimiseen seed-arvoa (siemen), jotta saamme erilaisia lukuja joka kerta suorittaessamme koodin.
+Satunnaisien numeroiden generointi onnistuu helposti C++:lla käyttämällä funktiota rand() ja siihen liittyvää siemensize seed. Ensiksi täytyy lisätä oma siemensize, esimerkiksi ajan mukaan, jotta satunnaisluvut vaihtuvat jokaisella ohjelman käynnistyksellä.
 
-````C++
+```
 #include <iostream>
-#include <random>
+#include <cstdlib> // rand()
+#include <time.h> // time()
 
-int main() {
-  // Alustetaan seed-arvo
-  std::random_device rd;
-  // Käytetään seed-arvoa generaattorissa
-  std::mt19937 mt(rd());
-  // Määritetään haluttu arvojen väli
-  std::uniform_int_distribution<int> dist(1, 10);
+int main()
+{
+    srand(time(NULL)); // lisätään siemensize
 
-  // Tulostetaan 10 satunnainen lukua
-  for (int i = 0; i < 10; i++) {
-    std::cout << dist(mt) << " ";
-  }
-
-  return 0;
+    // generoidaan satunnainen numero väliltä 1-10
+    int satunnainenLuku = rand()%10 + 1;
+    std::cout << "Satunnainen luku väliltä 1-10: " << satunnainenLuku << std::endl;
+    return 0;
 }
-````
-Tämän koodiesimerkin tulostus voi esimerkiksi olla seuraavanlainen:
-5 9 6 3 10 1 4 2 7 8
+```
 
-## Syvemmälle
+Tässä esimerkissä käytetään modulo-operaatiota, jotta luvut pysyvät halutulla välillä. Voit muuttaa välit haluamaksesi, esimerkiksi jos haluat satunnaisia desimaalilukuja, voit muuttaa koodia ja sen tulostusta vastaavasti.
 
-Nyt kun tiedämme, kuinka generoida satunnaisia lukuja C++:lla, haluamme ehkä tietää, miten tämä tapahtuu taustalla. Generointi perustuu pseudo-satunnaislukugeneraattoriin, joka tuottaa lukuja tietyllä kaavalla seed-arvon perusteella. Seed-arvo puolestaan saadaan usein järjestelmän kellosta tai ruutupiirroksen tulemisesta. Näitä seed-arvoja yhdistämällä ja käyttämällä monimutkaisempia kaavoja, voidaan tuottaa näennäisesti satunnaisia lukuja. Kuitenkin näiden lukujen todellinen satunnaisuus riippuu käytetyistä kaavoista ja antureista.
+## Syvempi sukellus
+
+Edellä mainitun esimerkin lisäksi C++:lla on muitakin tapoja generoida satunnaisia lukuja, kuten esimerkiksi funktiot srand48() ja drand48(), jotka ovat tarkoitettu käytettäväksi desimaalilukujen kanssa. On myös huomioitava, että funktio rand() ei ole täysin satunnainen ja sen luvut voivat toistua pitkässä juoksussa. Jos tarvitset täysin satunnaisia lukuja, kannattaa tutustua esimerkiksi Boost-kirjaston random-toimintoihin.
 
 ## Katso myös
 
-- [C++:n random -kirjasto](https://en.cppreference.com/w/cpp/numeric/random)
-- [Satunnaislukugeneraattorit ja pseudosatunnaisuus](https://www.youtube.com/watch?v=4vJphRN3fFQ)
-- [Satunnaislukujen käyttö peleissä](https://www.gamasutra.com/view/feature/131500/random_number_generation_.php)
+- [C++ dokumentaatio satunnaisille luvuille](https://www.cplusplus.com/reference/cstdlib/rand/)
+- [Boost-kirjaston random-toiminnot](https://www.boost.org/doc/libs/1_77_0/doc/html/random.html)

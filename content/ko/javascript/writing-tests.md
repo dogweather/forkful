@@ -1,51 +1,47 @@
 ---
-title:    "Javascript: 컴퓨터 프로그래밍에 대한 기사 제목: 테스트 쓰기"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/writing-tests.md"
+title:                "Javascript: 테스트 작성"
+programming_language: "Javascript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 테스트를 작성해야 하는가?
+## 왜
 
-소프트웨어 개발에 있어서 테스트는 매우 중요합니다. 테스트를 작성하는 것은 코드의 신뢰성과 안정성을 높이는 데 도움이 되며, 버그를 발견하고 수정하는 데 매우 유용합니다.
+코드 테스트를 작성하는 이유는 단순입니다. 안정성과 신뢰성 있는 코드를 제공하기 위함입니다.
 
-## 작성 방법
+## 방법
 
-테스트를 작성하는 방법은 간단합니다. 먼저, ```describe``` 함수를 사용하여 테스트의 그룹을 만듭니다. 그리고 ```it``` 함수를 사용하여 각각의 테스트 케이스를 작성합니다. 아래는 간단한 예제 코드입니다.
+코드 테스트를 작성하는 방법은 간단합니다. Javascript에서 코드를 작성하고 테스트를 실행하는 예시를 아래 코드 블록으로 확인하실 수 있습니다.
 
 ```Javascript
-describe('계산기', () => {
-  it('더하기 테스트', () => {
-    expect(add(2, 3)).toBe(5);
-  });
-  
-  it('빼기 테스트', () => {
-    expect(subtract(5, 3)).toBe(2);
-  });
-  
-  it('곱하기 테스트', () => {
-    expect(multiply(2, 3)).toBe(6);
-  });
-  
-  it('나누기 테스트', () => {
-    expect(divide(10, 2)).toBe(5);
-  });
-});
+// 덧셈 함수 테스트
+function sum(a, b) {
+  return a + b;
+}
+
+// 예상 결과값: 5
+console.log(sum(2,3));
+
+// 예상 결과값: 11
+console.log(sum(5,6));
 ```
 
-위의 코드는 간단한 계산기 함수들을 테스트하는 예제입니다. 각각의 ```it``` 함수 안에는 ```expect``` 함수와 함께 예상되는 출력값을 작성합니다. 그리고 각각의 테스트 케이스를 실행하고 결과를 확인합니다.
+위 코드에서는 덧셈 함수를 정의한 후, 예상 결과값을 기대하여 `console.log()`를 이용해 테스트하고 있습니다. 정상적으로 동작하는 경우 예상 결과값과 실제 결과값이 일치하여 테스트 성공으로 간주할 수 있습니다.
 
-## 깊이 있는 내용
+## 심층 분석
 
-테스트를 작성하는데 있어서 다양한 방식과 패턴들이 존재합니다. 개발 중인 언어나 프레임워크에 따라 적합한 방법들이 다르며, 테스트 커버리지를 높이는 데에도 중요한 영향을 미칩니다.
+코드 테스트를 작성하면서 더 깊게 알아야 할 내용이 있습니다. 예를 들어, `assert` 함수를 사용하면 원하는 예상 값과 실제 값이 일치하는지 확인할 수 있습니다. 또한, `expect` 문법을 사용하면 코드가 예상한 결과를 반환하는지 여부를 검사할 수 있습니다. 이를 통해 더 간편하고 정확한 테스트를 작성할 수 있습니다.
 
-또한 테스트를 작성하는 것만으로는 충분하지 않습니다. 이후에도 테스트 코드를 유지하고 업데이트해야 하며, 코드 변경 시 테스트가 실패하는지 확인하는 작업을 꼭 실시해야 합니다. 따라서 테스트 작성에 있어서 지속적인 관리와 유지가 매우 중요합니다.
+## 참고 자료
 
-## 또 다른 내용
+- [JavaScript 테스트 프로그래밍 기초](https://d2.naver.com/helloworld/6423756)
+- [테스트 주도 개발 (TDD)](https://edykim.com/ko/post/introduction-to-tdd/)
+- [Jest를 이용한 자바스크립트 테스트 코드 작성하기](https://jeonghwan-kim.github.io/2018/05/28/javascript-test.html)
 
-테스트 작성에 대한 더 많은 정보를 원하시면 아래의 링크를 참고해보세요.
+## 참고 자료
 
-- [최신 소프트웨어 개발 동향: 테스트 자동화](https://www.samsungsds.com/kr/insights/22nd-Auto_Testing.html)
-- [TDD와 BDD의 차이점](https://corgi-devlog.github.io/testing/tdd-and-bdd/)
-- [Jest를 이용한 자바스크립트 테스트 작성하기](https://corgi-devlog.github.io/testing/javascript-testing-with-jest/)
+- [JavaScript Testing 101](https://d2.naver.com/helloworld/6423756)
+- [Test-Driven Development (TDD)](https://edykim.com/en/post/introduction-to-tdd/)
+- [Writing JavaScript test code using Jest](https://jeonghwan-kim.github.io/2018/05/28/javascript-test.html)

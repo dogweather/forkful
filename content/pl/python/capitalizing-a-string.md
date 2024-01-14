@@ -1,46 +1,35 @@
 ---
-title:    "Python: Zmiana wielkości literek w ciągu znaków."
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/capitalizing-a-string.md"
+title:                "Python: Zmiana wielkich liter w ciągu znaków"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Dlaczego:Kapitalizacja ciągu znaków jest bardzo przydatną funkcją w programowaniu, gdyż pozwala nam zmienić każde słowo lub wyrażenie na pewien standard, na którym bazujemy w naszym projekcie. Może to być np. format nazw użytkowników lub tytułów artykułów.
 
-Pisanie w języku Python może być bardzo przyjemne, ale czasami może również wymagać szlifowania prostych umiejętności, takich jak zmiana wielkości liter w ciągach znaków. W tym wpisie bloga omówimy, dlaczego i jak dokonywać tego działań w sposób efektywny.
+Jak to zrobić:
 
-## Jak to zrobić
+```python
+# Przykładowy ciąg znaków
+string = "to jest przykładowy ciąg znaków"
 
-Aby zmienić wielkość liter w ciągu znaków w języku Python, możemy skorzystać z metody `upper()` lub `lower()` w połączeniu z metodą `capitalize()`. Poniższy kod ilustruje obie metody:
+# Używając metody capitalize()
+capitalized_string = string.capitalize()
 
-```Python
-string = "witaj świecie!"
-print(string.upper()) # WYNIK: WITAJ ŚWIAT!
-print(string.capitalize()) # WYNIK: Witaj świecie!
+# Wyświetlamy wynik
+print(capitalized_string)
+
+# Output: To jest przykładowy ciąg znaków
 ```
 
-Poza tym, możemy również wykorzystać pętle do zmiany wielkości liter pojedynczych słów w ciągu znaków. Przykładowy kod poniżej:
+Deep Dive:
 
-```Python
-string = "to jest testowy ciąg znaków"
-new_string = ""
+Kapitalizacja jest procesem zmiany pierwszej litery ciągu znaków na literę wielką. Jednak istnieją przypadki, w których chcielibyśmy kapitalizować więcej niż jedną literę, np. w przypadku nazw własnych. W takim przypadku możemy skorzystać z metody title(), która kapitalizuje pierwszą literę każdego słowa w ciągu. Inną przydatną metodą jest upper(), która zamienia wszystkie litery w ciągu na wielkie litery.
 
-for word in string.split():
-  new_string += word.capitalize() + " "
+See Also:
 
-print(new_string) # WYNIK: To Jest Testowy Ciąg Znaków
-```
-
-## Głębszy wgląd
-
-W języku Python istnieje wiele metod i funkcji do zmiany wielkości liter w ciągu znaków, takich jak `title()`, `swapcase()`, `casefold()` itp. Każda z nich działa nieco inaczej, więc warto zrobić głębszy research, aby wybrać najbardziej odpowiednią dla naszego konkretnego przypadku.
-
-Ponadto, warto również pamiętać, że zmiana wielkości liter w ciągu znaków może mieć wpływ na wydajność naszego kodu, szczególnie w przypadku dużej ilości danych do przetworzenia.
-
-## Zobacz także
-
-- [Dokumentacja Python: metody do modyfikacji ciągów znaków](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Tutorial Python: zmiana wielkości liter w ciągu znaków](https://www.digitalocean.com/community/tutorials/how-to-format-strings-in-python-3)
-
-Dziękujemy za przeczytanie naszego wpisu blogowego na temat zmiany wielkości liter w języku Python. Mamy nadzieję, że teraz już wiesz, dlaczego i jak dokonywać tego działania. Happy coding!
+- Dokumentacja Pythona dotycząca kapitalizacji ciągu znaków: https://docs.python.org/3/library/stdtypes.html#str.capitalize
+- Przydatne funkcje łańcuchowe w Pythonie: https://www.w3schools.com/python/python_strings_methods.asp
+- Tutorial na temat kapitalizacji w Pythonie: https://www.programiz.com/python-programming/methods/string/capitalize

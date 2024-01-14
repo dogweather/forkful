@@ -1,41 +1,88 @@
 ---
-title:    "TypeScript: Tiedoston lukeminen"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/reading-a-text-file.md"
+title:                "TypeScript: Tiedoston lukeminen"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Tiedostojen käsittely muodostaa tärkeän osan ohjelmoinnista. Tekstitiedostojen lukeminen on yksi yleisimmistä toiminnoista koodissa ja se voi olla hyödyllistä esimerkiksi tietokantojen päivittämisessä tai toisesta ohjelmasta saatujen tietojen käsittelyssä.
+Finnish readers, have you ever wondered how to read a text file using TypeScript? Text files are commonly used for storing and sharing important information, but understanding how to read them using programming languages can be a valuable skill. In this blog post, we will explain the *why* behind reading a text file using TypeScript and provide step-by-step instructions on how to do it. 
 
-## Kuinka
+## Miten
 
+Aluksi luodaan tekstitiedosto "example.txt" ja kirjoitetaan siihen seuraavaa sisältöä:
 ```TypeScript
-import * as fs from 'fs';
-
-// Funktio, joka lukee tekstirivin tiedostosta ja palauttaa sen merkkijonona
-function lueTiedosto(rivi: number, tiedosto: string): string {
-  // Avataan tiedosto
-  let data = fs.readFileSync(tiedosto, 'utf8');
-  // Jaetaan tiedosto rivin lopussa olevan rivinvaihdon kohdalta
-  let rivit = data.split('\n');
-  // Palautetaan haluttu rivi - 1, sillä taulukon indeksit alkavat nollasta
-  return rivit[rivi - 1];
-}
-
-// Tiedostossa "data.txt" on teksti "Tämä on esimerkki"
-// Tulostaa "Tämä on esimerkki"
-console.log(lueTiedosto(1, 'data.txt'));
+Tämä on tekstitiedoston esimerkki.
+Tärkeää tietoa.
+Loppu-
 ```
 
-## Syvällisempi tarkastelu
+Nyt, kun meillä on tekstitiedosto, voimme aloittaa sen lukemisen TypeScriptillä:
 
-Koodiesimerkissä käytetään Node.js:n "fs" -moduulia, joka antaa meille mahdollisuuden käsitellä tiedostoja TypeScript:ssä. Funktio "lueTiedosto" hyödyntää "fs.readFileSync" -metodia, joka lukee tiedoston halutusta polusta ja merkistökoodauksesta. "split" -metodilla jaetaan tiedosto rivien lopussa olevan rivinvaihdon kohdalta ja palautetaan halutun rivin sisältö.
+1. Tuodaan tarvittava moduuli käyttäen "fs" kirjastoa:
+```TypeScript
+import fs from 'fs';
+```
+2. Luodaan muuttuja joka sisältää tekstitiedoston nimen:
+```TypeScript
+const tiedostoNimi = 'example.txt';
+```
+3. Käytetään "readFile" funktiota lukemaan tiedosto:
+```TypeScript
+fs.readFile(tiedostoNimi, 'utf8', (error, data) => {
+  if (error) {
+    throw error; // Jos tapahtuu virhe, heitetään se
+  }
+  console.log(data); // Tulostetaan tiedoston sisältö konsoliin
+});
+```
+Tuloste:
+```
+Tämä on tekstitiedoston esimerkki.
+Tärkeää tietoa.
+Loppu-
+```
+
+## Syvempi sukellus
+
+Kuten näimme edellä, tekstitiedoston lukeminen TypeScriptillä on melko yksinkertaista. Mutta mitä tehdä jos haluamme lukea tiedostoa rivi kerrallaan? Tässä tapauksessa voimme käyttää "createReadStream" funktiota ja "line-by-line" kirjastoa. Alla on esimerkki, joka tulostaa tiedoston jokaisen rivin konsoliin:
+```TypeScript
+import { createReadStream } from 'fs';
+import { createInterface } from 'readline';
+import { on } from 'events';
+import { once } from 'events';
+import { LineStream } from 'byline';
+
+async function readLines() {
+  const tiedostoNimi = 'example.txt';
+  const input = createReadStream(tiedostoNimi);
+  const output = new LineStream();
+
+  const rl = createInterface({
+    input,
+    crlfDelay: Infinity,
+    historySize: 0,
+    output,
+    terminal: false
+  });
+
+  rl.on('line', line => console.log(line)); // Tulostaa jokaisen rivin
+  await once(rl, 'close'); // Sulkee lukemisen
+}
+
+readLines();
+```
+Tuloste:
+```
+Tämä on tekstitiedoston esimerkki.
+Tärkeää tietoa.
+Loppu-
+```
 
 ## Katso myös
 
-- [Node.js fs-moduuli](https://nodejs.org/api/fs.html)
-- [TypeScriptin tietotyypit](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-- [Tiedostojen käsittelyn perusteet TypeScriptissä](https://www.educba.com/file-handling-in-typescript/)
+- [Node.js fs moduuli](https://nodejs.dev/learn/the-nodejs-fs-module)
+- [Reading and Writing Files in TypeScript](https://blog.bitsrc.io/reading-and-writing-files-in-typescript-a50107692f58)

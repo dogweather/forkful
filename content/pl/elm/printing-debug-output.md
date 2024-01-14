@@ -1,44 +1,31 @@
 ---
-title:    "Elm: Drukowanie wyjścia debugowania"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/printing-debug-output.md"
+title:                "Elm: Wydrukowanie wyjścia debugowania"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jeśli jesteś programistą pracującym w Elm, pewnie zastanawiasz się, po co drukować wyjścia debugowania. Jednym z najważniejszych powodów jest to, że pomaga to zrozumieć, jak działają Twoje funkcje i moduły. Może się to także przydać w przypadku napotkania błędów lub problemów w kodzie.
+Możliwość drukowania danych debugowania jest nieodzownym narzędziem dla programistów Elm. Dzięki niej możemy łatwo śledzić przebieg naszego kodu i znaleźć ewentualne błędy.
 
-## Jak to zrobić
+## Jak używać
 
-W Elm istnieje wbudowana funkcja `Debug.log`, która służy do wyświetlania wyjścia debugowania. Najprostszy sposób jej użycia wygląda następująco:
+Moduł Debug w Elm zawiera funkcje do drukowania danych debugowania, takich jak `toString` czy `toFloat`. Możemy je wykorzystać w naszym kodzie, umieszczając je wewnątrz `Debug.log` w następujący sposób:
 
-```
-Elm.debug "Twoje wyjście debugowania"
-```
-
-Możesz również wyświetlić wartości zmiennych lub wyrażeń, wpisując je po przecinku w nawiasach:
-
-```
-Elm.debug (x, y + z)
+```Elm
+Debug.log "Zmienna x" (toString x) 
 ```
 
-Pamiętaj, że `Debug.log` jest funkcją czysto debugującą i nie powinna być używana w kodzie produkcyjnym.
+W ten sposób możemy wydrukować wartość zmiennej `x` w konsoli przeglądarki.
 
-## Głębsze zagłębienie
+## Głębsze zanurzenie
 
-Poza prostym wyświetlaniem tekstu, `Debug.log` ma wiele zastosowań, dlatego warto poznać dokładniej jego możliwości.
-
-Możesz np. wyświetlić informacje o typach danych, co jest szczególnie przydatne podczas pracy z Elm Debuggerem. Można to zrobić w ten sposób:
-
-```
-Elm.debug (typeof model, typeof msg)
-```
-
-Warto również wiedzieć, że `Debug.log` może być zagnieżdżona w innych funkcjach lub wyrażeniach warunkowych. Po prostu umieść ją wewnątrz nawiasów, tak jakbyś używał jej poza nimi.
+Funkcja `Debug.log` jest nie tylko przydatna do wyświetlania wartości zmiennych, ale także do śledzenia przebiegu działania naszego programu. Możemy wykorzystać ją do drukowania kolejnych kroków w naszym kodzie, dzięki czemu łatwiej będzie nam znaleźć ewentualne błędy.
 
 ## Zobacz także
 
-- [Dokumentacja Elm do funkcji `Debug.log`](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
-- [Elm Debugger - narzędzie do debugowania w przeglądarce](https://debug.elm-lang.org)
+- [Dokumentacja Elm Debug](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [Przykłady użycia Debug w Elm](https://elmprogramming.com/debugging-in-elm-using-elm-debug-log.html)

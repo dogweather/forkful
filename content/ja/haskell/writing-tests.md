@@ -1,50 +1,56 @@
 ---
-title:    "Haskell: テストの書き方"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/writing-tests.md"
+title:                "Haskell: テストを書く"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ書くのか
 
-プログラミングにおいて、テストは非常に重要です。コードを書く際には、何度もバグを確認する必要があります。しかし、テストを書くことで、コードのバグを事前に発見し、修正することができます。これにより、プログラミングの効率性が向上し、品質の高いコードを作成することができます。
+プログラミングをする上で、私たちは常にコードの品質を重視します。コードが正しく動作することを確認するために、テストが欠かせません。テストを書くことによって、コードのバグを早期に発見し、修正することができるようになります。
 
-## 方法
+## どのように書くのか
 
-テストを書くには、Haskellの組み込みのテスティングツールである`QuickCheck`を使用するのが一般的です。例えば、以下のように書くことができます。
-
+テストを書くためには、まずテストフレームワークをインポートする必要があります。以下のコードは、HUnitというテストフレームワークを使用した、単純な数値の比較を行うテストの例です。
 ```Haskell
--- 整数を受け取り、それが偶数かどうかをチェックする関数
-isEven :: Int -> Bool
-isEven x = x `mod` 2 == 0 
+module Main where
 
--- テストのためのプロパティ
--- すべての偶数を入力すると、偶数が出力されることを確認する
-prop_even :: Int -> Bool
-prop_even x = isEven x == True 
+import Test.HUnit
 
--- テストを実行する関数
-checkEven = quickCheck prop_even
+-- テストする関数
+add :: Int -> Int -> Int
+add x y = x + y
+
+-- テストケース
+testAdd :: Test
+testAdd = TestCase (assertEqual "1 + 1 は 2 に等しい" 2 (add 1 1))
+
+-- テストスイート
+tests :: Test
+tests = TestList [TestLabel "testAdd" testAdd]
+
+-- メイン関数
+main :: IO ()
+main = runTestTT tests
 ```
 
-実行してみると、以下のような結果が得られるはずです。
+上記のコードを実行すると、以下のような結果が得られます。
 
 ```
-+++ OK, passed 100 tests.
+Cases: 1 Tried: 1 Errors: 0 Failures: 0
+Counts {cases = 1, tried = 1, errors = 0, failures = 0}
 ```
 
-これで、入力されたすべての偶数が正しくチェックされたことがわかります。
+このように、テストが全て通過したことが表示され、プログラムの正しさが確認できます。
 
-## 深い掘り下げ
+## 深く掘り下げる
 
-テストを書くにはさまざまな方法がありますが、より詳細な情報を求める場合は、HUnitやTastyなどのさまざまなライブラリも使用することができます。これらのライブラリを使用することで、より高度なテストを作成することができます。
-
-また、テスト駆動開発（TDD）と呼ばれるアプローチもあります。これは、コードを書く前にテストを書き、そのテストを通過するようにコードを書くという方法です。この方法を使用することで、プログラマーが自分の書いたコードをより自信を持って修正することができます。
+テストを書く際には、テストケースをできるだけ網羅的に設計することが重要です。また、コードの特定の部分だけでなく、複数の関数を組み合わせてテストすることも大切です。さらに、コードのバグを発見した際には、そのバグを再現するテストケースも書くことが重要です。
 
 ## 参考リンク
 
-- [HaskellのQuickCheckのドキュメント](https://hackage.haskell.org/package/QuickCheck)
-- [Tastyのドキュメント](https://hackage.haskell.org/package/tasty)
-- [HUnitのドキュメント](https://hackage.haskell.org/package/HUnit)
-- [テスト駆動開発（TDD）の解説](https://www.geeksforgeeks.org/test-driven-development-tdd/)
+- [HUnit公式ドキュメント](https://hackage.haskell.org/package/HUnit)
+- [テスト駆動開発の基本](https://codezine.jp/article/detail/565)
+- [Haskellのテストフレームワーク一覧](https://qiita.com/nwtgck/items/29d1b1accb1e3e5d55f6)

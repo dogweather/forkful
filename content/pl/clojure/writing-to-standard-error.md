@@ -1,61 +1,52 @@
 ---
-title:    "Clojure: Pisanie do standardowego błędu"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-to-standard-error.md"
+title:                "Clojure: Pisanie do standardowego błędu"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego pisać do standardowego błędu?
 
-Napisanie do standardowego wyjścia błędu jest ważnym aspektem programowania w Clojure, ponieważ pozwala na wyświetlenie informacji o błędach i wyjątkach, które mogą wystąpić w naszym kodzie. Jest to szczególnie przydatne podczas debugowania i znajdowania błędów w programie.
+Pisanie do standardowego błędu jest niezbędne w celu poprawnego debugowania i przechwytywania błędów w naszych programach Clojure. Dzięki temu możemy szybko zlokalizować przyczynę problemu i odpowiednio zareagować.
 
-## Jak to zrobić
-
-Aby napisać do standardowego wyjścia błędu w Clojure, możemy użyć funkcji `println` z argumentem `*err*`. Spowoduje to wyświetlenie podanego ciągu znaków w konsoli jako błąd. Na przykład:
+## Jak to zrobić?
 
 ```Clojure
-(println *err* "Wystąpił błąd!")
+(println "To jest standardowy błąd!")
 ```
 
-Wyjście będzie wyglądać następująco:
+Wyżej przedstawiony kod pokazuje, jak prostym sposobem możemy wypisać treść do standardowego błędu. Możemy również użyć funkcji `eprintln`, aby wypisać błąd wraz z jego treścią.
+
 ```
-Wystąpił błąd!
+Standardowy błąd: To jest standardowy błąd!
 ```
 
-Możemy także wykorzystać makro `with-out-str`, aby prześledzić wszystkie informacje wyświetlane do standardowego wyjścia błędu. Na przykład:
+## Głębszy wgląd
+
+Pisanie do standardowego błędu jest szczególnie przydatne, gdy chcemy zobaczyć, który kod został wykonany przed błędem. Możemy to zrobić, wykorzystując funkcję `debug`, która wypisze nam stos wywołań dla danej funkcji.
 
 ```Clojure
-(with-out-str (println *err* "Wystąpił błąd!"))
+(defn add [a b]
+  (println "Jestem w funkcji add!")
+  (+ a b))
+
+(def x 10)
+(def y "Test")
+
+(add x y)
 ```
 
-W ten sposób zadziała `println`, ale informacje nie zostaną faktycznie wyświetlone w konsoli. Zamiast tego, będą dostępne w ciągu znaków, który możemy przetworzyć lub zapisać do pliku.
-
-## Deep Dive
-
-Poza wyświetlaniem prostych komunikatów błędów, możemy także zwrócić obiekty typu `Exception`, w których możemy zawrzeć dokładniejsze informacje o błędzie. Na przykład:
-
-```Clojure
-(def error (ex-info "Ten błąd jest spowodowany przez brakujący argument!" {:missing-arg "nazwa argumentu"}))
+```
+Standardowy błąd: Jestem w funkcji add!
+Jestem w funkcji add!
+TypeError: Cannot cast java.lang.String to java.lang.Number
 ```
 
-Następnie, możemy wyświetlić ten błąd używając funkcji `prn` na obiekcie `error`:
+Jak widać, dzięki wypisaniu do standardowego błędu, widzimy, że błąd wystąpił w funkcji "add" oraz mamy dokładną informację, jakie wartości zostały przekazane do funkcji.
 
-```Clojure
-(prn error)
-```
+## Zobacz też
 
-Wyjście będzie wyglądać następująco:
-```
-{:cause "Ten błąd jest spowodowany przez brakujący argument!", :data {:missing-arg "nazwa argumentu"}}
-```
-
-Możemy także wykorzystać funkcję `throw` aby rzucić ten błąd w kodzie.
-
-## Zobacz także
-
-Aby uzyskać więcej informacji na temat pisania do standardowego wyjścia błędu w Clojure, warto zapoznać się z poniższymi linkami:
-
-- Oficjalna dokumentacja Clojure: [https://clojuredocs.org/clojure.core/*err*](https://clojuredocs.org/clojure.core/*err*)
-- Poradnik z przykładami: [https://purelyfunctional.tv/guide/error-output/](https://purelyfunctional.tv/guide/error-output/)
-- Forum Clojure: [https://clojureverse.org/t/writing-to-standard-error/1596](https://clojureverse.org/t/writing-to-standard-error/1596)
+- [Dokumentacja Clojure o pisanie do standardowego błędu](https://clojure.org/reference/exceptions#writing_to_standard_error)
+- [Blog o programowaniu w Clojure (w języku polskim)](https://clojure.pl/blog/)

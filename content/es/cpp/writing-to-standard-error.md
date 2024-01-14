@@ -1,59 +1,44 @@
 ---
-title:    "C++: Escribiendo en el error estándar"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/writing-to-standard-error.md"
+title:                "C++: Escribiendo en el estándar de error"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-#¿Por qué escribir en estándar error en C++?
+## Por qué escribir a la salida de error estándar
 
-La salida estándar (stdout) y la salida de error (stderr) son dos formas en las que un programa puede mostrar información al usuario. La principal diferencia es que la salida estándar se muestra en la consola del usuario, mientras que la salida de error se guarda en un archivo o se muestra en la consola de errores. Escribir en estándar error puede ser útil cuando quieres mostrar información importante sobre un error o cuando quieres guardar información de depuración en un archivo separado.
+Es común que al escribir un programa en C++, nos encontremos con errores del compilador o con situaciones en las que necesitamos mostrar mensajes de error al usuario. A veces, estos mensajes se pueden mostrar en la salida estándar, pero en ocasiones es más importante mostrarlos en la salida de error estándar. Esta es una forma de distinguir claramente el mensaje de error de la información importante del programa.
 
-##Cómo escribir en estándar error en C++
+## Cómo escribir a la salida de error estándar
 
-En C++, existe una función llamada "std::cerr" que permite escribir en la salida de error. Para usar esta función, debes incluir la librería <iostream> y luego usarla de la siguiente manera:
+Para escribir a la salida de error estándar en C++, se utiliza la función "cerr" de la biblioteca estándar. Esta función se usa de la misma manera que la función "cout", pero en lugar de mostrar el mensaje en la salida estándar, lo muestra en la salida de error estándar. Aquí hay un ejemplo de cómo usarlo:
 
 ```C++
 #include <iostream>
+using namespace std;
 
 int main() {
-    std::cerr << "Este es un mensaje de error" << std::endl;
+    int x = 10;
+    if (x % 2 == 0) {
+        cerr << "El número es par." << endl;
+    } else {
+        cerr << "El número es impar." << endl;
+    }
     return 0;
 }
 ```
 
-El código anterior mostrará el mensaje "Este es un mensaje de error" en la consola de errores. Nota que se utiliza el operador "<<" para insertar el mensaje en la función "std::cerr" y se utiliza "std::endl" para indicar el final de la línea.
+El resultado de este programa sería "El número es par." Si cambiamos el valor de "x" a 11, el mensaje de error sería "El número es impar."
 
-También puedes usar esta función para mostrar valores de variables mientras estás depurando tu código. Por ejemplo:
+## Profundizando en la escritura a la salida de error estándar
 
-```C++
-int main() {
-    int a = 5;
-    std::cerr << "El valor de a es: " << a << std::endl;
-    return 0;
-}
-```
+Como mencionamos antes, la principal diferencia entre "cerr" y "cout" es que "cerr" es la salida de error estándar, mientras que "cout" es la salida estándar. Esto significa que los mensajes de "cerr" se muestran en una pantalla diferente que los de "cout". Por lo general, la salida de error estándar es la consola en la que se está ejecutando el programa, pero también puede ser redirigida a un archivo si es necesario.
 
-Este código mostrará "El valor de a es: 5" en la consola de errores.
+También es importante tener en cuenta que los mensajes de "cerr" no se muestran en diferentes colores ni se guardan en un archivo de registro como los mensajes de "cout". Sin embargo, seguimos recomendando su uso para mostrar mensajes de error y garantizar que estos se destaquen claramente de la salida estándar.
 
-##Deep Dive: Más información sobre escribir en estándar error
+## Ver también
 
-Una de las ventajas de escribir en estándar error es que puedes guardar la salida de error en un archivo y revisarla más tarde para encontrar errores en tu código. Para hacer esto en C++, simplemente redirige la salida de errores a un archivo en lugar de mostrarla en la consola. Puedes hacerlo usando el símbolo ">" seguido del nombre del archivo. Por ejemplo:
-
-```
-./mi_programa > errores.txt
-```
-
-Esto guardará todos los mensajes de error en un archivo llamado "errores.txt".
-
-También puedes usar esta función para mostrar información importante al usuario en caso de un error inesperado. Puedes personalizar tus mensajes de error para que sean claros y útiles para los usuarios.
-
-##Ver también
-
-Para obtener más información sobre la salida estándar y la salida de error en C++, puedes consultar los siguientes recursos:
-
-- https://www.programiz.com/cpp-programming/library-function/cstdio/stderr
-- https://www.geeksforgeeks.org/stdcerr-vs-stderr-cpp/
-- https://en.cppreference.com/w/cpp/io/cerr
-- https://es.cppreference.com/w/cpp/language/io_error
+- [Introducción a la programación en C++](https://www.freecodecamp.org/espanol/news/introduccion-a-c-plus-plus/)
+- [Documentación de la función cerr en cplusplus.com](https://www.cplusplus.com/reference/iostream/cerr/)

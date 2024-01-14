@@ -1,41 +1,56 @@
 ---
-title:    "Haskell: Lesen von Befehlszeilen Argumenten"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/reading-command-line-arguments.md"
+title:                "Haskell: Lesen von Befehlszeilenargumenten"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Lesen von Befehlszeilenargumenten ist eine wichtige Fähigkeit für jeden Haskell-Programmierer. Es ermöglicht die Übergabe von Informationen an ein Programm auf einfache und effiziente Weise.
+Wenn du dich für das Programmieren mit Haskell entschieden hast, bist du wahrscheinlich schon mit der funktionalen Programmierung und der Stärke der Typisierung vertraut. Aber wusstest du, dass Haskell auch sehr effizient mit Kommandozeilenargumenten umgehen kann? In diesem Blogbeitrag zeigen wir dir, warum es sich lohnt, sich mit dem Lesen von Kommandozeilenargumenten in Haskell auseinanderzusetzen.
 
-# Wie geht das?
+## Anleitung
 
-Um Befehlszeilenargumente in Haskell zu lesen, müssen wir die Funktion `getArgs` aus dem Modul `System.Environment` importieren. Diese Funktion gibt eine Liste mit den Argumenten zurück, die beim Aufruf des Programms übergeben wurden.
+Das Lesen von Kommandozeilenargumenten in Haskell ist dank der "System.Environment"-Bibliothek sehr einfach. Zunächst musst du diese Bibliothek in deinem Code importieren:
 
 ```Haskell
 import System.Environment
-
-main = do
-    args <- getArgs
-    putStrLn ("Erhaltene Argumente: " ++ show args)
 ```
 
-Wenn wir dieses Programm mit dem Befehl `runghc programm.hs arg1 arg2 arg3` ausführen, wird die Ausgabe folgendermaßen aussehen:
+Als nächstes verwenden wir die Funktion "getArgs", um die Argumente zu lesen und sie der Variablen "args" zuzuweisen:
+
+```Haskell
+args <- getArgs
+```
+
+Die "args"-Variable enthält nun eine Liste der übergebenen Argumente. Um sie auszugeben, können wir die "putStrLn"-Funktion verwenden:
+
+```Haskell
+putStrLn "Die übergebenen Argumente sind:"
+mapM_ putStrLn args
+```
+
+Dieser Code wird die Liste der Argumente Zeile für Zeile ausgeben. Wenn du dieses Beispiel ausführst und deinem Programm Argumente übergibst, wirst du sehen, wie einfach es ist, sie mit Haskell zu lesen. Hier ein Beispiel der Ausgabe:
 
 ```
-Erhaltene Argumente: ["arg1", "arg2" , "arg3"]
+> MeinProgramm Argument1 Argument2 Argument3
+Die übergebenen Argumente sind:
+Argument1
+Argument2
+Argument3
 ```
 
-Beachten Sie, dass der erste argument im output der Name des Programms ist, der dort automatisch eingefügt wird.
+## Tiefergehende Informationen
 
-# Tief in die Materie eintauchen
+Die "System.Environment"-Bibliothek bietet noch viele weitere Funktionen, die dir helfen können, die übergebenen Argumente weiter zu verarbeiten. Eine davon ist die "getProgName"-Funktion, mit der du den Namen deines Programms auslesen kannst. Eine andere nützliche Funktion ist "lookupEnv", mit der du Umgebungsvariablen auslesen kannst.
 
-Wenn wir uns genauer mit dem Versuch befassen, Befehlszeilenargumente zu lesen, können wir sehen, dass die Funktion `getArgs` in Haskell auf der Funktion `getProgArgs` basiert, die wiederum auf dem `System.IO`-Modul basiert. Durch die Kombination all dieser Funktionen wird das Parsen der Befehlszeilenargumente sehr effizient, da sie direkt auf dem Betriebssystem aufbauen.
+Es gibt auch viele weitere Bibliotheken, die dir dabei helfen können, Kommandozeilenargumente zu verarbeiten. Eine davon ist die "optparse-applicative"-Bibliothek, mit der du Optionen und Argumente parsen und verarbeiten kannst.
 
-# Siehe auch
+Das Lesen von Kommandozeilenargumenten in Haskell ist auch sehr nützlich, wenn du Skripte schreibst, die mit anderen Programmen interagieren müssen. Du kannst die Argumente, die du von der Kommandozeile erhältst, verwenden, um dein Programm anzupassen oder bestimmte Aktionen auszuführen.
 
-- Dokumentation zu `System.Environment` - https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html
-- Offizielle Haskell-Dokumentation - https://www.haskell.org/documentation/
-- Ein Tutorial zum Lesen von Befehlszeilenargumenten in Haskell - https://wiki.haskell.org/Command_line_argument_handling
+## Siehe auch
+
+- Offizielle Dokumentation zu "System.Environment": https://hackage.haskell.org/package/base/docs/System-Environment.html
+- Übersicht über nützliche Bibliotheken für das Lesen von Kommandozeilenargumenten in Haskell: https://wiki.haskell.org/Applications_and_libraries/GetOpt

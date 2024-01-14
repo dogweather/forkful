@@ -1,40 +1,48 @@
 ---
-title:    "Clojure: Ricerca e sostituzione di testo"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/searching-and-replacing-text.md"
+title:                "Clojure: Ricerca e sostituzione di testo"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Cercare e sostituire il testo è una delle attività più comuni e utili quando si programma in Clojure. Usando questa tecnica, è possibile trovare e sostituire parti del codice in modo veloce e efficiente. In questo post, esploreremo come implementare questa funzionalità utilizzando alcune funzioni di Clojure.
+C'è un motivo per cui la sostituzione di testo è una delle attività più comuni nella programmazione. È necessario modificare un codice sorgente, aggiornare un documento o semplicemente correggere un errore di ortografia. Indipendentemente dal motivo, la capacità di cercare e sostituire automaticamente il testo è un'abilità essenziale per ogni programmatore.
 
 ## Come fare
 
-Per cercare e sostituire il testo, useremo le seguenti funzioni di Clojure:
+Fortunatamente, Clojure offre una sintassi semplice e potente per effettuare operazioni di sostituzione del testo. Vediamo alcuni esempi che mostrano come si utilizza la funzione `replace`:
 
-```Clojure
-(replace "testoDaCercare" "nuovoTesto" "stringaDaCercare")
-(replace-regex #"([0-9]+)" "parola" "1, 2, 3")
+```
+Clojure
+(replace "cane" "gatto" "Mi piace il mio cane!")
+;; Output: "Mi piace il mio gatto!"
 ```
 
-In questo esempio, la prima funzione sostituisce la prima occorrenza del testo specificato con il nuovo testo nella stringa data. La seconda funzione utilizza una espressione regolare per cercare e sostituire tutte le occorrenze di numeri con la parola "parola". Entrambe le funzioni restituiscono una nuova stringa con il testo sostituito.
+In questo esempio, stiamo sostituendo la parola "cane" con "gatto" nella stringa "Mi piace il mio cane!". La funzione `replace` accetta tre parametri: il testo da cercare, il testo da sostituire e la stringa in cui effettuare la sostituzione.
+
+```
+Clojure
+(replace #"([A-Z]+) ([0-9]+)" "$2 $1" "ALFA 123")
+;; Output: "123 ALFA"
+```
+
+In questo secondo esempio, stiamo utilizzando un'espressione regolare per invertire l'ordine delle parole e delle cifre nella stringa "ALFA 123". La funzione `replace` accetta anche espressioni regolari come parametro di ricerca.
 
 ## Approfondimento
 
-Oltre alle funzioni di base per cercare e sostituire il testo, Clojure offre anche altre funzioni e librerie utili per questa attività. Ad esempio, la libreria "clojure.string" include la funzione "replace-first" che sostituisce solo la prima occorrenza del testo. È anche possibile utilizzare la funzione "replace-nth" per sostituire solo la n-esima occorrenza.
+Oltre alla semplice funzione `replace`, Clojure dispone di una vasta gamma di funzioni per la manipolazione del testo. Ad esempio, la funzione `replace-first` sostituisce solo la prima occorrenza trovata, mentre `replace-regexp` permette di sostituire in base a un'espressione regolare. Inoltre, si può utilizzare il metodo `replaceAll` delle stringhe Java per sostituire in modo case-insensitive.
 
-Inoltre, Clojure ha una caratteristica interessante che consente di sostituire il testo utilizzando una funzione di trasformazione. Questo significa che invece di specificare un nuovo testo, possiamo fornire una funzione che trasforma il testo da sostituire. Ad esempio:
-
-```Clojure
-(replace #(str * 2) "3" "2 3 4")
-```
-
-In questo esempio, la funzione "replace" sostituisce il testo "3" nella stringa con il doppio del testo stesso, ottenendo come risultato "2 6 4".
+È importante notare che le stringhe in Clojure sono immutabili, quindi ogni operazione di sostituzione restituisce una nuova stringa. Inoltre, Clojure utilizza una libreria chiamata `clojure.string` per le operazioni di manipolazione del testo, quindi è necessario importarla prima di utilizzare queste funzioni.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Clojure su replace e replace-regex](https://clojuredocs.org/clojure.string/replace)
-- [Tutorial su espressioni regolari in Clojure](https://clojuredocs.org/clojure.repl/doc-clojure/regex)
-- [Cheat sheet di Clojure per sostituire il testo](https://clojure.org/api/cheatsheet)
+- [La documentazione ufficiale di `clojure.string`](https://clojure.github.io/clojure/clojure.string-api.html)
+- [Il tutorial su espressioni regolari di Clojure](https://clojuredocs.org/clojure.core/re-find)
+
+ Grazie per aver letto questo articolo. Speriamo che ti sia stato utile nella tua avventura di programmazione con Clojure!# Vedi anche
+
+- [La documentazione ufficiale di `clojure.string`](https://clojure.github.io/clojure/clojure.string-api.html)
+- [Il tutorial su espressioni regolari di Clojure](https://clojuredocs.org/clojure.core/re-find)

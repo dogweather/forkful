@@ -1,43 +1,34 @@
 ---
-title:    "Fish Shell: Comparando dos fechas"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/comparing-two-dates.md"
+title:                "Fish Shell: Comparando dos fechas"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-¿Alguna vez has tenido que comparar dos fechas en tu código? Si es así, entonces sabes lo tedioso que puede ser este proceso. Sin embargo, con el uso adecuado de Fish Shell, puedes comparar fácilmente dos fechas y obtener los resultados que necesitas. En esta publicación, exploraremos cómo hacerlo de manera eficiente.
+Comparar dos fechas en programación puede ser muy útil para determinar la duración de un evento, calcular el tiempo transcurrido entre dos puntos o simplemente para ordenar eventos cronológicamente. En este artículo, aprenderemos cómo comparar fechas usando Fish Shell.
 
 ## Cómo hacerlo
-Para comparar dos fechas en Fish Shell, utilizaremos el comando `date` seguido de la opción `-jf`, que nos permite especificar un formato de fecha. Podemos utilizar `strftime` para indicar el formato que deseamos utilizar. Por ejemplo, si queremos comparar dos fechas en formato "día-mes-año", podemos usar `%d-%m-%Y`. Aquí está un ejemplo de código y su salida:
+La comparación de fechas en Fish Shell se realiza con el comando `date`. Para comparar dos fechas, debemos asegurarnos de que ambas estén en el formato adecuado, es decir, en el orden de año, mes y día. Por ejemplo, si queremos comparar las fechas 01/01/2020 y 02/01/2020, deberíamos escribirlo como 20200101 y 20200102 respectivamente.
+
+Para comparar estas dos fechas, podemos usar el comando `test` junto con la opción `-lt` (menor que) o `-gt` (mayor que), seguido de las dos fechas en el formato mencionado anteriormente. Veamos un ejemplo:
 
 ```Fish Shell
-fecha1 = (date -jf "%d-%m-%Y" "14-08-2021")
-fecha2 = (date -jf "%d-%m-%Y" "20-08-2021")
-if test $fecha1 -gt $fecha2
-    echo "La primera fecha es mayor que la segunda"
-else
-    echo "La segunda fecha es mayor que la primera"
+if test 20200101 -lt 20200102
+    echo "La primera fecha es anterior a la segunda."
 end
 ```
 
-Salida:
-
-```
-La segunda fecha es mayor que la primera
-```
-
-¡Así de fácil es comparar dos fechas en Fish Shell!
+En el código anterior, usamos el comando `test` para comparar las dos fechas y luego imprimimos un mensaje en caso de que la primera fecha sea anterior a la segunda. Si cambiamos la opción a `-gt`, el mensaje se imprimirá solo si la primera fecha es mayor que la segunda.
 
 ## Profundizando
-Ahora que sabemos cómo comparar dos fechas en Fish Shell, echemos un vistazo más de cerca a lo que realmente está sucediendo detrás de escena. Cuando usamos `date -jf` para comparar fechas, en realidad estamos convirtiendo esas fechas en timestamps, que son valores numéricos que representan la cantidad de segundos transcurridos desde el 1 de enero de 1970. Luego, simplemente comparamos esos timestamp para determinar cuál es mayor.
+Hay algunas cosas más que debemos tener en cuenta al comparar fechas en Fish Shell. Por ejemplo, si queremos comparar fechas con horas incluidas, debemos escribir la fecha en el siguiente formato: `AAAAMMDDTHHMMSS`. Además, el comando `test` también tiene opciones como `-ge` (mayor o igual que) o `-le` (menor o igual que) que nos permiten realizar comparaciones más complejas.
 
-Es importante tener en cuenta que la opción `-jf` solo está disponible en versiones más recientes de Fish Shell (2.5 o superior). Si estás utilizando una versión anterior, puedes usar el comando `simple-format` para formatear las fechas en un formato que sea compatible con el comando `date`.
+Otra cosa importante a tener en cuenta es el uso de variables. En lugar de escribir las fechas directamente en el comando `test`, podemos guardarlas en variables y luego utilizar esas variables en la comparación. Esto hace que nuestro código sea más legible y fácil de modificar si es necesario.
 
 ## Ver también
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial sobre cómo utilizar `strftime` en Fish Shell](https://www.linode.com/docs/guides/use-the-strftime-function-in-your-postgres-shell/)
-- [Ejemplos de uso de `date` en Fish Shell](https://fishshell.com/docs/current/commands.html#date)
-
-Gracias por leer y ¡feliz comparación de fechas en Fish Shell!
+- [Documentación de Fish Shell sobre el comando `date`](https://fishshell.com/docs/current/cmds/date.html)
+- [Más información sobre el comando `test`](https://fishshell.com/docs/current/cmds/test.html)
+- [Ejemplos de comparación de fechas en Fish Shell](https://fishshell.com/docs/current/tutorial.html#test-command)

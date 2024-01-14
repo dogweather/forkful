@@ -1,62 +1,38 @@
 ---
-title:    "Elixir: Uuden projektin aloittaminen"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/starting-a-new-project.md"
+title:                "Elixir: Aloittaminen uudessa projektissa"
+programming_language: "Elixir"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi aloittaa uusi projekti?
+## Miksi aloittaa uusi projekti Elixir-ohjelmoinnissa?
 
-Monilla kehittäjillä tulee aika ajoin tarve aloittaa uusi projekti. Tämä voi johtua esimerkiksi uuden teknologian käytön halusta tai vanhan projektin päivittämisen tarpeesta. Elixir on suosittu ohjelmointikieli, joka tarjoaa monia etuja ja ominaisuuksia uuden projektin luomiseen.
+Uuden ohjelmointiprojektin aloittaminen voi olla jännittävä ja haastava prosessi. Elixir-ohjelmointikielen avulla voit kuitenkin luoda tehokkaita ja skaalautuvia sovelluksia, jotka ovat helppoja ylläpitää ja laajentaa. Elixir tarjoaa myös monia hyödyllisiä ominaisuuksia, kuten vahvan ja dynaamisen tyyppijärjestelmän, virheettömän samanaikaisuuden ja helpon moduulirakenteen. Näiden etujen ansiosta Elixir on yksi suosituimmista ohjelmointikielistä uusien projektien aloittamiseen.
 
-## Miten: Esimerkkejä koodin kirjoittamisesta
-
-Jos olet kiinnostunut aloittamaan uuden projektin Elixirillä, tässä on muutama esimerkki miten voit aloittaa. Ensinnäkin, voit luoda uuden Elixir-projektin käyttämällä "mix new" -komentoa. Tämä luo uuden kansiojrakenteen projektillesi ja sisältää tarvittavat alustavat tiedostot. Voit myös käyttää "mix new <nimi>" -komentoa, jonka avulla voit antaa projektillesi nimen.
+## Kuinka aloittaa uusi projekti Elixir-ohjelmoinnissa?
 
 ```Elixir
-mix new projekti
-...
-* creating README.md
-* creating .formatter.exs
-* creating .gitignore
-* creating mix.exs
-* creating config
-* creating config/config.exs
-* creating lib
-* creating lib/projekti.ex
-* creating test
-* creating test/test_helper.exs
-* creating test/projekti_test.exs
-```
-
-Kun projekti on luotu, voit aloittaa koodaamisen! Voit käyttää Elixirin ominaisuuksia, kuten moduleita ja funktioita, helposti ja sujuvasti. Tässä esimerkissä luomme yksinkertaisen funktion, joka kertoo "Hei maailma!".
-
-```Elixir
-defmodule Hei do
-  def hei_maailma do
-    IO.puts "Hei maailma!"
+defmodule Hello do
+  def say_hello(name) do
+    "Hei #{name}!"
   end
 end
+
+IO.puts Hello.say_hello("Maailma") #=> "Hei Maailma!"
 ```
 
-Kun suoritat tämän funktion, näet tuloksen:
+Aloita uusi projekti Elixirissä luomalla uusi moduuli ```defmodule``` -käskyllä. Sisälläsi voit määrittää erilaisia toimintoja, jotka voidaan kutsua toisiinsa. Esimerkissä näkemyksessämme luomme yksinkertaisen moduulin nimeltä ```Hello``` ja sen sisällä olevan toiminnon ```say_hello```, joka tulostaa tervehdyksen parametrina annetulle nimelle. Voit suorittaa tämän koodin komentoriviltä käyttämällä ```mix run -e "Hello.say_hello('Maailma')"```.
 
-```Elixir
-iex> Hei.hei_maailma
-Hei maailma!
-:ok
-```
+## Syvällisempi sukellus uuden projektin aloittamiseen Elixir-ohjelmoinnissa
 
-## Syvällisemmin: Tietoa uuden projektin aloittamisesta
+Uuden projektin aloittaminen Elixirissä vaatii useita eri vaiheita, mutta onneksi Elixir-yhteisö on luonut monia resursseja ja työkaluja helpottamaan tätä prosessia. Voit esimerkiksi käyttää Mix-työkalua luomaan uuden Elixir-projektin käyttämällä komentoa ```mix new <projektin_nimi>```. Tämä luo valmiin projektin rakenteen ja tarvittavat tiedostot, joten voit keskittyä koodaamiseen.
 
-Aloittaessasi uuden projektin Elixirillä, on hyvä pitää mielessä muutamia asioita. Ensinnäkin, voit käyttää "mix" -työkalua moniin toimintoihin, kuten testien suorittamiseen ja koodin kääntämiseen. Lisäksi voit käyttää Ecto-kirjastoa tietokantayhteyksiin ja Phoenix-kehystä web-sovellusten luomiseen.
-
-On myös tärkeää suunnitella projektisi rakennetta ja miettiä mitä toiminnallisuuksia se tarvitsee. Elixirin modulaarinen rakenne mahdollistaa projektin helpomman hallinnan ja ylläpidon. Kannattaa myös tutustua Elixirin syntaksiin ja käytäntöihin, jotta voit hyödyntää sen tarjoamia ominaisuuksia täysimääräisesti.
+Toinen hyödyllinen työkalu uuden projektin aloittamiseen on Elixirin sisäänrakennettu dokumentaatio. Dokumentaatio sisältää yksityiskohtaisia ohjeita eri toimintojen ja kirjastojen käytöstä sekä esimerkkejä koodin käytöstä. Voit käyttää dokumentaatiota referenssinä löytääksesi sopivia kirjastoja tai ymmärtääksesi paremmin Elixirin syntaksia ja käytäntöjä.
 
 ## Katso myös
 
-- [Elixirin virallinen sivusto](https://elixir-lang.org/)
-- [Elixirin dokumentaatio](https://hexdocs.pm/elixir/)
-- [Ecto-dokumentaatio](https://hexdocs.pm/ecto/Ecto.html)
-- [Phoenix-dokumentaatio](https://hexdocs.pm/phoenix/overview.html)
+- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/)
+- [Elixir-kurssit ja opetusohjelmat](https://elixirschool.com/)
+- [Elixir-yhteisöfoorumi](https://elixirforum.com/)

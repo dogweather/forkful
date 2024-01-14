@@ -1,40 +1,47 @@
 ---
-title:    "C++: स्ट्रिंग्स को जोड़ना"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/concatenating-strings.md"
+title:                "C++: स्ट्रिंगों को जोड़ना"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-C++ में स्ट्रिंग्स को जोड़ना एक बहुत उपयोगी कौशल है। यह बहुत से प्रोग्रामिंग सिनारियों में काम आ सकता है, जैसे प्रिंटिंग स्ट्रिंग्स, फ़ाइल संग्रहण और यूआई तर्कों को अपडेट करना। यह बहुत सरल होता है और आपको बहुत समय बचाता है जब आप अनुक्रमित स्ट्रिंग्स को काम करना चाहते हैं।
+हमारे पास कभी-कभी टेक्स्ट को कंकटनेट करने की जरूरत होती है। यह दो या दो से अधिक टेक्स्ट स्ट्रिंग्स को एक साथ जोड़कर एक बड़ा स्ट्रिंग बनाता है। यह एक उपयोगी तकनीक है जो क्रमश: किसी भी कार्य को करने के लिए स्ट्रिंग डेटा को बनाता है। इसके अलावा, आप आसानी से दो स्ट्रिंग्स को जोड़ सकते हैं और प्रिंट कर सकते हैं।
 
-## कैसे
+## कैसे करें
 
 ```C++
-// स्ट्रिंग्स को जोड़ना
-
 #include <iostream>
 #include <string>
 using namespace std;
 
 int main()
 {
-  string s1 = "मेरा";
-  string s2 = "नाम";
-  string s3 = s1 + " " + s2; // स्ट्रिंग्स को जोड़ें
-  cout << s3 << endl; // मेरा नाम
+  // दो स्ट्रिंग्स डिफाइन करें
+  string firstString = "नमस्ते";
+  string secondString = "दुनिया";
+  
+  // स्ट्रिंग्स को जोड़ें
+  string combined = firstString + secondString;
+  
+  // प्रिंट करें
+  cout << combined;
+  
   return 0;
 }
 ```
+आउटपुट:
+नमस्ते दुनिया
 
 ## गहराई में जाएं
 
-स्ट्रिंग्स को जोड़ने के लिए, C++ एक बहुत सरल कौशल बनाता है। स्ट्रिंग्स को `+` अपरेटर के माध्यम से जोड़ना ही रूचिकर होता है। आप अनेक स्ट्रिंग्स को एक बार में भी जोड़ सकते हैं, जैसे `s1 + " " + s2` उदाहरण में देखा गया है।
+स्ट्रिंग्स को जोड़ने के लिए, C++ में दो काम करने के लिए विभिन्न तरीके हैं। पहले, आप स्ट्रिंग्स को '+ ऑपरेटर' के द्वारा जोड़ सकते हैं। दूसरा तरीका, `append()` फ़ंक्शन का उपयोग करके स्ट्रिंग को संलग्न करना है। आपको स्ट्रिंग्स को `+=` ऑपरेटर के साथ भी जोड़ सकते हैं। स्ट्रिंग के साथ जोड़ने के बाद आप उसको प्रिंट भी कर सकते हैं।
 
 ## देखें भी
 
-- [C++ एक समान गुणक का उपयोग करने के लिए उत्कृष्ट तरीके](https://www.javatpoint.com/cpp-string-equal-operator-overloading)
-- [C++ स्ट्रिंग्स समीकरण और जोड़ना](https://www.geeksforgeeks.org/cpp-program-to-find-concatenation-of-two-strings/)
-- [C++ स्ट्रिंग्स के साथ काम करना](https://www.geeksforgeeks.org/cpp-programming-working-with-strings/)
+- [C++ स्ट्रिंग हैंडलिंग](https://www.geeksforgeeks.org/c-plus-plus/#Strings)
+- [स्ट्रिंग के साथ काम करना](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
+- [C++ स्ट्रिंग क्लास के संदर्भ में](https://www.programiz.com/cpp-programming/string)

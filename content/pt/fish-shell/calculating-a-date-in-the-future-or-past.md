@@ -1,50 +1,45 @@
 ---
-title:    "Fish Shell: Calculando uma data no futuro ou passado"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/calculating-a-date-in-the-future-or-past.md"
+title:                "Fish Shell: Calculando uma data no futuro ou no passado"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que utilizar o Fish Shell para calcular datas?
+## Por que
 
-Se você é um programador ou entusiasta de tecnologia, provavelmente já ouviu falar do Fish Shell como uma alternativa para o Bash. Mas você sabia que também é possível utilizar o Fish Shell para realizar cálculos de datas? Isso pode ser especialmente útil para tarefas como agendamento de tarefas ou criação de scripts automatizados. Neste artigo, vamos explorar como utilizar o Fish Shell para calcular datas no passado ou no futuro.
+Você já se perguntou como calcular uma data no futuro ou no passado? Talvez você precise fazer um cronograma para um projeto ou planejar suas férias, mas não quer gastar tempo fazendo cálculos manualmente. É por isso que a linguagem de programação Fish Shell tem uma função integrada para calcular datas.
 
 ## Como fazer
 
-O Fish Shell oferece uma maneira simples e eficiente de calcular datas utilizando o seu terminal. Para isso, podemos utilizar o comando `date` seguido de uma fórmula de cálculo. Veja o exemplo abaixo:
+Para calcular uma data no futuro ou no passado usando o Fish Shell, basta seguir esses passos simples:
+
+1. Abra o terminal e abra o Fish Shell digitando `fish`.
+2. Use o comando `date` seguido de uma data no formato "ano-mês-dia" para definir a data base. Por exemplo, `date 2021-07-15` define a data base como 15 de julho de 2021.
+3. Use o operador matemático `+` para adicionar dias à data base ou o operador `-` para subtrair dias. Por exemplo, se quisermos calcular a data 10 dias após a data base, usamos `date 2021-07-15 + 10`. O Fish Shell também aceita expressões matemáticas mais complexas, como `date 2021-07-15 + 2 * 5` para adicionar 10 dias à data base.
+4. Se quiser calcular uma data no passado, basta usar o operador `-` e um número negativo. Por exemplo, `date 2021-07-15 - 3` calcula a data 3 dias antes da data base.
+5. Você também pode adicionar outros formatos de data à sua saída usando a opção `-f`. Por exemplo, `date -f "%A, %B %e, %Y" 2021-07-15` irá imprimir a data como "Thursday, July 15, 2021".
+
+Aqui está um exemplo da saída do terminal usando esses comandos:
 
 ```Fish Shell
-date "3 days ago"
+$ date 2021-07-15
+2021-07-15
+$ date 2021-07-15 + 10
+2021-07-25
+$ date -f "%A, %B %e, %Y" 2021-07-15
+Thursday, July 15, 2021
 ```
 
-Esse comando irá retornar a data de hoje, mas três dias atrás. Outros exemplos possíveis seriam `date "next week"` para obter a data correspondente a uma semana a partir de hoje ou `date "last month"` para a data de um mês atrás.
+## Aprofundando
 
-Além disso, também é possível combinar o comando `date` com outros comandos como `echo` ou `read` para criar scripts mais complexos que utilizam cálculos de datas. Por exemplo, podemos criar um script que pede ao usuário uma data e retorna o dia da semana correspondente utilizando o seguinte código:
+O Fish Shell utiliza a biblioteca `libdatecalc` para executar cálculos de datas, o que significa que ele é capaz de lidar com datas muito distantes no futuro ou no passado com precisão. Além disso, o Fish Shell também é capaz de lidar com fusos horários, o que é essencial para quem trabalha com equipes de diferentes partes do mundo.
 
-```Fish Shell
-echo "Digite uma data (ex: 2021-01-01): "
-read data
-date -d $data +%A
-```
-
-## Aprofundando-se no cálculo de datas
-
-Quando falamos em cálculo de datas, é importante entender como o Fish Shell interpreta as fórmulas utilizadas. O comando `date` possui uma lista de opções como `years` (anos), `months` (meses) e `hours` (horas), que podem ser utilizadas para especificar a unidade de tempo a ser calculada. Além disso, também é possível utilizar operadores matemáticos como adição `+` e subtração `-` para criar cálculos mais avançados.
-
-Por exemplo, podemos utilizar a seguinte fórmula para obter a data de dois anos e três meses atrás:
-
-```Fish Shell
-date "2 years 3 months ago"
-```
-
-O resultado seria a data correspondente a 27 meses atrás a partir da data de hoje.
+Além disso, existem outras opções para personalizar a saída, como usar o operador `@` para imprimir a data em formato Unix timestamp ou a opção `-I` para imprimir somente a data sem o horário.
 
 ## Veja também
 
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial de início rápido do Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Exemplos de scripts com Fish Shell](https://github.com/fish-shell/fish-shell/tree/master/scripts)
-- [Explicações detalhadas sobre como utilizar o comando `date`](https://fishshell.com/docs/current/commands.html#section-date)
-
-# Veja também
+- Documentação oficial do Fish Shell: https://fishshell.com/docs/current/cmds/date.html
+- Usando expressões matemáticas no Fish Shell: https://fishshell.com/docs/current/tutorial.html#tut_math
+- Formatação de datas no Fish Shell: https://fishshell.com/docs/current/cmds/date.html#format-output

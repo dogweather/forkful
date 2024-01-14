@@ -1,55 +1,44 @@
 ---
-title:    "Swift: Extraction de sous-chaînes"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/extracting-substrings.md"
+title:                "Swift: Extraction de sous-chaînes"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-La manipulation de chaînes de caractères est une tâche courante en programmation, mais parfois il est nécessaire d'extraire uniquement une partie d'une chaîne plutôt que de travailler avec la chaîne complète. C'est là qu'entre en jeu l'extraction de sous-chaînes. Avec Swift, cela peut être fait facilement et efficacement grâce à certaines méthodes et fonctions intégrées.
+L'extraction de sous-chaînes est une compétence importante à avoir en programmation Swift. Elle permet de manipuler et d'extraire des parties spécifiques d'une chaîne de caractères. Cela peut s'avérer utile dans de nombreuses situations, telles que la validation des entrées utilisateur, la recherche de mots-clés dans un texte ou encore la manipulation de données provenant d'une API.
 
 ## Comment faire
 
-Pour extraire une sous-chaîne d'une chaîne de caractères, il vous suffit d'utiliser la méthode `substring` en spécifiant l'index de début et l'index de fin de la sous-chaîne souhaitée. Par exemple:
+Pour extraire une sous-chaîne d'une chaîne de caractères en Swift, utilisez la méthode `substring(from:)` ou `prefix(through:)` en fonction de vos besoins. Voici un exemple de code avec l'utilisation de la méthode `substring(from:)` :
 
 ```Swift
-let str = "Bonjour le monde!"
-let subStr = str.substring(from: 8, to: 11)
-print(subStr) //sortie: "le"
+let phrase = "Je suis un développeur Swift."
+let extrait = phrase.substring(from: 11)
+print(extrait)  // "développeur Swift."
 ```
 
-Dans cet exemple, nous avons extrait la sous-chaîne qui va du 8ème caractère (inclus) jusqu'au 11ème caractère (exclus).
-
-Si vous souhaitez extraire la sous-chaîne à partir d'un index donné jusqu'à la fin de la chaîne, vous pouvez utiliser la méthode `substring(from:)` en spécifiant uniquement l'index de départ.
+Vous pouvez également utiliser la méthode `range(of:)` pour rechercher un mot-clé ou une expression dans une chaîne de caractères et extraire la sous-chaîne correspondante :
 
 ```Swift
-let subStr = str.substring(from: 8)
-print(subStr) //sortie: "le monde!"
+let phrase = "Je suis un développeur Swift."
+if let range = phrase.range(of: "développeur") {
+    let extrait = phrase.substring(with: range)
+    print(extrait)  // "développeur"
+}
 ```
 
-Si vous voulez extraire une sous-chaîne en partant de la fin de la chaîne, vous pouvez utiliser la méthode `substring(to:)` en spécifiant l'index de fin de la sous-chaîne souhaitée.
+## Plongée en profondeur
 
-```Swift
-let subStr = str.substring(to: 6)
-print(subStr) //sortie: "Bonjour"
-```
+L'extraction de sous-chaînes peut sembler simple, mais il y a quelques aspects à prendre en compte. Par exemple, la méthode `range(of:)` peut renvoyer `nil` si le mot-clé recherché n'est pas présent dans la chaîne de caractères, il est donc important de prendre en compte cette possibilité lors de la manipulation des sous-chaînes.
 
-Enfin, si vous souhaitez extraire une sous-chaîne à partir d'un index de départ et en spécifiant le nombre de caractères à extraire, vous pouvez utiliser la méthode `substring(with:)`.
-
-```Swift
-let subStr = str.substring(with: 8..<14)
-print(subStr) //sortie: "le mon"
-```
-
-## Zoom en profondeur
-
-L'extraction de sous-chaînes en Swift est basée sur le type `Substring`, qui est une sous-classe de `String` et représente une vue sur une partie de la chaîne d'origine. Cela signifie que l'extraction d'une sous-chaîne ne nécessite pas de copier la chaîne complète, ce qui peut être utile en termes de performances et de consommation de mémoire.
-
-Il est également important de noter que les sous-chaînes doivent être converties en chaînes de caractères complètes avant d'être utilisées en dehors du contexte dans lequel elles ont été créées. Cela peut être fait en utilisant la méthode `String()` ou en utilisant l'opérateur `+` pour concaténer la sous-chaîne à une autre chaîne.
+Il est également important de comprendre que la méthode `substring(from:)` inclut le caractère à la position indiquée, tandis que la méthode `prefix(through:)` inclut tous les caractères jusqu'à la position indiquée.
 
 ## Voir aussi
 
-- [Documentation officielle de Swift sur l'extraction de sous-chaînes](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID275)
-- [Article Medium sur l'utilisation de sous-chaînes en Swift](https://medium.com/@abhimuralidharan/learn-swift-4-string-substring-3fe72abb75a8)
+- [Documentation officielle Apple sur les chaînes de caractères en Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Exemples d'utilisation de la méthode `substring(from:)` en Swift](https://www.hackingwithswift.com/example-code/strings/how-to-extract-a-substring-from-a-string)
+- [Guide complet sur la manipulation des sous-chaînes en Swift](https://www.ralfebert.de/ios-examples/uikit/strings/substring/)

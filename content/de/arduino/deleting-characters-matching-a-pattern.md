@@ -1,49 +1,67 @@
 ---
-title:    "Arduino: Löschen von Zeichen, die einem Muster entsprechen"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/arduino/deleting-characters-matching-a-pattern.md"
+title:                "Arduino: Löschen von Zeichen, die mit einem Muster übereinstimmen"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+Warum:
 
-Wenn Sie ein Arduino-Entwickler sind, werden Sie sicherlich schon einmal auf die Aufgabe gestoßen sein, bestimmte Zeichenfolgen oder einzelne Zeichen aus einem Text oder einer Variablen zu löschen. Dies kann aus verschiedenen Gründen notwendig sein, zum Beispiel um unerwünschte Zeichen zu entfernen oder um Daten für die weitere Verarbeitung zu bereinigen. Hier erfahren Sie, wie Sie mit Ihrem Arduino ganz einfach Zeichen löschen können.
+Manchmal ist es notwendig, bestimmte Zeichen in einem Text zu löschen, die einem bestimmten Muster entsprechen. Das kann zum Beispiel der Fall sein, wenn man Daten aus einer seriellen Schnittstelle empfängt und sie in einer bestimmten Form verarbeiten möchte. In solchen Fällen ist es hilfreich, einen Algorithmus zu haben, der diese Aufgabe automatisiert.
 
-## Wie das geht
+Wie Geht’s:
 
-Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, können Sie die `replace()`-Funktion verwenden. Sehen wir uns ein Beispiel an:
-
-```Arduino
-String text = "Hallo Arduino!";
-text.replace("a", "");
-Serial.println(text); // Ausgabe: Hllo Arduino!
-```
-
-Hier haben wir die `replace()`-Funktion verwendet, um alle Vorkommen von "a" in unserem Text zu ersetzen. Der zweite Parameter ist dabei leer, sodass die Zeichen einfach gelöscht werden. Beachten Sie, dass die `replace()`-Funktion immer nur das erste Vorkommen des Musters löscht. Um alle Vorkommen zu entfernen, müssen Sie diese Funktion in einer Schleife ausführen.
-
-Natürlich können Sie auch ganze Wörter oder längere Zeichenfolgen löschen. Dazu einfach die zu löschenden Zeichen oder Wörter als Parameter in die Funktion einsetzen.
+Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, gibt es verschiedene Ansätze. In diesem Blogpost werden wir uns auf die Verwendung der Funktion `String::remove()` in der Arduino IDE konzentrieren. Diese Funktion ermöglicht es uns, Zeichen aus einem String zu entfernen, die einem bestimmten Muster entsprechen.
 
 ```Arduino
-String text = "Hallo Arduino!";
-text.replace("ll", "l");
-Serial.println(text); // Ausgabe: Halo Arduino!
+String text = "Hallo Welt!";
+text.remove("a");  // Entfernt alle "a" aus dem String
+Serial.println(text); // Ausgabe: Hllo Welt!
 ```
 
-## Tiefere Einblicke
+In diesem Beispiel wird das Zeichen "a" aus dem String `text` entfernt und die modifizierte Version wird über die serielle Schnittstelle ausgegeben.
 
-Um zu verstehen, wie die `replace()`-Funktion arbeitet, werfen wir einen Blick unter die Haube. Diese Funktion basiert auf der `indexOf()`-Funktion, die die Position des ersten Vorkommens eines Musters in einem Text zurückgibt. Ist das Muster nicht enthalten, wird `-1` zurückgegeben. Mit dieser Information kann die `replace()`-Funktion dann das entsprechende Zeichen löschen.
-
-Wenn Sie mehr Kontrolle über die Löschung von Zeichen haben möchten, können Sie auch die `remove()`-Funktion verwenden. Diese erwartet als Parameter die Startposition und die Anzahl der zu löschenden Zeichen.
+Tipp: Die `String::remove()` Funktion kann auch mit anderen Datentypen wie `char` oder `int` verwendet werden, indem diese zuvor in einen String umgewandelt werden.
 
 ```Arduino
-String text = "Hallo Arduino!";
-text.remove(0, 5); // Entfernt die ersten 5 Zeichen
-Serial.println(text); // Ausgabe: Arduino!
+char letter = 'e';
+String text = "Hallo Welt!";
+text.remove(String(letter)); // Entfernt alle "e" aus dem String
+Serial.println(text); // Ausgabe: Hallo Wlt!
 ```
 
-## Siehe auch
+Eine weitere Möglichkeit ist die Verwendung von Schleifen, um jeden einzelnen Buchstaben in einem String zu überprüfen und bei Übereinstimmung zu löschen.
 
-- `replace()`-Funktion: https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/replace/
-- `indexOf()`-Funktion: https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/indexof/
-- `remove()`-Funktion: https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/remove/
+```Arduino
+String text = "Hallo Welt!";
+int length = text.length();
+
+// Durchlaufe jeden Buchstaben im String
+for(int i = 0; i < length; i++){
+  // Überprüfe auf Übereinstimmung mit dem gesuchten Muster
+  if(text.charAt(i) == 'a'){
+    // Lösche den Buchstaben an dieser Stelle
+    text.remove(i);
+  }
+}
+
+Serial.println(text); // Ausgabe: Hallo Welt!
+```
+
+Tipp: Mit der `String::indexOf()` Funktion können Sie auch die Position eines bestimmten Zeichens im String finden und es dann mit `String::remove()` entfernen.
+
+Deep Dive:
+
+Zusätzlich zu den hier vorgestellten Methoden gibt es noch weitere Möglichkeiten, um Zeichen aus einem String zu löschen, die einem bestimmten Muster entsprechen. Dazu gehören die Verwendung von regulären Ausdrücken oder die Verwendung von Bibliotheken wie der `String` oder `TextFinder` Bibliothek.
+
+Es ist auch wichtig zu beachten, dass die Verwendung von `String` Objekten auf dem Arduino oft zu Speicherproblemen führen kann, da der Arduino nur begrenzten Speicher hat. Daher ist es ratsam, sparsam mit `String` Objekten umzugehen und stattdessen eher auf Zeichenarrays zurückzugreifen.
+
+Siehe auch:
+
+- [Offizielle Arduino Referenz für die String::remove() Funktion](https://www.arduino.cc/reference/de/language/variables/data-types/string/functions/remove/)
+- [Beispiele für die Verwendung von String::remove() in der Arduino IDE](https://www.arduino.cc/en/Tutorial/StringRemove)
+- [Verwendung von regulären Ausdrücken auf dem Arduino](https://www.robotic-controls.com/learn/arduino/arduino-regex-expression-regular-expressions)
+- [Verwendung der String Bibliothek auf dem Arduino](https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/)
+- [Verwendung der TextFinder Bibliothek auf dem Arduino](https://github.com/adafruit/Adafruit_TextFinder)

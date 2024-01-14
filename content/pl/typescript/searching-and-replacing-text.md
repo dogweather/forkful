@@ -1,31 +1,53 @@
 ---
-title:    "TypeScript: Wyszukiwanie i zamiana tekstu"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/searching-and-replacing-text.md"
+title:                "TypeScript: Wyszukiwanie i zamiana tekstu"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Nie ma wątpliwości, że każdy programista często musi korzystać z funkcji wyszukiwania i zamiany tekstu w swoim kodzie. To nie tylko ułatwia pracę, ale także może poprawić czytelność i wydajność kodu. W tym artykule dowiesz się dlaczego warto używać tej funkcji i jak można ją wykorzystać w języku TypeScript.
+Czy kiedykolwiek znalazłeś się w sytuacji, gdzie musiałeś zmienić kilka słów lub fraz w swoim kodzie? Może to była zmiana nazwy zmiennej lub poprawienie błędu w tekście. Bez względu na powód, wyszukiwanie i zastępowanie tekstu jest niezwykle pomocne w programowaniu. Pozwala na szybkie i efektywne wprowadzanie zmian w kodzie oraz oszczędza czas i wysiłek programisty.
 
 ## Jak to zrobić
 
-Aby wyszukać i zamienić tekst w kodzie TypeScript, należy użyć funkcji `replace()`. Przykładowy kod poniżej pokazuje jak można zastosować tę funkcję:
+Aby przeszukiwać i zamieniać tekst w TypeScript, możemy użyć funkcji `replace()`. Ta metoda przyjmuje dwa argumenty: pierwszy to szukany tekst, a drugi to tekst, który ma zostać wstawiony w miejsce znalezionego tekstu. Najbardziej przydatną opcją w tej funkcji jest dodanie flagi globalnej, dzięki której przeszukiwanie będzie obejmować cały tekst, a nie tylko pierwsze znalezione wystąpienie. Poniżej znajduje się przykładowy kod wykorzystujący funkcję `replace()`.
 
 ```TypeScript
-let text = "Hello World";
-text = text.replace("World", "Polish Readers");
-console.log(text);
+const text = 'Cześć, nazywam się Jan, mam 25 lat.';
+const newText = text.replace(/Jan/g, 'Anna');
+// Nowy tekst: Cześć, nazywam się Anna, mam 25 lat.
 ```
 
-Wyjściem z tego kodu będzie `"Hello Polish Readers"`, ponieważ funkcja `replace()` zamieniła słowo "World" na "Polish Readers". Można również wykorzystać regularne wyrażenia w celu bardziej złożonych wyszukiwań i zamian.
+Jak widać powyżej, szukamy słowa "Jan" za pomocą wyrażenia regularnego `/Jan/` i zastępujemy je słowem "Anna". Dzięki dodaniu flagi globalnej `g`, funkcja `replace()` przeszuka cały tekst i zamieni wszystkie wystąpienia.
 
 ## Deep Dive
 
-Funkcja `replace()` może przyjmować różne parametry, co pozwala na bardziej zaawansowane operacje wyszukiwania i zamiany tekstu. Można na przykład dodać flagi, które określają sposób wyszukiwania tekstu (np. z uwzględnieniem wielkości liter) lub zastosować funkcję zwrotną do dostosowania zamian. Istnieje również możliwość przekazania wyrażenia regularnego jako parametru wyszukiwania, co daje jeszcze większą kontrolę nad operacją zamiany.
+Istnieje wiele różnych zastosowań funkcji `replace()` w TypeScript. Możemy na przykład użyć jej do zmiany wielkości liter w wyrazach, wykasowania znaków specjalnych lub dodania prefiksu do wyrazów. Poniżej znajdują się przykładowe kody prezentujące te możliwości.
 
-## Zobacz również
+```TypeScript
+// Zmiana wielkości liter
+const text = 'Programowanie jest super!';
+const newText = text.replace(/super/, 'SUPER');
+// Nowy tekst: Programowanie jest SUPER!
 
-Jeśli chcesz dowiedzieć się więcej o funkcji `replace()` w języku TypeScript, zapoznaj się z dokumentacją na stronie [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html). Możesz również przeczytać artykuł [Regular Expressions in TypeScript](https://blog.logrocket.com/regular-expressions-in-typescript/), który pokaże Ci jak wykorzystać wyrażenia regularne w tej funkcji.
+// Usunięcie znaków specjalnych
+const text = 'F#^a@n%t^a$s#t&y!';
+const newText = text.replace(/[\^@%#&]/g, '');
+// Nowy tekst: Fantasy!
+
+// Dodanie prefiksu
+const text = 'Pies, kot, chomik';
+const newText = text.replace(/(\w+)/g, 'moj$1');
+// Nowy tekst: mojPies, mojKot, mojChomik
+```
+
+Dodatkowo, możemy także użyć funkcji `replace()` w połączeniu z funkcją `match()`, która zwraca tablicę znalezionych wyrażeń, aby przeszukiwać i zastępować bardziej złożone wzorce.
+
+## Zobacz też
+
+- [Dokumentacja funkcji `replace()`](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/replace)
+- [Wzorce regularne w TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Funkcja `match()` w TypeScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Globalne/String/match)

@@ -1,53 +1,48 @@
 ---
-title:    "Java recipe: Extracting substrings"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/java/extracting-substrings.md"
+title:                "Java recipe: Extracting substrings"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why Extract Substrings?
 
-Extracting substrings is a useful skill to have in Java programming as it allows you to manipulate strings in a more efficient and precise manner. This can be especially helpful when dealing with large amounts of text data or when you need to extract specific information from a string.
+Extracting substrings is a fundamental skill in Java programming that allows you to retrieve a portion of a string, or a sequence of characters, from a larger string. This can be useful for manipulating and analyzing text data, and is a common task in many applications.
 
-## How To
+## How To Extract Substrings
 
-To extract a substring in Java, you can use the `substring()` method from the `String` class. This method takes in two parameters: the starting index and the ending index of the desired substring. Let's take a look at an example:
-
-```Java
-String sentence = "I love programming";
-String substring = sentence.substring(7, 18);
-System.out.println(substring); // Output: programming
-```
-
-In this example, we have a string `sentence` that contains the phrase "I love programming". We then use the `substring()` method to extract the word "programming" by specifying the starting index as 7, which is the index of the letter "p", and the ending index as 18, which is the index of the letter "g" plus one. This will return a new string containing the extracted substring, which we can then assign to a new variable `substring` and print out.
-
-You can also use the `substring()` method to extract a substring from a specific index until the end of the string by omitting the second parameter. For example:
+To extract a substring in Java, you can use the `substring()` method, which takes in two parameters: the starting index and the ending index of the substring you want to extract. Here's an example of how to use this method:
 
 ```Java
-String sentence = "I love programming";
-String substring = sentence.substring(2);
-System.out.println(substring); // Output: love programming
+String sentence = "Hello world!";
+String substring = sentence.substring(0, 5);
+System.out.println(substring);
 ```
 
-This will return a new string starting from index 2, which is the letter "l", until the end of the original string.
+The output of this code would be `Hello`, as it is extracting the characters from index 0 to index 4 (remember, the ending index is excluded).
 
-## Deep Dive
+You can also specify just the starting index and the `substring()` method will extract the rest of the string from that index to the end. For example:
 
-The `substring()` method in Java is a powerful tool that allows you to manipulate strings in many different ways. Here are some other things to keep in mind when working with substrings:
+```Java
+String sentence = "Hello world!";
+String substring = sentence.substring(6);
+System.out.println(substring);
+```
 
-- The starting index in the `substring()` method is inclusive, meaning that the character at that index will be included in the extracted substring. However, the ending index is exclusive, so the character at that index will not be included.
+The output of this code would be `world!`.
 
-- You can use negative numbers as indices in the `substring()` method. This will count backwards from the end of the string, with -1 being the index of the last character.
+## Deep Dive into Substring Extraction
 
-- If you specify an invalid index in the `substring()` method, such as a negative number or an index that is larger than the length of the string, it will throw an `IndexOutOfBoundsException`.
+In Java, strings are indexed starting from 0 and the `substring()` method follows the same convention. This means that the first character of a string is at index 0 and the last character is at index `length - 1`.
 
-- The `substring()` method returns a new string, leaving the original string unchanged. This is important to remember if you plan on further manipulating the original string.
+Another important thing to note is that the `substring()` method returns a new string, rather than modifying the original string. This is important to keep in mind as it may affect the results of subsequent operations on the original string.
+
+It's also worth mentioning that there are other methods for extracting substrings in Java, such as `charAt()` and `split()`. Each of these methods have their own use cases and it's important to understand their differences in order to choose the appropriate one for your specific task.
 
 ## See Also
 
-You can learn more about the `substring()` method and string manipulation in Java by checking out these resources:
-
-- [Official Java String class documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
-- [GeeksforGeeks article on substring in Java](https://www.geeksforgeeks.org/java-string-substring-method-example/)
-- [JavaTpoint tutorial on substring in Java](https://www.javatpoint.com/java-string-substring)
+- [Java String class documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+- [Java substring method on GeeksforGeeks](https://www.geeksforgeeks.org/java-lang-string-substring-java/)
+- [Java String Methods tutorial on W3Schools](https://www.w3schools.com/java/java_ref_string.asp)

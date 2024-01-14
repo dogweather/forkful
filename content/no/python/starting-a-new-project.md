@@ -1,42 +1,59 @@
 ---
-title:    "Python: Å starte et nytt prosjekt"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/starting-a-new-project.md"
+title:                "Python: Å starte et nytt prosjekt"
+programming_language: "Python"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å starte et nytt programmeringsprosjekt kan være en spennende og givende opplevelse. Det gir deg muligheten til å utforske nye ideer og lære nye ferdigheter. Det kan også være en måte å utfordre deg selv og pushe dine grenser som utvikler.
 
-Enten du er en erfaren utvikler eller nybegynner, er det alltid spennende å starte et nytt prosjekt i Python. Det er et kraftig, enkelt å lære programmeringsspråk som tilbyr uendelige muligheter for utvikling av ulike applikasjoner og prosjekter. Å starte et nytt prosjekt kan være en spennende og givende opplevelse som kan hjelpe deg å forbedre dine programmeringsferdigheter og utvide din kunnskap om Python.
+## Hvordan
+For å starte et nytt Python-prosjekt, kan du følge disse enkle trinnene:
 
-## Hvordan du gjør det
+```python
+# Importer nødvendige biblioteker
+import numpy as np
+import pandas as pd
 
-For å starte et nytt prosjekt i Python, trenger du en tekstredigerer (vi anbefaler Visual Studio Code) og Python installert på datamaskinen din. Følg disse enkle trinnene for å begynne:
+# Definer variabler
+x = np.arange(10)
+y = x ** 2
 
-1. Åpne din tekstredigerer og lag en ny fil.
-2. Skriv `print("Hei, verden!")` i filen og lagre den.
-3. Åpne kommandolinjen og naviger til mappen hvor du lagret filen.
-4. Skriv `Python filnavn.py` og trykk enter. Dette vil kjøre programmet og du skal se teksten "Hei, verden!" i din kommandolinje.
+# Lag en dataframe
+data = {'x': x, 'y': y}
+df = pd.DataFrame(data)
 
-```Python
-print("Hei, verden!")
+# Print ut dataframe
+print(df)
 ```
 
-Det er bare en enkel måte å starte et nytt prosjekt på i Python, men det viser også hvor enkelt og raskt det er å skrive og kjøre kode i dette programmeringsspråket. Du kan også utforske forskjellige moduler og biblioteker for å utvikle mer komplekse og funksjonelle programmer.
+``` 
+Output:
+   x   y
+0  0   0
+1  1   1
+2  2   4
+3  3   9
+4  4  16
+5  5  25
+6  6  36
+7  7  49
+8  8  64
+9  9  81
+```
 
-## Dykke dypere
+Nå som du har fått en liten smakebit på hvordan du kan strukturere et Python-prosjekt, kan du begynne å eksperimentere og legge til flere funksjoner og filer etter behov.
 
-Å starte et nytt prosjekt i Python handler ikke bare om å skrive kode og få den til å fungere. Det er en dyptgående prosess som krever grundig planlegging og forskning. Før du begynner å skrive kode, bør du tenke på hva slags prosjekt du ønsker å lage og hva dets formål og mål er. Deretter kan du begynne å undersøke hvilke biblioteker og moduler som vil være nyttige for ditt prosjekt, og lese dokumentasjonen på disse for å få en bedre forståelse av hvordan de fungerer.
+## Dypdykk
+Når du starter et nytt prosjekt, er det viktig å ha en god forståelse av hva målet ditt er og hvordan du skal oppnå det. Sett opp en solid plan for prosjektet ditt og vær klar på hvilke funksjoner du vil implementere. Ta deg tid til å lese gjennom dokumentasjonen til nødvendige biblioteker og vær grundig i testingen av koden din.
 
-Når du har klare mål og en forståelse av de verktøyene du vil bruke, kan du begynne å skrive koden din. Det er også viktig å ha en god kodepraksis og kommentere koden din for å gjøre den mer lesbar og forståelig for andre. Husk å teste koden din grundig før du publiserer prosjektet ditt.
+Det er også viktig å huske å strukturere koden din på en måte som gjør det enkelt å vedlikeholde og utvide i fremtiden. Bruk kommentarer og gode variabelnavn for å gjøre koden din mer forståelig for andre og for deg selv i fremtiden.
 
 ## Se også
-
-For å lære mer om å starte et nytt prosjekt i Python, kan du sjekke ut disse ressursene:
-
-- [Offisiell Python dokumentasjon](https://docs.python.org/3/tutorial/index.html)
-- [Real Python](https://realpython.com/start-here/)
-- [Python Tutorial for Beginners](https://www.youtube.com/watch?v=_uQrJ0TkZlc)
-
-Lykke til med ditt neste Python-prosjekt!
+- [Python.org](https://www.python.org/) 
+- [Real Python](https://realpython.com/)
+- [Think Python](https://greenteapress.com/wp/think-python-2e/)
+- [Github](https://github.com/)

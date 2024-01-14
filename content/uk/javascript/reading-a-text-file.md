@@ -1,34 +1,57 @@
 ---
-title:    "Javascript: Читання текстового файлу"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/reading-a-text-file.md"
+title:                "Javascript: Читання текстового файлу"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому 
+## Чому
 
-Програмування на Javascript є важливою навичкою для кожного начинаючого розробника. Через те, що багато веб-сайтів та програм використовують текстові файли для зберігання даних, знання, як читати ці файли, є необхідним для ефективної роботи з ними.
+Програмування на Javascript - це захоплююча тема, а читання текстових файлів є важливою складовою цього процесу. Цей блог допоможе вам розібратися з основами читання текстового файлу в Javascript.
 
-## Як це зробити 
-
-Для того, щоб прочитати текстовий файл в Javascript, ми можемо використовувати вбудовану функцію "fs.readFile". Приклад коду для читання файлу з назвою "data.txt" з вмістом "Hello world" виглядатиме наступним чином:
+## Як
 
 ```Javascript
+// Приклад коду для читання текстового файлу
 const fs = require('fs');
 
-fs.readFile('data.txt', 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log(data); // виводить "Hello world"
+// Використовуємо метод readFile для зчитування файлу
+fs.readFile('textfile.txt', 'utf8', (err, data) => {
+    // Перевіряємо наявність помилок
+    if (err) throw err;
+    // Виводимо зчитаний текст в консоль
+    console.log(data);
+});
+
+```
+
+В результаті ви отримаєте вміст текстового файлу, що записаний у змінну `data`.
+
+```
+Hello, world!
+This is a text file.
+```
+
+## Глибоке погруження
+
+Читання текстового файлу у Javascript може бути більш детальним процесом, в залежності від вашої потреби. Ви можете використовувати `fs.readFile()` або `fs.readFileSync()` для зчитування файлу, налаштовуючи параметри для отримання більш точного результату.
+
+Наприклад, ви можете використовувати параметр `encoding` для вказання кодування файлу, яке відповідає його змісту. Крім того, ви можете налаштувати декодування `Buffer`, використовуючи параметр `flag`.
+
+```
+// Використовування параметрів для зчитування файлу
+fs.readFile('textfile.txt', {encoding: 'latin1', flag: 'r'}, (err, data) => {
+    // Перевіряємо наявність помилок
+    if (err) throw err;
+    // Виводимо зчитаний текст в консоль
+    console.log(data);
 });
 ```
 
-## Заглиблення 
+## Дивись також
 
-Крім вбудованої функції "fs.readFile", є ще багато інших методів для читання текстових файлів в Javascript. Наприклад, ми можемо використовувати функцію "fs.readFileSync", яка повертає дані з файлу без асинхронного підходу. Також, ми можемо використовувати пакет "fs-extra" для читання файлів зі збереженням усіх даних у зручному для нас форматі.
-
-## Дивись також 
-
-- [Офіційна документація по функції "fs.readFile"](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
-- [Навчальне відео по читанню файлів на Javascript](https://www.youtube.com/watch?v=QSpwocGaiJ8)
-- [Огляд різних методів читання файлів в Javascript](https://blog.bitsrc.io/6-ways-to-write-better-code-with-node-js-e0b54d5f065a)
+- [fs.readFile() документація](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
+- [fs.readFileSync() документація](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options)
+- [Навчальне відео по читанню файлів в Javascript](https://www.youtube.com/watch?v=CBQGl6zokMs)

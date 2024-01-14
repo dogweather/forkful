@@ -1,61 +1,62 @@
 ---
-title:    "Fish Shell: Capitaliser une chaîne de caractères"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/capitalizing-a-string.md"
+title:                "Fish Shell: Mise en majuscule d'une chaîne de caractères"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-L'utilisation de la fonction de capitalisation de chaîne est un moyen pratique d'améliorer la lisibilité des données dans Fish Shell. Elle permet de convertir automatiquement les lettres d'une chaîne en majuscules, ce qui peut être utile dans de nombreuses situations de programmation.
+La programmation en Fish Shell peut sembler intimidante au début, mais elle offre de nombreuses fonctionnalités utiles pour les utilisateurs avancés. L'une de ces fonctionnalités est la possibilité de mettre en majuscule une chaîne de caractères. Pourquoi voudriez-vous le faire ? Peut-être que vous travaillez avec des données qui nécessitent une mise en forme spécifique, ou peut-être que vous voulez simplement ajouter un peu de style à vos résultats de script. Quelle que soit votre raison, apprendre à mettre en majuscule une chaîne de caractères en Fish Shell peut vous être très utile.
 
 ## Comment faire
 
-Pour capitaliser une chaîne en Fish Shell, il suffit d'utiliser la syntaxe suivante :
+Pour mettre une chaîne de caractères en majuscule en utilisant Fish Shell, voici un exemple de code à suivre :
 
-```Fish Shell
-set my_string "Bonjour le monde"
-echo $my_string | tr '[:lower:]' '[:upper:]'
+```
+set string "ceci est un exemple"
+echo $string | tr a-z A-Z
 ```
 
-Cela utilisera la commande `tr` pour convertir toutes les lettres de la chaîne en majuscules. Vous pouvez également utiliser la commande `printf` pour obtenir le même résultat :
+Dans cet exemple, nous avons créé une variable "string" contenant la chaîne de caractères "ceci est un exemple". En utilisant la commande "tr" avec les options "a-z" et "A-Z", nous convertissons toutes les lettres minuscules en lettres majuscules. En exécutant ce code, nous obtenons le résultat suivant :
 
-```Fish Shell
-set my_string "Bonjour le monde"
-printf "%s" $my_string | tr '[:lower:]' '[:upper:]'
+```
+CECI EST UN EXEMPLE
 ```
 
-Dans les deux cas, la sortie sera "BONJOUR LE MONDE". Il est également possible d'utiliser la fonction `capitalize` qui fait partie du paquet Fish "string" :
+Il est également possible d'utiliser la fonction "string" pour mettre en majuscule une chaîne de caractères. Par exemple :
 
-```Fish Shell
-set my_string "Bonjour le monde"
-string capitalize $my_string
+```
+set string "ceci est un exemple"
+echo $string | string upper
 ```
 
-La sortie sera également "BONJOUR LE MONDE". Toutefois, il convient de noter que la fonction `capitalize` ne prend pas en compte les caractères spéciaux et ne convertira que les lettres en majuscules.
+Cette fois-ci, nous utilisons la fonction "upper" de la commande "string" pour convertir la chaîne de caractères en majuscules. Cela donne le même résultat que dans l'exemple précédent.
 
 ## Plongée en profondeur
 
-La capitalisation de chaîne n'est pas limitée aux seules lettres de l'alphabet, elle peut également être utilisée pour les caractères spéciaux et les chiffres. Par exemple :
+Maintenant que vous savez comment mettre en majuscule une chaîne de caractères en Fish Shell, passons à un peu plus de détails. Il est important de noter que la conversion en majuscules ne fonctionne que pour les caractères ASCII. Cela signifie que les caractères accentués ou spéciaux ne seront pas convertis en majuscules.
 
-```Fish Shell
-set my_string "Bonjour le monde !"
-echo $my_string | tr '[:lower:]' '[:upper:]'
+De plus, vous pouvez également utiliser la variable interne "$USER" pour mettre en majuscule le nom d'utilisateur de la session en cours. Par exemple :
+
+```
+echo $USER | tr a-z A-Z
 ```
 
-La sortie sera "BONJOUR LE MONDE !". Vous pouvez également capitaliser uniquement le premier caractère d'une chaîne en utilisant la fonction `read` :
+Et si vous préférez utiliser la fonction "string", vous pouvez également le faire comme ceci :
 
-```Fish Shell
-set my_string "Salut tout le monde"
-set -l first_char (string index -i $my_string 1)
-string capitalize $first_char; string sub $my_string 2 -1
 ```
-
-La sortie sera "Salut tout le monde".
+echo $USER | string upper
+```
 
 ## Voir aussi
 
-- [La documentation officielle de Fish Shell](https://fishshell.com/docs/2.7/)
-- [La liste complète des fonctions de chaîne de Fish Shell](https://fishshell.com/docs/current/cmds/string.html)
-- [Un guide détaillé sur l'utilisation de Fish Shell](https://linoxide.com/linux-command/run-linux-command-shell-script-fish-shell/)
+Pour en savoir plus sur la programmation en Fish Shell, vous pouvez consulter les liens suivants :
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Fish Shell Tutorial](https://fishshell.com/docs/current/tutorial.html)
+- [Fish Shell Command Substitution](https://fishshell.com/docs/current/index.html#command-substitution)
+
+Maintenant que vous avez appris à mettre en majuscule une chaîne de caractères en Fish Shell, vous pouvez l'appliquer à différents cas d'utilisation dans vos scripts et vos tâches quotidiennes. Amusez-vous bien !

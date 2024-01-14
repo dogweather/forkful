@@ -1,26 +1,36 @@
 ---
-title:    "Kotlin: डायरेक्ट्री मौजूद है या नहीं जांचना"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/checking-if-a-directory-exists.md"
+title:                "Kotlin: डायरेक्ट्री का अस्तित्व जाँचना"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-#### क्यों
+## क्यों
 
-डायरेक्टरी का अस्तित्व पता करने से पहले कोई उपयोगकर्ता अपने ऐप्लिकेशन में एक निश्चित डायरेक्टरी में नए फ़ाइलें या फ़ोल्डर बनाने के लिए पहले से ही मौजूद न होने की स्थिति में यह उपयोगी हो सकता है।
+एक निर्देशिका अस्तित्व की जाँच करने का कारण है कि हम इसे उपयोग करके अपने कोड में गलतियों को जांच सकते हैं और सुनिश्चित कर सकते हैं कि हमारे एप्लिकेशन में सही संरचना मौजूद है। 
 
-## कैसे
-
-जब हमें कोई ऐप्लिकेशन डायरेक्टरी का अस्तित्व जानना होता है। तो हम `exists()` फ़ंक्शन का इस्तेमाल कर सकते हैं। इस फ़ंक्शन को `File` क्लास में पाया जाता है। यह तरीका सबसे आसान है।
+## कैसे करें
 
 ```Kotlin
-val directory = File("/Users/john/blog") 
-val exists = directory.exists()
-println("डायरेक्टरी अस्तित्व होने पर: $exists")
+val directory = File("path/to/directory")
+
+if (directory.exists()) {
+    println("Directory exists!")
+} else {
+    println("Directory does not exist!")
+}
 ```
 
-जब अस्तित्व होता है तो यह आउटपुट दिखाई देगा:
+उपरोक्त कोड से हम देख सकते हैं कि हमने अस्तित्व नि:शुल्क विधि का उपयोग किया है और उसके परिणाम को देखने के लिए एप्लिकेशन प्रविष्ट किया है। यह उपयोगकर्ता को भी पता चलता है कि क्या एक निर्देशिका मौजूद है या नहीं। 
 
-```
-डा
+## गहराई में जाएं
+
+एक निर्देशिका के अस्तित्व की जाँच करने के लिए, हम इसका उपयोग अपने कोड में आसानी से कर सकते हैं और सुनिश्चित कर सकते हैं कि हमारे कोड में पहले से ही कोई अस्तित्व है या नहीं। साथ ही, इससे हमें उस निर्देशिका का पता चल जाता है जिसके अस्तित्व पर हमारे कोड का निर्भरता हो सकता है। 
+
+## इसके अलावा देखें
+
+- [Kotlin आधिकारिक वेबसाइट] (https://kotlinlang.org/docs/home.html)
+- [JavaTpoint के लिए कोटलिन ट्यूटोरियल] (https://www.javatpoint.com/kotlin-tutorial)
+- [देवेंद्र राजपूत के लिए कोटलिन सीखो] (https://dev.to/devkode19/learn-kotlin-for-android-development-a-step-by-step-guide-5gfc)

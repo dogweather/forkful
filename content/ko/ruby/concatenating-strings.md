@@ -1,41 +1,39 @@
 ---
-title:    "Ruby: 문자열 연결하기"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/concatenating-strings.md"
+title:                "Ruby: 스트링 연결하기"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 문자열 연결이 중요한가요?
 
-문자열을 연결하는 것에 대해 고민해 본 적이 있나요? 당신이 프로그래밍을 할 때, 종종 문자열을 함께 이어붙여야 할 때가 있습니다. 예를 들어, 사용자의 이름과 환영 메시지를 함께 표시하거나, 다양한 정보를 담고 있는 문자열을 생성할 때 말이죠. 이런 상황에서 문자열을 연결하는 것은 매우 유용한 기술입니다.
+우리의 일상 생활에서 문자열 연결은 매우 중요한 작업입니다. 우리가 사용하는 소프트웨어나 앱에서 메세지를 보내거나 출력할 때, 여러 개의 단어나 문장을 하나로 합치는 일은 빈번하게 발생합니다. 따라서 문자열 연결은 프로그래밍에서 매우 유용하고 필수적인 작업입니다.
 
-## 어떻게
+## 어떻게 하나요?
 
-우리는 Ruby의 `+` 연산자를 사용하여 문자열을 연결할 수 있습니다. 예를 들어, `"안녕" + "하세용"`으로 "안녕하세요"라는 새로운 문자열을 만들 수 있습니다. 아래는 몇 가지 예시 코드와 그에 대한 출력 결과입니다.
+Ruby에서 문자열 연결을 하기 위해서는 "+" 기호를 사용합니다. 예를 들어, "Hello"와 "World"라는 두 개의 문자열을 연결하고 싶을 때는 아래와 같이 쓸 수 있습니다.
 
 ```Ruby
-puts "반가워요!" + " 만나서"
-# 출력 결과: "반가워요! 만나서"
-
-puts "저는" + " " + "루비를 좋아해요."
-# 출력 결과: "저는 루비를 좋아해요."
+puts "Hello" + "World"
 ```
 
-위에서 볼 수 있듯이, 우리는 `+` 연산자를 사용하여 두 개의 문자열을 합쳤습니다. `+` 연산자를 사용하여 더 많은 문자열을 합치는 것도 가능합니다. 또는 `<<` 연산자를 사용할 수도 있습니다. 이를테면, `greeting << name << "."`으로 "안녕하세요. 루비씨!"라는 문자열을 만들 수 있습니다.
+위의 코드는 "HelloWorld"라는 문자열을 출력합니다.
 
-## 깊게 파헤치기
+## 깊이 파헤쳐보기
 
-문자열 연결 기능을 더 자세히 살펴보겠습니다. `+` 연산자를 사용하여 문자열을 합친 경우, 새로운 문자열 객체가 만들어집니다. 이는 작업이 조금 더 많이 소요될 수 있지만, 각 문자열을 수정하지 않고 원하는 문자열을 얼마든지 만들 수 있다는 장점이 있습니다.
+Ruby에서 문자열을 연결할 때는 다른 언어들과는 다르게 "String Interpolation"이라는 기능을 사용할 수 있습니다. 이 기능은 문자열 내부에 변수나 식을 넣어서 사용할 수 있게 해줍니다. 예를 들어, 아래의 코드를 살펴보세요.
 
-또한 `*` 연산자를 사용하여 문자열을 반복할 수도 있습니다. 예를 들어, `"다" * 5`를 하면 "다다다다다"라는 문자열이 출력됩니다. 이를테면, `greeting * 3`를 하면 "안녕하세요안녕하세요안녕하세요"라는 문자열이 출력됩니다.
+```Ruby
+name = "John"
+puts "Hello, my name is #{name}"
+```
 
-## 참고하기
+위의 코드는 "Hello, my name is John"이라는 문자열을 출력합니다. 우리는 변수 name의 값을 문자열 내부에서 사용했습니다. 이렇듯 "String Interpolation"은 문자열을 더 유연하게 다룰 수 있도록 도와주는 중요한 기능입니다.
 
-많은 프로그래밍 언어에서 문자열 연결 기능을 제공하고 있으며, 각 언어마다 다양한 방법으로 문자열을 합칠 수 있습니다. 이러한 기능을 더 자세히 알아보고 싶다면 아래 링크들을 참고해보세요.
+# See Also
 
-[Python에서 문자열 연결하기](https://www.w3schools.com/python/python_strings_concatenation.asp)
-
-[JavaScript에서 문자열 연결하기](https://www.w3schools.com/js/js_string_concat.asp)
-
-[Java에서 문자열 연결하기](https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/)
+- [Ruby 문자열 연결 방법](https://www.rubyguides.com/2019/09/ruby-string-concatenation/)
+- [Ruby 문자열 보간법](https://blog.appsignal.com/2019/01/24/ruby-magic-string-interpolation.html)
+- [Ruby 문자열 연결 실습](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-strings/cheatsheet)

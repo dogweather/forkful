@@ -1,48 +1,39 @@
 ---
-title:    "Rust: Generazione di numeri casuali"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/rust/generating-random-numbers.md"
+title:                "Rust: Generazione di numeri casuali"
+programming_language: "Rust"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Generare numeri casuali è un aspetto fondamentale della programmazione, in quanto può essere utilizzato per la creazione di giochi o per il testing di algoritmi.
 
-## Come Fare
-Per generare numeri casuali in Rust, è possibile utilizzare la libreria standard "rand". Inizialmente, dobbiamo aggiungere la dipendenza nel nostro file `Cargo.toml`:
+Scegliere di generare numeri casuali è una scelta comune per molti programmatori, poiché spesso è necessario per creare algoritmi o testare funzionalità di un programma. Imparare come farlo in Rust può essere molto utile per chi vuole sviluppare in questo linguaggio.
 
-```Rust
-[dependencies]
-rand = "0.8.0"
-```
+## Come fare
 
-Successivamente, possiamo utilizzare la funzione `thread_rng()` per inizializzare il nostro generatore di numeri casuali e la funzione `gen_range()` per generare un numero all'interno di un determinato range.
-
-Esempio di codice:
+Rust offre diversi modi per generare numeri casuali, ma il più comune è utilizzare il modulo `rand`. Per iniziare, è necessario importare il modulo nel tuo codice.
 
 ```Rust
-use rand::prelude::*;
-
-fn main() {
-    let mut rng = thread_rng();
-    let random_number = rng.gen_range(1..=10);
-    println!("Il numero casuale è: {}", random_number);
-}
+use rand::Rng;
 ```
 
-Output:
+Una volta importato, puoi utilizzare il metodo `gen_range` per generare un numero casuale compreso tra due valori specificati. Ad esempio, se volessi generare un numero casuale compreso tra 1 e 10, il codice sarebbe il seguente:
 
+```Rust
+let num = rand::thread_rng().gen_range(1, 11);
+println!("Il numero casuale è: {}", num);
 ```
-Il numero casuale è: 5
-```
+
+Il metodo `gen_range` utilizza un generatore di numeri casuale globale chiamato `thread_rng` per ottenere i numeri casuali. Ciò garantisce che i numeri generati siano veramente casuali. Inoltre, è possibile specificare anche un terzo parametro per indicare il passo tra i numeri generati.
 
 ## Approfondimento
-La libreria "rand" offre diverse funzionalità per la generazione di numeri casuali, come ad esempio la possibilità di scegliere una distribuzione specifica (uniforme, normale, etc.), di generare numeri a virgola mobile e di utilizzare seed personalizzati.
 
-Inoltre, è importante tenere in considerazione che la generazione di numeri casuali non è veramente casuale, ma è basata su un algoritmo. Pertanto, è importante scegliere un buon generatore di numeri casuali e utilizzarlo in modo corretto per evitare di influenzare la casualità dei numeri generati.
+Se vuoi approfondire ulteriormente il funzionamento dei numeri casuali in Rust, è possibile utilizzare il modulo `rand` per generare numeri secondo diverse distribuzioni, come la distribuzione di Gauss o di Poisson. Inoltre, è possibile utilizzare un generatore di numeri casuale non basato sulla libreria standard di Rust, come ad esempio `rand_pcg`, che offre un miglior controllo sui numeri generati.
 
-## Vedi Anche
-- Documentazione ufficiale della libreria "rand": https://docs.rs/rand/0.8.0/rand/
-- Tutorial su generazione di numeri casuali in Rust: https://www.educative.io/edpresso/generating-random-numbers-in-rust
-- Tutorial su come scegliere un buon generatore di numeri casuali: https://programming.guide/prng-random-number-generator.html
+## Vedi anche
+
+- [La documentazione ufficiale di Rust su generazione di numeri casuali](https://doc.rust-lang.org/rand/rand/index.html)
+- [Un tutorial su come generare numeri casuali in Rust](https://www.youtube.com/watch?v=qSvDcx59wLU)
+- [Una raccolta di esempi pratici di generazione di numeri casuali in Rust](https://rust-random.github.io/book/guide-start.html)

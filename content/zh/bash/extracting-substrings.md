@@ -1,37 +1,52 @@
 ---
-title:    "Bash: 提取子字符串"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/bash/extracting-substrings.md"
+title:                "Bash: 提取子字符串"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么：
+## 为什么会使用Bash提取子字符串
 
-提取子字符串是编程中常见的操作，它可以让我们从一个字符串中提取出我们需要的信息。例如，假设我们有一个包含很多商品信息的数据库，我们想要从中提取出每个商品的价格，这时候就可以使用提取子字符串的方法。
+在Bash编程中，提取子字符串是一种常见的任务。它可以帮助程序员轻松地从一个字符串中获取所需的信息，例如某段文本或特定的字符。这可以提高编程效率，并简化一些复杂的操作。下面我们将介绍如何使用Bash提取子字符串。
 
-## 如何操作：
+## 如何提取子字符串
 
-在Bash中，我们可以使用`cut`命令来提取子字符串。以下是一个简单的示例，假设我们有一个字符串"Hello World"，我们想要提取出其中的"World"，我们可以使用以下代码：
+在Bash中，提取子字符串的最基本的命令是`${string:position:length}`。其中，`string`表示待提取的字符串，`position`表示提取的位置，`length`表示提取的长度。让我们来看一个简单的例子，假设我们有一个字符串`Hello World`，我们想要提取`World`这个词，可以使用以下代码：
 
-```Bash
-echo "Hello World" | cut -d' ' -f 2
+```
+Bash #!/bin/bash
+
+string="Hello World"
+substring=${string:6:4}
+
+echo $substring
 ```
 
-这段代码的意思是，使用空格作为分隔符（`-d' '`），提取出第2个字段（`-f 2`），即"World"。
+运行以上代码，将会输出`World`。在这个例子中，我们使用`6`作为`position`，因为`W`的位置是第6个字符。而`4`作为`length`，因为`World`有4个字符。
 
-## 深入了解：
+除了指定具体的`position`和`length`外，我们还可以使用以下更多的方法来提取子字符串：
 
-除了使用`cut`命令，我们还可以使用Bash中的字符串截取技巧来提取子字符串。以下是一些常用的字符串截取方法：
+- `${string:position}` : 从`position`开始提取字符串直到结尾
+- `${string:position:-length}` : 从`position`开始提取字符串直到倒数第`length`个字符
+- `${string: -position}` : 从开头开始提取字符串直到倒数第`position`个字符
 
-- `${string:position}`：从字符串的指定位置开始提取子字符串。例如，`${string:5}`会提取出从第5个字符开始的子字符串。
-- `${string:position:length}`：从指定位置开始提取指定长度的子字符串。例如，`${string:5:3}`会提取出从第5个字符开始长度为3的子字符串。
-- `${string#substring}`：从字符串开头开始寻找指定子字符串并删除，然后返回剩余的字符串。例如，`${string#H}`会删除字符串开头的"H"，然后返回剩余的字符串"ello World"。
-- `${string%substring}`：从字符串结尾开始寻找指定子字符串并删除，然后返回剩余的字符串。例如，`${string%ld}`会删除字符串结尾的"ld"，然后返回剩余的字符串"Hello Wor"。
+值得注意的是，在Bash中，`position`和`length`都是从0开始计数的。因此，如果我们想要从第一个字符开始提取字符串，我们需要将`position`设置为`0`。
 
-无论是使用`cut`命令还是字符串截取方法，都能够轻松地提取出我们想要的子字符串。
+## 深入了解提取子字符串
 
-## 查看也可以：
+除了以上基本的方法，Bash还提供了更加灵活的功能来提取子字符串，包括通配符（wildcards）、正则表达式（regular expressions）和替换（replacement）等。这些功能可以帮助我们更加精确地定位想要提取的内容。
 
-- [Linux Command Line: Master the Linux Command Line from Scratch](https://www.udemy.com/course/linux-command-line-from-scratch/?utm_source=adwords&utm_medium=udemyads&utm_campaign=Linux&utm_term=_._ag_90619066970_._ad_437497333164_._de_c_._dm__._pl__._ti_kwd-303100969360_._li_9065282_._pd__._&utm_term=_._pd__._kw_linux%20command%20line%20tutorial_._)
-- [Bash Substring Operations](https://www.tldp.org/LDP/abs/html/string-manipulation.html#SUBSTRREF)
+另外，我们也可以使用循环来提取多个子字符串，或者结合其他命令（例如`grep`和`sed`）来进行更加复杂的操作。总而言之，提取子字符串的方法有很多，我们需要根据具体的情况选择最合适的方法。
+
+## 参考文章
+
+- [Bash String Manipulations](https://www.thegeekstuff.com/2010/07/bash-string-manipulation)
+- [BashGuide/Substition](http://mywiki.wooledge.org/BashGuide/Substitutions#String_manipulation)
+- [Advanced Bash-Scripting Guide - Chapter 10. Manipulating Variables](http://www.tldp.org/LDP/abs/html/string-manipulation.html)
+
+## 参见
+
+- [Bash文本处理教程](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
+- [Bash快速入门教程](https://ryanstutorials.net/bash-scripting-tutorial/)

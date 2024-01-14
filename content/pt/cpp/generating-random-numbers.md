@@ -1,57 +1,50 @@
 ---
-title:    "C++: Gerando números aleatórios"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/generating-random-numbers.md"
+title:                "C++: Geração de números aleatórios"
+programming_language: "C++"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios é importante?
+## Por que gerar números aleatórios em C++?
 
-Gerar números aleatórios é uma técnica crucial na programação. Com ele, podemos simular situações aleatórias, criar jogos e até mesmo garantir a segurança de algumas aplicações. É uma ferramenta poderosa que pode trazer muitos benefícios para o seu código.
+Gerar números aleatórios pode ser útil em muitas situações de programação. Por exemplo, ao criar um jogo, é comum usar números aleatórios para gerar eventos imprevisíveis e tornar o jogo mais dinâmico. Além disso, gerar números aleatórios também é importante em simulações e algoritmos de criptografia.
 
-## Como gerar números aleatórios em C++?
+## Como fazer em C++?
 
-Para gerar números aleatórios em C++, podemos utilizar a biblioteca padrão `<random>`. Com ela, temos acesso a diversas funções e classes que facilitam o processo de geração de números aleatórios. Vamos ver um exemplo de código que gera 5 números aleatórios entre 0 e 100:
+Para gerar números aleatórios em C++, é necessário incluir a biblioteca <random> e criar um objeto da classe `random_device`. Em seguida, é possível usar esta classe para gerar números aleatórios usando diferentes distribuições, como a distribuição uniforme ou a distribuição normal.
+
+Um exemplo de código para gerar 5 números aleatórios entre 1 e 10 seria:
 
 ```C++
 #include <iostream>
 #include <random>
 
 int main() {
-    // Inicializa o gerador de números aleatórios com uma semente
     std::random_device rd;
-
-    // Cria um motor de números aleatórios utilizando a semente
     std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(1, 10);
 
-    // Define o intervalo de geração de números
-    std::uniform_int_distribution<> dist(0, 100);
-
-    // Gera 5 números aleatórios e os imprime
-    for (int i = 0; i < 5; i++) {
-        int num = dist(gen);
-        std::cout << num << std::endl;
+    for (int i = 0; i < 5; ++i) {
+        std::cout << dis(gen) << " "; // imprime cada número gerado separado por espaço
     }
+    std::cout << "\n";
 
     return 0;
 }
 ```
 
-Exemplo de saída:  
-34  
-79  
-16  
-85  
-2 
+O resultado deste código pode ser, por exemplo: `4 9 2 7 3`.
 
-Nesse código, utilizamos a classe `std::mt19937` como o gerador de números aleatórios e `std::uniform_int_distribution` para definir o intervalo em que queremos gerar os números. Assim, podemos utilizar essas classes para controlar de forma mais precisa os números que queremos gerar.
 
-## Profundidade na geração de números aleatórios
+## Mergulho profundo
 
-Por trás dos geradores de números aleatórios, existe uma teoria matemática complexa que é fundamental para garantir a "aleatoriedade" dos números gerados. Um dos métodos mais utilizados é o Método dos Quadrados Médios, que consiste em elevar o número gerado ao quadrado e utilizar os dígitos intermediários como a nova semente para a próxima geração de números. Dessa forma, os números gerados apresentam um bom nível de imprevisibilidade.
+A geração de números aleatórios em C++ é feita usando algoritmos que produzem uma sequência de números aparentemente aleatórios. No entanto, estes algoritmos são baseados em uma semente inicial, que determina toda a sequência de números gerada. Por isso, é importante usar uma semente verdadeiramente aleatória para garantir que a sequência resultante seja realmente imprevisível.
+
+Além disso, é possível gerar números pseudo-aleatórios em C++, que são determinísticos e repetíveis. Isso pode ser útil para testes e depuração, porém não deve ser usado para criptografia ou segurança.
 
 ## Veja também
 
-- [Documentação da biblioteca <random> do C++](https://docs.microsoft.com/pt-br/cpp/standard-library/random)
-- [Como usar o método dos quadrados médios para gerar números aleatórios](https://pt.wikipedia.org/wiki/Quadrados_m%C3%A9dios)
+- [Documentação da biblioteca <random> em C++](https://en.cppreference.com/w/cpp/numeric/random)
+- [Exemplos de código para gerar números aleatórios em C++](https://www.tutorialspoint.com/generate-random-numbers-in-cplusplus)

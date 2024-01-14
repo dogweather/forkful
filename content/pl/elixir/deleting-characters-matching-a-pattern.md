@@ -1,53 +1,47 @@
 ---
-title:    "Elixir: Usuwanie znaków pasujących do wzoru"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/deleting-characters-matching-a-pattern.md"
+title:                "Elixir: Usuwanie znaków pasujących do wzorca."
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Może się zdarzyć, że w trakcie programowania w Elixirze zechcesz usunąć znaki pasujące do określonego wzorca. Może być to konieczne, gdy chcesz przeanalizować lub przekształcić dane w swoim kodzie. W tym artykule dowiesz się, jak to zrobić w prosty sposób.
+Każdy programista wie, że czasem trzeba przeprowadzić operacje usuwania znaków, które pasują do pewnego wzorca. Jest to niezbędne przy obróbce tekstu lub danych wejściowych. W tym artykule dowiesz się, dlaczego warto poznać możliwości silnie typowanego języka programowania jakim jest Elixir oraz jak wykorzystać jego funkcje do usuwania znaków pasujących do określonych wzorców.
 
 ## Jak to zrobić
 
-Aby usunąć znaki pasujące do wzorca w Elixirze, możesz skorzystać z metody `String.replace` lub `Regex.replace` w zależności od Twoich potrzeb.
+Aby usunąć znaki pasujące do wzorca, możemy użyć funkcji `String.replace/4`. Przykładem jest usunięcie białych znaków z podanego tekstu:
 
 ```Elixir
-String.replace("Hello world!", "l", "")
-# Output: "Heo word!"
-
-Regex.replace("Hello world!", ~r/l/, "")
-# Output: "Heo word!"
+String.replace("Witaj \t w \t świecie \n Elixira", " ", "")
 ```
 
-Zauważ, że obie metody przyjmują pierwszy argument jako ciąg znaków, a drugi jako wzorzec do usunięcia. W przypadku `String.replace` po prostu podajemy znak, który chcemy usunąć, podczas gdy w `Regex.replace` musimy użyć wyrażenia regularnego z prefixem `~r`. Jeśli potrzebujesz bardziej złożonego wzorca, możesz poszukać przydatnych wyrażeń regularnych lub zapoznać się z dokumentacją Elixira.
-
-## Głębszy przegląd
-
-Obie metody `String.replace` i `Regex.replace` mają opcjonalny trzeci argument, który pozwala na dokładniejsze kontrolowanie procesu usuwania. Na przykład, możesz określić maksymalną liczbę znaków do zastąpienia lub określić z jakiej strony w ciągu znaków powinna rozpocząć się operacja usunięcia.
-
-Poniżej przedstawiono kilka przykładowych wywołań funkcji `String.replace`, aby pokazać, jak można dostosować sposób usuwania znaków:
+Ten kod zwróci `"WitajwświecieElixira"`. Możemy również wykorzystać wyrażenie regularne w celu bardziej zaawansowanego usuwania. Na przykład, aby usunąć liczbę z podanego tekstu, użyjemy:
 
 ```Elixir
-# Usunięcie tylko pierwszego pasującego znaku:
-String.replace("Hello world!", "l", "", global: false)
-# Output: "Helo world!"
-
-# Usunięcie tylko dwóch pierwszych pasujących znaków:
-String.replace("Hello world!", "l", "", global: false, times: 2)
-# Output: "Heo world!"
-
-# Usunięcie tylko znaków występujących po prawej stronie ciągu:
-String.replace("Hello world!", "o", "", insert_replaced: :after,
-               insert_deleted: :after)
-# Output: "Hell wrld!"
+String.replace("Elixir '2004' jest językiem  programowania stworzonym przez Ęrica \\n\\n  \n\ Bodena", ~r/\d+/, "")
 ```
 
-Spróbuj dostosować powyższe przykłady używając funkcji `Regex.replace` i przetestuj różne kombinacje argumentów, aby lepiej zrozumieć jak one działają.
+Kod ten zwróci `"Elixir 'jest językiem programowania stworzonym przez Ęrica \\n\\n \n\ Bodena"`.
 
-## Zobacz też
+Możemy również użyć funkcji `String.replace/3`, która automatycznie usuwa wszystkie wystąpienia danego znaku lub ciągu znaków. Na przykład, aby usunąć wszystkie spacje z tekstu, możemy wykorzystać:
 
-- [Dokumentacja Elixira o String.replace](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Dokumentacja Elixira o Regex.replace](https://hexdocs.pm/elixir/Regex.html#replace/4)
+```Elixir
+String.replace("Elixir jest świetnym językiem programowania", " ", "")
+```
+
+Kod ten zwróci `"Elixirjestświetnymjęzykiemprogramowania"`.
+
+## Dogłębna analiza
+
+Funkcja `String.replace/4` przyjmuje cztery argumenty: ciąg znaków wejściowych, wzorzec do przeszukania, zastępujący ciąg znaków oraz opcje. Ostatni argument określa, czy wzorzec ma być traktowany jako wyrażenie regularne lub nie. Jeśli nie podamy tej opcji, domyślnie będzie traktowany jako zwykły ciąg znaków.
+
+Aby dokładniej poznać wyrażenia regularne, warto zapoznać się z dokumentacją Elixir. Możemy również wykorzystać narzędzia online, na przykład [regex101](https://regex101.com/) w celu testowania naszych wyrażeń.
+
+## Zobacz również
+
+- [Dokumentacja Elixir](https://hexdocs.pm/elixir/String.html#replace/4)
+- [Narzędzie online do testowania wyrażeń regularnych](https://regex101.com/)

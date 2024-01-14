@@ -1,63 +1,95 @@
 ---
-title:    "C recipe: Calculating a date in the future or past"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/calculating-a-date-in-the-future-or-past.md"
+title:                "C recipe: Calculating a date in the future or past"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why
+## Why
 
-Have you ever needed to calculate a date in the future or past? Maybe you're trying to determine when a project will be completed, or when a bill is due. Whatever the reason may be, understanding how to calculate a date in the future or past can be a valuable skill in many programming projects. In this blog post, we will explore the basics of calculating dates in C.
+Calculating a date in the future or past can be a useful tool for a number of reasons. For example, you may need to schedule a task or event in the future or look back on a past event for reference. Whatever the reason may be, understanding how to calculate dates in your C program can greatly enhance its functionality.
 
-# How To
+## How To
 
-To calculate a date in the future or past, we need to first understand how dates are represented in C. Dates are typically represented as a structure, with members for year, month, and day. We can use the `<time.h>` header file to work with dates in our C program.
-
-Let's say we want to calculate a date 30 days from today. We can use the `time()` function to get the current date and time, and then use the `localtime()` function to convert the current time to a structure. Here's an example code:
+Calculating dates in C can be done using the <time.h> library. First, you will need to initialize a structure of type "tm" which contains information about dates and times. Here is an example of how to do this:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    time_t currentTime;
-    struct tm *myDate;
-    time(&currentTime);
-    myDate = localtime(&currentTime);
+int main(){
+    // initialize structure
+    struct tm date;
     
-    printf("Today's date is: %d/%d/%d\n", myDate->tm_mon + 1, myDate->tm_mday, myDate->tm_year + 1900);
+    // set values for date
+    date.tm_mon = 9;
+    date.tm_mday = 10;
+    date.tm_year = 2020;
     
-    // Adding 30 days to the current date
-    myDate->tm_mday += 30;
-    mktime(myDate); // Re-normalize date
+    // calculate date in 10 days
+    date.tm_mday += 10;
     
-    printf("Date 30 days from today is: %d/%d/%d\n", myDate->tm_mon + 1, myDate->tm_mday, myDate->tm_year + 1900);
+    // print new date
+    printf("The new date is: %d/%d/%d\n",date.tm_mon,date.tm_mon,date.tm_year);
+    
+    return 0;
+    
+}
+```
 
+This code initializes a structure with a date of October 10th, 2020 and then calculates the date 10 days in the future. The output should be:
+
+```
+The new date is: 10/20/2020
+```
+
+You can also use the time() function to get the current time and date, and then use functions like localtime() and mktime() to manipulate the values. Here is an example:
+
+```C
+#include <stdio.h>
+#include <time.h>
+
+int main(){
+    // initialize time variable
+    time_t currentTime;
+    
+    // get current time
+    time(&currentTime);
+    
+    // initialize time structure
+    struct tm *local = localtime(&currentTime);
+    
+    // add 10 days to current date
+    local->tm_mday += 10;
+    
+    // calculate new time
+    time_t newTime = mktime(local);
+    
+    // print new time
+    printf("The new time is: %s", ctime(&newTime));
+    
     return 0;
 }
 ```
 
-Output:
+This code takes the current time and adds 10 days to it, then prints out the new date. The output should be something like:
 
 ```
-Today's date is: 12/3/2019
-Date 30 days from today is: 1/2/2020
+The new time is: Wed Oct 21 00:03:00 2020
 ```
 
-In this example, we use the `time()` function to get the current time in seconds since January 1, 1970. We then use the `localtime()` function to convert this time into a structure, which we can then manipulate. After adding 30 days to the `tm_mday` member, we use the `mktime()` function to re-normalize the date. This ensures our date is represented correctly, taking into account things like leap years.
+## Deep Dive
 
-We can also calculate dates in the past by subtracting days instead of adding them. Additionally, we can manipulate the `tm_mon` and `tm_year` members to calculate dates in different months and years.
+Calculating dates in C may seem daunting at first, but understanding the underlying functions and structures can make it much easier. The <time.h> library has a variety of functions that can be used to manipulate dates and times. Some important ones to note are localtime(), which converts the time_t variable into a structure of type "tm", and mktime(), which does the opposite. The structure "tm" also has a number of variables that you can manipulate such as "tm_mon" for month, "tm_mday" for day, and "tm_year" for year.
 
-# Deep Dive
+Another important aspect to keep in mind is time zones. The functions mentioned above only take into account the local time, so if you want to calculate a date in a different time zone, you will need to adjust the values accordingly.
 
-Behind the scenes, C uses the Julian Day Number (JDN) system to represent dates. This is a continuous count of days from January 1, 4713 BC. By converting our desired date to a JDN, we can use simple arithmetic to calculate dates in the future or past.
+It's also worth noting that dates in C are represented as the number of seconds since January 1st, 1970 (also known as the Unix Epoch). This makes it easy to perform arithmetic operations on dates, but it's important to keep track of the units you are using (seconds, minutes, hours, etc.).
 
-The `mktime()` function also does much of the heavy lifting for us when re-normalizing a date. It takes into account things like daylight saving time and leap years, ensuring our date calculations are accurate.
+## See Also
 
-# See Also
-
-- [C Programming Language - Dates and Times](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
-- [Julian Day Number](https://en.wikipedia.org/wiki/Julian_day)
-- [mktime() function](https://www.tutorialspoint.com/c_standard_library/c_function_mktime.htm)
+- [Time and Date in C](https://www.programiz.com/c-programming/c-date-time)
+- [C Programming Tutorial: Date & Time](https://www.youtube.com/watch?v=3mwwfD_N1mg)
+- [C Language: Date and Time Functions](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)

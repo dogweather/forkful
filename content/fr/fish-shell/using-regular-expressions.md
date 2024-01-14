@@ -1,44 +1,40 @@
 ---
-title:    "Fish Shell: Utiliser les expressions régulières"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/using-regular-expressions.md"
+title:                "Fish Shell: Utiliser des expressions régulières"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
 
-Si vous êtes un développeur expérimenté ou novice dans le domaine de la programmation, vous avez probablement rencontré des situations où vous avez besoin de rechercher, filtrer ou remplacer des chaînes de caractères dans un fichier ou un texte. C'est là que les expressions régulières entrent en jeu. Les expressions régulières, également appelées regex, sont un ensemble de règles utilisées pour rechercher et manipuler des chaînes de caractères selon un modèle spécifique. En utilisant des expressions régulières, vous pouvez économiser du temps et des efforts en évitant de devoir écrire du code personnalisé pour chaque cas.
+Si vous travaillez avec des chaînes de caractères dans votre code, il est probable que vous ayez rencontré des situations où vous deviez trouver et manipuler des motifs spécifiques dans ces chaînes. Les expressions régulières peuvent être un outil puissant pour accomplir cette tâche.
 
-## Comment faire 
+## Comment faire
 
-Voici un exemple de code en utilisant les expressions régulières dans Fish Shell pour rechercher et afficher tous les mots commençant par la lettre "a" dans un fichier texte:
-```Fish Shell
-grep -oE "\ba\w+" fichier.txt
+Les expressions régulières sont des séquences spéciales de caractères qui représentent des modèles que l'on veut trouver dans une chaîne de caractères. Dans Fish Shell, vous pouvez utiliser les expressions régulières en utilisant la commande "grep".
+
+Par exemple, si vous voulez trouver toutes les occurrences de "fish" dans une chaîne, vous pouvez utiliser la commande suivante :
+
+```
+Fish Shell grep "fish" texte.txt
 ```
 
-Dans ce code, nous utilisons la commande "grep" pour rechercher le modèle spécifié par les expressions régulières. L'option "-o" permet d'afficher seulement les parties correspondantes, et l'option "-E" est utilisée pour activer les expressions régulières. Le modèle "\ba\w+" recherche tous les mots commençant par la lettre "a" suivie de n'importe quel caractère alphanumérique. En utilisant "\b" au début du modèle, nous nous assurons que le mot commence par la lettre "a" et non une partie d'un mot. Enfin, nous spécifions le nom du fichier dans lequel nous voulons effectuer la recherche.
+Cela recherchera et affichera toutes les lignes de "texte.txt" qui contiennent le mot "fish". Vous pouvez également utiliser des symboles spéciaux comme "*" pour représenter plusieurs caractères ou "?" pour représenter un seul caractère.
 
-Voici un exemple de sortie possible pour ce code:
-``` 
-apple
-appleauce
-apricot
-avocado
+## Plongée profonde
+
+En plus d'utiliser les expressions régulières pour trouver des motifs spécifiques, vous pouvez également les utiliser pour remplacer ou modifier des parties de chaînes de caractères. Par exemple, si vous voulez remplacer toutes les occurrences de "fish" par "shell" dans une chaîne, vous pouvez utiliser la commande "sed" avec une expression régulière :
+
+```
+Fish Shell sed -i "s/fish/shell/g" texte.txt
 ```
 
-## Plongée en profondeur 
+Cela remplacera toutes les occurrences de "fish" par "shell" dans "texte.txt". Vous pouvez également combiner plusieurs expressions régulières pour créer des motifs plus complexes pour vos recherches et remplacements.
 
-Les expressions régulières peuvent sembler intimidantes au début, car elles utilisent des caractères spéciaux et des symboles pour définir des modèles. Voici quelques-uns des éléments clés à connaître pour mieux comprendre les expressions régulières:
+## Voir aussi
 
-- Les métacaractères: ces caractères spéciaux ont une signification spécifique dans les expressions régulières. Par exemple, "." correspond à n'importe quel caractère.
-- Les quantificateurs: ils spécifient le nombre de fois qu'un élément doit apparaître dans une chaîne de caractères. Par exemple, "a{2,5}" signifie que l'on recherche une chaîne contenant entre 2 et 5 fois la lettre "a".
-- Les caractères de classe: ils permettent de rechercher un certain type de caractère. Par exemple, "\d" correspond à un chiffre et "\w" correspond à un caractère alphanumérique.
-
-Pour en savoir plus sur les expressions régulières et leurs nombreuses utilisations, n'hésitez pas à consulter les ressources ci-dessous.
-
-## Voir aussi 
-
-- [La documentation officielle de Fish Shell](http://fishshell.com/docs/current/)
-- [Les bases des expressions régulières en Fish Shell](https://swcarpentry.github.io/shell-novice/05-regex/index.html)
-- [RegexOne - Un tutoriel interactif pour apprendre les expressions régulières](https://regexone.com)
+- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Tutoriel d'expressions régulières en français](https://openclassrooms.com/fr/courses/1567291-programmez-en-oriente-objet-en-php/1567593-les-expressions-regulieres)
+- [Documentation officielle de grep](https://www.gnu.org/software/grep/manual/grep.html)

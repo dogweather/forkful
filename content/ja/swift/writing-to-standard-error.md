@@ -1,36 +1,45 @@
 ---
-title:    "Swift: 「標準エラーに書き込む」"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/writing-to-standard-error.md"
+title:                "Swift: 「標準エラーへの書き込み」"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-なぜ「標準エラー」に書き込む必要があるのでしょうか？Swiftプログラミングで、標準エラーを利用するメリットについてご紹介します。
+エラーメッセージを標準エラー出力に書き込むことの意義を説明します。
 
-## 方法
+エラーメッセージを標準エラー出力に書き込むことは、デバッグや問題の特定に役立ちます。また、実行中のプログラムでエラーが発生した場合に、ユーザーにエラーの原因を伝えることができます。
 
-標準エラーへの書き込み方法はとても簡単です。下記のコード例をご覧ください。
+## 使い方
 
-```Swift
-var standardError = FileHandle.standardError
-let data = "エラーが発生しました".data(using: .utf8)
-standardError?.write(data!)
-```
-
-実行すると、次のように標準エラーにメッセージが表示されます。
+以下は、Swiftで標準エラー出力にエラーメッセージを書き込む方法の例です。
 
 ```
-エラーが発生しました
+Swift guard let file = FileManager.default.contents(atPath: "notExistingFile") else {
+    fatalError("ファイルが見つかりませんでした")
+}
+
+// program continues...
+```
+
+上記のコードでは、`FileManager`を使用して指定したファイルを読み込み、その結果を`guard`文でオプショナル型の変数`file`に代入しています。もしファイルが見つからない場合は、`fatalError`関数を使用してエラーメッセージを標準エラー出力に書き込みます。
+
+実行すると、以下のような結果になります。
+
+```
+Fatal error: ファイルが見つかりませんでした
 ```
 
 ## 深堀り
 
-標準エラーへの書き込みは主にエラーハンドリング時に使用されます。例えば、ファイルの読み込みに失敗した場合や、不正な入力があった場合などに、エラーメッセージを標準エラーに表示することができます。また、標準エラーは標準出力とは別のストリームを持つため、バグのデバッグやログを出力する際にも便利に使えます。
+標準エラー出力に書き込まれるエラーメッセージは黄色で表示され、標準出力に書き込まれたものよりも目立ちます。これは、標準エラー出力がエラーメッセージのみを表示するように設計されているためです。
 
-## あわせて読みたい
+また、標準エラー出力に書き込まれるエラーメッセージは、ファイルやコマンドラインでプログラムを実行した際に、ファイルにリダイレクトすることなく直接ターミナル上に表示することができます。
 
-- [Swiftのエラーハンドリングについてのドキュメント](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)
-- [FileHandleクラスについてのドキュメント](https://developer.apple.com/documentation/foundation/filehandle)
+## 参考
+
+- [Swift Language Guide - Standard Library](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID340)
+- [Apple Developer Documentation - Logging and Diagnostic Messages](https://developer.apple.com/documentation/xcode/logging_and_diagnostic_messages)

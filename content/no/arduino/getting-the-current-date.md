@@ -1,40 +1,63 @@
 ---
-title:    "Arduino: Hente dagens dato"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/getting-the-current-date.md"
+title:                "Arduino: Få nåværende dato"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det å få tak i den nåværende datoen er en viktig del av mange programmeringsprosjekter. Det er spesielt nyttig for å lage tidsbaserte funksjoner og for å holde rede på når en bestemt hendelse skjedde.
+# Hvorfor
 
-## Hvordan
-For å få tak i den nåværende datoen i Arduino, kan du bruke funksjonene som er tilgjengelige i den innebygde tidsbiblioteket. Her er et eksempel på hvordan du kan skrive ut den nåværende datoen på en serie monitor:
-```Arduino
-#include <TimeLib.h>
-void setup() {
-  Serial.begin(9600);
-  setTime(13, 30, 45, 1, 5, 2021);
+Har du noen gang lurt på hvordan du kan få den nåværende datoen til å vises på din Arduino? Det er mange grunner til at noen kan ønske å gjøre dette, kanskje som en del av et større prosjekt eller for personlig nytte. Uansett hva årsaken er, så er det enkelt å implementere og kan være veldig nyttig i mange situasjoner.
+
+# Hvordan
+
+For å få den nåværende datoen på Arduino, trenger du å bruke en klokke modul, som for eksempel en RTC (Real Time Clock). Det finnes flere forskjellige RTC-moduler på markedet, men i denne guiden vil vi bruke DS1307 RTC, da den er ganske enkel å forstå og implementere.
+
+Først må du koble RTC-modulen til Arduino ved å koble VCC til 5V og GND til bakken. Deretter må du koble SDA til pinne A4 og SCL til pinne A5. Når tilkoblingene er gjort, kan du laste ned biblioteket "RTClib" og inkludere det i Arduino-skissen din ved å gå til "Sketch" > "Include Library" > "Manage Libraries" og søke etter "RTClib".
+
+Deretter kan du kopiere og lime inn følgende kode i skissen din:
+
+```
+#include <RTClib.h> // inkluderer biblioteket for RTC
+RTC_DS1307 rtc; // lager en RTC_DS1307 objekt
+
+void setup () {
+  Serial.begin(9600); // starter seriell kommunikasjon
+  rtc.begin(); // starter RTC kommunikasjon
 }
-void loop() {
-  tmElements_t now;
-  breakTime(now, now);
-  Serial.print(now.Day);
-  Serial.print("/");
-  Serial.print(now.Month);
-  Serial.print("/");
-  Serial.print(now.Year);
+
+void loop () {
+  DateTime now = rtc.now(); // lagrer nåværende tid og dato i en DateTime variabel
+
+  // skriver ut datoen og tiden til seriell monitor
+  Serial.print(now.year());
+  Serial.print('/');
+  Serial.print(now.month());
+  Serial.print('/');
+  Serial.print(now.day());
+  Serial.print(' ');
+  Serial.print(now.hour());
+  Serial.print(':');
+  Serial.print(now.minute());
+  Serial.print(':');
+  Serial.print(now.second());
+  Serial.println();
+
+  delay(1000); // venter 1 sekund mellom hver utskrift
 }
 ```
-Dette vil skrive ut datoen som "5/1/2021" på serie monitoren. Det er også mange andre funksjoner som lar deg få tak i den nåværende tiden, inkludert å få tak i tidsstempler i millisekunder og konvertere dem til en mer lesbar format.
 
-## Deep Dive
-En ting å huske på når du arbeider med å få tak i den nåværende datoen er at Arduino ikke har en innebygd klokke eller kalender. Derfor må du manuelt sette opp dato og tid ved å bruke funksjonen `setTime()` i setup-seksjonen av programmet ditt. Du kan også bruke en ekstern Real Time Clock (RTC) modul for å få mer nøyaktig og pålitelig tidsinformasjon.
+Etter å ha lastet skissen på Arduino og åpnet seriell monitor, vil du se at nåværende dato og tid blir skrevet ut. Dette er et enkelt eksempel, men du kan også bruke denne informasjonen til å utføre andre handlinger, for eksempel å styre en digital klokke eller logge data.
 
-En annen viktig ting å huske på er å konvertere tiden du får fra Arduino til det aktuelle tidssonen og formatet du trenger. Dette kan gjøres ved å bruke funksjonene som er tilgjengelige i tidsbiblioteket, eller du kan manuelt beregne og justere for eventuelle tidssoner.
+# Dypdykk
 
-## Se også
-- TimeLib dokumentasjon: https://github.com/PaulStoffregen/Time
-- De forskjellige funksjonene for å arbeide med tid i Arduino: https://www.arduino.cc/en/Reference/Time
-- RTC modul tutorial: https://www.arduino.cc/en/Tutorial/RTClib
+I denne koden bruker vi funksjonen "now()" for å få nåværende dato og tid. Dette er en enkel måte å hente den nåværende informasjonen på, men det finnes også andre funksjoner som kan være nyttige.
+
+For eksempel kan du bruke "dayOfWeek()" for å få dagen i uken som en numerisk verdi (1-7). Du kan også bruke "UNIXtime()" for å få tiden som en UNIX-tidsstempel, som er antall sekunder siden 1. januar 1970.
+
+# Se også
+
+- [DS1307 RTC-bibliotek](https://github.com/adafruit/RTClib)
+- [Arduino DS1307 RTC tutorial video på norsk](https://www.youtube.com/watch?v=YZCZpD6CRSo) (av "Programmeringsverkstedet")

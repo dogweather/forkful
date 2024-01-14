@@ -1,52 +1,37 @@
 ---
-title:    "Rust: Odczytywanie argumentów wiersza poleceń"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/reading-command-line-arguments.md"
+title:                "Rust: Odczytywanie argumentów wiersza poleceń"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Jeśli jesteś programistą Rust i chcesz nauczyć się, jak czytać argumenty wiersza poleceń, to właściwy artykuł dla Ciebie! Poznasz dokładnie dlaczego jest to ważne oraz jak to zrobić.
+Czy kiedykolwiek zastanawiałeś się, jak programy wiersza poleceń są w stanie akceptować argumenty? Możesz być programistą, który chce zwiększyć swoją wiedzę na temat języka Rust lub po prostu ciekawą osobą, która chce wiedzieć więcej na temat tego procesu. W tym blogu zgłębimy sposoby czytania argumentów wiersza poleceń w języku Rust.
 
-## Jak to zrobić
+## Jak To Zrobić?
 
-Aby czytać argumenty wiersza poleceń w Rust, wystarczy skorzystać z funkcji `args()` oraz `next()`. Oto przykładowy kod:
+Pierwszym krokiem w czytaniu argumentów wiersza poleceń w języku Rust jest zaimportowanie modułu `std::env`. Następnie, możemy wykorzystać funkcję `args()` aby uzyskać iterator, który zawiera nasze argumenty przekazane z wiersza poleceń. Przykład kodu przedstawiony poniżej pokazuje, jak uzyskać dostęp do argumentów i wyświetlić je na ekranie:
 
-```Rust
-use std::env;
+```rust
+use std::env; //importowanie modułu
 
 fn main() {
-    let args: Vec<String> = env::args().collect(); 
-    let first_arg = args.next(); 
-    println!("Pierwszy argument to: {:?}", first_arg); 
+    let args: Vec<String> = env::args().collect(); //tworzenie iteratora z argumentami
+    println!("Przekazane argumenty: {:?}", args); //wyświetlenie argumentów na ekranie
 }
 ```
 
-Jeśli uruchomisz ten kod z argumentem w wierszu poleceń, na przykład `cargo run test`, to otrzymasz taki wynik:
+Przykładowe wywołanie tego programu może wyglądać następująco: `./program_name argument1 argument2`. Wtedy, na ekranie pojawi się wydruk: `Przekazane argumenty: [./program_name, argument1, argument2]`.
 
-```
-Pierwszy argument to: Some("test")
-```
+## Głębsze Zagłębianie Się
 
-Możesz także użyć pętli `for` do iteracji przez wszystkie argumenty:
+Po uzyskaniu podstawowej wiedzy na temat czytania argumentów wiersza poleceń w języku Rust, możesz dalej zgłębiać temat poprzez naukę o funkcjonalnościach modułu `std::env` oraz metodach, które można wykorzystać do manipulowania argumentami. Możesz również zobaczyć przykładowy projekt na GitHubie lub zgłębić temat struktury argumentów przekazywanych w terminalu.
 
-```Rust
-use std::env;
+## Zobacz Również
 
-fn main() {
-    for arg in env::args() {
-        println!("Argument: {}", arg); 
-    }
-}
-```
-
-## Dogłębna analiza
-
-Podczas czytania argumentów wiersza poleceń w Rust, warto zauważyć kilka ważnych rzeczy. Przede wszystkim, funkcja `args()` zwraca iterator. Oznacza to, że możemy wywołać metodę `next()` wielokrotnie, aż do momentu, gdy wszystkie argumenty zostaną przeczytane. Ponadto, warto zauważyć, że `args()` zwraca też nazwę programu jako pierwszy argument.
-
-## Zobacz również
-
-- [Dokumentacja Rust na temat czytania argumentów wiersza poleceń](https://doc.rust-lang.org/std/env/fn.args.html)
-- [Przykłady użycia czytnika argumentów wiersza poleceń w praktyce](https://github.com/rust-lang-nursery/getopts#examples)
+- Dokumentacja modułu `std::env` w języku Rust (https://doc.rust-lang.org/std/env/)
+- Przykładowy projekt czytający argumenty wiersza poleceń w języku Rust (https://github.com/username/project_name)
+- Dokumentacja terminalu w systemie operacyjnym, aby dowiedzieć się więcej o argumentach wiersza poleceń (np. dla systemu Linux: `man bash`)

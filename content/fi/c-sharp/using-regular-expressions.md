@@ -1,34 +1,50 @@
 ---
-title:    "C#: Regulaaristen lausekkeiden käyttö"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/using-regular-expressions.md"
+title:                "C#: Säännöllisten ilmausten käyttö"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita?
+## Miksi käyttää säännöllisiä lausekkeita ohjelmoinnissa
 
-Säännölliset lausekkeet ovat tärkeä osa C# ohjelmointia, sillä niitä käytetään tekstien käsittelyyn ja jäsentämiseen. Niiden avulla voidaan etsiä, korvata tai poistaa tiettyjä merkkijonoja halutusta tekstistä. Tämä tekee ohjelmista tehokkaampia ja helpompia ylläpitää.
+Säännölliset lausekkeet ovat voimakas työkalu ohjelmoijille, jotka haluavat etsiä ja muokata tekstiä tehokkaasti. Ne tarjoavat monipuolisen tavan tarkistaa, vastaako annettu merkkijono tietylle kaavalle, joka sitten voidaan käsitellä halutulla tavalla. Tämä tekee niistä erittäin hyödyllisiä esimerkiksi tietokannan kyselyissä tai tekstiprosessoinnissa.
 
-## Miten käyttää säännöllisiä lausekkeita C# ohjelmoinnissa?
+## Kuinka käyttää säännöllisiä lausekkeita C#:lla
 
-C# tarjoaa laajan valikoiman säännöllisiä lausekkeita käsitteleviä luokkia ja metodeja, jotka tekevät niiden käytöstä melko suoraviivaista. Seuraavassa on esimerkkejä yleisimmin käytetyistä säännöllisiin lausekkeisiin liittyvistä toiminnoista C# ohjelmoinnissa:
+Voimme aloittaa säännöllisten lausekkeiden käytön ottamalla käyttöön System.Text.RegularExpressions -kirjaston C#:ssa. Sieltä löydämme Regex-luokan, joka tarjoaa useita hyödyllisiä metodeja säännöllisten lausekkeiden käyttöön. Alla on esimerkki siitä, miten voimme etsiä tiettyjä sanoja tekstistä ja tulostaa ne konsoliin:
 
-- Etsi tietty teksti: ```C# Regex.Match("teksti", "t"); // Palauttaa "t" ```
-- Korvaa teksti toisella: ```C# Regex.Replace("Tämä on esimerkki", "esimerkki", "demo"); // Palauttaa "Tämä on demo" ```
-- Tarkista onko teksti halutussa muodossa: ```C# Regex.IsMatch("12345", @"\d{5}"); // Palauttaa true ```
-- Etsi useita vaihtoehtoisia merkkijonoja: ```C# Regex.Match("C# on mahtava kieli", "mahtava|upea"); // Palauttaa "mahtava" ```
+```C#
+using System;
+using System.Text.RegularExpressions;
 
-Näiden lisäksi C# tarjoaa myös muita hyödyllisiä metodeja, kuten ```Regex.Split()``` ja ```Regex.Escape()```, jotka helpottavat säännöllisten lausekkeiden käyttöä ohjelmoinnissa.
+class Program
+{
+    static void Main()
+    {
+        string teksti = "Tämä on esimerkkiteksti, josta haluamme löytää tiettyjä sanoja.";
+        Regex regex = new Regex(@"\w+");
+        MatchCollection matchit = regex.Matches(teksti);
 
-## Syvempi sukellus säännöllisiin lausekkeisiin
+        foreach(Match match in matchit)
+        {
+            Console.WriteLine(match.Value);
+        }
+    }
+}
+```
 
-C# säännöllisten lausekkeiden taustalla on .NET Frameworkin ```Regex``` luokka, joka sisältää kaikki tarvittavat luokat ja metodit niiden käsittelemiseen. Tämän luokan avulla voimme luoda oman luokkamme, joka käsittelee tietynlaisten säännöllisten lausekkeiden käsittelyä. Tämä antaa meidän hyödyntää niitä omassa ohjelmoinnissa entistä joustavammin.
+Tässä esimerkissä käytämme Regex-luokan Matches-metodia, joka etsii kaikki säännöllisen lausekkeen mukaiset merkkijonot annetusta tekstistä ja tallentaa ne MatchCollection-olioon. Sitten voimme käydä läpi nämä matchit ja tulostaa ne konsoliin.
 
-On myös tärkeää muistaa, että säännölliset lausekkeet ovat melko tehokkaita ja nopeita, mutta ne voivat myös olla hankalia ymmärtää ja käyttää oikein. Siksi on suositeltavaa harjoitella ja tutustua huolellisesti niiden käyttöön ennen niiden käytön aloittamista.
+## Syvempää tietoa säännöllisistä lausekkeista
+
+Säännölliset lausekkeet voivat olla monimutkaisia ja niiden käyttö voi vaatia paljon opiskelua ja harjoittelua. On myös tärkeää huomata, että eri ohjelmointikielissä säännölliset lausekkeet voivat vaihdella hieman, joten kannattaa tarkistaa käyttämäsi kielen dokumentaatio säännöllisiin lausekkeisiin liittyen.
+
+Kehittyneempien säännöllisten lausekkeiden käyttöön C#:ssa voit tutustua esimerkiksi RegexOptions-luokkaan, joka tarjoaa erilaisia asetuksia säännöllisten lausekkeiden käyttöön. Voit myös käyttää säännöllisiä lausekkeita esimerkiksi tiedon etsimiseen tietokannoista tai tekstien muokkaukseen.
 
 ## Katso myös
 
-- [C# Regular Expressions Tutorial](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
-- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-- [.NET Regular Expressions Reference](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- Säännölliset lausekkeet C#:ssa Microsoftin dokumentaatiosta: https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference
+- Koodiesimerkkejä C#:ssa säännöllisten lausekkeiden käytöstä: https://www.dotnetperls.com/regex
+- Lyhyt opas säännöllisten lausekkeiden käyttöön eri ohjelmointikielillä (englanniksi): https://www.regular-expressions.info/tutorial.html

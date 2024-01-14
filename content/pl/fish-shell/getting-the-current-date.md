@@ -1,39 +1,50 @@
 ---
-title:    "Fish Shell: Pobieranie aktualnej daty"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/getting-the-current-date.md"
+title:                "Fish Shell: Uzyskiwanie bieżącej daty"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Programowanie jest nie tylko o tworzeniu nowych funkcjonalności, ale także o wykorzystaniu narzędzi, które ułatwiają pracę i oszczędzają czas. Jednym z takich narzędzi jest zdolność do pobierania aktualnej daty wskazującej na bieżący czas. W tym artykule dowiesz się, jak to zrobić za pomocą powłoki Fish Shell.
+Czasami w programowaniu potrzebujemy aktualnej daty. Może to być przydatne na przykład do wyświetlania daty ostatniej aktualizacji strony lub do generowania plików z nazwami zawierającymi datę. Dzięki językowi Fish Shell można to łatwo osiągnąć.
 
-## Jak to zrobić
+## Jak zrobić
 
-Aby pobrać aktualną datę w Fish Shell, użyj polecenia `date` z odpowiednimi flagami. Oto kilka przykładów:
+Podstawowym poleceniem w Fish Shell do uzyskania aktualnej daty jest `date`. Polecenie to może być użyte w różnych formatach, na przykład:
 
 ```Fish Shell
-date +%d/%m/%Y     # Wyświetli datę w formacie dzień/miesiąc/rok
->> 14/04/2021
-
-date +%A            # Wyświetli bieżący dzień tygodnia
->> Środa
-
-date +%T            # Wyświetli aktualny czas w formacie godzina:minuty:sekundy
->> 16:32:49
+date +"%d/%m/%Y"
 ```
-Możesz użyć różnych kombinacji flag, aby uzyskać pożądany format daty i czasu. Szczegółowe informacje o dostępnych flagach można znaleźć w dokumentacji Fish Shell.
+W wyniku powyższego polecenia otrzymamy datę w formacie DD/MM/RRRR, na przykład: 03/05/2021.
 
-## Wnikliwa analiza
+Możemy także wyświetlić tylko rok lub miesiąc, wykorzystując odpowiednie formatowanie, na przykład:
 
-Polecenie `date` jest częścią standardowych narzędzi systemowych i działa na wszystkich systemach operacyjnych, które obsługują powłokę Fish. W przypadku, gdy chcesz użyć innej strefy czasowej niż domyślna, możesz użyć flagi `-u` oraz podać odpowiedni kod dla danej strefy. Na przykład, `-u EST` dla strefy Eastern Standart Time.
+```Fish Shell
+date +"%Y" # wyświetli aktualny rok
+date +"%b" # wyświetli skrócony nazwę aktualnego miesiąca (np. Jan, Feb, Mar)
+```
+Dzięki temu poleceniu możemy dostosować format daty do swoich potrzeb.
 
-Ponadto, polecenie `date` może również przyjmować opcję `-d`, która pozwala na obliczenie daty w przyszłości lub w przeszłości. Na przykład, `date +"%d/%m/%Y" -d "2 days ago"` wyświetli datę sprzed dwóch dni.
+## Głębszy zanurzenie
 
-## Zobacz również
+Funkcja `date` w Fish Shell jest oparta na standardowym poleceniu `date` w systemie Unix. Oznacza to, że możemy wykorzystać wszystkie opcje dostępne w normalnej komendzie `date`. Na przykład możemy ustawić datę na inną niż aktualna, używając opcji `-s`, na przykład:
 
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Dokumentacja polecenia `date`](https://www.unix.com/man-page/linux/1/date/)
-- [Porównanie powłok: Bash vs. Fish](https://dev.to/manan30/bash-vs-fish-which-is-the-shell-for-you-9c4)
+```Fish Shell
+date -s "15 APR 2021" # ustawi datę na 15 kwietnia 2021
+```
+Możemy także wyłączyć automatyczne przesunięcie letniego czasu użytkując opcji `-u`, na przykład:
+
+```Fish Shell
+date -u +"%H:%M:%S" # wyświetli aktualny czas bez przesunięcia letniego
+```
+
+W ten sposób możemy bardziej zaawansowanie manipulować datą w systemie, wykorzystując możliwości standardowego polecenia `date`.
+
+## Zobacz także
+
+- Dokumentacja Fish Shell: https://fishshell.com/docs/current/
+- Poradnik dotyczący wykorzystania polecenia `date`: https://www.computerhope.com/unix/date.htm
+- Wszystkie dostępne formaty daty w poleceniu `date`: https://man7.org/linux/man-pages/man1/date.1.html

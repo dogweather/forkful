@@ -1,58 +1,53 @@
 ---
-title:    "Go: Kahden päivämäärän vertailu"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/comparing-two-dates.md"
+title:                "Go: Kahden päivämäärän vertailu"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi vertailla kahden päivämäärän välillä?
+## Miksi
 
-Kun käsittelemme päivämääriä Go-ohjelmoinnin kanssa, on tärkeää ymmärtää, kuinka vertailla kahta päivämäärää toisiinsa. Tämä mahdollistaa esimerkiksi tapahtuman päivämäärän tarkistamisen tai lähimmän tulevan päivämäärän laskemisen.
+Monissa ohjelmoinnin projekteissa on tarve vertailla eri päivämääriä, esimerkiksi tarkistaakseen onko jokin tapahtuma jo mennyt. Tässä blogikirjoituksessa käymme läpi, miten tämä voidaan toteuttaa Go-ohjelmointikielellä.
 
-## Kuinka tehdä se?
+## Kuinka
 
-Voit vertailla kahta päivämäärää Go-ohjelmoinnissa käyttämällä ```time```-pakettia ja sen ```Before```, ```After``` tai ```Equal```-metodeja. Seuraavassa esimerkissä tarkistamme, onko ensimmäinen päivämäärä ennen tai jälkeen toisen päivämäärän:
+Yksi tapa vertailla päivämääriä on käyttää aikaleimoja (timestamps), jotka ovat kokonaislukuja, jotka esittävät ajanhetkeä tiettynä sekuntina. Go tarjoaa time-paketin, jossa on mahdollista luoda aikaleimoja ja vertailla niitä. Alla on yksinkertainen esimerkki, jossa verrataan kahta päivämäärää ja tulostetaan tulos konsoliin:
 
-```
-t1 := time.Date(2021, time.March, 1, 0, 0, 0, 0, time.UTC)
-t2 := time.Date(2021, time.April, 1, 0, 0, 0, 0, time.UTC)
-if t1.Before(t2) {
-    fmt.Println("Ensimmäinen päivämäärä on ennen toista päivämäärää.")
-} else if t1.After(t2) {
-    fmt.Println("Ensimmäinen päivämäärä on jälkeen toista päivämäärää.")
-} else {
-    fmt.Println("Päivämäärät ovat samat.")
+```Go
+package main
+import (
+    "fmt"
+    "time"
+)
+func main() {
+    date1 := time.Date(2021, time.May, 10, 12, 0, 0, 0, time.UTC)
+    date2 := time.Date(2021, time.May, 11, 12, 0, 0, 0, time.UTC)
+    
+    if date1.Before(date2) {
+        fmt.Println("Päivämäärä 1 on ennen päivämäärää 2")
+    } else {
+        fmt.Println("Päivämäärä 2 on ennen päivämäärää 1")
+    }
 }
 ```
 
-**Tuloste:**
-```
-Ensimmäinen päivämäärä on ennen toista päivämäärää.
-```
-
-## Syvenny aiheeseen
-
-Päivämäärän vertailu Go-ohjelmoinnissa käyttää taustalla Unix-ajanlaskua. Jokainen päivämäärä edustaa tiettyä sekuntia Unix-ajanlaskusta. Tämän vuoksi voimme käyttää myös Unix-aikaleimoja päivämäärien vertailuun. Seuraavassa esimerkissä tarkistamme, onko ensimmäinen päivämäärä ennen tai jälkeen toisen päivämäärän Unix-aikaleimojen avulla:
+Tulostus:
 
 ```
-t1Unix := time.Date(2021, time.March, 1, 0, 0, 0, 0, time.UTC).Unix()
-t2Unix := time.Date(2021, time.April, 1, 0, 0, 0, 0, time.UTC).Unix()
-if t1Unix < t2Unix {
-    fmt.Println("Ensimmäinen päivämäärä on ennen toista päivämäärää.")
-} else if t1Unix > t2Unix {
-    fmt.Println("Ensimmäinen päivämäärä on jälkeen toista päivämäärää.")
-} else {
-    fmt.Println("Päivämäärät ovat samat.")
-}
+Päivämäärä 1 on ennen päivämäärää 2
 ```
 
-**Tuloste:**
-```
-Ensimmäinen päivämäärä on ennen toista päivämäärää.
-```
 
-# Katso myös
+## Syvällisemmin
+
+Go-ohjelmointikielessä aikaleimoja käsitellään time.Time-tyypin avulla. Tämä tyyppi sisältää kaikki tarvittavat ominaisuudet ja metodit päivämäärien vertailuun. Aikaleimoja voidaan myös muuttaa eri aikavyöhykkeiden välillä, mikä helpottaa kansainvälisten sovellusten kehitystä.
+
+On myös tärkeää huomata, ettei päivämääriä ja aikaleimoja tulisi koskaan vertailla ==- tai !=-operaattoreilla. Aikaleimojen vertailuun tulisi aina käyttää Before(), After() tai Equal() -metodeja, jotka tarkastavat myös mahdolliset aikavyöhykkeiden erot.
+
+
+## Katso myös
 
 - [Go time-paketti](https://golang.org/pkg/time/)
-- [Go Unix ajanlasku](https://golang.org/pkg/time/#Time.Unix)
+- [Vertaile aikaleimoja Go:ssa](https://medium.com/@saturnsrings/time-manipulation-based-on-millisecond-data-in-golang-3bcace3aad7d)

@@ -1,51 +1,47 @@
 ---
-title:    "Elixir: Uttrekking av delstrenger"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/extracting-substrings.md"
+title:                "Elixir: Utdrag av substringer"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor?
+## Hvorfor
+Noen ganger trenger vi bare en del av en tekststreng for å løse et problem eller utføre en oppgave. Dette er når vi trenger å ekstrahere substringer i Elixir.
 
-Du lurer kanskje på hvorfor du bør engasjere deg i å ekstrahere substringer i Elixir programmering. Vel, substringer er en viktig del av mange programmer og er svært nyttige når man ønsker å manipulere tekst. Ved å lære hvordan man ekstraherer substringer, kan du gjøre din kode mer effektiv og funksjonell.
-
-## Slik gjør du det:
-
-For å ekstrahere substringer i Elixir, kan du bruke funksjonen `slice/3`. Denne funksjonen tar inn en liste, en startindeks og en slutindeks, og returnerer en del av listen som tilsvarer substrider fra og med startindeksen til, men ikke inkludert, slutindeksen.
-
+## Hvordan
+For å utvinne en del av en tekststreng i Elixir, bruker vi funksjonen `String.slice/3`. Denne funksjonen tar tre argumenter: tekststrengen, startindeksen og sluttpindeksen. La oss se på et eksempel:
 ```Elixir
-my_list = [1, 2, 3, 4, 5]
-slice(my_list, 1, 3) # Output: [2, 3]
+name = "Alice"
+String.slice(name, 0, 2)
 ```
-
-Du kan også bruke `slice/2` for å ekstrahere en del av en liste fra en bestemt indeks til slutten av listen.
-
+Dette vil gi oss resultatet `"Al"` som er de første to tegnene i variabelen `name`. Vi kan også bruke negative indekser for å telle baklengs fra slutten av strengen. For eksempel, hvis vi vil ha de siste to bokstavene i `name`, kan vi bruke `-2` som sluttpindeksen:
 ```Elixir
-slice(my_list, 3) # Output: [4, 5]
+String.slice(name, -2, -1)
 ```
+Dette vil gi oss `"ce"` som er de to siste bokstavene i `name`.
 
-Hvis du trenger å ekstrahere en del av en streng i Elixir, kan du bruke `String.slice/3` eller `String.slice/2` på samme måte som med lister.
-
+Vi kan også bruke funksjonen `String.slice/2` for å ekstrahere en del av en tekststreng basert på indekser. Denne funksjonen vil ta inn tekststrengen og en liste av indekser. Her er et eksempel:
 ```Elixir
-my_string = "Elixir programmering er gøy!"
-String.slice(my_string, 7, 19) # Output: "programmering"
-String.slice(my_string, 13) # Output: "gøy!"
+String.slice("banana", [0, 2, 4])
 ```
+Dette vil gi oss `"bnn"` som er bokstavene på indeksene 0, 2 og 4 i strengen `"banana"`.
 
-## Dypdykk:
-
-Det er viktig å merke seg at Elixir bruker null-indeks som standard for lister og strenger, noe som betyr at det første elementet har indeks 0. Dette betyr at hvis du vil ekstrahere første element i en liste eller streng, må du bruke indeks 0. Det er også viktig å huske på at indekser er inkludert i ekstraksjonen, men ikke sluttpunktet.
-
-Videre kan du også bruke negative indekser for å ekstrahere substringer fra slutten av listen eller strengen. For eksempel, hvis du bruker `-1` som slutindeks, vil substriden bli ekstrahert fra starten av listen eller strengen til og med det nest siste elementet. 
-
+## Deep Dive
+Vi har også mulighet til å bruke funksjonen `String.slice/2` med et tredje argument som en funksjon. Denne funksjonen vil ta hver bokstav i strengen og returnere `true` eller `false` basert på en gitt betingelse. Her er et eksempel hvor vi vil ekstrahere alle vokalene i en tekststreng:
 ```Elixir
-String.slice(my_string, 0, -3) # Output: "Elixir programmering er"
+String.slice("Elixir", fn char -> char in ~w(a e i o u A E I O U) end)
 ```
+Dette vil gi oss `"Ei"` som er alle vokalene i strengen `"Elixir"`.
 
-## Se også:
+Husk at strenger i Elixir er en liste av tegn, så vi kan også bruke funksjonen `Enum.slice/2` for å ekstrahere substringer fra en liste. For eksempel, hvis vi har en liste som inneholder tallene `1` til `5`, kan vi bruke `Enum.slice/2` for å få de siste 3 tallene:
+```Elixir
+list = [1, 2, 3, 4, 5]
+Enum.slice(list, -3, 2)
+```
+Dette vil gi oss `[3, 4]` som er tallene `3` og `4` i listen.
 
-- [Elixir Dokumentasjon for `slice/3`](https://hexdocs.pm/elixir/List.html#slice/3)
-- [Elixir Dokumentasjon for `slice/2`](https://hexdocs.pm/elixir/List.html#slice/2)
-- [Elixir Dokumentasjon for `String.slice/3`](https://hexdocs.pm/elixir/String.html#slice/3)
-- [Elixir Dokumentasjon for `String.slice/2`](https://hexdocs.pm/elixir/String.html#slice/2)
+## Se også
+- [Elixir dokumentasjon for `String.slice/3`](https://hexdocs.pm/elixir/String.html#slice/3)
+- [Elixir dokumentasjon for `Enum.slice/2`](https://hexdocs.pm/elixir/Enum.html#slice/2)

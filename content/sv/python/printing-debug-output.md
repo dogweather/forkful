@@ -1,55 +1,48 @@
 ---
-title:    "Python: Utmatning av felsökningsinformation"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/python/printing-debug-output.md"
+title:                "Python: Utmatning av felsökningsinformation"
+programming_language: "Python"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
+Att skriva programspråk kan vara en komplex och tidskrävande process. Ibland kan det uppstå buggar eller fel i koden som är svåra att hitta och åtgärda. Genom att använda tryckning av felsökningstext kan man enkelt spåra dessa problem och snabbare lösa dem.
 
-Att skriva kod är en spännande och ibland utmanande process. Och ibland, oavsett hur bra vi är på att planera och skriva vår kod, så stöter vi på problem. Det kan vara ett resultat som inte ser ut precis som vi förväntade oss, ett oväntat felmeddelande eller till och med en kod som helt enkelt inte fungerar som den ska. För att hjälpa oss att felsöka dessa problem är det viktigt att använda verktyg som kan hjälpa oss att förstå vad som händer i vår kod. Och det är där utskrift av debugdata blir värdefullt.
-
-## Hur man gör
-
-Det enklaste sättet att skriva ut debugdata i Python är att använda "print" -funktionen. Vi kan antingen skriva ut ett meddelande som vi vill se, eller så kan vi skriva ut värdena på våra variabler för att se om de innehåller rätt data.
+##Så här
+För att skriva ut felsökningstext i Python kan du använda funktionen `print`. Du kan skriva ut olika typer av information såsom variabler, strängar och utskrift av olika steg i ditt program. Ett exempel på kodblock kan se ut så här:
 
 ```Python
-# Skriv ut ett meddelande
-print("Debugdata")
-
-# Skriv ut värdet på en variabel
-num = 10
-print("Värdet på num är:", num)
+num1 = 10
+print("Det första numret är:", num1)
 ```
 
-Output:
+Detta kommer att ge följande utmatning:
+
 ```
-Debugdata
-Värdet på num är: 10
+Det första numret är: 10
 ```
 
-En annan användbar teknik är att använda "assert" -satser för att kontrollera våra antaganden om våra variabler och koden i allmänhet.
+Du kan också lägga till flera variabler och strängar inuti `print` funktionen genom att använda kommatecken mellan dem. Detta kommer att skriva ut varje element åtskilt med ett mellanslag.
 
 ```Python
-# Kontrollera att variabeln är av rätt typ
-my_list = [1, 2, 3]
-assert isinstance(my_list, list)
-
-# Kontrollera att ett villkor är sant
-my_bool = True
-assert my_bool is True
+num2 = 7.5
+print("Det andra numret är:", num2, "och summan av numren är:", num1 + num2)
 ```
 
-## Djupdykning
+Detta ger följande utmatning:
 
-Att skriva ut debugdata kan hjälpa oss att identifiera fel och problem i vår kod, men det är också viktigt att vara försiktig med hur mycket data vi skriver ut. Om vi skriver ut för mycket data kan det bli svårt att hitta det som är relevant och det kan också påverka prestandan i vår kod.
+```
+Det andra numret är: 7.5 och summan av numren är: 17.5
+```
 
-En annan viktig aspekt är att veta var man ska skriva ut debugdata. Detta kan bero på vilken del av koden vi vill undersöka, vilken typ av data vi behöver eller hur ofta vi behöver informationen. Vi kan använda olika tekniker och verktyg för att skriva ut och samla in debugdata, som till exempel loggning och användning av debugger.
+##Djupdykning
+När det gäller att skriva ut felsökningstext finns det flera andra funktioner som kan hjälpa till att göra processen ännu enklare. Till exempel kan du använda `format` funktionen för att formatera utskriften av ditt felsökningstext. Du kan också använda `repr` funktionen för att få en mer detaljerad utmatning av dina objekt.
 
-## Se även
+En annan användbar funktion är `sys` modulen, som ger tillgång till systemrelaterad information som till exempel vilken plattform ditt program körs på och vilken version av Python som används. Du kan använda `sys.stderr` för att skriva ut felmeddelanden och `sys.stdout` för att skriva ut annan felsökningstext.
 
-- [Debugging i Python: Vad det är och hur man gör det](https://realpython.com/python-debugging/)
-- [Writing Python Scripts](https://www.python.org/dev/peps/pep-0301/)
-- [Python Debugging With the PDB Module](https://realpython.com/python-debugging-pdb/)
-- [Python Logging Library](https://docs.python.org/3/library/logging.html)
+##Se också
+- [7 sätt att använda Python för felsökning](https://www.datacamp.com/community/tutorials/7-essential-python-scripts-debugging)
+- [Felsökningsguide för Python-utvecklare](https://realpython.com/python-debugging-pdb/)
+- [Python dokumentationen för `print`](https://docs.python.org/3/library/functions.html#print)

@@ -1,60 +1,61 @@
 ---
-title:    "Bash: Sjekke om en mappe finnes"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/checking-if-a-directory-exists.md"
+title:                "Bash: Sjekke om en mappe eksisterer"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+En vanlig oppgave for en programmerer er å sjekke om en bestemt mappe eksisterer. Dette er spesielt viktig når vi skriver skript som skal jobbe med filer og må navigere gjennom forskjellige mapper. Ved å lære hvordan man sjekker om en mappe eksisterer, kan vi sikre at skriptene våre fungerer riktig og unngå uventede feil.
 
-Å sjekke om en mappe eksisterer er en viktig del av Bash-programmering. Dette kan hjelpe deg med å sikre at skriptene dine kjører som de skal og unngå uventede feil.
-
-## Hvordan
-
-For å sjekke om en mappe eksisterer i Bash, kan du bruke `test` kommandoen med flagget `-d` etterfulgt av mappenavnet.
+# Hvordan gjøre det
+For å sjekke om en mappe eksisterer i Bash, kan vi bruke kommandoen `test`. Denne kommandoen lar oss utføre forskjellige tester, inkludert å sjekke om en mappe eksisterer. Vi kan også bruke `if`-statment for å utføre handlinger basert på resultatet av testen.
 
 ```Bash
-if test -d mappenavn
-then
-    echo "Mappen eksisterer!"
+if test -d /sti/til/mappe; then
+    # Handle når mappen eksisterer
 else
-    echo "Mappen eksisterer ikke."
+    # Handle når mappen ikke eksisterer
 fi
 ```
 
-Dette skriptet vil enten gi ut "Mappen eksisterer!" hvis mappen finnes, eller "Mappen eksisterer ikke." hvis mappen ikke finnes.
-
-En annen måte å sjekke på er å bruke `[[`brackets`]]` med flagget `-d` etterfulgt av mappenavnet.
+La oss se et enkelt eksempel på dette i handling. Vi har en mappe kalt "prosjekt" i hjemmemappen vår.
 
 ```Bash
-if [[ -d mappenavn ]]
-then
-    echo "Mappen eksisterer!"
+if test -d ~/prosjekt; then
+    echo "Mappen eksisterer"
 else
-    echo "Mappen eksisterer ikke."
+    echo "Mappen eksisterer ikke"
 fi
 ```
 
-Denne metoden vil også gi samme resultat som det første skriptet.
+Når dette skriptet kjøres, vil det skrive ut "Mappen eksisterer" siden prosjekt-mappen faktisk eksisterer.
 
-## Dypdykk
-
-I Bash kan du også bruke `test` kommandoen med flagget `-e` for å sjekke om en fil eller mappe eksisterer. Dette vil sjekke både filer og mapper, mens `test -d` kun sjekker om en mappe eksisterer.
-
-En annen ting å merke seg er at både `test` og `[[`brackets`]]` trenger absolutte stier for å sjekke om en mappen eksisterer. Hvis du ønsker å bruke relativ sti, kan du bruke variabelen `$PWD` (present working directory) etterfulgt av mappenavnet.
+# Dypdykk
+Vi kan også bruke `test`-kommandoen til å sjekke om en mappe ikke eksisterer ved å bruke utropstegn som foran testen.
 
 ```Bash
-if [[ -d $PWD/mappenavn ]]
-then
-    echo "Mappen eksisterer!"
-else
-    echo "Mappen eksisterer ikke."
+if test ! -d /sti/til/mappe; then
+    # Handle når mappen ikke eksisterer
 fi
 ```
 
-## Se Også
+Vi kan også bruke `if`-statment for å sjekke om to mapper har samme navn ved å bruke dobbel likhetstegn.
 
-- [Bash-skripting for nybegynnere](https://www.finn bruker tips.com/bash-scripting-for-nybegynnere)
-- [Bash dokumentasjon for `test` og `[[`brackets`]]`](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
-- [5 vanlige Bash-programmeringsfeil og hvordan du kan unngå dem](https://www.examples.com/mistakes-to-avoid-when-bash-programming/)
+```Bash
+mappe1="mappe"
+mappe2="mappe"
+
+if test "$mappe1" == "$mappe2"; then
+    echo "Mappene har samme navn"
+fi
+```
+
+Når vi prøver å kjøre disse to eksemplene, vil vi se at testen utføres riktig og den tilsvarende handlingen blir utført.
+
+# Se også
+- [BashGuide](https://mywiki.wooledge.org/BashGuide)
+- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
+- [Linuxcommand.org](https://linuxcommand.org/)

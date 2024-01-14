@@ -1,38 +1,36 @@
 ---
-title:    "Elm: המרת תאריך למחרוזת"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/converting-a-date-into-a-string.md"
+title:                "Elm: המרת תאריך למחרוזת"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה: 
- כי חשוב להיות מסוגלים להציג תאריך כגון בתור טקסט באפליקציות או באתרים.
+## למה
+רובנו רוצים לתצוגה תאריך מסוים כולל התאריך והשעה, אבל באופן טבעי באינטרנט אנחנו משתמשים במחרוזות כדי להציג אותו. כדי לעשות זאת, אנו צריכים להמיר את התאריך לטקסט. במאמר הזה, אנחנו נלמד כיצד לבצע פעולה זו בעזרת שפת Elm.
 
-## כיצד:
- ###
- ```Elm
- import Time
+## איך לעשות זאת
+תחילה, נצטרך להשתמש במודול Date שנמצא בתוך ספרייה הסטנטרדית של Elm. לאחר מכן, נוכיח לבצע מספר פעולות כדי להמיר את התאריך למחרוזת.
 
-dateToString : Time.Posix -> String
-dateToString date =
-    let
-        month = Date.toMonth (Date.fromTime date)
-        day = Date.day (Date.fromTime date)
-        year = Date.year (Date.fromTime date)
-    in
-      (Month.toString month) ++ "-" ++ (toString day) ++ "-" ++ (toString year)
+```elm
+import Date exposing (Day, Month, Year, Time)
+import Date.Format exposing (format)
 
-date = Time.millisToPosix 1632242400000
-dateToString date --> "September-22-2021"
- ```
+today : Date
+today =
+    Date.fromTime (Time.fromHours 11)
 
-## התעמקות:
+formatToday : String
+formatToday =
+    format "%d/%m/%Y %H:%M" today
+```
 
-להמיר תאריך לטקסט באלם יכול להיעשות בעזרת הפונקציה Date.toMonth, Date.day ו- Date.year להשתמש באובייקט המכיל את התאריך וליצור ממנו טקסט ברוחב כמו התאריך הסטנדרטי. אם רוצים להיות מדויקים ניתן להשתמש בחיוג לכל אחד מהחודשים שיש כדי לוודא שהתאריך יוצג בדיוק כפי שציפיתם לו, לעומת זאת צריך לשים לב שצריך לתת רווחים וכוונות יתר עבור התאריך. בנוסף, כמובן שניתן להתאים את פורמט הטקסט בהתאם לצרכים שלכם ולהוסיף פרטים נוספים כמו יום בשבוע או שעות.
+קוד זה ייצור את התאריך הנוכחי כמו נעילה בין שני זמני `today` ו-`now`. התאריך יושת במחרוזת הנכונה יותר כמו ״1/12/2020 11:00״. ניתן לשנות את הפורמט לפי הצורך, אך יש לוודא כי השימוש בתבניות המתאימות כדי להציג את התאריך הנכון במחרוזת.
 
-## ראה גם:
- - [Date.toMonth](https://package.elm-lang.org/packages/elm/time/latest/Time)
- - [Date.day](https://package.elm-lang.org/packages/elm/time/latest/Time)
- - [Date.year](https://package.elm-lang.org/packages/elm/time/latest/Time)
- - [תאריך באלם: התחברות, תאריך, שעות](https://www.bennadel.com/blog/3787-an-elm-datetime-exercise-meeting-planner.htm)
+## העמקה
+כשאנחנו ממירים את התאריך למחרוזת, האם הוא מתמזג עם תוכן אחר במידה והוא חלק ממחרוזת. הוא ישפיע על התוצאה המוחזרת. ייתכן כי התאריך מופיע בתוך מחרוזת כמו ״Today is the 1st of December״. כדי לשמור על פירוק המחרוזת, אנו צריכים להתחשב גם בתבנים המתאימים כדי להמיר את התאריך בצורה נכונה למחרוזת המתאימה.
+
+## ראה גם
+* [תיעוד Date של Elm](https://package.elm-lang.org/packages/elm/time/latest/Time)
+* [מדריך מפורט על כיצד להשתמש במבני תבניות](https://package.elm-lang.org/packages/elm/time/latest/Time#Format)

@@ -1,55 +1,48 @@
 ---
-title:    "Kotlin: Wycinanie podciągów"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/extracting-substrings.md"
+title:                "Kotlin: Wyciąganie podciągów"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto używać wyodrębniania podciągów w Kotlinie?
+## Dlaczego
 
-Wyodrębnianie podciągów jest nieodłączną częścią wielu zadaniach programistycznych. W języku Kotlin, dzięki wygodnej funkcji `substring()`, jest to zadanie nie tylko prostsze, ale także znacznie bardziej czytelne. Pozwala ona na wygodne wyciąganie wybranych fragmentów tekstu, co jest bardzo przydatne w wielu scenariuszach programistycznych.
+Extraction of substrings, or taking specific parts of a larger string, is a common task in programming. It allows for more precise manipulation and analysis of data. In Kotlin, there are several built-in methods and functions to easily extract substrings. 
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Używanie funkcji `substring()` jest bardzo proste. Wystarczy podać jej dwa argumenty: początkowy i końcowy indeks, który określa zakres tekstu, który chcemy wyodrębnić. Przykład:
-
-```Kotlin
-val text = "To jest przykładowy tekst."
-val substring = text.substring(3, 10)
-println(substring)
+Aby wyodrębnić podciągi w Kotlinie, możemy skorzystać z dwóch głównych metod: `substring()` oraz `subSequence()`. Obie metody przyjmują dwa parametry: indeks początku i indeks końca, które określają fragment, który chcemy wyodrębnić.
 
 ```
+Kotlin val sentence = "Programowanie w Kotlinie jest super!"
 
-Output:
-```
-jest przykł
-```
+val result = sentence.substring(16, 23)
+println(result) // wyświetli "Kotlinie"
 
-W powyższym przykładzie, używając funkcji `substring()`, wyodrębniliśmy fragment tekstu od trzeciego do dziesiątego indeksu i przypisaliśmy go do zmiennej `substring`. Następnie, wypisaliśmy go przy użyciu funkcji `println()`.
-
-Jeśli potrzebujemy wyodrębnić fragment tekstu od początku, możemy pominąć pierwszy parametr i podać tylko drugi, określający końcowy indeks, np. `text.substring(0, 5)` wyodrębni pierwsze 5 znaków ze zmiennej `text`.
-
-Funkcja `substring()` może również przyjmować tylko jeden argument - początkowy indeks, wtedy wyodrębniony zostanie cały tekst od tego indeksu do końca.
-
-```Kotlin
-val substring = text.substring(7)
-println(substring)
+val result2 = sentence.subSequence(23, 28)
+println(result2) // wyświetli "jest "
 ```
 
-Output:
+Jeśli chcemy wyodrębnić całą resztę stringa, możemy pominąć drugi parametr. Wtedy metody `substring()` i `subSequence()` automatycznie wybiorą resztę stringa od podanego indeksu do końca. Możemy również wykorzystać metody `first()` i `last()` do szybkiego wyodrębnienia pierwszego i ostatniego znaku stringa.
+
 ```
-jest przykładowy tekst.
+Kotlin val sentence = "Hello World!"
+
+val result = sentence.substring(6)
+println(result) // wyświetli "World!"
+
+val result2 = sentence.subSequence(sentence.first(), sentence.last())
+println(result2) // wyświetli "Hello World!"
 ```
 
-## Wnikliwszy opis
+## Głębszy zewchód
 
-Funkcja `substring()` wykorzystuje indeksowanie zaczynające się od zera - pierwszy znak tekstu posiada indeks 0, kolejny 1, i tak dalej. Zwróćmy uwagę, że końcowy indeks nie jest wliczany w wyodrębniony fragment tekstu.
+Podczas wyodrębniania podciągów, warto pamiętać o tym, że metoda `substring()` tworzy nowy string, natomiast `subSequence()` zwraca nowy obiekt `CharSequence`. Dodatkowo, należy zwrócić uwagę na to, że indeks pierwszego znaku jest równy `0`, a ostatniego jest `length - 1`.
 
-Ponadto, jeśli podane indeksy wykraczają poza długość tekstu, program wyrzuci błąd `IndexOutOfBoundsException`.
+## Zobacz także
 
-Funkcja `substring()` może być również używana na obiektach typu `String?` (String z dodanym znakiem zapytania oznacza, że może to być również wartość null). Wtedy, jeśli wartość jest null, funkcja również zwróci null.
-
-## Zobacz też
-- Dokumentacja funkcji `substring()` w języku Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/substring.html
-- Przykładowe zastosowania wyodrębniania podciągów w Kotlinie: https://www.programiz.com/kotlin-programming/substring
+- Dokumentacja Kotlina na temat wyodrębniania podciągów: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/index.html#substring
+- Wideo "Kotlin Tips & Tricks - Wyodrębnianie podciągów": https://www.youtube.com/watch?v=Hy-VJbHN1T8
+- Przykładowe zadania z wykorzystaniem wyodrębniania podciągów w Kotlinie: https://codeforces.com/problemset/tags/implementation?order=BY_SOLVED_DESC

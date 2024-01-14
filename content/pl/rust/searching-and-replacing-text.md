@@ -1,59 +1,68 @@
 ---
-title:    "Rust: Wyszukiwanie i zastępowanie tekstu"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/searching-and-replacing-text.md"
+title:                "Rust: Wyszukiwanie i zamienianie tekstu"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Stacja Przemysłowa Rust (Rust Industrial Station) jest wreszcie wygodną alternatywą dla wyszukiwania i zastępowania tekstu w Rust. Nie tylko jest łatwy w użyciu, ale też wydajny i niezawodny. W tym artykule dowiesz się, dlaczego warto wybrać Rust do wyszukiwania i zastępowania tekstu.
+Wybranie i zamiana tekstu jest jednym z najczęstszych zadań wykonywanych przez programistów. Może to być wymagane podczas refaktoryzacji kodu, zmiany nazw zmiennych lub funkcji, lub po prostu poprawenia literówek w plikach źródłowych. W tym poście dowiecie się, jak w prosty sposób zamieniać tekst w języku Rust.
 
 ## Jak to zrobić
 
-Przykłady kodów i wyników (sample output) zawarte są w blokach kodu "```Rust ... ```". W Rust Industrial Station istnieją różne narzędzia służące do wyszukiwania i zastępowania tekstu. Jednym z nich jest funkcja `replace()` w module `std::string`, która zastępuje wszystkie wystąpienia danego tekstu w zmiennej. Na przykład:
+W języku Rust istnieje wiele różnych sposobów na wybranie i zamianę tekstu, ale najprostszym i najczęściej używanym jest użycie metody `replace()` dostępnej dla typu `String`. Przypomnijmy sobie podstawowe zasady działania tej metody za pomocą poniższego przykładu:
 
 ```Rust
-let my_string = "Cześć, jestem programistą w Rust!";
-let replaced_string = my_string.replace("Rust", "Python");
-println!("Nowy napis: {}", replaced_string);
+let text = "Witaj, świecie!";
+let new_text = text.replace("świecie", "Ruscie");
+println!("{}", new_text);
+
+// Output: Witaj, Ruscie!
 ```
 
-Wynik:
+W tym przypadku wywołujemy metodę `replace()` na zmiennej `text`, przekazując jako pierwszy argument tekst, który chcemy zamienić, a jako drugi - tekst, na który chcemy go zamienić. Następnie, za pomocą funkcji `println!()`, wypisujemy wynik.
 
-`Cześć, jestem programistą w Python!`
-
-Innym przydatnym narzędziem jest funkcja `find()` w module `std::str`, która wyszukuje pierwsze wystąpienie danego tekstu w zmiennej. Na przykład:
+Ale co jeśli chcielibyśmy dokonać zamiany jednocześnie na różnych fragmentach tekstu? W takim przypadku możemy skorzystać z metody `replace_range()`, która pozwala nam podać wybrany zakres tekstu do zamiany. Przykład wyglądałby następująco:
 
 ```Rust
-let my_string = "Hello world!";
-let found_position = my_string.find("world");
-println!("Pozycja znaleziona: {}", found_position);
+let mut text = String::from("Witaj, świecie!");
+text.replace_range(7.., "bezpieczny");
+println!("{}", text);
+
+// Output: Witaj, bezpieczny!
 ```
 
-Wynik:
+W tym przypadku wykorzystujemy metodę `replace_range()` na zmiennej `text`, przekazując jako pierwszy argument początkowy indeks, od którego chcemy dokonać zamiany, a jako drugi - tekst, który chcemy wstawić. Ponadto, ustawiamy zmienną `text` jako mutowalną, aby móc dokonać zmiany na jej wartości.
 
-`Pozycja znaleziona: 6`
+## Przypadki specjalne
 
-## Głębsza analiza
-
-W Rust Industrial Station możliwe jest także wykorzystanie wyrażeń regularnych do bardziej złożonych operacji wyszukiwania i zastępowania tekstu. Wyrażenia regularne są wzorcami, które pozwalają na dokładniejsze określenie szukanego tekstu. Na przykład, jeśli chcemy zastąpić wszystkie liczby pojedynczą gwiazdką, możemy użyć następującego wyrażenia regularnego:
+Co w sytuacji, gdy chcemy dokonać zamiany tekstu, ale nie chcemy uwzględniać wielkości liter? Tutaj przydatna okaże się metoda `replace()` wraz z funkcją `to_lowercase()`, która zmienia wszystkie litery w tekście na małe. Przykładowy kod wyglądałby tak:
 
 ```Rust
-let my_string = "Liczba pi to 3.141592653589793";
-let replaced_string = Regex::new(r"[0-9]+").unwrap().replace_all(&my_string, "*");
-println!("Napis z gwiazdkami: {}", replaced_string);
+let text = "HELLO, WORLD!";
+let new_text = text.replace("hello", "cześć");
+println!("{}", new_text);
+
+// Output: HELLO, WORLD!
 ```
 
-Wynik:
+W tym przypadku wprowadzone zmiany nie zostaną uwzględnione, ponieważ tekst `"hello"` i `"HELLO,"` różnią się wielkością liter. Aby to zmienić, możemy wykorzystać kombinację tych dwóch metod:
 
-`Liczba pi to *.**************`
+```Rust
+let text = "HELLO, WORLD!";
+let new_text = text.to_lowercase().replace("hello", "cześć");
+println!("{}", new_text);
 
-## Zobacz także
+// Output: cześć, WORLD!
+```
 
-Jeśli chcesz dowiedzieć się więcej o wyszukiwaniu i zastępowaniu tekstu w Rust, zapoznaj się z następującymi linkami:
+Teraz tekst zostanie poprawnie zamieniony, bez względu na wielkość liter.
 
-- [Dokumentacja Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [Oficjalny poradnik Rust](https://www.rust-lang.org/learn)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/rust)
+## Deep Dive
+
+Dzięki bibliotece standardowej języka Rust, możemy dokonać zamiany tekstu w sposób wygodny i prosty. Warto jednak pamiętać, że biblioteka ta nie jest przeznaczona do zaawansowanych operacji na tekście i nie jest zalecana do zastosowań, gdzie dużo danych wymaga szybkiego przetwarzania.
+
+Jeśli potrzebujemy bardziej zaawansowanych funkcji, warto zwrócić uwagę na biblioteki takie jak `regex` lub `strsim`, które zawierają dodatkowe metody do manipulacji tek

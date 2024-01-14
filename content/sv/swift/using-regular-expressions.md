@@ -1,49 +1,52 @@
 ---
-title:    "Swift: Användning av reguljära uttryck"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/using-regular-expressions.md"
+title:                "Swift: Användning av regelbundna uttryck"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför använda sig av reguljära uttryck?
+## Varför
 
-Reguljära uttryck är ett kraftfullt verktyg för att söka och bearbeta strängar i Swift-programmering. Det är ett sätt att beskriva mönster som matchar en viss sekvens av tecken i en sträng. Det används ofta för att söka igenom texter, validera inmatning och ersätta eller formatera text på ett enkelt sätt.
+När vi programmerar vill vi ofta hantera och manipulera text. Ibland behöver vi hitta specifika mönster i en textsträng eller ersätta delar av den med annan text. Här kommer reguljära uttryck, även kända som "regular expressions", till vår hjälp. De är ett kraftfullt verktyg för att söka, matcha och manipulera text.
 
-## Hur man använder reguljära uttryck i Swift
+## Så här använder du reguljära uttryck i Swift
 
-För att använda reguljära uttryck i Swift måste man först importera "Foundation" biblioteket. Sedan kan man använda sig av "NSRegularExpression" för att skapa ett reguljärt uttryck och söka efter matchningar i en given sträng. Låt oss se ett enkelt exempel:
+För att använda reguljära uttryck i Swift behöver vi importera "Foundation" biblioteket. Sedan kan vi använder oss av metoder från "NSRegularExpression" klassen för att skapa och utföra vår sökning eller manipulation. 
 
-```swift
-import Foundation
+```Swift
+import Foundation 
 
-let text = "Jag gillar att läsa och skriva kod i Swift."
-let pattern = "Swift."
+let text = "Detta är en text med siffror 12345 och symboler !@#"
 
-let regex = try! NSRegularExpression(pattern: pattern)
-let matches = regex.matches(in: text, range: NSRange(location: 0, length: text.count))
-
-for match in matches {
-    print("Match found: \(text[Range(match.range, in: text)!])")
+do {
+	// Skapar ett reguljärt uttryck för att hitta siffror
+	let regex = try NSRegularExpression(pattern: "[0-9]+")
+	
+	// Utför sökningen på vår text
+	let matches = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
+	
+	// Skriver ut matchningarna
+	for match in matches {
+		print(text[Range(match.range, in: text)!])
+	}
+} catch {
+	print("Ogiltigt reguljärt uttryck: \(error)")
 }
 ```
 
-Detta kommer att ge följande utmatning: "Match found: Swift."
+Kodblocket ovan skriver ut följande:
 
-## Djupdykning i reguljära uttryck
+```
+12345
+```
 
-Reguljära uttryck kan verka komplexa, men med lite övning kan de bli en kraftfull resurs för textbehandling i dina Swift-program. De ger dig möjlighet att söka igenom stora mängder text på ett effektivt sätt och göra komplexa transformationer. Det finns många olika specialtecken och syntax som kan användas för att skapa olika mönster och matchningar.
+## Djupare utforskning av reguljära uttryck
 
-En annan fördel med reguljära uttryck är att de är plattformsoberoende, vilket innebär att samma kod kan användas på både macOS och iOS enheter.
-
-Det finns också många olika online-resurser och verktyg som kan hjälpa dig att lära dig mer om reguljära uttryck och hur man använder dem i Swift-programmering.
+Reguljära uttryck kan användas på olika sätt för att söka, matcha och manipulera text. Vi kan till exempel använda speciella symboler för att matcha specifika mönster eller använda modifierare för att göra sökningen mer flexibel. Det finns också flera onlineverktyg där man kan testa och experimentera med sina reguljära uttryck, som [RegExr](https://regexr.com/) eller [Regex101](https://regex101.com/).
 
 ## Se även
 
-Här är några användbara länkar för att lära dig mer om reguljära uttryck i Swift:
-
-- [Swifts offciella dokumentation om reguljära uttryck](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Swift Regular Expressions Cheatsheet](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
-- [RegExr - online verktyg för att experimentera med reguljära uttryck](https://regexr.com/)
-
-Vi hoppas att denna artikel har gett dig en bra grund för att börja använda reguljära uttryck i dina Swift-program. Lycka till!
+- [Apple - NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Swift by Sundell - Regular Expressions](https://www.swiftbysundell.com/tips/regular-expressions-in-swift/)

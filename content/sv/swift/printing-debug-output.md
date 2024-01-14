@@ -1,51 +1,55 @@
 ---
-title:    "Swift: Utskrift av felutdata"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/printing-debug-output.md"
+title:                "Swift: Utskrift av felsökningsutdata"
+programming_language: "Swift"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-När man arbetar med Swift-programmering är det lätt att stöta på problem och buggar. Det kan vara frustrerande att inte veta vad som orsakar problemet, särskilt om det är en komplex kod. Att använda utskrift av felsökningsinformation är ett enkelt och effektivt sätt att ta reda på vad som händer under körningen av ditt program.
+## Varför debugga utdata är viktigt i Swift
 
-## Hur man gör
-För att skriva ut felsökningsinformation i Swift kan du använda funktionen `print()`. Detta kommer att skriva ut det du anger inom parenteserna i Xcode's debug area. Här är ett enkelt exempel:
+När man utvecklar en app i Swift kan det vara lätt att fastna i problem och fel som uppstår. Att lägga till print-satser för att skriva ut information vid olika steg i koden kan vara en användbar metod för att förstå vad som händer och varför saker inte fungerar som de ska. Detta kan spara tid och frustration under utvecklingsprocessen.
 
-```Swift
-let num1 = 10
-let num2 = 5
-print("Summan av \(num1) och \(num2) är \(num1 + num2)")
-```
+## Så här använder du dig av debug utdata i Swift
 
-Output:
-
-```
-Summan av 10 och 5 är 15
-```
-
-Du kan också skriva ut värdena av variabler och objekt genom att använda `String` initieraren. Här är ett exempel:
+För att skriva ut debug utdata i Swift, används funktionen `print()` med den information som önskas i parenteser. Här är ett exempel på hur du kan skriva ut en variabel `name` och dess värde:
 
 ```Swift
-let namn = "Emma"
-let ålder = 25
-print("Mitt namn är " + String(namn) + " och jag är " + String(age) + " år gammal.")
+let name = "Johan"
+print("Namnet är: \(name)")
 ```
 
-Output:
+Detta kommer att skriva ut följande i konsolfönstret:
 
 ```
-Mitt namn är Emma och jag är 25 år gammal.
+Namnet är: Johan
 ```
 
-## Djupdykning
-En annan användbar funktion för felsökning är `dump()`. Detta kommer att skriva ut en strukturerad och detaljerad beskrivning av ett objekt, inklusive alla dess egenskaper och deras värden. Detta kan vara särskilt användbart när du arbetar med komplexa datatyper som arrayer eller dictionaries.
+För att skriva ut flera variabler vid ett tillfälle, kan du använda den speciella funktionen `debugPrint()` och skriva alla variabler i parenteser separerade med kommatecken.
 
-En annan tips för felsökning är att använda `assert()`. Denna funktion låter dig ställa in villkor och om dessa villkor inte uppfylls kommer den att skriva ut ett felmeddelande och avbryta körningen. Detta kan vara användbart för att hitta och åtgärda problem innan de orsakar en krasch.
+```Swift
+let age = 28
+let occupation = "Programmerare"
+debugPrint(age, occupation)
+```
+
+Detta kommer att skriva ut:
+
+```
+28, "Programmerare"
+```
+
+## Djupare utforskning av debug utdata i Swift
+
+Utöver att skriva ut värden av variabler, kan man även använda `print()` för att skriva ut textsträngar eller meddelanden som hjälper till att förklara vad som händer i koden. Du kan också använda `print()` tillsammans med villkorsuttryck för att se vilka vägar i koden som faktiskt utförs.
+
+För mer avancerad debuggning, kan du använda funktionen `assert()`. Denna funktion tar ett villkorsuttryck som måste vara sant, annars kommer den att skriva ut ett felmeddelande i konsolen och stoppa execution av koden.
+
+För att lättare läsa och hålla reda på utskrifterna, kan du även använda dig av breakpoints och Xcode's Debug Navigator.
 
 ## Se även
-Här är några resurser för vidare läsning om Swift-felsökning:
 
-- [Officiell Swift Debugging Guide](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/xcode_help-command_line_developer_tools/Chapters/Xcode_Developer_Tools_Command-Line_Tools.html#//apple_ref/doc/uid/TP40002663-CH107-SW1)
-- [Swift Debugging and Profiling Techniques](https://www.raywenderlich.com/26632/how-to-debug-memory-leaks-with-xcode-and-instruments-tutorial)
-- [Debugging Swift: Advanced tips and techniques](https://www.hackingwithswift.com/read/7/3/debugging-swift-advanced-tips-and-techniques)
+* [Apple's dokumentation om debug utdata i Swift](https://developer.apple.com/library/content/documentation/ToolsLanguages/Conceptual/Xcode_Overview/DebugYourApp/DebugYourApp.html)
+* [En guide till debug utdata i Swift](https://www.hackingwithswift.com/read/16/4/adding-debugging-println-statements)
+* [Video tutorial om debug utdata i Swift](https://www.youtube.com/watch?v=qYx_VIHS_xI)

@@ -1,47 +1,48 @@
 ---
-title:    "Bash: Lendo argumentos da linha de comando"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/reading-command-line-arguments.md"
+title:                "Bash: Lendo argumentos de linha de comando"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando?
+## Por que
 
-Se você é um programador iniciante, pode se perguntar por que precisa se preocupar com a leitura de argumentos da linha de comando em programas Bash. A resposta é simples: isso permite que o usuário forneça informações ao programa e personalize sua execução de acordo com suas necessidades específicas. A habilidade de ler argumentos da linha de comando é um importante aspecto da programação em Bash e é essencial para a criação de programas mais interativos e versáteis.
+Se você é um programador iniciante ou experiente em Bash, provavelmente já ouviu falar sobre o conceito de argumentos de linha de comando. Mas por que é importante entender e saber como trabalhar com eles? Os argumentos de linha de comando permitem que você personalize a execução de um programa ou script sem precisar alterar seu código. Isso torna seu código mais flexível e prático para diferentes usos.
 
-## Como ler argumentos da linha de comando
+## Como
 
-A leitura de argumentos da linha de comando é feita por meio do uso de parâmetros especiais que são passados ​​para o programa quando ele é executado. Esses parâmetros são acessados ​​usando a variável especial `$n`, onde `n` é o número do argumento desejado. Por exemplo, se você deseja acessar o primeiro argumento passado para o seu programa, use `$1`. Você também pode usar `shift` para percorrer os argumentos um por um.
+Vamos começar com um exemplo simples para entender como os argumentos de linha de comando funcionam. Imagine que você tem um script chamado "cumprimentar.sh" que simplesmente imprime "Olá!" na tela. Se você executar o script dessa forma: `./cumprimentar.sh`, ele sempre imprimirá "Hello!". Mas, e se você quiser que ele cumprimente alguém específico? É aí que os argumentos de linha de comando entram em cena.
 
-Aqui está um exemplo de código que lê os argumentos da linha de comando e imprime seu valor:
+Podemos modificar nosso script para receber um argumento no momento da execução. Para isso, usamos a variável especial `$1`, que representa o primeiro argumento após o nome do script. Por exemplo, se executarmos `./cumprimentar.sh Ana`, o script imprimirá "Olá, Ana!" na tela.
 
-​```Bash
+Vamos ver o código completo do script:
+
+```Bash
 #!/bin/bash
-echo "O primeiro argumento é: $1"
-echo "O segundo argumento é: $2"
-echo "O terceiro argumento é: $3"
+echo "Olá, $1!"
 ```
 
-**Exemplo de saída:**
+Agora, se quisermos dar um cumprimento mais informal, podemos passar dois argumentos: o primeiro especificando o nome e o segundo para adicionar uma palavra extra. Por exemplo: `./cumprimentar.sh João cara legal`. O script resultará em "E aí, João cara legal!".
 
-```
-$ ./programa.sh primeiro segundo terceiro
-O primeiro argumento é: primeiro
-O segundo argumento é: segundo
-O terceiro argumento é: terceiro
-```
+Além da variável `$1`, podemos usar outras, como `$2`, `$3`, e assim por diante, para trabalhar com mais de um argumento.
 
 ## Mergulho Profundo
 
-A leitura de argumentos da linha de comando pode ser um pouco mais complicada do que parece à primeira vista. Além de usar o `shift` para percorrer os argumentos um por um, você também pode optar por usar um loop `while` para percorrer todos os argumentos.
+Você pode estar se perguntando: "E se eu quiser passar vários argumentos diferentes para um script?". É possível! Podemos usar a variável especial `$@`, que representa todos os argumentos passados. Vamos adicionar essa funcionalidade ao nosso script de cumprimento:
 
-Além disso, você também pode usar as opções `getopts` para lidar com argumentos opcionais e argumentos com valores. Isso permite que você crie programas mais robustos e completos que podem processar uma variedade maior de argumentos da linha de comando.
+```Bash
+#!/bin/bash
+echo "Olá, $@"
+```
 
-## Veja também
+Agora, se executarmos `./cumprimentar.sh João e Maria`, o script imprimirá "Olá, João e Maria!" na tela.
 
-Aqui estão alguns links úteis para mais informações sobre como ler argumentos da linha de comando em Bash:
+Além disso, podemos fazer verificações no nosso código para garantir que os argumentos sejam passados corretamente e tratar possíveis erros.
 
-- [Guia rápido sobre argumentos da linha de comando no Linux](https://www.linode.com/docs/tools-reference/linux-command-line/arguments)
-- [Documentação oficial do Bash sobre argumentos da linha de comando](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#Bash-Variables)
-- [Guia de uso de opções `getopts` em programas Bash](https://stackoverflow.com/questions/16483119/an-unofficial-bash-internal-getopts-tutorial)
+## Veja Também
+
+- [Documentação Oficial do Bash](https://www.gnu.org/software/bash/)
+- [Tutorial de Scripting em Bash](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Exemplos de Scripts em Bash](https://oleddisplay.simsso.de/bash-snippets-examples/)

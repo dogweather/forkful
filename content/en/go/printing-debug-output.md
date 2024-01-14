@@ -1,47 +1,61 @@
 ---
-title:    "Go recipe: Printing debug output"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/printing-debug-output.md"
+title:                "Go recipe: Printing debug output"
+programming_language: "Go"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Debugging is an essential part of the software development process, and being able to print out relevant information about the program's execution can be incredibly useful. Whether it's for troubleshooting a specific issue or gaining a better understanding of the code flow, printing debug output is a powerful tool for developers.
+Debug output is an essential part of the development process for any programmer. It allows us to understand the flow of our code and identify any potential errors or bugs. In the Go programming language, there are various methods for printing debug output, each with its own advantages and use cases.
 
 ## How To
 
-To print debug output in Go, we can use the built-in `fmt` package's `Println` function. It takes in any number of arguments and prints them to the console.
+To print debug output in Go, we can use the built-in `fmt` package, which provides functions for formatting and printing data. Let's take a look at some examples:
 
 ```Go
-fmt.Println("Hello World!")
+package main
+
+import "fmt"
+
+func main() {
+    // printing a single variable
+    name := "John"
+    fmt.Println("Hello", name)
+
+    // formatting output
+    num1 := 10
+    num2 := 20
+    fmt.Printf("The sum of %v and %v is %v\n", num1, num2, num1+num2)
+
+    // printing multiple variables
+    age := 25
+    location := "New York"
+    fmt.Println("I am", age, "years old and currently living in", location)
+}
 ```
 
-This will print "Hello World!" to the console. We can also use string interpolation to print out the value of a variable.
-
-```Go
-name := "John"
-fmt.Println("Hello", name)
+Output:
+```
+Hello John
+The sum of 10 and 20 is 30
+I am 25 years old and currently living in New York
 ```
 
-This will print "Hello John". We can also use the `Printf` function to format our output.
-
-```Go
-age := 25
-fmt.Printf("I am %d years old.", age)
-```
-
-This will print "I am 25 years old."
+As we can see in the examples, we can use `Println` to simply print the variables, `Printf` to format the output, and `Print` for printing without adding a newline at the end. Additionally, the `%v` verb in `Printf` allows us to print any type of variable.
 
 ## Deep Dive
 
-The `fmt` package offers various other functions for printing debug output, such as `Sprintf` and `Fprintln`. These functions give us more control over the format and destination of our output. We can also use the `%v` verb in `Printf` to print any value in its default format.
+Apart from the `fmt` package, there are other ways to print debug output in Go. One popular method is using the `log` package, which provides functions for logging data and displaying it in a structured manner. It also has different levels of logging, such as `Info`, `Warning`, and `Error`, which can help us differentiate the significance of the printed data.
 
-Additionally, we can use the `log` package for more advanced logging capabilities. It allows us to specify the severity level of the message and include a timestamp. We can also create our own custom logger with specific configurations.
+Another technique is using `panic` and `recover` to handle errors and print out relevant information when necessary. This can be useful for debugging code that is prone to unexpected runtime errors.
+
+Another important aspect of printing debug output is the use of `defer` statements. These statements allow us to schedule a function call to be executed at the end of the current function, which is helpful for printing data after the execution of a block of code. It also allows us to handle errors more efficiently by printing relevant information before exiting the function.
 
 ## See Also
 
-- [fmt package documentation](https://golang.org/pkg/fmt/)
-- [log package documentation](https://golang.org/pkg/log/)
-- [Debugging in Go: Tips and Tricks](https://medium.com/swlh/debugging-in-go-tips-and-tricks-5ae5087b5c88)
+- Official documentation for the `fmt` package: https://golang.org/pkg/fmt/
+- Official documentation for the `log` package: https://golang.org/pkg/log/
+- Using `panic` and `recover` for error handling in Go: https://blog.golang.org/defer-panic-and-recover

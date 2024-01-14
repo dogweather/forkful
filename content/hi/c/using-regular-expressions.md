@@ -1,54 +1,31 @@
 ---
-title:    "C: नियमित अभिव्यक्तियों का उपयोग"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c/using-regular-expressions.md"
+title:                "C: रेगुलर एक्सप्रेशन्स का उपयोग करना"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यूः
+## क्यों
 
-रेगुलर एक्सप्रेशन (regular expressions) का उपयोग उन लोगों द्वारा किया जाता है जो पाठ विश्लेषण (text analysis) के साथ काम करते हैं, जैसे कि स्ट्रिंग मिलान (string matching), रीप्लेसमेंट (replacement), और वैधिकता की जांच (validation).
+Regular Expressions ("रेगुलर एक्स्प्रेशन्स" या "रेगेक्स") क्‍या होते हैं और उन्हें क्‍यों इस्‍तेमाल करें? आजकल, प्रोग्रामिंग में रेगुलर एक्स्प्रेशन्स एक महत्वपूर्ण टूल के रूप में माना जाता है जो डाटा मैनिपुलेशन और डेटा की आयात-निर्यात को सोझा और सरल बनाता है। रेगुलर एक्स्प्रेशन्स को लगभग हर प्रोग्रामिंग भाषा में समर्थित किया गया है जैसे कि C, Java, Python, आदि।
 
 ## कैसे करें
 
-```C
-#include <stdio.h>
-#include <regex.h>
+रेगुलर एक्स्प्रेशन्स को उपयोग करने के लिए आपको कुछ सिंपल स्‍टेप्स फॉलो करने होंगे:
 
-int main() {
-  regex_t regex;
-  char string[] = "Hello, World!";
-  char pattern[] = "Hello";
-
-  // रेगुलर एक्सप्रेशन को कंपाइल करें
-  regcomp(&regex, pattern, REG_EXTENDED);
-
-  // पैटर्न मिलान करें
-  int result = regexec(&regex, string, 0, NULL, 0);
-
-  // परिणाम मिलान
-  if (result == 0) {
-    printf("पाठ विश्लेषण के लिए रेगुलर एक्सप्रेशन उपयोगी हो सकता है!");
-  } else {
-    printf("रेगुलर एक्सप्रेशन नहीं मिला।");
-  }
-
-  return 0;
-}
-```
-
-आउटपुट:
-```
-पाठ विश्लेषण के लिए रेगुलर एक्सप्रेशन उपयोगी हो सकता है!
-```
-
-## गहराई में जाएं
-
-रेगुलर एक्सप्रेशन का उपयोग करके, आप टेक्स्ट में फिल्टरिंग (filtering) कर सकते हैं, स्ट्रिंग वैधिकता की जांच (validation) कर सकते हैं, अनुक्रमणिका (sorting) कर सकते हैं और भी बहुत कुछ कर सकते हैं। रेगुलर एक्सप्रेशन अधिक शक्तिशाली बनाता है जो टेक्स्ट प्रोसेसिंग (text processing) को आसान बनाता है।
-
-## देखें भी
-
-- [यूनिक्स में रेगुलर एक्सप्रेशन का विस्तृत गाइड](https://www.gnu.org/software/libc/manual/html_node/Regex-Tutorial.html)
-- [जावा के लिए रेगुलर एक्सप्रेशन का उपयोग](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
-- [PHP में रेगुलर एक्सप्रेशन केस स्टडी](https://www.php.net/manual/en/function.preg-match.php)
+- पहले, आपको अपने प्रोग्राम में `regex.h` हेडर फाइल को इंक्लूड करना होगा।
+"```C
+#include <regex.h> /* regex.h इंक्लूड करें */
+```"
+- फिर, आपको अपने कोड में `regex` डेटा टाइप बनाना होगा। 
+"```C
+regex_t regex; /* रेगेक्स डेटा टाइप बनाएं */ 
+```"
+- अगला चरण होता है पैटर्न का कॉंपाइल करना। एक टेस्‍ट करने के लिए, हम `regex` विकल्प का उपयोग क्र पुर्‍वनिर्दे द्वारा एक ही पैटर्न का कॉंपाइल कर सकते हैं। इस उदाहरण में, हम `regex` के आगे `REG_EXTENDED` विकल्प का उपयोग करते हैं।
+"```C
+char *pattern = "hello"; /* एक सरल पैटर्न चुनें */ 
+regcomp(&regex, pattern, REG_EXTENDED); /* पैटर्न का कॉंपाइल करें */ 
+```"
+- अंतिम में, हम `regex` डेटा टाइप से निकाले गए पैटर्न के अनुकूल स्‍ट्रिंग को तुलना करते हैं। यदि पैटर्न में एक मिलान होता ह

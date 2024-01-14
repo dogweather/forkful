@@ -1,54 +1,68 @@
 ---
-title:    "Python: Sammenføying av strenger"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/concatenating-strings.md"
+title:                "Python: Sammenslåing av strenger"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Mange ganger i programmering, vil du trenge å kombinere to eller flere strenger for å lage en ny streng. Dette kalles "konkatinering" og det kan være veldig nyttig for å manipulere og lage mer komplekse data.
+I programmering er det ofte nødvendig å kombinere flere tekststrenger for å lage en ny tekst. Denne prosessen kalles "concatenation" på engelsk, og i Python brukes "+" operatøren for å gjøre dette. Ved å lære hvordan man konkatenerer strenger, kan du utvide dine muligheter som programmerer og lage mer avanserte og dynamiske programmer.
 
 ## Hvordan
 
-Her er noen eksempler på hvordan man kan konkatinere strenger i Python:
+```python
+text1 = "Hei"
+text2 = "verden!"
+text3 = text1 + text2
+print(text3)
+```
+
+Output:
+```python
+Hei verden!
+```
+
+I dette eksempelet har vi to variabler, "text1" og "text2", som inneholder hver sin tekststreng. Ved å bruke "+", blir disse to strengene koblet sammen og lagret i den tredje variabelen, "text3". Deretter blir den concatenerte strengen "Hei verden!" printet ut. 
+
+En annen måte å concatenate strenger på er å bruke % tegnet og et formatert tekststreng:
 
 ```python
-# Bruke "+" operator:
-fornavn = "Kari"
-etternavn = "Nordmann"
-navn = fornavn + etternavn
-print(navn)
+name = "Maria"
+age = 25
+text = "Hei, mitt navn er %s og jeg er %d år gammel." % (name, age)
+print(text)
 ```
-Dette vil produsere outputen "KariNordmann".
 
+Output:
 ```python
-# Bruke "format" metoden:
-tall = 42
-navn = "Svar på alt er {}.".format(tall)
-print(navn)
+Hei, mitt navn er Maria og jeg er 25 år gammel.
 ```
-Dette vil produsere outputen "Svar på alt er 42.".
 
-```python
-# Bruke "join" metoden:
-list = ["Eple", "Banan", "Jordbær"]
-frukt = ", ".join(list)
-print(frukt)
-```
-Dette vil produsere outputen "Eple, Banan, Jordbær".
+Her blir "%s" og "%d" brukt til å plassere variablene "name" og "age" inn i teksten. Dette er spesielt nyttig når du ønsker å inkludere variabler i en lengre tekststreng.
 
 ## Deep Dive
 
-I Python, er strenger immutable, noe som betyr at de ikke kan forandres etter at de er opprettet. Derfor, når man konkatinerer strenger, lager man en helt ny streng i stedet for å endre den eksisterende. Dette kan være viktig å huske på når man jobber med store strengoperasjoner.
+I tillegg til å bruke "+" og "%"-operatørene, kan du også bruke "join" funksjonen for å concatenate strenger. Dette er spesielt nyttig når du ønsker å kombinere en liste av strenger. For å bruke "join", må du først spesifisere hvordan du ønsker å separere strengene, og deretter spesifisere listen du ønsker å concatenate.
 
-En annen ting å være oppmerksom på er rekkefølgen på strengene man konkatinerer. For eksempel, vil "he" + "ll" + "o" produsere en annen streng enn "ll" + "o" + "he".
+```python
+names = ["Per", "Kari", "Ole"]
+hello_string = "Hei, mitt navn er"
+joined_string = hello_string.join(names)
+print(joined_string)
+```
+
+Output:
+```python
+Hei, mitt navn er PerHei, mitt navn er KariHei, mitt navn er Ole
+```
+
+Det er også viktig å huske at når du konkatenerer strenger, må du sørge for at alle strengene er av samme datatype. Ellers vil du få en feilmelding.
 
 ## Se også
 
-Her er noen andre nyttige ressurser for å lære mer om å konkatinere strenger i Python:
-
-- [Python String Concatenation and Formatting](https://realpython.com/python-string-concatenation/)
-- [Learn Python the Hard Way: Exercise 6 - Strings and Text](https://learnpythonthehardway.org/python3/ex6.html)
-- [Python String join() Method](https://www.w3schools.com/python/ref_string_join.asp)
+- [Offisiell Python dokumentasjon for concatenating strenger](https://docs.python.org/3.7/library/string.html#formatstrings)
+- [W3Schools tutorial om concatenating strenger i Python](https://www.w3schools.com/python/python_strings_concatenate.asp)
+- [RealPython tutorial om concatenating strenger i Python](https://realpython.com/python-string-split-concatenate-join/)

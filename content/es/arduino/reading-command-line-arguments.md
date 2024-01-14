@@ -1,57 +1,61 @@
 ---
-title:    "Arduino: Leyendo argumentos de línea de comandos"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/arduino/reading-command-line-arguments.md"
+title:                "Arduino: Lectura de argumentos de línea de comandos"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-Los argumentos de línea de comando son una herramienta esencial en la programación de Arduino. Te permiten interactuar con tu código y modificar su comportamiento sin tener que reescribirlo cada vez. En esta publicación, te explicaremos por qué leer los argumentos de línea de comando es importante y cómo puedes hacerlo en tus proyectos de Arduino.
 
-## Cómo 
-Para leer los argumentos de línea de comando en Arduino, primero debes incluir la biblioteca `commandline.h` en tu código. Luego, debes declarar una variable de tipo `CommandLine` y llamarla con el tamaño máximo de los argumentos que esperas recibir. A continuación, puedes utilizar la función `getArgument()` para obtener los argumentos introducidos por el usuario. Veamos un ejemplo de código:
+Si eres nuevo en la programación de Arduino, puede ser confuso saber cómo interactuar con tu dispositivo a través de la línea de comandos. Sin embargo, leer argumentos de línea de comandos puede ser muy útil en ciertas situaciones, como cuando necesitas pasar información a tu programa de forma dinámica. En este post, aprenderás cómo leer argumentos de línea de comando en tu proyecto de Arduino.
 
-```Arduino
-#include <commandline.h>
+## Cómo hacerlo
 
-void setup() {
-  Serial.begin(9600);
-  //crear una variable de tipo CommandLine con un máximo de 5 argumentos
-  CommandLine cmd(5);
-  //obtener el primer argumento introducido por el usuario
-  String arg1 = cmd.getArgument(0);
-  //imprimir el argumento en el monitor serial
-  Serial.println(arg1);
-}
+Primero, debes entender que los argumentos de línea de comando son valores que se pasan al programa al iniciarlo. Esto permite introducir información adicional en tu programa sin necesidad de cambiar el código. Para leer estos argumentos, sigue los siguientes pasos:
 
+1. Incluye la biblioteca "Arduino.h" en tu proyecto.
+```
+include "Arduino.h"
+```
+
+2. Declara las variables que quieres recibir como argumentos.
+```
+int arg1;
+float arg2;
+```
+
+3. En la función setup(), utiliza la función "Serial.begin()" para habilitar la comunicación serial.
+```
+Serial.begin(9600);
+```
+
+4. En la función loop(), utiliza la función "Serial.available()" para verificar si hay argumentos disponibles y la función "Serial.parseFloat()" para leer números decimales y "Serial.parseInt()" para leer números enteros. Luego, puedes imprimir los valores leídos utilizando la función "Serial.print()".
+```
 void loop() {
-  //tu código aquí
+  if (Serial.available()) {
+    arg1 = Serial.parseFloat();
+    arg2 = Serial.parseInt();
+    Serial.print("Arg1: ");
+    Serial.println(arg1);
+    Serial.print("Arg2: ");
+    Serial.println(arg2);
+  }
 }
 ```
 
-Si ejecutas este código y en la ventana de monitor serial de Arduino introduces "Hola mundo", verás que el código imprimirá "Hola" en el monitor serial. Esto se debe a que "Hola" es el primer argumento introducido, que se encuentra en la posición 0 de la variable `CommandLine`. Puedes seguir este mismo proceso para obtener y utilizar los argumentos que necesites en tus proyectos.
+5. Ejecuta el programa y verás que los argumentos son leídos y mostrados en el monitor serial.
 
-## Deep Dive
-Los argumentos de línea de comando son útiles para muchas cosas, desde cambiar la configuración de un proyecto hasta proporcionar datos para su procesamiento. También puedes utilizarlos para crear opciones de ejecución en tu código, es decir, diferentes escenarios o acciones que se pueden activar o desactivar según los argumentos introducidos por el usuario. Por ejemplo, si tu proyecto tiene diferentes modos de funcionamiento, puedes utilizar un argumento para seleccionar el modo que deseas utilizar.
+## Profundizando
 
-Un truco útil al leer los argumentos de línea de comando es utilizar la función `hasOption()`. Con esta función, puedes comprobar si un argumento determinado está presente o no. Por ejemplo:
+Existen otras funciones que puedes utilizar para leer argumentos de línea de comando, como "Serial.readString()" para leer cadenas de texto y "Serial.read()" para leer un solo carácter. Además, puedes pasar múltiples argumentos separándolos con un espacio en blanco.
 
-```Arduino
-if (cmd.hasOption("-a")){
-  //haz algo en caso de que el argumento -a esté presente
-}
-```
-
-Y para obtener varios argumentos en una sola línea, puedes utilizar un bucle `for`:
-
-```Arduino
-for (int i = 0; i < cmd.getArgumentCount(); i++) {
-  String arg = cmd.getArgument(i);
-  //haz algo con cada argumento obtenido
-}
-```
+Puedes combinar la lectura de argumentos de línea de comando con otras funcionalidades de Arduino, como sensores, para crear proyectos más complejos y dinámicos.
 
 ## Ver también
-- [Documentación oficial de la biblioteca commandline] (https://github.com/ssp509/commandline)
-- [Tutorial de programación de Arduino para principiantes] (https://maker.pro/arduino/tutorial/beginner-tips-arduino-command-line-arguments)
+
+Para más información sobre cómo leer argumentos de línea de comando en Arduino, puedes consultar los siguientes recursos:
+
+- [Documentación oficial de Arduino sobre comunicación serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Tutorial de Hackster sobre cómo leer argumentos en Arduino](https://www.hackster.io/rraghuvanshi456/how-to-pass-command-line-arguments-to-arduino-code-3e809b)

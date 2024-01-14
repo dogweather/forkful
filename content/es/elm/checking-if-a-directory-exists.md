@@ -1,67 +1,92 @@
 ---
-title:    "Elm: Comprobando si existe un directorio"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elm/checking-if-a-directory-exists.md"
+title:                "Elm: Comprobando si existe un directorio"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué verificar la existencia de un directorio?
+##Por qué 
 
-La verificación de la existencia de un directorio es importante para garantizar que nuestro programa pueda acceder a los archivos y directorios específicos que necesita. Esto nos permite asegurarnos de que nuestro código funcione correctamente y evitar errores no deseados. En esta publicación, aprenderemos cómo verificar si un directorio existe en Elm y cómo podemos manejar diferentes situaciones.
+Revisar si un directorio existe puede ser una tarea importante en ciertas aplicaciones de Elm. Es útil para asegurarse de que un directorio en particular esté disponible antes de realizar alguna acción, como guardar archivos o leer su contenido. Además, puede ayudar a manejar errores de manera más efectiva.
 
-## Cómo hacerlo
+##Cómo hacerlo
+
+Para revisar si un directorio existe en Elm, primero debemos importar el módulo `Directory` de la biblioteca `elm/file`. Luego, podemos utilizar la función `exists` que toma un `path` (ruta) y devuelve un `Cmd` (comando) que retorna un resultado `Bool` indicando si el directorio existe o no.
 
 ```Elm
--- Importamos la biblioteca `File` que contiene funciones para trabajar con archivos y directorios
-import File
+import File.Directory exposing (exists)
 
--- Definimos una función que toma como parámetro una ruta de directorio
-existeDirectorio : String -> Cmd msg
-existeDirectorio ruta =
-    -- Utilizamos la función `File.exists` para verificar si el directorio existe
-    File.exists ruta
-        |> Task.attempt DirectorioExistente
+checkDirectory : Cmd msg
+checkDirectory = exists "ruta/a/mi/directorio"
+```
 
--- Creamos un comando para manejar el resultado de nuestra función
+La variable `checkDirectory` ahora contiene un comando que podemos ejecutar utilizando `Platform.send` o `Task.perform`. Podemos utilizar estas funciones dentro de un `update` o en un `Cmd` independiente para obtener el resultado de si el directorio existe o no.
+
+```Elm
+import File.Directory exposing (exists)
+
 type Msg
-  = DirectorioExistente Bool
+    = DirectorioExiste Bool
 
--- Utilizamos la función `view` para mostrar el resultado en la página
-view : Bool -> Html Msg
-view existe =
-    if existe then
-        text "¡El directorio existe!"
-    else
-        text "Lo siento, el directorio no existe."
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of 
+        DirectorioExiste existe ->
+            if existe then { model | mensaje = "El directorio existe." } else { model | mensaje = "El directorio no existe." } ! []
 
--- Un ejemplo de cómo usar nuestra función
-main : Program () () Msg
-main =
-    Html.program
-        { init = (existeDirectorio "miDirectorio", Cmd.none)
-        , update = \msg model -> (model, Cmd.none)
-        , subscriptions = always Sub.none
+main : Program Never Model Msg 
+main = 
+    Browser.sandbox
+        { init = { mensaje = "" }
         , view = view
+        , update = update
         }
+
+view : Model -> Html Msg
+view model = 
+    div []
+        [ h1 [] [ text "Verificar si un directorio existe en Elm." ]
+        , p [] [ text model.mensaje ]
+        , button [ onClick checkDirectory ] [ text "¡Haz clic para comprobar el directorio!" ]
+        ]
 ```
-**Ejemplo de salida:**
+
+Esta es solo una forma simple de implementar la verificación de un directorio existente en Elm. El comando `checkDirectory` se ejecutará al hacer clic en el botón y se actualizará el modelo con el resultado en el campo `mensaje`.
+
+##Deep Dive
+
+En la mayoría de los casos, la función `exists` solo verificará si el directorio existe, pero no si es un directorio vacío o no. Sin embargo, en algunas ocasiones, podemos querer asegurarnos de que el directorio no solo exista, sino que también tenga algún contenido. En este caso, podemos utilizar la función `listFiles` para obtener una lista de los archivos en el directorio y verificar su tamaño. Si la lista está vacía, sabremos que el directorio existe pero está vacío.
+
+```Elm
+import File.Directory exposing (exists, listFiles) 
+import File.Selectors exposing (fileSize) 
+
+checkDirectory : Cmd msg 
+checkDirectory = 
+    exists "ruta/a/mi/directorio" 
+        |> andThen 
+            ( \exists -> 
+                if exists then 
+                    listFiles "ruta/a/mi/directorio" 
+                        |> andThen ignore
+                          -- ignore es una función de ayuda que simplemente descarta el resultado ya que solo nos interesa el tamaño.
+                        |> andThen fileSize 
+                        |> andThen 
+                            ( \size -> 
+                                if size == -1 then 
+                                    Task.succeed False
+                                else 
+                                    Task.succeed True 
+                            ) 
+                else 
+                    Task.succeed False
+            )
 
 ```
-¡El directorio existe! 
-```
-```
-Lo siento, el directorio no existe.
-```
 
-## Profundizar
+##Vea también
 
-La función `File.exists` que utilizamos en nuestro ejemplo devuelve una tarea que proporciona un valor booleano que indica si el directorio existe o no. Sin embargo, esta función solo verifica si el directorio existe en el momento en que se llama. Si el directorio se elimina o se mueve después de que se haya llamado a `File.exists`, nuestra función puede no reflejar la realidad.
-
-Para verificar si el directorio existe en tiempo real, podemos utilizar la biblioteca `elm-lang/navigation` para suscribirnos a cambios en la URL y actualizar nuestro estado en consecuencia.
-
-## Ver también
-
-- Documentación de Elm: https://guide.elm-lang.org/architecture/user_input/buttons.html
-- Elm Package: https://package.elm-lang.org/packages/elm-lang/navigation/latest/
-- Ejemplos de código: https://github.com/elm-lang/examples/tree/master/navigation
+- Documentación de la biblioteca `elm/file`: <https://package.elm-lang.org/packages/elm/file/latest/>
+- Ejemplo de código en GitHub: <https://github.com/lumenghe/elm-file-directory>

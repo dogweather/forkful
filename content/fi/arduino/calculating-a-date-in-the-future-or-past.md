@@ -1,75 +1,67 @@
 ---
-title:    "Arduino: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/calculating-a-date-in-the-future-or-past.md"
+title:                "Arduino: Päivämäärän laskeminen tulevaisuudesta tai menneisyydestä."
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Usein Arduino-ohjelmointia tehdessä tulee tarvetta laskea tietty päivämäärä tulevaisuudessa tai menneisyydessä. Tämä voi olla esimerkiksi tarpeellista ajastettujen tapahtumien suunnittelussa tai tietyissä datan tallennuksessa. Seuraavaksi kerromme, miten tämä voidaan toteuttaa Arduino-ohjelmoinnissa.
+Miksi haluaisit laskea tulevan tai menneen päivämäärän Arduino-ohjelmoinnilla? Päivämäärien laskeminen voi olla hyödyllistä esimerkiksi aikaperusteisissa projekteissa tai tuotteissa, kuten herätyskelloissa tai ajastimissa.
 
-## Miten
+## Mitä tarvitset
 
-Lasketun päivämäärän saamiseksi tulee ensin määrittää nykyinen päivämäärä. Tämä voidaan tehdä hyödyntämällä RTC (real-time clock) moduulia tai käyttämällä Arduino:n Time Librarya. Esimerkiksi, jos haluamme saada tulevan päivämäärän 10 päivän päästä, voimme käyttää seuraavaa koodinpätkää:
+Ennen kuin aloitat päivämäärien laskemisen Arduinolla, tarvitset tietoa millaisessa muodossa päivämäärät ovat ja millainen tulos haluat saavuttaa. Tarvitset myös perustiedot Arduino-ohjelmoinnista, kuten muuttujien ja ehtolauseiden käytöstä.
 
-```Arduino
-#include <TimeLib.h>
+## Miten tehdä
 
-void setup() {
-  // Määritetään nykyinen päivämäärä
-  setTime(11, 11, 2019, 12, 0, 0);
-}
+Päivämäärien laskeminen tulevaisuuteen tai menneeseen päin tapahtuu samalla periaatteella. Käytetään hyväksi yhteenlaskua ja vähennystä, sekä Arduinon valmiita funktioita datan käsittelemiseen.
 
-void loop() {
-  // Lasketaan päivämäärä 10 päivän päähän
-  time_t futureDate = now() + (10L * 24L * 3600L);
-
-  // Tulostetaan laskettu päivämäärä sarjaporttiin
-  Serial.print("Tuleva päivämäärä: ");
-  Serial.println(day(futureDate));
-  Serial.print(".");
-  Serial.print(month(futureDate));
-  Serial.print(".");
-  Serial.println(year(futureDate));
-
-  delay(1000); // Pieni viive seuraavaan laskentakertaan
-}
-```
-
-Tulostus sarjaporttiin: Tuleva päivämäärä: 21.11.2019
-
-Voimme myös laskea menneisyydessä olevia päivämääriä, muuttamalla laskettavan päivämäärän merkkiä miinukseksi. Esimerkiksi, jos haluamme laskea päivämäärän 3 päivää taaksepäin, voimme käyttää seuraavaa koodinpätkää:
+Seuraavassa esimerkissä lasketaan päivämäärä viikon päästä tämänhetkisestä. Käytetään funktiota `dayOfWeek()` hankkimaan tämänhetkinen viikonpäivä ja muuttujaa `daysToAdd` päivien lukumäärän säilömiseen. Lopuksi tulostetaan tulevan päivämäärän viikonpäivä ja päivämäärä muodossa `viikonpäivä, Month-Päivä-Vuosi`.
 
 ```Arduino
-#include <TimeLib.h>
+int day = dayOfWeek();
+int daysToAdd = 7;
+int futureDay = (day + daysToAdd) % 7;
 
-void setup() {
-  // Määritetään nykyinen päivämäärä
-  setTime(11, 11, 2019, 12, 0, 0);
+Serial.print("Tuleva päivämäärä: ");
+switch (futureDay) {
+  case 0: Serial.print("Sunnuntai, ");
+          break;
+  case 1: Serial.print("Maanantai, ");
+          break;
+  case 2: Serial.print("Tiistai, ");
+          break;
+  case 3: Serial.print("Keskiviikko, ");
+          break;
+  case 4: Serial.print("Torstai, ");
+          break;
+  case 5: Serial.print("Perjantai, ");
+          break;
+  case 6: Serial.print("Lauantai, ");
+          break;
 }
-
-void loop() {
-  // Lasketaan päivämäärä 3 päivää taaksepäin
-  time_t pastDate = now() + (-3L * 24L * 3600L);
-
-  // Tulostetaan laskettu päivämäärä sarjaporttiin
-  Serial.print("Menneisyyden päivämäärä: ");
-  Serial.println(day(pastDate));
-  Serial.print(".");
-  Serial.print(month(pastDate));
-  Serial.print(".");
-  Serial.println(year(pastDate));
-
-  delay(1000); // Pieni viive seuraavaan laskentakertaan
-}
+Serial.print(month());
+Serial.print("-");
+Serial.print(day()+daysToAdd);
+Serial.print("-");
+Serial.println(year());
 ```
 
-Tulostus sarjaporttiin: Menneisyyden päivämäärä: 8.11.2019
+Esimerkkitulos:
 
-## Syvempi tarkastelu
+```
+Tuleva päivämäärä: Maanantai, 06-22-2020
+```
 
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä perustuu ajanlaskuun ja yksinkertaiseen matemaattiseen laskutoimitukseen. Kun nykyinen päivämäärä on tiedossa, voidaan tuleva tai menneinen päivämäärä laskea lisäämällä tai vähentämällä tietty määrä sekunteja nykyiseen aikaan. Arduino:n Time Libraryssa tämä toteutetaan time_t-tyypillä, joka sisältää nykyisen ajan sekunteina vuodesta 1970.
+## Syvemmälle aiheeseen
 
-On myös hyvä huomioida, että päivämäärä lasketaan UNIX-päivinä. 1 UNIX-päivä vastaa 24*60*60 eli 86400 sek
+Monimutkaisemmissa päivämäärien laskemiseen liittyvissä tehtävissä voi tarvita hieman enemmän pohjatyötä. Esimerkiksi ottaessa huomioon karkausvuodet tai aikavyöhykkeet voi vaatia lisäfunktioita ja tarkempaa laskemista. On tärkeää ymmärtää tiettyjen kuukausien pituus ja millainen vaikutus niillä voi olla laskettaessa päivämääriä.
+
+## Katso myös
+
+- [Arduino Reference - Date and Time](https://www.arduino.cc/reference/en/libraries/time/)
+- [Tutorialspoint - Arduino Date and Time Functions](https://www.tutorialspoint.com/arduino/arduino_date_time_functions.htm)
+- [Instructables - How to Work with Date and Time in Arduino](https://www.instructables.com/id/How-to-Work-With-Dates-and-Times-in-Arduino/)

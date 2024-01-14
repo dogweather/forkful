@@ -1,38 +1,48 @@
 ---
-title:    "TypeScript: Reply: テストを書く"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/writing-tests.md"
+title:                "TypeScript: テストの書き方"
+programming_language: "TypeScript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜテストを書くのか
 
-プログラミングをする上で、テストは非常に重要な役割を担っています。テストを書くことで、コードが期待通りに動作するかどうかを確認し、バグを早期に発見することができます。これにより、品質の高いプログラムを作成することができます。
+ソフトウェア開発は、常にコードを書くことに焦点が当てられがちですが、テストを書くことも非常に重要です。テストを書くことで、バグを早期に発見したり、コードの品質を向上させたりすることができます。
 
 ## 方法
 
-テストを書く方法を学ぶ前に、まずはTypeScriptを使ったプログラミングの基本を覚えましょう。以下のコード例を参考にしてください。
+テストを書く最も一般的な方法の1つは、単体テストを行うことです。単体テストでは、個々の関数や処理が正しく動作するかを確認するために、入力と期待される出力を定義します。
+
+例えば、以下のような関数があるとします。
 
 ```TypeScript
-// 2つの数値を足し合わせる関数
-function add(a: number, b: number): number {
+function addNumbers(a:number, b:number):number {
   return a + b;
 }
-
-// テストケース
-console.log(add(2,3)); // 出力結果：5
-console.log(add(-1, 100)); // 出力結果：99
 ```
 
-上記の例では、2つの数値を足し合わせる関数を作成し、それぞれのテストケースをConsole.logを使って出力しています。このように、テストを書くことでコードの動作を確認することができます。
+この関数に対して、以下のような単体テストを書くことができます。
+
+```TypeScript
+it('2つの数を足し合わせること', () => {
+  const result = addNumbers(2, 3);
+  expect(result).toEqual(5);
+});
+```
+
+ここでは、関数が正しく動作し、2つの数を足し合わせて5を返すかをテストしています。もしテストが失敗した場合、コードにバグがある可能性が高いため、修正が必要になります。
 
 ## ディープダイブ
 
-テストを書く際には、さまざまなタイプのテストがあります。単体テストや結合テストなど、それぞれの目的に応じて適切なテストを選択することが重要です。また、網羅的なテストを書くことで、コードのカバレッジを高めることができます。さらに、テストを自動化することで、プログラムの品質を保つことができます。
+テストを書く際には、いくつかの重要なポイントがあります。まず、テストはバグを見つけるための手段であるため、網羅的に書くことが重要です。全てのケースをカバーすることで、バグの発見しやすさが向上します。
+
+また、テストはコードの品質を向上させるためにも利用できます。より多くのテストを書くことで、コードの可読性やメンテナンス性を高めることができます。
+
+さらに、テストコードもまたリファクタリングの対象となります。テストが通るようにコードをリファクタリングすることで、より良いコードを書くことができます。
 
 ## See Also
 
-- [TypeScript公式ドキュメント](https://www.typescriptlang.org/docs/)
-- [Jestを使ったテストの自動化](https://jestjs.io/docs/getting-started)
-- [テスト駆動開発についての教材](https://codeprep.jp/books/28)
+- [TypeScript 公式ドキュメント（日本語）](https://www.typescriptlang.org/ja/docs/)
+- [テスト駆動開発（TDD）のやり方](https://qiita.com/honkaku/items/096677897180c05173e8)

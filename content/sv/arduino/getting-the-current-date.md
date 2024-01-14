@@ -1,51 +1,48 @@
 ---
-title:    "Arduino: Att få den aktuella datumet"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/getting-the-current-date.md"
+title:                "Arduino: Hämta aktuellt datum"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att få reda på den aktuella datumet kan vara en användbar funktion i många projekt. Den kan hjälpa till att spåra händelser, schemalägga aktiviteter eller helt enkelt ge en allmän uppfattning om tiden.
 
-Att kunna få ut den aktuella datumet kan vara användbart för många olika projekt som rör sig kring tidshantering. Genom att använda sig av Arduino och dess inbyggda RTC (real time clock) modul, kan vi enkelt få ut den nuvarande datumet direkt från vår kod. Det är även en grundläggande funktion för många olika applikationer som involverar tidgivning, så det är en bra funktion att ha kunskap om.
-
-## Så här gör du
-
-För att få ut den aktuella datumet i Arduino, behöver vi först ansluta en RTC-modul till vår Arduino. Detta gör vi genom att ansluta VCC till 5V, GND till jord och SDA/SCL till motsvarande pinnar på Arduino. Sedan behöver vi installera biblioteket "DS3231.h" för att kunna använda oss av RTC-funktionerna.
-
-För att få ut datumet, använder vi oss av "RTC_DS3231" objektet och "now()" funktionen. Sedan kan vi använda följande kod:
+## Hur man gör det
+För att få den aktuella datumet i Arduino behöver du använda `millis()` funktionen. Detta returnerar antalet millisekunder sedan enheten startade. Genom att konvertera detta till en läsbar form kan vi få datumet.
 
 ```Arduino
-#include <DS3231.h>
-
-RTC_DS3231 rtc;
-
-void setup() {
-  Serial.begin(9600);
-  rtc.begin();
-}
-
-void loop() {
-  DateTime now = rtc.now();
-
-  Serial.print(now.day(), DEC);
-  Serial.print('/');
-  Serial.print(now.month(), DEC);
-  Serial.print('/');
-  Serial.print(now.year(), DEC);
-
-  Serial.println();
-}
+unsigned long nu = millis(); //Spara aktuellt antal millisekunder i en variabel
+unsigned long dagar = nu / (1000*60*60*24); //Konvertera till antal dagar
+Serial.println(dagar); //Skriv ut antal dagar sedan enheten startade
 ```
 
-Detta kommer att ge oss utskriften "DD/MM/YYYY" i seriell monitor. Vi kan även använda oss av funktioner som "now.hour()", "now.minute()" och "now.second()" för att få ut tidigare information.
+Output:
+```Arduino
+18558
+```
+
+Detta nummer motsvarar antalet dagar sedan enheten startade. För att få ett mer läsbart datum kan man använda några matematiska beräkningar och `sprintf()` funktionen.
+
+```Arduino
+unsigned long nu = millis(); //Spara aktuellt antal millisekunder i en variabel
+unsigned long dagar = nu / (1000*60*60*24); //Konvertera till antal dagar
+int år = 1970 + dagar / 365; //Hitta år genom att dela antalet dagar med antalet dagar på ett år
+int dag = dagar % 365; //Hitta dag genom att använda modulo-operatorn för att få återstående dagar
+sprintf("%d/%d/%d", dag, år, dag); //Formatera datumet och skriv ut det
+```
+
+Output:
+```Arduino
+27/2025/12 //Om enheten startade den 1 januari 1970
+```
 
 ## Djupdykning
-
-Datumet som hämtas från RTC-modulen är i decimalformat, vilket betyder att en siffra som t.ex. "31" egentligen representerar det hexadecimala värdet "1F". Om du vill ha ut informationen som en "0"-fylld sträng, så finns det funktioner tillgängliga för detta. För att ta reda på vad de hexadecimala värdena betyder, kan du använda dig av hexadecimala kalkylatorer eller utför ett omvandlingsprogram.
+Som du kanske märkte så är denna metod för att få den aktuella datumet inte perfekt. Trots att enheten har gått i flera år så visar datumet endast 10 år (i detta fall). Detta beror på att `millis()` funktionen endast returnerar ett 32-bitars heltal vilket motsvarar cirka 50 dagar på en Arduino som går på 16 MHz. För att få ett mer exakt datum kan man använda en realtidsklocka eller en extern RTC-modul.
 
 ## Se även
-
-- DS3231 biblioteket: https://github.com/jarzebski/Arduino-DS3231
-- Ytterligare resurser för att använda RTC på Arduino: https://www.instructables.com/id/Arduino-Real-time-clock-with-clock-sentence-outpu/
+- [Användning av millis() funktionen](https://www.arduino.cc/reference/sv/language/functions/time/millis/)
+- [Skriva omvandlingsfunktioner för millis() till dage/datum](https://www.arduino.cc/reference/sv/language/functions/time/millis/)
+- [Användning av realtidsklocka (RTC) med Arduino](https://www.arduino.cc/en/Tutorial/RTClib)

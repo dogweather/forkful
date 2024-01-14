@@ -1,57 +1,36 @@
 ---
-title:    "Haskell: Concaténation de chaînes"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/concatenating-strings.md"
+title:                "Haskell: Concaténation de chaînes de caractères"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-Dans la programmation en Haskell, il est fréquent d'avoir à concaténer des chaînes de caractères, c'est-à-dire de les combiner en une seule chaîne. Cette opération est très utile dans de nombreux cas, comme par exemple lors de la création de messages ou de rapports.
+Si vous êtes nouveau dans le monde de la programmation Haskell, vous vous demandez peut-être pourquoi quelqu'un voudrait concaténer des chaînes de caractères. En termes simples, la concaténation de chaînes de caractères implique la fusion de deux ou plusieurs chaînes de caractères pour en créer une seule.
 
 ## Comment faire
-
-La concaténation de chaînes de caractères en Haskell est très simple grâce à la fonction `++`. Lorsque vous concaténez deux chaînes, la première sera placée avant la seconde. Voici un exemple de code :
-
-```Haskell
-concatenate :: String -> String -> String
-concatenate str1 str2 = str1 ++ str2
-
--- Output : "Bonjour le monde!"
-concatenate "Bonjour" " le monde!"
-```
-
-Vous pouvez également concaténer plusieurs chaînes en une seule en utilisant la fonction `concat`. Celle-ci prend en argument une liste de chaînes et les combine en une seule. Voici un autre exemple de code :
+La concaténation de chaînes de caractères en Haskell est simple et facile. Avec l'opérateur "++", vous pouvez concaténer deux chaînes de caractères comme dans l'exemple suivant :
 
 ```Haskell
-multipleConcat :: [String] -> String
-multipleConcat strings = concat strings
-
--- Output : "Je suis un programmeur en Haskell"
-multipleConcat ["Je ", "suis ", "un ", "programmeur ", "en ", "Haskell"]
+"Bonjour" ++ "à tous"
 ```
+Cela produirait la sortie suivante : "Bonjour à tous".
+
+Vous pouvez également concaténer plusieurs chaînes de caractères en les mettant toutes ensemble, comme ceci :
+
+```Haskell
+"Comment" ++ "" ++ "ça" ++ "va ?"
+```
+Cela produirait la sortie suivante : "Comment ça va ?".
 
 ## Plongée en profondeur
+En plus de l'opérateur "++", il existe également la fonction "concat" qui concatène une liste de chaînes de caractères en une seule. Vous pouvez également utiliser des variables pour stocker des chaînes de caractères et les concaténer à l'aide de l'opérateur "++=".
 
-En Haskell, les chaînes de caractères sont en fait des listes de caractères. La fonction `++` fonctionne en prenant la première liste et en y ajoutant la seconde à la fin. Cela signifie que si vous concaténez une chaîne avec un seul caractère, celui-ci sera également ajouté à la fin. Par exemple :
-
-```Haskell
--- Output : "Hello world!"
-concatenate "Hello " "w" ++ "orld!"
-```
-
-Il est également possible de concaténer des chaînes non alphabétiques, comme des nombres. Cependant, il est important de noter que la fonction `concat` fonctionne uniquement avec des listes de chaînes, il faut donc convertir les nombres en chaînes avant de les concaténer. Par exemple :
-
-```Haskell
--- Output : "Le résultat est : 8"
-concatenate "Le résultat est : " (show (6+2))
-```
-
-Enfin, il existe d'autres fonctions utiles pour manipuler les chaînes de caractères en Haskell, comme `unwords` qui concatène une liste de mots en une seule chaîne avec des espaces entre chacun, ou encore `lines` qui sépare une chaîne en plusieurs lignes en fonction des retours à la ligne. Ces fonctions peuvent être très pratiques pour manipuler des données ou des fichiers textes.
+Il est important de noter que la concaténation de chaînes de caractères peut être coûteuse en termes de performances, car elle nécessite l'allocation d'une nouvelle chaîne de caractères à chaque concaténation. Il est donc recommandé d'utiliser la fonction "concat" ou "lines" lorsque vous avez besoin de concaténer plusieurs chaînes de caractères.
 
 ## Voir aussi
-
-- [Documentation officielle de la concaténation en Haskell](https://www.haskell.org/tutorial/strings.html#function-)
-- [Tutoriel sur les chaînes de caractères en Haskell](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
-- [Exemple de manipulation de chaînes de caractères en Haskell](https://wiki.haskell.org/More_about_lists#Strings)
+- [Documentation officielle sur la concaténation de chaînes de caractères en Haskell](https://www.haskell.org/documentation/#strings)
+- [Tutoriel sur la concaténation de chaînes de caractères en Haskell](https://www.tutorialspoint.com/haskell/haskell_concatenation.htm)
+- [Vidéo sur la concaténation de chaînes de caractères en Haskell](https://www.youtube.com/watch?v=uFxkRcMjAyM)

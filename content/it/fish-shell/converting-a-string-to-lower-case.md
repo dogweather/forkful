@@ -1,48 +1,41 @@
 ---
-title:    "Fish Shell: Convertire una stringa in minuscolo"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/converting-a-string-to-lower-case.md"
+title:                "Fish Shell: Convertire una stringa in caratteri minuscoli"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perchè
 
-Spesso nella programmazione dobbiamo manipolare delle stringhe di testo. Una delle operazioni più comuni è la conversione di una stringa in caratteri minuscoli. Questo può essere utile per confrontare le stringhe in modo case-insensitive o per uniformare i dati di input.
+Molte volte, nel processo di sviluppo di un programma, ci troviamo a dover manipolare delle stringhe di testo. Una delle operazioni più comuni è quella di convertire una stringa in lettere minuscole. Questo può essere utile per confrontare stringhe senza tenere conto delle maiuscole e delle minuscole o per uniformare il formato di un testo.
 
-## Come fare
+## Come Fare
 
-Per convertire una stringa in minuscolo utilizzando il Fish Shell, possiamo utilizzare il comando `string tolower` seguito dalla stringa che vogliamo convertire. Ad esempio:
-
-```Fish Shell
-set testString "Ciao a tutti!"
-echo (string tolower $testString)
-```
-
-Questo producirà l'output `ciao a tutti!`.
-
-Inoltre, se stai lavorando con variabili di ambiente, puoi utilizzare il comando `set` per assegnare il risultato della conversione a una nuova variabile. Ad esempio:
+Per convertire una stringa in lettere minuscole in Fish Shell è possibile utilizzare il comando `string tolower`. Basta inserire la stringa da convertire tra parentesi tonde dopo il comando. Ecco un esempio:
 
 ```Fish Shell
-set originalString "FISH SHELL"
-set lowercaseString (string tolower $originalString)
-echo $lowercaseString # output: fish shell
+string tolower "Ciao Mondo!"
 ```
 
-## Approfondimento
+Questo produrrà l'output "ciao mondo!". Nota che le lettere accentate rimarranno invariare.
 
-Un fatto interessante è che la conversione di una stringa in minuscolo utilizzando il Fish Shell è effettuata in base al parametro di locale corrente. Questo significa che, a seconda del sistema in cui stai eseguendo il codice, il risultato potrebbe essere diverso.
-
-Inoltre, esiste un altro modo per convertire una stringa in minuscolo utilizzando il Fish Shell, ovvero utilizzando il correttore ortografico integrato. Questo può essere fatto utilizzando il comando `correct` seguito dalla stringa da convertire. Ad esempio:
+Un'altra opzione per convertire una stringa in lettere minuscole è utilizzare la funzione built-in `lowercase`. Quindi, il comando diventerebbe:
 
 ```Fish Shell
-echo (correct "Hello World") # output: hello world
+lowercase "Ciao Mondo!"
 ```
 
-Questo è possibile poiché il correttore ortografico mostra le parole con la prima lettera maiuscola e il resto minuscolo.
+Il risultato è lo stesso dell'esempio precedente.
 
-## Vedi anche
+## Deep Dive
 
-- [Guida rapida sulla manipolazione delle stringhe utilizzando il Fish Shell](https://fishshell.com/docs/current/cmds/set.html#syntax)
-- [Documentazione ufficiale del Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial sull'uso del Fish Shell per la programmazione](https://fishshell.com/docs/current/tutorial.html)
+In realtà, la conversione delle stringhe in lettere minuscole avviene utilizzando lo standard Unicode. Questo significa che il comando `string tolower` o la funzione `lowercase` non funzioneranno correttamente se si opera su un sistema con una codifica dei caratteri diversa da Unicode.
+
+Inoltre, con la funzione `lowercase`, è possibile specificare una lingua opzionale per preservare i caratteri accentati. Ad esempio, `lowercase -L it_IT "Ciao Mondo!"` produrrà come output "ciao mondo!" invece di "ciao mondo!".
+
+## Vedi Anche
+
+- [Documentazione Fish Shell di `string tolower`](https://fishshell.com/docs/current/cmds/string.html#tolower)
+- [Documentazione Fish Shell di `lowercase`](https://fishshell.com/docs/current/cmds/lowercase.html)

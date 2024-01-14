@@ -1,37 +1,36 @@
 ---
-title:    "Fish Shell: Перетворення рядка упершеливання пigramування"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/capitalizing-a-string.md"
+title:                "Fish Shell: Перетворення рядка на великі літери"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Важливість правильного написання коду полягає в збільшенні його читабельності та зменшенні кількості помилок. Одним з важливих елементів у правильному коді є правильне використання регістру.
+Зараз в більшості мов програмування є вбудована функція, яка автоматично перетворює рядки на великі або малі літери. Проте в Fish Shell ця функція відсутня, тому деякі користувачі можуть хотіти вручну виконати дану операцію для певної роботи.
 
 ## Як
 
-Для капіталізації рядка в Fish Shell використовується функція "string capitalize". Приклад програми та її вихідного коду наведено нижче:
+```Fish shell
+set string "ukrainian language"
+echo $string
+echo (string capitalize $string) 
+```
+- Виведе `ukrainian language` і `Ukrainian Language` для стандартної функції capitalize.
+- При використанні параметру `-w` або `--words` можна вказати які слова потрібно капіталізувати.
+- Значення першої літери слова можна з переключити з `-lf` або `--leading-first` параметром.
 
-````Fish Shell
-set str "привіт світе"
-set capitalized_str (string capitalize -- $str)
-echo $capitalized_str
-````
+## Deep Dive
 
-Результат виконання програми буде виглядати так:
+Функція capitalize в Fish Shell робить просте перетворення рядків в іншу форму. Але деякі користувачі можуть захотіти змінити стандартну поведінку або навіть додати додаткові регулярні вирази для більш тонкого капіталізації рядків. Це може бути корисно для складних рядків, таких як назви людей або пунктуаційні символи.
 
-Привіт світе
+На щастя, у Fish Shell є бібліотека fzf, яка містить кілька вбудованих функцій для роботи з рядками. Це дає можливість користувачам змінювати та адаптувати функцію capitalize під свої потреби.
 
-## Поглиблене дослідження
+## See Also
 
-Важливість правильної капіталізації рядка полягає в тому, що у багатьох мов програмування є різниця між регістром букв. Наприклад, у рядка "Hello" перша літера прописна, а у рядку "hello" вона маленька. Це може бути важливо при порівнянні рядків або при використанні їх для пошуку. Також, правильна капіталізація рядка до складніших операцій, таких як шифрування, може допомогти запобігти помилкам.
-
-## Дивись також
-
-Щоб дізнатися більше про правильне використання регістру в програмуванні, дивіться також наступні посилання:
-
-- Документація по Fish Shell: https://fishshell.com/docs/current/index.html
-- Розділ про капіталізацію рядка: https://fishshell.com/docs/current/cmds/string.html#capitalize
-- Приклади використання регістру в програмуванні: https://www.tutorialspoint.com/computer_programming/computer_programming_case_sensitivity.htm
+- [Fish Shell Website](https://fishshell.com/)
+- [Fish Shell Source Code](https://github.com/fish-shell/fish-shell)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Fish Shell User's Guide (Ukrainian)](https://sanstv.ru/fishbook)

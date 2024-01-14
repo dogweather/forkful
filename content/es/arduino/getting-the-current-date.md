@@ -1,85 +1,68 @@
 ---
-title:    "Arduino: Obteniendo la fecha actual."
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/arduino/getting-the-current-date.md"
+title:                "Arduino: Obtener la fecha actual."
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+##Por qué
 
-Si estás trabajando en un proyecto de Arduino que requiere saber la fecha actual, es importante saber cómo obtenerla correctamente. La fecha actual puede ser útil en una variedad de proyectos, como un reloj digital o un programa de control de riego.
+¿Alguna vez has querido que tu proyecto de Arduino muestre la fecha y hora actual? Quizás quieres crear un reloj digital o simplemente quieres saber cuánto tiempo ha pasado desde tu último proyecto. Sea cual sea la razón, obtener la fecha y hora actual es una habilidad útil para cualquier programador de Arduino.
 
-## Cómo hacerlo
+##Cómo hacerlo
 
-Para obtener la fecha actual en Arduino, se utiliza la función `millis()`, que devuelve la cantidad de milisegundos desde que se encendió la placa. A continuación, se debe hacer algunos cálculos para convertir los milisegundos en una fecha legible.
+Para obtener la fecha y hora actual en Arduino, debemos utilizar la librería "Time.h". Primero, debemos incluir la librería en nuestro código:
 
-Aquí hay un ejemplo de código para obtener la fecha actual y mostrarla en el monitor serie del Arduino:
-
-```
-Arduino
-unsigned long millis_dia = 86400000; // cantidad de milisegundos en un día
-unsigned long millis_inicio = millis(); // obtiene la cantidad de milisegundos desde el encendido
-unsigned long dias = millis_inicio / millis_dia; // convierte los milisegundos en días
-Serial.print("La cantidad de días desde el encendido es: ");
-Serial.println(dias); // imprime el resultado en el monitor serie
+```Arduino
+#include <Time.h>
 ```
 
-La salida en el monitor serie se verá así:
+Luego, debemos inicializar una variable del tipo "tmElements_t" que utilizará la librería para almacenar la fecha y hora:
 
-```
-La cantidad de días desde el encendido es: 2
-```
-
-## Profundizando
-
-Además de utilizar la función `millis()`, también se puede utilizar la librería `Time` de Arduino que permite obtener la fecha actual con mayor precisión y en un formato más legible. Esta librería incluye funciones como `hour()`, `minute()`, `day()`, `month()` y `year()` que devuelven la hora, minutos, día, mes y año respectivamente.
-
-Aquí hay un ejemplo de código utilizando la librería `Time` para obtener la fecha y hora actual y mostrarla en el monitor serie:
-
-```
-Arduino
-#include <Time.h> // incluir la librería
-
-void setup() {
-  Serial.begin(9600); // iniciar el monitor serie
-  setTime(12, 0, 0, 1, 1, 2020); // establecer la fecha y hora actual
-}
-
-void loop() {
-  // obtener la fecha y hora actual
-  int segundos = second();
-  int minutos = minute();
-  int horas = hour();
-  int dia = day();
-  int mes = month();
-  int anio = year();
-  
-  // mostrar la fecha y hora en el monitor serie
-  Serial.print("La fecha actual es: ");
-  Serial.print(mes);
-  Serial.print("/");
-  Serial.print(dia);
-  Serial.print("/");
-  Serial.println(anio);
-  Serial.print("La hora actual es: ");
-  Serial.print(horas);
-  Serial.print(":");
-  Serial.print(minutos);
-  Serial.print(":");
-  Serial.println(segundos);
-  
-  delay(1000); // esperar 1 segundo antes de volver a obtener la fecha y hora
-}
+```Arduino
+tmElements_t tiempo;
 ```
 
-La salida en el monitor serie se verá así:
+Ahora, podemos utilizar la función "now()" para obtener la fecha y hora actual y almacenarla en nuestra variable "tiempo":
+
+```Arduino
+tiempo = now();
+```
+
+Para imprimir la fecha y hora en el monitor serie, utilizamos las funciones "year()", "month()", "day()", "hour()", "minute()" y "second()" de la librería, de la siguiente manera:
+
+```Arduino
+Serial.print(year(tiempo)); // imprime el año actual
+Serial.print("/");
+Serial.print(month(tiempo)); // imprime el mes actual
+Serial.print("/");
+Serial.print(day(tiempo)); // imprime el día actual
+
+Serial.print(" ");
+
+Serial.print(hour(tiempo)); // imprime la hora actual
+Serial.print(":");
+Serial.print(minute(tiempo)); // imprime el minuto actual
+Serial.print(":");
+Serial.print(second(tiempo)); // imprime el segundo actual
+```
+
+La salida en el monitor serie debería verse así:
 
 ```
-La fecha actual es: 1/1/2020
-La hora actual es: 12:0:4
+2021/09/03 12:30:25
 ```
 
-## Ver también
-- [Página de documentación de Arduino sobre la función `millis()`](https://www.arduino.cc/reference/en/language/functions/time/millis/)
-- [Página de documentación de Arduino sobre la librería `Time`](https://www.arduino.cc/reference/en/libraries/time/)
+##Profundizando
+
+La función "now()" de la librería "Time.h" utiliza un reloj interno del Arduino y se actualiza cada segundo. Sin embargo, si necesitas una mayor precisión, puedes utilizar un módulo de tiempo real (RTC) externo que se conecta al Arduino a través de I2C.
+
+Además, la librería "Time.h" también tiene funciones para obtener la fecha y hora en formato Unix, o para convertir entre diferentes formatos de tiempo.
+
+##Véase también
+
+- [Documentación de Time.h](https://www.arduino.cc/reference/en/libraries/time/)
+- [Tutorial sobre el uso de un módulo RTC con Arduino](https://www.youtube.com/watch?v=92AroynoCXc)
+- [Ejemplo de conversión de formato de tiempo en Arduino](https://lastminuteengineers.com/convert-time-date-to-timestamp-arduino-ide/)

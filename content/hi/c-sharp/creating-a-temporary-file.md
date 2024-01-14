@@ -1,60 +1,38 @@
 ---
-title:    "C#: तात्कालिक फाइल बनाना"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/creating-a-temporary-file.md"
+title:                "C#: अस्थायी फाइल बनाना"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-टेम्पररी फाइल बनाने का प्रयास क्यों किया जाता है, इसके पीछे का कारण है कि कई बार हमारे प्रोग्राम्स को किसी अलग तरीके से डेटा को स्टोर करने की जरूरत होती है। इस समस्या को हल करने के लिए हम अस्थायी फ़ाइलें बनाते हैं।
+एक अस्थायी फ़ाइल बनाने में लोगों का आदेश क्यों हो सकता है, उसके बारे में कुछ उपयोगी सूचनाएँ हैं।
 
-## कैसे करें
+## कैसे
+
+अस्थायी फ़ाइल बनाने के लिए, हम `Path.GetTempFileName()` फ़ंक्शन का उपयोग कर सकते हैं, जो फ़ाइल नाम और पथ दोनों को वापस करता है। नीचे दिये गए कोड ब्लॉक एक उदाहरण प्रदान करते हैं:
 
 ```C#
-using System;
-using System.IO;
+string tempFilePath = Path.GetTempFileName();
+Console.WriteLine("Temporary file created: " + tempFilePath);
 
-namespace TemporaryFile
-{
-    class Program
-    {
-        static void Main()
-        {
-            // Create a temporary file with .tmp extension
-            string path = Path.GetTempFileName();
-
-            Console.WriteLine("Temporary file created at:");
-            Console.WriteLine(path);
-
-            // Write data to the temporary file
-            File.WriteAllText(path, "This is a temporary file.");
-
-            // Read data from the temporary file
-            string data = File.ReadAllText(path);
-            Console.WriteLine("Data written to the file:");
-            Console.WriteLine(data);
-
-            // Delete the temporary file
-            File.Delete(path);
-        }
-    }
-}
+// Output: Temporary file created: C:\Users\Username\AppData\Local\Temp\af7a28ba.tmp
 ```
 
-### Output:
-Temporary file created at:
-C:\Users\<username>\AppData\Local\Temp\tmpE33F.tmp
-Data written to the file:
-This is a temporary file.
+यदि आप अपनी स्वयं की अस्थायी फ़ाइल बनाना चाहते हैं, तो आप निम्नलिखित कोड का उपयोग कर सकते हैं:
 
-## गहरायाई खुराक
+```C#
+string tempFileName = "myTemporaryFile.txt";
+string tempFilePath = Path.Combine(Path.GetTempPath(), tempFileName); // combining temp path and file name
+File.Create(tempFilePath); // creates a new temporary file with specified file name
+Console.WriteLine("Temporary file created: " + tempFileName);
 
-टेम्पररी फाइल बनाने के लिए `GetTempFileName` और `GetTempPath` मेथड का उपयोग किया जाता है। इन मेथड्स की मदद से हम सिस्टम की temporary फ़ाइल डायरेक्टरी को प्राप्त करते हैं और उस फ़ाइल डायरेक्टरी में एक unique नाम के साथ एक अस्थायी फ़ाइल बनती है। इससे हमारे प्रोग्राम को अस्थायी डेटा को स्टोर करने और उसे पढ़ने की अनुमति मिलती है।
+// Output: Temporary file created: myTemporaryFile.txt
+```
 
-## देखें भी
+## घोर तौर पर पता करें
 
-- [Microsoft Docs: Creating a Temporary File in C#](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-create-a-temporary-file)
-- [C# Corner: Creating Temporary Files in C#](https://www.c-sharpcorner.com/UploadFile/mahesh/temporary-file-in-C-Sharp/)
-- [C# Tutorials: Temporary Files in C#](https://csharp.net-tutorials.com/advanced/temporary-files/)
+स्वयं की अस्थायी फ़ाइल बनाने के लिए, आपको ध्यान देने की जरूरत है कि आपको निर्दिष्ट गति के साथ फ़ाइल नाम देना होगा ताकि वह दो उपलब्ध फ़ाइलों के बीच अलग हो सकें। आपको हर बार वही गति या उससे अधिक वाली को उपयोग करना होगा जो प्रत्येक प्रक्रिया में अलग हो सकेगी। इसके अलावा, अस्थायी फ़ाइलें प्रत्येक समय ट्रिगर होने या पूरा प्रक्रिया के साथ सही समय पर हटाई जाने के लिए निर्दिष्ट किए गए नहीं होती हैं। प्रकार सार्वजनिक और प्रत्येक कर्म द्वारा समय सीमा का उपयोग किए बिना अस्थायी फ़ाइलों को हटाने के लिए ज

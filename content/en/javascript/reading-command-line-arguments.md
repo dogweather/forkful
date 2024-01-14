@@ -1,70 +1,49 @@
 ---
-title:    "Javascript recipe: Reading command line arguments"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/reading-command-line-arguments.md"
+title:                "Javascript recipe: Reading command line arguments"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why
+## Why
 
-When it comes to programming, there are often different ways to achieve the same result. One such example is reading command line arguments in Javascript. While not commonly used, understanding how to read and manipulate command line arguments can be a valuable skill for a programmer. In this blog post, we will explore why someone would engage in reading command line arguments and how to effectively do so in Javascript.
+As a Javascript programmer, you may have come across the term "command line arguments" before. But why exactly would you need to read these arguments in your code? The answer is simple - command line arguments allow you to pass specific inputs to your program when it is executed. This can be useful for customizing your program's behavior or handling different scenarios. In this blog post, we'll explore how to read command line arguments in Javascript and how it can benefit your programming.
 
-##How To
+## How To
 
-To read command line arguments in Javascript, we first need to access the built-in `process` object. This object provides information about the current Node.js process, including command line arguments.
-
-We can access the command line arguments using the `process.argv` property, which returns an array of strings. The first element in this array will always be the path to the Node.js executable, followed by the path to the Javascript file being executed, and then any additional arguments provided in the command line.
-
-To demonstrate this, let's create a simple Javascript file and run it with some arguments. In this example, we will create a file called `greeting.js` and add the following code:
+Reading command line arguments in Javascript can be done using the `process.argv` property. This property is an array that contains all the arguments passed to your program in the command line. Let's take a look at an example:
 
 ```Javascript
-// greeting.js
-console.log(`Welcome to ${process.argv[2]} ${process.argv[3]}!`);
+// Our program to read and display command line arguments
+console.log(process.argv)
+
+// Output when executing `node index.js firstArg secondArg`
+// [ 'node', '/path/to/file/index.js', 'firstArg', 'secondArg' ]
 ```
 
-Now, if we run this file with the following command:
-
-`node greeting.js John Doe`
-
-The output will be:
-
-`Welcome to John Doe!`
-
-We can also access individual arguments by using their index within the `process.argv` array. For example, `process.argv[0]` would return the path to the Node.js executable, and `process.argv[1]` would return the path to the `greeting.js` file.
-
-In addition to accessing the command line arguments, we can also manipulate them to fit our needs. For example, we can use the `slice()` method to create a new array with only the arguments we want. This can be useful if we only need specific arguments or want to ignore the first few elements in the `process.argv` array.
-
-##Deep Dive
-
-Under the hood, Node.js uses the `yargs` library for parsing command line arguments. This library allows for a more flexible and intuitive way of working with arguments, providing features such as parsing options and defining commands.
-
-To use `yargs`, we first need to install it using `npm` by running the following command:
-
-`npm install yargs`
-
-Now, we can use `yargs` in our `greeting.js` file to achieve the same result as before, but in a more organized and dynamic way. Here's an example:
+As you can see, the first two elements of the `process.argv` array are the path to the node executable and the path to the current file. The remaining elements are the arguments passed in the command line, in the order they were entered. You can access these arguments using array indexing, starting from the third element. Let's see another example where we pass in a number as an argument and perform some operations on it:
 
 ```Javascript
-// greeting.js
+// Our program to read and manipulate command line arguments
+const num = parseInt(process.argv[2]) // converting argument from string to integer
+const square = num * num // calculating the square
+console.log(`The square of ${num} is ${square}`) // displaying the result
 
-const args = require('yargs').argv;
-
-console.log(`Welcome to ${args.first} ${args.last}!`);
+// Output when executing `node index.js 5`
+// The square of 5 is 25
 ```
 
-Now, if we run the file with the following command:
+You can even pass in multiple arguments and make use of conditional statements to handle different scenarios. The possibilities are endless! Experiment with different inputs and see what you can come up with.
 
-`node greeting.js --first="John" --last="Doe"`
+## Deep Dive
 
-The output will be:
+Apart from using `process.argv`, there are other methods to read command line arguments in Javascript. One of them is using a popular library called `yargs`. This library provides a more robust and user-friendly way to handle command line arguments by allowing you to specify options and flags for your program.
 
-`Welcome to John Doe!`
+You can also validate the arguments passed using `process.argv` or `yargs` by checking their data types and values. This can help prevent unexpected errors and improve the overall stability of your program.
 
-Note that `yargs` automatically parses the command line arguments and creates an `argv` object with key-value pairs based on the provided options. This makes it easier to access and manipulate the arguments in a more structured way.
+## See Also
 
-##See Also
-
-- [Node.js Process Object documentation](https://nodejs.org/dist/latest-v14.x/docs/api/process.html)
-- [Yargs library documentation](https://www.npmjs.com/package/yargs)
-- [Command Line Arguments in Node.js blog post](https://blog.logrocket.com/the-beginner-guide-to-command-line-arguments-in-node-js/)
+- [Official Node.js documentation on process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [Yargs documentation](https://www.npmjs.com/package/yargs)

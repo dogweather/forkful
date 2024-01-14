@@ -1,59 +1,57 @@
 ---
-title:    "C++: Kahden päivämäärän vertailu"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/comparing-two-dates.md"
+title:                "C++: Kahden päivämäärän vertailu"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi vertailla kahta päivämäärää?
 
-Päivämäärien vertailu on tärkeä osa ohjelmointia, sillä se mahdollistaa tiettyjen toimintojen suorittamisen tiettyinä päivinä tai aikaväleinä. Esimerkiksi verkkosivuilla saatetaan näyttää erilaisia tarjouksia tiettynä päivämääränä tai sovelluksessa saatetaan lähettää muistutus tärkeästä tapahtumasta tiettynä päivänä. Siksi on tärkeää tietää, miten kahta päivämäärää voidaan vertailla ja tarkistaa niiden välisiä eroja.
+Vertailu kahden päivämäärän välillä voi olla tärkeää, kun haluat tarkistaa, onko tietty päivämäärä ennen vai jälkeen toisen. Se voi olla hyödyllistä esimerkiksi projektien aikataulutuksessa tai tietyn tapahtuman päivämäärän tarkistamisessa.
 
 ## Miten vertailla kahta päivämäärää?
 
-Päivämäärien vertailemiseen on monia erilaisia tapoja, mutta yksi tehokkaimmista tavoista on käyttää valmiita aikaluokkia, kuten C++:n *tm* rakennetta tai *chrono* kirjastoa. Näillä työkaluilla on valmiita funktioita, jotka mahdollistavat päivämäärien vertailun helposti ja tarkasti.
+Vertaamme kahta päivämäärää käyttämällä C++:n aikojen ja päivämäärien kirjastoa. Seuraavassa esimerkissä tarkastelemme, onko annettu päivämäärä ennen vai jälkeen toista päivämäärää.
 
 ```C++
 #include <iostream>
 #include <ctime>
-
+ 
 using namespace std;
-
+ 
 int main() {
-    // Alustetaan kaksi päivämäärää
-    tm date1 = { 0, 0, 0, 1, 3, 2020 }; // 1. maaliskuuta 2020
-    tm date2 = { 0, 0, 0, 1, 6, 2020 }; // 1. kesäkuuta 2020
-
-    // Muunnetaan päivämäärät sekunneiksi
-    time_t time1 = mktime(&date1);
-    time_t time2 = mktime(&date2);
-
-    // Vertaillaan päivämääriä ja tulostetaan ero
-    if (time1 < time2) {
-        cout << "Ensimmäisen päivämäärän ja toisen päivämäärän ero on " 
-            << difftime(time2, time1) / (24 * 60 * 60) << " päivää." << endl;
-    } else {
-        cout << "Toisen päivämäärän ja ensimmäisen päivämäärän ero on " 
-            << difftime(time1, time2) / (24 * 60 * 60) << " päivää." << endl;
-    }
-
-    return 0;
+   // Luodaan kaksi aikarakennetta
+   struct tm date1 = {0, 0, 0, 1, 3, 120}; // 1.3.2020
+   struct tm date2 = {0, 0, 0, 10, 6, 120}; // 10.6.2020
+ 
+   // Muunnetaan aikarakenteet time_t -objekteiksi
+   time_t time1 = mktime(&date1);
+   time_t time2 = mktime(&date2);
+ 
+   // Vertaillaan aikakoordinaatteja
+   if (time1 < time2)
+      cout << "Päivämäärä 1 on ennen päivämäärää 2.";
+   else if (time1 > time2)
+      cout << "Päivämäärä 1 on jälkeen päivämäärää 2.";
+   else
+      cout << "Päivämäärät ovat samat.";
+ 
+   return 0;
 }
 ```
 
-*Esimerkkitulostus:*
-
+Tulostus:
 ```
-Ensimmäisen päivämäärän ja toisen päivämäärän ero on 92 päivää.
+Päivämäärä 1 on ennen päivämäärää 2.
 ```
 
-## Syvempi sukellus päivämäärien vertailuun
+## Syvempi sukellus
 
-Päivämäärien vertailussa tärkeintä on ymmärtää, mitä eri aikaluokat, kuten *tm* rakenne ja *chrono* kirjasto, tekevät taustalla. Nämä työkalut mahdollistavat päivämäärien käsittelyn eri muodoissa ja tarjoavat valmiita funktioita helpottamaan vertailua. On myös tärkeää huomata, että päivämäärien vertailuun vaikuttavat myös alueelliset asetukset, kuten aikavyöhykkeet, joten oikeiden tulosten saamiseksi on tärkeää olla tietoinen näistä asetuksista ja huolehtia niiden oikeasta määrittämisestä.
+Päivämäärä- ja aikafunktiot C++:ssa ovat tärkeitä työkaluja, kun haluat hallita ja vertailla päivämääriä ohjelmoinnissa. `mktime()`-funktio muuntaa aikarakenteen `struct tm` time_t -objektiksi, jota voidaan sitten verrata muihin aikaobjekteihin. On myös mahdollista käyttää muita aikafunktioita, kuten `difftime()`, joka laskee ajaneroa kahden ajan välillä.
 
 ## Katso myös
 
-- [C++ *tm* rakenne](https://en.cppreference.com/w/cpp/chrono/c/tm)
-- [C++ *chrono* kirjasto](https://en.cppreference.com/w/cpp/chrono)
-- [Päivämäärien vertailu eri aikavyöhykkeillä](https://www.learncpp.com/cpp-tutorial/using-time-and-clocks-in-c/)
+- [cppreference - Aikafunktiot](https://en.cppreference.com/w/cpp/chrono)
+- [cplusplus - Aikafunktioilla työskentely](https://www.cplusplus.com/reference/ctime/)

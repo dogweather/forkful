@@ -1,51 +1,35 @@
 ---
-title:    "Python: Å skrive en tekstfil"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/writing-a-text-file.md"
+title:                "Python: Å skrive en tekstfil"
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å skrive en tekstfil er en vanlig oppgave i programmering, og det er nyttig å vite hvordan man gjør det for å kunne lagre og behandle data. Dette kan også være nyttig når man jobber med større programmer der man ønsker å lagre informasjon i separate filer.
+Det er flere grunner til å skrive en tekstfil i Python. Det kan være for å lagre data som skal brukes senere, eller for å lage en rapport eller dokumentasjon for et prosjekt.
 
 ## Hvordan
-
-For å skrive en tekstfil i Python, kan man bruke den innebygde funksjonen `open()`. Denne funksjonen tar to argumenter, filnavnet og modusen hvor man sier at man ønsker å skrive til filen (i dette tilfellet "w" for "write").
-
-```python
-f = open("tekstfil.txt", "w")
-```
-Man kan da skrive til filen ved å bruke `write()`-metoden, og passere inn teksten man vil skrive.
+Det finnes flere måter å skrive en tekstfil i Python på, men en enkel måte er å bruke `open()` funksjonen. Følgende kode viser hvordan du kan lage en tekstfil og skrive innhold til den:
 
 ```python
-f.write("Dette er en tekst som blir skrevet til filen.")
+# Åpne en fil med navnet "min_fil.txt" i skrivemodus
+with open("min_fil.txt", "w") as fil:
+  # Skriv innhold til filen
+  fil.write("Dette er en tekstfil laget med Python!")
 ```
 
-Til slutt må man huske å lukke filen ved å bruke `close()`-metoden, ellers vil endringene ikke bli lagret.
-
-```python
-f.close()
-```
-
-Hvis man ønsker å skrive flere linjer til filen, må man passe på å legge til en linjeskift `\n` etter hver linje.
-
-```python
-f.write("Dette er linje 1.\n")
-f.write("Dette er linje 2.")
-```
+Etter å ha kjørt koden, vil en ny tekstfil med navnet "min_fil.txt" bli opprettet med innholdet "Dette er en tekstfil laget med Python!".
 
 ## Dypdykk
+Når du åpner en fil med `open()` funksjonen, må du spesifisere om du vil åpne den i lese-, skrive- eller tilleggsmodus. Dette bestemmes av den andre parameteren i `open()` funksjonen. For eksempel, hvis du vil åpne en fil for å legge til nytt innhold, kan du bruke "a" som parameter istedenfor "w".
 
-Det finnes flere forskjellige moduser man kan velge når man åpner en fil med `open()`, for eksempel "a" for "append" som legger til tekst i slutten av filen uten å overskrive eksisterende data. Man kan også lese og skrive til samme fil ved å bruke "r+" eller "w+" som moduser.
+Det finnes også flere metoder for å skrive innhold til en fil. `write()` er den mest grunnleggende metoden, men det finnes også `writelines()` som lar deg skrive flere linjer på en gang og `print()` som lar deg formatere og skrive ut variabler.
 
-Når man skriver til en fil, blir teksten lagret som en sekvens av bytes. For å lese teksten som vanlig tekst, kan man bruke `encoding`-parameteret og sette det til den ønskede kodingen (for eksempel "utf-8").
-
-Det er også viktig å merke seg at hvis man åpner en fil med "w" eller "w+" som modus, vil eventuelle eksisterende data i filen bli slettet uten advarsel. Derfor er det viktig å være forsiktig når man bruker disse modusene.
+Det er viktig å huske å lukke filen etter at du er ferdig med å jobbe med den, ved å bruke `close()` funksjonen. Men det kan også være nyttig å bruke `with` kontekst-managers for å sørge for at filen blir lukket automatisk når du er ferdig med å bruke den.
 
 ## Se også
-
-- [Python dokumentasjon](https://docs.python.org/no/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [W3Schools Python file handling tutorial (engelsk)](https://www.w3schools.com/python/python_file_handling.asp)
-- [Real Python tutorial on writing and reading files (engelsk)](https://realpython.com/read-write-files-python/)
+- [Python dokumentasjon for filer](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [W3Schools tutorial om å jobbe med filer i Python](https://www.w3schools.com/python/python_file_handling.asp)
+- [Django tutorial om hvordan å lese og skrive filer i Python](https://docs.djangoproject.com/en/3.1/topics/files/)

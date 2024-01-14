@@ -1,47 +1,39 @@
 ---
-title:    "Gleam: Konvertere en dato til en streng"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/converting-a-date-into-a-string.md"
+title:                "Gleam: Omgjøring av en dato til en streng"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Mange programmerere kan støte på situasjoner hvor de må konvertere en dato til en streng. Dette kan være for å presentere datoer på en mer lesbar måte, eller for å utføre spesifikke beregninger. I Gleam, en ny og spennende funksjonell programmeringsspråk, kan du enkelt utføre denne konverteringen ved hjelp av innebygde funksjoner. I denne bloggposten vil vi gå gjennom hvordan man konverterer en dato til en streng i Gleam.
 
-Det å konvertere en dato til en streng er en vanlig oppgave som ofte forekommer i programmering. Hvis du for eksempel ønsker å vise datoer i en brukerinterface, lagre dem i en database, eller sende dem over en nettverksforbindelse, er det nødvendig å konvertere dem til en streng. Å vite hvordan man gjør dette kan spare deg for mye tid og frustrasjon i utviklingen av dine programmer.
-
-## Hvordan gjøre det
-Her er en enkel måte å konvertere en dato til en string i Gleam:
+## Hvordan
+Først må du importere biblioteket `gleam/calendar`, som inneholder funksjoner for å håndtere datoer og kalendere. Deretter kan du bruke funksjonen `format_date` for å konvertere en dato til en streng. Her er et eksempel som viser hvordan du kan konvertere en dato til en streng og deretter skrive den ut i konsollen:
 
 ```Gleam
-// Oppretter en dato
-let date = Date.now()
+import gleam/calendar
 
-// Konverterer datoen til en streng med formatet "YYYY-MM-DD"
-let date_string = date.to_string("%Y-%m-%d")
-
-// Printer ut resultatet
-IO.print(date_string)
-
-// Output: "2020-09-05"
+let date = Time.utc_now()
+let str = Calendar.format_date(date, "%Y-%m-%d")
+Log.info(str)
 ```
 
-For å konvertere en dato til andre formater, kan du bruke forskjellige formateringsstrenger. Her er noen vanlige formateringsstrenger som kan brukes til å konvertere en dato til en streng:
+Kjører denne koden vil gi følgende resultat:
 
-- `%Y`: årstallet med fire siffer
-- `%y`: årstallet med to siffer
-- `%M`: månedsnummeret med to siffer
-- `%m`: månedsnummeret med et siffer
-- `%D`: dagnummeret med to siffer
-- `%d`: dagnummeret med et siffer
+```
+2020-10-20
+```
 
-Det finnes mange flere formateringsstrenger du kan bruke, og du kan også kombinere dem for å få ønsket resultat. Det er viktig å merke seg at formateringsstrengene kan variere avhengig av programmeringsspråket du bruker, så det er viktig å sjekke dokumentasjonen til ditt spesifikke språk.
+I dette eksempelet brukte vi `%Y-%m-%d` som formateringsmønster, men du kan også bruke andre formateringsalternativer, som beskrevet i dokumentasjonen til `format_date`-funksjonen. Du kan også angi en lokal tidssone ved å legge til en tidszoneparameter i funksjonskallet.
 
 ## Dypdykk
-Å konvertere en dato til en streng kan virke som en enkel oppgave, men det er faktisk en ganske kompleks operasjon. Datoer er representert som tall i de fleste programmeringsspråk, og å konvertere dem til en streng innebærer å tolke disse tallene og formatere dem på en lesbar måte.
+Å konvertere en dato til en streng kan virke som en enkel oppgave, men det er faktisk ganske komplekst. Datoer kan representeres på forskjellige måter, for eksempel i ulike kalendere eller tidsformateringssystemer. Derfor er det viktig å velge riktig formateringsmønster for å sikre nøyaktigheten i konverteringen.
 
-I tillegg kan forskjellige land og språk ha ulike måter å representere datoer på, noe som kan gjøre det utfordrende å håndtere internasjonalisering i programmering. Det er viktig å være oppmerksom på disse forskjellene og å bruke riktige formateringsstrenger for å sikre at datoer blir riktig konvertert uansett språk eller land.
+I Gleam bruker `Time`-modulen den internasjonale standarden ISO8601 for å representere dato og tid. Dette sikrer at alle datoer blir håndtert på en standardisert og konsistent måte. Når du bruker formateringsmønster i `format_date`-funksjonen, må du sørge for å følge denne standarden for å unngå feil i konverteringen.
 
-## Se også
-- [Gleam dokumentasjon om datokonvertering](https://gleam.run/documentation/language/date_formatters)
-- [Eksempler på ulike datoformater](https://www.tutorialspoint.com/strftime-function-in-c-cplusplus#:~:text=The%20strftime()%20function%20is,replaceable%20symbols%20used%20for%20formatting.)
+## Se Også
+- [Dokumentasjon for `gleam/calendar` biblioteket](https://gleam.run/api/master/gleam_calendar.html)
+- [Gleam programmeringsspråkets offisielle nettside] (https://gleam.run)

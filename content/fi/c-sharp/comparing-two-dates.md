@@ -1,55 +1,63 @@
 ---
-title:    "C#: Päivämäärien vertailu"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/comparing-two-dates.md"
+title:                "C#: Kahden päivämäärän vertaaminen"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi vertailla kahden päivämäärän välillä?
 
-Päivämäärien vertailu on yleinen ohjelmoinnin tehtävä, jota käytetään esimerkiksi tapahtumien aikajärjestyksen selvittämiseen tai päivämäärien erotuksen laskemiseen. Tämä artikkeli opastaa kuinka voit vertailla kahta päivämäärää C#-ohjelmointikielellä.
+Päivämäärien vertaaminen voi olla hyödyllistä esimerkiksi ohjelmassa, jossa on tarvetta tarkistaa, onko annettu päivämäärä tulevaisuudessa vai menneisyydessä. Tämä voi olla tarpeellista esimerkiksi järjestelmän lokien tarkistamisessa tai tulevien tehtävien aikatauluttamisessa.
 
-## Kuinka tehdä se?
+## Miten vertailla kahden päivämäärän välillä?
 
-Päivämäärien vertailu C#-ohjelmointikielessä on helppoa. Alla olevassa esimerkissä käytämme `DateTime`-luokkaa ja sen `Compare`-metodia vertaillaksemme kahta päivämäärää.
+Käytämme C# -ohjelmointikielen Date-tyyppiä vertaillaksemme kahta päivämäärää. Tämän tyyppinen vertailu palauttaa boolean-arvon, joka ilmaisee, onko ensimmäinen päivämäärä ennen vai jälkeen toista päivämäärää. Alla on esimerkki koodista, jossa verrataan kahta päivämäärää sekä tulostetaan vertailun tulos konsoliin.
 
 ```C#
-DateTime date1 = new DateTime(2021, 10, 15);
-DateTime date2 = new DateTime(2021, 11, 20);
+using System;
 
-int result = DateTime.Compare(date1, date2);
+class Program
+{
+    static void Main()
+    {
+        // Luodaan kaksi Date-tyyppistä muuttujaa
+        DateTime date1 = new DateTime(2021, 12, 24);
+        DateTime date2 = new DateTime(2022, 1, 1);
 
-if(result < 0)
-{
-    Console.WriteLine(date1 + " on aiempi päivämäärä kuin " + date2);
-}
-else if(result > 0)
-{
-    Console.WriteLine(date2 + " on aiempi päivämäärä kuin " + date1);
-}
-else
-{
-    Console.WriteLine(date1 + " ja " + date2 + " ovat samat päivämäärät");
+        // Verrataan päivämääriä ja tulostetaan tulos konsoliin
+        if (date1 < date2)
+        {
+            Console.WriteLine("Ensimmäinen päivämäärä on ennen toista päivämäärää.");
+        }
+        else if (date2 < date1)
+        {
+            Console.WriteLine("Toinen päivämäärä on ennen ensimmäistä päivämäärää.");
+        }
+        else
+        {
+            Console.WriteLine("Päivämäärät ovat samat.");
+        }
+    }
 }
 ```
 
-Tämä koodi vertailee kahta päivämäärää ja tulostaa konsoliin niiden välistä suhdetta. Tuloksena saamme:
+Tulostus:
 
 ```
-15.10.2021 on aiempi päivämäärä kuin 20.11.2021
+Ensimmäinen päivämäärä on ennen toista päivämäärää.
 ```
 
-Voit myös käyttää `DateTime`-luokan muita metodeja, kuten `Equals` ja `CompareTo`, päivämäärien vertailuun. On tärkeää muistaa, että vertailu perustuu päivämäärien aikajärjestykseen ja että päivämäärät kirjoitetaan oikeassa muodossa, esimerkiksi `DateTime(2021, 1, 15)`.
+Voimme myös käyttää muita vertailuoperaattoreita, kuten `<=` ja `>=`, mikä antaa meille mahdollisuuden tarkastella myös päivämäärien samanaikaisuutta.
 
-## Syventävä tieto
+## Syvällisempi sukellus
 
-Päivämäärien vertailu voi tuntua yksinkertaiselta, mutta syvemmälle kaivettaessa huomaamme, että se perustuu `DateTime`-luokan taustalla olevaan aikaleimasimeen, joka laskee päiviä 01.01.0001:n jälkeen. On myös tärkeää ottaa huomioon aikavyöhykkeet ja päivämäärien muotoilut, kun vertailee päivämääriä.
+Päivämäärät saattavat tuntua yksinkertaisilta ja helppokäyttöisiltä tietotyypeiltä, mutta niiden taustalta löytyy monimutkaisempaa logiikkaa. Esimerkiksi vuosien, kuukausien ja päivien eri pituudet vaikuttavat vertailuun ja ovat tärkeitä ottaa huomioon.
 
-Voit lukea lisää `DateTime`-luokasta ja sen käyttömahdollisuuksista Microsoftin virallisilta verkkosivuilta.
+Lisäksi C# tarjoaa monia muita valmiita työkaluja päivämäärien käsittelyyn, kuten `DateTime.TryParse()` ja `DateTime.ParseExact()`. Nämä voivat olla hyödyllisiä, jos ohjelmaan syötetään päivämäärä käyttäjän antamana merkkijonona.
 
 ## Katso myös
 
-- [C# DateTime Class](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [DateTime.Compare Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare?view=net-5.0)
-- [C# Tietotyypit ja muunnokset](https://www.tktutor.org/k/csharp/csharp-tyypit.htm)
+- [C# Date-tietotyyppi (Microsoftin dokumentaatio)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [Päivämäärien vertailu JavaScriptissä (blogikirjoitus)](https://www.w3schools.com/jsref/jsref_obj_date.asp)

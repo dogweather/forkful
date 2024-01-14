@@ -1,33 +1,37 @@
 ---
-title:    "Kotlin: Merkkijonon muuntaminen pieniksi kirjaimiksi"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/converting-a-string-to-lower-case.md"
+title:                "Kotlin: Merkkijonon muuttaminen pienaakkosiksi"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi muuttaa merkkijono pieniksi kirjaimiksi?
+## Miksi
 
-Merkkijonon muuttaminen pieniksi kirjaimiksi voi olla hyödyllistä monissa ohjelmoinnin tilanteissa. Se voi helpottaa vertailua, kun halutaan tarkistaa, vastaako käyttäjän syöttämä sana ennalta määriteltyä sanaa. Se myös auttaa välttämään virheitä, jos esimerkiksi käytettävissä olevat tiedostot ovat eri kirjoitusmuodossa. Pienet kirjaimet ovat myös yleisesti hyväksytty tapa kirjoittaa ohjelmointikielistä.
+Tekstin muuttaminen pienaakkosiksi on tärkeää, kun haluat verrata tai etsiä tietoa tekstissä. Muunnaessa merkkijonon pienaakkosiksi, voit varmistaa että kaikki kirjaimet ovat samassa muodossa.
 
-## Kuinka muuttaa merkkijono pieniksi kirjaimiksi Kotlinissa
-
-Kotlinissa merkkijonon pieniksi kirjaimiksi muuttaminen on helppoa. Tämä voidaan tehdä käyttämällä `toLowerCase()`-funktiota, joka kuuluu `String`-luokkaan. Alla on esimerkki kuinka käyttää tätä funktiota:
+## Miten
 
 ```Kotlin
-val sana = "Tervetuloa"
-val pienetKirjaimet = sana.toLowerCase()
-
-println(pienetKirjaimet) // tulostaa "tervetuloa"
+fun main() {
+    val merkkijono = "TÄMÄ ON ESIMERKKI"
+    println(merkkijono.toLowerCase())
+}
 ```
+**Output:** *tämä on esimerkki*
 
-Tässä esimerkissä luodaan uusi merkkijono, joka sisältää sanan "Tervetuloa". Tämän jälkeen käytetään `toLowerCase()`-funktiota, joka muuttaa sanan pieniksi kirjaimiksi ja tallentaa sen uuteen muuttujaan. Lopuksi käytetään `println()`-funktiota tulostamaan uusi merkkijono konsoliin.
+Muuttamista varten käytämme `toLowerCase()` -metodia, jonka avulla voimme muuttaa merkkijonon pienaakkosiksi. Tämä metodi auttaa myös sivuuttamaan kirjainten väliset erot, kuten ä tai ö.
 
-## Syvemmälle merkkijonon muuttamiseen pieniksi kirjaimiksi
+Voimme myös käyttää `toLowerCase(Locale.ENGLISH)` tai muuta tiettyä kieltä vastaavaa `Locale` -arvoa, jotta merkkijono muutetaan kyseiselle kielelle tyypilliseen muotoon.
 
-Vaikka merkkijonon muuttaminen pieniksi kirjaimiksi Kotlinissa onkin helppoa, on hyvä ymmärtää miten tämä tapahtuu taustalla. `toLowerCase()`-funktio käyttää Unicode-standardia muuttaessaan merkkijonoa pieniksi kirjaimiksi. Unicode-standardissa jokaisella kirjaimella on oma koodipiste, joka määrittää sen suuren tai pienen kirjaimen. Kun funktio muuttaa merkkijonon pieniksi kirjaimiksi, se tarkistaa jokaisen kirjaimen koodipisteen ja muuttaa sen vastaavaksi pieneksi kirjaimeksi.
+## Syvällinen sukellus
+
+Kotlinissa `String` -luokassa on `toLowerCase()` -metodi, joka palauttaa merkkijonosta uuden olion, joka sisältää kaikki merkit pienaakkosina. Tämä metodi käyttää oletusarvoisesti `Locale.getDefault()` -arvoa käyttöjärjestelmämme kielelle, mutta voimme myös antaa `Locale` -arvon haluamamme kielen mukaan.
+
+Voimme myös käyttää `toCharArray()` -metodia ja `CharSequence.map()` -funktiota muuttaaksemme kirjaimet pienaakkosiksi ja yhdistää ne takaisin merkkijonoksi, mutta tämä on hieman monimutkaisempi tapa.
 
 ## Katso myös
 
-- [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
-- [Unicode-standardi](https://unicode.org/standard/standard.html)
+- [Kotus-sivusto merkkijonojen muuttamisesta pienaakkosiksi](https://www.kotus.fi/nyt/kayttomanualit/uudenkielennayttajalle/merkkijonojen-muuttaminen-pienaakkosiksi) 
+- [Kotlin Docs - String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)

@@ -1,50 +1,35 @@
 ---
-title:    "Rust: Merkkijonon muuttaminen pienaakkosiksi"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/converting-a-string-to-lower-case.md"
+title:                "Rust: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Tekstinpätkän muuntaminen pienaakkosiksi Rustilla
+## Miksi
 
-Useimmissa ohjelmointiprojekteissa on joskus tarve muuntaa käyttäjän antama syöte pienaakkosiksi. Tämä voi olla esimerkiksi käyttäjän kirjoittamien tietojen validointia varten tai yhtenäisen tietokannan tallennuksen varmistamiseksi. Pienaakkojen muuntaminen on yleinen tarve, ja Rust tarjoaa tehokkaita tapoja toteuttaa tämä.
+Miksi haluaisit muuntaa merkkijonon pieniksi kirjaimiksi? Tämä on yleinen tehtävä ohjelmoijille, jotka haluavat varmistaa, että tekstiä käsitellään yhtenäisesti ja vertailukelpoisena.
 
-## Miten: Esimerkkejä tekstinpätkän muuntamisesta pienaakkosiksi Rustilla
+## Kuinka tehdä
 
-Rustilla on sisäänrakennettu toiminto, joka muuntaa merkkijonon pienaakkosiksi. Se käyttää Unicode-yhteensopivaa algoritmia ja tukee monenlaisia kielialueita. Alla on esimerkkejä koodista, joka käyttää tätä toimintoa:
-
-```Rust
-let name = "Matti Meikäläinen";
-let name_lowercase = name.to_lowercase();
-println!("{}", name_lowercase); // tulostaa "matti meikäläinen"
-```
-
-Voit myös muuntaa vain tietyn osan merkkijonosta pienaakkosiksi käyttämällä `to_lowercase`-funktioon liitettyä `get`-metodia:
+[Rust](https://www.rust-lang.org/) tarjoaa helpon tavan muuntaa merkkijonon pieniksi kirjaimiksi käyttämällä `to_lowercase()` -funktiota. Se palauttaa uuden merkkijonon, joka on kopio alkuperäisestä merkkijonosta mutta pienillä kirjaimilla.
 
 ```Rust
-let message = "Terve! Nähdään Taas!";
-let lowercase = message[..6].to_lowercase(); // muuntaa vain "Terve!" pienaakkosiksi
-println!("{}", lowercase); // tulostaa "terve!"
+let teksti = "Tutustu Rustiin";
+
+let pieniksi = teksti.to_lowercase();
+
+println!("{}", pieniksi);
+// tulostaa "tutustu rustiin"
 ```
 
-Voit myös käyttää `to_lowercase`-funktiota osana `map`-korkeamman asteen toimintoa, joka käsittelee merkkijonoja vektorissa:
+## Syvällisesti
 
-```Rust
-let fruits = ["Omena", "Banaani", "Appelsiini"];
-let lowercase_fruits = fruits
-    .iter()
-    .map(|x| x.to_lowercase())
-    .collect::<Vec<String>>(); // muuntaa kaikki hedelmien nimet pienaakkosiksi
-println!("{:?}", lowercase_fruits); // tulostaa ["omena", "banaani", "appelsiini"]
-```
-
-## Syväsukellus: Lisätietoa tekstinpätkän muuntamisesta pienaakkosiksi Rustilla
-
-Rustin `to_lowercase`-funktio käyttää `UnicodeSpecialCasing`-tietorakennetta muuntaakseen merkkijonon pienaakkosiksi. Tämä mahdollistaa myös erikoismerkkien, kuten Å ja Ä, muuntamisen oikein. Funktiota voidaan myös kutsua käyttämällä `chars`-iteraattoria, jolloin se käsittelee merkki kerrallaan ja mahdollistaa monimutkaisemmat muunnosprosessit.
+Vaikka `to_lowercase()` -funktiota on helppo käyttää, on hyvä tietää mitä se tekee taustalla. Tämä funktio käyttää [Unicode Standardin](https://unicode.org/) määrittelemää käyttäytymistä merkkijonon muuntamisessa. Se varmistaa, että kaikki saatavilla olevat kielet ja kirjaimet käsitellään oikein. Lisäksi se myös käsittelee erikoismerkkejä oikein, esimerkiksi Skandinaaviset kirjaimet.
 
 ## Katso myös
 
-- [Rustin virallinen dokumentaatio tekstinpätkän muuntamisesta pienaakkosiksi](https://doc.rust-lang.org/std/string/trait.From.html#method.to_lowercase)
-- [Crate `unicase`, joka tarjoaa lisämahdollisuuksia tekstin muuntamiseen eri kielialueilla](https://crates.io/crates/unicase)
-- [Esimerkkejä merkkijonon käsittelystä Rustilla](https://learnxinyminutes.com/docs/rust/)
+- [Rustin dokumentaatio string-tyypin to_lowercase() -funktiosta](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
+- [Rust-tutoriaali: Merkkijonot](https://www.rust-lang.org/learn/strings)
+- [Unicode Standardin virallinen verkkosivusto](https://unicode.org/)

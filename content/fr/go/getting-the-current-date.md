@@ -1,94 +1,71 @@
 ---
-title:    "Go: Obtenir la date actuelle"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/go/getting-the-current-date.md"
+title:                "Go: Obtenir la date actuelle"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
+L'intérêt de comprendre comment obtenir la date actuelle en programmation en Go peut sembler évident, mais il y a de nombreuses nuances à prendre en compte. Que vous souhaitiez enregistrer la date dans une base de données, créer un calendrier dynamique ou simplement afficher la date pour les utilisateurs, savoir comment obtenir la date actuelle en Go est une compétence précieuse pour tout programmeur.
 
-Obtenir la date actuelle peut sembler une tâche simple et banale, mais cela peut être très utile dans de nombreuses applications. Par exemple, afficher la date sur un site web ou enregistrer la date de création d'un fichier peut donner des informations importantes aux utilisateurs.
+## Comment Faire
+Il existe plusieurs façons d'obtenir la date actuelle en Go, mais voici l'une des méthodes les plus simples :
 
-## Comment faire
-
-Pour obtenir la date actuelle en Go, nous pouvons utiliser la fonction `now` du package `time`. Voici un exemple de code qui obtient la date actuelle et l'affiche à l'écran :
-
-```Go
+```
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-    current := time.Now()
-    fmt.Println("La date actuelle est :", current)
+	currentTime := time.Now()
+	fmt.Println("La date actuelle est :", currentTime)
 }
 ```
 
-Si vous exécutez ce code, vous devriez voir une sortie similaire à :
+La sortie de ce code sera quelque chose comme ceci :
 
-```bash
-La date actuelle est : 2021-11-17 14:30:12.488627 +0100 CET m=+0.000218784
+```
+La date actulle est : 2021-07-09 16:30:27.8408544 +0000 UTC m=+0.049004501
 ```
 
-Nous pouvons également personnaliser le format de la date en utilisant la méthode `Format` sur notre objet `Time`. Par exemple, si nous voulons afficher la date au format "dd/mm/yyyy", nous pouvons utiliser la chaîne de format `02/01/2006`, car c'est la date de la publication initiale de Go. Voici un exemple de code pour cela :
+Cette méthode utilise la fonction `Now()` de la bibliothèque `time` pour obtenir l'heure actuelle, puis l'affiche à l'aide de la fonction `Println()` de la bibliothèque `fmt`.
 
-```Go
-package main
+Il est également possible de formater la date pour l'afficher dans un format spécifique, par exemple en utilisant la méthode `Format()` :
 
-import (
-    "fmt"
-    "time"
-)
+```
+layout := "2006-01-02"
+currentTime := time.Now().Format(layout)
+fmt.Println("La date actuelle est :", currentTime)
+```
 
-func main() {
-    current := time.Now()
-    fmt.Println("La date actuelle est :", current.Format("02/01/2006"))
+Cela produira une sortie comme ceci :
+
+```
+La date actuelle est : 2021-07-09
+```
+
+Il existe de nombreuses autres fonctions utiles dans la bibliothèque `time` pour travailler avec les dates et les heures en Go. Consultez la documentation officielle pour en savoir plus sur ces fonctions.
+
+## Plongée Profonde
+Il est important de noter que la fonction `Now()` utilise le fuseau horaire UTC par défaut. Si vous souhaitez utiliser un fuseau horaire différent, vous pouvez le spécifier en utilisant la méthode `Location()` et en la passant à la fonction `Now()` :
+
+```
+location, err := time.LoadLocation("Europe/Paris")
+if err != nil {
+	fmt.Println(err)
 }
+currentTime := time.Now().In(location)
+fmt.Println("La date actuelle en France est :", currentTime)
 ```
 
-La sortie de ce code devrait être :
+Cette méthode utilise la bibliothèque `time/zoneinfo` pour charger le fuseau horaire souhaité et l'applique à la date actuelle.
 
-```bash
-La date actuelle est : 17/11/2021
-```
-
-## Plongée en profondeur
-
-Maintenant que nous savons comment obtenir la date actuelle en Go, il est important de comprendre que cette date sera différente selon le fuseau horaire de l'ordinateur sur lequel le code s'exécute. Cela peut parfois prêter à confusion, mais cela peut être résolu en utilisant la méthode `UTC` sur notre objet `Time`.
-
-Nous pouvons également manipuler la date en ajoutant ou en soustrayant des durées en utilisant les méthodes `Add` et `Sub` sur notre objet `Time`. Par exemple, pour obtenir la date d'il y a 1 an à partir de la date actuelle, nous pouvons utiliser :
-
-```Go
-package main
-
-import (
-    "fmt"
-    "time"
-)
-
-func main() {
-    current := time.Now()
-    oneYearAgo := current.AddDate(-1, 0, 0)
-    fmt.Println("Il y a un an, la date était :", oneYearAgo)
-}
-```
-
-La sortie de ce code devrait être :
-
-```bash
-Il y a un an, la date était : 2020-11-17 14:30:12.488627 +0100 CET
-```
-
-Il existe également d'autres fonctions utiles dans le package `time`, comme `Hour`, `Minute` et `Second`, qui permettent d'obtenir des informations plus précises sur la date actuelle.
-
-## Voir aussi
-
-Il existe de nombreuses autres fonctions et outils en Go pour travailler avec les dates et les heures. Voici quelques liens utiles pour en savoir plus :
-
-- [Documentation officielle sur le package `time`](https://golang.org/pkg/time/)
-- [Exemples pratiques d'utilisation de la date et de l'heure en Go](https://yourbasic.org/golang/time-date-timezone/)
-- [Un package Go pour manipuler facilement les dates (github.com)](https://github.com/jinzhu/now)
+## Voir Aussi
+- [Documentation officielle de la bibliothèque `time` en Go](https://pkg.go.dev/time)
+- [Guide pour formater les dates en Go](https://www.alexedwards.net/blog/formatting-time-and-dates-in-go)
+- [Guide pour manipuler les fuseaux horaires en Go](https://www.sohamkamani.com/golang/date-parsing/)

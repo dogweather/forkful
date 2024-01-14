@@ -1,34 +1,32 @@
 ---
-title:    "Ruby: 문자열의 길이 찾기"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/finding-the-length-of-a-string.md"
+title:                "Ruby: 문자열의 길이 찾기"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
+왜 문자열의 길이를 찾는 일에 관여해야 하는지에 대해 1-2 문장으로 설명합니다. 
 
-문자열의 길이를 찾는 것이 유용한 이유는 여러 가지가 있습니다. 예를 들어, 문자열의 길이를 알면 문자열을 작업하는 데 필요한 반복 및 조건문의 횟수를 정확하게 파악할 수 있습니다. 또한 문자열의 길이를 알면 문자열에서 특정 부분을 추출하는 등의 작업을 더 쉽게 할 수 있습니다.
+문자열의 길이를 찾기 위해서는 이해하기 쉬운 방법이며, 유용한 도구이기 때문에 프로그래머에게 매우 중요합니다.
 
-# 방법
-
-문자열의 길이를 찾는 방법은 간단합니다. `length` 메소드를 사용하면 됩니다. 아래는 간단한 예제 코드입니다.
-
-```Ruby
-str = "안녕하세요!"
+## 방법
+"```Ruby 
+str = "안녕하세요"
 puts str.length
-```
+```"
 
-위 코드를 실행하면 문자열 "안녕하세요!"의 길이, 즉 6이 출력됩니다. 이처럼 `length` 메소드는 문자열의 길이를 반환해주는 간단하고 유용한 메소드입니다.
+위의 예시 코드를 실행하면 "5"라는 결과가 출력됩니다. 여기서 "length"는 문자열의 길이를 나타내는 메소드입니다. 문자열의 각 문자를 하나씩 셀 필요가 없이 간단한 메소드를 사용하면 길이를 쉽게 찾을 수 있습니다. 
 
-# 깊게 들어가기
+## 깊게 살펴보기
+문자열의 길이를 찾는 방법에 대해 더 깊이 알아보겠습니다. "length" 메소드는 문자열 내의 모든 문자를 하나씩 셀 때 사용되는 방법 중 하나입니다. 또 다른 방법으로는 "size" 메소드를 사용할 수 있습니다. 두 메소드는 기능이 거의 동일하지만 "size" 메소드는 배열에서도 사용할 수 있습니다. 
 
-실제로 `length` 메소드는 어떻게 동작하는 걸까요? 우선, 모든 Ruby 객체는 메소드를 호출할 수 있습니다. 따라서 문자열 역시 `length` 메소드를 호출할 수 있습니다. 그렇다면 어떤 일이 벌어질까요?
+## 관련 링크 
+- [Ruby String 클래스 문서](https://ruby-doc.org/core-2.7.0/String.html)
+- [공식 Ruby 문서 for .length](https://ruby-doc.org/core-2.7.0/String.html#method-i-length)
+- [공식 Ruby 문서 for .size](https://ruby-doc.org/core-2.7.0/String.html#method-i-size)
 
-사실 Ruby에서는 문자열을 내부적으로 배열로 처리합니다. 즉, 문자열의 각 문자가 배열의 요소가 되는 것입니다. 따라서 `length` 메소드를 호출하면 배열의 크기를 반환하는 것과 같은 방식으로 동작합니다.
-
-# 관련 자료
-
-- [Ruby 문서: String 클래스](https://ruby-doc.com/core-2.5.0/String.html)
-- [Ruby 모범 사례: 문자열 다루기](https://github.com/bbatsov/ruby-style-guide#strings)
-- [Ruby 문자열 관련 기능 더 알아보기](https://www.rubyguides.com/ruby-tutorial/string/#string-size)
+## 참고 
+그리스어 "metron"에서 유래된 "measuring rod"라는 뜻을 가지고 있는 단어 "메터"는 문자열을 셀 때 사용하는 다른 용어입니다. 이를 참고해보세요!

@@ -1,53 +1,47 @@
 ---
-title:    "Kotlin: Tekstitiedoston lukeminen."
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/reading-a-text-file.md"
+title:                "Kotlin: Tekstitiedoston lukeminen"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-On monia syitä, miksi lukua tekstitiedostoon on tärkeä taito ohjelmointimaailmassa. Se voi auttaa sinua käsittelemään suuria tietomääriä, tallentamaan ja lukemaan käyttäjän syötteitä, tai yksinkertaisesti helpottamaan tiedon tallentamista ja jakamista ohjelman kanssa.
+Tiedostojen käsittely on olennainen osa ohjelmointia, ja usein joudumme käsittelemään tekstiä tiedoston muodossa. Tästä syystä on tärkeää ymmärtää, miten luemme tekstitiedostoja Kotlin-ohjelmoinnissa.
 
-## Miten
-
-Aloittamiseen, sinun täytyy avata käyttämäsi tiedoston lukija käyttämällä `BufferedReader` luokkaa Kotlinissa. Sitten voit käyttää `useLines` funktiota lukeaksesi tiedoston sisältöä rivillä kerrallaan. 
+## Kuinka
 
 ```Kotlin
-val tiedostonLukija = BufferedReader(FileReader(path))
-tiedostonLukija.useLines { rivit ->
-    rivit.forEach { rivi ->
-        // tee jotain rivin kanssa
-    }
+fun lueTiedosto(polku: String): List<String> {
+    File(polku).useLines { lines -> return lines.toList() }
+}
+
+val tiedot = lueTiedosto("tiedosto.txt")
+for (tieto in tiedot) {
+    println(tieto)
 }
 ```
 
-Jos haluat vain lukea koko tiedoston sisällön kerralla, voit käyttää `readLines` funktiota, joka palauttaa listan kaikista tiedoston riveistä. 
+Esimerkissä luomme funktion "lueTiedosto", joka hyödyntää "File"-luokkaa ja sen "useLines"-metodia avatakseen ja lukeakseen tekstitiedoston. Tämän jälkeen voimme käyttää funktiota lähettämällä sille halutun tiedostopolun parametrina. Tuloksena saamme listan, jossa jokainen rivivastaa yhtä tiedoston riviä. Lopuksi käytämme "for"-silmukkaa tulostamaan jokainen rivi konsoliin.
+
+## Syvällinen sukellus
+
+Luettuamme tekstitiedoston, haluamme mahdollisesti käsitellä sen sisältöä tarkemmin. Voimme käyttää esimerkiksi String-luokan "split"-metodia jakamaan tiedoston rivit erillisiksi osiksi.
 
 ```Kotlin
-val tiedostonSisalto = File(path).readLines()
-println(tiedostonSisalto)
+val tiedot = lueTiedosto("tiedosto.txt")
+for (tieto in tiedot) {
+    val osat = tieto.split(",")
+    println("${osat[0]} on ${osat[1]} vuoden ikäinen.")
+}
 ```
 
-Voit myös luoda oman `File` olion ja käyttää `reader` funktion antamaan `BufferedReader` olion, jolloin sinun ei tarvitse erikseen avata tai sulkea tiedostoa.
-
-```Kotlin
-val tiedosto = File(path)
-val rivit = tiedosto.reader().readLines()
-println(rivit)
-```
-
-## Syventävä tarkastelu
-
-Tekstitiedostojen lukeminen Kotlinissa on todella yksinkertaista ja helppoa, mutta on myös muutama asia, jotka on hyvä pitää mielessä. Ensinnäkin, muista aina käsitellä tiedoston lukuun liittyvät poikkeukset, kuten jos tiedostoa ei löydy tai sitä ei voida avata. 
-
-Toiseksi, voit käyttää `forEachLine` funktiota `useLines` sijasta, jos haluat käsitellä jokaista riviä erikseen sen sijaan, että luot listaa kaikista tiedoston riveistä. 
-
-Lopuksi, tiedostot voivat olla eri koodaustyyleillä (esim. UTF-8, ISO-8859-1) joten varmista, että käytät oikeaa koodaustyyppiä lukiessasi tekstitiedostoa.
+Tässä esimerkissä hyödynnetään ","-merkkiä erotinmerkkinä ja tulostetaan jokaiselle riville tietynlainen lause.
 
 ## Katso myös
 
-- Kotlinin `BufferedReader` dokumentaatio: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-buffered-reader/index.html
-- Esimerkkikoodi tekstitiedostojen lukemisesta Kotlinissa: https://kotlinlang.org/docs/tutorials/kotlin-for-py/read-files.html
-- Tiedostonluku käyttäen `File` luokkaa: https://kotlinlang.org/docs/tutorials/kotlin-for-py/read-files-advanced.html
+- [Kotlinin virallinen dokumentaatio tiedostojen käsittelystä](https://kotlinlang.org/docs/tutorials/kotlin-for-py/how-to-read-write-files.html)
+- [Esimerkkejä tekstitiedoston lukemisesta Kotlinilla](https://www.educative.io/edpresso/how-to-read-a-file-using-kotlin)
+- [Interaktiivisia harjoituksia tiedostonkäsittelyyn liittyen](https://www.codingame.com/ide/puzzle/file-on-the-road-big-data)

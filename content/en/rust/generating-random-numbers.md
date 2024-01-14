@@ -1,65 +1,52 @@
 ---
-title:    "Rust recipe: Generating random numbers"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/generating-random-numbers.md"
+title:                "Rust recipe: Generating random numbers"
+programming_language: "Rust"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Generating random numbers is a common task in programming, used for a variety of purposes such as creating random game scenarios, testing algorithms, and generating unique identifiers. In this blog post, we will explore how to generate random numbers in Rust and the various options available.
+Random numbers are a crucial component in many programming tasks such as generating encryption keys, creating random game worlds, and selecting items in a random order. In this post, we will explore the basics of generating random numbers in Rust and how to use this functionality in your own projects.
 
 ## How To
 
-To generate random numbers in Rust, we will use the `rand` crate, which is a popular random number generation library in the Rust ecosystem. To use this crate, add the following line to your `Cargo.toml` file:
+To generate random numbers in Rust, we first need to add the `rand` crate to our `Cargo.toml` file:
 
 ```Rust
 [dependencies]
-rand = "0.8.4"
+rand = "0.7.3"
 ```
 
-Next, we will need to import the crate into our Rust code:
+Next, we need to import the `Rng` trait and the `thread_rng()` function from the `rand` crate:
 
 ```Rust
 use rand::Rng;
+use rand::thread_rng;
 ```
 
-Now, let's dive into some examples of how to generate random numbers using `rand`:
-
-1. Generate a random integer between 1 and 100:
+Now, we can use the `thread_rng()` function to create a random number generator and then call methods from the `Rng` trait to generate random numbers. For example, to generate a random integer between 1 and 100, we can use the `gen_range()` method:
 
 ```Rust
-let mut rng = rand::thread_rng();
-let random_number = rng.gen_range(1..=100);
+let mut rng = thread_rng();
+let number = rng.gen_range(1, 101);
+println!("Random number: {}", number);
 ```
 
-2. Generate a random float between 0.0 and 1.0:
-
-```Rust
-let mut rng = rand::thread_rng();
-let random_number = rng.gen::<f64>();
-```
-
-3. Generate a random boolean:
-
-```Rust
-let mut rng = rand::thread_rng();
-let random_bool = rng.gen::<bool>();
-```
-
-The `thread_rng()` method creates a random number generator using a thread-local source of randomness. This ensures that each time we call the `gen()` or `gen_range()` method, we get a different random number. Next, we use the `gen()` method to generate a random number of the specified type.
+Running this code will output a different random number each time it is executed.
 
 ## Deep Dive
 
-The `rand` crate uses pseudorandom number generators (PRNGs) that generate numbers based on a mathematical algorithm. These numbers are deterministic, meaning that given the same starting point (or seed), the numbers will always be the same. This can be useful for testing or generating consistent results.
+Behind the scenes, the `rand` crate uses a pseudo-random number generator (PRNG) to generate its random numbers. This PRNG is seeded by the operating system's entropy source, ensuring a fairly random distribution. However, it is important to note that these numbers are not truly random and should not be used for cryptographic purposes.
 
-One commonly used PRNG in the `rand` crate is the Mersenne Twister algorithm (MT19937). This algorithm is known for its high-quality randomness and speed, making it an excellent choice for generating random numbers.
-
-It is important to note that PRNGs are not cryptographically secure, meaning that they should not be used for encryption or securing sensitive data. For these purposes, a cryptographically secure random number generator should be used.
+Additionally, the `rand` crate offers various methods for generating different types of random numbers, such as floats, booleans, and even randomly shuffling items in a vector.
 
 ## See Also
 
-- Official `rand` crate documentation: https://docs.rs/rand
-- Rust Book chapter on random numbers: https://doc.rust-lang.org/book/ch07-06-sex-and-randomness.html
-- Random number generation in other languages: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+If you want to learn more about generating random numbers in Rust, here are some helpful resources:
+
+- [The Rust Book: Randomness](https://doc.rust-lang.org/book/ch07-05-separating-modules-into-different-files.html)
+- [The rand crate documentation](https://docs.rs/rand/0.7.3/rand/)
+- [The Rust Cookbook: Generating Random Numbers](https://rust-lang-nursery.github.io/rust-cookbook/science/mathematics/rand.html)

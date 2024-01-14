@@ -1,49 +1,44 @@
 ---
-title:    "C: Wydrukowanie wyjścia debugowego"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/printing-debug-output.md"
+title:                "C: Wyświetlanie wyników debugowania"
+programming_language: "C"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Jednym z najważniejszych narzędzi w procesie programowania jest wyświetlanie informacji na temat działania naszego kodu. Może to być pomocne w celu znalezienia błędów, zrozumienia przepływu programu lub po prostu monitorowania jego działania. W tym blogu dowiesz się, dlaczego wyświetlanie informacji debugowania jest ważne i jak to zrobić w C.
+Debugowanie jest jedną z najważniejszych części procesu pisania programów. Bez niego trudno jest znaleźć błędy i poprawić działanie naszego kodu. Jednym z potężniejszych narzędzi debugujących jest wyświetlanie informacji pomocniczych, które pomagają nam w prześledzeniu działania naszego programu i identyfikacji problemów. W tym artykule zobaczymy, dlaczego wyświetlanie debug output jest ważne i jak tego dokonać.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby wyświetlić informacje debugowania w języku C, możemy skorzystać z funkcji `printf()`. Wykorzystuje się ją do wypisywania różnych typów danych, takich jak tekst, liczby czy wartości logiczne.
-
-Przykład:
+Wyświetlanie debug output w języku C jest stosunkowo proste. Wystarczy wykorzystać funkcję `printf()` w celu wyświetlenia żądanych informacji. Przykładowy kod wyglądałby następująco:
 
 ```C
-int num = 5;
-printf("Wartość zmiennej \"num\" to %d\n", num);
-```
-Wyjście:
-```
-Wartość zmiennej "num" to 5
-```
-W powyższym przykładzie użyłem znaku specjalnego `%d`, który oznacza, że zmienna typu `int` zostanie wyświetlona jako liczba dziesiętna. Istnieje wiele innych znaków specjalnych, które można wykorzystać w celu wyświetlenia różnych typów danych. Kilka najważniejszych to:
+#include <stdio.h>
 
-- `%d` - liczba dziesiętna
-- `%f` - liczba zmiennoprzecinkowa (float)
-- `%c` - znak
-- `%s` - tekst
-- `%x` - liczba szesnastkowa
+int main()
+{
+    int a = 5, b = 7;
+    printf("Wartość a: %d, wartość b: %d.\n", a, b);
+    return 0;
+}
+```
 
-Należy również pamiętać, że można wyświetlić więcej niż jedną zmienną za pomocą jednej funkcji `printf()`. W tym celu wystarczy po prostu dodać kolejne zmienne po znaku `%`.
+Powyższy kod wyświetli nam informację o wartościach zmiennych `a` i `b` na konsoli w trakcie działania programu. Jednak warto pamiętać, że wyświetlanie debug output powinno być używane tylko podczas debugowania, a nie w końcowej wersji produktu.
 
 ## Deep Dive
 
-W języku C istnieje również funkcja `fprintf()`, która działa w podobny sposób jak `printf()`, ale pozwala wyświetlać informacje do pliku zamiast do konsoli. Jest to przydatne w przypadku, gdy chcemy zachować informacje debugowania dla późniejszego przejrzenia.
+Za pomocą funkcji `printf()` możemy wyświetlić różnego rodzaju informacje, takie jak wartości zmiennych, tekst, czy nawet adresy pamięci. W celu odseparowania tych informacji możemy wykorzystać specjalne znaki formatujące, np. `%d` dla wartości całkowitych, `%f` dla liczb zmiennoprzecinkowych, czy `%s` dla tekstów.
 
-Istnieje również możliwość wyświetlania bardziej szczegółowych informacji, takich jak adresy pamięci, dzięki użyciu funkcji `sprintf()`. Jest to szczególnie przydatne w przypadku debugowania programów korzystających z dynamicznej alokacji pamięci.
+Dodatkowo, możemy wykorzystać również inne funkcje, takie jak `sprintf()`, która pozwala na zapisanie wyświetlanych informacji do zmiennej, lub `fprintf()`, która zapisuje je do pliku zamiast na konsoli.
 
-Oprócz funkcji `printf()`, `fprintf()` i `sprintf()`, istnieje również wiele innych narzędzi i metod do wyświetlania informacji debugowania w języku C. Jest to obszerna dziedzina, która wymaga doświadczenia i eksperymentowania, aby osiągnąć najlepsze wyniki.
+Pamiętajmy, żeby nie nadużywać wyświetlania debug output, ponieważ to może wpłynąć na wydajność naszego programu.
 
-## Zobacz również
+## Zobacz też
 
-- [10 przydatnych wskazówek do debugowania w C](https://www.programiz.com/article/c-debugging-tips)
-- [Dokumentacja funkcji `printf()`](https://www.cplusplus.com/reference/cstdio/printf/)
-- [Poradnik: Wykorzystaj funkcję `fprintf()` do zapisywania informacji do pliku](https://fresh2refresh.com/c-programming/c-file-handling/fprintf-fputs-fscanf-fscanf-sprintf-scanf-cc-functions/)
+- ["Debugowanie w języku C"](https://pl.wikipedia.org/wiki/B%C5%82%C4%85d_programowania)
+- ["Wyświetlanie debug output w języku Python"](https://realpython.com/python-debugging-pdb/#printing-values-to-understand-what-s-going-on)
+
+Dzięki wyświetlaniu debug output możemy łatwiej zidentyfikować błędy w naszym kodzie i naprawić je szybciej. Pamiętajmy jednak, żeby używać go tylko podczas debugowania, a nie w końcowej wersji produktu. Miejmy również na uwadze wydajność naszego programu i unikajmy nadmiernego wyświetlania informacji pomocniczych.

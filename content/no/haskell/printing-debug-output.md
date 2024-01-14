@@ -1,50 +1,70 @@
 ---
-title:    "Haskell: Utskrift av feilsøkingsutdata"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/printing-debug-output.md"
+title:                "Haskell: Utskrift av feilsøkingsutdata"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Det kan være frustrerende å feilsøke koden din og finne ut hva som egentlig skjer. Dette er spesielt viktig når man jobber med Haskell, et funksjonelt programmeringsspråk som kan være krevende å forstå. Å skrive ut feilmeldinger og annen debug-informasjon kan være en avgjørende hjelp for å løse problemer og forstå hvordan koden din fungerer i detalj.
+Vi har alle vært der - prøver å løse en feil i koden vår, men støter på en murvegg. Vi prøver å lese koden og forstå hva som skjer, men ingenting virker galt. Det er her debugging kommer inn i bildet. Den enkleste måten å få en bedre forståelse av hva som skjer i koden vår er å legge inn debug utskrifter, som printer verdiene av variabler og uttrykk. Dette kan hjelpe oss med å finne feil og forbedre vår generelle forståelse av koden.
 
-# Hvordan
+## Hvordan
 
-Det å skrive ut debug-informasjon kan gjøres på flere forskjellige måter i Haskell. En av de enkleste måtene er å bruke funksjonen `print` som tar inn en verdi og skriver den ut til konsollen. Her er et eksempel på hvordan man kan skrive ut en liste med tall i Haskell:
+For å skrive ut debug-utskrifter i Haskell, bruker vi funksjonen `putStrLn`. Vi kan inkludere denne funksjonen i hvilken som helst del av koden vår, og den vil skrive ut en string på konsollen når programmet kjører. La oss ta en titt på et eksempel:
 
 ```Haskell
+main :: IO ()
 main = do
-    let numbers = [1, 3, 5, 7, 9]
-    print numbers
+  let tall = 42
+  putStrLn ("Tallet er: " ++ show tall)
 ```
 
-Output vil da være:
+I dette eksempelet lager vi en variabel `tall` med verdien `42`. Vi bruker deretter `putStrLn` til å skrive ut en string som inkluderer verdien av `tall`. Når vi kjører programmet, blir følgende skrevet ut på konsollen:
 
 ```
-[1, 3, 5, 7, 9]
+Tallet er: 42
 ```
 
-En annen måte å skrive ut debug-informasjon på er å bruke funksjonen `trace` fra pakken `Debug.Trace`. Denne funksjonen tar inn en streng og en verdi, og skriver begge til konsollen. Et eksempel på hvordan dette kan brukes i praksis er:
+Vi kan også legge til flere debug-utskrifter for å se verdien av flere variabler og uttrykk. For å gjøre dette, må vi bare legge til flere `putStrLn`-kall i koden vår. Det kan også være nyttig å inkludere en beskrivende tekst for å vite hva som blir skrevet ut.
 
 ```Haskell
-import Debug.Trace
-
-calculateSum :: Int -> Int -> Int
-calculateSum x y = trace ("x + y is " ++ show (x + y)) (x + y)
+main :: IO ()
+main = do
+  let tall1 = 12
+      tall2 = 30
+  putStrLn "Debug-utskrifter:"
+  putStrLn ("Tall 1: " ++ show tall1)
+  putStrLn ("Tall 2: " ++ show tall2)
+  putStrLn ("Summen av tall 1 og tall 2: " ++ show (tall1 + tall2))
 ```
 
-Nå vil funksjonen `calculateSum` skrive ut en melding til konsollen som viser hva summen av to tall er.
+Dette vil resultere i følgende utskrift:
 
-# Dypdykk
+```
+Debug-utskrifter:
+Tall 1: 12
+Tall 2: 30
+Summen av tall 1 og tall 2: 42
+```
 
-Hvis du vil få mer detaljert debug-informasjon, kan du bruke funksjonen `Debug.Trace.traceShow` som tar inn en streng og en verdi, og skriver dem begge til konsollen sammen med informasjon om data-typen til verdien. Dette er spesielt nyttig når man jobber med komplekse datastrukturer, som for eksempel lister av lister eller trær.
+## Dypdykk
 
-En viktig ting å huske på når man bruker debug-informasjon er å fjerne eller kommentere ut denne koden før man leverer den endelige versjonen av programmet sitt. Ellers vil det bli skrevet ut mye unødvendig informasjon til konsollen som kan gjøre programmet ditt tregere.
+Det er viktig å merke seg at debugging ikke er en erstatning for god koding. Det er bare et nyttig verktøy for å hjelpe oss med å forstå hva som skjer bak kulissene i koden vår. Det er også viktig å huske å fjerne alle debug-utskrifter før du deployer koden din til produksjon.
 
-# Se også
+En annen nyttig funksjon for debugging i Haskell er `trace`. Denne funksjonen tar en string og et uttrykk som argumenter, og evaluerer uttrykket mens den skriver ut stringen på konsollen. La oss se på et eksempel:
 
-- [Offisiell Haskell-dokumentasjon](https://www.haskell.org/documentation)
-- [Haskell for nybegynnere](https://medium.com/@noemiandor/haskell-for-beginners-9e8d06c0e5a8)
-- [Haskell-programmeringsspråket](https://no.wikipedia.org/wiki/Haskell_(programmeringsspr%C3%A5k))
+```Haskell
+sum :: Num a => [a] -> a
+sum []     = 0
+sum (x:xs) = trace ("Legger til " ++ show x) x + sum xs
+```
+
+Her bruker vi funksjonen `trace` for å skrive ut en string som forteller oss hva som blir lagt til i summen hver gang funksjonen blir kalt. Dette kan være spesielt nyttig når du jobber med rekursive funksjoner.
+
+## Se også
+
+- [Debugging i Haskell (engelsk)](https://wiki.haskell.org/Debugging)
+- [Feilsøkingstips for Haskell (engelsk)](https://www.yesodweb.com/blog/2012/01/tips-for-debugging-haskell)

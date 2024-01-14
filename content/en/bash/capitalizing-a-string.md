@@ -1,80 +1,46 @@
 ---
-title:    "Bash recipe: Capitalizing a string"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/capitalizing-a-string.md"
+title:                "Bash recipe: Capitalizing a string"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Capitalize a String in Bash
+##Why
+Are you tired of seeing strings in all lowercase letters? Do you want to add some emphasis to your strings? Look no further! Capitalizing a string can easily be done in Bash programming.
 
-Capitalizing a string in Bash can be useful when working with user inputs or manipulating textual data. It can make the output more visually appealing or conform to a certain format.
+##How To
+Coding in Bash may seem intimidating at first, but it's actually quite simple. To capitalize a string, follow these steps:
 
-## How To Capitalize a String in Bash
-
-To capitalize a string in Bash, we can use the `awk` command. The following code snippet shows how to capitalize the first letter of a string:
-
+1. Start by creating a variable that contains the string you want to capitalize. For this example, we'll use the string "hello world".
 ```
-#!/bin/bash
-
-# Define the string to capitalize
-str="hello world"
-
-# Use awk to capitalize the first letter
-capitalized_str=$(echo "$str" | awk '{print toupper(substr($0, 1, 1)) substr($0, 2)}')
-
-# Print the capitalized string
-echo "$capitalized_str"
-
-# Output: Hello world
+Bash
+string="hello world"
 ```
-
-We can also use the `tr` command to capitalize the entire string:
-
+2. Next, we can use the `tr` command to translate lowercase characters to uppercase. The `-u` flag specifies that we want to convert to uppercase.
 ```
-#!/bin/bash
-
-# Define the string to capitalize
-str="hello world"
-
-# Use tr to capitalize the entire string
-capitalized_str=$(echo "$str" | tr '[:lower:]' '[:upper:]')
-
-# Print the capitalized string
-echo "$capitalized_str"
-
-# Output: HELLO WORLD
+Bash
+capitalized_string=`echo $string | tr '[:lower:]' '[:upper:]'`
 ```
-
-Another way to capitalize a string is by using Bash's string manipulation capabilities. The following code snippet shows how to capitalize the first letter using parameter expansion:
-
+3. Finally, we can print out the capitalized string using the `echo` command.
 ```
-#!/bin/bash
-
-# Define the string to capitalize
-str="hello world"
-
-# Use parameter expansion to capitalize the first letter
-capitalized_str="${str^}"
-
-# Print the capitalized string
-echo "$capitalized_str"
-
-# Output: Hello world
+Bash
+echo $capitalized_string
 ```
+The output of this code will be:
+```
+HELLO WORLD
+```
+Congratulations, you have successfully capitalized a string in Bash!
 
-## Deep Dive into Capitalizing a String in Bash
+##Deep Dive
+Behind the scenes, the `tr` command works by using a translation table. In our example, the translation table has all lowercase letters mapped to their uppercase counterparts. This means that when we use the `tr` command, the lowercase "h" in "hello world" is translated to an uppercase "H", and so on.
 
-In Bash, strings are treated as arrays of characters. We can use this characteristic to manipulate the string as needed. For example, to capitalize the first letter of a string, we can use the `^` operator, which capitalizes the first character.
+Additionally, it's worth noting that the `tr` command only works with single characters. If you try to pass in a string, it will only process the first character. This is why we had to use the `echo` command to pass in the entire string.
 
-Similarly, we can use the `^^` operator to capitalize every character in the string, or the `,,` operator to convert the string to lowercase.
-
-Additionally, we can use the `tr` command with its various options to manipulate the case of the string. For example, we can use `tr '[:lower:]' '[:upper:]'` to convert all lowercase characters to uppercase.
-
-Overall, understanding the characteristics and capabilities of strings in Bash can help in efficiently capitalizing strings in a variety of ways.
-
-## See Also
-
-- [Bash Guide: String Manipulation](https://www.linuxjournal.com/article/8919)
-- [AWK Tutorial](https://www.grymoire.com/Unix/Awk.html)
-- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+##See Also
+To dive even deeper into the `tr` command, check out these resources:
+- [The tr command in Bash](https://www.geeksforgeeks.org/tr-command-in-linux-with-examples/)
+- [Using Bash's tr command](https://linuxize.com/post/linux-tr-command/)
+- [Utilities: tr](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)

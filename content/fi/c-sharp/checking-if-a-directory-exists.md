@@ -1,41 +1,40 @@
 ---
-title:    "C#: Tarkistetaan, onko hakemistoa olemassa"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/checking-if-a-directory-exists.md"
+title:                "C#: Tarkistetaan, onko kansio olemassa"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi tarkistaa, onko hakemisto olemassa
 
-On monia syitä, miksi haluat tarkistaa, onko hakemisto olemassa. Yleisimpiä ovat työnkulun automatisointi ja virheiden välttäminen, kun yrität päästä käsiksi tiettyyn hakemistoon.
+On olemassa useita syitä, miksi haluat tarkistaa, onko tietty hakemisto olemassa. Tämä voi olla hyödyllistä esimerkiksi varmistaessasi, että tietty hakemisto on olemassa ennen tiedostojen tallentamista siihen, tai jos haluat tarkistaa, onko ohjelmalle tarvittavat tiedostot saatavilla ennen sen suorittamista.
 
-## Miten
+## Miten tarkistaa, onko hakemisto olemassa
 
-Tarkistamalla, onko hakemisto olemassa, voit välttää virheitä ja käsitellä niitä tarvittaessa. Voit tehdä tämän helposti C#-kielellä käyttämällä Directory.Exists()-metodia.
-
-```
-C#
-string hakemistoPolku = "C:\\Users\\Kayttaja\\Tallennetut tiedostot";
-
-if (Directory.Exists(hakemistoPolku))
+```C#
+if (Directory.Exists("hakemisto")) // Tarkistaa, onko "hakemisto" nimistä hakemistoa olemassa
 {
     Console.WriteLine("Hakemisto on olemassa.");
 }
 else
 {
-    Console.WriteLine("Hakemistoa ei löytynyt.");
+    Console.WriteLine("Hakemistoa ei löydy.");
 }
+
+// Esimerkkilähtö:
+// Hakemisto on olemassa.
 ```
 
-Tämä koodi tarkistaa, onko "Tallennetut tiedostot" -hakemisto olemassa käyttäjän "Kayttaja" kotihakemistossa. Jos hakemisto löytyy, tulostetaan "Hakemisto on olemassa.". Muussa tapauksessa tulostetaan "Hakemistoa ei löytynyt.". Tämä yksinkertainen tarkistus auttaa sinua välttämään virheitä ja parantamaan koodisi suorituskykyä.
+## Syvällisempi tarkastelu hakemistojen tarkistamisesta
 
-## Syvällinen katsaus
+Kun haluat tarkistaa, onko hakemisto olemassa, tärkeintä on tietää hakemistopolku ja käyttää sitä parametrina `Directory.Exists()` -metodissa. On myös tärkeää muistaa, että ohjelmalla on oltava tarvittavat oikeudet päästä hakemistoon, jotta tarkistus voi onnistua.
 
-Jos haluat tietää tarkemmin, miten Directory.Exists()-metodi toimii, voit tutkia sen toimintaa syvällisemmin. Teknisesti ottaen metodi tarkistaa, onko annetun polun tai hakemiston kansio olemassa. Se palauttaa boolean-arvon, joka kertoo, onko hakemisto olemassa vai ei. Tätä tietoa voit käyttää esimerkiksi päätöksentekoon tai virheiden käsittelyyn.
+Voit myös käyttää `DirectoryInfo` -luokkaa hakemiston tarkistamiseen. Tämä luokka tarjoaa monia hyödyllisiä ominaisuuksia hakemistojen hallintaan, kuten tietoa koon ja luontiajan lisäksi myös `Exists` -ominaisuuden, jolla voit tarkistaa, onko hakemisto olemassa.
 
 ## Katso myös
 
-- [Tietoja hakemistojen tarkistamisesta C#-kielellä](https://docs.microsoft.com/fi-fi/dotnet/api/system.io.directory.exists?view=net-5.0)
-- [Hakemistojen käsitteleminen C#-kielellä](https://www.tutorialspoint.com/csharp/csharp_directory_class.htm)
-- [Vianjäljitysvinkkejä hakemistojen tarkistamiseen C#-kielellä](https://www.fluxbytes.com/csharp/check-if-a-directory-exists-using-csharp/)
+- [Microsoftin dokumentaatio - Directory.Exists -metodi](https://docs.microsoft.com/fi-fi/dotnet/api/system.io.directory.exists?view=net-5.0)
+- [Microsoftin dokumentaatio - DirectoryInfo -luokka](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=net-5.0)
+- [C# Directory.Exists -metodi: tarkista, onko tiedosto vai hakemisto](https://www.youtube.com/watch?v=KC8gy-nrOww) (YouTube-video)

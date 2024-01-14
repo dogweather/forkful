@@ -1,38 +1,43 @@
 ---
-title:    "Haskell: Encontrando o comprimento de uma string"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/finding-the-length-of-a-string.md"
+title:                "Haskell: Encontrando o comprimento de uma string."
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que encontrar o comprimento de uma string é importante?
+## Por que
 
-Encontrar o comprimento de uma string é uma habilidade fundamental na programação. Saber quantos caracteres uma string contém pode ser útil em diversas situações, como validar entradas de usuário, manipulação de dados e formatação de saída.
+Encontrar o comprimento de uma string é uma tarefa comum em programação. Saber como fazer isso pode ser útil em uma variedade de cenários, desde a manipulação de dados até a formatação de saída. Além disso, é um bom exercício para fortalecer suas habilidades em Haskell.
 
-## Como fazer:
+## Como fazer
+
+A função `length` em Haskell pode ser usada para encontrar o comprimento de uma string. Aqui está um exemplo simples de como usá-la:
 
 ```Haskell
--- Definindo uma função para encontrar o comprimento de uma string
-findLength :: String -> Int 
-findLength str = length str
-
--- Exemplos de entrada e saída da função
-findLength "Olá" -- output: 3
-findLength "123456789" -- output: 9
+main = do
+    let str = "Olá, mundo!"
+    putStrLn ("O comprimento da string é: " ++ (show (length str)))
 ```
 
-A função `length` é pré-definida na linguagem Haskell e retorna o comprimento de qualquer estrutura que possa ser percorrida, como strings, listas e arrays. Entretanto, é importante ressaltar que o comprimento de uma string pode ser diferente do número de caracteres visíveis, já que caracteres unicode possuem diferentes tamanhos.
+A saída deste código será `O comprimento da string é: 12`, indicando que a string possui 12 caracteres. Agora, vamos ver um exemplo um pouco mais complexo que envolve a entrada do usuário:
 
-## Profundidade:
+```Haskell
+main = do
+    putStrLn "Digite uma palavra:"
+    str <- getLine
+    putStrLn ("A palavra " ++ str ++ " tem " ++ (show (length str)) ++ " letras.")
+```
 
-Ao encontrarmos o comprimento de uma string, estamos na verdade contando quantos elementos ela possui. Em Haskell, o tipo `String` é equivalente a uma lista de caracteres `Char`, então podemos utilizar a função `length` para encontrar tanto o comprimento de uma string quanto de uma lista. É importante salientar que o tipo `String` é uma lista com elementos do tipo `Char`, então manipulações e operações que funcionam com listas podem ser aplicadas em strings também.
+Ao executar este código e digitar uma palavra, a saída será algo como `A palavra casa tem 4 letras.` Isso mostra como a função `length` pode ser usada em conjunto com outras funções e entrada do usuário para obter resultados úteis.
 
-Outro detalhe importante é que a função `length` é uma função pura, ou seja, ela não possui efeitos colaterais e sempre retorna o mesmo resultado para uma mesma entrada. Isso significa que seu código será mais previsível e menos propenso a erros.
+## Mergulho profundo
 
-## Veja também:
+Embora a função `length` seja bastante simples, existem algumas coisas interessantes por trás dela. Por exemplo, ela pode ser usada em listas de outros tipos de dados, como números ou booleanos. Além disso, a função é implementada de forma recursiva em Haskell, o que pode ser um bom ponto de discussão para entender melhor como ela funciona.
 
-- [Documentação oficial do Haskell](https://www.haskell.org/documentation/)
-- [Funções pré-definidas no Haskell](https://wiki.haskell.org/Standard_functions)
-- [Tutorial interativo de Haskell](https://learnyouahaskell.com/chapters)
-- [Documentação da linguagem Markdown](https://www.markdownguide.org/)
+## Veja também
+
+- [Tutorial de Haskell](https://www.haskell.org/tutorial/)
+- [Documentação da função length](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:length)
+- [Exercícios práticos de programação em Haskell](http://www.inf.ufg.br/~eden/teaching/plc/Lista-exercicios-Haskell.pdf)

@@ -1,52 +1,82 @@
 ---
-title:    "Javascript: Wyszukiwanie i zamiana tekstu"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/searching-and-replacing-text.md"
+title:                "Javascript: Wyszukiwanie i zamienianie tekstu"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego 
 
-Zamienianie tekstu jest podstawowym zadaniem w programowaniu. Dzięki tej funkcji możemy łatwo i szybko zmieniać wybrane fragmenty tekstu, co jest niezbędne w wielu projektach.
+W dzisiejszym poście omówimy zagadnienie wyszukiwania i zamiany tekstu w języku JavaScript. Jest to niezwykle ważne narzędzie w programowaniu, które pozwala na szybką i precyzyjną modyfikację tekstu w naszym kodzie. Jeśli chcesz dowiedzieć się więcej o tej funkcji i jak jej używać, to ten artykuł jest dla Ciebie!
 
 ## Jak to zrobić
 
-Aby zamienić tekst w Javascript, możemy użyć kilku różnych sposobów. Jednym z najprostszych jest użycie funkcji `replace()`. Przykładowy kod wyglądałby tak:
+### Przygotowanie danych
 
-```Javascript
-let text = "Witaj na moim blogu!";
-let newText = text.replace("Witaj", "Cześć");
-console.log(newText);
+Zanim przejdziemy do kodowania, musimy przygotować nasze dane. Załóżmy, że mamy tekst, w którym chcemy zamienić litery "a" na "e".
+
+```javascript
+let tekst = "Programowanie jest zabawa";
 ```
 
-Wynikiem tego kodu jest "Cześć na moim blogu!".
+Teraz możemy przejść do właściwej części - zamiany tekstu.
 
-Możemy również użyć wyrażenia regularnego do zamiany tekstu. Przykładowy kod wyglądałby tak:
+### Wyszukiwanie i zamiana
 
-```Javascript
-let text = "Zamiana wielu słów za pomocą wyrażeń regularnych.";
-let newText = text.replace(/wielu słów/g, "dużo słów");
-console.log(newText);
+W JavaScript mamy specjalną funkcję, która pozwala nam na wyszukiwanie oraz zamianę tekstu w zadanym ciągu znaków. Jest to metoda `replace()` i wygląda ona następująco:
+
+```javascript
+let nowyTekst = tekst.replace('a', 'e');
+console.log(nowyTekst);
 ```
 
-Wynikiem tego kodu jest "Zamiana dużo słów za pomocą wyrażeń regularnych." 
+W wyniku dostaniemy:
+
+```
+Progrmowanie jest zebew
+```
+
+Jak widzimy, wszystkie litery "a" zostały zamienione na "e".
+
+### Używanie wyrażeń regularnych
+
+Możemy również użyć wyrażeń regularnych, aby wyszukać i zmienić tekst. Na przykład, jeśli chcemy zamienić wszystkie samogłoski na znaki "*", możemy użyć poniższego kodu:
+
+```javascript
+let nowyTekst2 = tekst.replace(/[aeiou]/g, '*');
+console.log(nowyTekst2);
+```
+
+W wyniku dostaniemy:
+
+```
+Pr*gr*m*wn**e j*st z*b*w*
+```
+
+### Zachowanie orginalnego tekstu
+
+Jeśli chcemy zachować oryginalny tekst i stworzyć nowy, zmodyfikowany, możemy to zrobić za pomocą składni z użyciem wyrażenia regularnego:
+
+```javascript
+let nowyTekst3 = tekst.replace(/[g]/, 'G');
+console.log(nowyTekst3);
+console.log(tekst); // oryginalny tekst zostaje niezmieniony
+```
+
+W wyniku dostaniemy:
+
+```
+Programowanie jest zGbawa
+Programowanie jest zabawa
+```
 
 ## Deep Dive
 
-Funkcja `replace()` może przyjmować dwa parametry - wartość, którą chcemy zamienić oraz wartość, na którą chcemy ją zamienić. Możemy również przekazać funkcję jako drugi parametr, która będzie wywoływana na każdym dopasowanym fragmencie tekstu. Możemy w ten sposób dokonać bardziej zaawansowanych operacji podczas zamiany tekstu.
+Metoda `replace()` jest wyjątkowo przydatna, ponieważ daje nam wiele możliwości. Możemy wyszukiwać konkretny tekst, wyrażenia regularne, a także użyć funkcji zwrotnej do bardziej zaawansowanego przetwarzania tekstu. Polecam prześledzić dokumentację, aby poznać wszystkie jej funkcjonalności.
 
-```Javascript
-let text = "Zamiana wielu słów za pomocą funkcji zamieniającej.";
-let newText = text.replace(/funkcji/g, function(match) {
-  return "funkcję " + match.toUpperCase();
-});
-console.log(newText);
-```
+## Zobacz także
 
-Wynikiem tego kodu jest "Zamiana wielu słów za pomocą funkcji ZAMIANIAJĄCEJ." 
-
-## Zobacz również
-
-* [Funkcja replace() w Javascript](https://www.w3schools.com/jsref/jsref_replace.asp)
-* [Wyrażenia regularne w Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Dokumentacja metody replace()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/replace)
+- [Poradnik wyrażeń regularnych w JavaScript](https://kursjs.pl/kurs/regex/regex.php)

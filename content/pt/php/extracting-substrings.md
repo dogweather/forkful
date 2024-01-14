@@ -1,45 +1,43 @@
 ---
-title:    "PHP: Extraindo Substrings"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/extracting-substrings.md"
+title:                "PHP: Extraindo subtrings"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings em programação
+## Por que fazer extração de subcadeias?
 
-Extrair substrings, ou partes de uma string, é um processo importante na programação PHP. Isso permite que você manipule e processe informações específicas dentro de uma string maior. Seja para formatar dados, buscar informações específicas ou qualquer outra necessidade, a extração de substrings é uma habilidade valiosa para os programadores.
+Fazer extração de subcadeias pode ser útil em diversas situações de programação, como na manipulação de dados de entrada ou na formatação de strings. Com a extração de subcadeias, você pode selecionar apenas a parte necessária de uma string para ser usada em seu código.
 
-## Como extrair substrings em PHP
+## Como fazer extração de subcadeias em PHP
 
-Extrair substrings em PHP é bastante simples. Você pode usar a função `substr()` seguida de três argumentos: a string original, o índice inicial e a quantidade de caracteres a serem extraídos.
+Fazer a extração de subcadeias em PHP é simples e pode ser feita usando a função `substr()`. Essa função requer dois parâmetros: a string de onde a subcadeia será extraída e a posição inicial da subcadeia. Por exemplo:
 
-```
-$original = "Esta é uma string de exemplo";
-$substring = substr($original, 8, 6);
-
-echo $substring; // saída: "string"
+```PHP
+$string = "Esta é uma string para a demonstração de extração de subcadeias.";
+$subcadeia = substr($string, 20);
 ```
 
-Neste exemplo, definimos a string original como "Esta é uma string de exemplo" e extraímos uma substring começando a partir do 8º caractere, que é "s", e continuando por 6 caracteres, resultando em "string". Você também pode extrair substrings contando da direita para a esquerda, usando um índice negativo.
+A variável `$subcadeia` agora contém a subcadeia a partir da posição 20 da string original. Você também pode especificar um terceiro parâmetro opcional para determinar o tamanho da subcadeia a ser extraída. Por exemplo:
 
-```
-$original = "Esta é uma string de exemplo";
-$substring = substr($original, -7, 3);
-
-echo $substring; // saída: "emp"
+```PHP
+$subcadeia = substr($string, 20, 10);
 ```
 
-Note que a contagem de índice começa em 0, então o primeiro caractere é 0, o segundo é 1, e assim por diante. Além disso, se você omitir o terceiro argumento, a substring será extraída até o final da string original.
+Nesse caso, a subcadeia terá 10 caracteres a partir da posição 20 da string original. O resultado da variável `$subcadeia` será "para a demo".
 
-## Mergulho profundo na extração de substrings
+## Mais detalhes sobre a extração de subcadeias
 
-Existem alguns detalhes importantes a serem considerados ao extrair substrings em PHP. Em primeiro lugar, se o índice inicial for maior que o tamanho da string, a função `substr()` retornará uma string vazia. Além disso, se o índice inicial for um número negativo e maior do que o tamanho da string, a função irá começar a extração contando do início da string original.
+Além da função `substr()`, existem outras formas de fazer a extração de subcadeias em PHP. Por exemplo, você também pode usar a função `mb_substr()` para trabalhar com strings multibyte e tratar caracteres acentuados corretamente.
 
-Você também pode utilizar a função `mb_substr()` para extrair substrings em PHP com suporte a caracteres multibyte, que incluem caracteres com acentos e símbolos. Esta função possui os mesmos três argumentos que a `substr()`, mas certifique-se de habilitar o suporte a caracteres multibyte em seu PHP.ini.
+Outra opção é utilizar expressões regulares para fazer a extração de subcadeias. Isso pode ser especialmente útil quando você precisa buscar por padrões específicos na string original.
+
+Em qualquer um dos casos, é importante lembrar que a posição da subcadeia é sempre contada a partir do índice 0, ou seja, o primeiro caractere da string é a posição 0, o segundo é a posição 1 e assim por diante.
 
 ## Veja também
 
-- Documentação oficial sobre a função `substr()`: https://www.php.net/manual/en/function.substr.php
-- Documentação oficial sobre a função `mb_substr()`: https://www.php.net/manual/en/function.mb-substr.php 
-- Tutorial sobre strings em PHP: https://www.php.net/manual/en/language.types.string.php
+- [Documentação oficial do PHP sobre a função `substr()`](https://www.php.net/manual/pt_BR/function.substr.php)
+- [Documentação oficial do PHP sobre a função `mb_substr()`](https://www.php.net/manual/pt_BR/function.mb-substr.php)
+- [Guia sobre expressões regulares em PHP](https://www.php.net/manual/pt_BR/book.pcre.php)

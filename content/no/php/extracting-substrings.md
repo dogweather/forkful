@@ -1,35 +1,34 @@
 ---
-title:    "PHP: Uthenting av delstrenger"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/extracting-substrings.md"
+title:                "PHP: Ekstrahering av delstrenger"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Har du noen gang lurt på hvordan du kan hente ut deler av en tekststreng i PHP? Det kan være nyttig når du for eksempel skriver et program som skal behandle brukerinput eller formatere data. Ved å utnytte funksjoner for å trekke ut substrings, kan du gjøre koden din mer dynamisk og effektiv.
+Et av de mest grunnleggende elementene i strengmanipulering i PHP er å kunne trekke ut deler av en streng, også kjent som substringer. Dette er en viktig ferdighet for å kunne behandle data og utføre forskjellige operasjoner på det. Uansett om du er en erfaren PHP-utvikler eller en nybegynner, er å kunne ekstrahere substringer noe som vil være svært nyttig i mange ulike situasjoner.
 
-## Hvordan du gjør det
+## Hvordan
 
-Å trekke ut substrings i PHP er enkelt med funksjonen `substr()`. Denne funksjonen tar imot tre parametere: den opprinnelige tekststrengen, startindeksen og antall tegn du vil hente ut. Her er et eksempel på hvordan du kan bruke `substr()`:
+For å trekke ut en substring i PHP, bruker du funksjonen `substr()`. Denne funksjonen tar tre parametere: den opprinnelige strengen, startposisjonen for den ønskede substringen og lengden på substringen. La oss se på et enkelt eksempel:
 
 ```PHP
-$original = "Hei, jeg heter Andreas.";
-$sub = substr($original, 5, 10);
-echo $sub;
+$streng = "Hei, dette er en streng.";
+$substring = substr($streng, 4, 4);
+
+echo $substring;
 ```
 
-Outputen vil være "jeg heter".
+Outputen vil være "dett", siden startsposisjonen er 4 og lengden på substringen er 4. Du kan også bruke negative tall for startposisjon og lengde. Dette vil da telle bakfra i strengen.
 
-## Dypdykk
+## Dype granskninger
 
-Det finnes også flere andre funksjoner som kan brukes for å hente ut substrings i PHP. Blant annet `mb_substr()` som lar deg håndtere flerspråklige tekststrenger, og `str_split()` som lar deg splitte en tekststreng inn i en array av mindre tekststrenger.
-
-Det kan også være nyttig å vite at du kan bruke negative tall som startindeks i `substr()` for å starte tellingen fra slutten av tekststrengen. For eksempel vil `substr($original, -5)` hente de siste fem tegnene i tekststrengen.
+I tillegg til å bruke `substr()`-funksjonen, kan du også bruke andre funksjoner for å arbeide med substringer i PHP. For eksempel kan du bruke `strpos()` for å finne posisjonen til en bestemt streng i en annen streng, og deretter bruke `substr()` for å trekke ut en substring fra den posisjonen. Det finnes også nyttige funksjoner som `str_replace()` for å erstatte deler av en streng og `str_split()` for å dele en streng inn i en array.
 
 ## Se også
 
-- [PHP dokumentasjon for substr()](https://www.php.net/manual/en/function.substr.php)
-- [W3Schools tutorial on substrings in PHP](https://www.w3schools.com/php/func_string_substr.asp)
-- [Codecademy course on manipulating strings in PHP](https://www.codecademy.com/courses/learn-php/lessons/php-string-handling/exercises/substr)
+- [PHP.net - Substr](https://www.php.net/manual/en/function.substr.php)
+- [W3Schools - PHP substring functions](https://www.w3schools.com/php/php_ref_string.asp)

@@ -1,70 +1,60 @@
 ---
-title:    "C++: Comparer deux dates"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/comparing-two-dates.md"
+title:                "C++: Comparer deux dates"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Nous avons souvent besoin de comparer deux dates dans nos programmes C++, que ce soit pour vérifier les délais de livraison, les anniversaires ou simplement pour trier une liste de données. Dans cet article, nous allons découvrir comment comparer facilement deux dates en utilisant C++.
+Comme programmeur en C++, il est parfois nécessaire de comparer deux dates pour effectuer des opérations telles que la planification d'événements ou la gestion de tâches. Comprendre comment comparer des dates est une compétence importante à maîtriser pour tout développeur de logiciels.
 
 ## Comment faire
 
-La méthode la plus simple pour comparer deux dates en C++ est d'utiliser la structure de données `tm` de la bibliothèque `<ctime>`. Cette structure contient des informations sur le temps, y compris les éléments pour les années, les mois, les jours, les heures, les minutes et les secondes.
+Pour comparer deux dates en C++, nous devons utiliser la classe "std::chrono::time_point". Cette classe représente un point spécifique dans le temps, et nous pouvons l'utiliser pour créer des instances de date et les comparer entre elles.
+
+Voici un exemple de code montrant comment définir deux dates et les comparer entre elles :
 
 ```C++
+// Importer les bibliothèques nécessaires
 #include <iostream>
-#include <ctime>
+#include <chrono>
+using namespace std; 
 
-int main()
-{
-    // Déclaration des variables pour les deux dates à comparer
-    struct tm date1 = {0, 0, 0, 1, 0, 2020}; // 1er janvier 2020
-    struct tm date2 = {0, 0, 0, 15, 1, 2020}; // 15 février 2020
+int main() {
+    // Définir les dates à comparer
+    chrono::time_point<chrono::system_clock> date1 = chrono::system_clock::now();
+    chrono::time_point<chrono::system_clock> date2 = date1 + chrono::hours(24);
 
-    // Comparaison des dates en utilisant la fonction difftime()
-    double difference = difftime(mktime(&date1), mktime(&date2));
-
-    // Affichage du résultat
-    if (difference < 0) 
-    {
-        std::cout << "La date 1 est antérieure à la date 2." << std::endl;
-    }
-    else if (difference > 0)
-    {
-        std::cout << "La date 2 est antérieure à la date 1." << std::endl;
-    }
-    else 
-    {
-        std::cout << "Les deux dates sont identiques." << std::endl;
+    // Comparer les dates
+    if (date1 < date2) {
+        cout << "Date 1 est plus tôt que date 2" << endl;
+    } else if (date1 > date2) {
+        cout << "Date 1 est plus tard que date 2" << endl;
+    } else {
+        cout << "Les dates sont égales" << endl;
     }
 
     return 0;
 }
 ```
 
-Output:
+Voici un exemple de sortie pour illustrer la comparaison entre deux dates :
 
 ```
-La date 1 est antérieure à la date 2.
+Date 1 est plus tôt que date 2
 ```
-
-Dans cet exemple, nous avons utilisé la fonction `mktime()` pour convertir notre structure `tm` en un nombre de secondes depuis l'Epoch (1er janvier 1970). Ensuite, nous avons utilisé la fonction `difftime()` pour comparer ces deux nombres de secondes.
-
-Il est également possible d'utiliser la fonction `mktime()` pour convertir une date saisie par l'utilisateur en une structure `tm`, ce qui vous permet de comparer facilement cette date avec une autre.
-
-Il est important de noter que cette méthode ne prend pas en compte les fuseaux horaires et utilise l'heure locale par défaut. Si vous avez besoin de prendre en compte les fuseaux horaires ou des dates dans un fuseau horaire différent, vous devrez utiliser une bibliothèque externe telle que `Boost.Date_Time`.
 
 ## Plongée en profondeur
 
-En utilisant la structure `tm`, il est également possible de comparer des dates avec une précision allant jusqu'aux millisecondes en utilisant les éléments `tm_sec` et `tm_usec` qui représentent respectivement les secondes et les microsecondes.
+Il est important de comprendre que les dates sont des objets complexes en C++, et qu'il existe plusieurs façons de les représenter et de les comparer. Par exemple, il existe différents types de "clocks" (horloges) en C++, et chacune peut fournir différents niveaux de précision pour les dates.
 
-Dans certains cas, il peut également être utile de simplement comparer les dates sans tenir compte de l'heure ou des minutes. Pour ce faire, vous pouvez utiliser la fonction `std::equal()` de la bibliothèque `<algorithm>` en spécifiant les éléments de la structure `tm` que vous souhaitez comparer.
+Il est également important de noter que les dates peuvent être affectées par des valeurs de timezone (fuseaux horaires) et des changements de temps, ce qui peut compliquer la comparaison entre elles. C'est pourquoi il est recommandé d'utiliser la classe "std::chrono::time_point" qui est conçue pour gérer ces détails et nous permettre de comparer les dates de manière précise.
 
 ## Voir aussi
 
-- Documentation sur la bibliothèque `<ctime>` en C++ : https://www.cplusplus.com/reference/ctime/
-- Documentation sur la structure `tm` : https://www.cplusplus.com/reference/ctime/tm/
-- Tutoriel sur la bibliothèque `Boost.Date_Time` : https://theboostcpplibraries.com/boost.datetime-date-time-convenience-classes
+- [Documentation sur classe "std::chrono::time_point" (en anglais)](https://en.cppreference.com/w/cpp/chrono/time_point)
+- [Tutoriel sur les opérations de temps en C++ (en anglais)](https://www.geeksforgeeks.org/operations-date-time-c/)
+- [Article sur la manipulation des dates et heures en C++ (en français)](https://blog.frankel.ch/manipulation-temps-date-heure-cpp/)

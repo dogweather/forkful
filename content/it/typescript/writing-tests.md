@@ -1,38 +1,46 @@
 ---
-title:    "TypeScript: Scrivere test"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/typescript/writing-tests.md"
+title:                "TypeScript: Scrivere test"
+programming_language: "TypeScript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere test nel TypeScript?
+## Perché
 
-Scrivere test è un'ottima pratica di programmazione che aiuta a garantire la qualità del codice. In particolare, nel TypeScript, i test possono aiutare a individuare e risolvere potenziali errori prima ancora di eseguire l'applicazione.
+Scrivere test è fondamentale per garantire la qualità e l'affidabilità del nostro codice. Ci permette di individuare e risolvere bug prima che il nostro software arrivi in produzione, riducendo il rischio di downtime e offrendo una migliore esperienza agli utenti.
 
-## Come scrivere test nel TypeScript
+## Come fare
 
-Per iniziare, è necessario installare un framework di test come Jest o Mocha tramite il gestore di pacchetti di Node.js. Una volta installato, è possibile utilizzare le sue funzionalità per scrivere i test in modo semplice e intuitivo.
+Per scrivere test in TypeScript, dobbiamo prima importare la libreria `chai` che ci permette di effettuare le asserzioni e `mocha` che ci permette di organizzare i nostri test in suite.
 
-Ecco un esempio di test per una funzione di somma in TypeScript utilizzando Jest:
+Dopo aver installato queste dipendenze, possiamo scrivere il nostro primo test. In questo esempio, supponiamo di avere una funzione `sum` che accetta due numeri e restituisce la loro somma:
 
 ```TypeScript
-test("somma 1 + 2", ()=>{
-    let result = somma(1,2);
-    expect(result).toBe(3);
+const { expect } = require('chai');
+const { describe, it } = require('mocha');
+
+describe('sum function', () => {
+  it ('should correctly add two numbers', () => {
+    const result = sum(2,3);
+    expect(result).to.equal(5);
+  });
 });
 ```
 
-In questo test, definiamo una funzione che eseguirà una somma tra due numeri e verificheremo se il suo risultato corrisponde al valore atteso. Se il test fallisce, verrà mostrato un messaggio di errore indicando il motivo del fallimento.
+In questo esempio, abbiamo creato una suite di test chiamata "sum function" e un test all'interno di essa che verifica che la funzione `sum` restituisca il risultato corretto per due numeri dati. Utilizzando la funzione `expect` della libreria `chai`, possiamo fare asserzioni sul valore di `result`. Se la nostra asserzione non è verificata, il test fallirà e ci sarà segnalato il motivo del fallimento.
 
-## Approfondimento sui test nel TypeScript
+Aggiungere sempre più test che coprano diversi scenari ci garantirà una migliore copertura e affidabilità del nostro codice.
 
-Oltre ai test standard, è possibile utilizzare anche i test di integrazione e i test di unità nel TypeScript. I test di integrazione verificano il funzionamento delle diverse componenti dell'applicazione in modo coordinato, mentre i test di unità si focalizzano su singole porzioni di codice. Questi diversi tipi di test possono essere utili a seconda delle esigenze dell'applicazione.
+## Deep Dive
 
-Inoltre, è importante ricordare che i test dovrebbero essere scritti in modo da essere facilmente mantenibili e aggiornabili. Utilizzare variabili e funzioni ben nominate può aiutare a facilitare la comprensione dei test e la loro manutenzione nel tempo.
+Scrivere test non solo ci aiuta a individuare e risolvere bug, ma anche a progettare un codice più modulare e testabile. Inoltre, ci offre una documentazione vivente del nostro codice che ci permette di comprenderne meglio il funzionamento nel tempo.
+
+Per ottimizzare il nostro processo di testing, possiamo anche utilizzare altri strumenti come `istanbul` per generare una copertura dei nostri test e `eslint` per identificare eventuali errori di sintassi o best practices non seguite.
 
 ## Vedi anche
 
-- [Documentazione di Jest](https://jestjs.io/docs/getting-started)
-- [Guida ai test nel TypeScript](https://blog.logrocket.com/a-2021-guide-to-unit-testing-with-typescript/)
-- [Esempi di utilizzo di test nel TypeScript](https://codeburst.io/unit-testing-in-typescript-d4719b25bc5d)
+- [Guida completa alla scrittura dei test in TypeScript] (https://www.typescriptlang.org/docs/handbook/testing.html)
+- [Documentazione su Mocha] (https://mochajs.org/)
+- [Documentazione su Chai] (https://www.chaijs.com/)

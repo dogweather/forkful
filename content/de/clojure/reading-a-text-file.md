@@ -1,41 +1,48 @@
 ---
-title:    "Clojure: Eine Textdatei lesen"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/reading-a-text-file.md"
+title:                "Clojure: Eine Textdatei lesen"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-In der Welt der Programmierung ist das Lesen von Textdateien ein grundlegender und notwendiger Schritt für die Verarbeitung von Daten, sei es zum Lesen von Konfigurationsdateien oder zum Extrahieren von Informationen aus großen Datenmengen. Lesen von Textdateien ermöglicht es einem Programmierer, auf einfache Weise Informationen aus einem externen Quelltext zu erhalten, ohne die Daten manuell eingeben zu müssen.
+Das Lesen von Textdateien ist eine grundlegende Fähigkeit, die jeder Clojure-Programmierer beherrschen sollte. Es ermöglicht das Lesen und Verarbeiten von externen Daten in Ihren Programmen, was insbesondere für die Entwicklung von Anwendungen mit umfangreichen Datensätzen von Vorteil ist.
 
-## Wie man Textdateien in Clojure liest
+# Wie man das macht
 
-Das Lesen von Textdateien in Clojure ist relativ einfach und erfordert nur wenige Zeilen Code. In der folgenden Beispielcode verwenden wir die Funktion `slurp` um den Inhalt einer Textdatei in eine variable zu speichern und dann die `println` Funktion, um den Inhalt auf der Konsole auszugeben.
+Um eine Textdatei in Clojure zu lesen, können wir die Funktion `clojure.java.io/reader` verwenden. Diese akzeptiert als Argument einen Dateipfad und gibt ein Java-Objekt zurück, das wir dann in Clojure-Funktionen weiterverarbeiten können.
 
-```Clojure
-(def text (slurp "datei.txt"))
-(println text)
-```
-
-Die Ausgabe wird dann den gesamten Inhalt der Textdatei auf der Konsole ausgeben. Alternativ kann auch die Funktion `read-lines` verwendet werden, um den Inhalt einer Textdatei zeilenweise in eine Liste zu speichern.
+Hier ist ein Beispiel, das eine Textdatei namens "textdatei.txt" liest und jede Zeile auf der Konsole ausgibt:
 
 ```Clojure
-(def lines (read-lines "datei.txt"))
-(println lines)
+(with-open [reader (reader "textdatei.txt")]
+  (doseq [line (line-seq reader)]
+    (println line)))
 ```
 
-Die Ausgabe wird dann eine Liste mit jeder Zeile der Textdatei als separate Elemente enthalten.
+Die Funktion `with-open` öffnet das Dateiobjekt und sorgt dafür, dass es nach Beendigung des Vorgangs ordnungsgemäß geschlossen wird. Dann verwenden wir `line-seq` um die Zeilen der Datei einzeln zu durchlaufen und `println` um sie auszugeben.
 
-## Tiefere Einblicke
+Die Ausgabe könnte wie folgt aussehen:
 
-Es gibt auch Möglichkeiten, Textdateien in Clojure zu lesen, die über die grundlegenden Funktionen `slurp` und `read-lines` hinausgehen. Zum Beispiel kann die Bibliothek "clojure-csv" verwendet werden, um CSV-Dateien zu lesen und in Clojure Datenstrukturen zu konvertieren.
+```
+Dies ist ein Beispieltext
+Der zweite Satz
+Schließlich endet die Datei
+```
 
-Eine weitere Möglichkeit ist die Verwendung von regulären Ausdrücken, um spezifische Informationen aus einer Textdatei zu extrahieren. In Kombination mit den Funktionen `slurp` und `read-lines` können reguläre Ausdrücke eingesetzt werden, um gezielt nach bestimmten Mustern in einer Textdatei zu suchen und diese zu verarbeiten.
+# Tiefere Einblicke
 
-## Siehe auch
+Das Lesen von Textdateien in Clojure kann auch mit Hilfe der `slurp`-Funktion erfolgen, die den gesamten Inhalt der Datei als String zurückgibt. Diese kann nützlich sein, wenn Sie die gesamte Datei auf einmal in einem bestimmten Format verarbeiten möchten.
 
-- [Offizielle Clojure Dokumentation](https://clojure.org/)
-- [Clojure Cheat Sheet](https://clojure.org/api/cheatsheet)
-- [Clojure for Beginners YouTube Kanal](https://www.youtube.com/channel/UCbwhWannAwBT7PcDPKnox-g)
+Eine weitere wichtige Funktion ist die `clojure.string/split` Funktion, die eine Zeichenkette anhand eines Trennzeichens in eine Sequenz von Teilen aufteilt. Sie kann verwendet werden, um eine Textdatei in einzelne Wörter oder Sätze aufzuteilen und diese weiter zu verarbeiten.
+
+# Siehe auch
+
+- Clojure Dokumentation zu `clojure.java.io/reader`: https://clojuredocs.org/clojure.java.io/reader
+- Clojure Dokumentation zu `slurp`: https://clojuredocs.org/clojure.core/slurp
+- Clojure Dokumentation zu `split`: https://clojuredocs.org/clojure.string/split
+
+Danke fürs Lesen und viel Spaß beim Lesen von Textdateien in Clojure!

@@ -1,18 +1,19 @@
 ---
-title:    "Haskell: Lecture des arguments de ligne de commande"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/reading-command-line-arguments.md"
+title:                "Haskell: Lecture des arguments de ligne de commande"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Lorsque vous écrivez un programme en Haskell, il est souvent nécessaire de prendre des entrées de l'utilisateur pour personnaliser le fonctionnement du programme. Cela peut inclure des chaînes de caractères, des nombres ou même des options spécifiques. La lecture des arguments de la ligne de commande est donc une compétence importante pour tout programmeur Haskell.
+Les arguments de ligne de commande sont un aspect essentiel de la programmation en Haskell. Ils permettent de personnaliser les actions d'un programme lors de son exécution. En comprendre le fonctionnement est donc crucial pour tout développeur utilisant ce langage fonctionnel.
 
-## Comment faire
+## Comment Faire
 
-Pour lire les arguments de la ligne de commande en Haskell, nous pouvons utiliser la fonction `getArgs` du module `System.Environment`. Cette fonction renvoie une liste de chaînes de caractères contenant tous les arguments passés au programme lors de son exécution. Par exemple :
+Pour lire les arguments de ligne de commande en Haskell, nous allons utiliser une fonction appelée `getArgs`, qui renvoie une liste de chaînes de caractères représentant les arguments entrés par l'utilisateur.
 
 ```Haskell
 import System.Environment
@@ -20,20 +21,24 @@ import System.Environment
 main :: IO ()
 main = do
     args <- getArgs
-    putStrLn ("Les arguments sont : " ++ show args)
+    putStrLn ("Les arguments entrés sont: " ++ show args)
 ```
 
-Supposons que le programme ci-dessus s'appelle "programme.hs" et qu'il soit exécuté avec les arguments "Hello" et "World" comme ceci : `runhaskell programme.hs Hello World`, il affichera la sortie suivante :
+Si nous exécutons ce code avec la commande `runhaskell monProgramme.hs Bonjour tout le monde`, nous obtiendrons l'output suivant:
 
-```
-Les arguments sont : ["Hello", "World"]
-```
+`Les arguments entrés sont: ["Bonjour","tout","le","monde"]`
 
-## Plongée plus profonde
+Nous pouvons ensuite utiliser ces arguments pour effectuer différentes actions dans notre programme, en fonction de nos besoins.
 
-Bien que cela puisse sembler simple, la fonction `getArgs` peut en fait être problématique si les arguments contiennent des caractères spéciaux, tels que des guillemets ou des espaces. Dans ces cas, il est préférable d'utiliser la fonction `getArgsWith`, qui utilise un parser pour traiter correctement les arguments. Il est également important de noter que les arguments sont renvoyés sous forme de liste de chaînes de caractères, et qu'il est de la responsabilité du programmeur de les convertir en types appropriés si nécessaire.
+## Plongée Profonde
 
-## Voir aussi
+Il est important de noter que les arguments de ligne de commande en Haskell sont des chaînes de caractères. Par conséquent, si nous voulons utiliser ces arguments comme des entiers ou d'autres types de données, nous devrons les convertir en utilisant des fonctions telles que `read` et `fromIntegral`.
 
-- [Documentation sur `getArgs` et `getArgsWith`](http://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html#v:getArgs)
-- [Tutoriel sur la manipulation des arguments de la ligne de commande en Haskell](https://www.tutorialspoint.com/haskell/haskell_command_line_arguments.htm)
+Il est également possible de manipuler les arguments avant de les utiliser, en utilisant des fonctions de manipulation de listes telles que `map` ou `filter`.
+
+Pour plus d'informations, consultez la documentation officielle de Haskell sur les arguments de ligne de commande.
+
+## Voir Aussi
+
+- [Documentation officielle de Haskell sur les arguments de ligne de commande](https://www.haskell.org/onlinereport/haskell2010/haskellch11.html)
+- [Tutoriel vidéo sur les arguments de ligne de commande en Haskell (en anglais)](https://www.youtube.com/watch?v=lNWcrapb_JU)

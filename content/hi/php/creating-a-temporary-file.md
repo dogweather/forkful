@@ -1,42 +1,37 @@
 ---
-title:    "PHP: अस्थायी फाइल बनाना"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/php/creating-a-temporary-file.md"
+title:                "PHP: Atemporary file बनाना"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-अगर आप PHP में काम कर रहे हैं और आपको अस्थायी फाइलें बनाने की जरूरत है, तो आपको इस ब्लॉग पोस्ट को ध्यान से पढ़ना चाहिए। यहां हम आपको बताएंगे कि अस्थायी फाइल कैसे बनाएं और उससे आपको क्या लाभ हो सकता है।
+आज के युग में प्रोग्रामिंग स्किल्स का बहुत महत्व हैं और उन्हें सीखने और अपनाने में कोई भी व्यक्ति नहीं पीछे रहना चाहता हैं। एक ऐसी स्किल्ड में से एक हैं PHP प्रोग्रामिंग। आप अपने PHP कोड को और भी सुरक्षित और बेहतर बनाने के लिए टेम्पोररी फाइल सृजन कर सकते हैं। इसका प्रयोग आपको सुरक्षित डेटा जोड़ने या और भी अनेक विभिन्न कार्यों में मदद कर सकता हैं।
 
-## कैसे बनाएं
-
-अस्थायी फाइल बनाने के लिए आपको `tmpfile()` फ़ंक्शन का उपयोग करना होता है। नीचे एक उदाहरण है:
+## कैसे करें
 
 ```PHP
-$file = tmpfile(); // अस्थायी फाइल बनाएं
-fwrite($file, "Hello World!"); // फ़ाइल में कुछ लिखें
-echo fread($file, filesize($file)); // फ़ाइल से पढ़ें
-fclose($file); // फ़ाइल बंद करें
+$file = tmpfile();
+fwrite($file, "This is a temporary file.");
+echo fread($file, filesize("Your File Path"));
+fclose($file);
 ```
 
-इसका आउटपुट होगा:
+## गहराई तक जाईये
 
-```
-Hello World!
-```
+टेम्पोररी फाइल सृजन करने के बारे में गहराई से जानने से पहले हमें यह समझना चाहिए कि यह क्या है और यहाँ इसका क्या उपयोग होता हैं। टेम्पोररी फाइलें अस्थायी फाइलें होती हैं जो आमतौर पर एप्लीकेशन या सिस्टम प्रोसेसेस की अपने आप डिलीट हो जाती हैं। ये फाइलें ऑपरेशन कमलाई और सुरक्षितता बनाए रखने के लिए स्टोर होती हैं। इससे अपने कोड को प्रोटेक्ट किया जा सकता हैं और डेटा लॉस या वाइरस से बचाया जा सकता हैं।
 
-जैसा कि आप देख सकते हैं, हमने `fwrite()` और `fread()` फ़ंक्शन का उपयोग किया है जो अस्थायी फाइल के साथ काम करते हैं। आप अपनी आवश्यकतानुसार इस्तेमाल कर सकते हैं।
+## अधिक जानकारी के लिए
 
-## गहराई में जाएं
+[PHP Official Documentation on tmpfile() function](https://www.php.net/manual/en/function.tmpfile.php)
 
-अस्थायी फ़ाइलें इस्तेमाल करने के कई लाभ हैं। उनमें से कुछ हैं:
+[GeeksforGeeks tutorial on PHP temporary files](https://www.geeksforgeeks.org/creating-temporary-files-in-php/)
 
-- समय की बचत करते हैं क्योंकि ये फ़ाइलें स्वचालित रूप से हटाई जाती हैं। आपको फाइल को हटाने की चिंता नहीं करनी होती।
-- सुरक्षा प्रदान करते हैं क्योंकि इन फाइलों को अस्थायी रूप से स्थानीय डिस्क पर सहेजा जाता है। इसलिए, अन्य लोगों द्वारा इन फाइलों को एक्सेस करने की संभावना नहीं होती।
+## देखें भी
 
-## इससे प्रति
+[How to Secure Your PHP Code](https://www.example.com/how-to-secure-php-code)
 
-- [PHP मैनुअल: tmpfile()](https://www.php.net/manual/en/function.tmpfile.php)
-- [W3Schools: PHP tmpfile() फंक्शन](https
+[Introduction to PHP: Basics and Best Practices](https://www.example.com/introduction-to-php-basics)

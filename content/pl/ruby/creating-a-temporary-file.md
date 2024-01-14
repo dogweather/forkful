@@ -1,45 +1,64 @@
 ---
-title:    "Ruby: Tworzenie tymczasowego pliku"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/creating-a-temporary-file.md"
+title:                "Ruby: Tworzenie pliku tymczasowego"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego tworzymy pliki tymczasowe?
+# Dlaczego
 
-Tworzenie plików tymczasowych jest powszechnie stosowaną praktyką w programowaniu. Są one szczególnie przydatne w przypadkach, gdy program musi tymczasowo przechowywać dane lub informacje, które nie są potrzebne w trwałej formie. Tworzenie plików tymczasowych pozwala również na zachowanie porządku w systemie plików, ponieważ zostaną one automatycznie usunięte po zakończeniu ich wykorzystywania.
+Tworzenie plików tymczasowych jest bardzo przydatnym narzędziem w Ruby. Służą one do przechowywania danych tymczasowo, co jest szczególnie przydatne podczas przetwarzania dużych ilości danych lub operowania na plikach. W tym artykule dowiesz się, dlaczego tworzenie tymczasowych plików jest ważne i jak to zrobić w najprostszy sposób.
 
-## Jak utworzyć plik tymczasowy w Ruby?
+## Jak
 
-Aby utworzyć plik tymczasowy w Ruby, używamy metody `tempfile` dostępnej w module `File`. Poniżej przedstawiony jest przykład kodu, który tworzy plik tymczasowy i zapisuje w nim tekst "To jest przykładowy tekst!".
+Tworzenie plików tymczasowych w Ruby jest bardzo proste. Wystarczy użyć wbudowanej metody `Tempfile.new`, która automatycznie tworzy i otwiera plik tymczasowy. Poniżej znajdują się przykładowe kody oraz wynik wyjściowy.
 
 ```Ruby
 require 'tempfile'
 
-#tworzenie pliku tymczasowego
-tymczasowy_plik = Tempfile.new('plik')
+# Tworzenie pliku tymczasowego
+tempfile = Tempfile.new('dane')
 
-#zapisywanie danych do pliku
-tymczasowy_plik.puts "To jest przykładowy tekst!"
+# Wyświetlanie ścieżki do pliku tymczasowego
+puts tempfile.path
+```
+Output:
+`/var/folders/g3/gz_2b5jn6fx0h6gkz6pq7dp00000gn/T/dane20181113-33297-190o86c`
 
-#wyświetlenie zawartości pliku
-puts tymczasowy_plik.read
+```Ruby
+# Zapisywanie danych do pliku tymczasowego
+tempfile.write("To jest przykładowy tekst.")
 
-#zamknięcie i usunięcie pliku
-tymczasowy_plik.close
-tymczasowy_plik.unlink
+# Odczytywanie danych z pliku tymczasowego
+puts tempfile.read
+```
+Output:
+`To jest przykładowy tekst.`
+
+```Ruby
+# Zamykanie i usuwanie pliku tymczasowego
+tempfile.close
+tempfile.unlink
 ```
 
-W powyższym przykładzie wykorzystaliśmy metody `puts` i `read` do zapisania i odczytania danych z pliku tymczasowego. Aby zamknąć i usunąć plik, musimy wywołać odpowiednio metody `close` i `unlink`.
+W ten sposób możesz w prosty sposób tworzyć, zapisywać i odczytywać dane z pliku tymczasowego w swoim kodzie Ruby.
 
-## Głębszy wgląd w tworzenie pliku tymczasowego
+## Deep Dive
 
-Plik tymczasowy jest tworzony w systemie plików, jednak jest on niewidoczny dla użytkownika. Zostanie on usunięty automatycznie po zamknięciu i usunięciu lub po zakończeniu działania programu. W przypadku, gdy plik taki nie zostanie usunięty, zostanie on przeniesiony do katalogu tymczasowego systemu operacyjnego.
+Warto zauważyć, że plik tymczasowy jest automatycznie usuwany po wywołaniu metody `unlink`. Dzieje się tak dlatego, że plik tymczasowy jest uważany za obiekt "zabezpieczony", czyli taki, który może zostać usunięty tylko przez swojego właściciela. Jako że w tym przypadku właścicielem jest obiekt `tempfile`, to tylko on może usunąć plik tymczasowy. Dzięki temu nie musimy się martwić, czy przypadkiem nie pozostanie on na naszym systemie.
 
-Istnieje również możliwość ustawienia określonej ścieżki, w której zostanie utworzony plik tymczasowy. W tym celu możemy przekazać ścieżkę w drugim argumencie metody `tempfile`, na przykład `Tempfile.new('plik', '/uzytkownik/home/')`. Ta funkcjonalność pozwala na większą kontrolę nad tworzeniem plików tymczasowych.
+Warto również zauważyć, że pliki tymczasowe są domyślnie usuwane po zamknięciu. Jeśli chcesz uniknąć przypadkowego usunięcia pliku, możesz przekazać dodatkowy argument `false` do metody `unlink`, w ten sposób:
 
-# Zobacz również
+```Ruby
+tempfile.unlink(false)
+```
 
-- [Dokumentacja Ruby o tworzeniu plików tymczasowych](https://ruby-doc.org/stdlib-2.6.3/libdoc/tempfile/rdoc/Tempfile.html)
-- [Poradnik z przykładami dotyczącymi tworzenia plików tymczasowych w Ruby](https://www.rubyguides.com/2018/07/ruby-tempfile/)
+W takim przypadku plik tymczasowy nie zostanie usunięty po zamknięciu, a my będziemy musieli usunąć go samodzielnie.
+
+## Zobacz również
+
+* [Oficjalna dokumentacja dla `Tempfile` w Ruby](https://ruby-doc.org/stdlib-2.5.1/libdoc/tempfile/rdoc/Tempfile.html)
+* [Artykuł na temat tworzenia plików tymczasowych w Ruby](https://www.codecademy.com/articles/temporary-files-ruby)
+* [Przykładowy kod tworzenia pliku tymczasowego w Ruby na GitHubie](https://github.com/koic/ruby-gmail/blob/master/tmp/temporary_io.rb)

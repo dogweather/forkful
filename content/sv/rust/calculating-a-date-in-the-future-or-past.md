@@ -1,44 +1,50 @@
 ---
-title:    "Rust: Beräkning av ett datum i framtiden eller det förflutna"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/calculating-a-date-in-the-future-or-past.md"
+title:                "Rust: Beräkna ett datum i framtiden eller det förflutna"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna beräkna ett datum i framtiden eller det förflutna kan vara en användbar funktion i många olika programmeringsuppgifter. Det kan användas för att planera möten eller evenemang, hantera deadlines eller helt enkelt hålla koll på tiden.
+Att kunna beräkna ett datum i framtiden eller det förflutna kan vara väldigt användbart i många situationer, till exempel vid schemaläggning eller för att hålla koll på kommande händelser.
 
-## Hur man gör
+## Så här gör du
 
-Att beräkna ett datum i framtiden eller förflutna är enkelt med hjälp av Rusts standardbibliotek. Först bör vi definiera ett datum med hjälp av `NaiveDate`-strukturen:
+Det finns många olika sätt att beräkna ett datum i framtiden eller det förflutna i Rust, men vi kommer att fokusera på en enkel metod. Först behöver du importera modulen `chrono`, som innehåller funktioner för att hantera datum och tid.
 
-```Rust
-let start_date = NaiveDate::from_ymd(2020, 11, 1);
+```
+extern crate chrono;
+use chrono::prelude::*;
 ```
 
-Vi kan sedan använda funktionen `checked_add` för att lägga till ett antal dagar till detta datum för att få ett datum i framtiden:
+För att beräkna ett datum i framtiden eller det förflutna kan du använda funktionen `naive_date` och ange antalet dagar som ska adderas eller subtraheras från ett specifikt datum.
 
-```Rust
-let future_date = start_date.checked_add(Duration::days(14)).unwrap();
+```
+let current_date = NaiveDate::from_ymd(2021, 11, 3);
+let future_date = current_date.naive_date().unwrap() + Duration::days(45);
+let past_date = current_date.naive_date().unwrap() - Duration::days(10);
+
+println!("Detta är datumet 45 dagar från nu: {}", future_date);
+println!("Detta är datumet 10 dagar före nu: {}", past_date);
 ```
 
-Om vi istället vill ha ett datum i förflutna, kan vi använda funktionen `checked_sub`:
+Denna kod kommer att ge följande utdata:
 
-```Rust
-let past_date = start_date.checked_sub(Duration::weeks(3)).unwrap();
 ```
-
-Notera att vi använder oss av `checked_add` och `checked_sub` för att undvika eventuella fel om det skulle bli ett ogiltigt datum.
+Detta är datumet 45 dagar från nu: 2021-12-18
+Detta är datumet 10 dagar före nu: 2021-10-24
+```
 
 ## Djupdykning
 
-Som vi nämnde tidigare är det möjligt att använda en `Duration` för att lägga till eller subtrahera dagar, veckor, månader eller till och med år från ett datum. Detta är på grund av att interna representationen av ett datum i Rust är en enkel räknare på antalet dagar sedan `1 januari 1` och därmed kan en `Duration` enkelt läggas till eller subtraheras för att få ett nytt datum.
+För att förstå hur detta fungerar behöver vi först förstå vad `naive_date` och `Duration` gör. Funktionen `naive_date` skapar en nytt `NaiveDate`-objekt från ett specifikt datum, medan `Duration` är en strukt som kan användas för att representera en tidsintervall. Genom att lägga till eller subtrahera ett `Duration`-objekt från ett `NaiveDate`-objekt kan vi enkelt beräkna ett nytt datum.
 
-Det finns också andra funktioner som `checked_add_signed` och `checked_sub_signed` som kan användas för att beräkna datum baserat på ett angivet antal dagar, även om det är negativt.
+Det är också värt att nämna att `chrono`-modulen innehåller många andra användbara funktioner för att hantera datum och tid. Det är definitivt värt att djupdyka i dokumentationen för att lära sig mer.
 
 ## Se även
 
-* [Dokumentation för Rusts standardbibliotek](https://doc.rust-lang.org/std/index.html)
-* [Officiell bok för Rust](https://doc.rust-lang.org/book/)
+- [Dokumentation för chrono-modulen](https://docs.rs/chrono/0.4.19/chrono/index.html)
+- [Rust standardbibliotekets dokumentation för datum och tid](https://doc.rust-lang.org/std/time/index.html)

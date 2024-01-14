@@ -1,34 +1,49 @@
 ---
-title:    "Kotlin: 读取命令行参数."
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/reading-command-line-arguments.md"
+title:                "Kotlin: 读取命令行参数"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+## 为什么
 
-命令行参数是编写任何程序时非常重要的一部分。它们为我们提供了一种与程序交互的方式，可以让程序根据输入的不同参数执行不同的操作。读取命令行参数也可以帮助我们更容易地调试程序，发现错误并进行修改。因此，深入了解如何读取命令行参数是非常有价值的。
+读取命令行参数是编程中一个常见的需求。通过读取命令行参数，您可以在运行程序时向它提供输入，从而使程序更加灵活和可定制。这对于编写可用性强的程序来说至关重要，因此了解如何读取命令行参数是非常重要的。
 
-# 如何做
+## 如何做
 
-在Kotlin中，我们可以使用`args`数组来读取命令行参数。此数组包含了在命令行输入的所有参数。让我们看一个简单的示例，代码如下：
+在Kotlin中，读取命令行参数是非常简单的。首先，您需要使用`args`关键字来声明一个数组来存储命令行参数。然后，您可以使用循环来遍历数组中的参数，并以您需要的方式使用它们。
 
-```Kotlin
-fun main(args: Array<String>) {
-    // 打印第一个参数
-    println(args[0])
+例如，假设我们的程序需要从命令行接收两个参数：姓名和年龄。那么我们可以这样写代码：
+
+```
+fun main(args: Array<String>) { // 使用args关键字声明一个Array来存储命令行参数
+    for (arg in args) { // 使用循环遍历数组中的参数
+        println("Command line argument: $arg") // 使用println函数打印参数
+    }
 }
 ```
 
-假设我们在命令行中输入`kotlin example.kt argument1 argument2`，则该程序的输出将是`argument1`。我们可以根据需要在程序中使用这些参数，例如根据输入的参数执行不同的计算或打印不同的信息。
+假设我们在命令行中输入`kotlin Main.kt John 25`，那么程序的输出将是：
 
-# 深入了解
+```
+Command line argument: John
+Command line argument: 25
+```
 
-除了基本的命令行参数读取之外，Kotlin还提供了更多功能来帮助我们处理命令行参数。例如，我们可以使用`getOrNull`函数来检查数组中指定位置的参数是否存在，并在该参数不存在时返回null。我们还可以使用`getOptionValue`函数来获取键值对类型的参数，例如`--name=John`。另外，Kotlin还支持使用命令行参数来指定程序的默认运行参数，这些内容可以在官方文档中找到。
+因此，您可以看到如何使用Kotlin来读取和使用命令行参数非常简单。
 
-# 参考链接
+## 深入了解
 
-- 官方文档：https://kotlinlang.org/docs/command-line.html
-- 学习Kotlin：https://kotlincn.netlify.app/docs/tutorials/command-line.html
-- Kotlin命令行参数教程：https://www.geeksforgeeks.org/kotlin-command-line-arguments/
+实际上，Kotlin中的`main`函数本身就接收一个参数`args`。这个参数就是一个Array，包含了所有的命令行参数。您也可以使用索引来访问特定的参数，例如`args[0]`代表第一个参数。
+
+另外，如果您想要指定参数的类型，您可以使用`args: Array<String>`，其中`String`可以替换为您需要的任何类型，例如`Int`、`Double`等等。这样可以帮助您在使用参数时更加灵活和规范。
+
+另外，您也可以使用Java中的`Scanner`类来读取命令行输入。这种方式可以更加自定义命令行输入的格式，但需要导入Java库。
+
+## 参考链接
+
+- [Kotlin官方文档：读取命令行参数](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-args/index.html)
+- [Kotlin For Java Developers](https://www.udemy.com/kotlin-for-java-developers/)
+- [Kotlin快速入门教程](https://www.w3cschool.cn/kotlin/)

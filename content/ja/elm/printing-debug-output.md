@@ -1,53 +1,51 @@
 ---
-title:    "Elm: デバッグ出力のプリント"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/printing-debug-output.md"
+title:                "Elm: デバッグ出力のプリント"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜデバッグ出力をプリントする必要があるのか？
+## なぜ
 
-プログラムを作成する際に、エラーの原因や処理の流れを追跡することは非常に重要です。デバッグ出力をプリントすることで、コードの実行中にどの部分でエラーが発生したのかを容易に特定できます。また、処理の途中経過を確認することで、コードの修正や最適化に役立ちます。
+デバッグ用の出力を出すことは、プログラムの開発やデバッグをする上で非常に重要なことです。そのため、Elmプログラミングにおいてもデバッグ用の出力は欠かせません。デバッグ用の出力をすることで、プログラムの動きをより詳細に把握し、バグを見つけやすくなります。
 
-## デバッグ出力のプリント方法
+## 使い方
 
-デバッグ出力をプリントするには、Elmの標準ライブラリである`Debug.log`関数を使用します。以下のように`Debug.log`関数を使用し、出力したいメッセージと値を与えることで、コンソールにデバッグ出力を表示することができます。
-
-```Elm
-Debug.log "エラーが発生しました" "エラーメッセージ"
-```
-
-また、`Debug.log`を使わずに自分で定義したデバッグ用関数を作成することもできます。例えば、以下のように`debug`という関数を定義し、コンソールにメッセージを出力することができます。
+デバッグ用の出力を行うには、 ```Debug.log``` 関数を使用します。この関数は、1つの引数として任意の値を受け取り、その値をコンソールに出力します。使用例を示します。
 
 ```Elm
-debug : String -> a -> a
-debug msg value =
-    Debug.log msg value
-
-main : Html a
-main =
-    div []
-        [ button [ onClick <|
-            debug "ボタンがクリックされました" 42
-          ] [ text "クリック" ]
-        ]
+-- コンソールに "Hello World!" という文字列を出力する
+Debug.log "デバッグ用出力" "Hello World!"
 ```
 
-このように、デバッグ出力を柔軟に行うことができます。
+このように、コンソールに出力されるメッセージの前には、デバッグ用のタグを付けることができます。これにより、出力されたメッセージを特定することが容易になります。
 
-## デバッグ出力の深堀り
+## 詳細を掘り下げる
 
-デバッグ出力を使用する際に注意すべき点は、デバッグ出力のコードを本番環境に残さないようにすることです。コードの実行速度に影響を与える可能性があるため、デバッグ出力が残っているとパフォーマンスが低下してしまいます。そのため、デバッグ出力用の関数は本番環境では実行されないように、ビルド時には無効化するようにすることが重要です。
+デバッグ用の出力を行う際、より詳細な情報を確認したい場合があります。そのような場合には、 ```Debug.inspect``` 関数を使用することができます。この関数は、任意の値を受け取り、その値をコンソールに出力すると同時に、その値をデバッグ用のタグ付きの文字列として返します。使用例を示します。
 
-また、デバッグ出力をプリントする際には、冪等性（同じ入力に対して同じ出力が得られる状態）を保つことも重要です。必要なデータがプリントされなかったり、出力結果が常に異なると、デバッグ出力がうまく機能しなくなります。
+```Elm
+-- コンソールに "変数xの値は: 10" というメッセージを出力し、変数xの値を取得する
+let
+    x = 10
+in
+    ( x
+        |> Debug.inspect "変数xの値は: "
+    )
+```
+
+このようにすることで、変数の値を出力するだけでなく、その値を別の部分で使用することも可能になります。
+
+## その他のリソース
+
+- [Elm Documentation: Debugging](https://guide.elm-lang.org/debugging/)
+- [Debugging with Elm](https://thoughtbot.com/blog/debugging-with-elm)
+- [Debugging Elm Code](https://www.snoyman.com/blog/2017/08/debugging-elm-code)
 
 ## 関連リンク
 
-- [Elm デバッグガイド](https://guide.elm-lang.org/errors/debugging.html)
-- [デバッグ出力についてのQ&A](https://discourse.elm-lang.org/t/how-to-debug-your-programs/249)
-- [Elm 0.19のデバッグガイド](https://github.com/dillonkearns/idiomatic-elm-with-richard-feldman/blob/master/episodes/27-debugging/0.19_Debugging.md)
-
-## 必要な情報を得るためのデバッグ出力
-
-デバッグ出力をプリントすることで、コードの実行中にエラーや処理の途中経過を確認することができます。しかし、デバッグ出力を使用することで得られる情報は必ずしも十分ではありません。より詳細な情報を得るためには、デバッ
+- [Elm 公式ドキュメント](https://guide.elm-lang.org/)
+- [Elm 公式フォーラム](https://discourse.elm-lang.org/)
+- [Elm Japan コミュニティー](https://elmjapan.org/)

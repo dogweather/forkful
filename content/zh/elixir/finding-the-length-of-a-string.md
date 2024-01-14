@@ -1,57 +1,60 @@
 ---
-title:    "Elixir: 寻找字符串的长度"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/finding-the-length-of-a-string.md"
+title:                "Elixir: 寻找字符串的长度"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+##为什么
+有时候，在编程中我们需要知道一个字符串的长度。这可以帮助我们处理文本、验证用户输入或者进行排序。在Elixir中，有几种方法可以轻松地找到字符串的长度。
 
-字符串的长度是一个常见的编程问题，因为它涉及到对字符串操作的基本理解和技能。它是诸如验证用户输入以及数据处理等任务中几乎必不可少的一步。在Elixir编程中，掌握如何找到字符串的长度是非常重要的，因此让我们来学习一下如何做到这一点。
-
-# 如何
+##如何
+在Elixir中，我们可以使用`String.length`函数来获取一个字符串的长度。让我们来看一个简单的例子：
 
 ```Elixir
-string = "Hello World"
+string = "Hello"
 IO.puts String.length(string)
 ```
 
-这个简单的代码块可以输出：`11`，因为“Hello World”这个字符串总共有11个字符。让我们通过另一个例子来进一步理解这个概念。
+输出将是： 5
+
+另一种获得字符串长度的方法是使用`String.trim_leading`函数。这个函数将返回一个经过修剪后的字符串，然后我们可以使用`String.length`函数来获取修剪后的字符串的长度。让我们看一个例子：
 
 ```Elixir
-string = "你好世界"
-IO.puts String.length(string)
+string = "  Hello  "
+trimmed_string = String.trim_leading(string)
+IO.puts String.length(trimmed_string)
 ```
 
-这次，我们得到的输出将是`5`，因为这个字符串由一个中文字符和四个英文字符组成，总共是5个字符。这说明，Elixir中的长度计算并不是简单地基于字符的个数，而是基于每个字符的编码长度。这对于处理各种不同编码格式的字符串非常有用。
+输出将是：5
 
-# 深入探讨
+##深入探究
+在Elixir中，字符串实际上是一个由字符列表组成的列表。当我们使用`String.length`函数时，它会遍历字符串并计算字符的数量，最终返回字符串的长度。因此，它的运行时间是O(n)，其中n是字符串的长度。
 
-在Elixir中，虽然我们有`String.length`函数来计算字符串长度，但是它并不是唯一的方法。我们也可以使用模式匹配来获取字符串的长度。
+除了使用`String.length`函数外，我们还可以自己实现一个函数来计算字符串的长度。让我们来看一个简单的例子：
 
 ```Elixir
-string = "Hello World"
-length = String.length(string)
+defmodule MyString do
+  def get_length(string) do
+    length = 0
+    Enum.each(string, fn character ->
+      length = length + 1
+    end)
+    length
+  end
+end
 
-# 使用模式匹配获取长度
-[_|rest] = string
-IO.puts length
+string = "Hello"
+IO.puts MyString.get_length(string)
 ```
 
-上面的代码将输出`11`，因为我们通过匹配`string`变量来获取了它的长度。当然，这种方法只适用于ASCII字符。
+输出将是：5
 
-此外，我们也可以使用`Enum.count`函数来计算字符串的长度。这个函数接受一个函数作为参数，然后将字符串拆分成字符列表并对其进行计数。
+在这个例子中，我们使用`Enum.each`函数来遍历字符串，并在每次循环中增加长度的计数器。这种方法的运行时间也是O(n)。
 
-```Elixir
-string = "Hello World"
-IO.puts Enum.count(string, fn _ -> true end)
-```
-
-这个例子将输出`11`，因为我们将每个字符都匹配为`true`，然后对整个字符列表进行计数。
-
-# 参考链接
-
-- [Elixir官方文档](https://hexdocs.pm/elixir/String.html)
-- [Learn Elixir - Strings](https://elixir-lang.org/getting-started/string.html)
-- [Elixir Tips](https://myelixirstatus.com/)
+##参考
+* [`String.length` 文档](https://hexdocs.pm/elixir/String.html#length/1)
+* [`String.trim_leading` 文档](https://hexdocs.pm/elixir/String.html#trim_leading/2)
+* [Elixir 字符串教程](https://elixirschool.com/zh-hans/lessons/basics/basics/#%E5%AD%97%E7%AC%A6%E7%AA%97%E6%8E%A5)

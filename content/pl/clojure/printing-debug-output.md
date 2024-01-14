@@ -1,47 +1,83 @@
 ---
-title:    "Clojure: Wydrukowanie danych do debugowania"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/printing-debug-output.md"
+title:                "Clojure: Wyświetlanie wyników debugowania"
+programming_language: "Clojure"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Zastanawialiście się kiedyś dlaczego warto wyświetlać debugowe wyjście podczas pisania kodu w Clojure? Czy wiecie, że może to pomóc w szybkim i skutecznym debugowaniu błędów? W tym artykule dowiecie się dlaczego warto tego używać i jak to zrobić.
+Wyświetlanie informacji debugujących jest kluczowym narzędziem dla programistów w celu zrozumienia działania ich kodu i znajdowania błędów. Jest to niezbędne dla skutecznego rozwiązywania problemów w aplikacjach i ułatwia proces debugowania.
 
 ## Jak to zrobić
 
-Aby wyświetlić debugowe wyjście w Clojure, możemy skorzystać z funkcji `println`, która wypisze nam wartości w konsoli. Spójrzmy na poniższy przykład:
+W Clojure istnieje kilka sposobów na wyświetlanie informacji debugujących. Jednym z najprostszych jest użycie funkcji `println`, która wypisze podane wartości do standardowego wyjścia.
 
 ```Clojure
-(defn sum [a b]
-  (println "Dodaję" a "do" b)
-  (+ a b))
-  
-(println "Wynik:" (sum 5 7))
-
-Wynik: 12
+(println "Hello World!")
 ```
 
-Funkcja `println` może przyjmować dowolną liczbę argumentów i przekonwertuje je na tekst, dzięki czemu możemy wyświetlać zmienne, wyniki działań czy też komunikaty związane z aktualnie wykonywanym kodem. To może bardzo ułatwić nam zrozumienie wykonywanego kodu i pomóc w znalezieniu ewentualnych błędów.
+Output:
+```
+Hello World!
+```
 
-## Deep Dive
+Można również użyć funkcji `prn`, która wypisze podane wartości w formie drukowalnej. Jest to pomocne w przypadku wyświetlania złożonych struktur danych.
 
-Istnieje również możliwość użycia funkcji `prn`, która działa podobnie jak `println`, ale dodatkowo przekonwertuje wyjściowe wartości do ich reprezentacji tekstowej w języku Clojure. Dzięki temu możemy uniknąć niechcianych konwersji, które mogą wpłynąć na wygląd wyjścia.
+```Clojure
+(prn {:name "John" :age 30})
+```
 
-Warto również wspomnieć o funkcji `println-str`, która wypisze wartości do zmiennej typu `String` zamiast na konsolę. Może to być przydatne w przypadku, gdy chcemy przekazać wyjście do innego miejsca w naszym kodzie.
+Output:
+```
+{:name "John", :age 30}
+```
 
-## Zobacz również
+Jeśli potrzebujemy wyświetlić informacje debugujące bezpośrednio w kodzie, możemy użyć makra `println` lub `prn`.
 
-Jeśli chcesz dowiedzieć się więcej o debugowaniu w Clojure, polecam zapoznać się z poniższymi artykułami:
+```Clojure
+(defn add [x y]
+  (println "Adding" x "and" y)
+  (+ x y))
+```
 
-- [Clojure dla początkujących: Debugowanie](https://jakubniewczas.pl/clojure-dla-poczatkujacych-debugowanie/)
-- [Debugowanie w Clojure z pomocą biblioteki Clover](https://blog.softwaremill.com/debugging-clojure-code-with-the-help-of-clover-library-59fbd049952a)
-- [Podstawy debugowania w Clojure](https://jacekszubert.tech/2018/04/02/debugging-in-clojure-basic/)
+Output:
+```
+Adding 2 and 3
+```
 
-Dzięki wyświetlaniu debugowego wyjścia nasz kod będzie łatwiejszy w debugowaniu, co przyczyni się do bardziej efektywnej i przyjemniejszej pracy. Pamiętajmy jednak, aby nie zostawiać tych instrukcji w kodzie produkcyjnym, gdyż może to wpłynąć na wydajność aplikacji.
+## Głębsza analiza
 
-## Zobacz również
+Ponieważ wyświetlanie informacji debugujących jest nieodłączną częścią procesu programowania, warto nauczyć się bardziej zaawansowanych technik w Clojure. Możemy na przykład użyć funkcji `str`, która pozwala na wyświetlenie różnych wartości w formie jednego stringa.
 
-Nie zapomnij zajrzeć na naszą stronę [ClojurePL](https://clojure.pl/) oraz do naszej społeczności na Slacku, gdzie możesz znaleźć więcej ciekawych artykułów i dyskusji na temat programowania w Clojure. Do zobaczenia!
+```Clojure
+(str "The answer is" 42)
+```
+
+Output:
+```
+"The answer is 42"
+```
+
+Możemy również wypisać wartości w formacie CSV za pomocą funkcji `clojure.string/join`.
+
+```Clojure
+(require '[clojure.string :as str])
+(def data [1 2 3])
+(str/join "," data)
+```
+
+Output:
+```
+"1,2,3"
+```
+
+## Zobacz także
+
+- [Dokumentacja Clojure](https://clojuredocs.org/)
+
+- [10 sposobów na debuggerowanie w Clojure](https://lispcast.com/debugging-clojure/)
+
+- [Jak pisać czytelny kod w Clojure](https://purelyfunctional.tv/guide/clojure-style-guide/)

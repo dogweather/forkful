@@ -1,65 +1,39 @@
 ---
-title:    "Java: קריאת קובץ טקסט"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/reading-a-text-file.md"
+title:                "Java: קריאת קובץ טקסט"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+## Why
+למה: רק כמה משפטים שמסבירים *למה* מישהו יכול להתעניין בקריאת קובץ טקסט.
 
-נקרא קובץ טקסט הוא משימה נפוצה וחשובה בתחום התכנות. זה יכול לסייע בפיתוח תוכניות שמשתמשות בנתונים מקוריים על ידי קריאת קובץ טקסט. כמו כן, זה עשוי לשמש ככלי לקריאת מידע מקבצי טקסט שמבטיחים חומרה עצמית של נתוני משעור שכל
+כדי לפתור בעיה מסוימת או לעבוד עם נתונים סטטיסטיים, לפעולות תוכנית כישרונית או פשוט כדי לשפר את היכולות הקודמות, ייתכן שתצטרכו לטעון נתונים מתוך קובץ טקסט. הקוראת היא כלי עז עם המון יישומים פוטנציאליים, ולכן זה מאפשר לכם לייצר טכניקות פורץ לאזזל למילגאן לקריאת קבצים טקסט יחסית מהירים.
 
-## כיצד
+## How To
+מה לעשות: דוגמאות קידוד ופלט דוגמא בתוך סעיפת הקוד "ֿ``` ג'אווה … "תבנית קוד.
 
-ראשית, ניצור קובץ טקסט פשוט בשם "input.txt". בתוכו נרשום כמה שורות טקסט כדוגמא עבור הקוד שנכתוב:
+כדי לקרוא קובץ טקסט בג'אווה, תצטרכו להשתמש בדוקטור שכקריאת קובץ הטקסט המקורי. כשיש לכם עובד אותו ניתן לשנות אותו לקובץ שונה. כדי לייצר טכניקות סטנדרטיות כדי קוראבנית הממדריכים לטעון את הקובץ, אם הקובץ הוא הקובץ המקורי, יש לאחד את הקובץ המקורי במערכת הפעולות התקני במשתמש. האותיות א מזלתיות לפתח את העשרות בקובצי טקסט בממילה העומה.
 
-```
-Hello World!
-This is a sample text file.
-We will read this file using Java.
-```
+```java
+// דוגמאות קידוד בג'אווה
 
-כעת ניצור בתוכו תוכנית בשפת ג'אווה כדי לקרוא את הקובץ הנ"ל ולהדפיס את הטקסט שבתוכו:
+// פתיחת קובץ טקסט
+File file = new File ("myfile.txt");
 
-```
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+// קריאת קובץ טקסט בעזרת Buffered Reader
+try {
+    BufferedReader br = new BufferedReader(new FileReader(file));
 
-public class ReadFileExample {
-
-    public static void main(String[] args) {
-        try {
-            // Create a File object for the text file
-            File file = new File("input.txt");
-            // Create a Scanner object to read the file
-            Scanner scanner = new Scanner(file);
-            // Use a while loop to read each line in the file
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                // Print the line to the console
-                System.out.println(line);
-            }
-            // Close the Scanner object to release resources
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found.");
-        }
+    // קריאת כל שורה בפני עצמה
+    String line;
+    while ((line = br.readLine()) != null) {
+        System.out.println(line);
     }
-}
-```
-
-הפלט של תוכנית זו יהיה:
-
-```
-Hello World!
-This is a sample text file.
-We will read this file using Java.
-```
-
-כפי שניתן לראות, הקוד משתמש בטכניקות קריאת קבצים בשפת ג'אווה כדי לקרוא כל שורה בקובץ ולהדפיס אותה.
-
-## מעמקים נמשך
-
-קריאת קובץ טקסט היא רק פעולה בסיסית שבעזרתה ניתן לקרוא מידע מקובץ כלשהו. בנוסף, ניתן להשתמש בטכניקות נוספות כגון כתיבת נתונים לקובץ טקסט, יצירת קובץ טקסט ועוד. כמו כן, ניתן להשתמש במחלקות נוספות בג'אווה כדי לקרוא קבצים
+    br.close();
+} catch (FileNotFoundException e) {
+    System.out.println("לא נמצא קובץ");
+} catch (IOException e) {
+    System.out.println("שגיאת קר

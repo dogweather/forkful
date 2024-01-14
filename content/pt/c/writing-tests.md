@@ -1,59 +1,94 @@
 ---
-title:    "C: Escrevendo testes"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/writing-tests.md"
+title:                "C: Escrevendo testes"
+programming_language: "C"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante?
+Por que escrever testes em C pode melhorar seu código
 
-Escrever testes é uma prática essencial para garantir a qualidade e a estabilidade de um código em C. Testes bem escritos podem ajudar a encontrar e corrigir erros antes mesmo deles impactarem um programa em produção. Além disso, testes bem estruturados podem funcionar como uma documentação viva do código, facilitando o entendimento e a manutenção do mesmo.
+Escrever testes é uma das melhores práticas de programação que pode ajudar a melhorar a qualidade do seu código em C. Testes bem escritos podem detectar erros e bugs em seu código antes mesmo de serem implementados, economizando tempo e esforço.
 
-## Como escrever testes em C?
+Como escrever testes em C
 
-Para escrever testes em C, é necessário utilizar uma biblioteca de testes, como a "cmocka", por exemplo. Esta biblioteca fornece funções e macros para facilitar a escrita e execução de testes.
+Para escrever testes em C, você deve primeiro garantir que tenha uma compreensão sólida do código que está testando. Em seguida, você deve seguir as etapas abaixo:
 
-Um exemplo de teste utilizando a biblioteca "cmocka" seria o seguinte:
+1. **Escolha um framework de teste**: existem várias opções de frameworks de teste disponíveis para C, como "CuTest" e "Check". Escolha o que melhor se adequa às suas necessidades e conhecimentos.
+
+2. **Defina suas funções de teste**: crie funções de teste que verifiquem o comportamento de suas funções no código. Essas funções devem retornar "pass" ou "fail" com base nos resultados do teste.
+
+3. **Utilize as macros adequadas**: as macros fornecidas pelo framework de teste selecionado ajudarão a verificar assertivamente os resultados esperados no seu código.
+
+4. **Execute seus testes**: compilo e execute seus testes para verificar se eles estão retornando os resultados esperados. Se alguns testes falharem, você precisará fazer ajustes no seu código.
+
+Exemplo de código em C:
 
 ```C
-#include <stdarg.h>
-#include <stddef.h>
-#include <setjmp.h>
-#include <cmocka.h>
+#include <stdio.h> 
+#include "CuTest.h" 
 
-// Função a ser testada
-int somar(int a, int b){
-    return a + b;
-}
+void test_function1(CuTest* test) { 
+    CuAssertIntEquals(test, 10, function1(2, 5)); 
+    CuAssertIntEquals(test, 45, function1(15, 30)); 
+} 
 
-// Exemplo de teste
-void teste_somar(){
-    assert_int_equal(somar(2,3), 5); // Verifica se a soma de dois números é igual ao esperado
-}
+void test_function2(CuTest* test) { 
+    CuAssertIntEquals(test, 5, function2(10)); 
+    CuAssertIntEquals(test, -2, function2(-4)); 
+} 
 
-// Função main para rodar os testes
-int main(){
-    const struct CMUnitTest tests[] = {
-        cmocka_unit_test(teste_somar), // Adiciona o teste criado à lista de testes
-    };
+CuSuite* function1_suite() { 
+    CuSuite* suite = CuSuiteNew(); 
+    SUITE_ADD_TEST(suite, test_function1); 
+    return suite; 
+} 
+
+CuSuite* function2_suite() { 
+    CuSuite* suite = CuSuiteNew(); 
+    SUITE_ADD_TEST(suite, test_function2); 
+    return suite; 
+} 
+
+void all_suites(CuSuite* testSuite) { 
+    SUITE_ADD_SUITE(testSuite, function1_suite()); 
+    SUITE_ADD_SUITE(testSuite, function2_suite()); 
+} 
+
+int main() { 
+    CuSuite *suites = CuSuiteNew(); 
+    all_suites(suites); 
+    CuSuiteRun(suites); 
     
-    return cmocka_run_group_tests(tests, NULL, NULL); // Executa os testes e retorna o resultado
+    printf("Number of tests run: %d\n", suites->countRun); 
+    
+    CuString *output = CuStringNew(); 
+    CuSuiteSummary(suites, output); 
+    printf("Summary: %s\n", output->buffer); 
+    
+	CuSuiteDetails(suites, output); 
+    printf("Details: %s/n", output->buffer); 
+    
+    CuSuiteDelete(suites); 
+    CuStringDelete(output); 
+    return 0; 
 }
+
 ```
 
-Este é apenas um exemplo simples de como escrever testes utilizando a biblioteca "cmocka". Existem outras bibliotecas e formas de escrever testes em C, porém o conceito básico é o mesmo: criar funções de teste que verifiquem se o código se comporta como esperado em diferentes situações.
+Saída esperada:
 
-## Aprofundando nos testes em C
+```
+Number of tests run: 4 
+Summary: Cases run: 4, Failures: 0 
+Details: Test function1 <PASSED> 
+Test function2 <PASSED> 
 
-Uma boa prática ao escrever testes em C é seguir o padrão "Given-When-Then", que significa "Dado-Quando-Então", em tradução livre. Neste padrão, o teste é dividido em três partes: a preparação do código (Given), execução da função a ser testada (When) e verificação dos resultados (Then). Isso ajuda a manter os testes organizados e fáceis de entender.
+See Also
 
-Outra dica importante é testar tanto os casos positivos (quando o código deve funcionar corretamente) quanto os casos negativos (quando o código deve falhar). Isso garante uma cobertura maior dos testes e ajuda a encontrar possíveis erros em situações inesperadas.
+Para saber mais sobre como escrever testes em C, confira os links abaixo:
 
-Além disso, é importante lembrar de manter os testes atualizados sempre que for feita alguma mudança no código. Caso contrário, os testes podem se tornar obsoletos e não cumprir mais seu papel de garantir a qualidade do código.
-
-## Veja também
-
-- [Documentação da biblioteca "cmocka"](https://cmocka.org/)
-- [Outras bibliotecas de testes em C](https://www.toolsie.com/2017/08/28/CppUnit-GTest-CMocka-UNITY-example/)
-- [Explicação detalhada do padrão "Given-When-Then"](https://blog.novoda.com/code-quality-tdd-flow-8/)
+- [Tutorial: How to write test cases in C](https://www.tutorialspoint.com/cprogramming/cprogramming_unittesting.htm)
+- [Using Check: A unit testing framework for C](https://libcheck.github.io/check/)
+- [Unit Testing Techniques for C](https://www.slideshare.net/GeoffreySereg/testing-techniques-for-c)

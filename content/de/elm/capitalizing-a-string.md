@@ -1,35 +1,43 @@
 ---
-title:    "Elm: String in Großbuchstaben umwandeln"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/capitalizing-a-string.md"
+title:                "Elm: Ein String großschreiben"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Kapitalisieren von Strings ist eine grundlegende Operation bei der Entwicklung von Software. Es kann verwendet werden, um die Lesbarkeit von Benutzereingaben zu verbessern oder um ein bestimmtes Format in den Ausgaben zu erreichen.
+Wenn Sie sich schon einmal gefragt haben, wie Sie in Elm eine Zeichenkette in Großbuchstaben umwandeln können, dann sind Sie hier richtig. In diesem Blogbeitrag werden wir uns genauer ansehen, wie man eine Zeichenkette in Elm capitalisieren kann.
 
-## Wie
+## Wie geht das?
 
-Das Kapitalisieren eines Strings in Elm ist sehr einfach. Wir können die Funktion `String.toUpper` verwenden, um den gesamten String in Großbuchstaben zu konvertieren. Hier ist ein Beispielcode:
-
-```Elm
-String.toUpper "Hallo Welt!" -- Gibt "HALLO WELT!" aus
-```
-
-Alternativ können wir die Funktion `String.toTitle` verwenden, um nur den Anfangsbuchstaben jedes Wortes in einem String zu kapitalisieren. Hier ist ein Beispielcode:
+Um eine Zeichenkette in Elm zu capitalisieren, können Sie die eingebaute Funktion `String.toUpper` verwenden. Diese Funktion nimmt eine Zeichenkette entgegen und gibt eine neue Zeichenkette zurück, in der alle Buchstaben in Großbuchstaben umgewandelt wurden. Hier ist ein Beispiel:
 
 ```Elm
-String.toTitle "hallo welt!" -- Gibt "Hallo Welt!" aus
+String.toUpper "hallo"
+```
+Dieser Code würde als Ausgabe `"HALLO"` produzieren.
+
+Natürlich funktioniert diese Methode nur mit alphabetischen Zeichen. Wenn Sie andere Zeichen wie Leerzeichen oder Sonderzeichen in einer Zeichenkette haben, werden diese nicht verändert. Hier ist ein weiteres Beispiel, um das zu verdeutlichen:
+
+```Elm
+String.toUpper "hello world"
 ```
 
-## Deep Dive
+Die Ausgabe hier wäre immer noch `"HELLO WORLD"`, da die Leerzeichen nicht verändert werden.
 
-Für diejenigen, die tiefer in die Details des Kapitalisierens eines Strings in Elm eintauchen möchten, gibt es einige wichtige Dinge zu beachten. Zum Beispiel sind `String.toUpper` und `String.toTitle` nicht sehr effizient für Strings mit mehr als 6 Zeichen. Für längere Strings kann die Verwendung von `String.foldl` und `Char.toUpper` eine bessere Option sein. Außerdem kann es schwierig sein, Strings in anderen Sprachen als Englisch zu kapitalisieren. Für solche Fälle könnte die Verwendung des Online-Services "Unicode String Capitalizer" von der Firma Elixa oder die Entwicklung einer eigenen benutzerdefinierten Funktion erforderlich sein.
+## Tiefere Einblicke
+
+Wenn Sie sich fragen, wie die `String.toUpper` Funktion genau funktioniert, gibt es einige tiefere Einblicke, die wir hier teilen können. Diese Funktion nutzt die integrierte `String.map` Funktion, um jeden Buchstaben in der Zeichenkette zu verarbeiten. Dies bedeutet, dass Sie auch die `String.map` Funktion selbst nutzen könnten, um eine ähnliche Funktion zu erstellen, die Ihre Zeichenkette auf eine andere Art und Weise capitalisiert.
+
+Es gibt auch andere Möglichkeiten, eine Zeichenkette in Elm zu capitalisieren, wie zum Beispiel durch die Verwendung von regulären Ausdrücken. Dies ist jedoch komplexer und erfordert möglicherweise weitere Kenntnisse in der Programmiersprache. Wenn Sie jedoch auf der Suche nach mehr Flexibilität sind, ist dies möglicherweise eine Option, die Sie ausprobieren möchten.
 
 ## Siehe auch
 
-- [Offizielle Elm Dokumentation: String Modul](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Unicode String Capitalizer von Elixa](https://www.elixa.com/tools/unicode-capitalization.htm)
-- [Offizielle Elm Dokumentation: Char Modul](https://package.elm-lang.org/packages/elm/core/latest/Char)
+- Offizielle Elm-Referenz für `String.toUpper` Funktion: https://package.elm-lang.org/packages/elm/core/latest/String#toUpper
+- Dokumentation zur `String.map` Funktion: https://package.elm-lang.org/packages/elm/core/latest/String#map
+- Tutorial zur Verwendung von regulären Ausdrücken in Elm: https://github.com/elm-explorations/regex
+
+Vielen Dank für das Lesen dieses Blogbeitrags. Wir hoffen, er hat Ihnen geholfen, besser zu verstehen, wie Sie in Elm eine Zeichenkette capitalisieren können. Wenn Sie weitere Fragen haben oder weitere Ressourcen benötigen, zögern Sie nicht, die oben genannten Links zu besuchen oder in der Elm-Community nach Unterstützung zu fragen. Bis zum nächsten Mal!

@@ -1,83 +1,73 @@
 ---
-title:    "Ruby recipe: Printing debug output"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/ruby/printing-debug-output.md"
+title:                "Ruby recipe: Printing debug output"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-As a programmer, you may have encountered situations where your code is not functioning as expected. When this happens, it can be frustrating to figure out where the issue lies. This is where printing debug output becomes useful. By strategically placing print statements in your code, you can get a better understanding of the program's flow and identify any errors that may be causing the unexpected behavior.
+Debugging is an essential part of any programming project, and being able to print out debug output is a useful tool in every developer's arsenal. It allows you to see the flow of your code, spot errors, and test different scenarios. In this blog post, we will go over the basics of printing debug output in Ruby, including why it's beneficial and how to do it.
 
 ## How To
 
-To print debug output in your Ruby program, you can use the `print` or `puts` methods. These methods allow you to print out values or messages to the console during runtime. Let's look at an example:
+To print out debug output in Ruby, we use the `puts` method to display the desired information in the console. Let's take a look at a simple example:
 
 ```Ruby
 def multiply(num1, num2)
-    print "Multiplying #{num1} and #{num2}..."
-    product = num1 * num2
-    puts "The result is #{product}."
-    return product
+  puts "Multiplying #{num1} and #{num2}"
+  return num1 * num2
 end
 
-multiply(5, 7)
-# Output:
-# Multiplying 5 and 7...
-# The result is 35.
+multiply(5, 10)
 ```
 
-In the above code, we have added print statements to show us the values of the two numbers being multiplied and the final result. This can give us a better understanding of how the function is working and help us identify any errors.
+This code will output the following in the console:
 
-Another useful method for debugging is `p`, which stands for "print" and allows you to print out the value of an object or variable. It also displays the data type of the value, which can be helpful for debugging. Let's modify our previous example to use `p` instead of `print`:
+```
+Multiplying 5 and 10
+=> 50
+```
+
+As you can see, we used string interpolation to include the values of `num1` and `num2` in our output. This can be helpful when trying to figure out the values of variables or the result of a calculation.
+
+We can also use the `p` method to print out the value of a variable:
 
 ```Ruby
-def multiply(num1, num2)
-    p "Multiplying #{num1} and #{num2}..."
-    product = num1 * num2
-    p product
-    return product
-end
-
-multiply(5, 7)
-# Output:
-# "Multiplying 5 and 7..."
-# 35
+age = 25
+p age
 ```
 
-Now we can see that the `product` variable is an integer with a value of 35.
+This will output `25` in the console. The `p` method is useful when dealing with more complex data structures like arrays or hashes.
+
+Another useful tool for printing debug output is the `logger` class. It allows you to log information at different levels, such as `debug`, `info`, `warn`, `error`, and `fatal`. Here's an example of how to use it:
+
+```Ruby
+require 'logger'
+
+logger = Logger.new(STDOUT)
+
+logger.debug("Debug message")
+logger.info("Info message")
+```
+
+This will output the following in the console:
+
+```
+D, [2020-01-01T12:00:00.000000 #12345] DEBUG -- : Debug message
+I, [2020-01-01T12:00:00.000000 #12345]  INFO -- : Info message
+```
+
+For more information on the `logger` class and its capabilities, check out the official documentation [here](https://guides.rubyonrails.org/debugging_rails_applications.html#the-logger).
 
 ## Deep Dive
 
-While using print statements for debugging can provide a quick solution, it is not the most efficient method. Ruby has a built-in `debugger` library that allows you to pause the execution of your code at a specific point and interactively inspect the program's state. This can be especially useful for debugging complex issues.
+Printing debug output is not only useful for troubleshooting and fixing errors but can also help newcomers understand the flow of a codebase. It allows them to see the values of variables and the logic behind each step. However, it's essential to use debug output sparingly and to remove it before deploying your code to production.
 
-To use the `debugger` library, you first need to require it in your code:
-
-```Ruby
-require 'debugger'
-```
-
-Next, you can insert the `debugger` method at any point in your code where you want it to pause:
-
-```Ruby
-def multiply(num1, num2)
-    product = num1 * num2
-    debugger
-    return product
-end
-
-multiply(5, 7)
-```
-
-When the program reaches the `debugger` method, it will pause the execution and give you an interactive shell where you can inspect the values of variables and objects.
-
-To exit the debugger, you can type `c` for "continue" and press enter.
+Besides using `puts`, `p`, and `logger`, there are other tools and techniques for printing debug output, such as using a debugger or writing custom print methods. It's up to you to decide which method works best for your specific scenario.
 
 ## See Also
-
-- [Debugging with the `debugger` library](https://ruby-doc.org/stdlib-2.7.1/libdoc/debug/rdoc/index.html)
-- [Using `p` for debugging](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-p)
-- [Using `print` and `puts` for debugging](https://ruby-doc.org/core-2.7.1/IO.html#method-i-print)
-
-Debugging is an essential skill for any programmer, and using print statements and the `debugger` library can significantly improve your debugging process in Ruby. So next time you encounter an error in your code, don't forget to print out some debug output to help you troubleshoot.
+- [Official Ruby Documentation](https://www.ruby-doc.org/stdlib-2.7.2/libdoc/logger/rdoc/Logger.html)
+- [Debugging Rails Applications](https://guides.rubyonrails.org/debugging_rails_applications.html)
+- [Ruby Debugging Tips and Tricks](https://www.sitepoint.com/ruby-debugging-tips-tricks/)

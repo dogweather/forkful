@@ -1,57 +1,62 @@
 ---
-title:    "Elm recipe: Calculating a date in the future or past"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/calculating-a-date-in-the-future-or-past.md"
+title:                "Elm recipe: Calculating a date in the future or past"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why
+## Why
 
-Have you ever needed to calculate a date in the future or past in your Elm program? Whether it's for scheduling events or managing project timelines, being able to accurately determine a specific date can be essential for many applications. In this blog post, we will discuss how to easily calculate a date in the future or past using Elm.
+Calculating dates in the future or past is an essential task in any programming language. It allows for scheduling events, implementing reminder systems, and many other practical applications.
 
-# How To
+## How To
 
-To calculate a date in the future or past, we will use the widely available Elm package "elm-time" which provides functions for working with dates and times. First, we need to import this package in our Elm program by adding the following line at the top of our file:
-
-```Elm
-import Time exposing (..)
-```
-
-Next, we can use the `add` function from the "elm-time" package to add a number of days, months, or years to a given date. For example, let's say we want to calculate a date 7 days from today, we can use the following code:
+To calculate a date in the future or past, we can use the `Time` library in Elm. First, we need to define the reference date from which we want to calculate. We can use the `now` function to get the current date and time.
 
 ```Elm
-add (days 7) (now)
+now : Task x Time
 ```
 
-The `now` function returns the current date and time. So, by adding 7 days to the current date, we will get a date 7 days in the future. Similarly, we can also subtract a certain number of days, months, or years from a date using the same `add` function.
-
-In addition, the "elm-time" package provides many other functions for working with dates and times such as `toMonth`, `toYear`, `fromString`, etc. These functions can be very useful for manipulating dates and times in your Elm program.
-
-To better understand how to use these functions, let's take a look at a code example below:
+We can then use `Unix.toTime` to convert a Unix timestamp to a `Time` value. For example, to get the time for tomorrow, we can use the following code:
 
 ```Elm
-import Time exposing (..)
-
--- Define a date
-date = fromString "2021-04-01"
-
--- Calculate a date 2 years from the given date
-futureDate = add (years 2) date
-
--- Display the year of the calculated date 
--- Returns 2023 as the output
-toYear futureDate
+tomorrow : Time
+tomorrow =
+    now
+        |> Task.toMaybe
+        |> Maybe.andThen (\now -> now.timestamp |> Unix.toTime)
+        |> Maybe.withDefault now
+        |> Time.tomorrow
 ```
 
-# Deep Dive
+This code first gets the current time using `now`, converts it to a `Maybe` value using `Task.toMaybe`, and then extracts the timestamp using `Maybe.andThen`. If the value is `Nothing`, we use `now` as a default value. Finally, we use the `tomorrow` function from the `Time` library to get the time for tomorrow.
 
-If you want to dig deeper into calculating dates in the future or past, the "elm-time" package offers a great deal of documentation and tutorials on their website. You can also explore other available packages that provide additional functionalities for working with dates and times in Elm.
+We can also calculate a date in the past by subtracting a certain number of milliseconds from the reference date. For example, to get the time for 7 days ago, we can use the following code:
 
-One important thing to keep in mind while working with dates and times in Elm is that the "elm-time" package uses a customized `Date` type to represent dates, rather than relying on the built-in `Time` type in Elm. This is because the "elm-time" package offers more precise and convenient functions for handling dates, making it easier to work with.
+```Elm
+sevenDaysAgo : Time
+sevenDaysAgo =
+    now
+        |> Task.toMaybe
+        |> Maybe.andThen (\now -> now.timestamp |> Unix.toTime)
+        |> Maybe.withDefault now
+        |> Time.subtract (Time.millisecond * 7 * 24 * 60 * 60 * 1000)
+```
 
-# See Also
+Here, we are converting the timestamp to a `Time` value and then subtracting 7 days (in milliseconds) from it.
 
-- Official documentation for "elm-time" package: https://package.elm-lang.org/packages/elm/time/latest/
-- Article on manipulating dates and times in Elm: https://medium.com/@ckoster22/manipulating-dates-and-times-in-elm-c8dab67f1e2a
-- Additional packages for working with dates in Elm: https://package.elm-lang.org/packages/elm/time/latest/
+## Deep Dive
+
+Calculating dates in the future or past can be a bit tricky, especially when dealing with time zones and daylight saving time. It is essential to understand how the `Time` library handles time to ensure accurate results.
+
+In Elm, time is represented as a `Posix` value, which is the number of milliseconds since `January 1, 1970, 00:00:00` UTC. This means that time is always based on UTC; however, the `Time` library provides functions to convert to and from local time.
+
+When calculating dates, it is essential to take into account the time zone and daylight saving time for the desired date. We can use the `Convert` library to convert a `Time` value to a specific time zone. This can be helpful when working with international clients or events.
+
+## See Also
+
+- [Elm Time library documentation](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Elm Convert library documentation](https://package.elm-lang.org/packages/justinmimbs/elm-time/latest/)
+- [Blog post on calculating dates with Elm](https://dev.to/hwaxxer/calculating-dates-in-elm-2ak)

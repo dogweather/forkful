@@ -1,58 +1,40 @@
 ---
-title:    "Java: Estrazione di sottostringhe"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/java/extracting-substrings.md"
+title:                "Java: Estrazione di sottostringhe"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+# Perché
+Estrazione di sottostringhe è un'operazione comune e utile nella programmazione Java. Ci sono molte situazioni in cui è necessario estrarre una parte di testo da una stringa più grande. Ad esempio, potresti voler ottenere il nome di un file da un percorso completo del file o estrarre un numero di telefono da una stringa di testo.
 
-Una delle tecniche più utili nella programmazione Java è l'estrazione di sottostringhe, ovvero la possibilità di estrarre una parte specifica di una stringa. Questo può essere utile in situazioni in cui si desidera manipolare una parte specifica di una stringa o analizzarne una porzione particolare. Vediamo come implementare questa tecnica.
+# Come Fare
+Per estrarre una sottostringa da una stringa in Java, puoi utilizzare il metodo `substring()` della classe `String`. Questo metodo richiede due argomenti: l'indice di inizio e l'indice di fine della sottostringa desiderata.
 
-## Come Eseguirlo
-
-Per estrarre una sottostringa in Java, è possibile utilizzare il metodo `substring()` della classe `String`. Questo metodo richiede due parametri: l'indice di inizio della sottostringa e l'indice finale (escluso) della sottostringa desiderata.
-
-Ad esempio, se abbiamo una stringa `"Ciao amici!"` e vogliamo estrarre solo `"amici"`, possiamo utilizzare il seguente codice:
+Ecco un esempio di codice che estrae una sottostringa dal nome completo di una persona e restituisce solo il cognome:
 
 ```Java
-String s = "Ciao amici!";
-String sub = s.substring(5, 10); // indice di inizio: 5, indice finale (escluso): 10
-System.out.println(sub); // output: amici
+String nomeCompleto = "Mario Rossi";
+String cognome = nomeCompleto.substring(6);
+System.out.println(cognome); // output: Rossi
 ```
 
-Possiamo anche estrarre l'ultima parte di una stringa utilizzando la lunghezza della stessa come indice finale, senza specificare un valore. Ad esempio:
+Nell'esempio sopra, l'indice di inizio è 6 perché il primo carattere della stringa è un indice 0. Se vogliamo includere anche il nome, possiamo specificare l'indice di fine come 5, come mostrato di seguito:
 
 ```Java
-String s = "Ciao ragazzi!";
-String sub = s.substring(5); // indice di inizio: 5, indice finale (escluso): lunghezza della stringa
-System.out.println(sub); // output: ragazzi!
+String cognome = nomeCompleto.substring(0, 5); // output: Mario
 ```
 
-È importante notare che gli indici in Java iniziano da 0, quindi il primo carattere di una stringa ha indice 0 e l'ultimo carattere ha indice lunghezza della stringa - 1.
+# Approfondimento
+Oltre al metodo `substring()`, ci sono altri modi per estrarre sottostringhe in Java. Ad esempio, puoi utilizzare il metodo `split()` della classe `String` per dividere una stringa in base a un carattere o una espressione regolare specificata.
 
-## Approfondimento
+Inoltre, ci sono diverse classi nella libreria standard di Java che possono aiutarti a gestire le sottostringhe in modi più complessi, come ad esempio la classe `StringBuffer` o la classe `StringBuilder`.
 
-Oltre alla semplice estrazione di sottostringhe, il metodo `substring()` può essere utilizzato per molte altre operazioni. Ad esempio, è possibile controllare se una parola è presente all'interno di una stringa utilizzando il metodo `contains()` e combinandolo con `substring()`:
+# Vedi Anche
+Se sei interessato a saperne di più sull'estrazione di sottostringhe in Java, puoi consultare questi utili link:
 
-```Java
-String s = "Ciao amici!";
-if (s.contains("amici")) {
-    System.out.println("La stringa contiene la parola 'amici'!");
-}
-```
-
-Possiamo anche utilizzare `substring()` per dividere una stringa in più parti utilizzando un carattere di separazione. Ad esempio, se abbiamo una stringa `"1-2-3-4"` possiamo dividerla in un array di stringhe utilizzando il carattere `-` come separatore:
-
-```Java
-String s = "1-2-3-4";
-String[] parts = s.split("-");
-System.out.println(Arrays.toString(parts)); // output: [1, 2, 3, 4]
-```
-
-## Vedi Anche
-
-- Documentazione ufficiale di Java sull'utilizzo del metodo `substring()`: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int
-- Tutorial su estrazione di sottostringhe in Java: https://www.tutorialspoint.com/java/java_string_substring.htm
-- Esempi di utilizzo del metodo `substring()` in situazioni reali: https://www.geeksforgeeks.org/string-substring-methods-java-examples/
+- [Documentazione ufficiale di Java sul metodo `substring()`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring(int,int))
+- [Tutorial di W3Schools su come estrarre sottostringhe in Java](https://www.w3schools.com/java/java_strings_substrings.asp)
+- [Articolo su Baeldung sull'uso di classi come `StringBuffer` e `StringBuilder` per estrarre sottostringhe in Java](https://www.baeldung.com/java-substring)

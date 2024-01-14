@@ -1,42 +1,54 @@
 ---
-title:    "Swift: Tworzenie pliku tekstowego"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/writing-a-text-file.md"
+title:                "Swift: Tworzenie pliku tekstowego"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto tworzyć pliki tekstowe w języku Swift?
 
-Pisanie plików tekstowych jest nieodzowną częścią programowania w Swift. Może to służyć do przechowywania danych, tworzenia konfiguracji lub przygotowania aplikacji do użycia. Dzięki napisaniu tekstu program można w prosty sposób manipulować danymi wewnątrz aplikacji.
+Pisanie plików tekstowych jest ważnym aspektem programowania w języku Swift. Pozwala nam zapisywać i odczytywać dane w prosty sposób, co może być bardzo przydatne w różnych aplikacjach. W tym wpisie dowiedz się dlaczego warto korzystać z plików tekstowych oraz jak to zrobić.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Poniżej przedstawiono prosty przykład kodu w języku Swift, który tworzy plik tekstowy o nazwie "example.txt" w katalogu dokumentów na urządzeniu. W tym przypadku plik zawiera prosty tekst "Hello World!".
+Pierwszym krokiem jest otworzenie pliku do zapisu lub odczytu za pomocą klasy `FileHandle`. Następnie wykorzystując metodę `write` lub `read`, możemy zapisywać lub odczytywać dane z pliku. Poniżej przedstawione są przykładowe fragmenty kodu z wykorzystaniem biblioteki `Foundation`.
 
 ```Swift
-let text = "Hello World!"
+// otwarcie pliku do zapisu
+let file = FileHandle(forWritingAtPath: "dane.txt")
 
-let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-let fileURL = documentsDirectory.appendingPathComponent("example.txt")
+// zapisywanie danych do pliku
+let data = "To jest przykładowy tekst do zapisania w pliku."
+file?.write(data.data(using: .utf8)!)
 
-do {
-    try text.write(to: fileURL, atomically: true, encoding: .utf8)
-} catch {
-    print("Error writing text file: \(error)")
+// zamknięcie pliku
+file?.close()
+
+// otwarcie pliku do odczytu
+let file2 = FileHandle(forReadingAtPath: "dane.txt")
+
+// odczytywanie danych z pliku
+let fileData = file2?.readDataToEndOfFile()
+
+// konwersja danych na string
+if let dataString = String(data: fileData!, encoding: .utf8) {
+    print(dataString)
 }
+
+// zamknięcie pliku
+file2?.close()
 ```
 
-Po uruchomieniu powyższego kodu, w katalogu dokumentów pojawi się nowo utworzony plik "example.txt" zawierający tekst "Hello World!".
+Powyższy kod pokazuje jak w prosty sposób można otworzyć plik do zapisu oraz odczytać z niego dane. Pamiętaj, że przed zapisaniem danych konieczne jest przekonwertowanie ich na typ `Data`, a przed odczytaniem - na `String`.
 
-## Wnikliwe spojrzenie
+## Głębszy zanurzenie
 
-Pisanie plików tekstowych może być bardziej skomplikowane niż w przykładzie powyżej, zwłaszcza jeśli wymaga obsługi większej ilości danych. W takim przypadku przydatne może być użycie pętli lub funkcji służących do odczytu i zapisu danych z pliku.
-
-Pamiętaj również, aby użyć odpowiednich kodowań, jeśli plik tekstowy zawiera znaki spoza standardowego zestawu znaków. W przypadku braku takiej informacji, plik może zostać nieprawidłowo odczytany.
+Tworzenie plików tekstowych w języku Swift jest możliwe dzięki wykorzystaniu klasy `FileHandle` z biblioteki `Foundation`. Klasa ta umożliwia dostęp do plików na różne sposoby, jak np. odczytanie tylko części danych za pomocą metody `read(upToCount:)` lub przesunięcie kursora za pomocą metody `seek(toFileOffset:)`. Ponadto, klasa `FileHandle` dziedziczy po klasie `InputStream` i `OutputStream`, co pozwala na wygodne korzystanie z funkcjonalności związanych z przesyłaniem danych.
 
 ## Zobacz też
 
-- [Oficjalna dokumentacja Swift na temat tworzenia i edycji plików tekstowych](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID293)
-- [Przewodnik po plikach i katalogach w języku Swift](https://www.hackingwithswift.com/read/0/overview)
-- [Przydatny artykuł na temat obsługi plików w języku Swift](https://learnappmaking.com/read-write-files-swift-programming/)
+- [Dokumentacja Apple o klasie FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
+- [Inne sposoby na manipulowanie plikami tekstowymi w Swift](https://medium.com/swift-programming/swift-programing-working-with-strings-files-d4da5f6fb2c)
+- [Przykładowy projekt wykorzystujący pliki tekstowe w Swift](https://github.com/karolaltamirano/swift-file-manager)

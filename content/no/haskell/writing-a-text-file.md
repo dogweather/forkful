@@ -1,39 +1,51 @@
 ---
-title:    "Haskell: Å skrive en tekstfil"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/writing-a-text-file.md"
+title:                "Haskell: Å skrive en tekstfil"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvis du er en programmerer eller en nybegynner som ønsker å lære et funksjonelt programmeringsspråk, kan Haskell være et bra alternativ. En av de mange tingene du kan gjøre i Haskell er å skrive tekstfiler. I denne artikkelen vil vi utforske hvorfor og hvordan du kan gjøre dette.
+# Hvorfor
 
-## Hvordan
-La oss starte med et enkelt eksempel på hvordan du kan skrive en tekstfil i Haskell. Vi vil bruke hovedfunksjonen "main" som starter programmet vårt og "writeFile" som lar oss skrive en ny fil.
+Hvis du noen gang har programmert i Haskell, har du kanskje lagt merke til at de fleste programmer starter med å importere moduler og deretter definere funksjoner og variabler. Men hvorfor bry seg med å skrive alt i et tekstfilformat? Det er tross alt bare en annen måte å skrive koden på. I denne bloggposten skal vi utforske hvorfor det er nyttig å skrive en Haskell-programkode i et tekstfilformat.
 
-```Haskell
-main = do
-  writeFile "hello.txt" "Hei, verden!"
-```
+# Hvordan
 
-Når du kjører dette programmet, vil du få en ny fil som heter "hello.txt" med innholdet "Hei, verden!". Dette er et enkelt eksempel, men du kan gjøre mer avansert tekstbehandling ved å bruke innebygde funksjoner og biblioteker.
-
-## Dypdykk
-Nå som vi har sett et enkelt eksempel på hvordan skrive en tekstfil, la oss ta en dypere titt på hvordan dette fungerer. Først og fremst må du importere "System.IO" biblioteket for å bruke funksjonen "writeFile". Deretter kan du bruke "do" notasjon for å kjøre flere IO-operasjoner i en sekvens.
+Det første vi trenger å gjøre er å opprette en ny fil med "hs" utvidelse, for eksempel "main.hs". Dette er en konvensjonell måte å navngi en Haskell-programkodefil på, selv om du kan kalle den hva du vil. Deretter kan vi begynne å skrive koden vår ved å definere modulnavnet, importere eventuelle nødvendige moduler og skrive funksjoner og variabler. La oss se på et eksempel:
 
 ```Haskell
-import System.IO
+module Main where
+
+import Data.List
+
+faktoriser :: Int -> [Int]
+faktoriser tallet = findDelere tallet [2..tallet]
+  where findDelere _ []         = []
+        findDelere tall (x:mulige)
+          | tall `mod` x == 0 = x : findDelere (tall `div` x) mulige
+          | otherwise         = findDelere tall mulige
 
 main = do
-  handle <- openFile "hello.txt" WriteMode
-  hPutStrLn handle "Hei, verden!"
-  hClose handle
+  putStrLn "Skriv inn et tall: "
+  input <- getLine
+  let tall = read input :: Int
+  putStrLn (show (faktoriser tall))
 ```
 
-I dette eksempelet åpner vi en fil i "WriteMode" og tildeler det til en "handle" variabel. Deretter bruker vi "hPutStrLn" for å skrive teksten til filen og til slutt lukker vi filen med "hClose".
+I dette eksempelet har vi definert en funksjon "faktoriser" som finner alle faktorene til et gitt tall. Vi har også brukt funksjonen "getLine" for å lese inn et tall fra brukeren og deretter brukt "read" for å konvertere det til en Integer. Til slutt skriver vi ut resultatet ved hjelp av "show" funksjonen. Når koden er lagret i en fil, kan vi enkelt kjøre den ved å bruke kommandoen:
 
-## Se også
-- [Dokumentasjon for Haskell I/O](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [LæreHaskell - En ressurs for å lære Haskell på norsk](https://www.larehaskell.nu/)
-- [Offisiell Haskell-nettside](https://www.haskell.org/)
+```bash
+runhaskell main.hs
+```
+
+# Dypdykk
+
+Nå spør du deg kanskje hvorfor vi bryr oss med å skrive koden i en fil når vi likevel må bruke en kommandolinjekommando for å kjøre den. Svaret er enkelt, det handler om organisering og gjenbruk av kode. Ved å ha koden din i separate filer, kan du enkelt organisere og strukturere koden din på en bedre måte. Du kan også gjenbruke kode fra en fil i en annen fil ved å importere moduler. Dette kan være svært nyttig når du jobber med større og mer komplekse programmer.
+
+# Se også
+
+- [Haskell dokumentasjon](https://www.haskell.org/documentation/#books)
+- [Haskell tutorial](https://wiki.haskell.org/Tutorials)
+- [Haskell programmeringsmiljø](https://www.haskell.org/platform/)

@@ -1,47 +1,39 @@
 ---
-title:    "Javascript: 텍스트 파일 작성하기"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/writing-a-text-file.md"
+title:                "Javascript: 텍스트 파일 작성하기"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
+# 왜
 
-텍스트 파일을 작성하는 것은 프로그래머가 프로그램을 작성할 때 중요한 부분입니다. 이는 코드를 구성하고 보관하기 위해 필요한 정보를 담고 있는 파일이며, 나중에 코드를 다시 사용하거나 다른 사람과 공유할 수 있도록 합니다.
+텍스트 파일을 작성하는 것은 프로그래밍에서 중요한 부분입니다. 이것은 다양한 목적으로 사용될 수 있고 데이터를 다루는 많은 방법 중 하나입니다. 만약 당신이 텍스트 파일을 작성하는 방법을 아직 모른다면 이 글을 계속 읽어보세요!
 
-## 방법
+## 어떻게
 
-먼저, 텍스트 파일을 작성하기 위해 우리는 Javascript XMLHttpRequest 객체를 사용할 것입니다. 이 객체는 서버로부터 데이터를 가져올 수 있도록 해주는 기능을 제공합니다. 아래는 간단한 예제 코드입니다.
+텍스트 파일을 작성하는 가장 간단한 방법은 `writeFileSync()` 함수를 사용하는 것입니다. 이 함수는 Node.js에서 제공되는 기능으로, 파일 경로와 데이터를 인자로 받아 파일을 생성하고 데이터를 쓸 수 있게 해줍니다. 아래의 예제를 참고하세요.
 
 ```Javascript
-// XMLHttpRequest 객체 생성
-var xhttp = new XMLHttpRequest();
-// 파일을 열기 위한 GET 요청 보내기
-xhttp.open("GET", "textfile.txt", true);
-// 파일을 불러오기
-xhttp.onreadystatechange = function() {
-    // 서버로부터 응답이 오면 데이터를 출력하기
-    if (this.readyState == 4 && this.status == 200) {
-        // 파일에서 읽은 데이터를 변수에 저장
-        var data = this.responseText;
-        // 데이터 출력
-        console.log(data);
-    }
-};
-// 요청 보내기
-xhttp.send();
+fs.writeFileSync('output.txt', 'Hello, world!');
+
 ```
 
-위의 예제 코드에서는 XMLHttpRequest 객체를 생성하고, GET 요청을 보내서 파일을 불러온 뒤, 서버로부터 응답이 오면 데이터를 출력하는 방식으로 작성됩니다. 이것은 파일을 읽기 위해 필요한 가장 기본적인 방법입니다.
+이 코드를 실행하면 현재 디렉토리에 `output.txt`이라는 이름의 파일이 생성되고 "Hello, world!"라는 내용이 쓰여집니다.
 
-## 깊이 파고들기
+## 딥 다이브
 
-텍스트 파일을 작성하는 것은 간단한 작업처럼 보일 수 있지만, 더 깊이 들어가보면 더 복잡한 작업이 될 수 있습니다. 예를 들어, 우리는 파일을 읽기 전에 먼저 파일의 존재 여부를 확인해야 합니다. 또는 파일을 작성하는 도중에 오류가 발생했을 때 이를 처리하는 방법도 생각해야 합니다. 이런 작업을 위해 사용할 수 있는 여러 가지 방법이 있기 때문에 깊게 공부하고 습득하는 것이 중요합니다.
+텍스트 파일을 작성하는 것은 결국 데이터를 저장하는 것입니다. 이때 데이터 포맷이 중요해지는데, 일반적으로 텍스트 파일은 간단한 문자열로 구성되어 있습니다. 그리고 그 문자열은 여러 줄로 이뤄져 있을 수 있고 그 안에는 다양한 정보가 들어갈 수 있습니다. 예를 들어, CSV 파일은 쉽게 만들 수 있고 여러 데이터를 포함시킬 수 있습니다.
 
-## 참고 자료
+하지만 앞서 말한 `writeFileSync()` 함수는 단순한 예제이므로 중요한 것은 데이터 포맷보다는 파일을 만드는 방법과 데이터를 어떻게 쓰느냐에 대해 이해하는 것입니다.
 
-- [MDN: XMLHttpRequest](https://developer.mozilla.org/ko/docs/Web/API/XMLHttpRequest)
-- [W3Schools: Ajax - Load the JSON data from a file](https://www.w3schools.com/js/js_ajax_intro.asp)
-- [TechSight: How to read and write files in JavaScript](https://www.techsight.nl/programming/javascript/read-and-write-files-with-javascript/)
-- [Tutorials Teacher: JavaScript File Handling](https://www.tutorialsteacher.com/javascript/javascript-file-handling)
+## 더 알아보기
+
+텍스트 파일을 작성하는 것 외에도 Node.js에서는 다양한 파일 작업 기능을 제공합니다. 파일을 읽고 쓰는 방법을 익히는 것은 프로그래밍에서 매우 중요한 부분이기 때문에 관련 정보를 더 찾아보는 것을 추천합니다.
+
+### 이것도 참고하세요
+
+- [Node.js fs 모듈 문서](https://nodejs.org/api/fs.html)
+- [텍스트 파일 쓰기 - 노마드코더 유튜브 강의](https://youtu.be/RuztJ4phU_Y)
+- [파일 다루기 - 드림코딩 엘리스 유튜브 강의](https://youtu.be/T7cDYFiz4lk)

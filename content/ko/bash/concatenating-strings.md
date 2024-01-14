@@ -1,58 +1,42 @@
 ---
-title:    "Bash: 문자열 연결하기"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/concatenating-strings.md"
+title:                "Bash: 문자열 연결하기"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-스트링을 연결(concatenating)하는 일은 프로그래밍에서 자주 사용되는 중요한 작업입니다. 여러 개의 스트링을 한 곳에 모아서 기능적으로 하나의 스트링으로 만들 수 있기 때문에, 우리는 스트링을 조작하고 다양한 데이터를 효율적으로 처리하기 위해 스트링 연결을 사용합니다.
+웹 개발이나 데이터 처리를 하는 동안, 때때로 우리는 문자열을 합치는 것이 필요합니다. 예를 들어, 여러 개의 변수를 조합하여 하나의 문장을 만들거나, 사용자의 입력값으로 동적으로 문자열을 생성하는 경우 등에 사용될 수 있습니다. 문자열 연결(concatenation)은 소프트웨어 개발에 있어서 매우 유용한 기능 중 하나입니다.
 
-## 하는 방법
-
-스트링을 연결하는 방법은 매우 간단합니다. 우선, 우리는 `+` 연산자를 사용하여 스트링을 합칠 수 있습니다. 다음의 예시를 보겠습니다:
+## 사용 방법
 
 ```Bash
-str1="Hello"
-str2="World"
-echo $str1$str2
+# 변수를 활용한 문자열 연결
+name="John"
+age=25
+echo "제 이름은 $name이며, 나이는 $age살입니다."
+# 출력 결과: 제 이름은 John이며, 나이는 25살입니다.
+
+# 사용자의 입력값으로 동적으로 문자열 연결
+echo "당신의 이름은 무엇인가요?"
+read name
+echo "안녕하세요, $name님! 반가워요."
+# 출력 결과: 당신의 이름은 무엇인가요?
+#           (사용자가 입력한 이름)님! 반가워요.
 ```
 
-위의 코드를 실행하면 `HelloWorld`라는 스트링이 출력됩니다. 또는 우리는 `+=` 연산자를 사용하여 변수에 스트링을 추가할 수도 있습니다. 다음의 예시를 보겠습니다:
+위 코드에서 `echo` 명령어를 사용하여 문자열을 출력하면서, 변수를 활용하여 문자열을 연결할 수 있습니다. 또한 사용자의 입력값을 `read` 명령어로 받아와서 동적으로 문자열을 생성할 수도 있습니다. Bash 스크립트에서는 쉽게 문자열을 조합하여 원하는 형태의 결과물을 출력할 수 있습니다.
 
-```Bash
-str="Hello"
-str+="World"
-echo $str
-```
+## 딥 다이브
 
-위의 코드를 실행하면 `HelloWorld`라는 스트링이 출력됩니다. 마지막으로, 우리는 `[]`를 사용하여 스트링을 연결할 수도 있습니다. 다음의 예시를 보겠습니다:
+Bash 스크립트에서 문자열 연결을 할 때, 주의할 점이 있습니다. 바로 띄어쓰기와 따옴표의 사용입니다. 예를 들어 위에서 살펴본 코드에서 `"제 이름은 $name이며, 나이는 $age살입니다."` 부분에서 변수를 표현하기 위해 `${변수명}`과 같은 형태를 사용하였습니다. 이렇게 해주지 않으면 Bash는 `$name이`라는 하나의 변수를 인식하고 이는 정의되지 않은 변수이기 때문에 원하는 결과를 얻을 수 없습니다.
 
-```Bash
-str1="Hello"
-str2="World"
-echo "${str1}${str2}"
-```
+또한 따옴표의 사용도 중요합니다. 위 코드 예시에서 나오듯이, 따옴표 내부에서 변수를 사용하여 문자열을 연결한 경우에는 따옴표를 쓰지 않아도 원하는 형태의 결과가 나오지만, 따옴표를 생략하면 변수를 인식하지 못하고 단순 문자열로 인식할 수 있다는 점을 기억해야 합니다.
 
-위의 코드를 실행하면 `HelloWorld`라는 스트링이 출력됩니다.
+## 관련 링크 보기
 
-## 더 깊게
-
-스트링을 연결하는 방법은 다양한 방법이 있습니다. 우리가 앞서 살펴본 `+`, `+=`, `[]` 외에도 `printf`를 사용하여 스트링을 연결할 수 있습니다. `printf`는 형식화된 출력을 할 때 사용하는 명령어로, 다음과 같이 사용할 수 있습니다:
-
-```Bash
-str1="Hello"
-str2="World"
-printf "%s%s" $str1 $str2
-```
-
-위의 코드를 실행하면 `HelloWorld`라는 스트링이 출력됩니다.
-
-## 연관된 정보
-
-보다 자세한 내용과 다른 스트링 조작 방법을 알고 싶으시다면 다음 링크들을 참고해보세요:
-
-* <https://www.tldp.org/LDP/abs/html/string-manipulation.html>
-* <https://linuxize.com/post/bash-concatenate-strings/>
+- [Bash 공식 문서](https://www.gnu.org/software/bash/manual/bash.html)
+- [Linux 운영체제에서의 문자열 연결 가능한 다양한 방법](https://tecadmin.net/concatenate-strings-in-linux/)

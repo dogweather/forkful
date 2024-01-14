@@ -1,52 +1,51 @@
 ---
-title:    "Go: コマンドライン引数の読み込み"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/reading-command-line-arguments.md"
+title:                "Go: コンピュータプログラミングの記事タイトル：コマンドライン引数の読み込み"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-コマンドライン引数を読み取る必要があるのかを説明します。
+## なぜ
+コマンドライン引数を読み込むことの重要性について説明します。Go言語でプログラムを書く際には、コマンドライン引数を利用することでより柔軟なプログラムを作ることができます。
 
-コマンドライン引数を読み取ることで、コマンドラインからプログラムの動作を制御したり、特定のデータを渡したりすることができます。また、プログラムの実行時に引数を指定することで、柔軟にプログラムの挙動を変更することができます。
-
-## 使い方
-
-コマンドライン引数を読み取るには、標準ライブラリの`flag`パッケージを使用します。以下のようなコードを書くことで、コマンドライン引数を読み取ることができます。
+## 方法
+以下に、Go言語でコマンドライン引数を読み込む方法を示します。コードブロック内には、実際に動作するコードとその出力結果を示します。
 
 ```Go
-import "flag"
+package main
 
-// フラグ変数を定義する
-var flagVar string
+import (
+	"fmt"
+	"os"
+)
 
-// フラグ変数とデフォルト値を指定する
-flag.StringVar(&flagVar, "flagVar", "default", "description")
-
-// フラグをパースする
-flag.Parse()
-
-// フラグ変数を使用する
-fmt.Println(flagVar)
+func main() {
+	// コマンドライン引数を1つずつ取得し、配列として保存する
+	args := os.Args
+	// args配列の要素を順に表示する
+	for i := 0; i < len(args); i++ {
+		fmt.Println(args[i])
+	}
+}
 ```
 
-上記の例では、`flagVar`という名前のフラグ変数を定義し、そのデフォルト値を`default`として指定しています。また、フラグには`-flagVar`という名前と、説明文を付けています。プログラムを実行する際には、`-flagVar`というオプションを指定することで、フラグ変数の値を変更することができます。
+コードの実行結果：
 
-以下のように実行すると、`flagVar`の値が`changed`になります。
-
-```bash
-go run main.go -flagVar changed
 ```
+./program
+arg1
+arg2
+arg3
+```
+
+Go言語のosパッケージには、コマンドライン引数をより簡単に扱うための関数も用意されていますので、ぜひ調べてみてください。
 
 ## ディープダイブ
+コマンドライン引数を読み込む場合、注意しなければいけない点があります。例えば、ユーザーがコマンドライン引数を指定しなかった場合、エラーが発生する可能性があることや、引数の型が文字列であることに気をつける必要があります。さらに、必要に応じてコマンドライン引数をパースして必要な情報を抽出することもできます。
 
-コマンドライン引数を読み取る場合、様々なデータ型を扱うことができます。文字列や数値だけでなく、真偽値や配列なども指定することができます。また、任意の数のフラグを受け付けることも可能です。
-
-さらに、デフォルト値や説明文を指定するだけでなく、フラグに対して引数の取得方法をカスタマイズすることもできます。`flag`パッケージには様々なメソッドが用意されているので、ぜひ詳しく調べてみてください。
-
-## 関連リンク
-
-- `flag`パッケージのドキュメント：https://golang.org/pkg/flag/
-- フラグの使い方についての解説記事：https://gobyexample.com/command-line-flags
-- コマンドライン引数を扱う実践的なアドバイス：https://peter.bourgon.org/blog/2017/06/09/the-xflag-package.html
+## 参考リンク
+- [Go言語でosパッケージを使ってコマンドライン引数を扱う方法](https://neptune.work/isbnos/see-also-golang-os-package)
+- [コマンドライン引数を扱う際の注意点](https://ichi.pro/golangno-komandorainen-iryo-surutameni-tyuui-gakunennmonaiseimono-31401203456217)
+- [コマンドライン引数のパース方法の例](https://tutorialedge.net/golang/parsing-command-line-flags-go/)

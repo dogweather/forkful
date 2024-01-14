@@ -1,36 +1,43 @@
 ---
-title:    "Rust: Convertendo uma string para letra minúscula."
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/converting-a-string-to-lower-case.md"
+title:                "Rust: Convertendo uma string para minúsculas"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que converter uma string para letras minúsculas?
 
-Quando escrevemos programas em Rust, é importante considerar a usabilidade para o usuário final. Uma das tarefas comuns em programação é formatar strings, e em geral, é mais desejável que elas estejam em letras minúsculas para uma melhor visualização e organização. Neste artigo, vamos explorar como converter uma string para minúsculas em Rust.
+Converter uma string para letras minúsculas é uma tarefa comum em programação, especialmente em linguagens de programação sensíveis a maiúsculas e minúsculas como Rust. Ao converter uma string para letras minúsculas, podemos garantir consistência e facilitar a comparação de strings para fins de classificação, busca e outros usos.
 
-## Como Fazer
+## Como fazer a conversão em Rust
 
-O processo de conversão de uma string para minúsculas em Rust é bastante simples. Primeiro, importamos o módulo "string" e usamos o método "to_lowercase()". Vamos ver um exemplo:
+Para converter uma string para letras minúsculas em Rust, podemos usar o método `to_lowercase()` da struct `String`. Veja um exemplo de código abaixo:
 
 ```Rust
-use std::string;
+let string = String::from("EXEMPLO DE STRING");
+let lowercase_string = string.to_lowercase();
 
-let frase = String::from("OLá MuNDo!");
-
-let resultado = frase.to_lowercase();
-println!("{}", resultado);
+println!("String original: {}", string);
+println!("String em letras minúsculas: {}", lowercase_string);
 ```
 
-Neste exemplo, importamos o módulo "string" e criamos uma string contendo a frase "OLá MuNDo!". Em seguida, usamos o método "to_lowercase()" para converter a string para letras minúsculas e a imprimimos na tela. O resultado será "olá mundo!".
+Output:
 
-## Uma Profundidade Maior
+```
+String original: EXEMPLO DE STRING
+String em letras minúsculas: exemplo de string
+```
 
-Por baixo dos panos, o método "to_lowercase()" usa a função "chars()" para iterar através de cada caractere da string e aplicar a função "to_lowercase()" individualmente para convertê-los. Isso permite que ele lide com caracteres acentuados e símbolos especiais de forma correta e eficiente. No entanto, é importante lembrar que o resultado final será uma nova string e a string original não será modificada.
+Podemos ver que a string original é convertida com sucesso para letras minúsculas.
 
-## Veja Também
- 
- - [Documentação do Módulo "string" em Rust](https://doc.rust-lang.org/std/string/index.html)
- - [Explicação Detalhada do Método "to_lowercase()" no Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/text/strings.html#convert-a-case-of-a-string)
- - [Vídeo Tutorial sobre Conversão de Strings no Rust](https://www.youtube.com/watch?v=Qezm_KpOits)
+## Mergulho profundo
+
+Ao chamar o método `to_lowercase()` em uma string em Rust, o valor retornado é uma nova `String`, com letras minúsculas. Isso significa que a string original não é modificada. Além disso, devemos ter em mente que as regras de conversão de maiúsculas e minúsculas podem variar dependendo do idioma. Por exemplo, a letra "İ" em turco não é convertida para "i", mas para "ı". Portanto, é importante estar ciente dessas diferenças ao trabalhar com strings multilíngues.
+
+## Veja também
+
+- Documentação oficial de Rust sobre o método `to_lowercase()`: https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase
+- Artigo sobre strings e suas manipulações em Rust: https://dev.to/rosolv/working-with-strings-in-rust-115o
+- Tutorial em vídeo sobre como converter strings para letras minúsculas em Rust: https://www.youtube.com/watch?v=r7Lt65-_PnM

@@ -1,43 +1,36 @@
 ---
-title:    "Swift: Kielen Tekstit kirjoittaminen."
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/capitalizing-a-string.md"
+title:                "Swift: Merkkijonon muuttaminen alkavaksi isolla alkukirjaimella"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Why: Miksi haluat aloittaa merkkijonon isolla kirjaimella?
+## Miksi
 
-On monia mahdollisia syitä capitalizing eli merkkijonon aloitus isolla kirjaimella, kuten ulkoasusta huolehtiminen, tiettyjen ohjelmointistandardien noudattaminen tai käyttäjän syötteen käsittely. Seuraavassa kerromme miten voit tehdä sen kätevästi Swiftillä.
+Miksi haluaisit muuttaa merkkijonon ensimmäisen kirjaimen isoksi?
 
-How To: koodiesimerkkien ja tulostusten esittely * ``` Swift ... ``` * koodilohkoissa.
-
-Mitä tahansa syötettä saatkin käyttäjältä, on tärkeää huolehtia että se näyttää hyvältä ja seurata ohjelmointistandardeja. Tässä yksinkertainen koodi, joka ottaa käyttäjän syötteen ja muuttaa sen isoksi kirjaimeksi:
+## Kuinka tehdä se
 
 ```Swift
-let userInput = "hei, mitä kuuluu?"
-print(userInput.capitalized) // Tulostaa: Hei, mitä kuuluu?
+let teksti = "tämä on esimerkkiteksti"
+print(teksti.capitalized)
 ```
 
-Toinen vaihtoehto on käyttää extensioneja, jotka ovat Swift-kielen tapa lisätä uusia toimintoja olemassa oleviin tietotyyppeihin. Seuraava koodiesimerkki käyttää extensionia String-tietotyypille capitalizing-toiminnon suorittamiseen:
+Tämä tulostaisi "Tämä On Esimerkkiteksti".
 
-```Swift
-extension String {
-    func capitalized() -> String {
-        return prefix(1).uppercased() + self.lowercased().dropFirst()
-    }
-}
+## Syvemmälle aiheeseen
 
-let userInput = "moi, mitä kuuluu?"
-print(userInput.capitalized()) // Tulostaa: Moi, mitä kuuluu?
-```
+Merkkijonon ensimmäisen kirjaimen muuttaminen isoksi on hyödyllinen toiminto monissa tilanteissa, kuten kun haluat muokata käyttäjän syöttämää tekstiä ennen sen tallentamista tietokantaan. Tämä toiminto helpottaa myös tekstin lukemista ja ymmärtämistä.
 
-Deep Dive: Syvempää tietoa merkkijonon capitalizingista.
+Merkkijonoilla on Swiftissä useita erilaisia toimintoja, kuten `capitalized`, `lowercased` ja `uppercased`. `Capitalized` toiminto muuttaa merkkijonon ensimmäisen kirjaimen isoksi ja `lowercased` muuttaa kaikki kirjaimet pieniksi. `Uppercased` taas muuttaa kaikki kirjaimet suuriksi.
 
-Vaikka yksinkertaisimmassa mallissa, jossa käytettiin vain "capitalized" metodia, tulos näytti hyvältä, se ei välttämättä vastaa kaikkia ohjelmointistandardeja. Esimerkiksi, jos syötteessä on yli yksi sana, sen ensimmäisen kirjaimen pitäisi olla isolla mutta muiden sanojen ei. Tämän takia toisessa koodiesimerkissä käytettiin prefix- ja dropFirst-metodeja varmistaen että vain ensimmäinen sana capitalizoidaan.
+On myös mahdollista muuttaa vain merkkijonon ensimmäinen kirjain isoksi käyttämällä `prefix`-toimintoa.
 
-Footer (See Also): Katso myös.
+## Katso myös
 
-- Lisää tietoa String-tietotyypistä: https://developer.apple.com/documentation/swift/string
-- Toimintojen lisääminen olemassa oleviin tietotyyppeihin: https://docs.swift.org/swift-book/LanguageGuide/Extensions.html
-- Ohjelmointistandardit Swiftissä: https://swift.org/documentation/api-design-guidelines/
+Tässä muutama hyödyllinen linkki, jotka voivat auttaa sinua syventymään lisää merkkijonotoimintoihin Swiftissä:
+
+- [Apple Developer Documentation - String](https://developer.apple.com/documentation/swift/string)
+- [Hacking with Swift - How to capitalize words in a string using capitalized()](https://www.hackingwithswift.com/example-code/strings/how-to-capitalize-words-in-a-string-using-capitalized)

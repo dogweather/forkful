@@ -1,69 +1,52 @@
 ---
-title:    "Arduino: 计算未来或过去的日期"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/calculating-a-date-in-the-future-or-past.md"
+title:                "Arduino: 计算过去或未来的日期"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要使用Arduino计算日期？
-使用Arduino计算日期可以帮助您在您的项目中确定特定日期，例如确定未来或过去的日期。这对于制作日历或倒计时器非常有用。
+# 为什么
+很多人可能会问，为什么要在Arduino编程中计算未来或过去的日期？其实，这是一个很有用的技巧，能够帮助你更精确地控制程序的运行时间，也方便你在设计各种计时功能时使用。
 
-## 如何使用Arduino计算日期？
-您可以使用以下代码来计算日期，并将结果输出到串行监视器：
-```Arduino
-#include <Time.h>
-#include <TimeLib.h>
+# 怎样操作
+在Arduino中，我们可以使用内置函数"```millis()```"来获取当前的系统时间，单位是毫秒。我们可以通过一些计算来将这一数值转换成日期格式，从而实现时间的计算。下面是一个简单的范例代码：
 
-int day, month, year;
+```
+Arduino的库文件中有一个名为 "RTClib" 的库，可以直接在IDE中安装。在这个库的帮助下，我们可以轻松地获取当前的日期和时间。比如，想要在5秒后打印出当日的日期，可以这样写：
+
+```
+#include <RTClib.h>
+RTC_DS3231 rtc;
 
 void setup() {
   Serial.begin(9600);
-  setTime(20, 25, 00, 1, 1, 2020); // 设置时间为2020年1月1日20时25分00秒
-  day = day(); // 获取当前日期的天数
-  month = month(); // 获取当前日期的月份
-  year = year(); // 获取当前日期的年份
-  Serial.print("今天是");
-  Serial.print(year); // 输出年份
-  Serial.print("-");
-  Serial.print(month); // 输出月份
-  Serial.print("-");
-  Serial.println(day); // 输出天数
 
-  tmElements_t futureDate; // 定义一个时间结构体
-  futureDate.Second = 0; // 设置秒数为0
-  futureDate.Minute = 0; // 设置分钟为0
-  futureDate.Hour = 0; // 设置小时为0
-  futureDate.Day = 14; // 设置日期为14
-  futureDate.Month = 2; // 设置月份为2
-  futureDate.Year = 2021; // 设置年份为2021
-  time_t futureEpoch = makeTime(futureDate); // 将时间结构体转换为time_t类型
-  setTime(futureEpoch); // 设置当前时间为未来日期
-  day = day(); // 获取日期的天数
-  month = month(); // 获取日期的月份
-  year = year(); // 获取日期的年份
-  Serial.print("未来日期是");
-  Serial.print(year); // 输出年份
-  Serial.print("-");
-  Serial.print(month); // 输出月份
-  Serial.print("-");
-  Serial.println(day); // 输出天数
+  // 初始化RTC模块
+  rtc.begin();
+
+  // 获取当前时间
+  DateTime now = rtc.now();
+
+  // 计算5秒后的日期
+  DateTime future = now + TimeSpan(0,0,5,0);
+
+  // 打印出未来日期的格式
+  Serial.println(future.format("m.d.Y"));
 }
 
 void loop() {
-
+  // 空函数
 }
 ```
 
-这段代码将输出当前日期和未来日期，您可以根据您的需求修改futureDate结构体来计算其他日期。
+在上面的代码中，我们使用了"```RTClib```"库来初始化了RTC模块，并且通过"```DateTime```"类来获取系统当前的日期和时间。然后，我们使用"```TimeSpan```"类来计算出距离当前日期5秒后的时间，并将其赋值给"```future```"变量。最后，我们使用"```format()```"函数来设置日期的格式，并使用"```Serial.println()```"函数打印出结果。运行代码会在串口监视器中输出类似"```12.17.2021```"的结果。
 
-## 深入了解Arduino计算日期
-Arduino使用Time库来处理日期和时间。该库提供了许多有用的函数和结构体来处理日期和时间。
+# 深入学习
+当然，我们可以通过使用不同的数值来计算出未来或过去的日期，而不仅仅是5秒。同时，我们也可以通过一些逻辑判断，来确定未来或过去的日期是否为特定的日期，从而实现一些更复杂的计时功能。
 
-在本例中，我们使用makeTime函数将日期和时间转换为time_t类型，这样我们就可以使用setTime函数来设置当前日期和时间。
-
-另外，您还可以使用其他函数来计算某一日期之后或之前的日期，例如使用addTime函数来计算未来日期，并使用subtractTime函数来计算过去日期。
-
-## 参考链接
-- [Arduino Time库文档](https://www.pjrc.com/teensy/td_libs_Time.html)
-- [Arduino Time库GitHub仓库](https://github.com/PaulStoffregen/Time)
+# 参考链接
+- Arduino的官方文档：https://www.arduino.cc/en/Reference/DueDate
+- "```millis()```"函数的使用方法：https://www.arduino.cc/reference/en/language/functions/time/millis/
+- "```RTClib```"库的GitHub页面：https://github.com/adafruit/RTClib

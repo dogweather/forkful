@@ -1,26 +1,60 @@
 ---
-title:    "Haskell: कम्‍प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट पढ़ना।"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/reading-command-line-arguments.md"
+title:                "Haskell: कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-क्या आप कभी प्रोग्राम बनाते समय अपने हैसकेल कोड पर कमांड लाइन तर्कों को पढ़ने की ज़रूरत महसूस करते हैं? अगर हाँ, तो यह हमारे लिए भी एक ऐसी अनुभव की बात है। इस ब्लॉग पोस्ट में हम आपको बताएंगे कि हैसकेल में कमांड लाइन तर्कों को कैसे पढ़ा जाता है और आप इससे कैसे लाभ उठा सकते हैं।
+कमांड लाइन विकल्पों को पढ़ने का आपत्तिजनक काम हो सकता है, लेकिन यह हैसकेल प्रोग्रामिंग में अत्यंत महत्वपूर्ण होता है। यह बहुत सारी अवस्थाओं में उपयोगी हो सकता है, जैसे कि अधिकतम सुरक्षा के लिए अनुरोध प्रोग्रामों को, विभिन्न प्रकार के समाप्ति और विधि कार्यों को, और आपके कोड का आकंशी पूर्वानुमान करने के लिए।
 
-## कैसे करें
+## कैसे
 
-हैसकेल में कमांड लाइन तर्कों को पढ़ने के लिए हम `getArgs` फ़ंक्शन का इस्तेमाल करते हैं। यह फ़ंक्शन `System.Environment` मॉड्यूल में स्थित होती है। इसके प्रयोग के बाद, हमें एक `IO [String]` का परिणाम मिलता है। इसका मतलब है कि यह फ़ंक्शन एक `String` सूची की आउटपुट देती है जो हमें हमारे कमांड लाइन तर्कों को प्राप्त करने में मदद करती है।
+कमांड लाइन विकल्पों को पढ़ने के लिए हस्केल में `System.Environment.getArgs` फ़ंक्शन का उपयोग किया जाता है। इस फ़ंक्शन को अपने कोड में इस प्रकार से लिखा जा सकता है:
 
 ```Haskell
-import System.Environment (getArgs)
+import System.Environment
 
-main :: IO ()
 main = do
-  args :: [String] <- getArgs
-  putStrLn $ "आपके कमांड लाइन तर्क हैं: " ++ show args
+  args <- getArgs
+  print args
 ```
 
-जैसा कि आप देख सकते हैं, हमने प्राप्त `String` सूची को `show` फ़ंक्शन के ज़रिए एक `String` में जोड़ दिया है ताकि हम परिणाम को देख सकें। अब हम चाहे तो इस सूची के सदस्यों को अलग-अलग `String` के रूप में प्रिंट कर सकते हैं या उनको अपनी आवश्यकतानुसार प्रोसेस कर सकते हैं। उदाहरण के तौर पर, यदि हम `Data.List` मॉड्यूल का उपयोग करके सूची के सदस्यों को आयात करते हैं तो हम सूची के ऊपर से संभाव
+यदि आप अपने कोड को आवृत्ति से संपत्ति बनाना चाहते हैं, तो आप मानचित्र योग्यता प्राप्त कमांड लाइन विकल्पों की गणना भी कर सकते हैं। आप इसका उपयोग `System.Console.GetOpt` प्रक्रिया के साथ कर सकते हैं, जो स्टैंडर्ड ऊपर दिए गए कमांड लाइन विकल्पों को देखेगा और उन्हें आपके कोड के लिए उदाहरण जोड़ेंगे। इस प्रक्रिया को आप इस प्रकार से उपयोग में ला सकते हैं:
+
+```Haskell
+import System.Console.GetOpt
+import System.Environment
+
+data Options = Options {
+  optFlag :: Bool,
+  optInputFile :: FilePath
+} deriving Show
+
+defaultOptions = Options {
+  optFlag = False,
+  optInputFile = ""
+}
+
+options :: [OptDescr (Options -> Options)]
+options = [
+  Option ['f'] ["flag"]
+         (NoArg (\opts -> opts { optFlag = True }))
+         "Set flag"
+  Option ['i'] ["input"]
+         (ReqArg (\file opts -> opts { optInputFile = file }))
+         "Input file"
+  ]
+
+main = do
+  args <- getArgs
+  let (opts, nonOpts, errors) = getOpt Permute options args
+  case errors of
+    [] -> print opts
+    _ -> error (concat errors)
+```
+
+यहां हमने `Options` डेटा टाइप बनाया और उसम

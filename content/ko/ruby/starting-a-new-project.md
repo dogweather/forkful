@@ -1,32 +1,37 @@
 ---
-title:    "Ruby: 새로운 프로젝트 시작하기"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/starting-a-new-project.md"
+title:                "Ruby: 새 프로젝트 시작하기"
+programming_language: "Ruby"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 시작하나요?
-새로운 프로젝트를 시작하는 이유는 무엇일까요? 새로운 기술을 배우는 것, 새로운 도전을 경험하는 것, 혹은 단순히 새로운 아이디어를 구현하는 것을 목적으로 할 수 있습니다. 하지만 무엇보다도, 새로운 프로젝트를 시작하면서 새로운 것을 배우고, 더 나은 개발자로 성장할 수 있는 기회가 생깁니다.
+## 왜
+새로운 프로젝트를 시작하는 것은 현대 프로그래밍에서 중요한 부분입니다. 새로운 스킬을 배우고, 문제를 해결하고, 큰 아이디어를 실현하는 좋은 기회입니다.
 
 ## 시작하는 방법
-새로운 프로젝트를 시작하기 전에는 무엇보다도 목표를 정하는 것이 중요합니다. 이후에는 해당 목표를 달성하기 위해 필요한 도구와 기술을 선택하고, 프로젝트의 구조를 계획하는 것이 좋습니다. 예를 들어, 새로운 웹 애플리케이션을 만든다면 Ruby on Rails 프레임워크를 사용하여 개발할 수 있습니다. 아래는 간단한 예제 코드입니다.
-
 ```Ruby
-# 간단한 웹 애플리케이션 예제
-require 'sinatra'
-get '/' do
-  "안녕하세요! 새로운 프로젝트를 시작하세요!"
+# 새로운 프로젝트 시작하기
+def new_project(name)
+  puts "새로운 프로젝트 '#{name}'을(를) 시작합니다!"
 end
+
+new_project("루비 프로그래밍 블로그 포스트")
+
+# 결과: 새로운 프로젝트 '루비 프로그래밍 블로그 포스트'을(를) 시작합니다!
 ```
 
-위 코드를 실행하면, `localhost:4567`에 접속하여 "안녕하세요! 새로운 프로젝트를 시작하세요!"라는 메시지를 볼 수 있습니다. 이제 이 예제 코드를 기반으로 원하는 기능을 추가하고, 새로운 프로젝트를 완성해보세요!
+새로운 프로젝트를 시작하는 가장 기본적인 방법은 함수를 만드는 것입니다. 이 함수는 사용자가 입력한 이름으로 새로운 프로젝트를 생성합니다. 다양한 파라미터를 추가하여 더욱 유연하게 프로젝트를 시작할 수도 있습니다.
 
-## 깊게 들어가기
-새로운 프로젝트를 시작하기 전에, 다른 개발자들이 어떻게 프로젝트를 시작하는지, 어떤 기술을 사용하고 있는지, 어떤 문제들을 해결해나가는지 살펴보는 것이 도움이 됩니다. 여러분의 프로젝트를 좀 더 나은 방향으로 이끌어줄 수 있는 아이디어나 팁을 얻을 수 있을 것입니다. 또한, 새로운 개발도구나 기술을 배우는 것도 결코 부담되지 않을 것입니다. 그리고 이러한 배운 지식들을 이후 프로젝트에 응용할 수 있을 것입니다.
+## 깊이 파고들기
+새로운 프로젝트를 시작할 때 유용한 팁 몇 가지를 알려드리겠습니다. 첫째, 최대한 간단하게 시작하세요. 무엇보다도 동작하는 작은 프로그램을 만드는 것이 중요합니다. 또한, 이 프로그램을 나중에 확장하고 발전시킬 수 있도록 코드를 구성하는 것이 좋습니다. 둘째, 적극적으로 구글링을 활용하세요. 대부분의 프로그래밍 문제는 이미 누군가 해결했을 가능성이 큽니다. 마지막으로, 자신만의 스타일을 만들어서 사용하는 것도 중요합니다. 다른 사람과 동일한 방식으로 코딩하는 것보다 자신만의 스타일을 만들어가는 것이 좋습니다.
 
-## 참고 링크
-- [Ruby on Rails 가이드](https://guides.rubyonrails.org/getting_started.html)
-- [웹 개발을 위한 Ruby on Rails](https://zdnet.co.kr/view/?no=20150508151144)
-- [Ruby와 Ruby on Rails 개발에 대한 대략적인 이해](https://brunch.co.kr/@jm9964/5)
-- [Ruby on Rails 철저 입문서](http://www.yes24.com/Product/Goods/62568728#TabCs
+## 더 알아보기
+보다 많은 레퍼런스와 튜토리얼을 보고 싶다면 아래 링크를 참고하세요!
+
+### 관련 자료
+- "Ruby on Rails 튜토리얼" (https://www.railstutorial.org/)
+- "Ruby 프로그래밍 가이드" (https://www.ruby-lang.org/ko/documentation/)
+- "Git과 GitHub을 활용한 협업 및 버전 관리 방법" (https://backlog.com/git-tutorial/kr/)
+- "이클립스로 Ruby 프로그래밍 하기" (https://www.vogella.com/tutorials/Ruby/article.html)

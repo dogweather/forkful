@@ -1,33 +1,37 @@
 ---
-title:    "Fish Shell: 「テストの書き方」"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/writing-tests.md"
+title:                "Fish Shell: テストの書き方"
+programming_language: "Fish Shell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+## なぜテストコードを書くか？
 
-テストを書くことは、コードの品質を保証し、バグを見つけるのに役立ちます。また、将来の変更に対応する際にも役立ちます。
+テストコードを書くことには、いくつかの利点があります。最も重要なのは、コードの品質を向上させることです。テストコードを書くことで、コードの動作に自信を持つことができ、バグやエラーを早期に発見することができます。また、コードを改善する際にもテストコードが役立ちます。テストコードを書くことで、コードの安定性を確保し、長期的なメンテナンスを容易にすることができます。
 
-## テストの書き方
+## テストコードの書き方
 
-```Fish Shell
-# Example test case
-@test "Addition test"  # テストケースの説明
-set result (math 2 + 2)  # テストするコード
-# 期待される出力と実際の出力を比較
-expect $result -eq 4
+テストコードの書き方は簡単です。まず、```Fish Shell ... ```という形式でコードブロックを作成します。その中にテストしたいコードを書き、アサーションを使ってテストする値や結果を確認します。例えば、以下のようなコードを書くことができます。
+
+```
+Fish Shell: test '1 + 1 = 2' 'expr 1 + 1' = 2
 ```
 
-上記の例では、additionのテストケースを作成しています。まず、テストケースに説明を書きます。次に、テストしたいコードを書きます。最後に、期待される結果と実際の結果を比較します。
+このコードでは、```expr 1 + 1```というコマンドの結果が2であることをテストしています。もしこのアサーションが成立しない場合、テストは失敗となります。
 
-## テストの詳細
+## テストコードの詳細
 
-テストを書くには、まずテストするコードについて十分に理解する必要があります。テストケースを作成する際には、様々なパターンやエラーを想定し、それに対する期待される結果を設定することが重要です。また、テストケースを書く際には、コードのカバレッジを考慮することも重要です。つまり、すべてのコードの分岐をテストすることで、コードの正確性を保証することができます。
+テストコードを書く際には、いくつかのテクニックがあります。まずはテストケースをカバーすることが重要です。これは、あらゆる入力に対して、想定通りの結果が得られることを確認することを意味します。また、テストコードを書く際には、コードの可読性や保守性も考慮する必要があります。テストがわかりやすく書かれていなければ、後でテストを追加したり変更したりするのが難しくなってしまいます。
 
-## さらに読む
+## 参考資料
 
-[Fish Shell の公式ドキュメント](https://fishshell.com/docs/current/index.html)  
-[Fish Shell のテストケース作成のベストプラクティス](https://github.com/fish-shell/fish-shell/wiki/Best-practices-for-testcases)  
-[Fish Shell のチュートリアル](https://github.com/fish-shell/fish-shell/wiki/Tutorial)
+- [Fish Shellの公式ドキュメント](https://fishshell.com/docs/current/)
+- [MinGhuang's Fish Shell Blog](https://blog.minghuang.me/fish2test-test-your-bash-fish-functions/)
+
+## 参考になるリンク
+
+- [テスト駆動開発(TDD)とは？メリットやデメリットを解説](https://www.sejuku.net/blog/31510)
+- [テストファースト(TF)開発でソフトウェア開発の品質を向上させる](https://www.jyukusirou1.com/entry/2018/09/02/040959)
+- [テストカバレッジとは？意味や目的、測定方法を解説](https://article.uncolormatter.com/technology/coverage)

@@ -1,51 +1,40 @@
 ---
-title:    "Clojure: Sammenligning av to datoer"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/comparing-two-dates.md"
+title:                "Clojure: Sammenligning av to datoer"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+"## Hvorfor
 
-Sammenligning av to datoer er en vanlig oppgave i programmering, spesielt i Clojure. Det kan være nyttig for å identifisere forskjeller mellom to datoer, eller for å sortere en liste av datoer i kronologisk rekkefølge.
+Så, du lurer på hvorfor man ville sammenligne to datoer? Vel, det er flere grunner til det. Kanskje du vil sortere en liste med datoer i stigende rekkefølge, eller kanskje du vil finne ut hvor lang tid det er mellom to hendelser. Uansett årsak, å kunne sammenligne datoer er en viktig ferdighet å ha i din Clojure-programmeringsverktøykasse.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å sammenligne to datoer i Clojure, kan du bruke funksjonen `compare`. Denne funksjonen tar inn to datoer og returnerer en numerisk verdi som indikerer forholdet mellom dem.
-
-```Clojure
-(compare (java.util.Date. 2021 12 15) (java.util.Date. 2021 12 10))
-```
-
-Dette vil gi en output på `1`, som betyr at den første datoen kommer etter den andre. Hvis den første datoen hadde vært tidligere enn den andre, ville output vært `-1`, og hvis de to datoene er like, ville output vært `0`.
-
-Du kan også bruke funksjonen `before?` og `after?` for å sjekke om en dato er før eller etter en annen.
+Det første trinnet for å sammenligne to datoer er å sørge for at de er i et format som Clojure kan forstå. Dette kan gjøres ved å bruke funksjonen `java.util.Date` som konverterer en streng til en datotypen. Her er et eksempel på hvordan du kan sammenligne to datoer og få en sann eller falsk utgang:
 
 ```Clojure
-(before? (java.util.Date. 2020 5 10) (java.util.Date. 2021 5 10))
+(def dato1 (java.util.Date. "2021-08-15"))
+(def dato2 (java.util.Date. "2021-08-20"))
+(println (<= dato1 dato2))
 ```
 
-Dette vil returnere `true`, siden den første datoen kommer før den andre.
-
-En annen nyttig funksjon er `days-between`, som returnerer antall dager mellom to datoer.
-
-```Clojure
-(days-between (java.util.Date. 2021 5 1) (java.util.Date. 2021 5 10))
-```
-
-Dette vil gi en output på `9`.
+I dette tilfellet vil utgangen bli "true" siden dato2 er etter dato1. Hvis du ønsker å sammenligne datoer for likhet, kan du bruke funksjonen `==`.
 
 ## Dypdykk
 
-Når du sammenligner to datoer, er det viktig å huske på at tidsforskjellen påvirker resultatet. For eksempel, hvis en dato har en nøyaktighet på bare dager, vil den ignorere forskjellen i tid på to datoer som har samme dag.
+Når du sammenligner datoer, er det viktig å være klar over at det også er flere underliggende faktorer som kan påvirke resultatet. For eksempel, hvis du sammenligner datoer med tidsangivelser, må du sørge for at tiden er inkludert i sammenligningen for nøyaktighet. En annen ting å vurdere er at noen tidssoner kan ha forskjellig tid for samme dato, så du må være forsiktig når du sammenligner over ulike tidszoner.
 
-Det er også viktig å være oppmerksom på hvilken type dato du jobber med. I Clojure har vi forskjellige datatyper for datoer, som `java.util.Date` og `java.time.LocalDate`, og disse kan ha forskjellige funksjoner og egenskaper for sammenligning.
+En annen nyttig funksjon i Clojure for å håndtere datoer er `java.util.Calendar` som lar deg lage en kalender for en bestemt dato og deretter bruke funksjoner som `getTime()` for å få frem tidspunkter og `get()` for å hente spesifikk informasjon om datoen.
 
-En annen ting å huske på er at datoer kan være utfordrende å håndtere på grunn av forskjellige formater og tidszoner. Det er viktig å ha en god forståelse av hvordan datoer fungerer i Clojure, og å bruke de riktige funksjonene for å få nøyaktige resultater.
+## Se også
 
-## Se Også
+Her er noen linker som kan være nyttige for å lære mer om å sammenligne datoer i Clojure:
 
-- [Offisiell Clojure Dokumentasjon](https://clojure.org/)
-- [Clojure Datatypes Cheat Sheet](https://clojure.org/guides/learn/functions#_useful_functions_on_core_data_structures)
-- [Clojure Date and Time Library](https://github.com/clj-time/clj-time)
+- Offisiell Clojure dokumentasjon for å jobbe med datoer: https://clojure.github.io/java.time-java-time/ 
+
+- "Working with Dates and Times in Clojure" av Alex Miller: http://blog.cognitect.com/blog/2016/12/1/clojure-dates 
+
+- En diskusjon om tidszoner og datoer i Clojure: https://stackoverflow.com/questions/14416468/converting-java-util-date-to-java-time-localdate#14435763

@@ -1,43 +1,44 @@
 ---
-title:    "Gleam recipe: Calculating a date in the future or past"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/calculating-a-date-in-the-future-or-past.md"
+title:                "Gleam recipe: Calculating a date in the future or past"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Calculating dates in the future or past is a crucial aspect of many programming applications. With Gleam, it becomes even easier and more efficient to perform such calculations, resulting in smooth and error-free date processing for your projects.
+
+Calculating dates in the future or past is a common task in programming. It allows for precise scheduling and time management, making it a useful skill for any developer.
 
 ## How To
-To calculate a date in the future or past, we can use the `add_days` function provided by the builtin `Time` module in Gleam. Let's take a look at an example:
+
+To calculate a date in the future or past in Gleam, we will use the `Date` module. First, we need to import the module into our program:
 
 ```Gleam
-// Import the Time module
-const Time = import gleam/time
-
-// Calculate a date 3 days from now
-let futureDate = Time.add_days(Time.now(), 3)
+import gleam/date
 ```
 
-The `add_days` function takes two arguments - the starting date and the number of days to add. It returns a new date object with the specified number of days added. In the above example, we used `Time.now()` to get the current date and time as the starting point.
-
-We can also go back in time by passing a negative number as the second argument. For example:
+Next, we can use the `add_days` or `subtract_days` functions to add or subtract a specified number of days from a given date:
 
 ```Gleam
-// Calculate a date 2 days ago
-let pastDate = Time.add_days(Time.now(), -2)
+let date = date.from_gregorian(2020, 10, 1)
+let future_date = date.add_days(10)
+let past_date = date.subtract_days(5)
 ```
 
-Additionally, you can pass different time intervals such as hours, minutes, or seconds instead of days, to perform more specific calculations. This gives you greater flexibility in handling date and time data in your projects.
+We can also use the `add_months` or `subtract_months` functions to add or subtract a specified number of months from a date, and the `add_years` or `subtract_years` functions to add or subtract a specified number of years.
+
+For more precise control, we can use the `add_duration` and `subtract_duration` functions to add or subtract a specific duration, such as hours, minutes, or seconds, from a given date.
 
 ## Deep Dive
-Behind the scenes, Gleam uses the `DateTime` struct to represent dates and times. The `add_days` function works by converting the input date into a `DateTime` struct, adding or subtracting the specified number of days, and then converting the result back into a date object.
 
-It's also worth noting that the `Time` module provides various other functions for manipulating dates and times, such as `add_seconds`, `add_hours`, and `add_minutes`, to name a few. Using these functions, you can perform more complex date calculations with ease.
+When calculating a date in the future or past, it's important to consider things like leap years and daylight saving time. In Gleam, the `Date` module handles these details for us, ensuring accurate calculations.
+
+Additionally, the `from_gregorian` function used above also takes into account time zones, making it possible to calculate dates in a specific time zone if needed.
 
 ## See Also
-- Gleam's official documentation on date and time calculations: [https://gleam.run/documentation/guides/time.html](https://gleam.run/documentation/guides/time.html)
-- A tutorial on working with dates and times in Gleam: [https://dev.to/gleamlang/working-with-dates-and-times-in-gleam-1e2e](https://dev.to/gleamlang/working-with-dates-and-times-in-gleam-1e2e)
 
-Happy coding!
+- [Gleam documentation on date module](https://gleam.run/modules/date.html)
+- [Examples of date calculations in Gleam](https://github.com/gleam-lang/examples/tree/master/date)
+- [Gleam community forum](https://forum.gleam.run/)

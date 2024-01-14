@@ -1,42 +1,42 @@
 ---
-title:    "Gleam: Generazione di numeri casuali"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/generating-random-numbers.md"
+title:                "Gleam: Generazione di numeri casuali"
+programming_language: "Gleam"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
-Generare numeri casuali è una funzionalità importante per molti programmi. Potresti voler simulare processi casuali o creare giochi con elementi casuali. In ogni caso, la generazione di numeri casuali è uno strumento fondamentale per diversi scenari di programmazione.
+# Perché
 
-## Come Fare
-Per generare numeri casuali in Gleam, puoi utilizzare la libreria standard `random`. Per prima cosa, dovrai importare la libreria all'inizio del tuo file di codice:
+Generare numeri casuali è essenziale per molti algoritmi e applicazioni, come giochi, crittografia e simulazioni. È importante avere una conoscenza di base di come generare numeri casuali per comprendere meglio il funzionamento di queste applicazioni.
 
-```
-use random
-```
+## Come fare
 
-Quindi, puoi utilizzare la funzione `int` per generare un numero intero casuale all'interno di un determinato intervallo. Ad esempio, se volessi generare un numero tra 1 e 10, puoi usare il seguente codice:
+Per generare numeri casuali in Gleam, possiamo utilizzare il modulo `random` che offre una varietà di funzioni per generare numeri casuali in diversi formati.
 
-```
-let random_number = random.int(1, 10)
-```
+```Gleam
+import random
 
-Puoi anche utilizzare la funzione `float` per generare un numero decimale casuale. Ad esempio, se volessi generare un numero tra 0 e 1, puoi usare il seguente codice:
-
-```
-let random_float = random.float(0.0, 1.0)
+// Genera un numero intero casuale compreso tra 0 e 10 inclusi
+let random_int = random.int_uniform(0, 10)
 ```
 
-Infine, se vuoi generare una sequenza di numeri casuali, puoi utilizzare la funzione `generate` fornendo l'intervallo e il numero desiderato di numeri da generare. Ad esempio, se volessi generare una lista di 5 numeri casuali compresi tra 1 e 100, puoi utilizzare il seguente codice:
+Possiamo anche utilizzare la funzione `float_uniform` per generare numeri casuali in formato floating point. Inoltre, possiamo specificare la semina (seed) per ottenere sempre lo stesso numero casuale in caso di dover riprodurre il nostro codice.
 
+```Gleam
+// Genera un numero floating point casuale compreso tra 0 e 1 inclusi
+let random_float = random.float_uniform(0.0, 1.0, seed=1234)
 ```
-let random_list = random.generate(1, 100, 5)
-```
+
+Ci sono anche diverse funzioni nel modulo `random` per generare numeri casuali con diversi distribuzioni, come la distribuzione normale o la distribuzione esponenziale.
 
 ## Approfondimento
-La generazione di numeri casuali è una tecnica fondamentale in programmazione, ma va utilizzata con cautela. Assicurati sempre di capire le proprietà dei numeri casuali generati e come potrebbero influenzare il tuo programma. Inoltre, ci sono altri modi per generare numeri casuali in Gleam, come utilizzando una seme di generazione specifica oppure utilizzando la libreria `crypto` per generare numeri crittograficamente sicuri.
 
-## Vedi Anche
-- [Documentazione ufficiale sulla libreria random di Gleam](https://gleam.run/libraries/random)
-- [Esempi di codice per la generazione di numeri casuali in Gleam](https://github.com/search?l=Gleam&q=random&type=Code)
+Nell'implementazione di Gleam, i numeri casuali sono generati utilizzando l'algoritmo Marsaglia, che è stato dimostrato essere un buon generatore di numeri casuali. Inoltre, è possibile utilizzare il modulo `rand` che offre più opzioni per la semina, inclusa la possibilità di utilizzare un generatore di numeri casuali esterno.
+
+# Vedi anche
+
+- Documentazione ufficiale di Gleam sul modulo `random`: https://gleam.run/modules/random/
+- Tutorial su come generare numeri casuali in Gleam: https://gleam.run/blog/generating-random-numbers-in-gleam/
+- Esempi di applicazioni in cui sono necessari numeri casuali: https://medium.com/@asminasarvin/random-numbers-importance-of-randomness-in-everyday-life-42205e5f181f

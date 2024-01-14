@@ -1,40 +1,49 @@
 ---
-title:    "PHP: Utilizando expresiones regulares"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/using-regular-expressions.md"
+title:                "PHP: Utilizando expresiones regulares"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué utilizar expresiones regulares en PHP?
+## Por qué utilizar expresiones regulares en PHP
 
-Las expresiones regulares son una herramienta muy útil para los programadores PHP ya que les permiten buscar y manipular patrones de texto de forma eficiente. Con ellas, es posible validar inputs de formularios, extraer información de cadenas de texto y realizar búsquedas avanzadas en bases de datos. Además, son muy versátiles y pueden ser utilizadas en una amplia gama de situaciones, desde simples scripts hasta aplicaciones web complejas.
+Las expresiones regulares son una herramienta muy útil en la programación, ya que permiten realizar búsquedas y manipulaciones de texto de manera eficiente y precisa. En PHP, las expresiones regulares se utilizan para buscar y reemplazar patrones en cadenas de texto, ahorrando tiempo y esfuerzo en el proceso de programación.
 
 ## Cómo utilizar expresiones regulares en PHP
 
-Para utilizar expresiones regulares en PHP, se utiliza la función `preg_match()` seguida por el patrón que se desea buscar entre dos barras inclinadas (`/`). Por ejemplo, si se quiere validar un correo electrónico, se puede utilizar el siguiente código:
+Para utilizar expresiones regulares en PHP, primero debemos definir el patrón que deseamos buscar. Luego, utilizamos la función `preg_match()` para buscar coincidencias en una cadena de texto. Por ejemplo:
 
 ```PHP
-<?php
-$email = "ejemplo@ejemplo.com";
-if (preg_match("/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/", $email)) {
-  echo "El correo electrónico es válido";
+$texto = "Hola, mi nombre es Juan y soy de España";
+if (preg_match("/Juan/", $texto)) {
+    echo "¡Encontré el nombre Juan en el texto!";
 } else {
-  echo "El correo electrónico no es válido";
+    echo "No se encontró el nombre Juan en el texto.";
 }
-?>
 ```
 
-En este código, el patrón utilizado entre las barras inclinadas se asegura de que el correo electrónico tenga un formato válido, siguiendo las reglas establecidas por el RFC 5322. Si se quiere extraer información específica de una cadena de texto, se puede utilizar la función `preg_match_all()` para buscar coincidencias múltiples.
+En este ejemplo, utilizamos la expresión regular `/Juan/` para buscar la palabra "Juan" dentro de la cadena de texto. Si se encuentra una coincidencia, se imprimirá el mensaje "¡Encontré el nombre Juan en el texto!", de lo contrario, se imprimirá "No se encontró el nombre Juan en el texto".
 
-## Profundizando en el uso de expresiones regulares en PHP
+Además de la función `preg_match()`, PHP también proporciona otras funciones útiles para trabajar con expresiones regulares, como `preg_replace()`, que permite reemplazar patrones en una cadena de texto, y `preg_split()`, que divide una cadena de texto en un array basado en un patrón dado.
 
-Las expresiones regulares en PHP son muy poderosas y tienen una serie de opciones y metacaracteres que permiten realizar búsquedas más precisas y complejas. Por ejemplo, se pueden utilizar grupos de captura para extraer información específica de una coincidencia, o utilizar los metacaracteres `\b` para buscar palabras completas y no partes de ellas.
+## Profundizando en el uso de expresiones regulares
 
-Además, se pueden utilizar modificadores de patrón para hacer que las búsquedas sean más sensibles a mayúsculas y minúsculas, o para buscar sólo al principio o al final de una cadena de texto. Es importante tener en cuenta que las expresiones regulares también pueden generar errores si no se utilizan correctamente, por lo que es recomendable tener un buen entendimiento de su funcionamiento antes de utilizarlas en proyectos importantes.
+Las expresiones regulares pueden ser una herramienta poderosa en la programación, pero también pueden ser un poco complicadas de entender al principio. Es importante tener en cuenta que las expresiones regulares son sensibles a mayúsculas y minúsculas, por lo que si solo deseamos buscar coincidencias independientemente de la capitalización, podemos utilizar la bandera `i` al final de la expresión regular (por ejemplo, `/Juan/i`).
 
-## También te puede interesar
+También podemos utilizar metacaracteres para hacer búsquedas más avanzadas. Algunos de los más comunes son:
 
-- [Documentación oficial de PHP sobre expresiones regulares](https://www.php.net/manual/es/book.pcre.php)
-- [Curso interactivo de expresiones regulares en PHP](https://regexone.com/references/php)
-- [Cheat Sheet de expresiones regulares en PHP](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- `.`: coincide con cualquier carácter excepto el salto de línea.
+- `*`: coincide con cero o más repeticiones del carácter anterior.
+- `+`: coincide con una o más repeticiones del carácter anterior.
+- `\d`: coincide con cualquier dígito del 0 al 9.
+- `\w`: coincide con cualquier carácter alfanumérico o guión bajo.
+
+Podemos combinar estos metacaracteres y utilizarlos junto con otros operadores para crear patrones más complejos.
+
+## Ver también
+
+- [Documentación de expresiones regulares de PHP](https://www.php.net/manual/es/book.pcre.php)
+- [Tutorial de expresiones regulares en PHP](https://www.w3schools.com/php/php_regex.asp)
+- [Expresiones regulares en PHP vs. JavaScript](https://stackify.com/regular-expressions-in-php-vs-javascript/)

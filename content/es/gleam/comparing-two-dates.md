@@ -1,38 +1,47 @@
 ---
-title:    "Gleam: Comparación de dos fechas"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/comparing-two-dates.md"
+title:                "Gleam: Comparando dos fechas"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué comparar dos fechas en Gleam?
+# ¿Por qué comparar dos fechas en Gleam?
 
-Comparar dos fechas es una tarea común en la programación, especialmente al trabajar con datos que tienen una componente temporal. Con Gleam, puedes realizar fácilmente esta comparación y obtener resultados precisos.
+ Comparar dos fechas es una tarea común en la programación, y en Gleam no es diferente. Al comparar dos fechas, podemos obtener información valiosa, como averiguar si una fecha es anterior o posterior a otra, o si tienen la misma fecha. En este artículo, exploraremos cómo realizar comparaciones de fechas en Gleam y profundizaremos en los detalles.
 
 ## Cómo hacerlo
 
-La comparación de dos fechas en Gleam se realiza utilizando el operador de comparación "==" entre dos valores de tipo Date. Veamos un ejemplo:
+Para comparar dos fechas en Gleam, podemos utilizar el módulo `Time.Date` que nos proporciona varias funciones útiles. Primero, necesitamos crear dos variables que contengan las fechas que queremos comparar, utilizando el formato `[año, mes, día]`. Por ejemplo, `fecha1 = [2019, 10, 17]` y `fecha2 = [2020, 5, 12]`. Luego, podemos utilizar la función `Date.compare` pasando como argumentos nuestras dos fechas para realizar la comparación. Esta función devuelve `Order.Less` si la primera fecha es anterior a la segunda, `Order.Equal` si son iguales y `Order.Greater` si la primera fecha es posterior a la segunda.
 
 ```Gleam
-let primeraFecha = Date.create(2021, 12, 1)
-let segundaFecha = Date.create(2021, 11, 15)
+import gleam/time/date
+fecha1 = [2019, 10, 17]
+fecha2 = [2020, 5, 12]
+comparacion = Time.Date.compare(fecha1, fecha2)
+```
 
-if primeraFecha == segundaFecha {
-  IO.print("Las dos fechas son iguales")
-} else {
-  IO.print("Las fechas son diferentes")
+El valor de `comparacion` sería `Order.Less` en este caso, ya que la primera fecha es anterior a la segunda. Podemos utilizar un `if` statement para hacer algo con este resultado, por ejemplo, imprimir un mensaje en la consola.
+
+```Gleam
+if comparacion == Order.Less {
+  Gleam.IO.print("La primera fecha es anterior a la segunda.")
 }
 ```
 
-El resultado de este código sería "Las fechas son diferentes", ya que las dos fechas no son la misma. También se pueden utilizar otros operadores de comparación como "<" o ">=" para realizar comparaciones basadas en la fecha y la hora.
+También podemos utilizar la función `Date.eq` para verificar si dos fechas son iguales. Al igual que `Date.compare`, esta función devuelve `true` si las fechas son iguales y `false` en caso contrario.
 
-## Profundizando
+## Profundizando en la comparación de fechas
 
-Gleam proporciona una variedad de funciones y métodos para trabajar con fechas, lo que te permite realizar operaciones más complejas. Por ejemplo, la función `Date.diff_in_days` se puede utilizar para calcular la diferencia en días entre dos fechas. Además, Gleam tiene un módulo llamado `Calendar` que proporciona funciones para trabajar con fechas y tiempos de manera más detallada. ¡Explora estas opciones y descubre cómo puedes utilizarlas en tus proyectos!
+Es importante tener en cuenta que cuando comparamos dos fechas en Gleam, estamos tratando con valores de tipo `Time.Date` y no con cadenas de texto. Esto significa que no podemos utilizar operadores de comparación como `>` o `<` directamente en nuestras fechas, ya que estos operadores solo funcionan con tipos de datos numéricos. En su lugar, debemos utilizar las funciones proporcionadas por el módulo `Time.Date`.
+
+También es importante tener en cuenta que las fechas en Gleam solo pueden ser comparadas si están en el mismo calendario. Por ejemplo, no podemos comparar una fecha en el calendario gregoriano con una fecha en el calendario lunar. Si necesitamos comparar fechas de diferentes calendarios, podemos utilizar la función `Date.to_universal_calendar` para convertir la fecha a un formato universal antes de realizar la comparación.
+
+En resumen, comparar dos fechas en Gleam puede brindarnos información valiosa sobre las mismas y nos permite tomar decisiones basadas en su relación. Pero es importante tener en cuenta los detalles y limitaciones mencionados anteriormente para asegurarnos de que nuestras comparaciones sean precisas.
 
 ## Ver también
 
-- [Documentación oficial de fecha y hora en Gleam](https://gleam.run/modules/date.html)
-- [Ejemplos de código para comparar fechas en Gleam](https://github.com/gleam-lang/gleam/blob/master/examples/dates.gleam)
-- [Tutorial sobre cómo trabajar con fechas en Gleam](https://gleam.run/tutorials/dates.html)
+- Documentación oficial del módulo `Time.Date` en Gleam: https://gleam.run/std/time.date.html
+- Ejemplos de código de comparación de fechas en Gleam: https://gist.github.com/GleamHub/477dd516dce495bec4d37c7a059e6b7f
+- Tutorial de Gleam en español: https://gleam.run/es/tour/

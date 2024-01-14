@@ -1,55 +1,51 @@
 ---
-title:    "Swift: Jämföra två datum"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/comparing-two-dates.md"
+title:                "Swift: Jämföring av två datum"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-När man skriver kod är det ofta nödvändigt att jämföra två datum. Det kan vara för att kontrollera om ett datum är större än ett annat, eller om de är lika. Att kunna göra detta korrekt är avgörande för att skapa robusta och tillförlitliga program. I denna blogginlägg kommer jag att gå igenom hur man jämför två datum på ett effektivt sätt med hjälp av Swift.
+Att jämföra två datum kan vara användbart för att få ut specifik information om tidsperioder eller för att kontrollera om en specifik händelse inträffat före eller efter en annan.
 
-## Så här gör du
+## Hur man gör det
 
-För att jämföra två datum i Swift, kommer vi att använda oss av Date-klassen. Vi kan skapa två datumobjekt med hjälp av Date-konstruktorn och sedan jämföra dem med hjälp av olika jämförelseoperatorer. Här är ett exempel på hur du jämför två datum för att se om de är lika:
+För att jämföra två datum i Swift, kan du använda metoden `compare()` som finns på `Date`-objektet. Nedan finns ett exempel på hur du kan använda denna metod för att jämföra två datum:
 
 ```Swift
 let datum1 = Date()
-let datum2 = Date(timeIntervalSinceNow: 3600) // Skapar ett datum som är en timme framåt i tiden från nu
+let datum2 = Date(timeIntervalSinceNow: -3600) // Skapar ett datum som är en timme tidigare än datum1
 
-if datum1 == datum2 {
-  print("Datumen är lika")
+if datum1.compare(datum2) == .orderedAscending {
+    print("Datum 1 är tidigare än datum 2")
+} else if datum1.compare(datum2) == .orderedDescending {
+    print("Datum 1 är senare än datum 2")
 } else {
-  print("Datumen är inte lika")
+    print("Datum 1 och datum 2 är samma")
 }
-```
-Output: Datumerna är inte lika
 
-Vi kan också använda oss av andra operatorer som till exempel > (större än) och < (mindre än) för att jämföra datum. Här är ett exempel:
+// Output: Datum 1 är senare än datum 2
+```
+
+Du kan också jämföra datum med hjälp av operatörer, exempelvis udig `>` och `<`:
 
 ```Swift
-let nyligen = Date()
-let ettÅrSedan = Date(timeIntervalSinceNow: -31536000) // Skapar ett datum som är ett år tillbaka i tiden från nu
-
-if nyligen > ettÅrSedan {
-  print("Datumet är senare än ett år sedan")
+if datum1 > datum2 {
+    print("Datum 1 är senare än datum 2")
 }
 ```
-Output: Datumet är senare än ett år sedan
 
 ## Djupdykning
 
-När vi jämför datum i Swift, används inte bara datumvärdet utan även tidszonen och kalenderinställningar. Det är därför viktigt att vara medveten om dessa faktorer när man utför jämförelser. Om man till exempel vill jämföra två datum på olika tidszoner kan man först konvertera dem till UTC innan man jämför dem för att få ett korrekt resultat.
+När du jämför datum med Swift, måste du vara medveten om att jämförelsen görs på millisekundsnivå. Det betyder att även om två datum kanske verkar samma på ögat, så kan en millisekund skilja dem åt. För att undvika detta kan du använda metoden `timeIntervalSince(_:)` som ger dig en tidsperiod i sekunder mellan två datum istället för att bara jämföra dem.
 
-Det finns även andra fördjupade koncept som kan användas när man jämför datum, som till exempel DateFormatter och Calendar-klassen. Calendar-klassen erbjuder möjligheten att utföra mer avancerade jämförelser som att se om två datum är på samma dag, vecka eller månad.
+En annan viktig sak att komma ihåg när man jämför datum är tidszoner och kalendrar. En del länder använder en annan kalender än den gregorianska, vilket kan påverka hur datum visas och jämförs. Det är därför viktigt att du är medveten om vilken tidszon och kalender som används för att få korrekta jämförelser mellan datum.
 
 ## Se även
 
-Här är några användbara resurser för att lära dig mer om att jämföra datum i Swift:
-
-- [Officiell Swift dokumentation om Date](https://developer.apple.com/documentation/swift/date)
-- [Tutorial om att jämföra datum i Swift på raywenderlich.com](https://www.raywenderlich.com/767-how-to-compare-dates-in-swift)
-- [En artikel om hantering av tidszoner och datum i Swift](https://theswiftdev.com/2017/10/03/how-to-handle-time-zones-dates-in-swift/)
-
-Förhoppningsvis har detta blogginlägg hjälpt dig att förstå hur man jämför datum i Swift på ett enkelt och effektivt sätt. Lycka till med dina kodprojekt!
+- [Apple Developer - Date](https://developer.apple.com/documentation/foundation/date)
+- [Hacking with Swift - How to compare dates the Swift way](https://www.hackingwithswift.com/example-code/system/how-to-compare-dates-the-swift-way)
+- [Swift Examples - Dates](https://swiftexamples.com/dates/)

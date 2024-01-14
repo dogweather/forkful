@@ -1,50 +1,57 @@
 ---
-title:    "Kotlin: कम्प्यूटर प्रोग्रामिंग में यादृच्छिक संख्याओं का उत्पादन"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/generating-random-numbers.md"
+title:                "Kotlin: यादृच्छिक संख्याएं उत्पन्न करना"
+programming_language: "Kotlin"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Kyu
+## Kyun
 
-Kisi ke hirdye me aksar ek sawaal uthhta hai, ki "hum random numbers kyu generate karte hai?" Ek simple jawab hai ki random numbers hume apne code me unpredictability add karne ke liye madad karte hai. Yeh humari programs ko impreseed banata hai aur hume alag alag results deta hai har baar jab hum code ko chalate hai.
+Random numbers kyun banane ka ek aasan tarika hai apne code mein unpredictability aur variability add karne ka. Isse aap apne code ko interesting aur versatile bana sakte hain.
 
 ## Kaise Kare
 
-Random numbers generate karne ke liye Kotlin me hume ek built-in function "random()" ka use karna hota hai. Is function ko use karke hume ek random number milta hai jo ki double data type me hota hai. Hum is function ko use kar sakte hai integers, floating point numbers ya kisi bhi number system ki values generate karne ke liye.
+Random numbers banane ke liye, Kotlin mein `Random` class ka istemaal kiya jaata hai. Iske liye aap ye steps follow kar sakte hain:
+
+1. `Random()` constructor ke saath ek object create karein.
+2. `nextInt()` function ka use karke ek random integer generate karein.
+3. Agar aap chahte hain ki random numbers ek specific range ke andar hi generate ho, toh `nextInt(n)` function ka use karein jahaan `n` aapke desired range ka ek number hai.
+4. Agar aap chahte hain ki random numbers decimal values mein generate ho, toh `nextDouble()` function ka use kar sakte hain.
+
+For example, agar hum chahte hain ki 1 se 10 ke beech random integers generate ho, toh hum ye code likh sakte hain:
 
 ```Kotlin
-// Randomly generate a number between 1 to 10
-val randomNum = (1..10).random()
-println("Random number: $randomNum")
-
-// Output:
-// Random number: 7
+val random = Random()
+val num = random.nextInt(10) + 1
+println(num)
 ```
+Iske output ke examples hain: 4, 8, 2, 10, etc.
 
-Hum agar chahte hai ki har baar jab hum code ko run kare toh hume ek alag random number mile toh hum "seed" property ka use kar sakte hai. Seed property hume ek seed value generate karta hai jise hum phir se use kar sakte hai code ko chalane ke baad bhi.
+Agar hum chahte hain ki random decimal values generate ho, toh hum ye code likh sakte hain:
 
 ```Kotlin
-// Generate a random number using a seed
-val seed = (1..100).random()
-val randomNum = Random(seed).nextInt(10) + 1 // Generates a number between 1 to 10
-println("Random number: $randomNum")
-
-// Output:
-// Random number: 5
+val random = Random()
+val num = random.nextDouble()
+println(num)
 ```
+Output ke examples hain: 0.247593550982, 0.7658193592, 0.0512987413, etc.
 
-## Gehri Khudai
+## Gehraai Mein Jhaarnaa
 
-Random numbers generate karne ke liye hume samajhna hoga ki seed property kaise kaam karta hai. Seed property hume ek starting point deta hai jise hum use karke code me randomness lekar aate hai. Seed property ka use hume seed values dene me madad karta hai jaise current time, user input, ya koi bhi fixed value.
+Random numbers generate karne ke liye, `Random` class ke alawa bhi kuch aur methods hain jinhein aap istemaal kar sakte hain. Kuch examples hain:
 
-Seed property ka use hume code me predictability se bachata hai. Agar hum ek baar ek seed value use karte hai toh hum hai predict kar sakte hai ki next time bhi wohi value generate hogi. Lekin har baar agar hum alag alag seed values use kare toh hume unpredictable results milenge.
+1. `nextFloat()` function aapko random floating point numbers generate karne mein help karega.
+2. `nextBoolean()` function aapko true ya false values random tarike se generate karne mein help karega.
+3. Hum `Seed` concept se bhi eksath random numbers generate kar sakte hain. Seed basically ek starting point hota hai jisein computer seed kiya jaata hai aur woh uss point se random numbers generate karta hai. Iske liye aap `setSeed()` function ka use kar sakte hain aur seed ko specify kar sakte hain.
 
-# Dekhe Bhi
+## Dekhiye Bhi
 
-Aap chahte hai ki apke random number generation skills ko aur behtar banaye? Niche diye gaye links par click karke aur seekhe!
+### See Also
 
-- [Kotlin's built-in functions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/index.html)
-- [Random number generation techniques in Kotlin](https://www.baeldung.com/kotlin/random)
-- [Using the seed property in Kotlin](https://kotlinexpertise.com/kotlin-random/)
+- [Kotlin Random class documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-random/index.html)
+- [Random Number Generation in Kotlin](https://www.baeldung.com/kotlin/random)
+- [Using Random Numbers in Kotlin](https://medium.com/@abbasalom/using-random-numbers-in-kotlin-b645d0d535cb)
+
+Isse aapko random numbers generate karne mein koi problem nahi hogi. Ab aap apne code ko aur versatile bana sakte hain!

@@ -1,53 +1,47 @@
 ---
-title:    "PHP: Używanie wyrażeń regularnych"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/php/using-regular-expressions.md"
+title:                "PHP: Używanie wyrażeń regularnych"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
+Regularne wyrażenia są niezbędnym narzędziem w każdym języku programowania, a w PHP jest to szczególnie pomocne. Pozwalają na wyszukiwanie i manipulację tekstem, co jest niezwykle przydatne w wielu projektach. Dzięki nim można szybko i sprawnie przetwarzać duże ilości danych, co znacznie ułatwia pracę programistom.
 
-Każdy programista PHP powinien nauczyć się wykorzystywać wyrażenia regularne w swoim kodzie. Pozwalają one na precyzyjną manipulację ciągami znaków, co jest niezbędne w wielu projektach.
-
-## Jak używać wyrażeń regularnych w PHP
-
-Wyrażenia regularne są obsługiwane przez funkcje wbudowane w PHP, w tym funkcje `preg_match()`, `preg_replace()` i `preg_split()`. Wszystkie przyjmują trzy argumenty: wyrażenie regularne, ciąg znaków do sprawdzenia i opcje.
-
-Przykładowo, jeśli chcemy znaleźć wszystkie wystąpienia słowa "hello" w ciągu znaków, możemy użyć funkcji `preg_match()` w ten sposób:
+## Jak to zrobić
+Aby zacząć korzystać z regularnych wyrażeń w PHP, należy użyć funkcji `preg_match` lub `preg_replace`, które pozwalają na porównywanie wzorca z tekstem lub zamianę wybranego fragmentu tekstu na inny. Przykładowy kod wykorzystujący funkcję `preg_match` wygląda następująco:
 
 ```PHP
-$str = "Hello world! Witaj świecie!";
-if (preg_match("/hello/i", $str)) { // /i oznacza ignorowanie wielkości liter
-  echo "Znaleziono słowo hello!";
-} else {
-  echo "Nie znaleziono słowa hello.";
+$text = "Ten tekst zawiera numer telefonu: 123-456-789." 
+if (preg_match("/[0-9]{3}-[0-9]{3}-[0-9]{3}/", $text, $matches)){
+    echo "Numer telefonu: " . $matches[0];
 }
 ```
 
-To wywołanie funkcji sprawdzi, czy w ciągu znaków `$str` znajduje się wyrażenie regularne `hello`, zignorując wielkość liter. W tym przypadku zostanie wyświetlony komunikat "Znaleziono słowo hello!".
+Wynik działania powyższego kodu to:
+`Numer telefonu: 123-456-789`
 
-Można również zastosować wyrażenie regularne do zamiany części ciągu znaków, używając funkcji `preg_replace()`. Na przykład, jeśli chcemy zamienić wszystkie wystąpienia słowa "Cześć" na "Hello", możemy użyć tego kodu:
+Można również wykorzystać wyrażenia regularne do wykonywania bardziej zaawansowanych operacji, takich jak wyodrębnianie fragmentów tekstu lub zmiana jego formatu. Przykładowy kod z wykorzystaniem funkcji `preg_replace` wygląda następująco:
 
 ```PHP
-$str = "Cześć Maciek! Witaj w świecie programowania.";
-$newStr = preg_replace("/cześć/i", "Hello", $str);
-echo $newStr; // Wyświetli: Hello Maciek! Witaj w świecie programowania.
+$text = "Ten tekst będzie zmieniony na duże litery."
+$text = preg_replace("/tekst/", "napis", $text);
+echo strtoupper($text);
 ```
 
-## Głębsze zagadnienia dotyczące wyrażeń regularnych
+Wynik działania powyższego kodu to:
+`TEN NAPIS BĘDZIE ZMIENIONY NA DUŻE LITERY.`
 
-Korzystając z wyrażeń regularnych, można znacznie usprawnić przetwarzanie danych w aplikacjach PHP. Można na przykład użyć wyrażeń regularnych do:
+## Głębsza analiza
+W PHP istnieje wiele opcji i funkcji związanych z wyrażeniami regularnymi, ale najważniejszą rzeczą do zapamiętania jest to, że wzorzec musi być dokładnie dopasowany do tekstu, aby zadziałał. Wyrażenia regularne są również wrażliwe na wielkość liter, więc należy uważnie dopasowywać wzorzec, aby uzyskać pożądany efekt.
 
-- Weryfikacji poprawności adresu email lub numeru telefonu
-- Sprawdzania poprawności formatu daty
-- Wyszukiwania i zastępowania części tekstu
-- Dzielenia tekstu na mniejsze części
-
-Warto poświęcić więcej czasu na poznanie składni i możliwości wyrażeń regularnych, aby móc wykorzystać je w swoich projektach w pełni.
+Pamiętaj również, że w PHP istnieją różne symbole, które można użyć przy tworzeniu wzorca, na przykład `+` oznaczające, że można dopasować jeden lub więcej wystąpień danego znaku, lub `?` oznaczający, że dany znak jest opcjonalny. Dzięki temu można tworzyć bardzo szczegółowe i precyzyjne wzorce.
 
 ## Zobacz również
+Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych w PHP, polecam przeczytać następujące artykuły:
 
-- [Dokumentacja PHP na temat funkcji regulárních výrazů](https://www.php.net/manual/en/ref.pcre.php)
+- [Oficjalna dokumentacja PHP o wyrażeniach regularnych](https://www.php.net/manual/en/ref.pcre.php)
 - [Tutorial na temat wyrażeń regularnych w PHP](https://www.tutorialspoint.com/php/php_regular_expression.htm)
-- [Wyrażenia regularne w 10 minut](https://www.youtube.com/watch?v=EkluES9Rvak) - przydatny filmik dla początkujących programistów.
+- [Poradnik od PHP Academy](https://phpacademy.org/courses/regular-expressions-in-php)

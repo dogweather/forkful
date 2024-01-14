@@ -1,73 +1,44 @@
 ---
-title:    "Gleam: 读取命令行参数"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/reading-command-line-arguments.md"
+title:                "Gleam: 读取命令行参数"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-什么是命令行参数？为什么要阅读命令行参数？命令行参数是指在运行程序时通过命令行输入的各种设置和指令。通过阅读命令行参数，程序可以根据用户的需求来执行不同的操作，使得程序更加灵活和定制化。
+为什么：阅读命令行参数是一项重要的编程技能，它可以帮助你构建更强大的应用程序，同时提高你的技能水平。无论你是初学者还是有经验的开发者，掌握阅读命令行参数都是至关重要的。
 
-## 为什么
+如何进行：以下是一个使用Gleam语言编写的基本例子，它展示了如何读取和处理命令行参数，并输出到控制台。注意，你需要在终端中运行该程序，输入参数并按下回车键才能看到结果。
 
-阅读命令行参数可以让程序具有更强的可定制性，允许用户通过命令行输入不同的参数来改变程序的行为。这使得程序可以适应不同的需求和场景，提高程序的使用性和效率。
-
-## 如何
-
-要在Gleam中读取命令行参数，可以使用标准库中的`gleam_io`模块。首先，我们需要导入`gleam_io`模块，然后使用`gleam_io.arguments`函数来获取传入的命令行参数。代码示例如下：
-
-```
-use gleam_io
+```Gleam
+import gleam/io.Console
 
 fn main() {
-  arguments = gleam_io.arguments()
-
-  case arguments {
-    Ok(args) -> gleam_io.println("您输入的参数为：", args)
-    Err(err) -> gleam_io.println("出错了：", err)
-  }
+    args = Console.args
+    Console.print_line("你输入的参数是：")
+    Console.print_line(args)
 }
 ```
 
-输出示例（假设程序命名为`demo.gleam`）：
+深度挖掘：阅读命令行参数的最佳方法是使用标准库中的`gleam/io`模块。它提供了各种函数和方法来读取命令行参数，并进行必要的类型转换和格式化。你也可以自己编写函数来处理特定的参数格式，以满足你的需求。
 
-```
-$ gleam run demo.gleam --option1 --option2=value
-您输入的参数为：["--option1", "--option2=value"]
-```
+另外，你还可以探索如何处理错误或异常情况，例如处理无效的参数输入或缺少必要的参数。在这里，你可以使用`gleam/error`模块来捕获和处理这些异常，从而优化你的应用程序的健壮性。
 
-## 深入了解
+此外，如果你想进一步学习有关阅读命令行参数的知识，请查阅Gleam官方文档，并参考其他有关编程语言的相关资源，从中提取关键信息并将其应用到Gleam代码中。
 
-在Gleam中，命令行参数以字符串列表的形式存储在`gleam_io.arguments()`函数返回的结果中。如果需要解析参数的具体值，可以使用`gleam_parsec`模块中的函数来实现。例如，如果想要获取`--option2`参数的值，可以使用`gleam_parsec.option()`函数来解析此参数。代码示例如下：
+相关阅读：下面是一些有用的链接，帮助你更深入地了解如何使用Gleam语言读取和处理命令行参数。
 
-```
-use gleam_io
-use gleam_parsec
+- [Gleam官方文档](https://gleam.run/documentation/)
+- [官方Gleam库：gleam/io](https://gleam.run/documentation/standard_library/#gleam-io)
+- [Gleam示例仓库：命令行参数](https://github.com/gleam-lang/examples/tree/master/command-line-arguments)
 
-fn main() {
-  arguments = gleam_io.arguments()
+另外，你也可以在[Gleam社区版块](https://discourse.gleam.run)上与其他开发者交流，分享你的经验和问题，并从他们的回复中学习更多关于Gleam的知识。
 
-  case arguments {
-    Ok(args) -> {
-      case gleam_parsec.option("--option2", args) {
-        Ok(value) -> gleam_io.println("您输入的--option2参数的值为：", value)
-        Err(err) -> gleam_io.println("出错了：", err)
-      }
-    }
-    Err(err) -> gleam_io.println("出错了：", err)
-  }
-}
-```
+此文结束于：欢迎探索Gleam语言更多的特性，祝你编程愉快！ 
 
-输出示例（假设程序命名为`parse_option.gleam`）：
+## 参考链接：
 
-```
-$ gleam run parse_option.gleam --option1 --option2=value
-您输入的--option2参数的值为：value
-```
-
-## 参考链接
-
-- `gleam_io`标准库模块：https://gleam.run/stdlib/gleam_io.html
-- `gleam_parsec`标准库模块：https://gleam.run/stdlib/gleam_parsec.html
-- Gleam文档：https://gleam.run/
+- [官方Gleam教程：命令行参数](https://gleam.run/book/tutorials/command-line-arguments.html)
+- [使用Gleam读取命令行参数的实际案例](https://medium.com/@gleam/run-good-fast-how-i-use-gleam-to-write-cli-tools-d3d20707cf6f)
+- [Gleam社区版块](https://discourse.gleam.run)

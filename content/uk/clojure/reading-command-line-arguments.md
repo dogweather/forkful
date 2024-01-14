@@ -1,54 +1,58 @@
 ---
-title:    "Clojure: Читання аргументів командного рядка"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/reading-command-line-arguments.md"
+title:                "Clojure: Читання аргументів командного рядка"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Читання аргументів командного рядка може бути корисним для розробників, які хочуть створити програми з можливістю взаємодії з користувачем. Це дозволяє передавати дані або налаштування програми безпосередньо через командну строку.
+Програмування з використанням Clojure є досить популярним у широкому колі IT-спеціалістів. Одна з найбільш корисних функцій цієї мови - це можливість зчитувати аргументи командного рядка. Це дозволяє вам передавати параметри та дані у вашу програму під час її виконання, що зробить ваш код більш універсальним та адаптивним.
 
 ## Як
 
-```Clojure
-(defn read-cmd-args []
-    "Функція для зчитування аргументів командного рядка"
-    (let [cmd-args (rest *command-line-args*)]
-        (println "Аргументи командного рядка:" cmd-args)))
-
-(read-cmd-args)
-```
-
-Приклад входу: `lein run arg1 arg2`
-
-Вихід: `Аргументи командного рядка: (arg1 arg2)`
-
-## Глибоке занурення
-
-Для більш складних програм, можливо, буде потрібно зчитувати аргументи командного рядка як числа або булеві значення. Для цього можна використовувати функцію `parse-int` або `parse-bool` з програми `clojure.edn` для перетворення аргументів у відповідні типи даних.
+Для того, щоб зчитати аргументи командного рядка у Clojure, потрібно використати функцію `args` з модуля `clojure.core`, яка повертає список аргументів у вигляді рядка. Далі ви можете обробити цей список за допомогою звичайних функцій маніпулювання списками, таких як `map` або `filter`.
 
 ```Clojure
-(require '[clojure.edn :as edn])
+(ns my-program.core
+  (:gen-class))
 
-(defn read-cmd-args []
-    "Функція для зчитування аргументів командного рядка"
-    (let [cmd-args (rest *command-line-args*)
-          int-arg-1 (edn/parse-int (first cmd-args))
-          bool-arg-2 (if (= (second cmd-args) "true") (edn/parse-bool "true") (edn/parse-bool "false"))]
-        (println "Числовий аргумент:" int-arg-1)
-        (println "Булевий аргумент:" bool-arg-2)))
-
-(read-cmd-args)
+(defn -main [& args]
+  (let [arguments (rest args)] ; виключаємо перший елемент зі списку - назву програми
+    (println (str "Список аргументів: " arguments)) ; виводимо список аргументів
+    (println (str "Початок з класом: " (first arguments))) ; виводимо перший аргумент
+    (println (str "Третій аргумент: " (nth arguments 2))) ; виводимо третій аргумент
+  ) ; кінець let
+) ; кінець -main
 ```
 
-Приклад входу: `lein run 10 true`
+Приклад виклику програми: `java -jar my-program.jar "Hello" World "2021"`
 
-Вихід: `Числовий аргумент: 10` та `Булевий аргумент: true`
+Результат виконання програми:
 
-## Дивіться також
+`Список аргументів: (Hello World 2021)`
 
-- [The Clojure Programming Language](https://clojure.org/)
-- [Command-Line Arguments in Clojure - Baeldung](https://www.baeldung.com/clojure-command-line-arguments)
-- [Working with Command Line Arguments in Clojure - Mindful Dev Mag](https://mindfuldevmag.com/clojure/working-with-command-line-arguments-in-clojure/)
+`Початок з класом: Hello`
+
+`Третій аргумент: 2021`
+
+## Розглиблення
+
+Ще одним цікавим аспектом зчитування аргументів командного рядка є можливість використовувати додаткові бібліотеки для розширення функціональності. Наприклад, бібліотека `cli` дозволяє організувати більш зручне та елегантне читання аргументів з використанням спеціальних типів даних.
+
+```Clojure
+(ns my-program.core
+  (:gen-class)
+  (:require [clojure.tools.cli :refer [parse-opts]]))
+
+(defn -main [& args]
+  (let [[options flags rest-args] (parse-opts args [["-f" "--file" "Файл для обробки" :string] ; будуємо список для символу f (file)
+                                                   ["-n" "--number" "Кількість файлів" :int] ; будуємо список для символу n (number)
+                                                   ])]
+    (println "Параметри командного рядка:")
+    (println (str "Файл: " (:file options))) ; повертаємо значення параметру -f (--file)
+    (println (str "Кількість: " (:number options))) ; повертаємо значення параметру -n (--number)
+    (when (:help options) ; якщо задано флаг -h (--help), виводимо допомогу
+      (println "Допомога: Використання

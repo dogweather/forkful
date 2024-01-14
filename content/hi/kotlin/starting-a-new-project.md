@@ -1,39 +1,33 @@
 ---
-title:    "Kotlin: नई परियोजना शुरू करना।"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/starting-a-new-project.md"
+title:                "Kotlin: नया प्रोजेक्ट शुरू करना"
+programming_language: "Kotlin"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Kyun
+## क्यों
 
-Kisi bhi naye project ko shuru karne ka karan hai toh uska ek naya challenge lete hue apni coding skills aur knowledge ko improve karna hai.
+कोई नया प्रोजेक्ट शुरू करने से पहले हमें क्या उम्मीद है? अक्सर नए प्रोजेक्ट स्वोत्तेजक होते हैं लेकिन हमें कुछ विशेष कारणों से उन्हें शुरू करना चाहिए। यह आर्टिकल हमें बताएगा कि क्यों हमें एक नया प्रोजेक्ट शुरू करना चाहिए।
 
-# Kaise Karein
+## कैसे करें
+
+अब हम तैयार हैं एक नया प्रोजेक्ट शुरू करने के लिए। पहले हम एक "Hello World" उदाहरण बनाएंगे जो हमें शुरू करने में मदद करेगा। उदाहरण कोड़ और सम्पूर्ण आउटपुट कोड ब्लॉक "```Kotlin ... ```" में वर्णित किया गया है। हमारे ब्लॉग पोस्ट के प्रत्येक उदाहरण कोड समझने में आसानी होगी।
 
 ```Kotlin
+// हेलो वर्ल्ड को चालू करें
 fun main() {
-    System.out.println("Namaste Duniya!")
+    println("नमस्ते दुनिया!")
 }
+
+// आउटपुट: नमस्ते दुनिया!
 ```
 
-Is code se hum "Namaste Duniya!" ka output receive kar sakte hain, jo ki Hindi mein "Hello World!" ka saman hai. Is prakar ke chote chote code examples se hum apne project ka shuruwat kar sakte hain.
+## गहराई में जाएं
 
-```Kotlin
-fun calculateSum(a: Int, b: Int): Int {
-    return a + b
-}
-```
+हम अब देखेंगे कि एक नया प्रोजेक्ट शुरू करने के लिए हमें क्या जानना चाहिए। प्रोजेक्ट शुरू करने से पहले हमें एक योजना बनाने की जरूरत होती है और इस नए प्रोजेक्ट से क्या उम्मीद है। जानकारी के लिए, हमें अपने प्रोजेक्ट में उपयोग किए जाने वाले इंटरनेट पेज और संसाधनों के बारे में पढ़ना सुनिश्चित करना चाहिए।
 
-Ek aur udahran, jahan humne ek function banaya hai jo ki do integers ka sum calculate karta hai. Is tarah ke functions humare code ko modular aur easily readable banate hain.
+## देखें पड़ता हो
 
-# Gehri Jhaank
-
-Kisi bhi naye project ki shuruwat mei ek important step hai uske requirements aur expectations ko clear karna. Iske alawa, humein apne project ki scalability aur maintainability ka bhi dhyan rakhna chahiye. Code mei comments aur proper indentation ko follow karna bhi zaruri hai taaki humare code ko badhawa diya ja sake.
-
-# Dekhiye Bhi
-
-- [Official Kotlin Website](https://kotlinlang.org/)
-- [Kotlin Tutorials YouTube Playlist](https://www.youtube.com/playlist?list=PLBbgqtDgdc_TqzA-qXrjgTFMC_1onHE12)
-- [Kotlin Cheat Sheet](https://blog.kotlin-academy.com/free-kotlin-cheat-sheet-1137584290d?gi=bbe08e857474)
+"देखें पड़ता हो" से आप और अधिक गहराई में जा सकते हैं और नए प्रोजेक्ट शुरू करने से पहले संबंधित जानकारी प्राप्त कर स

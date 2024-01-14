@@ -1,93 +1,73 @@
 ---
-title:    "Ruby: 字符串连接"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/concatenating-strings.md"
+title:                "Ruby: 连接字符串"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+# 为什么：为什么要进行字符串串联
+在编程中，字符串是一种重要的数据类型，它们是由字符组成的序列，在Ruby中，我们可以使用“+”号来连接两个或多个字符串，将它们合并成一个新的字符串。这种串联操作在处理文本数据时非常常用，它可以让我们更容易地创建复杂的文本输出，比如日志记录、文件操作等等。
 
-为什么要学习Ruby编程？一种常见的技术是在字符串中连接其他字符串，这在许多不同的编程任务中都非常有用。在本文中，我们将深入探讨如何使用Ruby连接字符串以及为什么它是一个强大的编程技巧。
-
-# 如何使用
-
-连接字符串是指将多个字符串合并成一个字符串。这在编程中经常用于创建用户界面文本、生成数据报告以及搜索字符串匹配。让我们看一个简单的例子来了解如何在Ruby中连接字符串：
+## 如何：如何在Ruby中进行字符串串联
+在Ruby中，我们可以使用“+”号来连接两个字符串，但需要注意的是，被连接的字符串必须是同种数据类型。下面是一个简单的示例代码：
 
 ```Ruby
-  # 创建两个字符串变量
-  first_name = "张"
-  last_name = "三"
-
-  # 使用字符串插值语法连接变量
-  full_name = "#{first_name} #{last_name}"
-  puts full_name
+a = "Hello"
+b = "World"
+c = a + b
+puts c
+```
+输出结果为：
+```
+HelloWorld
 ```
 
-输出将会是：张三
-
-在这个例子中，我们使用了Ruby的字符串插值语法（#{}）来连接两个字符串变量，并通过puts方法将结果打印出来。你也可以使用简单的加号（+）来连接字符串：
+我们也可以使用`+=`的操作符来实现同样的功能，如下所示：
 
 ```Ruby
-  first_name = "张"
-  last_name = "三"
-
-  full_name = first_name + " " + last_name
-  puts full_name
+a = "Hello"
+a += "World"
+puts a
+```
+输出结果为：
+```
+HelloWorld
 ```
 
-输出同样是：张三
-
-另外，你也可以使用Ruby的concat方法来连接字符串，如下所示：
+此外，我们还可以使用`<<`操作符来追加字符串，如下所示：
 
 ```Ruby
-  first_name = "张"
-  last_name = "三"
-
-  full_name = first_name.concat(" ", last_name)
-  puts full_name
+a = "Hello"
+a << " "
+a << "World"
+puts a
+```
+输出结果为：
+```
+Hello World
 ```
 
-输出同样是：张三
-
-# 深入探讨
-
-除了连接简单的字符串，你也可以在Ruby中连接其他数据类型，如数字和布尔值。当你连接一个数字和一个字符串时，Ruby会将数字转换为字符串：
+需要注意的是，这三种方式都会改变原来的字符串，如果想保留原来的字符串不变，可以使用`+`创建一个新的字符串，如下所示：
 
 ```Ruby
-  # 创建一个数字变量
-  age = 25
-  puts "我今年" + age + "岁。"
+a = "Hello"
+b = "World"
+c = a + b
+puts a
+puts b
+```
+输出结果为：
+```
+Hello
+World
 ```
 
-输出将会是：我今年25岁。
+## 深入了解
+在之前的例子中，我们提到了字符串必须是同种数据类型才可以进行串联，那么什么是“同种数据类型”呢？在Ruby中，两个字符串被认为是同种数据类型的条件是它们的编码方式必须相同。比如，UTF-8和ASCII的编码方式是不同的，如果想要连接这两种编码方式的字符串，就需要先进行转换，否则会出现编码错误。另外，如果想要连接不同数据类型的内容，可以使用`.to_s`方法将其转换为字符串类型。
 
-当你连接布尔值时，Ruby会将其转换为字符串“true”或“false”：
-
-```Ruby
-  # 创建一个布尔值变量
-  is_ruby_fun = true
-  puts "学习Ruby是" + is_ruby_fun + "的。"
-```
-
-输出将会是：学习Ruby是true的。
-
-另外，你还可以使用Ruby的join方法来连接数组中的多个元素：
-
-```Ruby
-  # 创建一个包含几个动物的数组
-  animals = ["狗", "猫", "熊"]
-
-  # 使用join方法连接数组中的元素
-  puts "我最喜欢的动物是" + animals.join("，") + "。"
-```
-
-输出将会是：我最喜欢的动物是狗，猫，熊。
-
-除了以上提到的方法，Ruby还有许多其他的字符串连接技巧，如使用<<运算符、使用concat方法连接多个字符串等等。通过不断学习和练习，你将可以灵活地使用这些技巧来解决各种编程问题。
-
-＃＃见下文
-
-- [Ruby字符串连接方法](https://www.rubyguides.com/2011/07/ruby-string-concat-methods/)
-- [Ruby字符串插值语法](https://www.rubyguides.com/2019/02/ruby-string-interpolation/)
-- [Ruby字符串文档](https://ruby-doc.org/core-2.5.1/String.html)
+## 参考链接
+- [Ruby字符串文档](https://ruby-doc.org/core-3.0.0/String.html)
+- [Ruby编码文档](https://ruby-doc.org/core-3.0.0/Encoding.html)
+- [Ruby编码示例](https://stackoverflow.com/questions/2988035/how-can-i-declare-a-unicode-string-in-ruby-1-9)

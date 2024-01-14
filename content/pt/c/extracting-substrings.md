@@ -1,54 +1,59 @@
 ---
-title:    "C: Extração de subcadeias de caracteres"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/extracting-substrings.md"
+title:                "C: Extraindo substrings"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings é importante?
+## Por que extrair substrings em programação?
 
-Uma substring é uma parte de uma string maior. Em programação, é comum precisar extrair certas informações de uma string específica. Isso pode ser útil para fazer manipulações de dados ou para analisar informações em um determinado formato. Extrair substrings é uma tarefa comum em programação e pode ser muito útil em diversas situações.
+Ao escrever código em linguagem C, muitas vezes nos deparamos com a necessidade de extrair partes específicas de uma string. Isso pode ser útil em várias situações, como na validação de entradas do usuário ou na manipulação de dados em um banco de dados. Nesse sentido, a capacidade de extrair substrings é uma habilidade importante para os programadores.
 
-## Como extrair substrings em C
+## Como fazer isso em C?
 
-Em C, existem algumas funções que podem ser utilizadas para extrair substrings de uma string maior. A seguir, vamos ver alguns exemplos de código e sua saída correspondente.
+Extrair substrings em C é uma tarefa relativamente simples. Primeiro, é necessário ter uma string da qual você quer extrair a substring. Suponha que temos a seguinte string:
 
 ```C
-#include<stdio.h>
-
-int main() {
-    char str[] = "Programação em C";
-    char sub[5];
-    
-    // Extraindo os primeiros 5 caracteres da string
-    strncpy(sub, str, 5);
-    printf("A substring é: %s \n", sub);
-    
-    // Extraindo a parte da string iniciando na posição 7
-    char *ptr = str + 7;
-    printf("A substring é: %s \n", ptr);
-    
-    return 0;
-}
-
-```
-Saída:
-```
-A substring é: Progr
-A substring é: em C
+char str[] = "Extração de substrings em C";
 ```
 
-Nesse exemplo, estamos utilizando a função `strncpy()` para copiar os primeiros 5 caracteres da variável `str` para a variável `sub`. Também estamos utilizando a forma de ponteiro para extrair a parte da string iniciando na posição 7.
+Para extrair uma substring dessa string, é necessário especificar o índice de início e o tamanho da substring desejada. Por exemplo, se quisermos extrair a palavra "substrings", podemos fazer o seguinte:
 
-## Explorando mais sobre a extração de substrings
+```C
+char substring[10];
 
-Além da função `strncpy()`, existem outras funções que podem ser utilizadas para extrair substrings em C. Uma delas é a função `strtok()`, que pode ser utilizada para dividir uma string em várias partes, delimitadas por um caractere específico. Também é possível utilizar a função `strchr()`, que permite encontrar o primeiro caractere específico dentro de uma string e utilizar sua posição como ponto de início para extrair a substring.
+// Índice de início da substring
+int start = 14;
 
-A extração de substrings também é uma tarefa importante em expressões regulares, uma ferramenta poderosa para manipulação de strings. É possível utilizar funções como `regcomp()` e `regexec()` para encontrar padrões dentro de uma string e extrair as informações desejadas.
+// Tamanho da substring desejada
+int length = 10;
+
+// Usando a função strncpy para extrair a substring
+strncpy(substring, str + start, length);
+```
+
+Agora, a variável "substring" contém a substring "substrings". Podemos imprimir essa substring para verificar se ela foi extraída corretamente:
+
+```C
+printf("Substring: %s\n", substring);
+```
+
+O código acima produziria o seguinte resultado:
+
+```
+Substring: substrings
+```
+
+## Aprofundando-se na extração de substrings
+
+Além da função `strncpy`, C também possui outras funções que podem ser úteis na extração de substrings, como `strchr` e `strtok`. É importante entender como essas funções funcionam e em quais situações elas podem ser mais adequadas.
+
+Além disso, também é importante lembrar que, ao extrair substrings, devemos levar em consideração o tamanho da string original e do tamanho de substring desejado para evitar possíveis erros na execução do código.
 
 ## Veja também
 
-- [Tutoriais de C da DevMedia](https://www.devmedia.com.br/tutoriais/c/)
-- [Documentação do C na linguagem C](https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/built-in-types/string)
-- [Tutorial de expressões regulares em C](https://www.tutorialspoint.com/c_standard_library/c_function_regexec.htm)
+- [Referência de Strings em C](https://www.codingame.com/playgrounds/14213/string-handling-in-c)
+- [Documentação oficial da função strncpy](https://www.ibm.com/docs/en/zos/2.3.0?topic=functions-strncpy-store-string)
+- [Tutorial de programação em C](https://www.devmedia.com.br/c-tutorial/)

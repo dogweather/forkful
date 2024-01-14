@@ -1,48 +1,47 @@
 ---
-title:    "Java: भविष्य या अतीत में एक तारीख की गणना"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/calculating-a-date-in-the-future-or-past.md"
+title:                "Java: भविष्य या भूत की तिथि की गणना"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-दिनांक को भविष्य या भूत का गणना क्यों किया जाता है, इसका पता मतलब होगा।
+दिनांक की गणना आने या बीते हुए कुछ अतीत या भविष्य में होने वाली घटनाओं के संबंध में उपयोगी हो सकती है।
 
 ## कैसे करें
 
-यदि आप जावा में दिनांक को भविष्य या भूत के रूप में गणना करना चाहते हैं, तो आपको ```Java ... ``` कोड ब्लॉक में कोडिंग उदाहरण और नमूना आउटपुट के साथ आगे बढ़ना होगा।
+```Java
+import java.time.LocalDate;
 
-```java
-// वर्तमान दिनांक प्राप्त करें
+// एक साल बाद की तारीख की गणना करें
 LocalDate today = LocalDate.now();
+LocalDate nextYear = today.plusYears(1);
+System.out.println("आज से एक साल बाद की तारीख: " + nextYear);
 
-// भविष्य की तारीख का गणना करें, यहां हम 30 दिन बाद की तारीख प्राप्त कर रहे हैं
-LocalDate after30Days = today.plusDays(30);
+// पिछले साल की तारीख की गणना करें
+LocalDate lastYear = today.minusYears(1);
+System.out.println("आज से पिछले साल की तारीख: " + lastYear);
 
-// नमूना आउटपुट प्रिंट करें
-System.out.println("आज की तारीख: " + today);
-System.out.println("30 दिनों के बाद की तारीख: " + after30Days);
+// भविष्य के वालेंटाइन्स डे की तारीख की गणना करें
+LocalDate valentinesDay = LocalDate.of(2022, 2, 14);
+System.out.println("2022 में वालेन्टाइन्स डे की तारीख: " + valentinesDay);
 ```
 
 आउटपुट:
 
-```java
-आज की तारीख: 2021-05-17
-30 दिनों के बाद की तारीख: 2021-06-16
+```
+आज से एक साल बाद की तारीख: 2022-10-10
+आज से पिछले साल की तारीख: 2020-10-10
+2022 में वालेन्टाइन्स डे की तारीख: 2022-02-14
 ```
 
 ## गहराई में जाएं
 
-दिनांक को भविष्य या भूत का गणना करने के बारे में और गहराई से जानने के लिए, आपको यह जानना होगा कि जावा में दिनांक को कैसे जोड़ा जाता है और कैसे काम करता है। इसके अलावा, यह कैसे मानया जाता है कि खुले रेंज और बंद रेंज में फर्क क्या होता है और यह दिनांक को बदल सकता है। आगे बढ़ने से पहले हमें दिनांक के स्त्रोत को समझना भी जरूरी है।
+Java में तारीख की गणना करने के लिए `LocalDate` क्लास का उपयोग किया जाता है। इसके साथ हम अक्सर अतीत या भविष्य में एक विशिष्टता या ईवेंट की तारीख गणना करना चाहते हैं। Java में, `LocalDate` क्लास के साथ हम आसानी से इस गणना को कर सकते हैं। इसके अलावा, हम अन्य तारीख संबंधित कार्यों को भी कर सकते हैं जैसे कि तारीखों को मिलाना, तोड़ना, तारीखों को अनुमति देना आदि। इस तरह हमारे पास तारीखों को गणना और प्रबंधित करने के लिए शक्तिशाली एवं सरल टूल्स हैं।
 
-## नज़र्मंदित देखें
+## इससे जुड़े देखें
 
-[JavaDocs: LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
-
-[Java Tutorials: Date Time API](https://docs.oracle.com/javase/tutorial/datetime/overview/index.html)
-
-[Java8 के नवीनतम अद्यतन से जुड़े ट्यूटोरियल](https://www.javatpoint.com/java8)
-
-## देखा ज
+[Java LocalDate दस्तावेज़ीकरण](https://docs.oracle.com

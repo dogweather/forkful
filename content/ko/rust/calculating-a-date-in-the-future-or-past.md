@@ -1,60 +1,52 @@
 ---
-title:    "Rust: 미래나 과거의 날짜를 계산하기"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/calculating-a-date-in-the-future-or-past.md"
+title:                "Rust: 미래나 과거의 날짜 계산하기"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-날짜를 미래나 과거에 계산하는 것에 참여해야 하는 이유는 무엇일까요? 간단히 설명해보겠습니다.
+Rust 프로그래밍이 다른 언어와 비교하여 강력하고 안전한 이유 중 하나는 날짜 계산이 용이하기 때문입니다. 따라서 오늘은 Rust로 미래나 과거 날짜를 계산하는 방법에 대해 알아보겠습니다.
 
-우리는 삶에서 항상 시간과 날짜에 의존합니다. 예를 들어, 우리는 옷의 환불 기간을 계산하거나 예약한 여행의 출발 날짜를 확인합니다. 이러한 상황에서 우리가 다루는 날짜는 미래나 과거일 수도 있지만, 그 중 하나를 정확하게 계산해야 합니다.
+## 방법
 
-이러한 이유로 날짜를 계산하는 과정은 우리 삶에서 중요한 역할을 합니다. 이제는 이 작업을 Rust 프로그래밍으로 어떻게 할 수 있는지 알아보겠습니다.
-
-## 어떻게
-
-날짜를 계산하는 것은 프로그래밍에서 중요한 부분입니다. Rust는 이를 수행하는 강력한 기능을 제공합니다. 아래에는 Rust 코드 블록을 통해 예제와 결과를 보여드리겠습니다.
+다음은 날짜를 계산하는 방법에 대한 Rust 코드 예제입니다. 아래 코드 블록은 ```Rust ... ```로 시작해야 합니다.
 
 ```Rust
-use chrono::{Duration, Local, NaiveDate, NaiveDateTime};
+use chrono::{Duration, NaiveDate};
 
-// 오늘 기준 5일 후의 날짜 계산
-let today = Local::today();
-let five_days_later = today + Duration::days(5);
-println!("오늘은 {} 이고, 5일 후는 {} 입니다.", today, five_days_later);
+// 미래 날짜 계산
+let now = chrono::Utc::now().naive_utc();
+let future_date = now + Duration::days(30);
 
-// 지정한 날짜의 1년전 날짜 계산
-let date = NaiveDate::from_ymd(2019, 4, 20);
-let one_year_ago = date - Duration::days(365);
-println!("2019년 4월 20일로부터 1년 전은 {} 입니다.", one_year_ago);
+// 과거 날짜 계산
+let past_date = now - Duration::weeks(3);
 
-// 현재 시간(시, 분, 초)과 30분 뒤 시간 계산
-let now = Local::now();
-let future_time = now + Duration::minutes(30);
-println!("현재 시간은 {} 이고 30분 뒤 시간은 {} 입니다.", now, future_time);
+// 출력
+println!("현재 날짜: {}", now);
+println!("미래 날짜: {}", future_date);
+println!("과거 날짜: {}", past_date);
 ```
 
-위 코드를 실행하면 다음과 같은 결과가 나옵니다.
+위 코드를 실행하면 다음과 같은 결과가 나타납니다.
 
 ```
-오늘은 2021-10-06 이고, 5일 후는 2021-10-11 입니다.
-2019년 4월 20일로부터 1년 전은 2018-04-20 입니다.
-현재 시간은 2021-10-06 12:00:00 이고 30분 뒤 시간은 2021-10-06 12:30:00 입니다.
+현재 날짜: 2021-08-01
+미래 날짜: 2021-08-31
+과거 날짜: 2021-07-11
 ```
 
-이러한 간단한 예제를 통해 Rust를 사용하여 날짜를 계산하는 방법을 배웠습니다. 그렇다면 이것보다 더 심화된 부분을 살펴보겠습니다.
+## 딥 다이브
 
-## 더 깊게 들어가기
+Rust에서 날짜를 계산하는 과정에서 사용되는 라이브러리는 `chrono`입니다. 이 라이브러리는 다양한 날짜 계산 함수와 유연한 시간대 및 달력 지원을 제공합니다. 이를 통해 다양한 시간 형식을 다루는데 매우 유용합니다.
 
-날짜 계산은 실제로는 매우 복잡한 작업입니다. 이 작업에서 우리는 윤년, 유닉스 타임스탬프, 여러 시간대 등 많은 요소들을 고려해야 합니다. Rust를 사용하여 이러한 요소들을 쉽게 처리할 수 있습니다.
+예를 들어, `Duration`을 이용해 날짜 간의 차이를 구할 수 있습니다. `NaiveDate`를 사용하면 특정한 날짜를 생성할 수 있습니다. 이 외에도 `DateTime`, `TimeZone` 등 다양한 기능을 제공하니 적극적으로 활용해보세요.
 
-예를 들어, 유닉스 타임스탬프는 1970년 1월 1일부터 시작되는 타임스탬프를 의미합니다. 이것을 Rust와 chrono 라이브러리를 사용해서 계산해보겠습니다.
+## 더 알아보기
 
-```Rust
-use chrono::{DateTime, NaiveDateTime, Utc};
-
-// 유닉스 타임스탬프로 10일 후 날짜 계산
-let timestamp = 163351200
+- [Rust 공식 문서: chrono 라이브러리](https://doc.rust-lang.org/chrono/)
+- [Rust 날짜 계산 관련 블로그 글](https://erickt.github.io/blog/2019/04/04/dates-in-rust/)
+- [Panics vs. Errors in Rust: 날짜 계산 시 발생하는 에러 처리 방법](https://www.viget.com/articles/panics-vs-errors-in-rust/)

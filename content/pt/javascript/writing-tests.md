@@ -1,49 +1,111 @@
 ---
-title:    "Javascript: Escrevendo testes"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/writing-tests.md"
+title:                "Javascript: Escrevendo testes"
+programming_language: "Javascript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante?
+## Por que escrever testes é importante para programadores em Javascript?
 
-Escrever testes é uma prática essencial para garantir que o código que você escreve está funcionando corretamente. Além disso, testes automatizados ajudam a evitar erros e problemas no futuro, economizando tempo e recursos.
+Escrever testes é uma prática essencial para garantir a qualidade do código em qualquer linguagem de programação, incluindo Javascript. Ao escrever testes, podemos verificar se o nosso código está funcionando conforme o esperado e detectar possíveis problemas antes mesmo deles ocorrerem em produção. Isso nos ajuda a economizar tempo e recursos, além de garantir um produto final de melhor qualidade.
 
 ## Como escrever testes em Javascript
 
-Para escrever testes em Javascript, é importante utilizar uma ferramenta de teste, como o framework "Jest". Veja abaixo um exemplo de como escrever um teste simples para uma função de soma:
+Existem várias ferramentas e frameworks disponíveis para escrever testes em Javascript, mas neste artigo vamos nos concentrar em dois deles: Mocha e Jest.
+
+### Mocha
+
+Mocha é um framework de teste popular que oferece uma sintaxe clara e simples para escrever testes. Para começar, instale o Mocha globalmente em seu projeto usando o npm:
 
 ```Javascript
-// Função de soma
+npm install -g mocha
+```
+
+Em seguida, crie um arquivo de teste com o nome "test.js" e adicione o seguinte código:
+
+```Javascript
+// Importe a biblioteca de assertividade "chai"
+var assert = require('chai').assert;
+
+// Descreva o que o teste deve verificar
+describe('Calculadora', function() {
+
+  // Descreva o que o teste específico deve verificar
+  it('deve retornar a soma de dois números', function() {
+    // Execute o código que deve ser testado
+    var resultado = soma(2, 3);
+
+    // Verifique se o resultado é igual ao esperado
+    assert.equal(resultado, 5);
+  });
+
+  // Também podemos testar se a função lança um erro
+  it('deve lançar um erro se os parâmetros não forem números', function() {
+    // Execute o código que deve ser testado
+    function testarSoma() {
+      soma('dois', 'três');
+    }
+
+    // Verifique se a função lança um erro
+    assert.throws(testarSoma, Error);
+  });
+});
+
+// Função que deve ser testada
 function soma(a, b) {
   return a + b;
 }
+```
 
-// Teste para verificar se a soma de 2 e 3 é igual a 5
-test('soma 2 + 3 é igual a 5', () => {
-  expect(soma(2, 3)).toBe(5);
+Para executar os testes, basta rodar o seguinte comando no terminal:
+
+```
+mocha test.js
+```
+
+### Jest
+
+Jest é uma biblioteca de teste criada pelo Facebook e possui algumas vantagens em relação ao Mocha, como uma sintaxe mais simples e a capacidade de executar testes em paralelo. Para começar, instale o Jest em seu projeto com o npm:
+
+```Javascript
+npm install --save-dev jest
+```
+
+Em seguida, crie um arquivo de teste com o nome "app.test.js" e adicione o seguinte código:
+
+```Javascript
+// Descreva o que o teste deve verificar
+describe('Teste de somar', () => {
+  // Descreva o que o teste específico deve verificar
+  test('deve retornar a soma de dois números', () => {
+    // Execute o código que deve ser testado
+    const resultado = soma(5, 5);
+
+    // Verifique se o resultado é igual ao esperado
+    expect(resultado).toBe(10);
+  });
 });
+
+// Função que deve ser testada
+function soma(a, b) {
+  return a + b;
+}
 ```
 
-Ao executar esse teste, o output deve ser:
+Para executar os testes, basta rodar o seguinte comando no terminal:
 
 ```
-PASS  test.js
-√ soma 2 + 3 é igual a 5 (xms)`
-
-Test Suites: 1 passed, 1 total
-Tests: 1 passed, 1 total
+jest app.test.js
 ```
 
-Além disso, é possível utilizar diversas funções do jest, como `expect` e `toBe` para testar diferentes cenários e garantir a corretude do código.
+## Aprofundando-se em testes
 
-## Aprofundamento em escrever testes
-
-Além de testes unitários, existem também testes de integração e end-to-end. Os testes de integração garantem que várias partes do código estão funcionando juntas corretamente, enquanto os testes end-to-end simulam a interação de um usuário com a aplicação. É importante também cobrir o máximo possível de código com testes, e manter esses testes sempre atualizados à medida que o código é modificado.
+Além dos exemplos apresentados, existem diversos outros conceitos e técnicas importantes para escrever testes eficazes em Javascript, como teste de integração, teste de unidade, mocks e spies. É importante estudar e praticar essas técnicas para se tornar um programador mais habilidoso e garantir a qualidade do seu código.
 
 ## Veja também
 
-- [Documentação oficial do Jest](https://jestjs.io/)
-- [Artigo sobre testes em Javascript](https://tableless.com.br/testes-automaticos-javascript/)
-- [Tutorial em vídeo sobre testes em Javascript](https://www.youtube.com/watch?v=r9HdJ8P6GQI)
+- [Documentação do Mocha](https://mochajs.org/)
+- [Documentação do Jest](https://jestjs.io/pt-BR/)
+- [Artigo sobre testes em Javascript](https://medium.com/xp-inc/testes-unit%C3%A1rios-no-javascript-com-jest-a-primeira-vista-dcf5a5e81da2)

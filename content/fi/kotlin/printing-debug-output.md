@@ -1,41 +1,41 @@
 ---
-title:    "Kotlin: Virhetulostuksen tulostaminen"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/printing-debug-output.md"
+title:                "Kotlin: Virheenkorjaustulostuksen tulostaminen"
+programming_language: "Kotlin"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Usein koodin kehittämisen yhteydessä törmäämme erilaisiin virheisiin ja ongelmakohtiin. Yksi tapa selvittää näitä ongelmia on käyttää "debug output" -tulostusta, joka auttaa meitä ymmärtämään, mitä koodi oikeasti tekee ja miksi tietty virhe tapahtuu.
+Joskus koodin suorituksessa ilmenee ongelmia tai virheitä, joiden löytämiseen ja korjaamiseen tarvitaan lisätietoa. Tulosteiden (debug output) tarkasteleminen on yksi tapa helpottaa ja nopeuttaa tämän prosessin etenemistä.
 
-## Miten
+## Näin teet sen
 
-Debug output -tulostusta voidaan käyttää Kotlinissa yksinkertaisesti println()-funktiolla. Tämä tulostaa halutun muuttujan arvon tai tekstin terminaaliin. Esimerkiksi:
-
-```Kotlin
-var x = 5
-println(x)
-```
-
-Tämä tulostaisi terminaaliin "5". Voit myös käyttää tulostukseen useampia muuttujia tai tekstiä yhdistämällä niitä plussa-merkillä:
+Tulosteiden tulostaminen eli debuggauksen tekeminen onnistuu Kotlinissa helposti käyttämällä `println()`-funktiota. Tämä tulostaa annetun arvon tai muuttujan sisällön konsoliin.
 
 ```Kotlin
-var x = 5
-var y = 10
-println("x:n arvo on " + x + " ja y:n arvo on " + y)
+val luku = 42
+println(luku)
 ```
 
-Tämä tulostaisi "x:n arvo on 5 ja y:n arvo on 10" terminaaliin.
+Tämän avulla voit tarkastella ohjelman suorituksen aikana eri muuttujien arvoja ja varmistaa, että oikeita arvoja käytetään halutuissa kohdissa.
 
-## Syvempi sukellus
+## Syvemmälle debuggaukseen
 
-Debug output -tulostus voi olla erittäin hyödyllinen työkalu koodin kehittämisessä ja virheiden etsimisessä. Kannattaa kuitenkin muistaa, että joskus tulostamalla kaikki mahdolliset muuttujat ja tekstit, koodistamme saattaa tulla hyvin epäselvää ja vaikeasti luettavaa. Siksi on tärkeää harkita tarkasti, mitä haluamme tulostaa ja missä vaiheessa koodia.
+Kotlinissa on myös muita apukeinoja debuggaukseen, kuten `assert()`-funktio, joka tarkistaa, että annettu ehto on tosi. Jos ehto ei täyty, ohjelma keskeytetään ja konsoliin tulostetaan ilmoitus virheestä.
 
-Voit myös käyttää Kotlinin logging-kirjastoa, joka tarjoaa monipuolisempia mahdollisuuksia debug output -tulostukseen. Tämä kirjasto tarjoaa esimerkiksi eri tasoisia lokitiedostoja, joihin voit tallentaa tiettyjä virheilmoituksia ja tarkastella niitä myöhemmin.
+```Kotlin
+val luku1 = 5
+val luku2 = 10
+assert(luku1 < luku2, {"Ensimmäisen luvun täytyy olla pienempi kuin toisen!"})
+```
+
+Tämä on hyödyllistä esimerkiksi silloin, kun haluat varmistua, että arvoja käytetään oikeassa järjestyksessä tai että ne ovat oikeassa muodossa.
 
 ## Katso myös
 
-- [Kotlinin virallinen dokumentaatio debug output -tulostuksesta](https://kotlinlang.org/docs/reference/basic-types.html#print-and-debug)
-- [Kotlinin logging-kirjasto](https://github.com/Kotlin/kotlin-logging)
+- [Debugging in Kotlin](https://kotlinlang.org/docs/reference/tools.html#debugging-in-kotlin)
+- [Debugging and Troubleshooting in Kotlin](https://blog.kotlin-academy.com/debugging-and-troubleshooting-in-kotlin-6dffcfcbef18)
+- [Effective Debugging in Kotlin](https://blog.kotlin-academy.com/effective-debugging-in-kotlin-5ecb07aab87c)

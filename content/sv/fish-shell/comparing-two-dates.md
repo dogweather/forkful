@@ -1,47 +1,40 @@
 ---
-title:    "Fish Shell: Jämföra två datum"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/comparing-two-dates.md"
+title:                "Fish Shell: Jämförande av två datum"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att jämföra två datum är en viktig del av programmering, speciellt när man arbetar med datumbaserade data. Det kan hjälpa till att hitta skillnader i datum och utföra olika åtgärder baserat på resultaten.
+Att jämföra två datum är en vanlig uppgift inom programmering, och kan vara användbart för att sortera och filtrera data, eller för att kontrollera om vissa åtgärder ska utföras baserat på datum. I denna bloggpost kommer vi att utforska hur man jämför två datum i Fish Shell.
 
-## Hur man gör
+## Så här gör du
 
-För att jämföra två datum i Fish Shell, kan du använda funktionen `date` tillsammans med operatorn `-s` som står för "subtraktion". Till exempel, om vi vill jämföra dagens datum med datumet för två veckor sedan, skulle koden se ut så här:
+För att jämföra två datum i Fish Shell, behöver vi först konvertera dem till formatet som Fish Shell förstår. Detta kan göras med hjälp av `date` kommandot och flaggorna `-f` för att ange formatet och `-j` för att returnera datumet i Unix-timestamp format. Låt oss titta på ett exempel:
 
-```Fish Shell
-date -s "-2 weeks"
+```
+set start_date (date -f %Y-%m-%d -j 2021-01-01)
+set end_date (date -f %Y-%m-%d -j 2021-12-31)
 ```
 
-Detta kommer att ta dagens datum och dra bort två veckor från det. Om du vill jämföra två specifika datum, måste du först konvertera dem till Unix-tidsstämplar och sedan subtrahera dem med `-s` operatorn. Använd sedan `echo` för att se resultatet. Till exempel:
+I detta exempel har vi definierat två variabler som innehåller start- och slutdatum i Unix-timestamp format. Nu kan vi jämföra dem med hjälp av Fish Shell's `test` kommando och flaggan `-gt` för större än. Om startdatumet är större än slutdatumet, kommer testet att returnera `true`:
 
-```Fish Shell
-echo (date -f '%s' '2021-01-01') - (date -f '%s' '2020-12-01')
+```
+test $start_date -gt $end_date; echo $status
 ```
 
-Detta kommer att ge dig differensen i sekunder mellan de två datumen.
+Outputen av detta kommer att vara `1`, vilket betyder att testet returnerade `false`.
 
 ## Djupdykning
 
-Det finns flera sätt att jämföra två datum i Fish Shell:
+När du jämför två datum i Fish Shell, är det viktigt att se till att de är i samma format. Om de har olika format, kommer jämförelsen att ge felaktiga resultat. Dessutom bör man vara medveten om att datumen kan inkludera tidsinformation, vilket kan påverka jämförelsen. Det är alltid bäst att konvertera datumen till Unix-timestamp format för att undvika felaktigheter.
 
-- Du kan använda `-lt`, `-le`, `-eq`, `-ge`, `gt` operatorerna tillsammans med `date` för att utföra mindre än, mindre än eller lika med, större än, mer än eller lika med jämförelser.
-
-- Du kan använda `strftime` för att konvertera datum till andra format för enkel jämförelse.
-
-- Du kan också använda en sekundär variabel för att hålla datumet som ska jämföras, istället för att använda `date` varje gång.
-
-Var noga med att kontrollera dokumentationen för mer information och andra användbara funktioner för att jämföra datum i Fish Shell.
+Det finns också andra sätt att jämföra datum i Fish Shell, såsom att använda `sort` kommandot med flaggan `-n` för numeriskt sorterade och sedan välja det första eller sista värdet för att jämföra med det önskade datumet.
 
 ## Se även
 
-- [Fish Shell dokumentation] (https://fishshell.com/docs/current/index.html)
-
-- [Unix-tidsstämpel] (https://en.wikipedia.org/wiki/Unix_time)
-
-- [Jämföra datum i Bash Shell] (https://www.howtogeek.com/662683/how-to-compare-dates-in-bash/)
+- [Fish Shell Date Kommando](https://fishshell.com/docs/current/commands.html#date)
+- [Unix Timestamp](https://www.unixtimestamp.com/index.php)

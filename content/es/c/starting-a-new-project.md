@@ -1,56 +1,59 @@
 ---
-title:    "C: Comenzando un nuevo proyecto"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/starting-a-new-project.md"
+title:                "C: Comenzando un nuevo proyecto"
+programming_language: "C"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué iniciar un nuevo proyecto?
+## Por qué
 
-Iniciar un nuevo proyecto de programación puede ser una oportunidad emocionante para explorar nuevas ideas y desarrollar habilidades. Además, puede ser una gran manera de mejorar tu perfil como programador y aprender nuevas técnicas.
+Iniciar un nuevo proyecto de programación puede ser una experiencia emocionante y gratificante. Ya sea que estés ampliando tus habilidades o buscando resolver un problema específico, crear algo desde cero puede ser muy enriquecedor.
 
 ## Cómo hacerlo
 
-Para iniciar un nuevo proyecto en C, primero debes tener instalado un compilador de C en tu computadora. Luego, puedes seguir estos pasos:
+Para comenzar un nuevo proyecto en C, primero debes tener instalado un compilador de C en tu computadora. Luego, sigue estos pasos:
 
-1. Inicia un nuevo archivo C en tu editor de texto.
-2. Escribe tu código en el formato adecuado, iniciando con `#include <stdio.h>` para incluir librerías y `int main()` como función principal.
-3. Escriba su código dentro de las llaves de `main()`.
-4. Una vez que hayas completado tu código, guarda el archivo con una extensión `.c`.
-5. Abre la línea de comando y navega hasta el directorio donde guardaste tu archivo.
-6. Compila tu código usando el comando `gcc <nombre del archivo>.c -o <nombre del archivo ejecutable>`.
-7. Si no hay errores, puedes ejecutar tu programa usando el comando `./<nombre del archivo ejecutable>`.
-8. ¡Felicidades, has iniciado un nuevo proyecto en C!
+1. Escribe tu código en un editor de texto de tu elección, como Visual Studio Code o Sublime Text.
+2. Guarda tu archivo con la extensión ".c".
+3. Abre tu terminal y navega hasta la ubicación del archivo.
+4. Compila tu código escribiendo "gcc -o nombre_del_ejecutable archivo.c" en la terminal.
+5. Si no hay errores, se creará un archivo ejecutable con el nombre que especificaste.
+6. Ejecuta el programa escribiendo "./nombre_del_ejecutable" en la terminal.
+7. ¡Voilà! Ahora puedes ver el resultado de tu código en la terminal.
 
-A continuación, hay un ejemplo de un programa de "Hola Mundo" en C:
+Aquí hay un ejemplo de un programa simple que muestra un mensaje en pantalla:
 
 ```C
 #include <stdio.h>
 
 int main()
 {
-    printf("¡Hola Mundo!\n");
+    printf("¡Hola, mundo!\n");
+
     return 0;
 }
 ```
 
-Output:
-```
-¡Hola Mundo!
-```
+La salida de este programa sería "¡Hola, mundo!" impreso en la terminal.
 
-## Profundizando en iniciar un nuevo proyecto
+## Profundizando
 
-Aparte de los pasos básicos mencionados anteriormente, aquí hay algunos consejos adicionales que pueden ayudarte a iniciar con éxito un nuevo proyecto en C:
+Iniciar un nuevo proyecto en C no se trata solo de escribir líneas de código. También es importante planificar y organizar tu proyecto para que sea más fácil de manejar y mantener en el futuro. Esto incluye:
 
-- Antes de comenzar a escribir código, es importante tener una comprensión clara de los requisitos y objetivos del proyecto.
-- Planifica tu proyecto en papel antes de comenzar a escribir código. Esto puede ahorrarte tiempo en la resolución de problemas más adelante.
-- Utiliza buenas prácticas de codificación, como la modularidad y la documentación adecuada, para que tu código sea más fácil de entender y mantener.
-- No tengas miedo de buscar ayuda en tutoriales, documentación y foros en línea. La comunidad de programación es muy acogedora y siempre está dispuesta a ayudar.
+- Identificar claramente el propósito y los objetivos de tu proyecto.
+- Crear un diseño o diagrama de flujo para visualizar cómo se relacionan los diferentes componentes de tu proyecto.
+- Elegir estructuras de datos y algoritmos adecuados para cumplir con tus objetivos.
+- Hacer pruebas y depurar tu código para asegurarte de que funciona como se espera.
+- Documentar tu código para que sea más legible y comprensible para otros desarrolladores.
+
+Al seguir estos pasos, podrás crear un proyecto de C sólido y bien estructurado.
 
 ## Ver también
 
-- [Guía de inicio de proyectos en C](https://www.geeksforgeeks.org/basics-of-file-handling-in-c/)
-- [Compilación y ejecución de programas en C](https://www.cprogramming.com/compileandrun.html)
-- [Documentación de C en línea](https://www.cplusplus.com/doc/)
+Para obtener más información sobre cómo iniciar un proyecto en C, consulta estos recursos en español:
+
+- [Guía básica de C](https://www.aprendeaprogramar.com/guia-aprender-programacion/tutorial-aprender-programacion-c-desde-cero)
+- [Introducción a la programación en C](https://es.coursera.org/learn/introduccion-programacion-c)
+- [Curso de programación en C para principiantes](https://www.udemy.com/course/curso-de-programacion-en-c-para-principiantes/)

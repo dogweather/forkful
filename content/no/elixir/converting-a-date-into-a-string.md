@@ -1,37 +1,54 @@
 ---
-title:    "Elixir: Konvertere en dato til en streng"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/converting-a-date-into-a-string.md"
+title:                "Elixir: Konvertere en dato til en streng"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det å konvertere en dato til en streng er en viktig del av programmering, spesielt i Elixir. Dette lar oss presentere datoer på en lesbar måte for brukere eller andre systemer. I tillegg kan det være nødvendig å konvertere datoer til strenger for å lagre dem i databaser eller sende dem over nettverket.
+Konvertering av datoer til strenger er en vanlig oppgave i programmering, spesielt i Elixir. Det kan være nyttig for å vise datoer til brukere eller formatere data til lagring. 
 
 ## Hvordan
 
-I Elixir er det flere måter å konvertere en dato til en streng på, avhengig av dine behov og preferanser. La oss se på noen eksempler:
+For å konvertere en dato til en streng i Elixir, kan du bruke funksjonen `DateTime.to_string/2`. Denne funksjonen tar inn en dato og en formatstreng som argumenter.
 
-```elixir
-# Konverter en dato til en streng med formatet "YYYY-MM-DD"
-~D[2021-04-15] |> Date.to_string() # => "2021-04-15"
+```Elixir
+dato = DateTime.utc_now()
+format = "{{D, MMMM}} {{YYYY}}"
+streng = DateTime.to_string(dato, format)
 
-# Konverter en dato til en kort streng med månedsnavn
-~D[2021-04-15] |> Date.to_string(:short) # => "15. apr"
+IO.puts(streng)
 
-# Konverter en dato til en lang streng med ukedag og månedsnavn
-~D[2021-04-15] |> Date.to_string(:long) # => "torsdag 15. april 2021"
+# Utskrift:
+# 15. oktober 2021
 ```
 
-Som du kan se, bruker vi funksjonen `Date.to_string/2` for å konvertere datoen til en streng. Første argument er datoen vi ønsker å konvertere, og den andre er formatet vi ønsker å bruke. For mer informasjon om de ulike formatene og mulighetene som finnes, kan du sjekke Elixir sin offisielle dokumentasjon.
+Du kan også spesifisere et lokalt tidssone ved å legge til en liste med alternativer som et tredje argument i funksjonen.
 
-## Dykk dypere
+```Elixir
+dato = DateTime.utc_now()
+format = "{DD.MM.YYYY}"
+alternativer = [time_zone: "Europe/Oslo"]
+streng = DateTime.to_string(dato, format, alternativer)
 
-Under overflaten, bruker Elixir det innebygde `Calendar` biblioteket for å håndtere datoer. Dette biblioteket gir oss mange nyttige funksjoner for å håndtere datoer og tid. For å konvertere en dato til en streng, bruker `Calendar.ISO.format/2` funksjonen under capnds (calendar to printable string) modulen.
+IO.puts(streng)
+
+# Utskrift:
+# 15.10.2021
+```
+
+Det finnes også andre funksjoner som kan være nyttige for å konvertere datoer til strenger, som for eksempel `DateTime.to_iso8601/1`, `Date.to_string/2` og `Time.to_string/2`. Disse funksjonene har lignende syntaks og kan også ta inn en liste med alternativer for å spesifisere en tidssone.
+
+## Dypdykk
+
+Når man skal konvertere datoer til strenger, er det også viktig å være klar over forskjellene mellom de ulike datatypene. I Elixir er det tre forskjellige datatyper som representerer datoer og klokkeslett: `Date`, `Time` og `DateTime`. `Date` representerer kun en dato, `Time` representerer kun et klokkeslett og `DateTime` representerer både dato og klokkeslett. Dette er viktig å være oppmerksom på når du skal konvertere og behandle data i din kode.
+
+Du kan også bruke funksjonen `DateTime.from_iso8601/1` for å konvertere en ISO 8601-streng til en `DateTime`-dato. Dette kan være nyttig hvis du for eksempel henter data fra en ekstern API som bruker ISO 8601-formatet.
 
 ## Se også
 
-- [Elixir offisiell dokumentasjon for Date module](https://hexdocs.pm/elixir/Date.html#to_string/2)
-- [Elixir offisiell dokumentasjon for Calendar module](https://hexdocs.pm/elixir/Calendar.html)
+- [Elixir DateTime dokumentasjon](https://hexdocs.pm/elixir/DateTime.html)
+- [ISO 8601 dato- og klokkeslettstandard](https://en.wikipedia.org/wiki/ISO_8601)

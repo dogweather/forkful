@@ -1,41 +1,42 @@
 ---
-title:    "C++: Drukowanie wyników debugowania"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/printing-debug-output.md"
+title:                "C++: Wydrukowanie wyników debugowania"
+programming_language: "C++"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Debugowanie jest kluczowym elementem w programowaniu. Wielu programistów używa różnych technik, aby znaleźć błędy w swoim kodzie. Jedną z tych technik jest drukowanie informacji debugujących, które mogą pomóc w zlokalizowaniu problemów. W tym blogu dowiesz się, jak z powodzeniem wykorzystać drukowanie informacji debugujących w swoim kodzie C++.
+Każdy programista wie, jak ważne jest debugowanie programów. Jedną z przydatnych technik, które pomagają nam w tym procesie, jest drukowanie wyjścia debugowania. W tej krótkiej instrukcji zaprezentujemy, dlaczego jest to przydatne i jak to zrobić w języku C++.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Pierwszym krokiem jest dołączenie biblioteki <iostream> do swojego kodu. Następnie musisz użyć funkcji cout, aby wydrukować swoje dane debugowania. Na przykład:
+Do drukowania wyjścia debugowania w C++ używamy funkcji ```cout``` z biblioteki standardowej ```iostream```. Przykładowy kod może wyglądać następująco:
 
-```C++
+```
 #include <iostream>
 
+using namespace std;
+
 int main() {
-    int x = 5;
-    std::cout << "Wartość zmiennej x to: " << x << std::endl;
+    int x = 10;
+    cout << "Wartość zmiennej x to: " << x << endl;
     return 0;
 }
 ```
 
-Wyjście z powyższego kodu będzie wyglądać tak:
+Wynikiem działania tego programu będzie wyświetlenie tekstu "Wartość zmiennej x to: 10" w konsoli. Dzięki temu możemy sprawdzić poprawność przypisanych wartości do zmiennych oraz prześledzić działanie programu krok po kroku.
 
-```
-Wartość zmiennej x to: 5
-```
+## Deep Dive
 
-Możesz również dodać informacje debugujące w wielu miejscach w swoim kodzie, aby śledzić jak wartości zmiennych zmieniają się w różnych punktach programu.
+Drukowanie wyjścia debugowania może być szczególnie przydatne w przypadku skomplikowanych algorytmów czy błędów, które trudno jest zlokalizować. Dzięki temu, że mamy możliwość wyświetlenia zmiennych w różnych częściach programu, możemy łatwiej zidentyfikować problem oraz zrozumieć, jak wygląda działanie programu na każdym etapie.
 
-## Głębsza analiza
-
-Drukowanie informacji debugujących jest szczególnie pomocne podczas śledzenia zmian wartości zmiennych w trakcie wykonywania programu. Może to pomóc zlokalizować błędy w logice lub algorytmach. Jednak należy pamiętać, że nadmiarowe informacje debugujące mogą utrudnić czytanie kodu i sprawić, że stanie się on mniej czytelny.
+Należy jednak pamiętać, że drukowanie za dużo informacji debugowania może wpłynąć negatywnie na wydajność naszego programu. Dlatego ważne jest, aby stosować je z umiarem i usuwać je po zakończeniu procesu debugowania.
 
 ## Zobacz również
 
-Jeśli jesteś zainteresowany poznaniem innych technik debugowania w C++, może spodobać Ci się również nasz artykuł o użyciu debuggera C++: [link do artykułu o debuggerze C++]. Możesz również przeczytać nasz artykuł o sposobach testowania kodu w C++: [link do artykułu o testowaniu w C++].
+- [Artykuł na temat debugowania w C++](https://www.geeksforgeeks.org/c-plus-plus/)
+- [Oficjalna dokumentacja C++](https://en.cppreference.com/w/)
+- [Przykłady kodów z wykorzystaniem funkcji cout](https://www.programiz.com/cpp-programming/output-input)

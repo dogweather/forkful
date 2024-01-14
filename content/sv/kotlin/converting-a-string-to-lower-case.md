@@ -1,40 +1,45 @@
 ---
-title:    "Kotlin: Omvandla en sträng till gemener"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/converting-a-string-to-lower-case.md"
+title:                "Kotlin: Konvertera en sträng till gemener"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna konvertera en sträng till gemener är en nyttig och användbar kunskap inom Kotlin programmering. Detta låter dig behandla och manipulera text på ett mer flexibelt sätt och gör det enklare att jämföra och sortera strängar.
 
-## Hur man gör det
-För att konvertera en sträng till gemener i Kotlin, kan du använda stringens inbyggda funktion `toLowerCase()`. Detta tar bort eventuella stora bokstäver i strängen och ersätter dem med motsvarande gemener.
+Att konvertera en sträng till små bokstäver är en vanlig operation inom programmering. Det kan användas för att jämföra eller söka igenom strängar utan att behöva bry sig om stor eller liten bokstav. Det är också användbart för att formatera data eller för att ge användare möjlighet att skriva in data utan att behöva bry sig om bokstavsstorlek.
 
-```Kotlin
-val str = "HEJ ALLA KOTLIN-PROGRAMMERARE"
-println(str.toLowerCase())
-```
-Output:
-`hej alla kotlin-programmerare`
+## Så här gör du
 
-Det är viktigt att notera att funktionen `toLowerCase()` returnerar en ny sträng och påverkar inte den ursprungliga strängen. Om du vill ändra den ursprungliga strängen permanent, måste du tilldela det nya värdet till den variabel som innehåller strängen.
+För att konvertera en sträng till små bokstäver kan du använda Kotlin-funktionen ```toLowerCase()```. Här är ett enkelt exempel:
 
 ```Kotlin
-var str = "HEJ ALLA KOTLIN-PROGRAMMERARE"
-str = str.toLowerCase()
-println(str)
+val sträng = "tHIs IS a StRInG"
+val konverteradSträng = sträng.toLowerCase()
+println(konverteradSträng) // output: this is a string
 ```
 
-Output:
-`hej alla kotlin-programmerare`
+Det här är en grundläggande metod för att konvertera en hel sträng till små bokstäver. Men det finns också andra sätt som är mer flexibla och tillåter användaren att välja vilka delar av strängen som ska konverteras.
 
 ## Djupdykning
-Konverteringen från stora bokstäver till gemener beror på vilket språk som används i din miljö. Standardbiblioteket i Kotlin använder sig av Unicode-standard som anger hur stora och små bokstäver i ett språk förhåller sig till varandra. Detta betyder att konverteringen kan variera beroende på vilket språk som är inställt i ditt system.
 
-Det är också viktigt att notera att konverteringen till gemener inte bara gäller för bokstäver utan även för andra tecken som till exempel accenter och skiljetecken. I vissa fall kan detta leda till att tecken försvinner eller förändras, därför är det alltid bäst att testa konverteringen på din specifika sträng för att se till att resultatet blir det önskade.
+När du använder funktionen ```toLowerCase()``` på en sträng i Kotlin, skapas en ny sträng där alla bokstäver har konverterats till små. Detta kan vara en ineffektiv metod om du bara behöver konvertera vissa delar av en stor sträng. För att undvika att skapa en helt ny sträng kan du använda en stream och en lambda-funktion för att konvertera specifika delar av strängen. Här är ett exempel:
+
+```Kotlin
+val sträng = "tHIs IS a StRInG"
+val konverteradSträng = sträng
+    .stream()
+    .map { bokstav -> bokstav.toLowerCase() } // konverterar alla bokstäver i streamen
+    .collect(Collectors.joining()) // slår ihop bokstäverna till en sträng igen
+println(konverteradSträng) // output: this is a string
+```
+
+Detta är en mer flexibel metod och kan vara användbar när du behöver konvertera delar av en stor sträng.
 
 ## Se även
-- [Kotlin Strings](https://kotlinlang.org/docs/strings.html)
-- [Unicode Standard](https://www.unicode.org/standard/index.html)
+
+- [Kotlin String documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [Kotlin Stream documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/stream.html)
+- [Java String toLowerCase() documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase())

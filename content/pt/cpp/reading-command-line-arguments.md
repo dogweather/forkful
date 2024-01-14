@@ -1,57 +1,60 @@
 ---
-title:    "C++: Lendo argumentos da linha de comando"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/reading-command-line-arguments.md"
+title:                "C++: Lendo argumentos da linha de comando"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por que ler argumentos de linha de comando em C ++?
+# Por que ler argumentos da linha de comando é importante para programadores C++
 
-Ao programar em C ++, é importante saber como lidar com argumentos de linha de comando. Esses argumentos são informações inseridas pelo usuário no momento em que o programa é executado. Saber como ler e utilizar esses argumentos pode tornar seu código mais flexível e permitir que o usuário controle melhor a execução do programa.
+Quando se trata de programação C++, saber como ler e utilizar argumentos de linha de comando é uma habilidade essencial. Isso permite que os programadores criem programas mais versáteis e interativos, além de facilitar a integração com outros sistemas e ferramentas. Neste post, vamos mergulhar nesse tópico e abordar como ler argumentos de linha de comando no C++.
 
-## Como ler argumentos de linha de comando em C ++
+## Como ler argumentos de linha de comando em C++
 
-Para ler argumentos de linha de comando, você precisará usar o parâmetro "argc" (contador de argumentos) e "argv" (lista de argumentos) na função "main". O parâmetro "argc" indica o número de argumentos inseridos pelo usuário, enquanto "argv" é um array de strings que contém os argumentos.
+Existem várias maneiras de ler argumentos de linha de comando em C++, mas vamos nos concentrar no método mais simples e popular. Primeiramente, é necessário incluir a biblioteca <iostream> para permitir a entrada e saída de dados, e a biblioteca <cstdlib> para acessar a função de conversão de texto para números:
 
 ```C++
 #include <iostream>
-using namespace std;
+#include <cstdlib>
+```
 
-int main(int argc, char* argv[])
-{
-    // Imprime o número de argumentos
-    cout << "Número de argumentos: " << argc << endl;
+Em seguida, é preciso declarar a função main, que é o ponto de entrada do programa. A função main também recebe dois parâmetros: argc, que é o número de argumentos passados pela linha de comando, e argv, que é um vetor que contém esses argumentos. 
 
-    // Imprime cada argumento
-    for(int i = 0; i < argc; i++)
-    {
-        cout << "Argumento " << i << ": " << argv[i] << endl;
-    }
-
-    return 0;
+```C++
+int main(int argc, char* argv[]){
+    //Código do programa vai aqui
 }
 ```
-Exemplo de entrada: `./programa argumento1 argumento2`
-Saída:
+
+Para acessar os argumentos individualmente, basta utilizar o vetor argv[], passando o índice do argumento desejado. Por exemplo, para imprimir no console o primeiro argumento passado, podemos fazer o seguinte:
+
+```C++
+std::cout << argv[0] << std::endl;
 ```
-Número de argumentos: 3
-Argumento 0: ./programa
-Argumento 1: argumento1
-Argumento 2: argumento2
+
+É importante lembrar que o primeiro elemento do vetor é sempre o nome do programa, seguido dos argumentos passados.
+
+Para converter o argumento de texto para um número inteiro, podemos utilizar a função std::atoi() da biblioteca <cstdlib>. Por exemplo, se o segundo argumento for um número inteiro, podemos armazená-lo em uma variável do tipo int da seguinte forma:
+
+```C++
+int num = std::atoi(argv[1]);
 ```
-Com isso, você pode utilizar os argumentos em seu código da forma que melhor lhe convier.
 
-## Aprofundando-se em leitura de argumentos de linha de comando
+## Profundidade na leitura de argumentos de linha de comando
 
-Para uma utilização mais avançada, é possível utilizar bibliotecas como "getopt" ou "Boost" para facilitar a leitura e o tratamento dos argumentos. Essas bibliotecas oferecem funções mais específicas, como validação de argumentos, opções de linha de comando e suporte a diferentes tipos de dados.
+Além de acessar argumentos individuais, também é possível percorrer todos os argumentos em um loop. Isso pode ser útil quando o número de argumentos é variável ou quando precisamos realizar a mesma operação em todos eles.
 
-Além disso, é importante ter em mente que os argumentos são lidos na ordem em que são inseridos pelo usuário. Você pode utilizar a função "strcmp" para comparar argumentos e executar ações diferentes com base neles.
+```C++
+for(int i = 0; i < argc; i++){
+    //Acessar e utilizar os argumentos aqui
+}
+```
+
+Também é importante lembrar que os argumentos passados pela linha de comando são lidos como texto, então é necessário fazer as devidas conversões para utilizar como números ou outros tipos de dados.
 
 ## Veja também
 
-- [Documentação do C++: argc e argv]("https://www.cplusplus.com/articles/DEN36Up4/")
-- [Biblioteca "getopt" em C++]("https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html")
-- [Biblioteca "Boost" em C++]("https://www.boost.org/doc/libs/1_76_0/doc/html/program_options.html")
-
-Esperamos que este artigo tenha sido útil para compreender melhor a leitura de argumentos de linha de comando em C ++. Comece a utilizá-los em seus programas e explore as diferentes possibilidades que eles oferecem!
+- [Tutorial de C++ da W3Schools](https://www.w3schools.com/cpp)
+- [Documentação da função std::atoi()](https://www.cplusplus.com/reference/cstdlib/atoi/)

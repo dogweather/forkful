@@ -1,56 +1,59 @@
 ---
-title:    "Haskell recipe: Starting a new project"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/starting-a-new-project.md"
+title:                "Haskell recipe: Starting a new project"
+programming_language: "Haskell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Starting a new project in Haskell may seem like a daunting task, but the benefits far outweigh any initial challenges. By using a functional and statically-typed language like Haskell, programmers can create robust and efficient code that is easier to maintain and debug. Additionally, Haskell's strong type system allows for safer and more reliable software, making it a great choice for new projects.
+If you're interested in functional programming and want to challenge yourself with a new language, starting a project in Haskell can be an exciting and rewarding experience. Haskell is a purely functional language that allows you to write elegant, concise code that is also highly efficient.
 
 ## How To
 
-To get started on a new project in Haskell, first make sure you have the Glasgow Haskell Compiler (GHC) and the Haskell build tool, Cabal, installed on your system. Once those are set up, you can create a new project using the `cabal init` command. This will prompt you for some basic information about your project, such as the name and version number. 
-
-After your project is created, you can begin writing code in the `main.hs` file within the `src` directory. Here's an example of a simple Haskell program that greets the user:
+To get started with Haskell, you'll need to download a Haskell compiler, such as GHC (Glasgow Haskell Compiler). Once you have that installed, you can use a text editor or integrated development environment (IDE) to write your code. Let's look at a simple example of a function that calculates the area of a rectangle:
 
 ```Haskell
--- main.hs
--- Simple greeting program
-
-main = do
-    putStrLn "Hello, what's your name?"
-    name <- getLine
-    putStrLn $ "Nice to meet you, " ++ name ++ "!"
+area :: Double -> Double -> Double
+area x y = x * y
 ```
 
-To run this program, navigate to the root directory of your project and use the `runhaskell` command:
+Here, we've declared a function called "area" that takes in two parameters, "x" and "y", both of type "Double". The function multiplies the two parameters together to calculate the area and returns a value of type "Double". Let's try running this function in the GHCi (GHC interactive) tool:
 
-```
-runhaskell src/main.hs
-```
-
-The output should look something like this:
-```
-Hello, what's your name?
-John
-Nice to meet you, John!
+```Haskell
+Prelude> area 5 6
+30.0
 ```
 
-Haskell's syntax can be quite different from other languages, but don't let that discourage you. With practice and patience, you'll quickly get the hang of it.
+As you can see, we specified the values for "x" and "y" when calling the function, and it correctly calculated the area of a rectangle with sides of length 5 and 6.
+
+Haskell also has powerful pattern matching capabilities, which allow you to define different cases for a given function. For example:
+
+```Haskell
+sayHello :: String -> String
+sayHello "World" = "Hello, World!"
+sayHello name = "Hello, " ++ name ++ "!"
+```
+
+Here, we have a function called "sayHello" that takes in a string parameter and returns a string. The first case specifies that if the parameter is equal to "World" then the function will return "Hello, World!" Otherwise, it will concatenate the name with "Hello, " and "!" to create a personalized greeting.
 
 ## Deep Dive
 
-One of the key components of starting a new project in Haskell is choosing and setting up a development environment. The two most popular options are using an integrated development environment (IDE) or a text editor with a Haskell plugin. Whichever you choose, it's important to understand the basic concepts of Haskell, such as functional programming, lazy evaluation, and type inference, to effectively write code.
+Functional programming is heavily reliant on recursion, and Haskell is no exception. Recursion is the process of a function calling itself until a base case is reached. This allows for elegant and concise solutions to various problems, such as calculating factorials or creating a Fibonacci sequence.
 
-Another important aspect of starting a new project is choosing the right libraries and dependencies. Haskell has a vast collection of open-source libraries available in the Hackage repository, so you can easily find and use packages to add additional functionality to your project. It's also important to keep your dependencies up-to-date to ensure your project runs smoothly.
+Haskell also has a strong type system that helps catch errors at compile time, making it easier to write bug-free code. It also allows for the creation of user-defined data types, which can help in modeling real-world problems.
 
-Lastly, testing is crucial for any project, and Haskell offers a variety of testing frameworks such as HUnit and QuickCheck. Writing tests early on can help catch bugs and prevent future issues, making it easier to maintain your code in the long run.
+When starting a project in Haskell, it's essential to understand the concept of "monads," which are used for managing side effects and keeping code pure. They can be a challenging but crucial aspect of learning Haskell.
 
 ## See Also
 
-- Official Haskell website: https://www.haskell.org/
-- Haskell for Imperative Programmers: https://www.youtube.com/watch?v=cuTb8Uh1zYw
-- Hackage package repository: https://hackage.haskell.org/
+Here are some useful resources to help you get started with Haskell:
+
+- [Haskell Official Website](https://www.haskell.org/)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+- [Real World Haskell](http://book.realworldhaskell.org/)
+- [Haskell Wiki](https://wiki.haskell.org/)
+
+Now that you have an overview of why and how to start a project in Haskell, go ahead and give it a try! Happy coding!

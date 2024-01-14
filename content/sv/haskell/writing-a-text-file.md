@@ -1,39 +1,46 @@
 ---
-title:    "Haskell: Skriva en textfil"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/writing-a-text-file.md"
+title:                "Haskell: Att skriva en textfil"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva en textfil är en viktig del av programmering eftersom det gör det möjligt för dig att lagra och manipulera data på ett enkelt och strukturerat sätt. Det kan också vara ett sätt att kommunicera med andra programmerare eller användare av ditt program.
+Att skriva en textfil är en grundläggande färdighet som alla som programmerar behöver för att spara och strukturera data. Genom att använda Haskell kan du enkelt skapa textfiler som är snabba och effektiva att läsa och bearbeta.
 
-## Så här gör du
+## Hur man gör det
 
-För att skriva en textfil i Haskell behöver du först importera modulen "System.IO". Sedan kan du använda kommandot "writeFile" för att skriva en sträng till en textfil och "appendFile" för att lägga till mer text till en befintlig fil.
+För att skriva en textfil i Haskell behöver vi först importera modulen "System.IO" som ger oss funktioner för att öppna, läsa och skriva till filer. Vi behöver också en variabel som håller namnet på vår fil, t.ex. "minFil.txt".
 
-```
+```Haskell
 import System.IO
 
--- Skriva en helt ny fil
-writeFile "minfil.txt" "Hej världen!"
-
--- Lägga till text till en befintlig fil
-appendFile "minfil.txt" " Det här är en extra rad."
+-- öppna filen i läge för att skriva
+main = do
+    fil <- openFile "minFil.txt" WriteMode
 ```
 
-Detta är bara en enkel implementation, men det finns många olika sätt att manipulera textfiler i Haskell, såsom att läsa från en fil, ta bort innehåll eller ändra ordning på rader.
+Nu kan vi använda funktionen "hPutStrLn" för att skriva en sträng till filen och funktionen "hClose" för att stänga filen.
+
+```Haskell
+-- skriv "Hej världen" till filen
+hPutStrLn fil "Hej världen"
+
+-- stäng filen
+hClose fil
+```
 
 ## Djupdykning
 
-Skrivande av textfiler i Haskell är en del av modulen "System.IO", som innehåller många andra funktioner för att hantera in- och utmatning. Detta inkluderar läsning och skrivning från terminalen, hantering av fel och hantering av binära filer. Det är också möjligt att använda modulerna "Data.Text" och "Data.ByteString" för att hantera textfiler på ett mer effektivt sätt.
+När vi skriver till en textfil i Haskell använder vi "String" som datatyp. Detta innebär att vi kan skriva ut alla typer av text, inklusive specialtecken, direkt till filen. Om vi vill skriva ut andra datatyper som t.ex. en Int eller Bool behöver vi först konvertera dem till en String.
 
-En annan viktig sak att notera är att när en textfil öppnas för skrivning eller läsning, bör den stängas när man är klar för att undvika läckor av resurser. Detta kan göras med funktionen "hClose".
+Vi kan också använda funktionen "withFile" istället för "openFile" för att hantera det steg där vi öppnar och stänger filen. Detta hjälper till att undvika eventuella problem med stängda filer.
 
 ## Se också
 
-- [Haskell Wiki page on IO](https://wiki.haskell.org/IO)
-- [Haskell documentation on System.IO module](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html)
-- [Haskell tutorial on handling I/O](https://www.tutorialspoint.com/haskell/haskell_input_output.htm)
+- [Haskell.org](https://www.haskell.org/)
+- [Haskell för nybörjare (Svenska)](https://medium.com/swiftly-swift/haskell-f%C3%B6r-nyb%C3%B6rjare-en-introduktion-till-funktionell-programmering-och-haskell-b04e9d613fdf)
+- [Haskell Wikibooks](https://en.wikibooks.org/wiki/Haskell)

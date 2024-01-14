@@ -1,45 +1,46 @@
 ---
-title:    "Gleam: Utilisation des expressions régulières"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/using-regular-expressions.md"
+title:                "Gleam: Utiliser les expressions régulières"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Les expressions régulières sont un outil très utile pour trouver, extraire et manipuler des motifs dans du texte. Elles sont particulièrement utiles pour traiter de grandes quantités de données ou pour effectuer des tâches de recherche et de remplacement.
+Les expressions régulières sont un outil puissant pour rechercher des motifs spécifiques dans du texte. Avec Gleam, vous pouvez facilement utiliser des expressions régulières dans votre code pour filtrer et manipuler des données de manière efficace. Que vous souhaitiez traiter de grandes quantités de données ou simplement trouver un mot spécifique dans une chaîne de caractères, les expressions régulières sont un outil précieux pour tout programmeur.
 
 ## Comment faire
 
-Pour utiliser des expressions régulières dans le langage de programmation Gleam, il suffit d'importer le module `regex` et de définir l'expression régulière souhaitée à l'aide de la fonction `make()`.
-
-Voici un exemple de code montrant comment trouver et afficher le nombre de fois où un mot spécifique apparaît dans une chaîne de caractères :
+Pour utiliser des expressions régulières en Gleam, vous devez d'abord importer le module `regex`. Ensuite, vous pouvez créer un nouveau pattern en utilisant la fonction `Regex.make()` et en passant le motif en tant que chaîne de caractères entre parenthèses. Par exemple, si vous souhaitez trouver tous les mots contenant "chat" dans une liste, vous pouvez utiliser le motif `"(chat)"`. Ensuite, vous pouvez utiliser la fonction `Regex.matches()` pour vérifier si une chaîne de caractères correspond à ce motif spécifique. Voici un exemple de code:
 
 ```Gleam
 import regex
 
-let count = regex.make("mot").find("Voici un exemple de mot et un autre exemple de mot")
-count
+animals = ["chien", "chat", "souris", "oiseau"]
+pattern = Regex.make("(chat)")
+matches = Regex.matches(pattern, "J'ai un chat")
+// Output: matches = [Some("chat")]
 ```
 
-Cela renverra le nombre `2` pour le mot "mot" dans la chaîne de caractères donnée.
+Vous pouvez également utiliser des expressions régulières pour remplacer des parties spécifiques d'une chaîne de caractères. Dans l'exemple suivant, nous allons remplacer toutes les occurrences de "a" par "e" dans une chaîne de caractères:
 
-## Plongée profonde
+```Gleam
+import regex
 
-Les expressions régulières peuvent sembler compliquées au premier abord, mais elles deviennent très puissantes une fois que vous les maîtrisez. Voici quelques astuces et conseils pour les utiliser efficacement dans vos projets Gleam :
+string = "Bonjour"
+pattern = Regex.make("a")
+replaced = Regex.replace_all(pattern, string, "e")
+// Output: replaced = "Bonjoure"
+```
 
-- Utilisez les caractères spéciaux pour trouver des motifs plus spécifiques, tels que les chiffres avec `\d` ou les lettres avec `\w`.
-- Utilisez les quantificateurs pour spécifier le nombre de fois qu'un motif doit apparaître, tels que `+` pour une ou plusieurs fois et `*` pour zéro ou plusieurs fois.
-- Utilisez les groupes de capture pour extraire des parties spécifiques de votre texte, en les définissant entre parenthèses dans votre expression régulière.
-- N'hésitez pas à utiliser des sites tels que [Regex101](https://regex101.com/) pour tester et valider vos expressions régulières avant de les utiliser dans votre code.
+## Plongée en profondeur
 
-En explorant et en pratiquant régulièrement avec des expressions régulières, vous deviendrez rapidement plus à l'aise et pourrez les utiliser facilement pour résoudre des problèmes complexes.
+Les expressions régulières peuvent sembler un peu intimidantes au début, mais avec de la pratique, elles deviendront un outil précieux dans votre boîte à outils de programmation. N'hésitez pas à explorer différentes ressources pour comprendre les différents motifs et les utiliser efficacement dans votre code. Vous pouvez également consulter la documentation officielle de Gleam pour plus d'informations sur l'utilisation des expressions régulières dans ce langage.
 
 ## Voir aussi
 
-- [Documentation officielle de Gleam sur les expressions régulières](https://gleam.run/articles/regex)
-- [Guide de référence rapide sur les expressions régulières](https://www.rexegg.com/regex-quickstart.html)
-- [Regex101 - Tester et valider vos expressions régulières](https://regex101.com/)
-
-À vous maintenant d'explorer et de découvrir toutes les possibilités qu'offrent les expressions régulières dans vos projets Gleam !
+- [Documentation officielle de Gleam](https://gleam.run/)
+- [Tutoriel sur les expressions régulières en Gleam](https://dev.to/otterthegreat/advanced-pattern-matching-with-regular-expressions-in-gleam-4bnh)
+- [Jeu interactif pour pratiquer les expressions régulières](https://regexone.com/)

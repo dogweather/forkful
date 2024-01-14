@@ -1,47 +1,41 @@
 ---
-title:    "Elm: Sammanslagning av strängar"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/concatenating-strings.md"
+title:                "Elm: Sammanfogning av strängar"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att sammanslå strängar (concatenating strings) är en viktig del av programmering eftersom det gör det möjligt att skapa dynamiska och anpassningsbara strängar som kan användas i olika sammanhang.
+Att sammanslå strängar är en essentiell färdighet i Elm programmering. Genom att kombinera flera strängar till en enda kan du skapa dynamiskt innehåll, som till exempel meddelanden eller användarprofiler. Det är också ett sätt att spara utrymme och undvika upprepning av kod. 
 
-## Hur man gör det
+## Så här gör du
 
-Att sammanslå strängar i Elm är enkelt och används ofta i olika applikationer. För att sammanslå strängar i Elm använder man "+"-tecknet, vilket fungerar på samma sätt som i andra programmeringsspråk.
+För att sammanslå strängar i Elm, använder vi funktionen `String.concat`. Låt oss ta en titt på ett exempel:
 
 ```Elm
-let greeting = "Hej"
-let name = "Anna"
-let message = greeting + " " + name
-
-message -- Resultatet blir "Hej Anna"
+resultat = String.concat ["Hej", " ", "världen"]
 ```
 
-I det här exemplet används "+"-tecknet för att sammanslå "Hej" och "Anna" till en ny sträng som innehåller både hälsning och namn.
+I det här exemplet sätter vi ihop tre strängar, "Hej", ett tomrum och "världen". Resultatet blir en enda sträng, "Hej världen". Låt oss nu se vad som händer när vi sätter ihop flera strängar i en funktion:
+
+```Elm
+minFunktion str1 str2 str3 =
+  String.concat [str1, str2, str3]
+````
+
+När vi anropar funktionen med `minFunktion "Hej" " " "världen"`, får vi samma resultat som i det första exemplet. Men nu kan vi enkelt anropa funktionen med olika kombinationer av strängar och få olika resultat.
 
 ## Djupdykning
 
-I Elm finns det också en funktion som heter "append", vilken också kan användas för att sammanslå strängar. Den här funktionen tar två strängar som argument och returnerar en ny sträng som innehåller båda.
+När det kommer till sammanslagning av strängar i Elm, finns det några saker att hålla i åtanke. För det första, funktionen `String.concat` kan endast ta emot en lista av strängar som argument. Om du vill sätta ihop en annan typ av data, som till exempel en int eller en float, måste du först konvertera den till en sträng med hjälp av funktionen `String.fromInt` eller `String.fromFloat`.
 
-```Elm
-let first = "Elm"
-let second = "programmering"
-let full = String.append first second
-
-full -- Resultatet blir "Elm programmering"
-```
-
-En annan viktig sak att komma ihåg när det gäller sammanslagning av strängar är att vara uppmärksam på vilken ordning strängarna sätts ihop i. Om man byter ordning på strängarna kan resultatet bli helt annorlunda.
+För det andra, var noga med att tänka på ordningen som strängarna läggs ihop. Om du till exempel har en lista av namn och vill skapa ett meddelande som innehåller dessa namn, måste du se till att namnen hamnar i rätt ordning så att meddelandet inte blir bakvänt.
 
 ## Se även
 
-Om du vill lära dig mer om hur man sammanslår strängar i Elm, kan du kolla in följande resurser:
-
-- Official Elm Syntax Guide: sammanslagning av strängar (https://guide.elm-lang.org/core_language.html#string-concatenation)
-- Elm Programming Language Youtube Channel: Working with Strings (https://www.youtube.com/watch?v=55piJKzKZUQ)
-- Elm Community - String Module (https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm dokumentation om sammanslagning av strängar](https://package.elm-lang.org/packages/elm/core/latest/String#concat)
+- [Elm dokumentation om konvertering av data till strängar](https://package.elm-lang.org/packages/elm/core/latest/String#fromInt)
+- [Officiell Elm-hemsida](https://elm-lang.org/)

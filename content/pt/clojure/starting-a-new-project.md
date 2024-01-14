@@ -1,52 +1,34 @@
 ---
-title:    "Clojure: Iniciando um novo projeto"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/starting-a-new-project.md"
+title:                "Clojure: Começando um novo projeto"
+programming_language: "Clojure"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que iniciar um novo projeto?
+## Por que iniciar um novo projeto em Clojure?
 
-Iniciar um novo projeto em Clojure pode ser uma ótima escolha para aqueles que desejam desenvolver aplicativos e sistemas robustos, escaláveis e funcionais. Com sua sintaxe concisa e sua forte tipagem, o Clojure oferece um ambiente propício para a criação de soluções de alta qualidade.
+Se você é um programador à procura de uma linguagem versátil e funcional, Clojure pode ser uma ótima escolha para iniciar um projeto. Com sua sintaxe simples e poderosas ferramentas de manipulação de dados, Clojure pode ajudar a agilizar e simplificar o processo de desenvolvimento de software.
 
-# Como fazer:
-
-```Clojure
-(defn soma [a b]
-  (+ a b))
-```
-
-Neste exemplo, criamos uma função chamada `soma` que recebe dois parâmetros e retorna a sua soma. Podemos chamar essa função da seguinte forma:
+## Como começar
 
 ```Clojure
-(soma 5 10) ; retorna 15
+(defn somar [a b]
+    (+ a b))
+
+(somar 5 7)
+; Output: 12
 ```
 
-Além disso, a comunidade Clojure oferece uma ampla gama de bibliotecas e ferramentas que facilitam o processo de desenvolvimento. A seguir, mostraremos alguns passos para iniciar um novo projeto em Clojure:
+Para começar a programar em Clojure, você precisa ter o ambiente de desenvolvimento configurado em seu computador. Isso inclui a instalação do Java Development Kit (JDK) e do Clojure. Depois disso, você pode usar ferramentas como o Leiningen para gerenciar suas dependências e criar projetos.
 
-- Instale o leiningen, uma ferramenta de gerenciamento de projetos Clojure
-- Crie uma nova estrutura de projeto usando o comando `lein new template`
-- Configure o arquivo `project.clj` para adicionar dependências e outras configurações necessárias
-- Crie seus arquivos de código fonte com a extensão `.clj`
-- Compile e execute seu projeto usando o comando `lein run`
+## Aprofundando-se
 
-Com esses passos, você estará pronto para começar a desenvolver seu projeto em Clojure.
+Ao iniciar um novo projeto em Clojure, é importante entender alguns conceitos fundamentais, como imutabilidade, funções de alta ordem e programação funcional em geral. Também é útil conhecer as ferramentas disponíveis para a manipulação de dados, como a biblioteca core, que oferece funções poderosas como `map`, `filter` e `reduce`.
 
-# Profundidade:
+## Veja também
 
-Antes de iniciar um novo projeto em Clojure, é importante entender os principais conceitos por trás dessa linguagem funcional. Algumas das características mais importantes incluem:
-
-- Imutabilidade: objetos em Clojure são imutáveis ​​por padrão, o que garante uma maior segurança e evita efeitos colaterais.
-- Coleções persistentes: em Clojure, as coleções são persistentes e as operações de modificação sempre retornam novas instâncias, garantindo assim uma maior eficiência e segurança.
-- Sintaxe de lisp: Clojure é baseado na linguagem lisp, que possui uma sintaxe simples e concisa, facilitando a leitura e o entendimento do código.
-- JVM: Clojure é executado na máquina virtual Java, o que permite a integração com outras linguagens e bibliotecas já existentes na plataforma.
-
-Além disso, Clojure possui uma comunidade ativa e engajada, com diversos recursos e materiais disponíveis para ajudar no desenvolvimento de projetos.
-
-# Veja também
-
-- [Site oficial do Clojure](https://www.clojure.org/)
-- [Leiningen](https://leiningen.org/)
-- [ClojureDocs - Documentação e exemplos de código](https://clojuredocs.org/)
-- [Canal #Clojure no Slack](https://clojurians.slack.com/)
+- [Clojure - Site Oficial](https://clojure.org/)
+- [Clojure Brasil](https://clojure.com.br/)
+- [Clojure Cookbook - Livro de receitas para Clojure](https://github.com/clojure-cookbook/clojure-cookbook)

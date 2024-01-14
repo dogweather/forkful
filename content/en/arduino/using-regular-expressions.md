@@ -1,59 +1,61 @@
 ---
-title:    "Arduino recipe: Using regular expressions"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/using-regular-expressions.md"
+title:                "Arduino recipe: Using regular expressions"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+##Why
 
-Regular expressions are an essential tool for any programmer, including those working with Arduino. They allow you to efficiently search and manipulate strings of data, making your code more powerful and versatile. Whether you're working on a project or tinkering with code for fun, learning how to use regular expressions can greatly enhance your programming skills.
+Have you ever found yourself needing to search for a specific pattern of characters within a large chunk of text? Regular expressions are a powerful tool that allows you to do just that. They make it easier to find, replace, and manipulate text in your Arduino programs.
 
-## How To
+##How To
 
-To use regular expressions in your Arduino code, you will need to include the Arduino Regular Expressions library. Once you have the library installed, you can begin using regular expressions in your code.
+To use regular expressions in Arduino, we first need to include the RegularExpressions library. This can be done by navigating to Sketch > Include Library > RegularExpressions. Once the library is included, we can begin using regular expressions in our code.
 
-Let's say you have a string of data from a sensor that looks like this:
-
-```
-int sensorData = "12.768,40.554"
-```
-
-You want to extract the two numbers from this string. This is where regular expressions come in handy. You can use the `Regex` library to define a pattern and then extract the matching data from the string.
+Let's take a simple example of searching for a specific word in a string. Say we have a string variable called "sentence" and we want to check if it contains the word "Arduino". We can use the ```match()``` function from the RegularExpressions library to achieve this:
 
 ```
-#include <Regex.h>
+#include <RegularExpression.h>
 
-// Define the pattern to search for
-Regex pattern("([0-9]+\.[0-9]+),([0-9]+\.[0-9]+)");
+String sentence = "I love my Arduino!";
 
-// Use the match() function to find matches in the string
-Match match = pattern.match(sensorData);
+if (match(sentence, "Arduino")) {
+  Serial.println("The word Arduino was found!");
+} 
+```
+The ```match()``` function returns a boolean value, so if the word "Arduino" is found in the sentence, the if statement will evaluate to true and the corresponding message will be printed to the serial monitor.
 
-// Print out the matching data
-Serial.println(match.group(1)); // outputs 12.768
-Serial.println(match.group(2)); // outputs 40.554
+Regular expressions also allow us to search for more complex patterns using wildcards, anchors, and quantifiers. Let's say we want to check if our string contains any numbers. We can use the ```[0-9]``` wildcard, which represents any digit from 0 to 9.
+
+```
+#include <RegularExpression.h>
+
+String sentence = "There are 10 types of people in the world.";
+
+if (match(sentence, "[0-9]")) {
+  Serial.println("There are numbers in the sentence!");
+} 
 ```
 
-As you can see, regular expressions allow you to specify patterns to match in a string and extract the relevant data. This makes it easier and more efficient to process strings of data in your code.
+The ```[0-9]``` wildcard will match any single digit in the sentence, so even though there are multiple numbers in the sentence, the if statement will evaluate to true as long as it finds at least one digit.
 
-## Deep Dive
+##Deep Dive 
 
-Regular expressions use a combination of symbols and characters to define a pattern. Some common symbols include:
+Regular expressions may seem daunting at first, but once you understand the different components and their meanings, they can greatly simplify your code. Some of the commonly used components in regular expressions include:
 
-- `.` (dot) - matches any single character
-- `*` (asterisk) - matches the preceding element zero or more times
-- `+` (plus) - matches the preceding element one or more times
-- `?` (question mark) - matches the preceding element zero or one time
-- `|` (pipe) - matches either the element on the left or the element on the right
+- Wildcards: These are characters that can match any single character in a string. Examples include ```[a-z]``` (matches any lowercase letter) and ```[0-9]``` (matches any digit).
 
-You can also use brackets to specify a range of characters. For example, `[0-9]` would match any single digit from 0 to 9.
+- Anchors: These indicate the beginning or end of a string. The most commonly used anchors are ```^``` (matches the beginning of a string) and ```$``` (matches the end of a string).
 
-There are many other symbols and characters you can use in regular expressions, so it's worth exploring and experimenting to become comfortable with them. Regular expressions can be tricky at first, but with practice, you'll soon be able to use them to solve complex string manipulation problems.
+- Quantifiers: These indicate how many times a character or group of characters should be repeated. Some examples include ```+``` (matches one or more occurrences), ```*``` (matches zero or more occurrences), and ```?``` (matches zero or one occurrence).
 
-## See Also
+For a more comprehensive guide on the different components and syntax of regular expressions, check out this [tutorial](https://www.regular-expressions.info/tutorial.html). Also, remember to test your regular expressions using online [regex testers](https://regexr.com/) before implementing them in your code.
 
-- [Arduino Regular Expressions Library](https://github.com/shirriff/Arduino-regexp)
-- [Regex Tutorial](https://regexone.com/)
-- [Regex Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+##See Also
+
+- [Official Arduino Regular Expressions Documentation](https://www.arduino.cc/reference/en/libraries/regularExpressions/)
+- [Regular Expressions Reference Sheet](https://www.regular-expressions.info/refquick.html)
+- [Interactive Regular Expressions Tutorial](https://regexone.com/)

@@ -1,41 +1,49 @@
 ---
-title:    "C++: Criando um arquivo temporário"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/creating-a-temporary-file.md"
+title:                "C++: Criando um arquivo temporário"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-Você já se perguntou por que às vezes precisamos criar arquivos temporários ao escrever um programa em C++? Bem, é uma ferramenta útil para armazenar dados temporários que podem ser acessados ​​e manipulados durante a execução do programa. Vamos dar uma olhada em como podemos fazer isso de maneira eficiente.
+## Por que criar um arquivo temporário em C++?
 
-## Como fazer
-Para criar um arquivo temporário, podemos usar a função `tmpfile()` da biblioteca padrão `<cstdio>`. Vamos dar uma olhada em um exemplo simples:
+Sempre que estamos trabalhando em um programa em C++, é comum que precisemos armazenar informações em arquivos. Isso pode ser para salvar dados temporários, fazer backups ou até mesmo criar logs para facilitar a depuração do código. A criação de arquivos temporários é uma técnica específica que pode ser muito útil em algumas situações. Neste artigo, vamos explorar por que e como criar um arquivo temporário em C++.
+
+## Como criar um arquivo temporário em C++
+
+Para criar um arquivo temporário em C++, precisamos incluir a biblioteca `fstream` e utilizar a função `tmpfile()`. Essa função irá gerar um arquivo temporário e retornar um ponteiro para seu descritor. A partir daí, podemos utilizar as funções de leitura e escrita de arquivos normalmente, usando o descritor temporário gerado pela função `tmpfile()`.
 
 ```C++
-#include <cstdio>
+#include <fstream>
 
 int main() {
-    // Crie um ponteiro de arquivo temporário
-    FILE *temp_file = tmpfile();
-    if (temp_file != NULL) {
-        // Escreva dados no arquivo
-        fprintf(temp_file, "Olá, mundo!");
 
-        // Feche o arquivo temporário
-        fclose(temp_file);
-    }
+    // cria um arquivo temporário e retorna um ponteiro para seu descritor
+    FILE* tempFile = tmpfile();
+
+    // escreve uma string no arquivo temporário
+    fprintf(tempFile, "Olá, este é um arquivo temporário!");
+
+    // fecha o arquivo temporário
+    fclose(tempFile);
+
     return 0;
 }
 ```
-Se executarmos este programa, veremos que um arquivo temporário foi criado no diretório de trabalho atual com o texto "Olá, mundo!" dentro dele.
 
-## Mergulho profundo
-A função `tmpfile()` cria um arquivo temporário em modo de leitura e gravação, com o arquivo aberto em modo binário. Isso significa que podemos escrever qualquer tipo de dados no arquivo, desde que usemos o `fprintf()` para formatá-los corretamente. Além disso, o arquivo é excluído automaticamente quando o programa é encerrado ou quando usamos a função `fclose()` para fechá-lo explicitamente.
+Ao executar o programa, não veremos nenhum arquivo criado no disco rígido. Isso acontece porque os arquivos temporários são armazenados apenas na memória RAM, tornando-os ideais para armazenar informações temporárias que não precisam ser salvas permanentemente.
 
-Também é importante lembrar que o arquivo temporário é criado em um local padrão do sistema operacional, o que pode variar dependendo do sistema em que estamos executando o programa. Portanto, é uma boa prática usar a função `tmpnam()` para obter o caminho completo do arquivo temporário antes de criá-lo.
+## Detalhando a criação de arquivos temporários em C++
+
+Além da função `tmpfile()`, existem outras opções para criar arquivos temporários em C++. Podemos utilizar também a função `tmpnam()` que irá gerar um nome para o arquivo temporário, mas não irá criá-lo automaticamente. Nesse caso, é necessário utilizar o nome gerado para criar o arquivo com a função `fopen()` e, em seguida, manipulá-lo normalmente.
+
+Outra alternativa é a função `tempnam()` que permite especificar um diretório para a criação do arquivo temporário. Além disso, podemos utilizar a função `mkstemp()` que permite especificar o nome do arquivo temporário e cria automaticamente o arquivo especificado.
 
 ## Veja também
-- [Documentação da função `tmpfile()`](https://www.cplusplus.com/reference/cstdio/tmpfile/)
-- [Tutorial básico de C++](https://www.cplusplus.com/doc/tutorial/)
-- [Referência rápida do C++](https://www.cplusplus.com/files/tutorial.pdf)
+
+Para saber mais sobre a criação de arquivos temporários em C++, confira os seguintes links:
+- [Documentação oficial da função `tmpfile()`](https://en.cppreference.com/w/cpp/io/c/tmpfile)
+- [Exemplos de uso da função `tmpfile()`](https://www.geeksforgeeks.org/tmpfile-function-in-c/)
+- [Tutorial sobre a criação de arquivos temporários em C++](https://www.guru99.com/cpp-file-reading-writing.html)

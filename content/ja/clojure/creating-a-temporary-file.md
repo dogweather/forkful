@@ -1,62 +1,40 @@
 ---
-title:    "Clojure: 一時ファイルの作成"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/creating-a-temporary-file.md"
+title:                "Clojure: 一時ファイルの作成"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-一時ファイルを作成する理由はたくさんあります。例えば、大きなデータを処理する中間ファイルを作成したり、一時的なバックアップファイルを保存することができます。また、一時ファイルはアプリケーションが終了した後自動的に削除されるため、メモリを節約することができます。
+一時ファイルを作成する理由は様々です。例えば、ファイルを一時的に保存する必要がある時や、あるプログラムの出力を保存する時などに使えます。また、一時ファイルはメモリを節約することにも役立ちます。
 
 ## 作り方
 
-一時ファイルを作成するには、Clojureのライブラリであるclojure.java.ioを使用します。まず、適切なパッケージをインポートします。
+Clojureでは、`with-open`関数を使うと簡単に一時ファイルを作成することができます。以下のコードを参考にしてください。
 
 ```Clojure
-(ns my-app.core
-  (:require [clojure.java.io :as io]))
+(with-open [file (java.io.File/createTempFile "prefix-" ".txt")]
+  ; ファイルにデータを書き込む
+  (.write file "Hello World!")
+  ; ファイルを閉じる
+)
 ```
 
-次に、`with-open`マクロを使用して一時ファイルを作成します。以下の例では、一時ファイルを作成し、そのパスを出力しています。
+上記の例では、`with-open`関数を使って一時ファイルを作成し、そのファイルに`write`メソッドでデータを書き込み、最後にファイルを閉じています。こうすることで、一時ファイルが自動的に削除されるので、メモリを節約することができます。
 
-```Clojure
-(with-open [file (io/file "tempfile.txt")]
-  (println (.getPath file)))
-```
+## より詳しく
 
-出力結果は以下のようになります。
+一時ファイルを作成する際には、`java.io.File`クラスの`createTempFile`メソッドを使用します。このメソッドには2つの引数があります。最初の引数は、一時ファイルのプレフィックスを表し、2つ目の引数は一時ファイルの拡張子を表します。また、一時ファイルはデフォルトではシステムの一時フォルダに作成されますが、`java.io.File`クラスの`createTempFile`メソッドの第3引数を指定することで、ファイルを作成する場所を指定することもできます。
 
-```
-/tmp/tempfile.txt
-```
+## その他の情報
 
-また、作成された一時ファイルにデータを書き込むこともできます。以下の例では、一時ファイルに"Hello World"という文字列を書き込んでいます。
+一時ファイルを作成する際には、メモリの管理やファイルの確保について注意する必要があります。一時ファイルが多すぎるとメモリが不足し、プログラムが正しく動作しない可能性があります。また、ファイルの削除を忘れるとディスク容量を浪費することにもつながります。ですので、一時ファイルを使う際には、適切なタイミングでファイルを閉じて削除するように注意しましょう。
 
-```Clojure
-(with-open [file (io/file "tempfile.txt")]
-  (io/write file "Hello World"))
-```
+## 関連リンク
 
-一時ファイルを削除するには、`delete-file`関数を使用します。
-
-```Clojure
-(io/delete-file "tempfile.txt")
-```
-
-## 深堀り
-
-一時ファイルを作成する際には、一時ファイルの作成先を指定することもできます。例えば、`with-open`マクロの第一引数にディレクトリパスを指定することで、指定したディレクトリに一時ファイルを作成することができます。
-
-また、一時ファイルを作成する際には、一意のファイル名を指定することも重要です。そのために、Clojureでは`uuid`関数を使用して一意のファイル名を生成することができます。
-
-```Clojure
-(with-open [file (io/file "/tmp/" (str (uuid) ".txt"))]
-  (io/write file "Hello World"))
-```
-
-## 他の参考文献
-
-- [clojure.java.ioライブラリのドキュメンテーション](https://clojure.github.io/java.io/)
-- [with-openマクロの詳細](https://clojuredocs.org/clojure.core/with-open)
+- [Java SE ドキュメント - java.io.Fileクラス](https://docs.oracle.com/javase/jp/8/docs/api/java/io/File.html)
+- [Clojureホームページ](https://clojure.org/)
+- [Clojureドキュメント - with-open関数](https://clojuredocs.org/clojure.core/with-open)

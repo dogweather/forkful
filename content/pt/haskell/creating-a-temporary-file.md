@@ -1,39 +1,43 @@
 ---
-title:    "Haskell: Criando um arquivo temporário"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/creating-a-temporary-file.md"
+title:                "Haskell: Criando um arquivo temporário"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porque criar um arquivo temporário em Haskell
+## Por que usar arquivos temporários em Haskell?
 
-Criar arquivos temporários é uma prática comum na programação para armazenar dados temporários ou para fins de teste. Isso pode ser especialmente útil ao lidar com arquivos grandes que não podem ser armazenados na memória principal ou quando precisamos testar um código antes de implementá-lo definitivamente. Neste artigo, vamos explorar como criar e manipular arquivos temporários em Haskell.
+Criar arquivos temporários é uma prática comum em linguagens de programação, incluindo Haskell. Esses arquivos são criados e usados temporariamente durante a execução de um programa e geralmente são excluídos após o uso. A criação de arquivos temporários pode ser útil para armazenar dados temporários, gerar relatórios ou até mesmo testar uma função sem alterar arquivos permanentes. Neste artigo, vamos explorar como criar e utilizar arquivos temporários em Haskell.
 
-## Como criar um arquivo temporário em Haskell
+## Como fazer
 
-Para criar um arquivo temporário em Haskell, usamos a função `withSystemTempFile` do módulo `System.IO.Temp`. Esta função recebe dois parâmetros: o padrão de nome do arquivo e uma função que manipula esse arquivo. A função passada deve ter dois parâmetros: o caminho para o arquivo temporário e o handle (identificador) do arquivo.
-
-Um exemplo de código para criar e escrever em um arquivo temporário seria o seguinte:
+Para criar um arquivo temporário em Haskell, primeiro precisamos importar o módulo `System.IO.Temp`. Em seguida, usamos a função `withSystemTempFile` que recebe dois parâmetros: um prefixo de nome de arquivo e uma função. Essa função é responsável por manipular o arquivo temporário criado. Abaixo, temos um exemplo de como criar um arquivo temporário com alguns dados e usá-lo em uma função:
 
 ```Haskell
-import System.IO
 import System.IO.Temp
+import System.IO
 
-main = withSystemTempFile "temp.txt" $ \tmpFilePath handle -> do
-  hPutStrLn handle "Hello World!"
-  hClose handle
+myFunction :: String -> IO ()
+myFunction tempFile = do
+  contents <- readFile tempFile
+  -- faça algo com os dados do arquivo temporário aqui
+  putStrLn "Dados processados com sucesso!"
+
+main :: IO ()
+main = withSystemTempFile "temp" myFunction
 ```
+A saída do programa será `Dados processados com sucesso!` e o arquivo temporário criado terá um nome parecido com `temp034862.txt`, dependendo do sistema operacional.
 
-Neste exemplo, estamos criando um arquivo temporário com o nome "temp.txt" e escrevendo "Hello World!" nele. A função `withSystemTempFile` se encarregará de criar o arquivo e gerenciar seu fechamento após a execução da função passada.
+## Explorando mais a fundo
 
-## Aprofundando no uso de arquivos temporários em Haskell
+Existem outras funções relacionadas à criação de arquivos temporários em Haskell, como `withSystemTempDirectory` e `openTempFile`. A função `withSystemTempDirectory` é semelhante à `withSystemTempFile` e recebe a mesma estrutura de parâmetros, mas cria um diretório temporário em vez de um arquivo. Já a função `openTempFile` é responsável apenas pela criação do arquivo temporário, sem executar nenhuma função específica. Além disso, é possível definir o diretório em que o arquivo será criado, fornecendo-o como o terceiro parâmetro.
 
-As operações de leitura e escrita em arquivos temporários podem ser realizadas usando as funções `hGetContents` e `hPutStr` do módulo `System.IO`. Além disso, podemos usar as funções `withSystemTempDirectory` e `withTempDirectory` para criar diretórios temporários em vez de arquivos.
-
-Também é importante lembrar de remover os arquivos temporários após seu uso para não ocupar espaço desnecessário no sistema. Para isso, podemos usar a função `removePathForcibly` do módulo `System.Directory`.
+É importante lembrar que arquivos temporários são criados em um diretório seguro, garantindo que eles serão excluídos após o seu uso. Também é possível definir as permissões do arquivo temporário utilizando a função `openTempFileWithMode`.
 
 ## Veja também
 
-- [Documentação oficial do módulo System.IO.Temp](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO-Temp.html)
-- [Tutorial sobre manipulação de arquivos em Haskell](https://github.com/Mikail-Eli/Manipulando-Arquivos-em-Haskell)
+- [Documentação do módulo `System.IO.Temp` em Haskell](https://hackage.haskell.org/package/temporary/docs/System-IO-Temp.html)
+- [Tutorial sobre arquivos e diretórios temporários em Haskell](https://abhinavsarkar.net/posts/programming/2019-03-10-temporary-files-in-haskell.html)
+- [Vídeo explicativo sobre arquivos temporários em Haskell](https://www.youtube.com/watch?v=HeYPJY1BrKc)

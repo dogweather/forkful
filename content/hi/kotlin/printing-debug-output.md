@@ -1,40 +1,32 @@
 ---
-title:    "Kotlin: डिबग आउटपुट प्रिंट करना"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/printing-debug-output.md"
+title:                "Kotlin: डीबग आउटपुट प्रिंट करना"
+programming_language: "Kotlin"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
+आपने कभी सोचा है कि आपका कोड सही से काम कर रहा है या नहीं? कई बार हम अपने कोड में समस्याओं का पता लगाने के लिए उसमे डिबग आउटपुट का उपयोग करते हैं। इस ब्लॉग पोस्ट में हम जानेंगे कि डिबग आउटपुट क्यों और कैसे प्रिंट करना चाहिए।
+
 ## क्यों
-कोटलिन में डिबग आउटपुट प्रिंट करने का उद्देश्य त्रुटियों को ढूंढने और उन्हें ठीक करने में मदद करता है।
+
+डिबग आउटपुट आपको अपने कोड में समस्याओं का पता लगाने में मदद करता है। इससे आप अपने कोड को और बेहतर बना सकते हैं और उसमें से बग को धुंधने में आसानी होती है।
 
 ## कैसे करें
-```kotlin
+
+```Kotlin
 fun main() {
     val name = "John"
-    println("Hello $name!") // Output: Hello John!
+    val age = 25
+
+    println("Name: $name")
+    println("Age: $age")
 }
 ```
 
-```kotlin
-fun main() {
-    val num1 = 10
-    val num2 = 5
-    println("$num1 + $num2 = ${num1 + num2}") // Output: 10 + 5 = 15
-}
-```
-
-```kotlin
-fun main() {
-    val list = listOf("apple", "banana", "orange")
-    println("Fruits: $list") // Output: Fruits: [apple, banana, orange]
-}
-```
+यहां हमने ```println()``` फंक्शन का उपयोग किया है जो डिबग आउटपुट प्रिंट करने के लिए इस्तेमाल होता है। इस फंक्शन में हम वे वेरियबल्स प्रिंट करते हैं जो हमारे कोड में हैं। इससे हमें उन कीमतों का पता चलता है जो हमने अपने कोड में सेट किए हैं। साथ ही, हम इससे अपने कोड में समस्याओं का भी पता लगा सकते हैं जैसे की वेरियबल्स की गलत कीमत, या कोड के सही चलने का पता लगाने में दिक्कत।
 
 ## गहराई में जाएं
-डिबग आउटपुट के लिए ```println()``` फंक्शन का उपयोग किया जाता है। यह फंक्शन मैसेज के साथ वेरिएबल या एक्सप्रेशन को लेकर उसे प्रिंट करता है। इससे हम अपनी कोड में ट्रैक कर सकते हैं कि कैसे अपने प्रोग्राम में कोई गलती हो सकती है और उसे ठीक कैसे कर सकते हैं।
 
-## देखें भी
-[Kotlin एक पूर्वावलोकन](https://kotlinlang.org/docs/reference/) \
-[Kotlin फंक्शन](https://kotlinlang.org/docs/reference/functions.html)
+डिबग आउटपुट को प्रिंट करने के लिए हम ```println()``` के अलावा कई और फंक्शन्स भी उपयोग कर सकते हैं। जैसे, ```print()``` जो लाइन ब्रेक के बिना प्रिंट करता है और ```println()``` जो लाइन ब्रेक के साथ प्रिंट करता है। इसके अलावा, हम ```runBlocking()``` फंक्शन का भी इसत

@@ -1,43 +1,53 @@
 ---
-title:    "C#: כתיבת בדיקות"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/writing-tests.md"
+title:                "C#: כתיבת בדיקות"
+programming_language: "C#"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+מדוע:
+כתיבת בדיקות לקוד היא חשובה כיוון שהיא מאפשרת לנו להעריך את תכונותיו של הקוד ולוודא שהוא פועל כצפוי. היא עוזרת לנו לזהות בעיות כבר בשלב מוקדם יותר ולתקן אותן לפני שהן מפגיעות בתפקוד של האפליקציה.
 
-כתיבת בדיקות בתוכניות היא חלק חשוב ביישום מתודולוגיית בדיקות תוכנה. כתיבת בדיקות מאפשרת לנו לוודא שהקוד שלנו עובד כמצופה וכן מאפשרת לנו לזהות בצורה נוחה ומהירה אם ישנם בעיות עם הקוד לפני יישום התוכנית לאלפי משתמשים.
-
-## כיצד לבצע כתיבת בדיקות
-
-לפנינו דוגמא בשפת C# לכיצד ניתן לכתוב בדיקות עבור פונקציה שמקבלת שני מספרים ומחזירה את הערך הגדול ביותר.
-
+איך לכתוב בדיקות:
 ```C#
-public int GetMaxValue(int a, int b) 
-{
-   return a > b ? a : b; 
-} 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
-public void TestGetMaxValue() 
+namespace Calculator.Test
 {
-   int actualResult = GetMaxValue(5, 10); 
-   int expectedResult = 10; 
+    [TestClass]
+    public class MathTest
+    {
+        [TestMethod]
+        public void Add_InputTwoInt_GetSum()
+        {
+            // Arrange
+            int num1 = 5;
+            int num2 = 10;
+            int expected = 15;
+            var math = new Math();
 
-   if(actualResult == expectedResult) 
-   {
-      Console.WriteLine("התוצאה נכונה!");
-   }
-   else 
-   {
-      Console.WriteLine("התוצאה שגויה...");
-   }
+            // Act
+            int result = math.Add(num1, num2);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+        }
+    }
 }
 ```
+כאן אנו כותבים טסט פשוט לפונקציה המכאיבה שלנו, Add. אנו יוצרים משתנים לפי ארגומנטים לפונקציה ומצפים לתוצאה נכונה. לאחר מכן, אנו קוראים לפונקציה ומוודאים שהתוצאה זהה לתוצאה הצפויה באמצעות Assert.
 
-כאן, אנו משתמשים בפונקציה הבנויה TestGetMaxValue לבדוק את התוצאה הצפויה מפונקציית GetMaxValue. אנו משווים את התוצאה האמיתית לתוצאה שאמורה לצאת על פי כללי הפונקציה. אם התוצאה תואמת, נדפיס הודעת הצלחה, אחרת נדפיס הודעת שגיאה.
+עמוק יותר:
+כשאנו כותבים בדיקות, חשוב לראות כללי עבודה של הקוד ולמצוא בעיות שעשויות להופיע. חשוב לבדוק מגוון של סיטואציות ולוודא שהקוד עובד כצפוי גם כאשר נתונים נמצאים במצב קיצון. כמו כן, חשוב לכתוב בדיקות טובות כדי לוודא שהן יתפקדו בכל פעם שמריצים אותן.
 
-## לכיוון הים העמוק
+ראו כמה פנטזיות של וידאו עבור תרגול כתיבת סקריפט שטיפת גופר:
+- https://www.youtube.com/watch?v=O86UiOxQV5E
+- https://www.youtube.com/watch?v=xp0WlD7KZp8
+- https://www.youtube.com/watch?v=RKTtsIR726I
 
-כעת שהבנו כיצד לכתוב בדיקות, ניתן לשפר את מתודולוגיית הבדיקות שלנו על ידי השתמשות במאפיינים נוספים כגון הדפוס AAA (Arrange, Act, Assert) והשתמשות בכלים כמו xUnit ו- NUnit. כמו כן, ניתן לכתוב בדיקות אוטומטיות שיאפשרו לנו לבדוק את התוצאות שלנו בצורה עצמאית ולא ידנית. עם שימוש בכלים ופרקטיקות מתקדמות יותר, תהיה לנו אפשרות לשפר את איכות הקוד שלנו ולהפחית את סיכ
+כדי ללמוד עוד על כתיבת בדיקות לקוד ב- C#, ניתן לבדוק את המדריך המפורט כאן:
+- https://docs.microsoft.com/en-us/visualstudio/test/writing-unit-tests-for-csharp?view=vs-2019
+- https://stackify.com/unit-testing-basics-best-practices/

@@ -1,72 +1,48 @@
 ---
-title:    "Gleam: Ausgabe von Debug-Meldungen"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/printing-debug-output.md"
+title:                "Gleam: Debug-Ausgaben drucken"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Drucken von Debug-Ausgaben ist ein wichtiges Tool für die Fehlersuche und das Verständnis des Codes beim Programmieren in Gleam. Es kann helfen, Fehler schneller zu finden und die Funktionsweise des Codes besser zu verstehen.
+Es gibt viele Methoden, um die Fehler in unserem Code zu finden und zu beheben. Eine einfache, aber effektive Methode ist das Ausgeben von Debug-Informationen. Das bedeutet, dass wir während der Ausführung unseres Codes zusätzliche Informationen anzeigen, um Probleme zu lokalisieren und zu beheben. In diesem Blog-Beitrag werden wir uns ansehen, wie wir Debug-Ausgaben in Gleam verwenden können.
 
-# Wie geht man vor
+## Wie geht das?
 
-Um Debug-Ausgaben in Gleam zu drucken, nutzen wir die Funktion `gleam_io:p/1`, die einen beliebigen Wert in der Konsole ausgibt. Hier ist ein Beispiel, wie wir diese Funktion nutzen können:
-
-```Gleam
-import gleam/io
-
-pub fn main() {
-  greeting = "Hallo Welt"
-  gleam_io:p(greeting)
-}
-```
-
-Dieser Code würde die Debug-Ausgabe "Hallo Welt" in der Konsole ausgeben. Wir können auch komplexe Datentypen wie Lists oder Tuples ausdrucken, um den Inhalt von Variablen besser zu verstehen.
+Um Debug-Ausgaben in Gleam zu erstellen, verwenden wir die Funktion `debug/1`. Diese Funktion akzeptiert einen beliebigen Wert und gibt ihn in der Konsole aus. Schauen wir uns ein Beispiel an:
 
 ```Gleam
-import gleam/io
+let message = "Hallo, Welt!"
 
-pub fn main() {
-  numbers = [1, 2, 3]
-  gleam_io:p(numbers)
-}
-
+debug(message) // gibt "Hallo, Welt!" in der Konsole aus
 ```
 
-Die Ausgabe wäre `[1, 2, 3]`, was uns zeigt, dass `numbers` eine Liste mit den Zahlen 1, 2 und 3 ist. Dies kann besonders nützlich sein, wenn wir mit komplexeren Datenstrukturen arbeiten und den Überblick behalten wollen.
-
-# Tiefere Einblicke
-
-Wenn wir Debug-Ausgaben nutzen, sollten wir sicherstellen, dass sie nicht in der finalen Version unseres Codes enthalten sind. Wir können sie zum Beispiel mit `if`-Statements umgeben, um sicherzustellen, dass sie nur ausgeführt werden, wenn wir uns in der Debug-Phase befinden.
+Wenn wir uns das oben genannte Beispiel ansehen, können wir sehen, dass die Syntax sehr einfach ist. Wir geben einfach den Wert an, den wir in der Konsole ausgeben möchten, innerhalb der `debug` Funktion. Wir können dies auch mit komplexeren Werten wie Listen oder Tupeln tun:
 
 ```Gleam
-import gleam/io
+let numbers = [1, 2, 3]
 
-pub fn main() {
-  debug = true
-  if debug {
-    // Code hier
-  }
-}
+debug(numbers) // gibt [1, 2, 3] in der Konsole aus
 ```
 
-Wir können auch mehrere Werte in einer Debug-Ausgabe ausdrucken, indem wir sie mit einem Komma trennen.
+## Tiefer ins Detail gehen
+
+Das Ausgeben von Debug-Informationen ist eine großartige Möglichkeit, um zu verstehen, was in unserem Code passiert. Es kann jedoch auch nützlich sein, um spezifische Informationen über unsere Variablen oder Funktionen zu erhalten. In diesem Fall verwenden wir die Funktion `inspect/1`, die akzeptiert ebenfalls einen beliebigen Wert, aber gibt eine lesbare Repräsentation dieses Wertes zurück. Schauen wir uns ein Beispiel an:
 
 ```Gleam
-import gleam/io
+let name = "Max"
 
-pub fn main() {
-  first_name = "Max"
-  last_name = "Mustermann"
-  gleam_io:p(first_name, last_name)
-}
+inspect(name) // gibt "String(\"Max\")" in der Konsole aus
 ```
 
-Die Ausgabe wäre `Max, Mustermann`, was uns den Wert von `first_name` und `last_name` zeigt.
+Wie Sie sehen können, gibt die Funktion `inspect` eine lesbare Repräsentation des übergebenen Wertes zurück. Dies kann hilfreich sein, um genau zu verstehen, was in unserer Variablen gespeichert ist.
 
-# Siehe auch
+## Siehe auch
 
--[Gleam Dokumentation](https://gleam.run/documentation.html)
--[Gleam Beispiele und Tutorials](https://github.com/gleam-lang/gleam/tree/master/examples)
+- [Gleam-Dokumentation zur Debug-Ausgabe](https://gleam.run/documentation/debugging#output)
+- [Ein weiterer Blog-Beitrag über Gleam-Debugging-Techniken](https://blog.example.com/gleam-debugging)
+- [Gleam-Community-Diskussionsforum über Debugging](https://forum.gleam.run/c/debugging)

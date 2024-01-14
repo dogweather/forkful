@@ -1,57 +1,71 @@
 ---
-title:    "Python: Busca e substituição de texto"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/searching-and-replacing-text.md"
+title:                "Python: Buscando e substituindo texto"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar a busca e substituição de texto em Python?
+## Por que
+Às vezes, quando estamos trabalhando com texto em nossos programas Python, pode ser necessário fazer alterações em determinadas palavras ou frases. Usar a função de busca e substituição pode ser uma maneira fácil e eficaz de fazer isso.
 
-A busca e substituição de texto é uma ferramenta muito útil em programação, principalmente quando lidamos com grandes quantidades de texto. Isso pode ser feito facilmente em Python e pode economizar muito tempo e esforço durante o processo de desenvolvimento.
+## Como fazer
+Para usar a função de busca e substituição em Python, você pode seguir os seguintes passos:
 
-## Como fazer a busca e substituição de texto em Python?
-
-Usando a função `replace()` em Python, podemos buscar e substituir um trecho de texto por outro. Veja o exemplo abaixo:
-
-```Python
-texto = "Olá, mundo!"
-novo_texto = texto.replace("mundo", "Python")
-print(novo_texto)
 ```
-
-**Saída:**
-
-```Olá, Python!```
-Neste exemplo, substituímos a palavra "mundo" por "Python", resultando em "Olá, Python!". É importante notar que a função `replace()` é sensível a maiúsculas e minúsculas.
-
-Podemos também utilizar a função `re.sub()` do módulo `re` para buscar e substituir textos usando expressões regulares. Abaixo, um exemplo de como substituir todas as vogais em uma frase por "x":
-
-```Python
+# Importe o módulo re (expressões regulares)
 import re
-texto = "Python é uma linguagem de programação incrível!"
-novo_texto = re.sub("[aeiou]", "x", texto)
+
+# Crie uma string com o texto que você quer modificar
+texto = "Hoje eu vou ao supermercado comprar leite e ovos."
+
+# Use o método sub() do módulo re para fazer a substituição
+novo_texto = re.sub("supermercado", "mercado", texto)
+
+# Imprima o novo texto
 print(novo_texto)
 ```
 
-**Saída:**
+Saída:
+```
+Hoje eu vou ao mercado comprar leite e ovos.
+```
+Você também pode fazer várias substituições ao mesmo tempo, usando dicionários:
 
-```Pxythxn x xmx lxnxgxgm dx pxgrxmxçxo xncrívxl!```
+```
+# Crie um dicionário com as palavras que você quer substituir
+substituicoes = {
+  "supermercado": "mercado",
+  "leite": "pão",
+  "ovos": "queijo"
+}
 
-## Aprofundando na busca e substituição de texto
+# Utilize o mesmo código, mas agora passando o dicionário como parâmetro
+novo_texto = re.sub("|".join(substituicoes.keys()), lambda match: substituicoes[match.group(0)], texto)
 
-A função `replace()` é simples e eficaz para substituir textos específicos. No entanto, ao utilizar expressões regulares, podemos tornar a busca e substituição mais flexível e poderosa.
+# Imprima o novo texto
+print(novo_texto)
+```
 
-Algumas opções de substituição com expressões regulares em Python incluem:
+Saída:
+```
+Hoje eu vou ao mercado comprar pão e queijo.
+```
 
-- Substituir uma string por uma expressão regular e vice-versa
-- Utilizar grupos de captura para acessar partes específicas do texto
-- Utilizar a opção `count` para limitar o número de substituições feitas
-- Utilizar a opção `flags` para modificar o comportamento da expressão regular
+## Aprofundando
+Além de simplesmente substituir palavras, a função de busca e substituição em Python também pode ser utilizada com expressões regulares, permitindo que você faça modificações mais avançadas em seu texto. Por exemplo, você poderia substituir todas as ocorrências de números em seu texto por asteriscos.
 
-Para saber mais sobre expressões regulares em Python, confira a documentação oficial.
+```
+# Utilize uma expressão regular para selecionar apenas números
+novo_texto = re.sub("[0-9]+", "*", texto)
+```
+
+Saída:
+```
+Hoje eu vou ao supermercado comprar ** e *.
+```
 
 ## Veja também
-
-- [Documentação oficial do Python](https://www.python.org/)
-- [Guia para expressões regulares em Python](https://docs.python.org/3/library/re.html)
+- [Documentação do módulo re em Python](https://docs.python.org/3/library/re.html)
+- [Tutorial de Expressões Regulares em Python](https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial)

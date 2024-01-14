@@ -1,35 +1,49 @@
 ---
-title:    "Elm: Excluindo caracteres que correspondem a um padrão"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/deleting-characters-matching-a-pattern.md"
+title:                "Elm: Excluindo caracteres correspondentes a um padrão"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+# Por que deletar caracteres que correspondem a um padrão?
 
-Às vezes, em programação, nos deparamos com a necessidade de deletar caracteres que correspondem a um determinado padrão. Isso pode ser feito por diversos motivos, como por exemplo, por questões de segurança ou para a limpeza de dados.
+Às vezes, ao trabalhar com dados, pode ser necessário remover caracteres que correspondem a um determinado padrão. Isso pode ser feito de forma fácil e eficiente usando a linguagem de programação Elm. Neste artigo, vamos explorar como realizar essa tarefa e mergulhar mais fundo para entender como o processo funciona.
 
-## Como fazer?
+# Como fazer
 
-Para deletar caracteres que correspondem a um padrão em Elm, podemos usar a função String.filter. Esta função recebe como argumento uma função que determina se um caractere deve ser mantido ou descartado. Vamos ver um exemplo:
+Para deletar caracteres que correspondem a um padrão em Elm, primeiro precisamos importar o módulo String. Em seguida, usamos a função `replace` para substituir os caracteres desejados pelo valor vazio ("").
 
-```Elm
-let
-    string = "Olá, mundo!"
-    newString = String.filter (\c -> c /= ' ') string
-in
-    newString
+```
+Elm import String
+
+texto = "Olá, *mundo*!"
+novoTexto = replace "*" "" texto
+
+-- novoTexto será "Olá, mundo!"
 ```
 
-Esse código vai deletar todos os espaços em branco da string "Olá, mundo!", resultando em "Olá,mundo!" como saída.
+No exemplo acima, usamos a função `replace` para substituir o asterisco "*" pelo valor vazio, resultando em um texto sem a formatação em negrito.
 
-## Deep Dive
+# Mergulho Profundo
 
-A função String.filter é bastante útil para realizar ações específicas em nossas strings. Podemos usá-la em conjunto com outras funções, como por exemplo String.index ou String.slice para atingir um resultado mais específico. Além disso, fazer a limpeza de dados com esta função pode trazer maior segurança em nossos programas, evitando possíveis vulnerabilidades.
+Ao trabalhar com a função `replace`, é importante entender que ela só substitui a primeira ocorrência do caractere desejado. Portanto, se houver mais de uma ocorrência do caractere, precisamos usar um laço `while` para substituir todas elas.
 
-## Veja também
+```
+Elm import String
 
-- [Documentação oficial do Elm](https://guide.elm-lang.org/core_language.html)
-- [Tutorial de Elm para iniciantes](https://medium.com/@murilomendonca/elm-guia-pr%C3%A1tico-para-iniciantes-e-interessados-bcri%C3%A7%C3%A3o-alem%C3%A3-943574f2cc37)
-- [Mais sobre a função String.filter](https://package.elm-lang.org/packages/elm/core/latest/String#filter)
+texto = "Eu gosto de *café* com *leite*"
+novoTexto = replace "*" "" texto
+
+enquanto ((indexOf "*") /= -1) novoTexto do
+    novoTexto = replace "*" "" novoTexto
+```
+
+Neste exemplo, usamos um laço `while` para substituir todas as ocorrências do caractere "*". No primeiro ciclo, apenas o primeiro "*" será substituído e, no segundo ciclo, a próxima ocorrência será substituída e assim por diante até que todas as ocorrências sejam substituídas.
+
+# Veja também
+
+- [Documentação oficial do módulo String em Elm](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Outros exemplos de manipulação de strings em Elm](https://elmprogramming.com/elm-string.html)
+- [Como usar a função `replace` em Elm](https://www.eg.bucknell.edu/$PHP/~mead/teaching/cs206/s14-1763.html)

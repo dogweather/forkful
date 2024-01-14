@@ -1,44 +1,47 @@
 ---
-title:    "Ruby: 텍스트 검색 및 교체"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/searching-and-replacing-text.md"
+title:                "Ruby: 텍스트 검색 및 교체하기"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
+# 왜?
+텍스트를 검색하고 대체하는 작업을 왜 해야 할까요? 많은 컴퓨터 프로그래밍 작업은 텍스트 기반으로 이루어지기 때문입니다. 따라서 특정 텍스트를 일괄적으로 검색하고, 해당 텍스트를 다른 내용으로 대체하는 것은 유용하고 효율적입니다. 특히, 대규모 코드 베이스에서 특정 변수 이름이나 함수 호출 이름을 변경해야 할 때 매우 유용합니다.
 
-텍스트를 검색하고 대체하는 작업의 이유는 간단합니다 - 시간과 노력을 절약하기 위해서입니다. 특정 문자열을 찾아서 일일이 대체하는 것은 매우 시간 소모적이며 실수를 범할 수도 있습니다. 반면에 Ruby 프로그래밍 언어를 사용하면 같은 작업을 몇 줄의 코드로 쉽게 처리할 수 있습니다.
-
-## 하는 법
+## 어떻게 할까요?
+검색하고 대체하는 작업은 Ruby의 String 클래스와 정규식을 사용하여 쉽게 할 수 있습니다. 우선, 아래와 같이 `gsub` 메소드를 사용하여 특정 텍스트를 다른 내용으로 대체할 수 있습니다.
 
 ```Ruby
-# 검색 대상 텍스트
-text = "안녕하세요, 저는 Ruby를 사랑하는 개발자입니다."
-
-# 'Ruby'를 'Python'으로 대체
-replaced_text = text.gsub("Ruby", "Python")
-
-# 결과 출력
-puts replaced_text
-
-# 출력: 안녕하세요, 저는 Python을 사랑하는 개발자입니다.
+puts "Hello, world!".gsub("world", "Korea") #=> "Hello, Korea!"
 ```
 
-위 예시 코드에서 `gsub` 메소드를 사용하여 `text` 변수 내부의 "Ruby"를 "Python"으로 대체하였습니다. 이를 통해 간단한 1줄의 코드로 텍스트를 대체하는 작업이 가능합니다. 그리고 대체된 결과를 `puts` 메소드를 사용하여 출력합니다.
+또한, 정규식을 사용하여 더욱 강력한 검색 및 대체 작업을 수행할 수 있습니다. 정규식을 사용하면 패턴을 이용하여 더욱 정교하게 텍스트를 검색하고, 해당 패턴에 일치하는 부분을 다른 내용으로 대체할 수 있습니다.
 
-## 딥 다이브
+```Ruby
+puts "The quick brown fox jumps over the lazy dog".gsub(/[aeiou]/, '*') #=> "Th* q**ck br*wn f*x j*mps *v*r th* l*zy d*g"
+```
 
-Ruby에서는 `String` 클래스의 `gsub` 메소드뿐만 아니라 `sub`, `replace`, `sub!`, `replace!` 등 여러 가지 메소드를 제공하며, 각각의 기능이 조금씩 다릅니다. 예를 들어, `replace` 메소드는 대체된 결과를 반환하는 것이 아니라 기존의 문자열을 수정하며, `sub` 메소드는 첫 번째 검색 대상 문자열만을 대체하는 것입니다.
+## 깊게 들어가보기
+Ruby의 String 클래스에는 `gsub` 메소드 외에도 `sub`과 `gsub!` 메소드가 있습니다. `sub`은 첫 번째 일치하는 부분만 대체하는 반면, `gsub`은 모든 일치하는 부분을 대체합니다. 또한, `gsub!` 메소드는 대체한 결과를 인스턴스에 저장하여 기존 문자열을 변경합니다.
 
-또한 정규표현식을 이용하여 더 복잡한 검색과 대체 작업을 수행할 수도 있습니다. 정규표현식은 문자열 패턴을 표현하는 방법으로, 조금 더 응용적인 검색 대상을 찾을 수 있도록 도와줍니다.
+또한, 정규식을 사용하여 치환 문자열을 동적으로 생성할 수 있습니다. 예를 들어, 아래와 같이 패턴 매치 결과에 따라 대체할 문자열을 다르게 지정할 수 있습니다.
 
-## 참고
+```Ruby
+puts "Bob is a great programmer".gsub(/Bob|programmer/, "Bill" => "CEO", "programmer" => "developer") #=> "Bill is a great CEO"
+```
 
-[정규표현식 레퍼런스](https://www.rubyguides.com/2015/06/ruby-regular-expressions/)
+## 알아두면 유용한 팁
+검색 및 대체 작업을 수행할 때, 정규식의 캡처 그룹을 활용하면 더욱 다양한 작업을 할 수 있습니다. 캡처 그룹은 괄호로 묶인 부분을 의미하며, 일치하는 텍스트를 추출할 수 있습니다. 이를 활용해 텍스트를 다양하게 재구성할 수 있습니다.
 
-[문자열 검색, 대체 관련 메소드 레퍼런스](https://ruby-doc.org/core-2.6/String.html#method-i-gsub)
+또한, 정규식의 match 메소드를 사용하면 해당 텍스트가 정규식에 일치하는지 여부를 빠르게 확인할 수 있습니다. 이를 활용하여 대소문자를 무시하는 검색을 수행할 수 있습니다.
 
-[Ruby String 클래스 레퍼런스](https://ruby-doc.org/core-2.6/String.html)
+# 또 다른 예제
+- [Ruby의 정규식 사용 예제](https://ruby-doc.com/docs/Tutorial/part_02/phrase.html)
+- [Ruby에서 문자열 조작하기](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
+- [Ruby의 정규식과 치환](https://docs.ruby-lang.org/en/2.0.0/String.html#method-i-gsub-21)
 
-[Ruby 정규표현식 딥 다이브 강의](https://www.youtube.com/watch?v=EsaYB0uolX8)
+# 참고자료
+- [Ruby 문서 - String 클래스](https://ruby-doc.com/core-2.7.0/String.html)
+- [Ruby 문서 - 정규식](https://ruby-doc.com/docs/ProgrammingRuby/html/tut_stdtypes.html

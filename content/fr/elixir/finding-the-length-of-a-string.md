@@ -1,40 +1,57 @@
 ---
-title:    "Elixir: Trouver la longueur d'une chaîne de caractères"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/finding-the-length-of-a-string.md"
+title:                "Elixir: Trouver la longueur d'une chaîne"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Trouver la longueur d'une chaîne de caractères peut sembler être une tâche simple, mais cela peut en réalité être très utile dans la programmation. Cela vous permet de manipuler et de traiter efficacement des données textuelles, ce qui est un élément clé dans la plupart des programmes informatiques.
+Dans la programmation, il est souvent nécessaire de manipuler des chaînes de caractères. Savoir la longueur d'une chaîne est donc une compétence essentielle pour tout développeur. Dans cet article, nous allons vous montrer comment trouver la longueur d'une chaîne en utilisant le langage Elixir.
 
 ## Comment faire
 
-Pour trouver la longueur d'une chaîne de caractères en Elixir, nous pouvons utiliser la fonction `String.length()`. Voici un exemple de code pour trouver la longueur d'une chaîne de caractères en utilisant cette fonction:
+La méthode la plus simple pour trouver la longueur d'une chaîne est d'utiliser la fonction `String.length/1`. Cette fonction prend en paramètre une chaîne et retourne sa longueur. Voyons un exemple concret :
 
 ```Elixir
-string = "Bonjour le monde!"
-length = String.length(string)
-IO.puts(length) #output: 18
+string = "Bonjour"
+String.length(string)
 ```
 
-Nous pouvons également combiner la fonction `String.length()` avec la méthode de liste `hd()` pour trouver la longueur de mots individuels dans une phrase. Voici un exemple:
+Output : `7`
+
+Il est également possible d'utiliser l'opérateur `++` pour concaténer deux chaînes et ainsi obtenir leur longueur combinée. Par exemple :
 
 ```Elixir
-string = "Le petit chat noir"
-words = String.split(string, " ")
-IO.puts("Le mot \"#{hd(words)}\" a une longueur de #{String.length(hd(words))}.") #output: Le mot "Le" a une longueur de 2.
+string1 = "Bonjour"
+string2 = "monde"
+String.length(string1 ++ string2)
 ```
 
-Dans ces exemples, nous avons utilisé la méthode `IO.puts()` pour afficher le résultat à l'écran, mais vous pouvez également l'utiliser pour manipuler les données selon vos besoins.
+Output : `12`
 
-## Plongée en profondeur
+## Plongeon en profondeur
 
-Il y a quelques choses à garder à l'esprit lors de l'utilisation de la fonction `String.length()` en Elixir. Tout d'abord, cette fonction renvoie le nombre de caractères unicode dans la chaîne de caractères et non le nombre de lettres ou de symboles. Une autre chose à noter est que, lors du traitement de chaînes de caractères contenant des caractères unicode comme les emojis, la longueur réelle peut être différente de la longueur affichée.
+La fonction `String.length/1` utilise un algorithme efficace basé sur la table ASCII pour calculer la longueur d'une chaîne de caractères. Elle parcourt simplement tous les caractères dans la chaîne et compte le nombre de caractères valides. Cependant, il est important de noter que cette fonction peut être moins performante pour les chaînes contenant des caractères Unicode.
+
+Pour ces cas, il existe une autre fonction appelée `String.codepoints/1` qui retourne une liste des points de code Unicode pour chaque caractère dans la chaîne, et ainsi on peut facilement en déduire la longueur de la chaîne. Voici un exemple :
+
+```Elixir
+string = "こんにちは"
+length = String.codepoints(string) |> Enum.count
+IO.puts("La longueur de la chaîne est : #{length}")
+```
+
+Output : `La longueur de la chaîne est : 5`
 
 ## Voir aussi
 
-- La documentation officielle sur `String.length()` : https://hexdocs.pm/elixir/String.html#length/1
-- Un tutoriel sur la manipulation de chaînes de caractères en Elixir : https://www.youtube.com/watch?v=ayla9-PjcXQ
+Pour en savoir plus sur les opérations sur les chaînes de caractères en Elixir, ces liens peuvent vous être utiles :
+
+- [Documentation officielle sur les chaînes de caractères en Elixir](https://hexdocs.pm/elixir/String.html)
+- [Tutoriel sur les chaînes de caractères en Elixir](https://elixirschool.com/fr/lessons/basics/basics/)
+- [Guide des chaînes de caractères en Elixir](https://www.codementor.io/ayushchapagain/introduction-to-strings-and-charlists-yh0pbylf1)
+
+N'hésitez pas à les consulter pour améliorer vos compétences en programmation avec Elixir. À bientôt pour d'autres astuces de programmation !

@@ -1,56 +1,49 @@
 ---
-title:    "Ruby: Utskrift av feilsøkingsutdata"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/ruby/printing-debug-output.md"
+title:                "Ruby: Utskrift av feilsøkingsdata"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å printe ut debug-utgang er en viktig del av å skrive kode i Ruby, spesielt når du jobber med større og mer komplekse prosjekter. Det kan hjelpe deg med å finne og fikse feil og gjøre koden din mer effektiv og lesbar.
+Å skrive kode kan være en frustrerende opplevelse, spesielt når ting ikke fungerer som de skal. Det kan virke som om du har prøvd alt, men likevel ikke finner ut hva som er galt. Det er her debugging kommer inn i bildet. En enkel og effektiv måte å finne feil i koden din er å bruke print-utsagn for å se hva som skjer under kjøretid. Dette kan være en livredder når du forsøker å løse komplekse problemer eller forstå hvordan koden din fungerer.
 
-## Slik gjør du det
+# Slik gjør du det
 
-For å printe ut debug-utgang i Ruby, kan du bruke metoden `p`. Denne metoden tar et argument og printer det ut med et linjeskift. Du kan også bruke `puts` eller `print` metoder, men `p` er spesifikt designet for debug-utgang og vil vise mer informasjon om objektet du printer ut.
-
-```Ruby
-a = 5
-p a # => 5
-```
-
-Du kan også printe ut flere verdier eller variabler ved å separere dem med kommaer:
+Skrive ut debug-output i Ruby er enkelt og kan gjøres på noen få forskjellige måter. En av de mest populære metodene er å bruke metoden `puts`, som står for "put string". Dette gjør at du kan skrive ut en hvilken som helst variabel eller streng i konsollen mens programmet ditt kjører. For eksempel:
 
 ```Ruby
-a = 5
-b = "hello"
-p a, b # => 5, "hello"
+puts "dette er en test"
+# => dette er en test
 ```
 
-En annen måte å få mer detaljert debug-utgang på, er å bruke `inspect` metoden. Denne metoden vil gi deg en detaljert beskrivelse av objektet du printer ut, inkludert dets klasse og verdi.
+Du kan også inkludere variabler i `puts`-uttrykket ved å bruke interpolering. Dette betyr at du kan legge til verdien av en variabel i en streng. For eksempel:
 
 ```Ruby
-a = [1,2,3]
-p a.inspect # => "[1, 2, 3]"
+nummer = 5
+puts "tallet er #{nummer}"
+# => tallet er 5
 ```
 
-## Dykk dypere
-
-For mer avansert debugging kan du også bruke `binding.pry` eller `binding.irb` inne i koden din. Disse vil stoppe kjøringen av programmet og åpne et interaktivt konsollmiljø på det tidspunktet. Her kan du utforske og inspisere variabler og objekter for å finne feil eller se hvordan de blir endret.
+Du kan også bruke `p`, som står for "print", for å skrive ut en variabel, men også for å se dens type og struktur. Dette kan være spesielt nyttig når du jobber med komplekse objekter eller arrays. For eksempel:
 
 ```Ruby
-def add_two_numbers(a, b)
-  result = a + b
-  binding.pry
-  return result
-end
-
-add_two_numbers(3, 4) # => [1] pry(main)> result
-                       # => 7
+array = [1, 2, 3]
+p array
+# => [1, 2, 3]
 ```
 
-## Se også
+# Dykk dypere
 
-- [Ruby metoder: p, puts, print](https://www.rubyguides.com/2018/10/p-puts-print/)
-- [Debugging Ruby applikasjoner med pry](https://rossta.net/blog/debugging-ruby-applications-with-pry.html)
-- [Åtte måter å få mer ut av Ruby's `p` metode](https://thoughtbot.com/blog/using-the-pp-method-for-more-helpful-debugging-output)
+Det er en rekke andre utskriftsmetoder som kan være nyttige når du debugger din Ruby-kode. For eksempel har vi `print`, som bare skriver ut teksten og ikke legger til en ny linje etter. Dette kan være nyttig hvis du ønsker å skrive ut flere ting på samme linje. Det er også `pp`, som står for "pretty print", og gjør at utdataen ser mer strukturert og lesbar ut. Dette kan være spesielt nyttig for å få et bedre overblikk over komplekse objekter.
+
+Det er også verdt å merke seg at det kan være lurt å bruke en betingelse når du skriver ut debugging-uttrykk. For eksempel kan du legge til en `if`-setning for å kun skrive ut variabler hvis en bestemt betingelse er oppfylt. På denne måten kan du unngå å oversvømme konsollen med unødvendig informasjon.
+
+# Se også
+
+* [Guide til debugging i Ruby](https://www.sitepoint.com/ruby-debugging/)
+* [10 tips for effektiv debugging i Ruby](https://www.sitepoint.com/tips-effective-debugging-ruby/)
+* [Offisiell dokumentasjon for utskriftsmetoder i Ruby](https://ruby-doc.org/core-2.7.0/doc/syntax/control_expressions_rdoc.html#label-Print)

@@ -1,50 +1,55 @@
 ---
-title:    "C++ recipe: Getting the current date"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/getting-the-current-date.md"
+title:                "C++ recipe: Getting the current date"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-In today's digital world, it is important for programmers to have accurate date and time information for various applications such as logging, scheduling, and data tracking. Knowing the current date and time is a fundamental aspect of programming and can be easily achieved using C++.
+
+As a programmer, it's important to have a good understanding of how to get the current date in your code. This allows you to create time-sensitive applications and keep track of important events.
 
 ## How To
-To get the current date in C++, we can use the `chrono` library. First, we need to include the `chrono` header file in our code. 
+
+Getting the current date in C++ is a simple process. First, we need to include the `<ctime>` library in our code. This library provides functions for manipulating date and time.
 
 ```
-#include <chrono>
+#include <iostream>
+#include <ctime>
+
+using namespace std;
 ```
 
-Then, we can use the `now()` function to get the current time as a `time_point` object. 
+Next, we can define a variable of type `time_t` to store the current date and time.
 
 ```
-auto currentTime = std::chrono::system_clock::now();
+time_t now = time(0);
 ```
 
-To convert this `time_point` object into a readable format, we can use the `time_t` and `ctime` functions. 
+We can then use the `ctime` function to convert this `time_t` variable into a human-readable format.
 
 ```
-std::time_t currentTime_t = std::chrono::system_clock::to_time_t(currentTime);
+// Convert time_t to string
+string date = ctime(&now);
+
+// Print out current date
+cout << "Today is: " << date << endl;
 ```
 
-Using the `ctime` function, we can format the current time into a string and print it out. 
-
-```
-std::cout << "The current date and time is: " << std::ctime(&currentTime_t) << std::endl;
-```
-
-#### Sample Output
-```
-The current date and time is: Fri Jul 02 15:20:05 2021
-```
+Running this code will output the current date in the format "Day of Week Month Day HH:MM:SS Year". For example, "Mon Feb 01 09:00:00 2021".
 
 ## Deep Dive
-Behind the scenes, the `chrono` library uses the `Duration` and `TimePoint` classes to represent time. The `now()` function returns a `TimePoint` object which is the current time since the system clock's epoch (January 1, 1970). This value is then converted into a `time_t` object, which is a representation of the current time in seconds since the epoch.
 
-It is important to note that the `chrono` library also provides options to get the current time in other formats, such as `steady_clock` for consistent time intervals and `high_resolution_clock` for high-precision measurements.
+The `time()` function used to get the current date and time returns the number of seconds elapsed since January 1, 1970. This time is commonly referred to as the Unix Epoch or Unix Time. In order to convert this into a human-readable format, the `ctime()` function uses the system's current time zone.
+
+There are also other useful functions in the `<ctime>` library, such as `localtime()` and `gmtime()`, which allow us to retrieve the current date and time in a specific time zone or in Greenwich Mean Time (GMT) respectively.
+
+Another important aspect to note is that the time retrieved using `time()` is dependent on the system's clock. If the system clock is changed, the date and time retrieved using `time()` will also be affected.
 
 ## See Also
-- [C++ Chrono Library Documentation](https://en.cppreference.com/w/cpp/chrono)
-- [Working with Dates in C++: A Tutorial](https://www.learncpp.com/cpp-tutorial/89-working-with-dates-in-c/)
-- [Current date and time in C++](https://stackoverflow.com/questions/997946/how-to-get-current-time-and-date-in-c)
+
+- [C++ Reference: <ctime> library](https://www.cplusplus.com/reference/ctime/)
+- [Unix time - Wikipedia](https://en.wikipedia.org/wiki/Unix_time)
+- [The Unix Epoch](https://www.epochconverter.com/)

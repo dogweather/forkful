@@ -1,75 +1,47 @@
 ---
-title:    "Go recipe: Using regular expressions"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/using-regular-expressions.md"
+title:                "Go recipe: Using regular expressions"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Regular expressions, commonly known as regex, are powerful string manipulation tools used in various programming languages. They allow for efficient searching and pattern matching within strings, making it a crucial skill to master for any programmer.
+Regular expressions, also known as regex, are a powerful and efficient way to search, match, and manipulate text in any programming language. In Go, regular expressions are implemented using the built-in "regexp" package, making it easily accessible for developers to use. Whether you are working on a simple string matching project or a complex data validation task, regular expressions can greatly simplify your code and save you time.
 
 ## How To
 
-In Go, regular expressions are supported through the `regexp` package. To start using regex, we first need to import the package:
+Using regular expressions in Go is quite straightforward. First, import the "regexp" package into your code. Next, use the "Compile" function to create a regexp object, passing in the pattern you want to search for. For example:
 
 ```Go
-import "regexp"
+regexpObj := regexp.Compile("John")
 ```
 
-Next, we define our regex pattern using the `Compile` method, which takes in a string as its parameter:
+You can then use the "MatchString" method on this object to check if a given string follows the specified pattern. Here's an example code block that demonstrates this:
 
 ```Go
-pattern := regexp.MustCompile("go[a-z]+")
+str := "Hello, my name is John."
+if regexpObj.MatchString(str) {
+    fmt.Println("Found a match!")
+} else {
+    fmt.Println("No match.")
+}
 ```
 
-This pattern searches for any string that starts with "go" followed by one or more lowercase letters. To test our regex pattern, we use the `MatchString` function and pass in the string we want to test against:
-
-```Go
-fmt.Println(pattern.MatchString("gopher")) // true
-fmt.Println(pattern.MatchString("gOfish")) // false
-```
-
-We can also extract specific parts of a string using capturing groups. Let's say we want to extract the username from an email address in the format of "username@example.com". We can use the regex pattern:
-
-```Go
-pattern := regexp.MustCompile("(.+)@.+.com")
-```
-
-The parentheses indicate the capturing group, and we can use the `FindStringSubmatch` function to retrieve the captured part of the string:
-
-```Go
-result := pattern.FindStringSubmatch("john@example.com")
-fmt.Println(result[1]) // john
-```
-
-Regular expressions offer a wide range of features and syntax, making it a versatile tool for string manipulation. It's important to familiarize yourself with the different functions and patterns available to fully harness its capabilities.
+The output of this code would be "Found a match!", as the string contains the name "John". You can also use other methods such as "FindString" and "ReplaceAllString" to further manipulate and extract data from strings using regular expressions.
 
 ## Deep Dive
 
-Regular expressions in Go also support flags, which add additional functionality to our patterns. Some commonly used flags include:
+Regular expressions may seem daunting at first, with their seemingly endless combinations of symbols and characters. However, once you get the hang of them, they can be extremely powerful for text manipulation and data validation tasks.
 
-- `i`: Case-insensitive matching
-- `s`: Allow `.` to match newline characters
-- `U`: Non-greedy matching
+To create more complex patterns, you can use metacharacters such as * (zero or more occurrences), + (one or more occurrences), and ? (zero or one occurrence). You can also specify ranges of characters using the square brackets and use anchors such as ^ (start of string) and $ (end of string) to ensure your pattern only matches at specific positions.
 
-We can include these flags in our regex patterns as a second parameter to the `Compile` function:
-
-```Go
-pattern := regexp.MustCompile("go[a-z]+")
-```
-
-Regular expressions can also be used for string replacement using the `ReplaceAllString` function. For example, we can replace all occurrences of a substring with a different string:
-
-```Go
-pattern := regexp.MustCompile("gopher")
-newString := pattern.ReplaceAllString("I love gopher programming", "Go")
-fmt.Println(newString) // I love Go programming
-```
+Go's regexp package also allows the use of named capture groups, which are useful for extracting data from strings and storing them in variables. For more in-depth information and examples, check out the official documentation for "regexp" package at [https://golang.org/pkg/regexp/](https://golang.org/pkg/regexp/).
 
 ## See Also
 
-- [Regular Expressions in Go](https://golang.org/pkg/regexp/)
-- [Learn Regex Tutorial](https://www.youtube.com/watch?v=rhzKDrUiJVk)
-- [Regex Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [Mastering Regular Expressions](https://regexone.com/) - online tutorial for understanding and learning regular expressions
+- [Regular Expressions Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/) - a handy reference for common regex syntax and usage
+- [Go Docs](https://golang.org/doc/) - official documentation for Go programming language, including the "regexp" package.

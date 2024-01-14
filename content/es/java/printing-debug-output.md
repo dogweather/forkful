@@ -1,63 +1,51 @@
 ---
-title:    "Java: Impresión de salida de depuración"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/java/printing-debug-output.md"
+title:                "Java: Imprimiendo la salida de depuración"
+programming_language: "Java"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-Debugging es una parte esencial de la programación y puede ser una tarea complicada. Una forma de facilitar esta tarea es escribiendo mensajes de salida debug durante la ejecución del código. Estos mensajes pueden ayudar a identificar errores y entender el flujo del programa.
 
-## Cómo hacerlo
-Para imprimir mensajes de salida debug en Java, podemos usar la clase `System.out` y su método `println()`. Por ejemplo:
+Imprimir mensajes de depuración en Java es una técnica muy útil para identificar errores y entender cómo funciona nuestro código. Con la impresión de mensajes de depuración, podemos ver el valor de las variables en diferentes puntos de nuestro programa y encontrar posibles errores en la lógica del mismo.
 
-```Java
-System.out.println("Mensaje debug aquí");
-```
+## ¿Cómo hacerlo?
 
-También podemos usar la clase `java.util.logging.Logger` para imprimir mensajes de salida en diferentes niveles de severidad. Por ejemplo:
+Para imprimir mensajes de depuración en Java, utilizamos el método `System.out.println()`. Este método toma como argumento una cadena de texto o el valor de una variable y lo imprime en la consola. Veamos un ejemplo:
 
 ```Java
-import java.util.logging.Logger;
-
-Logger logger = Logger.getLogger("MiClase");
-logger.severe("Mensaje de error");
-logger.info("Mensaje informativo");
+int a = 5;
+System.out.println("El valor de a es: " + a);
 ```
 
-El resultado de estas líneas de código sería el siguiente:
-
-```
-[SEVERE](MiClase) - Mensaje de error
-[INFO](MiClase) - Mensaje informativo
-```
-
-Otra forma de imprimir mensajes de salida debug es usando la anotación `@Log` de la librería `lombok`. Esta anotación genera automáticamente un registro con el nombre de la clase y el método desde donde se llama a la anotación. Por ejemplo:
+El resultado de este código sería `El valor de a es: 5`, ya que la variable `a` tiene asignado el valor de 5. También podemos imprimir el valor de una variable dentro de una cadena de texto utilizando la notación de `%s` para cadenas y `%d` para números:
 
 ```Java
-import lombok.extern.log4j.Log;
+String nombre = "Juan";
+int edad = 25;
+System.out.printf("Mi nombre es %s y tengo %d años.", nombre, edad);
+```
 
-@Log
-public class MiClase {
-    public void metodoEjemplo() {
-        log.debug("Mensaje de debug");
-    }
+El resultado de este ejemplo sería `Mi nombre es Juan y tengo 25 años.`.
+
+## Profundizando
+
+Las impresiones de debug no solo nos sirven para ver el valor de las variables, sino también para entender cómo fluye nuestro código. Podemos agregar diferentes mensajes en puntos clave de nuestro código para verificar si se están cumpliendo ciertas condiciones. También podemos utilizar la palabra clave `if` para imprimir un mensaje solo si se cumple una determinada condición. Por ejemplo:
+
+```Java
+int b = 10;
+
+if (b % 2 == 0) {
+    System.out.println("b es un número par.");
+} else {
+    System.out.println("b es un número impar.");
 }
 ```
 
-La salida del código anterior sería:
-
-```
-[DEBUG](MiClase.metodoEjemplo) - Mensaje de debug
-```
-
-## Profundizando
-Al imprimir mensajes de salida debug, es importante tener en cuenta que estos deben ser eliminados antes de enviar el código a producción, ya que pueden impactar en el rendimiento del programa. Además, es una buena práctica utilizar diferentes niveles de severidad para los mensajes, de manera que podamos filtrarlos y enfocarnos en los necesarios.
-
-También es posible agregar información adicional a los mensajes de salida, como por ejemplo el valor de ciertas variables en un determinado punto del programa. Esto puede ser de gran ayuda para entender qué está sucediendo en el código y encontrar la fuente de un error.
+El resultado de este código sería `b es un número par.` ya que el número 10 cumple con la condición de ser divisible entre 2. De esta forma, podemos verificar si nuestro código está funcionando de la manera deseada y encontrar posibles errores.
 
 ## Ver también
-- [Documentación de la clase `System.out`](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out)
-- [Documentación de la clase `java.util.logging.Logger`](https://docs.oracle.com/javase/8/docs/api/java/util/logging/Logger.html)
-- [Lombok: Anotación `@Log`](https://projectlombok.org/api/lombok/extern/log4j/Log.html)
+
+Para obtener más información sobre cómo imprimir mensajes de depuración en Java, puedes consultar la documentación oficial en [Java Debugging](https://docs.oracle.com/javase/8/docs/technotes/guides/jpda/index.html). También puedes aprender más sobre cómo utilizar el método `printf()` en la [documentación de Java](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html). ¡Prueba a utilizar impresiones de debug en tu próximo proyecto para ahorrar tiempo y esfuerzo en la identificación de errores!

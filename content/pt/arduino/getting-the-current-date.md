@@ -1,72 +1,62 @@
 ---
-title:    "Arduino: Obtendo a data atual"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/getting-the-current-date.md"
+title:                "Arduino: Obtendo a data atual."
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar a programação Arduino para obter a data atual?
+## Por que obter a data atual?
 
-Muitas vezes, em projetos de automação e controle, é necessário saber a data atual para realizar determinadas tarefas ou tomar decisões lógicas. Com a programação Arduino, é possível obter a data atual facilmente e utilizá-la em seu projeto de forma precisa e eficiente.
+Você já teve a necessidade de saber a data atual em um projeto de Arduino? Talvez você queira criar um sistema de controle de acesso baseado no dia da semana ou exibir a data em um display LCD. Independentemente do motivo, obter a data atual pode ser uma tarefa útil e relativamente simples de programar em Arduino.
 
-## Como obter a data atual utilizando o Arduino
+## Como obter a data atual no Arduino
 
-Para obter a data atual em um projeto Arduino, é preciso utilizar a biblioteca "RTClib". Esta biblioteca permite a comunicação com um relógio de tempo real (RTC - Real-Time Clock), que é responsável por manter a data e hora atual.
+Para obter a data atual em seu projeto de Arduino, você precisará utilizar a biblioteca "RTClib". Esta biblioteca permite que o Arduino se conecte a um circuito de tempo real (RTC) para obter a data e hora atual. 
 
-Primeiro, é necessário importar a biblioteca no início do código:
+Primeiro, vamos importar a biblioteca "RTClib" para o nosso projeto, o que pode ser feito adicionando o seguinte código no início do seu sketch:
 
 ```Arduino
 #include <RTClib.h>
 ```
 
-Em seguida, é preciso criar um objeto da classe "RTC_DS1307" que irá se comunicar com o RTC:
+Em seguida, vamos declarar uma variável do tipo RTC_DS1307, que é o tipo de RTC mais comum:
 
 ```Arduino
 RTC_DS1307 rtc;
 ```
 
-É importante, também, inicializar o RTC dentro do método "setup()" do Arduino, para garantir que a comunicação esteja funcionando corretamente:
+Agora precisamos inicializar o RTC no setup() do nosso sketch. Para fazer isso, podemos usar o método begin(), que verifica se o RTC está funcionando corretamente. Se estiver tudo bem, ele irá retornar "true" e, caso contrário, irá retornar "false". Por exemplo:
 
 ```Arduino
 void setup() {
-  Serial.begin(9600);
   rtc.begin();
+
+  if (!rtc.begin()) {
+    Serial.println("RTC não está funcionando!");
+    while (1);
+  }
 }
 ```
 
-Agora, é possível utilizar o método "now()" da biblioteca "RTClib" para obter a data e hora atual em uma variável do tipo "DateTime". Por exemplo:
+Após a inicialização, podemos utilizar o método now() para obter a data e hora atuais. Este método retorna um objeto do tipo DateTime que possui métodos úteis para acessar os diferentes componentes da data e hora. Por exemplo, para obter o ano:
 
 ```Arduino
-DateTime data = rtc.now();
+DateTime now = rtc.now();
+int ano = now.year();
 ```
 
-Para visualizar a data no monitor serial, basta utilizar os métodos "day()", "month()", "year()", "hour()", "minute()" e "second()" da variável "data". Por exemplo:
+Agora você pode utilizar as informações de data e hora em seu projeto como desejar!
 
-```Arduino
-Serial.print(data.day());
-Serial.print("/");
-Serial.print(data.month());
-Serial.print("/");
-Serial.print(data.year());
-Serial.print(" ");
-Serial.print(data.hour());
-Serial.print(":");
-Serial.print(data.minute());
-Serial.print(":");
-Serial.print(data.second());
-```
+## Mergulho Profundo
 
-O resultado seria algo como "25/6/2020 14:50:23".
+Caso queira explorar mais recursos da biblioteca "RTClib", você pode verificar a documentação oficial no GitHub (https://github.com/adafruit/RTClib). Lá você encontrará informações sobre como configurar um RTC, como modificar a data e hora e muito mais.
 
-## Aprofundando na obtenção da data atual
+## Ver também
 
-Caso não possua um RTC conectado ao seu Arduino, é possível utilizar as funções "day()", "month()", "year()", "hour()", "minute()" e "second()" do Arduino para obter a data atual. Porém, essa forma não é tão precisa e confiável quanto utilizando um RTC.
+- [Documentação oficial da biblioteca RTClib](https://github.com/adafruit/RTClib)
+- [Tutorial em vídeo sobre como obter a data atual em Arduino](https://www.youtube.com/watch?v=j1_BlIYOxgQ)
+- [Projeto de controle de acesso utilizando a data atual em Arduino](https://create.arduino.cc/projecthub/Richard7i/arduino-controle-de-acesso-usando-lcd-rtc-y-arduino-uno-e1674d)
 
-Além disso, é importante lembrar que, ao utilizar um RTC, é necessário manter a bateria do mesmo carregada para evitar a perda dos dados armazenados.
-
-## Veja também
-
-- [Documentação da biblioteca RTClib](https://github.com/adafruit/RTClib)
-- [Tutorial sobre como utilizar o RTC DS1307](https://www.filipeflop.com/blog/utilizando-modulo-rtc-ds1307/)
-- [Guia para iniciantes de programação Arduino](https://www.arduino.cc/en/Guide/HomePage)
+Espero que este artigo tenha sido útil para você. Agora você pode facilmente obter a data atual em qualquer projeto de Arduino que precisar. Experimente e divirta-se criando!

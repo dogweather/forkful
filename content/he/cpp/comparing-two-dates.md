@@ -1,51 +1,47 @@
 ---
-title:    "C++: השוואת שתי תאריכים"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/cpp/comparing-two-dates.md"
+title:                "C++: להשוואת שתי תאריכים"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
-מתכנתים רבים מתחילים את המסלול שלהם בתוכניתן חישוב הזמן מתאר מהבסיס. תוכניתן חישוב הזמן מאפשרת למשתמשים להשוות בין שתי תאריכים, משהו שיכול להיות שימושי בהחלט כאשר מטרת התוכנית היא להשוות בין תאריכים שונים או לבדוק כמה זמן עבר מאז תאריך מסוים.
+# למה?
 
-## כיצד לעשות זאת
-בכדי לבצע השוואה בין שתי תאריכים בשפת סי++ ישנם כמה דרכים שונות. אחת הדרכים הבסיסיות היא על ידי בניית פונקצייה שתקבל שני תאריכים כפרמטרים ותחזיר תוצאה על סמך נתונים מפורטים. אפשר להשיג זאת בעזרת פעולות של סי++ כמו מצביעים ופונקציות מובנות. הנה דוגמה לקוד שמחזיר תוצאה של השוואה בין שני תאריכים:
+משרתים תאריכים הם כלי חיוני בתכנות בשפת C++. השוואת שני תאריכים עשויה להיות משימה קשה עבור מתכנתים, אך יכולה להיות חיונית כאשר מדובר בתכנון זמנים ואירועים בתוכניות.
+
+# איך לעשות זאת?
+
+תחילה, ניצור שתי משתנים מטיפוס התאריך (date) - אחד עבור כל תאריך שנרצה להשוות. לשם הדוגמה, נשתמש בתאריכים הבאים: 10 במרץ 2021 ו-15 במרץ 2021.
+
+בכדי להשוות בין שני התאריכים נשתמש בפונקציית compare של ספריית התאריך. הפונקציה תחזיר את התוצאה 0 אם התאריך הראשון שלנו זהה לתאריך השני, תוצאה שלילית אם התאריך הראשון מקדים את התאריך השני, ותוצאה חיובית אם התאריך הראשון מאחר מהתאריך השני.
+
+בקוד הבא נדפיס את התוצאה של השוואת התאריכים שלנו:
 
 ```C++
 #include <iostream>
+#include <ctime>
+
 using namespace std;
 
-int compareDates(int* date1, int* date2) {
-    if (date1[2] < date2[2]) 
-        return 1; // date1 is earlier
-    else if (date2[2] < date1[2]) 
-        return 2; // date2 is earlier
-    else {
-        if (date1[1] < date2[1]) 
-            return 1; // date1 is earlier
-        else if (date2[1] < date1[1]) 
-            return 2; // date2 is earlier
-        else {
-            if (date1[0] < date2[0]) 
-                return 1; // date1 is earlier
-            else if (date2[0] < date1[0]) 
-                return 2; // date2 is earlier
-            else 
-                return 0; // dates are equal
-        }
-    }
-}
-
-int main() {
-    int date1[3] = {12, 10, 2021}; // first element is day, second is month, third is year
-    int date2[3] = {24, 12, 2020};
-    int result = compareDates(date1, date2); // returns 2
-    cout << "Result: " << result << endl;
+int main()
+{
+    // יצירת משתנים מטיפוס התאריך
+    time_t firstDate = mktime(&tm{.tm_mday=10, .tm_mon=2, .tm_year=121}), secondDate = mktime(&tm{.tm_mday=15, .tm_mon=2, .tm_year=121});
+    
+    // השוואת התאריכים באמצעות פונקציית compare
+    int result = difftime(secondDate, firstDate));
+    
+    // הדפסת התוצאה
+    cout << "תוצאת השוואה:" << result;
+    
     return 0;
 }
 ```
-מצפים לקבל כתובת חיסור הנתונים של הפונקציה. סופק על פי התייעצות עם [ ).
 
-## צליל עמוק
-ההשוואה בין תאריכים בסי++ יכולה להיות מעט מורכבת מתחילתו. המטרה של ביצוע השוואה בין
+התוצאה שנדפיס תהיה 345600 מכיוון ש-15 במרץ מאחר מ-10 במרץ במשך 4 ימים (כמו שצוין בפונקציה mktime).
+
+# העומק בתהליך
+
+תהליך השוואת תאריכים ב- C++ כולל התייחסות למחלקת התאריך (date class) ועבודה עם פונקציות נוספות כמו mktime ו- difftime. ישנם גם פתרונות נוספים לשוואת תאריכים כגון שימוש בס

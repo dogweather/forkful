@@ -1,57 +1,43 @@
 ---
-title:    "Fish Shell: Odczytywanie argumentów wiersza poleceń"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/reading-command-line-arguments.md"
+title:                "Fish Shell: Odczytywanie argumentów z wiersza poleceń"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Programowanie w wierszu poleceń może wydawać się na pierwszy rzut oka nieprzyjazne i trudne do zrozumienia, jednak jest to bardzo przydatne narzędzie dla programistów. Pozwala na szybkie i precyzyjne wykonywanie poleceń oraz automatyzację zadań. Czytanie argumentów w wierszu poleceń jest jedną z umiejętności, które znacznie ułatwiają pracę z systemem operacyjnym. W tym artykule pokażemy Ci, jak to zrobić przy użyciu powłoki Fish Shell.
+Programowanie w powłoce przy użyciu komend wiersza poleceń jest bardzo przydatne i ważne dla każdego programisty. Pozwala ono na szybkie i efektywne wykonywanie różnych działań na plikach i folderach. W tym artykule dowiesz się jak czytać argumenty wiersza poleceń, co ułatwi Ci pracę z Fish Shell.
 
 ## Jak to zrobić
 
-Aby odczytać argumenty z wiersza poleceń, musimy skorzystać z wbudowanego polecenia `set` w Fish Shell. Najczęściej wykorzystywany jest wraz z opcją `-q`, która sprawdza czy dany argument jest obecny w liście argumentów.
+Pierwszą rzeczą, którą należy zrobić, aby czytać argumenty wiersza poleceń, jest użycie funkcji `argparse`, która jest wbudowana w Fish Shell. Korzystając z tej funkcji, możemy wczytać wszystkie parametry podane przez użytkownika w linii poleceń.
 
 ```Fish Shell
-# Przykład 1
-set -q arg1; and echo $status
-# Jeśli argument "arg1" jest obecny, wyświetli się wartość "0", w przeciwnym razie "1"
-
-# Przykład 2
-if set -q arg1
-    echo "Argument arg1 jest obecny w wierszu poleceń"
-else
-    echo "Nie znaleziono argumentu arg1"
-end
-# W zależności od wyniku, wyświetli jedną z dwóch wiadomości
+argparse ^znacznik^ --^opcja^ ^argument^
 ```
 
-Powyższe przykłady ilustrują proste sposoby na sprawdzenie obecności argumentów w wierszu poleceń. Jednak czasami potrzebujemy nieco bardziej rozbudowanych funkcjonalności. W takim przypadku możemy zastosować strukturę `switch`, która pozwala na sprawdzanie wielu argumentów jednocześnie.
+Używając powyższej komendy, Fish Shell będzie odczytywał wszystkie parametry, a także informować nas o błędach, jeśli użytkownik podał niewłaściwe argumenty.
 
 ```Fish Shell
-# Przykład 3
-switch $argv
-case "-h" or "--help"
-    echo "Wyświetlam pomoc"
-case "-v" or "--version"
-    echo "Wyświetlam wersję"
-case "-f" or "--file"
-    echo "Wyświetlam zawartość pliku $argv[2]"
-end
-# W zależności od wybranej opcji, wyświetlamy odpowiednią treść
-# Przykład wywołania: ./program -f plik.txt
-# Wynik: Wyświetlam zawartość pliku plik.txt
+argparse ^-f^ --^file^ ^plik.txt^
 ```
+
+W tym przykładzie, za pomocą opcji `-f` lub `--file`, możemy określić nazwę pliku, który chcemy wczytać. W pierwszym przypadku używamy skróconej wersji, a w drugim pełnej nazwy. Następnie podajemy nazwę pliku `plik.txt` jako argument.
+
+Możemy również użyć opcji bez argumentów, aby w prosty sposób włączyć lub wyłączyć daną funkcję.
 
 ## Deep Dive
 
-Poza podstawowymi funkcjami do odczytywania argumentów, Fish Shell oferuje także wiele dodatkowych opcji, które warto poznać. Możemy na przykład odczytywać argumenty w innej kolejności, używać wzorców do sprawdzania kolejności argumentów, a także wykorzystywać zmienne specjalne, takie jak `$argv0` do odczytywania nazwy wywoływanego pliku. Pełna dokumentacja dotycząca czytania argumentów w Fish Shell znajduje się na oficjalnej stronie dokumentacji.
+Jeśli chcemy dokładniej zrozumieć, jak działa funkcja `argparse`, może przydać się nam wiedza o tzw. flagach. Flagi to opcje bez argumentów, którymi możemy włączyć lub wyłączyć daną funkcję. Są one poprzedzone znakiem `-` lub `--`, a w przypadku opcji z argumentami, po nich wstawiamy nazwę argumentu.
 
-## Zobacz także
+Możemy również określić domyślne wartości dla argumentów, jeśli użytkownik nie poda ich w linii poleceń. Robimy to za pomocą opcji `default`, np. `argparse --file ^plik.txt^^ -^f^ ^default "plik.txt"^`.
 
-- Dokumentacja Fish Shell: https://fishshell.com/docs/current/cmds/set.html
-- Przydatne porady dla początkujących programistów w wierszu poleceń: https://dev.to/aspittel/5-command-line-tricks-for-beginners-5a6
+Pamiętaj również, że nie musimy używać `argparse` tylko w głównym pliku z kodem. Możemy stworzyć nowy plik `przyklad.fish` i wstawić tam nasz kod z `argparse`, a następnie wywołać go w głównym pliku, np. `source przyklad.fish`.
 
-Dzięki nauce odczytywania argumentów w wierszu poleceń w Fish Shell, będziesz mógł/a wydajniej pracować z systemem operacyjnym i automatyzować wiele zadań. Warto poświęcić trochę czasu na poznanie tych funkcjonalności, ponieważ mogą one znacznie ułatwić Ci pracę.
+## Zobacz również
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/cmds/argparse.html)
+- [Poradnik programowania w Fish Shell](https://www.sitepoint.com/fish-shell-one-configurable-shell/)
+- [Porady i triki dla programistów używających Fish Shell](https://defkey.com/downloads/fish-shell)

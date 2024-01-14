@@ -1,55 +1,59 @@
 ---
-title:    "Swift: Utskrift av feilsøkingsutdata"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/swift/printing-debug-output.md"
+title:                "Swift: Utskrift av feilsøkingsresultater"
+programming_language: "Swift"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Mange utviklere har sannsynligvis opplevd å måtte feilsøke en kode uten å vite hva som egentlig skjer i bakgrunnen. Derfor kan å skrive ut feilmeldinger ved hjelp av debug-utskrift være et nyttig verktøy for å finne og fikse feil. I denne bloggposten vil jeg vise deg hvordan du kan bruke debug-utskrift i Swift for å gjøre debugging-prosessen mer effektiv.
+Det å printe ut debug-utdata i Swift kan være en nyttig måte å feilsøke og forstå koden din på. Ved å printe ut verdier og beskrivelser i konsollen, kan du få en bedre forståelse av hva som skjer bak kulissene og hvordan din kode fungerer.
 
-## Hvordan bruke debug-utskrift i Swift
+# Hvordan
 
-For å bruke debug-utskrift i Swift, kan du bruke funksjonen "print()" for å skrive ut meldinger til konsollen. La oss se på et enkelt eksempel:
+For å printe ut debug-utdata i Swift, kan du bruke `print()` funksjonen. Denne funksjonen tar inn en hvilken som helst variabel eller uttrykk og vil skrive ut verdien eller beskrivelsen av den i konsollen.
 
 ```Swift
-let tall = 5
-print("Tallet er \(tall)")
+let navn = "Sara"
+let alder = 25
+print("Hei, mitt navn er \(navn) og jeg er \(alder) år gammel.")
+// Output: Hei, mitt navn er Sara og jeg er 25 år gammel.
 ```
 
-Her vil konsollen vise meldingen "Tallet er 5". Dette kan være nyttig for å sjekke verdier av variabler og for å se om en bestemt del av koden blir utført som forventet.
-
-Du kan også bruke denne funksjonen til å skrive ut uttrykk og variabler for å få mer detaljert informasjon om hva som skjer i koden din. For eksempel:
+For å printe ut verdien av en variabel eller utrykk, kan du også bruke `debugPrint()` funksjonen. Denne funksjonen vil skrive ut en mer detaljert beskrivelse av verdien, inkludert navnet på variabelen eller uttrykket.
 
 ```Swift
-let tall1 = 10
-let tall2 = 5
-print("Summen av tall1 og tall2 er \(tall1 + tall2)")
+let tall = 42
+debugPrint(tall)
+// Output: "tall: 42"
 ```
 
-Dette vil skrive ut meldingen "Summen av tall1 og tall2 er 15" i konsollen. Ved å skrive ut uttrykket får du et bedre innblikk i hva som skjer under kjøring av koden din.
-
-## En dypere forståelse av debug-utskrift
-
-Et annet nyttig aspekt ved debug-utskrift i Swift er muligheten til å legge til betingelser og begrensninger. Dette kan være spesielt nyttig når du vil sjekke om en bestemt del av koden din blir utført som forventet, eller hvis du vil se nærmere på en variabel ved hjelp av en betingelse.
-
-For eksempel, hvis du vil sjekke om et tall er større enn 10 før du skriver det ut, kan du bruke en if-setning slik:
+Du kan også bruke `dump()` funksjonen for å printe ut hele strukturen av en variabel eller et uttrykk, med alle dets underliggende egenskaper og verdier.
 
 ```Swift
-let tall = 7
-if tall > 10 {
-    print("Tallet er større enn 10")
+struct Person {
+    var navn = "Sara"
+    var alder = 25
 }
+
+let person = Person()
+dump(person)
+// Output:
+// - navn: "Sara"
+// - alder: 25
 ```
 
-Dette vil bare skrive ut meldingen hvis betingelsen er oppfylt.
+# Deep Dive
 
-Du kan også bruke debug-utskrift til å sjekke utførelsesrekkefølgen av koden din. Dette kan være nyttig hvis du har flere funksjoner og vil forsikre deg om at de blir kalt i riktig rekkefølge.
+Når du printer ut debug-utdata, er det viktig å være oppmerksom på hva du ønsker å få ut av det. Hvis du ønsker å se verdien av en variabel, kan du bruke `print()` eller `debugPrint()`, men dersom du ønsker en mer detaljert beskrivelse, kan `dump()` være et bedre alternativ.
 
-## Se også
+Det kan også være lurt å bruke debug-utdata i kombinasjon med breakpoint. Dette gjør det mulig for deg å stoppe koden din på et bestemt sted og se verdien av variabler eller uttrykk på det aktuelle punktet i programmet.
 
-* [Official Apple Documentation on Debugging in Swift](https://developer.apple.com/documentation/xctest/debugging)
-* [Ray Wenderlich's Tutorial on Debugging in Swift](https://www.raywenderlich.com/7382-getting-started-with-swift-3-0/lessons/40)
-* [Hacking with Swift's Guide to Debugging](https://www.hackingwithswift.com/quick-start/swift-programming-language/how-to-debug)
+Det finnes også mange verktøy og biblioteker som kan hjelpe deg med å printe ut mer kompleks eller detaljert debug-utdata, inkludert `os_log` og `SwiftLogging`.
+
+# Se også
+
+- [Apple Developer Documentation: Print debugging output](https://developer.apple.com/documentation/swift/debugging_errors_and_logging/printing_debugging_output)
+- [Swift By Sundell: Logging in Swift](https://www.swiftbysundell.com/articles/logging-in-swift/)

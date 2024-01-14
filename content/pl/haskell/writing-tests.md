@@ -1,77 +1,43 @@
 ---
-title:    "Haskell: Pisanie testów"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/writing-tests.md"
+title:                "Haskell: Pisanie testów"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Testy są nieodłączną częścią procesu tworzenia oprogramowania. Pisząc testy, możemy mieć pewność, że nasz kod działa zgodnie z oczekiwaniami i nie wprowadza niepożądanych błędów. Dodatkowo, testowanie pozwala nam szybko wykryć i naprawić ewentualne problemy, co zwiększa jakość i niezawodność naszego kodu.
+Pisanie testów jest nieodłączną częścią procesu tworzenia oprogramowania. Pozwala ono sprawdzić czy kod działa poprawnie, weryfikuje jego funkcjonalności oraz pozwala na szybkie wykrycie ewentualnych błędów. Jest to nie tylko narzędzie ułatwiające pracę programistów, ale również zapewnia bezpieczeństwo i jakość produktu końcowego.
 
-## Jak
+## Jak to zrobić
 
-Najważniejszą częścią pisania testów jest wykorzystanie modułu `Test.HUnit` lub `Test.Hspec`, które są częścią popularnego w Haskellu frameworka do testowania o nazwie `hspec`. Aby rozpocząć, musimy zaimportować odpowiedni moduł, a następnie odpowiednio zdefiniować testy.
-
-Przykładowy test z wykorzystaniem `Test.HUnit` wyglądałby następująco:
+Sprawne i efektywne pisanie testów w Haskellu może wydawać się trudne, ale w rzeczywistości jest to prostsze niż się wydaje. Właśnie dlatego postanowiliśmy stworzyć ten krótki poradnik, który pomoże Ci wdrożyć testy do swojego projektu.
 
 ```Haskell
-import Test.HUnit
-
--- definicja funkcji, którą będziemy testować
-double :: Int -> Int
-double x = x * 2
-
--- funkcja do testowania
-testDouble :: Test
-testDouble = TestCase $ assertEqual "double 2 should be 4" 4 (double 2)
-
--- lista testów, którą przekażemy do funkcji runTest
-tests :: Test
-tests = TestList [testDouble]
+-- Przykładowy test funkcji dodawania
+addTwoNumbers :: Int -> Int -> Int
+addTwoNumbers a b = a + b
 
 main :: IO ()
-main = runTestTT tests
+main = do
+  -- Wywołanie funkcji addTwoNumbers z parametrami 2 i 3
+  let result = addTwoNumbers 2 3
+  -- Sprawdzenie czy wynik jest równy oczekiwanemu
+  if result == 5
+    then putStrLn "Test zakończony pomyślnie!"
+    else putStrLn "Test nie powiódł się."
 ```
 
-Wywołanie funkcji `runTestTT` spowoduje uruchomienie wszystkich testów zdefiniowanych w liście `tests` i wyświetlenie ich wyników w konsoli. Jeśli wszystkie testy zostaną zakończone succesem, otrzymamy taki wynik:
-
-```Haskell
-Cases: 1  Tried: 1  Errors: 0  Failures: 0
-Counts {cases = 1, tried = 1, errors = 0, failures = 0}
-```
-
-Przykład z użyciem `hspec` wyglądałby trochę inaczej, ale również widać w nim wykorzystanie modułu `Test.HUnit`:
-
-```Haskell
-import Test.Hspec
-
--- definicja funkcji, którą będziemy testować
-double :: Int -> Int
-double x = x * 2
-
--- funkcja do testowania
-main :: IO ()
-main = hspec $ do
-  describe "double" $ do
-    it "should return double of input" $
-      double 2 `shouldBe` 4
-```
-
-Funkcja `hspec` przyjmuje jako argument funkcję, która używa funkcji `describe` do grupowania testów i funkcji `it` do definiowania konkretnych testów.
+W powyższym przykładzie widzimy jak w prosty sposób tworzyć testy w Haskellu. Korzystając z funkcji `main` oraz konstrukcji `if-else`, możemy weryfikować czy nasze funkcje zwracają poprawne wyniki.
 
 ## Deep Dive
 
-Pisanie testów to sztuka, która wymaga praktyki i umiejętności. Oto kilka wskazówek, które mogą pomóc Ci pisać skuteczne i czytelne testy w Haskellu:
-
-- Warto definiować nazwy testów w sposób opisowy, aby łatwo było zrozumieć, co jest testowane i jakie oczekiwane są wyniki (np. `testDoublePositiveNumber`, `testSquareRootOfNegativeNumber`).
-- Wykorzystaj funkcje `assertBool` i `assertString` do sprawdzania warunków logicznych w testach.
-- W przypadku testów wykorzystujących IO (np. testy funkcji obsługujących pliki) użyj funkcji `runIO` do uruchomienia opakowanego kodu IO wewnątrz testu.
-- Stwórz zmienną lub funkcję, która będzie przechowywać wspólne dane dla wszystkich testów, aby uniknąć nadmiernego powtarzania kodu.
-- Korzystaj z funkcji `shouldThrow` lub `shouldReturn` wraz z `hspec` do łatwego sprawdzania wyjątków i wyników funkcji.
+Aby pisać jeszcze lepsze testy w Haskellu, warto poznać niektóre z dostępnych bibliotek, takich jak HUnit czy QuickCheck. Biblioteka HUnit pozwala na pisanie testów jednostkowych, gdzie z kolei QuickCheck pozwala na generowanie i testowanie danych. Warto również zaznajomić się z pojęciem TDD (Test Driven Development), czyli tworzenia testów przed implementacją kodu.
 
 ## Zobacz także
 
-- [Dokumentacja modułu Test.HUnit](https://hackage.haskell.org/package/HUnit-1.6.0.0/docs/Test-HUnit.html)
-- [Dokument
+- [Poradnik dla początkujących w języku Haskell](https://www.tomaszdrazil.com.pl/tworzenie-gry-w-haskellu-wstep/)
+- [Dokumentacja biblioteki HUnit](https://hackage.haskell.org/package/HUnit)
+- [Dokumentacja biblioteki QuickCheck](https://hackage.haskell.org/package/QuickCheck)

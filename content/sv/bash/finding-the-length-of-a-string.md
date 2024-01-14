@@ -1,68 +1,43 @@
 ---
-title:    "Bash: Att hitta längden på en sträng"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/finding-the-length-of-a-string.md"
+title:                "Bash: Att hitta längden på en sträng."
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att hitta längden på en sträng är en vanlig uppgift inom Bash-programmering. Genom att förstå hur man hittar längden på en sträng kan du effektivt hantera och manipulera data i dina skript.
+Att hitta längden på en sträng är en vanlig uppgift inom Bash-programmering. Det kan vara användbart när man behöver behandla strängar på olika sätt eller kontrollera att de är inom en viss längd. Att kunna hitta längden på en sträng är en grundläggande färdighet som kan hjälpa dig i dina Bash-projekt.
 
-## Hur man gör det
+## Så här gör du
 
-För att hitta längden på en sträng i Bash kan du använda kommandot `expr length`, som tar emot en sträng som argument och returnerar dess längd. Till exempel:
+Att hitta längden på en sträng i Bash är enkelt och kan göras på flera olika sätt. Här kommer några exempel med kodblock och utskrifter.
 
 ```Bash
-strang="Hej, världen!"
-langd=$(expr length $strang)
-echo "Längden på strängen är $langd" 
-```
+# Definiera en variabel med en sträng
+sträng="Hej på dig"
 
-Output:
+# Använd kommandot "expr" tillsammans med "length" för att hitta längden på strängen
+längd=`expr length "$sträng"`
+# Utskrift: 10 eftersom det finns 10 tecken i strängen
 
-```
-Längden på strängen är 14
-```
+# Du kan också använda dubbla parenteser "(( ))" och använda variabeln "$#" för att få ut längden på strängen
+längd=$(( $# ))
+# Utskrift: 10
 
-Det är viktigt att notera att `expr length` bara fungerar med variabler som innehåller en enda sträng. Om du vill ta reda på längden på flera textsträngar måste du använda en loop eller ett annat verktyg som kan bearbeta flera argument.
-
-```Bash 
-namn=("Lena" "Kalle" "Nina")
-for namn in ${namn[@]}; do
-  langd=$(expr length $namn)
-  echo "$namn är $langd bokstäver långt."
-done
-```
-
-Output:
-
-```
-Lena är 4 bokstäver långt.
-Kalle är 5 bokstäver långt.
-Nina är 4 bokstäver långt.
+# Använd kommandot "wc" tillsammans med "c" för att få ut antalet tecken i en fil
+längd=`wc -c < fil.txt`
+# Utskrift: 42 (om filen innehåller 42 tecken)
 ```
 
 ## Djupdykning
 
-Bash har också inbyggda variabler för att hitta längden på en sträng, utan att behöva använda `expr length`. En sådan variabel är `${#variabel}`, där "variabel" är namnet på din strängvariabel.
-
-```Bash
-strang="Hej, världen!"
-echo "Längden på strängen är ${#strang}"
-```
-
-Output:
-
-```
-Längden på strängen är 14
-```
-
-Det här är ett enklare sätt att hitta längden på en sträng och kan användas med enbart en variabel.
+Förutom dessa exempel finns det flera andra sätt att hitta längden på en sträng i Bash. Du kan till exempel använda "printf" eller "grep" kommandon för att få ut längden på en sträng eller använda olika reguljära uttryck för att söka efter mönster i en sträng. Det är också viktigt att veta att dessa metoder fungerar på olika sätt beroende på vilken kodning som används för strängen, så det är viktigt att göra rätt undersökning för att få den korrekta längden.
 
 ## Se även
 
-- [Bash: Manipulera textsträngar](https://ryanstutorials.net/bash-scripting-tutorial/bash-strings.php)
-- [expr man-sida](https://www.man7.org/linux/man-pages/man1/expr.1.html)
-- [Shell Skript: Regex avsnitt](https://www.shellscript.sh/regular-expressions.html)
+- Bash Guide for Beginners - String Operations: https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html
+- Bash Documentation - Built-in Commands: https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html
+- How to Get Length of String in Shell Script: https://linuxhint.com/string_length_bash/

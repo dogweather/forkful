@@ -1,44 +1,83 @@
 ---
-title:    "Arduino: Scrivere un file di testo"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/writing-a-text-file.md"
+title:                "Arduino: Scrivere un file di testo"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+# Perché
 
-Scrivere un file di testo è un'operazione fondamentale quando si programma con Arduino. Questo semplice processo consente di inserire informazioni all'interno del codice senza dover riscrivere manualmente i dati ogni volta che il programma viene eseguito. Questo risparmia tempo e semplifica il processo di sviluppo.
+Scrivere un file di testo è un'attività fondamentale per i programmatori Arduino. Può essere utile per salvare dati o per leggere e scrivere informazioni su una scheda SD. In questo articolo, imparerai come scrivere un file di testo utilizzando il tuo Arduino.
 
-## Come fare
+# Come farlo
 
-Per scrivere un file di testo con Arduino, è necessario seguire questi semplici passaggi:
-
-- Aprire l'IDE di Arduino sul tuo computer.
-- Creare un nuovo sketch e assegnargli un nome.
-- Utilizzare la funzione `File.write()` per scrivere i dati all'interno del file.
-- Salvare il file con l'estensione ".txt" nella stessa cartella del tuo sketch.
-
-Nell'esempio seguente, verrà creato un file di testo che contiene una semplice stringa di testo, utilizzando la funzione `File.write()`:
+Iniziamo con un esempio semplice di codice per scrivere un file di testo su una scheda SD utilizzando Arduino.
 
 ```Arduino
-File myFile;
+#include <SPI.h>
+#include <SD.h>
+
+File file;
+
 void setup() {
-  myFile = SD.open("myFile.txt", FILE_WRITE);
-  myFile.write("Questo è un esempio di scrittura di un file di testo con Arduino.");
-  myFile.close();
+  pinMode(4, OUTPUT);
+  // inizializza la scheda SD
+  SD.begin();
+  // apri il file di testo
+  file = SD.open("testo.txt", FILE_WRITE);
+  // scrivi all'interno del file
+  file.println("Ciao, Arduino!");
+  // chiudi il file
+  file.close()
+}
+
+void loop() {
+  // lascia vuoto
 }
 ```
 
-Una volta eseguito il codice, il file di testo verrà creato nella stessa cartella del tuo sketch e conterrà il testo specificato.
+Il codice sopra utilizza la libreria SPI e SD di Arduino. Inizializziamo la scheda SD e poi apriamo il file specificando il suo nome e la modalità in cui vogliamo scriverci (in questo caso, utilizzeremo "FILE_WRITE" per aggiungere testo alla fine del file). Utilizziamo il metodo `println()` per scrivere una riga di testo all'interno del file e poi lo chiudiamo con il metodo `close()`. 
 
-## Approfondimento
+L'output di questo codice sarà un file di testo chiamato "testo.txt" sulla tua scheda SD, contenente il messaggio "Ciao, Arduino!".
 
-Scrivere un file di testo con Arduino può essere utile anche per salvare dati di sensori o risultati di calcoli all'interno del programma stesso. È importante notare che la capacità di memoria di Arduino è limitata, quindi assicurati di non scrivere troppi dati all'interno del file o potresti riscontrare problemi di memoria disponibile.
+Oltre a scrivere testo, possiamo anche leggere un file di testo utilizzando Arduino. Ad esempio, se vogliamo leggere le righe di testo presenti nel file "testo.txt", possiamo utilizzare questo codice:
 
-Inoltre, è possibile utilizzare la funzione `File.println()` per scrivere i dati su una nuova riga all'interno del file, rendendo più facile la lettura dei dati in fase di debug.
+```Arduino
+#include <SPI.h>
+#include <SD.h>
 
-## Vedi anche
+File file;
 
-- [Documentazione ufficiale di Arduino sulla scrittura di file di testo](https://www.arduino.cc/en/Tutorial/Files)
-- [Tutorial di Adafruit su come utilizzare la funzione `File.write()`](https://learn.adafruit.com/adafruit-pir-sensor/using-the-sd-library)
+void setup() {
+  pinMode(4, OUTPUT);
+  // inizializza la scheda SD
+  SD.begin();
+  // apri il file di testo
+  file = SD.open("testo.txt");
+  // leggi il file riga per riga
+  while (file.available()) {
+    // leggi ogni riga e stampala sulla seriale
+    Serial.println(file.readStringUntil('\n'));
+  }
+  // chiudi il file
+  file.close();
+}
+
+void loop() {
+  // lascia vuoto
+}
+```
+
+In questo caso, abbiamo utilizzato il metodo `available()` per verificare se ci sono ancora righe da leggere nel file. Se è così, utilizziamo il metodo `readStringUntil()` per leggere una riga alla volta e stamparla sulla seriale.
+
+# Approfondimento
+
+Per un approfondimento sull'argomento, puoi esplorare ulteriori funzioni e opzioni disponibili per scrivere e leggere file di testo con Arduino. Ad esempio, puoi utilizzare la funzione `seek()` per spostarti in una posizione specifica all'interno del file o puoi utilizzare la libreria `SDFat` per avere ulteriori opzioni di lettura e scrittura.
+
+# Vedi anche
+
+- [Libreria SD di Arduino](https://www.arduino.cc/en/Reference/SD)
+- [Guida per l'utilizzo di schede SD con Arduino](https://www.circuitar.com/how-to-use-sd-card-shield-with-arduino/)
+- [Libreria SDFat per Arduino](https://github.com/greiman/SdFat)

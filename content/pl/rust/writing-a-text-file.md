@@ -1,42 +1,40 @@
 ---
-title:    "Rust: Tworzenie pliku tekstowego"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/writing-a-text-file.md"
+title:                "Rust: Tworzenie pliku tekstowego"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie stało się jedną z najważniejszych umiejętności, a język Rust zyskuje coraz większą popularność wśród programistów. Istnieje wiele powodów, dla których warto zainteresować się tym językiem, ale jednym z najważniejszych jest jego bezpieczeństwo i wydajność. W dzisiejszym artykule opowiemy o jednym z podstawowych zadań programistycznych - pisaniu tekstu do pliku - i jak można to osiągnąć przy użyciu języka Rust.
+Pisanie tekstu może sprawiać przyjemność, ale czy kiedykolwiek zastanawiałeś się, jak można zapisać ten tekst do pliku tekstowego? Programowanie może wydawać się trudne, ale dzięki językowi Rust jest to o wiele prostsze i szybsze. Zobacz, jak w łatwy sposób można zapisać tekst do pliku, używając Rust.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby napisać tekst do pliku w języku Rust, musimy najpierw zaimportować bibliotekę "std::fs" za pomocą kodu "use std::fs;". Następnie, wykorzystując metodę "fs::write", możemy wpisać nasz tekst do pliku. Aby zobaczyć efekt, musimy otworzyć ten plik w trybie odczytu. Poniżej znajduje się przykładowy kod i wynik.
+Aby móc zapisać tekst do pliku w języku Rust, potrzebujemy w naszym kodzie użyć biblioteki standardowej `std::fs`. Najpierw musimy utworzyć instancję struktury `File`, która reprezentuje plik tekstowy. Następnie, za pomocą metody `write` możemy przesłać tekst do naszego pliku. Poniżej przedstawiamy przykładowy kod, który zapamiętuje nasz tekst "Cześć, świecie!" do pliku o nazwie "tekst.txt":
 
 ```Rust
-use std::fs;
+use std::fs::File;
+use std::io::prelude::*;
 
 fn main() {
-    let text = "Cześć! Jestem tekstem, który zostanie zapisany do pliku.";
-    fs::write("test.txt", text).expect("Nie udało się zapisać tekstu do pliku"); 
-    
-    let read_text = fs::read_to_string("test.txt").expect("Nie udało się odczytać tekstu z pliku");
-    
-    println!("Tekst w pliku test.txt to: {}", read_text);
+    let mut plik = File::create("tekst.txt").unwrap();
+    plik.write(b"Cześć, świecie!").unwrap();
 }
 ```
 
-**Wynik:** Tekst w pliku test.txt to: Cześć! Jestem tekstem, który zostanie zapisany do pliku.
+Po uruchomieniu tego kodu, zostanie utworzony plik tekstowy "tekst.txt", który będzie zawierał tekst "Cześć, świecie!". W przypadku, gdy plik już istnieje, metoda `create` zwróci błąd, dlatego używamy metody `unwrap`, aby go obsłużyć.
 
-## Głębszy wgląd
+## Deep Dive
 
-Pisząc tekst do pliku w języku Rust, musimy pamiętać o możliwościach obsługi błędów. W przykładzie powyżej została wykorzystana metoda "expect()", która wyświetli błąd w przypadku niepowodzenia operacji. Jest to prosta metoda, ale może nie być wystarczająca w bardziej złożonych programach. Dlatego warto zapoznać się z innymi metodami obsługi błędów, takimi jak "Result" czy mechanizmy "panic" i "unwrap" dostępne w języku Rust.
+Kod użyty w przykładzie jest dość prosty, jednak istnieje wiele innych sposobów na zapis tekstu do pliku w języku Rust. Możemy na przykład użyć metody `writeln`, aby automatycznie dodać znak nowej linii na końcu tekstu, lub użyć makra `writeln!`, które oprócz tekstu będzie mogło również przyjmować zmienne.
 
-## Zobacz także
+Warto również zaznaczyć, że metoda `write` zwraca wynik w postaci `io::Result`, który jest typem enum z dwiema wartościami: `Ok` i `Err`. Dzięki temu możemy lepiej kontrolować nasz program i obsługiwać ewentualne błędy zapisu.
 
-Jeśli chcesz dowiedzieć się więcej o pisaniu tekstu do pliku w języku Rust, polecamy zapoznanie się z oficjalną dokumentacją języka i odwiedzenie innych ciekawych stron:
+## Zobacz również
 
-- Dokumentacja języka Rust: https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html
-- Przykład obsługi błędów w języku Rust: https://blog.logrocket.com/handling-errors-in-rust/
-- Poradnik dla początkujących w języku Rust: https://medium.com/@veswill3/getting-started-with-rust-streaming-files-1177ce45600c
+- [Dokumentacja biblioteki standardowej fs](https://doc.rust-lang.org/std/fs/index.html)
+- [Inne możliwości zapisywania danych w Rust](https://blog.logrocket.com/7-ways-to-write-data-in-rust/)
+- [Poradnik języka Rust od podstaw](https://pl.wikibooks.org/wiki/Rust/J%C4%99zyk_Rust:_Wst%C4%99p)

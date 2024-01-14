@@ -1,73 +1,44 @@
 ---
-title:    "Ruby: Generowanie losowych liczb"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/generating-random-numbers.md"
+title:                "Ruby: Generowanie losowych liczb"
+programming_language: "Ruby"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Generowanie liczb losowych jest nieodłączną częścią wielu programów i aplikacji, dzięki którym możemy tworzyć różnorodne symulacje, gry czy testy. W języku Ruby istnieje wiele sposobów na generowanie przypadkowych wartości, a w tym artykule dowiecie się jak wykorzystywać je w swoich projektach.
+Generowanie losowych liczb jest kluczowym elementem wielu programów, szczególnie wtedy, gdy potrzebujemy wykonać jakieś losowe działanie lub symulować różne sytuacje. Może to być również użyteczne w tworzeniu gier, kryptografii, czy testowaniu programów. Dzięki temu, że Ruby ma wbudowaną bibliotekę do generowania liczb losowych, możemy to zrobić szybko i łatwo.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Sposób generowania liczb losowych w Ruby jest stosunkowo prosty i polega na wykorzystaniu wbudowanych w język funkcji rand oraz srand. Pierwsza z nich jest odpowiedzialna za wygenerowanie pojedynczej losowej liczby, natomiast druga pozwala na ustawienie ziarna, czyli wartości, która będzie używana do generowania liczb.
-
-```Ruby
-# Przykładowe użycie funkcji rand
-puts rand # Wyświetla pojedynczą losową liczbę
-
-# Użycie funkcji srand do ustawienia ziarna
-srand(123) # Ustawia ziarno na wartość 123
-puts rand # Teraz wynik będzie zawsze taki sam dla danego ziarna
-```
-
-Możemy również wykorzystać funkcję rand w celu wygenerowania losowego indeksu dla elementów z tablicy lub hasza.
+Aby wygenerować losową liczbę, musimy użyć metody `rand`, która przyjmuje jeden lub dwa argumenty. Jeśli podamy dwa argumenty, pierwszy będzie oznaczał początek przedziału, a drugi jego koniec. Należy pamiętać, że liczby te muszą być wyrażone w postaci Float (zmiennoprzecinkowej). Na przykład:
 
 ```Ruby
-# Generowanie losowego indeksu dla elementów w tablicy
-array = ["jabłko", "banan", "truskawka", "winogrono"]
-puts array[rand(4)] # Wyświetli losowy owoc z listy
-
-# Generowanie losowego elementu z hasza
-hash = {a: 1, b: 2, c: 3, d: 4}
-random_key = hash.keys[rand(4)] # Wybiera losowy klucz z hasza
-puts hash[random_key] # Wyświetli wartość dla wybranego losowo klucza
+puts rand(0.0..10.0) # wygeneruje liczbę z zakresu od 0 do 10
 ```
 
-## Deep Dive
-
-W języku Ruby mamy również dostęp do różnych metod, które pozwalają na bardziej zaawansowane generowanie liczb losowych. Warto zapoznać się z dokumentacją na ten temat, aby poznać wszystkie możliwości. Niektóre z tych metod to m.in. Random.new, Random.rand, SecureRandom czy Faker.
-
-Możemy również ustawić ograniczenia dla generowanych liczb, jak na przykład zakres, liczby całkowite lub ułamkowe, czy typ danych (np. integer lub float).
+Jeśli nie podamy żadnego argumentu, metoda `rand` wygeneruje liczbę z zakresu od 0 do 1. Możemy również podać tylko jeden argument, wtedy metoda `rand` wygeneruje liczbę z przedziału od 0 do podanej liczby.
 
 ```Ruby
-# Ustawienie zakresu dla generowanych liczb
-puts rand(10..20) # Wyświetli losową liczbę z zakresu od 10 do 20
-
-# Generowanie losowej liczby całkowitej
-puts rand(100) # Wyświetli losową liczbę z zakresu 0-99
-
-# Generowanie losowej liczby ułamkowej
-puts rand(0.0..1.0) # Wyświetli losową liczbę z zakresu od 0.0 do 1.0
-
-# Generowanie losowego typu danych
-puts Faker::Name.name # Wyświetli losowe imię i nazwisko
+puts rand # wygeneruje liczbę z zakresu od 0 do 1
+puts rand(50) # wygeneruje liczbę z zakresu od 0 do 50
 ```
 
-W języku Ruby możemy także tworzyć własne metody, które będą generować odpowiednie wartości losowe dla naszych potrzeb. Poniżej przykład funkcji, która zwraca losową liczbę z zakresu podanego jako parametry.
+Jeśli chcemy wygenerować liczbę całkowitą, musimy użyć metody `rand` w połączeniu z metodą `to_i`:
 
 ```Ruby
-def random_number(min, max)
-  rand(min..max)
-end
-
-puts random_number(5, 10) # Wyświetli losową liczbę z zakresu 5-10
+puts rand(10).to_i # wygeneruje liczbę całkowitą z zakresu od 0 do 10
 ```
 
-## Zobacz Również
+## Głębsze zagadnienia
 
-- Dokumentacja języka Ruby na temat generowania liczb losowych: https://ruby-doc.org/core/Kernel.html#method-i-rand
-- Dokumentacja dla biblioteki Faker, umożliwiającej generowanie losowych wartości: https://github.com/faker-ruby/faker
-- Przykładowy projekt wykorzystujący generowanie liczb losowych w Ruby: https://github.com/danapadila/guessing
+Warto wiedzieć, że metoda `rand` używa tzw. generatora liniowego kongruencyjnego (ang. linear congruential generator), który jest algorytmem matematycznym do generowania liczb pseudolosowych. Dlatego wygenerowane przez nią liczby są w rzeczywistości ciągiem matematycznym, a nie zupełnie losowe. W związku z tym, nie powinniśmy polegać na generatorze `rand` w zastosowaniach, gdzie wymagana jest wysoka jakość losowości, takich jak w kryptografii.
+
+Jednym z ciekawszych zastosowań losowych liczb jest tzw. "Monte Carlo method", czyli metoda wykorzystująca liczby pseudolosowe do rozwiązywania problemów matematycznych. Jest to przydatne w przypadkach, gdy nie możemy znaleźć dokładnego rozwiązania przy użyciu tradycyjnych metod.
+
+## Zobacz również
+
+- Oficjalna dokumentacja Ruby na temat generowania liczb losowych: https://ruby-doc.org/core-2.7.1/Random.html
+- Przykłady wykorzystania losowych liczb w programowaniu: https://www.rubyguides.com/2018/05/random-numbers-in-ruby/

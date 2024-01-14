@@ -1,41 +1,47 @@
 ---
-title:    "Ruby: Sökning och ersättning av text"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/searching-and-replacing-text.md"
+title:                "Ruby: Söka och ersätta text"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Ibland när vi arbetar med programmering, stöter vi på text som behöver ändras eller ersättas. Det kan vara ett namn, en länk eller annan information som behöver uppdateras. Att lära sig hur man söker och ersätter text är en viktig färdighet för att effektivt kunna redigera kod.
 
-## Så här gör du
-Det finns flera olika sätt att söka och ersätta text i Ruby, men det vanligaste är att använda sig av den inbyggda `gsub`-metoden. Här är ett exempel på hur du skulle kunna använda den:
+Många programmerare behöver ofta söka och byta ut text i sina kodfiler. Det kan vara för att korrigera stavfel, ändra variabelförnamn eller göra mer omfattande ändringar. Men varför är det viktigt att ha goda kunskaper om sökning och utbyte i Ruby? Jo, det sparar tid och minskar risken för felaktiga ändringar i koden.
 
-```ruby
-str = "Hej världen!"
-puts str.gsub("hej", "Hallå")
-=> Hallå världen!
+## Hur man gör det
+
+För att söka och byta ut text i Ruby kan du använda metoden `gsub`. Den tar två argument: en sträng som du vill söka efter och en sträng som du vill ersätta den med. Till exempel:
+
+```Ruby
+text = "Hej världen!"
+puts text.gsub("Hej", "Hello")
 ```
 
-I detta exempel ersätter vi ordet "hej" med "Hallå" i strängen "Hej världen!". Det är viktigt att notera att `gsub`-metoden är casesensitiv, vilket betyder att den bara kommer att ersätta text som matchar exakt.
+Detta kommer att skriva ut "Hello världen!" på skärmen. Du kan också använda reguljära uttryck (regular expressions) för mer avancerad sökning och ersättning. Till exempel:
 
-Du kan också använda en RegEx (regular expression) med `gsub` för att söka efter mer specifik text. Till exempel:
-
-```ruby
-str = "Jag gillar äpplen men inte bananer"
-puts str.gsub(/äpplen|bananer/, "frukter")
-=> Jag gillar frukter men inte frukter
+```Ruby
+text = "Det var en gång en katt som hette Kalle."
+puts text.gsub(/\b(Kalle)\b/i, "Felix")
 ```
 
-Här använder vi `|` för att matcha både "äpplen" och "bananer" och ersätta dem med "frukter". Detta sparar oss tid och gör det möjligt att söka efter flera kombinationer av ord på samma gång.
+Detta kommer att ersätta ordet "Kalle" med "Felix" oavsett om det är skrivet med versaler eller gemener.
 
 ## Djupdykning
-Förutom `gsub`-metoden finns det andra sätt att söka och ersätta text i Ruby. En annan vanlig metod är `sub`, som bara ersätter första matchningen. Det finns också möjlighet att använda `tr`-metoden för att byta ut specifika tecken i en sträng.
 
-Oavsett vilken metod du väljer att använda, är det viktigt att förstå skillnaderna och begränsningarna hos varje metod.
+Metoden `gsub` kan ta emot ytterligare ett argument, en block, som ger dig möjlighet att göra ännu mer avancerade ändringar. Till exempel kan du byta ut ett ord med hjälp av ett villkor i blocket. Se nedan:
+
+```Ruby
+text = "Jag älskar att programmera i Ruby!"
+puts text.gsub("älskar") {|match| match == "älskar" ? "hatar" : "älskar" }
+```
+
+Innan du kör koden ovan, försök att förutsäga vad som kommer att skrivas ut på skärmen. Du kommer att bli förvånad över resultatet!
 
 ## Se även
-- [Ruby's gsub-metod](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub)
-- [Om Regular Expressions (på svenska)](https://rot13.glitch.me/regex)
-- [10 saker som alla borde veta om Ruby Regex](https://medium.com/@TheGallahad/10-things-every-ruby-programmer-should-know-about-regular-expressions-263f8b4811f1)
+
+- [Ruby String Dokumentation](https://ruby-doc.org/core-2.7.0/String.html)
+- [Regex Tutorial för Ruby](https://www.regular-expressions.info/ruby.html)
+- [100 utmaningar i Ruby](https://github.com/jorgegonzalez/beginners-challenges#ruby)

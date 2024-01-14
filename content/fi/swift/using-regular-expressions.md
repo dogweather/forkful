@@ -1,52 +1,57 @@
 ---
-title:    "Swift: Säännöllisten lausekkeiden käyttö"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/using-regular-expressions.md"
+title:                "Swift: Säännöllisten lausekkeiden käyttö"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi käyttää säännöllisiä lausekkeita Swift-ohjelmoinnissa?
 
-Säännölliset lausekkeet ovat voimakas työkalu, joka helpottaa merkkijonojen muokkaamista ja haun toteuttamista. Niiden avulla voidaan etsiä ja korvata tiettyjä merkkijonoja, tarkistaa merkkijonon muotoilua ja paljon muuta. Etenkin isojen tekstiaineistojen käsittelyssä ne ovat erittäin hyödyllisiä.
+Säännölliset lausekkeet ovat erinomainen työkalu tekstikäsittelyssä ja datan validoinnissa Swift-ohjelmoinnissa. Ne säästävät aikaa ja vaivaa, kun haluat etsiä tiettyjä merkkijonoja tai suorittaa tarkistuksia syöttölomakkeissa.
 
-## Miten käytetään säännöllisiä lausekkeita Swift-ohjelmoinnissa?
+## Miten käyttää säännöllisiä lausekkeita Swiftissä?
 
-Säännöllisten lausekkeiden käyttö Swiftissä tapahtuu "NSRegularExpression" -luokan avulla. Se mahdollistaa erilaisten haku- ja korvaustoimintojen suorittamisen halutuilla muuttujilla. Alla esimerkki säännöllisen lausekkeen käytöstä Swiftissä:
+Säännölliset lausekkeet käytetään RegularExpressions-moduulin avulla, joka sisältyy Swiftin Foundation-kirjastoon. Voit luoda RegularExpression-olion antamalla halutun säännöllisen lausekkeen merkkijonona. Tämän jälkeen voit suorittaa erilaisia metodeja tämän olion avulla, kuten `.matches(in:options:range:)` ja `.replaceMatches(in:options:range:with:)`, jotka etsivät vastaavuuksia ja korvaavat ne annetulla merkkijonolla.
 
 ```Swift
-let merkkijono = "Tämä on säännöllisten lausekkeiden käyttämisen esimerkki Swiftissä."
-let pattern = "[aeiouyAEIOUY]" // Etsii kaikki vokaalit
-let regex = try! NSRegularExpression(pattern: pattern, options: [])
-let match = regex.matches(in: merkkijono, options: [], range: NSMakeRange(0, merkkijono.utf16.count))
+let pattern = "[a-z]+@[a-z]+\\.com"
+let emailRegex = try! NSRegularExpression(pattern: pattern)
+let email = "example@email.com"
 
-for match in matches {
-  print("Löydetty: \(merkkijono[Range(match.range, in: merkkijono)!])")
+if emailRegex.matches(email) {
+    print("Valid email address")
+} else {
+    print("Invalid email address")
 }
+
+// Output: Valid email address
 ```
 
-Tulostus:
+Voit myös käyttää Capturing-ryhmiä säännöllisissä lausekkeissa tallentamaan tietyt osat vastaavasta merkkijonosta. Tämä tehdään lisäämällä säännöllisen lausekkeen sisään sulkeet `(` ja `)` ja antamalla numerot vastaaville ryhmille.
 
+```Swift
+let pattern = "(\\d{3})(\\d{3})(\\d{4})"
+let phoneRegex = try! NSRegularExpression(pattern: pattern)
+let phoneNumber = "1234567890"
+
+if let match = phoneRegex.firstMatch(in: phoneNumber, options: [], range: NSRange(location: 0, length: phoneNumber.utf16.count)) {
+    let areaCode = (phoneNumber as NSString).substring(with: match.range(at: 1))
+    let middleNumber = (phoneNumber as NSString).substring(with: match.range(at: 2))
+    let endNumber = (phoneNumber as NSString).substring(with: match.range(at: 3))
+    print("Phone number: (\(areaCode)) \(middleNumber)-\(endNumber)")
+}
+
+// Output: Phone number: (123) 456-7890
 ```
-Löydetty: ä
-Löydetty: o
-Löydetty: ä
-Löydetty: i
-Löydetty: u
-Löydetty: a
-Löydetty: u
-Löydetty: e
-Löydetty: e
-Löydetty: a
-Etsittyjen merkkien määrä: 10
-```
 
-## Syvällisempi sukellus säännöllisten lausekkeiden käyttöön
+## Syvällisempää tietoa säännöllisistä lausekkeista Swiftissä
 
-Säännöllisten lausekkeiden käyttäminen vaatii jonkin verran harjoittelua, mutta niiden hyödyt ovat suuret. Niiden avulla voidaan esimerkiksi tarkistaa, että annettu sähköpostiosoite on oikeassa formaatissa tai poistaa tarpeettomat merkit tekstistä. Niiden ominaisuuksia ovat muun muassa aakkosten, numeroiden ja erikoismerkkien tunnistaminen sekä tarkan haun toteuttaminen halutuilla muuttujilla.
+Säännöllisten lausekkeiden käyttäminen Swiftissä voi olla erittäin hyödyllistä, mutta niiden opettelu voi vaatia aikaa ja kärsivällisyyttä. On tärkeää ymmärtää säännöllisten lausekkeiden syntaksia ja miten erilaiset erikoismerkit vaikuttavat hakuun. Myös virheiden käsittely ja turvallisuus ovat tärkeitä näkökohtia, kun käytät säännöllisiä lausekkeita ohjelmissasi.
 
 ## Katso myös
 
-- [NSRegularExpression -dokumentaatio](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Swift Regular Expressions -opetusohjelma](https://www.ralfebert.de/ios/tutorials/regular-expressions/)
-- [Regular Expressions Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [Swiftin RegularExpressions-moduuli](https://developer.apple.com/documentation/foundation/regular_expressions)
+- [VapaaCodeCampin opas säännöllisiin lausekkeisiin](https://www.freecodecamp.org/news/an-easy-way-to-learn-regular-expressions-with-examples/)
+- [Regexper - säännöllisten lausekkeiden visualisointityökalu](https://regexper.com/)

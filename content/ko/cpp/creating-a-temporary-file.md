@@ -1,57 +1,52 @@
 ---
-title:    "C++: 임시 파일 만들기"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/creating-a-temporary-file.md"
+title:                "C++: 임시 파일 생성"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-가끔은 우리가 프로그램을 만들다 보면 임시 파일이 필요한 경우가 있습니다. 이러한 임시 파일은 우리가 작업하는 동안 일시적으로 데이터를 저장하거나, 임시적으로 생성된 파일을 사용해야 할 때 유용하게 쓰입니다. 따라서 임시 파일을 생성하는 방법을 배우는 것은 매우 중요합니다.
+임시 파일을 생성하는 것이 왜 필요한지 궁금하신가요? 임시 파일은 컴퓨터 프로그래밍에서 중요한 역할을 합니다. 예를 들어, 프로그램 실행 중에 사용자의 입력을 저장하거나, 복구 가능한 데이터를 저장하는 등 여러 가지 용도로 사용될 수 있습니다. 임시 파일은 프로그램이 동작하는 동안 필요하지만, 그 이후에는 필요하지 않은 데이터를 임시적으로 보관하기에 적합합니다.
 
-## 어떻게
+## 어떻게?
 
-우선, C++의 `<fstream>` 헤더 파일을 포함해야 합니다. 그러면 임시 파일을 생성할 수 있는 `tmpfile()` 함수를 사용할 수 있습니다. 아래는 예제 코드와 출력 결과입니다.
+임시 파일을 생성하기 위해서는 C++의 표준 라이브러리 중 하나인 <code>tmpfile()</code> 함수를 사용하면 됩니다. 아래의 코드를 참고해보세요.
 
 ```C++
-#include <iostream>
-#include <fstream>
+#include <stdio.h>
 
 int main() {
     // 임시 파일 생성
-    std::FILE* tempFile = std::tmpfile();
+    FILE* temp = tmpfile();
 
-    // 쓰기 모드로 파일 열기
-    std::ofstream ofs;
-    ofs.open("temp.txt");
-  
-    // 파일에 쓰기
-    ofs << "Temporary file created successfully!" << std::endl;
+    // 임시 파일에 문자열 쓰기
+    fputs("안녕하세요?", temp);
 
-    // 임시 파일 닫기
-    ofs.close();
+    // 임시 파일을 읽기 위한 파일 포인터 위치 조정
+    rewind(temp);
 
-    // 결과 확인
-    std::cout << "Temp file created." << std::endl;
-    return 0;
+    // 임시 파일에서 문자열 읽기
+    char str[20];
+    fgets(str, 20, temp);
+    printf("임시 파일에 저장된 문자열: %s", str);
 }
 ```
-
-**결과:**
-
+**출력 결과:**
 ```
-Temp file created.
+임시 파일에 저장된 문자열: 안녕하세요?
 ```
 
-위 코드에서 볼 수 있듯이, 임시 파일을 생성하고 쓰기 모드로 파일을 열어 데이터를 파일에 작성하는 과정을 거칩니다.
+## 깊이 파고들기
 
-## 딥 다이브
+`tmpfile()` 함수는 실제로는 임시 파일을 생성하는 것이 아니라, 메모리를 할당한 후 그 주소를 가리키는 파일 포인터를 반환합니다. 이렇게 함으로써 파일로 여러 가지 작업을 수행할 수 있게 됩니다. 또한 이 함수는 프로그램이 종료되면 자동으로 임시 파일을 삭제해 줍니다. 따라서 별도의 삭제 작업이 필요하지 않습니다.
 
-위의 예제에서는 `std::tmpfile()` 함수를 사용해 임시 파일을 생성했지만, 더 복잡한 파일 구조를 필요로 한다면 다른 방법을 사용해야 합니다. 예를 들어, `std::ofstream` 대신에 `std::fstream`을 사용해 파일을 열 수도 있습니다. 또한, 임시 파일을 생성할 때 `tmpnam()` 함수를 함께 사용해 파일 이름을 설정할 수도 있습니다.
+이 외에도 C++에서는 임시 파일을 생성하는 다른 방법들이 존재합니다. 다만, 유닉스 강의를 따라가는 경우엔 <code>mkstemp()</code> 함수를 사용하시면 됩니다. 이 함수는 <code>tmpnam()</code> 함수가 재귀적인 방식으로 파일 이름을 생성하는 점을 보완하고 있으며, 보안적인 측면에서 더 좋습니다.
 
-## 참고
+## 더 알아보기
 
-- [C++ <fstream> 헤더 파일 설명서](https://www.cplusplus.com/reference/fstream/)
-- [C++ 임시 파일 생성 예제 코드](https://www.geeksforgeeks.org/tmpfile-function-in-c/)
-- [C++ tempnam() 함수 설명서](https://www.cplusplus.com/reference/cstdio/tempnam/)
+[<code>tmpfile()</code> 함수 설명서](https://modoocode.com/104) \
+[<code>mkstemp()</code> 함수 설명서](https://modoocode.com/110) \
+[<code>tmpnam()</code> 함수 설명서](https://modoocode.com/105)

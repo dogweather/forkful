@@ -1,46 +1,41 @@
 ---
-title:    "Gleam: Pobieranie aktualnej daty"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/getting-the-current-date.md"
+title:                "Gleam: Pobieranie bieżącej daty"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Pobranie aktualnej daty jest niezbędnym elementem w wielu programach i aplikacjach. Może ona być wykorzystana do wyświetlania daty, obliczania różnych interwałów czasowych lub manipulowania datami w różny sposób. W tym blogu przedstawimy, jak można w łatwy sposób uzyskać aktualną datę w języku programowania Gleam.
+Dlaczego chcielibyśmy poznać aktualną datę? W programowaniu, często musimy używać czasu aby wyświetlić bieżące wydarzenia, wykonać operacje na plikach lub określić ważne daty w projekcie. Dzięki temu, poznanie aktualnej daty jest niezwykle ważne i przydatne w wielu sytuacjach.
 
 ## Jak to zrobić
 
-```Gleam
-current_date = Date.now()
-```
-
-W powyższym przykładzie użyliśmy funkcji `now()` z modułu `Date`, aby uzyskać aktualną datę i przypisaliśmy ją do zmiennej `current_date`. Następnie możemy wykorzystać tę zmienną w programie, na przykład wyświetlając ją w konsoli:
-
-```Gleam
-IO.inspect(current_date)
-```
-
-Przykładowy output:
+Aby uzyskać aktualną datę w Gleam, możemy wykorzystać wbudowaną funkcję `Date.now()`. Przykładowy kod i wynik można zapisać w bloku kodu Gleam:
 
 ```
-#<DateTime 2021-05-16T18:35:49.879970Z>
+gleam -module date_example
+
+pub fn main() {
+  let current_date = Date.now()
+  IO.println("Aktualna data: " ++ current_date)
+}
 ```
 
-Funkcja `now()` zwraca wartość typu `DateTime`, która zawiera informacje o dacie i czasie wraz z informacją o strefie czasowej.
+Wyjście powinno wyglądać mniej więcej tak:
 
-## Deep Dive
-
-W języku Gleam istnieje kilka innych funkcji dostępnych w module `Date`, które można wykorzystać do manipulowania datami.
-
-```Gleam
-days_till_new_year = Date.diff(Date.now(), Date.from_tuple({2022, 1, 1}))
+```
+Aktualna data: 2020-05-08T19:56:23.233Z
 ```
 
-W powyższym przykładzie możemy obliczyć ilość dni pozostałych do nowego roku, wykorzystując funkcję `diff()`, która oblicza różnicę między dwoma datami. Wykorzystaliśmy również funkcję `from_tuple()`, aby utworzyć datę na podstawie krotki zawierającej rok, miesiąc i dzień.
+## Wnikliwe spojrzenie
 
-## Zobacz też
+Jeśli chcemy wiedzieć więcej na temat wykorzystania daty w Gleam, możemy przejrzeć dokumentację języka, która dostępna jest na oficjalnej stronie Gleam. Istnieje również wiele bibliotek zewnętrznych, takich jak `calendar` czy `datetime`, które mogą pomóc w manipulowaniu danymi i przekształcaniu ich w różne formaty. 
 
-- Dokumentacja modułu `Date` w języku Gleam: https://gleam.run/modules/date.html
-- Poradnik o manipulacji datami w Gleam: https://dev.to/gleam_lang/date-manipulation-in-gleam-with-datetime-handling-errors-gracefully-4ha8
+## Zobacz również
+
+- [Dokumentacja Gleam](https://gleam.run/)
+- [Biblioteka calendar dla Gleam](https://github.com/gleam-lang/calendar)
+- [Biblioteka datetime dla Gleam](https://github.com/philippneugebauer/gleam-datetime)

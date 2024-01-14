@@ -1,109 +1,82 @@
 ---
-title:    "Python recipe: Writing a text file"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/python/writing-a-text-file.md"
+title:                "Python recipe: Writing a text file"
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-Writing a text file may seem like a simple task, but it can serve multiple purposes and be useful in various programming projects. In this blog post, we will explore the reasons why you might consider writing a text file and how to do it efficiently with Python.
+Writing a text file is a fundamental skill in Python programming. It allows us to store data, such as user input or program output, in a simple and readable format. Text files are also commonly used for data manipulation and analysis, making it an essential skill for any Python programmer.
 
-## How To
+## How To 
 
-Creating a text file in Python is a straightforward process. We will use the built-in `open()` function to create and write to a text file. Let's first see the syntax of this function:
+To write a text file in Python, we can use the built-in `open()` function. This function takes two parameters: the file name we want to create or open, and the mode in which we want to open the file. For writing a new file, we need to specify the mode as `'w'`.
 
-```Python
-open(filename, mode)
+```python
+# Creating a new text file named "example.txt"
+file = open("example.txt", "w")
+
+# Writing "Hello World!" to the file
+file.write("Hello World!")
+
+# Closing the file to save changes
+file.close()
 ```
 
-The `open()` function takes in two parameters: `filename` and `mode`. `filename` is the name of the text file you want to create or open, and `mode` determines the purpose of opening the file. There are four possible modes to open a file in Python:
+By default, the `write()` method will overwrite any existing file with the same name. If we want to add data to an existing text file without overwriting it, we can specify the mode as `'a'` (append). 
 
-- `'r'`: Read mode - This is the default mode used to open a file for reading.
-- `'w'`: Write mode - This mode opens a file for writing. If the file already exists, it will be overwritten; if it doesn't exist, a new file will be created.
-- `'a'`: Append mode - Similar to write mode, but the new content will be added at the end of the file.
-- `'r+'`: Read and write mode - This mode allows you to read and write to a file at the same time.
+```python
+# Opening an existing text file named "example.txt" in append mode
+file = open("example.txt", "a")
 
-Let's see an example of using the `open()` function to create a new text file and write some content to it:
+# Adding a new line to the file
+file.write("\nThis is a new line!")
 
-```Python
-with open('new_file.txt', 'w') as f:
-    f.write("Hello, world!")
+# Closing the file to save changes
+file.close()
 ```
 
-In this example, we have created a new text file named `new_file.txt` and opened it in write mode (`'w'`). The `with` statement ensures that the file is properly closed after being used. Inside the `with` block, we use the `write()` method to add the text "Hello, world!" to the file. Let's see the output of this code:
+To write multiple lines to a file, we can use the `write()` method multiple times or use the `writelines()` method, which takes a list of strings as input. Let's see this in action:
 
-```
-Hello, world!
-```
-
-As you can see, the `write()` method has successfully added the text to the file. Now, let's explore some other ways of writing to a text file.
-
-If you already have some content in a variable and want to write it to a text file, you can use the `write()` method with string formatting, like this:
-
-```Python
-name = "John"
-age = 30
-with open('new_file.txt', 'w') as f:
-    f.write("My name is %s and I am %d years old." % (name, age))
-```
-The output in the text file will be:
-```
-My name is John and I am 30 years old.
-```
-
-Another useful method for writing to a file is `writelines()`. It can take in a list of strings and write them to a file, each on a separate line. Let's see an example:
-
-```Python
+```python
+# List of strings to write to the file
 lines = ["This is line 1.\n", "This is line 2.\n", "This is line 3.\n"]
-with open('new_file.txt', 'w') as f:
-    f.writelines(lines)
+
+# Using write() method
+file = open("example.txt", "w")
+file.write("This is line 1.\n")
+file.write("This is line 2.\n")
+file.write("This is line 3.\n")
+file.close()
+
+# Using writelines() method
+file = open("example.txt", "w")
+file.writelines(lines)
+file.close()
 ```
 
-The output in the text file will be:
-```
-This is line 1.
-This is line 2.
-This is line 3.
-```
+After running the code above, the content of our "example.txt" file will be:
 
-## Deep Dive
-
-Now that we have seen the basics of creating and writing to a text file, let's take a deep dive into some other useful things you can do with text files in Python.
-
-### Appending to a file
-
-We have seen earlier that the `'a'` mode can be used to append new content to the end of a file. Let's see an example:
-
-```Python
-with open('existing_file.txt', 'a') as f:
-    f.write("This line will be added at the end.")
-```
-
-The previous content of the file will remain unchanged, and the new line will be added at the end.
-
-### Reading from a file
-
-To read from a text file in Python, we can use the `read()` or `readlines()` methods. The `read()` method will return the entire contents of the file as a string, while `readlines()` will return a list of strings, each representing a line from the file. Let's see an example:
-
-```Python
-# Using read()
-with open('existing_file.txt', 'r') as f:
-    content = f.read()
-    print(content)
-
-# Using readlines()
-with open('existing_file.txt', 'r') as f:
-    lines = f.readlines()
-    print(lines)
-```
-
-The output will be:
 ```
 This is line 1.
 This is line 2.
 This is line 3.
 ```
 
-**Note:** Remember to close the file after reading using the `close()` method to prevent any issues
+## Deep Dive 
+
+When writing a text file, we should keep in mind the following points:
+
+- If we do not specify the full path of the file, it will be created in the current working directory.
+- It is best practice to use the `with` statement when opening a file. This ensures that the file is automatically closed after the code block is executed.
+- To avoid any formatting issues, always add a newline `\n` at the end of each line when using the `write()` method.
+- The `write()` method only takes in strings, so we need to convert any other data types to strings before writing it to the file.
+
+## See Also 
+
+- [Python documentation on file input/output](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [Real Python tutorial on working with files](https://realpython.com/read-write-files-python/)
+- [Python Crash Course book on file manipulation](https://nostarch.com/pythoncrashcourse/)

@@ -1,41 +1,60 @@
 ---
-title:    "Fish Shell: Obliczanie daty w przyszłości lub przeszłości"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/calculating-a-date-in-the-future-or-past.md"
+title:                "Fish Shell: Obliczanie daty w przyszłości lub przeszłości"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Będąc programistą, często musimy pracować z datami w przyszłości lub przeszłości. Odliczanie dni, tygodni lub miesięcy może być czasochłonne i trudne. Jednak dzięki kodowaniu w Fish Shell, możemy szybko i łatwo obliczyć datę w przyszłości lub przeszłości.
+Obliczanie dat w przyszłości lub przeszłości jest nieodłączną częścią programowania. Warto więc poznać narzędzia, które ułatwią nam ten proces i pozwolą oszczędzić czas. W tym artykule opiszemy, jak przy pomocy języka programowania Fish Shell możemy wykonywać takie obliczenia.
 
-## Jak to zrobić?
+## Jak wykonać obliczenia daty w przyszłości lub przeszłości przy użyciu Fish Shell
 
-Aby obliczyć datę w przyszłości lub przeszłości w Fish Shell, musimy użyć wbudowanej komendy "date" z flagą "-d". Przykładowa składnia kodu wygląda następująco:
+Fish Shell jest językiem programowania, który pozwala na wygodne i szybkie wykonywanie obliczeń daty. W poniższych przykładach użyjemy wbudowanej funkcji `date` oraz operatorów arytmetycznych, aby pokazać, jak można obliczyć daty w przyszłości lub przeszłości.
 
-```
-Fish Shell> date -d "1 day"
-```
-To spowoduje wyświetlenie daty za 1 dzień w przyszłości. Innym przydatnym poleceniem jest "date -d", aby obliczyć datę w przeszłości. Na przykład:
+### Obliczanie daty w przyszłości
 
-```
-Fish Shell> date -d "1 week ago"
-```
+Aby obliczyć datę, na którą wydarzenie odbędzie się np. za miesiąc, możemy użyć poniższego kodu:
 
-Powyższy kod wyświetli datę z tygodniem wstecz w przeszłości. Możemy również używać różnych jednostek czasu, takich jak miesiące i lata. Na przykład:
-
-```
-Fish Shell> date -d "2 months"
+```Fish Shell
+date -j -v+1m
 ```
 
-Spowoduje wyświetlenie daty za 2 miesiące w przyszłości. Aby zobaczyć pełną listę dostępnych opcji dla komendy "date -d", możemy użyć polecenia "man date" w Fish Shell.
+Wykorzystujemy tutaj opcję `-v` (z ang. "value") wraz z wartością `+1m`, co oznacza "dodaj 1 miesiąc do obecnej daty". Możemy również wykorzystać operator `+`, np. `+1d` oznacza dodanie jednego dnia, `+2w` - dodanie dwóch tygodni, itp.
 
-## Dogłębnie
+### Obliczanie daty w przeszłości
 
-Obliczanie daty w przyszłości lub przeszłości jest możliwe dzięki wbudowanej komendzie "date" w Fish Shell, która używa biblioteki GNU Date. Ta biblioteka oferuje wiele opcji, które pozwalają nam na obliczanie dat w różnych jednostkach czasu i wyświetlanie wyniku w różnych formatach. W Fish Shell możemy również używać zmiennych, aby przechowywać obliczone daty i wykorzystać je w naszym kodzie.
+Jeśli chcemy obliczyć datę, na którą wydarzenie już się odbyło, np. tydzień temu, możemy użyć tego samego kodu, tylko z użyciem operatora `-` zamiast `+`:
 
-## Zobacz również
+```Fish Shell
+date -j -v-1w
+```
 
-- [Dokumentacja Fish Shell dotycząca obliczania daty](https://fishshell.com/docs/current/commands.html#date)
-- [Dokumentacja GNU Date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+Możemy również wykorzystać więcej niż jeden operator, np. `+2w5d` oznacza dodanie dwóch tygodni i pięciu dni.
+
+## Głębsza analiza
+
+Obliczanie daty w przyszłości lub przeszłości może uwzględniać różne czynniki, takie jak liczba dni w miesiącu, rok przestępny itp. W zależności od potrzeb, możemy dodać do naszego kodu warunki, które uwzględnią te przypadki.
+
+Na przykład, aby dodać jedną miesiąc do obecnej daty, ale uwzględnić także liczbę dni w miesiącu, możemy użyć poniższego kodu:
+
+```Fish Shell
+if test (date -j +%m) = 2
+    date -j -v+1m -v-1d
+else if test (date -j +%d) -gt 28
+    date -j -v+1m -v-3d
+else
+    date -j -v+1m
+end
+```
+
+W ten sposób nasz program będzie uwzględniał różne ustawienia daty i zawsze będzie zwracać poprawny wynik.
+
+## Zobacz także
+
+- Dokumentacja Fish Shell - https://fishshell.com/docs/current/index.html
+- Poradnik Fish Shell dla początkujących - https://dev.to/gboduljak/introduction-to-fish-shell-3lon
+- Przełączanie między katalogami w Fish Shell - https://www.ostechnix.com/cd-command-fish-shell-switching-between-directories/

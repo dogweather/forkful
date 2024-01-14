@@ -1,48 +1,48 @@
 ---
-title:    "C++: Skriving til standardfeil."
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/writing-to-standard-error.md"
+title:                "C++: Skriver til standardfeil"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor?
 
-Å skrive til standard error i C++ kan virke som en unødvendig prosess, men det kan være svært nyttig når du skal finne og rette feil i koden din. Ved å utskrive feilmeldinger til standard error i stedet for standard output, kan du enkelt skille mellom regulær utskrift og feilmeldinger.
+Å skrive til standard error kan være nyttig i tilfeller der du ønsker å vise feil- og progressmeldinger til brukeren. Dette kan hjelpe deg med å feilsøke og forbedre koden din.
 
-## Slik gjør du det
+## Hvordan gjøre det?
 
-Det er enkelt å skrive til standard error i C++. Du trenger bare å inkludere biblioteket "iostream" og deretter bruke kommandoen "std::cerr << "Feilmelding" << std::endl;" for å skrive til standard error. Du kan også bruke "std::cerr" flere ganger i koden din for å skrive ut flere feilmeldinger.
+For å skrive til standard error i C++, må du bruke biblioteket `iostream` og operatoren `<<`. Nedenfor er et eksempel på hvordan du kan skrive til standard error:
 
 ```C++
 #include <iostream>
 using namespace std;
 
 int main() {
-    // En feilmelding som skal skrives til standard error
-    std::cerr << "Dette er en feilmelding!" << std::endl;
+    cerr << "Dette er en feilmelding" << endl;
+    cout << "Dette er en vanlig utskrift" << endl;
     
-    // Annen kode og utskrift som skal skrives til standard output
-    std::cout << "Dette er en vanlig utskrift." << std::endl;
- 
     return 0;
 }
 ```
 
 Output:
+
 ```
-Dette er en feilmelding!
-Dette er en vanlig utskrift.
+Dette er en feilmelding
+Dette er en vanlig utskrift
 ```
+Som du kan se, blir feilmeldingen skrevet til standard error ved hjelp av `cerr`, mens den vanlige utskriften blir skrevet til standard output ved hjelp av `cout`. Ved å skrive til standard error, skiller du disse to typene utskrifter og kan enklere identifisere feilene dine.
 
-## Dypdykk
+## Dykk dypere
 
-Når vi bruker standard error til å skrive ut feilmeldinger, er det viktig å huske på at dette kun er nyttig når programmet kjøres i en terminal eller kommandolinje. Hvis du kjører programmet ditt fra et grafisk brukergrensesnitt, vil feilmeldingene bli skjult og du vil ikke kunne se dem.
+Å skrive til standard error er en del av "streaming" konseptet i C++, der data sendes via en strøm av tegn. Denne strømmen kan enten være inn- eller ut-data, noe som gir deg fleksibilitet til å skrive til både standard output og error.
 
-En annen viktig ting å huske på er at standard error også kan kobles til en fil, slik at du kan lagre feilmeldingene dine og se dem senere. Dette kan være nyttig når du jobber med større prosjekter og trenger å undersøke feil på et senere tidspunkt.
+Det er også viktig å merke seg at når du bruker C++ på forskjellige plattformer, kan standard error vises annerledes. På Windows brukes en rød tekst med en "X" som feilmelding, mens på Unix og Linux brukes det røde tekst og ingen spesiell symbol. Derfor kan det være lurt å teste koden din på ulike plattformer for å sikre konsistent utskrift.
 
 ## Se også
 
-- [C++ iostream bibliotek dokumentasjon](http://www.cplusplus.com/reference/iostream/)
-- [Hvordan løse C++ feilmedlinger](https://www.cplusplus.com/articles/yU6vU7Lw/)
-- [Hva er forskjellen mellom standard output og standard error?](https://stackoverflow.com/questions/8355844/what-is-the-difference-between-stdcout-stdcerr-and-stdclog)
+- [Å skrive til standard error i C++ av GeeksforGeeks (engelsk)](https://www.geeksforgeeks.org/writing-to-file-and-error-console-in-cpp/)
+- [Stream konseptet i C++ av cplusplus.com (engelsk)](http://www.cplusplus.com/doc/tutorial/files/)
+- [Standard error på ulike plattformer av The C++ Programming Language (engelsk)](https://stackoverflow.com/questions/15175178/how-to-change-the-text-color-of-cerr-in-windows)

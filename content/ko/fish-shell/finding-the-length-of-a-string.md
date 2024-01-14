@@ -1,46 +1,30 @@
 ---
-title:    "Fish Shell: 문자열의 길이 찾기"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/finding-the-length-of-a-string.md"
+title:                "Fish Shell: 문자열의 길이 찾기"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 # 왜
-문자열의 길이를 찾는 것에 참여하는 이유를 간단히 설명합니다.
+문자열의 길이를 찾는 것에 대해 관심을 가지는 이유는, 우리가 다루는 데이터의 크기를 파악하고 다른 작업에 적절하게 활용할 수 있기 때문입니다.
 
 ## 어떻게
-```Fish Shell``` 코드 블록 안에 코딩 예제와 샘플 출력을 포함하여 설명합니다.
-
-### 예제 1: 문자열의 길이 찾기 
-```Fish Shell
-set string "안녕하세요!"
-echo $string | wc -m
+```Fish Shell```에서 문자열의 길이를 찾는 방법은 매우 간단합니다. 명령줄에 다음과 같이 입력하여 문자열을 생성합니다.
 ```
-### 샘플 출력: 7
-
-### 예제 2: 공백을 포함한 문자열 길이 찾기 
-```Fish Shell
-set string "Hello, nice to meet you!"
-set string (printf %q $string)
-echo $string | wc -c
+set hello "안녕하세요"
 ```
-### 샘플 출력: 24
-
-### 예제 3: 긴 파일 이름의 길이 찾기
-``` Fish Shell
-set filename "very_long_file_name.txt"
-echo $filename | wc -c
+이제 길이를 찾고 싶은 문자열 변수를 ```string length``` 명령어에 전달합니다.
 ```
-### 샘플 출력: 23
+string length $hello
+```
+위의 예제에서는 6이라는 숫자가 출력될 것입니다. 즉, "안녕하세요"라는 문자열의 길이를 나타냅니다.
 
 ## 깊이 파고들기
-```Fish Shell```의 ```wc``` 명령어로 문자열 길이를 찾는 방법을 더 자세히 설명합니다. ```wc -c``` 옵션은 공백을 포함한 문자열의 길이를 찾아주며, ```-m``` 옵션은 한글 텍스트를 정확하게 처리할 수 있도록 해줍니다. 그리고 ```printf %q```를 사용하면 파일 이름이나 폴더 이름처럼 공백이 있는 문자열을 올바르게 인식하여 문자열의 길이를 찾을 수 있습니다.
+문자열의 길이를 찾는 것이 어떤 원리로 이루어지는지 궁금할 수 있습니다. 내부적으로, ```string length``` 명령어는 문자열을 배열로 변환하고 배열의 요소 개수를 세어서 결과를 반환합니다. 또한 이 명령어는 UTF-8 인코딩을 지원하므로 다국어 문자열에 대해서도 정확한 길이를 반환할 수 있습니다.
 
-## 관련 자료
-[Fish Shell 공식 사이트](https://fishshell.com/)\
-[Fish Shell 문서](https://fishshell.com/docs/current/)\
-[Fish Shell 튜토리얼](https://fishshell.com/docs/3.3/tutorial.html)\
-[유용한 Fish Shell 스니펫 모음](https://github.com/jorgebucaran/fisher)\
-[생활코딩: 기초 셸 스크립트 과정](https://opentutorials.org/course/1058)\
-[코딩도장: 셸 스크립트](https://dojang.io/course/view.php?id=5)
+# See Also
+- [Fish Shell 공식 문서](https://fishshell.com/docs/current/commands.html#string-length)
+- [KoreanFish 가이드](https://github.com/samebl0ck/koreanfish)
+- [Fish Shell Stack Overflow 페이지](https://stackoverflow.com/tags/fish)

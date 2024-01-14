@@ -1,53 +1,39 @@
 ---
-title:    "Haskell: Convertir une chaîne en minuscules"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/converting-a-string-to-lower-case.md"
+title:                "Haskell: Conversion d'une chaîne en minuscules"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-L'une des tâches courantes en programmation est de manipuler des chaînes de caractères. Une de ces manipulations peut être la conversion en minuscules, utile pour faciliter la comparaison de chaînes ou pour des raisons esthétiques. Dans cet article, nous allons explorer comment le faire en utilisant le langage Haskell.
 
-## Comment Faire
-Pour convertir une chaîne en minuscules en Haskell, nous pouvons utiliser la fonction `toLower` de la bibliothèque standard `Data.Char`. Voici un exemple de code :
+Il existe plusieurs raisons pour lesquelles on a besoin de convertir une chaîne de caractères en minuscules en programmation Haskell. La plus évidente est pour l'affichage de texte en minuscules afin d'améliorer la lisibilité pour les utilisateurs. Cela peut également être utile lors de la comparaison de chaînes de caractères, car cela assure une comparaison précise et uniforme.
 
-```Haskell
-import Data.Char (toLower)
+## Comment faire
 
-lowercase :: String -> String
-lowercase str = map toLower str
-
-main = do
-    let result = lowercase "BONJOUR"
-    print result
-```
-
-La première ligne importe la fonction `toLower` de la bibliothèque standard. La fonction `lowercase` utilise la fonction `map` pour appliquer `toLower` à chaque caractère de la chaîne donnée en argument. Ensuite, nous appelons cette fonction avec la chaîne "BONJOUR" et imprimons le résultat. Le résultat attendu est "bonjour".
-
-Nous pouvons également utiliser la même méthode en utilisant une liste de compréhension :
+La conversion de chaînes de caractères en minuscules peut être facilement réalisée en utilisant la fonction "map" combinée avec la fonction intégrée "toLower". Voici un exemple de code pour cela :
 
 ```Haskell
-lowercase :: String -> String
-lowercase str = [toLower c | c <- str]
+import Data.Char (toLower) # Import de la fonction toLower pour pouvoir l'utiliser
+
+toLowerString :: String -> String # Fonction pour convertir une chaîne de caractères en minuscules
+toLowerString str = map toLower str # Utilisation de la fonction map avec toLower pour la transformation
 ```
 
-## Plongée en Profondeur
-Maintenant, nous allons plonger en profondeur et comprendre comment fonctionne la fonction `toLower`. En Haskell, les caractères sont représentés par des nombres, grâce à une extension du langage appelée Unicode. Ainsi, chaque caractère possède une valeur numérique qui lui correspond. Par exemple, la lettre "A" a la valeur 65 et la lettre "a" a la valeur 97. La fonction `toLower` utilise ces valeurs pour déterminer la version minuscule de chaque caractère.
+Le résultat de cette fonction sera la chaîne de caractères en minuscules. Par exemple, si on applique cette fonction à "Haskell", le résultat sera "haskell".
 
-Par exemple, voici comment nous pourrions implémenter la fonction `toLower` nous-mêmes :
+## Plongée en profondeur
 
-```Haskell
-toLowerChar :: Char -> Char
-toLowerChar c
-    | c >= 'A' && c <= 'Z' = toEnum (fromEnum c + 32)
-    | otherwise = c
-```
+La fonction "map" est utilisée pour appliquer une fonction à chaque élément d'une liste. Dans notre cas, la fonction "toLower" est appliquée à chaque caractère de la chaîne. Cela signifie que la fonction traverse la chaîne de caractères et applique la fonction "toLower" à chaque caractère.
 
-Cette fonction utilise la fonction `fromEnum` pour convertir un caractère en sa valeur numérique et la fonction `toEnum` pour convertir une valeur numérique en caractère. Nous ajoutons ensuite 32 à la valeur numérique si le caractère est une lettre majuscule pour obtenir sa version minuscule (puisque les lettres majuscules et minuscules ont une différence de 32 en valeur numérique).
+Il est important de noter que la conversion en minuscules dans Haskell est basée sur le standard Unicode, ce qui signifie que les caractères accentués et autres caractères spéciaux seront également convertis en minuscules.
 
-## Voir Aussi
-- [Documentation de la fonction `toLower`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toLower)
-- [Documentation de la fonction `map`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:map)
-- [Documentation de la liste de compréhension](https://wiki.haskell.org/List_comprehension)
-- [Documentation sur l'Unicode en Haskell](https://wiki.haskell.org/Roadmap/Compatibility/Unicode)
+Il est également possible de personnaliser la fonction "toLower" en utilisant des bibliothèques externes pour gérer les caractères spéciaux dans différentes langues. Cela peut être utile lors de la manipulation de données multilingues.
+
+## Voir aussi
+
+- [Documentation de la fonction map en Haskell](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:map)
+- [Documentation de la fonction toLower en Haskell](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toLower)
+- [Guide de documentation pour la manipulation de chaînes de caractères en Haskell](https://wiki.haskell.org/Strings)

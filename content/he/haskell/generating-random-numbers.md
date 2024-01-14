@@ -1,46 +1,51 @@
 ---
-title:    "Haskell: יצירת מספרים אקראיים"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/haskell/generating-random-numbers.md"
+title:                "Haskell: יצירת מספרים אקראיים"
+programming_language: "Haskell"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+# למה
 
-בעולם התכנות, פעולת ההגרלה (randomization) היא כלי חשוב ונפוץ. היא משמשת למגוון רב של מטרות, כגון בניית משחקים, יצירת תמונות מיוחדות, והגברת תחושת חשיבה יצירתית בתוכניות. בשפת Haskell, אפשר ליצור רצף מספרים אקראיים בקלות רבה ובמיוחד בעזרת ספריית `random`.
+אם אתה מתחיל עם תכנות Haskell, אולי אתה נאהב את כל האתגרים שהוא מציע. אבל אם אתה מחפש דרך כיפית להתחיל, אז ליצור מספרים אקראיים יכול להיות משימה כיפית ומרעננת.
 
-## כיצד לעשות זאת
-
-הנה דוגמא פשוטה לפונקציה המייצרת מספרים אקראיים באמצעות הספרייה `random`:
+# כיצד לעשות זאת
 
 ```Haskell
 import System.Random
 
--- פונקציה המחזירה מספר שלם אקראי בין 1 ל-10
-randomInt :: IO Int
-randomInt = randomRIO (1,10)
+-- יצירת מחולל מספרים אקראיים
+gen :: StdGen
+gen = mkStdGen 2021
+
+-- הדפסת מספרים אקראיים תוך שהקוד מתחיל באותו מכניס מספרים אקראיים
+main :: IO()
+main = do
+    putStrLn "אנא הכנס מספר ראשון:"
+    num1 <- readLn
+    putStrLn "אנא הכנס מספר שני:"
+    num2 <- readLn
+    -- שימוש במחולל מספרים אקראיים כדי ליצור מספרים בין num1 ל-Bnum2 
+    let (randomNum, _) = randomR (num1, num2) gen :: (Int, StdGen)
+    putStrLn "המספר האקראי הוא:"
+    print randomNum
 ```
 
-הפונקציה `randomInt` משתמשת בפעולת ההגרלה `randomRIO` שמקבלת כפרמטרים שני מספרים שמגדירים תחום המספרים האקראיים המשתנים עליו הפונקציה תפעל. על מנת להשתמש בפונקציה `randomInt`, נצטרך להיות תחילה בחבילת `System.Random` ולהשתמש במושג של מונד Hellermonde. פתחו תוכניית Haskell חדשה ונגיד שם פעם `randomInt` כדי להיעזר בנוסחאת המתרגם הנ"ל.
+פלט:
 
-## למעמיקים
-
-במקום להשתמש בפונקציות מובנות כמו `randomRIO`, ניתן לבנות מחולל מספרים אקראיים משלנו בעזרת המודול `System.Random`.
-
-```Haskell
-import System.Random
-
--- מחולל מספרים אקראיים עם זריקת המזל
-random :: Int -> Int -> [Int]
-random seed range = map (`mod` range) $ iterate (nextSeed seed) seed
-  where
-    nextSeed :: Int -> Int -> Int
-    nextSeed seed = (3 * seed + 1) `mod` (2 ^ 31)
-
--- פונקציה המוחזרת מספר שלם אקראי בטווח מסוים
-randomInt :: Int -> Int -> Int -> Int
-randomInt seed range index = random seed range !! index
+```
+אנא הכנס מספר ראשון:
+1
+אנא הכנס מספר שני:
+10
+המספר האקראי הוא:
+3
 ```
 
-המחולל `random` משתמש בזריקת המזל (random seed) כדי לייצר ר
+# Deep Dive
+
+כאשר אנחנו מדברים על יצירת מספרים אקראיים ב-Haskell, יש לנו שני דברים עיקריים לשקול - מחולל מספרים אקראיים וגנרטור מספרים אקראיים. המחולל מספרים אקראיים הוא פונקציה שמקבלת מספר כניסות (לדוגמה, זמן עכשיו כעולם שמרני) ומייצרת אותו מספר כל פעם שהוא מתקרב אליו. גנרטור מספרים אקראיים, מצד שני, הוא מכשיר שיכול לתכתב עם מחולל מספרים אקראיים כדי ליצור רשימה ארוכה של מספרים אקראיים.
+
+אתה יכול לעשות שימוש במחולל מספרים אקראיים כדי להפליא את חבריך במשחקי מחשב, ליצור אתרי תרג

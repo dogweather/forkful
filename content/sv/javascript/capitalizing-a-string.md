@@ -1,45 +1,37 @@
 ---
-title:    "Javascript: Att stora bokstäver i en sträng"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/capitalizing-a-string.md"
+title:                "Javascript: Stor bokstavering av en sträng"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Du kanske har stött på situationer där du behöver ändra en sträng så att bara den första bokstaven är stor bokstav och resten är små bokstäver. Detta kallas att "kaptalisera" en sträng och det kan ha olika syften, till exempel när du vill förbättra läsbarheten eller för att matcha en specifik standard i din kod.
 
-## Hur man gör
-Det finns flera sätt att kaptalisera en sträng i Javascript, men här är två enkla exempel som du kan utforska:
+Att kunna omvandla en sträng till versaler är en viktig del av programmering, särskilt när man arbetar med textbearbetning och formatering av utdata. Det gör att texten blir lättare att läsa och kan också krävas för att uppfylla vissa krav för vissa program eller webbsidor. Det är en enkel men användbar funktion som alla utvecklare bör ha i sin verktygslåda.
+
+## Hur man gör det
+
+Det finns många olika sätt att omvandla en sträng till versaler i Javascript, men det vanligaste och enklaste är att använda funktionen `toUpperCase()`. Denna funktion tar en sträng som argument och returnerar en ny sträng med bara versaler. Här är ett exempel på hur du kan använda det i en kod:
 
 ```Javascript
-// Med hjälp av "toUpperCase()" och "toLowerCase()" metoder
-let str = "hej på dig!";
-let capitalizedString = str[0].toUpperCase() + str.substring(1).toLowerCase(); // Output: "Hej på dig!"
+let text = "hej! välkommen till min blogg!";
+console.log(text.toUpperCase());
 
-// Med hjälp av "charAt()" och "slice()" metoder
-function capitalizeString(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-}
-
-console.log(capitalizeString("hej på dig!")); // Output: "Hej på dig!"
+//Output: HEJ! VÄLKOMMEN TILL MIN BLOGG!
 ```
 
-Det första exemplet använder inbyggda metoder i Javascript för att göra den första bokstaven stor och resten små. Det andra exemplet skapar en funktion som tar en sträng som argument och använder olika metoder för att returnera en kaptaliserad version av strängen. Du kan välja det alternativ som passar dig bäst beroende på dina behov och preferenser.
+Som du kan se behåller funktionen `toUpperCase()` alla andra teckenbaserade delar av strängen, men omvandlar bara de bokstäver som är i gemener till versaler.
 
-## Djupdykning
-Om du vill lära dig mer om hur kaptalisering av strängar fungerar i Javascript, kan vi ta en titt på det andra exemplet som visar användningen av "charAt()" och "slice()" metoder.
+Det är också möjligt att använda `charAt()` och `charCodeAt()` för att iterera igenom en sträng och omvandla varje tecken till versaler, men detta är ett mer komplicerat tillvägagångssätt och rekommenderas bara för avancerade användare.
 
-Först tar "charAt()" metoden ett index som argument och returnerar tecknet på det specifika indexet. I vårt exempel är indexet alltid 0 eftersom vi bara vill kaptalisera den första bokstaven.
+## Deep Dive
 
-Därefter används "slice()" metoden för att skapa en ny sträng från en viss startpunkt till ett visst slutpunkt. Eftersom vi vill ha resten av strängen efter den första bokstaven, är vår startpunkt 1 och slutpunkten är inte specificerad, vilket betyder att vi använder standardvärdet som är slutet på strängen.
-
-Slutligen kombineras den kaptaliserade första bokstaven med resten av strängen genom att enkelt lägga ihop dem med "+" operatören.
+För de som vill lära sig mer om hur versaler fungerar i Javascript och andra programmeringsspråk kan det vara värt att titta närmare på Unicode-standarderna. Versalt till gemena omvandling är en del av Unicode-tablellen och är baserad på deras hierarkiska struktur av bokstäver och tecken. Detta är en intressant djupdykning i hur datorer hanterar text och kan hjälpa till att förbättra dina färdigheter som utvecklare.
 
 ## Se även
-Här är några länkar som kan vara användbara vid kapitalisering av strängar i Javascript:
 
-- [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [String.prototype.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [String.prototype.toUpperCase() - MDN Web Docs](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [JavaScript Strings - W3Schools](https://www.w3schools.com/js/js_strings.asp)
+- [Unicode Character Categories - Unicode.org](https://unicode.org/versions/Unicode13.0.0/ch04.pdf)

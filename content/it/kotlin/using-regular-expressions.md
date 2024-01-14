@@ -1,46 +1,58 @@
 ---
-title:    "Kotlin: Utilizzare le espressioni regolari"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/using-regular-expressions.md"
+title:                "Kotlin: Utilizzo delle espressioni regolari"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché utilizzare le espressioni regolari in Kotlin
+## Perché utilizzare le espressioni regolari?
 
-Le espressioni regolari sono un potente strumento per la manipolazione dei dati e la ricerca di pattern all'interno di una stringa. Queste possono essere utili in molti casi, come la validazione di input utente, il parsing di testi o la gestione di dati strutturati.
+Le espressioni regolari sono uno strumento potente per la manipolazione di stringhe in un programma Kotlin. Con l'utilizzo delle espressioni regolari, è possibile cercare e sostituire parti di una stringa in modo efficiente, risparmiando tempo e sforzi durante lo sviluppo.
 
 ## Come utilizzare le espressioni regolari in Kotlin
 
-Per utilizzare le espressioni regolari in Kotlin, è necessario importare la classe Regex dal pacchetto `kotlin.text`. Una volta importata la classe, è possibile creare un oggetto Regex utilizzando il costruttore e specificando il pattern da cercare all'interno della stringa.
+Per utilizzare le espressioni regolari in un programma Kotlin, è necessario importare la classe `Regex` dal pacchetto `kotlin.text`.
 
 ```
-val regex = Regex("esempio")
+import kotlin.text.Regex
 ```
 
-Per effettuare una ricerca nella stringa, è possibile utilizzare il metodo `find()` dell'oggetto regex, che restituirà un oggetto MatchResult se il pattern è stato trovato, altrimenti restituirà null.
+Una volta importata la classe `Regex`, è possibile utilizzarla per creare un oggetto espressione regolare utilizzando il costruttore `Regex(pattern: String)` e specificando il pattern desiderato tra virgolette.
 
 ```
-val result = regex.find("Questo è un esempio di testo con la parola 'esempio'.")
-println(result)
-// Output: esempio
+var regex = Regex("abc")
 ```
 
-Per effettuare sostituzioni all'interno della stringa, si può utilizzare il metodo `replace()` dell'oggetto regex, specificando due parametri: il pattern da sostituire e la nuova stringa di sostituzione.
+Per verificare se una stringa corrisponde a un determinato pattern, è possibile utilizzare il metodo `matches(input: CharSequence)`, che restituirà `true` se la stringa corrisponde al pattern e `false` altrimenti.
 
 ```
-val modificato = regex.replace("Questo è un esempio di testo.", "prova")
-println(modificato)
-// Output: Questo è un prova di testo.
+var result = regex.matches("abcdef") // result is true
 ```
 
-## Approfondimento sulle espressioni regolari in Kotlin
+Per ottenere una lista di tutte le corrispondenze di un pattern in una stringa, è possibile utilizzare il metodo `findAll(input: CharSequence)`, che restituirà un oggetto `MatchResult` che contiene tutte le corrispondenze trovate.
 
-Le espressioni regolari seguono una sintassi specifica basata su diversi simboli e caratteri speciali che permettono di definire pattern complessi da cercare all'interno di una stringa. Per esempio, il simbolo `^` indica l'inizio della stringa, mentre il simbolo `$` indica la fine della stringa. Esistono inoltre molte classi e metacaratteri che permettono di identificare diverse tipologie di caratteri (come i numeri o le lettere) o al contrario, di escluderli dalla ricerca.
+```
+var matches = regex.findAll("abcdef") // matches will contain a list of all matches found in the string
+```
 
-Un altro aspetto importante da considerare è l'efficienza delle espressioni regolari. In alcuni casi, è possibile che l'utilizzo di espressioni regolari sia più lento rispetto a un'implementazione alternativa, soprattutto se il pattern da cercare è molto complesso. È quindi consigliato analizzare il codice e valutare la sua efficienza in base alle esigenze specifiche del proprio progetto.
+Per sostituire parti di una stringa utilizzando un pattern, si può utilizzare il metodo `replace(input: CharSequence, replacement: String)` specificando il pattern da sostituire e la stringa con cui sostituirlo.
+
+```
+var output = regex.replace("abcdef", "xyz") // output will be "xyzdef"
+```
+
+## Approfondimento sulle espressioni regolari
+
+Le espressioni regolari sono costituite da una serie di caratteri speciali che rappresentano una stringa di ricerca. Questi caratteri possono essere combinati in modo diverso per creare pattern complessi che corrispondono a stringhe specifiche. Per esempio, `abc` corrisponde a una stringa che contiene semplicemente "abc", mentre `ab*c` corrisponde a una stringa che inizia con "a", seguita da qualsiasi numero di "b" e termina con "c".
+
+Inoltre, le espressioni regolari offrono molti modelli e modi per adattarsi alle esigenze specifiche. Ad esempio, è possibile utilizzare le parentesi tonde per raggruppare una parte del pattern e richiamarla successivamente utilizzando i simboli `$1`, `$2`, ecc.
+
+Esistono molte risorse online per imparare come utilizzare al meglio le espressioni regolari, quindi non esitare a fare ricerche e a praticare per diventare un esperto in materia.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Kotlin su espressioni regolari](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Regex101 - strumento online per testare ed esplorare espressioni regolari](https://regex101.com/)
+- [Kotlin Regex Reference](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- [Regular-Expressions.info](https://www.regular-expressions.info/)
+- [Regex Tutorial - Learn How to Use Regex](https://www.youtube.com/watch?v=7DG3kCDx53c)

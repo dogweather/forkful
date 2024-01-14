@@ -1,40 +1,46 @@
 ---
-title:    "C#: Extrahera substrängar"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/extracting-substrings.md"
+title:                "C#: Extrahera delsträngar"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Extrahering av substrängar är en vanlig uppgift inom programmering, oavsett vilket språk man använder. Det är en viktig färdighet som kan hjälpa dig att manipulera och hantera strängar på ett effektivt sätt.
+Att extrahera substrängar från en sträng kan vara en användbar teknik i många C# program. Det kan göra det enklare att manipulera data, hitta specifika delar av en sträng och utföra regelbundna uttryck.
 
-## Så här
+## Hur man gör
 
-Att extrahera substrängar innebär helt enkelt att välja en del av en befintlig sträng. I C# kan vi använda metoden `Substring()` för att åstadkomma detta.
-
-Låt oss säga att vi har en sträng som heter `myString` och innehåller följande: "Hej alla tillsammans!". Om vi vill extrahera ordet "tillsammans" från denna sträng, kan vi göra så här:
+För att extrahera substrängar från en sträng i C# kan du använda metoden `Substring()` som finns inbyggd i strängklassen. Denna metod tar två parametrar: en startposition och en längd. Här är ett enkelt exempel på hur du kan använda `Substring()` för att extrahera en del av en sträng:
 
 ```C#
-string myString = "Hej alla tillsammans!";
-string substring = myString.Substring(9, 10);
-Console.WriteLine(substring); // output: tillsammans
+string namn = "Jag heter Maria";
+string förnamn = namn.Substring(4, 5);
+Console.WriteLine(förnamn);
 ```
 
-I det här exemplet använder vi `Substring()`-metoden på vår ursprungliga sträng `myString` och anger två parametrar - startindex och längden på den önskade substrängen. Eftersom ordet "tillsammans" börjar på index 9 och är 10 tecken långt, väljer vi dessa värden för våra parametrar.
+I detta exempel kommer utskriften att bli "heter", eftersom det är den del av strängen som börjar på position 4 och är 5 tecken lång.
 
-Det är också värt att nämna att index i C# börjar på 0, vilket betyder att det första tecknet i en sträng har index 0. Så om vi ville extrahera ordet "Hej" från vår ursprungliga sträng, skulle vi använda parametrarna (0, 3).
+Du kan också använda `Substring()` tillsammans med andra C# strängmetoder, som `IndexOf()` och `LastIndexOf()`, för att hitta specifika delar av en sträng och sedan extrahera dem. Här är ett exempel på hur du kan göra för att extrahera ett efternamn från en sträng:
 
-## Djupdykning
+```C#
+string namn = "Jag heter Maria Andersson";
+string efternamn = namn.Substring(namn.IndexOf(" ") + 1, namn.Length - namn.IndexOf(" ") - 1);
+Console.WriteLine(efternamn);
+```
 
-När det gäller `Substring()`-metoden finns det några saker att tänka på. För det första, om vi bara anger ett startindex som parameter, kommer metoden att extrahera resten av strängen från och med det angivna indexet. Så om vi ville extrahera allt efter "alla" i vår ursprungliga sträng, skulle vi använda `(7)` som parameter.
+I detta exempel kommer utskriften att bli "Andersson", eftersom vi först använder `IndexOf()` för att hitta positionen för det första mellanslaget i strängen. Vi lägger sedan till 1 till denna position för att hoppa över mellanslaget och använder `Length`-egenskapen för att få resten av strängen.
 
-För det andra, om vi anger ett startindex som är större än längden på vår sträng kommer metoden att returnera ett undantag. Så se till att alltid kolla längden på din sträng innan du extraherar en substräng.
+## Djupt dyk
 
-Slutligen är det värt att notera att `Substring()`-metoden inte ändrar den ursprungliga strängen, utan returnerar en ny sträng. Så om du vill ändra en del av en sträng, t.ex. ersätta ett ord, måste du använda metoder som `Replace()` istället.
+När du extraherar substrängar måste du vara försiktig med indexering eftersom den första tecknet i en sträng är index 0, inte 1. Om du anger en längd som är längre än det som finns kvar i strängen kan du få en `ArgumentOutOfRangeException` när du kör din kod.
+
+Det finns också olika sätt att hantera teckenkodning, särskilt vid extrahering av substrängar från flerspråkiga strängar. Du kan behöva använda `Encoding`-klassen för att justera teckenkodningen innan du extraherar dina substrängar.
 
 ## Se även
 
-- [C#-strängar - Microsoft Dokumentation](https://docs.microsoft.com/sv-se/dotnet/csharp/programming-guide/strings/)
-- [C#-substrings - C# Corner](https://www.c-sharpcorner.com/article/substrings-in-C-Sharp/)
+- [Microsoft- dokumentation om Substring-metoden](https://docs.microsoft.com/en-US/dotnet/api/system.string.substring?view=netframework-4.8)
+- [C#- String-klass dokumentation](https://docs.microsoft.com/en-US/dotnet/api/system.string?view=netframework-4.8)
+- [Tutorial om C#-strängmetoder](https://www.tutorialspoint.com/csharp/csharp_strings.htm)

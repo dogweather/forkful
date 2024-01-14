@@ -1,41 +1,50 @@
 ---
-title:    "Fish Shell: Scrivere su standard error"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/writing-to-standard-error.md"
+title:                "Fish Shell: Scrivere su standard error"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Scrivere su standard error è una pratica utile per visualizzare errori o avvisi specifici durante l'esecuzione di un programma. In questo modo, è possibile identificare e risolvere i problemi in modo tempestivo.
+Scrivere su standard error è un'abilità utile per i programmatori che desiderano gestire meglio gli errori e il debug del loro codice. Con l'utilizzo del Fish Shell, è possibile scrivere direttamente su standard error per visualizzare messaggi di errore o di avviso durante l'esecuzione del programma.
 
-## Come fare
+## Come Fare
 
-Per scrivere su standard error utilizzando Fish Shell, è possibile utilizzare il comando `echo` seguito dalla stringa da visualizzare e il simbolo `>` per indicare l'output su stderr. Ad esempio:
-
-```Fish Shell
-echo "Errore: il file non è stato trovato" >&2
-```
-
-Questo produrrà un output simile al seguente:
+Per scrivere su standard error utilizzando il Fish Shell, è necessario utilizzare il comando `echo` seguito dal simbolo `&`. Ad esempio:
 
 ```Fish Shell
-Errore: il file non è stato trovato
+echo "Errore: la porta è già in uso" >&2
 ```
 
-## Approfondisci
-
-Scrivere su standard error è particolarmente utile quando si scrivono script o programmi più complessi, in quanto consente di visualizzare informazioni importanti che altrimenti potrebbero passare inosservate nell'output standard. Inoltre, utilizzando Fish Shell, è possibile anche eseguire il redirect dell'output di un comando specifico su stderr utilizzando `2>` seguito dall'output desiderato. Ad esempio:
+In questo modo, il messaggio verrà scritto direttamente su standard error invece che su standard output. È importante ricordare di usare `>&2` dopo ogni comando `echo` per assicurarsi che il messaggio venga inviato al giusto canale di output. Inoltre, è possibile utilizzare variabili e funzioni all'interno del comando `echo` per creare messaggi dinamici, come ad esempio:
 
 ```Fish Shell
-ls -l file_non_esistente 2> errore.txt
+porta=8080
+echo "Attenzione: la porta $porta è già in uso" >&2
 ```
 
-Questo comando produrrà un file "errore.txt" contenente eventuali errori generati dall'esecuzione del comando `ls` su un file inesistente. Ciò è particolarmente utile quando si desidera registrare gli errori per analisi future.
+## Analisi Approfondita
 
-## Vedi anche
+Scrivere su standard error può essere utile anche per distinguere tra diversi tipi di messaggi durante l'esecuzione del programma. Ad esempio, si può utilizzare `>&2` solo per gli errori critici, mentre si può utilizzare la normale output per messaggi di avviso o informazioni. Inoltre, è possibile utilizzare il condizionale `if` per scrivere su standard error solo se si verificano determinate condizioni, come ad esempio:
 
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/)
-- [Tutorial di Fish Shell su Codementor](https://www.codementor.io/@ericowens/how-to-use-fish-shell-1vsz7dkzbd)
-- [Articolo su come scrivere a standard error su OMG! Ubuntu! (in italiano)](https://www.omgubuntu.co.uk/2020/02/write-to-stderr-linux)
+```Fish Shell
+if test -n "$porta"
+	echo "Attenzione: la porta $porta è già in uso" >&2
+end
+```
+
+In questo modo, il messaggio viene scritto solo se è stata definita una variabile per la porta. 
+
+## Vedi Anche
+
+- [Documentazione ufficiale del Fish Shell](https://fishshell.com/docs/current/)
+
+- [Guida all'utilizzo di standard error nel Fish Shell](https://hackersandslackers.com/fish-shell-stdout-stderr/)
+
+- [Approfondimento sulla gestione degli errori nel Fish Shell](https://www.linuxjournal.com/content/handle-errors-fish-shell)
+
+
+# Vedi Anche

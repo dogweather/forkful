@@ -1,58 +1,56 @@
 ---
-title:    "TypeScript: Das aktuelle Datum erhalten"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/getting-the-current-date.md"
+title:                "TypeScript: Die aktuelle Datum abrufen"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Abrufen des aktuellen Datums ist eine häufige Notwendigkeit bei der Programmierung. Es kann verwendet werden, um ein Datumsfeld in einem Formular vorzubelegen, um die Erstellung von Zeitstempeln zu automatisieren oder um die letzte Aktualisierung einer Datei oder Datenbank anzuzeigen. Es ist also eine nützliche Funktion, um zu wissen, wie man sie in TypeScript umsetzt.
+Das Abrufen des aktuellen Datums kann für Programmiererinnen und Programmierer sehr hilfreich sein, um verschiedene Aufgaben und Funktionen in ihrem Code auszuführen. Es kann verwendet werden, um zeitgesteuerte Aktionen durchzuführen, Daten zu organisieren oder um den Nutzer mit dem aktuellen Datum zu begrüßen.
 
-## Wie geht man vor
+## Wie Geht's
 
-Es gibt mehrere Möglichkeiten, um das aktuelle Datum in TypeScript abzurufen. Eine Möglichkeit ist die Verwendung der integrierten JavaScript-Dateiobjekte. Zum Beispiel kann man das "Date" Objekt verwenden, um das aktuelle Datum und die aktuelle Zeit abzurufen. 
+Das Abrufen des aktuellen Datums in TypeScript ist relativ einfach. Verwenden Sie einfach die integrierte JavaScript-Methode `new Date()`, um ein Date-Objekt zu erstellen. Sie können dann verschiedene Methoden anwenden, um das Datum in verschiedenen Formaten darzustellen.
+
+### Beispiel:
 
 ```TypeScript
-let currentDate = new Date(); 
-console.log(currentDate); 
+let currentDate: Date = new Date();
+console.log(currentDate); // Ausgabe: Tue Sep 08 2020 09:30:00 GMT+0200 (Mitteleuropäische Sommerzeit)
+
+let day: number = currentDate.getDate();
+let month: string = currentDate.getMonth() + 1;
+let year: number = currentDate.getFullYear();
+console.log(`${day}.${month}.${year}`); // Ausgabe: 08.09.2020
 ```
- Die Konsole würde dann das aktuelle Datum und die aktuelle Uhrzeit in der folgenden Form ausgeben:
- ```TypeScript
- Sun Jun 20 2021 10:37:50 GMT-0400 (Eastern Daylight Time)
- ```
 
- Eine andere Möglichkeit ist die Verwendung von Bibliotheken wie Moment.js oder date-fns, die zahlreiche Funktionen zum Umgang mit Datum und Zeit bieten. Zum Beispiel könnte man Moment.js verwenden, um das aktuelle Datum als ein bestimmtes Format anzuzeigen:
+Sie können auch die `toLocaleString()`-Methode verwenden, um das Datum in verschiedenen Länder- und Sprachformaten darzustellen.
 
- ```TypeScript
- import moment from 'moment';
- let currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
- console.log(currentDate);
- ```
- Die Konsole würde dann das aktuelle Datum und die aktuelle Uhrzeit in der folgenden Form ausgeben:
- ```TypeScript
- June 20th 2021, 10:37:50 am
- ```
+### Beispiel:
 
- Wenn man das aktuelle Datum in einem HTML-Formular vorbefüllen möchte, könnte man dies wie folgt tun:
+```TypeScript
+console.log(currentDate.toLocaleString('de-DE')); // Ausgabe: 8.9.2020, 09:30:00
+console.log(currentDate.toLocaleString('en-US')); // Ausgabe: 9/8/2020, 9:30:00 AM
+```
 
- ```TypeScript
- let dateInput = document.getElementById("datum") as HTMLInputElement;
- dateInput.value = new Date().toISOString().split("T")[0];
- ```
- Dies würde das aktuelle Datum im ISO-Format als Wert für ein Eingabefeld mit der ID "datum" einfügen.
+## Tiefer Tauchen
 
-## Tiefere Einblicke
+Der `new Date()`-Konstruktor ermöglicht es uns, nicht nur das aktuelle Datum zu erstellen, sondern auch ein spezifisches Datum in der Vergangenheit oder Zukunft. Wir können auch Zeitangaben hinzufügen, um das Datum und die Uhrzeit zu steuern.
 
-Es gibt einige Dinge, die man beachten sollte, wenn man das aktuelle Datum in TypeScript verwendet. Zum Beispiel gibt es Unterschiede in den Zeit- und Datumsformaten, je nachdem, in welchem Land oder in welcher Region man sich befindet. Dies kann bei der Formatierung und Ausgabe des Datums berücksichtigt werden.
+### Beispiel:
 
-Außerdem kann es sinnvoll sein, das Datum und die Zeit in UTC zu erhalten, um mögliche Zeitzonenprobleme zu vermeiden. Dazu kann man die entsprechende Methode für UTC verwenden, wie zum Beispiel `getUTCDate()` oder `getUTCHours()`. 
+```TypeScript
+let date: Date = new Date(2020, 0, 1, 5, 30, 0); // 1. Januar 2020 um 5:30 Uhr
+console.log(date.toLocaleString('de-DE')); // Ausgabe: 1.1.2020, 05:30:00
+```
 
-Es kann auch hilfreich sein, sich mit den verschiedenen Funktionen und Eigenschaften des Date-Objekts vertraut zu machen, um das Datum und die Zeit weiter zu verarbeiten.
+Sie können auch verschiedene Methoden anwenden, um das Datum zu manipulieren, z. B. `setDate()` oder `setFullYear()`. Schauen Sie sich die offizielle [Dokumentation](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date) für weitere Details und Beispiele an.
 
-## Siehe auch
+## Siehe Auch
 
-- [Date Objekt - MDN Web Docs](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js - Dokumentation](https://momentjs.com/docs/)
-- [date-fns - Dokumentation](https://date-fns.org/docs/)
+- [Date-Objekt, MDN Web Docs](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript: Official Website](https://www.typescriptlang.org/)
+- [JavaScript Dates, W3Schools](https://www.w3schools.com/js/js_dates.asp)

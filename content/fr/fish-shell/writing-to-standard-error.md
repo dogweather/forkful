@@ -1,53 +1,44 @@
 ---
-title:    "Fish Shell: Écrire vers l'erreur standard"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/writing-to-standard-error.md"
+title:                "Fish Shell: Écrire vers l'erreur standard"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+# Pourquoi écrire vers l'erreur standard en Fish Shell
 
-Ecrire vers la sortie d'erreur standard est une pratique courante dans la programmation en Fish Shell. Cela permet de contrôler et de gérer les erreurs de manière efficace, ce qui peut améliorer la fiabilité et la qualité de votre code.
+Il peut être utile d'écrire vers l'erreur standard en programmation pour mieux comprendre les problèmes d'exécution de votre code. Cela peut également vous aider à déboguer plus efficacement en identifiant les erreurs plus rapidement.
 
-# Comment faire
+## Comment faire
 
-Pour écrire vers la sortie d'erreur standard en Fish Shell, il suffit d'utiliser la commande `echo` suivie du symbole `>` et du numéro de sortie `2` pour indiquer l'erreur. Par exemple :
-
-```Fish Shell
-
-echo "Il y a eu une erreur" >2
-
-```
-
-Cela écrira le message "Il y a eu une erreur" vers la sortie d'erreur standard. Vous pouvez également ajouter des variables ou des commandes à votre message d'erreur, comme ceci :
+Voici un exemple de code utilisant la syntaxe Fish Shell pour écrire vers l'erreur standard :
 
 ```Fish Shell
-
-echo "L'erreur suivante s'est produite : $erreur" >2
-
+function mon_script
+    echo "Bonjour le monde !" >&2
+end
 ```
 
-Dans cet exemple, la variable `$erreur` sera remplacée par la valeur correspondante lors de l'exécution du code. Vous pouvez également utiliser `>>` pour ajouter un message à la sortie d'erreur standard sans l'écraser.
-
-Pour afficher le contenu de la sortie d'erreur standard, vous pouvez utiliser la commande `cat` suivie du fichier spécial `/dev/stderr`. Par exemple :
-
-```Fish Shell
-
-cat /dev/stderr
+Et voici le résultat que vous obtiendrez en exécutant cette fonction :
 
 ```
+$ mon_script
+Bonjour le monde !
+```
 
-Cela affichera tout le contenu de la sortie d'erreur standard à l'écran.
+Comme vous pouvez le voir, le message "Bonjour le monde !" est écrit vers l'erreur standard, symbolisée par le signe ">&2" à la fin de la commande "echo". Cela signifie que le message sera affiché en rouge dans votre terminal, ce qui le distingue des messages écrits vers la sortie standard.
 
-# Plongée en profondeur
+## Approfondissement
 
-L'utilisation de la sortie d'erreur standard permet également de rediriger les erreurs vers un fichier ou de les utiliser pour les exploiter ultérieurement. Par exemple, vous pouvez utiliser `2> fichier.txt` pour écrire les erreurs vers un fichier spécifique.
+Maintenant que vous savez comment écrire vers l'erreur standard en Fish Shell, voici quelques informations supplémentaires pour mieux comprendre cet outil :
 
-De plus, en utilisant les commandes `2>&1` ou `|&`, vous pouvez rediriger à la fois la sortie standard et la sortie d'erreur standard vers le même endroit. Cela peut être utile pour simplifier le traitement des erreurs et des résultats.
+- La commande ">&2" peut également être utilisée pour écrire des erreurs vers l'erreur standard dans des scripts Bash.
+- Vous pouvez rediriger l'erreur standard vers un fichier en utilisant l'opérateur "2>" suivi du nom du fichier dans lequel vous souhaitez enregistrer les erreurs. Cela peut être utile pour créer des fichiers de journalisation ou de débogage.
+- L'erreur standard est souvent utilisée pour afficher des messages d'erreur ou des avertissements à l'utilisateur.
 
 # Voir aussi
 
-- [Documentation Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guide de démarrage rapide de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Commandes de redirection en Fish Shell](https://fishshell.com/docs/current/tutorial.html#redirecting-the-input-output-and-errors)
+- [La syntaxe Fish Shell complète](https://fishshell.com/docs/current/index.html)
+- [Un guide détaillé sur les redirections en Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_redirects)

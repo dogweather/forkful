@@ -1,44 +1,36 @@
 ---
-title:    "Java: Skriva till standardfel"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/writing-to-standard-error.md"
+title:                "Java: Skriva till standardfel"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför skriva till standardfel?
+## Varför
+Att skriva till standardfel är ett viktigt verktyg i Java-programmering, eftersom det ger möjlighet att felmeddelanden skrivna till standard output (eller console) att ignoreras eller försvinna bland annan utdata. Genom att skicka felmeddelanden till standardfel, säkerställer vi att de syns och kan åtgärdas av utvecklaren.
 
-I Java-programmering är standardfel ett sätt att kommunicera fel meddelanden till konsolen eller terminalen. Det kan användas för att felsöka ditt program och hitta buggar. Att skicka felmeddelanden till standardfel är också ett sätt att berätta för användarna om eventuella problem som uppstår under körning av programmet.
-
-## Hur man skriver till standardfel
-
-För att skicka felmeddelanden till standardfel i Java, används metoden "System.err.println()" där "err" står för "error". Till exempel:
+## Hur man gör det
+För att skriva till standardfel i Java, behöver du använda objektet System.err och metoden println() som skriver ut en sträng till standardfel. Här är ett exempel: 
 
 ```Java
-System.err.println("Ett fel har uppstått!");
+System.err.println("Detta är ett exempel på ett felmeddelande"); 
 ```
 
-Detta kommer att skriva ut meddelandet "Ett fel har uppstått!" till konsolen eller terminalen.
-
-Utöver att skriva ut en enkel textrad, kan du också inkludera värden från variabler eller objekt i ditt felmeddelande. Till exempel:
+Om vi kör detta kodblock får vi följande utdata i standardfel:
 
 ```Java
-int a = 5;
-System.err.println("Talet är " + a + " och det här är ett felmeddelande");
+Detta är ett exempel på ett felmeddelande
 ```
 
-Detta kommer att skriva ut "Talet är 5 och det här är ett felmeddelande". På detta sätt kan du ge användare mer specifik information om felet som uppstår.
+Det är viktigt att komma ihåg att använda System.err.println() bara när det är nödvändigt, eftersom det kan göra din kod svårare att läsa och förstå.
 
 ## Djupdykning
+När vi skriver till standardfel, skickar vi egentligen utströmmen till felhanteringsmekanismen i Java. Detta gör att felmeddelanden kan åtgärdas på olika sätt beroende på miljön där koden körs. Till exempel, om vi kör koden i en webbapplikation, kan felmeddelandena skickas till en loggfil som utvecklaren kan kolla på senare.
 
-Att förstå skillnaden mellan att skriva till standardutdata (standard output) och standardfel är viktigt. Standardutdata används för att skriva ut vanliga meddelanden och resultat från programmet, medan standardfel används för att rapportera fel och problem.
+Det är också värt att notera att standardfel inte bara används för felmeddelanden utan också för att skriva ut information om varningar eller avbrott i koden. Att använda System.err.println() ger utvecklare möjlighet att se dessa meddelanden och felsöka sin kod mer effektivt.
 
-Du kan också använda try-catch block för att hantera felmeddelanden och skriva dem till standardfel. Detta ger dig mer kontroll över hur felet hanteras och visas för användarna.
-
-Det är också viktigt att se till att ditt program hanterar alla typer av fel och skriver dem till standardfel på ett tydligt sätt, så att användarna kan förstå vad som har hänt och hur de kan åtgärda problemet.
-
-## Se även
-
-- [Java Try Catch Block](https://www.programiz.com/java-programming/exception-handling)
-- [Java System Class](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/System.html)
-- [Java Output to Console](https://www.w3schools.com/java/java_output.asp)
+## Se också
+- [Java API Dokumentation](https://docs.oracle.com/javase/8/docs/api/)
+- [Java Felsökning: Att använda System.err.println()](https://www.baeldung.com/java-system-out-println-vs-system-err-println)
+- [Javaskolan: System.err.println()](http://javaskolan.se/src/system.err.println.html)

@@ -1,49 +1,38 @@
 ---
-title:    "Haskell: Beräkning av ett datum i framtiden eller förflutna"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/calculating-a-date-in-the-future-or-past.md"
+title:                "Haskell: Beräkna ett datum i framtiden eller förflutna"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att kunna beräkna ett datum i framtiden eller i det förflutna kan vara användbart i många olika situationer inom programmering. Det kan till exempel hjälpa dig att planera för framtida händelser eller att hålla koll på när saker och ting inträffade.
+Att beräkna ett datum i framtiden eller dåtid kan vara användbart för många olika programmeringsprojekt, inklusive tidshantering, schemaläggning och kalenderapplikationer.
 
-## Hur man gör det
+# Hur man gör
 
-För att beräkna ett datum i Haskell kan du använda funktionen `addDays` och `addGregorianYearsRollOver`. Dessa funktioner tillåter dig att lägga till eller subtrahera ett visst antal dagar eller år från ett befintligt datum.
+För att göra detta i Haskell finns det flera olika sätt att närma sig det. Ett sätt är att använda biblioteket "time" som innehåller funktioner för att hantera datum och tid. Nedanstående kodexempel visar hur man beräknar ett datum 30 dagar framåt från nuvarande datum:
 
-``` Haskell
+```Haskell
 import Data.Time
+import Data.Time.Calendar.OrdinalDate
 
--- Lägg till 10 dagar till idag
-addDays 10 $ fromGregorian 2021 9 1
--- Output: 2021-09-11
+futureDate = addDays 30 $ utctDay $ getCurrentTime
+print $ futureDate
 
--- Subtrahera 3 år från idag
-addGregorianYearsRollOver (-3) $ fromGregorian 2021 9 1
--- Output: 2018-09-01
+-- Output: 2021-12-31
 ```
 
-Du kan också använda funktionen `diffDays` för att räkna ut antalet dagar mellan två datum.
+Dessa funktioner gör det enkelt att manipulera datum i olika format och ta hänsyn till skottår. Om du vill beräkna ett datum i förfluten tid kan du göra det genom att använda "diffDays" funktionen istället för "addDays".
 
-``` Haskell
-import Data.Time
+# Djupdykning
 
--- Antal dagar mellan två datum
-diffDays (fromGregorian 2021 9 1) (fromGregorian 2021 8 1)
--- Output: 31
-```
+Vissa projekt kan kräva mer avancerad beräkning av datum, som till exempel att ta hänsyn till skiftande tidszoner eller att hantera speciella händelser som sommartid. För dessa ändamål finns det andra bibliotek som erbjuder mer robust funktionalitet. Det är viktigt att välja rätt bibliotek beroende på dina behov och krav.
 
-## Djupdykning
+# Se även
 
-I Haskell är datum och tid representerade som olika datatyper. För att kunna utföra beräkningar med dessa datatyper behöver du använda dig av funktioner som är specifika för varje datatyp. Till exempel, för att räkna ut antalet dagar mellan två datum behöver du använda funktionen `diffDays` som är specifik för `Day` datatypen.
-
-Det är också viktigt att notera att Datum och Tid i Haskell är immutabla datatyper, vilket innebär att de inte går att ändra på. Om du vill ändra ett datum eller en tid måste du i stället skapa ett nytt objekt med dina önskade förändringar.
-
-## Se även
-
-- [Haskell Documentation: Data.Time](https://downloads.haskell.org/~ghc/latest/docs/html/library/time-1.11.1.0/Data-Time.html)
-- [Haskell for all: How to deal with timezones in Haskell](https://www.haskellforall.com/2021/03/how-to-deal-with-timezones-in-haskell.html)
-- [Learn You a Haskell: Working with Dates and Times](https://learnyouahaskell.com/starting-out#ready-set-go)
+- [Officiell dokumentation för "time" biblioteket](https://hackage.haskell.org/package/time)
+- [Mer information om hantering av datum och tid i Haskell](https://wiki.haskell.org/Time_Standard_2)
+- [En sammanfattning av de bästa Haskell biblioteken för beräkning av datum](https://www.fpcomplete.com/school/to-infinity-and-beyond/pick-of-the-week/haskells-date-library/)

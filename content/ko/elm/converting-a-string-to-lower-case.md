@@ -1,42 +1,59 @@
 ---
-title:    "Elm: 문자열을 소문자로 변환하기"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/converting-a-string-to-lower-case.md"
+title:                "Elm: 문자열을 소문자로 변환하기"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-변수를 전부 소문자로 변환하는 것이 왜 유용한지를 알고 싶으신가요? 그럼 계속 읽어보세요!
+문자열을 소문자로 변환하는 것의 이유는 무엇일까요?
 
-## 어떻게 해야 할까요
+컴퓨터 프로그램에서 문자열은 매우 중요합니다. 데이터를 다루고, 텍스트 기반의 사용자 인터페이스를 만들고, 웹 애플리케이션에서 사용자 입력을 다루기 위해 문자열을 사용할 수 있습니다. 때로는 대문자, 소문자 등 텍스트 형식을 바꿔야 할 필요가 있습니다. 예를 들면 사용자가 입력한 비밀번호를 소문자로 받아와서 저장해야 하는 경우가 있을 수 있습니다.
 
-문자열을 소문자로 변환하는 것은 간단합니다. Elm의 `String` 모듈에 이미 내장된 `toLower` 함수를 사용하면 됩니다. 아래는 이 함수를 사용한 예시 코드입니다.
+이제 Elm 프로그래밍 언어를 사용하여 문자열을 소문자로 변환하는 방법을 살펴보겠습니다.
 
-```Elm
-import String
+## 변환하는 방법
 
-lowercaseString = String.toLower "ELM PROGRAMMING"
-```
-
-위 코드의 실행 결과는 다음과 같습니다.
+먼저 "toLower" 함수를 사용해서 소문자로 변환할 문자열을 인자로 넣습니다. 다음 예제 코드에서는 "hello"라는 문자열을 소문자로 변환한 결과를 보여줍니다.
 
 ```Elm
-"elm programming"
+toLower "hello"
 ```
 
-## 깊이 들어가기
+결과는 간단합니다. 소문자로 변환된 "hello"를 출력합니다.
 
-문자열을 소문자로 변환하는 이유는 여러 가지가 있습니다. 첫 번째로는 일관성을 유지하기 위해서입니다. 대부분의 프로그래밍 언어는 대/소문자를 구분하므로, 변수명이나 함수명을 정할 때 일관성을 유지하는 것이 중요합니다. 또한 문자열 내용을 비교할 때도 대소문자를 구분하기 때문에, 문자열을 소문자로 변환하면 비교가 더 쉬워집니다.
+```
+"hello"
+```
 
-그렇다면 문자열을 대문자로 변환하는 방법은 없을까요? Elm의 `String` 모듈에는 `toUpper` 함수도 있는데, 이는 `toLower` 함수와 사용법이 같습니다.
+또 다른 예를 살펴보겠습니다. "TO BE or NOT to be"라는 문자열을 소문자로 변환해 봅시다.
 
-# 더 알아보기
+```Elm
+toLower "TO BE or NOT to be"
+```
 
-문자열을 소문자로 변환하는 것 외에도 여러 가지 유용한 기능이 있는 Elm의 `String` 모듈에 대해 더 알고 싶다면 아래 링크를 참고해보세요.
+다음과 같은 결과가 나올 것입니다.
 
-## 함께 보기
+```
+"to be or not to be"
+```
 
-- [Elm String 모듈 문서](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm 공식 홈페이지](https://elm-lang.org/)
+이 함수는 여러 단어로 이루어진 문자열도 소문자로 변환할 수 있습니다. 다만 공백이나 특수 문자는 그대로 유지됩니다. 예를 들면 "I have 2 cats."를 소문자로 변환하면 다음과 같은 결과를 출력합니다.
+
+```
+"i have 2 cats."
+```
+
+## 깊게 파헤치기
+
+하지만 "toLower" 함수는 공백이나 특수 문자를 그대로 유지하면서 문자열을 소문자로 변환하는 것이었습니다. 만약 모든 글자를 소문자로 바꾸는 것이 목적이라면 "toLower" 함수 이외에 다른 방법이 있을 수 있습니다.
+
+예를 들어 사용자가 입력한 문자열을 검증하는 과정에서 입력한 정보가 대문자로 저장되어 있더라도 소문자로 변환해야 할 필요가 있습니다. 이럴 때 "String.toLower" 함수를 사용할 수 있습니다. 이 함수는 모든 문자를 소문자로 변환한 새로운 문자열을 반환합니다. 하지만 이 함수는 특수 문자나 공백을 그대로 둔 채 전체 문자열을 소문자로 바꾸는 차이점이 있습니다. 예를 들면 "I have 2 cats." 문자열을 "toLower" 함수로는 "i have 2 cats."로 변환하지만 "String.toLower" 함수로는 "i have 2 cats."로 변환합니다.
+
+## 참고
+
+- Elm 공식 문서 - [String.toLower](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+- Elm 공식 문서 - [Basics.toLower](https://package.elm-lang.org/packages/elm/core/1.0.5/Basics#toLower)

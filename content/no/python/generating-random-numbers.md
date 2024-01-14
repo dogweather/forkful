@@ -1,40 +1,53 @@
 ---
-title:    "Python: Generering av tilfeldige tall"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/generating-random-numbers.md"
+title:                "Python: Generering av tilfeldige tall"
+programming_language: "Python"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Generering av tilfeldige tall kan være svært nyttig i programmering. Det kan hjelpe deg med å teste ut ulike scenarier og lage varierte datasett.
+# Hvorfor
 
-## Hvordan
-For å generere tilfeldige tall i Python, kan du bruke "random" biblioteket. Her er et eksempel på hvordan du kan generere et tilfeldig tall mellom 1 og 10 og skrive det ut:
+I denne bloggposten vil vi utforske hvordan man enkelt kan generere tilfeldige tall i Python. Dette er en nyttig ferdighet for å lage flere ulike typer programmer, som spill eller simuleringer. Å kunne generere tilfeldige tall kan også hjelpe til med å teste koden din og finne feil.
 
-```Python
-import random
-print(random.randint(1,10))
-```
+# Hvordan Gjøre Det
 
-Dette vil skrive ut et tilfeldig tall hver gang koden kjøres, for eksempel: 7, 3, 9 osv.
-
-Du kan også generere tilfeldige tall fra en liste ved hjelp av "choice" funksjonen. Her er et eksempel på hvordan du kan generere et tilfeldig navn fra en liste og skrive det ut:
+For å generere tilfeldige tall i Python, kan man bruke "random" biblioteket. Her er en enkel kodeeksempel:
 
 ```Python
 import random
-names = ["Ella", "Olav", "Sofia", "William", "Mia"]
-print(random.choice(names))
+
+# Genererer et tilfeldig heltall mellom 1 og 10
+tilfeldig_tall = random.randint(1, 10)
+
+print(tilfeldig_tall)
 ```
 
-Dette vil skrive ut et tilfeldig navn fra listen hver gang koden kjøres, for eksempel: Olav, William, Mia osv.
+Dette vil produsere en tilfeldig tall mellom 1 og 10 hver gang koden kjøres.
 
-## Dypdykk
-Python har flere funksjoner som kan hjelpe deg med å generere tilfeldige tall på ulike måter. "random.uniform()" kan for eksempel generere tilfeldige desimaltall mellom et gitt intervall. "random.sample()" kan generere en liste med tilfeldige tall eller elementer fra en eksisterende liste uten å duplisere dem. 
+Man kan også bruke "random" biblioteket til å generere tilfeldige tall innenfor et bestemt intervall, som vist i følgende eksempel:
 
-Det er også mulig å sette en startverdi, kalt en "seed", for å få de samme tilfeldige tallene hver gang koden kjøres. Dette kan gjøres ved å bruke funksjonen "random.seed()". Dette kan være nyttig hvis du trenger å kunne gjenskape resultatene dine.
+```Python
+import random
 
-## Se også
-- [Dokumentasjon for random modulen i Python](https://docs.python.org/3/library/random.html)
-- [Generere tilfeldige tall med numpy biblioteket](https://numpy.org/doc/stable/reference/random/generated/numpy.random.randint.html)
-- [Hvordan generere tilfeldige tall i andre programmeringsspråk](https://www.geeksforgeeks.org/generating-random-number-list-in-python/)
+# Genererer et tilfeldig desimaltall mellom 2.5 og 5.5
+tilfeldig_desimal = random.uniform(2.5, 5.5)
+
+print(tilfeldig_desimal)
+```
+
+# Dypdykk
+
+Når man genererer tilfeldige tall i programmering, er det nyttig å vite hvilke algoritmer som brukes og hvordan de fungerer. Det finnes flere ulike metoder for å generere tilfeldige tall, men de vanligste er "linear congruential generator" (LCG) og "Mersenne Twister".
+
+LCG er en enkel metode som genererer tall basert på en lineær ligning. Mersenne Twister er en mer kompleks og vanligvis mer nøyaktig metode som har blitt implementert i mange programmeringsspråk, inkludert Python.
+
+Det er også viktig å huske at selv om tallene som genereres av disse algoritmene er tilfeldige innenfor et gitt sett, følger de egentlig en bestemt sekvens. Det er derfor viktig å være forsiktig med å bruke tilfeldige tall til kryptografiske formål.
+
+# Se Også
+
+- [Dokumentasjon for "random" biblioteket i Python](https://docs.python.org/3/library/random.html)
+- [En dypere forklaring av tilfeldige tall og algoritmer](https://www.quantstart.com/articles/random-number-generation-in-python/)
+
+Takk for at du leste denne bloggposten. Vi håper det har vært nyttig og inspirert deg til å bruke tilfeldige tall i dine egne programmer. Ha det gøy med å eksperimentere og utforske!

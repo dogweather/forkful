@@ -1,42 +1,46 @@
 ---
-title:    "Arduino: Sammenstilling av strenger"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/concatenating-strings.md"
+title:                "Arduino: Sammenslåing av tekststrenger"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Det å sette sammen tekststrenger er en nyttig ferdighet når du jobber med Arduino-programmering. Ved å kombinere flere strenger kan du lage mer dynamiske og tilpassede utskrifter og brukerinteraksjoner. 
 
-Å konkatener strenger (å sette sammen to eller flere strenger til en lengre streng) i Arduino-programmering kan være nyttig når du trenger å lage en mer kompleks tekst eller melding. Det kan også gjøre koden mer effektiv og enklere å lese og forstå.
+## Hvordan gjøre det
+For å sette sammen tekststrenger i Arduino, kan du bruke funksjonen `strcat()`. Denne funksjonen tar to eller flere strenger som argumenter og kombinerer dem til én streng. Her er et eksempel på hvordan du kan bruke `strcat()`:
 
-## Hvordan
+```Arduino 
+char navn[20] = "Hilde";
+char alder[3] = "25";
 
-For å konkatener strenger i Arduino, bruker du "+" -operatøren for å kombinere to strenger. Du kan også bruke flere "+" -operatører for å kombinere flere strenger.
+strcat(navn, " er ");
+strcat(navn, alder);
+strcat(navn, " år gammel.");
 
-```Arduino
-String navn = "Ole";
-String alder = "25";
-String beskjed = "Hei, mitt navn er " + navn + " og jeg er " + alder + " år gammel.";
-Serial.println(beskjed);
+Serial.println(navn);
 ```
 
-Dette vil gi følgende output: "Hei, mitt navn er Ole og jeg er 25 år gammel."
+Dette vil resultere i en utskrift av `Hilde er 25 år gammel.` på serieporten. Det er viktig å merke seg at `strcat()` funksjonen endrer den første strengen, så det er nødvendig å bruke en midlertidig streng når du kombinerer mer enn to strenger. 
 
 ## Dypdykk
-
-Når du bruker "+" -operatøren for å konkatenerere strenger, må du være oppmerksom på datatype-konvertering. Hvis du bruker forskjellige datatyper i strengene, kan det føre til uventede resultater.
-
-Du kan også bruke funksjonen `concat()` for å konkatenerere strenger. Denne funksjonen gjør det mulig å konkatenerere flere strenger samtidig.
+I tillegg til `strcat()`, er det andre måter å sette sammen strenger på i Arduino. Du kan for eksempel bruke `sprintf()` funksjonen, som lar deg inkludere variabler og konstanter i strengen. Her er et eksempel på hvordan du kan bruke `sprintf()`:
 
 ```Arduino
-String instruksjon = "Har du " + XXX + "Når du bruker " + YYY + "merk at dette kan føre til uønskede resultater.";
-Serial.println(instruksjon.concat("spørsmål om dette."));
+int tall = 10;
+
+char tekst[20];
+sprintf(tekst, "Tallet er: %d", tall);
+
+Serial.println(tekst);
 ```
 
-Dette vil gi følgende output: "Har du spørsmål om dette? Når du bruker merk at dette kan føre til uønskede resultater."
+Dette vil resultere i en utskrift av `Tallet er: 10` på serieporten. `sprintf()` funksjonen gir deg også muligheten til å kontrollere antall siffer som skal inkluderes, og hvor de skal plasseres i strengen. 
 
 ## Se også
-
-- [Official Arduino Language Reference - Strings](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [How to Concatenate Strings in Arduino](https://maker.pro/arduino/projects/concatenate-strings-arduino)
+- [Official Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Arduino String concatenation tutorial](https://www.arduino.cc/en/Tutorial/StringAppendOperator)
+- [sprintf() function documentation](https://www.cplusplus.com/reference/cstdio/sprintf/)

@@ -1,36 +1,31 @@
 ---
-title:    "Javascript: Генерування випадкових чисел"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/generating-random-numbers.md"
+title:                "Javascript: Створення випадкових чисел"
+programming_language: "Javascript"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
-Згенерувати випадкові числа є важливим аспектом програмування, особливо при роботі з великими наборами даних. Випадкові числа дозволяють створити випадкові умови для тестування і виконання алгоритмів.
+Генерація випадкових чисел може бути корисною при розв'язуванні різних завдань, таких як шифрування даних або створення випадкових об'єктів у гральних програмах.
 
-## Як це зробити
+## Як
+Використовуючи вбудовану функцію `Math.random()`, ми можемо згенерувати випадкове число від 0 до 1. Для отримання випадкового числа у певному діапазоні, скористайтеся наступним кодом:
+
 ```Javascript
-// Випадкове ціле число в діапазоні від 1 до 10
-let randomNumber = Math.floor(Math.random() * 10) + 1;
-console.log(randomNumber);
-
-// Випадкове число в діапазоні від 0 до 1
-let randomDecimal = Math.random();
-console.log(randomDecimal);
-
-// Випадковий елемент зі списку
-let array = ['apple', 'orange', 'banana', 'grape'];
-let randomItem = array[Math.floor(Math.random() * array.length)];
-console.log(randomItem);
+// генерація випадкового числа від 1 до 10
+let randomNumber = Math.floor(Math.random() * 10 + 1);
+console.log(randomNumber); // виведе випадкове число від 1 до 10
 ```
 
-Вищевказані приклади демонструють використання методів ```Math.random()``` та ```Math.floor()``` для генерування випадкових цілих чисел і десяткових чисел з обмеженим діапазоном. Також це можливо зробити для випадкового елемента зі списку шляхом генерації випадкового індексу.
+Для генерації випадкового цілого числа використовуйте функцію `Math.floor()`, яка округлює результат до найближчого меншого цілого числа. Щоб випадкове число було включно до заданого діапазону, додаємо 1 до результату.
 
-## Глибше поглиблення
-Існує кілька методів для генерації випадкових чисел, таких як ```Math.random()```, ```Math.floor()```, ```Math.ceil()``` та ```Math.round()```. Кожен з цих методів має свої особливості і поведінку при обробці чисел. Також важливо уникати використання псевдовипадкових чисел при створенні криптографічної безпеки, оскільки ці числа можуть бути передбаченими.
+## Глибока аналітика
+Хоча функція `Math.random()` є швидкою та простою для генерації випадкових чисел, вона не є повністю випадковою. Відомо, що вона генерує послідовності чисел, які повторюються через певну кількість викликів. Для більш безпечних та випадкових результатів, можна скористатися зовнішніми бібліотеками, такими як `crypto.getRandomValues()`.
 
-## Дивись також
-- [Документація MDN: Math.random()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Стаття: Генерація випадкових чисел в Javascript](https://medium.com/@jvalimaki/computer-science-in-javascript-games-random-7d96e9d52b44)
-- [Курс: Випадкові числа в Javascript](https://www.udacity.com/course/intro-to-javascript--ud803)
+## Дивіться Також
+- [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Generating cryptographically secure random numbers in Node.js](https://curtisfornadley.medium.com/generating-cryptographically-secure-random-numbers-in-node-js-e220f39f30da)
+- [Introduction to Random Number Generators in JavaScript](https://www.freecodecamp.org/news/introduction-to-random-number-generators-in-javascript/)
+- [crypto.getRandomValues()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues)

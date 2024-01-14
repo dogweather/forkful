@@ -1,38 +1,38 @@
 ---
-title:    "Fish Shell: 生成随机数"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/generating-random-numbers.md"
+title:                "Fish Shell: 产生随机数"
+programming_language: "Fish Shell"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：随机数在编程中是非常有用的，它可以用来模拟实际情况，进行测试，或者生成随机数据。
+## 为什么
 
-如何使用Fish Shell生成随机数：
+生成随机数是编程中常见的需求，例如创建随机密码或选择随机样本。使用 Fish Shell 可以轻松地实现这一功能。
+
+## 怎么做
+
+使用 Fish Shell 内置的 `math` 模块就可以生成随机数。以下是一个例子，使用 `math` 模块中的 `random` 函数来生成一个 1-10 之间的随机数：
 
 ```Fish Shell
-
-# 生成一个0-10的随机整数
-set random_number (math /dev/urandom 0 10)
+set random_number (math random --uniform 1 10)
 echo $random_number
-
-# 生成一个0-1的随机小数
-set random_decimal (math /dev/urandom 0 1)
-echo $random_decimal
-
-# 生成一个含有10个元素的随机数组
-set -l random_array (for i in (seq 1 10); math /dev/urandom 0 100; end)
-echo $random_array
-
 ```
 
-深入了解随机数生成：
+运行这段代码，你会看到一个随机数被打印出来。每次运行代码，都会生成一个不同的随机数。
 
-生成随机数的关键是使用操作系统提供的随机设备/dev/urandom。Fish Shell中的math函数可以从该设备中获取随机数，参数如/dev/urandom表示随机设备，后面的0和10表示随机数的范围。随机数范围的设定可以根据需求自行调整。
+## 深入探讨
 
-另外，可以使用for循环来生成随机数组，通过设置数组的长度和math函数的参数，我们可以方便地获取任意长度的随机数组。
+Fish Shell 的 `math` 模块内置了多种随机数生成函数，包括 `random`、`normal`、`poisson` 等。你可以使用不同的函数来生成不同分布的随机数，满足不同的需求。此外，你也可以通过设置参数来控制生成随机数的范围。通过学习 `math` 模块的文档，你可以更深入地了解如何使用 Fish Shell 生成随机数。
+
+## 参考文献
+
+- [Fish Shell 官方文档](https://fishshell.com/docs/current/index.html)
+- [熟悉 Fish Shell 中的 Random 模块](https://fishshell.com/docs/current/cmds/math.html#math-random)
+- [学习 Fish Shell 的数学函数](https://fishshell.com/docs/current/cmds/math.html)
 
 ## 另请参阅
 
-- Fish Shell官方文档：https://fishshell.com/docs/current/
-- 随机数生成器：https://www.random.org/
+- [在 Fish Shell 中学习循环](https://fishshell.com/docs/current/tutorial.html#loop-de-loops)
+- [使用 Fish Shell 进行系统管理](https://fishshell.com/blog/2016/10/14/commands-part-4.html)

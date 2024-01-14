@@ -1,50 +1,48 @@
 ---
-title:    "Haskell: Att få den aktuella datumet"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/getting-the-current-date.md"
+title:                "Haskell: Att få den nuvarande datumet"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna få den aktuella datumet är ett viktigt verktyg för alla Haskell-programmerare. Genom att ha tillgång till datumet kan vi skapa mer dynamiska och relevanta program.
 
-## Hur man gör det
-För att få den aktuella datumet i Haskell, kan vi använda funktionen `getCurrentTime` från biblioteket `Data.Time`. Detta bibliotek innehåller många användbara funktioner för hantering av tid och datum i Haskell. För att använda detta bibliotek måste du först importera det i din kod:
+Att kunna få den nuvarande datumen i dina Haskell-program kan hjälpa dig att hålla koll på tidsrelaterade händelser och också göra det möjligt att göra beräkningar med hjälp av datuminformation. Det kan också vara användbart när du behöver visa eller spara datumen i ditt program.
+
+## Så här gör du
+
+För att få den nuvarande datumen i Haskell kan du använda funktionen `getCurrentTime` från `Data.Time` biblioteket. Först behöver du importera biblioteket i ditt program med följande kod:
 
 ```Haskell
 import Data.Time
 ```
 
-När du har importerat biblioteket kan du använda `getCurrentTime` för att få den aktuella tiden som ett `UTCTime`-objekt:
+Sedan kan du använda `getCurrentTime` funktionen för att få den nuvarande datumen i formatet `UTCTime`. Här är ett exempel som skriver ut den nuvarande datumen på skärmen:
 
 ```Haskell
-currentDate <- getCurrentTime
+main = do
+    currentTime <- getCurrentTime
+    print currentTime
 ```
 
-Detta objekt innehåller information om den aktuella tiden, inklusive datum. För att få tillgång till det datumet kan vi använda funktionen `toGregorian` som omvandlar `UTCTime`-objektet till en trippel med år, månad och dag:
+Output:
 
-```Haskell
-let (year, month, day) = toGregorian $ utctDay currentDate
+```
+2021-05-23 10:00:00.123456 UTC 
 ```
 
-Nu har vi tillgång till år, månad och dag som separata variabler och kan använda dem i vårt program på olika sätt.
+Funktionen `getCurrentTime` returnerar datumen som en typ av `UTCTime` som inte är en läsbar eller användbar form. Du kan dock konvertera den till en mer användbar form som `Day` eller `LocalTime` med hjälp av funktionerna `utctDay` eller `utctToLocalTime` från `Data.Time.LocalTime` biblioteket.
 
 ## Djupdykning
-För de som är intresserade av en mer detaljerad förklaring, så är `getCurrentTime`-funktionen en del av standardbiblioteket `base` och använder sig av systemets klocka för att få den aktuella tiden. Detta innebär att den aktuella tiden kommer att vara baserad på systemets inställningar.
 
-För att få den aktuella tiden i ett specifikt tidszon kan vi använda funktionen `getCurrentTimeZone` från biblioteket `Data.Time.LocalTime` och sedan använda den tillsammans med `utcToLocalTime` för att konvertera tiden till den önskade tidszonen.
+Den `UTCTime` som returneras av `getCurrentTime` funktionen representerar det aktuella datumen i UTC-tid, vilket är en standardform av tid som används för att hålla reda på tiden över hela världen. Det är viktigt att känna till att `UTCTime` inte innehåller någon information om tidszonen.
 
-```Haskell
-import Data.Time.LocalTime
-
-currentTimeZone <- getCurrentTimeZone
-let currentDateInTimeZone = utcToLocalTime currentTimeZone currentDate
-```
-
-Det finns också möjlighet att få den aktuella tiden i millisekunder genom att använda funktionen `getCurrentTime` från biblioteket `Data.Time.Clock.System`.
+Om du vill få datumen i lokal tid eller i en specifik tidszon kan du använda funktionen `getCurrentTimeZone` från `Data.Time.LocalTime` biblioteket för att få den aktuella tidszonen och sedan konvertera den `UTCTime` till `LocalTime` med hjälp av funktionen `utcToLocalTime` och `getCurrentTimeZone`.
 
 ## Se även
-- [Haskell.org - Datum och tid](https://wiki.haskell.org/Date_and_time)
-- [Hackage - Data.Time biblioteket](https://hackage.haskell.org/package/time)
-- [Hackage - Data.Time.LocalTime biblioteket](https://hackage.haskell.org/package/time-1.9.2/docs/Data-Time-LocalTime.html)
+
+- [Haskell documentation for Data.Time library](https://www.haskell.org/cabal/users-guide/developing-packages.html#specifying-dependencies)
+- [Stack Overflow: How to get current time in Haskell](https://stackoverflow.com/questions/4297610/how-to-get-current-time-and-date-in-haskell)
+- [Haskell wiki: Time library tutorial](https://wiki.haskell.org/Time_library)

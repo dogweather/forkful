@@ -1,37 +1,68 @@
 ---
-title:    "Fish Shell: Satunnaislukujen luominen"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/generating-random-numbers.md"
+title:                "Fish Shell: Satunnaislukujen luominen"
+programming_language: "Fish Shell"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Halusitko koskaan luoda pelin, jossa on satunnaisia elementtejä? Tai kenties laskentaprojektissa tarvitset satunnaista dataa? Fish Shell tarjoaa helpon tavan luoda satunnaisia numeroita, joka on hyödyllinen monissa ohjelmointitilanteissa.
+Satunnaisluvun generointi on tärkeä osa ohjelmointia. Se mahdollistaa monipuolisen ja vaihtelevan datajoukon luomisen, jota voi hyödyntää erilaisissa sovelluksissa ja algoritmeissa. Lisäksi se voi auttaa ohjelmoijaa luomaan testidataa kehittämässä uusia ominaisuuksia tai uudistamaan vanhoja.
 
-## Miten
+## Miten tehdä
 
-Fish Shell:lla on valmiiksi sisäänrakennettu komento, `math random`, jolla voidaan generoida satunnaislukuja. Se ottaa parametrina minimi- ja maksimiarvon, ja palauttaa satunnaisen luvun niiden väliltä.
-
-```Fish Shell
-math random 1 100
-```
-
-Tämä esimerkki palauttaisi satunnaisen kokonaisluvun väliltä 1-100, esimerkiksi 78. Voit myös käyttää muita muuttujia, kuten `echo`, tulostamaan satunnaislukuja.
+Fish Shell tarjoaa kätevän tavan generoida satunnaisia lukuja käyttäen `seq`-komennon `-r`-valitsinta. Se generoi halutun määrän satunnaisia lukuja tietyllä välillä. Esimerkiksi seuraava komento generoi 10 satunnaista kokonaislukua väliltä 1-100.
 
 ```Fish Shell
-set luku (math random 1 10)
-echo "Satunnainen luku on $luku"
+seq -r 1 100 | head -n 10
+```
+Tulostus näyttää tältä:
+
+```Fish Shell
+58
+23
+89
+12
+45
+7
+91
+34
+78
+50
 ```
 
-Tämä tulostaisi esimerkiksi "Satunnainen luku on 6".
+Voit myös käyttää `shuf`-komentoa luomaan satunnaisia permutaatioita. Seuraava esimerkki osoittaa kuinka voit generoida satunnaisen järjestyksen numerosarjoille 1-5.
 
-## Syvään sukeltaminen
+```Fish Shell
+seq 1 5 | shuf
+```
+Tulostus voisi näyttää esimerkiksi tältä:
 
-Fish Shellin `math random` komento käyttää Perl-kirjastoa satunnaislukujen generoimiseen. Tarkempien ohjeiden ja vaihtoehtoisten parametrien löytämiseksi voit katsoa Fish Shellin dokumentaatiota tai Perl-kirjaston dokumentaatiota.
+```Fish Shell
+3
+1
+5
+4
+2
+```
+
+Voit myös käyttää `($RANDOM)`-komennon asettamaan satunnaisen numeroarvon muuttujaan ja sitten käyttää sitä jossain toisessa komennossa. Esimerkiksi voit luoda skriptin, joka arpoo satunnaisen numeron ja lisää sen tiedoston nimeen.
+
+```Fish Shell
+touch "uusi_tiedosto($RANDOM)"
+```
+Tämä luo uuden tiedoston nimellä "uusi_tiedosto" ja siihen lisätään satunnainen numero. Näin voit luoda isoja määriä samanlaisia mutta eri nimisiä tiedostoja.
+
+## Syvempi sukellus
+
+Satunnaislukujen generoiminen perustuu algoritmeihin, jotka luovat lukuja käyttämällä tiettyjä sääntöjä. Fish Shell käyttää `arc4random`-algoritmia, joka pohjautuu RC4-salausalgoritmiin. Tämä algoritmi luo satunnaisia lukuja käyttämällä salauksessa tarvittavia satunnaisia lukuja. Se on kehitetty tarjoamaan parempaa suorituskykyä ja turvallisuutta verrattuna muihin satunnaislukualgoritmeihin.
+
+On myös tärkeää muistaa, että satunnaislukujen generoiminen voi olla haastavaa tietokoneelle, joten täysin satunnaisia lukuja ei oikeastaan voi luoda. Usein käytetäänkin algoritmeja, jotka pyrkivät tuottamaan mahdollisimman sattumanvaraisia lukuja.
 
 ## Katso myös
 
-- [Fish Shell:nnen dokumentaatio](https://fishshell.com/docs/current/cmds/math.html)
-- [Perl-kirjaston dokumentaatio](https://perldoc.perl.org/functions/rand.html)
+- [Fish Shellin dokumentaatio satunnaisluvuista](https://fishshell.com/docs/current/cmds/seq.html)
+- [Shuf-komennon dokumentaatio](https://man.archlinux.org/man/core/coreutils/shuf.1.en)
+- [Artikkeli siitä, kuinka satunnaislukuja generoidaan](https://www.pcworld.com/article/2883932/how-to-generate-truly-random-numbers-with-your-pc.html)

@@ -1,37 +1,44 @@
 ---
-title:    "Ruby: कंप्यूटर प्रोग्रामिंग पर लेख: यादृच्छिक संख्याएँ उत्पन्न करना"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/generating-random-numbers.md"
+title:                "Ruby: कंप्यूटर प्रोग्रामिंग पर लेख: रैंडम नंबरों का उत्पादन"
+programming_language: "Ruby"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
+## Kyun
 
-अकसर हमारे प्रोग्राम और गेमों में हमें कुछ हार्ड कोड्ड या रैंडम नंबर की आवश्यकता होती है। यह बहुत आसान हो सकता है, लेकिन इसका निर्माण कैसे किया जाता है? यहां हम आपको बताएंगे कि रूबी में रैंडम नंबर कैसे बनाएं और उन्हें इस्तेमाल कैसे करें। 
+Kya aapko kabhi kabhi apne code mein kuch naya aur alag try karna pasand hai? Kya aapko khudse sawal puchhna aur uska jawab dhundhna pasand hai? Agar haan, to shayad random numbers generate karna aapke liye ek majedaar kaam ho sakta hai! Random numbers generate karne se, aap apne code mein surprise elements add kar sakte hai aur naye solutions explore kar sakte hai. Iss article mein hum dekhenge ki hum kaise Ruby mein random numbers generate kar sakte hai.
 
-## कैसे करें
+## Kaise Karein
 
-पहले हमारे पास Random मॉड्यूल होना चाहिए जिसका उपयोग हम रैंडम नंबर बनाने के लिए करेंगे। आप निम्न विधि का उपयोग करके रैंडम नंबर सीख सकते हैं: 
+Sabse pehle, hum randomNumber naam ka ek variable declare karenge, jisme hum random number store karenge. Uske baad, hum Random module ko use karke random number generate karenge. Neeche diye gaye code block mein aapko samajh aa jayega -
 
-```Ruby 
-# रैंडम नंबर बनाएं 
-puts Random.rand 
-
-# दो नंबरों के बीच रैंडम नंबर बनाएं 
-puts Random.rand(1..10)
-
-# दोनों समान अंतराल के बीच रैंडम नंबर बनाएं 
-puts Random.rand(10..100)
-
+```Ruby
+randomNumber = Random.rand(1..10)
+puts "Aapka random number hai: #{randomNumber}"
 ```
 
-उपरोक्त उदाहरण में हमने `Random.rand` का उपयोग किया जो एक ब्राउज़र जैसे एक रैंडम नंबर बनाता है। हमने इन्हें `puts` का उपयोग करके प्रिंट भी किया है। आप इन्हें अपनी फीब हट में भी इस्तेमाल कर सकते हैं। 
+Agar aap yeh code implement karenge, to har baar jab aapise run karenge, aapko ek naya random number milega. Code mein "1..10" humne yeh bataya hai ki aapko numbers ki range kya honi chahiye, aap apni marzi ke hisaab se iss range ko change kar sakte hai.
 
-## विस्तृत जानकारी
+Ab, agar aap chahte hai ki aapko har baar same random number mile, to aap seed value ka use kar sakte hai. Seed value basically hume batata hai ki humare code mein kitna randomness chahiye. Seed value ko neeche diye gaye code block mein dekhiye -
 
-रूबी में रैंडम नंबर का निर्माण प्रकृति के हुनर से किया जाता है। यहां हम भीड़ समान अंतराल और स्थिर रूप से अनुभव रैंडम नंबर हासिल कर सकते हैं। आप दिए गए लिंक में इस टॉपिक की गहराई में जानकारी प्राप्त कर सकते हैं। 
+```Ruby
+randomNumber = Random.new_seed
+puts "Aapka random number hai: #{randomNumber}"
+```
 
-## और भी देखें 
+Seed value har baar change hoti rahegi, isliye aapko har baar different random number milega.
 
-- [ऑनलाइन दस्तावेज़ीकरण: रुबी में Random Module](https://ruby
+## Gehri Jankari
+
+Random number generate karne ke liye, Ruby mein kai saare methods available hai. Humne upar jo example diye hai, woh Random module ka ek method hai. Iske alava, aap "rand" method ka use karke bhi random numbers generate kar sakte hai. Isme aapko ek argument dena padega, jiski value aapko random number ki range batayegi.
+
+Ruby mein, random numbers generate karne ke liye algorithm ka use hota hai. Woh algorithm "Mersenne Twister" hai, jo ki ek pseudorandom number generator hai. Pseudorandom number generator matlab woh number generate karta hai jo ki random hi lagta hai, lekin uske seed value se hi generate hota hai.
+
+## Dekhiye Bhi
+
+- [Ruby Random Module] (https://ruby-doc.org/core-2.6.3/Random.html)
+- [Pseudorandom Number Generator] (https://www.rubyguides.com/2016/05/pseudo-random-numbers/)
+- [Difference Between rand and Random] (https://www.geeksforgeeks.org/difference-between-rand-and-random-ruby/)

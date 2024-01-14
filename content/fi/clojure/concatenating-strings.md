@@ -1,49 +1,37 @@
 ---
-title:    "Clojure: Merkkijonojen yhdistäminen"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/concatenating-strings.md"
+title:                "Clojure: Merkkijonojen yhdistäminen"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monissa ohjelmoinnin kielissä on mahdollista yhdistää erillisiä merkkijonoja yhdeksi isoksi merkkijonoksi. Tämä voi olla hyödyllistä esimerkiksi silloin, kun halutaan muodostaa dynaamisia viestejä tai kirjoittaa tietoja tiedostoon. Clojurella tämä onnistuu helposti käyttämällä `str` -funktiota.
+Miksi haluaisit yhdistää merkkijonoja ohjelmoinnissa? Yksinkertaisesti sanottuna, yhdistämällä merkkijonoja voit luoda uusia merkkijonoja, jotka sisältävät haluamasi tiedon.
 
-## Miten
+## Kuinka
 
-Yhdistäminen tapahtuu antamalla `str` -funktiolle halutut merkkijonot parametreina. Alla on esimerkki, jossa yhdistetään kaksi sanaa "Hei" ja "Maailma".
-
-```Clojure
-(str "Hei" "Maailma")
-```
-
-Tämän tuloksena saadaan merkkijono "HeiMaailma".
-
-Toinen tapa yhdistää merkkijonoja on käyttää `str` -funktiota ja lisätä siihen väliä tai muita merkkejä parametreina. Esimerkki alle on listattu, kuinka voit lisätä nämä välimerkit `str` -funktiossa.
+Yhdistämisen avulla voit helposti yhdistää kaksi erillistä merkkijonoa yhdeksi. Voit tehdä tämän käyttämällä funktiota nimeltä `str`, joka ottaa vastaan kaksi parametria ja palauttaa uuden merkkijonon.
 
 ```Clojure
-(str "Tervetuloa" " " "Suomeen" " " "!")
+(str "Tämä on ensimmäinen merkkijono" " ja tämä on toinen.")
 ```
-
-Tämä tuottaa tuloksena "Tervetuloa Suomeen !".
-
-## Syvemmälle
-
-`str` -funktio pystyy käsittelemään monia eri tyyppisiä arvoja, joten sen käyttömahdollisuudet ovat lähes rajattomat. Lisäksi tämä funktio on suorituskykyinen ja toimii hyvin myös suurilla merkkijonoilla.
-
-On myös mahdollista käyttää `str` -funktiota luku- ja boolean -arvojen yhdistämiseen. Jos luku- tai boolean -arvo on mukana yhdistettävässä merkkijonossa, se muunnetaan automaattisesti merkkijonoksi.
-
-Tässä on esimerkki luku- ja boolean -arvojen yhdistämisestä `str` -funktiolla.
+Tuloksena saamme seuraavan merkkijonon:
 
 ```Clojure
-(str "Tulosta arvoa" 5 "ja" true)
+"Tämä on ensimmäinen merkkijono ja tämä on toinen."
 ```
 
-Tämä tuottaa tuloksen "Tulosta arvoa 5 ja true".
+## Syvempi sukellus
+
+On olemassa myös muita tapoja yhdistää merkkijonoja, kuten käyttämällä `str`-funktion sijasta merkkijonojen liittämiseen tarkoitettua operaattoria `++`. Voit myös yhdistää useita merkkijonoja kerrallaan käyttämällä `str`-funktiota yhden parametrin sijasta.
+
+Sinun tulee myös muistaa, että merkkijonojen yhdistäminen voi olla tehokkaampaa kuin merkkijonojen muokkaaminen, jos sinun täytyy tehdä useita muutoksia merkkijonoon.
 
 ## Katso myös
 
-- [Clojure dokumentaatio: str](https://clojure.org/api/string)
-- [Clojure Cookbook: String Concatenation](https://clojure-cookbook.clojureverse.org/string_manipulation/string_concatenation.html)
-- [Miten yhdistää merkkijonoja Clojuressa?](https://paulspontifications.blogspot.com/2011/03/how-to-join-strings-in-clojure.html)
+- [Clojure.org - Strings](https://clojure.org/reference/strings)
+- [Official Clojure Documentation - String Functions](https://clojure.github.io/clojure/clojure.string-api.html)
+- [Youtube - Concatenating strings in Clojure](https://www.youtube.com/watch?v=hwZSZY3H1Hc)

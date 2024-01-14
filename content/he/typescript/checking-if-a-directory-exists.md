@@ -1,39 +1,40 @@
 ---
-title:    "TypeScript: בדיקת קיום תיקייה"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/typescript/checking-if-a-directory-exists.md"
+title:                "TypeScript: לבדיקת קיום תיקייה"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+## למה
 
-בדיקת האם תיקייה קיימת יכולה להיות חשובה בכתיבת קוד ב-Typescript. למשל, כאשר יש צורך למעדכן או ליצור תיקייה לפני שביצוע פעולה מסוימת.
+לבדוק אם תיקייה קיימת במחשב שלך יכול להיות חשוב במצבים שונים בתכנות. לדוגמה, אם אתה עובד עם קבצים או מחלקת מידע ואתה רוצה לוודא שהתיקייה שבה הם נמצאים קיימת לפני שאתה ממשיך עם התהליך האחרון שלך. זה עשוי למנוע מך להתחיל תהליכים שלא יעבדו או ליצור את התיקייה אם לא נמצאת.
 
-## איך לעשות
+## כיצד לעשות זאת 
 
-בתחילת הקוד, נצרף את המודול fs של Node.js כדי לאפשר לנו לגשת לפעולות הקשורות לקבצים ותיקיות. לאחר מכן נשתמש בפעולת fs.existsSync() כדי לבדוק האם התיקייה קיימת או לא.
+הנה דוגמא קטנה של פונקציה שתבדוק אם תיקייה קיימת באמצעות TypeScript:
 
-```TypeScript
-import * as fs from 'fs';
-const dirPath = './myDirectory';
-if (fs.existsSync(dirPath)) {
-	console.log('התיקייה קיימת!');
-} else {
-	console.log('התיקייה לא קיימת.');
+```typescript
+const fs = require('fs');
+
+function checkDirectory(path: string): boolean {
+    return fs.existsSync(path);
 }
+
+console.log(checkDirectory('/Users/Desktop/Data')); // Output: true
+console.log(checkDirectory('/Users/Desktop/Nonexistent')); // Output: false
 ```
 
-תוצאה עבור הקוד הנ"ל לאחר ריצה:
+כאן אנו משתמשים בפונקציה `existsSync` של החבילה `fs` של Node.js כדי לבדוק אם תיקייה קיימת. הפונקציה מחזירה boolean שמציין האם התיקייה קיימת או לא. אנו מנסים לבדוק את תיקיית `Data` ותיקיית `Nonexistent` בהתאמה ומקבלים את הפלט הרצוי.
 
-```
-התיקייה לא קיימת.
-```
+## מערכת נשיאה
 
-## ירידה עמוקה
+כדי לעבוד עם תיקיות בכיתוב צוקלצורה היטב אתה צריך להבין כיצד המערכת הפעילה מתייחסת לתיקיות. כאשר אתה מבקש מאת המערכת לבדוק אם תיקייה קיימת, היא תבדוק את התיקייה הנתונה ואת מיקומה בהתאם לנתיב הנתון. אם התיקייה נמצאת במיקום מסוים במחשב שלך, היא תחזיר `true` ואם לא, היא תחזיר `false`.
 
-פעולת fs.existsSync() בודקת האם התיקייה קיימת ישירות מקובץ ה-JSON שמייצג אותה. במילים אחרות, היא בודקת את הנתיב המוגדר במשתנה dirPath ולא בודקת אם נוכל לגשת אליו. במצב כזה, אם הנתיב אינו קיים, הפקודה תחזיר false בכל מקרה. זה יכול לגרום לבעיה אם נעשה שימוש בפעולה זו על תיקייה שנמצאת בתיקייה שאין לנו הרשאות לגשת אליה. לכן, עלינו לוודא שאנו מעדיפים לבדוק אם הנתיב המוגדר במשתנה קיים על ידי השתמשות בפעולה fs.accessSync() עם הפרמטר fs.constants.F_OK.
+בנוסף, כדי לבדוק תיקייה מסוימת או אפילו קבצים במיקום מסוים, עליך להיות זכאי לגישה לאותן תיקיות ולקבצים.
 
 ## ראה גם
-- [מודול fs של Node.js](https://nodejs.org/api/fs.html)
-- [הסברים נוספים על בדיקת קיום של תיקיות ב-Typescript](https://www.tutorialspoint.com/typescript/typescript_checking_a_directory.htm)
+
+- [Node.js fs documentation](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
+- [TypeScript documentation](https://www.typescriptlang

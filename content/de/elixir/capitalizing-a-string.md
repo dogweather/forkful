@@ -1,50 +1,44 @@
 ---
-title:    "Elixir: Großbuchstaben eines Strings"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/capitalizing-a-string.md"
+title:                "Elixir: Großschreibung eines Strings"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Haben Sie sich jemals gefragt, wie man in Elixir eine Zeichenkette (string) großschreibt? Das können Sie ganz einfach tun, indem Sie die `String.capitalize/1` Funktion verwenden. Lesen Sie weiter, um mehr über diese nützliche Funktion zu erfahren.
+Es gibt viele Gründe, warum Sie eine Zeichenfolge in Elixir großschreiben möchten. Möglicherweise möchten Sie die Benutzerfreundlichkeit Ihrer Anwendung verbessern, indem Sie sicherstellen, dass Texte konsistent dargestellt werden, oder Sie benötigen eine bestimmte Formatierung für die Ausgabe von Daten.
 
-## Wie geht das?
+# Wie geht's
 
-Um eine Zeichenkette in Elixir großzuschreiben, können Sie die `String.capitalize/1` Funktion verwenden. Sie akzeptiert eine Zeichenkette als Argument und gibt eine neue Zeichenkette zurück, in der der erste Buchstabe jeder einzelnen Wörter großgeschrieben wird. Sehen wir uns ein Beispiel an:
-
-```Elixir
-string = "hallo, wie geht es dir?"
-String.capitalize(string)
-```
-
-Dieser Code gibt `Hallo, Wie Geht Es Dir?` als Ergebnis zurück.
-
-Beachten Sie jedoch, dass die `String.capitalize/1` Funktion nur den ersten Buchstaben jedes einzelnen Wortes großschreibt. Wenn Sie eine Zeichenkette haben, die bereits teilweise oder vollständig großgeschrieben ist, sind die Ergebnisse möglicherweise nicht zufriedenstellend. Sehen wir uns ein weiteres Beispiel an:
+Die Capitalize-Funktion in Elixir ist sehr einfach zu verwenden. Sie nehmen einfach die Zeichenfolge, die Sie großschreiben möchten, und verwenden die Funktion `String.capitalize/1`. Hier ist ein Beispiel:
 
 ```Elixir
-string = "hallo, ICH BIN GLÜCKLICH"
-String.capitalize(string)
+name = "peter"
+capitalized_name = String.capitalize(name)
+IO.puts(capitalized_name)
 ```
 
-Das Ergebnis lautet immer noch `Hallo, Ich Bin Glücklich`, da die Funktion nur den ersten Buchstaben jedes Wortes großschreibt und die anderen Buchstaben unverändert lässt.
-
-## Tiefere Einblicke
-
-Um vollständig zu verstehen, wie die `String.capitalize/1` Funktion funktioniert, sollten Sie wissen, dass sie intern die `String.upcase/1` Funktion verwendet. Diese Funktion wandelt alle Buchstaben einer Zeichenkette in Großbuchstaben um. Dann verwendet die `String.capitalize/1` Funktion die `String.upcase/1` Funktion, um alle Buchstaben in Großbuchstaben umzuwandeln, und wandelt anschließend den Rest der Zeichenkette in Kleinbuchstaben um.
-
-Sie können die `String.upcase/1` Funktion auch direkt verwenden, um alle Buchstaben in Großbuchstaben umzuwandeln. Sehen wir uns ein Beispiel an:
+Das oben genannte Beispiel würde die Ausgabe `Peter` zurückgeben. Wenn Sie möchten, können Sie auch nur den ersten Buchstaben einer Zeichenfolge großschreiben, indem Sie die Funktion `String.capitalize/1` verwenden. Hier ist ein Beispiel:
 
 ```Elixir
-string = "ich bin ein string"
-String.upcase(string)
+phrase = "elixir programming"
+capitalized_phrase = String.capitalize(phrase)
+IO.puts(capitalized_phrase)
 ```
 
-Das Ergebnis lautet `ICH BIN EIN STRING`.
+Die Ausgabe wäre `Elixir programming`.
 
-## Siehe auch
+# Tiefer Einblick
 
-Weitere Informationen und Beispiele zu Zeichenketten in Elixir finden Sie in der offiziellen [Elixir Dokumentation](https://hexdocs.pm/elixir/String.html).
+Die `String.capitalize/1` Funktion funktioniert, indem sie den ersten Buchstaben der Zeichenfolge in einen Großbuchstaben umwandelt und alle anderen Buchstaben in Kleinschreibung umwandelt. Wenn Sie jedoch eine Zeichenfolge haben, die bereits großgeschrieben ist, wird die Funktion keine Änderungen vornehmen.
 
-Wenn Sie sich für fortgeschrittene Möglichkeiten der Zeichenkettenmanipulation in Elixir interessieren, lesen Sie auch unseren Blog-Beitrag über [Pattern Matching in Elixir Strings](https://blog.example.com/pattern-matching-elixir-strings).
+Eine wichtige Sache zu beachten ist, dass diese Funktion Sprach-spezifisch ist. Dies bedeutet, dass die Ausgabe von `String.capitalize/1` auf der aktuellen Elixir-Konfiguration basiert. Wenn Sie also eine nicht-englische Spracheinstellung haben, wird die Ausgabe möglicherweise anders sein.
+
+# Siehe auch
+
+- [String.capitalize/1 Dokumentation](https://hexdocs.pm/elixir/String.html#capitalize/1)
+- [Offizielle Elixir Website](https://elixir-lang.org/)
+- [Elixir Forum](https://elixirforum.com/)

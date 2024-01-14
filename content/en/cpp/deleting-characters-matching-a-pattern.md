@@ -1,51 +1,90 @@
 ---
-title:    "C++ recipe: Deleting characters matching a pattern"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/cpp/deleting-characters-matching-a-pattern.md"
+title:                "C++ recipe: Deleting characters matching a pattern"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+##Why 
 
-There are many situations where deleting characters matching a pattern can be useful in programming. Some examples include sanitizing user input, removing irrelevant or sensitive data from a string, or simply cleaning up messy data.
+Deleting characters matching a certain pattern can be useful for data cleaning and manipulation tasks. For example, if you have a dataset with inconsistent formatting or unwanted characters, you can use this method to remove them and make your data more uniform and usable.
 
-## How To
+##How To 
 
-To delete characters matching a pattern in C++, we can use the `erase()` function from the `string` library. This function takes in two parameters - the starting index and the number of characters to be deleted. We can also use the `find()` function to locate the index of the first occurrence of the pattern in the string.
-
-Here's an example code block showing how to delete all occurrences of the letter "a" from a string:
+To delete characters matching a pattern in C++, you can use the `erase()` function from the `<string>` library. This function takes in two arguments - the starting position and the number of characters to be deleted. Here's a simple example:
 
 ```C++
-#include <iostream>
-#include <string>
+#include <iostream> 
+#include <string> 
 
-using namespace std;
+using namespace std; 
 
-int main() {
-    string str = "apples and oranges are my favorite fruits";
-    
-    // Deleting all occurrences of "a"
-    int index = 0;
-    while ((index = str.find("a", index)) != string::npos) {
-        str.erase(index, 1);
-    }
-    
-    cout << str << endl;
-    // Output: pples nd ornges re my fvorite fruits
-}
+int main() 
+{ 
+    string sentence = "Hello, World!"; 
+    sentence.erase(7, 1); 
+    cout << sentence << endl; 
+    return 0; 
+} 
 ```
 
-## Deep Dive
+Output: Hello World!
 
-The `erase()` function modifies the original string by deleting the specified characters. This can be a useful feature, but it also means that we need to be careful when using it. If we need to preserve the original string, we can make a copy and perform the deletion on the copy instead.
+In this example, we have a string "Hello, World!" and we use the `erase()` function to remove the comma after "Hello". Note that the first character has an index of 0, so 7 represents the 8th character in the string. The second argument, 1, specifies that we want to delete 1 character. 
 
-We can also use the `replace()` function to replace characters matching a pattern with a different character or string. This function takes in three parameters - the starting index, the number of characters to be replaced, and the replacement string.
+You can also use the `<algorithm>` library and the `remove_if()` function to delete characters based on a specific condition. Here's an example that removes all the vowels from a string:
 
-There are also other ways to delete characters matching a pattern, such as using regular expressions or custom algorithms. It's important to carefully consider the specific needs of your program and choose the most efficient and effective method for your situation.
+```C++
+#include <iostream> 
+#include <string> 
+#include <algorithm> 
 
-## See Also
+using namespace std; 
 
-- [C++ string library](https://www.cplusplus.com/reference/string/)
-- [Using erase() and replace() in C++](https://www.geeksforgeeks.org/clear-erase-and-swap-in-cpp-stl/)
-- [Regular expressions in C++](https://www.geeksforgeeks.org/regular-expression-regex-in-c/)
+int main() 
+{ 
+    string sentence = "This is a test sentence"; 
+    sentence.erase(remove_if(sentence.begin(), sentence.end(), [](char c) 
+        { return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');}), 
+        sentence.end()); 
+    cout << sentence << endl; 
+    return 0; 
+} 
+```
+
+Output: Ths s  tst sntnc
+
+Here, we use a lambda function to specify the condition for deletion - in this case, any character that is a vowel will be removed. 
+
+##Deep Dive 
+
+The `erase()` function works by modifying the original string, so it's important to use it with caution. If you want to keep the original string intact, you can use the `substr()` function to extract the desired characters and create a new string. For example:
+
+```C++
+#include <iostream> 
+#include <string> 
+
+using namespace std; 
+
+int main() 
+{ 
+    string sentence = "Hello, World!"; 
+    string new_sentence = sentence.substr(0, 7); 
+    cout << new_sentence << endl; 
+    return 0; 
+} 
+```
+
+Output: Hello,
+
+Here, we use the `substr()` function to extract the first 7 characters of the string "Hello, World!" and store it in a new string variable called `new_sentence`.
+
+##See Also 
+
+- [C++ erase() function](https://www.geeksforgeeks.org/c-stl-erase-function/)
+- [C++ remove_if() function](https://www.geeksforgeeks.org/remove_if-in-cpp/)
+- [C++ substr() function](https://www.cplusplus.com/reference/string/string/substr/)
+
+By using the `erase()` function in C++, you can easily delete characters matching a specific pattern and clean up your data. However, it's important to be careful and use it appropriately to avoid unintended modifications to your strings. Happy coding!

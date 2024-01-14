@@ -1,79 +1,58 @@
 ---
-title:    "Elm: קריאת ארגומנטים משורת הפקודה"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/reading-command-line-arguments.md"
+title:                "Elm: קריאת פרמטרי שורת פקודה"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-פיצ'ר קריאת ארגומנטי שורת פקודה באלם הוא חלק חשוב מהתכנן והעיבוד של קוד. הוא מאפשר לנו לקבל מידע מהמשתמש שמריץ את התוכנית שלנו. זה מאפשר לנו ליצור בעיות יעילות יותר ולהתאים את התוכנית לצרכיו של המשתמש.
+הזינו אחד או שני משפטים לסביר לקוראים למה הם ישתתפו בקריאת ארגומנטים ממסך הפקודות.
 
-## איך לעבוד עם פקודות שורת פקודה באלם
+להזין מידע נכון ממסך הפקודות הוא כלי חיוני לכל מתכנת. הכירו את אפשרויות הקוד השונות שמספקת לנו אלם לקריאת ארגומנטים ממסך הפקודות בקלות ובפשטות.
 
-כדי לקרוא ארגומנטי שורת הפקודה באלם, נצטרך להשתמש בפונקציה מובנית שנקראת "command". ניתן להשתמש בפונקציה זו כדי לקבל את הארגומנטים כפרמטרים לתוכנית שלנו. לדוגמה:
+## כיצד לעשות זאת
 
-```Elm
+בשפת אלם ישנן כמה דרכים לקרוא ארגומנטים ממסך הפקודות. הנה כמה דוגמאות של קוד ופלט ממסך הפקודות:
+
+```elm 
 module Main exposing (main)
+import Platform exposing (worker)
+import String
+import Task exposing (perform)
+import Console exposing (log)
 
-import Platform exposing (command)
-
-
--- הקבלת הארגומנטים כפרמטרים לתוכנית
-main : Program Flags
-main =
-    Platform.worker
-        { init = init
-        , update = update
-        , subscriptions = subscriptions
-        , view = view
-        }
-
-
--- האתחול
-init : () -> (Model, Cmd Msg)
-init _ =
-    ({ text = "" }, Cmd.none)
-
-
--- עדכון המודל
-type Msg
-    = ReadCommand String
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-    case msg of
-        ReadCommand command ->
-            ({ model | text = command }, Cmd.none)
-
-
--- כפתורים לשליחת פקודות מהקליינט
-subscriptions : Model -> Sub Msg
-subscriptions model =
-    Sub.batch
-        [ command ReadCommand
-        ]
-        
-        
--- הצגת המודל
 type alias Flags =
-    { init : () }
+	{ file : String
+	}
 
-type alias Model =
-    { text : String }
+init : Flags -> ((), Cmd Msg)
+init flags =
+	( (), Cmd.none )
 
-view : Model -> Html Msg
-view model =
-    div []
-        [ div [] [ text "שורת הפקודה:" ]
-        , div [] [ input [ onInput ReadCommand ] [] ]
-        , div [] [ text ("הארגומנטים שקלטת: " ++ model.text) ]
-        ]
+type Msg
+	= GotFile String
+
+update : Msg -> () -> ((), Cmd Msg)
+update msg _ =
+	case msg of
+		GotFile file ->
+			( (), Cmd.none )
+
+port workerPort : Platform.Flags -> Platform.Flags
+port workerPort flags =
+	({ flags | tasks = GotFile "Hello World!" })
 ```
 
-ריצה ופלט: כאשר נכניס פקודה לתיבת הקלט ונלחץ על "Enter", נוכל לראות את הארגומנטים שנקלטו בתיבת התוכן שלנו.
+כאן אנו משתמשים בפונקצייות כמו `Platform` ו- `Console` כדי לקרוא את הארגומנטים ממסך הפקודות ולהדפיס אותם על גבי הקונסולה.
 
-## העמקה נוספת
+## להעמיק
 
-פקודה של תוכנית אלם מכילה כל מיני ארגומנטים נוספים, כגון ארגומנטים נוספים להפעלת תוכניות. ניתן למצוא את כל הפקודות הללו בקובץ README ש
+לקריאת ארגומנטים יש לנו גם אפשרות להשתמש בפונקציות כמו `Platform` ו- `Task` כדי לשלוט בארגומנטים ולתפעול פעולות נוספות עליהם. כדאי ללמוד עוד על הפונקציות השונות שמספקות לנו אלם לקריאת ארגומנטים ולהתאים אותן לצרכי הפרויקטים שלנו.
+
+## ראו גם
+
+- Documentation for `Platform` in the Elm website (http://elm-lang.org/docs/).
+- Blog post about reading command line arguments in Elm by Richard Feldman (https://dev.to/rtfeldman/how-to-read-command-line-arguments-in-elm-9o).

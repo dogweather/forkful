@@ -1,47 +1,42 @@
 ---
-title:    "Elixir: Génération de nombres aléatoires"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/generating-random-numbers.md"
+title:                "Elixir: Générer des nombres aléatoires"
+programming_language: "Elixir"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Générer des nombres aléatoires peut sembler être une tâche simple et peu utile à première vue. Cependant, en programmation, il existe de nombreuses situations où avoir la possibilité de générer des nombres de manière aléatoire peut être très utile. Que ce soit pour simuler des scénarios, créer des tests ou pour des jeux, la génération de nombres aléatoires est une compétence essentielle à maîtriser en programmation.
+Générer des nombres aléatoires peut sembler un exercice inutile pour certains, mais c'est une pratique importante en programmation pour diverses raisons. Cela peut être utile pour simuler des données dans un environnement contrôlé, tester des algorithmes ou même ajouter un élément de surprise dans les jeux ou les applications.
 
 ## Comment faire
 
-La programmation en Elixir offre différentes façons de générer des nombres aléatoires. La méthode la plus simple consiste à utiliser la fonction `:random.uniform/1` qui accepte un nombre entier en guise de limite et renvoie un nombre aléatoire compris entre 0 et cette limite. Par exemple :
+Pour générer des nombres aléatoires en Elixir, nous utilisons la fonction `:rand.uniform/1`. Cette fonction prend en paramètre une liste, un tuple ou un nombre et renvoie un nombre aléatoire compris dans la plage spécifiée. Par exemple, pour générer un nombre aléatoire entre 1 et 10, nous pouvons utiliser la fonction de cette manière :
 
 ```Elixir
-:random.uniform(10)
+:rand.uniform(1..10) # renvoie un nombre aléatoire entre 1 et 10
 ```
 
-produirait un nombre aléatoire entre 0 et 10, inclusivement.
-
-Pour générer un nombre aléatoire dans une plage spécifique, on peut utiliser la fonction `:random.uniform/2`. Cette fonction accepte une limite inférieure et une limite supérieure et renvoie un nombre aléatoire compris entre ces deux limites. Par exemple :
+Nous pouvons également générer des nombres aléatoires à virgule en spécifiant une plage de nombres décimaux. Par exemple, pour générer un nombre aléatoire entre 0 et 1, nous pouvons utiliser la fonction de cette manière :
 
 ```Elixir
-:random.uniform(5, 10)
+:rand.uniform(0.0..1.0) # renvoie un nombre décimal aléatoire entre 0 et 1
 ```
 
-produirait un nombre aléatoire entre 5 et 10.
-
-Il est également possible de générer des nombres aléatoires avec des types de données spécifiques, tels que des nombres en virgule flottante ou des atomes. Pour cela, on peut utiliser les fonctions `:random.uniform_float/0` et `:random.uniform_atom/0`.
+Nous pouvons également utiliser la fonction `:rand.uniform/0` pour générer un nombre aléatoire à virgule de précision infinie dans la plage `[0, 1)`.
 
 ## Plongée en profondeur
 
-En plus de générer des nombres aléatoires, il est également possible de contrôler la séquence de nombres générés en utilisant la fonction `:random.seed/1`. Cette fonction prend en argument une valeur et initialise le générateur de nombres aléatoires avec cette valeur, ce qui permet de reproduire la même séquence de nombres aléatoires si nécessaire.
+Lors de la génération de nombres aléatoires en Elixir, il est important de comprendre comment la fonction `:rand.uniform/1` travaille en interne. En fait, cette fonction utilise une autre fonction appelée `:rand.uniform_s/1` qui utilise un algorithme appelé "Mersenne Twister". Cet algorithme est très efficace pour générer des nombres aléatoires et est utilisé dans de nombreux langages de programmation.
 
-Il est également possible d'utiliser un module spécifique pour la génération de nombres aléatoires en utilisant la fonction `:random.seed/2`. Cette fonction prend en argument un module et une valeur et utilise cette valeur comme graine pour générer des nombres aléatoires spécifiques au module donné.
-
-Enfin, pour des applications nécessitant une sécurité plus élevée, il est recommandé d'utiliser le module `:crypto` qui fournit des fonctions pour générer des nombres aléatoires cryptographiquement sécurisés.
+Il est également important de noter que la fonction `:rand.uniform/1` utilise un générateur de nombre aléatoire pseudo-aléatoire, ce qui signifie que les mêmes entrées produiront toujours les mêmes sorties. Cela peut être utile pour la reproductibilité, mais si vous avez besoin de générer des nombres vraiment aléatoires, vous pouvez utiliser la fonction `:rand.seed/1` pour initialiser le générateur avec une "graine" différente à chaque fois.
 
 ## Voir aussi
 
-Pour en savoir plus sur la génération de nombres aléatoires en Elixir, consultez les ressources suivantes :
+- Documentation officielle sur la fonction `:rand.uniform/1` : https://hexdocs.pm/elixir/Kernel.SpecialForms.html#random-generators
 
-- La documentation officielle d'Elixir sur les fonctions de génération de nombres aléatoires : https://hexdocs.pm/elixir/Kernel.html#random?/1
-- Un article détaillé sur les différentes méthodes de génération de nombres aléatoires en Elixir : https://blog.lelonek.me/random-numbers-in-elixir-8d05f3c98e19
-- Un exemple d'utilisation de générateurs de nombres aléatoires en jeu avec Elixir : https://itnext.io/building-a-simple-game-in-elixir-a1332b7ea4b4
+- Tutoriel sur la génération de nombres aléatoires en Elixir : https://www.codementor.io/@ostapio/randomness-with-elixir-e9mcv119s
+
+- Utilisations pratiques de la génération de nombres aléatoires en Elixir : https://dashbit.co/blog/randomness-and-shuffle-in-elixir

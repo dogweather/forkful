@@ -1,54 +1,75 @@
 ---
-title:    "Haskell: Jämföring av två datum."
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/comparing-two-dates.md"
+title:                "Haskell: Jämförande av två datum"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-I Haskell är det möjligt att jämföra två datum med hjälp av olika funktioner. Detta kan vara användbart när man behöver hantera datum i sina program, till exempel för att sortera data eller filtrera det efter ett visst datum. 
+I programutveckling är det ofta nödvändigt att jämföra olika datum för att hantera tidsbaserade funktioner och uppgifter. Genom att lära sig hur man jämför datum i Haskell kan du effektivt hantera dessa typer av uppgifter och undvika problem som felaktiga beräkningar och felaktiga data.
 
 ## Så här gör du
 
-Att jämföra datum i Haskell är enkelt och kan göras på flera olika sätt, beroende på vilken precision man behöver. Här är ett exempel på hur man kan jämföra två datum och få ut resultatet som en matematisk sanning (True eller False):
+För att jämföra två datum i Haskell behöver vi först skapa två datumobjekt. Detta kan göras med hjälp av "Day" typen i Haskell som representerar ett datum.
 
 ```Haskell
 import Data.Time
-import Data.Time.Calendar.OrdinalDate
 
-date1 = fromGregorian 2021 03 02
-date2 = fromGregorian 2021 05 15
-
--- jämför om date1 är mindre än date2
-date1 < date2
--- Output: True
+-- skapa två datumobjekt
+let date1 = fromGregorian 2020 4 10
+let date2 = fromGregorian 2020 4 20
 ```
 
-Man kan även jämföra datum baserat på deras kalenderdatum och tidszon. Här är ett exempel på hur man kan jämföra två datum och få ut deras exakta skillnad:
+För att jämföra dessa två datum, använder vi funktionen "compare" som finns inbyggd i Haskell. Den tar två argument och returnerar en "Ordering" typ som kan vara "LT" (mindre än), "GT" (större än) eller "EQ" (likvärdig).
 
 ```Haskell
--- jämför två datum baserade på deras tidszon
-zonedTime1 = ZonedTime (LocalTime date1 (TimeOfDay 12 00 00)) (TimeZone 120 True "CET")
-zonedTime2 = ZonedTime (LocalTime date2 (TimeOfDay 20 00 00)) (TimeZone (-60) True "PST")
+-- jämför datumobjekten
+let comparison = date1 `compare` date2
 
-zonedTime1 < zonedTime2
--- Output: False
+-- skriv ut resultatet
+print comparison
 
--- jämför två datum baserade på deras kalenderdatum
-diffDays date1 date2
--- Output: 73
+-- output: LT
 ```
 
-Som du kan se i det andra exemplet, kan man även få ut skillnaden mellan två datum i antal dagar genom att använda den inbyggda funktionen `diffDays`. Det finns också andra liknande funktioner som `diffLocalTime` och `diffTimeOfDay` för att få ut exakta skillnader baserat på datumens olika komponenter.
+Nu kan vi använda detta resultat för att göra beslut baserat på jämförelsen av datum. Till exempel kan vi skriva en funktion som returnerar "True" om det första datumet är före det andra datumet och "False" annars.
+
+```Haskell
+-- funktion för att jämföra datum
+compareDates :: Day -> Day -> Bool
+compareDates date1 date2
+    | date1 `compare` date2 == LT = True
+    | otherwise = False
+
+-- användning
+compareDates date1 date2
+
+-- output: True
+```
 
 ## Djupdykning
 
-Att jämföra datum i Haskell involverar att först och främst omvandla dem till rätt format, och sedan använda de olika funktionerna som finns tillgängliga i språket. Det finns också en hel del andra inbyggda funktioner som kan vara användbara för datumhantering, som till exempel `addDays`, `addUTCTime`, och `formatTime`. Det kan vara värt att utforska dessa närmare när du arbetar med datum i dina program.
+I Haskell finns det några andra funktioner som kan användas för att jämföra datum på olika sätt. Till exempel kan vi använda "diffDays" för att få antalet dagar mellan två datum eller "addDays" för att lägga till ett visst antal dagar till ett datum.
+
+```Haskell
+-- diffDays
+diffDays date1 date2
+
+-- output: 10
+
+-- addDays
+addDays 5 date1
+
+-- output: 2020-04-15 (Adderar 5 dagar till date1)
+```
+
+För mer information om dessa funktioner och hur man använder dem kan du konsultera Haskell dokumentationen.
 
 ## Se även
 
-- [Haskell.org](https://www.haskell.org/)
-- [Haskell Wikibook - Datum och tid](https://en.wikibooks.org/wiki/Haskell/Datum_och_tid)
-- [Hoogle - sökmotor för Haskell-funktioner](https://hoogle.haskell.org/)
+- [Haskell dokumentationen](https://www.haskell.org/documentation/)
+- [Jämföring av datum i Haskell](https://www.tutorialspoint.com/compare-dates-in-haskell) (engelska)
+- [Officiell webbplats för Haskell](https://www.haskell.org/)

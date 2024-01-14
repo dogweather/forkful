@@ -1,54 +1,59 @@
 ---
-title:    "Haskell: Söka och ersätta text"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/searching-and-replacing-text.md"
+title:                "Haskell: Sökning och ersättning av text"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att söka och ersätta text är en viktig del av programmering, då det tillåter oss att effektivt göra ändringar i stora mängder av text eller kod. Det är ett viktigt verktyg för att göra vårt arbete mer effektivt och för att undvika handgjorda ändringar som kan leda till misstag.
+Att söka och ersätta text är en viktig färdighet för programmerare, oavsett vilket språk de använder. Detta kan till exempel vara användbart när man vill hitta och ändra specifika delar av koden eller när man vill uppdatera stora mängder data på en gång.
 
 ## Hur man gör det
 
-Med Haskell kan vi enkelt söka och ersätta text med hjälp av inbyggda funktioner och moduler. Först måste vi importera "Data.Text" modulen, vilket ger oss tillgång till funktioner för att hantera textsträngar.
+För att söka och ersätta text i Haskell används funktionen `substitute`, som finns inbyggd i `Text`-modulen. Den tar tre argument: det mönster man vill söka efter, det man vill ersätta det med och den text som man vill söka i. Detta kan se ut såhär:
 
-```Haskell
+```
+Haskell
 import Data.Text
+
+-- Sök och ersätt "world" med "universe" i strängen "Hello world!"
+substitute "world" "universe" "Hello world!"
+-- Output: "Hello universe!"
 ```
 
-Sedan kan vi använda funktionen "replace" för att söka och ersätta text i en given sträng. Denna funktion tar tre argument: söktermen, den nya texten och den ursprungliga strängen som ska ändras. Här är ett enkelt exempel där vi ersätter "Hej" med "Hej hej" i en given sträng:
+Man kan även använda reguljära uttryck i mönstret, genom att använda funktionen `regex` från `Text.Regex`-modulen:
 
-```Haskell
-sträng = "Hej, hur mår du?"
-nySträng = replace "Hej" "Hej hej" sträng
-print nySträng
+```
+Haskell
+import Data.Text.Regex
 
--- Output: "Hej hej, hur mår du?"
+-- Sök och ersätt alla förekomster av siffror i en sträng med "*"
+substitute (regex "[0-9]+") "*" "This is a string with 1 and 2"
+-- Output: "This is a string with * and *"
 ```
 
-Om vi vill göra flera ändringar i samma sträng kan vi använda "replaceEach" funktionen istället, som tar en lista av tupler som argument. Varje tupel innehåller söktermen och den nya texten. Här är ett exempel:
+Det är även möjligt att använda funktionen `replaceAll` för att söka och ersätta i alla förekomster av en viss text i en sträng, istället för bara den första. Detta kan göras på följande sätt:
 
-```Haskell
-sträng = "God morgon världen!"
-ersättningar = [("God", "Hej"), ("morgon", "kväll")]
-nySträng = replaceEach ersättningar sträng
-print nySträng
+```
+Haskell
+import Data.Text
 
--- Output: "Hej kväll världen!"
+-- Ersätt alla "hello" med "hi" i strängen "hello hello hello"
+replaceAll "hello" "hi" "hello hello hello"
+-- Output: "hi hi hi"
 ```
 
 ## Djupdykning
 
-I Haskell kan sök- och ändringsfunktionerna även användas på mer avancerade sätt, som till exempel med hjälp av reguljära uttryck. Med hjälp av "Data.Text.Regex" modulen kan vi använda funktioner som "subRegex" för att hitta och ersätta text baserat på mönster istället för exakta matchningar.
+För de som vill lära sig mer om hur man effektivt kan söka och ersätta text i Haskell så finns det flera olika moduler och funktioner som kan vara till hjälp. Till exempel är `Text.Regex`-modulen väldigt kraftfull när det kommer till att använda reguljära uttryck. Det finns även andra externa moduler som kan vara användbara, som till exempel `Text.Search` och `Text.Regex.TDFA`.
 
-En annan användbar funktion är "replaceRegex", vilket tillåter oss att göra flera ersättningar i en sträng med enbart en funktion istället för att använda "replaceEach".
-
-Genom att använda reguljära uttryck i sök- och ersättningsprocessen kan vi göra mer komplexa ändringar i texten och spara tid genom att inte behöva göra flera separata ändringar.
+En annan viktig punkt att tänka på när det kommer till att söka och ersätta text är prestanda. Om man arbetar med stora mängder data och behöver söka och ersätta i flera olika strängar, kan det vara värt att undersöka vilken modul eller funktion som ger bäst resultat för ens specifika användning.
 
 ## Se även
 
-- [Haskell.org](https://www.haskell.org/)
-- [Data.Text modulen](https://hackage.haskell.org/package/text/docs/Data-Text.html)
-- [Data.Text.Regex modulen](https://hackage.haskell.org/package/regex-doc)
+- https://hackage.haskell.org/package/text-1.2.3.1/docs/Data-Text.html
+- https://hackage.haskell.org/package/text-regex-1.0.0.3/docs/Data-Text-Regex.html
+- https://hackage.haskell.org/package/text-search-0.1.0.0/docs/Data-Text-Search.html

@@ -1,44 +1,71 @@
 ---
-title:    "Go: Pobieranie bieżącej daty"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/getting-the-current-date.md"
+title:                "Go: Pobieranie aktualnej daty"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wiele aplikacji i systemów informatycznych wymaga aktualnej daty do prawidłowego działania. Bez niej nie byłoby możliwe śledzenie czasu, wyświetlanie wydarzeń czy generowanie raportów. W tym wpisie dowiesz się jak w języku Go uzyskać bieżącą datę oraz jak ją wykorzystać w swoim kodzie.
+Zawsze zastanawiałeś się jak uzyskać aktualną datę oraz godzinę w języku programowania Go? Ta krótka instrukcja wyjaśni Ci jak to zrobić krok po kroku.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Pobranie aktualnej daty w języku Go jest bardzo proste. Wystarczy użyć funkcji `Now()` z biblioteki `time` i przypisać ją do zmiennej. Poniżej znajduje się przykładowe użycie tej funkcji:
-
-```Go
-import (
-    "fmt"
-    "time"
-)
-
-func main() {
-    currentDate := time.Now()
-    fmt.Println(currentDate)
-}
-```
-
-Wywołanie tej funkcji zwróci nam obecną datę wraz z godziną. Możemy także określić jak chcemy aby została wyświetlona poprzez użycie formatowania:
+Uzyskanie aktualnej daty w języku Go jest bardzo proste. Musimy skorzystać z funkcji "time.Now()", która zwraca nam aktualną datę i czas w postaci obiektu "Time". Wystarczy wywołać tę funkcję i przypisać jej wynik do zmiennej.
 
 ```Go
-currentDate := time.Now().Format("02.01.2006 15:04")
+currentTime := time.Now()
+fmt.Println(currentTime)
 ```
 
-W powyższym przykładzie użyłem przyjętego standardu formatowania dat w Go. Możemy oczywiście dostosować go do naszych potrzeb. Pełna lista opcji formatowania dostępna jest w dokumentacji języka Go.
+Powyższy kod wyświetli aktualną datę i godzinę w formacie:
 
-## Głębszy zanurzenie
+```
+2021-10-30 13:45:00 +0100 CET
+```
 
-Dokładne zrozumienie sposobu działania funkcji `Now()` może być przydatne w przypadku bardziej skomplikowanych projektów. W języku Go, czas jest reprezentowany przez strukturę `Time`, która zawiera informacje o dniu, miesiącu, roku, godzinie, minucie, sekundzie, strefie czasowej oraz innych szczegółach. Funkcja `Now()` zwraca wartość tego typu, co pozwala na dokładne operowanie na czasie w naszym programie.
+Jeśli chcemy wyświetlić tylko datę bez godziny, możemy skorzystać z metody "Format" i odpowiedniego parametru. Poniżej przykład wyświetlający samą datę:
 
-## Zobacz też
+```Go
+fmt.Println(currentTime.Format("2006-01-02"))
+```
 
-- Dokumentacja języka Go: https://golang.org/doc/
-- Przykładowe projekty w Go: https://github.com/golang/example
+Output:
+
+```
+2021-10-30
+```
+
+## Głębsze zanurzenie
+
+Funkcja "time.Now()" korzysta z lokalnego systemowego zegara, więc jeśli zmienimy strefę czasową, wynik również ulegnie zmianie. Aby uniknąć tego problemu, możemy wykorzystać metodę "In" i podać jako parametr strefę czasową, w której chcemy uzyskać aktualną datę.
+
+```Go
+currentTime := time.Now().In(time.UTC)
+fmt.Println(currentTime)
+```
+
+Output:
+
+```
+2021-10-30 12:45:00 +0000 UTC
+```
+
+Możemy również wyświetlić dzień tygodnia oraz godzinę w odpowiednim formacie. W poniższym przykładzie wyłączamy część związana z dniem tygodnia i formatujemy tylko godzinę.
+
+```Go
+fmt.Println(currentTime.Format("15:04:05"))
+```
+
+Output:
+
+```
+13:45:00
+```
+
+## Zobacz również
+
+- Dokumentacja funkcji "time.Now()" w języku Go: https://pkg.go.dev/time#Now
+- Przykładowe kody korzystające z funkcji "time.Now()": https://gist.github.com/marpiech/d38b07d53cfa812792b3e5d9ca7947f3

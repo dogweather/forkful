@@ -1,37 +1,49 @@
 ---
-title:    "Clojure: Concatenando cadenas"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/concatenating-strings.md"
+title:                "Clojure: Uniendo cadenas"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-La concatenación de cadenas es una técnica comúnmente utilizada en programación para combinar dos o más cadenas de texto en una sola. Esto puede ser útil en situaciones en las que se desea mostrar información dinámica en una interfaz de usuario o generar mensajes personalizados. Aprender a concatenar cadenas en Clojure te permitirá crear programas más dinámicos y flexibles.
+La concatenación de cadenas es una herramienta fundamental en cualquier lenguaje de programación, incluyendo Clojure. Te permite unir varias cadenas para crear una nueva y manipular datos de forma más eficiente. 
 
 ## Cómo hacerlo
-
-Para concatenar cadenas en Clojure, puedes utilizar la función "str", que toma cualquier número de argumentos de texto y los une en una sola cadena. Por ejemplo:
+En Clojure, la concatenación de cadenas se puede realizar de varias maneras. Una forma es utilizar la función `str`, que toma cualquier número de argumentos de cadena y los combina en una sola cadena.
 
 ```Clojure
-(str "¡Hola" ", " "mundo" "!") ; imprimiría "¡Hola, mundo!"
+(str "Hola" "mundo") ; la salida será "Holamundo"
 ```
 
-También puedes utilizar la función "format" para concatenar cadenas en un formato específico. Esta función toma una cadena de formato y cualquier número de argumentos y los combina en una sola cadena formateada. Por ejemplo:
+También puedes usar la función `str` para unir cadenas con otros tipos de datos, como números y otros valores.
 
 ```Clojure
-(format "Hoy es %s, el %s de %s" "martes" "5" "enero") ; imprimiría "Hoy es martes, el 5 de enero"
+(str "El número es " 42) ; la salida será "El número es 42"
+```
+
+Otra forma de concatenar cadenas en Clojure es utilizando la función `format`, que te permite crear una cadena con formato. Esto significa que puedes especificar dónde quieres que se inserten los valores dentro de la cadena.
+
+```Clojure
+(format "Hola %s" "Juan") ; la salida será "Hola Juan"
+(format "La respuesta es %d" 42) ; la salida será "La respuesta es 42"
 ```
 
 ## Profundizando
+Clojure también ofrece otras funciones para la manipulación de cadenas, como `subs`, que te permite obtener una subcadena de una cadena dada.
 
-Es importante tener en cuenta que la concatenación de cadenas en Clojure es un proceso inmutable, lo que significa que no altera las cadenas originales sino que crea una nueva cadena combinando las existentes. Por lo tanto, es esencial utilizar la función "str" o "format" para asignar el resultado a una variable o imprimirlo.
+```Clojure
+(subs "Hola mundo" 0 4) ; la salida será "Hola"
+```
 
-Además, es importante tener en cuenta el rendimiento al concatenar cadenas en grandes cantidades. Debido a que Clojure es un lenguaje funcional, cada vez que se realiza una concatenación de cadenas, se crea una nueva cadena y se descarta la anterior. Por lo tanto, en situaciones en las que se necesitan concatenar grandes cantidades de cadenas, se recomienda utilizar conjuntos o vectores y luego unirlos utilizando "apply" para mejorar el rendimiento.
+También puedes utilizar la función `join` para unir varias cadenas en una sola, utilizando un separador opcional.
+
+```Clojure
+(join ", " ["manzana" "plátano" "naranja"]) ; la salida será "manzana, plátano, naranja"
+```
 
 ## Ver también
-
-- [Documentación oficial de Clojure sobre la concatenación de cadenas](https://clojure.org/guides/strings)
-- [Ejemplos de concatenación de cadenas en Clojure](https://www.javaer101.com/es/article/4743409.html)
-- [Comparación de rendimiento de diferentes métodos de concatenación en Clojure](https://medium.com/@maximshvimmanuel/converting-string-to-edn-in-a-performance-oriented-clojure-eb3b7f47d0d5) (en inglés)
+- [Documentación oficial de Clojure](https://clojure.org/guides/strings)
+- [Tutorial de concatenación de cadenas en Clojure](https://www.tutorialspoint.com/clojure/clojure_strings.htm)
+- [Ejemplos prácticos de concatenación de cadenas en Clojure](https://www.javacodegeeks.com/2019/04/10-clojure-examples-concatenating-strings.html)

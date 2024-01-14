@@ -1,55 +1,79 @@
 ---
-title:    "Arduino: שינוי אותיות לגדלות במחרוזת"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/arduino/capitalizing-a-string.md"
+title:                "Arduino: ניצור נושא למאמר 'כיצור מחרוזת' על תכנות מחשב."
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-כאשר מחליטים לבנות פרויקט עם ארדואינו ייתכן שנתקלו בצורך לרשום מחרוזת (String) כלשהי, וייתכן שרוצים לכתוב אותה כבקשר (Capitalized). פעולה זו תכול לתרום לקביעה שאתם מנסים להעביר בכתובת אתרים כלשו. 
+הכתיבה באותיות ראשונות משנה לסקירור מחרוזות וייצוג יפה יותר של נתונים במכשירי ארדואינו. זה יכול להיות שימושי כאשר אנחנו רוצים להציג טקסט במסך LCD, לשלוח מידע דרך יציאת סיריאלית או פשוט נרצה להפיק את השם של משתמש מכתובת אימייל.
 
-## איך לבצע זאת
+## איך לעשות זאת
 
-אם אתם מעוניינים לבנות פונקציה שתכתוב לנו מחרוזת כקביעה תוכלו לעשות זאת בקלות באמצעות תוסף שמקבל שלשה פרמטרים. החלונית שני הפרמטרים יכולים להיות מחרוזות ולמהדת את הטקטס לצורך כתיבה מחרוזת עם האות הגדולה אשר תהיה גם כזה של קביעה.
+בכדי לכתוב את הקוד למכשיר ארדואינו נשתמש בפונקצייה ```capitalize```. לדוגמה, אם נרצה לכתוב את המחרוזת "hello world" על המסך LCD, נשתמש בקוד הבא:
 
-```Arduino
-String capitalize(String str, String separator) {
-    String result = "";
-    for (uint8_t i = 0; i < strlen(str.c_str()); i++) {
-        char c = str.charAt(i);
-        if (i == 0 || str.charAt(i - 1) == separator[separator.length() - 1] || (str.charAt(i - 1) == '-' && separator[0] == '-')) {
-            if (c >= 'a' && c <= 'z') {
-                c += 'A' - 'a';
-            }
-        }
-        result.concat(c);
-    }
-    return result;
+```arduino
+#include <LiquidCrystal.h> 
+
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+void setup() {
+
+  lcd.begin(16, 2);
+  lcd.print(capitalize("hello world")); // אנחנו קוראים לפונקציית capitalize כאן
+
+}
+
+void loop() {
+
+  // כאן אנחנו ממתינים לקליטה נוספת
+
 }
 ```
 
-הנה מספר לוגים במטריית התוכנית:
+כתוצאה מכך, נקבל את התוצאה הבאה על המסך:
 
-```Arduino
-"separate", "", "Capitalize only first char: " => Capitalize_only_first_char
-"The-Second", "-", "Capitalize first char of each word: " => Capitalize_First_Char_Of_Each_Word
+```
+Hello world
 ```
 
-הפלט של התוכנית יופיע ככה:
+## צעדים עמוקים
 
-```Arduino
-Capitalize only first char: Separate
-Capitalize first char of each word: The Second
+כאשר אנחנו קוראים לפונקציית ```capitalize```, אנחנו מעבירים לה את המחרוזת שאנחנו רוצים לסקור, כך:
+
+```arduino
+capitalize("hello world");
 ```
 
-## חקירה מעמיקה
+פונקציית ```capitalize``` תחזיר את המחרוזת עם האות הראשונה בכתיב ראשוני ואת שאר האותיות בכתיב קטני. אם ננסה לכתוב:
 
-הפונקציה הנ"ל מבוססת על הרצונות למצוא את האות הראשונה של כל מילה במחרוזת.
+```arduino
+capitalize("hELlO wORLD");
+```
 
+נקבל כתוצאה:
+
+```
+Hello world
+```
+
+כמו כן, אם ננסה לכתוב מספרים או תווים מיוחדים בתוך המחרוזת, הם יישמרו בכתיב המקורי. לדוגמה:
+
+```arduino
+capitalize("h3llo w0rld!");
+```
+
+תחזיר:
+
+```
+H3llo w0rld!
+```
 
 ## ראה גם
 
-- [מפרט על ארדווינו](https://www.arduino.cc/en/guide/introduction)
-- [הפיכת מחרוזת לקביעה בפייתון](https://www.geeksforgeeks.org/convert-string-to-camel-case-in-python/)
+למאמרים נוספים בנושא תכנות בפלטפורמת ארדואינו, ראה את הקישורים הבאים:
+
+- [התחלה עם ארדואינו: מדר

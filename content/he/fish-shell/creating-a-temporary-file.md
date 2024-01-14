@@ -1,35 +1,47 @@
 ---
-title:    "Fish Shell: יצירת קובץ זמני"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/creating-a-temporary-file.md"
+title:                "Fish Shell: יצירת קובץ זמני"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+# למה:
 
-יצירת קובץ זמני היא כלי חשוב בתכנות וכתיבת קוד. בעזרתו ניתן לאתחל ולאחסן נתונים זמניים ביצירת קובץ שאין צורך בו לאחר השימוש, מה שיכול לסייע ביצירת קוד יעיל ויעילות כותרתית. ניתן גם להשתמש בקבצים זמניים כדי לבצע ניסויים ואיתור באגים.
+יצירת קובץ זמני היא בדרך כלל צעד חשוב בתהליך התכנות ב-Fish Shell. הקובץ הזמני מאפשר לנו לשמור ולעבד מידע בעת ריצת התכנית ולאחר מכן למחוקו כדי לשמור על ניקיון במערכת שלנו.
 
-## כיצד לעשות זאת
+## איך לעשות זאת:
 
-כדי ליצור קובץ זמני ב-Fish Shell, מתבצעת הפעולה הבאה במשתנה $TMPDIR המציין את התיקייה הזמנית של מערכת ההפעלה. ניתן ליצור קובץ זמני באמצעות הפקודה touch ולאתחל את הנתונים הזמניים באמצעות פקודת echo. לדוגמה:
+בקוד הבא תוכלו לראות דוגמה של איך ליצור קובץ זמני ב-Fish Shell ולהדפיס את התוכן שלו:
 
-```Fish Shell
-touch $TMPDIR/tempfile.txt
-echo "This is a temporary file" >> $TMPDIR/tempfile.txt
+```fish
+# יצירת קובץ זמני בשם "tempfile.txt"
+set tmp (mktemp)
+
+# כתיבה של טקסט כלשהו לתוך הקובץ זמני
+echo "זוהי הודעה זמנית" > $tmp
+
+# קריאה של תוכן הקובץ והדפסתו
+cat $tmp
+
+# מחיקת הקובץ הזמני לאחר השימוש
+rm $tmp
 ```
 
-אפשר גם להשתמש בתת-תיקיות בפיתרון זמני יותר נקי. לדוגמה, בכדי ליצור קובץ זמני בתקיית העבודה הנוכחית, ניתן להשתמש בקו פקודה הבא:
+פלט הפקודות הללו יהיה:
 
-```Fish Shell
-touch ./tempfiles/tempfile.txt
+```
+זוהי הודעה זמנית
 ```
 
-## מהפנים
+בעזרת קוד זה, אתם יכולים ליצור קבצים זמניים כמו קבצי טקסט, תמונות או קבצי קוד ולעבוד עליהם כל עוד התוכנית מופעלת.
 
-היצירה של קובץ זמני ב-Fish Shell משתמשת בכלי בדיקה בקלות ובייעול טובים. ניתן למצוא מידע נוסף על צורת השימוש בהגדרות של שפת הסקריפט של Fish Shell ובהגדרות של פקודות פנימיות כמו set, setenv וכדומה.
+## חפירה עמוקה:
 
-## ראה גם
+יצירת קובץ זמני ב-Fish Shell מבצעת מספר פעולות ומשתנה בהתאם למערכת הפעולות של מערכת ההפעלה שלכם. אם אתם מעוניינים לחפש פרטים נוספים על אופן ביצוע פעולות אלה, מומלץ לעיין בתיעוד של Fish Shell ולהתנסות בקוד כדי לראות כיצד הענקת ההרשאות והגנה על המידע ניתנת לביצוע.
 
-- [Fish Shell כדי לקבוע מדריך קבצים זמניים לעסקים עבור Bash GEO של Apple](https://blog.lansa.com/cfa-geolocations-with-fish-shell-and-bash-geo-for-apples-fish-shell)
-- [התקנת גם מעבר ל-BASH!tpl עם הקריה Bashrt והשבועיים](https://medium.com/@common_python/shell/perl6-fish-shell-setup-bash-tpl-with-bashrc-and-env-5535cf5addea)
+## ראו גם:
+
+- [תיעוד Fish Shell](https://fishshell.com/docs/current/)
+- [מדריך מתחילים ל-Fish Shell](https://dev.to/alekswrites/building-a-fish-shell-for-beginners-4kka)

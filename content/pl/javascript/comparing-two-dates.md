@@ -1,61 +1,53 @@
 ---
-title:    "Javascript: Porównywanie dwóch dat"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/comparing-two-dates.md"
+title:                "Javascript: Porównywanie dwóch dat"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Porównywanie dwóch dat jest jednym z kluczowych aspektów w programowaniu. Jest to niezbędne w wielu zastosowaniach, takich jak obliczanie długości trwania zdarzeń, kalkulacje czasu czy sortowanie danych. Używanie wbudowanych funkcji w Javascript do porównywania dat jest nie tylko szybkie i wygodne, ale także zapewnia dokładne wyniki. W tym artykule dowiesz się, jak porównywać dwie daty w języku Javascript.
+Programowanie to sztuka rozwiązywania problemów, a jednym z powszechnych problemów jest porównywanie dwóch dat. Porównywanie dat jest ważnym elementem w wielu aplikacjach, takich jak systemy przewodzenia dokumentów czy też tworzenie kalendarzy. W tym artykule dowiesz się, w jaki sposób porównywać dwie daty w języku JavaScript.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Poniżej znajdują się przykłady kodów i wyników porównywania dwóch dat w języku Javascript.
-
-### Przykład 1: Porównanie daty z użyciem operatorów porównania
+Porównywanie dwóch dat w JavaScript może wydawać się skomplikowane, jednak dzięki wbudowanym funkcjom możemy to zrobić w prosty sposób. Przykładem takiej funkcji jest `Date.parse()`, która konwertuje datę z postaci tekstowej na liczbę reprezentującą liczbę milisekund od 1 stycznia 1970 roku. W tym przypadku, im większa liczba milisekund, tym późniejsza data.
 
 ```Javascript
-let date1 = new Date("2021-07-21");
-let date2 = new Date("2021-07-25");
+const data1 = new Date('2021-01-01');
+const data2 = new Date('2021-01-02');
 
-if (date1 < date2) {
-  console.log("Pierwsza data jest wcześniej od drugiej daty");
-} else if (date1 > date2) {
-  console.log("Pierwsza data jest później od drugiej daty");
+console.log(data1); //Wed Dec 31 2020 19:00:00 GMT-0500
+console.log(data2); //Fri Jan 01 2021 19:00:00 GMT-0500
+
+const milisekundyData1 = Date.parse(data1);
+const milisekundyData2 = Date.parse(data2);
+
+console.log(milisekundyData1); //1609455600000
+console.log(milisekundyData2); //1609542000000
+
+//Porównanie dat
+if (milisekundyData1 < milisekundyData2) {
+  console.log("Data 1 jest wcześniejsza od daty 2");
+} else if (milisekundyData1 > milisekundyData2) {
+  console.log("Data 2 jest wcześniejsza od daty 1");
 } else {
-  console.log("Obie daty są takie same");
+  console.log("Daty są identyczne");
 }
-
-// Wynik: Pierwsza data jest wcześniej od drugiej daty
 ```
 
-W tym przykładzie wykorzystujemy operatory porównania (mniejsze niż i większe niż) do porównania dwóch dat. Wynik jest wyświetlany w konsoli w zależności od tego, która data jest wcześniej lub później.
-
-### Przykład 2: Porównanie daty z użyciem funkcji getTime()
-
-```Javascript
-let date1 = new Date("2021-09-01");
-let date2 = new Date("2021-09-01");
-
-if (date1.getTime() === date2.getTime()) {
-  console.log("Obie daty są takie same");
-} else {
-  console.log("Daty są różne");
-}
-
-// Wynik: Obie daty są takie same
-```
-
-W tym przykładzie wykorzystujemy metodę `getTime()` dla obu dat, która zwraca ilość milisekund od 1 stycznia 1970 roku. Następnie porównujemy wartości zwrócone przez tę metodę, aby stwierdzić czy daty są takie same czy różne.
+W powyższym przykładzie, porównujemy daty `data1` i `data2` poprzez konwersję ich na liczbę milisekund i porównanie tych liczb. Możemy również porównać daty bezpośrednio, używając operatorów porównania `<`, `>` lub `===`.
 
 ## Deep Dive
 
-Porównywanie dat może nie być oczywiste dla początkujących programistów. Istnieje wiele innych metod i funkcji w języku Javascript, które mogą być użyte do porównania dat, takich jak `getFullYear()`, `getDate()` czy `getMonth()`. Ważne jest, aby zawsze przetestować swoją implementację porównywania dat, aby upewnić się, że działa ona zgodnie z oczekiwaniami.
+W języku JavaScript, każda konkretna data jest ustawiona na czas lokalny użytkownika i jest wyświetlana w jego strefie czasowej. Jednak przy porównywaniu dat, ważne jest, aby ustalić strefę czasową, ponieważ inaczej porównania mogą być niepoprawne. W takich przypadkach, warto korzystać z funkcji `getUTC*()` i `setUTC*()`, które są ustawione na czas uniwersalny (UTC).
 
-## Zobacz także
+Innym aspektem do wzięcia pod uwagę jest, że funkcja `Date.parse()` może mieć różne zachowanie w różnych przeglądarkach. Dlatego zaleca się korzystanie z bibliotek, takich jak Moment.js, które ułatwiają pracę z datami w języku JavaScript.
 
-- Porównywanie dat w języku Javascript: https://www.w3schools.com/js/js_date_methods.asp
-- Przydatna biblioteka do operacji na datach w Javascript: https://momentjs.com/
-- Praktyczne przykłady porównywania dat w różnych sytuacjach: https://codeburst.io/javascript-dates-557983222d98
+## Zobacz również
+
+- [Date.parse()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Obiekty_globalne/Date/parse)
+- [Moment.js](https://momentjs.com/)
+- [Światowy zegar](https://www.timeanddate.com/worldclock/)

@@ -1,43 +1,54 @@
 ---
-title:    "C: Muuntamassa merkkijonoa pieniksi kirjaimiksi"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/converting-a-string-to-lower-case.md"
+title:                "C: Muuttaminen merkkijonoksi pienaakkosiksi"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi kukaan haluaisi muuttaa merkkijonon pienaakkosiksi? Vaikka se saattaa kuulostaa yksinkertaiselta tehtävältä, on tämä muunnos tärkeä osa ohjelmointia monessa tilanteessa. Esimerkiksi silloin kun vertaillaan merkkijonoja, on tärkeää että molemmat merkkijonot ovat samassa muodossa.
+Monissa tilanteissa on tarpeellista muuntaa merkkijono pienaakkosiksi, esimerkiksi kun halutaan vertailla merkkijonoja tai tehdä niistä tulosteita. Tämä blogikirjoitus käsittelee kuinka muuntaa merkkijono pienaakkosiksi C-ohjelmoinnissa.
 
-## Kuinka tehdä
+## Kuinka
 
-Merkkijonon muuttaminen pienaakkosiksi tapahtuu käyttäen C:n standardikirjastofunktiota `tolower`. Tämä funktio muuntaa yhden merkin kerrallaan ja sitä voi käyttää merkkijonon läpikäymiseen for-silmukan avulla. Alla esimerkki koodista ja sen tuottamasta tulosteesta:
+Merkkijonon muuntaminen pienaakkosiksi C:ssä on helppoa. Ensimmäinen vaihe on määrittää merkkijono, joka halutaan muuntaa. Tämän jälkeen käytetään C-ohjelmoinnissa valmiiksi määriteltyä funktiota "tolower()", ja syötetään siihen muunnettava merkkijono. Koodin tulisi näyttää suunnilleen tältä:
 
-```C
+```
 #include <stdio.h>
-#include <ctype.h>
+#include <string.h>
 
-int main() {
-  char string[] = "Tämä On MERRKIJONO PiENAkkOsina"; 
-  int i; 
-
-  for (i = 0; string[i] != '\0'; i++) {
-    string[i] = tolower(string[i]);
+int main()
+{
+  char str[] = "TÄMÄ ON MERKKIJONO";
+  printf("Ennen muuntamista: %s\n", str);
+  
+  // Käytetään "tolower()" funktiota muuntaaksemme merkkijonon pienaakkosiksi
+  for(int i = 0; str[i]; i++)
+  {
+    str[i] = tolower(str[i]);
   }
 
-  printf("%s\n", string); //tulostaa: "tämä on merkkijono pienaakkosina"
+  printf("Pienaakkosiksi muunnettuna: %s\n", str);
   return 0;
 }
 ```
 
-## Syväsukellus
+Tuloste:
 
-`tolower`-funktio käyttää ASCII-taulukkoa muuntaakseen merkkinä olevan kirjaimen vastaavaan pienaakkoseen. Tämä tarkoittaa, että esimerkiksi tästä merkistä `K` tulee `k` ja merkistä `Ö` tulee `ö`. On hyvä muistaa, että tämä muunnos ei toimi muiden kirjaimistojen kanssa, kuten esimerkiksi skandinaavisissa kieletissä käytetyllä UTF-8-koodistikolla.
+```
+Ennen muuntamista: TÄMÄ ON MERKKIJONO
+Pienaakkosiksi muunnettuna: tämä on merkkijono
+```
 
-Tässä kohtaa voi myös mainita toisen hyödyllisen funktioon `toupper`, joka muuntaa merkkijonon isoaakkosiksi. Näiden kahden funktion yhdistelmä mahdollistaa merkkijonon muuntamisen eri muotoihin tarpeen mukaan.
+## Syvemmälle
+
+Miksi käytämme "tolower()" funktiota? Se johtuu siitä, että C-ohjelmointikielessä kirjaimet tallennetaan ASCII-numerokoodimuodossa, ja suurilla ja pienillä kirjaimilla on erilaiset koodiarvot. Muuttamalla kirjaimen ASCII-koodiarvoa pienimmästä suurimpaan saamme kirjaimen pienaakkoseksi.
+
+On myös tärkeää huomata, että "tolower()" funktio muuntaa merkkijonon vain sisäisesti, mutta ei tallenna sitä vakioksi. Jos haluamme muuttaa alkuperäisen merkkijonon pysyvästi, voimme käyttää esimerkiksi "strcpy()" funktiota kopioidaksemme pienaakkosmuotoisen merkkijonon uuteen muuttujaan.
 
 ## Katso myös
 
-- [C Standard Library: tolower](https://www.cplusplus.com/reference/cctype/tolower/)
-- [C Standard Library: toupper](https://www.cplusplus.com/reference/cctype/toupper/)
+- [tolower() funktio C:ssä](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
+- [strcpy() funktio C:ssä](https://www.tutorialspoint.com/c_standard_library/c_function_strcpy.htm)

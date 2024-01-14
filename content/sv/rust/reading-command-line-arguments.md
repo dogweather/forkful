@@ -1,68 +1,62 @@
 ---
-title:    "Rust: Läsning av kommandoradsargument"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/reading-command-line-arguments.md"
+title:                "Rust: Läsning av kommandoradsargument"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför läsa kommandoradsargument i Rust?
+## Varför
 
-Att kunna läsa och hantera kommandoradsargument är en viktig färdighet för många programmerare, oavsett vilket språk de använder. I denna artikel kommer vi att utforska hur man läser kommandoradsargument i Rust och hur det kan hjälpa till att förbättra ditt programmeringsarbete.
+Att läsa in kommandoradsargument är en viktig del av programmeringsprocessen för många som använder sig av Rust. Det ger möjlighet att dynamiskt ändra programbeteendet utan att behöva ändra källkoden. Läs vidare för att ta reda på hur du kan implementera detta i dina egna projekt.
 
-## Hur man läser kommandoradsargument i Rust
+## Hur man gör
 
-Att läsa kommandoradsargument i Rust är enkelt och kan göras med hjälp av standardbiblioteket `std::env`. Vi kan använda funktionen `args` för att få en vector av de argument som användaren skickade med vid körningen av vårt program. Här är ett enkelt exempel:
+För att läsa in kommandoradsargument i din Rust-kod behöver du först importera biblioteket `std::env` genom att lägga till följande kod i början av din fil:
 
 ```Rust
 use std::env;
+```
 
+Sedan kan du använda funktionen `args()` inom `env`-biblioteket för att få en vektor med alla kommandoradsargument som skickats till ditt program. Här är ett exempel på hur du kan skriva ut argumenten till konsolen:
+
+```Rust
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    // Vi kan nu använda vector:n args för att hämta de argument som skickades med i kommandoraden
-    for argument in &args {
-        println!("{}", argument);
+    // Skriver ut argumenten till konsolen
+    println!("Kommandoradsargument: {:?}", args);
+}
+```
+
+Om du till exempel kör detta program med kommandot `rustc hello.rs Hej Världen` så kommer det att skriva ut `Kommandoradsargument: ["Hej", "Världen"]` till konsolen.
+
+## Djupdykning
+
+Det finns många olika sätt att hantera kommandoradsargument i Rust, men en vanlig teknik är att använda match uttryck för att hantera olika fall beroende på antal och innehåll av argument. Här är ett annat exempel som visar hur detta kan implementeras:
+
+```Rust
+fn main() {
+    let args: Vec<String> = env::args().collect();
+
+    // Match uttryck för att hantera olika fall
+    match args.len() {
+        // Om inga argument skickas till programmet
+        1 => println!("Inga argument skickades."),
+        // Om ett argument skickas till programmet
+        2 => println!("Bara ett argument skickades: {}", args[1]),
+        // Om flera argument skickas till programmet
+        _ => println!("Flera argument skickades: {:?}", &args[1..]),
     }
 }
 ```
 
-Om vi nu exekverar vårt program med kommandoradsargumenten `rust program.rs arg1 arg2`, kommer vi få följande utskrift:
+Om du till exempel kör programmet med kommandot `rustc hello.rs Hej Världen` så kommer det att skriva ut `Flera argument skickades: ["Hej", "Världen"]`.
 
-```
-arg1
-arg2
-```
+## Se även
 
-## DJupdykning i kommandoradsargument
+* [Officiell dokumentation för kommandoradsargument i Rust](https://doc.rust-lang.org/std/env/index.html)
+* [En tutorial om hur man hanterar kommandoradsargument i Rust](https://dev.to/devsyntax/handling-command-line-arguments-in-rust-9gf)
 
-Förutom att läsa och skriva ut kommandoradsargument, kan vi också utföra olika operationer på dem. Det finns till exempel inbyggda funktioner för att söka efter specifika argument eller att konvertera dem till andra datatyper. Här är några exempel på hur vi kan använda dessa funktioner:
-
-```Rust
-use std::env;
-
-fn main() {
-    let args: Vec<String> = env::args().collect();
-
-    // Omvandla argumentet till en Integer
-    let num: i32 = args[1].parse().expect("Argument måste vara ett nummer!");
-
-    // Kontrollera om argumentet är en flagga eller inte
-    if args[2].starts_with("-") {
-        println!("Argument 2 är en flagga: {}", args[2]);
-    } else {
-        println!("Inget argument hittades");
-    }
-}
-```
-
-Med dessa funktioner kan du skräddarsy ditt program för att ta emot och hantera specifika kommandoradsargument som passar dina behov.
-
-# Se också
-
-Om du vill lära dig mer om hur du hanterar kommandoradsargument i Rust, rekommenderar vi att du läser följande dokumentation och guider:
-
-- [Den officiella dokumentationen för std::env](https://doc.rust-lang.org/std/env/index.html)
-- [En guide om hur man läser kommandoradsargument i Rust](https://www.geeksforgeeks.org/command-line-arguments-in-rust-programming/)
-
-Med dessa resurser och din nya kunskap om hur man läser kommandoradsargument i Rust, kan du ta dina programmeringsfärdigheter till nästa nivå. Lycka till och ha kul med dina projekt!
+Tack för att du läste! Hoppas detta hjälper dig att hantera kommandoradsargument på ett smidigt sätt i dina Rust-projekt.

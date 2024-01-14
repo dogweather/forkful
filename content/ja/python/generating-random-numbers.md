@@ -1,38 +1,38 @@
 ---
-title:    "Python: 乱数の生成"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/python/generating-random-numbers.md"
+title:                "Python: ランダムな数字の生成"
+programming_language: "Python"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-ランダムな数字を生成するプログラミングを行う理由は、様々な目的に使用できるからです。例えば、ゲームやシミュレーション、暗号学などにおいて、ランダムな値を使用する必要があります。また、ランダムな値を生成することで、プログラムの動作をテストすることもできます。
+
+乱数を生成する活用が必要な理由は、コンピュータープログラミングにおいて偶発的な出力をシミュレートする必要があるからです。このシミュレーションは、ゲームや統計的なシミュレーションなど多岐に渡ります。
 
 ## 方法
-乱数を生成するには、Pythonの標準ライブラリであるrandomモジュールを使用します。以下のコードを使用することで、乱数を生成することができます。"
 
 ```Python
+# ランダムモジュールをインポートする
 import random
-num = random.randint(1, 100) # 1から100までの乱数を生成
-print(num) # 乱数を出力
+
+# 0〜9の範囲でランダムな整数を生成
+random_num = random.randint(0, 9)
+print(random_num)
+# 結果例: 5
+
+# 0〜1の範囲でランダムな小数を生成
+random_float = random.random()
+print(random_float)
+# 結果例: 0.3456891829
 ```
 
-上記の例では、1から100までの乱数を生成していますが、生成する範囲は任意の値に変更することができます。また、乱数を重複させたくない場合には、randomモジュールの中にあるsample()関数を使用することができます。
+## 注意深い
 
-```Python
-import random
-num_list = [1, 2, 3, 4, 5]
-random_num = random.sample(num_list, 3) # num_listから3つの乱数を重複せずに生成してリストとして返す
-print(random_num) # 例: [3, 5, 1]
-```
+乱数は完全にランダムではありません。コンピューターのアルゴリズムによって生成されたものであり、特定のパターンが現れる可能性があります。そのため、本当にランダムなデータが必要な場合は、外部のハードウェアデバイスを使用する必要があります。
 
-さらに、randomモジュールには乱数を生成するためのさまざまな関数が用意されていますので、ドキュメントを参照することでより詳細な情報を得ることができます。
+## See Also
 
-## ディープダイブ
-乱数を生成する方法について、もっと深く掘り下げてみましょう。乱数を生成するアルゴリズムには様々な種類がありますが、Pythonのrandomモジュールでは、メルセンヌツイスターというアルゴリズムを使用しています。メルセンヌツイスターは高速であり、周期も非常に長いという特徴があります。また、メルセンヌツイスターの他にも、様々なアルゴリズムがあるので、興味のある方は調べてみると良いでしょう。
-
-## 関連記事
-- [Python公式ドキュメント - randomモジュール](https://docs.python.org/ja/3/library/random.html)
-- [Python randomモジュールを使ってみよう](https://qiita.com/creeper3eee/items/1a60c787cc7e22302c97)
-- [乱数の生成方法について](https://www.edemy.jp/technologies/1108)
+- [Python公式ドキュメント](https://docs.python.org/ja/3/library/random.html)
+- [ランダム数生成のアルゴリズムの種類](https://en.wikipedia.org/wiki/Random_number_generation)

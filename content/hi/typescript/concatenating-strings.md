@@ -1,34 +1,29 @@
 ---
-title:    "TypeScript: स्ट्रिंग्स को संयोजित करना"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/concatenating-strings.md"
+title:                "TypeScript: स्ट्रिंग्स को एक साथ जोड़ना"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
+कोई भी प्रोग्रामिंग भाषा में स्ट्रिंग को जोड़ना एक आम और उपयोगी काम है। स्ट्रिंग को जोड़कर हम अपनी प्रोग्राम में समूहीकरण करते हैं और इससे हमारे कोड को लिखने में आसानी होती है।
 
-एक प्रोग्रामर के लिए, स्ट्रिंग जोड़ने का काम अपेक्षित फलन्ता लाता है - भले ही वह डेटाबेस स्ट्रिंग्स को कानिका क्यों नहीं सेट करता है, या फिर उसके डेटाबेस से जुड़ने के लिए कोड लिखाता है जो वह डेटाबेस से आइटम फेट करे।
-
-## कैसे करें
-
+## कैसें करें
 ```TypeScript
-const firstName = "अदिति";
-const lastName = "गुप्ता।"
+let firstString = "हेलो";
+let secondString = "दुनिया!";
 
-console.log(`नमस्ते, मैं ${firstName} ${lastName} हूँ!`);
+let concatenation = firstString + secondString;
+
+console.log(concatenation);
 ```
-
-```नमस्ते, मैं अदिति गुप्ता हूँ!```
-
-यहाँ, हमने दो अलग स्ट्रिंग वेरिएबल्स बनाएं और फिर इन्हें सम्मर्थित स्ट्रिंग जोड़कर एक हिंदी बातचीत लिखा है। यह एक प्रकार का स्ट्रिंग परिवर्तन है जो कि जावास्क्रिप्ट में भी समर्थित है।
+आप कोड को चलाएंगे तो कॉन्सोल पर हमें `हेलोदुनिया!` मिलेगा। इसमें हमने दो स्ट्रिंग `firstString` और `secondString` को जोड़कर एक नए स्ट्रिंग `concatenation` बनाया है। हम `+` ऑपरेटर का उपयोग करके स्ट्रिंग को जोड़ सकते हैं। उदाहरण के लिए, यदि हम `firstString = "Hello"` और `secondString = "World!"` लिखते तो हमें `HelloWorld!` मिलता।
 
 ## गहराई में जाएं
-
-स्ट्रिंग जोड़ने के अलावा, आप भी स्ट्रिंग को फिर से संरेखित कर सकते हैं। इसका मतलब है कि आप एक स्ट्रिंग वेरिएबल का उपयोग करके उससे सीधे कहीं। यह आसान तरीका है दो स्ट्रिंग वेरिएबल बनाने के लिए और उन्हें अपनाएं, जो कि बहुत सकारात्मक है।
+स्ट्रिंग को जोड़ने के लिए, हम अनेक तरह के विधियों का उपयोग कर सकते हैं। उपरोक्त उदाहरण में हमने दो स्ट्रिंग को जोड़ने के लिए `+` ऑपरेटर का उपयोग किया है, लेकिन हम `concat()` फ़ंक्शन या `.concat()` मैथमेटिकल ऑपरेटर से भी स्ट्रिंग को जोड़ सकते हैं।  इसके अलावा स्ट्रिंग टेम्पलेट लिटरेल्स भी उपयोगी हो सकते हैं जहां हम `${}` से भिन्न भिन्न मानों को एक साथ जोड़ सकते हैं। 
 
 ## देखें भी
-
-[टाइपस्क्रिप्ट ऑफिशियल डॉक्यूमेंटेशन](https://www.typescriptlang.org/docs/handbook/basic-types.html) <br>
-[टाइपस्क्रिप्ट बेसिक टाइप्स](https://www.tutorialspoint.com/typescript/typescript_basic_types.htm) <br>
-[जावास्क्रिप्ट स्ट्रिंग्स](https://www.w3schools.com/js/js_strings.asp)
+- [टाइपस्क्रिप्ट मैनुअल](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+- [टाइपस्क्रिप्ट स्ट्रिंग ऑपरेटर्स](https://www.typescriptlang.org/docs/handbook/2/objects.html#string-literal-types)

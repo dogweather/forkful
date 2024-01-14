@@ -1,49 +1,55 @@
 ---
-title:    "Clojure: Substrings extrahieren"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/extracting-substrings.md"
+title:                "Clojure: Unterstrings extrahieren"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Das Extrahieren von Teilstrings kann eine nützliche Funktion in der Programmierung sein, um spezifische Informationen aus einem größeren String herauszufiltern. Dies kann hilfreich sein, wenn man beispielsweise eine Benutzereingabe analysiert oder bestimmte Daten aus einem Textdokument auslesen möchte.
 
-Das Extrahieren von Teilstringen ist eine nützliche Funktion in der Programmierung. Es ermöglicht uns, bestimmte Teile von Strings zu isolieren und sie in verschiedenen Anwendungen zu verwenden.
-
-## Wie man Teilstringe extrahiert
-
-Um Teilstringe in Clojure zu extrahieren, können wir die Funktion `subs` verwenden. Sie akzeptiert zwei Argumente: den zu extrahierenden String und die Start- und Endpositionen des Teilstrings.
+## Anleitung
+Die folgenden Codebeispiele zeigen, wie man mithilfe von Clojure Teilstrings extrahieren kann. Zunächst müssen wir die Funktion "subs" verwenden, die einen Teil eines Strings zurückgibt, basierend auf einem start- und end-Parameter. In diesem Beispiel extrahieren wir die ersten zwei Buchstaben aus dem String "Hallo".
 
 ```Clojure
-(def string "Hallo Welt!")
-(subs string 0 5)
+(subs "Hallo" 0 2)
 ```
 
-Dieser Code extrahiert den Teilstring "Hallo" aus dem Originalstring "Hallo Welt!".
+Output:
+```Clojure
+"Ha"
+```
 
-Eine andere Möglichkeit Teilstringe zu extrahieren, ist die Verwendung von regulären Ausdrücken mit der Funktion `re-find`.
+Man kann auch negative Indizes verwenden, um vom Ende des Strings aus zu zählen. In diesem Beispiel extrahieren wir den letzten Buchstaben aus dem String "Guten Tag".
 
 ```Clojure
-(def name "Max Mustermann")
-(re-find #"Max" name)
+(subs "Guten Tag" -1)
 ```
 
-Dieser Code extrahiert den Teilstring "Max" aus dem Namen "Max Mustermann".
+Output:
+```Clojure
+"g"
+```
 
-## Tiefergehende Informationen
-
-Um bestimmte Muster in einem String zu finden und zu extrahieren, können wir die Funktion `re-seq` verwenden. Diese Funktion akzeptiert einen regulären Ausdruck und einen String und gibt eine Sequenz aller Teilstrings zurück, die dem regulären Ausdruck entsprechen.
+Mithilfe des "re-find" Befehls können wir auch mithilfe von regulären Ausdrücken Teilstrings extrahieren. In diesem Beispiel extrahieren wir alle Zahlen aus dem String "123abc456xyz".
 
 ```Clojure
-(def email "max.mustermann@example.com")
-(re-seq #"@(.*)" email)
+(re-find #"\d+" "123abc456xyz")
 ```
 
-Dieser Code extrahiert die Domain aus der E-Mail-Adresse "max.mustermann@example.com" und gibt "example.com" zurück.
+Output:
+```Clojure
+"123" "456"
+```
 
-Es gibt auch Möglichkeiten, Teilstringe in mehreren Zeilen von Text zu extrahieren, indem `\n` im regulären Ausdruck verwendet wird, um einen Zeilenumbruch anzugeben.
+## Tiefere Einblicke
+Es gibt zahlreiche Anwendungen für das Extrahieren von Teilstrings in der Programmierung. Zum Beispiel kann man damit auch komplexe Muster in Strings suchen und ersetzen, oder Daten aus Dateinamen auslesen.
+
+Eine wichtige Sache, die man beim Extrahieren von Teilstrings beachten sollte, ist, dass die Indexierung in Clojure bei 0 beginnt. Das bedeutet, dass der erste Buchstabe im String den Index 0 hat und nicht 1, wie man es vielleicht gewohnt ist.
 
 ## Siehe auch
-- [Clojure Dokumentation für `subs`](https://clojuredocs.org/clojure.core/subs)
-- [Clojure Dokumentation für `re-find`](https://clojuredocs.org/clojure.core/re-find)
-- [Clojure Cheat Sheet für reguläre Ausdrücke](https://clojure.org/api/cheatsheet#fn-regex)
+- [Offizielle Clojure Dokumentation zu subs](https://clojuredocs.org/clojure.core/subs)
+- [Clojure String Manipulation Tutorial von Clojure for the Brave and True](https://www.braveclojure.com/working-with-strings/)
+- [Regex Tutorial von Regular-Expressions.info](https://www.regular-expressions.info/tutorial.html)

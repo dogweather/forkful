@@ -1,30 +1,38 @@
 ---
-title:    "Fish Shell: Eliminazione di caratteri corrispondenti a un modello"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/deleting-characters-matching-a-pattern.md"
+title:                "Fish Shell: Eliminazione di caratteri corrispondenti ad un modello"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-La cancellazione di caratteri corrispondenti a un determinato pattern può essere utile per semplificare e pulire il codice, rimuovendo informazioni non necessarie o errate. Può anche essere utilizzata per effettuare operazioni su stringhe o altre variabili che richiedono un filtro specifico.
+Quando si lavora con la Shell Fish, è possibile che ci si trovi a dover eliminare caratteri corrispondenti a un certo pattern. Questo potrebbe essere necessario per eseguire una correzione o per pulire i dati in una stringa.
 
 ## Come fare
+Utilizzare il comando `string match` in Fish Shell per trovare e eliminare i caratteri corrispondenti al pattern desiderato. Ad esempio, se vogliamo eliminare tutti i numeri da una stringa, possiamo utilizzare il seguente codice:
 
-Per cancellare i caratteri corrispondenti a un pattern nella Shell di Fish, è possibile utilizzare il comando `string match` seguito dal carattere `^` e dal pattern desiderato tra parentesi quadre. Ad esempio, se si vuole eliminare tutti i caratteri numerici da una stringa, si può utilizzare il seguente comando:
+```Fish Shell
+set stringa “Questo è un esempio 123 di una stringa”
+set pattern “[0-9]”
+set nuova_stringa (string match -d -- $pattern $stringa)
 ```
-string match -r '[0-9]' stringa1 stringa2
-```
-Dove "stringa1" e "stringa2" rappresentano le stringhe su cui si vuole effettuare l'operazione. Il risultato sarà una nuova stringa che contiene solo i caratteri non numerici presenti nelle stringhe originali.
+Il comando `string match` ci permette di specificare il pattern che vogliamo cercare (`[0-9]` in questo caso) e poi utilizziamo l'opzione `-d` per indicare che vogliamo eliminare i caratteri corrispondenti. Infine, usiamo `--` per indicare che il pattern si applica solo alla stringa e non ai comandi successivi.
+
+Il risultato sarà una nuova stringa senza i caratteri numerici: `Questo è un esempio di una stringa`.
 
 ## Approfondimento
+Per effettuare una ricerca più precisa e complessa, possiamo utilizzare espressioni regolari all'interno del comando `string match`. Ad esempio, se vogliamo eliminare tutti i caratteri speciali da una stringa, possiamo utilizzare il seguente codice:
 
-Il comando `string match` utilizza l'espressione regolare per cercare i caratteri corrispondenti al pattern specificato. Tuttavia, è possibile anche utilizzare altri caratteri al posto di `^`, come `$` per eliminare i caratteri alla fine della stringa o `*` per eliminare più di un carattere corrispondente. Inoltre, è possibile specificare più pattern tra parentesi quadre per eliminare più caratteri contemporaneamente, ad esempio `[0-9a-z]`.
-
-Inoltre, il comando `string match` può essere utilizzato in combinazione con altri comandi per effettuare operazioni più complesse. Ad esempio, si può utilizzare il comando `string sub` per sostituire i caratteri eliminati con un altro carattere o stringa specificata.
+```Fish Shell
+set stringa “Q/uest!o è un'e&mpi,.,o di una strin'ga”
+set pattern “[^a-zA-Z0-9\s]”
+set nuova_stringa (string match -d -- $pattern $stringa)
+```
+In questo caso, stiamo specificando un pattern che selezioni tutti i caratteri diversi da lettere, numeri e spazi (indicati con `[^a-zA-Z0-9\s]`). Il risultato sarà una nuova stringa pulita, senza caratteri speciali: `Q u est o è un e mpi o di una strin ga`.
 
 ## Vedi anche
-
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/cmds/string.html#match)
-- [Tutorial sulle espressioni regolari in Bash](https://www.shell-tips.com/regex-tutorial)
+- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Guida alle espressioni regolari](https://www.regular-expressions.info/)
+- [Guida introduttiva a Fish Shell](https://scotch.io/tutorials/getting-started-with-fish-the-friendly-interactive-shell)

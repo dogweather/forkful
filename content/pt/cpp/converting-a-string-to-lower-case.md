@@ -1,78 +1,71 @@
 ---
-title:    "C++: Convertendo uma string para minúsculas"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/converting-a-string-to-lower-case.md"
+title:                "C++: Convertendo uma string para minúsculas"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que converter uma string para minúsculo
 
-Converter uma string para letras minúsculas é uma tarefa essencial em muitos projetos de programação. Isso nos permite padronizar e comparar strings de maneira mais fácil e eficiente.
+Muitas vezes, ao trabalhar com strings em C++, precisamos garantir que elas estejam em um formato específico. Uma das tarefas comuns é converter uma string para minúsculo, o que pode ser útil ao realizar comparações ou manipulações de texto. Neste artigo, vamos discutir por que essa conversão é necessária e como podemos realizar isso em nossos programas.
 
-## Como fazer
+## Como fazer a conversão
 
-Abaixo estão algumas maneiras de converter uma string para letras minúsculas usando a linguagem de programação C++.
-
-### Usando a função `transform` do STL
+Existem várias maneiras de converter uma string para minúsculo em C++. Aqui estão dois exemplos de código que mostram duas abordagens diferentes:
 
 ```C++
-// Cabeçalhos necessários
+// usando um laço for
 #include <iostream>
-#include <string>
-#include <algorithm>
-
+#include <cctype> // biblioteca para funções de caso
 using namespace std;
 
 int main() {
-    // String de exemplo
-    string palavra = "Exemplo";
-
-    // Usando a função transform para converter a string para letras minúsculas
-    transform(palavra.begin(), palavra.end(), palavra.begin(), ::tolower);
-
-    // Imprimindo a string modificada
-    cout << palavra;
-
-    return 0;
-}
-
-// Saída: exemplo
-```
-
-### Usando a função `tolower` do header `cctype`
-
-```C++
-// Cabeçalhos necessários
-#include <iostream>
-#include <string>
-#include <cctype>
-
-using namespace std;
-
-int main() {
-    // String de exemplo
-    string palavra = "Exemplo";
-
-    // Convertendo cada caractere da string para letras minúsculas
-    for (char& c : palavra) {
-        c = tolower(c);
+    string minhaString = "EXEMPLO";
+    // laço for para iterar sobre cada caractere da string
+    for (int i = 0; i < minhaString.length(); i++) {
+        // usando a função tolower para converter para minúsculo
+        minhaString[i] = tolower(minhaString[i]);
     }
-
-    // Imprimindo a string modificada
-    cout << palavra;
-
+    // impressão do resultado
+    cout << minhaString << endl; // vai imprimir "exemplo"
+    
     return 0;
 }
-
-// Saída: exemplo
 ```
 
-## Mergulho profundo
+```C++
+// usando a função transform
+#include <iostream>
+#include <algorithm> // biblioteca para a função transform
+#include <cctype> // biblioteca para funções de caso
+using namespace std;
 
-Existem algumas coisas importantes a serem consideradas ao converter uma string para letras minúsculas. Primeiro, é preciso ter cuidado ao escolher a função de conversão para garantir que ela funcione corretamente com a codificação de caracteres do seu projeto. Além disso, em alguns casos, espaços e pontuação podem não ser convertidos corretamente para suas formas minúsculas, então é importante verificar e tratar esses casos manualmente, se necessário.
+int main() {
+    string minhaString = "EXEMPLO";
+    // usar a função transform para converter para minúsculo
+    transform(minhaString.begin(), minhaString.end(), minhaString.begin(), ::tolower);
+    // impressão do resultado
+    cout << minhaString << endl; // vai imprimir "exemplo"
+    
+    return 0;
+}
+```
+
+Podemos ver que, em ambos os exemplos, primeiro importamos a biblioteca <cctype>, que contém a função tolower para converter um caractere para minúsculo. Em seguida, usamos um laço for ou a função transform para iterar sobre cada caractere da string e realizar a conversão. Em ambos os casos, o resultado é armazenado de volta na mesma string.
+
+É importante lembrar que, ao manipular strings, sempre devemos verificar se todos os caracteres necessários estão disponíveis na biblioteca que estamos usando.
+
+## Uma análise mais profunda
+
+A conversão de uma string para minúsculo pode parecer uma tarefa simples, mas existem alguns detalhes importantes que devemos levar em consideração.
+
+Um dos pontos a serem observados é que a conversão depende do idioma. Por exemplo, em alguns idiomas, a letra "i" maiúscula pode ser convertida para "ı" minúscula, enquanto em outros pode permanecer como "i". Isso é importante a ser considerado ao realizar comparações entre duas strings em C++.
+
+Outra coisa a ser observada é que, quando usamos a função transform, podemos escolher entre convertê-la para minúsculo ou para maiúsculo usando a função tolower ou toupper, respectivamente.
 
 ## Veja também
 
-- [Referência da função `transform` do STL em cppreference.com](https://en.cppreference.com/w/cpp/algorithm/transform)
-- [Referência da função `tolower` do header `cctype` em cppreference.com](https://en.cppreference.com/w/cpp/string/byte/tolower)
+- [Guia de Idiomas - Strings](https://www.cplusplus.com/reference/string/) 
+- [Documentação da biblioteca cctype](https://www.cplusplus.com/reference/cctype/)

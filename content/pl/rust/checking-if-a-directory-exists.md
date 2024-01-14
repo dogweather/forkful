@@ -1,45 +1,45 @@
 ---
-title:    "Rust: Sprawdzanie czy istnieje katalog"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/checking-if-a-directory-exists.md"
+title:                "Rust: Sprawdzanie istnienia katalogu"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto sprawdzić, czy katalog istnieje?
 
-Istnienie katalogu jest ważnym aspektem każdego programu, który musi wykonywać operacje na plikach. Właściwe sprawdzanie, czy dany katalog istnieje, pomaga uniknąć błędów i nieporozumień, a także ułatwia utrzymanie poprawnej struktury plików w systemie. W tym artykule dowiesz się, jak w łatwy sposób można sprawdzić istnienie katalogu w języku Rust.
+W dzisiejszym świecie programowania nieuniknione jest korzystanie z różnego rodzaju systemów plików i katalogów. Często zdarza się, że nasze programy muszą operować na plikach i folderach, a w takich przypadkach warto upewnić się, czy dany katalog istnieje przed podjęciem dalszych działań. W tym artykule dowiesz się, dlaczego warto sprawdzić, czy katalog istnieje oraz jak w prosty sposób to zrobić w języku Rust.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Rust oferuje proste i intuicyjne rozwiązanie do sprawdzania istnienia katalogu - moduł `std::fs`. Aby skorzystać z tego modułu, należy najpierw zaimportować go do swojego programu:
+Sprawdzenie istnienia katalogu w języku Rust jest bardzo prostym zadaniem. Wystarczy skorzystać z funkcji `Path::exists()`, która sprawdza, czy dany element systemu plików istnieje. W przypadku katalogu, który nas interesuje, musimy przekazać jego ścieżkę jako argument do tej funkcji. Oto przykładowy kod:
 
-```Rust
-use std::fs;
-```
+```rust
+use std::path::Path;
 
-Następnie, aby sprawdzić, czy dany katalog istnieje, należy użyć funkcji `metadata` z tego modułu i przekazać jako argument nazwę katalogu, który chcemy sprawdzić:
-
-```Rust
-let path = "sciezka/do/katalogu";
-let metadata = fs::metadata(path);
-```
-
-Funkcja `metadata` zwraca wartość typu `Result`, która może zawierać informacje o katalogu, jeśli istnieje, lub błąd, jeśli nie. Aby sprawdzić, czy katalog istnieje, należy wywołać funkcję `is_dir` na obiekcie `metadata`:
-
-```Rust
-if metadata.is_ok() && metadata.unwrap().is_dir() {
-    println!("Katalog istnieje!");
-} else {
-    println!("Katalog nie istnieje!");
+fn main() {
+    let directory = Path::new("/home/username/Documents");
+    if directory.exists() {
+        println!("Katalog istnieje!");
+    } else {
+        println!("Katalog nie istnieje.");
+    }
 }
 ```
 
-## Również warto wiedzieć
+Jeśli podana ścieżka wskazuje na aktualny katalog, możemy skorzystać z funkcji `Path::exists()` na obiekcie `std::env::current_dir()`, aby sprawdzić jego istnienie. 
 
-Ponadto, istnieje wiele innych funkcji z modułu `std::fs`, które mogą być przydatne przy pracy z katalogami, np. `create_dir` (tworzy nowy katalog), `remove_dir` (usuwa katalog) czy `read_dir` (odczytuje zawartość katalogu). Więcej informacji na ten temat znajdziesz w dokumentacji języka Rust i w przykładach kodu.
+## Głębsze zanurzenie
 
-## Zobacz także (See Also)
+Podczas sprawdzania istnienia katalogu możemy skorzystać z dodatkowych funkcji, aby uzyskać więcej informacji. Możemy na przykład wykorzystać metodę `Path::is_dir()` do sprawdzenia, czy element jest katalogiem i wypisać dalsze informacje na jego temat. Istnieje również wiele bibliotek zewnętrznych, które mogą pomóc w bardziej zaawansowanych operacjach na plikach i katalogach, takich jak `std::fs` lub `walkdir`.
 
-- Dokumentacja oficjalna języka Rust: https://doc.rust-lang.org/std/fs/index.html
-- Przykładowy kod sprawdzający istnienie katalogu w Rust Playground: https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=2c697daf91fa1a440ec4c26ef0c319c6
+## Zobacz również
+
+Jeśli chcesz dowiedzieć się więcej o operacjach na plikach i katalogach w języku Rust, polecam zapoznać się z poniższymi linkami:
+
+- [Dokumentacja `std::path::Path`](https://doc.rust-lang.org/std/path/struct.Path.html)
+- [Biblioteka `std::fs`](https://doc.rust-lang.org/std/fs/index.html)
+- [Biblioteka `walkdir`](https://crates.io/crates/walkdir)
+
+Dzięki wykorzystaniu powyższych narzędzi i wiedzy, będziesz w stanie sprawnie operować na plikach i katalogach w swoich programach w języku Rust. Sprawdzanie istnienia katalogu to tylko jeden z wielu przydatnych kroków, które możesz wykonać przy pracy z systemem plików. Zachęcam do dalszego zgłębiania tematu i eksperymentowania z różnymi rozwiązaniami.

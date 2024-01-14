@@ -1,39 +1,50 @@
 ---
-title:    "Java: Comenzando un nuevo proyecto"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/java/starting-a-new-project.md"
+title:                "Java: Comenzando un nuevo proyecto."
+programming_language: "Java"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué empezar un nuevo proyecto en Java?
+## ¿Por qué?
 
-La programación es una habilidad valiosa en la actualidad, y Java es uno de los lenguajes de programación más populares y utilizados en la industria. Empezar un nuevo proyecto en Java te brinda la oportunidad de aprender y mejorar tus habilidades, así como también de crear aplicaciones útiles y relevantes para el mundo tecnológico.
+Comenzar un nuevo proyecto de programación puede ser una experiencia emocionante y gratificante. Puede brindar oportunidades para aprender nuevas habilidades, experimentar con nuevas tecnologías y crear algo desde cero. Además, puede ser una excelente manera de aplicar tus conocimientos y mejorar tu currículum.
 
-## Cómo empezar un nuevo proyecto en Java
+## ¿Cómo empezar?
 
-Para empezar un proyecto en Java, es necesario tener instalado el JDK (Java Development Kit) en tu computadora. A continuación, se presentan algunos ejemplos de código que puedes probar en tu IDE (Entorno de Desarrollo Integrado) favorito:
+Para comenzar un nuevo proyecto de Java, sigue estos sencillos pasos:
+
+1. Instala una plataforma de desarrollo integrado (IDE) como Eclipse o NetBeans.
+2. Crea un nuevo proyecto en el IDE y elige "Java" como lenguaje de programación.
+3. Crea una clase principal, que será el punto de entrada a tu programa.
+4. Define tus variables y escribe el código necesario para que tu programa haga lo que deseas.
+5. Ejecuta tu código y revisa la salida.
+
+¡Aquí un ejemplo de cómo se vería un programa simple de "Hola mundo" en Java!
 
 ```Java
-// Hola mundo
 public class HolaMundo {
-    // Método principal
     public static void main(String[] args) {
-        System.out.println("¡Hola mundo!");
+        System.out.println("¡Hola, mundo!");
     }
 }
 ```
+Salida:
+~~~
+¡Hola, mundo!
+~~~
 
-El código anterior imprimirá "¡Hola mundo!" en la consola cuando se ejecute. Este es un simple ejemplo de un programa en Java, pero puedes seguir explorando y aprendiendo sobre el lenguaje a través de tutoriales y proyectos prácticos.
+## Profundizando
 
-## Profundizando en el inicio de un nuevo proyecto
+Si deseas profundizar más en tu proyecto de Java, aquí hay algunos consejos adicionales:
 
-Antes de empezar a escribir código, es importante tener una idea clara de lo que quieres lograr con tu proyecto. Puedes comenzar por hacer un diseño y planificación de tu aplicación, identificando los requisitos y funcionalidades que deseas incluir. También es importante tener en cuenta las buenas prácticas de programación, como la estructura de clases y el uso de comentarios para hacer tu código más legible y mantenible.
-
-Una vez que tengas un diseño y planificación sólidos, puedes comenzar a codificar tu proyecto y hacer uso de las características del lenguaje Java, como la orientación a objetos y la amplia biblioteca estándar, para construir una aplicación eficiente y funcional.
+- Utiliza una metodología de desarrollo ágil para planificar y organizar tu trabajo.
+- Investiga y utiliza bibliotecas y frameworks de Java para aprovechar al máximo sus características y simplificar tu código.
+- Comparte tu código y colabora con otros programadores en foros y plataformas de desarrollo en línea.
 
 ## Ver también
 
-- [Documentación oficial de Java](https://docs.oracle.com/en/java/)
-- [Tutoriales de programación en Java](https://www.tutorialesprogramacionya.com/javaya/)
-- [Guía para crear una aplicación Java paso a paso](https://www.javatpoint.com/creating-first-java-app)
+- [Tutorial de Java para principiantes](https://www.javatpoint.com/java-tutorial)
+- [Documentación oficial de Java](https://docs.oracle.com/javase/8/docs/api/)
+- [Ejemplos de proyectos de Java en GitHub](https://github.com/topics/java-projects)

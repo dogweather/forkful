@@ -1,34 +1,54 @@
 ---
-title:    "Ruby: ディレクトリが存在するかどうかを調べる"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/checking-if-a-directory-exists.md"
+title:                "Ruby: ディレクトリが存在するかどうかをチェックする"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-ディレクトリが存在するかを確認することに取り組んだ方が良い理由は、コードを実行する前に予期しないエラーを防ぐことができるからです。プログラム内で特定のディレクトリにアクセスする必要がある場合、そのディレクトリが存在するかどうかを事前に確認することが重要です。
+ディレクトリが存在するかどうかをチェックする理由は、ファイルを作成したり、削除したり、または特定のディレクトリ内のファイルにアクセスする必要があるためです。
 
 ## 方法
 
-Rubyでは、ディレクトリが存在するかを確認するために`Dir.exist?`メソッドを使用します。例えば、`check_dir.rb`というファイル内で以下のコードを使用することで、`examples`というディレクトリが存在するかを確認することができます。
+まず、Rubyプログラミング言語でディレクトリが存在するかどうかを確認する方法について説明します。次のコードブロックを使用します。
 
 ```Ruby
-if Dir.exist?("examples")
-  puts "Directory exists"
+# ディレクトリが存在するかどうかをチェックする
+Dir.exist?('/path/to/directory')
+```
+
+これにより、指定したディレクトリが存在する場合は`true`、存在しない場合は`false`が返されます。また、簡単に条件分岐を使用して、ディレクトリが存在するかどうかに応じて処理を分岐させることもできます。
+
+```Ruby
+if Dir.exist?('/path/to/directory')
+  # ディレクトリが存在する場合の処理
 else
-  puts "Directory does not exist"
+  # ディレクトリが存在しない場合の処理
 end
 ```
 
-もしディレクトリが存在する場合、`Directory exists`という出力が表示されます。しかし、もしディレクトリが存在しない場合、`Directory does not exist`という出力が表示されます。
+必要に応じて、指定したディレクトリの配下に存在するファイルやディレクトリの一覧を取得することもできます。
 
-## 深堀り
+```Ruby
+# ディレクトリ内のファイルとディレクトリの一覧を取得する
+Dir.entries('/path/to/directory')
+```
 
-`Dir.exist?`メソッドは、ディレクトリが存在するかどうかを確認するだけではなく、指定したディレクトリ内にあるすべてのファイルやサブディレクトリも含めて確認することができます。さらに、`Dir.exist?`メソッドはディレクトリのパスを渡すこともでき、相対パスや絶対パスの両方で動作します。
+このように、`Dir.exist?`や`Dir.entries`を組み合わせることで、特定のディレクトリ内でのファイル操作や、ファイルの一覧表示を容易に行うことができます。
 
-## 参考
+## ディープダイブ
 
-- [RubyのDirクラスドキュメント](https://docs.ruby-lang.org/en/2.7.0/Dir.html)
-- [Rubyの存在確認メソッド「Dir.exist?」を理解しよう](https://qiita.com/t0rkie/items/92ec4f6fc388b8dbd922)
+ディレクトリが存在するかどうかをチェックするメソッド`exist?`は、`Dir`クラスのメソッドの1つであることはご存知かもしれません。しかし、実際にはこのメソッドは`File`クラスでも使用することができます。つまり、`File.exist?`を使用して、ファイルが存在するかどうかをチェックすることもできるのです。
+
+さらに、`Dir.exist?`や`File.exist?`以外にも、`Dir`クラスや`File`クラスにはディレクトリやファイルに関する様々なメソッドが用意されています。ぜひ、公式ドキュメントを参考に、さまざまなメソッドを使いこなしてみてください。
+
+## 詳しくはこちらを参照
+
+[Dirクラスの公式ドキュメント](https://ruby-doc.org/core-3.0.0/Dir.html)
+
+[Fileクラスの公式ドキュメント](https://ruby-doc.org/core-3.0.0/File.html#method-c-exist-3F)
+
+[ドットインストールの「Ruby入門」動画：ディレクトリ操作編](https://dotinstall.com/lessons/basic_ruby_v3/28405)

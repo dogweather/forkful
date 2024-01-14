@@ -1,48 +1,50 @@
 ---
-title:    "Ruby: Tulevan tai menneen päivämäärän laskeminen"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/calculating-a-date-in-the-future-or-past.md"
+title:                "Ruby: Laskeminen päivämäärää tulevaisuudessa tai menneisyydessä."
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi joku haluaisi laskea päivämäärän tulevaisuudessa tai menneisyydessä? Monissa ohjelmointiprojekteissa on tarpeen laskea tietty päivämäärä jostain toisesta päivämäärästä eteen- tai taaksepäin. Tämä voi olla hyödyllistä esimerkiksi laskutuksessa, aikataulutuksessa tai laskennallisessa analyysissä.
+Calculating date in the future or past can be a useful skill to have as a programmer. It allows you to write programs that can handle dates dynamically, making them more efficient and versatile.
 
 ## Miten
 
-Ruby tarjoaa kätevän tavan laskea päivämääräksi tietyn määrän päiviä tai kuukausia eteen- tai taaksepäin. Tätä varten käytämme `Time` -luokkaa ja sen metodeita `#advance` ja `#change`. Tarkastellaanpa seuraavaa esimerkkiä:
+Laskeminen tulevan tai menneen päivän välillä Ruby-ohjelmoinnissa on helppoa käyttämällä Date-luokkaa. Voit käyttää seuraavia metodeja saadaksesi halutun päivämäärän:
 
 ```Ruby
-# Lasketaan päivämäärä 30 päivää eteenpäin tänään
-tanaan = Time.now
-uusi_paivamaara = tanaan.advance(days: 30)
+Date.today # palauttaa tämän päivän päivämäärän
+Date.parse("2020-12-25") # muuntaa merkkijonon päivämääräksi
+```
 
-puts uusi_paivamaara
-# output: 2021-08-31 11:00:00 +0300
+Voit myös lisätä ja vähentää päiviä antamalla halutun määrän päiviä tai käyttämällä Date-luokan metodeja, kuten `next_day` tai `prev_day`. Tässä on esimerkki käyttämällä `next_day`-metodia:
 
-# Lasketaan päivämäärä 6 kuukautta taaksepäin tänään
-uusi_paivamaara = tanaan.advance(months: -6)
+```Ruby
+Date.today.next_day(7) # palauttaa seuraavan viikon päivämäärän
+```
 
-puts uusi_paivamaara
-# output: 2020-02-01 11:00:00 +0200
+Lopuksi, voit muuttaa päivämäärää tiettyyn aikavyöhykkeeseen käyttämällä `change`-metodia. Esimerkiksi voit muuttaa päivämäärän UTC-aikavyöhykkeestä Helsinkiin seuraavasti:
 
-# Lasketaan päivämäärä joulukuuhun tänä vuonna
-uusi_paivamaara = tanaan.change(month: 12)
+```Ruby
+Date.today.change(offset: "+03:00") # muuttaa päivämäärän Helsingin aikavyöhykkeelle
+```
 
-puts uusi_paivamaara
-# output: 2020-12-01 11:00:00 +0200
+Voit tulostaa päivämäärän haluamassasi muodossa käyttämällä `strftime`-metodia, joka hyödyntää muotoilukoodia. Alla on esimerkki, joka tulostaa päivämäärän suomalaisessa muodossa:
+
+```Ruby
+Date.today.strftime("%d.%m.%Y") # palauttaa esimerkiksi "23.09.2020"
 ```
 
 ## Syvempi sukellus
 
-`#advance` -metodi hyväksyy lukuisia parametreja, kuten `years`, `weeks` ja `seconds`. Voit myös välittää siihen useita arvoja yhdellä kertaa. Esimerkiksi `tanaan.advance(months: 3, weeks: 2)` laskee päivämäärän 3 kuukautta ja 2 viikkoa eteenpäin tänään.
-
-`#change` -metodi puolestaan antaa sinun muuttaa tiettyä osaa päivämäärästä, kuten kuukautta, päivää tai vuotta. Voit myös yhdistää `#change` ja `#advance` -metodit, jolloin voit laskea päivämäärän esimerkiksi seuraavan tiistain päälle tai edellisen kuukauden ensimmäiselle päivälle.
+Date-luokassa on paljon muitakin hyödyllisiä metodeja, joten suosittelemme tutustumaan Ruby-docsin dokumentaatioon saadaksesi lisätietoja. Muista myös ottaa huomioon aikavyöhykkeet ja niiden vaikutus päivämääriin ohjelmia kirjoittaessasi.
 
 ## Katso myös
 
-- [Ruby dokumentaatio: Time luokka](https://ruby-doc.org/core-2.7.3/Time.html)
-- [Ruby on Rails dokumentaatio: ActiveSupport::TimeWithZone](https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html)
-- [Date ja DateTime luokat](https://ruby-doc.org/stdlib-2.6.3/libdoc/date/rdoc/Date.html)
+- [Ruby-docs: Date-luokka](https://ruby-doc.org/core-2.7.1/Date.html)
+- [A Guide to Working with Date and Time in Ruby](https://www.rubyguides.com/2015/05/working-with-dates/)
+
+Kiitos lukemisesta! Toivottavasti tämä artikkeli auttoi sinua ymmärtämään paremmin miten lasketaan päivämäärä tulevaisuudessa tai menneisyydessä Ruby-ohjelmoinnissa. Muista kokeilla näitä esimerkkejä ja kehittää taitojasi. Onnea ohjelmointiin!

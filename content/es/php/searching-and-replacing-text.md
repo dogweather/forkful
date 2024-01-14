@@ -1,48 +1,65 @@
 ---
-title:    "PHP: Buscar y reemplazar texto"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/searching-and-replacing-text.md"
+title:                "PHP: Buscando y reemplazando texto."
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-¡Hola programadores PHP! ¿Alguna vez te has encontrado con la tarea de buscar y reemplazar texto en tu código? Seguro que sí. Afortunadamente, PHP ofrece una función muy útil para ayudarte con esta tarea. En esta publicación del blog, aprenderás más sobre cómo utilizarla y por qué es importante para tu flujo de trabajo de programación.
+## Por qué
 
-## ¿Por qué?
-
-La función de búsqueda y reemplazo en PHP es una herramienta esencial para cualquier programador. Permite a los usuarios realizar cambios rápidos y eficientes en grandes cantidades de texto. Ya sea para corregir errores tipográficos, actualizar variables o modificar nombres de funciones, esta función es una forma rápida de hacer cambios en el código sin tener que hacerlo manualmente.
+A la hora de escribir código en PHP, a veces es necesario realizar cambios en un texto para mejorar su funcionalidad o corregir errores. Para esto, es importante saber cómo buscar y reemplazar texto de forma eficiente.
 
 ## Cómo hacerlo
 
-¡Vamos a sumergirnos en el código de PHP! A continuación, se muestra un ejemplo de cómo utilizar la función `str_replace` para buscar y reemplazar texto en una cadena:
+Para realizar una búsqueda y reemplazo de texto en PHP, se puede utilizar la función `str_replace()`. Esta función toma tres parámetros: el texto a buscar, el texto de reemplazo y el texto completo donde se realizará la búsqueda. Por ejemplo:
 
 ```PHP
-$texto = "¡Hola Programadores PHP!";
-echo str_replace("PHP", "Python", $texto);
+$texto = "Hola mundo!";
+echo str_replace("mundo", "amigos", $texto);
 ```
 
-Este código primero define una variable `$texto` con una cadena de texto específica. Luego, utiliza la función `str_replace` para buscar la palabra "PHP" en esa cadena y reemplazarla con la palabra "Python". Finalmente, se imprime el resultado de la función, que debería ser "¡Hola Programadores Python!".
+La salida de este código sería "Hola amigos!".
 
-También se puede utilizar la función de búsqueda y reemplazo para hacer cambios en archivos, en lugar de solo en cadenas de texto. Aquí hay un ejemplo de cómo se podría utilizar en un archivo PHP:
+También se pueden utilizar expresiones regulares para realizar búsquedas más específicas. Por ejemplo, para reemplazar todos los números en un texto por un asterisco, se puede utilizar la siguiente expresión regular:
 
 ```PHP
-$file = "texto.php";
-$new_file = str_replace("Hola", "¡Hola", file_get_contents($file));
-file_put_contents("nuevoTexto.php", $new_file);
+$texto = "Este es un texto con números: 12345";
+echo preg_replace("/[0-9]+/", "*", $texto);
 ```
 
-Este código abre un archivo llamado "texto.php" y reemplaza todas las apariciones de la palabra "Hola" con la palabra "¡Hola". Luego, crea un nuevo archivo llamado "nuevoTexto.php" y guarda el resultado en él.
+La salida sería "Este es un texto con números: *****".
 
 ## Profundizando
 
-Además de la función `str_replace`, también hay otras funciones útiles para buscar y reemplazar texto en PHP, como `preg_replace`, que utiliza expresiones regulares para buscar patrones específicos de texto. También se pueden utilizar diferentes parámetros en estas funciones para realizar cambios en diferentes partes de las cadenas de texto y archivos.
+Si se necesita realizar búsquedas y reemplazos más complejos, se puede utilizar la función `preg_replace_callback()`. Esta función permite utilizar una función personalizada para realizar el reemplazo en lugar de un string fijo. Por ejemplo:
 
-Sin embargo, es importante tener en cuenta que estas funciones solo realizan cambios específicos en la cadena de texto o archivo. Si se desea realizar cambios en todas las apariciones de una palabra o patrón, se debe utilizar la función `str_ireplace` en su lugar.
+```PHP
+// Función que toma el primer y último caracter y los intercambia
+function intercambiar($match) {
+  return $match[2] . $match[1];
+}
+
+$texto = "Hola mundo!";
+echo preg_replace_callback("/([a-z]+) ([a-z]+)/i", "intercambiar", $texto);
+```
+
+La salida sería "mundo Hola!".
+
+Otra herramienta útil es `strtr()`, que permite realizar múltiples reemplazos en un solo paso. Por ejemplo:
+
+```PHP
+$texto = "Este es un ejemplo con varios cambios";
+$reemplazos = array("ejemplo" => "texto", "varios" => "muchos");
+echo strtr($texto, $reemplazos);
+```
+
+La salida sería "Este es un texto con muchos cambios".
 
 ## Ver también
 
-- [Documentación oficial de PHP sobre la función `str_replace`](https://www.php.net/manual/es/function.str-replace.php)
-- [Ejemplos de uso de la función `str_replace`](https://www.w3schools.com/php/func_string_str_replace.asp)
-- [Documentación oficial de PHP sobre la función `preg_replace`](https://www.php.net/manual/es/function.preg-replace.php)
-
-¡Eso es todo por ahora, programadores PHP! Esperamos que hayan encontrado útil esta publicación sobre cómo buscar y reemplazar texto en PHP. ¡Sigue practicando y mejorando tus habilidades de programación!
+- [Documentación oficial de str_replace() en PHP.net](https://www.php.net/manual/es/function.str-replace.php)
+- [Información sobre expresiones regulares en PHP](https://www.php.net/manual/es/reference.pcre.pattern.syntax.php)
+- [Documentación oficial de preg_replace_callback() en PHP.net](https://www.php.net/manual/es/function.preg-replace-callback.php)
+- [Más información sobre la función strtr() en PHP.net](https://www.php.net/manual/es/function.strtr.php)

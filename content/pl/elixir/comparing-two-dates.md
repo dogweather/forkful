@@ -1,47 +1,56 @@
 ---
-title:    "Elixir: Porównywanie dwóch dat"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/comparing-two-dates.md"
+title:                "Elixir: Porównywanie dwóch dat"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czas jest jednym z najważniejszych elementów w każdym języku programowania, ponieważ wiele aplikacji korzysta z daty i czasu do wykonywania różnych operacji. Dlatego porównywanie dwóch różnych dat może być bardzo pomocne w wielu scenariuszach. W tym artykule dowiesz się, jak to zrobić w Elixirze.
+Porównywanie dwóch dat może być bardzo przydatne w programowaniu, ponieważ pozwala na wykrycie różnic w czasie i podejmowanie odpowiednich działań w zależności od wyniku porównania. Na przykład, jeśli chcemy sprawdzić, czy dana data jest wcześniejsza lub późniejsza niż inna data, możemy użyć porównania dat.
 
 ## Jak to zrobić
 
-Aby porównać dwie daty w Elixirze, musimy najpierw skonwertować je na typ Date. Można to zrobić za pomocą funkcji ```Elixir Date.from_iso8601("YYYY-MM-DD")```. Następnie możemy użyć operatorów porównania, takich jak ```<```, ```>```, ```<=```, ```>=``` do porównania dwóch dat.
+Możemy użyć modułu Elixir `Date` do porównania dwóch dat. Przykładowo, chcemy porównać datę urodzenia z dzisiejszą datą i sprawdzić, czy osoba jest już pełnoletnia. Oto przykład kodu:
 
-Przykład:
+```elixir
+today = Date.utc_today()
+birth_date = Date.new(1990, 10, 10)
 
-```Elixir
-first_date = Date.from_iso8601("2021-01-01")
-second_date = Date.from_iso8601("2021-02-15")
-
-IO.puts(first_date < second_date) # true
+if birth_date > today do
+  IO.puts("Ta osoba nie jest jeszcze pełnoletnia")
+elsif birth_date < today do
+  IO.puts("Ta osoba jest już pełnoletnia")
+else
+  IO.puts("Ta osoba ma dzisiaj urodziny!")
+end
 ```
 
-Możemy również użyć funkcji ```Elixir Date.compare/2```, aby otrzymać wynik porównania jako liczba całkowita, co jest przydatne, gdy chcemy porównywać daty z różnych stref czasowych.
+Powyższy kod używa funkcji `>`, `>=`, `<`, `<=`, aby porównać dwie daty. Pamiętaj, aby użyć funkcji `utc_today()` do uzyskania dzisiejszej daty w strefie czasowej UTC.
 
-Przykład:
+Możemy również użyć biblioteki `Timex` do bardziej zaawansowanych operacji na datach, takich jak porównywanie tylko części dat, np. miesiąca lub dnia. Przykładowo:
 
-```Elixir
-first_date = Date.from_iso8601("2020-12-01")
-second_date = Date.from_iso8601("2021-01-15")
+```elixir
+today = Timex.today()
+next_month = Timex.shift(today, months: 1)
 
-IO.puts(Date.compare(first_date, second_date)) # -1 (pierwsza data jest wcześniejsza)
+if Timex.date_part(today, :month) > Timex.date_part(next_month, :month) do
+  IO.puts("Jeszcze nie minął miesiąc")
+else
+  IO.puts("Minął już miesiąc")
+end
 ```
 
-## Deep Dive
+## Głębszy zanurzenie
 
-W Elixirze, porównywanie dwóch dat jest możliwe dzięki zaimplementowaniu protokołu ```Elixir Comparable``` przez typ ```Elixir Date```. Dzięki temu możemy używać operatorów porównania, takich jak ```<```, ```>```, itp., ale także funkcji takich jak ```Elixir Date.min/2``` i ```Elixir Date.max/2```, aby znaleźć odpowiednio najwcześniejszą lub najpóźniejszą datę.
+Elixir i biblioteka Timex oferują wiele funkcji do porównywania dat. Możemy na przykład użyć funkcji `is_same?(datetime1, datetime2, time_unit)`, aby sprawdzić, czy dwie daty są takie same w wybranej jednostce czasu. Dostępne jednostki to m.in. rok, miesiąc, dzień, godzina, minuta, sekunda. Więcej informacji znajdziesz w dokumentacji modułu `Timex`.
 
-Kiedy porównujemy dwie daty w Elixirze, porównujemy tylko ich daty, a nie również godziny i minuty. Jeśli chcesz porównać daty z godzinami, musisz użyć typu ```Elixir DateTime```.
+Możemy również porównywać daty w strefach czasowych, korzystając z funkcji `shift_zone(datetime, zone)`, która przesuwa datę do wybranej strefy czasowej.
 
-## Zobacz także
+## Zobacz również
 
-- Dokumentacja Elixir Date: https://hexdocs.pm/elixir/Date.html
-- Porównywanie wartości w Elixirze: https://elixirschool.com/pl/lessons/basics/comparisons/
-- Porównywanie dat w innych językach programowania: https://www.techiedelight.com/compare-dates-in-programming-languages/
+- [Dokumentacja modułu Date w Elixirze](https://hexdocs.pm/elixir/Date.html)
+- [Dokumentacja biblioteki Timex](https://hexdocs.pm/timex/readme.html)
+- [Porównywanie dat w Elixirze - artykuł na blogu Elixir Mastery](https://elixirmastery.com/blog/date-comparison-in-elixir/)

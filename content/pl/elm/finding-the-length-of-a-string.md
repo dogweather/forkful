@@ -1,34 +1,53 @@
 ---
-title:    "Elm: Znajdowanie długości ciągu znaków"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/finding-the-length-of-a-string.md"
+title:                "Elm: Znajdując długość ciągu znaków"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Programowanie może wydawać się trudne, ale dzięki językowi programowania Elm może być łatwiejsze niż się wydaje. Dlatego mieszkańcy Polski powinni zacząć poznawać ten język programowania, a w dzisiejszym wpisie opowiem o tym, jak znaleźć długość ciągu znaków w Elm.
+
+Dlaczego chcielibyśmy znaleźć długość ciągu znaków? To proste - jest to podstawowa umiejętność w programowaniu, która jest niezbędna do rozwiązywania wielu różnych problemów. W tym artykule dowiemy się, jak znaleźć długość ciągu znaków w Elm i przedstawimy kilka przydatnych przykładów.
 
 ## Jak to zrobić
-Aby znaleźć długość ciągu znaków w Elm, musimy użyć funkcji `String.length`, która zwraca liczbę znaków w danym ciągu. Przykładowo, jeśli mamy ciąg znaków "Elm", to `String.length "Elm"` zwróci wartość 3.
+
+Aby znaleźć długość ciągu znaków w Elm, musimy użyć funkcji `String.length`. Wygląda to następująco:
 
 ```Elm
-String.length "Elm" -- 3
+String.length "Hello World!" -- 12
 ```
 
-Możemy również użyć tej funkcji w połączeniu z innymi funkcjami dla bardziej skomplikowanych zadań. Na przykład, jeśli chcemy sprawdzić, czy długość ciągu znaków przekracza 10, możemy użyć funkcji `String.length` razem z funkcją `>` (większe od). Poniżej znajduje się przykładowy kod i jego wynik:
+Funkcja ta zwraca liczbę znaków w podanym ciągu, w tym przypadku jest to 12. Dzięki temu prostemu przykładowi możemy już wiedzieć, jak używać tej funkcji w naszych programach.
+
+W przypadku, gdy chcemy znaleźć długość ciągu znaków zapisanego w zmiennej, musimy najpierw przypisać ten ciąg do zmiennej, a następnie użyć funkcji `String.length` na tej zmiennej. Przykład:
 
 ```Elm
-String.length "Elm language" > 10 -- True
-String.length "Programming" > 10 -- False
+let message = "To jest przykładowa wiadomość!"
+String.length message -- 29
 ```
 
-## Głębsze zanurzenie
-Aby lepiej zrozumieć, jak działa funkcja `String.length` w Elm, warto przyjrzeć się jej definicji w dokumentacji języka. Dokumentacja podaje, że funkcja ta bazuje na metodzie `.length` z języka JavaScript, ale jest ona dostosowana do działania w Elm.
+Możemy również użyć tej funkcji wewnątrz innych wyrażeń, na przykład w warunkowym wyrażeniu `if...then`:
 
-Zwróć uwagę, że funkcja `String.length` nie liczy jedynie liter w ciągu, ale również liczby znaków UTF-8 zawartych w tym ciągu. To oznacza, że w ciągu znaków mogą występować zarówno litery, jak i znaki specjalne i emoji, a funkcja `String.length` poprawnie określi długość takiego ciągu.
+```Elm
+if String.length "Hello" > 5 then "Zbyt długi ciąg!" else "Wszystko w porządku!"
+```
+
+W tym przypadku, jeśli długość ciągu "Hello" jest większa niż 5, zostanie zwrócony napis "Zbyt długi ciąg!", w przeciwnym wypadku zostanie zwrócony napis "Wszystko w porządku!".
+
+## Głębsza analiza
+
+Oprócz prostego użycia funkcji `String.length`, warto również wiedzieć, że ta funkcja liczy także whitespaces (spacje, tabulacje itp.) jako znaki. Dzięki temu możemy uzyskać dokładną liczbę znaków w ciągu, nawet jeśli zawiera on puste miejsca.
+
+Ponadto, jeśli chcemy sprawdzić, czy długość ciągu wynosi 0, możemy użyć funkcji `String.isEmpty`, która zwraca wartość boolean (true lub false) w zależności od wyniku.
 
 ## Zobacz również
-- [Dokumentacja Elm - String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Dlaczego warto uczyć się Elm](https://elm-lang.org/)
-- [Elm w praktyce - przykłady zastosowań](https://medium.com/@selleo/5x-why-elm-should-power-your-next-big-thing-fba63b3c7434)
+
+Zapoznaj się również z innymi przydatnymi funkcjami do pracy z ciągami znaków w Elm:
+
+- `String.reverse` - odwraca ciąg znaków
+- `String.contains` - sprawdza, czy podany ciąg zawiera się w innym ciągu
+- `String.split` - dzieli ciąg na podciągi na podstawie podanego separatora
+
+Zachęcamy również do zapoznania się z dokumentacją języka Elm, gdzie znajduje się pełna lista funkcji do pracy z ciągami znaków: https://package.elm-lang.org/packages/elm/core/latest/String

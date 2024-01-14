@@ -1,51 +1,80 @@
 ---
-title:    "Swift: Zusammenfügen von Zeichenketten"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/concatenating-strings.md"
+title:                "Swift: Verknüpfen von Zeichenketten"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Strings zu verketten ist eine häufig verwendete Methode in der Swift Programmierung. Durch die Zusammensetzung von mehreren Strings zu einem neuen wird es einfacher, Informationen zusammenzufügen und sie später wiederzufinden.
 
-Wenn du in der Swift Programmiersprache arbeitest, wirst du wahrscheinlich irgendwann auf die Notwendigkeit stoßen, mehrere Strings miteinander zu verbinden. Das kann zum Beispiel beim Erstellen von Benutzerinteraktionen oder beim Zusammenfügen von Benutzer- und Systemdaten nützlich sein. In diesem Blogbeitrag werde ich dir zeigen, wie du einfach und effektiv Strings in Swift zusammenfügen kannst.
+## Wie man es macht
+Es gibt verschiedene Möglichkeiten, Strings in Swift zu verkettet. Eine Möglichkeit ist die Verwendung des "+" Operators:
 
-## Wie geht das?
+```Swift
+let name = "Max"
+let age = 25
 
-Die einfachste Methode zum Zusammenfügen von Strings in Swift ist die Verwendung des `+` Operators. Schauen wir uns ein Beispiel an:
+let greeting = "Hallo, mein Name ist " + name + " und ich bin " + String(age) + " Jahre alt."
+print(greeting)
+```
+Output: Hallo, mein Name ist Max und ich bin 25 Jahre alt.
 
-```Swift 
-let name = "Sophia"
-let profession = "Programmiererin"
-let phrase = name + " ist eine erfolgreiche " + profession.
+Eine andere Möglichkeit ist die Verwendung der `string interpolation`, bei der Werte in einen String eingefügt werden:
+
+```Swift
+let name = "Anna"
+let age = 27
+
+let greeting = "Hallo, mein Name ist \(name) und ich bin \(age) Jahre alt."
+print(greeting)
 ```
 
-Das Ergebnis der Variable `phrase` ist "Sophia ist eine erfolgreiche Programmiererin". Wie du sehen kannst, werden die einzelnen Strings einfach hintereinander angehängt.
+Output: Hallo, mein Name ist Anna und ich bin 27 Jahre alt.
 
-Eine weitere Möglichkeit ist die Verwendung von String Interpolation. Dabei werden Variablen direkt in einen String eingebettet, indem sie von einem BACKSLASH gefolgt werden. Schauen wir uns ein Beispiel an:
+Man kann auch Strings mit der `append()` Funktion aneinanderreihen:
 
-```Swift 
-let age = 28
-let info = "Sophia ist \(age) Jahre alt."
+```Swift
+var greeting = "Willkommen"
+let name = "Sara"
+
+greeting.append(", \(name)!")
+
+print(greeting)
 ```
 
-Das Ergebnis der Variable `info` ist "Sophia ist 28 Jahre alt." Hier wird die Variable `age` direkt in den String eingefügt, ohne dass der `+` Operator verwendet werden muss.
+Output: Willkommen, Sara!
 
-## Deep Dive
+## Tiefer eintauchen
+Es gibt noch einige weitere Funktionen und Möglichkeiten, Strings in Swift zu verkettet. Zum Beispiel kann man mit der `joined()` Funktion Arrays von Strings zu einem String zusammenfassen:
 
-Wenn du noch tiefer in das Thema des Zusammenfügens von Strings in Swift eintauchen möchtest, gibt es noch einige weitere interessante Möglichkeiten. Zum Beispiel kannst du mit der `+=` Operator auch Strings aneinanderhängen, anstatt sie neu zu initialisieren.
+```Swift
+let fruits = ["Apfel", "Banane", "Kirsche"]
+let fruitString = fruits.joined(separator: ", ")
 
-Außerdem bietet Swift eine praktische Funktion namens `joined(separator:)`, mit der du ein Array von Strings mit einem bestimmten Trennzeichen verbinden kannst. Schauen wir uns ein Beispiel an:
-
-```Swift 
-let hobbies = ["Klettern", "Reisen", "Programmieren"]
-let hobbyList = hobbies.joined(separator: ", ")
+print("Meine Lieblingsfrüchte sind: \(fruitString).")
 ```
 
-Das Ergebnis der Variable `hobbyList` ist "Klettern, Reisen, Programmieren". Hier wurde jede der Hobbys im Array durch ein Komma und ein Leerzeichen getrennt.
+Output: Meine Lieblingsfrüchte sind: Apfel, Banane, Kirsche.
+
+Außerdem gibt es in Swift auch die Möglichkeit, Strings mit dem `+=` Operator zu verkettet. Hier ein Beispiel:
+
+```Swift
+var greeting = "Guten Tag"
+let name = "Thomas"
+
+greeting += ", \(name)!"
+
+print(greeting)
+```
+
+Output: Guten Tag, Thomas!
+
+Es ist auch wichtig zu beachten, dass Strings in Swift unveränderlich sind. Das bedeutet, dass wenn man einen String verkettet oder ändert, ein neuer String erzeugt wird und der ursprüngliche String unverändert bleibt.
 
 ## Siehe auch
-
-- [Offizielle Swift Dokumentation zum Zusammenfügen von Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID285)
-- [Swift-Tutorial: Einführung in Strings](https://www.raywenderlich.com/11520-swift-tutorial-a-quick-start)
-- [Interpolation in Swift](https://www.swiftbysundell.com/articles/string-interpolation-in-swift/)
+- [Offizielles Swift Dokumentation zu Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Häufige Fehler beim Arbeiten mit Strings in Swift](https://medium.com/@bobgodwinx/10-mistakes-swift-string-programmers-make-94e2f46f807e)
+- [Tutorial zu Strings in Swift](https://medium.com/@shasheenee/swift-strings-how-to-e24ce946341c)

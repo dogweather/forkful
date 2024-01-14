@@ -1,45 +1,58 @@
 ---
-title:    "Java: Tekstin etsiminen ja korvaaminen"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/searching-and-replacing-text.md"
+title:                "Java: Tekstin etsiminen ja korvaaminen"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Tekstin etsiminen ja korvaaminen ovat olennainen osa Java-ohjelmointia. Ne mahdollistavat tietyn merkkijonon tai sanan korvaamisen toisella halutulla merkkijonolla, mikä auttaa esimerkiksi korjaamaan oikeinkirjoitusvirheitä tai muuttamaan vanhoja tekstejä uudempaan muotoon. Tämä blogipostaus opastaa, miten voit tehdä tämän kätevästi Java-koodillasi.
 
-## Näin
-Java-ohjelmoijalla on käytössään muutamia eri metodeja tekstin etsimiseen ja korvaamiseen. Yksi näistä metodeista on `replaceAll()`-metodi, jonka avulla voit korvata kaikki halutut merkkijonot toisilla merkkijonoilla haluamallasi tavalla.
+Monissa Java-ohjelmoinnin projekteissa, on tarpeen etsiä ja korvata tekstiä tietyistä tiedostoista tai tietokannoista. Tämä helpottaa tekstin muokkaamista ja parantaa ohjelman suorituskykyä.
 
-Esimerkiksi, jos haluat korvata kaikki "kissa"-sanan esiintymät tekstin sisällä "koira"-sanalla, voit käyttää seuraavaa koodia:
+## Miten tehdä
 
-```Java
-String teksti = "Tänään näin pienen kissan puistossa.";
-String uusiTeksti = teksti.replaceAll("kissa", "koira");
-System.out.println(uusiTeksti);
-```
-
-Tämä koodi tulostaa "Tänään näin pienen koiran puistossa."
-
-Toinen tapa etsiä ja korvata tekstejä on käyttää `replace()`-metodia, joka ottaa vastaan kaksi parametria: vanhan tekstin ja uuden tekstin. Tämän metodin avulla voit korvata vain yhden tietyn merkkijonon kerrallaan.
+Voit käyttää Java-koodia etsimään ja korvaamaan tekstiä helposti. Seuraavassa esimerkissä näet, kuinka yksinkertaisen tiedoston sisältävän tekstin voi etsiä ja korvata. 
 
 ```Java
-String teksti = "Minulla on musta koira.";
-String uusiTeksti = teksti.replace("musta", "valkoinen");
-System.out.println(uusiTeksti);
+String content = "Tervetuloa! Tämä on Java-blogi.";
+String newText = content.replace("Tervetuloa", "Hei");
+
+System.out.println(newText);
+
+// Output: Hei! Tämä on Java-blogi.
 ```
 
-Tämä koodi tulostaa "Minulla on valkoinen koira."
+Voit myös etsiä ja korvata tekstiä tiedostosta käyttämällä Scanner-luokkaa ja File-luokkaa. Seuraava esimerkki näyttää, kuinka voit etsiä tiettyä sanaa ja korvata sen toisella tekstillä. 
 
-Voit myös käyttää `startsWith()`- ja `endsWith()`-metodeja tarkistaaksesi, alkaako tai päättyykö tekstisi tietyllä merkkijonolla. Nämä metodit voivat olla hyödyllisiä esimerkiksi silloin, kun haluat korvata tietyn sanan vain tietyssä kohdassa tekstiä.
+```Java
+Scanner scanner = new Scanner(new File("tiedosto.txt"));
+while (scanner.hasNextLine()) {
+    String line = scanner.nextLine();
+    if (line.contains("Java")) {
+        line = line.replace("Java", "JavaScript");
+    }
+    System.out.println(line);
+}
+```
 
-## Syvällinen sukellus
-Java tarjoaa monia vaihtoehtoja tekstin etsimiseen ja korvaamiseen, ja erilaiset metodit sopivat erilaisiin tilanteisiin. On tärkeää pohtia, mikä metodi sopii parhaiten juuri omaan tarkoitukseesi. Lisäksi voit käyttää myös säännöllisiä lausekkeita tarkemman tekstin etsimisen ja korvaamisen kanssa.
+Jos haluat löytää ja korvata tekstiä tietokannasta, voit käyttää SQL-kyselyitä. Tässä esimerkissä korvaamme kaikki "John" nimiset henkilöt taulukossa "asiakkaat" nimellä "Juhani". 
 
-Muistathan myös aina testata koodisi erilaisilla syötteillä ja tarkistaa, että haluttu tulos saavutetaan.
+```Java
+String query = "UPDATE asiakkaat SET nimi = 'Juhani' WHERE nimi = 'John'";
+Statement statement = connection.createStatement();
+int rowsUpdated = statement.executeUpdate(query);
+System.out.println("Updated " + rowsUpdated + " rows.");
+```
+
+## Syvällinen tarkastelu
+
+Java tarjoaa monia erilaisia tapoja etsiä ja korvata tekstiä, sekä erilaisia käyttötarkoituksia kuten tiedostot, tietokannat tai käyttäjän syöttämä teksti. On tärkeää ymmärtää eri vaihtoehdot ja valita sopivin tapa sen mukaan minkä tyyppistä tekstiä haluat etsiä ja korvata. Samalla on myös hyvä ottaa huomioon ohjelman suorituskyky sekä turvallisuus.
 
 ## Katso myös
-- [Oracle Java-tietojenkäsittelyopas](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)
-- [Java String-luokan dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Säännölliset lausekkeet Java:ssa](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+
+- [Java String.replace()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-java.lang.CharSequence-java.lang.CharSequence-)
+- [Java Scanner-luokka](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
+- [Java File-luokka](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Java SQL-kyselyt](https://docs.oracle.com/javase/tutorial/jdbc/basics/processingsqlstatements.html)

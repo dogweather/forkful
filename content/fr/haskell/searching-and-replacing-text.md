@@ -1,47 +1,40 @@
 ---
-title:    "Haskell: Recherche et remplacement de texte"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/searching-and-replacing-text.md"
+title:                "Haskell: Recherche et remplacement de texte"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
+Lorsque vous programmez en Haskell, vous pourriez avoir à effectuer des recherches et des remplacements de texte dans votre code. Cela peut sembler fastidieux, mais heureusement, Haskell a des fonctions intégrées pour vous aider à le faire efficacement. Découvrez comment effectuer des recherches et des remplacements de texte en Haskell!
 
-La recherche et le remplacement de texte sont des tâches courantes en programmation. Que ce soit pour corriger des erreurs dans un code existant ou pour effectuer des modifications massives sur un grand nombre de fichiers, cette fonctionnalité est essentielle pour tout développeur.
-
-# Comment faire
-
-Il existe différentes façons de rechercher et de remplacer du texte en Haskell, mais nous allons nous concentrer sur l'utilisation de la fonction `substitute` du module `Text.Regex.TDFA`.
+## Comment faire
+La fonction de base pour effectuer des recherches et des remplacements de texte en Haskell est `replace`. Elle prend en entrée un motif de recherche, une chaîne de remplacement et un texte dans lequel effectuer la recherche. Voici un exemple simple:
 
 ```Haskell
-import Text.Regex.TDFA
-
-replaceText :: String -> String -> String -> String
-replaceText regex replacement input =
-    let replaced = substitute (makeRegex regex) replacement input
-    in case replaced of
-        Just result -> result
-        Nothing -> input
+replace "chat" "chien" "J'aime les chats"
 ```
 
-Dans l'exemple ci-dessus, nous utilisons la fonction `substitute` pour rechercher et remplacer du texte dans une chaîne de caractères donnée. Nous utilisons également la fonction `makeRegex` pour créer une expression régulière à partir d'une chaîne de caractères donnée. Enfin, nous utilisons le mot-clé `case` pour gérer le cas où le remplacement ne peut pas être effectué correctement.
+Cela renverra la chaîne de texte "J'aime les chiens". Notez que cela ne modifie pas directement la chaîne de texte originale, cela renvoie plutôt une nouvelle chaîne avec les modifications. 
 
-Voici un exemple de sortie pour la chaîne de caractères `"Bonjour, le monde !"` avec regex `monde` et remplacement `univers` :
+On peut également utiliser la fonction `replace` sur des listes de caractères en utilisant le type `String` en Haskell. Voici un exemple:
 
+```Haskell
+replace "H" "Hello" "wrd"
 ```
-Bonjour, le univers !
-```
 
-# Plongée en profondeur
+Cela renverra "HelloHelloello". Vous pouvez également utiliser la fonction de recherche et de remplacement de manière récursive pour effectuer des modifications complexes dans une chaîne de caractères.
 
-En plus de la fonction `substitute`, le module `Text.Regex.TDFA` offre également d'autres fonctions utiles pour effectuer des recherches et des remplacements. Par exemple, la fonction `substituteAll` permet d'effectuer des remplacements multiples dans une chaîne de caractères.
+## Plongée en profondeur
+En plus de la fonction de base `replace`, Haskell offre également d'autres fonctions utiles pour la recherche et le remplacement de texte. Par exemple, `nub` peut être utilisé pour supprimer tous les doublons dans une liste, tandis que `unfold` peut être utilisé pour générer une liste à partir d'une fonction récursive.
 
-De plus, le module `Text.Regex.TDFA` utilise des expressions régulières de type `ByteString` qui offrent de meilleures performances que les expressions régulières de type `String`.
+De plus, vous pouvez également utiliser des expressions régulières pour effectuer des recherches et des remplacements de texte en Haskell en important le module `Text.Regex`. Les expressions régulières sont un outil puissant pour la manipulation de chaînes de caractères et peuvent être utilisées pour des recherches plus complexes.
 
-Il est également possible d'utiliser des expressions régulières avancées telles que les groupes de capture et les modificateurs pour effectuer des recherches et des remplacements plus complexes.
+Vous pouvez également utiliser des fonctions de manipulation de chaînes de caractères telles que `take` et `drop` pour extraire des parties spécifiques d'une chaîne de texte avant de la modifier avec la fonction `replace`.
 
-# Voir aussi
-
-- [Documentation du module `Text.Regex.TDFA`](https://hackage.haskell.org/package/regex-tdfa/docs/Text-Regex-TDFA.html)
-- [Guide de référence sur les expressions régulières en Haskell](https://wiki.haskell.org/Regular_expressions)
+## Voir aussi
+- [Documentation sur les fonctions de manipulation de chaînes de caractères en Haskell](http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html#g:23)
+- [Tutoriel sur l'utilisation d'expressions régulières en Haskell](https://www.tutorialspoint.com/haskell/haskell_regular_expressions.htm)
+- [Exemples pratiques d'utilisation de fonctions de manipulation de chaînes en Haskell](https://blog.infinitenegativeutility.com/2014/5/haskell-lists-strings-and-matching)

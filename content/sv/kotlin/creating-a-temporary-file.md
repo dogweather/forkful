@@ -1,34 +1,51 @@
 ---
-title:    "Kotlin: Skapa en temporär fil"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/creating-a-temporary-file.md"
+title:                "Kotlin: Skapa en tillfällig fil"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att skapa en tillfällig fil kan vara användbart när man tillfälligt behöver lagra data eller skapa en temporär plats för att utföra en viss uppgift. Det är också ett sätt att hålla sin kod ren och organisera temporära filer på ett effektivt sätt.
+## Varför?
 
-## Hur
-För att skapa en temporär fil i Kotlin kan man använda sig av klassen `java.io.File` och metoderna `createTempFile()` för att skapa en ny fil och `deleteOnExit()` för att radera filen när programmet avslutas. Se nedan för ett exempel:
+Att skapa en tillfällig fil kan vara en viktig del av många Kotlin-programmerares arbetsflöde. Det kan hjälpa till att hantera filer på ett effektivt sätt genom att skapa en temporär lagringsplats för data som behöver bearbetas, sorteras eller manipuleras innan de sparas permanent.
+
+## Hur man gör det
+
+Det finns ett enkelt sätt att skapa en tillfällig fil i Kotlin med hjälp av standardbiblioteket. Först måste vi importera "java.io" paketet och sedan använda "createTempFile()" metoden på den "File" klassen.
 
 ```Kotlin
+import java.io.*
+
 val tempFile = File.createTempFile("temp", ".txt")
-tempFile.deleteOnExit()
-println("Temporär fil skapad med namn " + tempFile.name)
+println(tempFile.absolutePath)
 ```
-Output:
-```
-Temporär fil skapad med namn temp2360808707802368133.txt
-```
-I exemplet ovan skapas en temporär fil med prefixet "temp" och suffixet ".txt". När programmet stängs kommer filen att raderas automatiskt.
 
-## Djupdykning
-Förutom att skapa temporära filer med `createTempFile()` finns det också möjlighet att skapa temporära kataloger med metoden `createTempDirectory()`. Det finns också olika sätt att hantera filens livscykel, såsom att ändra dess behörigheter och skapa en temporär fil med ett specifikt innehåll.
+I det här exemplet använder vi metoden för att skapa en temporär textfil med ett slumpmässigt genererat namn, och sedan skriver ut den fullständiga sökvägen till filen. Detta är användbart om vi vill manipulera filen eller spara den på en specifik plats.
 
-För en mer detaljerad förklaring och fler exempel, se Kotlin dokumentationen för `java.io.File` eller andra resurser på nätet.
+### Utmatning:
+
+`C:\Users\Namn\AppData\Local\Temp\temp3007607233760854608.txt`
+
+## Fördjupning
+
+När du skapar en tillfällig fil i Kotlin är det alltid bra att tänka på filens livscykel och när den ska tas bort. Det är viktigt att föra in en try-finally kod som tar bort den tillfälliga filen när det behövs.
+
+```Kotlin
+import java.io.*
+
+val tempFile = File.createTempFile("temp", ".txt")
+try {
+    // gör något med den temporära filen
+} finally {
+    tempFile.delete()
+}
+```
+
+Detta ser till att den tillfälliga filen tas bort även om det uppstår ett fel under bearbetningen.
 
 ## Se även
-- [Kotlin dokumentation - java.io.File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html)
-- [Översikt av Kotlin filhantering](https://www.programiz.com/kotlin-programming/files)
-- [Skapa och hantera temporära filer i Kotlin](https://www.baeldung.com/kotlin-temporary-file)
+
+- Officiell dokumentation för "java.io.File" klassen: https://docs.oracle.com/javase/7/docs/api/java/io/File.html
+- "createTempFile()" metoden för att skapa tillfälliga filer: https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile%28java.lang.String,%20java.lang.String%29

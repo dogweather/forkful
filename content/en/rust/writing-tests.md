@@ -1,71 +1,51 @@
 ---
-title:    "Rust recipe: Writing tests"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/writing-tests.md"
+title:                "Rust recipe: Writing tests"
+programming_language: "Rust"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Writing tests is an essential part of the development process in any programming language, including Rust. It ensures that our code is functioning correctly and helps us catch any potential bugs or errors. By taking the time to write tests, we can save ourselves from encountering unexpected issues in our code down the line.
+Writing tests is an essential aspect of programming that ensures the reliability and functionality of our code. It allows us to catch bugs early on and make sure our code works as intended. In the long run, it saves time and effort and improves the overall quality of our projects.
 
 ## How To
 
-To write tests in Rust, we will be using the built-in Rust testing framework called `cargo test`. This framework allows us to run and manage our tests easily. Let's create a simple test for a function that adds two numbers together. 
+To write tests in Rust, we will be using the `assert!` macro from the standard library. This macro takes in a boolean expression and prints an error message if the expression evaluates to false. Let's see an example:
 
-```
-Rust
-fn add(x: i32, y: i32) -> i32 {
-    x + y
+```Rust
+fn add(a: i32, b: i32) -> i32 {
+    a + b
 }
 
+// simple test to check if the function correctly adds two numbers
 #[test]
 fn test_add() {
-    let result = add(3, 4);
-    assert_eq!(result, 7);
+    let result = add(5, 10);
+    assert!(result == 15, "5 + 10 should equal 15, but got {}", result);
 }
 ```
 
-In this example, we have created a function called `add` that takes in two `i32` integers and returns their sum. The `#[test]` annotation indicates that this is a test, and the `assert_eq!` macro checks if the `result` is equal to the expected output `7`. 
+In this `test_add` function, we first call our `add` function with two numbers and store the result in a variable. Then, we use the `assert!` macro to check if the result is equal to 15. If not, the error message will be printed along with the actual value of the result. The `#[test]` attribute tells the compiler to treat this function as a test.
 
-To run this test, we can use the command `cargo test` in our terminal. If all goes well, we should see a message saying `test test_add ... ok`.
+We can also use the `assert_eq!` macro to check for equality between two values, and the `assert_ne!` macro to check for inequality. Additionally, we can use the `should_panic` attribute to test for expected panics in our code. These are just a few examples, but there are many more testing tools available in Rust.
 
 ## Deep Dive
 
-Now that we have a basic understanding of writing tests in Rust, let's dive deeper into some useful features and tips.
+In Rust, tests are usually placed in a different directory `tests` than the rest of the codebase. This is to keep the tests separate from the actual code and to prevent them from being included in the compiled code.
 
-### Structuring Tests
+Tests in Rust follow the same naming convention as functions, starting with `test_` and being snake case. Each test function should only test one specific aspect of our code, making it easier to identify and fix bugs.
 
-In our previous example, we used the `#[test]` annotation to indicate that this is a test function. We can also use the `#[cfg(test)]` attribute on our test module to let the compiler know that the modules only contain test code. This way, we prevent our test code from building in our final executable.
-
-### Testing Error Cases
-
-We can also use the `assert!` macro to test our functions that are expected to return an error. For example, if we have a function that divides two numbers, and we want to test if it returns an error when the second number is zero.
-
-```
-Rust
-fn divide(x: f32, y: f32) -> Result<f32, String> {
-    if y == 0.0 {
-        Err("Cannot divide by zero!".to_string())
-    } else {
-        Ok(x / y)
-    }
-}
-
-#[test]
-fn test_divide() {
-    let result = divide(5.0, 0.0);
-    assert!(result.is_err());
-}
-```
-
-### Integration Testing
-
-In addition to unit testing, we can also write integration tests that test the interaction between different modules and components in our code. We can do this by creating a `tests` directory and placing our integration test files inside it. These tests will be run separately from our unit tests by using the command `cargo test --tests`.
+Apart from unit tests, we can also write integration tests in Rust. These tests are placed in a separate `tests` directory and interact with our code as an external user would. This allows us to test the entire functionality of our code from a user's perspective.
 
 ## See Also
 
-- [The Rust Book: Chapter 11 - Automated Tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Rust By Example: Testing](https://doc.rust-lang.org/stable/rust-by-example/testing.html)
-- [Rust Testing Guide](https://rust-lang-nursery.github.io/rust-cookbook/testing.html)
+For more information on writing tests in Rust, check out these resources:
+
+- [Rust Book - Writing Automated Tests](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
+- [Rust by Example - Testing](https://doc.rust-lang.org/rust-by-example/testing.html)
+- [Testing in Rust with `assert!`, `assert_eq!`, and `assert_ne!`](https://www.snoyman.com/blog/2014/12/rust-testing)
+
+Now that you have an understanding of how to write tests in Rust, go ahead and start implementing them in your projects to improve your code's reliability and quality. Happy testing!

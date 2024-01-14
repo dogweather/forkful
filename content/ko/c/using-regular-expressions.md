@@ -1,63 +1,53 @@
 ---
-title:    "C: 정규식을 사용하는 법"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c/using-regular-expressions.md"
+title:                "C: 일반 표현식 사용하기"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 정규식을 사용해야 할까요?
+## 왜 정규 표현식을 사용해야 할까요?
 
-C 프로그래밍에서 정규식은 매우 유용한 도구입니다. 정규식을 사용하면 검색 및 대체 기능을 포함하여 문자열을 처리하는 데 매우 유용합니다. 이것은 특히 데이터를 다루거나 패턴을 추출해야 할 때 유용합니다.
+정규 표현식은 C 프로그래머들에게 매우 유용한 도구입니다. 이를 사용하면 문자열에서 원하는 패턴을 쉽게 찾을 수 있으며, 코드를 줄이고 가독성을 높여줍니다. 또한 많은 언어와 프로그램에서도 지원되는 범용적인 도구로서, 다양한 상황에서 유용하게 사용할 수 있습니다.
 
 ## 사용 방법
 
-정규식을 사용하기 위해 여러분은 <regex.h> 헤더 파일을 인클루드해야 합니다. 그리고 다음과 같은 코드를 사용하여 정규식을 컴파일하고 문자열과 비교할 수 있습니다.
+정규 표현식을 사용하기 위해서는 `regex.h` 라이브러리를 불러와야 합니다. 이후 `regex_t` 구조체와 `regmatch_t` 구조체를 선언해줍니다. 그리고 `regcomp()` 함수를 이용하여 패턴을 컴파일하고, `regexec()` 함수를 이용하여 문자열에서 패턴을 검색할 수 있습니다. 예제 코드를 통해 쉽게 이해해봅시다.
 
 ```C
 #include <stdio.h>
 #include <regex.h>
 
 int main() {
-    // 정규식을 컴파일합니다.
-    regex_t regex;
-    int ret = regcomp(&regex, "Hello [Ww]orld", 0);
-    if (ret != 0) {
-        // 정규식 컴파일 중 오류가 발생했습니다.
-        printf("정규식 컴파일 오류!\n");
-        return 1;
-    }
+    regex_t regex; // regex_t 구조체 선언
+    regmatch_t match[1]; // regmatch_t 구조체 선언. 여러 패턴을 찾을 때는 배열로 선언.
 
-    // 문자열을 검색합니다.
-    char* text = "Hello World";
-    ret = regexec(&regex, text, 0, NULL, 0);
-    if (ret == 0) {
-        printf("'%s'는 정규식과 일치합니다.\n", text);
-    } else {
-        printf("'%s'는 정규식과 일치하지 않습니다.\n", text);
-    }
+    char *str = "My email is abc@def.com"; // 검색할 문자열
 
-    // 정규식 객체를 해제합니다.
-    regfree(&regex);
+    // 패턴 컴파일
+    regcomp(&regex, "[a-z]+@[a-z]+\\.com", 0); 
+
+    // 문자열에서 패턴 검색
+    regexec(&regex, str, 1, match, 0); 
+
+    // 패턴에 일치하는 결과 출력
+    printf("%.*s\n", (int)(match[0].rm_eo - match[0].rm_so), &str[match[0].rm_so]); 
+    // 출력 결과: abc@def.com
+
+    // regex 구조체 메모리 해제
+    regfree(&regex); 
 
     return 0;
 }
 ```
 
-위 코드의 결과는 다음과 같습니다.
+위 예제 코드에서 사용한 패턴은 이메일 주소를 검색하는 것이며, `[a-z]+@[a-z]+\\.com`와 같이 정규 표현식으로 표현됩니다. 이 부분을 원하는 패턴으로 수정하여 사용하면 됩니다.
 
-```
-'Hello World'는 정규식과 일치합니다.
-```
+## 더 깊게 들어가보기
 
-위에서 사용된 정규식은 "Hello World"라는 문자열과 일치하므로 출력 결과가 "정규식과 일치합니다."가 됩니다.
+정규 표현식에는 다양한 특수 문자가 존재하며, 각각의 의미와 사용법을 알고 있어야 더욱 효율적으로 사용할 수 있습니다. 예를 들어, `.`는 문자 하나를 나타내는 특수 문자입니다. 이를 이용하여 `ba.`는 `bag`, `bad`, `ban`과 같이 마지막에 `a`가 있는 단어를 찾을 수 있습니다. 또한 `*`는 `*`앞의 문자가 0번 이상 반복됨을 나타내며, `+`는 1번 이상 반복됨을 나타냅니다.
 
-## 깊이 들어가기
+또한, `|`을 이용하면 여러 패턴 중 하나에 일치하는 문자열을 찾을 수 있습니다. 예를 들어, `ba|ca`는 `ba` 또는 `ca`에 일치하는 문자열을 찾을 수 있습니다.
 
-정규식을 사용하는 데에는 많은 내용이 있지만 여기서는 단순히 기본적인 사용 방법만을 다뤄보았습니다. 정규식은 패턴 매칭, 대체 및 추출에 유용하지만 패턴을 작성하는 것은 쉽지 않을 수 있습니다. 따라서 정규식을 배울 때에는 많은 연습과 이해가 필요합니다.
-
-## 참고 자료
-
-- [GladysKnight/cse320-midterm-lecture8-regex.c](https://github.com/GladysKnight/cse320-midterm-lecture8-regex.c): C 언어로 정규식을 사용하는 예제 코드입니다.
-- [GeeksforGeeks: Regular Expressions in C](https://www.geeksforgeeks.org/regular-expressions-in-c/): C 언어에서 정규식을 사용하는 방법에 대한 자세한 설명을 제공합니다.
-- [CReference: <regex.h> - Regular expression handling](https://en.cppreference.com/w/c/regex): C 언어에서 정규식을 다루는 데 필요한 헤더 파일 <regex.h>에 대한 참고 문서입니다.
+정규 표현식의 특수 문자 중에서도 `()`와 `[]`는 매우 유용하게 사용됩니다. `()`는 정규 표현식을 하나의 그룹으로 묶어주는 역할을 하며, `[]`는 그 안에 들어있는 문자 중 하나와 일치하는 것을 찾을 수 있습니다. 예를 들어, `[a-d]`는 `a`, `b`, `c`, `d` 중 하나와 일치

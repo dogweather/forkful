@@ -1,43 +1,58 @@
 ---
-title:    "Bash: 프로그래밍 테스트 작성"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/writing-tests.md"
+title:                "Bash: 테스트 작성하기"
+programming_language: "Bash"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-"## 왜 테스트를 작성해야 하는가?"
+## 왜
 
-테스트 작성은 중요합니다. 우리가 처음부터 완벽한 코드를 작성할 수 없기 때문입니다. 따라서 테스트를 작성함으로써 버그를 미리 예방하고 코드의 안정성을 확보할 수 있습니다. 또한, 테스트를 작성함으로써 코드를 수정하거나 업데이트할 때 실수를 최소화할 수 있습니다.
+프로그래밍에 있어서 테스트를 작성하는 것이 왜 중요한지 궁금하신가요? 프로그램 코드를 테스트하지 않으면 버그가 발생할 가능성이 높아집니다. 이는 사용자에게 혼란을 야기하고 올바른 결과가 나오지 않을 수 있습니다. 따라서 테스트를 작성해 프로그램의 안정성을 보장하는 것이 매우 중요합니다.
 
-"## 작성 방법"
+## 어떻게
 
-테스트를 작성하는 가장 기본적인 방법은 `assert` 문을 이용하는 것입니다. 이 문장은 특정 조건이 참인지 검사하고, 만약 조건이 참이 아니라면 에러를 발생시킵니다. 아래는 간단한 숫자 계산을 테스트하는 예제 코드입니다.
+자 이제 실제로 테스트를 작성하는 방법을 알아보겠습니다! 먼저, 특정 기능을 테스트하는 함수를 만듭니다. 이 예제에서는 문자열의 길이를 구하는 함수를 테스트해 보겠습니다.
 
 ```Bash
-#!/bin/bash
-
-# 숫자 더하기 함수
-function add(){
-  echo $(($1 + $2))
+# 함수 정의
+string_length() {
+    echo "${#1}"
 }
 
-# 테스트 코드
-assert $(add 2 3) -eq 5
-assert $(add 5 10) -eq 15
-assert $(add 0 0) -eq 0
+# 함수 호출하여 결과 출력
+echo "문자열 'Hello'의 길이는 $(string_length Hello)입니다."
 ```
 
-위의 코드에서 `assert` 문은 각각의 `add` 함수 호출 결과가 예상한 값과 일치하는지를 검사합니다. 만약 일치하지 않는다면 스크립트는 에러를 발생시키고, 일치한다면 아무런 메시지도 출력하지 않습니다.
+출력 결과는 다음과 같습니다.
 
-"## 더 깊게 알아보기"
+```
+문자열 'Hello'의 길이는 5입니다.
+```
 
-테스트 작성에는 `assert` 문 외에도 다양한 기법과 도구들이 있습니다. 예를 들어, 리눅스 커널에는 `kselftest`라는 테스트 유틸리티가 내장되어 있어서, 리눅스 운영체제의 다양한 부분들을 자동으로 테스트할 수 있습니다. 또한, `bashunit`이나 `shunit2`와 같은 테스트 프레임워크를 이용하면 보다 구조적이고 효율적인 테스트를 작성할 수 있습니다.
+위 코드에서는 함수를 호출하여 올바른 결과가 나오는지 확인하는 테스트를 작성하였습니다. 그리고 이런 테스트를 여러 개 작성하면 더 확실하게 프로그램을 테스트할 수 있습니다.
 
-"## 관련 자료"
+## 더 깊게 들어가기
 
-- [assert 문서 (GNU Bash)](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions)
-- [쉘 스크립팅 테스팅 (Mozilla Developer Network)](https://developer.mozilla.org/ko/docs/Learn/Scripting/Bash/Testing)
-- [kselftest 사용 예제 (코드죽음을 부르는 방패)](https://kldp.org/node/63124)
-- [bashunit (GitHub)](https://github.com/kward/shunit2)
-- [shunit2 (GitHub)](https://github.com/rocky/bashunit)
+테스트를 작성할 때 몇 가지 관점에서 주의해야 합니다.
+
+1. 모든 입력을 테스트해야 합니다. 예상치 못한 입력이 들어올 경우 프로그램이 적절하게 처리할 수 있도록 테스트해야 합니다.
+2. 모든 코드 경로를 테스트해야 합니다. 즉, 가능한 모든 분기점에서 테스트해야 합니다.
+3. 모든 리턴 값에 대해 테스트해야 합니다. 이를 통해 예상치 못한 상황에서도 적절한 리턴 값이 나오는지 확인할 수 있습니다.
+
+또한, 테스트 프레임워크를 사용하면 더욱 효율적으로 테스트를 작성할 수 있습니다. 이를 통해 코드 변경 시 자동으로 테스트를 실행하고 결과를 확인할 수 있습니다.
+
+## 더 알아보기
+
+더 많은 정보를 알고 싶다면 아래 링크들을 참고해보세요!
+
+[리눅스 쉘 스크립트 튜토리얼](https://www.linuxtutorial.co.kr/) <br>
+[리눅스 쉘 스크립트를 이용한 테스트 자동화](https://blog.visualcv.com/ko/linux%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%80-%E3%83%86%E3%82%B9%E3%83%88/) <br>
+[Bash 단위 테스트 프레임워크](https://github.com/shunit2/shunit2) 
+
+# 관련 링크
+
+[리눅스 쉘 스크립트 기본 지식](https://bnzn2424.tistory.com/102) <br>
+[Bash 스크립트 프로그래밍 강좌](https://www.youtube.com/watch?v=QxjADkLFZFY) <br>
+[Bash 쉘 스크립트 예제 모음](https://recipes4dev.tistory.com/110)

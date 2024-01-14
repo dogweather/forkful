@@ -1,39 +1,43 @@
 ---
-title:    "Gleam: Impresión de salida de depuración"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/printing-debug-output.md"
+title:                "Gleam: Impresión de salida de depuración"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué imprimir salida de depuración en Gleam
+## ¿Por qué imprimir mensajes de depuración en Gleam?
 
-La impresión de salida de depuración es una herramienta útil para entender el funcionamiento interno de un programa en Gleam. Al mostrar información adicional durante la ejecución, puede ayudarte a identificar y solucionar problemas en tu código.
+Imprimir mensajes de depuración es una técnica comúnmente utilizada en la programación para verificar el comportamiento de un programa en tiempo de ejecución. En Gleam, esta práctica es especialmente útil debido a la naturaleza funcional del lenguaje.
 
-## Cómo hacerlo
+## Cómo imprimir mensajes de depuración en Gleam
 
-Para imprimir salida de depuración en Gleam, puedes utilizar la función `io.format`. Esta función toma dos argumentos: una cadena de formato y una lista de valores. Aquí hay un ejemplo:
+Para imprimir mensajes de depuración en Gleam, podemos utilizar la función `debug!`, que acepta una cadena como argumento. Veamos un ejemplo:
 
 ```Gleam
-io.format("El resultado de la suma de 1 y 2 es {}", [(1 + 2)])
+let nombre = "María"
+debug!("El nombre es: {}", [nombre])
 ```
 
-La salida de este código sería:
+Esto imprimirá en la consola el mensaje "El nombre es: María". También podemos imprimir valores de variables utilizando la cadena de formato `{}` y la lista de argumentos correspondientes. Por ejemplo:
 
+```Gleam
+let x = 5
+let y = 10
+debug!("La suma de x e y es: {}", [x + y])
 ```
-El resultado de la suma de 1 y 2 es 3
-```
 
-Puedes utilizar diferentes tipos de datos en la cadena de formato, como enteros, cadenas de texto, booleanos o incluso estructuras de datos complejas. También puedes utilizar la función `debug.inspect` para imprimir información detallada sobre una variable o valor específico.
+Esto imprimirá en la consola "La suma de x e y es: 15".
 
-## Profundizando
+## Profundizando en la impresión de mensajes de depuración
 
-La salida de depuración puede ser especialmente útil al trabajar con funciones o patrones más complejos. Puedes imprimir valores en diferentes puntos de una función para entender mejor cómo se están procesando los datos. También puedes utilizar la salida de depuración en conjunto con pruebas unitarias para encontrar errores en tu código.
+Además de utilizar la función `debug!`, también podemos configurar el nivel de depuración en Gleam para imprimir mensajes en diferentes momentos durante la ejecución del programa. Esto puede ser útil para identificar errores o problemas en un código complejo. Otra técnica útil es utilizar `println!`, que imprime mensajes en la consola sin interrupciones de formato.
 
-Sin embargo, es importante recordar eliminar o comentar cualquier salida de depuración antes de enviar tu código a producción, ya que puede sobrecargar el programa y afectar su rendimiento.
+En resumen, imprimir mensajes de depuración en Gleam puede facilitar el proceso de desarrollo y depuración de programas. Sin embargo, es importante tener en cuenta que estos mensajes deben ser eliminados antes de enviar el código a producción.
 
 ## Ver también
 
-- [Documentación oficial de Gleam sobre salida de depuración](https://gleam.run/core/io.html#format)
-- [Tutorial de Gleam para principiantes](https://gleam.run/tutorials/getting-started.html)
-- [Ejemplos de código en Gleam](https://github.com/gleam-lang/gleam/tree/master/examples)
+- Documentación de Gleam: https://gleam.run/
+- Ejemplos de código de Gleam: https://github.com/gleam-lang
+- Guía de depuración en Gleam: https://gleam.run/book/tour/getting-started.html#debugging

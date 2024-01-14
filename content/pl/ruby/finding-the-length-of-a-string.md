@@ -1,58 +1,55 @@
 ---
-title:    "Ruby: Znajdowanie długości ciągu znaków"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/finding-the-length-of-a-string.md"
+title:                "Ruby: Znajdowanie długości ciągu znaków"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często, w trakcie programowania w Ruby, potrzebujemy znaleźć długość łańcucha. Może to być wykorzystane do liczenia znaków w ciągach tekstowych, sprawdzania poprawności wprowadzonego hasła lub po prostu do wyświetlenia informacji użytkownikowi. W tym krótkim artykule omówię, jak znaleźć długość łańcucha za pomocą prostych kodów w języku Ruby.
+Długość ciągu znaków jest jedną z podstawowych operacji w programowaniu. W tym artykule dowiesz się, dlaczego znajdowanie długości ciągu jest ważne oraz jak to zrobić w języku Ruby.
 
 ## Jak to zrobić
 
-Aby znaleźć długość łańcucha w Ruby, użyjemy metody `.length`. Najpierw musimy przypisać łańcuch do zmiennej, na przykład:
+Aby znaleźć długość ciągu znaków w Ruby, możesz użyć metody `length` lub `size`. Przykładowy kod wyglądałby następująco:
 
 ```Ruby
-text = "Witaj, świecie!"
+string = "Hello World" # przykładowy ciąg znaków
+puts "Długość ciągu: #{string.length}" # wyświetli 11
 ```
 
-Następnie, możemy wywołać metodę `.length` na zmiennej `text`:
+Jeśli chcesz znaleźć długość ciągu złożonego z wielu wierszy, możesz użyć metody `each_line` oraz zastosować metodę `length` na każdym wierszu. Przykład:
 
 ```Ruby
-puts text.length
-```
-
-Powyższy kod wyświetli wartość `15`, ponieważ łańcuch składa się z 15 znaków (w tym spacji). Możemy również użyć tej metody bezpośrednio na łańcuchu, bez przypisywania go do zmiennej:
-
-```Ruby
-puts "Hello, World!".length
-```
-
-Powyższy kod również wyświetli wartość `15`.
-
-Możemy również wykorzystać metodę `.length` do sprawdzania długości wprowadzanego przez użytkownika hasła. Przykładowo, jeśli chcemy, aby hasło miało co najmniej 8 znaków, możemy użyć warunku:
-
-```Ruby
-print "Wprowadź hasło: "
-password = gets.chomp
-if password.length >= 8
-  puts "Hasło jest wystarczająco długie."
-else
-  puts "Hasło jest za krótkie."
+multiline_string = "Linia 1\nLinia 2\nLinia 3" # ciąg wielu wierszy
+multiline_string.each_line do |line|
+  puts "Długość wiersza #{line}: #{line.length}"
 end
+
+# wynik:
+# Długość wiersza Linia 1: 6
+# Długość wiersza Linia 2: 6
+# Długość wiersza Linia 3: 6
 ```
 
-Ten przykład pokazuje, jak prosto, ale przydatnie, możemy wykorzystać metodę `.length` w swoim kodzie Ruby.
+Możesz również użyć metody `bytesize`, która zwróci długość ciągu w bajtach.
+
+```Ruby
+string = "Cześć!"
+puts "Długość ciągu w bajtach: #{string.bytesize}"
+
+# wynik: 7
+```
 
 ## Deep Dive
 
-Długość łańcucha jest liczbą znaków znajdujących się w łańcuchu, włączając w to spacje i znaki specjalne. Dlatego, metoda `.length` działa w prosty sposób - po prostu zlicza wszystkie znaki w łańcuchu.
+W języku Ruby ciągi znaków są przechowywane jako obiekty klasy `String`. Metody `length` i `size` wykorzystują wewnętrzny atrybut `length` tego obiektu, aby zwrócić długość ciągu. Metoda `bytesize` natomiast zlicza ilość bajtów wewnątrz ciągu.
 
-Warto również wspomnieć, że metoda `.length` może być używana na innych typach danych, takich jak tablice czy hashe. W przypadku tablic, metoda ta zwróci liczbę elementów w tablicy, a w przypadku haszy - liczbę par klucz-wartość.
+Warto też zaznaczyć, że metoda `length` może nie zawsze być dokładna dla ciągów zawierających niestandardowe znaki lub emotikony, ponieważ tłumacząc na bity może dojść do przekształceń.
 
 ## Zobacz także
 
-- Oficjalna dokumentacja Ruby o metodzie `.length`: https://ruby-doc.org/core-2.7.2/String.html#method-i-length
-- Przykładowe zadania z wykorzystaniem metody `.length`: https://www.codewars.com/kata/search/ruby?q=length
+- Dokumentacja Ruby o metodach `length` i `size`: https://ruby-doc.org/core-2.7.4/String.html#method-i-length
+- Artykuł na temat długości ciągu znaków w Ruby: https://www.rubyguides.com/2019/06/ruby-string-length/

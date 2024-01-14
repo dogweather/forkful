@@ -1,55 +1,76 @@
 ---
-title:    "Python: Debug-Ausgabe drucken"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/python/printing-debug-output.md"
+title:                "Python: Ausgabe von Debugging-Informationen"
+programming_language: "Python"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Beim Programmieren kann es oft zu unerwartetem Verhalten oder Fehlern kommen. Um diese Probleme zu lösen, kann es hilfreich sein, Debug-Ausgaben zu drucken, um den genauen Ablauf des Codes zu verfolgen. Dadurch können mögliche Fehlerquellen leichter identifiziert und behoben werden.
+Das Drucken von Debug-Ausgaben kann eine nützliche Methode sein, um Fehler in Ihrem Code zu finden. Durch das Hinzufügen von zusätzlichen Ausgaben können Sie den Verlauf der Ausführung Ihres Programms verfolgen und potenzielle Probleme identifizieren.
 
-## Wie geht man vor
+## Wie man es macht
 
-Um Debug-Ausgaben in Python zu drucken, gibt es verschiedene Methoden. Eine Möglichkeit ist die Verwendung der `print()` Funktion, die in Python zur Standardausgabe verwendet wird. Hier ein Beispiel:
-
-```Python
-# Debug-Ausgabe mit print() Funktion
-x = 5
-y = 10
-print("Der Wert von x ist:", x)
-print("Der Wert von y ist:", y)
-```
-
-Die Ausgabe dieses Codes würde folgendermaßen aussehen:
-
-```
-Der Wert von x ist: 5
-Der Wert von y ist: 10
-```
-
-Eine andere Möglichkeit ist die Verwendung des `logging` Moduls, welches flexiblere Ausgabemöglichkeiten bietet. Hier ein Beispiel:
+Um Debug-Ausgaben in Python zu erstellen, verwenden Sie die `print()` Funktion. Hier ist ein Beispiel, wie Sie es in Ihrem Code verwenden können:
 
 ```Python
-# Debug-Ausgabe mit logging Modul
-import logging
-x = 5
-y = 10
-logging.debug("Der Wert von x ist: %s", x)
-logging.debug("Der Wert von y ist: %s", y)
+# Beispiel für Debug-Ausgabe
+name = "Max Mustermann"
+print("Der Name ist: " + name)
 ```
 
-Die Ausgabe dieses Codes wäre ähnlich wie bei der `print()` Funktion, jedoch könnte man hier z.B. auch den gewünschten Ausgabelevel festlegen.
+Dies würde die folgende Ausgabe erzeugen:
 
-## Tiefergehende Informationen
+`Der Name ist: Max Mustermann`
 
-Beim Drucken von Debug-Ausgaben gibt es einige wichtige Aspekte zu beachten. Zum einen sollte man sicherstellen, dass die Ausgaben in einer Produktionsumgebung deaktiviert sind, um mögliche Leistungseinbußen zu vermeiden. Dazu kann man z.B. mit dem `__debug__` Flag arbeiten und Debug-Ausgaben nur bei aktiviertem Debug-Modus drucken. Außerdem können die Ausgaben auch formatiert werden, um sie anschaulicher zu gestalten.
+Sie können auch Variablen oder Ausdrücke in der `print()` Funktion verwenden, um deren Werte auszugeben. Zum Beispiel:
 
-Eine weiterführende Möglichkeit ist die Verwendung eines Debuggers, der es ermöglicht, Schritt für Schritt durch den Code zu gehen und Variablenwerte zu überprüfen.
+```Python
+# Beispiel für die Verwendung von Variablen in Debug-Ausgabe
+jahr = 2021
+print("Das aktuelle Jahr ist: ", jahr)
+```
+
+Dies würde die folgende Ausgabe erzeugen:
+
+`Das aktuelle Jahr ist: 2021`
+
+## Tiefere Einblicke
+
+Wenn Sie weitere Informationen in Ihre Debug-Ausgaben einbinden möchten, können Sie formatierte Zeichenfolgen verwenden. Diese ermöglichen es Ihnen, Variablenwerte in einen String einzufügen. Zum Beispiel:
+
+```Python
+# Beispiel für die Verwendung von formatierten Zeichenfolgen
+name = "Marie"
+alter = 25
+
+print("Mein Name ist {} und ich bin {} Jahre alt".format(name, alter))
+```
+
+Dies würde die folgende Ausgabe erzeugen:
+
+`Mein Name ist Marie und ich bin 25 Jahre alt`
+
+Sie können auch benannte Platzhalter verwenden, um den Code lesbarer zu machen. Zum Beispiel:
+
+```Python
+# Beispiel für die Verwendung von benannten Platzhaltern
+name = "Müller"
+alter = 35
+
+print("Mein Name ist {name} und ich bin {age} Jahre alt".format(name=name, age=alter))
+```
+
+Dies würde die folgende Ausgabe erzeugen:
+
+`Mein Name ist Müller und ich bin 35 Jahre alt`
 
 ## Siehe auch
 
-- [Python Debugging with pdb](https://docs.python.org/3/library/pdb.html)
-- [Python Logging HOWTO](https://docs.python.org/3/howto/logging.html)
-- [Python Debugging Techniques](https://realpython.com/python-debugging/)
+Weitere Informationen zur `print()` Funktion und Debugging-Techniken finden Sie in den folgenden Ressourcen:
+
+- [Die offizielle Python-Dokumentation zur print() Funktion](https://docs.python.org/de/3/library/functions.html#print)
+- [Ein Tutorial zur Verwendung von Debug-Ausgaben in Python](https://realpython.com/python-debugging-pdb/)
+- [Tipps zum Debuggen von Python-Code](https://www.instructure.com/canvas/resources/guides/how-advise-students-debugging-python)

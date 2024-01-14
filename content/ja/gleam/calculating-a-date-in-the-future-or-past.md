@@ -1,54 +1,34 @@
 ---
-title:    "Gleam: 将来または過去の日付を計算する"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/calculating-a-date-in-the-future-or-past.md"
+title:                "Gleam: 将来または過去の日付の計算"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ
+日付を計算する必要があるのかを説明するため、まずは「なぜ」について考えてみましょう。時には、特定の日付を過去や未来に進めたり、戻したりする必要があります。例えば、予定されたイベントの日時をチェックするために、ある日付から数週間前や数ヶ月後の日付を計算する必要があるかもしれません。そんな時に便利なのが、Gleamの日付計算機能です。
 
-日付を未来や過去に計算する必要があるかを簡潔に説明します。
-
-多くのプログラミングプロジェクトでは、日付を計算する必要が出てきます。例えば、注文した商品の配送予定日や、イベントの開催日を計算する必要があります。Gleamを使用すると、日付の計算をより簡単に行うことができます。
-
-## 方法
-
-日付の計算をGleamで行う方法を以下のコードブロックを使用して説明します。
+# 使い方
+実際に日付を計算する方法を見てみましょう。以下は、ある日付から3日後の日付を計算するコードの例です。
 
 ```Gleam
-import gleam/time
-
-// 現在の日付を取得
-let current_date = time.now()
-
-// 1日後の日付を計算
-let tomorrow = time.add_day(current_date, 1)
-
-// 1か月前の日付を計算
-let last_month = time.add_month(current_date, -1)
-
-// 計算した日付のフォーマットを指定
-let formatted_date = time.format_date(last_month, "%Y-%m-%d")
-
-// 結果を出力
-gleam/io.println("Last month was " <> formatted_date)
+let start_date = Date.from_iso8601("2021-01-01")
+let end_date = start_date |> Date.add_days(3)
 ```
 
-上記の例では、```time```モジュールを使用して現在の日付を取得し、その日付を基にして1日後や1か月前の日付を計算し、指定したフォーマットで出力しています。Gleamの日付計算機能を活用することで、簡単に複雑な日付の計算を行うことができます。
+上記のコードを実行すると、`end_date`には2021年1月4日が入ります。このように、Gleamでは簡単に日付を計算することができます。
 
-## ディープダイブ
+# 詳細を掘り下げる
+日付を計算する際には、様々なオプションがあります。例えば、特定の日付から数日前や数ヶ月後の日付を計算するだけでなく、特定の曜日や月初めなど特定の条件を満たす日付を計算することもできます。また、日付のフォーマットを変更することも可能です。
 
-日付の計算を行う際には、タイムゾーンや夏時間などの概念にも注意が必要です。Gleamでは、```locale```モジュールを使用することで、タイムゾーンや地域ごとの異なる日付の表現を扱うことができます。また、```calendar```モジュールを使用することで、暦に関連する計算を行うことも可能です。
+さらに、Gleamはエラー処理にも対応しており、問題が起きた際に適切なエラーメッセージを出力することができます。これにより、安心して日付計算を行うことができます。
 
-日付の計算を行う際には、現在の日付やタイムゾーン設定、フォーマットなどについてよく確認し、必要に応じてGleamのモジュールを使用しましょう。
-
-## おわりに
-
-この記事を読んでGleamで日付の計算が行えるようになったかと思います。以下のリンクを参考に、さらにGleamの機能を活用してみてください。
-
-## 関連リンク
+# 併せて読みたい
+もし日付計算に興味があるのであれば、以下のリンクも参考にしてみてください。
 
 - [Gleam公式ドキュメント](https://gleam.run/documentation/)
-- [日付処理モジュールの参考ページ](https://gleam.run/documentation/standard-library/time/)
-- [タイムゾーン設定の方法](https://gleam.run/documentation/standard-library/time/#locale-and-timezone)
+- [Gleam GitHubリポジトリ](https://github.com/gleam-lang/gleam)
+
+それでは、日付計算を活用して、より便利なGleamプログラミングを楽しんでください！

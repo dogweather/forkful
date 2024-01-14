@@ -1,50 +1,61 @@
 ---
-title:    "C: パターンに一致する文字を削除する"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/deleting-characters-matching-a-pattern.md"
+title:                "C: パターンに一致する文字を削除する"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-この記事では、C言語でパターンに一致する文字を削除する方法について説明します。プログラマーの方々にとって、文字を削除することは非常に重要なスキルです。例えば、文字列から不要な空白を削除したり、特定の文字列を取り除いたりするために使用されます。この記事では、どのようにしてパターンに一致する文字を削除できるかを詳しく紹介します。
+特定のパターンにマッチする文字を削除することの重要性や利点について説明します。この機能を使用することで、文字列のデータをより効率的に処理することができるようになります。
 
-## 作り方
-文字を削除するには、配列を使用して文字列を保持する必要があります。下記は、パターンに一致する文字を削除するための基本的なコードです。
+## 方法
+まず最初に、C言語の標準ライブラリであるstring.hをインポートします。このライブラリには、文字列を処理するための便利な関数がたくさん含まれています。
+
+例えば、以下のようなコードを使用することで、文字列から特定のパターンにマッチする文字を削除することができます。
 
 ```C
 #include <stdio.h>
+#include <string.h>
 
-int main(void) {
-   char text[] = "Hello World";
-   char pattern = 'l';
-   int i, j;
+int main() {
+  char str[100] = "Hello World";
+  char pattern[10] = "llo";
 
-   for (i = j = 0; text[i] != '\0'; ++i) {
-      if (text[i] != pattern) {
-         text[j++] = text[i];
-      }
-   }
-   text[j] = '\0';
-   
-   printf("Result: %s", text);
+  // パターンにマッチする文字を削除する
+  str = strpbrk(str, pattern);
+  
+  printf("%s", str);
 
-   return 0;
+  return 0;
 }
 ```
 
-上記のコードを実行すると、次のような結果が得られます。
+上記の例では、文字列"Hello World"から"llo"というパターンにマッチする文字を探し、その文字を削除しています。そして、最終的な出力結果は"H World"となります。
 
-```
-Result: Heo Word
-```
-
-このコードでは、文字列を1文字ずつチェックし、パターンに一致する文字をスキップして新しい文字列を作成しています。
+このように、文字列を処理する際には、特定のパターンにマッチする文字を削除することで、データをよりシンプルにし、処理を効率的にすることができます。
 
 ## ディープダイブ
-パターンに一致する文字を削除するためのC言語のコードを書くことは、プログラミングの基本的なスキルです。しかし、より複雑なパターンマッチングが必要な場合や、大量の文字列を処理する必要がある場合はどうでしょうか。そんな時に役立つのが、正規表現と呼ばれるものです。正規表現は、特定のパターンに一致する文字列を検索や置換するための強力なツールです。C言語では、正規表現をサポートするライブラリやツールがありますので、究極的にはそれらを使用してパターンマッチングを行うことが可能です。
+この機能を実装する方法についてさらに詳しく見ていきましょう。上記の例では、文字列の中から一番最初にマッチした文字を削除していますが、もし複数のマッチがある場合、それら全てを削除する必要がある場合もあります。
 
-## それ以外にも
-- [C言語の文字列操作](https://codeforwin.org/2017/12/c-programming-examples-strings.html)
-- [C言語での正規表現の使用方法](https://www.thegeekstuff.com/2019/07/c-regular-expressions/)
-- [正規表現を理解するための練習問題](https://regexr.com/)
+そのような場合には、string.hライブラリに含まれるstrpbrk()関数ではなく、strspn()関数を使用することで、マッチする文字を全て削除することができます。
+
+さらに、strtr()関数を使用することで、特定の文字を別の文字に置き換えることもできます。
+
+このように、文字列を操作するためのライブラリや関数はたくさん存在するので、必要に応じて様々な方法を試してみることが大切です。
+
+## 関連リンク
+
+- [strpbrk() function](https://www.tutorialspoint.com/c_standard_library/c_function_strpbrk.htm)
+- [strspn() function](https://www.tutorialspoint.com/c_standard_library/c_function_strspn.htm)
+- [strtr() function](https://www.tutorialspoint.com/c_standard_library/c_function_strtr.htm)
+- [C言語のstring.hライブラリについて](https://codezine.jp/article/detail/4532)
+- [C言語を使った文字列処理の基本](http://www.tohoho-web.com/ex/c_string.html)
+
+より詳しい情報やサンプルコードを見つけることで、文字列を操作する際により効率的な方法を見つけることができるでしょう。
+
+## その他のリンク
+- [Markdown記法の使い方](https://gist.github.com/ihoneymon/652be052a0727ad59601)
+- [GitHub公式マークダウン記法ガイド](https://guides.github.com/features/mastering-markdown/)
+- [Markdownを上手に書こう](https://www.1101.com/mm/)

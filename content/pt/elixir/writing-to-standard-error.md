@@ -1,54 +1,41 @@
 ---
-title:    "Elixir: Escrevendo no erro padrão"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/writing-to-standard-error.md"
+title:                "Elixir: Escrevendo no erro padrão"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-"
+# Por que escrever para o erro padrão em Elixir
 
-## Por que escrever para o erro padrão em Elixir
-
-Escrever para o erro padrão pode ser útil para depuração e monitoramento de erros em sua aplicação Elixir. Isso permite que você visualize informações de erro em tempo real e tome medidas para corrigir problemas em seu código.
+Escrever para o erro padrão em Elixir é uma maneira poderosa de depurar e monitorar o desempenho do seu código. Isso permite que você identifique e resolva rapidamente quaisquer erros ou problemas no seu programa.
 
 ## Como fazer
 
-A sintaxe para escrever para o erro padrão em Elixir é simples e é semelhante em diferentes ambientes de execução. Primeiro, é necessário importar o módulo `IO`, que contém as funções de saída de erro padrão.
-
-Em seguida, basta chamar a função `IO.puts/2` e passar a mensagem que deseja escrever como primeiro argumento e o stream de erro padrão como segundo argumento. Veja o exemplo abaixo:
+Em Elixir, podemos escrever para o erro padrão usando a função `IO.puts/2` e especificando a saída como `:stderr`. Aqui está um exemplo de como podemos usar isso no nosso código:
 
 ```Elixir
-IO.puts("Ooops, algo deu errado!", :stderr)
+IO.puts("Esta é a saída padrão", :stderr)
 ```
 
-Isso imprimirá a mensagem "Ooops, algo deu errado!" no fluxo de erro padrão. Você também pode usar `IO.inspect/2` para imprimir o conteúdo de uma variável diretamente para o erro padrão. Por exemplo:
+Isso irá imprimir a mensagem "Esta é a saída padrão" no console de erro. Você também pode usar interpolação de string para exibir informações dinâmicas:
 
 ```Elixir
-i = 10
-IO.inspect(i, label: "i", output: :stderr)
+username = "João"
+IO.puts("Bem-vindo, #{username}!", :stderr)
 ```
 
-A saída será: `i: 10`. Isso pode ser útil para monitorar o valor de variáveis ​​em momentos-chave durante a execução do seu código.
+Isso será impresso como "Bem-vindo, João!" no console de erro. Você também pode criar funções personalizadas para escrever para o erro padrão, permitindo que você personalize a saída conforme necessário.
 
-## Análise aprofundada
+## Profundidade do mergulho
 
-A função `IO.puts/2` descrita acima é especificamente para escrever em streams de erro padrão. No entanto, você também pode usar a função `IO.write/2` para escrever em qualquer fluxo, incluindo o erro padrão. A diferença é que `IO.write/2` não adiciona automaticamente uma nova linha após a mensagem, então você pode continuar escrevendo em uma linha existente.
+Escrever para o erro padrão em Elixir é particularmente útil ao depurar código em produção, onde você não tem acesso ao console do servidor. Além disso, você também pode usar essa técnica para monitorar o desempenho do seu código em tempo real.
 
-Por exemplo:
+Uma das vantagens de escrever para o erro padrão em Elixir é que ele é rápido e eficiente em termos de recursos. Isso significa que você pode usar isso sem se preocupar com o impacto no desempenho do seu aplicativo.
 
-```Elixir
-IO.write("Este texto é", :stderr)
-IO.write(" tudo", :stderr)
-IO.write(" na mesma linha!", :stderr)
-```
+# Veja também
 
-A saída será: `Este texto é tudo na mesma linha!`
-
-Lembre-se de que usar `IO.puts/2` é o método preferido para escrever para o erro padrão, pois é mais legível e mais fácil de formatar.
-
-## Veja também
-
-- [Documentação oficial do Elixir sobre saída de dados](https://hexdocs.pm/elixir/IO.html#puts/2)
-- [Artigo da Inaka sobre debugging em Elixir](https://inaka.net/blog/2015/08/27/debugging-elixir-in-production/)
-- [Vídeo tutorial sobre escrita para o erro padrão em Elixir](https://www.youtube.com/watch?v=n8mr2l-UwdU)
+- [Documentação oficial do Elixir sobre saída padrão](https://hexdocs.pm/elixir/IO.html#puts/2)
+- [Tutoriais de Elixir do Programação funcional em 15 minutos](https://prog21.dadgum.com/30.html)
+- [Exibindo mensagens de erros coloridas em Elixir](https://elixirschool.com/lessons/advanced/error-handling/)

@@ -1,38 +1,71 @@
 ---
-title:    "Java: 미래나 과거의 날짜 계산하기"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/calculating-a-date-in-the-future-or-past.md"
+title:                "Java: 미래나 과거의 날짜 계산하기"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-날짜를 계산하는 것에 대해 알아보는 이유는 다양합니다. 예를 들어, 생일이나 결혼식과 같은 특별한 이벤트를 계획할 때 비롯하여 특정 날짜까지 몇 일이 남았는지 확인하고 싶을 때 등의 상황에서 반드시 필요한 기능입니다.
+
+날짜를 미래 또는 과거로 계산하는 일에 참여하는 이유는 무엇입니까? 이것은 많은 프로그램, 애플리케이션 및 웹 사이트에서 필요한 일입니다. 예를 들어, 생일 계산기, 약속 알리미, 이벤트 플래너 등이 모두 날짜를 처리하는 데 사용될 수 있습니다. 또한 날짜를 계산하는 것은 프로그램을 더 인간적으로 만들어주기 때문에 중요합니다.
 
 ## 어떻게
-자바에서 날짜를 계산하는 방법은 매우 간단합니다. 먼저 ```LocalDate``` 클래스를 사용하여 오늘의 날짜를 가져온 다음, ```.plusDays()``` 메소드를 사용하여 지정한 날 수 만큼 날짜를 더하거나 ```.minusDays()``` 메소드를 사용하여 지정한 날 수 만큼 날짜를 뺄 수 있습니다. 아래는 예시 코드와 출력 결과입니다.
+
+### Java에서의 날짜 계산
+
+날짜를 계산하는 가장 쉬운 방법은 Java에서 제공하는 기본 클래스인 `Calendar`를 사용하는 것입니다. 다음은 미래의 날짜를 계산하는 예제 코드입니다.
 
 ```Java
-LocalDate today = LocalDate.now();
-LocalDate futureDate = today.plusDays(10);
-LocalDate pastDate = today.minusDays(5);
+// 현재 날짜 가져오기
+Calendar cal = Calendar.getInstance();
 
-System.out.println("오늘 날짜: " + today);
-System.out.println("10일 뒤의 날짜: " + futureDate);
-System.out.println("5일 전의 날짜: " + pastDate);
+// 1년 뒤로 이동
+cal.add(Calendar.YEAR, 1);
+
+// 결과 출력
+System.out.println("1년 뒤 날짜: " + cal.getTime());
 ```
 
-출력 결과:
+위의 코드를 실행하면 현재 날짜에서 1년 뒤로 이동한 날짜가 출력될 것입니다. 마찬가지로 과거의 날짜를 계산하려면 `cal.add(Calendar.YEAR, -1)`와 같이 음수 값을 전달하면 됩니다.
 
+### 날짜 포맷 설정
+
+`Calendar` 클래스의 `getTime()` 메소드는 `Date` 클래스의 인스턴스를 반환합니다. 해당 인스턴스를 사용하여 출력되는 날짜의 포맷을 설정할 수 있습니다. 다음은 날짜를 `yyyy년 MM월 dd일`의 형식으로 출력하는 예제 코드입니다.
+
+```Java
+// 현재 날짜 가져오기
+Calendar cal = Calendar.getInstance();
+
+// 날짜 포맷 설정
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
+        
+// 결과 출력
+System.out.println("포맷 설정된 날짜: " + sdf.format(cal.getTime()));
 ```
-오늘 날짜: 2021-07-23
-10일 뒤의 날짜: 2021-08-02
-5일 전의 날짜: 2021-07-18
+
+### 다른 날짜 단위 계산
+
+`Calendar` 클래스는 `add()` 뿐만 아니라 다른 날짜 단위를 계산하는 다양한 메소드를 제공합니다. 다음은 월을 계산하는 예제 코드입니다.
+
+```Java
+// 현재 날짜 가져오기
+Calendar cal = Calendar.getInstance();
+
+// 3개월 뒤로 이동
+cal.add(Calendar.MONTH, 3);
+
+// 결과 출력
+System.out.println("3개월 뒤 날짜: " + cal.getTime());
 ```
 
-## 깊이 파고들기
-더 많은 기능을 원한다면, ```LocalDate``` 클래스뿐만 아니라 ```LocalDateTime```, ```ZonedDateTime``` 등 다양한 날짜 및 시간 관련 클래스를 사용할 수 있습니다. 또한, 날짜 간의 차이를 계산하고 비교하는 메소드도 있으므로 유용하게 활용할 수 있습니다. 자세한 내용은 공식 문서를 참고하시고 실제로 코드를 작성하며 익혀보시길 추천 드립니다.
+## 딥 다이브
 
-## 참고
-- [Java 8 날짜 및 시간 API 문서](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [날짜와 시간을 다루는 방법 - Baeldung 블로그](https://www.baeldung.com/java-date-time)
+Java에서 날짜를 계산하는 데 사용되는 `Calendar` 클래스는 Greogorian 달력을 기반으로 합니다. 따라서 그레고리오 달력에 따라 지원하지 않는 윤년도 존재할 수 있으며, 이는 오랜 기간의 날짜 계산에 영향을 줄 수 있습니다. 또한 해당 클래스는 시스템 날짜에 영향을 받기 때문에 결과가 잘못된 경우가 있을 수 있습니다. 따라서 복잡한 날짜 계산을 할 때는 외부 라이브러리를 사용하는 것이 좋습니다.
+
+## 봐주십시오
+
+- [Java Calendar Class](https://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html)
+- [SimpleDateFormat Class](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+- [Joda-Time Library](https://www.joda.org/joda-time/)

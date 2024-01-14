@@ -1,42 +1,44 @@
 ---
-title:    "Bash: テキストの検索と置換"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/searching-and-replacing-text.md"
+title:                "Bash: テキストの検索と置換"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-テキストの検索と置換を行うのはなぜでしょうか？その答えは簡単です。これは非常に便利なプログラミング技術であり、大量のテキストのなかから必要なデータを素早く取得することができるからです。
+なぜテキストの検索と置換に取り組むのか、その理由をご紹介します。テキストの検索と置換は、プログラミングにおいて非常に便利な機能です。例えば、大量のファイルの中から特定の単語やフレーズを検索し、一括置換することができます。
 
 ## 方法
 
-テキストの検索と置換を行うにはBashプログラミング言語を利用します。以下の例を参考にしてください。
+テキストの検索と置換をBashで行う方法をご紹介します。まず、必要なコマンドは「sed」です。次のコマンドを使用して、ファイル内の特定の文字列を別の文字列に置換することができます。
 
 ```Bash
-# サンプルテキスト
-text="こんにちは、私はBashを勉強しています。"
-
-# "私は"を"僕は"に置換するコマンド
-new_text=${text/"私は"/"僕は"}
-
-# 結果を出力
-echo $new_text
+sed 's/置換前の文字列/置換後の文字列/g' ファイル名
 ```
 
-上記のコードを実行すると、"こんにちは、僕はBashを勉強しています。"という結果が表示されます。
+例えば、ファイル内の「cat」を「dog」に置換する場合は、次のようにコマンドを入力します。
 
-## 深堀り
+```Bash
+sed 's/cat/dog/g' sample.txt
+```
 
-テキストの検索と置換は非常に便利な技術ですが、実はさまざまな方法があります。例えば、パターンマッチングを利用して特定の文字列や文字パターンを置換することもできます。また、複数のファイルに対して一括で検索と置換を行うことも可能です。
+すると、ファイル内のすべての「cat」が「dog」に置換されます。また、ファイル全体ではなく特定の行のみを置換することもできます。その場合は、行番号を指定する必要があります。
 
-さらに、正規表現を利用することでより複雑な置換を行うこともできます。正規表現を使うことで、特定の規則に従った文字列を一括で置換することができます。
+```Bash
+sed '行番号s/cat/dog/g' sample.txt
+```
 
-## さらに見る
+## ディープダイブ
 
-この記事ではBashを使用したテキストの検索と置換について解説しましたが、実際には他にもさまざまな検索と置換の方法があります。以下のリンクを参考にして、さらに深く学ぶことができます。
+さらに詳しく説明すると、sedコマンドでは文字列の置換の他にもさまざまな操作ができます。例えば、行の削除や文字列の追加などが可能です。また、正規表現を使用して複数の文字列を一括置換することもできます。詳しい説明はマニュアルを参照してください。
 
-- [Bashパターンマッチング - Linuxize](https://linuxize.com/post/bash-pattern-matching/)
-- [Bash正規表現チュートリアル - Tech Academy](https://techacademy.jp/magazine/18755)
-- [Bashの文字列操作 - Qiita](https://qiita.com/muran001/items/be596bcc51384b226d94)
+## その他の参考リンク
+
+- マニュアル: https://linuxcommando.blogspot.com/2007/10/find-and-replace-text-within-file-using.html
+- 正規表現について: https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/
+- 実践的な使用例: http://www.theunixschool.com/2012/07/sed-examples-replace-remove-preserve.html
+
+## 参考リンク

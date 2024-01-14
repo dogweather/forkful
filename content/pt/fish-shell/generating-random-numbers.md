@@ -1,41 +1,63 @@
 ---
-title:    "Fish Shell: Gerando números aleatórios"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/generating-random-numbers.md"
+title:                "Fish Shell: Gerando números aleatórios"
+programming_language: "Fish Shell"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
-Gerar números aleatórios é uma habilidade essencial para tarefas como criar senhas seguras, simular cenários e realizar testes de software. Aprender a fazer isso usando o Fish Shell pode ser útil para programadores e entusiastas de tecnologia.
+Às vezes, em nosso código, precisamos gerar números aleatórios para realizar certas operações. Seja para testar algoritmos, criar jogos ou qualquer outra aplicação que requeira elementos não previsíveis, a geração de números aleatórios é indispensável. Neste artigo, vamos explorar como podemos fazer isso de forma simples e eficiente utilizando o Fish Shell.
 
 ## Como fazer
-Gerar números aleatórios no Fish Shell é muito simples. Use o comando “rand”, seguido pelo número máximo que você deseja que seu número aleatório tenha.
+Para gerar números aleatórios no Fish Shell, podemos utilizar a função `math/rand` com o operador `&`, que nos dá um valor aleatório entre 0 e 1. Podemos multiplicá-lo pelo intervalo desejado e depois adicionar um número base para obter os valores desejados.
 
 ```
-Fish Shell rand 100
+Fish Shell - geração de números aleatórios
+
+#declarando o intervalo e o número base
+set interval 10
+set base 5
+
+#gerando um número aleatório
+echo (math/rand & * $interval + $base)
 ```
 
-Este comando irá gerar um número aleatório entre 0 e 100. Você também pode usar as opções “-l” e “-u” para especificar o limite inferior e superior do número aleatório.
+Por exemplo, se quisermos gerar um número aleatório entre 5 e 15, podemos multiplicar o resultado da função `math/rand &` por 10 e adicionar 5.
+
+Outra opção é utilizar a função `echo -n` em conjunto com a função `fmt` para formatar o número gerado em uma unidade desejada, como inteiro ou decimal.
 
 ```
-Fish Shell rand -l 50 -u 100
+Fish Shell - formatação de números aleatórios
+
+#gerando um número aleatório como inteiro
+echo -n (math/rand &) | fmt -o "%.0f"
+
+#gerando um número aleatório como decimal
+echo -n (math/rand &) | fmt -o "%.2f"
 ```
 
-Este comando irá gerar um número aleatório entre 50 e 100. Você pode ainda usar a opção “-n” para gerar mais de um número aleatório de uma vez.
+## Deep Dive
+Por baixo dos panos, a função `math/rand` utiliza o gerador de números aleatórios do sistema operacional. Isso garante que os números gerados sejam verdadeiramente aleatórios e não influenciados por fatores externos. Além disso, podemos utilizar o operador `|` para passar o resultado da função `math/rand &` para outras funções, como `sort` ou `head`, para obter conjuntos de números aleatórios em diferentes formatos.
 
 ```
-Fish Shell rand -n 5 50
+Fish Shell - manipulação de números aleatórios
+
+#gerando uma lista de 10 números aleatórios entre 1 e 100
+for i in (seq 10)
+	echo (math/rand & * 100 + 1) | head -n 1 | fmt -o "%.0f"
+end
+
+#ordenando uma lista de números aleatórios
+for i in (seq 10)
+	echo (math/rand & * 100 + 1) | sort -n | fmt -o "%.0f"
+end
 ```
-
-Este comando irá gerar cinco números aleatórios entre 0 e 50.
-
-## Aprofundando
-O Fish Shell usa o algoritmo de gerador de números pseudoaleatórios (PRNG) Mersenne Twister para gerar seus números aleatórios. Isso significa que, embora os números possam parecer aleatórios, eles são gerados de uma sequência previsível. Portanto, não é recomendado utilizar esses números para fins de segurança, como gerar senhas.
-
-Você também pode definir uma semente para o seu gerador de números aleatórios, usando a opção “-s”. Isso permite que você sempre gere a mesma sequência de números aleatórios, o que pode ser útil para fins de replicação em testes ou simulações.
 
 ## Veja também
-- [Fish Shell documentação - rand] (https://fishshell.com/docs/current/cmds/rand.html)
-- [Artigo Wikipedia sobre gerador Mersenne Twister] (https://en.wikipedia.org/wiki/Mersenne_Twister)
-- [Tutorial sobre como gerar números aleatórios seguros em Fish Shell] (https://www.digitalocean.com/community/tutorials/how-to-generate-secure-random-numbers-in-fish-shell)
+Este artigo cobriu apenas uma pequena parcela da funcionalidade do Fish Shell. Para saber mais sobre suas características e funcionalidades, recomendo verificar os links abaixo:
+
+- [Documentação do Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Comunidade Fish Shell](https://github.com/fish-shell/fish-shell)
+- [Repositório de plugins para Fish Shell](https://github.com/jorgebucaran/fisher)

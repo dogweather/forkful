@@ -1,44 +1,52 @@
 ---
-title:    "Elixir: המרת סטרינג לאותיות קטנות"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elixir/converting-a-string-to-lower-case.md"
+title:                "Elixir: המרת מחרוזת לאותיות קטנות"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## מדוע
 
-אחד הדברים הכי נפלאים בלימוד שפת תכנות הוא היכולת לממש תוכניות פשוטות שמשפרות את חיי היום יום שלנו. פעולה נפוצה בתכנות היא להמיר טקסט לאותיות קטנות, ובכתיבת פוסט זה נכיר את אופן העבודה עם כלי שיתוף מידע הזה במטרה ללמוד כיצד להמיר מחרוזת לאותיות קטנות בשפת אליקסיר.
+המרת סטרינג לאותיות קטנות היא דבר רגיל ולא נדרש בכל פעם שאנו מתקדמים בתכנות. אך בעבור חוויית תכנות טובה יותר ולהימנעות מטעויות מיותרות, ידע על כך יכול להיות שימושי. במאמר זה נדבר על נושא זה בקצרה ונסביר כיצד לבצע את הפעולה באמצעות שפת אליקסיר.
 
-## כיצד לעשות זאת
+## איך לעשות
 
-### חלק א: התקנת הכלי
-כדי להמיר מחרוזת לאותיות קטנות באמצעות אליקסיר, עלינו להתקין את החבילה `String` במכשיר שלנו. ניתן לעשות זאת באמצעות שורת הקוד הבאה:
-
-```Elixir
-mix deps.get String
-```
- 
-### חלק ב: השתמש בפונקציית `downcase`
-עם החבילה `String` מותקן במכשיר שלנו, נוכל להשתמש בפונקציית `downcase` כדי להמיר מחרוזת לאותיות קטנות. תחילה, נאתחל מספר מחרוזות כדי לבדוק את הפונקציה:
+תחילה נצטרך להגדיר את הסטרינג שנרצה להמיר לאותיות קטנות באמצעות הפונקציה `String.downcase/1`. לדוגמה: 
 
 ```Elixir
-iex> str1 = "Hello World!"
-iex> str2 = "I love Elixir"
+string = "ELIXIR IS AWESOME"
+String.downcase(string)
 ```
 
-כעת, נדרוס את הפונקציה `downcase` ונעביר את המחרוזות שלנו כפרמטר:
+פלט הפונקציה יחזיר סטרינג חדש שכולל את אותיות הסטרינג המקורי באותיות קטנות:
 
 ```Elixir
-iex> String.downcase(str1)
-"hello world!"
-iex> String.downcase(str2)
-"i love elixir"
+"elixir is awesome"
 ```
 
-כפי שאתם רואים, הפונקציה `downcase` מחזירה את המחרוזות שתורגמו לאותיות קטנות.
+עוד דרך לעשות זאת היא על ידי שימוש בחיוב או בשלילה של האותיות בסטרינג על ידי הפונקציות `String.upcase/1` או `String.capitalize/1`. ניתן לראות את פלט הפונקציות באמצעות הקוד הבא:
 
-### חלק ג: השתמש בפונקציית `String.downcase`
-בנוסף לפונקציה `downcase`, ישנה פונקציית `String.downcase` שמבצעת את אותה פעולה. שימוש בפונקציית זו הוא יתר על כן שהיא נותנת מענה למקרים יותר מסובכים.
+```Elixir
+String.upcase("elixir is awesome")
+String.capitalize("elixir is awesome")
+```
+```Elixir
+"ELIXIR IS AWESOME"
+"Elixir is awesome"
+```
 
-לדוגמה, ננסה לשנות את המחרוזת `"Hello World!"` לאותיות קטנות באמ
+כעת ננסה להמיר את הסטרינג לאותיות קטנות ולהשאר רק עם האותיות הראשונות בגודל גדול. נשתמש פה בשילוב של הפונקציות `String.downcase/1` ו-`String.capitalize/1` כך:
+
+```Elixir
+"elixir is awesome" |> String.downcase() |> String.capitalize()
+```
+
+פלט הפונקציה יחזיר סטרינג חדש שכולל את האות הראשונה באותיות גדולות, ואת כל האותיות האחרות באותיות קטנות:
+
+```Elixir
+"Elixir is awesome"
+```
+
+בכל מקרה, לאורך פיתוח תוכניות באליקסיר נבלט כמה פעמים הרשות לעביר מנהלה היא מנהל

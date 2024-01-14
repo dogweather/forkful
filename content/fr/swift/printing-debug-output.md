@@ -1,50 +1,78 @@
 ---
-title:    "Swift: Affichage du débogage"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/swift/printing-debug-output.md"
+title:                "Swift: Impression de sortie de débogage"
+programming_language: "Swift"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Lorsque vous développez une application en Swift, il est important de pouvoir suivre le flux d'exécution du code afin de détecter les erreurs et de comprendre les problèmes. C'est là que l'affichage des sorties de débogage entre en jeu.
+L'impression de sortie de débogage peut sembler évidente à certains, mais elle peut être un outil très utile pour comprendre le comportement de votre code et trouver des erreurs dans vos programmes Swift. Cela peut être particulièrement utile lors du développement de nouvelles fonctionnalités ou de la résolution de bugs.
 
 ## Comment faire
 
-Pour afficher les sorties de débogage dans votre code Swift, vous pouvez utiliser la fonction `print()` avec les valeurs que vous souhaitez afficher entre parenthèses. Par exemple :
+Pour imprimer une sortie de débogage dans Swift, vous pouvez utiliser la fonction `print()`. Par exemple:
 
 ```Swift
-let nom = "Marie"
-let age = 25
-
-print("Bonjour, je m'appelle \(nom) et j'ai \(age) ans.")
+let nombre = 10
+print("Le nombre est \(nombre)") 
 ```
 
-Lorsque vous exécutez ce code, vous verrez dans la console : "Bonjour, je m'appelle Marie et j'ai 25 ans." Cela peut vous aider à suivre le déroulement de votre code et à vérifier si les variables contiennent les valeurs que vous attendiez.
+Cela produira la sortie suivante dans la console :
 
-## Zoom sur l'affichage des sorties de débogage
+`Le nombre est 10`
 
-En plus d'afficher des valeurs de variables, vous pouvez également utiliser l'affichage des sorties de débogage pour afficher des messages d'erreur ou des avertissements dans votre code. Par exemple :
+Vous pouvez également utiliser `debugPrint()` pour obtenir une sortie de débogage plus détaillée pour les types personnalisés tels que les structures ou les classes.
 
 ```Swift
-let note = 17
-
-if note < 10 {
-    print("Attention, votre note est insuffisante.")
-} else if note >= 10 && note < 14 {
-    print("Votre note est passable.")
-} else if note >= 14 && note < 18 {
-    print("Félicitations, vous avez une bonne note.")
-} else {
-    print("Bravo, vous avez obtenu un excellent résultat !")
+struct Personne {
+    var nom: String
+    var age: Int
 }
+
+let moi = Personne(nom: "Jeanne", age: 25)
+debugPrint(moi) 
 ```
 
-Ce code affiche un message différent en fonction de la valeur de la variable `note`. Si vous voulez en savoir plus sur l'affichage des sorties de débogage en Swift, vous pouvez consulter la documentation officielle d'Apple sur le sujet.
+Cela produira la sortie suivante :
+
+`Personne(nom: "Jeanne", age: 25)`
+
+Vous pouvez également utiliser des options de formatage pour personnaliser votre sortie de débogage, telles que `separator` et `terminator`. Par exemple :
+
+```Swift
+let nombre1 = 5
+let nombre2 = 7
+print(nombre1, nombre2, separator: " + ", terminator: " = ")
+print(nombre1 + nombre2) 
+```
+
+Cela produira la sortie suivante :
+
+`5 + 7 = 12`
+
+## Plongée en profondeur
+
+L'impression de sortie de débogage peut également être utile à des fins de débogage avancées. Par exemple, vous pouvez utiliser `#function` pour imprimer le nom de la fonction dans laquelle la sortie est appelée.
+
+```Swift
+func imprimerFonction() {
+    print("Fonction appelée: \(#function)")
+}
+
+imprimerFonction() 
+```
+
+Cela produira la sortie suivante :
+
+`Fonction appelée: imprimerFonction()`
+
+Vous pouvez également utiliser `#line`, `#file` et `#column` pour imprimer des informations sur la ligne, le fichier et la colonne où la sortie est appelée.
 
 ## Voir aussi
 
-- [Documentation officielle sur l'affichage des sorties de débogage en Swift](https://developer.apple.com/documentation/swift/diagnosing_memory_issues)
-- [Article Medium sur l'utilisation de l'affichage des sorties de débogage en Swift](https://medium.com/ios-os-x-development/how-to-use-nslog-like-a-pro-to-debug-your-swift-code-75167286c6e9)
-- [Tutoriel vidéo sur l'affichage des sorties de débogage en Swift](https://www.youtube.com/watch?v=hxByyI9QFZ4)
+- [Documentation Apple sur l'impression de sortie de débogage](https://developer.apple.com/documentation/swift/debugging)
+- [Article sur l'utilisation de l'impression de sortie de débogage en Swift](https://www.hackingwithswift.com/sixty/12/6/debugging-print)
+- [Guide complet sur le débogage en Swift](https://www.raywenderlich.com/4448-swift-debugging-tips-and-tricks)

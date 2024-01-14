@@ -1,16 +1,19 @@
 ---
-title:    "Go: 텍스트 검색 및 대체하기"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/go/searching-and-replacing-text.md"
+title:                "Go: 텍스트 검색 및 대체하기"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-텍스트를 검색하고 바꾸는 것에 참여하는 이유는 간단합니다. 이 작업은 반복적이고 잦은 수정을 수행하는 데 매우 유용합니다.
 
-## 방법
-문자열을 바꾸는 작업은 Go에서 매우 간단합니다. 다음 예제 코드를 살펴보세요.
+텍스트 검색 및 치환의 필요성이 무엇인지 궁금하신가요? 이 블로그 포스트에서는 Go 언어를 사용하여 텍스트 검색 및 치환을 하는 방법과 그 과정에서 더 깊이 들여다볼 수 있는 정보를 제공합니다.
+
+## 어떻게
+
+텍스트 검색 및 치환을 수행하는 방법은 매우 간단합니다. 우선, 소스 코드에서 바꾸고자 하는 문자열을 찾은 다음, 지정한 새로운 문자열로 대체하면 됩니다. 이를 Go 언어의 `strings` 패키지를 사용하여 쉽게 구현할 수 있습니다.
 
 ```Go
 package main
@@ -21,25 +24,36 @@ import (
 )
 
 func main() {
-	str := "안녕하세요, 여러분!"
-	fmt.Println(str)
-	fmt.Println(strings.Replace(str, "여러분", "친구들", -1))
+	// 원래 문자열
+	str := "안녕하세요! 오늘은 출근일입니다."
+
+	// "안녕하세요"를 "Hello"로 대체
+	newStr := strings.Replace(str, "안녕하세요", "Hello", 1)
+
+	// 결과 출력
+	fmt.Println(newStr)
 }
 ```
-출력:
 
+위의 예시 코드에서는 `strings.Replace()` 함수를 사용하여 텍스트를 대체하였습니다. 이 함수는 세 가지 파라미터를 입력받습니다. 첫 번째 파라미터는 원본 문자열이고, 두 번째 파라미터는 찾을 문자열이며, 세 번째 파라미터는 대체할 문자열입니다. 마지막으로, 원본 문자열에서 찾는 모든 문자열을 대체하고 싶다면 마지막 인자로 `-1`을 입력하시면 됩니다.
+
+위의 코드를 실행하면 다음과 같은 결과가 출력됩니다.
+
+```Go
+Hello! 오늘은 출근일입니다.
 ```
-안녕하세요, 여러분!
-안녕하세요, 친구들!
-```
 
-위 코드에서는 `strings.Replace` 함수를 사용하여 "여러분"을 "친구들"로 바꿨습니다.
-마지막 매개변수인 `-1`은 모든 출현을 바꾸는 것을 의미합니다. 따라서 `str` 변수의 모든 "여러분"이 "친구들"로 바뀌었습니다.
+## 깊이 들여다보기
 
-## 딥 다이브
-위 코드에서는 `strings.Replace` 함수를 사용했지만, Go에는 다양한 다른 문자열 검색 및 교체 함수가 있습니다. `strings.Contains`, `strings.Count`, `strings.Index` 등으로 문자열을 비교하거나 위치를 찾을 수도 있습니다. 또한 정규표현식을 사용하여 더 복잡한 검색과 교체를 할 수도 있습니다.
+텍스트 검색 및 치환 작업을 더 깊이 들여다보려면 다음과 같은 함수들을 사용할 수 있습니다.
 
-## 참고 자료
-- [Go 문자열 함수](https://golang.org/pkg/strings/)
-- [Go 정규 표현식](https://golang.org/pkg/regexp/)
-- [예제와 함께 배우는 Go](https://pyrasis.com/book/GoForTheReallyImpatient/)
+- `strings.Contains()`: 문자열에 특정 문자열이 포함되어 있는지 여부를 확인합니다.
+- `strings.Count()`: 특정 문자열이 문자열 내에서 몇 번 등장하는지 세어줍니다.
+- `strings.Index()`: 문자열 내에서 특정 문자열이 처음으로 등장하는 인덱스를 반환합니다.
+
+이 외에도 여러 가지 함수를 사용하여 보다 복잡한 텍스트 검색 및 치환 작업을 수행할 수 있습니다. 자세한 내용은 [Go 언어 공식 문서](https://golang.org/pkg/strings/)를 참고하시기 바랍니다.
+
+## 같이 보기
+
+- [Go 언어 공식 문서 (strings 패키지)](https://golang.org/pkg/strings/)
+- [Go 언어로 파일 읽고 쓰기](https://medium.com/@ravinderpgupta/reading-file-in-golang-39ab81f85985)

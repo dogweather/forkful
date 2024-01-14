@@ -1,52 +1,44 @@
 ---
-title:    "Javascript: Wydobywanie podciągów"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/extracting-substrings.md"
+title:                "Javascript: Wycinanie podciągów"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Istnieje wiele powodów dla których programiści mogą potrzebować wydobyć podłańcuchy (substrings) z większych ciągów znaków w swoim kodzie JavaScript. Może to być potrzebne do analizy danych, wyciągania określonych informacji lub po prostu do manipulacji tekstem. Poniżej przedstawione zostaną przykłady w jaki sposób można wykorzystać metodę substring w praktyce.
+Czasami w programowaniu konieczne jest wydobycie fragmentu z tekstu lub ciągu znaków. Może to być potrzebne do porównania, edycji lub wykorzystania w inny sposób. W takich sytuacjach użyteczna jest operacja zwana wydobyciem podciągu (ang. substring).
 
-## Jak to zrobić
+## Jak to zrobić?
 
- W JavaScript istnieją różne metody do wydobywania podłańcuchów, jednak jedną z najczęściej używanych jest metoda `substring ()`. Pozwala ona określając początek i koniec podłańcucha, na wydzielenie go z większego ciągu znaków. Poniżej znajduje się przykład, który pokazuje jak uzyskać podłańcuch od 6 do 11 znaku z tekstu:
-
-```Javascript
-let tekst = "To jest przykładowy tekst";
-let podlacuch = tekst.substring(6, 11);
-console.log(podlacuch); // wyświetli: jest 
-```
-
-W powyższym przykładzie, użyliśmy metody `substring()` na zmiennej `tekst`, podając argumenty 6 i 11, co oznacza, że wybrane zostaną znaki od 6 do 11, a następnie wynik zostaje przypisany do zmiennej `podlacuch`, którą wyświetlamy na konsoli.
-
-Można również użyć `substring()` do wydobywania podłańcuchów na podstawie określonego znaku lub ciągu znaków znajdującego się w tekście. Na przykład, jeśli chcemy uzyskać podłańcuch zaczynający się od słowa "przykładowy", możemy użyć tego kodu:
+Aby wydobyć podciąg za pomocą JavaScript, musimy użyć wbudowanej funkcji `substring()`. Podajemy dwa parametry - początek i koniec wybranego fragmentu. Na przykład, jeśli chcemy wydobycie podciągu z drugiego do czwartego znaku z ciągu "Hello World!", nasz kod może wyglądać tak:
 
 ```Javascript
-let tekst = "To jest przykładowy tekst";
-let podlacuch = tekst.substring(tekst.indexOf("przykładowy")); // znajduje indeks pierwszego wystąpienia słowa "przykładowy"
-console.log(podlacuch); // wyświetli: przykładowy tekst 
+let text = "Hello World!";
+let substring = text.substring(2, 5);
+console.log(substring); // wynik: "llo"
 ```
 
-Inną przydatną metodą jest `slice()`, która działa w podobny sposób do `substring()`, ale pozwala na podanie tylko jednego indeksu jako argumentu. Jeśli podamy tylko jeden indeks, zostanie utworzony podłańcuch od tego indeksu do końca tekstu. Przykład:
+Możemy również podać tylko jeden parametr - początek. Wtedy zwrócony zostanie podciąg od tego miejsca do końca oryginalnego tekstu. Przykład:
 
 ```Javascript
-let tekst = "To jest przykładowy tekst";
-let podlacuch = tekst.slice(8); // utworzy podłańcuch od 8 indeksu do końca tekstu
-console.log(podlacuch); // wyświetli: przykładowy tekst
+let text = "Hello World!";
+let substring = text.substring(5);
+console.log(substring); // wynik: " World!"
 ```
 
-## Głębsza analiza
+Pamiętajmy, że indeksowanie znaków w JavaScript zaczyna się od 0, więc pierwszy znak ma indeks 0.
 
-Metody `substring()` i `slice()` opisane powyżej są bardzo podstawowe, jednak w JavaScript istnieje także wiele innych sposobów na wydobywanie podłańcuchów. Na przykład, można wykorzystać wyrażenia regularne lub zastosować różne funkcje do manipulacji tekstem, takie jak `split()` czy `replace()`.
+## Deep Dive
 
-Podczas manipulacji tekstami, ważne jest także pamiętać o tym, że ciągi znaków są niezmienialne (immutable), co oznacza, że metody te nie zmieniają oryginalnego tekstu, lecz zwracają nowy podłańcuch.
+Funkcja `substring()` jest często używana do manipulacji i edycji tekstów w JavaScript. Jest to jednak tylko jedna z wielu dostępnych metod. Innymi przydatnymi funkcjami są `slice()`, `substr()` czy `replace()`. W zależności od naszych potrzeb, możemy wybrać odpowiednią do danego zadania funkcję.
 
-## Zobacz również
+Warto również wiedzieć, że `substring()` działa tylko na typie danych "string", dlatego jeśli chcemy wykonać operację na innym typie, np. liczbie, musimy najpierw przekonwertować go na string za pomocą funkcji `toString()`.
 
-Jeśli chcesz dowiedzieć się więcej na temat eksplorowania podłańcuchów w JavaScript, polecamy zapoznać się z poniższymi linkami:
+## Zobacz także
 
-- Dokumentacja MDN na temat metody `substring()`: https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/substring
-- Poradnik dotyczący wydobywania podłańcuchów w JavaScript: https
+1. Dokumentacja wbudowanej funkcji `substring()` w JavaScript: https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/substring
+2. Porównanie różnych funkcji do manipulacji stringami w JavaScript: https://www.w3schools.com/js/js_string_methods.asp
+3. Przykłady zastosowań wydobycia podciągu w praktyce: https://www.geeksforgeeks.org/extracting-substrings-from-a-string-in-javascript/

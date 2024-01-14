@@ -1,56 +1,63 @@
 ---
-title:    "Clojure: Sammenslåing av strenger"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/concatenating-strings.md"
+title:                "Clojure: Sammenføyning av tekststrenger"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å kombinere eller "kata" strenger spiller en viktig rolle i mange programmeringsoppgaver. Ved å gjøre dette kan du enkelt konstruere store tekststrenger fra mindre biter som bidrar til å gjøre koden din mer lesbar og lett å vedlikeholde.
+Hvorfor ville noen ønske å kombinere strenger i Clojure? Det kan være nyttig når du trenger å sette sammen informasjon fra ulike kilder for å presentere for brukeren, eller hvis du trenger å formatere data på en spesifikk måte.
 
-## Hvordan
+## Slik gjør du det
 
-Du kan kombinere strenger ved å bruke funksjonen "str" i Clojure. Denne funksjonen tar imot en uendelig mengde argumenter, og returnerer en enkeltstreng som er en kombinasjon av disse.
-
-```Clojure
-(str "Hei" " " "alle sammen") ; Output: "Hei alle sammen"
-(str "abc" "def" "ghi") ; Output: "abcdefghi"
-```
-
-Du kan også kombinere strenger ved å bruke "+" operatoren.
+Å kombinere strenger i Clojure kan gjøres ved å bruke funksjonen "str". Her er et eksempel på hvordan dette kan gjøres:
 
 ```Clojure
-(+ "Hva er" " " "opp?") ; Output: "Hva er opp?"
+(str "Hei " "verden!")
 ```
 
-Hvis du vil kombinere en streng med et tall eller et annet data type, kan du bruke funksjonen "format". Denne funksjonen tar imot en formatteringsstreng og argumenter som skal plasseres i denne strengen.
+Dette vil produsere outputen "Hei verden!". Som du kan se, blir strengene "Hei" og "verden!" satt sammen til en ny streng. Du kan også kombinere flere strenger på en gang:
 
 ```Clojure
-(format "Det var %s ganger jeg sa hei i dag." 5) ; Output: "Det var 5 ganger jeg sa hei i dag."
-(format "Jeg vant %d kroner i lotto!" 1000000) ; Output: "Jeg vant 1000000 kroner i lotto!"
+(str "Min favorittfarge er " "blå, " "og jeg liker å " "spise sushi.")
 ```
 
-## Dypdykk
+Dette vil produsere outputen "Min favorittfarge er blå, og jeg liker å spise sushi.". Du kan også kombinere strenger med variabler:
 
-Det er viktig å være oppmerksom på at string-konkatinering kan bli ineffektivt hvis du bruker det i løkker eller funksjoner som kalles mange ganger. Dette er fordi hver gang du kombinerer to strenger, blir en kopi av dem laget, som kan føre til at programmet ditt bruker mer minne enn nødvendig.
+```Clojure
+(def favorittmat "taco")
+(str "Jeg elsker å spise " favorittmat " på fredagskvelder.")
+```
 
-For å unngå dette kan du bruke "StringBuilder" klassen i Java interop. Denne klassen lar deg bygge en streng ved å legge til små biter for å unngå å måtte skape mange kopier.
+Dette vil produsere outputen "Jeg elsker å spise taco på fredagskvelder.".
+
+## Dypere dykk
+
+I Clojure kan du også bruke funksjonen "clojure.string/join" for å kombinere en liste med strenger. Dette er nyttig hvis du har en liste med ord eller setninger som du vil sette sammen til en ny streng. Her er et eksempel på hvordan dette kan gjøres:
 
 ```Clojure
 (require '[clojure.string :as str])
-(defn concatenate [list-of-strings]
-  (let [builder (java.lang.StringBuilder.)]
-    (doseq [str list-of-strings]
-      (.append builder str))
-    (.toString builder)))
-
-(concatenate ["Hei, " "jeg " "heter " "Per"]) ; Output: "Hei, jeg heter Per"
+(def favorittlag ["Barcelona" "Real Madrid" "Liverpool"])
+(str/join ", " favorittlag)
 ```
 
-## Se også 
+Dette vil produsere outputen "Barcelona, Real Madrid, Liverpool". Ved å bruke "join" kan du også legge til et skilletegn mellom hver streng. Her er et eksempel på det:
 
-- [Clojure Docs - String Concatenation](https://clojuredocs.org/clojure.core/str)
-- [Java StringBuilder Class](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
-- [Clojure for Begynnere - Append og Str Concatenation](http://clojure-begginers-guide.blogspot.com/2016/07/append-and-str-concatenation.html)
+```Clojure
+(require '[clojure.string :as str])
+(def tall [1 2 3 4 5])
+(str/join ", " tall)
+```
+
+Dette vil produsere outputen "1, 2, 3, 4, 5".
+
+## Se også
+
+Her er noen nyttige ressurser for å lære mer om å kombinere strenger i Clojure:
+
+- [Clojure dokumentasjon for "str"](https://clojuredocs.org/clojure.core/str)
+- [Clojure dokumentasjon for "clojure.string/join"](https://clojuredocs.org/clojure.string/join)
+- [En tutorial om å jobbe med strenger i Clojure](https://www.braveclojure.com/do-things-with-strings/)

@@ -1,53 +1,50 @@
 ---
-title:    "Rust: Obteniendo la fecha actual"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/rust/getting-the-current-date.md"
+title:                "Rust: Obteniendo la fecha actual"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué obtener la fecha actual es importante en Rust
+## Por qué
 
-Rust es un lenguaje de programación moderno y eficiente que está ganando popularidad rápidamente. Una de las tareas más comunes que se realizan en la programación es obtener la fecha actual. Puede ser para mostrar la fecha en una interfaz de usuario, para realizar cálculos relacionados con el tiempo o para realizar una acción programada. En este artículo, veremos cómo obtener la fecha actual en Rust y por qué es importante para los programadores.
+Rust es un lenguaje de programación moderno y eficiente, que se ha vuelto cada vez más popular entre los desarrolladores en los últimos años. Una de las razones detrás de su creciente popularidad es su capacidad de manejar concurrencia y paralelismo de forma segura y eficiente. Hasta ahora, hemos aprendido sobre cómo Rust puede manejar concurrencia, pero ahora ampliemos nuestros conocimientos con algo práctico: ¿cómo podemos obtener la fecha actual en Rust?
 
-## Cómo obtener la fecha actual en Rust
+## Cómo hacerlo
 
-Para obtener la fecha actual en Rust, utilizaremos el módulo `std::time` que proporciona funciones para trabajar con fechas y horas. Primero, debemos importar el módulo en nuestro código con la declaración `use std::time;`. A continuación, utilizaremos la función `now()` del módulo para obtener un `Instant` que representa el tiempo actual. Luego, podemos usar el método `format()` para dar formato a la fecha en cualquier tipo de formato que necesitemos.
+Usando la biblioteca estándar de Rust `chrono`, podemos obtener la fecha y hora actual usando el siguiente código:
 
-```Rust
-use std::time;
+```Rust 
+use chrono::Local;
 
-let now = time::Instant::now();
-let date = now.format("%Y-%m-%d"); // formato año-mes-día
+let fecha = Local::now(); 
+println!("La fecha y hora actual es: {}", fecha); 
+```
+La salida de este código sería algo como esto:
 
-println!("La fecha actual es {}", date); // Salida: 2021-07-11
+```
+La fecha y hora actual es: 2021-09-15 14:30:00.023201 UTC
 ```
 
-También podemos obtener la hora actual en varias zonas horarias utilizando el tipo de datos `chrono::DateTime` del popular paquete `chrono`. Este paquete proporciona una gran cantidad de funciones para trabajar con fechas y horas.
+Pero, ¿qué sucede si queremos un formato de fecha diferente? Hay muchas formas de dar formato a una fecha en Rust, pero aquí hay un ejemplo utilizando `strftime` para obtener una fecha en formato "día/mes/año":
 
 ```Rust
-use chrono::prelude::*;
+use chrono::{Local, Datelike};
 
-let local_now = Local::now();
-let utc_now = Utc::now();
-
-println!("La hora actual en tu zona horaria es {}", local_now.format("%H:%M")); // Salida: 16:35
-println!("La hora actual en UTC es {}", utc_now.format("%H:%M")); // Salida: 20:35
+let date = Local::now();
+let formatted_date = date.strftime("%d/%m/%Y").unwrap_or("Fecha no disponible".to_string());
+println!("La fecha actual es: {}", formatted_date);
 ```
 
-Hay muchas más funciones y tipos de datos disponibles en los módulos `std::time` y `chrono` para trabajar con fechas y horas en Rust. Ahora veremos una explicación más profunda de cómo funcionan internamente estas funciones.
+La salida de este código sería la fecha actual en formato "día/mes/año", por ejemplo: 15/09/2021.
 
-## Profundizando en la obtención de la fecha actual en Rust
+## Profundizando en el tema
 
-Internamente, `std::time::Instant` es representado por un número de nanosegundos desde la época de Unix. La época de Unix es el 1 de enero de 1970 a las 00:00:00 UTC. Esto significa que `now()` devolverá un número positivo si la hora actual es después de la época de Unix y un número negativo si la hora actual es antes.
-
-Por otro lado, `chrono::DateTime` utiliza una estructura de datos más compleja que incluye información como el año, mes, día, hora, etc. También tiene una función `now()` que devuelve la fecha y hora actual en la zona horaria especificada.
-
-Es importante señalar que, al igual que con cualquier otra tarea de programación, hay múltiples formas de obtener la fecha actual en Rust. Puedes buscar en la documentación oficial o en foros y blogs en línea para encontrar otras alternativas y elegir la que mejor se adapte a tus necesidades.
+Ahora que sabemos cómo obtener la fecha actual en Rust, es importante saber que `chrono` también permite trabajar con diferentes zonas horarias y fechas históricas. Además, también tiene funciones útiles para trabajar con duraciones de tiempo, como calcular la diferencia entre dos fechas. Si quieres aprender más sobre `chrono`, puedes consultar su documentación [aquí](https://docs.rs/chrono/latest/chrono/).
 
 ## Ver también
 
-- Documentación oficial de Rust sobre `std::time`: https://doc.rust-lang.org/std/time/
-- Documentación oficial de Rust sobre `chrono`: https://docs.rs/chrono/0.4.19/chrono/
-
-Esperamos que este artículo te haya ayudado a comprender cómo obtener la fecha actual en Rust y por qué es importante para los programadores. ¡No dudes en experimentar con diferentes métodos y bibliotecas para encontrar el que mejor se adapte a tu aplicación!
+- [Documentación de la biblioteca chrono](https://docs.rs/chrono/latest/chrono/)
+- [Código de ejemplo para obtener la fecha actual en Rust](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=f1534bb83dd8ed6f67e2b76b9c23059b)
+- [Tutorial para trabajar con fechas y horas en Rust](https://blog.logrocket.com/handling-dates-and-times-in-rust/)

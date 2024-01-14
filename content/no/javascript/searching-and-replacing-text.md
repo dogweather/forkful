@@ -1,56 +1,45 @@
 ---
-title:    "Javascript: Søk og erstatt tekst"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/searching-and-replacing-text.md"
+title:                "Javascript: Søke og erstatte tekst"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
 
-Å bytte ut tekster i koden din kan være en nyttig ferdighet å ha som en Javascript-programmerer. Det lar deg enkelt endre flere forekomster av en gitt tekst på en gang, noe som kan spare deg mye tid og krefter.
+Det kan være mange grunner til å ønske å søke og erstatte tekst i Javascript. Kanskje du vil endre alle forekomster av et bestemt ord til et annet, eller kanskje du ønsker å formatere tekst på en spesiell måte. Uansett hva grunnen er, kan søking og erstatning av tekst være en nyttig ferdighet å ha når du jobber med Javascript.
 
-## Hvordan gjøre det
+##Slik gjør du det
 
-Det er flere måter å søke og erstatte tekst i Javascript. En av de mest effektive måtene er å bruke en regex (regular expression) sammen med en innebygd metode kalt `replace()`. Her er et eksempel på hvordan du kan bruke dette:
-
-```Javascript
-// Lager en ny string som inneholder tekster vi vil bytte ut
-let tekst = "Hei, mitt navn er Javascript. Javascript er kjempegøy!"
-
-// Bruker regex og replace() metoden for å endre tekst
-let nyTekst = tekst.replace(/Javascript/g, "Python")
-
-console.log(nyTekst) // Output: Hei, mitt navn er Python. Python er kjempegøy!
-```
-
-Som du kan se i eksempelet, bruker vi `/Javascript/g` som et regex-mønster og `replace()`-metoden for å bytte ut alle forekomster av "Javascript" med "Python". Det `g` etter skråstreken indikerer at vi vil at det skal endre alle forekomster, ikke bare den første.
-
-Du kan også bruke `replace()` for å erstatte tekster med variabler eller funksjoner. Her er et annet eksempel:
+For å søke og erstatte tekst i Javascript, kan du bruke metoden `replace` på en streng. Denne metoden tar to argumenter: den første er hva du ønsker å søke etter, og den andre er hva du ønsker å erstatte det med. La oss se på et eksempel:
 
 ```Javascript
-// En variabel med tekst vi vil bruke for å bytte ut
-let byttetTekst = "for å gi liv til kode!"
-
-// Funksjon som bytter ut tekster og legger til et '!' på slutten
-function erstatteTekst(match) {
-  return match + byttetTekst + '!';
-}
-
-// Bruker funksjonen og replace() for å endre tekst
-let nyTekst = "Vi koder ",replace('for', erstatteTekst)
-
-console.log(nyTekst) // Output: Vi koder for å gi liv til kode!!
+let tekst = "Hei verden!";
+let endretTekst = tekst.replace("Hei", "Hallo");
+console.log(endretTekst);
 ```
 
-## Dypdykk
+I dette eksempelet bruker vi `replace`-metoden for å erstatte "Hei" med "Hallo" i strengen tekst. Outputen vil bli "Hallo verden!".
 
-Det er også andre metoder for å søke og erstatte tekster i Javascript, som `indexOf()` og `substr()`. `indexOf()` returnerer posisjonen til en tekst i en streng, mens `substr()` returnerer en del av en streng basert på en startindeks og en lengde. Disse metodene kan også brukes på et array av strenger.
+Det er også mulig å bruke regulære uttrykk i `replace`-metoden for å gjøre mer avanserte søk og erstatninger. Et regulært uttrykk er en måte å beskrive et mønster som en streng kan matche. La oss se på et eksempel der vi erstatter alle tall i en streng med "X":
 
-Det er viktig å merke seg at regular expressions kan være komplekse og krever litt øvelse for å mestre. Men å kunne bruke dem for å søke og erstatte tekster i kode kan være en kraftig verktøy som kan spare deg for mye tid og arbeid.
+```Javascript
+let tall = "123456";
+let endretTall = tall.replace(/[0-9]/g, "X");
+console.log(endretTall);
+```
 
-## Se også
+I dette eksempelet bruker vi `[0-9]` for å matche alle tall i strengen ved å bruke et regulært uttrykk. Det siste argumentet `g` betyr global, som betyr at alle forekomster av mønsteret skal bli erstattet. Outputen vil bli "XXXXXX".
 
-- [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [MDN Web Docs - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [W3Schools - JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+##Dypdykk
+
+Å bruke regulære uttrykk i `replace`-metoden kan være veldig nyttig, spesielt når du ønsker å gjøre mer avanserte søk og erstatninger. Det finnes mange forskjellige mønstre du kan bruke i regulære uttrykk, og det kan være lurt å bruke et nettsted som regex101.com for å teste ut og utvikle dine egne uttrykk.
+
+Det kan også være nyttig å vite at `replace`-metoden ikke endrer originalstrengen, den returnerer en ny streng med de nødvendige endringene. Derfor må du lagre resultatet i en ny variabel, som vi gjorde i eksemplene våre.
+
+##Se også
+
+- [MDN Web Docs - replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [regex101.com](https://regex101.com/)

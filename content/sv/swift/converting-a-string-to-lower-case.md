@@ -1,46 +1,32 @@
 ---
-title:    "Swift: Omvandling av en sträng till gemener"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/converting-a-string-to-lower-case.md"
+title:                "Swift: Omvandling av en sträng till små bokstäver"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
-I den här bloggposten kommer vi att titta på hur man konverterar en sträng till små bokstäver i Swift. Det är ett vanligt problem som ofta uppstår när man hanterar inmatning från användare eller jämför strängar i en applikation. Genom att konvertera en sträng till små bokstäver kan du enkelt uppnå enhetlighet och korrekta jämförelser.
+## Varför
 
-# Hur man gör
-För att konvertera en sträng till små bokstäver kan du använda metoden `.lowercased()` på din sträng. Här är ett exempel:
+Att konvertera en sträng till gemener är en vanlig uppgift som kan vara användbar för att förbättra användarens upplevelse, till exempel genom att erbjuda mer flexibilitet i sökningar eller filtreringar.
+
+## Hur man gör det
 
 ```Swift
-let originalString = "SWIFT ÄR KUL!"
+let originalString = "Hello, WORLD!"
 let lowercasedString = originalString.lowercased()
+
 print(lowercasedString)
 ```
 
-Output:
-```
-swift är kul!
-```
+Output: "hello, world!"
 
-# Djupdykning
-När du använder `.lowercased()`-metoden i Swift kommer alla bokstäver i strängen att konverteras till små bokstäver enligt Unicode-standarder. Det betyder att även bokstäver från andra språk än engelska kommer att konverteras till små bokstäver enligt deras Unicode-ekvivalenter.
+## Djupdykning
 
-Om du vill begränsa konverteringen endast till engelska bokstäver kan du använda `.lowercased(with: Locale)`-metoden och specificera önskad lokal. Till exempel:
+Att konvertera en sträng till gemener är en enkel uppgift i Swift tack vare `lowercased()` funktionen. Detta kan också användas tillsammans med andra strängmanipuleringsfunktioner för att åstadkomma önskad funktionalitet.
 
-```Swift
-let originalString = "SWIFT ÄR KUL!"
-let lowercasedString = originalString.lowercased(with: Locale(identifier: "en"))
-print(lowercasedString)
-```
+## Se även
 
-Output:
-```
-swift är kul!
-```
-
-Det är också värt att nämna att `.lowercased()`-metoden inte ändrar originalsträngen, utan skapar en ny sträng med de konverterade bokstäverna.
-
-# Se även
-- [Dokumentation om `.lowercased()`-metoden](https://developer.apple.com/documentation/swift/string/1783473-lowercased)
-- [Unicode-språkkoder](https://www.unicode.org/cldr/charts/latest/supplemental/language_territory_information.html)
+- [Apple Developer Documentation: String Lowercasing](https://developer.apple.com/documentation/swift/string/3129814-lowercased)
+- [Swift Strings Cheat Sheet](https://www.andyibanez.com/development/swift/strings-cheat-sheet/#lowercasing-strings)

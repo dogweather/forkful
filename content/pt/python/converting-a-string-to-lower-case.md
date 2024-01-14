@@ -1,49 +1,54 @@
 ---
-title:    "Python: Convertendo uma string para minúsculas"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/converting-a-string-to-lower-case.md"
+title:                "Python: Convertendo uma string para minúsculas"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que converter uma string para minúsculas em Python
+## Por que
 
-Ao trabalhar com dados de texto em Python, pode ser útil converter uma string para letras minúsculas. Isso permite que você normalize seus dados e torne suas análises mais precisas.
+Converter uma string em caixa baixa (lower case) é uma tarefa comum em programação e pode ser útil em várias situações, como comparar strings sem levar em consideração a diferença entre maiúsculas e minúsculas.
 
 ## Como fazer
 
-Existem algumas maneiras de converter uma string para minúsculas em Python. Uma delas é usando o método `lower()`, que retorna uma cópia da string em letras minúsculas. Veja um exemplo abaixo:
+Para converter uma string em caixa baixa, podemos usar o método `lower()` em Python. Veja um exemplo abaixo:
 
-```Python
-texto = "Olá MUNDO!"
-print(texto.lower())
+```python
+# Definir uma string
+texto = "Olá, MUNDO!"
+
+# Converter para caixa baixa
+texto = texto.lower()
+
+# Imprimir o resultado
+print(texto)
 ```
-A saída será: "olá mundo!"
 
-Outra maneira é usando a função `str.lower()`, que também retorna a string em minúsculas. Veja um exemplo:
+**Saída:**
 
-```Python
-texto = "Este TEXTO Será CoNvErtIdO para Minúsculas"
-print(str.lower(texto))
+```python
+olá, mundo!
 ```
-A saída será: "este texto será convertido para minúsculas"
 
 ## Mergulho Profundo
 
-É importante notar que, ao converter uma string para minúsculas, qualquer caractere que não seja uma letra permanecerá inalterado. Isso inclui pontuação e números. Além disso, a conversão para minúsculas é sensível ao idioma. Por exemplo, em português, a letra "I" maiúscula se torna "i" minúscula, enquanto em turco, ela se torna "ı" minúscula.
+Ao usar o método `lower()`, é importante notar que ele retorna uma nova string convertida, mas não altera a string original. Por exemplo:
 
-Você também pode usar o método `replace()` para substituir caracteres maiúsculos por minúsculos em uma string. Veja um exemplo:
+```python
+texto = "Esse TEXTO vai ser CONVERtido"
 
-```Python
-texto = "Viva o BRASIL!"
-print(texto.replace("V", "v").replace("B", "b"))
+texto_convertido = texto.lower()
+
+print(texto) # Saída: Esse TEXTO vai ser CONVERtido
+print(texto_convertido) # Saída: esse texto vai ser convertido
 ```
-A saída será: "viva o brasil!"
 
-Por fim, é importante ressaltar que, quando você converte uma string para minúsculas, está criando uma nova string, já que as strings em Python são imutáveis. Isso significa que a string original permanecerá inalterada.
+Além disso, o método `lower()` é sensível a localização (locale) e pode retornar resultados diferentes dependendo do idioma definido no seu sistema operacional. Por exemplo, em português, a letra "ç" é equivalente a "c" em caixa baixa, mas em inglês não é. Isso pode causar resultados inesperados em algumas situações.
 
-# Veja também
+## Veja também
 
-- [Documentação oficial do Python sobre o método `lower()`](https://docs.python.org/3/library/stdtypes.html#str.lower)
-- [Tutorial sobre strings em Python](https://realpython.com/python-strings/)
-- [Vídeo do PyLadies sobre manipulação de strings em Python](https://www.youtube.com/watch?v=OvJ8YFA8VgM)
+- [Documentação do método `lower()` em Python](https://docs.python.org/3/library/stdtypes.html#str.lower)
+- [Tutorial: Manipulação de strings em Python](https://www.python.org/dev/peps/pep-0616/)
+- [Vídeo-aula: Python Strings and String Functions](https://www.youtube.com/watch?v=-uzs433zJTo)

@@ -1,33 +1,39 @@
 ---
-title:    "C#: 文字列の長さを見つける"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/finding-the-length-of-a-string.md"
+title:                "C#: 文字列の長さを求める"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-プログラマーたちは、文字列の長さを決定することがしばしばあります。例えば、入力フィールドの制限を設定したり、文字列を正しくフォーマットしたりするために必要です。今日は、文字列の長さを見つける方法について学びましょう！
+文字列の長さを求めることの意義は、プログラミングでテキストを処理する際に非常に重要です。例えば、ユーザーに入力された文字列をチェックするときや、ファイルの内容を扱うときに、文字列の長さを知る必要があります。
 
-##  方法
-
-プログラミング言語C #では、文字列の長さを決定するためにLengthプロパティを使います。例えば、次のようなコードを書くことで、文字列の長さを決定することができます。
+## 方法
 
 ```C#
-string input = "こんにちは、世界！"; 
-int length = input.Length;
-Console.WriteLine(length); // 出力： 8
+// 文字列の長さを求める方法
+string text = "こんにちは、世界！";
+int length = text.Length;
+Console.WriteLine(length); // 出力結果: 9
 ```
 
-上記のコードでは、input変数のLengthプロパティを使用して、文字列の長さを決定し、結果をlength変数に格納しています。その後、出力関数を使用して、結果をコンソールに表示しています。
+上記のコードでは、`string`型の変数`text`に文字列を代入し、`Length`プロパティを使用して文字列の長さを取得しています。このプロパティは、文字列の全ての文字をカウントしてくれるので、日本語や英語、数字などの多言語にも対応しています。また、空白や句読点も文字としてカウントされるので注意が必要です。
 
-## ディープダイブ
+## 深堀り
 
-文字列の長さを決定する方法を深く掘り下げると、文字列の長さを決定するために内部でどのような処理が行われているかを知ることができます。C＃には、内部的に文字のバイト数をカウントする方法が実装されています。また、C＃では、Unicode文字を正しくサポートし、文字列の長さを決定するのに役立つ多くの関数が備わっています。
+文字列の長さを求める方法には、`Length`プロパティ以外にも`Count`メソッドを使用する方法もあります。しかし、`Count`メソッドは文字列の長さを求めるだけでなく、指定した条件に合致した文字の数をカウントすることもできます。これは、特定の文字を探して処理を行う場合などに便利です。
 
-##  それを参照してください
+## よくある質問
 
-- [C＃のString.Lengthプロパティのドキュメンテーション](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netcore-3.1) 
-- [文字列の長さを決定するには？@Qiita（日本語）](https://qiita.com/shinoki7/items/3640d9bd1c91c1288001) 
-- [The Truth About Strings in .NET@Pluralsight（英語）](https://www.pluralsight.com/courses/the-truth-about-strings-dotnet)
+- 日本語の文字列の長さは、英文字列の長さと同じですか？
+  - はい、日本語の文字列も全ての文字をカウントして長さを判断します。
+- 文字列の先頭や末尾にある空白や改行は、文字列の長さに含まれるのですか？
+  - はい、文字列の先頭や末尾の空白や改行も文字としてカウントされます。
+
+## 参考リンク
+
+- [.NET プログラミング ガイド: 文字列の基本](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/strings)
+- [C# マニュアル: string.Length プロパティ](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.length)

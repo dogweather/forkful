@@ -1,31 +1,40 @@
 ---
-title:    "Ruby: Commencer un nouveau projet"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/starting-a-new-project.md"
+title:                "Ruby: Commencer un nouveau projet"
+programming_language: "Ruby"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Quand on apprend à programmer, il est important de se lancer dans de nouveaux projets pour mettre en pratique ses connaissances et les appliquer dans des projets concrets. Cela permet également de développer ses compétences et de découvrir de nouvelles techniques et technologies. 
+
+Commençons par la question la plus importante : pourquoi voudriez-vous vous lancer dans un nouveau projet de programmation en Ruby ? Eh bien, les raisons peuvent varier selon chaque individu, mais la programmation en Ruby offre une syntaxe simple et élégante, ainsi qu'une grande communauté de soutien et de ressources en ligne. De plus, en utilisant Ruby, vous pourriez construire des applications web puissantes et dynamiques en peu de temps, ce qui en fait un excellent choix pour les débutants et les professionnels.
 
 ## Comment faire
-Avant de commencer un nouveau projet en Ruby, il est important de bien comprendre les bases du langage et de se familiariser avec la syntaxe. Pour cela, on peut commencer par suivre des tutoriels ou des cours en ligne, et pratiquer en écrivant du code. Voici un exemple de code Ruby pour afficher "Bonjour le monde !" à l'écran :
 
-```ruby
+Maintenant que vous avez une idée des avantages de la programmation en Ruby, voyons comment commencer un nouveau projet. Tout d'abord, assurez-vous d'avoir installé Ruby sur votre ordinateur. Une fois installé, vous pouvez commencer à écrire votre code dans un fichier avec l'extension ".rb". Voici un exemple de code pour afficher un message simple :
+
+```Ruby
 puts "Bonjour le monde !"
 ```
 
-Ensuite, il est important de bien définir le but de votre projet et de planifier les différentes étapes à suivre. Cela peut inclure la création d'un cahier des charges, la mise en place d'une architecture de projet, et la rédaction de user stories. Il est également important de choisir les outils et les technologies les plus adaptés pour votre projet, comme des frameworks ou des librairies.
+Ce code utilisant la méthode "puts" affichera "Bonjour le monde !" dans votre terminal. Vous pouvez également utiliser des variables pour stocker des valeurs et les réutiliser dans votre code. Regardez cet exemple :
 
-Une fois que vous avez une idée claire de votre projet, vous pouvez commencer à coder. N'hésitez pas à utiliser des outils de débogage pour corriger rapidement les erreurs et à consulter la documentation officielle de Ruby pour trouver des solutions à vos problèmes.
+```Ruby
+nom = "Marie"
+age = 30
+puts "Bonjour, je m'appelle #{nom} et j'ai #{age} ans."
+```
+
+Ce code affichera "Bonjour, je m'appelle Marie et j'ai 30 ans." Utiliser des variables peut rendre votre code plus lisible et plus facile à gérer.
 
 ## Plongée en profondeur
-Plusieurs éléments sont à prendre en compte pour réussir à créer un nouveau projet en Ruby, comme la gestion du versionnement avec Git, l'optimisation des performances, et la mise en place de tests automatisés. Il est recommandé de suivre les bonnes pratiques de développement pour garantir un code propre et maintenable.
 
-Il est également important de comprendre les différences entre les différents types de projets en Ruby, tels que les applications web avec Ruby on Rails, les scripts en ligne de commande, ou les applications desktop avec Shoes. En explorant ces différents types de projets, vous pourrez découvrir de nouvelles façons d'utiliser Ruby et développer davantage vos compétences.
+Maintenant que vous avez eu un aperçu de la syntaxe de base de Ruby, il est temps de plonger un peu plus en profondeur. Vous pouvez utiliser des boucles pour répéter des actions plusieurs fois, des conditions pour exécuter du code en fonction de certaines conditions, et également créer des fonctions pour regrouper du code et le réutiliser. De plus, Ruby a une vaste bibliothèque de gemmes qui peuvent vous aider à accomplir presque toutes les tâches. Ne soyez pas intimidé par ces termes techniques, continuez à pratiquer et à explorer pour maîtriser la programmation en Ruby.
 
 ## Voir aussi
-- [Documentation officielle de Ruby](https://www.ruby-lang.org/fr/documentation/)
-- [Ruby on Rails Tutorial](https://www.railstutorial.org/fr/)
-- [10 bonnes pratiques pour écrire du bon code Ruby](https://blog.simplon.co/10-bonnes-pratiques-pour-ecrire-du-bon-code-ruby/)
+
+- [Tutoriel Ruby pour débutants](https://www.ruby-lang.org/fr/documentation/quickstart/)
+- [Commencer avec Ruby - Codecademy](https://www.codecademy.com/learn/learn-ruby)
+- [Forum Ruby sur Stack Overflow](https://stackoverflow.com/questions/tagged/ruby?sort=votes)

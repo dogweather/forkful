@@ -1,27 +1,40 @@
 ---
-title:    "Gleam: Radera tecken som matchar ett mönster"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/deleting-characters-matching-a-pattern.md"
+title:                "Gleam: Borttagning av tecken som matchar ett mönster"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-Varför: Det kan finnas flera anledningar till varför man skulle vilja ta bort tecken som matchar ett visst mönster i en Gleam-kod. En av de vanligaste är för att rensa upp kod som inte längre används eller är föråldrad.
+## Varför
 
-Hur man gör det: För att ta bort tecken som matchar ett visst mönster i en Gleam-kod, kan man använda funktionen "String.replace" och ange mönstret och ersättningsvärdet. Här är ett exempel på hur man kan göra det:
+Att ta bort tecken som matchar ett mönster kan vara en användbar funktion i Gleam för att rensa och manövrera data i en viss form.
 
-```Gleam
-let orig_str = "Hej världen"
-let new_str = String.replace(orig_str, ~pattern="världen", ~replacement="")
-IO.println(new_str) // Utskrift: "Hej "
+## Hur man gör
+
+För att ta bort tecken som matchar ett visst mönster kan du använda funktionen `delete_matches` i Gleam. Nedan ser du ett exempel på hur du kan använda den:
+
+```
+Gleam
+let data = "1,2,3,4,5"
+
+let cleaned_data = String.delete_matches(",", data)
+
+Data.log(cleaned_data)
+
 ```
 
-Djupdykning: Om du vill ta bort flera förekomster av ett visst mönster i en sträng, kan du använda funktionen "String.replace_all" istället. Detta kommer att ta bort alla förekomster av mönstret och ersätta dem med det angivna värdet. Här är ett exempel på hur man kan använda det:
+I detta exempel tar vi bort alla kommatecken i den ursprungliga datan och resultatet blir `"12345"`. Genom att använda `delete_matches` kan du enkelt manipulera data för att passa dina behov.
 
-```Gleam
-let orig_str = "Hej kära världen, kära Gleam-utvecklare"
-let new_str = String.replace_all(orig_str, ~pattern="kära", ~replacement="")
-IO.println(new_str) // Utskrift: "Hej världen, Gleam-utvecklare"
-```
+## Djupdykning
 
-Se även: För mer information om stränghantering i Gleam kan du kolla in Gleams officiella dokumentation (länk till: https://gleam.run/documentation/strings) och det här inlägget om hur man manipulerar strängar med hjälp av inbyggda funktioner (länk till: https://medium.com/@jlouis666/guide-to-manipulating-strings-in-gleam-eff0184d2b10).
+Funktionen `delete_matches` tar in två argument - mönstret som ska matchas och den ursprungliga datan. För att göra det ännu mer anpassningsbart kan du också skicka in ett tredje argument som anger vilken del av den matchande datan som ska behållas. Om du till exempel bara vill behålla siffrorna efter kommatecknet kan du använda `delete_matches(",", data, end)`. Då får du resultatet `"2345"`.
+
+Det är också värt att nämna att `delete_matches` har väldigt god prestanda eftersom den använder sig av regex bakom kulisserna.
+
+## Se även
+
+- [Gleam dokumentation](https://gleam.run/documentation/)
+- [Regex tutorial på svenska](https://regexone.com/lesson/introduction_abcs)
+- [Officiell Gleam Twitter](https://twitter.com/gleam_lang)

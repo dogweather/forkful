@@ -1,68 +1,30 @@
 ---
-title:    "Haskell: デバッグ出力の印刷"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/printing-debug-output.md"
+title:                "Haskell: デバッグ出力の印刷"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-デバッグ出力を生成することは、コード内の問題を特定するために非常に便利であるため、プログラマーにとって非常に重要です。
+## Why
+デバッグ出力を行う理由は、プログラムの動作や問題を理解するために非常に重要です。
 
-# 方法
-```Haskell
-import Debug.Trace
-
--- デバッグ出力を生成する関数
-printDebug :: Int -> Int -> String -> IO ()
-printDebug a b c = trace ("aの値: " ++ show a ++ ", bの値: " ++ show b ++ ", cの値: " ++ c) $ print (a + b)
-```
-この例では、`printDebug`関数を使用して、変数`a`、`b`、`c`をデバッグ出力として表示しています。実行すると、以下のような結果が得られます。
+## How To
+デバッグ出力を行うためには、プログラム内の特定の箇所にprint文を挿入する必要があります。Haskellでは、以下のようにprint文を使用することができます。
 
 ```Haskell
-> printDebug 1 2 "debug"
-aの値: 1, bの値: 2, cの値: "debug"
-3
+print "デバッグ出力"
 ```
-このようにして、私たちは`a`、`b`、および`c`の値を確認することができます。
 
-# 深堀り
-デバッグ出力を生成する方法は、さまざまな方法があります。上記の例では、`Debug.Trace`モジュールを使用しましたが、他の方法もあります。例えば、`Data.List`モジュールの`intercalate`関数を使用することで、変数の値をより見やすい形式で出力することができます。
+これにより、プログラム実行時に "デバッグ出力" というテキストが表示されます。
 
-```Haskell
-import Data.List
+## Deep Dive
+デバッグ出力を使用することで、プログラム内の変数や値の値を確認することができます。また、特定の条件下でのみデバッグ出力を行うことで、プログラムの特定の部分だけを詳細に確認することができます。
 
--- デバッグ出力を生成する関数
-printDebug :: [Int] -> IO ()
-printDebug xs = putStrLn $ "リストの要素: " ++ intercalate ", " (map show xs)
+デバッグ出力はプログラムの実行速度を低下させる可能性があるため、必要最小限の箇所にのみ挿入することが重要です。また、デバッグ出力を行った後は、不要なprint文を削除することも重要です。
 
--- リストの要素が正しいことを確認する関数
-checkList :: [Int] -> Bool
-checkList [] = True
-checkList (x:xs)
-  | x > 10 = False
-  | otherwise = checkList xs
-```
-ここでは、`printDebug`関数を使用して、リストの要素をデバッグ出力として表示しています。また、`checkList`関数を使用して、リストの要素が正しいかどうかをチェックしています。実行すると、以下のような結果が得られます。
-
-```Haskell
-> let myList = [1, 2, 3, 4, 5]
-> printDebug myList
-リストの要素: 1, 2, 3, 4, 5
-> checkList myList
-True
-> let myList2 = [1, 20, 3, 4, 5]
-> printDebug myList2
-リストの要素: 1, 20, 3, 4, 5
-> checkList myList2
-False
-```
-デバッグ出力を生成することで、リストの要素の順番や値が正しいことを確認することができます。
-
-# 関連記事
-- [デバッグ出力を生成するためのさまざまな方法](https://haskellexplained.com/2018/01/19/haskell-debugging-tips/)
-- [Haskellにおけるテストの基本](https://engineering.backtrace.io/testing-fundamentals-in-haskell/)
-
-## 参考リンク
-- [Haskell Wiki](https://wiki.haskell.org/)
-- [Haskellで始める関数型プログラミング](https://book.mynavi.jp/manatee/detail/id=94235)
+## See Also
+- [Haskellのprint文の使い方](https://haskell.e-bigmoon.com/print.html)
+- [デバッグ出力の重要性について](https://www.seas.upenn.edu/cets/answers/debugging.html)
+- [Haskellのデバッグ方法の記事](https://wiki.haskell.org/Debugging)

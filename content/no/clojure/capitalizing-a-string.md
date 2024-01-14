@@ -1,50 +1,50 @@
 ---
-title:    "Clojure: Stor forbokstaving av en streng"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/capitalizing-a-string.md"
+title:                "Clojure: Stor bokstaver på en streng"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-For de fleste programmører er å kapitalisere en streng en enkel oppgave som kan gjøres i et par linjer med kode. Men hvorfor ville noen engasjere seg i denne handlingen? Svaret er ganske enkelt: for å gjøre tekst mer leselig og presentabelt. Å ha riktig kapitalisering i en streng hjelper til med å tydeliggjøre navn, titler og andre viktige elementer i teksten.
+Det kan være mange grunner til å ville formatere en tekst på en bestemt måte, for eksempel å øke lesbarheten eller for å følge gitte konvensjoner. I Clojure, kan det være nyttig å kunne konvertere en streng til store bokstaver for å sørge for konsistens i koden din.
 
-## Slik gjør du det
+## Hvordan få det til
 
-Det er flere måter å kapitalisere en streng i Clojure på, her skal vi se på to av de vanligste metodene.
+Det finnes flere måter å kapitalisere en streng på i Clojure, avhengig av hvordan du ønsker å bruke resultatet. Her er to eksempler:
 
-### Metode 1
-
-En måte å kapitalisere en streng i Clojure er å bruke funksjonen "capitalize" fra "clojure.string" biblioteket. Denne funksjonen tar inn en streng og returnerer en ny streng med den første bokstaven i hvert ord som stor bokstav.
-
-```Clojure
-(require '[clojure.string :as str])
-(str/capitalize "dette er en test") ; => "Dette Er En Test"
-(str/capitalize "hei alle sammen") ; => "Hei Alle Sammen"
 ```
-
-Som du kan se, har vi brukt "str/" prefikset for å indikere at vi bruker en funksjon fra "clojure.string" biblioteket.
-
-### Metode 2
-
-En annen måte å kapitalisere en streng på er å bruke funksjonen "join" og "map" sammen. "Join" skaper en ny streng ved å kombinere elementer fra en samling i en spesifisert separator, mens "map" gjør en transformasjon på hvert element i en samling. Ved å bruke disse to funksjonene sammen, kan vi kapitalisere hvert ord i en streng.
-
-```Clojure
-(str/join " " (map #(. Character toUpperCase %) (str/split "dette er en test" #" "))) ; => "Dette Er En Test"
-(str/join " " (map #(. Character toUpperCase %) (str/split "hei alle sammen" #" "))) ; => "Hei Alle Sammen"
+Clojure (capitalize "hello world")
 ```
+Dette vil gi outputen "Hello world"
 
-I dette tilfellet har vi brukt "#()" syntax for å lage en anonym funksjon som kaller "toUpperCase" metoden på hvert tegn i strengen.
+```
+Clojure (clojure.string/upper-case "hello world")
+```
+Dette vil gi outputen "HELLO WORLD"
 
-## Dykk ned i det
+## Dypdykk
 
-Det er verdt å nevne at disse metodene ikke bare fungerer på engelsk tekst. De vil også fungere på andre språk med forskjellige tegnsett. Men, hvis du ønsker å kapitalisere alle ordene i en streng, uavhengig av språk eller tegnsett, bør du vurdere å bruke funksjonen "titlecase" fra "clojure.string" biblioteket i stedet for "capitalize". Denne funksjonen bruker mer kompleks logikk for å håndtere forskjellige språk og tegnsett.
+Hvis du vil ha mer kontroll over hvordan strengen blir formatert, kan du bruke Clojures string-funksjoner. For eksempel kan du bruke "replace-first" for å kapitalisere bare den første bokstaven i en streng, eller "replace" for å kapitalisere alle bokstaver i strengen.
+
+En annen nyttig funksjon er "title-case", som vil kapitalisere hvert ord i en streng.
+
+```
+Clojure (clojure.string/replace-first "hello world" #"h" "H")
+```
+Dette vil gi outputen "Hello world"
+
+```
+Clojure (clojure.string/title-case "hello world")
+```
+Dette vil gi outputen "Hello World"
+
+Det finnes også biblioteker som kan hjelpe med kapitalisering av strenger, som for eksempel "stringcase" og "clj-capitalize".
 
 ## Se også
 
-- [clojure.string dokumentasjon](https://clojure.github.io/clojure/clojure.string-api.html)
-- [Hvordan bruke strings i Clojure](https://clojure.org/guides/learn/strings)
-- [Control flow i Clojure](https://clojure.org/guides/control_flow)
-
-Takk for lesingen, håper dette har vært nyttig for deg. Fortsett å utforske og ha det gøy med Clojure!
+- [Clojure string functions](https://clojuredocs.org/clojure.string)
+- [Stringcase library](https://github.com/jarohen/stringcase)
+- [Clj-capitalize library](https://github.com/athos/clj-capitalize)

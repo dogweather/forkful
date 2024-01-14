@@ -1,39 +1,40 @@
 ---
-title:    "TypeScript: Redactando un archivo de texto"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/typescript/writing-a-text-file.md"
+title:                "TypeScript: Redacción de un archivo de texto"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir un archivo de texto?
+## Por qué escribir un archivo de texto
 
-Escribir un archivo de texto es una tarea común en la programación, ya que permite almacenar y manipular datos de una manera sencilla y organizada. Además, los archivos de texto son compatibles con una amplia variedad de lenguajes de programación, por lo que aprender a escribirlos es una habilidad valiosa para cualquier desarrollador.
+Escribir un archivo de texto es una práctica común en programación, ya que permite almacenar información de manera estructurada y accesible. Además, utilizar archivos de texto es una forma sencilla de compartir datos entre distintas aplicaciones.
 
-## Cómo escribir un archivo de texto en TypeScript
+## Cómo hacerlo
 
-Para escribir un archivo de texto en TypeScript, primero debemos importar el módulo `fs` que nos permitirá realizar operaciones de escritura en el sistema de archivos. Luego, podemos utilizar la función `writeFile` de este módulo para crear un nuevo archivo y escribir el contenido deseado. Veamos un ejemplo:
+Para escribir un archivo de texto en TypeScript, podemos utilizar el módulo `fs` de Node.js. Primero, debemos importar este módulo en nuestro archivo:
 
-```TypeScript
-import { writeFile } from 'fs';
+```
+import * as fs from 'fs';
+```
 
-// Crear un nuevo archivo
-writeFile('mi_archivo.txt', 'Hola Mundo!', (err) => {
-  if (err) throw err;
-  console.log('Archivo creado exitosamente.');
+Luego, podemos utilizar la función `writeFile()` para crear un nuevo archivo de texto y escribir en él. Por ejemplo, podemos crear un archivo llamado "ejemplo.txt" con el siguiente contenido:
+
+```
+fs.writeFile('ejemplo.txt', '¡Hola mundo!', (error) => {
+  if (error) throw error;
+  console.log('¡Archivo de texto creado exitosamente!');
 });
 ```
 
-En este ejemplo, utilizamos la función `writeFile` para crear un archivo llamado `mi_archivo.txt` y escribir el texto "Hola Mundo!" dentro de él. La función también toma una función de devolución de llamada que nos permite manejar cualquier error que pueda ocurrir durante la escritura del archivo.
+Al ejecutar este código, deberíamos ver el mensaje de éxito en nuestra consola. Y si abrimos el archivo "ejemplo.txt", deberíamos ver el texto "¡Hola mundo!" escrito en él.
 
 ## Un vistazo más profundo
 
-Ahora que ya conocemos los conceptos básicos de cómo escribir un archivo de texto en TypeScript, podemos profundizar un poco más en su funcionamiento. En primer lugar, es importante tener en cuenta que al utilizar la función `writeFile`, se sobrescribirá cualquier archivo existente con el mismo nombre. Si deseamos agregar contenido a un archivo existente, podemos utilizar la función `appendFile` en su lugar.
-
-Además, podemos especificar la codificación del archivo que estamos escribiendo utilizando un tercer parámetro en ambas funciones mencionadas anteriormente. Por defecto, se utiliza la codificación `utf-8`, pero si necesitamos trabajar con caracteres especiales podemos especificar una diferente.
+Además de simplemente escribir en un archivo de texto, podemos realizar otras acciones con el módulo `fs`, como leer y actualizar archivos existentes. También es importante tener en cuenta que al escribir en un archivo de texto, debemos considerar la codificación de caracteres utilizada para asegurarnos de que nuestro texto se vea correctamente.
 
 ## Ver también
 
-- [Documentación de Node.js sobre el módulo `fs`](https://nodejs.org/api/fs.html)
-- [Tutorial de TypeScript para principiantes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [Guía de Markdown en español](https://markdown.es/)
+- Documentación oficial de TypeScript para el módulo `fs`: https://www.typescriptlang.org/docs/handbook/nodejs.html
+- Tutorial sobre cómo escribir y guardar archivos de texto en TypeScript: https://dev.to/waqasabbasi/how-to-read-and-write-files-in-typescript-45pe

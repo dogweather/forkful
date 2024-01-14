@@ -1,45 +1,37 @@
 ---
-title:    "Ruby: デバッグ出力の印刷"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/printing-debug-output.md"
+title:                "Ruby: デバッグ出力の印刷"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜデバッグ出力を表示する必要があるのか
-
-プログラミングをしていると、コードが予想どおりに動かないことがあります。その時に、デバッグ出力を表示することで、どの部分が問題を引き起こしているのかを特定することができます。デバッグ出力は、問題を解決するために非常に重要なツールです。
+## なぜ
+デバッグ出力を表示する理由は、プログラマーがコードが期待通りに動作しているかどうかを確認するためです。エラーが発生した場合、デバッグ出力を使用して問題の原因を特定することができます。
 
 ## 方法
-
-デバッグ出力を表示するには、簡単なコードを書く必要があります。例えば、以下のようなコードを書きます。
+デバッグ出力を表示するには、```puts```というメソッドを使います。以下のコード例を参考にしてください。
 
 ```Ruby
 def add_numbers(x, y)
-    puts "xの値は#{x}です。"
-    puts "yの値は#{y}です。"
-    puts "x + yの値は#{x + y}です。"
+    puts "Adding #{x} and #{y}!"
+    return x + y
 end
 
-add_numbers(5, 10)
+sum = add_numbers(3, 5)
+puts "The total is #{sum}!"
 ```
-
-このコードでは、`add_numbers`メソッドを定義しています。その中で、`puts`メソッドを使ってデバッグ出力を表示しています。実行結果は以下のようになります。
-
+出力結果:
 ```
-xの値は5です。
-yの値は10です。
-x + yの値は15です。
+Adding 3 and 5!
+The total is 8!
 ```
-
-このように、`puts`メソッドでデバッグ出力を表示することで、簡単にコードの動作を確認することができます。
 
 ## 深堀り
+デバッグ出力には、異なるレベルの詳細度を指定することもできます。例えば、```puts "DEBUG: #{variable}"```とすることで、特定の変数の値を確認することができます。また、```p variable```とすることで、変数のデータ型や値を詳しく表示することができます。
 
-デバッグ出力を表示する上で重要なポイントは、常に表示したい情報を選択することです。コードが動作している途中で、必要な情報をプリントすることで、問題の引き起こしを特定することができます。また、デバッグ出力を表示する際には、見やすく整形することで、より理解しやすいコードを書くことができます。
-
-## その他参考リンク
-
-- [Ruby公式ドキュメント](https://docs.ruby-lang.org/ja/latest/method/Kernel/m/puts.html)
-- [デバッグの基本的な考え方](https://qiita.com/jnchito/items/884a1648dae8cb6ae57f)
-- [プログラミング初心者のためのデバッグ入門](https://www.sejuku.net/blog/82293)
+## 参考リンク
+- [Rubyのデバッグ出力についてのドキュメント](https://docs.ruby-lang.org/ja/latest/class/IO.html#M_P-puts)
+- [Rubyのデバッグ技術についての記事](https://qiita.com/joker1007/items/32ba10235eb383956c52)
+- [Rubyのデバッグ出力を上手に使う方法](https://www.codementor.io/@bryanarboleda/using-debug_output-in-ruby-d0qzv3whh)

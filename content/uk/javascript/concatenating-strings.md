@@ -1,48 +1,59 @@
 ---
-title:    "Javascript: З'єднання рядків"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/concatenating-strings.md"
+title:                "Javascript: З'єднання рядків"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому
+Почему: Объясняючи *чому* людина мала би заангажуватися у з'єднання рядків.
 
-Конкатенація рядків є важливою частиною програмування в Javascript і може бути корисною для об'єднання інформації з різних джерел в один рядок, роблячи код більш ефективним і зрозумілим.
+З'єднання рядків є важливою властивістю у програмуванні, оскільки воно дозволяє об'єднати декілька рядків у один, що полегшує роботу з даними та додаванням тексту до програми.
 
-## Як
-
-Для конкатенації рядків в Javascript потрібно використати оператор "+" або метод "concat()". Наприклад:
+Простий приклад:
 
 ```Javascript
-let firstName = "Анна";
-let lastName = "Іваненко";
-
+let firstName = "Олена";
+let lastName = "Петренко";
 let fullName = firstName + " " + lastName;
-// Результат: Анна Іваненко
-
-let welcomeMessage = "Ласкаво просимо, ";
-welcomeMessage = welcomeMessage.concat(firstName, "!");
-// Результат: Ласкаво просимо, Анна!
+// fullName = "Олена Петренко";
 ```
 
-## Глибоке занурення
+## Як використовувати
 
-Оператор "+" може бути використаний для конкатенації рядків, чисел та інших типів даних, що автоматично перетворює типи. Крім того, додаткові пробіли можуть бути додані за допомогою методу "trim()". Наприклад:
+З'єднання рядків у Javascript можна виконати за допомогою оператора "+" або методу "concat()". Однак, якщо розглядати більш складні випадки, можна використовувати регулярні вирази або вбудовану функцію "join()".
+
+Приклади:
 
 ```Javascript
-let num1 = 10;
-let num2 = 5;
-let result = "Сума чисел " + num1 + " та " + num2 + " дорівнює " + (num1 + num2);
-// Результат: Сума чисел 10 та 5 дорівнює 15
+let text = "Привіт";
+text += "!";
+// text = "Привіт!"
 
-let sentence = "  Привіт, я рядок  ";
-sentence = sentence.trim();
-// Результат: Привіт, я рядок
+let greetings = ["Привіт", "Доброго дня", "Вітаю"];
+console.log(greetings.join(", "));
+// output = "Привіт, Доброго дня, Вітаю"
 ```
 
-## See Also
+## Глибоке дослідження
 
-- [Оператор "+" в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Operators/Concatenation)
-- [Метод "concat()" в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [Типи даних в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Data_structures)
+У Javascript, рядки використовуються як об'єкти, тому вони мають доступ до різних методів. Наприклад, метод "split()" дозволяє розбити рядок на масив за допомогою вказаного розділювача. Також, можна використовувати спеціальні символи, такі як шаблонні рядки (template literals) для покращення роботи з рядками.
+
+Приклади:
+
+```Javascript
+let sentence = "Я люблю програмувати з Javascript";
+console.log(sentence.split(" "));
+// output = ["Я", "люблю", "програмувати", "з", "Javascript"]
+
+let name = "Софія";
+let greeting = `Привіт, моя ім'я ${name}`;
+// greeting = "Привіт, моя ім'я Софія"
+```
+
+## Дивіться також
+
+- [Документація з рядків в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [Робота з рядками в Javascript: детальніше про методі "split()"](https://www.w3schools.com/jsref/jsref_split.asp)
+- [Вбудована функція "join()" у Javascript](https://www.codegrepper.com/code-examples/javascript/js+join)

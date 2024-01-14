@@ -1,50 +1,46 @@
 ---
-title:    "Elm: Concatenazione di stringhe"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/concatenating-strings.md"
+title:                "Elm: Unione di stringhe"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Concatenare le stringhe è un'operazione fondamentale nella programmazione di Elm. È importante perché ci permette di unire due o più stringhe insieme per creare una nuova stringa più lunga. Questo è particolarmente utile quando dobbiamo creare messaggi di errore dinamici o visualizzare dati all'interno di una stringa.
+In programmazione, a volte è necessario unire più stringhe per creare una nuova stringa che contenga tutte le informazioni necessarie. L'Elm ha una funzione incorporata per gestire questa operazione, chiamata `concat`.
 
-## Come Fare
+## Come fare
 
-Per concatenare le stringhe in Elm, possiamo utilizzare l'operatore `++` o la funzione `String.concat`.
+Per concatenare due o più stringhe, possiamo utilizzare la funzione `concat` seguita dalle stringhe da unire, separate da virgole. Ecco un esempio di codice:
 
 ```Elm
-nome = "Maria"
-cognome = "Rossi"
-
-saluto = "Ciao " ++ nome ++ " " ++ cognome
-
--- Output: "Ciao Maria Rossi"
-
-lista = ["Uno", "Due", "Tre"]
-
-numeri = String.concat lista
-
--- Output: "UnoDueTre"
+concat "Ciao" "a" "tutti" --> "Ciao a tutti"
 ```
 
-Come possiamo vedere dagli esempi sopra, possiamo unire stringhe utilizzando l'operatore `++` o passando una lista di stringhe alla funzione `String.concat`.
+Se vogliamo aggiungere una stringa vuota come separatore, possiamo utilizzare la funzione `concatWith`.
+
+```Elm
+concatWith " " "Ciao" "a" "tutti" --> "Ciao a tutti"
+```
 
 ## Approfondimento
 
-Esistono alcune considerazioni da tenere presente quando si concatenano le stringhe in Elm. Innanzitutto, è importante che tutte le stringhe siano dello stesso tipo. Ciò significa che non è possibile unire una stringa con un intero o un float. Se vogliamo convertire un valore in una stringa, possiamo utilizzare la funzione `toString`.
+La funzione `concat` in realtà accetta una lista di stringhe invece di una serie di argomenti separati. Questo significa che possiamo anche utilizzare la funzione `List.concat` per ottenere lo stesso risultato:
 
 ```Elm
-numero = 123
-stringa = "Il numero è " ++ toString numero
-
--- Output: "Il numero è 123"
+List.concat ["Ciao", "a", "tutti"] --> "Ciao a tutti"
 ```
 
-Inoltre, quando si concatenano più stringhe, è importante prestare attenzione alle prestazioni. Se dobbiamo unire molte stringhe insieme, è consigliabile utilizzare la funzione `String.concat` invece dell'operatore `++`, poiché la prima è più efficiente in termini di prestazioni.
+Inoltre, l'Elm ha anche una funzione `String.join` che ci consente di unire una lista di stringhe utilizzando un separatore specifico. Ecco un esempio:
 
-## Vedi Anche
+```Elm
+String.join " " ["Ciao", "a", "tutti"] --> "Ciao a tutti"
+```
 
-- [Documentazione su come manipolare le stringhe in Elm](https://guide.elm-lang.org/effects/string.html)
-- [Esempi pratici sull'utilizzo del concatenamento delle stringhe in Elm](https://www.elmbasics.com/concatenating-strings)
+## Vedi anche
+
+- Documentazione su `concat`: https://package.elm-lang.org/packages/elm/core/latest/String#concat
+- Documentazione su `List.concat`: https://package.elm-lang.org/packages/elm/core/latest/List#concat
+- Documentazione su `String.join`: https://package.elm-lang.org/packages/elm/core/latest/String#join

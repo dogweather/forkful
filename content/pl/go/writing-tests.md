@@ -1,57 +1,67 @@
 ---
-title:    "Go: Pisanie testów"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/writing-tests.md"
+title:                "Go: Pisanie testów"
+programming_language: "Go"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisanie testów jest ważne w programowaniu Go?
+# Dlaczego warto pisać testy w języku Go?
 
-Testowanie jest nieodłączną częścią procesu tworzenia oprogramowania, a w języku Go jest to szczególnie istotne. Zapewnienie odpowiedniej jakości kodu jest kluczowe dla sukcesu projektu, a testy są ważnym narzędziem w uzyskaniu tego celu. Przeczytaj ten artykuł, aby dowiedzieć się dlaczego pisanie testów jest ważnym elementem pracy z językiem Go.
+# Dlaczego
 
-## Jak pisać testy w języku Go?
+Testowanie kodu jest nieodłączną częścią procesu tworzenia oprogramowania. Pomaga zapewnić, że nasz kod działa poprawnie i spełnia wymagania. W języku Go, pisanie testów jest prostsze i bardziej efektywne dzięki wbudowanej bibliotece do testowania. Dlaczego warto więc poświęcić czas na pisanie testów w Go? Kolejne sekcje artykułu odpowiadają na to pytanie.
 
-Pisanie testów w języku Go jest łatwe i przyjemne dzięki wbudowanemu w język pakietowi `testing`. Aby napisać test, wystarczy utworzyć nowy plik z sufiksem "_test.go" i użyć odpowiednich funkcji i metod z pakietu `testing`. Poniżej przedstawiamy przykładowy kod z komentarzami, który pokazuje jak napisać test jednostkowy w języku Go.
+# Jak to zrobić?
+
+Jeśli jesteś początkującym w języku Go, zacznij od nauki podstaw testowania. To pomoże Ci zrozumieć, jak testy są tworzone i jak działają. Poniżej znajdują się przykłady kodu w języku Go, które pokazują, jak pisać testy.
 
 ```Go
-package main
-
-import (
-    "testing" // importowanie pakietu testing
-)
-
-// Funkcja testująca
-func TestAddition(t *testing.T) {
-    // Tworzenie testowych danych
-    x := 5
-    y := 10
-    expected := 15 // oczekiwany wynik
-
-    // Wywołanie funkcji do przetestowania
-    result := Add(x,y)
+// Przykład testu jednostkowego dla funkcji dodawania
+func TestSum(t *testing.T) {
+    result := add(2, 3)
+    expected := 5
 
     if result != expected {
-        // W przypadku błędu wypisywanie informacji o teście
-        t.Errorf("Dodawanie nie działa poprawnie. Oczekiwany wynik: %d, otrzymany wynik: %d", expected, result)
+        t.Errorf("Wynik jest niepoprawny, oczekiwano: %v, otrzymano: %v", expected, result)
     }
 }
 ```
-Uruchomienie powyższego testu zwróci następujący wynik:
+
+```Go
+// Przykład testu integracyjnego dla serwisu HTTP
+func TestHTTPService(t *testing.T) {
+    req, err := http.NewRequest("GET", "/test", nil)
+    if err != nil {
+        t.Fatal("Nie udało się wykonać żądania HTTP:", err)
+    }
+
+    rr := httptest.NewRecorder()
+    handler := http.HandlerFunc(testHandler)
+    handler.ServeHTTP(rr, req)
+
+    if status := rr.Code; status != http.StatusOK {
+        t.Errorf("Niepoprawny kod odpowiedzi, oczekiwano: %v, otrzymano: %v", http.StatusOK, status)
+    }
+
+    expected := `{"message": "Testowy serwis HTTP działa poprawnie"}`
+    if rr.Body.String() != expected {
+        t.Errorf("Niepoprawny ciało odpowiedzi, oczekiwano: %v, otrzymano: %v", expected, rr.Body.String())
+    }
+}
 ```
---- FAIL: TestAddition (0.00s)
-    dodawanie_test.go:16: Dodawanie nie działa poprawnie. Oczekiwany wynik: 15, otrzymany wynik: 20
-FAIL
-```
 
-Wynik ten wskazuje, że w teście wystąpił błąd, ponieważ oczekiwany wynik to 15, a otrzymany wynik to 20. W ten sposób możemy w łatwy sposób sprawdzić poprawność działania naszej funkcji.
+W powyższych przykładach wykorzystujemy wbudowane funkcje w bibliotece do testowania języka Go, takie jak `t.Errorf` czy `t.Fatal`, aby informować o niepoprawnych wynikach testów.
 
-## Deep Dive: Czym są testy jednostkowe i jakie są ich zalety?
+# Deep Dive
 
-Testy jednostkowe są jednym z rodzajów testów, które służą do sprawdzania poprawności kodu na poziomie pojedynczych funkcji lub modułów. Najważniejszą zaletą testów jednostkowych jest zdolność do szybkiego wykrywania błędów podczas pisania kodu. Dzięki nim można również łatwiej refaktorować kod, ponieważ dowiadujemy się, czy zmiany wprowadzone w kodzie nie wpłynęły negatywnie na działanie funkcji. Testy jednostkowe zapewniają też większą pewność w kwestii stabilności i wydajności aplikacji.
+Testowanie w języku Go jest oparte na konwencjach. Aby prawidłowo napisać test, należy zazwyczaj użyć prefiksu `Test`, aby nazwać funkcję, oraz przekazać parametr `*testing.T` do funkcji. Więcej informacji na temat pisania testów w języku Go można znaleźć w [dokumentacji officjalnej](https://golang.org/pkg/testing/).
 
-## Zobacz także
+Jedną z najważniejszych zalet pisania testów w języku Go jest możliwość równoległego uruchamiania testów. Dzięki temu, testy w Go są szybsze i wydajniejsze niż w niektórych innych językach.
 
-- [Dokumentacja pakietu testing w języku Go](https://golang.org/pkg/testing/)
-- [Słów kilka o testowaniu w języku Go](https://medium.com/@johnnystarling/testing-in-go-a-quick-example-67fe23306d3c)
+# Zobacz także
+
+- [Dokumentacja oficjalna języka Go](https://golang.org/doc/)
+- [Tutorial o testowaniu w języku Go](https://golang.org/doc/code.html#Testing)
 - [Blog o języku Go](https://blog.golang.org/)

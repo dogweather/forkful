@@ -1,26 +1,32 @@
 ---
-title:    "Elixir: स्ट्रिंग को प्रथम अक्षर सही श्रेणी से लिखना"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/capitalizing-a-string.md"
+title:                "Elixir: स्ट्रिंग को मालिकाना करना"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-दोस्तों, अगर आप एक नए एलिक्सिर प्रोग्रामर हो तो आपने शायद इस सवाल को सुना होगा कि किसी स्ट्रिंग (string) को कैपिटलाइज (capitalize) करने का मकसद क्या होता है। यदि आप भी इस सवाल से परेशान हो तो आइए इस ब्लॉग पोस्ट (blog post) के माध्यम से जान लें कि कैसे एक स्ट्रिंग को कैपिटलाइज किया जाता है।
+कोई भी व्यक्ति एक स्ट्रिंग को कैपिटलाइज करने में रुचि रख सकता है क्योंकि यह एक अक्षरिक रूप से इंपोर्टेंट ओपरेशन होता है जो प्रोग्रामिंग में उपयोगी हो सकता है।
 
 ## कैसे करें
 
-एक स्ट्रिंग को कैपिटलाइज करने के लिए हम एक बहुत ही सरल तरीका इस्तेमाल कर सकते हैं। आपको बस एक `String` मॉड्यूल का उपयोग करके `String.capitalize/1` फंक्शन को कॉल करना होगा और उसमें आपको अपनी स्ट्रिंग को पास करना होगा। यह बहुत ही सरल और समझने में आसान है। नीचे एक कोड उदाहरण दिया गया है।
-
-```Elixir
-iex> String.capitalize("hello world")
-"Hello world"
+```elixir
+string = "hello world!"
+capitalized_string = String.capitalize(string)
+IO.puts capitalized_string
 ```
 
-यहां आप देख सकते हैं कि `String.capitalize/1` फंक्शन के उपयोग से हमारी स्ट्रिंग कैपिटलाइज हो गई है और प्रथम अक्षर ही अपरकेस में बदल गया है। साथ ही आप हमारे output की भी जाँच कर सकते हो।
+उपरोक्त उदाहरण में, हमने "hello world!" स्ट्रिंग को कैपिटलाइज किया है और उसे "Hello world!" में परिवर्तित किया है।
 
 ## गहराई में जाएं
 
-अब हम अपनी बात को थोड़ी गहराई से समझेंगे। स्ट्रिंग कैपिटलाइज करने का मकसद है कि हमें अपनी स्ट्रिंग को अपरकेस (uppercase) में बदलना होता है। यह फंक्शन बहुत उपयोगी होता है जब हमें स्ट्रिंग की पहचान में समस्या होती हैं और हमें स्ट्रिंग को स्पेल करना होता है। आप इसका उपयोग अपनी आवश्यकता के अनुसार
+स्ट्रिंग को कैपिटलाइज करने के लिए, String.capitalize/1 फंक्शन का उपयोग किया जाता है जो दिए गए स्ट्रिंग में से पहले अक्षर को कैपिटल बनाएगा। इसके अलावा, आपको String.upcase/1 फंक्शन भी उपयोग कर सकते हैं जो दिए गए स्ट्रिंग को पूरी तरह से अपरकेस में बदल देगा। अतिरिक्त गहराई के लिए, आप इस लेख को देख सकते हैं: [Elixir डॉक्स: String Module](https://hexdocs.pm/elixir/String.html)
+
+## देखें भी
+
+* [Elixir डॉक्स: String Module](https://hexdocs.pm/elixir/String.html)
+* [Elixir डॉक्स: String.capitalize/1 फंक्शन](https://hexdocs.pm/elixir/String.html#capitalize/1)
+* [Elixir डॉक्स: String.upcase/1 फंक्शन](https://hexdocs.pm/elixir/String.html#upcase/1)

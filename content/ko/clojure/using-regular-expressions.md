@@ -1,37 +1,36 @@
 ---
-title:    "Clojure: 정규 표현식 사용하기"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/using-regular-expressions.md"
+title:                "Clojure: 정규 표현식 사용하기"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
-정규식을 사용하는 이유는 매우 간단합니다. 정규식은 특정한 패턴을 가진 문자열을 찾는데에 매우 유용합니다. 예를 들어, 이메일 주소나 전화번호와 같은 형식의 데이터를 찾을 때 정규식은 매우 유용하게 사용될 수 있습니다.
+### 왜: 정규 표현식 사용의 이유
+데이터에서 원하는 패턴을 빠르고 쉽게 찾을 수 있도록 도와주는 정규 표현식은 프로그래밍에서 많이 쓰입니다. 쉬운 예시라면 전화번호 형식이나 이메일 주소와 같은 패턴을 찾을 때 유용합니다.
 
-## 어떻게?
-아래 예제 코드를 통해 정규식을 사용하는 방법을 알아보겠습니다.
+### 어떻게 사용하나요?
+정규 표현식을 사용하기 전에, Clojure에서 정규 표현식을 다루는 방법을 알아야 합니다. 먼저 `re-find` 함수를 사용하여 데이터에서 원하는 패턴을 찾을 수 있습니다. 아래는 전화번호 패턴을 찾는 예시입니다.
 
 ```Clojure
-; 이메일 주소 패턴을 정의합니다.
-(def email-pattern #"\w+@[\w.]+")
-
-; 정규식과 일치하는 문자열을 찾아 출력합니다.
-(print (re-seq email-pattern "이메일 주소는 example@example.com입니다."))
-
-; => (example@example.com)
+(def msg "내 전화번호는 010-1234-5678입니다.")
+(re-find #"\d{3}-\d{4}-\d{4}" msg)
 ```
 
-위 코드에서는 `\w`는 알파벳과 숫자를 나타내는 특수 기호이고 `+`는 그것들이 한 번 이상 반복되는 것을 의미합니다. 또한 `@`와 `[\w.]`는 `@` 기호 뒤에 온다는 것이 보장되며, 그 뒤에는 알파벳과 숫자, 그리고 점이 올 수 있다는 것을 의미합니다.
+위 코드를 실행하면 `010-1234-5678`이라는 전화번호 패턴이 찾아지게 됩니다. 정규 표현식은 `#""` 사이에 작성하며, `d{3}-\d{4}-d{4}`는 숫자 3개, 4개, 4개로 이루어진 전화번호 패턴을 의미합니다. 이렇게 정규 표현식을 사용하면 더욱 다양한 패턴을 찾을 수 있습니다.
 
-## 심층 분석
-정규식의 더 자세한 사용법을 알고 싶다면 다음 링크를 확인해보세요.
+### 깊게 들어가기
+정규 표현식을 더 깊게 알아보기 위해서는 다양한 메타 문자와 그 의미를 알아야 합니다. 아래는 자주 사용되는 메타 문자 몇 가지입니다.
 
-- [Clojure 정규식 문서](https://clojuredocs.org/clojure.core/re-seq)
-- [정규식 언어로서의 Clojure](https://clojuredocs.org/clojure.string/replace)
-- [정규식 빌더](https://regexr.com/)
+- `.` : 문자 한 개를 의미하며, 어떤 문자든지 해당 위치를 채울 수 있습니다.
+- `?` : 질문 표시로, 해당 문자가 있어도 되고 없어도 된다는 의미입니다.
+- `*` : 해당 문자가 0번 이상 나오는 경우를 의미합니다.
+- `+` : 해당 문자가 1번 이상 나오는 경우를 의미합니다.
+- `\d` : 숫자를 의미하며, `\w`는 알파벳과 숫자, `\s`는 공백을 의미합니다.
 
-## 참고 링크
-- [정규식 튜토리얼](https://www.regular-expressions.info/tutorial.html)
-- [Clojure 공식 문서](https://clojure.org/)
-- [정규식 연습 사이트](https://regex101.com/)
+더 많은 메타 문자와 그 의미를 알고 싶다면 인터넷에서 검색해보세요. 정규 표현식은 매우 유용한 도구이므로 이해하고 사용하는 것이 중요합니다.
+
+### 더 알아보기
+- [Clojurescript에서 정규 표현식 사용하기](https://www.jacobobryant.com/post/regular-expressions-in-clojurescript/)
+- [정규 표현식 실습하기](https://www.tutorialspoint.com/execute_clojure_online.php)

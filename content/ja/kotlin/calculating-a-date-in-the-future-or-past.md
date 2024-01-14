@@ -1,44 +1,36 @@
 ---
-title:    "Kotlin: 将来や過去の日付を計算する"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/calculating-a-date-in-the-future-or-past.md"
+title:                "Kotlin: 「将来または過去の日付を計算する」"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-未来や過去の日付を計算することに取り組む理由は、特定の日付を基準に、期限や締め切り、イベントの日程などを確認したいためです。
+## なぜ
 
-# 使い方
-```Kotlin
-// 今日の日付を取得
-val today = LocalDate.now()
+日付を計算することの理由は多様です。新しいアプリケーションを開発する際や、既存のアプリケーションに機能を追加する際に、現在の日付から特定の日数を加えたり引いたりする必要があるかもしれません。また、将来のイベントの日程を計算するためにも日付の計算が必要です。
 
-// 1年後の日付を計算して出力
-val oneYearFromNow = today.plusYears(1)
-println("1年後の日付: $oneYearFromNow")
+## 使い方
 
-// 1ヶ月前の日付を計算して出力
-val oneMonthAgo = today.minusMonths(1)
-println("1ヶ月前の日付: $oneMonthAgo")
+Kotlinでは、日付を計算するためのさまざまな方法が用意されています。例を挙げると、```LocalDate```クラスを使用して現在の日付を取得し、```plusDays()```メソッドを使って指定した日数を加えることができます。そして、```format()```メソッドを使用して、計算された日付を特定のフォーマットに変換することができます。
 
-// 特定の日付からの経過日数を計算
-val christmas = LocalDate.of(2021, 12, 25)
-val daysUntilChristmas = today.until(christmas, ChronoUnit.DAYS)
-println("今日からクリスマスまであと$daysUntilChristmas日")
+```
+Kotlin
+fun main() {
+    val today = LocalDate.now()
+    val futureDate = today.plusDays(30)
+    println(futureDate.format(DateTimeFormatter.ofPattern("yyyy/MM/dd")))
+}
 ```
 
-# 詳細
-Kotlinの日付を扱うライブラリである"java.time"パッケージのクラスを使用することで、簡単に未来や過去の日付を計算することができます。
+上記のコードを実行すると、現在の日付から30日後の日付をyyyy/MM/ddのフォーマットで表示することができます。
 
-例えば、"plusYears"や"minusMonths"などのメソッドを使用することで、指定した期間のずれた日付を計算することができます。また、"until"メソッドを使用することで、特定の日付と今日の日付の間に何日間あるかを取得することができます。
+## ディープダイブ
 
-# 参考リンク
-[Java Time APIドキュメンテーション](https://docs.oracle.com/javase/jp/8/docs/api/java/time/package-summary.html)
+日付を計算する際には、日付と時刻を表すさまざまなクラスが利用できます。```LocalDate```クラスだけではなく、例えば```LocalDateTime```クラスを使用することで、日付と時刻を同時に計算することも可能です。また、今回紹介したメソッド以外にも、日付の計算に役立つたくさんのメソッドが提供されていますので、ぜひ公式ドキュメントを参照してみてください。
 
-[kotlinx-datetimeドキュメンテーション](https://kotlinlang.org/docs/datetime.html)
+## 関連リンク
 
-# 関連リンク
-[Java Time APIの使い方まとめ](https://techacademy.jp/magazine/24060)
-
-[Kotlinで日付を扱う方法](https://qiita.com/nakaken0629/items/22107ce7c13b75efbc87)
+[Kotlin公式ドキュメント](https://kotlinlang.org/docs/home.html)
+[Kotlin日付と時刻の操作](https://kotlinlang.org/docs/dates-and-times.html)

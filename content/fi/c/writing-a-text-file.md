@@ -1,53 +1,78 @@
 ---
-title:    "C: Tiedoston kirjoittaminen"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/writing-a-text-file.md"
+title:                "C: Tekstitiedoston kirjoittaminen"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Tekstitiedostojen kirjoittaminen on tärkeä osa ohjelmistokehitystä ja data-analyysiä. Se mahdollistaa tietojen tallentamisen ja jakamisen eri muodoissa, ja on siksi välttämätöntä monissa ohjelmoinnin projekteissa.
+Tekstitiedostojen kirjoittaminen ohjelmoidessa on olennainen taito, joka auttaa sinua tallentamaan ja jakamaan tietoa ohjelmistojen kanssa. Se on myös yksi perusteellisista taidoista oppia C-ohjelmointia.
 
 ## Kuinka
 
-Seuraavassa esimerkissä näytetään, kuinka voit kirjoittaa tekstitiedoston C-kielellä käyttämällä `fopen`-funktiota ja `fprintf`-komenneta:
+Käytä "fopen()" -toimintoa luomaan tiedostonimikkeen ja avataksesi tiedoston. Käytä sitten "fprintf()" -toimintoa kirjoittaaksesi haluamasi sisällön tiedostoon. Lopuksi, muista sulkea tiedosto "fclose()" -toiminnolla.
 
-```C
+```
 #include <stdio.h>
 
-int main()
-{
-    FILE *tiedosto = fopen("teksti.txt", "w"); //Avaa tiedoston kirjoitusta varten
-    if (tiedosto != NULL)
-    {
-        //Kirjoita tekstitiedostoon käyttäen fprintf-komentoa
-        fprintf(tiedosto, "Tämä on tekstiä, joka tallentuu tiedostoon.");
-        fclose(tiedosto); //Sulje tiedosto
-        printf("Tekstitiedosto on kirjoitettu onnistuneesti.");
-    }
-    else
-    {
-        printf("Tiedoston avaaminen epäonnistui.");
-    }
-
+int main() {
+    // Luo tiedostonimike ja avaa tiedosto "example.txt" kirjoittamista varten
+    FILE *tiedosto = fopen("example.txt", "w");
+    
+    // Kirjoita teksti tiedostoon käyttäen fprintf-toimintoa
+    fprintf(tiedosto, "Tämä on esimerkki tekstistä, joka kirjoitetaan tiedostoon\n");
+    
+    // Sulje tiedosto
+    fclose(tiedosto);
+    
     return 0;
 }
+
 ```
 
-Esimerkin avulla olemme luoneet uuden tekstitiedoston nimeltä "teksti.txt". Käytämme `fprintf`-komenneta kirjoittaaksemme tiedostoon ja `fclose`-komenneta sulkeaksemme tiedoston. Lopuksi tulostetaan viesti, joka kertoo onnistuneesta tiedoston kirjoittamisesta.
+Tulostus tiedostoon olisi seuraavanlainen:
 
-## Syvemmälle
+Tämä on esimerkki tekstistä, joka kirjoitetaan tiedostoon
 
-Tekstitiedostojen kirjoittamisessa on tärkeää ymmärtää muutamia käsitteitä. Ensinnäkin, jokaiselle tiedostolle on annettava "tiedoston osoitin" eli muuttuja, jota käytetään ohjelmassa tiedoston käsittelyyn. Tässä esimerkissä käytimme `FILE *tiedosto` muuttujaa.
+## Syvällinen sukellus
 
-Toiseksi, on tärkeää tietää mitkä argumentit tarvitaan `fopen`-funktiolle. Ensimmäinen argumentti on tietysti tiedoston nimi ja toinen on avausmuoto. "w" avausmuoto tarkoittaa, että tiedosto avataan kirjoitusta varten.
+Kun luot tekstityyliä, voit käyttää erilaisia muotoiluja ja erityismerkkejä tekstiisi. Voit myös lukea tiedostosta käyttäen "fscanf()" -toimintoa ja jopa poistaa tiedosto "remove()" -toiminnolla.
 
-Lisäksi `fprintf`-komennolla on monia käyttömahdollisuuksia, esimerkiksi voit tulostaa useita muuttujia samassa tiedostossa. Löydät lisätietoja C-kielestä ja sen toiminnoista dokumentaatiosta.
+```
+#include <stdio.h>
+
+int main() {
+    // Luo tiedostonimike ja avaa tiedosto "example.txt" lukemista varten
+    FILE *tiedosto = fopen("example.txt", "r");
+    
+    // Määritä muuttuja "teksti" ja lue teksti tiedostosta
+    char teksti[50];
+    fscanf(tiedosto, "%s", teksti);
+    
+    // Tulosta teksti konsoliin
+    printf("Tiedostosta luettu teksti on: %s\n", teksti);
+    
+    // Sulje tiedosto
+    fclose(tiedosto);
+    
+    // Poista tiedosto "example.txt"
+    remove("example.txt");
+    
+    return 0;
+}
+
+```
+
+Tulostus olisi seuraavanlainen:
+
+Tiedostosta luettu teksti on: Tämä
 
 ## Katso myös
 
-- Dokumentaatio `fopen`-funktiosta: https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm
-- Dokumentaatio `fprintf`-komennosta: https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm
-- C-kielen dokumentaatio: https://www.tutorialspoint.com/cprogramming/index.htm
+- [fopen() käyttö C-kielen tekstityylissä](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+- [fprintf() käyttö C-kielen tekstityylissä](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
+- [Esimerkki tiedostojen lukemisesta ja kirjoittamisesta C-kielellä](https://www.programiz.com/c-programming/c-file-input-output)
+- [Tutustu Markdown-kieleen, jota käytetään tämän blogin kirjoittamiseen](https://www.markdownguide.org/)

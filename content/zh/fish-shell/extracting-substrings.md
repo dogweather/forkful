@@ -1,49 +1,41 @@
 ---
-title:    "Fish Shell: 提取子字符串."
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/extracting-substrings.md"
+title:                "Fish Shell: 提取子字符串"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要提取子字符串？
+## 为什么
 
-在编写程序的过程中，有时候我们需要从一个字符串中提取出特定的部分，比如姓名中的姓氏或者日期中的年份。使用Fish Shell中提供的子字符串提取方法，可以轻松地实现这一需求。
+有时候，在处理文本数据时，我们需要从一长串字符串中提取一部分内容。例如，从一条URL中提取网址域名。在这种情况下，提取子串就是非常有用的，它可以帮助我们快速地获取我们需要的信息。
 
-## 如何提取子字符串？
+## 如何
 
-Fish Shell中有两种方法可以提取子字符串：`string sub`和`string match`。`string sub`可以从一个字符串中提取出指定的字符，而`string match`则可以从字符串中匹配出符合某个模式的子字符串。下面是两个示例代码及其输出。
-
-```
-Fish Shell Code:
-set str "Hello World!"
-echo $str[1,5]
-
-Output:
-Hello
-```
+Fish Shell提供了内置的字符串提取函数，让我们可以轻松地提取指定位置的子串。下面是一个简单的例子，假设我们有一个包含学生姓名和成绩的字符串，每条记录以“|”分隔：
 
 ```
-Fish Shell Code:
-set str "April 23, 2021"
-string match -r, $str
-echo $string_match
-
-Output:
-23
+Fish Shell> set str "张三|89"
+Fish Shell> echo $str[3..-1]
+89
 ```
 
-## 深入了解子字符串提取
+在上面的例子中，我们使用`str[3..-1]`提取了`str`中第3个字符（从0开始计数）到最后一个字符之间的部分，即89。我们也可以结合其他命令对提取的子串进行进一步的处理：
 
-除了基本的提取方法外，Fish Shell还提供了更多的选项来满足不同情况下的需求。比如，使用`string sub`的`-r`选项可以实现反向提取，即从字符串的末尾开始提取。使用`string match`的`-a`选项可以提取出所有匹配的子字符串，而不仅仅是第一个。此外，Fish Shell还支持正则表达式，让我们能够更灵活地提取出符合特定模式的子字符串。
+```
+Fish Shell> echo $str[3..-1] | string sub -r '[0-9]+$'        
+89
+```
 
-## 参考链接
+在上面的例子中，我们使用了Fish Shell的`string sub`命令来删除`str[3..-1]`提取的子串中的所有非数字字符，最终得到了我们需要的成绩。
 
-- [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
-- [Fish Shell提供的字符串操作方法](https://fishshell.com/docs/current/cmds/string.html)
-- [正则表达式入门教程](https://www.runoob.com/regexp/regexp-tutorial.html)
+## 深入探讨
 
-## 相关链接
+除了上面为大家演示的简单例子，Fish Shell还提供了更多更强大的字符串提取函数，如`string match`和`string replace`。它们可以帮助我们更灵活地处理字符串，实现更复杂的提取和替换操作。同时，Fish Shell也支持使用正则表达式来进行字符串提取，极大地增强了提取子串的能力。
 
-- [在Fish Shell中处理字符串的实用技巧](https://www.example.com)
-- [如何在Fish Shell中使用变量和循环](https://www.example.com)
+## 参考资料
+
+- [Fish Shell文档-字符串提取函数](https://fishshell.com/docs/current/cmds/string.html)
+- [Fish Shell文档-正则表达式](https://fishshell.com/docs/current/index.html#regex)
+- [Fish Shell使用教程](https://fishshell.com/docs/current/index.html)

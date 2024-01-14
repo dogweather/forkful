@@ -1,36 +1,77 @@
 ---
-title:    "TypeScript: Escrevendo testes"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/writing-tests.md"
+title:                "TypeScript: Escrevendo testes"
+programming_language: "TypeScript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante?
+## Por que é importante escrever testes em TypeScript?
 
-Escrever testes é uma prática crucial para qualquer desenvolvedor TypeScript. Além de garantir que seu código funcione corretamente, os testes também ajudam a detectar bugs e a manter a qualidade do seu código. Com testes bem escritos, você pode ter mais confiança ao implementar novas funcionalidades e realizar alterações no seu código.
+Em desenvolvimento de software, a qualidade é fundamental. Garantir que o código funcione corretamente e com consistência é essencial para garantir um produto de qualidade aos usuários. Por isso, escrever testes é uma prática fundamental que ajuda a garantir a qualidade do código. Além disso, testes bem escritos também facilitam a manutenção do código, tornando-o mais escalável e menos propenso a erros.
 
-## Como escrever testes em TypeScript
+## Como escrever testes em TypeScript?
 
-Para escrever testes em TypeScript, você pode utilizar diversas bibliotecas de testes como o Jest, o Mocha ou o Chai. Vamos dar uma olhada em um exemplo básico utilizando o Jest:
+### Configurando um ambiente de teste
 
+Antes de começar a escrever os testes, é necessário configurar um ambiente de teste apropriado. Para isso, é necessário instalar o framework de testes Jest através do gerenciador de pacotes NPM. Com o Jest instalado, é preciso criar um arquivo de configuração de testes e, em seguida, adicionar alguns scripts ao arquivo "package.json" para que os testes possam ser executados.
+
+```TypeScript
+npm install --save-dev jest
 ```
-import { soma } from './calculator';
 
-test('Deve retornar o resultado da soma corretamente', () => {
-  expect(soma(2, 2)).toBe(4);
+```TypeScript
+// Configuração de teste (jest.config.js)
+
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+};
+```
+
+```TypeScript
+// Scripts adicionados ao arquivo "package.json"
+
+"scripts": {
+  "test": "jest",
+  "test:watch": "jest --watch"
+}
+```
+
+### Escrevendo testes unitários
+
+Os testes unitários são o primeiro nível de testes a serem escritos. Eles são responsáveis por verificar se as funções e métodos individuais do código estão funcionando corretamente. Para escrever um teste unitário em TypeScript, é necessário importar a função ou método que será testado e utilizar o método `expect` do Jest para verificar o resultado esperado.
+
+```TypeScript
+import { soma } from './funcoes';
+
+test('soma 1 + 2 é igual a 3', () => {
+  expect(soma(1, 2)).toEqual(3);
 });
 ```
 
-Nesse exemplo, nós importamos a função *soma* do nosso arquivo de calculadora e criamos um teste para verificar se o resultado dessa função é igual a 4 quando passamos os valores 2 e 2 como parâmetros. Utilizamos o *expect* para definir qual é o resultado esperado e o *toBe* para verificar se o resultado é realmente igual ao esperado.
+### Escrevendo testes de integração
 
-## Aprofundando em testes
+Os testes de integração verificam se as diferentes partes do código estão funcionando corretamente em conjunto. Para escrever um teste de integração em TypeScript, é necessário importar a classe ou módulo que será testado e utilizar o método `expect` do Jest para verificar o resultado esperado.
 
-Além dos testes unitários, que verificam a funcionalidade de uma parte isolada do código, também é importante escrever testes de integração e testes end-to-end. Os testes de integração garantem que diferentes partes do seu código funcionam juntas corretamente, enquanto os testes end-to-end simulam a interação de um usuário com a sua aplicação.
+```TypeScript
+import { Calculadora } from './calculadora';
 
-Outro conceito importante é a cobertura de testes, que significa quais partes do seu código estão sendo testadas e em que proporção. É importante ter uma boa cobertura de testes para garantir que todas as funcionalidades do seu código estão sendo testadas e que você está detectando possíveis bugs em todas as partes do seu projeto.
+test('multiplicação de 2 x 3 é igual a 6', () => {
+  const calc = new Calculadora();
+  expect(calc.multiplicar(2, 3)).toEqual(6);
+});
+```
+
+## Uma profundidade maior sobre a escrita de testes em TypeScript
+
+Além dos testes unitários e de integração, existem outros tipos de testes que podem ser escritos em TypeScript, como os testes de interface e testes de cobertura. Os testes de interface verificam se a interface do código está funcionando corretamente, enquanto os testes de cobertura medem a porcentagem do código que é coberta pelos testes.
+
+Ao escrever testes em TypeScript, é importante utilizar também ferramentas de mocks para simular comportamentos específicos e evitar interações com recursos externos, como APIs. Além disso, é importante seguir boas práticas de escrita de testes, como manter os testes independentes entre si e cobrir diferentes cenários de uso do código.
 
 ## Veja também
 
-- [Documentação do TypeScript](https://www.typescriptlang.org/docs/)
-- [Jest documentation](https://jestjs.io/docs/en/getting-started)
+- [Documentação do Jest](https://jestjs.io/pt-BR/)
+- [Guia de como escrever testes unitários efetivos em TypeScript](https://blog.softwaremill.com/effective-unit-testing-in-typescript-angular-814f6c6435b5)
+- [Como escrever testes de integração em TypeScript](https://itnext.io/testing-your-typescript-app-with-jest-and-ts-jest-1ef1353e8ce8)

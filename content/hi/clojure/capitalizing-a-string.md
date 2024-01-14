@@ -1,30 +1,30 @@
 ---
-title:    "Clojure: स्ट्रिंग को बड़ा लिखना"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/capitalizing-a-string.md"
+title:                "Clojure: स्ट्रिंग को प्रथम अक्षर से लिखना"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
+## क्यों
 
-प्रोग्रामिंग में विकसित भाषा क्लोजर में आपने अक्षरों को बड़े अक्षरों में बदलने की कोई बात नहीं सुनी होगी। आपको शायद यह प्रश्न हो कि आखिर इसका क्या महत्व है।
+यदि आप Clojure में नए हैं, तो आपने शायद देखा होगा कि कई कोडिंग प्रोजेक्ट में एक शब्द को शुद्ध कपिटलाइज किया जाता है। यह कई वयोग कोतिन शब्दों की पहचान करने में मदद कर सकता है और देखने में भी अच्छा लगता है। इस लेख में हम जानेंगे कि Clojure में स्ट्रिंग कैपिटलाइज कैसे करें।
 
-कोई भी प्रोग्राम विकसित करते समय हम अपने कोड में सम्बंधित तरीकों को बदलते रहते हैं। जब हम एक अक्षर स्ट्रिंग को बड़े अक्षरों में बदलते हैं तो हमारी काम करने की क्षमता काफी विस्तुवत्ता प्रदान करती है। इससे हमारे कोड को आसानी से समझा जा सकता है और उसमें त्रुटियां कम होती हैं। इसलिए, अक्षरों को बड़े अक्षरों में बदलने को काफी उपयोगी माना जाता है।
-
-## कैसे करें
-
-अगर आप क्लोजर में स्ट्रिंग को कैपिटलाइज करना चाहते हैं तो निम्नलिखित कोड का उपयोग कर सकते हैं।
+## कैसे
 
 ```Clojure
-(defn capitalize [str]
-  (clojure.string/upper-case str))
-
-(capitalize "hello world") ; Output: "HELLO WORLD"
+;; एक कपिटलाइज्ड स्ट्रिंग बनाने के लिए, uppercase फ़ंक्शन का उपयोग करें
+(println (uppercase "hello world")) ;; हेल्लो वर्ल्ड
 ```
 
-यहां हम `capitalize` नामक एक फ़ंक्शन बना रहे हैं जो कि हमारी स्ट्रिंग को `clojure.string` नामक लाइब्रेरी के उपयोग से बड़े अक्षरों में बदलेगा। `clojure.string/upper-case` आपके स्ट्रिंग को ऊपर दिए गए कोड का रूपांतरण कर देगा। हमारे उदाहरण में यह `hello world` को `HELLO WORLD` में बदल देगा।
+आप देख सकते हैं कि एक सादा से "hello world" स्ट्रिंग को उपर्केस में बदलकर हमने कैपिटलाइज किया है। इसके अलावा, आप lowercase, capitalize या titleize भी उपयोग कर सकते हैं जो स्ट्रिंग को अनुसार बदलते हैं।
 
-## गहराई में जाएं
+## गहराई में
 
-स्ट्रिंग को कैपिटलाइज करने का मूल उद्देश्य हमारे कोड को बेहतर ढंग से समझना और उसमें त्रुटियां कम करना है। इससे हमारे कोड को बुद्ध
+Clojure में कैपिटलाइज करने की दृष्टि से यह सबसे थोड़ा समस्या है कि यह अक्षरों की उत्पत्ति के साथ अलग-अलग टाइम्स निर्धारित करता है कि वे शब्द को कैसे कैपिटलाइज करें। इसका मतलब है कि यदि आप "iPhone" या "Walmart" स्ट्रिंग को कैपिटलाइज करते हैं, तो आपको उसे "Iphone" और "Walmart" में बदलना होगा। इसके लिए सबसे अच्छा रास्ता config फ़ंक्शन का उपयोग करना है जो आपको अलग-अलग capitalization के लिए मानदंड निर्दिष्ट करता है।
+
+## देखें अभी
+- [Clojure strings tutorial](https://clojure.org/guides/learn/syntax#_strings)
+- [Clojure string functions](http://clojure-doc.org/articles/language/strings.html)
+- [Configuring capitalization in Clojure](https://lambdaisland.com/blog/2020-01-14-configuring-capitalization-in-clojure)

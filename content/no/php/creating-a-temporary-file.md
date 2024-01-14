@@ -1,40 +1,39 @@
 ---
-title:    "PHP: Opprettelse av en midlertidig fil"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/creating-a-temporary-file.md"
+title:                "PHP: Lage en midlertidig fil"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det er mange grunner til å bruke midlertidige filer i PHP-programmering. En av de vanligste er å lagre midlertidige data som er nødvendige for å kunne jobbe med dem senere. Dette kan være nyttig for å bevare data mellom programkjøringer, for eksempel hvis du trenger å lagre brukerinnstillinger eller andre temporary filer. Å opprette midlertidige filer kan også hjelpe til med å organisere og strukturere koden din, og gjøre det lettere å feilsøke og vedlikeholde.
+Noen ganger, når du programmerer med PHP, trenger du midlertidige filer for å lagre data mens applikasjonen kjører. Dette kan være for å redusere lagringsbehovet eller for å lagre informasjon som kun trengs i øyeblikket. Å opprette midlertidige filer kan være nyttig i en rekke situasjoner, og i denne bloggposten vil vi utforske hvorfor og hvordan du kan gjøre det.
 
-## Hvordan
+## Hvordan du oppretter midlertidige filer i PHP
 
-Å opprette en midlertidig fil i PHP er enkelt. Først må du åpne en filressurs med `tmpfile()`-funksjonen. Dette vil opprette en midlertidig fil og returnere en filpeker som du kan bruke senere. Her er et eksempel på hvordan du kan bruke denne funksjonen:
+For å opprette en midlertidig fil i PHP, kan du bruke funksjonen `tempnam()`. Denne funksjonen tar inn to parametere, en mappebane hvor den midlertidige filen skal opprettes og et valgfritt prefiks for filnavnet. For eksempel:
 
 ```PHP
-<?php
-$file = tmpfile();
-fwrite($file, "Dette er en midlertidig fil.");
-rewind($file); // Flytter filpekeren til begynnelsen av filen.
-echo fread($file, filesize($file)); // Skriver ut innholdet av filen.
-fclose($file); // Lukker filressursen.
-?>
+$temp_file = tempnam('/tmp', 'my_prefix');
 ```
 
-Dette eksempelet vil skrive ut teksten "Dette er en midlertidig fil." og lukke filressursen. Merk at det er viktig å lukke filen når du er ferdig med å bruke den, slik at den midlertidige filen blir slettet fra systemet.
+Denne koden vil opprette en tekstfil under mappen `/tmp` med et tilfeldig generert navn, men med prefikset `my_prefix` foran. Dette gir deg en unik fil å jobbe med.
+
+Når du er ferdig med å bruke den midlertidige filen, må du slette den for å frigjøre plass på serveren. For dette kan du bruke funksjonen `unlink()`:
+
+```PHP
+unlink($temp_file);
+```
 
 ## Dypdykk
 
-Når du bruker midlertidige filer, er det viktig å tenke på sikkerheten. Du bør alltid sørge for å håndtere feil og unntak i koden din, for å unngå uønskede situasjoner som kan føre til at sensitive data blir lekket. Du kan også bruke `tempnam()`-funksjonen til å generere et unikt filnavn for den midlertidige filen din, slik at den ikke kan overskrives eller andre programmer kan få tilgang til den.
+Når du oppretter en midlertidig fil, blir den lagret på serveren i en mappe som er tilgjengelig for webserveren. Det er viktig å sørge for at denne mappen er riktig konfigurert og beskyttet mot uautorisert tilgang. En annen forholdsregel du bør ta, er å ikke lagre sensitiv informasjon i den midlertidige filen, da den kan være sårbar for lekkasje av data.
 
-Det kan også være nyttig å vite at det finnes en rekke forskjellige funksjoner og metoder for å jobbe med midlertidige filer i PHP. Du kan for eksempel bruke `tempnam()` til å generere et unikt filnavn, `tmpfile()` for å opprette selve filen, `fwrite()` for å skrive til filen og `fread()` for å lese fra filen. Utforsk disse og andre funksjoner for å finne den mest effektive måten å håndtere midlertidige filer på i ditt eget program.
+En annen ting å merke seg er at midlertidige filer vil bli slettet automatisk når skriptet er ferdig å kjøre. Men det er alltid en god praksis å slette filen manuelt for å sikre at den ikke forblir på serveren.
 
 ## Se også
 
-- [PHP.net - tmpfile()](https://www.php.net/manual/en/function.tmpfile.php)
-- [PHP.net - tempnam()](https://www.php.net/manual/en/function.tempnam.php)
-- [PHP.net - fwrite()](https://www.php.net/manual/en/function.fwrite.php)
-- [PHP.net - fread()](https://www.php.net/manual/en/function.fread.php)
+- [PHP-tutorials: Opprett og slett midlertidige filer](https://www.php.net/manual/no/function.tempnam.php)
+- [Secure Programming Techniques for PHP](https://www.php.net/manual/no/book.security.php)

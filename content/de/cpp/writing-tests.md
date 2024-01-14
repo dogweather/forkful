@@ -1,29 +1,58 @@
 ---
-title:    "C++: Tests schreiben"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/writing-tests.md"
+title:                "C++: Tests schreiben"
+programming_language: "C++"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-Warum:Um sicherzustellen, dass unsere Programme korrekt funktionieren, ist es wichtig, Tests zu schreiben. Tests können uns helfen, Fehler frühzeitig zu erkennen und die Qualität unserer Software zu verbessern.
+## Warum
 
-Wie man Tests schreibt:Um Tests in C++ zu schreiben, müssen wir zunächst eine Testbibliothek wie Google Test oder Catch2 einbinden. Anschließend können wir unsere Tests in Funktionen mit Hilfe von Assertions schreiben, die überprüfen, ob bestimmte Bedingungen erfüllt sind. Hier ist ein einfaches Beispiel mit Catch2:
+Testen ist ein wesentlicher Bestandteil der Softwareentwicklung, da es sicherstellt, dass der Code korrekt und zuverlässig funktioniert. Durch das Schreiben von Tests können potenzielle Fehler erkannt und behoben werden, bevor die Software in die Produktion geht, was Zeit und Ressourcen sparen kann. Es ist daher wichtig, diese Praktik zu beherrschen und in jedes Softwareprojekt zu integrieren.
+
+## Wie man Tests schreibt
+
+Das Schreiben von Tests kann mit Hilfe von Frameworks wie dem C++ Unit Test Framework oder dem Google Test Framework durchgeführt werden. Hier ist ein Beispiel für eine Testklasse, die mithilfe des Google Test Frameworks geschrieben wurde:
 
 ```C++
-TEST_CASE("Multiply Numbers") {
-  REQUIRE(2 * 2 == 4);
-  REQUIRE(5 * 3 == 15);
+#include <gtest/gtest.h>
+
+// Definition der Testklasse
+class SampleTest : public ::testing::Test {
+protected:
+
+  // Vorbereitung von Testdaten oder Zuständen
+  void SetUp() override {}
+
+  // Aufraeumen nach dem Test
+  void TearDown() override {}
+};
+
+// Testfunktion
+TEST_F(SampleTest, TestErfolg) {
+  EXPECT_EQ(2 + 2, 4);
+}
+
+TEST_F(SampleTest, TestFehlschlag) {
+  EXPECT_EQ(2 + 2, 5);
+}
+
+// Start des Tests
+int main(int argc, char* argv[]) {
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
 }
 ```
 
-Dieses Beispiel würde erfolgreich ausgeführt werden, da beide Bedingungen erfüllt sind. Falls eine Bedingung nicht erfüllt wird, würden die Tests fehlschlagen und uns darauf aufmerksam machen, dass wir einen Fehler in unserem Code haben.
+Das obige Beispiel zeigt die grundlegenden Strukturen von Unit Tests. Die Testklasse erbt von der Basisklasse "testing::Test" und hat Funktionen für die Testvorbereitung und das Aufräumen. Jede Testfunktion innerhalb der Klasse wird mit dem Makro "TEST_F" deklariert, gefolgt vom Namen der Klasse und dem Testnamen. Innerhalb der Testfunktion werden Assertions verwendet, um das erwartete Verhalten des Codes zu überprüfen. Wenn alle Tests erfolgreich sind, gibt der letzte Teil des Codes (die "main"-Funktion) eine "0" zurück und zeigt somit an, dass alle Tests erfolgreich waren.
 
-Deep Dive:Tests zu schreiben ist nicht nur eine Aufgabe, die man am Ende des Programmierprozesses erledigt. Es sollte von Anfang an in den Entwicklungsprozess integriert werden, um sicherzustellen, dass jede Änderung am Code keine unerwarteten Seiteneffekte hat. Außerdem können Tests auch dazu beitragen, den Code aufzuräumen und Kompatibilitätsprobleme zu erkennen. Es ist auch wichtig zu beachten, dass Tests nicht 100%ige Sicherheit bieten, aber sie können die Qualität und Verlässlichkeit unserer Programme verbessern.
+## Tiefere Einblicke
 
-Siehe auch:
-- [Einführung in das Testen von C++ Code mit Google Test](https://google.github.io/googletest/)
-- [Catch2 Dokumentation](https://github.com/catchorg/Catch2/blob/devel/docs/tutorial.md)
-- [Die wichtigsten Prinzipien für erfolgreiches Testen in der Softwareentwicklung](https://www.atlassian.com/de/agile/software-development/testing)
+Beim Schreiben von Tests gibt es verschiedene Konzepte und Techniken, die berücksichtigt werden sollten. Dazu gehören zum Beispiel die Verwendung von Test-Driven Development (TDD) und die Erstellung von "testbaren" Code. Darüber hinaus ist es wichtig, zu verstehen, wie man effektive Testfälle erstellt und wie man Fehlermeldungen interpretiert, um Fehler schnell und effizient zu beheben.
 
-Wir hoffen, dass dieser kurze Einblick Ihnen dabei geholfen hat, zu verstehen, warum es wichtig ist, Tests zu schreiben, und wie man Tests in C++ implementieren kann. Mit dieser Vorgehensweise können wir sicherstellen, dass unsere Software von hoher Qualität ist und unseren Benutzern eine zuverlässige Anwendung bietet. Viel Spaß beim Coden!
+## Siehe auch
+
+- [C++ Unit Test Framework](https://github.com/cpp-testing/Catch2)
+- [Google Test Framework](https://github.com/google/googletest)
+- [Test-Driven Development (TDD)](https://de.wikipedia.org/wiki/Testgetriebene_Entwicklung)

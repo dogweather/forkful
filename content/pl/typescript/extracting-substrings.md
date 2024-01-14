@@ -1,33 +1,48 @@
 ---
-title:    "TypeScript: Wycinanie podciągów"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/extracting-substrings.md"
+title:                "TypeScript: Wycinanie podciągów"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wykorzystywanie substrings jest ważną umiejętnością w programowaniu, ponieważ pozwala nam wyodrębnić określone części tekstu lub ciągu znaków z większego zbioru danych. To nie tylko ułatwia czytanie i analizowanie danych, ale także może być przydatne w wielu różnych zastosowaniach, takich jak walidacja formularzy, manipulowanie tekstem i wiele innych.
+Ekstrakcja podciągów jest często używanym i bardzo przydatnym narzędziem w programowaniu. Jest to proces wydobycia fragmentów tekstu lub ciągów znaków z łańcucha znaków. Czasami jest to konieczne do zastosowania w celu uzyskania odpowiednich danych lub do przeprowadzenia różnego rodzaju operacji na tekście.
 
 ## Jak to zrobić
 
-Aby wyciąć substring w TypeScript, możemy użyć metody `substring()` lub `slice()`, w zależności od naszych potrzeb. Oba te metody przyjmują dwa parametry: początkowy i końcowy indeks, które określają początek i koniec fragmentu, który chcemy wyodrębnić.
+Aby wykorzystać ekstrakcję podciągów w TypeScript, należy użyć metody `substring (beginIndex, endIndex)`, gdzie `beginIndex` jest indeksem pierwszego znaku w podciągu, a `endIndex`(opcjonalny) określa indeks ostatniego znaku w podciągu. Przykładowe użycie wyglądałoby następująco:
 
 ```TypeScript
-let string = "To jest tekst do przycięcia."
-let substring1 = string.substring(3, 11) // rezultat: "jest tekst"
-let substring2 = string.slice(16) // rezultat: "przycięcia."
+let str: string = "Programowanie jest super";
+let subStr: string = text.substring(6, 15);
+console.log(subStr); // "owanie jest"
 ```
 
-W pierwszym przykładzie, używając `substring()`, wycięliśmy tekst zaczynający się od trzeciego indeksu (wliczając pierwszy znak jako 0) do jedenastego indeksu (bez niego). Natomiast w drugim przykładzie, zastosowaliśmy `slice()` z jednym parametrem, co spowodowało wycięcie fragmentu tekstu od szesnastego indeksu do końca.
+Można również użyć metody `slice (beginIndex, endIndex)`, która działa tak samo jak `substring`, ale `endIndex` jest opcjonalny i jeśli nie jest podany, wyodrębnia wszystkie znaki od `beginIndex` do końca łańcucha. Przykładowe użycie wyglądałoby następująco:
 
-## Głębsza analiza
+```TypeScript
+let str: string = "Programowanie jest super";
+let subStr: string = text.slice(6);
+console.log(subStr); // "owanie jest super"
+```
 
-Powyższe przykłady pokazują podstawowe użycie metody `substring()` i `slice()`, jednak warto wiedzieć, że istnieją również inne metody do wycinania substrings, takie jak `substr()` czy `substring-before()` w XPath. Każda z nich różni się szczegółami i może być przydatna w różnych sytuacjach. Dlatego warto poznać je wszystkie, aby wybrać najodpowiedniejszą w danym przypadku.
+Możliwe jest również wykorzystanie funkcji `substr (beginIndex, length)`, która określa indeks pierwszego znaku w ekstrahowanym podciągu i jego długość. Przykładowe użycie wyglądałoby następująco:
 
-## Zobacz także
+```TypeScript
+let str: string = "Programowanie jest super";
+let subStr: string = text.substr(14, 5);
+console.log(subStr); // "super"
+```
 
-- Tutorial o używaniu substrings w TypeScript: [https://www.typescriptlang.org/docs/handbook/strings.html#substring-and-substr](https://www.typescriptlang.org/docs/handbook/strings.html#substring-and-substr)
-- Przykładowe zadania i wyzwania z wykorzystaniem substrings: [https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/slice-and-splice](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-algorithm-scripting/slice-and-splice)
-- Porównanie różnych metod wycinania substrings w programowaniu: [https://betterprogramming.pub/substring-substr-or-slice-how-to-substring-the-right-way-in-javascript-b6dfc365d1e4](https://betterprogramming.pub/substring-substr-or-slice-how-to-substring-the-right-way-in-javascript-b6dfc365d1e4)
+## Głębszy zanurzenie
+
+Podczas ekstrakcji podciągów należy pamiętać o kilku rzeczach. Po pierwsze, indeksy znaków zawsze zaczynają się od 0, więc pierwszy znak ma indeks 0, drugi ma indeks 1, itd. Po drugie, jeśli podamy indeks większy niż długość łańcucha, zostanie wyodrębniony pusty podciąg. Po trzecie, jeśli podamy niepoprawny indeks (np. wartość ujemna), zostanie zwrócony pusty łańcuch.
+
+## Zobacz również
+
+- [Dokumentacja dla metody substring](https://www.typescriptlang.org/docs/handbook/strings.html#substring)
+- [Dokumentacja dla metody slice](https://www.typescriptlang.org/docs/handbook/strings.html#slice)
+- [Dokumentacja dla funkcji substr](https://www.typescriptlang.org/docs/handbook/strings.html#substr)

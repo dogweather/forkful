@@ -1,45 +1,40 @@
 ---
-title:    "Rust: Criando um arquivo temporário."
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/creating-a-temporary-file.md"
+title:                "Rust: Gerando um arquivo temporário"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que criar um arquivo temporário em Rust?
 
-Criar um arquivo temporário é uma tarefa comum em programação, independentemente da linguagem utilizada. Em Rust, isso pode ser necessário para várias finalidades, como armazenar dados temporariamente, evitar conflitos entre processos ou realizar testes. Neste artigo, vamos ver como criar um arquivo temporário de forma simples e eficiente em Rust.
+Criar um arquivo temporário pode ser útil em diversas situações ao escrever um código em Rust. Algumas razões comuns para criar um arquivo temporário incluem armazenar dados temporários, fazer testes, manipular arquivos grandes ou simplesmente para evitar sobrecarregar o armazenamento permanente.
 
 ## Como criar um arquivo temporário em Rust
 
-Para criar um arquivo temporário em Rust, podemos utilizar a função `tempfile::tempfile` do módulo `std::fs`. Esta função criará um arquivo temporário vazio no sistema de arquivos padrão e retornará seu handle em forma de `std::fs::File`. Vejamos um exemplo de como utilizá-la:
+Para criar um arquivo temporário em Rust, podemos usar a função `tempfile::tempfile()`. Esta função retorna um objeto `Result<File>`, que pode ser usado para escrever ou ler dados do arquivo temporário. Veja um exemplo abaixo:
 
-```
-use std::fs::File;
+```Rust
 use std::io::prelude::*;
+use std::fs::File;
 use tempfile::tempfile;
 
-fn main() {
-    let mut file = tempfile().unwrap();
-    file.write_all(b"Olá mundo!").unwrap();
-}
+let mut temp_file = tempfile().expect("Não foi possível criar o arquivo temporário");
+temp_file.write_all(b"Este é um exemplo de conteúdo do arquivo temporário")
+    .expect("Não foi possível escrever dados no arquivo");
 ```
 
-Neste exemplo, estamos criando um arquivo temporário e escrevendo a string "Olá mundo!" nele. É importante lembrar que, após finalizarmos o uso do arquivo, devemos excluí-lo manualmente através da função `std::fs::remove_file`.
+Neste exemplo, usamos o `tempfile()` para criar o arquivo temporário e em seguida, usamos o método `write_all()` para escrever uma string no arquivo. Podemos também usar métodos como `read()` ou `seek()` para ler e manipular os dados no arquivo temporário.
 
-## Mergulho profundo
+## Aprofundando no assunto
 
-Existem várias opções que podemos passar para a função `tempfile::tempfile` para customizar nosso arquivo temporário. Algumas delas são:
+Existem algumas coisas importantes a se ter em mente ao criar um arquivo temporário em Rust. Primeiro, sempre devemos checar o resultado da função `tempfile()` para garantir que o arquivo foi criado com sucesso. Caso contrário, podemos receber um erro ao tentar escrever ou ler dados no arquivo.
 
-- `prefix`: podemos passar um prefixo para o nome do arquivo temporário, o que pode ser útil para identificar a utilidade do arquivo.
-- `suffix`: assim como o prefixo, podemos adicionar uma extensão para o nome do arquivo temporário.
-- `suffix_len`: podemos especificar o tamanho do sufixo, caso seja necessário utilizar um número maior de caracteres.
-- `tempfile`: é possível utilizar a função `tempfile` várias vezes para criar múltiplos arquivos temporários no mesmo código.
-
-Além disso, o módulo `tempfile` também oferece outras funções úteis, como `tempdir`, que cria um diretório temporário, e `persist`, que converte um arquivo temporário em um arquivo permanente. Consulte a documentação oficial para mais informações.
+Também é importante lembrar que o arquivo temporário será automáticamente deletado quando o programa terminar de executar, então não precisamos nos preocupar em deletá-lo manualmente. Além disso, podemos especificar a extensão do arquivo temporário usando o método `suffix()` para facilitar o reconhecimento do arquivo.
 
 ## Veja também
 
-- [Documentação do módulo `std::fs`] (https://doc.rust-lang.org/std/fs/index.html)
-- [Documentação do pacote `tempfile`] (https://docs.rs/tempfile/3.1.0/tempfile/)
-- [Exemplo de utilização da função `tempfile`] (https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=4e77fb3c8ce6cc6c1422f4b2f9dfd5b6)
+- [Documentação da função `tempfile()`](https://docs.rs/tempfile/3.2.0/tempfile/fn.tempfile.html)
+- [Exemplo de uso da biblioteca `tempfile`](https://gist.github.com/LuisHenrique01/00beee1099ca6e3fbea0de3d3b75a97f)
+- [Tutorial sobre manipulação de arquivos em Rust](https://doc.rust-lang.org/rust-by-example/std_misc/file/read_lines.html)

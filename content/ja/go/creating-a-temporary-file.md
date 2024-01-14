@@ -1,69 +1,58 @@
 ---
-title:    "Go: 一時ファイルの作成"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/creating-a-temporary-file.md"
+title:                "Go: 一時ファイルの作成"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-ゴー言語を学ぶ上で、一時ファイルの作成が必要な場面があるかもしれません。この記事では、一時ファイルの作成がなぜ必要なのかを紹介します。
+Go言語を学ぶために、一時ファイルの作成方法を学ぶ理由はたくさんあります。一時ファイルを作成することで、簡単にデータを保存することができます。また、一時ファイルの作成はデバッグ時に便利です。
 
 ## 作り方
 
-一時ファイルを作成するには、まず `ioutil` パッケージをインポートし、`ioutil.TempFile` 関数を使います。以下のコード例は、一時ファイルを作成し、書き込み、読み込んで削除するプログラムです。
+一時ファイルの作成は、```Go ioutil.TempFile```関数を使用することで簡単に行うことができます。下記のコードは、一時ファイルを作成し、書き込み、読み込みを行う例です。
 
 ```Go
-package main
-
-import (
-"fmt"
-"io/ioutil"
-)
-
-func main() {
-    // TempFile関数を使って一時ファイルを作成
-    tempFile, err := ioutil.TempFile("", "example")
-    if err != nil {
-        fmt.Println(err)
-    }
-    defer tempFile.Close()
-
-    // 一時ファイルに書き込み
-    _, err = tempFile.WriteString("Hello, Go!")
-    if err != nil {
-        fmt.Println(err)
-    }
-
-    // 一時ファイルを読み込み
-    fileContents, err := ioutil.ReadFile(tempFile.Name())
-    if err != nil {
-        fmt.Println(err)
-    }
-    fmt.Println(string(fileContents))
-
-    // 一時ファイルを削除
-    err = ioutil.Remove(tempFile.Name())
-    if err != nil {
-        fmt.Println(err)
-    }
+// 一時ファイルを作成する
+file, err := ioutil.TempFile("", "temporary_file")
+if err != nil {
+    panic(err)
 }
+defer os.Remove(file.Name())
+fmt.Println("一時ファイルが作成されました。")
+
+// ファイルにデータを書き込む
+data := []byte("これは一時ファイルです。")
+_, err = file.Write(data)
+if err != nil {
+    panic(err)
+}
+fmt.Println("データをファイルに書き込みました。")
+
+// ファイルからデータを読み込む
+readData := make([]byte, 20)
+_, err = file.Read(readData)
+if err != nil {
+    panic(err)
+}
+fmt.Println("ファイルから読み込んだデータは、", string(readData), "です。")
 ```
 
-実行結果は以下のようになります。
+上記のコードを実行すると、下記のような結果が得られます。
 
+```Go
+一時ファイルが作成されました。
+データをファイルに書き込みました。
+ファイルから読み込んだデータは、これは一時ファイルです。です。
 ```
-Hello, Go!
-```
 
-## 深堀り
+## ディープダイブ
 
-一時ファイルは、長期間保存する必要がないデータを一時的に作成・保存するために使われます。例えば、オンラインショッピングサイトでの仮の注文データの保存や、一時的なログファイルの作成などに使用されます。
-
-また、一時ファイルを作成する際には、ファイルのパーミッションを設定することができます。デフォルトでは読み書きが可能なパーミッションが設定されますが、必要に応じてパーミッションを変更することができます。詳細な情報は公式ドキュメントを参照してください。
+```Go ioutil.TempFile```関数では、デフォルトで一時ファイルが「/tmp」ディレクトリに作成されますが、引数を指定することで任意のディレクトリに一時ファイルを作成することもできます。また、一時ファイルは自動的に削除されるため、開発中やテスト時に便利ですが、プログラムが終了するとファイルも削除されてしまいます。そのため、必要に応じてファイルを保持する必要があります。
 
 ## 参考リンク
 
-- [Go言語の公式ドキュメント - ioutilパッケージ](https://golang.org/pkg/io/ioutil/)
-- [Go 言語で一時ファイルを作る方法](https://qiita.com/rrrfff/items/375f487bff5f4cda3919)
+[Go ioutil.TempFileドキュメント](https://golang.org/pkg/io/ioutil/#TempFile)

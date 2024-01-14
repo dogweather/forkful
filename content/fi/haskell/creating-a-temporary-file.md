@@ -1,73 +1,47 @@
 ---
-title:    "Haskell: Väliaikaisen tiedoston luominen"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/creating-a-temporary-file.md"
+title:                "Haskell: Tilapäistiedoston luominen"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Temporary-tiedostojen luominen on tärkeä osa Haskell-ohjelmoinnissa. Se tarjoaa tehokkaan ja luotettavan tavan tallentaa ja käyttää väliaikaista dataa ohjelman suorituksen aikana.
+Monet kirjoittajat ovat kohdanneet tarpeen luoda tilapäistiedostoja ohjelmointia varten. Tämä voi johtua siitä, että haluamme tallentaa tiedostoja vain tilapäisesti, käsikirjoituksen testaamiseksi tai tiedostojen luomiseksi toisista tiedoista. Tässä blogiviestissä käsittelemme, miten voit luoda tilapäistiedoston helposti Haskell-ohjelmassa.
 
-## Miten
+## Kuinka
 
-### Luodaan väliaikainen tiedosto
-
-```Haskell
-import System.IO.Temp
-
-main = do
-  -- Luodaan väliaikainen tiedosto oletuskansioon
-  withSystemTempFile "tempfile.txt" $ \tmpPath handle -> do
-    -- Kirjoitetaan data tiedostoon
-    hPutStrLn handle "Tämä on väliaikainen tiedosto"
-    -- Suljetaan tiedosto
-    hClose handle
-    -- Tulostetaan tiedoston polku
-    putStrLn $ "Luotu tiedosto: " ++ tmpPath
-```
-
-### luoEmbeddedFile-funktion käyttö
+Tilapäisten tiedostojen luominen Haskell-ohjelmassa on helppoa käyttämällä moduulia `System.IO.Temp`. Seuraavaksi näytämme yksinkertaisen esimerkin tilapäistiedoston luomisesta ja sen avaamisesta tiedon kirjoittamiseksi:
 
 ```Haskell
 import System.IO.Temp
-import Data.ByteString.Char8
-
-main = do
-  -- Tallennetaan väliaikainen data muuttujaan
-  let data = "Tämä on väliaikainen tiedosto"
-  -- Luodaan väliaikainen tiedosto siirtämällä data luoEmbeddedFile-funktiolle
-  (tmpPath, _) <- createTempFile Nothing "tempfile.txt"
-                      (folderPath, pack data)
-  -- Tulostetaan tiedoston polku
-  putStrLn $ "Luotu tiedosto: " ++ tmpPath
-```
-
-### Väliaikaisen tiedoston poistaminen
-
-```Haskell
-import System.IO.Temp
+import System.IO
 import System.Directory
 
 main = do
-  -- Luodaan väliaikainen tiedosto
-  (tmpPath, handle) <- openTempFile "folder" "tempfile.txt"
-  -- Kirjoitetaan data tiedostoon
-  hPutStrLn handle "Tämä on väliaikainen tiedosto"
-  -- Suljetaan tiedosto
-  hClose handle
-  -- Poistetaan tiedosto
-  removeFile tmpPath
+  -- Luodaan tilapäistiedosto ja avataan se ReadWrite-tilassa
+  withSystemTempFile "temp.txt" $ \tempFilePath tempHandle -> do
+    -- Kirjoitetaan tiedostoon
+    hPutStrLn tempHandle "Tämä on tilapäistiedosto Haskellilla!"
+    -- Suljetaan tiedosto
+    hClose tempHandle
+    -- Luetaan tiedoston sisältö ja tulostetaan se
+    readHandle <- openFile tempFilePath ReadMode
+    tempContents <- hGetContents readHandle
+    putStrLn tempContents
+    -- Poistetaan tilapäistiedosto
+    removeFile tempFilePath
 ```
 
-## Syväsukellus
+Tämän koodin tulosteena pitäisi olla: "Tämä on tilapäistiedosto Haskellilla!" Tämä esimerkki osoittaa, kuinka voit luoda tilapäistiedoston, kirjoittaa siihen ja lukea sen sisältöä. Lopuksi tiedosto poistetaan `removeFile`-funktion avulla.
 
-Väliaikaisten tiedostojen luominen on tärkeä osa Haskell-ohjelmia, jotka käsittelevät suuria määriä dataa tai tarvitsevat väliaikaisia tallennuspaikkoja väliaikaisille tiedostoille.
+## Syvällinen sukellus
 
-Suorituskyvyn optimoimiseksi on suositeltavaa käyttää ```createTempFile``` tai ```withSystemTempFile``` -funktiota, joka käyttää käyttöjärjestelmän osoittamaa väliaikaista hakemistoa tiedostojen tallentamiseen. Tällä tavalla voit varmistaa, että väliaikaiset tiedostot hävitetään lopuksi automaattisesti.
+Jos haluat lisätietoja tilapäistiedostojen luomisesta Haskell-ohjelmassa, lue moduulin `System.IO.Temp` dokumentaatio. Tämä moduuli tarjoaa myös muita käteviä toimintoja tilapäistiedostojen käsittelyyn, kuten `withTempDirectory`- ja `emptyTempFile`-funktiot.
 
 ## Katso myös
-- [Haskellin dokumentaatio System.IO.Temp-moduulista](https://www.haskell.org/cabal/users-guide/developing-packages.html#system-temporary-files)
-- [Haskelin dokumentaatio Data.ByteString.Char8-moduulista](https://hackage.haskell.org/package/bytestring-0.10.10.0/docs/Data-ByteString-Char8.html)
-- [Haskelin dokumentaatio System.Directory-moduulista](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
+
+- [Haskellin `System.IO.Temp`-moduulin dokumentaatio](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO-Temp.html)
+- [Haskelliin tutustuminen -opas (suomeksi)](https://fi.wikibooks.org/wiki/Haskell:_Tutustu_Haskelliin)

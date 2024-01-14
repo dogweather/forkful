@@ -1,77 +1,56 @@
 ---
-title:    "Go: Utskrift av feilsøkingsutgang"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/printing-debug-output.md"
+title:                "Go: Utskrift av feilsøkingsdata"
+programming_language: "Go"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Debugging er en viktig del av enhver programmeringsprosess, og å kunne skrive ut feilmeldinger og annen informasjon for å spore feil er avgjørende. I dette blogginnlegget vil vi utforske hvordan du kan bruke Go-programmeringsspråket til å skrive ut feilmeldinger og debug-informasjon.
+
+Å skrive kode kan noen ganger føles som å løse en gåte. Problemet er at du ikke alltid vet svaret på gåten, og da kan det være nyttig å kunne se hva som skjer underveis i koden. Det er her utskrift av feilsøkingsdata kommer inn. Ved å skrive ut data til konsollen mens koden kjører, kan du få en bedre forståelse av hvordan koden din fungerer og mulige feil som oppstår. Det kan også være nyttig for å finne ut hvor koden din bremser eller hvorfor den ikke gjør det du forventer.
 
 ## Hvordan
-Det første du må gjøre er å importere standardpakken `fmt`. Denne pakken inneholder funksjoner som lar oss skrive ut informasjon til konsollen. Her er et enkelt eksempel på hvordan du kan skrive ut en melding til konsollen:
+
+I Go er det enkelt å skrive ut feilsøkingsdata ved hjelp av "fmt" pakken. For å komme i gang, må du importere "fmt" pakken øverst i filen din: 
 
 ```Go
-package main
-
 import "fmt"
-
-func main() {
-    fmt.Println("Hei verden!")
-}
 ```
 
-Dette vil produsere følgende output i konsollen:
-
-```
-Hei verden!
-```
-
-Du kan også bruke `Printf`-funksjonen for å skrive ut variabler. Her er et eksempel på hvordan du kan skrive ut verdien av en variabel:
+Så kan du bruke "fmt.Println()" funksjonen for å skrive ut data til konsollen. La oss si du har en variabel "navn" og vil skrive ut verdien av den. Du kan gjøre det slik:
 
 ```Go
-package main
-
-import "fmt"
-
-func main() {
-    num := 42
-    fmt.Printf("Verdien av num er %d \n", num)
-}
+navn := "Ole"
+fmt.Println(navn)
 ```
 
-Dette vil produsere følgende output:
-
-```
-Verdien av num er 42
-```
-
-For å skrive ut feilmeldinger, kan du bruke `Errorf`-funksjonen. Her er et eksempel på hvordan du kan bruke den:
+Dette vil skrive ut "Ole" til konsollen. Du kan også kombinere tekst og variabler ved å bruke "fmt.Printf()" funksjonen. For eksempel, hvis du vil skrive ut "Hei, Ole!" vil du gjøre det slik:
 
 ```Go
-package main
-
-import "fmt"
-
-func main() {
-    err := fmt.Errorf("Dette er en feilmelding")
-    fmt.Println(err)
-}
+navn := "Ole"
+fmt.Printf("Hei, %s!", navn)
 ```
 
-Dette vil produsere følgende output:
+Dette vil skrive ut "Hei, Ole!" til konsollen. Du kan også legge til flere variabler ved å inkludere flere "%s" og passende variabelverdier i rekkefølgen de skal vises.
 
+## Dypdykk
+
+I tillegg til å skrive ut enkle variabler, kan du også skrive ut mer komplekse datastrukturer som arrays, maps og structs. For arrays og maps kan du bruke "fmt.Println()" eller "fmt.Printf()" funksjoner på samme måte som for enkeltvariabler. For structs kan du bruke "fmt.Printf()" funksjonen og referere til de ulike feltene i structet ved å bruke ".". For eksempel, hvis du har et struct som heter "Person" med feltene "navn" og "alder", vil du gjøre det slik:
+
+```Go
+person := Person{"Ole", 25}
+fmt.Printf("Navn: %s, Alder: %d", person.navn, person.alder)
 ```
-Dette er en feilmelding
-```
 
-## Deep Dive
-Nå som du har lært hvordan du kan skrive ut feilmeldinger og annen informasjon, kan det være nyttig å vite om noen tilleggsfunksjoner som kan være nyttige under debugging. En av disse er `Sprintf`-funksjonen, som lar deg lagre en formattert streng i en variabel istedenfor å skrive den direkte til konsollen.
+Dette vil skrive ut "Navn: Ole, Alder: 25" til konsollen.
 
-En annen nyttig funksjon er `Debugf`, som er spesielt nyttig når du jobber med større prosjekter. Denne funksjonen lar deg skrive ut informasjon til konsollen kun når programmet kjører med en flaggverdi som er satt til å være "debug".
+Du kan også bruke "fmt.Sprintf()" funksjonen til å formatere en string og lagre den i en variabel, i stedet for å skrive den direkte til konsollen. Dette kan være nyttig hvis du vil inkludere feilsøkingsdata i en feilmelding eller skrive den til en fil.
 
 ## Se også
-- [Offisiell dokumentasjon for fmt-pakken](https://golang.org/pkg/fmt/)
-- [Guide til error handling i Go](https://blog.golang.org/error-handling-and-go)
-- [Tutorial om debugging i Go](https://www.calhoun.io/5-debugging-tips-for-go-programmers/)
+
+For flere detaljer om hvordan du bruker "fmt" pakken og utskrift av feilsøkingsdata i Go, kan du sjekke ut disse ressursene:
+
+- https://golang.org/pkg/fmt/
+- https://www.golang-book.com/books/intro/4

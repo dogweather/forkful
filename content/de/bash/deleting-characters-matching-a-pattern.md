@@ -1,48 +1,52 @@
 ---
-title:    "Bash: Musterübereinstimmende Zeichen löschen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/deleting-characters-matching-a-pattern.md"
+title:                "Bash: Löschen von Zeichen, die einem Muster entsprechen"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Bash-Programmierung sehr nützlich sein. Damit können unerwünschte Zeichen aus einer Datei oder einem Text entfernt werden, bevor sie weiterverarbeitet werden.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Bash-Programmierung sehr hilfreich sein, um große Datenmengen zu filtern oder um unerwünschte Inhalte zu entfernen.
 
-## Wie man Zeichen mit einem Muster löscht
+## Wie geht's 
 
-Um Zeichen mit einem Muster zu löschen, verwenden wir das ```sed```-Kommando in der Bash. Hier ist ein einfaches Beispiel, um alle Zahlen aus einem String zu löschen:
+Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, können verschiedene Optionen verwendet werden, je nach Anwendungsfall.
 
-```Bash
-echo "123abc456" | sed 's/[0-9]//g'
-```
-
-In diesem Beispiel wird das ```sed```-Kommando verwendet, um alle numerischen Zeichen im String zu finden und zu löschen. Das Ergebnis ist "abc".
-
-## Tiefergehende Informationen
-
-Das Löschen von Zeichen mit einem Muster kann auch mit regulären Ausdrücken erfolgen. Diese ermöglichen es uns, noch spezifischere Muster anzugeben, die gelöscht werden sollen. Zum Beispiel könnten wir mit dem folgenden Befehl alle Leerzeichen aus einem String entfernen:
+Zum Beispiel, um alle Leerzeichen aus einem String zu löschen, kann folgender Code verwendet werden:
 
 ```Bash
-echo "Dies ist ein Beispiel" | sed 's/[[:blank:]]//g'
+string="Hallo, wie geht es dir?"
+echo ${string// /}
 ```
 
-Hier verwenden wir den regulären Ausdruck ```[[:blank:]]```, der alle Leerzeichen und Tabulatoren erfasst. Das Ergebnis ist "DiesisteinBeispiel".
-
-Es ist auch möglich, nur bestimmte Zeichen zu löschen, indem wir diese in eckige Klammern innerhalb des regulären Ausdrucks angeben. Zum Beispiel löscht der folgende Befehl alle Vokale aus einem String:
+Der Output wäre:
 
 ```Bash
-echo "Hallo Welt" | sed 's/[aeiou]//g'
+Hallo,wiegehtesdir?
+``` 
+
+Um nur bestimmte Zeichen zu löschen, kann auch eine reguläre Ausdrücke verwendet werden. Zum Beispiel, um alle Zahlen aus einem String zu entfernen, kann man folgende Befehle verwenden:
+
+```Bash
+string="1a2b3c4d"
+echo ${string//[0-9]/}
 ```
 
-Das Ergebnis ist "Hll Wlt".
+Der Output wäre:
 
-Diese tiefergehenden Techniken bieten uns eine große Flexibilität bei der Bearbeitung von Texten und Dateien in der Bash.
+```Bash
+abcd
+```
+
+## Tiefer Einblick
+
+Das Löschen von Zeichen ist unter anderem bei der Datenverarbeitung und Datenmanipulation wichtig. Auch in Kombination mit anderen Befehlen, wie z.B. "grep" oder "sed", kann das Löschen von Zeichen sehr nützlich sein. Es bietet eine effektive Möglichkeit, unerwünschte Daten zu filtern und saubere Ergebnisse zu erhalten.
 
 ## Siehe auch
 
-- [Ein ausführlicherer Leitfaden zur Verwendung von sed](https://www.digitalocean.com/community/tutorials/how-to-use-sed-to-find-and-replace-text-in-files-in-linux)
-- [Weitere Informationen zu regulären Ausdrücken in der Bash](https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html)
-
-Mit dem Wissen über das Löschen von Zeichen mit einem Muster in der Bash kannst du deine Skripte und Dateien effizienter bearbeiten und aufbereiten. Experimentiere mit verschiedenen regulären Ausdrücken und finde heraus, welche Ergebnisse du erzielen kannst!
+- [Bash String Manipulation](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion)
+- [Bash Shell Befehle](https://www.linode.com/docs/guides/linux-bash-shell-commands/) 
+- [Reguläre Ausdrücke mit grep und sed](https://www.chemietechnikmarkt.de/regulaere-ausdruecke-regex-mit-grep-und-sed-unix-linux)

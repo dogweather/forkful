@@ -1,58 +1,41 @@
 ---
-title:    "Gleam recipe: Converting a string to lower case"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/converting-a-string-to-lower-case.md"
+title:                "Gleam recipe: Converting a string to lower case"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-In programming, it is often necessary to convert strings to different formats for various purposes. One common conversion is from uppercase to lowercase, which can be useful for data manipulation, input validation, and more.
+Converting a string to lower case is a common task in most programming languages. It is especially useful when dealing with user input or comparing strings in a case-insensitive manner. In Gleam, this can be achieved easily with a built-in function.
 
 ## How To
 
-To convert a string to lowercase in Gleam, you can use the `String.to_lower_case` function. This function takes in a string as its argument and returns a new string with all letters converted to lowercase.
+To convert a string to lower case in Gleam, we can use the `String.to_lower` function. Here is a simple example:
 
-```
-Gleam
-
+```Gleam
 import gleam/string
 
-let input = "HELLO WORLD"
-let output = String.to_lower_case(input)
+let my_string = "HeLLo WoRlD"
+let lower_string = String.to_lower(my_string)
 
+// Output: "hello world"
 ```
 
-The output of this code would be `"hello world"`. Keep in mind that the original string remains unchanged and the `String.to_lower_case` function will always return a new string.
-
-You can also use pattern matching to convert individual characters within a string to lowercase. This can be useful for more complex situations where you only want to convert specific characters.
-
-```
-Gleam
-
-import gleam/string
-
-let input = "HeLlO wORLd"
-let output = input
-|> String.chars
-|> List.map(\case
-  \H -> \h
-  \O -> \o
-  char -> char
-  )
-|> String.from_chars
-```
-
-In this example, we are using pattern matching within a `List.map` function to convert the letters "H" and "O" to lowercase, while leaving the other characters unchanged. The final output would be `"hello world"`.
+As you can see, the `to_lower` function takes in a string as an argument and returns a new string with all characters converted to lower case. This function can also be used to convert individual characters to lower case, in case you ever need to do so.
 
 ## Deep Dive
 
-Understanding how strings are stored in a computer is important for understanding the conversion process. In Gleam, strings are represented as a list of characters under the hood. This means that when we convert a string to lowercase, we are essentially converting each individual character to lowercase and then reconstructing the string with the new characters.
+Under the hood, Gleam's `String.to_lower` function uses the `Unicode.CaseMapping.fold` function to handle all possible unicode characters. This ensures that the conversion is done accurately for all languages and character sets.
 
-Additionally, the `String.to_lower_case` function uses the Unicode standard for case conversions, which means that it can handle more than just the English alphabet. This is important for internationalization and supports different languages and characters.
+Furthermore, the `to_lower` function also takes into account any locale-specific transformations that may be required, making it a robust and reliable way to convert strings to lower case.
 
 ## See Also
 
-- [Unicode Standard for Case Conversions](https://unicode.org/standard/standard.html)
-- [Gleam Language Documentation](https://gleam.run/documentation/)
+Here are some other useful links for working with strings in Gleam:
+
+- Official Gleam documentation on strings: https://gleam.run/book/core_string.html
+- Unicode support in Gleam: https://gleam.run/book/unicode.html
+- Working with locales in Gleam: https://gleam.run/book/locales.html

@@ -1,63 +1,41 @@
 ---
-title:    "PHP: Skriver til standardfeil"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/writing-to-standard-error.md"
+title:                "PHP: Skriving til standardfeil"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Hvorfor skrive til standardfeil? Dette er et vanlig spørsmål blant PHP-programmerere. Svaret er enkelt: det er en viktig måte å håndtere feil og feilsøke problemer i koden din.
+Å skrive til standardfeil er en viktig del av PHP-programmering. Det lar utviklere enkelt spore feil og debugging-prosessen. I denne bloggposten vil vi dykke inn i hvordan man kan bruke denne funksjonen og hvorfor den er så nyttig.
 
-Når du skriver til standardfeil, vil eventuelle feil eller advarsler som oppstår under kjøring av programmet ditt bli skrevet til en egen fil i stedet for å bli vist på skjermen. Dette gjør det enklere å finne og løse feil, spesielt hvis programmet ditt har mye utskrift og du ikke vil ha feilmeldinger blandet inn.
+## Hvordan
 
-## Slik gjør du det
-
-For å skrive til standardfeil, kan vi bruke funksjonen `fwrite` sammen med `STDERR`-konstanten. Her er et eksempel på hvordan koden vår kan se ut:
+For å skrive til standardfeil i PHP kan man bruke funksjonen `fwrite()` sammen med `STDERR` som filresurs. Her er et eksempel:
 
 ```PHP
-$filename = "feillog.txt";
+/* Åpner stderr som en fil for skriving */
+$stderr = fopen('php://stderr', 'w');
 
-if (!is_writable($filename)) {
-    die("Kan ikke skrive til filen: $filename");
-}
+/* Skriver en melding til standardfeil */
+fwrite($stderr, 'Dette er en feilmelding som blir skrevet til standardfeil.');
 
-$handle = fopen($filename, "a");
-if (!$handle) {
-    die("Kunne ikke åpne filen for skriving");
-}
-
-// Lager en testfeil
-$error = "Dette er en testfeil.";
-// Skriver feilen til standardfeil
-fwrite(STDERR, $error);
-
-fclose($handle);
+/* Lukker filresursen */
+fclose($stderr);
 ```
 
-Koden vår sjekker først om filen vi vil skrive til er skrivbar. Deretter åpner vi filen og skriver feilen vår til `STDERR`. Til slutt lukker vi filen igjen.
-
-Nå kan vi se på innholdet i filen vår `feillog.txt`. Der vil vi finne meldingen vår: "Dette er en testfeil"!
-
-```
-Feillog: Dette er en testfeil.
-```
-
-Dette er bare et eksempel, du kan selvfølgelig utvide dette konseptet til å håndtere flere typer feil og logge dem til forskjellige filer.
+Når koden blir kjørt, vil meldingen bli skrevet til standardfeil og vises i utgangskonsollen. Dette er nyttig når man ønsker å identifisere og fikse feil i koden.
 
 ## Dypdykk
 
-Nå som vi vet hvordan vi kan skrive til standardfeil, kan vi se på noen fordeler og ulemper ved denne tilnærmingen.
+Det finnes også andre måter å skrive til standardfeil på i PHP. En annen metode er å bruke funksjonen `error_log()`, som lar deg skrive en feilmelding til enten standardfeil eller en annen fil eller ressurs. Ved å spesifisere en filresurs som parameter, kan man logge feilmeldingen til en bestemt fil for senere analyse.
 
-En av de største fordelene er at det gjør det enklere å feilsøke problemer i et større, komplekst program. Med standardfeil kan du logge feil til en dedikert fil og lettere finne og analysere dem.
-
-En ulempe er at dette ikke er en standard måte å håndtere feil på i PHP. Det kan føre til at andre utviklere som jobber med koden din, blir forvirret hvis de ikke er vant til denne tilnærmingen.
-
-En annen ulempe er at det kan bli vanskeligere å finne feilmeldingene hvis de blir skrevet til en fil i stedet for å vises på skjermen. Du må kanskje lete gjennom flere filer for å finne feilen, noe som kan være tidkrevende.
+En annen måte å skrive til standardfeil på er å bruke det populære debugging-verktøyet XDebug. Dette verktøyet lar deg sette breakpoints i koden og se verdier av variabler og funksjoner mens koden kjører. XDebug har også mulighet til å skrive til standardfeil, noe som kan være svært nyttig når man driver med debugging.
 
 ## Se også
 
-- [Håndtering av feil i PHP](https://www.php.net/manual/en/book.errorfunc.php)
-- [Logge feil til fil i PHP](https://www.php.net/manual/en/function.error-log.php)
-- [Feilsøking i PHP](https://www.php.net/manual/en/ref.errorfunc.php)
+- [PHP.net - fwrite()](https://www.php.net/manual/en/function.fwrite.php)
+- [PHP.net - error_log()](https://www.php.net/manual/en/function.error-log.php)
+- [XDebug Documentation](https://xdebug.org/docs/)

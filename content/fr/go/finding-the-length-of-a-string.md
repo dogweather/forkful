@@ -1,39 +1,68 @@
 ---
-title:    "Go: Trouver la longueur d'une chaîne"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/go/finding-the-length-of-a-string.md"
+title:                "Go: Trouver la longueur d'une chaîne"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Dans la programmation, il est souvent nécessaire de manipuler des chaînes de caractères. Mais saviez-vous qu'il est également possible de trouver la longueur d'une chaîne de caractères en Go ? Dans cet article, nous allons expliquer pourquoi il peut être utile de trouver la longueur d'une chaîne et comment le faire en utilisant le langage de programmation Go.
+La recherche de la longueur d'une chaîne peut sembler simple et sans intérêt à première vue. Mais en réalité, c'est une tâche fondamentale en programmation. Savoir comment trouver la longueur d'une chaîne peut être très utile dans de nombreux scénarios de programmation, tels que la manipulation de données et la vérification de la validité des entrées utilisateur.
 
-## Comment faire
+## Comment faire 
 
-Pour trouver la longueur d'une chaîne en Go, nous pouvons utiliser la fonction `len()`. Cette fonction prend une chaîne en argument et renvoie la longueur de cette dernière en nombre de caractères. Voyons un exemple :
+Pour trouver la longueur d'une chaîne en Go, vous pouvez utiliser la fonction `len()`. Elle prend en paramètre la chaîne que vous souhaitez évaluer et retourne le nombre de caractères dans cette chaîne.
 
-````Go
-// Déclarer une chaîne de caractères
-str := "Bonjour le monde !"
+```
+Go 
 
-// Utiliser la fonction len()
-longueur := len(str)
+package main 
 
-fmt.Println(longueur) // Affiche 19
-````
+import "fmt" 
 
-Comme vous pouvez le voir, la variable `longueur` contient désormais la valeur 19, qui correspond à la longueur de la chaîne "Bonjour le monde !".
+func main() { 
+    str := "Bonjour tout le monde" 
+    fmt.Println(len(str)) 
+} 
 
-## Plongeons plus profondément
+// Output: 20
+```
 
-Il est important de noter que la fonction `len()` renvoie le nombre de caractères de la chaîne, et non le nombre d'octets. En Go, les chaînes de caractères sont encodées en UTF-8 et peuvent donc contenir des caractères composés de plusieurs octets. Par exemple, la chaîne "Bonjour 😊" a une longueur de 11 caractères (et non 9), car le caractère emoji est encodé sur 4 octets en UTF-8.
+Comme on peut le voir dans l'exemple ci-dessus, la fonction `len()` peut être utilisée sur n'importe quelle chaîne de caractères. Elle est également utile pour vérifier si une chaîne est vide ou non. Si `len()` retourne 0, cela signifie que la chaîne est vide.
 
-De plus, la fonction `len()` peut également être utilisée pour trouver la longueur d'autres types de données, comme les tableaux ou les tranches (slices). Elle peut même être utilisée pour obtenir la taille d'un pointeur.
+Vous pouvez également utiliser la méthode `String()` pour convertir un autre type de donnée en une chaîne de caractères, puis utiliser la fonction `len()` pour trouver sa longueur.
 
-## Voir aussi
+```
+Go 
 
-- Documentation officielle de la fonction `len()` en Go : https://golang.org/ref/spec#Length_and_capacity
-- Tutoriel sur les chaînes de caractères en Go : https://tutorialedge.net/golang/strings-in-go-tutorial/
-- Vidéo explicative sur les caractères spéciaux en UTF-8 : https://www.youtube.com/watch?v=MijmeoH9LT4
+package main 
+
+import ( 
+    "fmt" 
+    "strconv" 
+) 
+
+func main() { 
+    num := 1234 
+    str := strconv.Itoa(num) 
+    fmt.Println(len(str)) 
+} 
+
+// Output: 4
+```
+
+## Deep Dive 
+
+La fonction `len()` en Go est basée sur le concept de runes. Une rune est une valeur entière 32 bits qui représente un caractère Unicode. Cela signifie que la longueur retournée par `len()` correspond au nombre de runes dans une chaîne, et non au nombre de caractères visibles.
+
+Par exemple, si nous prenons la phrase "Bonjour tout le monde" et la convertissons en Unicode, elle aura une longueur de 20 runes car elle contient des caractères spéciaux tels que "é". Mais si nous la convertissons en ASCII, sa longueur serait de 18, car l'ASCII ne prend pas en compte les caractères spéciaux.
+
+Il est également important de noter que `len()` ne peut pas être utilisé sur des types de données autres que les chaînes de caractères en Go. Si vous essayez de l'utiliser sur une liste ou un tableau, vous obtiendrez une erreur.
+
+## Voir aussi 
+
+- [La documentation officielle sur la fonction `len()` en Go](https://golang.org/pkg/builtin/#len)
+- [Un tutoriel sur les runes et les chaînes Unicode en Go](https://golangbot.com/strings/)
+- [Un article sur les différences entre l'Unicode et l'ASCII](https://www.beyondjava.net/about-unicode-75-characters)

@@ -1,71 +1,55 @@
 ---
-title:    "Clojure: Utskrift av felsökningsutdata"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/printing-debug-output.md"
+title:                "Clojure: Utmatning av felsökningsresultat"
+programming_language: "Clojure"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva kod kan ibland vara förvirrande och felsökning kan vara en utmaning. Att använda "debug output", eller utskrift av data för att hjälpa till med felsökningen, kan vara ett värdefullt verktyg för att förstå vad som händer i koden. Detta kan spara tid och frustration när man försöker hitta och åtgärda fel.
+Att skriva ut debuggutdata är ett viktigt verktyg för att felsöka och förstå hur koden fungerar. Genom att skriva ut olika värden och variabler kan du se vilka värden som tilldelas och om de är korrekta. Detta hjälper till att lösa problem och förbättra koden.
 
-## Hur man gör det
+## Så här gör du
 
-Att skriva ut data i Clojure är enkelt. Man använder funktionen `println` för att skriva ut en sträng, variabel, eller ett uttryck. Om vi till exempel har en variabel `x` med värdet 5, så kan vi skriva ut värdet på följande sätt:
-
-```Clojure
-(println x)
-```
-
-Output: 5
-
-Vi kan också skriva ut flera variabler eller uttryck på samma gång genom att ha dem separerade med mellanslag:
+För att skriva ut debuggutdata i Clojure, använder du funktionen `println`. Detta utskriftsverktyg tar emot en eller flera argument och skriver ut dem i terminalen.
 
 ```Clojure
-(println "Värdet på x är:" x "och värdet på y är:" y)
+(println "Detta är en testtext") ; Output: Detta är en testtext
 ```
 
-Output: Värdet på x är: 5 och värdet på y är: 10
-
-Vi kan också använda funktionen `prn` för att skriva ut en mer formaterad version av datatypen, till exempel en lista:
+Du kan också skriva ut flera värden samtidigt genom att lägga till dem som separata argument till `println`.
 
 ```Clojure
-(prn [1 2 3])
+(def name "Alice")
+(def age 25)
+(println "Namn:" name "Ålder:" age) ; Output: Namn: Alice Ålder: 25
 ```
 
-Output: [1 2 3]
+Du kan också använda funktionen `prn` för att skriva ut värden utan att lägga till en ny rad efter utskriften.
+
+```Clojure
+(prn "Detta är" "en testtext") ; Output: "Detta är" "en testtext"
+```
 
 ## Djupdykning
 
-Det finns flera olika sätt att använda `println` och `prn` för att skriva ut data. En av de mest användbara är att använda dem tillsammans med `str` funktionen för att skapa en formaterad sträng som innehåller variabler och text:
+Det finns olika användbara tekniker för att använda `println` och `prn` för att skriva ut debuggutdata. En av dessa är att använda dem inuti en `let` sats för att skriva ut värden från en specifik del av koden.
 
 ```Clojure
-(println (str "Jag har " x " äpplen." ))
+(let [x 5 y 10]
+  (println "Summan av x och y är" (+ x y))) ; Output: Summan av x och y är 15
 ```
 
-Output: Jag har 5 äpplen.
-
-Man kan också använda `print` funktionen för att skriva ut utan newline-tecken:
+En annan användbar teknik är att använda `with-out-str` för att få utskriften som en sträng istället för att skriva direkt till terminalen. Detta kan vara särskilt användbart när du vill skriva ut värden från ett mer komplicerat datastrukturer som en vektor eller en hashmap.
 
 ```Clojure
-(print "Hej " "alla")
-(print "!")
+(def my-vector [1 true "test"])
+(with-out-str (prn my-vector)) ; Output: "[1 true "test"]"
 ```
-
-Output: Hej alla!
-
-Vid utskrift av mer komplexa datastrukturer kan det vara hjälpsamt att använda funktionen `pprint` som formaterar outputen på ett mer läsbart sätt:
-
-```Clojure
-(pprint (range 10))
-```
-
-Output: 
-(0 1 2 3 4 5 6
- 7 8 9)
 
 ## Se även
 
-- Officiell dokumentation för utskrift i Clojure: https://clojure.org/reference/evaluation#_print_output
-- En guide för felsökning i Clojure: https://purelyfunctional.tv/guide/troubleshooting-clojure-problems/
+* [Official Clojure documentation for printing](https://clojuredocs.org/clojure.core/print)
+* [Tutorial: debugging in Clojure](https://purelyfunctional.tv/guide/debugging-in-clojure/)

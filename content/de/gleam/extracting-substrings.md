@@ -1,37 +1,56 @@
 ---
-title:    "Gleam: Substrings extrahieren"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/extracting-substrings.md"
+title:                "Gleam: Unterstrings extrahieren"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Die Extraktion von Teilstrings kann eine nützliche Technik sein, wenn Sie bestimmte Informationen aus einem Text oder einer Zeichenfolge erhalten möchten. Zum Beispiel könnten Sie nach bestimmten Schlüsselwörtern in einem Dokument suchen oder eine bestimmte Anzahl von Zeichen aus einer längeren Zeichenfolge extrahieren. In diesem Blog-Beitrag werden wir Ihnen zeigen, wie Sie dies in der Programmiersprache Gleam tun können.
+Das Extrahieren von Teilstrings ist eine wichtige Aufgabe in der Programmierung, besonders wenn es um die Manipulation von Texten geht. Es ermöglicht es uns, bestimmte Teile eines Textes zu isolieren und sie für weitere Verarbeitungsschritte zu verwenden. In diesem Blog-Beitrag werden wir uns ansehen, wie man in der funktionalen Programmiersprache Gleam Teilstrings extrahieren kann.
 
-## Wie geht man vor
+## Wie Geht Das
 
-Um Teilstrings in Gleam zu extrahieren, können Sie die Funktion `String.substring()` verwenden. Hier ist ein Beispielcode, der den Großteil des Alphabets aus einer Zeichenfolge extrahiert:
+Um Teilstrings in Gleam zu extrahieren, können wir die `substring` Funktion verwenden. Diese Funktion erwartet als Argumente den Text, aus dem der Teilstring extrahiert werden soll, sowie die Start- und Endposition des Teilstrings.
 
 ```Gleam
-fn main() {
-    let alphabet = "abcdefghijklmnopqrstuvwxyz";
-    let extracted = String.substring(alphabet, 0, 10);
-    io.println(extracted);
-}
+let text = "Gleam ist eine funktionale, typsichere Programmiersprache"
+let substring = substring(text, 16, 27)
 ```
 
-Dieser Code würde "abcdefghij" ausgeben, da die substring-Funktion die Zeichen von Position 0 bis 10 in der Zeichenfolge extrahiert. Beachten Sie, dass das erste Zeichen den Index 0 hat. Sie können auch einen Bereich von Indizes angeben, um einen Teil der Zeichenfolge zu extrahieren. Zum Beispiel würde `String.substring(alphabet, 5, 15)` die Zeichen "fghijklmnop" ausgeben.
+In diesem Beispiel extrahieren wir den Teilstring "funktionale" aus dem ursprünglichen Text und speichern ihn in der Variable `substring`. Die Zählung der Positionen beginnt bei 0, daher ist die Startposition 16 und die Endposition 27.
 
-Sie können auch einen negativen Index verwenden, um die Extraktion von der rechten Seite der Zeichenfolge zu beginnen. Zum Beispiel würde `String.substring(alphabet, -5, -1)` die Zeichen "vwxyz" ausgeben. Sie können auch die Länge der Zeichenfolge als zweiten Parameter angeben, um den Teilstring bis zum Ende der Zeichenfolge zu extrahieren.
+Wenn wir das Programm ausführen und `substring` ausgeben, erhalten wir das gewünschte Ergebnis:
 
-## Eine nähere Betrachtung
+```Gleam
+io.println(substring)
+// funktionale
+```
 
-Die `String.substring()` Funktion ist in Gleam ein Teil des `String` Moduls und kann auf Zeichenfolgen beliebiger Länge angewendet werden. Es gibt auch eine ähnliche Funktion für Byte-Strings, `Byte.substring()`. Für weitere Informationen über die verschiedenen Methoden zum Arbeiten mit Zeichenfolgen in Gleam, können Sie die offizielle Dokumentation konsultieren.
+## Ein Tiefer Einblick
 
-## Siehe auch
+Die `substring` Funktion in Gleam ist sehr flexibel und bietet verschiedene Möglichkeiten, Teilstrings zu extrahieren. Wir können beispielsweise auch angeben, ab welcher Position der Teilstring beginnen soll und den Rest des Textes extrahieren:
 
-- [Gleam-Dokumentation für Zeichenketten](https://gleam.run/documentation/stdlib/string/)
-- [Gleam-Code-Beispiele](https://github.com/gleam-lang/gleam/blob/master/examples/) zur Verwendung von `String.substring()` und anderen Zeichenketten-Funktionen
-- [Einführung in Gleam-Programmierung](https://gleam.run/getting-started/) für Grundlagen und mehr Beispiele mit Gleam
+```Gleam
+substring(text, 16) // gibt "funktionale, typsichere Programmiersprache" zurück
+```
+
+Außerdem können wir negative Zahlen verwenden, um die Positionen von hinten zu zählen. Wenn wir beispielsweise `-3` als Endposition angeben, extrahiert die Funktion die letzten drei Buchstaben des Textes.
+
+```Gleam
+substring(text, -3) // gibt "age" zurück
+```
+
+Es ist auch möglich, den Begriff "länge" als Endposition anzugeben, um den Teilstring bis zum Ende des Textes zu extrahieren.
+
+```Gleam
+substring(text, 16, "länge") // gibt "funktionale, typsichere Programmiersprache" zurück
+```
+
+## Siehe Auch
+
+- Dokumentation zur `substring` Funktion in Gleam: https://gleam.run/documentation/stdlib/string#substring
+- Einführung in Gleam: https://gleam.run/getting-started/introduction.html
+- Tutorial zur funktionalen Programmierung: https://www.tutorialspoint.com/functional_programming/index.htm

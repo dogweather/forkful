@@ -1,36 +1,71 @@
 ---
-title:    "Bash recipe: Converting a string to lower case"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/converting-a-string-to-lower-case.md"
+title:                "Bash recipe: Converting a string to lower case"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-If you're new to Bash programming, you may have come across the need to convert a string to lower case. This can be useful when dealing with user input or manipulating text in your scripts. Converting to lower case allows for easier comparison and manipulation of strings. 
+## Why
+
+Have you ever needed to convert a string to lower case in your Bash script? Maybe you want to make sure that the user's input is in a consistent format, or you need to compare two strings but case-sensitivity is not relevant. No matter the reason, knowing how to convert a string to lower case in Bash can be a useful skill to have in your programming arsenal.
 
 ## How To
-To convert a string to lower case in Bash, you can use the built-in command `tr`. The syntax for `tr` is as follows: 
 
-```
-tr [options] SET1 SET2
+To convert a string to lower case in Bash, we can use the `tr` command which is used for translating or deleting characters. Specifically, we will be using the `-s` option of `tr` which removes duplicate characters and the `-d` option which deletes specified characters.
+
+```Bash
+// Example code block showing a variable assignment and the tr command with -s and -d options
+string="HELLO WORLD"
+lowercase=$(echo $string | tr -s [:upper:] [:lower:] | tr -d ' ')
 ```
 
-To convert a string to lower case, we need to specify the range of characters to be converted in `SET1` and the corresponding characters in `SET2`. In this case, we want to convert all upper case letters to lower case, while leaving the rest of the string unchanged. We can do this by specifying the range of upper case letters in `SET1` and the matching lower case letters in `SET2`. Here's an example:
+In the above code, we first assign the string "HELLO WORLD" to a variable named `string`. Then, we use the `echo` command to print the value of `string` and pass it as input to the `tr` command. The `-s` option takes two character sets as arguments. In this case, we specify the `[:upper:]` character set to represent all uppercase letters and the `[:lower:]` character set to represent all lowercase letters. This will convert all uppercase letters in the string to lowercase. Next, we use the `-d` option with the `tr` command to specify which characters to delete. In this example, we delete the space character (represented by the single quotes) to remove any whitespace in the converted string. Finally, we assign the output of `tr` to a new variable named `lowercase` which will contain the lowercase version of the string "Hello World".
 
-```
-sentence="Hello World!"
-lowercase=$(echo $sentence | tr '[A-Z]' '[a-z]')
+The output of this code will be as follows:
+
+```Bash
 echo $lowercase
+hello world
 ```
 
-The output for this will be `hello world!`, with all letters converted to lower case. 
+We can also use the `tr` command on a variable without using the `echo` command. For example:
+
+```Bash
+// Example code block showing the use of `tr` command on a variable directly
+string="HELLO WORLD"
+lowercase=$(tr -s [:upper:] [:lower:] <<< $string)
+```
+
+The output of this code will be the same as the previous example.
 
 ## Deep Dive
-In Bash, characters are represented by their ASCII codes. The uppercase letters A-Z have ASCII codes ranging from 65 to 90, while the lowercase letters a-z have ASCII codes ranging from 97 to 122. This is why we specify these ranges in `SET1` and `SET2` when using `tr` to convert strings to lower case. 
 
-It's also worth noting that the `tr` command is not just limited to converting case. It can be used for a wide range of text manipulations, such as replacing characters, removing duplicates, and translating characters from one set to another. 
+We can also use other methods to convert a string to lower case in Bash, such as using the `sed` command or using `bash` built-in parameter expansion.
+
+```Bash
+// Example code block showing the use of `sed` command
+string="HELLO WORLD"
+lowercase=$(echo $string | sed 's/./\L&/g')
+```
+
+In this example, we use `sed` to substitute each character in the string with its lowercase version.
+
+```Bash
+// Example code block showing the use of `bash` built-in parameter expansion
+string="HELLO WORLD"
+lowercase=${string,,}
+```
+
+In this example, we use `bash` built-in parameter expansion to convert the value of the variable `string` to lowercase.
+
+However, using the `tr` command is the most common and efficient way to convert a string to lower case in Bash.
 
 ## See Also
-- [Bash `tr` command](https://linux.die.net/man/1/tr)
-- [ASCII Table](https://www.asciitable.com/)
+
+Here are some useful resources for further reading on converting strings to lower case in Bash:
+
+- [Bash String Manipulation](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
+- [Bash String Operators](https://www.gnu.org/software/bash/manual/html_node/String-Operators.html)
+- [tr command in Linux with examples](https://www.geeksforgeeks.org/tr-command-in-linux-with-examples/)

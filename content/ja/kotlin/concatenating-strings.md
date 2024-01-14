@@ -1,65 +1,64 @@
 ---
-title:    "Kotlin: 文字列の連結"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/concatenating-strings.md"
+title:                "Kotlin: 文字列の結合"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-
-文字列をつなげることに興味があるかもしれません。それはプログラミングの世界では非常に一般的なタスクであり、データを処理する際に役立つものです。文字列をつなげることによって、大きな文字列を作成し、集約したデータを簡単に表示することができます。
+文字列を連結することに関心を持つのはなぜでしょうか。文字列の連結は、プログラミングにおいて非常に重要な機能の一つです。コードを効率的に書くためには、文字列を連結してデータを処理する必要があります。
 
 ## 方法
-
-文字列をつなげる方法は多々ありますが、ここではKotlin言語のコードを使用した例を紹介します。
+Kotlinでは、文字列を連結するために「+」演算子を使用します。以下は、簡単なコード例です。
 
 ```Kotlin
-// 最も単純な方法は+演算子を使用することです
-val name = "太郎"
-val greeting = "こんにちは"
+val str1 = "Hello"
+val str2 = "World"
+val result = str1 + " " + str2
+println(result)
+```
 
-println(greeting + name)
-// 出力：こんにちは太郎
-
-// .plus()メソッドを使用することもできます
-val number1 = 10
-val number2 = 5
-println(number1.plus(number2))
-// 出力：15
+上記のコードを実行すると、次のような出力が得られます。
 
 ```
+Hello World
+```
+
+ここでは、2つの変数「str1」および「str2」に値を割り当て、それらの値を「+」演算子を使用して連結し、新しい変数「result」に割り当てています。そして、「println」関数を使用してresultの値を出力しています。
+
+さらに、Kotlinでは「StringBuilder」クラスを使用して複数の文字列を連結することもできます。以下は、その例です。
+
+```Kotlin
+val sb = StringBuilder()
+sb.append("Hello")
+sb.append(" ")
+sb.append("World")
+val result = sb.toString()
+println(result)
+```
+
+これにより、同じ結果が得られますが、より効率的に文字列を連結できます。
 
 ## ディープダイブ
+文字列の連結に関して、さらに詳しく見てみましょう。文字列を連結することで、複数の文字列を結合した新しい文字列を作成できます。また、文字列以外の値を文字列に変換してから連結することもできます。
 
-Kotlinでは、文字列の結合には+演算子や.plus()メソッドの他にも、文字列テンプレートやStringBuilderクラスを使用することもできます。さらに、Kotlinでは文字列補間と呼ばれる機能を使用して、変数や式を文字列に埋め込むこともできます。
+文字列の連結では、「+」演算子を使用することが最も一般的ですが、文字列を大量に連結する場合は、StringBuilderクラスを使用することでより効率的に処理することができます。
 
-```Kotlin
-// 文字列テンプレートを使用した例
-val age = 24
-val name = "太郎"
+## その他の記事
+「時短テクニック：Kotlinの文字列連結方法」  
+https://www.howkaku.com/kotlin/string-concatenation
 
-println("私の名前は$nameで、$age歳です。")
-// 出力：私の名前は太郎で、24歳です。
+「Kotlinプログラミングの基本：文字列の連結」  
+https://dev.classmethod.jp/articles/kotlin-basic-type-string/
 
-// StringBuilderクラスを使用した例
-val sb = StringBuilder()
-sb.append("今日は")
-sb.append("いい天気ですね。")
-println(sb.toString())
-// 出力：今日はいい天気ですね。
+「文字列の連結の効率性を向上させる方法」  
+https://proandroiddev.com/make-efficiency-strategies-of-java-concatenation-in-kotlin-world-cb262820a2d5
 
-// 文字列補間を使用した例
-val height = 175
-val weight = 65
+## 参考リンク
+「Kotlin Strings」  
+https://kotlinlang.org/docs/reference/basic-types.html#string
 
-println("私の身長は${height}cmで、体重は${weight}kgです。")
-// 出力：私の身長は175cmで、体重は65kgです。
-
-```
-
-## その他の参考リンク
-
-- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/strings.html)
-- [プログラミング言語Kotlinを使ってみよう](https://liginc.co.jp/421026)
-- [Kotlin: 文字列結合の方法まとめ](https://qiita.com/funadara/items/4d945f1e1ff6856b639a)
+「Java StringBuilderクラス」  
+https://docs.oracle.com/javase/jp/1.5.0/docs/api/java/lang/StringBuilder.html

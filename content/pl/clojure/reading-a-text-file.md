@@ -1,64 +1,61 @@
 ---
-title:    "Clojure: Odczytywanie pliku tekstowego"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/reading-a-text-file.md"
+title:                "Clojure: Odczytywanie pliku tekstowego"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, jak czytać zawartość pliku tekstowego w języku Clojure? Może potrzebujesz przetworzyć duże ilości danych lub chcesz automatycznie pobierać informacje z zewnętrznych źródeł? Dowiedz się, jak możliwe jest to przy użyciu kilku prostych linii kodu w Clojure.
+Programowanie w języku Clojure przynosi wiele korzyści, w tym możliwość łatwego odczytywania plików tekstowych. W tym artykule dowiecie się, dlaczego warto poznać mechanizm odczytu plików tekstowych i jak to zrobić w języku Clojure. 
 
-## Jak to zrobić
+## Jak To Zrobić
 
-```Clojure
-;; Otwórz plik o nazwie "dane.txt"
-(with-open [plik (clojure.java.io/reader "dane.txt")]
-  ;; Wyświetl zawartość pliku
-  (println (slurp plik)))
-```
-
-W tym prostej linii kodu otwieramy plik tekstowy "dane.txt" przy użyciu funkcji `with-open`, która automatycznie zamyka plik po zakończeniu operacji. Następnie za pomocą funkcji `slurp` odczytujemy całą zawartość pliku i wypisujemy ją na ekranie. Wyobraź sobie teraz, że zamiast wypisania na ekran, możemy przetworzyć te dane i użyć ich w naszej aplikacji.
+Odczytywanie plików tekstowych w języku Clojure jest proste i wygodne. Wystarczy użyć funkcji `slurp`, która wczytuje zawartość całego pliku i zwraca ją jako ciąg znaków. Poniżej przedstawiamy przykładowy kod, który otwiera plik `text.txt` znajdujący się w tym samym folderze co plik z kodem. 
 
 ```Clojure
-;; Otwórz plik o nazwie "dane.txt"
-(with-open [plik (clojure.java.io/reader "dane.txt")]
-  ;; Wczytaj linie z pliku do listy
-  (let [linie (line-seq plik)]
-    ;; Przetwórz każdą linię i wyświetl ją na ekranie
-    (doseq [linia linie]
-      (println linia))))
+(defn read-file [file]
+  (slurp file))
+
+(read-file "text.txt")
 ```
 
-Tutaj otwieramy plik i używamy funkcji `line-seq`, która zwraca listę zawierającą każdą linię z pliku. Następnie za pomocą pętli `doseq`, przetwarzamy każdą linię i wyświetlamy ją na ekranie. Możemy również wykonać dowolne inne operacje na tych liniach, np. zapisanie ich do bazy danych lub utworzenie nowych plików.
-
-## Głębszy wgląd
-
-Oprócz standardowych funkcji takich jak `slurp` czy `line-seq`, istnieje wiele innych sposobów na czytanie plików tekstowych w Clojure. Funkcja `slurp` jest przydatna w przypadku małych plików, ale może mieć znaczący wpływ na wydajność, gdy przetwarzamy duże ilości danych. Dlatego warto rozważyć użycie funkcji `reader` lub `io/input-stream`, które pozwalają na bardziej elastyczne przetwarzanie plików wycinkami.
+W wyniku otrzymujemy zawartość pliku `text.txt` w postaci ciągu znaków. Jeśli chcemy przetworzyć zawartość pliku jako listę, możemy użyć funkcji `clojure.string/split-lines`, która dzieli ciąg znaków na poszczególne linie. 
 
 ```Clojure
-;; Utwórz strumień danych z pliku
-(def plik (clojure.java.io/input-stream "dane.txt"))
+(defn read-file-lines [file]
+  (clojure.string/split-lines (slurp file)))
 
-;; Wczytaj dane do pamięci wycinkami
-;; Pierwszy argument to maksymalna liczba bajtów do wczytania
-;; Drugi argument to opcjonalnie można podać początkowy offset
-;; Trzeci argument to opcjonalnie można podać maksymalną długość danych
-;; W tym przykładzie wczytamy tylko pierwsze 10 bajtów
-(def dane (.read plik 10))
-
-;; Zamknij strumień danych
-(.close plik)
-
-;; Wypisz wczytane dane na ekranie
-(println dane)
+(read-file-lines "text.txt")
 ```
 
-Funkcja `read` pozwala na wczytanie strumienia danych wycinkami, co może być przydatne, gdy nie chcemy wczytać całego pliku na raz do pamięci.
+W przypadku, gdy plik zawiera dane w formacie CSV (Comma-Separated Values), możemy skorzystać z biblioteki `clojure-csv` i funkcji `clojure-csv.core/read-csv`, która zwraca listę list danych z pliku. 
 
-## Zobacz także
+```Clojure
+(require '[clojure-csv.core :as csv])
 
-- [Dokumentacja funkcji `slurp`](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/slurp)
-- [Dokumentacja funkcji `line-seq`](https://clojuredocs.org/clojure.core/line-seq)
-- [Dokumentacja funkcji `with-open`](https://clojured
+(defn read-csv [file]
+  (csv/read-csv file))
+
+(read-csv "data.csv")
+```
+
+W powyższych przykładach zakładamy, że plik znajduje się w tym samym folderze co plik z kodem. Jeśli plik znajduje się w innym folderze, należy podać pełną ścieżkę do pliku. 
+
+## Deep Dive
+
+Gdy dany plik tekstowy jest otwarty, jest czytany jako strumień znaków, co oznacza, że jest od razu dostępny w programie jako ciąg znaków, a nie musimy wczytywać go do pamięci. W przypadku plików o bardzo dużej ilości danych, jest to znacząca zaleta, ponieważ unikamy w ten sposób lądowania na pamięci komputera. 
+
+Ponadto, funkcja `slurp` domyślnie używa kodowania UTF-8, ale można też określić inne kodowanie poprzez dodanie kolejnego argumentu. 
+
+## Zobacz też
+
+Jeśli chcesz dowiedzieć się więcej o czytaniu i przetwarzaniu plików w języku Clojure, polecamy zapoznać się z poniższymi linkami:
+
+- Dokumentacja Clojure: https://clojure.org/api/cheatsheet#IO
+- Przetwarzanie plików CSV w języku Clojure: https://clojure.com/blog/2013/06/28/csv.html
+- Oficjalna strona biblioteki clojure-csv: https://github.com/clojure-csv/clojure-csv
+
+Bądź na bieżąco z blogami i artykułami na temat języka Clojure, śledząc naszą firmę na Twitterze (@example) i czytając nasz blog na stronie www.example.pl.

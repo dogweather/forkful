@@ -1,42 +1,34 @@
 ---
-title:    "C++: Att börja ett nytt projekt"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/starting-a-new-project.md"
+title:                "C++: Att påbörja ett nytt projekt"
+programming_language: "C++"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+Varför: Att starta ett nytt programmeringsprojekt kan verka skrämmande eller överväldigande för många. Men det kan också vara en spännande utmaning och en möjlighet att lära sig nya färdigheter. Att skapa ett nytt projekt ger dig möjlighet att skapa något unikt och utveckla dina programmeringskunskaper.
 
-Att starta ett nytt programmeringsprojekt kan verka skrämmande, men det finns många anledningar till att engagera sig i det. Det kan vara ett sätt att lära sig nya kodningstekniker, skapa något som du behöver eller till och med bara ha kul.
+Hur man gör: För att starta ett nytt projekt i C++, behöver du först ha en texteditor och en C++ kompilator. För att börja, öppna din texteditor och skriv följande kod i en ny fil: 
 
-## Hur man gör
-
-För att starta ett nytt programmingsprojekt i C++ kan du använda följande steg:
-
-1. Börja med att skapa en ny mapp för ditt projekt.
-2. Öppna en texteditor och skapa en ny fil med förlängningen ".cpp".
-3. Skriv din kod inom följande kodblock: ```C++
+```C++
 #include <iostream>
 using namespace std;
 
-int main() {
-  //Här kan du skriva din kod
-  return 0;
+int main(){
+    cout << "Hej världen!" << endl;
+    return 0;
 }
 ```
-4. Kompilera och köra programmet för att se dess utmatning. För att göra detta kan du använda ett kompilatorprogram som GNU C++ eller Visual Studio.
 
-## Djupdykning
+Denna kod kommer att skriva ut "Hej världen!" när du kör den. Nu behöver du kompilera koden med din C++ kompilator för att kunna köra den. Om allt går väl, bör du få utskriften "Hej världen!" på din skärm!
 
-När du börjar ett nytt projekt i C++, finns det några saker som du bör tänka på för att få en smidig utvecklingsupplevelse:
+Djupdykning: När du har blivit bekant med grundläggande C++-syntax är nästa steg att bestämma vad ditt projekt ska handla om. Det finns en mängd olika resurser och instruktionsvideor online som kan hjälpa dig att välja ett projekt som passar dina intressen och nivå av kunskap. Det är också viktigt att planera och strukturera ditt projekt innan du börjar koda för att undvika förvirring och problem på vägen.
 
-- Planera din kod: Innan du börjar koda, ta dig tid att planera hur ditt projekt ska se ut. Detta inkluderar att bestämma vilka funktioner som behövs, hur variabler ska namnges och hur koden ska organiseras.
-- Använd lämpliga verktyg: Se till att du använder ett bra textredigeringsprogram, en effektiv kompilator och andra användbara verktyg som kan hjälpa dig i din utveckling.
-- Testa ofta: Det är viktigt att testa din kod regelbundet för att fånga eventuella fel eller buggar. Detta sparar tid och frustration längre fram i utvecklingsprocessen.
+Se även: Här är några användbara länkar för att hjälpa dig att komma igång med ditt nya C++ projekt:
 
-## Se även
+- [En introduktion till C++](https://www.cplusplus.com/doc/tutorial/)
+- [En guide för att välja ett projekt](https://www.freecodecamp.org/news/what-to-do-when-you-are-bored-coding-thingsto-code/)
+- [Ett övningsprojekt för nybörjare](https://www.codementor.io/@garethdwyer/building-a-crud-app-with-node-js-and-mongodb-a7da54b6c5bd)
 
-- [C++ Tutorials](https://www.tutorialspoint.com/cplusplus/index.htm)
-- [C++ Reference](https://www.cplusplus.com/)
-- [Visual Studio C++](https://visualstudio.microsoft.com/vs/features/cplusplus/)
+Lycka till med ditt nya C++ projekt!

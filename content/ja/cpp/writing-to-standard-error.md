@@ -1,63 +1,53 @@
 ---
-title:    "C++: 標準エラーへの書き込み"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/writing-to-standard-error.md"
+title:                "C++: 標準エラーへの書き込み"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-C++プログラミングを行う上で、標準エラーへの書き込みを行う理由は何でしょうか？標準エラーへの書き込みは、プログラム実行中に発生したエラーをユーザーに表示するために使用されます。このように、プログラミングにおいて重要な役割を果たすことができます。
+## なぜ書くのか
+
+スタンダードエラーに書き込むことは、デバッグやエラートラッキングなどの重要なプログラミングタスクを行う上で非常に役立ちます。この記事では、C++でスタンダードエラーに書き込む方法を説明します。
 
 ## 方法
-標準エラーへの書き込みを行う方法を見ていきましょう。まずは、以下のように```C++```コードブロック内に、エラーを生成するコードを記述します。
+
+C++では、標準出力と同様に、標準エラーに書き込むことができます。例えば、次のようにコーディングします。
 
 ```C++
 #include <iostream>
 
-int main()
-{
-    // 5で割り算を行い、エラーを生成する
-    int result = 10 / 0;
-    
-    return 0;
+using namespace std;
+
+int main() {
+  cerr << "これはスタンダードエラーに書き込まれます。" << endl;
+  return 0;
 }
 ```
 
-このように、プログラム実行中にエラーを発生させることができます。次に、標準エラーへの書き込みを行う部分を記述します。
-
-```C++
-#include <iostream>
-
-int main()
-{
-    // 5で割り算を行い、エラーを生成する
-    int result = 10 / 0;
-    
-    // 標準エラーへの書き込みを行う
-    std::cerr << "エラーが発生しました。" << std::endl;
-    
-    return 0;
-}
-```
-
-このように、```std::cerr```を使用して標準エラーへ書き込むことができます。最後に、プログラムを実行してみましょう。
+上記のコードを実行すると、スタンダードエラーにメッセージが出力されます。例えば、ターミナル上で実行すると、次のように表示されます。
 
 ```
-$ g++ main.cpp
-$ ./a.out
-エラーが発生しました。
+これはスタンダードエラーに書き込まれます。
 ```
 
-これにより、プログラム実行中にエラーが発生した場合でも、ユーザーは標準エラーへ書き込まれたメッセージを通じてエラーを確認することができます。
+このように、`cerr`オブジェクトを使用することで、スタンダードエラーに効率的に書き込むことができます。
 
 ## ディープダイブ
-標準エラーへの書き込みを行う際には、```std::cerr```だけでなく、他の入出力ストリームを使用することも可能です。また、エラーの情報を詳しく出力するために、```std::cerr```には```<<```演算子を使用して複数のメッセージを連結することもできます。
 
-## おわりに
-標準エラーへの書き込みについてご紹介しました。プログラム実行中にエラーが発生した場合でも、ユーザーがエラーを確認できるように標準エラーへの書き込みを行うことが重要です。ぜひ、今後のプログラミングで活用してみてください。
+スタンダードエラーに書き込むことで、プログラムの実行中に起きたエラーを確認することができます。これは、デバッグやエラートラッキングなどの重要なタスクを行う際に特に有用です。また、標準エラーに書き込むことで、プログラムの実行速度が低下することもありません。
 
-## さらに見る
-- [C++ 入門 — エラーメッセージを取得する方法](https://www.codecademy.com/learn/learn-c-plus-plus/modules/cpp-debugging/cheatsheet)
-- [C++ 公式ドキュメント —入出力ライブラリ](https://docs.microsoft.com/ja-jp/cpp/standard-library/input-output-library?view=msvc-160)
-- [C++ 標準出力と標準エラー出力の違い](https://itmanabi.com/std_err/)
+しかし、スタンダードエラーに書き込む際には注意点もあります。例えば、プログラムの実行結果をファイルにリダイレクトする場合、スタンダードエラーに書き込まれたメッセージも一緒にファイルに書き込まれることになります。そのため、必要に応じてメッセージのフィルタリングなどを行う必要があるかもしれません。
+
+## 参考リンク
+
+[標準エラーの出力方法（スタンダードエラーへの書き込み）](https://www.petitmonte.com/programming/stdcerr.html)
+
+[C++入門 基本文法 第2部 1-7 出力ストリームから文字を取り出す](https://programming.pc-note.net/ccpp/output.html)
+
+## 参考
+
+[方法](https://docs.microsoft.com/en-us/cpp/standard-library/output-and-input-streams?view=vs-2019)
+
+[ディープダイブ](https://www.tutorialspoint.com/cplusplus-program-to-write-a-statement-on-error-stream-using-std-cerr)

@@ -1,49 +1,50 @@
 ---
-title:    "Rust: Konvertera ett datum till en sträng"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/converting-a-date-into-a-string.md"
+title:                "Rust: Omvandla ett datum till en sträng"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att konvertera ett datum till en sträng är en vanlig uppgift vid programmering, särskilt när man arbetar med datum och tid. Oavsett om du behöver presentera datumet i ett visst format eller spara det som en sträng, är det viktigt att veta hur man utför denna konvertering i Rust.
+Att konvertera en datum till en sträng är ett vanligt problem inom programmering. Det kan vara användbart när man behöver presentera datum på ett visuellt sätt för användare eller för att skapa unika identifierare baserade på datumet. I den här bloggposten kommer jag att visa dig hur du kan utföra detta enkelt med hjälp av Rust.
 
 ## Hur man gör
 
-Ett enkelt sätt att konvertera ett datum till en sträng i Rust är att använda DateTime-modulen från standardbiblioteket. Först måste du importera DateTime-klassen och sedan skapa ett nytt DateTime-objekt med önskat datum. Sedan kan du använda DateTime-objektets formatfunktion för att konvertera datumet till en sträng med ett visst format.
+Det första steget är att inkludera `chrono` biblioteket i ditt projekt. Använd sedan `DateTime` strukturen för att skapa ett datum och tid objekt.
 
-En kodexempel skulle se ut såhär:
-
-```rust
-use std::time::DateTime;
-
-let date = DateTime::parse_from_rfc3339("2020-01-01T12:00:00+00:00").unwrap();
-let date_str = date.format("%d-%m-%Y").to_string();
-
-println!("{}", date_str); // output: 01-01-2020
+```Rust
+extern crate chrono;
+use chrono::{DateTime, TimeZone, Utc};
+let now = Utc::now();
 ```
 
-I det här exemplet har vi använt formatet "%d-%m-%Y" för att få datumet att visas som dag-månad-år. Du kan självklart byta detta format baserat på dina behov och preferenser.
+Detta skapar ett nuvarande datum och tid objekt baserat på UTC-tidszonen. Du kan också ange en specifik tidszon genom att använda `FixedOffset` eller `Local` istället för `Utc`.
 
-Det är också värt att nämna att det finns flera externa bibliotek tillgängliga för att hjälpa till med datumkonverteringar i Rust, som chrono och time. Dessa bibliotek erbjuder olika funktioner och formatalternativ, så det är bra att undersöka vilket som passar bäst för dina specifika behov.
+För att konvertera datumet till en sträng använder vi `format` funktionen och specificerar det önskade formatet enligt `strftime` syntax.
+
+```Rust
+let date_string = now.format("%Y-%m-%d").to_string();
+```
+
+Detta kommer att skapa en sträng som visar datumet i formatet `ÅÅÅÅ-MM-DD` (t.ex. 2021-05-24).
 
 ## Djupdykning
 
-Vid konvertering av datum till strängar är det viktigt att förstå skillnaden mellan en lokaliserad och en icke-lokaliserad sträng. En lokaliserad sträng är specifik för ett visst språk eller region, medan en icke-lokaliserad sträng är opåverkad av språk och region.
+Om du vill ha mer kontroll över hur datumet presenteras kan du använda `NaiveDateTime` istället för `DateTime`. Detta ger dig tillgång till datum- och tidskomponenterna separat, så att du kan bygga din egen sträng baserat på dessa.
 
-När du använder formatfunktionen i DateTime-objektet, bör du vara medveten om vilken typ av sträng du vill ha som output. Om du till exempel vill ha en lokaliserad sträng för ett svenskt datum kan du använda "%A, den %d %B %Y".
+```Rust
+let timestamp = now.timestamp(); // antalet sekunder sedan 1970-01-01 00:00:00 UTC
+let date = now.date(); // datumkomponenten av DateTime objektet
+let time = now.time(); // tidskomponenten av DateTime objektet
+```
 
-För att utföra mer avancerade datumkonverteringar, som att extrahera enskilda komponenter från ett datum (t.ex. månad eller år), finns det också flera inbyggda funktioner tillgängliga i DateTime-objektet.
+Du kan också utnyttja `DateTime` och `NaiveDateTime` metoder för att göra mer avancerade operationer, till exempel att lägga till eller subtrahera en viss tidsperiod.
 
 ## Se även
 
-Det finns många andra aspekter av datum och tid i Rust som kan vara intressanta att lära sig mer om. Här är några användbara resurser att titta på:
-
-- [Rust Standard Library - DateTime](https://doc.rust-lang.org/std/time/struct.DateTime.html)
-- [Rust by Example - Date and Time](https://doc.rust-lang.org/stable/rust-by-example/std_misc/time.html)
-- [Chrono](https://github.com/chronotope/chrono)
-- [Time](https://github.com/chronotope/time)
-
-Lycka till med att konvertera datum till strängar i Rust!
+- [chrono documentation](https://docs.rs/chrono/)
+- [String formatting in Rust](https://doc.rust-lang.org/std/fmt/#formatting-traits)
+- [Date and time in Rust: A primer](https://blog.logrocket.com/a-primer-to-date-and-time-handling-in-rust/)

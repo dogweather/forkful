@@ -1,71 +1,43 @@
 ---
-title:    "Elm: Comparando duas datas"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/comparing-two-dates.md"
+title:                "Elm: Comparando duas datas"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas em Elm?
+## Por que comparar duas datas é importante em Elm?
 
-Comparar datas é uma tarefa comum em muitos projetos de programação. Em Elm, essa tarefa pode ser facilmente realizada com algumas funções nativas. Neste artigo, vamos explorar como comparar duas datas em Elm e como essa habilidade pode ser útil para criar aplicações mais robustas.
+Ao trabalhar com programação, frequentemente precisamos comparar duas datas para realizar diferentes tarefas, como ordenar eventos em um calendário ou validar informações de um formulário. Em Elm, comparar duas datas pode ser feito de forma simples e eficiente, por isso é importante entender como isso funciona.
 
-## Como fazer:
+## Como fazer em Elm
 
-Para comparar duas datas em Elm, vamos utilizar a função `Date.compare`, que recebe duas datas como argumento e retorna um `Date.Comparison`. Este tipo pode ter três valores possíveis: `LT` (menor que), `EQ` (igual a) ou `GT` (maior que).
+Felizmente, comparar datas em Elm é bastante simples. Primeiro, devemos importar o módulo `Date` e criar duas variáveis com as datas que queremos comparar. Em seguida, utilizamos a função `Date.compare` passando as duas datas como argumentos. O resultado será uma `Maybe` que indica se a primeira data é menor, igual ou maior que a segunda.
 
-```
-Elm Date.compare example:
+```elm
+-- Importar o módulo Date
+import Date exposing (..)
 
-import Date exposing (Date)
-import Date exposing (Month(..))
+-- Criar as duas datas a serem comparadas
+data1 = Date.fromCalendarDate 2021 5 10
+data2 = Date.fromCalendarDate 2021 5 15
 
-januaryFirst : Date
-januaryFirst = Date.fromYearMonthDay2021 1 1 0 0 0
-
-marchTwelfth : Date
-marchTwelfth = Date.fromYearMonthDay2021 3 12 0 0 0
-
-comparison : Date.Comparison
-comparison = Date.compare januaryFirst marchTwelfth
-
--- Output: Date.GT
+-- Comparar as datas e obter o resultado
+resultado = Date.compare data1 data2
 ```
 
-Neste exemplo, criamos duas datas diferentes e as comparamos utilizando a função `Date.compare`. No final, a variável `comparison` recebe o valor `Date.GT`, indicando que a segunda data é maior que a primeira.
+O resultado será `Just LT`, indicando que a primeira data (data1) é menor que a segunda (data2). Caso o resultado seja `Just EQ`, significa que as datas são iguais, e se for `Just GT`, a primeira data é maior que a segunda.
 
-Outra função útil para realizar comparações é a `Date.isSame`, que recebe duas datas e retorna um `Bool`, indicando se elas são iguais ou não. Além disso, podemos utilizar os operadores `>`, `<`, `==` para comparar diretamente se uma data é maior, menor ou igual a outra.
+Caso as datas não possam ser comparadas (por exemplo, uma delas é inválida), o resultado será `Nothing`. Portanto, é importante sempre tratar esse retorno para evitar erros em nosso código.
 
-```
-Elm Date.isSame example:
+## Mergulho profundo
 
-import Date exposing (Date)
-import Date exposing (Month(..))
+Em Elm, as datas são representadas como números de milissegundos desde o Unix Epoch (1 de janeiro de 1970). Isso significa que podemos também trabalhar diretamente com esses números para comparar datas em formato de milissegundos.
 
-januaryFirst : Date
-januaryFirst = Date.fromYearMonthDay2021 1 1 0 0 0
+Além disso, existem outras funções úteis no módulo `Date` que podem nos auxiliar no processo de comparação, como `toTime` e `fromTime`. Vale a pena explorar essas funções e aprender mais sobre a manipulação de datas em Elm.
 
-marchTwelfth : Date
-marchTwelfth = Date.fromYearMonthDay2021 3 12 0 0 0
+## Veja também
 
-isSame : Bool
-isSame = Date.isSame januaryFirst marchTwelfth
-
--- Output: False
-```
-
-Este exemplo utiliza a função `Date.isSame` para comparar as mesmas datas do exemplo anterior e retorna `False`, pois elas são diferentes.
-
-## Profundidade da função de comparação de datas:
-
-A função `Date.compare` é mais profunda do que parece à primeira vista. Além de comparar apenas as datas, essas funções também levam em conta o horário, fuso horário e até mesmo o formato em que as datas estão armazenadas. Isso significa que, mesmo que duas datas sejam tecnicamente iguais, se elas tiverem diferenças em algum desses aspectos, a comparação pode retornar um valor diferente de `EQ`.
-
-Por exemplo, se uma data estiver no formato de 12h e a outra no formato de 24h, elas serão consideradas diferentes pela função `Date.compare`, mesmo que sejam essencialmente a mesma data.
-
-É importante ter em mente esses detalhes ao utilizar as funções de comparação de datas em seus projetos Elm.
-
-## Veja também:
-
-- Documentação sobre como comparar datas em Elm: https://package.elm-lang.org/packages/time/1.0.0/Date#comparison
-- Artigo sobre como realizar cálculos com datas em Elm: https://medium.com/@robertsimoes/using-date-math-in-elm-9020403f9d30
-- Vídeo tutorial sobre como trabalhar com datas em Elm: https://www.youtube.com/watch?v=M7xLQ50vnos
+- Documentação do módulo Date do Elm: https://package.elm-lang.org/packages/elm/core/latest/Date
+- Tutorial sobre comparação de datas em Elm: https://medium.com/@gumsoul/comparing-dates-in-elm-b1622265baf0

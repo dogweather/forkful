@@ -1,49 +1,47 @@
 ---
-title:    "Rust: Konvertera en sträng till versaler"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/capitalizing-a-string.md"
+title:                "Rust: Att Göra en Sträng Stor"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna konvertera en sträng till versaler är en viktig funktion inom programmering. Till exempel kan det vara användbart när man vill jämföra två strängar utan att bry sig om storleken på bokstäverna. I den här bloggposten kommer vi att lära oss hur man kapitaliserar en sträng i programmeringsspråket Rust.
+Rust är ett modernt programmeringsspråk som har blivit alltmer populärt bland utvecklare. Det är ett säkert och effektivt språk som är väl lämpat för systemprogrammering och andra krävande applikationer. En av dess stora styrkor är dess starka typsystem som hjälper till att förhindra många vanliga fel. I denna bloggpost kommer vi att titta på en av de grundläggande funktionerna i Rust - att kapa en sträng (string).
 
 ## Hur man gör
 
-För att kapitalisera en sträng i Rust finns det ett par olika sätt att göra det på. Ett enkelt sätt är att använda standardbiblioteket och dess `to_uppercase()`-funktion. Se nedan för ett exempel:
+För att kapa en sträng i Rust, kan du använda inbyggda funktionen "to_uppercase". Det här är ett exempel på hur du skulle använda den i ditt program:
 
 ```Rust
-let str = "hej!";
-let capitalized_str = str.to_uppercase();
-
-println!("{}", capitalized_str); // HEJ!
+let namn = "jesper";
+let kapitaliserat_namn = namn.to_uppercase();
 ```
 
-En annan metod är att använda `String`-typen i Rust och funktionen `chars()` för att iterera över varje tecken i strängen och konvertera dem individuellt till versaler. Se nedan för ett annat exempel:
-
-```Rust
-let str = "hej!";
-let mut capitalized_str = String::new();
-
-for c in str.chars() {
-    capitalized_str.push(c.to_uppercase().next().unwrap());
-}
-
-println!("{}", capitalized_str); // HEJ!
-```
-
-Det finns också möjlighet att använda en tredje parts bibliotek, till exempel `strum` eller `regex`, för att få mer avancerade möjligheter för att konvertera strängar till versaler.
+I detta exempel skapar vi en variabel "namn" som innehåller en vanlig sträng - "jesper". Sedan använder vi "to_uppercase" funktionen för att skapa en ny variabel "kapitaliserat_namn" som innehåller samma sträng, men med alla bokstäver konverterade till versaler. 
 
 ## Djupdykning
 
-Att konvertera en sträng till versaler kan verka som en enkel uppgift, men det finns faktiskt en hel del logik bakom det. Till exempel måste man ta hänsyn till specialtecken och diakritiska tecken. Dessutom kan skillnaden mellan ASCII och Unicode påverka hur konverteringen görs. Därför är det viktigt att förstå de olika metoderna och deras begränsningar när man jobbar med strängar i Rust.
+Det finns flera andra sätt att kapa en sträng i Rust, såsom att använda "to_uppercase" metod för strängt: 
 
-## Se även
+```Rust
+let kapitaliserat_namn = "jesper".to_uppercase();
+```
 
-För mer information om strängoperationer i Rust, se nedan för några användbara länkar:
+Du kan också kapa en del av en sträng genom att använda "get_mut" funktionen och ändra enskilda bokstäver till versaler: 
 
-- [Rust Standardbiblioteket - Strängar](https://doc.rust-lang.org/std/string/)
-- [Rust Dokumentation - strum](https://docs.rs/strum/0.18.0/strum/)
-- [Regex Modulen i Rust](https://docs.rs/regex/1.4.2/regex/)
+```Rust
+let mut namn = String::from("jesper");
+let bokstav = namn.get_mut(0..1).unwrap();
+bokstav.make_ascii_uppercase();
+```
+
+Detta skulle resultera i variabeln "namn" som innehåller "Jesper", med den första bokstaven kapitaliserad. 
+
+## Se också
+
+- Rust språkwebbplats: https://www.rust-lang.org/sv-SE/
+- Rust dokumentation: https://doc.rust-lang.org/stable/std/
+- Rust subreddit: https://www.reddit.com/r/rust/

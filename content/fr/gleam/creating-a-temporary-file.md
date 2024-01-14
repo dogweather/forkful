@@ -1,48 +1,57 @@
 ---
-title:    "Gleam: Création d'un fichier temporaire"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/creating-a-temporary-file.md"
+title:                "Gleam: Création d'un fichier temporaire."
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La création de fichiers temporaires est un élément essentiel pour de nombreux programmes. Ces fichiers, comme leur nom l'indique, sont destinés à être utilisés temporairement pour stocker des données ou exécuter des tâches spécifiques. Cela peut sembler superflu, mais leur utilisation peut grandement faciliter la gestion des données dans votre code.
+La création de fichiers temporaires est une tâche courante dans le développement de logiciels. Elle permet de stocker temporairement des données avant de les utiliser ou de les supprimer. Dans cet article, nous allons discuter de la création de fichiers temporaires en utilisant le langage de programmation Gleam.
 
 ## Comment faire
 
-Pour créer un fichier temporaire en utilisant Gleam, vous devez d'abord importer le module `File` en haut de votre code:
+Pour créer un fichier temporaire en utilisant Gleam, nous pouvons utiliser la fonction `Gleam.File.Temp.create/2` qui prend deux arguments : le nom du fichier et le contenu du fichier.
 
-```
-import File
-```
-
-Ensuite, vous pouvez simplement utiliser la fonction `create_temporary/1` pour créer un nouveau fichier temporaire. Cette fonction prend en paramètre le nom du fichier et retourne un tuple contenant le chemin complet du fichier et son gestionnaire.
-
-```
-let {path, handler} = File.create_temporary("example.txt")
+```Gleam
+temp_file = Gleam.File.Temp.create("mon-fichier-temporaire.txt", "Contenu de mon fichier temporaire")
 ```
 
-Vous pouvez ensuite écrire et lire des données dans ce fichier en utilisant les fonctions `write/2` et `read/1` du module `File`.
+Cette fonction renvoie un tuple avec le chemin d'accès au fichier temporaire et un indicateur pour savoir s'il a été créé avec succès.
 
-```
-File.write(handler, "Bonjour")
-let data = File.read(handler)
-```
+```Gleam
+(path, created) = temp_file
 
-N'oubliez pas de fermer le gestionnaire de fichier une fois que vous avez terminé en utilisant la fonction `close/1`.
-
-```
-File.close(handler)
+if created {
+  // Le fichier temporaire a été créé avec succès
+} else {
+  // Le fichier temporaire n'a pas pu être créé
+}
 ```
 
 ## Plongée en profondeur
 
-L'une des principales raisons pour lesquelles la création de fichiers temporaires est importante est qu'elle vous permet de gérer efficacement les accès concurrents aux données. En effet, chaque processus aura son propre fichier temporaire, évitant ainsi les conflits lors de l'écriture ou de la lecture de données.
+En utilisant la fonction `Gleam.File.Temp.create/2`, nous pouvons également spécifier des options pour personnaliser notre fichier temporaire. Par exemple, nous pouvons spécifier l'extension de fichier en utilisant `ext` et le répertoire de stockage en utilisant `dir`.
 
-Il est également important de noter que la fonction `create_temporary/1` prend en compte tous les répertoires spécifiés dans la variable d'environnement `TMPDIR`. Ainsi, le chemin du fichier temporaire peut varier en fonction de l'environnement dans lequel votre programme est exécuté.
+```Gleam
+options = [ext: ".csv", dir: "/chemin/vers/mon/dossier/"]
+
+temp_file = Gleam.File.Temp.create("mon-fichier-temporaire", "Contenu de mon fichier temporaire", options)
+```
+
+Nous pouvons également utiliser la fonction `Gleam.File.Temp.dir/0` pour obtenir le chemin d'accès au répertoire de stockage des fichiers temporaires.
+
+```Gleam
+temp_dir = Gleam.File.Temp.dir()
+
+path = temp_dir ++ "/mon-fichier-temporaire.txt"
+```
 
 ## Voir aussi
-- [Documentation Gleam sur la création de fichiers temporaires](https://gleam.run/modules/file.html#create_temporary/1)
-- [Article sur l'utilisation des fichiers temporaires en programmation](https://www.redhat.com/en/blog/whats-behind-creating-temporary-files-programming)
+
+Pour en savoir plus sur la création de fichiers temporaires en utilisant le langage de programmation Gleam, vous pouvez consulter la documentation officielle : 
+- [Fonction `Gleam.File.Temp.create/2`](https://gleam.run/documentation/stdlib/file/#create)
+- [Fonction `Gleam.File.Temp.dir/0`](https://gleam.run/documentation/stdlib/file/#dir)
+- [Gleam Stdliv File module](https://gleam.run/documentation/stdlib/file/)

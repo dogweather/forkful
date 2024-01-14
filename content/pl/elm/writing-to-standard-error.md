@@ -1,42 +1,47 @@
 ---
-title:    "Elm: Pisanie do standardowego wyjścia błędu"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/writing-to-standard-error.md"
+title:                "Elm: Pisanie do standardowego błędu"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać do standardowego błędu w Elm?
+## Dlaczego warto pisać do standardowego wyjścia błędów
 
-Pisanie do standardowego błędu może pomóc w wykrywaniu i debugowaniu błędów w twoim kodzie. Jest to szczególnie przydatne, gdy pracujesz z większymi projektami i chcesz znaleźć dokładne miejsce, w którym występuje problem. W tym blogu omówimy dlaczego pisanie do standardowego błędu jest przydatne i jak to zrobić w języku Elm.
+Inżynierowie programiści często używają standardowego wyjścia błędów w celu wyświetlenia informacji o błędach i ostrzeżeń w trakcie działania programu. Jest to przydatne narzędzie do debugowania i poprawiania kodu. Oprócz tego, pisanie do standardowego wyjścia błędów jest również ważne ze względów bezpieczeństwa, ponieważ informuje użytkowników o potencjalnych problemach w aplikacji.
 
-## Jak to zrobić?
+## Jak napisać do standardowego wyjścia błędów w Elm
 
- Jest kilka sposobów na pisanie do standardowego błędu w Elm. Pierwszym jest użycie funkcji `Debug.log`, która wyświetli wartość wyrażenia zawartego w funkcji w konsoli. Na przykład:
-```Elm
-import Debug exposing (log)
+W Elm, aby napisać do standardowego wyjścia błędów, możemy użyć funkcji `Debug.crash`. Przyjmuje ona argument typu `String` i zwraca wartość typu `Never`, co oznacza, że ta funkcja nigdy nie zwraca żadnego wyniku.
 
-log "Hello from standard error"
-
-```
-Powyższy kod wyświetli w konsoli "Hello from standard error" oraz zwróci wartość "()" (pusty krotka).
-
-Możesz również użyć funkcji `Debug.crash()` do wyświetlenia błędu w konsoli. Na przykład:
 ```Elm
 import Debug exposing (crash)
 
-crash "Error occurred!"
+main = 
+    result = 5 / 0 -- dzielenie przez zero wygeneruje błąd
+    Debug.crash "Nie można dzielić przez zero"
 ```
-Ten kod wyświetli w konsoli komunikat "Error occurred!" oraz zakończy działanie programu z błędem.
 
-## Deep Dive
+W powyższym przykładzie, gdy wywołana zostanie funkcja `crash`, wygenerowany zostanie błąd na standardowym wyjściu błędów z przekazanym przez nas komunikatem.
 
-W języku Elm istnieje również możliwość łapania i obsługi błędów za pomocą biblioteki `Result`. Jest to przydatne w przypadku, gdy chcesz mieć kontrolę nad wyjątkami i obsłużyć je w wybrany przez siebie sposób. Możesz też użyć biblioteki `elm/error` do tworzenia niestandardowych błędów i zarządzania nimi.
+Możemy również wykorzystać funkcję `Debug.log` do wyświetlania informacji o błędach i ostrzeżeń. Ta funkcja przyjmuje dwa argumenty: `String` i wartość dowolnego typu, który chcemy wyświetlić. Zwraca ona ten sam typ wartości, co argument drugi.
 
-Możesz także skonfigurować pisanie do standardowego błędu w ustawieniach kompilatora, aby wyświetlał on błędy w konsoli lub zapisywał je do pliku.
+```Elm
+import Debug exposing (log)
 
-## Zobacz też
+main = 
+    result = 5 / 0 -- dzielenie przez zero wygeneruje błąd
+    Debug.log "Wynik dzielenia" result
+```
 
-- Dokumentacja Elm: https://elm-lang.org/docs
-- Poradnik poziomu zaawansowanego: https://guide.elm-lang.org/advanced/index.html
-- Tworzenie obsługi błędów w języku Elm: https://dev.to/vatsimister/error-handling-in-elm-3e8h
+## Głębszy wgląd w pisanie do standardowego wyjścia błędów
+
+W Elm, standardowe wyjście błędów jest obsługiwane przez funkcję `Platform.sendToApp`. Jest to funkcja wbudowana w Elm i nie jest przeznaczona do używania poza platformą. Pozwala ona na wysłanie komunikatu do aplikacji, gdzie może być obsłużony przez programistę.
+
+Ponadto, możemy również wykorzystać funkcję `Task.perform` do obsługi błędów i ostrzeżeń w naszej aplikacji Elm. Ta funkcja przyjmuje dwa argumenty: `Result error value` i funkcję do obsługi błędów (znajdująca się w drugim argumencie). W ten sposób możemy dokładnie kontrolować, co dzieje się z błędami w naszej aplikacji.
+
+## Zobacz również
+- [Elm - Debug Module](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [Elm - Using Debug.log](https://guide.elm-lang.org/debugging/debugging_concepts.html)
+- [Elm - Error Handling with Task and Result](https://guide.elm-lang.org/error_handling/)

@@ -1,52 +1,83 @@
 ---
-title:    "Elm recipe: Printing debug output"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/printing-debug-output.md"
+title:                "Elm recipe: Printing debug output"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Debugging is a crucial part of any programming task, and Elm is no exception. Printing debug output is an essential tool that can help you understand the inner workings of your program and identify any logical errors or bugs that may be causing unexpected behavior. In this blog post, we will dive into the world of printing debug output in Elm and learn how it can improve your development process.
+Printing debug output can be a useful tool for developers, allowing them to get a better understanding of their code and troubleshoot any potential issues. It can also be helpful in the learning process, as it allows users to see the values and types of their variables at different points in their program.
 
 ## How To
 
-To print debug output in Elm, we can use the `Debug.log` function. This function takes in two arguments: a label and any value we want to print. The label is simply a string that helps us identify the specific output we are printing. Let's take a look at an example:
+To print debug output in Elm, we can use the `Debug.log` function. This function takes in two parameters: a string label and a value. The label acts as a description for the value being printed, and the value can be any type of data. Let's take a look at an example:
 
 ```Elm
-import Debug
+import Debug exposing (log)
 
 x = 5
-Debug.log "x value" x
+y = "Hello, world!"
 
--- output:
--- x value: 5
+Debug.log "Value of x:" x
+Debug.log "Value of y:" y
 ```
 
-In this example, we use the label "x value" and the `x` variable as the value we want to print. As you can see, the output will display the label and the value separated by a colon. This can be useful when trying to track the value of a variable or a particular function's result.
+The output of this code would be:
 
-We can also use `Debug.log` in more complex scenarios, such as printing the values of multiple variables or combining strings and values. Let's see an example:
+```
+Value of x: 5
+Value of y: "Hello, world!"
+```
+
+You can also use the `log` function with multiple values by passing them in as a tuple:
 
 ```Elm
-import Debug
-
-firstName = "John"
-lastName = "Smith"
-Debug.log "Full name" (firstName ++ " " ++ lastName)
-
--- output:
--- Full name: John Smith
+z = (10, 20)
+Debug.log "Values of z:" z
 ```
 
-In this example, we are combining the first and last name variables and printing them with a label. This can be helpful when trying to keep track of different variables' values and their relationships within the program.
+The output of this code would be:
+
+```
+Values of z: (10, 20)
+```
 
 ## Deep Dive
 
-Now that we have seen how to use `Debug.log`, let's take a deeper look at its inner workings. Whenever we use `Debug.log`, we are essentially creating a `Task` that logs the given value and then continues with the given task. This means that these log tasks will not affect the program's execution or perform any side effects.
+The `Debug.log` function can also take in a second argument, which is a function that takes in the value being printed and returns a `String`. This allows for more advanced debugging, as we can format our output in a specific way. Let's see an example:
 
-However, it is essential to keep in mind that `Debug.log` should only be used for logging purposes during development. It is not recommended to have any `Debug.log` statements in your production code as it can significantly impact performance.
+```Elm
+formatValue value =
+    "Value is " ++ (toString value)
+
+x = 15
+Debug.log "Formatted value:" x formatValue
+```
+
+The output of this code would be:
+
+```
+Formatted value: Value is 15
+```
+
+We can also use the `List.concatMap` function to print out the values of a list. Let's take a look at an example:
+
+```Elm
+list = [1,2,3,4]
+Debug.log "List values:" list (List.concatMap toString)
+```
+
+The output of this code would be:
+
+```
+List values: 1 2 3 4
+```
 
 ## See Also
 
-To learn more about debugging in Elm, check out the official Elm documentation and the `Debug` library documentation. You can also find helpful tips and techniques in various Elm programming blogs and forums. Happy debugging!
+- [Debug module in Elm](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [Using debug.log in Elm](https://guide.elm-lang.org/debugging/debugging.html)
+- [Debugging tips and tricks in Elm](https://www.stephenpfrank.com/posts/2015-09-02-elm-debugging-tips-tricks.html)

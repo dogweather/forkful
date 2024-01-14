@@ -1,44 +1,42 @@
 ---
-title:    "Kotlin: Obtenir la date actuelle"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/getting-the-current-date.md"
+title:                "Kotlin: Obtenir la date actuelle."
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi 
 
-Obtenir la date actuelle est une tâche courante dans de nombreuses applications. Il est important pour de nombreuses raisons telles que les horaires, les rappels, et la gestion des tâches. Heureusement, Kotlin offre des moyens simples et efficaces pour accéder à la date actuelle.
+Saviez-vous que vous pouvez facilement obtenir la date actuelle dans vos programmes Kotlin ? Dans cet article, nous allons vous montrer comment le faire et pourquoi cela peut être utile pour votre code.
 
-# Comment faire
+## Comment faire 
 
-Voici comment vous pouvez obtenir facilement la date actuelle en utilisant Kotlin :
+Pour obtenir la date actuelle dans Kotlin, vous pouvez utiliser la fonction `LocalDate.now()`. Cette fonction renvoie un objet `LocalDate` qui représente la date actuelle dans le fuseau horaire du système. Voici un exemple de code :
 
-```
-fun main() {
-    // Obtention de la date actuelle
-    val currentDate = Date()
-
-    // Formattage de la date avec un motif spécifique
-    val formattedDate = SimpleDateFormat("dd.MM.yyyy").format(currentDate)
-
-    // Affichage de la date
-    println("La date actuelle est : $formattedDate")
-}
+```Kotlin
+val currentDate = LocalDate.now()
+println("La date actuelle est : $currentDate")
 ```
 
-Output : La date actuelle est : 22.05.2021
+Output : La date actuelle est : 2020-07-25
 
-# Plongée en profondeur
+Vous pouvez également spécifier un fuseau horaire différent en utilisant la fonction `now(zoneId)`, où `zoneId` est un identifiant de fuseau horaire tel que "Europe/Paris". Voici un exemple :
 
-Maintenant que vous savez comment obtenir la date actuelle, voici quelques informations supplémentaires sur la façon dont cela fonctionne en interne :
+```Kotlin
+val currentDate = LocalDate.now(ZoneId.of("Europe/Paris"))
+println("La date actuelle en France est : $currentDate")
+```
 
-- La première ligne de code utilise la classe `Date` pour créer une instance de la date actuelle. Cette classe est fournie par Java et Kotlin la prend en charge également.
-- La deuxième ligne utilise la classe `SimpleDateFormat` pour formater la date en utilisant un motif spécifique. Il existe de nombreux autres motifs pour formater la date selon vos besoins.
-- Enfin, la troisième ligne affiche simplement la date formatée en utilisant une chaîne de formatage.
+Output : La date actuelle en France est : 2020-07-25
 
-# Voir aussi
+## Analyse approfondie 
 
-- [Documentation Kotlin sur les Dates](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/)
-- [Documentation Java sur les Dates](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Guide des motifs de date et d'heure](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+Maintenant que nous savons comment obtenir la date actuelle en Kotlin, voyons un peu plus en détail comment cela fonctionne. La classe `LocalDate` fait partie de la bibliothèque standard de Kotlin et elle fait partie de la spécification Java Time. L'objet renvoyé par les fonctions `now()` et `now(zoneId)` est un objet immuable qui représente une date spécifique sans prendre en compte l'heure ou le fuseau horaire. Cela peut être utile si vous avez besoin de travailler avec des dates sans tenir compte de l'heure ou du fuseau horaire.
+
+## Voir aussi 
+
+- [Documentation officielle de LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/)
+- [Guide Java Time pour les débutants](https://www.baeldung.com/java-time)
+- [Tutoriel sur Kotlin pour les programmeurs Java](https://kotlinlang.org/docs/tutorials/kotlin-for-java-programmers.html)

@@ -1,72 +1,70 @@
 ---
-title:    "Elixir: Comparando dos fechas"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/comparing-two-dates.md"
+title:                "Elixir: Comparando dos fechas"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué comparar dos fechas en Elixir?
+## Por qué 
 
-Comparar dos fechas es una tarea común en la programación. Esta acción permite determinar si una fecha es posterior o anterior a otra, o si ambas son iguales. En Elixir, esta tarea se puede realizar de manera sencilla y eficiente gracias a las funciones y operadores disponibles en el lenguaje. En este artículo, aprenderemos cómo comparar dos fechas en Elixir de manera fácil y rápida.
+Comparar fechas es una tarea común en la programación, especialmente en aplicaciones web y sistemas de gestión de bases de datos. Al comprender cómo comparar de manera efectiva dos fechas, podemos asegurarnos de que nuestras aplicaciones funcionen de manera eficiente y sin bugs.
 
 ## Cómo hacerlo
 
-En Elixir, hay varias formas de comparar dos fechas. Una de ellas es utilizando el operador de comparación `==`, que compara si ambas fechas son iguales. Por ejemplo:
+En Elixir, podemos comparar dos fechas utilizando el operador `==`, que verifica si ambos valores son iguales. Sin embargo, esto no siempre es suficiente, ya que a menudo queremos tener en cuenta factores como la zona horaria y el formato de fecha. Veamos algunos ejemplos utilizando el módulo `Date` de la biblioteca estándar de Elixir. 
 
 ```Elixir
-date1 = ~D[2021-07-10]
-date2 = ~D[2021-07-10]
-date1 == date2 # Output: true
+iex> date_1 = Date.from_iso8601("2021-05-25")
+{:ok, ~D[2021-05-25]}
+
+iex> date_2 = Date.from_iso8601("2021-05-25")
+{:ok, ~D[2021-05-25]}
+
+iex> date_1 == date_2
+true
 ```
 
-También se puede utilizar el operador `>`, que determina si una fecha es posterior a otra. Por ejemplo:
+En este ejemplo, hemos creado dos fechas iguales y al compararlas obtenemos como resultado `true`. Pero, ¿qué sucede si queremos comparar la fecha actual con una fecha en el futuro? Para eso, podemos utilizar la función `compare/2` que devuelve uno de los siguientes tres átomos: `:lt (menor que)`, `:gt (mayor que)` o `:eq (igual a)`.
 
 ```Elixir
-date1 = ~D[2021-07-11]
-date2 = ~D[2021-07-10]
-date1 > date2 # Output: true
+iex> today = Date.utc_today()
+{:ok, ~D[2021-11-05]}
+
+iex> future_date = ~D[2022-02-14]
+~D[2022-02-14]
+
+iex> Date.compare(today, future_date)
+:lt 
 ```
 
-Si se desea comparar si una fecha es anterior a otra, se puede utilizar el operador `<`. Por ejemplo:
+También podemos utilizar la función `diff/2` para obtener la diferencia en días entre dos fechas.
 
 ```Elixir
-date1 = ~D[2021-07-09]
-date2 = ~D[2021-07-10]
-date1 < date2 # Output: true
+iex> Date.diff(~D[2021-01-01], ~D[2022-01-01])
+365
 ```
 
-Otra forma de comparar dos fechas es utilizando la función `Date.compare/2`, que devuelve un número entero para indicar si la primera fecha es anterior, igual o posterior a la segunda fecha. Si el resultado es -1, significa que la primera fecha es anterior, si es 0 significa que ambas son iguales, y si es 1 significa que la primera fecha es posterior. Por ejemplo:
+## Profundizando 
+
+Comparar fechas puede ser complicado cuando se tienen en cuenta diferentes zonas horarias y formatos. Por ejemplo, si queremos comparar dos fechas con diferentes zonas horarias, debemos ajustar la fecha a la misma zona horaria antes de realizar la comparación. 
 
 ```Elixir
-date1 = ~D[2021-07-10]
-date2 = ~D[2021-07-11]
-Date.compare(date1, date2) # Output: -1
+iex> date_1 = Date.new(2021, 5, 25, "Europe/Madrid") 
+~D[2021-05-25]
+
+iex> date_2 = Date.new(2021, 5, 25, "America/New_York")
+~D[2021-05-25]
+
+iex> date_1 == date_2 
+true 
 ```
 
-Además, también se puede utilizar la función `Date.before?/2` y `Date.after?/2` para determinar si una fecha es anterior o posterior a otra, respectivamente. Estas funciones devuelven un booleano. Por ejemplo:
+También es importante asegurarse de que las fechas estén en el mismo formato antes de compararlas. Podemos utilizar la función `from_europeans/1` para convertir una fecha en formato europeo al formato americano. 
 
-```Elixir
-date1 = ~D[2021-07-09]
-date2 = ~D[2021-07-10]
-Date.before?(date1, date2) # Output: true
-Date.after?(date1, date2) # Output: false
-```
+## Ver también 
 
-## Profundizando
-
-Es importante tener en cuenta que en Elixir, las fechas se representan como estructuras de datos, lo que permite comparar no solo la fecha sino también la hora y los segundos, si se desean. Por ejemplo:
-
-```Elixir
-datetime1 = ~N[2021-07-10 12:00:00]
-datetime2 = ~N[2021-07-10 14:00:00]
-datetime1 > datetime2 # Output: false
-```
-
-Además, Elixir también cuenta con módulos como `DateTime`, `NaiveDateTime` y `Time` que brindan funciones y operadores para trabajar con fechas y horas. Se recomienda explorar estos módulos para tener un mayor control y flexibilidad al comparar fechas en Elixir.
-
-## Ver también
-
-- Documentación oficial de Elixir sobre fechas y tiempo: https://elixir-lang.org/getting-started/datetime.html
-- Artículo sobre cómo trabajar con fechas y horas en Elixir: https://www.pluralsight.com/guides/dates-and-times-in-elixir
-- Ejemplos de código para comparar fechas en Elixir: https://gist.github.com/phortela/c4575ab81dbfa8450b844f0fac61edeb
+- Documentación oficial de Elixir: https://elixir-lang.org/getting-started/typespecs-and-behaviours.html#date 
+- Artículo sobre comparación de fechas en Elixir: https://medium.com/@chathuranga94/how-to-compare-dates-and-timestamps-in-elixir-9df7da123c57 
+- Biblioteca de fechas y tiempos para Elixir: https://hexdocs.pm/timex/Timex.html

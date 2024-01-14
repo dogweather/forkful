@@ -1,34 +1,49 @@
 ---
-title:    "C++: Skriva till standardfel"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/writing-to-standard-error.md"
+title:                "C++: Skriva till standardfel"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva till standard error är ett viktigt verktyg för att förstå och felsöka program i C++. Genom att skriva till standard error kan du utskriva meddelanden och felmeddelanden som hjälper dig att förstå vad som händer i ditt program.
 
-## Hur man gör det
-För att skriva till standard error i C++ behöver du inkludera "iostream" biblioteket och använda "cerr" funktionen. Här är ett exempel på hur du kan göra det:
+Att skriva till standard error är en viktig del av C++ programmering, eftersom det ger utskrifter till standard error streamen som är viktiga för att ge information om fel i programmet. Detta kan hjälpa utvecklare att hitta och åtgärda problem snabbt och effektivt.
 
-```C++
+## Hur man gör
+
+För att skriva till standard error streamen i C++, används funktionen `std::cerr`. Detta är en del av `iostream` biblioteket och behöver inte importeras separat. Här är ett enkelt exempel på hur man skulle skriva till standard error streamen:
+
+```
 #include <iostream>
 
-int main() {
-    if (true) {
-        std::cerr << "Ett fel inträffade!" << std::endl;
-    }
+int main(){
+
+    int age = 25;
+    
+    std::cerr << "Min ålder är: " << age << std::endl;
+
     return 0;
 }
 ```
 
-I detta exempel skriver vi texten "Ett fel inträffade!" till standard error genom att använda "cerr" funktionen. Sedan använder vi "endl" för att lägga till en radbrytning för tydlighet. När programmet körs kommer texten att skrivas ut till standard error och programmet kommer att fortsätta köra som vanligt.
+Som du kan se i koden ovan, används `std::cerr` precis som `std::cout` för att skriva till standard output streamen. Skillnaden är att allt som skrivs till `std::cerr` skickas till standard error streamen istället för standard output streamen. Det är viktigt att märka att standard error streamen inte buffras på samma sätt som standard output streamen, vilket innebär att utskriften kommer att visas omedelbart.
+
+När det gäller det faktiska användandet av `std::cerr`, kan den användas för att ge viktig information om programmet, som till exempel felmeddelanden och stack traces. Detta kan hjälpa utvecklare att hitta och åtgärda problem snabbt och effektivt.
 
 ## Djupdykning
-Att skriva till standard error är en del av det standarda utflödet (standard output) som är tillgängligt i de flesta programspråk. Det används främst för att skriva ut felmeddelanden eller annan information som är viktig för att förstå vad som händer i programmet. Ett vanligt fel är att blanda ihop "cerr" och "cout", vilket kan leda till förvirring och felaktiga utskrifter. En annan viktig sak att komma ihåg är att "cerr" inte buffrar utdata, vilket innebär att den skriver till standard error direkt utan att vänta på att programmet ska avslutas. Detta är särskilt användbart vid felsökning då du vill se felmeddelanden omedelbart istället för senare när programmet har kört klart.
 
-## Se också
-- [C++ Standard Library](https://en.cppreference.com/w/cpp/header)
-- [Cerr Reference](https://en.cppreference.com/w/cpp/io/cerr)
-- [Understanding Standard Error in C++](https://www.learncpp.com/cpp-tutorial/understanding-standard-iostream/)
+När man skriver till standard error streamen i C++, är det viktigt att förstå hur detta fungerar för att kunna använda det effektivt. Som nämnts tidigare, buffras inte standard error streamen på samma sätt som standard output streamen. Detta innebär att texten som skrivs till standard error streamen kommer att visas direkt och i rätt ordning, även om den kombineras med utskrifter från standard output streamen.
+
+Det är också viktigt att notera att `std::cerr` är baserad på `std::ostream`, vilket innebär att alla manipulatorer som fungerar för `std::cout` också fungerar för `std::cerr`. Detta inkluderar användning av `std::endl` för att avsluta utskriften och flytta markören till nästa rad.
+
+En annan viktig aspekt att förstå är att standard error streamen är avsedd för att ge information om fel och inte för att användas för vanliga utskrifter. Detta betyder att det inte är lämpligt att använda `std::cerr` för att skriva ut till exempelvis användaren av programmet. För det syftet bör man istället använda `std::cout`.
+
+## Se även (See Also)
+
+- [Standard Library Headers in C++](https://www.learncpp.com/cpp-tutorial/1-12a-standard-library-headers/)
+- [Debugging in C++](https://www.learncpp.com/cpp-tutorial/debugging-in-cpp/)
+- [Output Streams in C++](https://www.geeksforgeeks.org/output-streams-in-c/)
+
+Hoppas denna artikel har varit hjälpsam för att förstå varför och hur man skriver till standard error streamen i C++. Med rätt användning kan detta vara ett värdefullt verktyg för att hitta och åtgärda fel i program. Tack för att du läste!

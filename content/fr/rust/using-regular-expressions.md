@@ -1,34 +1,42 @@
 ---
-title:    "Rust: Utiliser les expressions régulières"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/rust/using-regular-expressions.md"
+title:                "Rust: Utiliser les expressions régulières"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi utiliser les expressions régulières en Rust?
 
-Les expressions régulières sont un outil puissant utilisé pour trouver et manipuler des motifs dans les chaînes de caractères. En programmant en Rust, il est important de comprendre comment utiliser les expressions régulières pour traiter efficacement les données.
+Les expressions régulières sont un outil puissant pour la manipulation de chaînes de caractères en Rust. Elles permettent de rechercher et de remplacer des motifs spécifiques dans du texte, ce qui peut être très utile pour le traitement de données, la validation de formulaires ou encore la création de routes pour des applications web.
 
-## Comment faire
+## Comment utiliser les expressions régulières en Rust?
 
-Les expressions régulières sont utilisées en Rust en important le module "regex". Par exemple, si vous souhaitez trouver toutes les occurrences d'un nombre à deux chiffres dans une chaîne de caractères, vous pouvez utiliser la fonction "Regex::new" pour créer une expression régulière et utiliser la méthode "find_iter" pour récupérer les correspondances. Voici un exemple de code:
+Les expressions régulières en Rust sont gérées par le module `regex`. Voici un exemple de code qui recherche des chaînes de caractères numériques dans un texte et les imprime:
 
 ```Rust
-let re = Regex::new(r"\d{2}").unwrap();
-let text = "Il y a 42 chats sur le mur.";
-for mat in re.find_iter(text) {
-    println!("Trouvé '{}'", mat.as_str());
+use regex::Regex;
+
+fn main() {
+    let text = "Le nombre de visiteurs est de 350 aujourd'hui.";
+    let re = Regex::new(r"\d+").unwrap();
+    for cap in re.captures_iter(text) {
+        println!("Nombre trouvé: {}", &cap[0]);
+    }
 }
 ```
-La sortie de ce code sera "Trouvé '42'".
 
-## Plongée en profondeur
+Cela produirait une sortie de `Nombre trouvé: 350`. Pour plus d'exemples et de détails sur l'utilisation des expressions régulières en Rust, vous pouvez consulter la documentation officielle.
 
-Les expressions régulières peuvent sembler compliquées au premier abord, mais elles suivent des règles de syntaxe spécifiques qui peuvent être apprises et maîtrisées avec de la pratique. Certaines astuces utiles incluent l'utilisation de caractères spéciaux comme les parenthèses pour capturer des groupes de correspondances, et l'utilisation des opérateurs "?" et "*" pour rendre certains motifs optionnels ou répétables. Il est également important de noter que les expressions régulières peuvent être sensibles à la casse et qu'il existe des drapeaux pour les instructions "insensible à la casse" et "multi-lignes".
+## Plongez plus profondément dans les expressions régulières en Rust
+
+Les expressions régulières en Rust fonctionnent de manière similaire à d'autres langages tels que Python ou JavaScript, mais il existe quelques spécificités à connaître. Par exemple, le type de données utilisé pour stocker les résultats de correspondance est différent en Rust et nécessite une compréhension plus approfondie.
+
+De plus, il est important de savoir quels motifs sont pris en charge par les expressions régulières en Rust et comment ils peuvent être utilisés pour capturer et extraire des données.
 
 ## Voir aussi
 
-- [Documentation sur les expressions régulières en Rust](https://doc.rust-lang.org/regex/regex/)
-- [Guide de référence rapide pour les expressions régulières en Rust](https://faimaison.net/wiki/index.php/Regular_expression_quick_ref_-_Rust)
-- [Livres et tutoriels pour apprendre les expressions régulières](https://www.regular-expressions.info/tutorial.html)
+- [Documentation officielle sur les expressions régulières en Rust](https://docs.rs/regex/1.3.1/regex/)
+- [Tutoriel sur les expressions régulières en Rust](https://blog.logrocket.com/using-regular-expressions-in-rust/)
+- [Référence de la syntaxe des expressions régulières en Rust](https://docs.rs/regex/1.3.1/regex/#syntax)

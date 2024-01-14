@@ -1,41 +1,52 @@
 ---
-title:    "Javascript: Tests schreiben"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/writing-tests.md"
+title:                "Javascript: Tests schreiben"
+programming_language: "Javascript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Es gibt viele Gründe, warum es sinnvoll ist, Tests beim Programmieren zu schreiben. Einer der wichtigsten Gründe ist, dass Tests sicherstellen, dass der Code ordnungsgemäß funktioniert und keine unerwarteten Fehler auftreten. Dadurch wird die Code-Qualität verbessert und die Entwicklungszeit verkürzt.
+Tests zu schreiben ist ein wichtiger Aspekt beim Entwickeln von Javascript Anwendungen. Sie helfen dabei, Bugs frühzeitig zu erkennen, die Qualität des Codes zu verbessern und die Stabilität der Anwendung zu gewährleisten. Außerdem können Tests dabei helfen, Vertrauen in den Code aufzubauen und die Wartbarkeit des Systems zu erhöhen.
 
-## Wie man Tests schreibt
-Um Tests zu schreiben, müssen wir zuerst sicherstellen, dass wir eine Testumgebung haben, die unsere Tests ausführen kann. In der Regel wird dafür ein Test-Framework wie Mocha oder Jasmine verwendet.
+## Wie das geht
 
-Als nächsten Schritt müssen wir unsere Tests in separate Dateien schreiben und sicherstellen, dass unser Code in einzelne Funktionen unterteilt wird, die leichter getestet werden können. Hier ist ein Beispiel für einen Test in Mocha:
+Um Tests in Javascript zu schreiben, gibt es verschiedene Frameworks wie zum Beispiel Jest, Mocha oder Jasmine. Für dieses Beispiel werden wir Jest verwenden. Zunächst müssen wir Jest installieren, dies geht entweder über npm oder yarn:
 
-```Javascript
-describe('sum function', function() {
-    it('should return the sum of two numbers', function() {
-        expect(sum(1,2)).toEqual(3);
-    })
-})
+```
+npm install jest
 ```
 
-In diesem Beispiel testen wir die Summenfunktion, indem wir überprüfen, ob sie die korrekte Summe von 1 und 2 zurückgibt.
+oder
 
-Nachdem wir unsere Tests geschrieben haben, können wir sie ausführen, indem wir die Befehle "npm test" oder "mocha" in der Kommandozeile eingeben.
+```
+yarn add jest
+```
 
-## Tiefer Einblick
-Beim Schreiben von Tests ist es wichtig, alle möglichen Szenarien abzudecken, einschließlich der Kantenfälle. Durch das Schreiben von umfassenden Tests können wir sicherstellen, dass unser Code robust und fehlerfrei ist.
+Anschließend können wir unsere erste Testdatei erstellen, zum Beispiel `calculator.test.js`:
 
-Eine wichtige Technik beim Testen ist das "Test-driven Development" (TDD), bei dem Tests vor der eigentlichen Entwicklung geschrieben werden. Dadurch wird sichergestellt, dass der Code von vornherein gut getestet ist und die Entwickler sich auf das Schreiben funktionierenden Codes konzentrieren können.
+```
+const calculator = require('./calculator');
 
-Eine weitere wichtige Facette des Testens ist das "Mocking". Durch das Mocking von Objekten oder Funktionen können wir Tests auf unabhängige Teile unseres Codes beschränken und so die Effizienz und Genauigkeit unserer Tests erhöhen.
+test('adds 1 + 2 to equal 3', () => {
+  expect(calculator.add(1, 2)).toBe(3);
+});
+```
+
+In diesem Beispiel importieren wir unsere `calculator` Funktion und führen dann einen Test aus, der erwartet, dass die Addition von 1 und 2 den Wert 3 ergibt. Wenn wir den Test jetzt laufen lassen, wird er erfolgreich sein. Wenn wir jedoch die `add`-Funktion ändern, sodass sie jetzt 1 und 2 zu 4 addiert, wird der Test fehlschlagen und uns darauf aufmerksam machen, dass etwas nicht stimmt.
+
+## Tiefer in die Materie
+
+Es gibt verschiedene Arten von Tests, die wir schreiben können, um sicherzustellen, dass unser Code wie erwartet funktioniert. Zum Beispiel gibt es Unit-Tests, die einzelne Funktionen oder Module testen, und Integrationstests, die überprüfen, ob verschiedene Teile der Anwendung korrekt zusammenarbeiten.
+
+Es gibt auch verschiedene Testing Tools und Techniken, wie zum Beispiel Mocking, um externe Abhängigkeiten zu simulieren, oder Test Driven Development (TDD), bei dem Tests vor dem eigentlichen Code geschrieben werden.
+
+Es ist wichtig, beim Schreiben von Tests auch auf gute Testabdeckung zu achten, sodass möglichst alle Szenarien abgedeckt werden und Bugs frühzeitig erkannt werden können.
 
 ## Siehe auch
-- [Mocha](https://mochajs.org/)
-- [Jasmine](https://jasmine.github.io/)
-- [Test-driven Development](https://de.wikipedia.org/wiki/Testgetriebene_Entwicklung)
-- [Mocking](https://en.wikipedia.org/wiki/Mock_object)
+
+- [Jest Dokumentation](https://jestjs.io/docs/getting-started)
+- [Mocha Webseite](https://mochajs.org/)
+- [Jasmine Dokumentation](https://jasmine.github.io/)

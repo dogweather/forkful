@@ -1,53 +1,48 @@
 ---
-title:    "Elixir: Ricerca e sostituzione di testo"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elixir/searching-and-replacing-text.md"
+title:                "Elixir: Ricerca e sostituzione di testo"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Il processo di ricerca e sostituzione del testo è un'operazione comune nella programmazione Elixir. Spesso, è necessario modificare grandi quantità di dati o semplicemente sostituire parti di una stringa in modo efficiente. Continua a leggere per scoprire come puoi farlo in modo semplice ed efficiente.
+Quando si programma in Elixir, uno dei problemi più comuni è la necessità di sostituire del testo all'interno di una stringa o di un file. Ecco perché è importante conoscere i diversi metodi per farlo in modo efficiente e accurato.
 
-## Come Fare
+## Come
 
-La soluzione più comune per cercare e sostituire il testo in Elixir è utilizzare il metodo `String.replace/3`. Questo metodo prende tre argomenti: la stringa originale, il testo da cercare e la stringa di sostituzione. Ecco un esempio:
-
-```Elixir
-testo = "Ciao a tutti!"
-String.replace(testo, "Ciao", "Salve")
-# Output: "Salve a tutti!"
-```
-
-È anche possibile utilizzare espressioni regolari per rendere la ricerca e la sostituzione più flessibili. Per fare ciò, si può utilizzare il modulo `Regex` e il metodo `Regex.replace/3`. Ad esempio, se si desidera sostituire tutte le vocali di una stringa con la lettera "o", si può utilizzare il seguente codice:
+Elixir offre diversi modi per effettuare la ricerca e la sostituzione di testo. Il metodo più semplice è utilizzare la funzione `String.replace/3` che accetta tre argomenti: la stringa di origine, l'espressione da cercare e la stringa di sostituzione desiderata. Ad esempio:
 
 ```Elixir
-testo = "Ciao a tutti!"
-Regex.replace(~r/[aeiou]/, testo, "o")
-# Output: "Coao o tutti!"
+String.replace("Ciao mondo", "Ciao", "Salve") # Output: Salve mondo
 ```
 
-Ci sono anche altri metodi utili per la ricerca e sostituzione del testo, come ad esempio `String.replace_prefix/3` e `String.replace_suffix/3`, che permettono di specificare esattamente dove sostituire il testo all'interno della stringa originale. Si consiglia di dare un'occhiata alla documentazione di Elixir per ulteriori opzioni e metodi utili.
-
-## Approfondimento
-
-Il metodo `String.replace/3` è molto efficiente, ma può diventare un po' lento se si deve effettuare la sostituzione su una grande quantità di dati. In questo caso, si può utilizzare la libreria `Stream` per elaborare i dati in modo più efficiente, come ad esempio:
+È possibile anche utilizzare le espressioni regolari per cercare e sostituire testo in modo più avanzato. Con l'operatore `=~` è possibile verificare se una stringa corrisponde a un'espressione regolare e, utilizzando l'operatore `<<<`, è possibile sostituire il testo corrispondente. Ad esempio:
 
 ```Elixir
-una_lista_di_testi = ["Ciao a tutti!", "Hello everyone!", "Bonjour à tous!"]
-una_lista_di_testi
-|> Stream.map(&String.replace(&1, "a", "o"))
-|> Enum.to_list
-# Output: ["Cioo o tutti!", "Hello everyone!", "Bonjouro touts!"]
+"Ciao mondo" =~ ~r/Ciao/ # Output: true
+
+"Ciao mondo" <<< ~r/Ciao/ # Output: Salve mondo
 ```
 
-In questo esempio, si sta utilizzando il metodo `Stream.map/2` per applicare la sostituzione a ogni elemento della lista e `Enum.to_list/1` per convertire il risultato in una lista.
+## Deep Dive
 
-Inoltre, è possibile accedere ai gruppi catturati in un'espressione regolare utilizzando il modificatore di sostituzione `$`. Ciò può risultare molto utile per sostituire solo parti specifiche di una stringa.
+Se si vuole effettuare la ricerca e la sostituzione su un file di testo, è possibile utilizzare la libreria `File` di Elixir. Utilizzando le funzioni `File.read/1` e `File.write/2`, è possibile leggere il contenuto del file, effettuare le modifiche desiderate e sovrascrivere il file originale con il nuovo contenuto modificato. Ad esempio:
+
+```Elixir
+text = File.read("file.txt")
+
+new_text = String.replace(text, "Ciao", "Salve")
+
+File.write("file.txt", new_text)
+```
+
+Inoltre, Elixir offre anche la libreria `Stream` che permette di effettuare la ricerca e la sostituzione in modo "pigrizia", lavorando solo con i dati necessari e non caricando tutto in memoria.
 
 ## Vedi Anche
 
-- Documentazione ufficiale di Elixir sulle stringhe e le espressioni regolari: https://hexdocs.pm/elixir/String.html
-- Tutorial su come usare le espressioni regolari in Elixir: https://elixirschool.com/it/lessons/basics/pattern-matching/
-- Articolo sulle libreria `StringScanner`, che fornisce funzionalità avanzate per la ricerca e la sostituzione del testo: https://www.poeticoding.com/elixir/scanning-strings-in-elixir-with-the-stringscanner-module/
+- [Documentazione ufficiale di Elixir sulla gestione delle stringhe] (https://hexdocs.pm/elixir/String.html)
+- [Articolo su come utilizzare le espressioni regolari in Elixir] (https://elixirschool.com/it/lessons/basics/pattern-matching/)
+- [Guida su come utilizzare la libreria `Stream` di Elixir] (https://blog.appsignal.com/2018/07/17/elixir-alchemy-the-power-of-piping-operators-with-streams.html)

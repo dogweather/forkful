@@ -1,44 +1,47 @@
 ---
-title:    "Elm: 텍스트 파일 읽기"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/reading-a-text-file.md"
+title:                "Elm: 텍스트 파일 읽기"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-텍스트 파일을 읽는 데 관심을 가지게 되는 이유는 많지만, 그 중 하나는 데이터를 처리하거나 분석하거나 사용하기 위해서입니다. 
+이번에는 Elm에서 텍스트 파일을 읽는 방법에 대해 알아보고자 합니다. 텍스트 파일은 데이터를 저장하고 공유하는데 유용합니다. 이 글을 통해 Elm에서 텍스트 파일을 읽는 방법을 쉽게 익힐 수 있습니다.
 
-## 방법
+# 어떻게
 
-텍스트 파일을 읽는 것은 Elm의 `File` 모듈을 사용하여 쉽게 할 수 있습니다. 먼저, 파일 데이터를 저장할 변수를 선언하고 파일을 열 때 사용될 `File.reader` 함수를 정의합니다. 그런 다음 `File.read` 함수를 사용하여 파일 데이터를 읽은 다음, `Result` 타입을 사용하여 실패나 성공 여부를 처리합니다. 아래는 파일을 읽는 간단한 예제 코드입니다:
+Elm에서 텍스트 파일을 읽는 방법은 간단합니다. 먼저, `elm/file` 라이브러리를 사용하여 파일을 가져와야 합니다. 그리고 `Text` 모듈에서 `lines` 함수를 사용하여 파일을 줄 단위로 읽어올 수 있습니다. 이렇게 읽어온 데이터는 `List String` 형태로 저장됩니다. 예제 코드를 통해 살펴보도록 하겠습니다.
 
 ```Elm
--- 파일 데이터를 저장하기 위한 변수 선언
-fileData : String
+import File
+import Text exposing (lines)
 
--- 파일을 열 때 사용될 `File.reader` 함수 정의
-reader : File.Reader
-reader =
-    { onNextChar = \char -> ( fileData = fileData ++ toString char, ( reader ), ( reader ) )
-    , onEndOfFile = \_ -> ( fileData, ( reader ), ( reader ) )
-    , onError = \error -> ( fileData, ( reader ), ( reader ) ) 
-    }
+file : File
+file =
+    File.read "example.txt"
 
--- 파일 데이터를 읽음
-File.read "text.txt" reader
+readFile : File.Result String
+readFile =
+    File.readAsString file
 
+parsedLines : List String
+parsedLines =
+    readFile
+        |> Result.map (lines FileSystem.Readable.utf8)
+        |> Result.withDefault []
 ```
 
-위 코드는 `text.txt` 파일을 읽을 때 사용되며, 파일 데이터는 `fileData` 변수에 저장됩니다. 
+위 예제 코드에서 `example.txt` 파일을 읽고 `lines` 함수를 사용하여 데이터를 줄 단위로 분리해 `List String` 형태로 저장합니다. 만약 파일을 읽지 못할 경우 기본값인 빈 리스트가 반환됩니다. 함수를 사용해 텍스트 파일 내용을 단순하게 가져올 수 있습니다.
 
-## 딥 다이브
+# 딥 다이브
 
-`File.reader` 함수의 콜백 함수들 중에서 `onNextChar` 함수는 매개 변수로 전달되는 문자 하나하나를 읽을 수 있습니다. 이를 활용하면 파일 데이터를 읽을 때 추가적인 로직을 적용할 수 있습니다. 또한, `File` 모듈에는 옵션으로 파일을 읽을 때 인코딩 방식을 지정할 수 있는 기능도 있습니다.
+이제 텍스트 파일을 간단하게 읽는 방법에 대해 알아보았습니다. 하지만 더 깊숙한 수준에서 파일을 읽을 수 있도록 하는 다양한 함수들도 존재합니다. 예를 들어 `File.readAsString` 함수를 사용하면 파일을 읽어 `String` 형태로 저장할 수 있으며, `File.readAsLines` 함수를 사용하면 파일을 읽어 `List (List String)` 형태로 저장할 수 있습니다.
 
-## 참고
+# 관련 링크
 
-- [Elm `File` 모듈 문서](https://package.elm-lang.org/packages/elm/core/latest/File)
-- [Elm과 파일 다루기](https://programmableweb.com)
-- [표준 입출력 장치와 파일 입출력](http://talestostories.tistory.com)
+- [Elm 공식 문서 - 파일 읽기](https://guide.elm-lang.org/io/files.html)
+- [Elm 공식 문서 - Text 모듈](https://package.elm-lang.org/packages/elm-lang/core/latest/Text)
+- [Elm Guide - 파일 다루기](https://guide.elm-lang.org/effects/file.html)

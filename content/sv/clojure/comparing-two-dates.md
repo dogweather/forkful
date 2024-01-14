@@ -1,45 +1,55 @@
 ---
-title:    "Clojure: Jämförelse av två datum"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/comparing-two-dates.md"
+title:                "Clojure: Jämföring av två datum"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
-I många programmeringsprojekt krävs det att man jämför två datum för att utföra olika funktioner, till exempel att sortera data eller beräkna tidsintervall. I denna blogginlägg undersöker vi hur man kan jämföra två datum i Clojure.
+## Varför
 
-## Hur man jämför två datum
-För att jämföra två datum i Clojure finns det flera sätt att gå tillväga. Ett enkelt sätt är att använda funktionen `compare`, som tar två datum som argument och returnerar ett heltal som indikerar hur de två datumen förhåller sig till varandra. Om det första datumet är före det andra returneras ett negativt tal, om det andra datumet är före returneras ett positivt tal, och om datumen är lika returneras noll.
+Att jämföra två datum kan vara en viktig del av många Clojure-program. Det kan hjälpa till att hitta skillnader mellan datum, avgöra vilket datum som kommer först eller hantera tidsbundna händelser. Låt oss titta på hur man kan jämföra två datum i Clojure.
+
+## Så här gör du
+
+Först måste vi definiera två datum som vi vill jämföra. Vi kan använda funktionen `date` för att skapa ett datum från dag, månad och år:
 
 ```Clojure
-(compare (local-date "2021-01-15") (local-date "2021-01-20"))
-
-; Output: -1
+(def datum1 (date 2021 3 25))
+(def datum2 (date 2021 5 15))
 ```
 
-En annan funktion som kan användas för att jämföra datum är `before?` och `after?`. Dessa funktioner returnerar true eller false beroende på om det första datumet är före eller efter det andra.
+Nu kan vi använda funktionen `before?` eller `after?` för att jämföra dessa två datum. Dessa funktioner returnerar `true` om det första datumet kommer före det andra datumet och `false` annars.
 
 ```Clojure
-(after? (local-date "2021-03-10") (local-date "2021-01-20"))
-
-; Output: true
+(before? datum1 datum2) ;; returnerar true
+(after? datum1 datum2) ;; returnerar false
 ```
 
-`between?` är en annan användbar funktion som kan användas för att kontrollera om ett datum ligger mellan två andra datum.
+Vi kan också använda funktionen `min` och `max` för att hitta det minsta eller största datumet mellan två givna datum:
 
 ```Clojure
-(between? (local-date "2021-02-05") (local-date "2021-01-01") (local-date "2021-03-10"))
+(min datum1 datum2) ;; returnerar datum1
+(max datum1 datum2) ;; returnerar datum2
+```
 
-; Output: true
+Om vi behöver jämföra tidsstämpeln för ett datum, kan vi använda funktionen `instant` för att få en Unix-tidsstämpel och sedan använda aritmetiska operationer för att jämföra dessa tidsstämplar.
+
+```Clojure
+(def timestamp1 (instant datum1))
+(def timestamp2 (instant datum2))
+(> timestamp2 timestamp1) ;; returnerar true
 ```
 
 ## Djupdykning
-När man jämför datum är det viktigt att vara medveten om hur olika datumtyper hanteras i Clojure. Till exempel kan man inte direkt jämföra ett datum av typen `local-date` med ett datum av typen `zoned-date-time`. Man måste då konvertera datumen till samma typ, antingen genom att använda funktionen `to-local-date` eller `to-zoned-date-time`.
 
-Det är också viktigt att vara medveten om eventuella tidszoner och att små skillnader i tiden kan påverka resultatet av jämförelser mellan datumen.
+Vid jämförelse av datum måste vi ta hänsyn till olika tidszoner och sommartid. Clojure ger oss möjlighet att använda biblioteket `clj-time` som erbjuder en mängd olika funktioner för att hantera tidszon och sommartid.
 
-## Se även
-- [Jämföra datum i Clojure Dokumentation](https://clojure.org/api/java.time)
-- [Java Date and Time API Dokumentation](https://docs.oracle.com/javase/tutorial/datetime/iso/overview.html)
-- [Clojure Programming Language Dokumentation](https://clojure.org/)
+Det är också viktigt att notera att jämförelser av datum kan vara känsliga för tidsprecision, särskilt vid jämförelse av Unix-tidsstämplar. Det är viktigt att noga överväga vilken precision som är nödvändig för det aktuella användningsområdet.
+
+## Se också
+
+* Officiell dokumentation för Clojure `date` funktionen: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/date
+* Dokumentation för `clj-time` biblioteket: https://github.com/clj-time/clj-time/wiki
+* En djupare artikel om jämförelse av datum i Clojure: https://www.mikera.net/posts/2012-07-10-clojure-date-comparisons.html

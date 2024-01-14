@@ -1,44 +1,46 @@
 ---
-title:    "Haskell: Komentoriviparametrien lukeminen"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/reading-command-line-arguments.md"
+title:                "Haskell: Komentoriviparametrien lukeminen"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Jos olet ohjelmoija, joka käyttää Haskellia, niin sinua kiinnostaa ehkä oppia kuinka lukea komentoriviargumentteja. Tämä taito on hyödyllinen monissa projekteissa, ja siksi on tärkeää oppia kuinka tehdä se oikein. Seuraavassa kerron miten tämä tehdään Haskellissa.
+Jos haluat oppia ohjelmoimaan Haskellilla, on tärkeää ymmärtää, kuinka käsitellä komentoriviltä saatuja argumentteja. Tämä on tärkeää silloin, kun haluat ohjailla ohjelmasi käyttäytymistä sen käynnistyksessä.
 
-## Kuinka tehdä
+## Kuinka
 
-Tässä kurssilla käytämme `System.Environment` moduulia, joka tarjoaa funktion `getArgs`. Tämä funktio palauttaa listan merkkijonoja, jotka sisältävät kaikki komentoriviargumentit, jotka annettiin ohjelman suorituksen yhteydessä. Voit kokeilla sitä seuraavalla tavalla:
+Haskellissa komentoriviparametrit luetaan `getArgs`-funktion avulla. Se palauttaa listan `String`-arvoja, jotka vastaavat komentoriviltä annettuja argumentteja. Alla on yksinkertainen esimerkki, jossa luetaan kaksi komentoriviparametria ja tulostetaan ne konsoliin:
 
-``` Haskell
-import System.Environment 
+```Haskell
+import System.Environment (getArgs)
 
+main :: IO ()
 main = do
-    args <- getArgs
-    putStrLn "Annetut argumentit:"
-    print args
+  args <- getArgs
+  putStrLn $ "Ensimmäinen argumentti: " ++ (args !! 0)
+  putStrLn $ "Toinen argumentti: " ++ (args !! 1)
 ```
 
-Kun suoritat tämän ohjelman komentorivillä käyttäen esimerkiksi komentoa `runhaskell`, saat tulosteen:
+**Esimerkkisyöte:**
+
+`runhaskell arguments.hs arg1 arg2`
+
+**Esimerkkilähtö:**
 
 ```
-runhaskell args.hs arg1 arg2 arg3
+Ensimmäinen argumentti: arg1
+Toinen argumentti: arg2
 ```
-```
-Annetut argumentit:
-["arg1", "arg2", "arg3"]
-```
-Kuten näet, `args` muuttuja on lista merkkijonoja, jotka ovat kaikki ne argumentit, jotka annoit suorittaessasi ohjelmaa. Voit käyttää tätä listaa työskennelläksesi argumenttien kanssa koodissasi esimerkiksi käyttäen `elem` funktiota tarkistamaan onko tiettyä argumenttia listassa.
 
-## Syvemmälle
+## Syvällinen sukellus
 
-Tarkempaa tietoa `System.Environment` moduulista ja sen sisältämistä funktioista löydät Haskelin virallisesta dokumentaatiosta. Voit myös tutkia erilaisia tapoja käyttää komentoriviargumentteja eri projekteissa.
+`getArgs`-funktion sijaan voit käyttää myös `getProgName`-funktiota, joka palauttaa vain ohjelman nimen. Lisäksi voit käyttää `withArgs`-funktiota, jolla voit muuttaa komentoriviparametrien listaa haluamallasi tavalla ennen niiden lukemista.
 
-## Katso myös
+See Also
 
-- [Haskellin virallinen dokumentaatio](https://www.haskell.org/documentation/)
-- [Haskelin `System.Environment` moduuli](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html)
+- Täältä voit löytää lisätietoa komentoriviparametrien lukemisesta Haskellilla: https://www.schoolofhaskell.com/user/commercial/content/getting-command-line-arguments-in-haskell
+- `System.Environment`-moduulin dokumentaatio: https://hackage.haskell.org/package/base-4.11.1.0/docs/System-Environment.html

@@ -1,59 +1,42 @@
 ---
-title:    "Rust: Majusculation d'une chaîne de caractères."
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/rust/capitalizing-a-string.md"
+title:                "Rust: Majuscule d'une chaîne de caractères"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La capitalisation d'une chaîne de caractères est une tâche courante en programmation, que ce soit pour l'affichage de données à l'utilisateur ou pour le traitement de données. Dans cet article, nous allons explorer comment capitaliser une chaîne en utilisant Rust, un langage de programmation qui offre une performance élevée et une sécurité au niveau système.
+Dans la programmation, il est souvent nécessaire de manipuler du texte, et une des tâches communes est de capitaliser une chaîne de caractères. Cela peut sembler simple, mais il peut y avoir des nuances et des cas d'utilisation spécifiques qui nécessitent une approche plus réfléchie. C'est pourquoi nous allons plonger dans le monde passionnant de la capitalisation de chaînes en Rust.
 
 ## Comment faire
 
-Pour commencer, importez le module `str` qui contient les méthodes pour manipuler les chaînes de caractères.
+Pour capitaliser une chaîne de caractères en Rust, nous pouvons utiliser la méthode `to_uppercase()` de la structure `String`. Elle prend en paramètre une référence mutable vers une chaîne de caractères et renvoie une nouvelle chaîne de caractères avec toutes les lettres en majuscules. Voyons un exemple concret :
 
 ```Rust
-use std::str; 
+let mut my_string = String::from("bonjour tout le monde");
+let capitalized = my_string.to_uppercase();
+println!("{}", capitalized); // affiche "BONJOUR TOUT LE MONDE"
 ```
 
-Ensuite, vous pouvez utiliser la méthode `to_uppercase()` pour capitaliser une chaîne.
+Vous pouvez également capitaliser uniquement la première lettre d'une chaîne en utilisant la méthode `capitalize()` de la structure `String`. Elle prend également une référence mutable vers une chaîne de caractères et renvoie une nouvelle chaîne de caractères avec la première lettre en majuscule. Voici un exemple :
 
 ```Rust
-let s = "bonjour";
-let capitalized = s.to_uppercase();
-println!("Chaîne de départ : {}", s); // Bonjour
-println!("Chaîne capitalisée : {}", capitalized); // BONJOUR
-```
-
-Vous pouvez également utiliser la méthode `to_lowercase()` pour mettre en minuscule une chaîne, ou `to_titlecase()` pour la mettre en majuscule avec la première lettre de chaque mot en majuscule.
-
-```Rust
-let s = "hello";
-let lowercased = s.to_lowercase();
-let titlecased = s.to_titlecase();
-println!("Chaîne de départ : {}", s); // Hello
-println!("Chaîne en minuscule : {}", lowercased); // hello 
-println!("Chaîne en majuscule avec la première lettre en majuscule : {}", titlecased); // Hello
-```
-
-Il est également possible de capitaliser uniquement la première lettre d'une chaîne en utilisant la méthode `to_ascii_uppercase()`, qui convertit uniquement les lettres ASCII en majuscule. Cela peut être utile si vous voulez conserver les accents et caractères spéciaux.
-
-```Rust
-let s = "école";
-let first_capitalized_letter = str::to_ascii_uppercase(&s[0..1]);
-println!("Première lettre capitalisée : {}", first_capitalized_letter); // É
+let mut my_string = String::from("bonjour");
+let capitalized = my_string.capitalize();
+println!("{}", capitalized); // affiche "Bonjour"
 ```
 
 ## Plongée en profondeur
 
-Maintenant que vous savez comment capitaliser une chaîne en utilisant Rust, voyons comment cela fonctionne sous le capot. En utilisant la méthode `to_uppercase()`, Rust convertit la chaîne en un type `UnicodeString` avant d'appliquer la capitalisation. Cela garantit que les caractères Unicode sont correctement gérés et que les majuscules sont bien respectées selon les règles linguistiques. 
+Bien que la capitalisation puisse sembler simple, il y a des détails à prendre en compte lors de l'utilisation de ces méthodes en Rust. Par exemple, il est important de noter que la méthode `to_uppercase()` ne fonctionne que pour les chaînes de caractères ASCII. Si vous travaillez avec des chaînes de caractères Unicode, vous devrez utiliser la bibliothèque `unicode_normalization` pour un traitement plus complet.
 
-De plus, la méthode `to_uppercase()` ne modifie pas la chaîne d'origine mais renvoie une nouvelle chaîne avec la capitalisation appliquée. Cela peut être utile si vous avez besoin de garder la chaîne d'origine et de la modifier plus tard.
+De plus, ces méthodes ne modifient pas la chaîne de caractères d'origine, mais renvoient plutôt une nouvelle chaîne de caractères capitalisée. Cela peut être utile si vous avez besoin de garder la chaîne de caractères d'origine pour une utilisation ultérieure.
 
 ## Voir aussi
 
-- [Documentation officielle de Rust](https://doc.rust-lang.org/std/primitive.str.html)
-- [Chaînes de caractères en Rust: Unicode, UTF-8, et ce que tout cela signifie](https://blog.thoughtram.io/string-immutable-mutable-what-the-heck/)
-- [Tutoriel Rust pour débutants](https://www.rust-lang.org/fr/learn)
+- [La documention sur les méthodes de manipulation de chaînes en Rust](https://doc.rust-lang.org/std/string/struct.String.html)
+- [La bibliothèque `unicode_normalization` pour une manipulation plus avancée des chaînes Unicode](https://crates.io/crates/unicode-normalization)
+- [Un tutoriel sur les chaînes en Rust](https://doc.rust-lang.org/book/ch08-02-strings.html)

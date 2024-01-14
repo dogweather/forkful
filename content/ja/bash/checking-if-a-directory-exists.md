@@ -1,51 +1,66 @@
 ---
-title:    "Bash: ディレクトリが存在するかどうかのチェック"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/checking-if-a-directory-exists.md"
+title:                "Bash: ディレクトリの存在をチェックする"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜディレクトリが存在するかをチェックするか
 
-ディレクトリが存在するかどうかをチェックする理由は、プログラミングの中でよく使われるタスクの1つです。例えば、ディレクトリを作成したり、ファイルを読み書きしたりする前にディレクトリが存在するかどうかを確認する必要があります。
+Bashプログラミングを行っているときに、特定のディレクトリが存在するかどうかを確認する必要があることがあります。これは、ファイル操作やスクリプトの実行において、プログラマーがコードを制御するために重要なステップです。ディレクトリが存在するかどうかを確認することで、スクリプトの実行を安全かつ成功させることができます。
 
-## 方法
+## 利用方法
 
-Bashプログラミングでは、ディレクトリが存在するかどうかを確認するために、「-d」オプションを使用します。ここでは、その使用方法をいくつかのコーディング例と共に説明します。
+ディレクトリが存在するかどうかを確認するには、コマンドラインで以下のコードを入力します。
 
-``` Bash
-# 単純にディレクトリが存在するかどうかを確認する場合
-if [ -d /path/to/directory ]; then
-  echo "ディレクトリが存在します。"
+```Bash
+#!/bin/bash
+if [ -d /path/to/directory ]
+then
+  echo "ディレクトリが存在します"
+else
+  echo "ディレクトリが存在しません"
 fi
 ```
 
-``` Bash
-# ディレクトリが存在しない場合の条件分岐
-if [ ! -d /path/to/directory ]; then
-  echo "ディレクトリが存在しません。"
+このコードでは、`-d`のオプションを使用し、`/path/to/directory`におけるディレクトリの存在を確認しています。もしディレクトリがあれば、`echo`コマンドでディレクトリが存在することを表示し、存在しない場合は存在しないことを表示します。
+
+また、もし存在しないディレクトリの作成を試みる場合は、以下のようにコードを書くこともできます。
+
+```Bash
+#!/bin/bash
+if [ ! -d /path/to/directory ]
+then
+  mkdir /path/to/directory
 fi
 ```
 
-``` Bash
-# 変数を使用してディレクトリの存在を確認する場合
-path="/path/to/directory"
-if [ -d "$path" ]; then
-  echo "ディレクトリが存在します。"
-fi
-```
-
-上記の例では、ディレクトリパスの前に「-d」オプションを付けることで、そのディレクトリが存在するかどうかを確認しています。存在する場合は「if」のブロックが実行され、存在しない場合は「else」のブロックが実行されます。また、変数を使用してディレクトリパスを指定する場合は、変数をダブルクォーテーションで囲むことで、空白を含むパスも正しく処理されます。
+このコードでは、`!`を使用してディレクトリが存在しない場合にのみディレクトリを作成しています。
 
 ## 深堀り
 
-ディレクトリが存在するかどうかをチェックする際に使用される「-d」オプションは、実は「test」コマンドの一部です。そのため、先ほどの「[ ]」（ブラケット）は、実際には「test」コマンドのエイリアスとして解釈されます。また、「-d」以外にも、ディレクトリの存在を確認するための他のオプションもあります。
+ディレクトリが存在するかどうかを確認する方法は他にもあります。確認するには、`test`コマンドや`[`コマンドを使用することもできます。
 
-さらに、Bashの「stat」コマンドを使用することで、より詳細な情報（パーミッションや所有者など）を取得することが可能です。例えば、「stat -c %F /path/to/directory」というコマンドを実行することで、そのディレクトリが実際にディレクトリであるかどうかをテストし、ファイルであれば「file」、シンボリックリンクであれば「link」を出力します。
+また、ディレクトリが存在しない場合は特定のコマンドを実行することもできます。例えば、`/path/to/directory`が存在しない場合は`echo`コマンドを実行するときに、`&&`を使用して次のようにコードを書くことができます。
 
-## 参考リンク
+```Bash
+#!/bin/bash
+[ ! -d /path/to/directory ] && echo "ディレクトリが存在しません"
+```
 
-- [Bashでディレクトリが存在するかどうかを確認する](https://www.tecmint.com/check-if-directory-exists-in-linux/)
-- [testコマンドのマニュアル](https://linuxjm.osdn.jp/html/GNU_coreutils/coreutils_single-6.html)
-- [statコマンドのマニュアル](https://ss64.com/bash/stat.html)
+また、`directory`というディレクトリが存在するかどうかを確認したい場合は、`directory`という名前のファイルが存在するかどうかを確認することで可能です。
+
+```Bash
+#!/bin/bash
+if [ -e directory ]
+then
+  echo "ディレクトリが存在します"
+fi
+```
+
+## 他の参考ページ
+
+- [Bashで条件式を記述する](https://script-archive.com/memo/HowtoBash/scripts_conditional_expression/)
+- [ディレクトリが存在するかどうかをチェックするコマンド](https://qiita.com/yudoufu/items/fac3de8b549593a4758a)

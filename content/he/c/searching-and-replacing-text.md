@@ -1,63 +1,59 @@
 ---
-title:    "C: חיפוש והחלפת טקסט"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c/searching-and-replacing-text.md"
+title:                "C: חיפוש והחלפת טקסט"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
+מבוא
+חיפוש והחלפה של טקסט הוא כלי חשוב בתכנות, שימוש בו עשוי לקצר את תהליך העדכון ושדרוג של קוד ולשפר את הקריאות והנוחות של קוד. בפוסט הזה אנחנו נראה איך להשתמש בפיתרון חיפוש והחלפת טקסט כדי לכתוב קוד בצורה יעילה יותר ולהפעיל את הפתרון המתאים ביותר לצרכים שלנו.
 
-למה לחפש ולהחליף טקסט? פעולת החיפוש וההחלפה היא פעולה חשובה ושימושית בתכנות שכולם יכולים להנות ממנה. היא מאפשרת למשתמשים למצוא מחרוזות מסוימות ולהחליף אותן עם מחרוזות אחרות על פי צורך. פעולת החיפוש וההחלפה יכולה לחסוך זמן רב ולשפר את היכולת לעבוד עם טקסט בקוד.
+## כיצד לעשות זאת
+לכנות מחרוזות
+>We will use the `strncpy()` function, which copies the characters of one string into another, up to a given limit.
 
-## איך לעשות זאת
+כדי להשתמש בפונקציה, נצטרך לבצע שימוש בהתקנת ה `` `string.h` ``, בעזרת `` `#include to``', "בכדי לכלול את הפונקציה =להשתמש נשתמש ++
 
- כדי לבצע פעולת חיפוש והחלפה ישנם מספר פקודות שיש להכיר:
-
-- `strstr()` - מוצא את המיקום של מחרוזת מסוימת בתוך מחרוזת אחרת.
-- `strchr()` - מוצא את המיקום של תו מסוים בתוך מחרוזת.
-- `strtok()` - מחלק את המחרוזת למספר מחרוזות קטנות בהתאם לפסיקים או מקפים.
-- `strlen()` - מחזיר את אורך המחרוזת.
-
-כדי להחליף טקסט בתוך המחרוזת הרצויה יש להשתמש בפקודת `strcpy()`.
-
-```C
-#include <stdio.h>
-#include <string.h> // מניעת התראות על strcpy
+ נתחיל עם המקרה הפשוט, נרצה להחליף כל מופע של המחרוזת `"hello"` עם המחרוזת `"hi"`. נתחיל עם משתני `from_str` ו-`to_str` שאליהם נשמר את המחרוזת `hello` ו-`hi` בהתאמה.
+```
+#include <string.h>
 
 int main() {
-    char str[50] = "מחרוזת מקורית";
-    char toReplace[] = "מקורית";
-    char newStr[] = "מחרוזת חדשה";
+   char from_str[] = "hello";
+   char to_str[] = "hi";
+}
+```
+השתמשו ב-`strchr()` function כדי לקבוע את מיקום המחרוזת בתוך המשתנה, ואז החליפו אותו באמצעות `strncpy()` function והרחבה `while` loop עם מתווה `strlen()` כדי להחליף את כל פעם שרקשים של המחרוזת הראשונה:
 
-    printf("מחרוזת נוכחית: %s\n", str);
+```
+#include <stdio.h>
+#include <string.h>
 
-    // חיפוש התווים המבוקשים והחלפתם
-    strcpy(str, strtok(str, toReplace)); // החלפת המחרוזת הכתובה מתוך המחרוזת המקורית
-    strcat(str, newStr); // הדפסת המחרוזת החדשה
 
-    printf("מחרוזת חדשה: %s\n", str);
+int main() {
+   char sample_str[] = "This is a sample string";
+   char from_str[] = "string";
+   char to_str[] = "word";
 
-    return 0;
+   char *from_ptr = from_str;
+   char *to_ptr = to_str;
+
+   while((to_ptr=strchr(sample_str, *from_ptr))) {
+      strncpy(to_ptr, to_str, strlen(from_str));
+      to_ptr += strlen(from_str);
+      ++from_ptr;
+   }
+
+   printf("%s\n", sample_str);
+   return(0);
 }
 ```
 
-Output:
+רצוי גם לבדוק את קונפיגורציות הפרמטר כמו גידול התו "המחרוזת שאנחנו רוצים להחליף אותה ואז נתאים אותה פונדריתה".
 
-```
-מחרוזת נוכחית: מחרוזת מקורית
-מחרוזת חדשה: מחרוזת חדשה
-```
-
-הנה עוד דוגמא לחיפוש והחלפה של מחרוזת בתוך מחרוזת:
-
-```C
-#include <stdio.h>
-#include <string.h> // מניעת התראות על strcpy
-
-int main() {
-    char str[] = "Hello World";
-    char toReplace[] = "World";
-    char newStr[] = "Universe";
-
-    //
+## לנסות
+החלפת כל תו קיום
+מתכונ

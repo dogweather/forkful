@@ -1,39 +1,66 @@
 ---
-title:    "Swift recipe: Comparing two dates"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/comparing-two-dates.md"
+title:                "Swift recipe: Comparing two dates"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-In Swift programming, comparing two dates can be a useful skill to have in your repertoire. Whether you're building a date picker for your app or calculating the time difference between two events, understanding how to compare dates can save you time and headache.
+
+In programming, we often come across the need to compare two dates. This can be for tasks such as sorting data, calculating time differences, or simply checking if one date falls before or after another. Fortunately, Swift makes it easy to compare dates, and in this blog post, we will explore the different ways of doing so.
 
 ## How To
-To compare two dates in Swift, you first need to create two date objects using the `Date()` initializer. Then, you can use the `compare()` method to compare the two dates, which will return a `ComparisonResult` enum. Here's an example of how to compare two dates:
+
+To compare two dates in Swift, we can use the `compare` method, which returns a `ComparisonResult` value indicating the relationship between the two dates. Here is an example where we have two `Date` objects representing the current date and a date in the past:
 
 ```Swift
-let date1 = Date()
-let date2 = Date(timeIntervalSinceNow: 3600) // Adds 1 hour to current date
+let currentDate = Date()
+let pastDate = Date().addingTimeInterval(-3600) //1 hour ago
+```
 
-if date1.compare(date2) == .orderedAscending { // Checks if date1 is before date2
-    print("Date 1 is before Date 2")
-} else if date1.compare(date2) == .orderedDescending { // Checks if date1 is after date2
-    print("Date 1 is after Date 2")
-} else { // Dates are equal
-    print("Date 1 is equal to Date 2")
+We can now use the `compare` method to check if the past date falls before the current date:
+
+```Swift
+if pastDate.compare(currentDate) == .orderedAscending {
+    print("The past date falls before the current date.")
 }
 ```
 
-The above code will output "Date 1 is before Date 2" since we added an hour to `date2`.
+The output will be: "The past date falls before the current date."
+
+We can also use the `compare` method to check if the dates are equal or if one is after the other. Here is an example:
+
+```Swift
+if pastDate.compare(currentDate) == .orderedSame {
+    print("The dates are equal.")
+} else if pastDate.compare(currentDate) == .orderedDescending {
+    print("The past date falls after the current date.")
+}
+```
+
+The output will be: "The past date falls after the current date."
 
 ## Deep Dive
-When comparing two dates, it's important to understand the different values that can be returned by the `compare()` method. The `ComparisonResult` enum has three cases: `.orderedAscending`, `.orderedDescending`, and `.orderedSame`. These cases indicate whether the first date is before, after, or equal to the second date, respectively.
 
-Additionally, when comparing dates, it's important to note that they are based on the UTC (Coordinated Universal Time) time zone. So if you want to compare dates based on a specific time zone, you will need to use `Calendar` to convert the dates first. This can be done using the `calendar` property and `dateComponents(in:)` method of `Calendar`.
+Behind the scenes, the `compare` method is using the `timeIntervalSinceReferenceDate` property, which represents the number of seconds since January 1st, 2001. The `ComparisonResult` values are simply a way to easily interpret the result of this comparison.
+
+In addition to the `compare` method, we can also use the `==` and `<` operators to compare dates. The `==` operator checks if the dates are equal, while the `<` operator checks if one date is earlier than the other. Here is an example:
+
+```Swift
+if pastDate == currentDate {
+    print("The dates are equal.")
+} else if pastDate < currentDate {
+    print("The past date falls before the current date.")
+}
+```
+
+The output will be: "The past date falls before the current date."
+
+It is important to note that when comparing dates, the time zone and daylight saving time changes are taken into consideration. This means that two dates can have the same point in time, but if they are in different time zones, the comparison may result in different values.
 
 ## See Also
-- [Apple Developer Documentation on Comparing Dates](https://developer.apple.com/documentation/foundation/date/comparing_dates)
-- [Swift Date and Time by Hacking with Swift](https://www.hackingwithswift.com/articles/117/swift-date-and-time-cheat-sheet)
 
-***Note: This article is written for English readers. For the original version, please visit [link to original article].***
+- Official Apple documentation on comparing dates in Swift: https://developer.apple.com/documentation/foundation/date/comparing_dates
+- Tutorial on working with dates and time in Swift: https://www.hackingwithswift.com/articles/117/a-quick-look-at-how-to-work-with-dates-in-swift

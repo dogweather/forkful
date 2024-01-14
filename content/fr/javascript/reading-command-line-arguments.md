@@ -1,52 +1,64 @@
 ---
-title:    "Javascript: Lecture des arguments de la ligne de commande"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/reading-command-line-arguments.md"
+title:                "Javascript: Lecture des arguments en ligne de commande"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous êtes un développeur Javascript intéressé par l'apprentissage de techniques avancées, alors la lecture des arguments de ligne de commande peut être une compétence très utile à acquérir. Cela peut vous permettre de créer des programmes plus flexibles et plus efficaces en utilisant les informations fournies par l'utilisateur à travers la ligne de commande.
+Les arguments de ligne de commande peuvent sembler intimidants au premier abord, mais ils sont en fait un outil utile pour les développeurs Javascript. En lisant cet article, vous découvrirez comment les utiliser pour améliorer votre expérience de programmation.
 
 ## Comment faire
 
-Pour lire les arguments de ligne de commande en Javascript, vous pouvez utiliser l'objet `process` intégré à Node.js. Voici un exemple de code qui montre comment accéder à ces arguments:
+Pour lire les arguments de ligne de commande en utilisant Javascript, vous pouvez utiliser l'objet `process.argv` inclus dans Node.js. Ce tableau contient tous les arguments passés lors de l'exécution de votre programme.
+
+Voici un exemple de code:
 
 ```Javascript
-// Récupérer les arguments de la ligne de commande
-const arguments = process.argv;
-
-// Parcourir chaque argument et l'afficher
-arguments.forEach((argument, index) => console.log(`Argument ${index}: ${argument}`));
+// Récupère le premier argument passé lors de l'exécution
+let argument = process.argv[2];
+console.log(argument);
 ```
 
-Supposons que vous ayez enregistré ce code dans un fichier appelé `arguments.js`. Vous pouvez alors l'exécuter en utilisant la commande suivante dans votre terminal:
+Si vous exécutez ce programme en tapant `node monProgramme.js Bonjour` dans votre terminal, la sortie sera `Bonjour`.
 
-```
-node arguments.js arg1 arg2 arg3
-```
+Vous pouvez également itérer à travers tous les arguments en utilisant une boucle `for`:
 
-Cela donnera la sortie suivante:
-
-```
-Argument 0: /usr/local/bin/node
-Argument 1: /Users/votre-nom/fichier/arguments.js
-Argument 2: arg1
-Argument 3: arg2
-Argument 4: arg3
+```Javascript
+for (let i = 0; i < process.argv.length; i++) {
+  console.log(process.argv[i]);
+}
 ```
 
-Comme vous pouvez le constater, le premier argument est le chemin vers l'exécutable Node.js et le deuxième est le chemin vers votre fichier. Les arguments définis par vous sont affichés après cela.
+## Plongée profonde
 
-## Plongée en profondeur
+En plus de récupérer les arguments passés à votre programme, vous pouvez également utiliser des options de ligne de commande en utilisant la bibliothèque `commander.js`. Avec cette bibliothèque, vous pouvez facilement définir des options et des commandes pour améliorer l'expérience utilisateur de vos programmes en ligne de commande.
 
-Vous pouvez également accéder aux arguments directement en utilisant l'index, par exemple `process.argv[2]` pour récupérer le premier argument. De plus, il existe des packages tels que `yargs` qui peuvent vous aider à gérer les arguments de manière plus structurée et à créer des interfaces utilisateur en ligne de commande plus avancées.
+Par exemple, vous pouvez définir une option `-v` qui affichera la version actuelle de votre programme. Voici un exemple de code utilisant `commander.js`:
 
-Il est également important de noter que les arguments de ligne de commande peuvent être très utiles pour automatiser des tâches répétitives ou pour exécuter plusieurs versions de votre code en utilisant des combinaisons d'arguments différentes.
+```Javascript
+const program = require('commander');
+
+// Définit l'option -v pour afficher la version
+program
+  .option('-v, --version', 'Affiche la version de mon programme');
+
+// Analyse les arguments de ligne de commande
+program.parse(process.argv);
+
+// Si -v est passé en argument, affiche la version
+if (program.version) {
+  console.log('La version actuelle de mon programme est 1.0.0');
+}
+```
+
+En utilisant `commander.js`, vous pouvez créer des programmes en ligne de commande plus robustes et plus faciles à utiliser.
 
 ## Voir aussi
 
-- [Documentation officielle de Node.js sur les arguments de ligne de commande](https://nodejs.org/api/process.html#process_process_argv)
-- [Documentation de `yargs` pour la gestion facile des arguments en ligne de commande](https://github.com/yargs/yargs)
+- [Documentation de Node.js sur process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [Documentation de commander.js](https://github.com/tj/commander.js/#readme)
+- [Article sur les arguments de ligne de commande en Javascript (en anglais)](https://www.twilio.com/blog/2017/12/http-requests-in-node-js.html)

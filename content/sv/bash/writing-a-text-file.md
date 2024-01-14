@@ -1,40 +1,50 @@
 ---
-title:    "Bash: Att skriva en textfil"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/writing-a-text-file.md"
+title:                "Bash: Skriva en textfil."
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna skriva och redigera textfiler är en grundläggande färdighet för alla som arbetar med Bash-programmering. Genom att kunna skapa och manipulera textfiler kan du skapa mer avancerade och dynamiska skript och applikationer.
+Att skriva en textfil är en viktig färdighet inom Bash-programmering eftersom det låter dig lagra och arbeta med data på ett mer strukturerat och flexibelt sätt. Det är också ett enkelt sätt att dokumentera och kommentera din kod.
 
-## Hur man skriver en textfil i Bash
+## Så här gör du
 
-Det första steget för att skriva en textfil är att öppna ett terminalfönster och navigera till den mapp där du vill spara filen. Sedan kan du använda kommandot `touch` för att skapa en ny tom fil, till exempel:
-
-```Bash
-touch min_textfil.txt
-```
-
-Du kan också använda en textredigerare som Nano eller Vi för att skapa och redigera filen. För att öppna filen i Nano, använd kommandot:
+För att skriva en textfil i Bash, använder du kommandot `echo` tillsammans med omdirigeringsoperatorn `>` för att skicka output till en fil. Se till att du använder dubbla citattecken runt din text för att bevara eventuella speciella tecken eller mellanslag. Till exempel:
 
 ```Bash
-nano min_textfil.txt
+echo "Hej världen" > textfil.txt
 ```
 
-Nu kan du skriva in din text i filen och spara den genom att trycka på `Ctrl + X`, sedan välja att spara filen och bekräfta med Enter.
+Detta kommer att skriva texten "Hej världen" till en fil med namnet `textfil.txt`. Om filen redan existerar kommer den att ersättas med den nya texten.
+
+Du kan också använda `>>` omdirigeringsoperatorn för att lägga till text till en befintlig fil, istället för att ersätta innehållet. Till exempel:
+
+```Bash
+echo "Livet är underbart" >> textfil.txt
+```
+
+Detta kommer att lägga till texten "Livet är underbart" till slutet av `textfil.txt` utan att ta bort något av det befintliga innehållet.
 
 ## Djupdykning
 
-När du skriver en textfil i Bash finns det några viktiga aspekter att tänka på. Först och främst måste du se till att använda korrekta teckenkoder för din textfil. Annars kan du stöta på problem när du öppnar filen i en annan applikation eller på en annan dator.
+När du skriver en textfil i Bash är det viktigt att tänka på att filen kommer att skrivas på samma ställe som din aktuella arbetskatalog. Du kan alltid ange en specifik sökväg till en fil om du vill skriva den någon annanstans, till exempel:
 
-En annan viktig aspekt är att använda lämpliga tool för att manipulera och redigera din textfil. Till exempel kan du använda `grep` för att söka efter specifika strängar i filen eller `sed` för att göra ändringar i textinnehållet.
+```Bash
+echo "Min favoritfärg är blå" > ~/dokument/favoritfarger.txt
+```
 
-## Se också
+Här kommer filen `favoritfarger.txt` att skrivas i `dokument` mappen i din hemkatalog.
 
-- [Bash Guide for Beginners (på svenska)](http://mywiki.wooledge.org/BashGuide/Svenska)
-- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
-- [Nano user guide](https://www.nano-editor.org/docs.php)
-- [Vi cheat sheet](https://www.linux.com/training-tutorials/vi-and-vim-cheat-sheet/)
+Det finns också flera andra kommandon som kan användas tillsammans med `echo` för att skriva textfiler, som till exempel `cat` och `printf`. Det är värt att spendera lite tid på att utforska dessa för att hitta det som passar bäst för ditt specifika behov.
+
+## Se även
+
+* [Guide till Bash: Komma igång](https://www.digitalocean.com/community/tutorials/en-bash-getting-started)
+* [Kommandot `echo` dokumentation](https://www.gnu.org/software/bash/manual/html_node/echo.html)
+* [Hantering av textfiler i Bash](https://www.cyberciti.biz/faq/sed-howto-working-with-text-files-in-bash/)
+
+Se efterföljande [Markdown](https://www.markdownguide.org/) och [Bash](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html) guider för mer information och tips för att skriva bättre Bash-kod.

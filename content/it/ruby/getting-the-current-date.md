@@ -1,57 +1,43 @@
 ---
-title:    "Ruby: Ottenere la data corrente"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/ruby/getting-the-current-date.md"
+title:                "Ruby: Ottenere la data corrente"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché utilizzare la funzione di data corrente in Ruby?
+## Perché
 
-Se stai sviluppando un'applicazione o un sito web in Ruby, la possibilità di ottenere la data corrente è fondamentale. Con la funzione di data corrente, puoi facilmente mostrare la data e l'orario attuali per fornire informazioni in tempo reale agli utenti del tuo progetto. Inoltre, la data corrente può essere utile per attivare azioni in base al giorno o all'orario, come inviare un promemoria o una notifica programmata.
+La programmazione è un campo in costante evoluzione e imparare un nuovo linguaggio può sembrare scoraggiante. Ma con l'avvento di Ruby, la programmazione può essere resa più facile e divertente. Una delle attività quotidiane di un programmatore è ottenere la data corrente e, con Ruby, è possibile farlo in modo efficiente e veloce.
 
-## Come ottenere la data corrente in Ruby
+## Come fare
 
-Per ottenere la data corrente in Ruby, puoi utilizzare il metodo `Time.now`, che restituirà un oggetto di tipo `Time` con la data e l'orario attuali. Ecco un esempio di codice:
-
-```Ruby
-Time.now #=> 2021-06-30 15:45:00 +0200
-```
-
-Puoi anche specificare una zona oraria specifica utilizzando il metodo `Time.zone.now`, che restituirà un oggetto di tipo `ActiveSupport::TimeWithZone`. Ecco un esempio di codice:
+Per ottenere la data corrente in Ruby, utilizzeremo il metodo `Time.now`. Vediamo un esempio pratico:
 
 ```Ruby
-Time.zone.now #=> 2021-06-30 09:45:00 -0400
+today = Time.now
+puts today
 ```
+L'output di questo codice sarà la data e l'ora corrente nel formato `Anno-Mese-Giorno Ore:Minuti:Secondi`. Ad esempio: `2021-05-31 14:35:21`
 
-Se vuoi ottenere solo la data corrente senza l'orario, puoi utilizzare il metodo `Date.today`, che restituirà un oggetto di tipo `Date`. Ecco un esempio di codice:
+Il metodo `Time.now` ci restituisce una istanza della classe `Time`, il che significa che possiamo utilizzare tutti i metodi disponibili per questa classe, come ad esempio il metodo `strftime` per formattare la data nel formato che desideriamo. Vediamo un esempio:
 
 ```Ruby
-Date.today #=> 2021-06-30
+today = Time.now
+puts today.strftime("%d/%m/%Y")
 ```
+In questo caso, l'output sarà la data corrente nel formato `Giorno/Mese/Anno`. Ad esempio: `31/05/2021`
 
-## Approfondimento sulle funzioni della data corrente in Ruby
+## Approfondimento
 
-Oltre ai metodi mostrati sopra, Ruby offre molte altre opzioni per manipolare e formattare la data corrente. Ad esempio, puoi utilizzare i metodi `strftime` e `strptime` per convertire la data in una stringa formattata secondo le tue esigenze. Inoltre, puoi utilizzare i metodi `day`, `month` e `year` per ottenere il giorno, il mese e l'anno dalla data corrente. Ecco un esempio di codice:
+Sapere come ottenere la data corrente è importante, ma è altrettanto importante capire come viene rappresentata e gestita nel linguaggio di programmazione. In Ruby, la data e l'ora sono gestite utilizzando l'oggetto `Time`, che è uno dei tanti tipi di dati disponibili.
 
-```Ruby
-date = Date.today #=> 2021-06-30
-date.strftime("%d/%m/%Y") #=> "30/06/2021"
-date.day #=> 30
-date.month #=> 6
-date.year #=> 2021
-```
+La classe `Time` è dotata di molti metodi utili per manipolare e gestire date e orari. Ad esempio, con il metodo `day` possiamo ottenere il giorno del mese, mentre con `month` possiamo ottenere il mese corrente. Esistono anche metodi per aggiungere o sottrarre giorni, mesi o anni da una data specifica.
 
-Puoi anche utilizzare la gemma `Chronic` per gestire in modo più flessibile le date e gli orari, consentendoti di analizzare ed elaborare date in formati diversi. Ecco un esempio di codice:
-
-```Ruby
-require 'chronic'
-Chronic.parse("next Monday") #=> 2021-07-05 12:00:00 +0200
-Chronic.parse("tomorrow at 6pm") #=> 2021-07-01 18:00:00 +0200
-```
+Inoltre, Ruby offre la possibilità di convertire una stringa in un oggetto `Time` utilizzando il metodo `parse`. Questo è utile quando si ha una data in un formato diverso da quello desiderato e si vuole convertirla in un oggetto `Time` per manipolarla.
 
 ## Vedi anche
 
-- Documentazione ufficiale di Ruby su Date e Time: https://ruby-doc.org/stdlib-2.4.1/libdoc/date/rdoc/Date.html
-- Documentazione ufficiale di Rails su ActiveSupport::TimeWithZone: https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html
-- Gemma Chronic per la gestione delle date e degli orari: https://github.com/mojombo/chronic
+- [Documentazione di Ruby `Time` class](https://ruby-doc.org/core-3.0.1/Time.html)
+- [Tutorial su come gestire le date con Ruby](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-control-flow-u/articles/ruby-time-date-manipulation)

@@ -1,20 +1,23 @@
 ---
-title:    "Go: Iniciando um novo projeto"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/starting-a-new-project.md"
+title:                "Go: Começando um novo projeto"
+programming_language: "Go"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto com Go?
+## Por que começar um novo projeto em Go?
 
-Se você está procurando uma linguagem de programação simples, eficiente e fácil de aprender, Go pode ser a escolha perfeita para o seu novo projeto! Com sua sintaxe limpa, forte suporte à concorrência e poderosas bibliotecas, Go é uma ótima opção para criar aplicativos modernos e escaláveis. Além disso, sua comunidade ativa e suas atualizações frequentes garantem que a linguagem esteja sempre evoluindo e melhorando.
+Começar um novo projeto de programação pode ser uma decisão difícil, especialmente quando se trata de escolher qual linguagem de programação usar. No entanto, o Go tem se tornado uma escolha popular entre os desenvolvedores por suas características modernas, facilidade de uso e alta performance.
 
-## Como começar a programar com Go
+## Como começar um projeto em Go
 
-Você pode instalar o Go em seu computador seguindo as instruções do site oficial, ou usar o playground online para testar alguns de nossos exemplos. Vamos criar um simples programa que imprime "Olá, mundo!" na tela:
+Para começar um novo projeto em Go, você precisará instalá-lo em seu sistema e configurar seu ambiente de desenvolvimento. Depois de ter o Go pronto, você pode criar seu primeiro arquivo de código Go com a extensão ".go" e começar a escrever seu código.
 
-```
+Vamos dar uma olhada em um exemplo de como imprimir "Olá, mundo!" na tela usando Go:
+
+```Go
 package main
 
 import "fmt"
@@ -24,30 +27,20 @@ func main() {
 }
 ```
 
-Ao executar o código acima, você verá a mensagem "Olá, mundo!" impressa no console. Agora vamos dar um passo adiante e criar uma função que calcula e retorna o quadrado de um número:
+Quando executamos esse código, a saída será:
 
 ```
-func square(num int) int {
-	return num * num
-}
-
-func main() {
-	fmt.Println(square(5))
-}
+Olá, mundo!
 ```
 
-Neste exemplo, declaramos uma função chamada "square" que recebe um número inteiro como parâmetro e retorna o seu quadrado. No "main", chamamos a função e imprimimos o resultado. Você pode modificar e testar esses exemplos no playground de Go.
+## Mergulho profundo
 
-## Aprofundando-se no processo de começar um novo projeto
+Uma das características mais úteis do Go é sua biblioteca padrão abrangente que oferece muitas funcionalidades para facilitar o desenvolvimento. Além disso, o Go possui suporte para concorrência, o que permite que você escreva código que pode executar em paralelo, tornando-o ideal para construir aplicações de alta performance.
 
-Antes de iniciar o desenvolvimento de um novo projeto, é importante estabelecer alguns passos essenciais. Primeiro, defina claramente qual é o objetivo do seu projeto e quais serão suas etapas de desenvolvimento. Em seguida, escolha as bibliotecas e ferramentas adequadas para o seu projeto, certificando-se de que estejam atualizadas e compatíveis com a versão mais recente do Go.
-
-Outro aspecto importante é seguir as boas práticas de codificação, como escrever código legível e bem documentado, e utilizar testes automatizados. Isso ajudará a manter seu código organizado e livre de erros.
-
-Além disso, é sempre bom estar familiarizado com os recursos da comunidade, como fóruns e grupos de discussão, onde você pode obter ajuda e trocar conhecimentos com outros desenvolvedores.
+Além disso, o Go também possui uma comunidade ativa e uma documentação detalhada, o que torna mais fácil para os desenvolvedores aprenderem e aperfeiçoarem suas habilidades em Go.
 
 ## Veja também
 
+- [Tutorial de instalação do Go](https://golang.org/doc/tutorial/getting-started)
 - [Documentação oficial do Go](https://golang.org/doc/)
-- [Playground de Go](https://play.golang.org/)
-- [Curso gratuito de Go para iniciantes](https://gobyexample.com/)
+- [Lista de projetos em Go para inspiração](https://github.com/golang/go/wiki/Projects)

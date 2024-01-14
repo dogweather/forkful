@@ -1,93 +1,85 @@
 ---
-title:    "Elm: Å lese kommandolinje-argumenter"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elm/reading-command-line-arguments.md"
+title:                "Elm: Lesing av kommandolinjeargumenter"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Om du noen gang har programmert i Elm, har du sannsynligvis kommet bort i behovet for å lese inn argumenter fra kommandolinjen. Dette kan være nyttig for å tilpasse programmets oppførsel basert på brukerens input. I denne bloggposten vil jeg forklare hvorfor og hvordan man kan lese kommandolinjeargumenter i Elm.
+Å kunne lese kommandolinje-argumenter er en viktig ferdighet for enhver Elm-utvikler. Det lar deg enkelt få tilgang til og behandle data som brukes til å tilpasse eller kontrollere utførelsen av ditt Elm-program.
 
-## Hvordan
+# Hvordan
 
-Å lese kommandolinjeargumenter i Elm er ikke komplisert og kan gjøres ved hjelp av den innebygde funksjonen `Platform.Cmdline.args`. Denne funksjonen returnerer en liste med argumentene som ble passert inn fra kommandolinjen.
+For å lese kommandolinje-argumenter i Elm, må du importere Cmd-modulen og bruke funksjonen `Cmd.worker`, som lar deg legge til en kommando som skal kjøres når programmet starter.
 
-For å bruke denne funksjonen, kan man først importere `Platform.Cmdline` modulen og deretter kalle `args` funksjonen slik:
-
-```elm
-import Platform.Cmdline
-
--- Leser inn kommandolinjeargumenter og lagrer dem i en variabel
-args = Platform.Cmdline.args
-```
-
-La oss se på et eksempel for å forstå bedre. For å lese inn argumentene fra kommandolinjen og skrive dem ut i konsollen, kan vi bruke følgende kode:
-
-```elm
-import Platform.Cmdline
-import Console
+```Elm
+import Cmd exposing (worker)
 
 main =
-  Platform.worker
-    { init = init
-    , update = update
-    , subscriptions = subscriptions
-    , view = view
-    }
+    webContent
+        |> Browser.element
+            { init = init
+            , view = view
+            , update = update
+            , subscriptions = subscriptions
+            }
 
-type alias Model =
-  { args : List String
-  }
+init () =
+    ( Model "", Cmd.none)
 
-init : () -> ( Model, Cmd Msg )
-init _ =
-  ( Model [], Cmd.none )
+update msg model =
+    case msg of
+        SetArgument argument ->
+            ( Model argument, Cmd.none )
 
 type Msg
-  = NoOp
+    = SetArgument String
 
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-  case msg of
-    NoOp ->
-      ( model, Cmd.none )
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-  Sub.none
-
-view : Model -> Html Msg
 view model =
-  -- Henter ut listen med argumenter og skriver dem ut i konsollen
-  (Console.log "Argumenter:")
-  (Platform.Cmdline.args
-    |> List.map (Console.log << toString)
-    |> List.mapHtml Console.text
-  )
+    Html.text ("Kommandolinje-argument som ble gitt til programmet var: " ++ model)
 
+subscriptions model =
+    worker SetArgument Cmd.Runtime.arguments
 ```
 
-Når vi nå kjører programmet og legger til noen argumenter i kommandolinjen, vil vi se at argumentene blir skrevet ut i konsollen.
+Her har vi en enkel `Model` som bare lagrer argumentet som blir gitt til programmet. Dette argumentet blir satt til `Model` ved å bruke `SetArgument`-meldingen i `update`-funksjonen. `subscriptions`-funksjonen vår bruker `worker` for å registrere kommandolinje-argumentet og sende det som `SetArgument`-melding.
 
-`$ elm reactor --port=3000`
+Når programmet blir kjørt, vil `Model`-teksten vise kommandolinje-argumentet som ble gitt.
 
-I konsollen vil du da få følgende output:
+# Deep Dive
 
+Videre kan vi utvide funksjonaliteten vår ved å tillate å lese flere argumenter. Dette kan gjøres ved å bruke `Cmd.map` for å mappe flere argumenter til en liste. Vi kan også sjekke om et spesifikt argument ble gitt ved å bruke `Debug.todo`-funksjonen for å utløse en feil dersom argumentet ikke finnes.
+
+```Elm
+subscriptions model =
+    worker SetArguments (Cmd.map List.filterRuntime.arguments)
+
+update msg model =
+    case msg of
+        SetArguments arguments ->
+            ( Model arguments, Cmd.none )
+        UnknownArgument ->
+            ( model, Cmd.none )
+
+init () =
+    ( Model [], Cmd.map List Runtime.arguments)
+
+case List.member "myargument" arguments of
+            True ->
+                ( , Cmd.none )
+            False ->
+                ( model, Cmd.perform UnknownArgument Debug.todo "Missing required command line argument: myargument" )
 ```
-Argumenter:
-"reactor"
-"--port=3000"
-```
 
-Med denne kunnskapen kan du nå lese inn og bruke kommandolinjeargumenter i dine egne Elm-prosjekter.
+Med denne tilnærmingen vil vår `Model` holde en liste over alle kommandolinje-argumentene som ble gitt til programmet.
 
-## Deep Dive
+# Se Også
 
-Det er verdt å merke seg at denne metoden for å lese kommandolinjeargumenter ikke støtter å lese inn flagg eller argumenter med flere ord. Hvis du trenger å lese inn slike argumenter, er det anbefalt å bruke en tredjeparts pakke som støtter dette, som for eksempel `elm-cmdargs`.
+Hvis du vil lære mer om å jobbe med kommandolinje-argumenter i Elm, kan du se følgende ressurser:
 
-## Se også
-
-- [Elm dokumentasjon for Platform.Cmdline](https://package.elm-lang.org/packages/elm/browser/latest/Browser#home)
-- [Elm pakken elm-cmdargs](https://package.elm-lang.org/packages/brianbuchanan/elm-cmdargs/latest/)
+- Dokumentasjon for Cmd-modulen: https://package.elm-lang.org/packages/elm/core/latest/Cmd
+- Elm-guide: https://guide.elm-lang.org/
+- Elm-programmeringsspråkets offisielle nettside: https://elm-lang.org/

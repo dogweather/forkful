@@ -1,47 +1,63 @@
 ---
-title:    "Java: 랜덤 숫자 생성하기"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/generating-random-numbers.md"
+title:                "Java: 랜덤 숫자 생성하기"
+programming_language: "Java"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 : 난수 생성에 참여하는 이유
+## 왜?
 
-난수 생성은 Java 프로그래밍에서 매우 유용합니다. 예를 들어, 게임에서 무작위적으로 이벤트를 발생시키거나, 시뮬레이션에서 랜덤한 상황을 만들거나, 테스트를 위해 무작위 데이터를 생성하는 등 다양한 상황에서 사용될 수 있습니다. 따라서 난수 생성은 프로그래머에게 매우 중요한 기능입니다.
+난수 생성에 참여하는 이유는 무엇일까요? 난수 생성은 프로그래밍에서 매우 유용한 기능입니다. 난수 생성을 통해 우리는 데이터를 무작위로 다룰 수 있고 더 다양한 알고리즘을 만들 수 있습니다. 이를 통해 우리의 코드를 더 효율적이고 강력하게 만들 수 있습니다.
 
-# 어떻게 : 난수 생성하는 방법
-
-Java에서 난수를 생성하는 가장 간단한 방법은 Math 클래스의 random() 메소드를 사용하는 것입니다. 예를 들어, 다음과 같이 코드를 작성할 수 있습니다.
+## 하우 투?
 
 ```Java
-double randomNum = Math.random(); // 0부터 1 사이의 난수 생성
-System.out.println(randomNum); // 콘솔에 결과 출력
+import java.util.Random;
+
+public class RandomNumberGenerator {
+
+    public static void main(String[] args) {
+        Random random = new Random();
+        // 정수형 난수 생성
+        int randomInt = random.nextInt();
+        System.out.println("Integer Random Number: " + randomInt);
+        // 범위를 지정한 정수형 난수 생성
+        int randomIntRange = random.nextInt(10);
+        System.out.println("Integer Random Number with Range: " + randomIntRange);
+        // double 타입의 난수 생성
+        double randomDouble = random.nextDouble();
+        System.out.println("Double Random Number: " + randomDouble);
+        // 임의의 boolean 값 생성
+        boolean randomBoolean = random.nextBoolean();
+        System.out.println("Random Boolean Value: " + randomBoolean);
+    }
+}
+
 ```
 
-위의 코드를 실행하면, 0부터 1 사이의 무작위한 숫자가 출력될 것입니다. 하지만 이 메소드는 실제로는 0~1 사이의 double 형 난수를 생성해주는 것이 아니라, 0 이상 1 미만의 double 형 난수를 생성해줍니다. 따라서 만약 우리가 1부터 10 사이의 정수 난수를 생성하고 싶다면 다음과 같이 코드를 수정해주어야 합니다.
+위 코드는 Java에서 난수를 생성하는 간단한 예시입니다. 우리는 먼저 `java.util.Random` 라이브러리를 import 하고, `Random` 객체를 생성합니다. `Random` 객체를 사용하면 우리는 다양한 난수 생성 기능을 사용할 수 있습니다. `nextInt()` 함수를 사용하면 정수형 난수를 생성할 수 있고, `nextDouble()` 함수를 사용하면 double 타입의 난수를 생성할 수 있습니다. 또한 `nextBoolean()` 함수를 사용하여 임의의 boolean 값을 생성할 수도 있습니다. 마지막으로 `nextInt()` 함수에 정수 값을 넘겨 범위를 지정하여 원하는 범위의 정수형 난수를 생성할 수도 있습니다.
 
-```Java
-int randomNum = (int) (Math.random() * 10) + 1; // 1부터 10 사이의 정수 난수 생성
-System.out.println(randomNum); // 콘솔에 결과 출력
+위 코드를 실행시키면 다음과 같은 결과가 나올 수 있습니다.
+
+```
+Integer Random Number: -1347613908
+Integer Random Number with Range: 4
+Double Random Number: 0.7790521801740829
+Random Boolean Value: true
 ```
 
-이 외에도 Random 클래스를 사용해 난수를 생성하거나, SecureRandom 클래스를 사용해 더 안전한 난수를 생성하는 방법도 있습니다. 하지만 위에서 언급한 방법이 가장 간단하고 자주 사용되는 방법입니다.
+위 예시는 Java에서 난수를 생성하는 간단한 방법을 보여줍니다. 하지만 난수 생성은 이보다 더 복잡할 수 있습니다. 다음 섹션에서는 더 깊이 들어가서 난수 생성에 대해 더 자세히 알아보겠습니다.
 
-# 자세히 살펴보기 : 난수 생성의 깊은 이해
+## 딥 다이브
 
-Random 클래스를 사용해 난수를 생성할 때, 기본적으로는 seed 값을 사용합니다. seed 값에 따라 생성되는 난수의 순서와 패턴이 결정됩니다. 따라서 같은 seed 값이면 항상 같은 순서와 패턴의 난수를 생성할 수 있습니다.
+우리는 이전 섹션에서 `java.util.Random` 라이브러리를 이용해 난수를 생성하는 간단한 예시를 살펴보았습니다. 하지만 이 방법은 매우 기본적인 방법이며, 더 복잡한 난수 생성 기법을 사용할 수도 있습니다. 다음은 더 깊이 들어가서 우리가 난수 생성을 할 때 알아야 할 몇 가지 중요한 개념들입니다.
 
-하지만 SecureRandom 클래스는 보안적인 이유로 seed 값을 무작위적으로 생성해줍니다. 이는 누군가 seed 값을 알아내어 예측할 수 없도록 만들어주는 역할을 합니다.
+### 의사 난수 생성기
 
-또한 Random 클래스에서는 nextInt(), nextDouble() 등의 메소드를 사용해 난수를 생성하는 것이 가능하지만, SecureRandom 클래스에서는 이렇게 되지 않습니다. SecureRandom 클래스를 사용할 때는 밀리세컨드, 바이트 배열 등 다양한 파라미터를 사용해 난수를 생성할 수 있습니다.
+난수 생성은 사실 의사 난수를 생성하는 것입니다. 이 의사 난수는 사실은 특정한 알고리즘에 의해 생성되는 수열입니다. 따라서 우리는 이 의사 난수 생성기의 알고리즘을 바꾸어 다양한 난수를 생성할 수 있습니다.
 
-## 참고자료
+### 시드(seed)
 
-- [Oracle Java Documentation - Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Oracle Java Documentation - SecureRandom](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)
-
-# 관련 자료
-
-- [Java의 수학 함수들 - Math 클래스](https://www.edwith.org/java-web)
-- [Java의 Random 클래스는 어떻게 작동할까](https://www.inflearn.com/course/Java-tdd/lecture/22894)
+의사 난수 생성기는 랜덤한 시작 숫자를 이용하는데, 이 숫자를 시드(seed)라고 합니다. 우리는 이 시드를 지정하여 매번 같은 난수를 생성할 수 있습니다. 이는

@@ -1,40 +1,57 @@
 ---
-title:    "C++: Alaohjelmien poimiminen"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/extracting-substrings.md"
+title:                "C++: Alastringien erottaminen"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Substringien erottaminen on hyödyllinen taito, jota tarvitaan usein ohjelmoinnissa. Se mahdollistaa merkkijonojen käsittelyn ja manipuloinnin, mikä on tärkeää monissa ohjelmointitehtävissä. Seuraavassa oppaassa opit kuinka on mahdollista erottaa alimerkkijonoja C++:ssa.
+Substringien erottaminen on tärkeä osa ohjelmointia, koska se mahdollistaa merkkijonojen manipuloinnin ja käsittelyn. Tämä voi olla hyödyllistä esimerkiksi tietokantaohjelmoinnissa tai tekstin käsittelyssä.
 
-## Kuinka tehdä niin
+## Kuinka tehdä
 
-Substringsin erottaminen C++:ssa on helppoa. Alla on esimerkki, kuinka erotat alimerkkijonon annetusta merkkijonosta käyttäen `substr()` -funktiota:
+Substringien erottaminen C++:lla on helppoa. Ensimmäiseksi tarvitaan merkkijono, josta haluat erottaa alimerkkijonon. Tämän jälkeen käytetään `substr()` -funktiota, joka ottaa parametreina alkuindeksin ja loppuindeksin ja palauttaa erillisen alimerkkijonon.
 
 ```C++
 #include <iostream>
+
 using namespace std;
 
 int main() {
-    string s = "Tämä on esimerkkimerkkijono.";
-    string sub = s.substr(0, 4); //erotetaan ensimmäiset 4 merkkiä
-    cout << sub << endl; //tulostaa "Tämä"
-
-    return 0;
+  string s = "Hei maailma!";
+  string sub = s.substr(4, 6); // aloittaa indeksistä 4 ja ottaa 6 merkkiä
+  cout << sub << endl; // tulostaa "maailma"
+  return 0;
 }
 ```
 
-Tässä koodissa `substr()`-funktio ottaa kaksi parametria: ensimmäisen ja viimeisen indeksin, joiden väliseen alueeseen alimerkkijono halutaan erottaa. On tärkeää huomata, että `substr()` palauttaa aina uuden merkkijonon ja ei muuta alkuperäistä merkkijonoa.
+Tässä esimerkissä otetaan merkkijonosta "Hei maailma!" alimerkkijono "maailma" aloittaen indeksistä 4 ja ottamalla 6 merkkiä.
 
 ## Syvemmälle
 
-On hyödyllistä tietää, miten `substr()`-funktio toimii taustalla. Se ottaa parametrit `unsigned int` tai `size_t` muodossa, joten tarkkaavaisuus on tarpeen, koska negatiivisten kelvottomat arvot johtavat epäloogiseen toimintaan. Lisäksi `substr()` käyttää iteraattoreita erottaakseen alimerkkijonon. Esimerkiksi `substr(3, 5)` ottaa muuttujan alkuperäisestä merkkijonosta, joka alkaa 3. indeksistä ja päättyy 7. indeksiin (mutta ei sisällä sitä).
+C++ tarjoaa myös muita tapoja erottaa alimerkkijonoja. Esimerkiksi `find()` -funktio löytää annetun merkkijonon ensimmäisen esiintymän ja palauttaa sen indeksin. Tämän tiedon avulla voidaan käyttää `substr()` -funktiota erottamaan haluttu alimerkkijono.
+
+```C++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  string s = "Tämä on esimerkkiteksti";
+  int index = s.find("esimerkki"); // löytää merkkijonon "esimerkki" indeksin
+  string sub = s.substr(index, 9); // aloittaa löydetyltä indeksiltä ja ottaa 9 merkkiä
+  cout << sub << endl; // tulostaa "esimerkki"
+  return 0;
+}
+```
+
+Substringien erottaminen voi myös olla hyödyllistä tiedon tallentamisessa ja käsittelyssä, jos halutaan esimerkiksi tallentaa tietyn tiedoston tiettyjen osien sisältö erillisiin muuttujiin.
 
 ## Katso myös
 
-- [std::string::substr - C++ Reference](https://en.cppreference.com/w/cpp/string/basic_string/substr)
-- [C++ Strings - GeeksforGeeks](https://www.geeksforgeeks.org/cpp-strings/)
-- [C++ Standard Library - cppreference.com](https://en.cppreference.com/w/)
+- [C++ string class](https://www.cplusplus.com/reference/string/string/) (C++-merkkijonojen luokka)
+- [Substring manipulation in C++](https://www.geeksforgeeks.org/substring-manipulation-in-c-string-find-substr/) (Substringien käsittely C++:ssa)
+- [String functions in C++](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm) (Merkkijonofunktiot C++:ssa)

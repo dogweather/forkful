@@ -1,36 +1,27 @@
 ---
-title:    "Rust: नियमित अभिव्यक्तियों का उपयोग करना"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/rust/using-regular-expressions.md"
+title:                "Rust: नियमित अभिव्यक्तियों का उपयोग"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों 
+## क्यों
+रेगुलर एक्सप्रेशन्स का उपयोग क्यों करना चाहिए? आपको पाठकों को इस विषय पर रुस्त प्रोग्रामिंग ब्लॉग आरंभ करने के लिए यहां से प्रेरित करता है।
 
-Regular expressions उस सभी के लिए महत्वपूर्ण हैं जो programming में लगे होते हैं। ये उन्हें टेक्स्ट मैनिपुलेशन को आसान और तेज़ बनाते हैं। 
+## कैसे करें
+रेगुलर एक्सप्रेशन्स का उपयोग करने के लिए, आपको कुछ निर्दिष्ट रूप से निर्दिष्ट प्राप्त प्रविष्टियों को खोजने या प्रविष्टियों को संशोधित करने के लिए आसान और शक्तिशाली तरीकों का उपयोग करना होगा। आप यह अपने रुस्त प्रोग्राम में अन्य फ़ंक्शन के रूप में उपयोग कर सकते हैं। नीचे दिए गए उदाहरण में, हम रेगुलर एक्सप्रेशन्स का उपयोग लेकर एक वर्णमाला को ढूंढ़ने और उसे बदलने के लिए दिखाएंगे।
 
-## कैसे
+```Rust
+// एक वर्णमाला को खोजने के लिए निर्दिष्ट करें
+let regex = Regex::new("rust").unwrap();
 
-Regular expressions का syntax ```Rust
-  Regex::new("pattern").unwrap();
+// वर्णमाला बदलें
+let replaced_str = regex.replace("यह वर्णमाला rust को खोजेगा", "होम");
+
+// और परिणाम दिखाएं
+println!("{}", replaced_str); // यह वर्णमाला होम को खोजेगा
 ```
-होता है। ```new``` एक ```Regex``` struct बनाता है जो pattern को compile करता है। इसके अन्दर हम इन्हें दो symbols के साथ use करते हैं: ```^``` जो string का starting point दिखाता है और ```$``` जो string का ending point दिखाता है। ये pattern की समाप्ति का संकेत करते हैं। उदाहरण के लिए, अगर हमें किसी string में "rust" की presence check करनी है तो हम लिख सकते हैं: ```Rust
-  Regex::new("^rust$").unwrap();
-```
 
-अगर ये pattern string में मिलता है तो हमें true मिलेगा। 
-
-## गहराई में जाएं 
-
-Regular expressions पर और गहराई से जानने के लिए, आप इन पढ़ सकते हैं: 
-
-- [Rust के लिए Regex सीखे](https://docs.rs/regex/1.4.6/regex/) 
-- [Regex कैसे काम करते हैं](https://docs.rs/regex/1.4.6/regex/#how-regexes-work)
-- [Regex syntax का बदलाव](https://docs.rs/regex/1.4.6/regex/#syntax) 
-
-## और भी पढ़ें 
-
-- [Rust programming के लिए Regex सीखें](https://doc.rust-lang.org/book/ch09-06-tokio.html) 
-- [Regex crate का अन्य use cases](https://crates.io/crates/regex#use-cases) 
-- [Rust और regular expressions को साथ मिलाकर कैसे use किया जा सकता है](https://dev.to/emilstahl/rust-regex-processing-hyperlink-regular-expressions-38nl)
+इस उदाहरण में, हमने `Regex` संरचना को नई `rust` वर्णमाला से संबंधित एक निर्दिष्ट उपयोग कर अपने प्रथम उदाहरण की प्रवेश दी। फिर हमने `replace` फ़ंक्शन का उपयोग करके उस वर्णमाला को बदल दिया जो उस वाक्यांश में पाया गया था। इसके बाद हमने नया वाक्य दर्शाया जो संशोधित वर्णमाला से निकाला गया था। आप अपने रूस्त प्रोग्राम में रेग

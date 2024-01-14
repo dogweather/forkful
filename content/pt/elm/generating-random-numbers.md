@@ -1,52 +1,36 @@
 ---
-title:    "Elm: Gerando números aleatórios"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/generating-random-numbers.md"
+title:                "Elm: Gerando números aleatórios."
+programming_language: "Elm"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que gerar números aleatórios em Elm?
 
-Gerar números aleatórios pode ser útil em muitas situações diferentes. Por exemplo, se você está criando um jogo, pode usar números aleatórios para criar diferentes cenários e desafios para os jogadores. Além disso, gerar números aleatórios também pode ser útil em outras aplicações, como sorteios ou simulações.
+Gerar números aleatórios é uma habilidade útil em qualquer linguagem de programação, incluindo Elm. Essa funcionalidade é especialmente útil quando se deseja criar jogos, simulações ou testes de desempenho. Portanto, se você está trabalhando em um desses tipos de projetos, aprender a gerar números aleatórios em Elm pode ser muito útil.
 
 ## Como fazer isso em Elm?
 
-Para gerar números aleatórios em Elm, você precisará importar o módulo `Random`. Ele contém funções úteis para criar e manipular valores aleatórios. Vamos dar uma olhada em um exemplo simples:
+Em Elm, gerar números aleatórios é muito simples. Tudo o que você precisa fazer é usar a função `Random` e definir o tipo de dado que você deseja gerar. Por exemplo, se você quiser gerar um número inteiro aleatório entre 1 e 100, você pode usar o seguinte código:
 
 ```Elm
 import Random
 
-randomNumber : Int
-randomNumber =
-    Random.int 1 10
+myRandomNumber : Int
+myRandomNumber =
+  Random.int 1 100
 ```
 
-Neste exemplo, importamos o módulo `Random` e criamos uma função chamada `randomNumber` que retorna um número inteiro aleatório entre 1 e 10. Podemos então chamar essa função em qualquer lugar do nosso código para obter um número aleatório:
+Isso irá gerar aleatoriamente um número inteiro entre 1 e 100 e atribuí-lo à variável `myRandomNumber`. Você também pode gerar números decimais, caracteres ou até mesmo listas de números aleatórios em Elm. Basta consultar a documentação para ver todas as possibilidades.
 
-```Elm
-main =
-    randomNumber -- retorna 7
-```
+## Aprofundando nas gerações de números aleatórios em Elm
 
-Se quisermos gerar um número aleatório com decimais, podemos usar a função `Random.float` em vez de `Random.int`. É importante lembrar que os números aleatórios em Elm são gerados a partir de uma "semente" (seed) que pode ser configurada usando a função `Random.initialSeed`.
-
-## Mergulho profundo
-
-Agora que sabemos como gerar números aleatórios em Elm, podemos nos aprofundar um pouco mais. Quando usamos a função `Random.int` ou `Random.float`, podemos especificar um intervalo de valores a partir do qual o número aleatório será gerado. No entanto, se quisermos gerar valores aleatórios de tipos mais complexos, como uma lista de números inteiros, podemos usar a função `Random.list`:
-
-```Elm
-Random.list 5 (Random.int 1 10) -- retorna uma lista com 5 números inteiros aleatórios entre 1 e 10
-```
-
-Também podemos usar a função `Random.map` para modificar o valor gerado por uma função de números aleatórios. Por exemplo, podemos usar `Random.map` para gerar uma lista de valores booleanos a partir de uma lista de números inteiros gerados aleatoriamente:
-
-```Elm
-Random.map (\n -> n % 2 == 0) (Random.list 5 (Random.int 1 10)) -- retorna uma lista com 5 valores booleanos aleatórios
-```
+Agora que você sabe como gerar números aleatórios em Elm, é importante entender como essa funcionalidade funciona em mais detalhes. Em Elm, a geração de números aleatórios é baseada em *sementes* e *geradores*. Uma semente é um valor inicial que é usado para gerar os números aleatórios e um gerador é uma função que recebe uma semente e retorna um valor aleatório. Quando você usa a função `Random`, ela cria automaticamente uma semente aleatória e passa essa semente para o gerador que você especificou. Isso garante que cada vez que você executar o programa, um número aleatório diferente será gerado.
 
 ## Veja também
 
-- [Documentação do módulo Random em Elm](https://package.elm-lang.org/packages/elm/random/latest/)
-- [Vídeo tutorial sobre geração de números aleatórios em Elm](https://www.youtube.com/watch?v=7fAU1ps5tQE)
-- [Exemplos de código para gerar números aleatórios em Elm](https://elmprogramming.com/random-numbers.html)
+- Documentação oficial sobre geração de números aleatórios em Elm: https://guide.elm-lang.org/effects/random.html
+- Exemplo de aplicação de geração de números aleatórios em Elm: https://github.com/118101267/elm-random-example
+- Tutorial em vídeo sobre como gerar números aleatórios em Elm: https://www.youtube.com/watch?v=F6XuURwVuTk

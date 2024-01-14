@@ -1,53 +1,42 @@
 ---
-title:    "Bash: Extraction de sous-chaînes"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/extracting-substrings.md"
+title:                "Bash: Extraction de sous-chaines"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Extrayez des sous-chaînes de caractères est une tâche courante en programmation Bash. Cela peut être utile pour sélectionner une partie spécifique d'une chaîne plus longue pour une utilisation ultérieure ou pour comparer les similitudes entre deux chaînes.
+Extrayer des sous-chaînes de caractères est une compétence utile à connaître pour tout programmeur Bash. Cela vous permet de manipuler et de modifier efficacement des chaînes de caractères, ce qui peut être utile pour diverses tâches de programmation.
 
 ## Comment faire
 
-Pour extraire une sous-chaîne en Bash, vous pouvez utiliser la commande `cut` en spécifiant la position de début et de fin de la sous-chaîne ainsi que la chaîne d'entrée. Par exemple, si nous voulons extraire les trois premiers caractères d'une chaîne, nous pouvons utiliser la commande suivante :
+Pour extraire une sous-chaîne de caractères dans Bash, vous pouvez utiliser la commande `cut`. Par exemple, si vous avez une chaîne de caractères "Bonjour le monde", et que vous voulez extraire "le monde", vous pouvez utiliser la commande suivante :
 
 ```Bash
-cut -c 1-3 << "Ma chaîne de caractères"
+echo "Bonjour le monde" | cut -d' ' -f2-
 ```
 
-Cela nous donnera en sortie "Ma ".
+Cela utilise le délimiteur d'espace pour séparer la chaîne en deux parties, puis utilise le sélecteur `-f2-` pour sélectionner la deuxième partie jusqu'à la fin.
 
-Pour extraire une sous-chaîne en utilisant une expression régulière, nous pouvons utiliser la commande `grep` avec l'option `-o` pour ne retourner que la partie de la chaîne qui correspond à l'expression régulière. Par exemple, pour extraire tous les nombres d'une chaîne, nous pouvons utiliser la commande suivante :
+Vous pouvez également utiliser des expressions régulières pour extraire des sous-chaînes de manière plus précise. Par exemple, si vous voulez extraire tous les chiffres d'une chaîne de caractères, vous pouvez utiliser la commande suivante :
 
 ```Bash
-grep -o "[0-9]+" << "Ma chaîne de chiffres 12345"
+echo "J'ai 5 pommes" | grep -o '[0-9]*'
 ```
 
-Cela nous donnera en sortie "12345".
+Cela sélectionnera et affichera uniquement les chiffres de la chaîne "5". 
 
-## Plongée en profondeur
+## Plongeon profond
 
-Il est également possible d'extraire des sous-chaînes en utilisant des variables. Par exemple, si nous avons une variable nommée `nom` contenant "Jean Dupont", nous pouvons extraire le prénom et le nom en utilisant la commande `cut` et en spécifiant un délimiteur, qui dans ce cas serait un espace :
+Il existe de nombreuses autres façons d'extraire des sous-chaînes de caractères en utilisant Bash. Vous pouvez utiliser des commandes telles que `sed`, `awk`, `grep` et même des boucles et des conditions pour filtrer et manipuler des chaînes de caractères.
 
-```Bash
-prenom="$(cut -d " " -f 1 << "$nom")"
-nom_de_famille="$(cut -d " " -f 2 << "$nom")"
-```
-
-Cela assignera "Jean" à la variable `prenom` et "Dupont" à la variable `nom_de_famille`.
-
-Vous pouvez également utiliser des opérations de substitution de commandes pour extraire une sous-chaîne spécifique d'une variable. Par exemple, pour extraire les trois derniers caractères d'un mot contenant 6 caractères, nous pouvons utiliser la commande suivante :
-
-```Bash
-variable="abcdef"
-sous_chaine="${variable: -3}"
-echo "$sous_chaine" // Résultat : "def"
-```
+Il est également important de noter que Bash dispose d'un support natif pour les tableaux de chaînes de caractères, ce qui facilite la manipulation de sous-chaînes de caractères dans des scripts Bash plus complexes.
 
 ## Voir aussi
 
-- Documentation de la commande `cut` : https://www.tutorialspoint.com/unix_commands/cut.htm
-- Documentation de la commande `grep` : https://www.tutorialspoint.com/unix_commands/grep.htm
+- [Documentaion Bash sur la commande "cut"](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html)
+- [Tutoriel sur les expressions régulières en Bash](https://www.tldp.org/LDP/abs/html/regexp.html)
+- [Guide complet sur l'utilisation des tableaux en Bash](https://www.linuxjournal.com/content/bash-arrays)

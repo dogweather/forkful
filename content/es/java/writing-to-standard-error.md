@@ -1,35 +1,45 @@
 ---
-title:    "Java: Escribiendo a la salida de error estándar"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/java/writing-to-standard-error.md"
+title:                "Java: Escribiendo en el error estándar"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué escribir a la salida de error estándar en Java?
+## Por qué
 
-La salida de error estándar es una herramienta importante en la programación de Java. Permite a los desarrolladores detectar y resolver errores durante la ejecución de un programa. Si quieres mejorar tus habilidades de programación en Java, es importante que aprendas a escribir a la salida de error estándar.
+¿Alguna vez te has preguntado por qué a veces, cuando ejecutas un programa en Java, aparecen mensajes de error rojos en la consola? Esa es la salida estándar de error, y aunque a veces puede ser frustrante verla, en realidad es una herramienta muy útil para los programadores.
 
-# Cómo hacerlo
+## Cómo hacerlo
 
-Para escribir a la salida de error estándar en Java, se utiliza el método "System.err.println()" seguido del mensaje de error o información que se desea mostrar. Por ejemplo:
+Escribir a la salida estándar de error en Java es bastante sencillo. Simplemente necesitas usar el objeto `System.err` en lugar del objeto `System.out`, que se utiliza para escribir a la salida estándar. Aquí hay un ejemplo de código que muestra cómo hacerlo:
 
 ```Java
-System.err.println("¡Este es un mensaje de error!");
+System.err.println("Este es un mensaje de error");
 ```
 
-Este código imprimirá el mensaje "Este es un mensaje de error!" en la consola como parte de la salida de error estándar. También es importante mencionar que el método "System.err.println()" agrega automáticamente una nueva línea al final del mensaje, lo que facilita la lectura de múltiples mensajes de error en la consola.
+La salida de este código sería un mensaje en rojo que indica un error. Esta es una forma muy útil de informar al usuario sobre cualquier problema que pueda surgir durante la ejecución del programa.
 
-# Profundizando
+Por supuesto, en lugar de simplemente imprimir un mensaje, también puedes enviar objetos a la salida estándar de error.
 
-Además de imprimir mensajes de error, también se pueden imprimir otros tipos de información en la salida de error estándar en Java. Por ejemplo, se pueden imprimir valores de variables para ayudar en la depuración de un programa. También se pueden imprimir mensajes de advertencia para indicar posibles problemas en el código. Un uso común de la salida de error estándar es para imprimir mensajes de excepciones, lo que ayuda a los desarrolladores a identificar dónde se produjo un error en el código.
+```Java
+String mensaje = "¡Este es otro mensaje de error!";
+System.err.println(mensaje);
+```
 
-Es importante tener en cuenta que la salida de error estándar es diferente de la salida estándar (System.out.println()). Mientras que la salida estándar se utiliza para imprimir información relevante al programa, la salida de error estándar se utiliza específicamente para mostrar mensajes de error y problemas durante la ejecución del programa.
+Esto imprimirá el contenido de la variable `mensaje` en la salida estándar de error.
 
-# Ver también
+## Profundizando
 
- - [Documentación oficial de Java sobre la salida de error estándar](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
- - [Tutorial de Java: Cómo manejar errores y excepciones](https://www.javatpoint.com/exception-handling-in-java)
- - [Ejemplos prácticos de cómo escribir a la salida de error estándar en Java](https://www.programiz.com/java-programming/standard-output-error)
+La razón principal por la que escribimos a la salida estándar de error es para identificar errores en nuestro código. Al imprimir mensajes o valores a esta salida, podemos tener una mejor comprensión de lo que está sucediendo en nuestro programa y solucionar problemas.
 
-¡Esperamos que este artículo te haya sido útil para entender la importancia y el uso de la salida de error estándar en Java! Recuerda siempre incluir mensajes de error en tu código para facilitar la depuración y mejorar la calidad de tus programas. ¡Feliz programación!
+También es útil para separar la salida estándar de error de la salida estándar regular. De esta manera, podemos mantener la información de diagnóstico separada de la información que se mostrará al usuario.
+
+Otra ventaja es que, a diferencia de la salida estándar regular, la salida estándar de error se imprime inmediatamente, lo que significa que no hay buffering. Esto puede ser importante cuando se trata de solucionar problemas en tiempo real.
+
+## Ver También
+
+- [Cómo utilizar la salida estándar en Java](https://www.delftstack.com/es/howto/java/how-to-use-standard-output-in-java/)
+- [Guía básica de errores y excepciones en Java](https://www.baeldung.com/java-errors-exceptions)
+- [Documentación oficial de Java sobre el objeto System](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)

@@ -1,55 +1,76 @@
 ---
-title:    "Fish Shell: Verbinden von Zeichenketten"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/concatenating-strings.md"
+title:                "Fish Shell: Zusammenführen von Zeichenketten"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
+Wenn du dich mit der Fish Shell beschäftigst, wirst du früher oder später auf das Konzept des Zusammenfügens von Zeichenfolgen oder auch "String Concatenation" stoßen. Dies ist eine grundlegende Funktion, die dir dabei hilft, Zeichenfolgen zu manipulieren und zusammenzufügen, um komplexere Aktionen auszuführen. In diesem Blogbeitrag werden wir uns genauer mit dem Warum, dem Wie und den Hintergründen von String Concatenation in der Fish Shell beschäftigen.
 
-Wenn Du dich mit dem Fish Shell beschäftigt hast, bist du vielleicht schon einmal auf das Konzept des "Kettenverknüpfens" oder "String Concatenation" gestoßen. Aber warum sollte man überhaupt Strings verknüpfen? Nun, es gibt verschiedene Gründe dafür. Zum einen kann es helfen, längere Ausdrücke oder Variablen in kürzere und übersichtlichere Formen zu bringen. Außerdem wird das Verknüpfen von Strings oft verwendet, um dynamische Inhalte zu erzeugen, wie z.B. beim Erstellen von Dateinamen oder beim Ausgeben von Benutzerantworten.
+## Wie geht das?
+Um Zeichenfolgen in der Fish Shell zu konkatenieren, verwenden wir den Punkt-Operator (.). Dieser Operator verbindet zwei Zeichenfolgen miteinander und gibt eine kombinierte Zeichenfolge zurück. Hier ist ein Beispiel:
 
-# Wie man es macht
+```
+Fish Shell:
 
-Das Verknüpfen von Strings ist im Fish Shell relativ einfach. Man verwendet den Operator `+` und die Syntax ist folgende:
+set name "Max"
+set age "25"
 
-```Fish Shell
-string1 + string2
+echo $name . " ist " . $age . " Jahre alt"
+
+output: Max ist 25 Jahre alt
 ```
 
-Lasst uns das anhand eines einfachen Beispiels demonstrieren:
+Wie du sehen kannst, haben wir zuerst zwei Variablen mit dem Befehl `set` erstellt und dann mit dem Punkt-Operator den Inhalt der Variablen zusammengefügt. Es ist wichtig zu beachten, dass der Punkt-Operator nur Strings miteinander verbinden kann, daher müssen wir gegebenenfalls Zahlen in Strings umwandeln, um sie hinzuzufügen.
 
-```Fish Shell
-$ set a "Hallo"
-$ set b "Welt"
-$ echo $a
-Hallo
-$ echo $b
-Welt
-$ echo $a$b
-HalloWelt
+Eine weitere Möglichkeit, Zeichenfolgen zu konkatenieren, ist die Verwendung von Platzhaltern. Hier ist ein Beispiel:
+
+```
+Fish Shell:
+
+set fruit "Apfel"
+
+echo "Ich esse gerne %s" $fruit
+
+output: Ich esse gerne Apfel
 ```
 
-Wie du siehst, werden die beiden Strings einfach aneinandergehängt. Wenn du Leerzeichen zwischen den beiden Strings haben möchtest, füge sie einfach hinzu:
+Der Platzhalter %s wird durch den Wert der Variable `fruit` ersetzt. Dies ist besonders nützlich, wenn man komplexe Zeichenfolgen mit variablen Werten zusammenfügen möchte, da es viel übersichtlicher und weniger fehleranfällig ist.
 
-```Fish Shell
-$ set a "Hallo"
-$ set b "Welt"
-$ echo $a" "$b
-Hallo Welt
+## Tiefergehende Informationen
+In der Fish Shell gibt es auch die Möglichkeit, mehrere Zeichenfolgen miteinander zu verketten. Dabei werden alle Zeichenfolgen hintereinandergehängt und ergeben eine große Zeichenfolge. Hier ist ein Beispiel:
+
+```
+Fish Shell:
+
+set string1 "Hallo"
+set string2 "Welt"
+
+echo $string1$string2
+
+output: HalloWelt
 ```
 
-# Tieferer Einblick
+Eine weitere wichtige Funktion ist die Verwendung von Variablen innerhalb des Punkt-Operators. Hier ist ein Beispiel:
 
-Wenn du dich tiefer mit der String-Konkatenierung im Fish Shell beschäftigen möchtest, gibt es einige weitere Funktionen, die du nutzen kannst. Zum Beispiel gibt es die Befehle `string join` und `string split`, die es ermöglichen, mehrere Strings miteinander zu verknüpfen oder einen String in mehrere Teile zu zerlegen.
+```
+Fish Shell:
 
-Außerdem kannst du mit dem Befehl `string replace` Teile eines Strings durch andere ersetzen. Ein Beispiel hierfür wäre das Ausgeben von Benutzerantworten, bei denen bestimmte Wörter durch Smileys ersetzt werden sollen.
+set fruit "Bananen"
 
-# Siehe auch
+set statement "Ich esse gerne"
 
-Hier sind einige nützliche Links, die dir weitere Informationen über das Verknüpfen von Strings im Fish Shell liefern können:
+echo $statement . " " . $fruit
 
-- Offizielle Dokumentation des Fish Shell: https://fishshell.com/docs/current/
-- Eine ausführliche Anleitung zur Verwendung von Strings im Fish Shell: https://www.informaticar.org/blog/concatenating-strings-in-fish-shell/
-- Weitere nützliche Tipps und Tricks für das Arbeiten mit dem Fish Shell: https://www.twilio.com/blog/using-fish-shell-like-a-pro
+output: Ich esse gerne Bananen
+```
+
+Wie du sehen kannst, können wir Variablen sowohl vor als auch nach dem Punkt-Operator verwenden, um komplexe Zeichenfolgen zu erstellen.
+
+## Siehe auch
+- [Official Fish Shell documentation on string concatenation](https://fishshell.com/docs/current/tutorial.html#tut_concat)
+- [Fish Shell scripting tutorial on string manipulation](https://github.com/jorgebucaran/fisher)
+- [Blog post about advanced string concatenation techniques in Fish Shell](https://blog.fishshell.com/fish-shellie/)

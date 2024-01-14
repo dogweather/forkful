@@ -1,58 +1,59 @@
 ---
-title:    "Haskell: Satunnaisten lukujen generointi"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/generating-random-numbers.md"
+title:                "Haskell: Satunnaisten numeroiden luominen"
+programming_language: "Haskell"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi generoida satunnaislukuja ohjelmoinnissa? Satunnaislukujen generointi on hyödyllistä, kun halutaan simuloita tietokoneella tapahtumia tai tehdä satunnaispohjaisia päätöksiä.
+Miksi haluaisit käyttää satunnaislukujen generaattoria Haskell-ohjelmoinnissa? Satunnaisuus on tärkeä osa monia ohjelmia ja algoritmeja, koska se mahdollistaa ennustamattomuuden ja monipuolisuuden. Satunnaislukujen avulla voidaan esimerkiksi luoda erilaisia tietoaineistoja testausta varten tai simuloida todellisia tilanteita.
 
 ## Miten
 
-Satunnaislukujen generoiminen Haskellissa on helppoa ja tehokasta. Se tapahtuu käyttämällä Random-kirjastoa, joka tarjoaa monia valmiita työkaluja satunnaislukujen luomiseen.
+Haskell tarjoaa valmiin kirjaston satunnaislukujen generointiin, nimeltään "System.Random". Ensimmäiseksi on tuotava kyseinen kirjasto moduuliksi ja määriteltävä random-luku generaattori.
 
 ```Haskell
 import System.Random
 
--- Generoidaan satunnainen kokonaisluku välillä 1-10
-generateInt :: IO Int
-generateInt = randomRIO (1, 10)
+-- Luodaan random-luku generaattori annetulla siemenarvolla
+randomGen :: Int -> StdGen
+randomGen seed = mkStdGen seed
 
--- Generoidaan satunnainen liukuluku välillä 0.0-1.0
-generateFloat :: IO Float
-generateFloat = randomIO
-
--- Generoidaan lista satunnaisia liukulukuja välillä 1.0-100.0
-generateList :: IO [Float]
-generateList = randomRs (1.0, 100.0)
-
--- Generoidaan satunnainen merkkijono
-generateString :: IO String
-generateString = randomIO
+-- Generoidaan 10 satunnaista lukua väliltä 1-100
+randomNumbers :: StdGen -> [Int]
+randomNumbers gen = take 10 $ randomRs (1,100) gen
 ```
 
-Ohjelman suorittaminen tuottaa seuraavanlaisen tulosteen:
+Yllä olevassa koodiesimerkissä luodaan ensin random-luku generaattori annetulla siemenarvolla käyttäen "mkStdGen" funktiota. Sitten luodaan "randomNumbers" funktio, joka ottaa parametriksi generaattorin ja palauttaa listan 10 satunnaista lukua väliltä 1-100 käyttäen "randomRs" funktiota. Tässä tapauksessa funktio palauttaa aina saman listan, jos sitä kutsutaan samalla siemenarvolla.
 
+## Syvemmälle
+
+Haskellin "System.Random" kirjasto tarjoaa monia erilaisia funktioita ja työkaluja satunnaislukujen generointiin erilaisin rajoituksin ja tarkkuuksin. Esimerkiksi käyttämällä "split" funktiota, voidaan yhdestä generaattorista luoda kaksi uutta generaattoria, jotka tuottavat erilaisia satunnaislukuja.
+
+```Haskell
+import System.Random
+
+-- Luodaan alkuperäinen random-luku generaattori
+gen :: StdGen
+gen = mkStdGen 1234
+
+-- Jaetaan generaattori kahteen uuteen 
+(gen1, gen2) = split gen
+
+-- Generoidaan 5 satunnaista lukua ensimmäisellä generaattorilla
+numbers1 = take 5 $ randomRs (1,10) gen1
+
+-- Generoidaan 5 satunnaista lukua toisella generaattorilla
+numbers2 = take 5 $ randomRs (1,10) gen2
 ```
-5
-0.45825222
-[14.715063,82.32594,44.826183,67.21938,75.008675,88.47541,38.569054,17.658438,5.645938,46.83128]
-"Khrb92sL"
-```
 
-## Syvällinen sukellus
-
-Satunnaislukujen generointi tietokoneella perustuu matemaattisiin algoritmeihin, joiden avulla voidaan luoda lukuja, joilla ei ole selkeää tai ennustettavaa järjestystä. Näitä algoritmeja kutsutaan myös pseudosatunnaislukugeneraattoreiksi, koska niiden tuottamat luvut ovat matemaattisesti määriteltyjä, mutta ne käyttäytyvät hyvin satunnaisilta.
-
-Haskellin Random-kirjasto käyttää Mersenne Twister -algoritmia satunnaislukujen generoimiseen. Tämä on yksi suosituimmista ja tehokkaimmista algoritmeista, jota käytetään ohjelmoinnissa.
-
-On myös tärkeää ymmärtää, että satunnaislukugeneraattorit eivät todellisuudessa tuota täysin satunnaisia lukuja. Ne on suunniteltu palauttamaan samat luvut, jos niiden annetaan sama aloitusarvo. Tämän vuoksi on tärkeää huolehtia siitä, että aloitusarvo vaihtelee jokaisella kerralla, kun satunnaislukugeneraattoria kutsutaan.
+Tässä tapauksessa "numbers1" ja "numbers2" listat ovat erilaiset, vaikka ne ovatkin generoitu samasta alkuperäisestä generaattorista.
 
 ## Katso myös
 
-- [Haskellin Random-kirjaston dokumentaatio](https://hackage.haskell.org/package/random)
-- [Mersenne Twister -algoritmi](https://en.wikipedia.org/wiki/Mersenne_Twister)
-- [Satunnaislukugeneraattori](https://fi.wikipedia.org/wiki/Satunnaislukugeneraattori)
+- [Haskellin random-kirjaston dokumentaatio](https://hackage.haskell.org/package/random)
+- [Haskellin opetusmateriaali (suomeksi)](http://www.cs.helsinki.fi/u/glinden/HyOpinnot/Harjoitukset/haskell/hask_intro.php)
+- [Haskellin perusteet (englanniksi)](https://www.haskell.org/tutorial/)

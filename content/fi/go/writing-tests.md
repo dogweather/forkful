@@ -1,85 +1,72 @@
 ---
-title:    "Go: Testien kirjoittaminen"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/writing-tests.md"
+title:                "Go: Testien kirjoittaminen"
+programming_language: "Go"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Testien kirjoittaminen on tärkeä osa ohjelmistokehitystä, joka auttaa varmistamaan koodin toiminnallisuuden ja luotettavuuden. Ilman testejä koodin hankalat bugin metsästys ja korjaaminen voi viedä paljon aikaa ja resursseja. Testien avulla voit myös helposti havaita regressiot, eli aiemmin toimineen koodin rikkoutumisen uusien muutosten jälkeen.
+On tärkeää, että ohjelmistokehittäjät kirjoittavat testejä ohjelmakoodiinsa. Testien avulla voidaan varmistaa, että koodi toimii oikein ja vähentää bugeja ohjelmassa.
 
-## Miten tehdä
+## Kuinka
 
-Testien kirjoittaminen Go-kielellä on helppoa ja suoraviivaista. Seuraavassa on muutamia esimerkkejä siitä, miten voit aloittaa testien kirjoittamisen omissa ohjelmissasi.
-
-### Yksikkötestit
-
-Aloita lisäämällä testikoodi samaan pakettiin kuin ohjelman koodi ja nimeämällä tiedoston perimän "test" lisäten loppuun "_test.go". Tämä auttaa Go-kääntäjää tunnistamaan tiedoston testejä varten.
-
-Seuraavassa on yksinkertainen esimerkki lisäämällä yksikkötesti function tai metodi luokkaan. Koodiblokkiin on lisätty myös odotettu testin tulos:
+Testien kirjoittaminen Go-kielellä on helppoa ja selkeää. Alla on esimerkkejä ja tulosteita koodinpätkässä "```Go ... ```".
 
 ```Go
-package main
+// Esimerkki yksinkertaisesta testistä
+func TestCalculateTotal(t *testing.T) {
+    total := calculateTotal(50, 10)
 
-import (
-	"testing"
-)
-
-func Add(x, y int) int {
-	return x + y
-}
-
-func TestAdd(t *testing.T) {
-	result := Add(2, 3)
-	expected := 5
-
-	if result != expected {
-		t.Errorf("Expected result to be %d, but got %d instead.", expected, result)
-	}
-}
-```
-
-Voit ajaa testit komennolla `go test` kansiossa, jossa testikoodi sijaitsee.
-
-### Benchmark-testit
-
-Voit myös tehdä benchmark-testejä Go-kielellä, jotta voit vertailla funktion suorituskykyä. Benchmark-koodin tulee olla nimetty perimän "test" ja loppuun "_bench.go".
-
-Tässä esimerkissä verrataan slice-apufunktioiden `append()` ja `copy()` suorituskykyä. Benchmark-koodiblokki kuvaa, kuinka monta kertaa kumpikin funktio suoritettiin 1000 kertaa.
-
-```Go
-package main
-
-import "testing"
-
-var s []int
-
-func BenchmarkAppend(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-        s = append(s, i)
+    if total != 60 {
+        t.Errorf("Odottamaton tulos! Halusimme 60, mutta saimme %f", total)
     }
 }
 
-func BenchmarkCopy(b *testing.B) {
-    dest := make([]int, b.N)
-    for i := 0; i < b.N; i++ {
-        copy(dest[i:], s)
-    }
-}
+// Tuloste:
+// --- FAIL: TestCalculateTotal (0.00s)
+//     main_test.go:7: Odottamaton tulos! Halusimme 60, mutta saimme 55
+
 ```
 
-Benchmark-testit voidaan ajaa lisäämällä `-bench=.` komennon perään. 
+```Go
+// Esimerkki testifunktion käyttämisestä
+func TestMultiply(t *testing.T) {
+    testCases := []struct {
+        input1 int
+        input2 int
+        expectedOutput int
+    }{
+        {2, 5, 10},
+        {10, 0, 0},
+        {-3, 7, -21},
+    }
 
-## Syvempi sukellus
+    for _, tc := range testCases {
+        output := multiply(tc.input1, tc.input2)
 
-Testien kirjoittamisessa on tärkeää huomioida muutamia asioita. Ensinnäkin, testien tulee olla riittävän kattavia ja testata kaikki mahdolliset skenaariot. Toiseksi, testikoodin tulee olla helppolukuista ja ymmärrettävää, jotta sen pohjalta voidaan helposti havaita ja korjata mahdolliset virheet.
+        if output != tc.expectedOutput {
+            t.Errorf("Odottamaton tulos! Halusimme %d, mutta saimme %d", tc.expectedOutput, output)
+        }
+    }
+}
 
-Hyvä tapa aloittaa testien kirjoittaminen on käyttää testilähtökohtaa (test-driven development), jossa ensin kirjoitetaan testikoodi ja sen perusteella toteutetaan ohjelmakoodi. Tällä tavoin varmistetaan, että testit ovat tarpeeksi kattavia ja toimivat oikein.
+// Tuloste:
+// --- PASS: TestMultiply (0.00s)
+```
+
+## Syvempää tietoa
+
+Testejä voi kirjoittaa monella eri tavalla ja testausstrategia kannattaa valita projektikohtaisesti. Alla on muutama hyvä resurssi testien kirjoittamiseen Go-kielellä:
+
+- [Go:n virallinen dokumentaatio testauksesta](https://golang.org/pkg/testing/)
+- [GoTest-sivusto, jossa on paljon vinkkejä ja esimerkkejä testien kirjoittamisesta Go-kielellä](https://gotest.tools/)
+- [Go-koodin testauksen paras käytäntö -artikkeli](https://medium.com/@matryer/5-simple-tips-and-tricks-for-writing-unit-tests-in-golang-619653f90742)
 
 ## Katso myös
 
-- [The Go Blog: The Go Programming Language](https://blog.golang.org/)
-- [Go Wiki: Writing Tests](https://github.com/golang/go/wiki/TableOfContents#testing)
-- [Testing in Go: Tools and Techniques](https://medium.com/rungo/unit-testing-made-easy-in-go-25077669318)
+- [Mitä ovat yksikkötestit ja miksi niitä tarvitsemme?](https://www.oreilly.com/library/view/97-things-every/9780596809495/ch01.html)
+- [Toinen blogipostaus testien kirjoittamisesta Go-kielellä](https://medium.com/@simonritchie/why-is-writing-unit-tests-so-important-yc-q-of-the-week-d41c1cf467d6)
+- [Go-koodin testauksen esimerkkien hakemisto GitHubissa](https://github.com/golang-standards/project-layout/tree/master/testing)

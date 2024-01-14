@@ -1,86 +1,53 @@
 ---
-title:    "Bash: Unione di stringhe."
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/bash/concatenating-strings.md"
+title:                "Bash: Unire stringhe."
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché concatenare le stringhe in Bash
 
-La concatenazione di stringhe è un'operazione comune quando si lavora con la programmazione Bash. Ci permette di unire due o più stringhe creando una nuova stringa. Ciò può essere utile per creare percorsi di file dinamici, costruire messaggi di output personalizzati e molto altro ancora.
+La concatenazione di stringhe è un'operazione comune nei linguaggi di programmazione, ed è particolarmente utile in Bash quando si lavora con testi o variabili. Unificare più stringhe può semplificare il codice e aggiungere flessibilità ai comandi. Vediamo come fare.
 
-## Come fare
+## Come concatenare le stringhe in Bash
 
-Per concatenare le stringhe in Bash, è necessario utilizzare l'operatore `+` o un trattino `-` tra le stringhe che vogliamo unire. Vediamo un esempio pratico:
-
-```
-Bash
-# Dichiarazione delle stringhe
-stringa1="Ciao"
-stringa2="Mondo"
-
-# Concatenazione delle due stringhe
-risultato=$stringa1$stringa2
-
-# Stampa del risultato
-echo $risultato
-```
-
-Nell'esempio sopra, abbiamo dichiarato due stringhe, "Ciao" e "Mondo". Poi, utilizziamo l'operatore di concatenazione `+` per unire le due stringhe e assegnare il risultato alla variabile "risultato". Infine, stampiamo il risultato con l'uso del comando `echo`. 
-
-L'output dovrebbe essere:
-
-```
-CiaoMondo
-```
-
-Possiamo anche utilizzare il trattino `-` per ottenere lo stesso risultato:
-
-```
-risultato=$stringa1-$stringa2
-```
-
-Un altro modo per concatenare le stringhe è utilizzando il comando `printf`:
-
-```
-risultato=$(printf "%s%s" $stringa1 $stringa2)
-```
-
-Questo comando è particolarmente utile quando si vogliono formattare le stringhe prima di concatenarle.
-
-## Approfondimento
-
-Una delle caratteristiche interessanti della concatenazione di stringhe in Bash è che possiamo unire anche numeri interi e float alle stringhe, senza doverli convertire in stringhe prima.
+Per concatenare due stringhe in Bash, è necessario utilizzare il comando `printf` seguito dal simbolo di percentuale `%s` per ogni stringa che si vuole concatenare. Ad esempio, se si vuole unire le stringhe "Ciao" e "mondo", il codice sarebbe il seguente:
 
 ```
 Bash
-# Dichiarazione di una stringa e un numero
-stringa="Il numero è "
-numero=10
-
-# Concatenazione
-risultato=$stringa$numero
-
-# Stampa del risultato
-echo $risultato
+helloworld=$(printf "%s%s" "Ciao" "mondo")
+echo $helloworld
 ```
+Output: `Ciao mondo`
 
-L'output sarà:
+Se si desidera aggiungere uno spazio tra le due stringhe, si può utilizzare il carattere di spazio dopo il primo `%s` nel comando `printf`, come mostrato di seguito:
 
 ```
-Il numero è 10
+Bash
+helloworld=$(printf "%s %s" "Ciao" "mondo")
+echo $helloworld
 ```
+Output: `Ciao mondo`
 
-Un'altra cosa da notare è che, quando concateniamo una variabile ad una stringa, non dobbiamo utilizzare spazi tra di loro. Se abbiamo bisogno di uno spazio tra la stringa e la variabile, possiamo utilizzare il carattere di spazio all'interno della stringa stessa.
+Per concatenare più di due stringhe, basta inserire più simboli di percentuale e le relative stringhe all'interno del comando `printf`. Inoltre, è possibile utilizzare variabili al posto delle stringhe rigide:
 
 ```
-risultato="La variabile è "$variabile # Non sarà inserito uno spazio
-risultato="La variabile è "$variabile # Uno spazio verrà inserito
+Bash
+greeting="Ciao"
+name="mondo"
+helloworld=$(printf "%s %s" $greeting $name)
+echo $helloworld
 ```
+Output: `Ciao mondo`
+
+## Approfondimento sulla concatenazione delle stringhe
+
+Quando si concatenano stringhe in Bash, è importante ricordare che all'interno del comando `printf` le stringhe vengono unite senza spazi aggiunti automaticamente. Ciò significa che se si desidera inserire uno spazio tra le due stringhe, è necessario specificarlo esplicitamente nel comando. Inoltre, è possibile concatenare qualsiasi tipo di dato, non solo stringhe, utilizzando il comando `printf`.
 
 ## Vedi anche
 
-* [Bash: Concatenare stringhe](https://tecnonucleous.com/2014/07/17/1566/bash-concatenare-stringhe)
-* [Guida pratica alla programmazione Bash](https://bit.ly/2pM65HN)
-* [Introduzione alla programmazione Bash](https://technedigitale.com/2017/05/25/la-programmazione-bash-unintroduzione)
+- [Documentazione ufficiale di Bash](https://www.gnu.org/software/bash/)
+- [Tutorial su Bash di Linux.com](https://www.linux.com/learn/introduction-bash-variables)
+- [Guida completa a Bash di Tecmint](https://www.tecmint.com/best-books-to-learn-bash-shell-scripting/)

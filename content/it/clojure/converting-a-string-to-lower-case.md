@@ -1,36 +1,44 @@
 ---
-title:    "Clojure: Convertire una stringa in minuscolo"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/converting-a-string-to-lower-case.md"
+title:                "Clojure: Convertire una stringa in minuscolo"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Converting una stringa in lowercase è un'operazione comune e utile quando si lavora con dati di input in formato testuale. Ciò permette di uniformare i dati e semplificare le operazioni di confronto e ricerca.
+
+Ci sono molte ragioni per cui uno potrebbe voler convertire una stringa in lettere minuscole durante la programmazione in Clojure. Alcuni esempi potrebbero includere la necessità di confrontare due stringhe, di semplificare un output o di risolvere problemi di capitalizzazione in un programma.
 
 ## Come fare
-Per convertire una stringa in lowercase in Clojure, è possibile utilizzare la funzione `clojure.string/lower-case`. Di seguito un esempio di codice con il risultato di output:
+
+Ci sono diversi modi per convertire una stringa in lettere minuscole in Clojure. Ecco tre metodi comuni:
 
 ```Clojure
-(clojure.string/lower-case "CIAO AMICI")
+(.toLowerCase "PAROLA") ; restituirà "parola"
 ```
-
-Output: `ciao amici`
-
-È importante notare che la funzione `lower-case` può gestire sia stringhe alfanumeriche che caratteri speciali come accenti e simboli.
-
-## Approfondimento
-La conversione di una stringa in lowercase può essere influenzata da diversi fattori, come la codifica dei caratteri e le impostazioni regionali del sistema in cui viene eseguito il codice. Inoltre, è possibile utilizzare il metodo `case` per gestire stringhe con più parole, come nel seguente esempio:
 
 ```Clojure
-(clojure.string/lower-case (case "CIAO AMICI" :lower))
+(lower-case "FRASE INTERA") ; restituirà "frase intera"
 ```
 
-Output: `ciao amici`
+```Clojure
+(.toLowerCase "TESTO" java.util.Locale/ITALIAN) ; restituirà "testo"
+```
 
-Questo metodo può essere utile in situazioni in cui si desidera mantenere la prima lettera di ogni parola maiuscola, come nelle intestazioni di un documento.
+In questi esempi, stiamo utilizzando la funzione ".toLowerCase" e la funzione predefinita "lower-case" per convertire le stringhe in lettere minuscole. Nota che nella terza opzione stiamo anche specificando la lingua italiana nella quale vogliamo che venga convertita la stringa.
+
+## Profondità
+
+Con oggi, abbiamo parlato di alcuni modi per convertire una stringa in lettere minuscole in Clojure. Tuttavia, è importante ricordare che la funzione ".toLowerCase" funziona solo con le stringhe in formato Java. Se hai bisogno di lavorare con stringhe Clojure, dovrai utilizzare la funzione "lower-case" o convertire prima la stringa in formato Java.
+
+È anche importante notare che la funzione ".toLowerCase" può causare problemi con l'encoding dei caratteri in alcune situazioni. In questi casi, è consigliabile utilizzare la funzione "lower-case" invece.
 
 ## Vedi anche
-- [Documentation for `clojure.string/lower-case`](https://clojuredocs.org/clojure.string/lower-case)
-- [Explanation of `case` in Clojure](https://clojuredocs.org/clojure.core/case)
+
+Per ulteriori informazioni sulle funzioni di manipolazione delle stringhe in Clojure, assicurati di dare un'occhiata a questi siti:
+
+- https://clojuredocs.org/clojure.string/lower-case
+- https://clojuredocs.org/clojure.string/.toLowerCase
+- http://clojurekatas.org/string-manipulation/#lower-case

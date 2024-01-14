@@ -1,48 +1,61 @@
 ---
-title:    "Ruby: Lecture d'un fichier texte"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/reading-a-text-file.md"
+title:                "Ruby: Lecture d'un fichier texte"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous êtes intéressé par la programmation avec Ruby, vous êtes probablement déjà familiarisé avec la lecture de fichiers textes. Mais pour ceux qui débutent, la lecture de fichiers peut sembler intimidante. Dans ce blog, nous allons expliquer pourquoi il est important de savoir lire un fichier texte en Ruby.
+Lire un fichier texte est une tâche courante en programmation. Cela peut être utile pour extraire des données, enregistrer des informations ou simplement afficher du contenu. Si vous utilisez Ruby comme langage de programmation, vous devez savoir comment lire un fichier texte. Heureusement, c'est assez simple à faire et dans cet article, nous allons vous montrer comment.
 
 ## Comment faire
 
-Tout d'abord, il est important de comprendre comment fonctionne la lecture d'un fichier texte en Ruby. Nous pouvons utiliser la méthode `File.open` pour ouvrir un fichier et enregistrer son contenu dans une variable. Ensuite, nous pouvons utiliser la méthode `read` pour lire le contenu du fichier et l'afficher dans la console. Voici un exemple de code pour illustrer cela :
+La méthode la plus courante pour lire un fichier texte en Ruby est d'utiliser la classe File. Tout d'abord, nous devons ouvrir le fichier en utilisant la méthode `open`.
 
 ```Ruby
-file = File.open("exemple.txt")
-puts file.read
+fichier = File.open('exemple.txt')
 ```
 
-En utilisant ces méthodes, nous pouvons facilement lire le contenu d'un fichier texte en Ruby. Mais qu'en est-il si nous voulons lire seulement une partie du fichier ? C'est là qu'entre en jeu la méthode `readline`. Cette méthode nous permet de lire une seule ligne à la fois du fichier. Voici un exemple :
+Ensuite, nous pouvons lire le contenu du fichier en utilisant la méthode `read`. Si nous voulons le stocker dans une variable, nous pouvons le faire en ajoutant un signe égal à la fin.
 
 ```Ruby
-file = File.open("exemple.txt")
-puts file.readline
+contenu = fichier.read
 ```
 
-Cela ne lit que la première ligne du fichier. Nous pouvons également utiliser cette méthode à plusieurs reprises pour lire les lignes suivantes, jusqu'à ce que le fichier soit entièrement lu.
-
-## Plongeons plus profondément
-
-Il peut arriver que nous ayons besoin de lire un fichier texte très volumineux. Dans ce cas, il n'est pas pratique de lire tout le fichier en une fois. C'est pourquoi nous pouvons utiliser une boucle pour lire le contenu ligne par ligne. Voici un exemple :
+Nous pouvons également utiliser la méthode `readlines` pour lire chaque ligne du fichier et les stocker dans un tableau.
 
 ```Ruby
-file = File.open("exemple.txt")
-file.each do |line|
-  puts line
-end
+lignes = fichier.readlines
 ```
 
-Cette boucle lit chaque ligne du fichier et la stocke dans la variable `line`, que nous pouvons ensuite afficher dans la console. Cela nous permet de parcourir tout le fichier sans avoir à charger tout son contenu en mémoire.
+Enfin, n'oubliez pas de fermer le fichier en utilisant la méthode `close` une fois que vous avez terminé de le lire.
 
-## Voir aussi
+```Ruby
+fichier.close
+```
 
-- Documentation Ruby sur la lecture de fichiers : https://ruby-doc.org/core-2.7.2/File.html
-- Tutoriel vidéo sur la lecture de fichiers en Ruby : https://www.youtube.com/watch?v=DkbOvx5KP5Y
-- Exemples de code pour la lecture de fichiers en Ruby : https://www.w3resource.com/ruby-exercises/file/index.php
+Voici un exemple complet:
+
+```Ruby
+fichier = File.open('exemple.txt')
+contenu = fichier.read
+ligne = fichier.readlines
+fichier.close
+```
+
+Le contenu du fichier `exemple.txt` sera stocké dans la variable `contenu` et chaque ligne sera stockée dans le tableau `lignes`.
+
+## Plongée en profondeur
+
+En plus de la méthode `read` et `readlines`, la classe File a d'autres méthodes pour lire un fichier texte. Par exemple, vous pouvez utiliser `each_line` pour itérer sur chaque ligne du fichier sans stocker le contenu dans une variable. Vous pouvez également spécifier le nombre de caractères à lire en utilisant `read(n)`, où n est le nombre de caractères.
+
+De plus, si vous voulez lire un fichier texte sans avoir à l'ouvrir et à le fermer manuellement, vous pouvez utiliser la méthode `File.foreach`. Cela itérera sur chaque ligne du fichier sans nécessiter d'ouverture et de fermeture manuelle du fichier.
+
+# Voir aussi
+
+- [Ruby Documentation on File Class](https://ruby-doc.org/core-2.7.3/File.html)
+- [Ruby File Class Cheatsheet](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+- [Reading a Text File in Ruby - Tutorial](https://www.youtube.com/watch?v=VEaNBsktpvg)

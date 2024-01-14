@@ -1,54 +1,59 @@
 ---
-title:    "Fish Shell recipe: Writing tests"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/writing-tests.md"
+title:                "Fish Shell recipe: Writing tests"
+programming_language: "Fish Shell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why: The Importance of Writing Tests
+# Why: The Importance of Writing Tests
 
-As programmers, we know that testing our code is crucial for ensuring its quality and functionality. But why should we specifically focus on writing tests in Fish Shell? 
+When writing code, it's crucial to ensure its functionality and catch any potential bugs or errors that may arise. This is where writing tests comes in handy. By creating tests, you can quickly and easily check your code's performance and catch any issues before they reach production. Writing tests also allows for easier collaboration with other developers by providing a clear understanding of expected outcomes.
 
-Writing tests in Fish Shell allows us to easily automate the process of testing our code, saving us time and effort in the long run. Additionally, tests help to catch bugs and errors early on, making for a more efficient and streamlined debugging process. It also serves as a form of documentation for our code, providing a clear understanding of its purposes and expected outputs.
+# How To: Writing Tests in Fish Shell
 
-## How To: Writing Tests in Fish Shell
+In Fish Shell, you can write tests using the `test` function. This function takes in two arguments: a condition and a description. Here's an example of a simple test that checks if a variable is equal to a specific value:
 
-Writing tests in Fish Shell is a simple and effective way to ensure the success and accuracy of our code. Let's take a look at a basic example:
-
-```
-Fish Shell test -n "Hello World" -o echo "Hello World"
+```Fish Shell
+test $var = "Hello World" "Check if var is equal to Hello World"
 ```
 
-In the above code, we are using the "test" command in Fish Shell to check if the string "Hello World" is outputted by the "echo" command. If the test is successful, "Hello World" will be printed in the terminal. 
+To run this test, simply type `fish -t filename.fish`, and you will see the following output:
 
-We can also use the "set -q" command to verify if a certain variable is set. For example:
-
-```
-set -q FISH
-and set -q FISH; or echo "Fish Shell is awesome!"
+```Terminal
+> Check if var is equal to Hello World
 ```
 
-This code checks if the variable "FISH" is set, and if it is, it will print "Fish Shell is awesome!" in the terminal. If it is not set, nothing will be printed.
+If the test fails, you will see an error message detailing the reason for the failure. It's essential to provide descriptive descriptions for your tests to easily identify which tests have failed.
 
-## Deep Dive: Understanding the Fish Shell Test Command
+You can also use the `not` keyword to check for the opposite condition. For example,
 
-The "test", or " [" command in Fish Shell is used for evaluating conditions and returning a boolean value. It takes in the condition to evaluate, and based on its result, will return either a "true" or "false" value.
+```Fish Shell
+test not (count $string) = 0 "Check if string is not empty"
+```
 
-In Fish Shell, we can also combine multiple tests using logical operators. For example, using the "and" operator will only return "true" if both conditions are met, while the "or" operator will return "true" if at least one of the conditions is met.
+Lastly, you can use the `contains` function to check if a string contains a particular substring.
 
-Other commonly used operators in the "test" command include:
+```Fish Shell
+test contains "Fish" "Checking if this sentence contains the word Fish"
+```
 
-- "-n" for checking if a string is not empty
-- "-z" for checking if a string is empty
-- "-e" for checking if a file or directory exists 
+# Deep Dive: Tips for Writing Effective Tests
 
-For a full list of operators and their functions, check out the official Fish Shell documentation.
+- Use clear and descriptive names for your tests to easily identify their purpose.
+- Organize your tests by category or function for better organization and readability.
+- Write tests for both expected and unexpected inputs to catch any edge cases.
+- Make use of the `not` keyword to check for negative conditions.
+- Utilize the `eq` function for more precise comparisons.
+- Write tests while you code to catch errors early on and save time in the long run.
 
-## See Also
+# See Also
 
-- [Fish Shell Documentation on Testing](https://fishshell.com/docs/current/commands.html#test)
-- [Introduction to Fish Shell Testing - FreeCodeCamp](https://www.freecodecamp.org/news/introduction-to-fish-shell-testing/)
-- [Writing Unit Tests in Fish Shell - Dev.to](https://dev.to/gokuldroid/writing-unit-tests-in-fish-shell-4h8c)
+For more information on writing tests in Fish Shell, check out the following resources:
 
-Writing tests in Fish Shell may seem daunting at first, but with practice and a good understanding of its syntax and commands, it can greatly improve the quality and reliability of our code. Happy testing!
+- [Official Fish Shell Documentation on Testing](https://fishshell.com/docs/current/cmds/test.html)
+- [Guide to Writing Tests in Fish Shell by Thoughtbot](https://thoughtbot.com/blog/writing-a-test-suite-in-fish-shell)
+- [Tutorial on Writing Automated Tests in Fish Shell by Medium](https://medium.com/swlh/testing-frameworks-in-fish-shell-f1dca2f522b8)
+
+Remember, writing tests is an invaluable tool that can greatly improve your coding process. So start implementing tests in your Fish Shell scripts today for better and more reliable code. Happy testing!

@@ -1,48 +1,57 @@
 ---
-title:    "C++: Söka och ersätta text"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/searching-and-replacing-text.md"
+title:                "C++: Sökning och ersättning av text"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-En av de mest grundläggande uppgifterna inom programmering är att söka och ersätta text. Genom att förstå processen bakom detta kan du effektivt hantera stora mängder kod och göra snabba ändringar när det behövs. I denna bloggpost kommer vi att titta närmare på vad söka och ersätta är, varför det är viktigt och hur man gör det i C++.
+Att söka och ersätta text är en vanlig procedur inom programmering, oavsett om det handlar om att ändra en stavning eller att uppdatera variablnamn. Genom att lära sig hur man effektivt söker och ersätter text i C++ kan man spara tid och undvika manuella misstag.
 
 ## Hur man gör
+För att söka och ersätta text i C++, behöver man använda sig av två huvudfunktioner: `find()` och `replace()`. `find()` kommer att leta igenom en sträng efter en viss text och returnera positionen där texten hittades. `replace()` kommer sedan att byta ut den hittade texten med en annan.
 
-Söka och ersätta i en text är själva grunden för de flesta textredigeringsprogrammen, inklusive kodredigerare. Det innebär att du kan söka och ersätta en viss sträng av text med en annan sträng. I C++ kan du använda funktionen `replace` för att utföra denna uppgift. Se nedan för ett exempel: 
+Här är ett kodexempel som visar hur man använder `find()` och `replace()` för att byta ut alla förekomster av ordet "hej" till "hello":
 
 ```C++
 #include <iostream>
 #include <string>
 
-using namespace std;
-
-int main(){
+int main() {
+    std::string str = "Hej värld!";
+    std::string hello = "hello";
     
-    string text = "Hej, jag heter Linda.";
-    text.replace(text.find("Linda"), 5, "Anna");
+    // Letar efter första förekomsten av "hej"
+    size_t found = str.find("hej");
     
-    cout << text << endl;
+    if (found != std::string::npos) { // Om "hej" hittas
+        // Byt ut "hej" med "hello"
+        str.replace(found, 3, hello);
+    }
+    
+    std::cout << str; // Skriver ut "Hello värld!"
     
     return 0;
 }
-
-// Output: Hej, jag heter Anna.
 ```
 
-I exemplet ovan använder vi funktionen `replace` för att söka efter strängen "Linda" och ersätta den med "Anna". Genom att förstå hur man använder `find` och `replace` kan du snabbt och effektivt söka och ersätta i både små och stora textfiler.
+Output:
+```
+Hello värld!
+```
 
 ## Djupdykning
+När det kommer till sökning och ersättning av text i C++, finns det vissa saker att tänka på för att undvika vanliga misstag. Till exempel, `find()` returnerar positionen där texten hittades som en `size_t`variabel, vilket är ett unsigned integer. Detta betyder att om "hej" inte hittas i strängen, kommer `find()` att returnera det största möjliga värdet för en `size_t`, vilket kan leda till oväntade resultat. 
 
-Innan vi dyker in i C++ kod, är det viktigt att förstå skillnaden mellan att söka och ersätta en sträng och att söka och ersätta en karaktär. När du söker efter en sträng, letar programmet efter en exakt matchning. Om du söker efter ett ord, kommer endast det ordet att ersättas. Om du söker efter en karaktär, kommer alla förekomster av den karaktären att ersättas, även om den ingår i ett ord. Denna information kan vara användbar om du behöver vara försiktig med vad du ersätter i din text.
+En annan viktig aspekt att tänka på är att `replace()` inte ersätter text i själva strängen, utan genererar en ny sträng med de ändringar som gjorts. För att ändra originalsträngen behöver man tilldela resultatet av `replace()` tillbaka till den.
 
 ## Se även
+- [C++ Dokumentation för `find()`](https://www.cplusplus.com/reference/string/string/find/)
+- [C++ Dokumentation för `replace()`](https://www.cplusplus.com/reference/string/string/replace/)
+- [En guide för grundläggande C++ strängmanipulering](https://www.learncpp.com/cpp-tutorial/6-x-chapter-6-comprehensive-data-decision-and-looping-statements/6-10-string-manipulation/)
 
-Här är några fler resurser som kan hjälpa dig att lära dig mer om söka och ersätta i C++:
-
-- [cplusplus.com](http://www.cplusplus.com/reference/string/string/replace/)
-- [GeeksforGeeks](https://www.geeksforgeeks.org/string-class-in-cpp-stl/)
-- [SoloLearn](https://www.sololearn.com/Course/CPlusPlus/)
+Se även
+ - [Markdown: Syntax](https://daringfireball.net/projects/markdown/syntax)
+ - [Get Started with Markdown in Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown)

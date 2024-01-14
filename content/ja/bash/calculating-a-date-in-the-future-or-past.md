@@ -1,54 +1,54 @@
 ---
-title:    "Bash: 「未来や過去の日付の計算」"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/calculating-a-date-in-the-future-or-past.md"
+title:                "Bash: 未来と過去の日付を計算する"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-今日、私たちは日常生活の中でさまざまな日付を計算する必要があります。誕生日や予定されたイベントの日付を計算したり、終わったイベントの日付を振り返ったりすることがあります。Bashプログラミングで日付を計算することは、これらのタスクをより簡単にするための一つの方法です。
+日付を未来や過去に計算する必要があるのでしょうか？例えば、誕生日やイベントの日付を計算したい場合は、今日から何日後なのかを知りたいと思うかもしれません。または、コンピューターシステムで日付を操作する必要がある場合もあります。このような場合、日付を計算することはとても役に立ちます。
 
-## 方法
+## 使い方
 
-Bashプログラミングで日付を計算するには、dateコマンドを使用します。例えば、2022年5月1日の1年前の日付を計算するには、以下のようにコマンドを入力します。
-
-```Bash
-date -d "1 year ago 2022-05-01"
-```
-
-そして、出力は以下のようになります。
+日付を計算するためのBashプログラミングの例を紹介します。まず、未来の日付を計算する場合は、```date```コマンドを使用します。例えば、今日の日付から1ヶ月後を計算する場合は、以下のように入力します。
 
 ```Bash
-Sun May 2 00:00:00 JST 2021
+date -d "+1 month"
 ```
 
-このように、dateコマンドでは、指定した日付や時間から前後の日付を計算することができます。また、日付や時間のフォーマットをカスタマイズすることもできます。
-
-## 深堀り
-
-日付を計算する際、dateコマンドではさまざまなオプションを使用することができます。例えば、以下のオプションを使うことで、今日の日付から1週間後の日付を計算することができます。
+出力は次のようになります。
 
 ```Bash
-date -d "today + 1 week"
+Tue Oct 12 00:00:00 JST 2021
 ```
 
-また、日付や時間のフォーマットを指定したい場合は、`-I`オプションを使用します。例えば、ISOフルフォーマットで日付を出力するには、以下のようになります。
+また、過去の日付を計算する場合も同じコマンドを使用します。例えば、10日前の日付を計算する場合は、以下のように入力します。
 
 ```Bash
-date -d "1 year ago 2022-05-01" -I
+date -d "10 days ago"
 ```
 
-そして、出力は以下のようになります。
+出力は次のようになります。
 
 ```Bash
-2021-05-02
+Mon Sep 20 00:00:00 JST 2021
 ```
 
-さらに、`-f`オプションを使用することで、独自の日付や時間のフォーマットを指定することもできます。詳しいオプションやコマンドの使い方については、[公式ドキュメント](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)を参考にしてください。
+## 詳細について
 
-## 関連リンク
+日付を計算するためには、使用できるオプションがたくさんあります。例えば、```date```コマンドには、年や月、週など、日付を計算するための異なる単位を指定するオプションがあります。また、特定の書式で日付を表示することもできます。詳細については、オンラインドキュメントを参照してください。
 
-- [GNU Coreutils公式ドキュメント](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Bashのループ文で日付を計算する方法](https://dev.classmethod.jp/articles/bash-loop-date-calculation/)
+## 参考リンク
+
+- [Bashの各種コマンドについてのオンラインドキュメント](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bashプログラミングのチュートリアル](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
+- [日付を計算するオプションの詳細](https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html)
+
+## その他のリンク
+
+- [Bash公式ウェブサイト](https://www.gnu.org/software/bash/)
+- [Bashコミュニティフォーラム](https://lists.gnu.org/mailman/listinfo/bug-bash)
+- [Bashの最新バージョンのダウンロード](https://ftp.gnu.org/gnu/bash/)

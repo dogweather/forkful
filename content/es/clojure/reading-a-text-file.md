@@ -1,54 +1,39 @@
 ---
-title:    "Clojure: Leyendo un archivo de texto"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/reading-a-text-file.md"
+title:                "Clojure: Leyendo un archivo de texto"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por Qué
+## Por qué
 
-¿Te has preguntado alguna vez cómo se pueden leer y procesar archivos de texto en el lenguaje de programación Clojure? En este post, te mostraremos cómo hacerlo de manera sencilla y eficiente.
+La lectura de archivos de texto es una habilidad esencial para cualquier programador de Clojure. Sin esta habilidad, no podríamos acceder a datos externos y procesarlos en nuestro código. En este artículo, exploraremos cómo leer archivos de texto en Clojure y cómo puede ser útil en tus proyectos.
 
-##Cómo Hacerlo
+## Cómo hacerlo
 
-La lectura de archivos de texto en Clojure se puede hacer con la función `slurp`. Esta función toma como argumento el nombre de un archivo de texto y devuelve una cadena de caracteres con todo su contenido. Por ejemplo:
-
-```Clojure
-(slurp "archivo.txt")
-```
-
-Esto devolverá una cadena con el contenido completo del archivo "archivo.txt".
-
-Para poder procesar la información del archivo, es posible utilizar funciones de manipulación de cadenas, como `split`, `join` y `substring`. Estas funciones te permitirán separar la información en diferentes partes y realizar operaciones específicas con ella.
-
-Por ejemplo, si queremos obtener cada línea del archivo en una lista, podemos utilizar la función `split` de la siguiente manera:
+Leer un archivo de texto en Clojure es muy sencillo. Primero, necesitamos utilizar la función `slurp`, que se encarga de leer el contenido del archivo y devolverlo como una cadena de texto. Por ejemplo, si queremos leer el contenido de un archivo llamado "texto.txt", podemos utilizar la siguiente línea de código:
 
 ```Clojure
-(split (slurp "archivo.txt") #"\n")
+(slurp "texto.txt") 
 ```
 
-Esto devolverá una lista con todas las líneas del archivo.
-
-## Deep Dive
-
-Además de la función `slurp`, Clojure también cuenta con la función `clojure.java.io/reader` que permite leer y procesar archivos de manera más avanzada. Esta función toma como argumento un objeto del tipo `java.io.Reader` que se puede crear utilizando la función `clojure.java.io/reader` y el nombre del archivo. 
-
-Por ejemplo, podemos obtener cada línea del archivo utilizando la función `clojure.java.io/reader` de la siguiente manera:
+Esto nos devolvería una cadena con todo el contenido del archivo. Sin embargo, si queremos procesar los datos de forma más estructurada, podemos usar la librería `clojure.string` y su función `split` para dividir el texto en líneas o por algún otro separador. A continuación, un ejemplo de cómo leer un archivo de texto línea por línea:
 
 ```Clojure
-(with-open [reader (clojure.java.io/reader "archivo.txt")]
-    (doseq [line (line-seq reader)]
-        (println line)))
+(require '[clojure.string :as str])
+(with-open [rdr (clojure.java.io/reader "texto.txt")] 
+  (doseq [line (line-seq rdr)] 
+    (println (str/split line #"\s+")))) 
 ```
 
-Esto imprimirá cada línea del archivo en la consola.
+Este código abrirá el archivo "texto.txt" y utilizará `line-seq` para recorrer todas las líneas del archivo. Luego, utilizando `split`, dividiremos cada línea por cualquier cantidad de espacios en blanco.
 
-## See Also
+## Profundizando
 
-Para obtener más información sobre el manejo de archivos de texto en Clojure, puedes consultar la documentación oficial: 
+Además de la función `slurp`, también podemos utilizar `clojure.java.io` para leer archivos de textos de forma más manual. Esta librería nos ofrece funciones para abrir y cerrar archivos, escribir en ellos, buscar rutas y demás. En particular, la función `reader` nos permite crear un lector de archivos, que podemos utilizar junto con `line-seq` para leer un archivo línea por línea.
 
-- [Función `slurp`](https://clojuredocs.org/clojure.core/slurp)
-- [Funciones de manipulación de cadenas](https://clojuredocs.org/clojure.core/String)
-- [Función `clojure.java.io/reader`](https://clojuredocs.org/clojure.java.io/reader)
-- [Documentación oficial de Clojure](https://clojure.org/guides/io)
+## Ver también
+
+Para más información sobre leer archivos de texto en Clojure, puedes revisar la documentación oficial [aquí](https://clojuredocs.org/clojure.java.io/reader). También puedes leer sobre otras funciones útiles como `print`, `println` y `with-open`. ¡Ahora estás listo para comenzar a leer archivos de textos en tus proyectos de Clojure!

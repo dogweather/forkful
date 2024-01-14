@@ -1,36 +1,51 @@
 ---
-title:    "Elixir: Escribiendo pruebas"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/writing-tests.md"
+title:                "Elixir: Escribiendo tests"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir pruebas en Elixir
+## Por qué
 
-Escribir pruebas en Elixir puede parecer una tarea tediosa y adicional al momento de programar. Sin embargo, es una práctica esencial ya que asegura que nuestro código funcione correctamente y nos ayuda a encontrar errores antes de que puedan afectar a nuestros usuarios. Además, escribir pruebas también nos permite tener un mejor entendimiento del código que estamos creando.
+Una parte importante de la programación en Elixir es escribir pruebas (tests) para nuestro código. Estas pruebas nos ayudan a asegurarnos de que nuestro código hace lo que queremos que haga y continua haciendo lo mismo a medida que lo actualizamos. También permiten a otros desarrolladores entender nuestro código y realizar cambios con confianza.
 
-## Cómo escribir pruebas en Elixir
+## Cómo hacerlo
 
-Para escribir pruebas en Elixir, utilizamos el módulo `ExUnit` que viene incluido en la librería estándar de Elixir. Primero, debemos importar este módulo en nuestro archivo de pruebas. Luego, podemos definir nuestras pruebas utilizando la macro `test` y brindándole un nombre descriptivo y una función anónima que contenga el código que queremos probar.
+Para empezar a escribir pruebas en Elixir, necesitamos utilizar el módulo "ExUnit". Podemos crear un archivo de pruebas con la extensión `.exs` y requerir el módulo ExUnit de la siguiente manera:
 
-```Elixir
-defmodule Pruebas do
+```
+# importa el módulo ExUnit
+import ExUnit
+
+# define un módulo de pruebas
+defmodule MiPrueba do
+
+  # especifica que mi módulo usa el módulo ExUnit
   use ExUnit.Case
 
-  test "suma de numeros" do
+  # nuestra primer prueba
+  test "mi prueba de suma" do
+    # assert asegura que 2 + 2 sea igual a 4
     assert 2 + 2 == 4
   end
 end
 ```
-Una vez que hemos definido nuestras pruebas, podemos ejecutarlas utilizando el comando `mix test` en nuestra terminal. Si todas las pruebas pasan exitosamente, recibiremos un mensaje de `1 test, 0 failures`.
 
-## Profundizando en la escritura de pruebas
+Una vez que hemos escrito nuestras pruebas, podemos ejecutarlas utilizando el comando `mix test`. Si todo funciona correctamente, deberíamos ver un resultado similar a esto:
 
-Escribir pruebas nos ayuda a identificar rápidamente errores en nuestro código y nos permite tener una mayor confianza en su funcionamiento. Además, nos permite tener una documentación viva de nuestro código, ya que las pruebas actúan como ejemplos de cómo utilizar nuestras funciones. Para obtener más información sobre cómo escribir pruebas en Elixir, puedes revisar la documentación oficial de `ExUnit`.
+```
+Finished in 0.04 seconds
+1 test, 0 failures
+```
+
+## Profundizando
+
+Existen varias formas de profundizar en la escritura de pruebas en Elixir, incluyendo la utilización de mocks y stubs para simular ciertos comportamientos en nuestras pruebas. También podemos utilizar ExUnit para realizar pruebas de rendimiento y pruebas de propiedades. Es importante explorar estas opciones y descubrir cómo se pueden aplicar a nuestro propio código.
 
 ## Ver también
 
-- [Documentación oficial de ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Artículo: "Guía de pruebas en Elixir"](https://happybearsoftware.com/guides/elixir/testing-in-elixir/)
-- [Video: "Testing Your Phoenix App"](https://www.youtube.com/watch?v=zy9JDWJ-ZVQ)
+- [Documentación de ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Elixir School - Pruebas y ExUnit](https://elixirschool.com/es/lessons/basics/testing/)
+- [Mocking en Elixir usando Mox](https://blog.appsignal.com/2018/07/03/elixir-mocking-with-mox-and-pattern-matching.html)

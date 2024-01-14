@@ -1,43 +1,46 @@
 ---
-title:    "Javascript: Beregning av en dato i fremtiden eller fortiden"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/calculating-a-date-in-the-future-or-past.md"
+title:                "Javascript: Å beregne en dato i fremtiden eller fortiden"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å beregne en dato i fremtiden eller fortiden kan være nyttig for å planlegge hendelser eller for å utføre nødvendige beregninger. Dette kan være spesielt nyttig innen programmering, der mange systemer og applikasjoner krever at datoer blir håndtert på en nøyaktig og effektiv måte. Ved å lære å beregne datoer i JavaScript kan du forbedre dine programmeringsferdigheter og løse problemer relatert til tid og dato på en enkel måte.
 
-Noen ganger i programmering må vi håndtere datoer og tider. Kanskje vi trenger å beregne en dato i fremtiden eller fortiden for å planlegge noe, eller kanskje vi ønsker å datere et blogginnlegg for å publisere det senere. Uansett årsak, er det viktig å kunne håndtere dette problemet på en effektiv måte. I denne bloggposten vil vi se på hvordan man kan beregne en dato i fremtiden eller fortiden i Javascript.
+## Slik gjør du det
+For å beregne en dato i fortiden eller fremtiden i JavaScript, må du først starte med en grunnleggende forståelse av datotypen "Date". Dette kan gjøres ved å bruke "new Date()" -konstruktøren som vil opprette et Date-objekt med den aktuelle datoen og klokkeslettet til brukeren.
 
-## Slik gjør du
-
-Det finnes flere måter å beregne en dato i Javascript på, men vi skal fokusere på den mest effektive metoden ved å bruke det innebygde Date-objektet og dets metoder. La oss si at vi ønsker å beregne en dato en uke fra nå. Dette kan gjøres ved å bruke setDate() metoden til å legge til 7 dager til den nåværende datoen.
-
-```Javascript
-let today = new Date();
-today.setDate(today.getDate() + 7);
-console.log(today); //output: Thu Apr 15 2021 19:59:09 GMT+0200 (Central European Summer Time)
-```
-
-På samme måte kan vi også beregne en dato i fortiden ved å bruke setDate() metoden til å trekke fra et antall dager fra den nåværende datoen.
+For å beregne en dato i fremtiden, kan du bruke "setDate()" -funksjonen for å legge til et visst antall dager på den nåværende datoen. Her er et eksempel på et kodestykke som beregner en dato 7 dager frem i tid:
 
 ```Javascript
-let today = new Date();
-today.setDate(today.getDate() - 10);
-console.log(today); //output: Sun Mar 28 2021 19:59:09 GMT+0200 (Central European Summer Time)
+var currentDate = new Date(); // Oppretter et Date-objekt med nåværende dato
+var futureDate = currentDate.setDate(currentDate.getDate() + 7); // Beregner en dato 7 dager frem i tid
+console.log(new Date(futureDate)); // Printer ut datoen i konsollen
 ```
 
-Vi kan også bruke andre metoder som setMonth() og setFullYear() for å beregne datoer i fremtiden eller fortiden, avhengig av hva slags nøyaktighet vi trenger.
+Output vil være: Sun Jul 12 2020 16:10:55 GMT+0200 (sentraleuropeisk sommertid)
+
+For å beregne en dato i fortiden, bruk "setDate()" -funksjonen igjen, men denne gangen kan du trekke fra et visst antall dager fra den nåværende datoen. Her er et eksempel på et kodestykke som beregner en dato 14 dager tilbake i tid:
+
+```Javascript
+var currentDate = new Date(); // Oppretter et Date-objekt med nåværende dato
+var pastDate = currentDate.setDate(currentDate.getDate() - 14); // Beregner en dato 14 dager tilbake i tid
+console.log(new Date(pastDate)); // Printer ut datoen i konsollen
+```
+
+Output vil være: Sat Jun 13 2020 16:10:55 GMT+0200 (sentraleuropeisk sommertid)
+
+Det er også mulig å beregne datoer basert på måneder og år ved å bruke "setMonth()" og "setFullYear()" -funksjonene. Det er viktig å merke seg at måneder i JavaScript starter på 0 for januar og slutter på 11 for desember.
 
 ## Dypdykk
+Det finnes også flere metoder og funksjoner for å håndtere datoer i JavaScript, som "getDay()" for å få ut hvilken ukedag en dato faller på. Det kan være nyttig å dykke dypere inn i dokumentasjonen til "Date" -objektet for å lære mer om alle de forskjellige mulighetene og funksjonene som er tilgjengelige.
 
-Når vi bruker Date-objektet, må vi være oppmerksomme på at datoer og tider er sensitive for tidsforskjeller og tidssoner. Dette betyr at hvis vi for eksempel ønsker å beregne en dato 6 måneder fra nå, så vil dette resultatet variere avhengig av hvilken tidssone vi befinner oss i. Derfor er det viktig å alltid være oppmerksom på begreper som UTC (Universal Time Coordinated) og UTC-offset når man jobber med tid og datoer.
-
-En annen viktig ting å være klar over er at Javascripts Date-objektet har en begrensning på antall millisekunder det kan håndtere. Dette betyr at hvis vi prøver å beregne datoer for langt inn i fremtiden eller fortiden, vil dette gi ugyldige resultater. Derfor må vi være forsiktige og sørge for at vi ikke overskrider denne begrensningen når vi beregner datoer.
+Å beregne datoer i fremtiden eller fortiden kan også være nyttig for å håndtere omfattende tidsberegningsoppgaver, som å sjekke for overlapping mellom datoer eller beregne gjennomsnittlig tidsbruk. Dette er bare noen eksempler på bruksområder for å beregne datoer i JavaScript, og mulighetene er mange.
 
 ## Se også
-
-- [Date Object Reference fra W3Schools](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-- [Kurs om tid og dato manipulasjon i Javascript fra Udemy](https://www.udemy.com/course/dates-data-time-manipulation-in-javascript/learn/lecture/2663980#overview)
-- [Tidsforskjeller og UTC-offset for ulike tidssoner fra Timeanddate.com](https://www.timeanddate.com/time/map/)
+- [Date Object in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Date Manipulation in JavaScript](https://www.w3schools.com/js/js_dates.asp)
+- [Understanding Date in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript)

@@ -1,46 +1,72 @@
 ---
-title:    "TypeScript: Uttrekking av substringer"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/extracting-substrings.md"
+title:                "TypeScript: Utvinning av substrings"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Substrings er en viktig del av programmering, spesielt innen TypeScript. Å ekstrahere substrings betyr å finne og isolere en del av en streng (tekst) og bruke den i koden din. Dette kan være nyttig for å organisere og håndtere data, samt for å formatere og manipulere tekst på en enkel måte.
+Å trekke ut substrings er en vanlig oppgave når du jobber med tekstbehandling i programmering. Dette kan være nyttig for å manipulere og behandle data på en mer detaljert og presis måte. I denne blogginnlegget vil vi gå gjennom hvordan du kan trekke ut substrings ved hjelp av TypeScript.
 
 ## Slik gjør du det
 
-For å ekstrahere substrings i TypeScript, bruker du funksjonene `substr()` og `substring()`. Begge disse funksjonene tar inn to argumenter: startindeks og sluttindeks for den ønskede delen av strengen.
+For å trekke ut substrings i TypeScript bruker vi metoden `substring()` sammen med indeksene til start og slutt på den delen av teksten vi ønsker å hente ut. La oss se på et enkelt eksempel:
 
-```
-//Eksempel på hvordan bruke `substr()`:
-let minTekst = "Dette er en eksempeltekst";
+```TypeScript
+let tekst = "Hei, dette er en test";
 
-//Ekstrahere "eksempeltekst":
-let delStreng = minTekst.substr(14);
+let substring = tekst.substring(5, 10);
 
-//Eksempel på hvordan bruke `substring()`:
-//Ekstrahere "en":
-let delStreng = minTekst.substring(9, 11);
-
-console.log(delStreng); //Output: "en"
+console.log(substring);
 ```
 
-I tillegg til `substr()` og `substring()`, kan du også bruke operatorer som `slice()` og `split()` til å ekstrahere substrings. Disse funksjonene fungerer på samme måte som `substr()` og `substring()`, men gir deg mer kontroll og fleksibilitet når du jobber med strenger.
+Dette eksemplet vil gi oss følgende output:
 
-## Dypdykk
+```TypeScript
+dette
+```
 
-En viktig ting å huske på når du arbeider med substrings, er at de bruker zero-based indexering. Dette betyr at den første bokstaven i en streng har indeks 0, den andre bokstaven har indeks 1, og så videre. Derfor vil for eksempel `minTekst.substr(0, 3)` gi deg de første tre bokstavene i strengen, ikke de første tre ordene.
+I koden over har vi definert en tekststreng og deretter brukt `substring()`-metoden for å hente ut teksten fra indeks 5 til indeks 10. Det er viktig å huske på at indeksene starter på 0, så det betyr at vi egentlig henter ut teksten fra den sjette (5 + 1) til den ellevte (10 + 1) bokstaven i teksten.
 
-Det finnes også ulike måter å angi start- og sluttindeks på, avhengig av hvilken funksjon du bruker. For eksempel kan du bruke negative tall for å telle baklengs fra slutten av strengen, eller bruke en andre streng som referanse for å angi indeksene.
+Vi kan også bruke negative indekser i `substring()`-metoden. Dette vil gi oss teksten fra slutten av teksten, som vist i eksempelet under:
 
-Det er også viktig å merke seg at substrings er "pass by reference", noe som betyr at de endrer den opprinnelige strengen de er ekstrahert fra. Hvis du ikke ønsker å endre den opprinnelige strengen, kan du i stedet bruke `slice()` eller `split()`.
+```TypeScript
+let tekst = "Hei, dette er en test";
+
+let substring = tekst.substring(-4, -1);
+
+console.log(substring);
+```
+
+Outputen for dette eksemplet vil være:
+
+```TypeScript
+tes
+```
+
+Vi kan også bruke variabler eller konstanter som indekser, avhengig av hva som passer best for oppgaven vår. Her er et eksempel på hvordan vi kan bruke konstanter som indekser:
+
+```TypeScript
+let tekst = "Hei, dette er en test";
+
+const START_INDEX = 5;
+const END_INDEX = 10;
+
+let substring = tekst.substring(START_INDEX, END_INDEX);
+
+console.log(substring);
+```
+
+## Dykk dypere
+
+Det er også verdt å nevne at `substring()`-metoden ikke endrer på den originale teksten, men heller returnerer en ny tekststreng basert på parametrene vi har gitt den. Hvis du ønsker å endre på den originale teksten, kan du bruke metoden `splice()` i stedet.
+
+Det er også mulig å hente ut deler av en tekst basert på kun én indeks i `substring()`-metoden. Hvis vi kun gir en startindeks, vil metoden hente ut teksten fra dette punktet og helt til slutten av teksten. Og hvis vi kun gir en sluttindeks, vil metoden hente ut teksten fra begynnelsen av teksten og til dette punktet.
 
 ## Se også
 
-- [String manipulation in TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html)
-- [JavaScript Substring, substr and substring](https://www.w3schools.com/jsref/jsref_substr.asp)
-- [JavaScript String slice() method](https://www.w3schools.com/jsref/jsref_slice_string.asp)
-- [JavaScript split() method](https://www.w3schools.com/jsref/jsref_split.asp)
+- [MDN web docs: substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [TypeScript documentation: string methods](https://www.typescriptlang.org/docs/handbook/2/strings.html#string-methods)

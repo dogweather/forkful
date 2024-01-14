@@ -1,48 +1,51 @@
 ---
-title:    "Gleam: कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/gleam/reading-command-line-arguments.md"
+title:                "Gleam: कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-"## Kyun: Gleam mein command line arguments ko padhne ke liye kyon kisi ki dilchaspi hai?
+## क्यों
+कुछ समझोगे तो समझेंगे
 
-Jab hum kisi program ko command line se run karte hain, tab hamein command line arguments ki zaroorat padti hai. Ye hume program mein dynamic input deta hai jo ki humare code ko functional banata hai. Isme hum apne program ko flexible banate hain aur usme changes kar sakte hain bina code ko compile kiye. Ye bahut hi faydemand ho sakta hai jab hum multiple environments mein apna code run karna chahte hain.
-
-"## Kaise karein: Command line arguments ko kaise padhen Gleam mein?
-
-Command line arguments ko padhna bahut hi aasan hai Gleam mein. Sabse pehle aapko `gleam/io` package ko import karna hoga. Fir aap `gleam/io` package mein diye gaye `argv()` function se command line arguments ko padh sakte hain. Iske liye aapko ek `List(String)` return hoga jisme saare arguments honge. Neeche diye gaye example code se aapko samajh aa jayega.
+## कैसे करे
+command line arguments बनाओ लेकिन कैसे. नीचे दी गयी कोडिंग उदाहरण और सैंपल output देखो "```Gleam ...```" कूट्स में:
 
 ```Gleam
 import gleam/io
 
 fn main() {
-  io.argv() |> io.print
+  // अगर कोई भी command line arguments दिये गए हैं, उन्हें देखा जायेगा
+  // लेकिन अगर कोई खाली h तब संदेश देखो
+  case io.args() {
+    // io.args() में से पहला हटाओ क्योंकि ये फ़ाइल नाम हो सकता है
+    [_, h | _] -> io.println("हेलो " ++ h)
+    _ -> io.println("हेलो world")
+  }
 }
 ```
 
-Is code ka output hume command line arguments ki list dega. Agar hum ise run karein to is tarah se output aayega:
+यदि आप इसको compile और run करते हैं, तो आप नीचे के सैंपल output को देखेंगे:
 
-```Gleam
-> gleam run app.gleam arg1 arg2
-[arg1, arg2]
+```
+$ gleam run hello_world.gleam
+अगर आप hello_world.gleam नाम के फ़ाइल को compile और run करते हैं
+
+hello world
+
+$ gleam run hello_world.gleam Sebastian
+यदि आप अपना खुदका नाम देते हैं
+
+hello Sebastian
 ```
 
-Is tarah se aap apne program mein arguments ko padh sakte hain aur unko use kar sakte hain apne code ko functional aur dynamic banane ke liye.
+## डीप डाइव
+command line arguments पाठ्यक्रम के साथ दिए गए स्वरूप को अन्य तरीके से प्रदर्शित करता है जो आपको इससे ज्यादा बुनियादी जानकारी प्रदान करता है। आप इसे परिवर्तित कर सकते हैं और इस कार्यों को अनिवार्य रूप से, उदाहरण के लिए, सुनिश्चित कर सकते हैं कि किस command line argument आपको कौन से कार्यों के साथ जुड़े हैं।
 
-"## Gehri Jaanch: Command line arguments ko padhne ki aur gehri jaankari
+आप हमारे [documentation](https://gleam.run/book/tutorials/command_line_arguments.html) पर जा कर गहराई से command line arguments के बारे में पढ़ सकते हैं।
 
-Command line arguments padhna na sirf aapko code ko functional banane mein madad karta hai balki isse aap apne program ko bahut versatile bhi bana sakte hain. Isme aap apne code mein default values bhi set kar sakte hain jisse agar user koi argument na de to bhi program run ho sake.
-
-Saath hi, command line arguments ke saath saath flags bhi use kar sakte hain jo ki humare program ke options hote hain. Aur jab hum in flags ko use karte hain to hume unki value bhi command line se read karni padti hai. Is tarah se hum apne program ko even more dynamic bana sakte hain.
-
-"## Dekhein Bhi: Iske alawa aur jaankari ke liye
-
-Is article mein humne command line arguments ko padhna aur use karna sikh liya hai. Agar aap aur bhi Gleam programming ke bare mein jaanna chahte hain, to neeche diye gaye links se aap humare dusre articles ko padh sakte hain:
-
-- [Gleam: Functional Programming ki Roshni Mein](https://futurestud.io/tutorials/gleam-functional-programming-seekho)
-- [Gleam: Concurrent Programming aur Erlang VM](https://futurestud.io/tutorials/gleam-concurrent-programming-seekho)
-- [Gleam: Github Repo aur Documentation](https://github.com/gleam-lang/gleam#readme)
-
-Yeh articles aapke Gleam programming journey mein aapki madad karenge. Happy coding! "
+## देखिये
+[मार्कडाउन और ग्लीम](https://gleam.run/book/tutorials/documentation.html)
+[ग्लीम से सीखिए प्रोग्रामिंग](https://gleam.run/book/)

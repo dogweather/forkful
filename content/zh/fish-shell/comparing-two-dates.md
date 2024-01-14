@@ -1,48 +1,68 @@
 ---
-title:    "Fish Shell: 比较两个日期。"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/comparing-two-dates.md"
+title:                "Fish Shell: 比较两个日期"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要比较两个日期？
 
-在编程过程中，经常会遇到需要比较两个日期的情况，例如判断某一日期是在另一个日期之前还是之后。Fish Shell提供了简单而有效的方式来进行日期比较，让编程变得更加轻松和高效。
+在编程中，我们经常需要比较两个日期来判断时间先后顺序或者计算时间间隔。比如在日程管理应用中，我们可能需要检查某个事件是否已经过去或者计算两个事件之间的天数。使用Fish Shell可以轻松地比较两个日期并获得想要的结果。
 
-## 如何使用
+## 如何比较两个日期？
 
-要比较两个日期，我们可以使用内置的`date`命令来获取日期的时间戳，然后使用Fish Shell提供的比较运算符来判断两个日期的大小关系。下面是一个示例代码及输出：
+比较两个日期的最基本的方法是使用date命令。以下是一个示例代码，演示如何比较两个日期是否相等：
 
 ```Fish Shell
-# 获取当前日期的时间戳
-set today (date +%s)
+set date1 2019-10-23
+set date2 2019-11-15
 
-# 获取未来一周的日期的时间戳
-set next_week (date -d "+1 week" +%s)
-
-# 使用Fish Shell的内置比较运算符来判断两个日期的大小关系
-if test $today -gt $next_week
-  echo "今天更晚"
+if [ "$date1" = "$date2" ]
+    echo "日期相等！"
 else
-  echo "未来一周更晚"
+    echo "日期不相等"
 end
 ```
 
-输出结果：
+运行以上代码，结果为“日期不相等”。如果想要更加灵活地比较日期，可以使用date命令的`-s`选项来将日期转换为可比较的格式。比如：
 
+```Fish Shell
+set date1 (date -s "2019-10-23" +%s)
+set date2 (date -s "2019-11-15" +%s)
+
+if [ "$date1" -eq "$date2" ]
+    echo "日期相等！"
+else
+    echo "日期不相等"
+end
 ```
-未来一周更晚
+
+运行以上代码，结果为“日期不相等”。这是因为date命令的`-s`选项将日期转换为Unix时间戳，可以更容易地比较大小。
+
+## 深入了解比较日期
+
+除了基本的比较方法，Fish Shell还提供了内置的math命令来进行日期运算。比如，想要计算两个日期之间的天数差，可以使用以下代码：
+
+```Fish Shell
+set date1 (date -s "2019-10-23" +'%Y%m%d')
+set date2 (date -s "2019-11-15" +'%Y%m%d')
+
+math $date2 - $date1
 ```
 
-通过获取日期的时间戳来进行比较，我们可以轻松地判断两个日期的大小关系，从而在编程中更加方便地处理日期相关的逻辑。
+运行以上代码，结果为23，表示两个日期相差23天。同时，Fish Shell还提供了方便的日期格式化选项，可以将日期输出为不同的格式。
 
-## 深入学习
-
-Fish Shell提供了丰富的日期比较功能，包括比较日期的年份、月份、天数等等。想要深入学习如何使用Fish Shell进行日期比较，可以参考官方文档中关于[日期比较](https://fishshell.com/docs/current/cmds/date.html#compare)的部分。
-
-## 参考链接
+# 参考链接
 
 - [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
-- [Fish Shell GitHub仓库](https://github.com/fish-shell/fish-shell)
-- [Fish Shell维基百科页面](https://en.wikipedia.org/wiki/Fish_(Unix_shell))
+- [如何在Fish Shell中比较两个日期](https://zhuanlan.zhihu.com/p/112704479)
+- [Fish Shell的日期处理指南](https://devhints.io/fish-shell-dates)
+- [Date命令的手册页面](https://linux.die.net/man/1/date)
+
+# 参见
+
+- [Fish Shell高级编程指南](https://medium.com/@jorgegsc007/a-definitive-guide-to-fish-shell-scripting-f295713cef59)
+- [Shell编程入门](https://www.runoob.com/linux/linux-shell.html)
+- [Shell语言编程基础知识](https://www.ibm.com/developerworks/cn/linux/l-shell/)

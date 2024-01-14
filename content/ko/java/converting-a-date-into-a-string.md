@@ -1,33 +1,75 @@
 ---
-title:    "Java: 날짜를 문자열로 변환하기"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/converting-a-date-into-a-string.md"
+title:                "Java: 날짜를 문자열로 변환하기"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-날짜를 문자열로 변환하는 것에 참여하는 이유는 다양합니다. 예를 들어, 날짜를 다른 데이터와 결합하거나 데이터를 시각적으로 표현하기 위해 사용할 수 있습니다. 또한 오류를 방지하기 위해 날짜를 문자열로 저장하는 것도 도움이 될 수 있습니다.
+날짜를 문자열로 변환하는 방법이 중요한 이유는 다음과 같습니다. 프로그래밍에서 날짜는 매우 중요한 개념이며 많은 분야에서 사용됩니다. 따라서 특정 날짜를 적절한 문자열 형식으로 변환하는 것은 불가피합니다.
 
-# 어떻게
+## 어떻게
 
-사용자가 입력한 날짜를 Java 프로그래밍에서 쉽게 문자열로 변환하는 방법을 소개합니다. 날짜를 문자열로 변환하는 가장 간단한 방법은 String 클래스의 format 메서드를 사용하는 것입니다. 아래의 코드 블록은 LocalDate 객체를 String 객체로 변환하는 예시를 보여줍니다.
+이제 코드 블록을 사용하여 여러가지 방법으로 날짜를 문자열로 변환하는 방법을 살펴보겠습니다.
 
-```Java
-LocalDate date = LocalDate.now(); // 현재 날짜를 가져옴
-String dateString = String.format("%d년 %d월 %d일", date.getYear(), date.getMonthValue(), date.getDayOfMonth()); // 사용자가 원하는 형식으로 날짜를 문자열로 변환
-System.out.println(dateString); // 결과 출력: 현재 날짜를 양식에 맞춰 출력 (예: 2021년 5월 2일)
+```java
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+Date date = new Date();
+SimpleDateFormat format1 = new SimpleDateFormat("yyyy/MM/dd");
+
+// Date를 yyyy/MM/dd 형식의 문자열로 변환
+String strDate1 = format1.format(date);
+System.out.println("String: " + strDate1);
+```
+```
+출력:
+String: 2020/10/05
 ```
 
-위의 코드를 실행하면 현재 날짜를 원하는 양식에 맞춰 문자열로 출력할 수 있습니다. 또한 원하는 양식에 맞춰 날짜를 출력할 수 있으며, 예외 처리를 통해 잘못된 값을 입력받았을 경우 오류를 방지할 수 있습니다.
+```java
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-# 더 들어가기
+LocalDate date = LocalDate.now();
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
-날짜를 문자열로 변환하는 더 복잡한 방법도 있습니다. 예를 들어, 날짜와 시간을 함께 출력하고 싶을 때는 LocalDateTime 클래스를 사용하면 됩니다. 또한 다양한 날짜 포맷을 사용해 원하는 형식으로 출력할 수 있습니다. 이러한 세부적인 내용은 Java의 공식 문서나 다른 프로그래밍 블로그에서 더 자세하게 확인할 수 있습니다.
+// LocalDate를 yyyy/MM/dd 형식의 문자열로 변환
+String strDate2 = date.format(formatter);
+System.out.println("String: " + strDate2);
+```
+```
+출력:
+String: 2020/10/05
+```
 
-# 관련 링크
+```java
+import java.util.Calendar;
 
-- Java String 클래스 문서: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
-- Java LocalDate 클래스 문서: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
-- Java LocalDateTime 클래스 문서: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html
+Calendar calendar = Calendar.getInstance();
+
+// java.util.Calendar를 yyyy/MM/dd 형식의 문자열로 변환
+String strDate3 = String.format("%1$tY/%1$tm/%1$td", calendar);
+System.out.println("String: " + strDate3);
+```
+```
+출력:
+String: 2020/10/05
+```
+
+위의 예제들은 각각 `Date`, `LocalDate`, `Calendar` 객체를 이용하여 날짜를 문자열로 변환하는 방법을 보여주고 있습니다. 각각의 클래스마다 다른 방식으로 문자열 형식을 지정해주어야 합니다. 따라서 자신이 사용하는 클래스에 따라 알맞은 방법을 선택해야 합니다.
+
+## 더 깊이 들어가기
+
+사실 날짜를 문자열로 변환하는 방법은 많은 다양한 방식이 있습니다. 위의 예제들은 간단한 형태의 날짜를 문자열로 변환하는 방법이지만, 더 복잡한 형태의 날짜를 다루어야 할 경우 더 많은 설정을 필요로 할 수 있습니다. 따라서 자신이 다루어야 할 날짜에 맞는 적절한 변환 방법을 찾아서 적용해야 합니다.
+
+## 참고
+
+* [Java - Date를 String으로 변환하기](https://helle-world.tistory.com/37)
+* [Date 형식을 String으로 변환하는 방법](https://lemontia.tistory.com/886)
+* [Java Calendar를 String으로 변환하는 방법](https://madplay.github.io/post/java-calendar-to-string-format)
+* [SimpleDateFormat 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)

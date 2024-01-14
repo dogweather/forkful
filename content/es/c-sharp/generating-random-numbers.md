@@ -1,49 +1,47 @@
 ---
-title:    "C#: Generando números aleatorios"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/generating-random-numbers.md"
+title:                "C#: Generando números aleatorios"
+programming_language: "C#"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-##¿Por qué Generar Números Aleatorios?
+### Por qué generar números aleatorios en programación
 
-La generación de números aleatorios es una práctica común en la programación. Puede ser útil en muchos escenarios, como en juegos, encriptación y simulaciones. También puede ser una forma divertida de jugar con los algoritmos de programación y mejorar tus habilidades.
+La generación de números aleatorios es una técnica común en programación para crear resultados aleatorios y evitar patrones predecibles en la ejecución de un programa. Puede ser útil en una variedad de aplicaciones, como juegos, simulaciones y criptografía.
 
-## Cómo Generar Números Aleatorios en C #
+### Cómo hacerlo en C#
 
-Generar números aleatorios en C # es sencillo y se puede hacer utilizando la clase `Random`. Aquí hay un ejemplo de cómo generar un número entero aleatorio entre 1 y 10:
-
-```C#
-//Declara una instancia de la clase Random
-Random rand = new Random();
-//Genera un número aleatorio entre 1 y 10
-int numAleatorio = rand.Next(1, 11);
-```
-
-También puedes usar `NextDouble ()` para generar un número decimal aleatorio entre 0 y 1.
+En C#, podemos generar números aleatorios utilizando la clase `Random` y su método `Next()`. Veamos un ejemplo básico:
 
 ```C#
-Random rand = new Random();
-//Genera un número decimal aleatorio entre 0 y 1
-double numAleatorio = rand.NextDouble();
+// Declarar un objeto de tipo Random
+Random rnd = new Random();
+
+// Generar un número aleatorio entre 1 y 10
+int numeroAleatorio = rnd.Next(1, 11);
+
+// Imprimir el resultado
+Console.WriteLine("El número aleatorio es: " + numeroAleatorio);
 ```
 
-## Profundizando en la Generación de Números Aleatorios
+El código anterior creará un objeto `Random` y llamará al método `Next()` indicando el rango en el que se desea generar el número aleatorio. El resultado será un número entero aleatorio entre 1 y 10.
 
-La clase `Random` utiliza un algoritmo para generar números aleatorios que se basa en una semilla. La semilla es un número entero que se utiliza como punto de partida para el algoritmo de generación de números aleatorios. Si no se especifica una semilla, se toma la hora actual como semilla. Esto significa que cada vez que ejecutes el programa, obtendrás una secuencia diferente de números aleatorios.
+También es posible generar números aleatorios de otros tipos de datos, como por ejemplo, números decimales o caracteres. Es importante mencionar que la clase `Random` utiliza un algoritmo para generar estos números, por lo que no son completamente aleatorios, pero son suficientemente impredecibles para muchos casos de uso.
 
-Si deseas obtener la misma secuencia de números aleatorios en cada ejecución del programa, puedes especificar una semilla fija en el constructor de la clase `Random`.
+### Profundizando en la generación de números aleatorios
 
-```C#
-//Declara una instancia de la clase Random con una semilla fija
-Random rand = new Random(42); //42 es solo un ejemplo de una semilla
-```
+Para aquellos interesados en conocer cómo funcionan los algoritmos de generación de números aleatorios, existen técnicas más avanzadas que utilizan otros métodos y ecuaciones matemáticas para crear resultados más precisos y aleatorios.
 
-La generación de números aleatorios en computadoras es en realidad un proceso pseudoaleatorio. Esto significa que, aunque los números pueden parecer aleatorios, en realidad están siguiendo un algoritmo matemático. Ten esto en cuenta si necesitas generar números verdaderamente aleatorios para propósitos de seguridad.
+Entre estas técnicas se encuentra la generación de números pseudoaleatorios, que son secuencias de números que parecen ser aleatorios, pero en realidad siguen un patrón determinado. Estas secuencias pueden ser útiles en ciertos contextos, como por ejemplo, en simulaciones científicas.
 
-## Ver También
+También existen algoritmos de generación de números criptográficos, que son utilizados en el ámbito de la seguridad informática para garantizar la máxima aleatoriedad y proteger datos sensibles.
 
-- [Documentación oficial de Microsoft para la clase Random en C#](https://docs.microsoft.com/es-es/dotnet/api/system.random)
-- [Más ejemplos de generación de números aleatorios en C#](https://www.c-sharpcorner.com/blogs/random-number-generation-in-c-sharp1)
-- [Introducción a los Generators en C# 9](https://docs.microsoft.com/es-es/dotnet/csharp/whats-new/csharp-9#generators)
+En resumen, la generación de números aleatorios es una herramienta útil y versátil en programación, con diversas aplicaciones y técnicas para diferentes propósitos.
+
+### Ver también
+
+- [Documentación oficial de Microsoft sobre la clase `Random` en C#](https://docs.microsoft.com/es-es/dotnet/api/system.random?view=netcore-3.1)
+- [Article on random number generation algorithms](https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/)
+- [Overview of cryptographically secure pseudo-random number generators](https://www.sciencedirect.com/science/article/abs/pii/S0898122107000947)

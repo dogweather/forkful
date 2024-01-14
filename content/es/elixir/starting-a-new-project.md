@@ -1,62 +1,57 @@
 ---
-title:    "Elixir: Comenzando un nuevo proyecto"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/elixir/starting-a-new-project.md"
+title:                "Elixir: Comenzando un nuevo proyecto"
+programming_language: "Elixir"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-Iniciar un nuevo proyecto en Elixir puede brindar numerosos beneficios, como la capacidad de crear aplicaciones altamente escalables y tolerantes a fallos. Además, Elixir cuenta con una sintaxis intuitiva y una comunidad activa que ofrece numerosos recursos y ayuda para el desarrollo de proyectos.
+Empezar un nuevo proyecto en Elixir puede ser una excelente opción para aquellos que buscan un lenguaje de programación funcional y altamente escalable. Con una sintaxis fácil de aprender y una comunidad activa, Elixir es una herramienta poderosa para crear aplicaciones robustas y eficientes.
 
-## Cómo
+## Cómo hacerlo
 
-Para comenzar un nuevo proyecto en Elixir, primero debes asegurarte de tener instalado el lenguaje en tu sistema. Luego, puedes crear una nueva aplicación utilizando el comando `mix new nombre_de_tu_app`. Este comando creará automáticamente la estructura básica de tu aplicación.
+Antes de comenzar a escribir código en Elixir, deberás asegurarte de tener instalado el runtime de Erlang y el sistema de construcción Mix. Una vez que tengas todo configurado, puedes seguir estos pasos para iniciar tu nuevo proyecto:
 
-A continuación, puedes editar el archivo `mix.exs` para añadir dependencias externas y configurar tu aplicación. Luego, puedes comenzar a escribir tu código en los archivos `.ex` utilizando la sintaxis de Elixir. Por ejemplo:
+1. Crea una nueva carpeta para tu proyecto.
+2. Abre una terminal y navega hasta la carpeta que acabas de crear.
+3. Ejecuta el comando `mix new nombre_del_proyecto` para generar una nueva estructura de proyecto con algunos archivos predefinidos.
+4. Navega a través de los archivos y edítalos según sea necesario para satisfacer tus necesidades.
+5. Para ejecutar tu proyecto, simplemente escribe `mix run` en la terminal.
+6. ¡Empieza a escribir tu código en Elixir y haz que tu proyecto cobre vida!
+
+Aquí hay un ejemplo básico de cómo imprimir "¡Hola mundo!" en la terminal usando Elixir:
 
 ```Elixir
-defmodule Saludo do
-  def hola(nombre) do
-    IO.puts "Hola #{nombre}!"
+defmodule Hola do
+  def mundo do
+    IO.puts "¡Hola mundo!"
   end
 end
 
-Saludo.hola("Juan") # salida: Hola Juan!
+Hola.mundo()
 ```
 
-Elixir también cuenta con un poderoso sistema de concurrencia llamado Erlang VM, que te permite ejecutar múltiples procesos de forma eficiente. Puedes utilizar este sistema para crear aplicaciones robustas y tolerantes a fallos. Por ejemplo:
+La salida de este código sería:
 
-```Elixir
-defmodule Calculadora do
-  def sumar(x, y) do
-    proceso = spawn(fn -> IO.puts "Calculando la suma de #{x} y #{y}..." end)
-    resultado = x + y
-    send(proceso, resultado)
-  end
-end
-
-Calculadora.sumar(5, 7) # salida: Calculando la suma de 5 y 7...
-                        #        12
+```
+¡Hola mundo!
 ```
 
-## Deep Dive
+## Profundizando
 
-Además de su elegante sintaxis y su sistema de concurrencia, Elixir también cuenta con una gran cantidad de herramientas y frameworks para facilitar el desarrollo de aplicaciones. Por ejemplo, Phoenix es un framework web basado en Elixir que te permite crear fácilmente aplicaciones web de alta calidad.
+Al iniciar un nuevo proyecto en Elixir, es importante entender algunos conceptos clave como la inmutabilidad, la concurrencia y el patrón de diseño de OTP (Open Telecom Platform). Estos son los pilares sobre los que se construye Elixir, por lo que conocerlos te ayudará a escribir un código más eficiente y escalable.
 
-También tienes la opción de utilizar Ecto, un mapeador de objetos relacionales que te permite interactuar con bases de datos utilizando el poderoso lenguaje de consulta de Elixir. Esto facilita la manipulación de datos en tus aplicaciones.
+La inmutabilidad se refiere a la idea de que los datos no deben cambiar una vez que se han creado, en lugar de eso, se deben crear nuevas versiones de los mismos. Esto ayuda a prevenir errores y hace que el código sea más fácil de razonar.
 
-En cuanto a herramientas de testing, puedes utilizar ExUnit para escribir pruebas automatizadas y garantizar la calidad de tu código.
+La concurrencia es una característica clave de Elixir que permite que varias tareas se ejecuten simultáneamente en un solo procesador. Esto se logra a través del uso de procesos livianos, que son mucho más eficientes que los hilos de los sistemas operativos. Esto permite que las aplicaciones escritas en Elixir manejen grandes cantidades de tareas de manera eficiente.
 
-Otra gran ventaja de Elixir es su capacidad de integración con Erlang, lo que te permite aprovechar la amplia variedad de bibliotecas y aplicaciones disponibles en el ecosistema de Erlang.
+El patrón de diseño de OTP es la forma en que Elixir organiza y estructura aplicaciones para asegurar que sean estables y escalables. Utiliza conceptos como la supervisión, que permite que una aplicación se recupere de errores de manera automática, y los GenServers, que son procesos de alto nivel que se encargan de procesar tareas específicas.
 
-Con todas estas herramientas y características, iniciar un nuevo proyecto en Elixir es una gran opción para aquellos que buscan desarrollar aplicaciones robustas y escalables de manera eficiente.
-
-## Vea También
+## Ver también
 
 - [Documentación oficial de Elixir](https://elixir-lang.org/docs.html)
-- [Phoenix Framework](https://www.phoenixframework.org/)
-- [Ecto](https://hexdocs.pm/ecto/Ecto.html)
-- [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Erlang](https://www.erlang.org/)
+- [Elixir School en español](https://elixirschool.com/es/)
+- [Lista de recursos de aprendizaje de Elixir en español](https://github.com/edgar/awesome-elixir-es)

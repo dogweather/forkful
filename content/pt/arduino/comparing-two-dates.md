@@ -1,60 +1,75 @@
 ---
-title:    "Arduino: Comparando duas datas"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/comparing-two-dates.md"
+title:                "Arduino: Comparando duas datas"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que comparar duas datas?
+## Por que comparar datas em programação Arduino?
 
-Comparar duas datas é uma tarefa comum em projetos de Arduino, especialmente quando se lida com temporizadores ou para verificar a diferença entre as datas atuais e as datas armazenadas em uma memória externa. Esta comparação pode ajudar a controlar eventos ou ativar dispositivos em horários específicos. Neste artigo, vamos aprender como fazer essa comparação utilizando o Arduino.
+Saber como comparar datas em programação Arduino pode ser extremamente útil em diversas aplicações. Por exemplo, pode-se utilizar essa técnica para controlar eventos que acontecem em horários específicos, para programar a iluminação de um ambiente ou até mesmo para criar alarmes.
 
-## Como fazer
+## Como comparar datas em programação Arduino
 
-Para comparar duas datas, precisamos primeiro obter as datas desejadas e depois utilizar funções de comparação para determinar se as datas são iguais, maiores ou menores.
+Para comparar duas datas em um código Arduino, é necessário seguir alguns passos simples:
 
-Passo 1: Obter as datas
+1. Definir as variáveis para as duas datas que serão comparadas, utilizando o tipo de dados `DateTime` da biblioteca `RTClib`.
+2. Utilizar o método `now()` da biblioteca `RTClib` para obter a data e hora atual do sistema.
+3. Utilizar os métodos `day()`, `month()` e `year()` para obter os valores de dia, mês e ano da data atual.
+4. Utilizar uma estrutura condicional (if/else) para comparar os valores de dia, mês e ano das duas datas e realizar a ação desejada.
 
-Usaremos a biblioteca <DateTime.h> para obter as datas desejadas. Esta biblioteca vem junto com a biblioteca <DS3231.h> para uso com o módulo de relógio DS3231. Primeiro, devemos inicializar o módulo e, em seguida, usar a função now() para obter a data atual.
-
-```
-#include <Wire.h>
-#include <DS3231.h>
-
-DS3231 rtc; // inicializa o módulo de relógio
-DateTime now = rtc.now(); // obtém a data atual
-```
-
-Passo 2: Comparar as datas
-
-Agora que temos a data atual, podemos compará-la com uma data armazenada em uma variável. Vamos supor que temos uma data desejada armazenada em uma variável chamada "data_alvo". Podemos usar as funções de comparação <, >, == para comparar as datas e tomar uma ação com base no resultado.
+Abaixo, segue um exemplo de código que compara duas datas e acende um LED caso as datas sejam iguais:
 
 ```
-if (now < data_alvo) {
-  // a data atual é menor que a data alvo
-  // faça algo
+#include <RTClib.h> 
+
+RTC_DS1307 rtc;
+DateTime data1, data2;
+
+int led = 13;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(led, OUTPUT);
+
+  if (! rtc.begin()) {
+    Serial.println("O módulo RTC não foi encontrado!");
+    while (1);
+  }
+
+  if (! rtc.isrunning()) {
+    Serial.println("O módulo RTC não está funcionando corretamente!");
+  }
+
+  data1 = DateTime(2020, 10, 25, 10, 0, 0); //primeira data para comparação
+  data2 = DateTime(rtc.now()); //segunda data para comparação é a data e hora atuais
 }
 
-if (now > data_alvo) {
-  // a data atual é maior que a data alvo
-  // faça algo
-}
+void loop() {
 
-if (now == data_alvo) {
-  // a data atual é igual à data alvo
-  // faça algo
+  if (data1.day() == data2.day() && data1.month() == data2.month() && data1.year() == data2.year()) { //compara os valores de dia, mês e ano das duas datas
+    digitalWrite(led, HIGH); //se as datas forem iguais, acende o LED
+    Serial.println("As datas são iguais!");
+  } else {
+    digitalWrite(led, LOW); //se as datas não forem iguais, mantém o LED apagado
+    Serial.println("As datas são diferentes!");
+  }
+  delay(500);
 }
 ```
 
-## Aprofundando
+O código acima utiliza a biblioteca `RTClib` para obter a data e hora atual e compara com a data definida pela variável `data1`. Caso as datas sejam iguais, o LED é aceso e uma mensagem é exibida no monitor serial.
 
-Ao comparar duas datas, é importante levar em consideração o formato em que elas estão sendo armazenadas. Geralmente, datas são armazenadas em strings ou em milissegundos desde uma data de referência. Portanto, é importante converter as datas em um formato comum antes de compará-las.
+## Aprofundando na comparação de datas
 
-Também é importante ter em mente que algumas funções de comparação podem não funcionar corretamente com datas maiores que o ano 2038. Isso ocorre devido a limitações de armazenamento de dados em uma variável de 32 bits. Portanto, é aconselhável usar uma biblioteca de tempo como a <TimeLib.h> para lidar com datas maiores que o ano 2038.
+É importante ressaltar que, ao comparar datas, é necessário levar em consideração o formato escolhido para exibir a data. No exemplo acima, utilizamos o formato `DateTime(Y, M, D, h, m, s)`, onde Y representa o ano, M o mês, D o dia, h a hora, m o minuto e s o segundo. No entanto, existem outras formas de representar e comparar datas, como por exemplo utilizando a biblioteca `Time` e seus respectivos métodos `hour()`, `minute()` e `second()`.
+
+Além disso, é importante considerar os formatos de hora e data utilizados pelo RTC (Real Time Clock), que podem variar dependendo do tipo de modelo utilizado.
 
 ## Veja também
 
-- <a href="https://www.arduino.cc/reference/pt/libraries/ds3231/">Biblioteca DS3231</a>
-- <a href="https://www.arduino.cc/reference/pt/language/functions/time/">Funções de tempo</a>
-- <a href="https://www.arduino.cc/reference/pt/language/functions/time/millis/">Função millis()</a>
+- [Tutorial completo: como utilizar datas e horas no Arduino](https://www.arduino.cc/reference/en/libraries/rtclib/)
+- [Como utilizar a biblioteca RTClib](https://www.arduino.cc/en/Reference/RTClib)
+- [Documentação oficial da biblioteca Time](https://www.pjrc.com/teensy/td_libs_Time.html)

@@ -1,42 +1,46 @@
 ---
-title:    "Javascript: Creando un archivo temporal"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/creating-a-temporary-file.md"
+title:                "Javascript: Creando un archivo temporal"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-En la programación de Javascript, a menudo nos encontramos con la necesidad de crear archivos temporales. Estos archivos pueden ser útiles para almacenar datos de forma temporal mientras se ejecuta un programa, o para realizar pruebas de código sin afectar los archivos permanentes. Aprender a crear archivos temporales puede ser muy útil para optimizar nuestro flujo de trabajo y evitar problemas en el futuro.
+## ¿Por qué crear un archivo temporal?
 
-## Cómo crear archivos temporales en Javascript
-Para crear un archivo temporal en Javascript, podemos utilizar la biblioteca integrada "fs". Primero, debemos importar la biblioteca con la sentencia `require`:
+En la programación, a menudo nos encontramos con la necesidad de crear un archivo temporal. Estos archivos se utilizan para almacenar información temporalmente y se eliminan una vez que ya no se necesitan. Esto puede ser útil en situaciones en las que se requiere almacenar datos de manera rápida y eficiente.
+
+## Cómo crear un archivo temporal
+
+Para crear un archivo temporal en Javascript, necesitamos utilizar la librería `fs`. Primero, debemos importarla al inicio de nuestro código:
+
 ```Javascript
 const fs = require('fs');
 ```
-Luego, utilizaremos el método `writeFile` para crear y escribir en el archivo temporal:
+
+Luego, podemos utilizar el método `fs.mktempSync()` para crear el archivo temporal. Este método tomará dos argumentos: el prefijo para el nombre del archivo y una función callback. Por ejemplo, si queremos crear un archivo temporal con el nombre "tempfile", nuestro código se vería así:
+
 ```Javascript
-fs.writeFile('temp.txt', 'Este es un archivo temporal', (err) => {
-  if (err) throw err;
-  console.log('Archivo temporal creado');
-});
+const tempFile = fs.mktempSync('tempfile');
 ```
-Este código creará un archivo llamado "temp.txt" y escribirá en él el texto "Este es un archivo temporal". Si queremos leer el contenido de nuestro archivo temporal, podemos utilizar el método `readFile`:
+
+Este método creará automáticamente un archivo con el nombre "tempfile" y nos devolverá la ruta absoluta al mismo.
+
+## Profundizando en la creación de un archivo temporal
+
+Hay varias cosas que debemos tener en cuenta al crear un archivo temporal en Javascript. En primer lugar, necesitamos asegurarnos de que nuestro código sea seguro y no cause problemas de seguridad en nuestra aplicación. Una forma de hacerlo es estableciendo una fecha de caducidad para nuestros archivos temporales. Podemos hacer esto utilizando el método `fs.mktempSync()` de la siguiente manera:
+
 ```Javascript
-fs.readFile('temp.txt', 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
+const tempFile = fs.mktempSync({ prefix: 'tempfile', postfix: '.txt', unsafeCleanup: true, expires: 60 });
 ```
-El método `readFile` nos devolverá el contenido del archivo temporal en formato de texto.
 
-## Profundizando en la creación de archivos temporales
-La función `writeFile` nos permite especificar un parámetro opcional para indicar la codificación del archivo. Por defecto, utiliza "utf8", pero podemos cambiarlo según nuestras necesidades. Además, podemos utilizar el método `unlink` para eliminar el archivo temporal después de utilizarlo.
+Aquí, hemos establecido una fecha de caducidad para nuestro archivo temporal de 60 segundos y también hemos agregado un sufijo ".txt" al nombre del archivo.
 
-También es importante tener en cuenta que la creación de archivos temporales puede variar en diferentes sistemas operativos. Por ejemplo, en Windows, el nombre del archivo temporal puede incluir una ruta de archivo completa, mientras que en Linux puede ser simplemente un nombre aleatorio.
+Otra cosa importante a tener en cuenta es que los archivos temporales pueden ser un blanco fácil para ataques maliciosos, ya que pueden contener información confidencial. Por lo tanto, debemos asegurarnos de que nuestros archivos temporales se eliminen de manera segura una vez que ya no los necesitamos. Podemos hacer esto utilizando el método `fs.mkdtempSync()` que creará un archivo temporal en una carpeta temporal y luego la eliminará automáticamente después de un período de tiempo específico.
 
-En resumen, la creación de archivos temporales puede ser una herramienta muy útil en la programación de Javascript, y es importante entender cómo funciona y cómo adaptarlo a nuestras necesidades específicas.
+## Ver También
 
-## Ver también
-- [Documentación oficial de Node.js sobre la creación de archivos temporales](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
-- [Artículo en Medium: Crear y leer archivos en Node.js usando la biblioteca fs](https://medium.com/swlh/creating-and-reading-files-in-node-js-using-the-fs-module-592a4b7a7e1#.pinu9ycnu)
+- [Node.js Documentation on fs.mktempSync()](https://nodejs.org/api/fs.html#fs_fs_mktempsync_prefix_options)
+- [Tutorial: Crear y eliminar archivos temporales en Node.js](https://johnny-five.io/tutorials/create-temporary-files-nodejs/)
+- [Artículo: Seguridad en archivos temporales en Node.js](https://blog.logrocket.com/securely-managing-temporary-files-in-node-js/)

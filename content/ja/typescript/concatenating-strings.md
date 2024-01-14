@@ -1,62 +1,52 @@
 ---
-title:    "TypeScript: 文字列の連結"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/concatenating-strings.md"
+title:                "TypeScript: 文字列の結合"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-文字列の連結を行うことの妥当性を説明するための 1~2 文について。
+文字列を連結することの意義についてご紹介します。文字列の連結は、プログラムをより柔軟にして簡潔に保つことができます。例えば、ユーザーの名前やメッセージを入力させるときに、個々の要素をすべて手作業で連結するのではなく、便利な方法で文字列を連結することができます。
 
-コンピュータープログラムにおいて、文字列はよく利用されるデータ型です。文字列を連結することによって、複数の文字列を一つの大きな文字列として結合することができます。これにより、より複雑な処理を行うことが可能になります。
+## 連結する方法
 
-## 連結の仕方
-
-連結する際に使用する TypeScript のコード例と、それぞれの出力結果を下記のコードブロックで示します。
+以下に、TypeScriptで文字列を連結する方法のコード例と出力を示します。
 
 ```TypeScript
-// 文字列の宣言
-let firstName: string = "太郎";
-let lastName: string = "山田";
+let name = "John";
+let message = "Hello " + name;
+console.log(message);
 
-// 連結
-let fullName: string = firstName + " " + lastName;
-
-// 出力
-console.log(fullName); // 太郎 山田
+// Output: Hello John
 ```
 
-ここでは、2つの文字列を `+` 演算子で結合し、新しい文字列を作成しています。また、空白を入れることによって、`太郎` と `山田` の間にスペースが入るようになっています。
+上記のコードでは、変数`name`に"John"という文字列が代入されています。そして、`message`という変数には、文字列を連結する`+`演算子を使って、"Hello "と`name`変数を結合しています。最後に、`console.log()`メソッドを使用して、メッセージをコンソールに出力します。
+
+また、ES6以降では、テンプレート文字列を使用しても文字列の連結ができます。これはバッククォート（`` ` ``）で囲まれた文字列の中に、`${}`を使うことで、変数や式を埋め込むことができます。
+
+```TypeScript
+let name = "John";
+let message = `Hello ${name}`;
+console.log(message);
+
+// Output: Hello John
+```
+
+テンプレート文字列を使用すると、文字列中に変数や式を埋め込むことができるため、より複雑な処理を行う際に便利です。
 
 ## 深堀り
 
-より詳細な連結の手法について深堀りを行います。TypeScript では、文字列を連結する他にも、`concat()` メソッドを使用することもできます。これは、文字列の配列を一つの文字列に結合することができるメソッドです。
+文字列を連結する方法についてもっと詳しく見ていきましょう。文字列の連結はJavaScriptやTypeScriptだけでなく、ほとんどのプログラミング言語で使用される一般的なテクニックです。そのため、覚えておくと他の言語でも役立ちます。
 
-```TypeScript
-// 文字列の配列の宣言
-let fruits: string[] = ["りんご", "バナナ", "みかん"];
+文字列の連結は、単に文字列を結合するのではなく、文字列を変数に代入したり、条件やループで動的に行ったりすることができるため、プログラムの柔軟性を高めることができます。
 
-// 連結
-let fruitsString: string = fruits.concat();
+## 関連記事
 
-// 出力
-console.log(fruitsString); // りんごバナナみかん
-```
+[TypeScript公式ドキュメント-文字列](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
 
-また、連結した文字列を変数に代入せずに、直接 `console.log()` する方法もあります。
+[テンプレート文字列に関する記事](https://typescript-jp.gitbook.io/deep-dive/template-literals)
 
-```TypeScript
-// 文字列の宣言
-let bearName: string = "ブラウン";
-let bearFriend: string = "サリー";
-
-// 連結と出力を同時に行う
-console.log("私たちのクマの友達は " + bearName + " と " + bearFriend + " です。"); // 私たちのクマの友達は ブラウン と サリー です。
-```
-
-## See Also
-
-- [TypeScript 公式ドキュメント](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [MDN Web Docs - 文字列の連結](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/concat#k-pseudo-depth-connect-languages)
+[他のプログラミング言語での文字列連結の方法](https://www.w3schools.com/js/js_strings.asp)

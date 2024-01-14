@@ -1,46 +1,37 @@
 ---
-title:    "Elm: Commencer un nouveau projet"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/starting-a-new-project.md"
+title:                "Elm: Commencer un nouveau projet"
+programming_language: "Elm"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Vous êtes intéressé par la programmation fonctionnelle et vous voulez commencer un nouveau projet en utilisant un langage moderne et élégant? Alors Elm peut être exactement ce que vous recherchez! Avec sa syntaxe claire et son système de typage fort, Elm est un choix populaire pour les développeurs cherchant à créer des applications web robustes et évolutives.
+Si vous cherchez un langage de programmation fonctionnel moderne, alors Elm est fait pour vous. Créé en 2012 par Evan Czaplicki, Elm est conçu pour rendre le développement web plus simple, fiable et performant. Avec une syntaxe claire et concise et un excellent système de types, Elm est idéal pour les débutants en programmation fonctionnelle ainsi que pour les développeurs expérimentés.
 
-## Comment Faire
+## Comment faire
 
-Pour commencer un nouveau projet Elm, la première étape est de télécharger et d'installer le compilateur Elm sur votre ordinateur. Vous pouvez le faire en suivant les instructions sur le site officiel d'Elm (https://guide.elm-lang.org/install/). Une fois que vous avez installé Elm, vous pouvez utiliser votre éditeur de code préféré pour créer un nouveau fichier avec l'extension ".elm".
-
-Ensuite, vous pouvez commencer à écrire du code Elm! Voici un exemple de fonction qui prend un nombre en entrée et le multiplie par deux:
+Pour commencer un nouveau projet en Elm, il vous suffit de suivre ces quelques étapes simples :
 
 ```Elm
-double : Int -> Int
-double num =
-    num * 2
-```
+import Html exposing (text)
 
-Vous pouvez également ajouter un bloc de code pour tester cette fonction et afficher le résultat dans la console:
-
-```Elm
 main =
-    let
-        number = 5
-        result = double number
-    in
-        Html.text (toString result)
+    text "Bonjour le monde!"
 ```
 
-Après avoir enregistré votre fichier, ouvrez-le dans un navigateur et vous devriez voir le résultat "10" s'afficher.
+Ce code affichera un simple "Bonjour le monde!" lorsque vous l'exécuterez. Maintenant, vous pouvez ajouter vos propres fonctions, types et modules pour construire votre application. N'oubliez pas d'utiliser le compilateur Elm pour vérifier que votre code est exempt d'erreurs avant de l'exécuter.
 
-## Profondeur de plongée
+## Approfondissement
 
-Maintenant que vous avez une compréhension de base de la façon de démarrer un projet Elm, vous pouvez aller plus profondément en explorant la documentation et les ressources en ligne. Le site officiel d'Elm (https://elm-lang.org/) a une section "Guide" qui vous fournira des informations détaillées sur le langage et ses fonctionnalités. Vous pouvez également rejoindre la communauté active d'Elm sur le forum (https://discourse.elm-lang.org/) pour poser des questions et obtenir de l'aide.
+L'une des caractéristiques uniques d'Elm est son architecture de modèle-vue, qui aide les développeurs à gérer efficacement les données et à mettre à jour l'interface utilisateur. De plus, la communauté Elm est très active et propose de nombreux packages utiles pour faciliter votre développement. Vous pouvez également utiliser des librairies JavaScript existantes en les intégrant à votre projet Elm.
 
-## Voir Aussi
+Maintenant que vous savez comment démarrer un projet en Elm, n'hésitez pas à explorer davantage les nombreuses fonctionnalités et avantages de ce langage de programmation !
 
-- Site officiel d'Elm: https://elm-lang.org/
-- Installation du compilateur Elm: https://guide.elm-lang.org/install/
-- Forum Elm: https://discourse.elm-lang.org/
+## À voir aussi
+
+- [Site officiel Elm](https://elm-lang.org/)
+- [Documentation officielle Elm](https://guide.elm-lang.org/)
+- [Exemples de code en Elm](https://github.com/rofrol/awesome-elm)*note: text changed from English to highlight French for reader familiarity.*

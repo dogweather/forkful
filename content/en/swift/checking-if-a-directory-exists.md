@@ -1,59 +1,48 @@
 ---
-title:    "Swift recipe: Checking if a directory exists"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/checking-if-a-directory-exists.md"
+title:                "Swift recipe: Checking if a directory exists"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-In Swift programming, checking if a directory exists is an important feature to ensure proper handling of files and folders. It allows us to verify if a certain directory is present before attempting to read, write or delete any contents within it. This helps in avoiding any potential errors or crashes in our code.
+Before diving into the "how" of checking if a directory exists in Swift, let's first discuss why someone might need to do this. In programming, it's important to be able to validate certain conditions in order to ensure that our code runs smoothly. In the case of checking if a directory exists, it allows us to handle potential errors and exceptions in our code.
 
 ## How To
 
-To check if a directory exists in Swift, we can use the `FileManager` class and its `fileExists(atPath:)` method. This method takes in a file path as a parameter and returns a boolean value indicating whether the file or directory exists or not.
+To check if a directory exists in Swift, we will be using the `FileManager` class. This class provides us with a method called `fileExists(atPath:)` which takes in a path string as its parameter. Here's an example of how we can use this method:
 
 ```Swift
 let fileManager = FileManager.default
-
-// Specify the file path
-let filePath = "/Users/username/Documents/MyDirectory"
-
-// Check if the directory exists
-if fileManager.fileExists(atPath: filePath) {
-    print("The directory exists")
+let path = "/Users/John/Documents/Projects"
+if fileManager.fileExists(atPath: path) {
+    print("The directory exists.")
 } else {
-    print("The directory does not exist")
+    print("The directory does not exist.")
 }
 ```
 
-In the above code, we first create an instance of the `FileManager` class and then specify the path to the directory that we want to check. Next, we use the `fileExists(atPath:)` method to determine if the directory exists or not. If it does, the message "The directory exists" will be printed, otherwise, "The directory does not exist" will be printed.
+In this code, we first create an instance of `FileManager` and then specify the path we want to check. The `fileExists(atPath:)` method returns a boolean value, so we can use an if-else statement to handle the different outcomes.
 
-We can also use the `url(for:in:appropriateFor:create:)` method to get the file or directory's URL and then check for its existence using the `checkResourceIsReachable()` method. This method returns a boolean value similar to `fileExists(atPath:)` method.
+Let's also take a look at the output we would see for each scenario:
 
-```Swift
-// Get the URL for the directory
-if let dirURL = fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
-    // Check if the directory exists
-    if fileManager.checkResourceIsReachable(at: dirURL) {
-        print("The directory exists")
-    } else {
-        print("The directory does not exist")
-    }
-}
-```
+- If the directory exists, the output would be: `The directory exists.`
+- If the directory does not exist, the output would be: `The directory does not exist.`
+
+It's also worth noting that the `fileExists(atPath:)` method not only checks for the existence of directories, but also files. So if we pass in a file path instead, it will perform the same task.
 
 ## Deep Dive
 
-Behind the scenes, the `fileExists(atPath:)` and `checkResourceIsReachable()` methods use the underlying file system to check for the existence of a directory. These methods can be used for both local directories within the app's sandbox and remote directories on a network server.
+Now that we know how to check if a directory exists in Swift, let's dig a little deeper into how this method works. Under the hood, `fileExists(atPath:)` uses the `access()` system call to determine the existence of a file or directory. This call is provided by the underlying operating system and returns a boolean value depending on whether the file or directory exists or not.
 
-It is important to note that these methods only check for the existence of a directory and not its contents. We can use `isReadableFile(atPath:)` and `isWritableFile(atPath:)` methods to determine if we have the appropriate privileges to access and modify the contents within the directory.
+One thing to keep in mind is that the `fileExists(atPath:)` method does not check if the path provided leads to a valid file or directory. It simply checks for the existence of that path.
 
 ## See Also
-
-For more information on handling files and directories in Swift, check out these helpful resources:
-
 - [Apple Developer Documentation: FileManager class](https://developer.apple.com/documentation/foundation/filemanager)
-- [Code Tuts+: Working with Directories in Swift](https://code.tutsplus.com/tutorials/working-with-directories-in-swift--cms-29818)
-- [Swift.org: Handling Files and Directories](https://swift.org/blog/os-x-filesystem-interaction/)
+- [SwiftDoc: FileManager.fileExists(atPath:)](https://swiftdoc.org/v3.0/type/FileManager/#func-fileexists)
+- [Hacking with Swift: Checking for the existence of a file](https://www.hackingwithswift.com/example-code/system/how-to-check-for-the-existence-of-a-file-using-filemanager)
+
+By understanding why and how to check if a directory exists in Swift, we can effectively handle potential errors in our code. As always, don't hesitate to consult the documentation or other resources if you have further questions or need additional clarification. Happy coding!

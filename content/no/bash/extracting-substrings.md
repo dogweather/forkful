@@ -1,53 +1,58 @@
 ---
-title:    "Bash: Ekstrahering av delstrenger"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/extracting-substrings.md"
+title:                "Bash: Ekstrahering av substringer"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Velkommen til min blogg som handler om å trekke ut substringer i Bash programmering! Hvis du er ny: substringer er en del av en tekst streng. Hvis du er en mer erfaren Bash-programmerer, vet du at substringer er en nyttig og nødvendig del av å håndtere tekstdata. Enten du er helt ny eller en erfaren programmerer, vil denne bloggposten gi deg verdifull informasjon om hvordan å ekstrahere substringer i Bash og hvorfor det er viktig.
+Har du noen gang lurt på hvordan du kan trekke ut en del av en tekststreng i et Bash-skript? Kanskje du har en fil med mange adresser og trenger bare å få ut postnummeret? Å trekke ut substrings er en nyttig og effektiv måte å behandle tekst på, og det kan spare deg mye tid og arbeid når du jobber med store datamengder.
 
-## Hvordan
-For å trekke ut substringer i Bash-programmering, må du bruke "```${STRING:START:LENGTH}```" syntaks. La oss si at vi har en variabel kalt "navn" som inneholder verdien "John Doe". For å hente ut substring "John", kan du bruke følgende kommando:
+## Slik gjør du det
+For å trekke ut en del av en tekststreng i Bash, bruker du kommandoen `cut`. Denne kommandoen lar deg angi start- og sluttposisjonen for den delen av strengen du vil få ut. La oss si at du har en fil med massevis av e-postadresser, og du bare vil få ut brukernavnene. Du kan bruke følgende kommando:
+
 ```Bash
-navn="John Doe"
-echo ${navn:0:4}     # Output: John
+cut -d "@" -f 1 email_list.txt
+```
+Dette kommandoen deler hver linje i filen ved hjelp av "@" som skiller, og tar den første delen som brukernavn. La oss si at du har en fil som inneholder følgende:
+
+```Bash
+john.smith@example.com
+jane.doe@example.com
+```
+Etter å ha kjørt kommandoen, vil du få følgende output:
+
+```Bash
+john.smith
+jane.doe
+```
+Du kan også bruke `cut` til å få ut deler av strenger basert på et bestemt antall tegn, i stedet for posisjon. For eksempel, la oss si at du har en tekststreng som består av et navn etterfulgt av et ID-nummer, og du vil få ut bare navnet. Du kan bruke følgende kommando:
+
+```Bash
+cut -c 1-5 name_id.txt
+```
+Dette vil returnere de første 5 tegnene i hver linje i filen. Hvis fila ser slik ut:
+
+```Bash
+John123
+Jane456
 ```
 
-Hvis du vil hente ut siste del av navnet "Doe", kan du bruke følgende kommando:
+Vil output være:
+
 ```Bash
-echo ${navn:5}       # Output: Doe
+John1
+Jane4
 ```
 
-Du kan også bruke variabler som start og lengde når du ekstraherer substringer. La oss si at vi har en variabel "start" som er satt til 3 og "lengde" som er satt til 5. Da kan vi hente ut "n Doe" fra variable "navn" ved hjelp av følgende kommando:
-```Bash
-echo ${navn:$start:$lengde}      # Output: n Doe
-```
+## Dykk dypere
+Nå som du vet hvordan du skal bruke `cut` for å trekke ut substrings, kan du også utforske flere funksjoner og alternativer til denne kommandoen. For eksempel kan du bruke `-s` alternativet for å hoppe over linjer som ikke inneholder et bestemt tegn eller tegnsekvens. Du kan også bruke `-n` for å spesifisere et område av tegn som skal returneres uten noen ganger å bruke en separat fil for å definere det området.
 
-Det er også mulig å hente ut substring fra slutten av en variabel ved hjelp av negative verdier for start og/eller lengde. La oss si at vi vil hente ut "Doe" fra variable "navn". Da kan vi bruke følgende kommando:
-```Bash
-echo ${navn:(-3)}      # Output: Doe
-```
-
-## Deep Dive
-Som vi har sett i eksemplene over, kan vi hente ut forskjellige deler av en tekststreng ved hjelp av "substring"-syntaksen. Men det er også mulig å bruke "substring"-syntaksen på arrayer i Bash. Dette lar oss ekstrahere deler av et element i arrayet. La oss si at vi har et array med navn "array" som inneholder "Navn: John". Hvis vi vil hente ut "John" fra dette arrayet, kan vi bruke følgende kommando:
-```Bash
-echo ${array[1]:6}  # Output: John
-```
-
-Vi kan også bruke "substring"-syntaksen til å utføre utvidet regulær uttrykkssamsvar, også kalt "regex". Dette åpner for mer avansert substringsøking og utvinning. Til dette bruker vi "~" (tilde-operator) på følgende måte: 
-```Bash
-echo ${navn:~[0-9]}    # Output: Doe
-```
-Dette vil returnere alt etter det første sifferet i startposisjonen. Du kan bruke dette til å utvide dine Bash-programmeringsferdigheter ytterligere og automatisere forskjellige oppgaver.
+Du kan også bruke kommandoen `grep` for å trekke ut substrings basert på et søkeord eller et mønster i teksten. Dette kan være nyttig for å filtrere ut bestemte data fra en større tekstfil.
 
 ## Se også
-For mer informasjon om å trekke ut substringer i Bash-programmering, kan du se følgende ressurser:
-
-- [GNU Bash manual om "substring"-syntaksen](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
-- [Bash Hackers Wiki om regulære uttrykk](http://wiki.bash-hackers.org/syntax/pattern)
-- [Bash-håndboken av O-Gi](https://github.com/giampaolo/psutil/blob/master/BASHFAQ#L30-L35)
-
-Takk for at du leste min bloggpost og lykke til med å trekke ut substringer i dine Bash-programmer!
+- [Offisiell dokumentasjon for cut command](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html)
+- [W3Schools tutorial for Bash strings](https://www.w3schools.com/bash/bash_substrings.asp) 
+- [Guide til grep command](https://www.geeksforgeeks.org/grep-command-in-unixlinux/)

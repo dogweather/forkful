@@ -1,42 +1,38 @@
 ---
-title:    "Fish Shell: 正規表現の使い方"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/using-regular-expressions.md"
+title:                "Fish Shell: 正規表現の使用方法"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ正規表現を使うのか？
+## なぜ？
 
-正規表現は特定のパターンに一致する文字列を検索・置換するための強力なツールです。テキスト処理やデータ検索など、様々な場面で使われています。
+正規表現を使用する理由は、文字列内で特定のパターンを検索や抽出する必要がある場合に非常に便利です。例えば、電話番号やメールアドレスのような特定のフォーマットに従う文字列を検索する時に、正規表現を使用することでより簡単に見つけることができます。
 
-## 正規表現を使う方法
+## 使い方
 
-正規表現を使うには、まずFish Shellで`grep`コマンドを使います。例えば、あるファイル内のメールアドレスを検索したい場合は、次のように入力します。
+正規表現は、Fish Shellの「grep」ツールを使用して簡単に実行することができます。例えば、電話番号を含む文字列を検索する場合、次のようなコマンドを実行します。
 
+```Fish Shell
+grep -o "[0-9]{3}-[0-9]{4}-[0-9]{4}" text.txt
 ```
-Fish Shell:
-grep --color -E '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}' test.txt
+
+上記のコマンドでは、ファイル「text.txt」内で「000-0000-0000」の形式に従う電話番号を検索し、それを表示します。
+
+## 深堀り
+
+正規表現をより詳しく学ぶには、様々なパターンを使用して実際にコードを書いてみるようにしましょう。例えば、文字列内で特定の文字「abc」の前にある文字を抽出したい場合、次のようなコマンドを使用できます。
+
+```Fish Shell
+grep -o ".abc" text.txt
 ```
 
-上記の例では、`grep`コマンドの`-E`オプションを使って正規表現モードを有効にしています。`[a-z0-9._%+-]+`はメールアドレスのローカル部分を、`[a-z0-9.-]+\.[a-z]{2,}`はドメイン部分を表しています。
+ここで使用されている「.」は任意の文字を表し、「abc」は特定の文字列を表します。これにより、文字列内にある「abc」の前にある文字が抽出されます。
 
-実行すると、`test.txt`ファイル内からメールアドレスのパターンに一致する行がカラー表示で出力されます。
+## 参考リンク
 
-## 正規表現の深層へ
+[Fish Shellの正規表現についてのドキュメント](https://fishshell.com/docs/current/cmds/grep.html)
 
-正規表現を使う上で重要なポイントは、パターンの記述です。例えば、`[0-9]`と書くと、1文字だけ数字にマッチしますが、`[0-9]+`と書くと連続する数字にマッチします。また、`*`や`?`などのメタ文字を使うことでパターンの組み合わせをさらに自由にカスタマイズすることができます。
-
-さらに、`|`パイプを使うことで複数のパターンのいずれかにマッチさせることもできます。正規表現を使いこなすためには、パターンとメタ文字の使い方を熟知することが重要です。
-
-## 別の参考文献
-
-- [Fish Shellの公式ドキュメント](https://www.fishshell.com/docs/current/scripting.html#regular-expressions)
-- [正規表現チートシート](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [正規表現ビルダー](https://regexr.com/)
-
-## リンク
-
-- [grepコマンドのドキュメント](https://www.gnu.org/software/grep/manual/grep.html)
-- [正規表現の基礎](https://www.w3schools.com/python/python_regex.asp)
-- [よく使われる正規表現パターンの例](https://www.geeksforgeeks.org/important-regular-expressions/)
+[正規表現を使ったパターンマッチングのチュートリアル](https://qiita.com/horikeso/items/e5c6d53f4cbb11d52732)

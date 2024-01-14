@@ -1,41 +1,52 @@
 ---
-title:    "Elm: परीक्षाओं को लिखना"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/elm/writing-tests.md"
+title:                "Elm: टेस्ट लिखना"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों?
+## क्यों
 
-Unit tests एक अत्यंत महत्वपूर्ण हिस्सा हैं जो हमारे कोड की गुणवत्ता बनाए रखने में मदद करते हैं। ये हमारे कोड में बदलावों को ट्रैक करने और नए बग्स को पकड़ने में मदद करते हैं। इसके अलावा, ये हमारे द्वारा बनाए गए कोड को समझने में भी मदद करते हैं।
+टेस्ट लिखने में क्यों लगाने की जरूरत है, यह काम क्यों महत्वपूर्ण है? अनुमानित कोड का परिणाम कैसे सुनिश्चित किया जाता है?
 
-## कैसे करें?
+## कैसे
 
-इस ब्लॉग पोस्ट के रूप में, हम आपको Elm में टेस्ट लिखने के तरीके दिखाएंगे। सबसे पहले, हम अपने कोड को मॉक फंक्शन में डिफेंड करने के लिए `elm-test` लाइब्रेरी का उपयोग करेंगे। इसके बाद हम एक `Example` श्रृंखला को उत्पन्न करेंगे जिसमें हम अपने कोड के इम्पोर्टेड फंक्शन्स को टेस्ट करेंगे। अंत में, हम `elm-test` की सहायता से अपने टेस्ट को चलाएंगे और दिखाएंगे कि आप कैसे अपने कोड को टेस्ट कर सकते हैं।
+टेस्ट लिखना आसान है, फिर भी आपको कुछ मूल सक्रिय कोड की आवश्यकता है, विशिष्ट उदाहरण देखिए.
 
 ```Elm
-module Example exposing (..)
-import Test exposing (..)
-import Expect exposing (expect)
-import MyModule exposing (myFunc)
+import Html exposing (text)
 
-mock myFunc = 
-    -- कोड को मॉक करने का कोड यहां डालें --
+-- function to add two numbers
+add : Int -> Int -> Int
+add x y =
+    x + y
 
-suite =
-    describe "myFunc"
-        [ test "returns correct value" <|
-            \_ ->
-                -- मॉक किए गए कोड को दौरा करें --
-                expect (myFunc 2) toEqual 4
-        ]
+-- test cases 
+addTest1 =
+    add 2 3 == 5
 
-main = 
-    -- सहायक परीक्षण रनर को सेटअप करें --
-    run suite
+addTest2 =
+    add -1 8 == 7
+
+addTest3 =
+    add 0 0 == 0
+
+-- output
+text "Test 1 passed: " ++ toString addTest1 -- True
+text "Test 2 passed: " ++ toString addTest2 -- True
+text "Test 3 passed: " ++ toString addTest3 -- True
 ```
 
-## गहराई में उतरें
+## गहराई से
 
-टेस्ट लिखना शुरू करने से पहले, हमें अपने कोड को समझना होगा और उसमें कोई बग्स होने की संभावना को देखना होगा। यदि हम अपने कोड को समझते हैं और संभावित बग्स को समझते हैं, तो हमें अपने टेस्ट को लिखने में आसान
+टेस्ट लिखने के लिए कुछ अत्यधिक उत्पादक विचार और तकनीकें हैं। यह आपके कोड को मजबूत और दुरस्त बनाने में मदद कर सकता है। टेस्ट कोड का उपयोग करने से आपको अनुमानित कोड के बदलावों का सामना करने की आवश्यकता नहीं होगी। यह आपको सुरक्षित भावना देता है कि आपका सक्रिय कोड अपेक्षाकृत ढंग से काम करेगा।
+
+## आपको देखना चाहिए
+
+"अधिक जानकारी के लिए" शीर्षक से नेत्र समाप्त होता है और नीचे दिए गए लिंक आपको टेस्ट लिखने की और अधिक सहायता प्रदान करेंगे।
+
+- [Elm डॉक्यूमेंटेशन](https://elm-lang.org/docs)
+- [एल्म टेस्टिंग गाइड](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- [टेस्ट के साथ एक ट्यूटोरियल](https://www.elm-tutorial.org/en/02-elm-arch/04-testing.html)

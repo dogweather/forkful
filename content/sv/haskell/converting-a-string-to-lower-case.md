@@ -1,51 +1,46 @@
 ---
-title:    "Haskell: Konvertera en sträng till gemener."
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/converting-a-string-to-lower-case.md"
+title:                "Haskell: Omvandla en sträng till gemener"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att konvertera en sträng till små bokstäver kan vara användbart i många olika situationer. Det kan till exempel vara användbart för att jämföra strängar eller för att se till att de visas korrekt på skärmen.
+Att konvertera en sträng till gemener (lower case) är ett vanligt problem när man arbetar med textbehandling i Haskell. Genom att göra detta kan man åstadkomma konsistens och enhetlighet i ens data, vilket är viktigt för många applikationer.
 
 ## Hur man gör det
 
-För att konvertera en sträng till små bokstäver i Haskell kan vi använda den inbyggda funktionen `map`. Detta gör vi genom att först definiera en funktion som konverterar en enskild bokstav till små bokstäver och sedan applicera denna funktion på varje bokstav i strängen med hjälp av `map`.
+Att konvertera en sträng till gemener i Haskell är ganska enkelt. Det finns en inbyggd funktion som heter `toLower` som tar emot en sträng som argument och returnerar en ny sträng med alla bokstäver i gemener.
+
+För att använda denna funktion behöver du importera modulen `Data.Char` genom att lägga till `import Data.Char` längst upp i din fil.
+
+Här är ett exempel som visar hur man konverterar en sträng till gemener och sedan skriver ut resultatet:
 
 ```Haskell
-toLowerCase :: Char -> Char
-toLowerCase c = if c `elem` ['A'..'Z']
-                    then toEnum (fromEnum c + 32) :: Char
-                    else c
+import Data.Char
 
-map toLowerCase "HEJ" -- ger "hej" som output
+main = do
+    let string = "HEJ ALLA SWEDISH READERS!"
+    let lower = toLower string
+    putStrLn lower
 ```
 
-Vi kan också använda följande kortare version med vanliga funktionskompositioner:
-
-```Haskell
-toLowerCase :: String -> String
-toLowerCase = map toLower
-
-toLowerCase "HELLO" -- ger "hello" som output
-```
+Kör detta och du borde få utskriften `hej alla swedish readers!`.
 
 ## Djupdykning
 
-En viktig aspekt att tänka på när man konverterar strängar till små bokstäver i Haskell är hantering av specialtecken och tecken med diakritiska eller akuta markeringar. Dessa tecken kan vara olika beroende på vilken teckenuppsättning som används. En lösning på detta problem är att använda funktionen `toCaseFold` från modulen `Data.Text`.
+Nu när vi vet hur man konverterar en sträng till gemener låt oss ta en titt på vad som händer under huven.
 
-```Haskell
-import Data.Text (toCaseFold)
+`toLower` funktionen använder sig av den inbyggda funktionen `ord` för att konvertera en karaktär till motsvarande numeriska värde i ASCII-tabellen. Sedan använder den funktionen `chr` för att konvertera detta värde tillbaka till en gemener karaktär.
 
-toCaseFold "ÅÄÖ" -- ger "åäö" som output oavsett vilken teckenuppsättning som används
-```
+Det betyder att `toLower` inte bara fungerar med bokstäver i det engelska alfabetet, utan det fungerar också med specialtecken, accenter och alfabet från andra språk.
 
-Det är också viktigt att notera att funktionerna `map` och `toLower` endast fungerar på tecken och inte hela strängar. För att konvertera en hel sträng kan vi använda `map` tillsammans med `unpack` och `pack` från `Data.Text`.
+Om du vill gräva ännu djupare så kan du ta en titt på källkoden för `toLower` genom att köra kommandot `:browse Data.Char` i GHCI (Haskell interpreter).
 
 ## Se även
 
-- [Haskell Wiki: Strings](https://wiki.haskell.org/Strings)
-- [hackage: Data.Char](https://hackage.haskell.org/package/base/docs/Data-Char.html) 
-- [hackage: Data.Text](https://hackage.haskell.org/package/text/docs/Data-Text.html)
+- [Haskell dokumentation för `Data.Char`](https://hackage.haskell.org/package/base/docs/Data-Char.html)
+- [ASCII-tabell](https://www.td.unh.edu “ASCII-tabell”)

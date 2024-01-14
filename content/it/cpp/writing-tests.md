@@ -1,41 +1,42 @@
 ---
-title:    "C++: Scrivere test"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/cpp/writing-tests.md"
+title:                "C++: Scrivere test"
+programming_language: "C++"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere test è importante nel C++
+Ciao a tutti, benvenuti al nostro blog sulle programmazioni in C++! Oggi parleremo di una pratica molto importante nella programmazione: la scrittura dei test.
 
-Scrivere test può sembrare noioso o superfluo quando si è occupati a creare nuove funzionalità per un'applicazione, ma in realtà i test sono una parte fondamentale della programmazione. Non solo aiutano a verificare che il codice funzioni come previsto, ma possono anche rivelare eventuali bug o errori che potrebbero passare inosservati durante lo sviluppo. Inoltre, scrivere test ti permette di effettuare modifiche al codice in modo sicuro, senza preoccuparti di rompere o alterare funzionalità esistenti.
+## Perché
 
-## Come scrivere test in C++
+Forse vi starete chiedendo perché sia così importante scrivere i test per il nostro codice. La risposta è semplice: i test assicurano che il nostro codice funzioni correttamente. Inoltre, ci aiutano a identificare eventuali bug o errori nel codice in modo tempestivo, evitando di dover fare debugging o di rilasciare un prodotto difettoso.
 
-Per scrivere test efficaci in C++, è importante utilizzare una libreria di test come Google Test o CppUnit. Questi strumenti ti permettono di creare suite di test, definire casi di test e verificare il risultato atteso. Di seguito un esempio di come creare un test utilizzando Google Test:
+## Come procedere
+
+Per iniziare a scrivere i test, dobbiamo prima importare la libreria "gtest" nel nostro progetto. Successivamente, creeremo una classe di test che conterrà una serie di asserzioni. In questo esempio, testeremo una funzione che prende in input due numeri e verifica se il primo è maggiore del secondo.
 
 ```C++
 #include <gtest/gtest.h>
 
-TEST(FunzioneSommatoria, CalcolaCorrettamente) {
-  // Definiamo il risultato atteso
-  int sommatoria = 10;
-
-  // Chiamiamo la funzione di sommatoria e verifichiamo il risultato
-  EXPECT_EQ(4 + 6, sommatoria);
+TEST(MyTest, GreaterThan) {
+    int a = 5;
+    int b = 3;
+    EXPECT_GT(a, b); // asserzione che verifica se a è maggiore di b
 }
 ```
 
-In questo caso, il risultato atteso è 10, quindi il test dovrebbe passare con successo. Se la sommatoria fosse stata calcolata in modo errato, il test avrebbe restituito un errore, indicando che la funzione non sta funzionando come dovrebbe.
+Una volta scritti i test, possiamo eseguirli ed ottenere l'output dei risultati. Nel nostro esempio, dovremmo ottenere un risultato positivo poiché 5 è effettivamente maggiore di 3.
 
-## Approfondimento sui test in C++
+## Approfondimento
 
-Quando si scrivono test, è importante coprire tutti i casi possibili e tenere in considerazione situazioni di errore o input inaspettati. Inoltre, è consigliato scrivere test prima di scrivere il codice effettivo, in modo da avere una guida chiara su come deve essere implementata la funzionalità. Inoltre, è importante mantenere i test aggiornati quando si effettuano modifiche al codice, in modo da assicurarsi che le funzionalità continuino a funzionare correttamente.
+Scrivere i test è importante non solo per garantire il corretto funzionamento del nostro codice, ma anche per rendere il processo di debugging più semplice e veloce. Inoltre, i test possono essere utilizzati durante il processo di sviluppo per verificare ogni nuova aggiunta o modifica di codice.
 
-È anche possibile utilizzare strumenti di analisi statica del codice, come Coverity o SonarQube, per trovare potenziali errori o situazioni di codice vulnerabili. Questi strumenti integrati con i test automatizzati aiutano a mantenere un codice di alta qualità e ridurre il rischio di bug in produzione.
+Assicurarsi di scrivere test accurati e ben strutturati richiede tempo e un'attenta pianificazione. Tuttavia, il tempo e lo sforzo investiti si ripagano nel lungo periodo, quando il nostro codice risulterà più stabile e affidabile.
 
 ## Vedi anche
-- [Google Test](https://github.com/google/googletest)
-- [CppUnit](https://github.com/cppunit/cppunit)
-- [Coverity](https://www.synopsys.com/software-integrity/security-testing/static-analysis/coverity.html)
-- [SonarQube](https://www.sonarqube.org/)
+
+- [Guida di Google C++ Test](https://github.com/google/googletest/blob/master/googletest/docs/primer.md)
+- [Tutorial di C++ Testing](https://www.tutorialspoint.com/cplusplus/cpp_testing.htm)
+- [Classi di test in C++](https://en.wikibooks.org/wiki/C%2B%2B_Programming/Unit_testing)

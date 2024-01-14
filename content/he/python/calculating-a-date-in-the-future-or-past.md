@@ -1,66 +1,42 @@
 ---
-title:    "Python: חישוב תאריך בעתיד או בעבר"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/python/calculating-a-date-in-the-future-or-past.md"
+title:                "Python: חישוב תאריך בעתיד או בעבר"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+# למה
 
-נתחשק לנו לחשב תאריך בעתיד או בעבר, יכול להיות כי חייבנו להכיר לאן יפול יום הולדת של חבר, או שאולי רוצים לחשב כמה זמן עבר מאז הטיול האחרון. בכל מקרה, בתכנות בפייתון ישנם כמה כלים מועילים לחישוב תאריכים בעתיד או בעבר.
+חישוב תאריך בעתיד או בעבר יכול להיות מועיל לכמה מטרות שונות, כגון ייצוג תאריך של אירוע מיוחד או טיפול בתאריכים באתרי אינטרנט.
 
-## איך לעשות זאת
+# איך לעשות זאת
 
-בשְׂפַת התכנות פייתון, יש פקודות מובנות לחישוב תאריכים בעתיד או בעבר. ראשית, נצטרך לייבא את הספרייה "datetime" כדי להשתמש בכלי החישוב הזה. אם נרצה לחשב תאריך מסוים בעתיד, נוכל להשתמש בפקודה "date.fromordinal()", עם הפרמטר של כמה ימים בעתיד מתאריך היום.
+כדי לחשב תאריך בעתיד או בעבר בפייתון, ניתן להשתמש בספריית התאריכים המובנית בשם datetime. הנה דוגמא לחישוב תאריך בעבר:
 
-```Python
-import datetime
-
-future_date = datetime.date.fromordinal(739021)
-print(future_date)
-```
-
-פלט:
-
-```
-2021-05-15
-```
-
-ניתן גם להשתמש בפקודה "date.today()" כדי לקבוע את התאריך הנוכחי ולהוסיף לו כמה ימים על ידי שימוש בפקודה "timedelta()".
-
-```Python
-import datetime
-
-today = datetime.date.today()
-days_to_add = datetime.timedelta(days=30)
-future_date = today + days_to_add
-print(future_date)
-```
-
-פלט:
-
-```
-2021-06-09
-```
-
-לחישוב תאריך בעבר, נוכל להשתמש בפקודה "date.fromtimestamp()", עם הפרמטר של כמה שניות לפני תאריך היום.
-
-```Python
-import datetime
-
-past_date = datetime.date.fromtimestamp(1614412800)
+```python
+from datetime import datetime, timedelta
+# הגדרת תאריך נוכחי
+current_date = datetime.now()
+# חישוב תאריך של 30 ימים לפני תאריך הנוכחי
+past_date = current_date - timedelta(days=30)
+# הדפסת התאריך החדש
 print(past_date)
 ```
 
-פלט:
+תצוגת התאריך החדש תהיה משהו כזה: 2021-08-05 16:31:14.174061.
 
-```
-2021-02-27
-```
+כדי לחשב תאריך בעתיד, ניתן להשתמש בתכנית דומה, אך תצוגת התאריך תהיה משהו כזה: 2021-09-04 16:31:14.174061.
 
-## העמקה
+למידע נוסף על השתמשות בספריית datetime לחישוב תאריכים בפייתון, ניתן לקרוא את המסמך הרשמי של פייתון.
 
-בפייתון קיימות גם פקודות נוספות לחישוב תאריכים בעתיד או בעבר, כגון "date.fromisoformat()" ו-"date.fromisoformat()". כמו כן, ניתן להשתמש בפקודות להצגת התאריך בפורמטים שונים או לחישוב הפרש זמן בין שני תאריכים.
+# הטפסות מעמיקות
 
-בכל זאת, חשוב לזכור שתאריך בפייתון מוגדר כאובייקט ולכן
+למי שמעוניין להמשיך בלימוד ולהתקדם בחישוב תאריכים בפייתון, ניתן לחקור עוד על נושאים כגון פורמטים של תאריכים, השוואה בין תאריכים וכו'.
+
+# ראה גם
+
+- מדריך רשמי לספריית datetime בפייתון: https://docs.python.org/3/library/datetime.html
+- פורום לפייתון בעברית, מקור מצוין לשאלות ותשובות על פייתון: https://python-forum.io/
+- האתר הרשמי של פייתון בעברית, כולל מדריכים ומידע נוסף: https://py-il.org/

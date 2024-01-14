@@ -1,49 +1,43 @@
 ---
-title:    "Haskell: テキストファイルを作成する"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/writing-a-text-file.md"
+title:                "Haskell: テキストファイルの作成"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-テキストファイルを書くことに参加する理由は、Haskellプログラミングの基本的なスキルを学ぶためです。テキストファイルを書くことは、データのストレージや情報の共有に非常に重要です。また、Haskellプログラミングによって、コードの再利用性や読みやすさが向上します。
+テキストファイルを書くことに興味があるかもしれませんが、それはコンピュータサイエンスやプログラミングの世界で非常に重要なスキルです。テキストファイルを書くことにより、データを保存、編集、および共有することができます。テキストファイルを書くことで、コードを保存してバックアップすることもできます。
 
-## ハウツー
+## 方法
 
-テキストファイルを書くための基本的な手順は以下の通りです。
-
-1. `haskell`のモジュールをインポートする。
-2. テキストファイルのパスを指定する。
-3. テキストファイルを開くための関数`openFile`を使用する。
-4. `hPutStr`関数を使用して、ファイルに書き込むデータを指定する。
-5. ファイルを閉じるための`hClose`関数を使用する。
-
-以下のコードは、上記の手順を実装した例です。
+テキストファイルを書くにはいくつかの方法がありますが、ここではHaskellの方法を紹介します。まず、テキストファイルを扱うためには`Text`モジュールをインポートする必要があります。次に、`writeFile`関数を使用してファイルに書き込みます。以下は、テキストファイルに文字列を書き込む例です。
 
 ```Haskell
 import System.IO
 
 main = do
-  let path = "sample.txt"
-  file <- openFile path WriteMode
-  hPutStr file "This is a sample text file."
-  hClose file
+  writeFile "sample.txt" "こんにちは、世界！"
 ```
 
-上記のコードを実行すると、`sample.txt`というファイルが作成され、その中に`This is a sample text file.`というテキストが書き込まれます。
+ファイルを開き、内容を確認すると、`こんにちは、世界！`という文字列が書き込まれています。また、ファイルを編集する場合は`appendFile`関数を使用して、文字列を追加することができます。
 
-## ディープダイブ
+```Haskell
+import System.IO
 
-テキストファイルを書くためには、さまざまなオプションや関数があります。ファイルを開く際には、読み書きのモードや文字コードを指定することができます。また、`hPutStrLn`関数を使用すれば、改行付きのテキストを書き込むこともできます。
+main = do
+  appendFile "sample.txt" "またお会いしましょう！"
+```
 
-テキストファイルを上書きするのではなく、追記する場合は`AppendMode`を使用します。さらに、`withFile`関数を使用することで、ファイルを自動的に閉じることができます。
+ファイルを再度開き、内容を確認すると、`こんにちは、世界！またお会いしましょう！`という文字列が追加されていることがわかります。
 
-テキストファイルの書き方に関するさらなる詳細は、公式のHaskellドキュメントを参照してください。
+## 突き詰める
 
-## その他のリンク
+テキストファイルを書くときには、いくつかの重要な点に気をつける必要があります。まず、ファイルをオープンし、書き込むか追加するかを決める必要があります。また、ファイルを開く際は、ファイルが既に存在しているかどうかを確認する必要があります。既に存在している場合は、ファイルを消去するか上書きする必要があります。また、ファイル操作を行う際は、例外処理を行うように心がける必要があります。これらの観点を把握し、テキストファイルの書き込みを行うことが重要です。
 
-- [Haskell公式ドキュメント](https://www.haskell.org/documentation/)
-- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
-- [Haskellでテキストファイルを読み書きする方法](https://qiita.com/sasaplus1/items/300fc9a819055afd2fa6)
+## 関連情報
+
+* [Haskellの`Text`モジュールについて](https://hackage.haskell.org/package/base/docs/Data-Text.html)
+* [Haskellのファイル操作について](https://wiki.haskell.org/Handling_files)

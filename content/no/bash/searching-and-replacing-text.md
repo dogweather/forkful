@@ -1,79 +1,40 @@
 ---
-title:    "Bash: Søking og utskifting av tekst"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/searching-and-replacing-text.md"
+title:                "Bash: Søke og erstatte tekst"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor: Søk og Erstatt i Bash-programmering
+# Hvorfor
+Å søke og erstatte tekst er en viktig del av Bash programmering. Det spiller en avgjørende rolle for å effektivisere og automatisere oppgaver, spesielt når man arbeider med store mengder data og filer.
 
-Søk og erstatt er en viktig funksjon i Bash-programmering, som lar deg enkelt finne og bytte ut tekst i en tekstfil eller i en variabel. Dette kan være nyttig når du jobber med store mengder data eller når du ønsker å gjøre endringer i koden din raskt og enkelt.
+# Hvordan
+Det finnes flere måter å søke og erstatte tekst på i Bash. Den enkleste måten er å bruke kommandoen `sed` som står for "stream editor". Dette er en kraftig kommando som lar deg søke og erstatte tekst i filer uten å endre originalfilen. 
 
-## Hvordan gjøre det: Eksempler og utdata
-
-Det første trinnet for å søke og erstatte i Bash er å bruke kommandoen `sed`, som står for "stream editor". Denne kommandoen lar deg søke etter et mønster i en tekstfil og erstatte det med en annen tekst. Her er et eksempel på hvordan en `sed` kommando vil se ut i praksis:
-
-```Bash
-sed 's/apple/orange/g' file.txt
-```
-
-I dette eksempelet søker vi etter ordet "apple" i filen `file.txt` og erstatter det med "orange" overalt det blir funnet. Det siste tegnet "g" står for "global" og sørger for at alle forekomster av mønsteret blir erstattet. Her er et eksempel på en fil før og etter bruk av `sed` kommandoen:
-
-Før:
-```
-Apple is delicious.
-I love eating apples.
-Apple pie is my favorite dessert.
-```
-
-Etter:
-```
-orange is delicious.
-I love eating oranges.
-orange pie is my favorite dessert.
-```
-
-Du kan også bruke `sed` kommandoen til å søke og erstatte i en variabel i Bash. Her er et eksempel på hvordan dette kan gjøres:
+For å bruke `sed` kommandoen, må du først spesifisere tekststrengen du vil søke etter, og deretter tekststrengen du vil erstatte den med. For eksempel, hvis du vil endre alle forekomster av "Bonjour" til "Hei" i en tekstfil, kan du bruke følgende kommando:
 
 ```Bash
-fruit="apple, banana, cherry"
-
-echo $fruit | sed 's/apple/orange/g'
+sed -i 's/Bonjour/Hei/g' tekstfil.txt
 ```
 
-Dette vil gi følgende utdata:
-```
-orange, banana, cherry
-```
+La oss ta en nærmere titt på denne kommandoen. `sed` kommandoen bruker flagget `-i` for å indikere at du vil gjøre endringer direkte i filen. Deretter bruker vi `'s/Bonjour/Hei/g'` for å spesifisere hva vi vil søke etter og erstatte med. `s` står for "substitute" (erstatt), `/Bonjour/` er tekststrengen vi vil søke etter, `/Hei/` er tekststrengen vi vil erstatte den med, og `g` betyr "global" og angir at alle forekomster skal erstattes. Til slutt indikerer vi hvilken fil dette skal utføres på, i dette tilfellet er det `tekstfil.txt`.
 
-## Dykk dypere: Mer informasjon om søk og erstat
+Du kan også søke etter og erstatte tekst i flere filer samtidig ved å spesifisere filene seperert med mellomrom, for eksempel `sed -i 's/Bonjour/Hei/g' tekstfil1.txt tekstfil2.txt`.
 
-For mer avanserte søk og erstatt operasjoner, kan du bruke regex (regular expressions) i `sed` kommandoen. Dette lar deg søke etter komplekse mønstre og utføre avanserte erstatninger. Her er et eksempel på hvordan dette kan gjøres:
+# Dypdykk
+I tillegg til `sed` kommandoen, er det også andre verktøy som kan brukes til å søke og erstatte tekst i Bash, som for eksempel `awk` og `perl`. Disse verktøyene bruker lignende syntaks, så kunnskap om hvordan man bruker `sed` vil være nyttig når du arbeider med disse verktøyene.
+
+Det er også mulig å bruke regulære uttrykk i søk og erstatte operasjoner for å gjøre det enda mer kraftig. Regulære uttrykk lar deg søke etter tekstmønstre i stedet for spesifikke ord. For eksempel, hvis du vil erstatte alle tall i en fil med ordet "nummer", kan du bruke følgende kommando:
 
 ```Bash
-sed 's/[0-9]/X/g' file.txt
+sed -i 's/[0-9]/nummer/g' tekstfil.txt
 ```
 
-I dette eksempelet søker vi etter alle tall (representert av [0-9]) i filen `file.txt` og erstatter dem med bokstaven X. Resultatet vil da bli som følger:
+Her bruker vi firkantede klammeparenteser og et uttrykk for å matche alle tall (0-9). Dette vil erstatte alle tall med ordet "nummer". Mer avanserte regulære uttrykk kan også brukes for å gjøre mer komplekse søk og erstatte operasjoner.
 
-```
-Apple is delicious.
-I love eating apples.
-Apple pie is my favorite dessert.
-```
-
-Etter:
-```
-XXXXX XX XXXXXXXXX.
-I love eating apples.
-Apple pie is my favorite dessert.
-```
-
-Du kan også bruke andre kommandoer som `awk` og `perl` for å gjøre lignende søk og erstatt operasjoner. Det er også verdt å utforske forskjellige flagg og alternativer som kan brukes med `sed` kommandoen for å oppnå ønsket resultat.
-
-## Se også
-
-- [Bash sed kommandoen dokumentasjon](https://www.gnu.org/software/sed/manual/sed.html)
-- [Bash scripting tutorial](https://www.tutorialspoint.com/unix/shell_scripting.htm)
-- [RegEx tutorial](https://www.regular-expressions.info/)
+# Se også
+- [Bash sed command](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/) (artikkel på engelsk)
+- [Introduction to regular expressions in Bash](https://www.linuxjournal.com/content/bash-regular-expressions) (artikkel på engelsk)
+- [Bash scripting tutorials på YouTube](https://www.youtube.com/playlist?list=PLf-PXVd8LLvjIzULMtVoj9OqQ8XxichST) (videoer på engelsk)

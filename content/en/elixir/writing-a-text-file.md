@@ -1,53 +1,57 @@
 ---
-title:    "Elixir recipe: Writing a text file"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/writing-a-text-file.md"
+title:                "Elixir recipe: Writing a text file"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Writing a Text File in Elixir is Useful
+## Why
 
-Writing a text file may seem like a mundane task, but it can be extremely useful in certain situations. For example, if you're working on a project that requires storing or manipulating large amounts of data, writing to a text file can be a convenient and efficient solution. Additionally, text files can be easily shared and read by other programs, making them a popular choice for data storage.
+Writing a text file is an essential skill for any programmer, as it allows you to store and manipulate data in a readable format. In the world of Elixir programming, knowing how to write a text file is especially important as it gives you the ability to exchange data with other applications or systems.
 
-## How To Write a Text File in Elixir
+## How To
 
-To write a text file in Elixir, we will use the `File.write` function. Let's say we want to create a file called "data.txt" and write the string "Hello, world!" to it. Here's the code:
+To write a text file in Elixir, we will use the `File.write` function. This function takes in two parameters: the name of the file and the data you want to write. Let's see an example of how to use this function to write the name "John" to a file called "name.txt".
 
-```elixir
-File.write("data.txt", "Hello, world!")
+```Elixir
+File.write("name.txt", "John")
 ```
 
-This will create a new file named "data.txt" in the current working directory and write the specified string to it. If the file already exists, it will be overwritten.
+This will create a file called "name.txt" in the same directory as your Elixir code and write the data "John" to it. If the file already exists, the `File.write` function will overwrite its contents.
 
-We can also write multiple lines of text to a file by using the `IO.write` function in a loop. For example, let's write numbers 1-10 to a file called "numbers.txt":
+We can also write more complex data to a text file by using Elixir's interpolation feature. Let's say we have a list of names and we want to write each one on a new line in a text file called "names.txt":
 
-```elixir
-File.open("numbers.txt", [:write], fn(file) ->
-  for n <- 1..10 do
-    IO.write(file, "#{n}\n")
-  end
-end)
+```Elixir
+names = ["John", "Alice", "Mark"]
+File.write("names.txt", for name <- names, do: "#{name}\n")
 ```
 
-This code will open the file for writing, then use `IO.write` to write each number on its own line. After we're done writing, we need to close the file using `File.close` to ensure that all data is written to the file. 
+This will create a file called "names.txt" and write the names on separate lines, like this:
 
-## Deep Dive into Writing a Text File
-
-There are a few different options for writing to a text file in Elixir, depending on your specific needs. One useful function is `IO.fwrite`, which allows us to use string interpolation to write variables to a file. For example:
-
-```elixir
-name = "John"
-age = 25
-IO.fwrite("My name is ~s and I am ~B years old.", [name, age])
+```
+John
+Alice
+Mark
 ```
 
-This will write the string "My name is John and I am 25 years old." to the file.
+## Deep Dive
 
-Another thing to keep in mind when writing text files in Elixir is that some characters may need to be escaped. For example, if our string contains quotation marks or backslashes, we will need to add a backslash before them to ensure they are written correctly. The `String.replace` function can be helpful in this situation.
+When writing a text file in Elixir, it's essential to understand how the underlying file system functions. By default, Elixir uses the same encoding as the underlying file system, which is typically UTF-8.
+
+You can also specify the encoding when writing a file by passing the `:encoding` option as a third parameter to the `File.write` function. For example, if you want to save the file in UTF-16 encoding, you can do so by writing:
+
+```Elixir
+File.write("names.txt", "John", encoding: :utf16)
+```
+
+Additionally, you can also use the `:append` option to append data to an existing file instead of overwriting its contents. This can be useful for creating log files that continuously add new entries.
 
 ## See Also
 
-- [File.write documentation](https://hexdocs.pm/elixir/File.html#write/2)
-- [IO.write documentation](https://hexdocs.pm/elixir/IO.html#write/2)
-- [String.replace documentation](https://hexdocs.pm/elixir/String.html#replace/4)
+Check out these resources for further reading on writing text files in Elixir:
+
+- Official Elixir documentation for `File.write`: https://hexdocs.pm/elixir/File.html#write/2
+- Blog post on file manipulation in Elixir: https://medium.com/@jtmccormick/working-with-files-in-elixir-741b4af02ae1
+- Elixir Forum discussion on writing text files: https://elixirforum.com/t/write-text-to-file/1381

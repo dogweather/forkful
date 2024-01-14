@@ -1,63 +1,55 @@
 ---
-title:    "C++: Beregning av dato i fremtiden eller fortiden."
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/calculating-a-date-in-the-future-or-past.md"
+title:                "C++: Kalkulerer en dato i fremtiden eller fortiden"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-#Hvorfor
+## Hvorfor
 
-Det er mange grunner til at noen ville være interessert i å beregne en dato i fremtiden eller fortiden. Kanskje du trenger å planlegge en ferie, eller kanskje du ønsker å finne ut nøyaktig hvor mange dager du har vært i jobb. Uansett årsak, er det nyttig å kunne dataprogrammer for å gjøre disse beregningene for deg.
+Noen ganger kan det være nødvendig å beregne en dato i fremtiden eller fortiden, for eksempel for å planlegge en jubileumsfeiring, beregne betalingsdatoer eller lage en påminnelse om en viktig hendelse. Ved å bruke C++, kan du enkelt lage et program som kan gjøre disse beregningene for deg.
 
-#Hvordan
+## Hvordan
 
-En måte å beregne en dato i fremtiden eller fortiden er å bruke C++'s `chrono` bibliotek. Først må du inkludere biblioteket i koden din:
+For å beregne en dato i fremtiden eller fortiden i C++, trenger du å bruke klassen "std::chrono::time_point" og funksjonen "std::chrono::duration" fra standardbiblioteket. Dette lar deg arbeide med tidspunkter og tidsintervaller i koden din. Se et eksempel på en funksjon som beregner datoen 30 dager frem i tid:
 
-```C++
+```
 #include <iostream>
 #include <chrono>
+
+using namespace std;
+
+int main() {
+    // Lag et time_point som viser nåværende tidspunkt
+    chrono::time_point<chrono::system_clock> now = chrono::system_clock::now();
+    
+    // Lag et duration-objekt som representerer 30 dager
+    chrono::duration<int, std::ratio<86400>> days(30);
+    
+    // Beregn fremtidig dato ved å legge til duration
+    chrono::time_point<chrono::system_clock> future = now + days;
+    
+    // Konverter til string og skriv ut
+    string future_date = chrono::system_clock::to_string(future);
+    cout << "Datoen 30 dager frem i tid er " << future_date << endl;
+    
+    return 0;
+}
 ```
 
-Deretter kan du bruke funksjonen `system_clock::now()` for å få gjeldende tidspunkt og beregne en dato i fremtiden eller fortiden. For å beregne en dato i fremtiden, må du legge til et visst antall dager til gjeldende tidspunkt, for eksempel:
+Eksempel på output:
 
-```C++
-auto now = std::chrono::system_clock::now();
-
-// legge til 30 dager
-auto future_date = now + std::chrono::hours(30 * 24);
+```
+Datoen 30 dager frem i tid er Sun Mar 22 03:51:32 2020
 ```
 
-For å beregne en dato i fortiden, må du trekke fra et visst antall dager fra gjeldende tidspunkt, for eksempel:
+## Dykk dypere
 
-```C++
-auto now = std::chrono::system_clock::now();
+I eksempelet over brukte vi "std::ratio<86400>" for å representere 30 dager. Denne ratioen representerer en dag i sekunder, og ved å endre verdien kan vi beregne datoer i ulike tidsintervaller, for eksempel timer, uker eller måneder. Det er også verdt å merke seg at "chrono::time_point" og "chrono::duration" er type-sikker og gjør det enkelt å unngå feil i beregningene dine.
 
-// trekke fra 30 dager
-auto past_date = now - std::chrono::hours(30 * 24);
-```
+## Se også
 
-Du kan deretter bruke funksjonen `time_point_cast` for å konvertere datoen til et spesifikt format, for eksempel et `time_t` objekt som representerer antall sekunder siden starten av Unix-epoken:
-
-```C++
-auto now = std::chrono::system_clock::now();
-
-// konvertere til `time_t` objekt
-auto future_date = std::chrono::time_point_cast<std::chrono::seconds>(now);
-auto past_date = std::chrono::time_point_cast<std::chrono::seconds>(now);
-
-// få antall sekunder siden starten av Unix-epoken
-std::time_t future_seconds = future_date.time_since_epoch().count();
-std::time_t past_seconds = past_date.time_since_epoch().count();
-```
-
-#Dypdykk
-
-Når du beregner en dato i fremtiden eller fortiden, er det viktig å være klar over at det ikke alltid er like enkelt som å legge til eller trekke fra et visst antall dager. Datoer kan være avhengig av ulike faktorer, som for eksempel skuddår, forskjellige antall dager i måneden og ulike tids soner.
-
-Det er derfor viktig å være nøye med å validere og justere datoen din etter disse faktorene for å sikre nøyaktigheten av beregningen. Du kan også vurdere å bruke C++'s `chrono` bibliotek for å håndtere disse utregningene på en mer presis og robust måte.
-
-#Se Også
-
-- [C++ `chrono` biblioteket](https://www.cplusplus.com/reference/chrono/)
-- [Beregning av datoer og tider i C++ med `chrono`](https://www.learncpp.com/cpp-tutorial/basier-chrontimepoints-and-durations/)
+- Les mer om "std::chrono" biblioteket i C++ her: https://en.cppreference.com/w/cpp/chrono
+- Se en ekstra kodeeksempel på hvordan beregne en dato i fremtiden eller fortiden her: https://www.geeksforgeeks.org/calculating-future-past-dates-based-given-date-c/

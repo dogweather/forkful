@@ -1,37 +1,39 @@
 ---
-title:    "Elm: String in Kleinschreibung umwandeln"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/converting-a-string-to-lower-case.md"
+title:                "Elm: Umwandlung eines Strings in Kleinbuchstaben"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum?
+## Warum
 
-String zu Kleinbuchstaben konvertieren? Das ist eine einfache Aufgabe, aber sie kann nützlich sein, wenn du zum Beispiel Nutzereingaben in einem Formular verarbeiten möchtest oder wenn du Daten aus einer API abrufst und in einem einheitlichen Format darstellen möchtest.
+Die Konvertierung einer Zeichenfolge in Kleinbuchstaben kann nützlich sein, wenn man sicherstellen möchte, dass der Benutzer bei der Eingabe von Text keine Großbuchstaben verwendet. Dies ist besonders beim Vergleich von Eingaben wichtig.
 
-## Wie?
+## Wie
 
 ```Elm
--- Eine Funktion zum Konvertieren von String zu Kleinbuchstaben
-toLowercase : String -> String
-toLowercase str =
-    String.toLower str
+import String
 
--- Beispielausgabe
-toLowercase "ELM PROGRAMMIERUNG"
--- "elm programmierung"
+stringToLowerCase : String -> String
+stringToLowerCase input =
+    String.toLower input
+
 ```
 
-## Tiefer gehende Informationen
+Output:
 
-In Elm gibt es bereits eine eingebaute Funktion `String.toLower`, die einen String in Kleinbuchstaben umwandelt. Sie verwendet den Unicode-Standard, um auch nicht-lateinische Buchstaben richtig zu konvertieren.
+```
+stringToLowerCase "Elm ist großartig!" == "elm ist großartig!"
+```
 
-Zusätzlich zu dieser Funktion bietet die Elm-Standardbibliothek auch `String.toLowercase`, die speziell auf die Verarbeitung von deutschen Umlauten und Sonderzeichen optimiert ist.
+## Tiefer Einblick
 
-Wenn du dich tiefer mit der String-Konvertierung in Elm beschäftigen möchtest, empfehle ich dir die offizielle Dokumentation und die Quellcode-Dateien der Standardbibliothek zu durchsuchen.
+Die Funktion `String.toLower` ist Teil des Elm Standardbibliothek und kann verwendet werden, um eine Zeichenfolge in Kleinbuchstaben zu konvertieren. Sie ignoriert automatisch nicht-alphabetische Zeichen und führt auch keine Trennung von Sätzen durch. Es ist wichtig zu beachten, dass die Rückgabe der Funktion eine neue kopierte Zeichenfolge ist und die ursprüngliche Zeichenfolge unverändert bleibt.
 
-## Siehe auch
-- [Offizielle Elm-Dokumentation zum Thema "Strings"](https://elm-lang.org/docs/strings)
-- [Quellcode der Elm-Standardbibliothek für Strings](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Weiterführender Blogartikel "Handling Strings in Elm"](https://dennisreimann.de/articles/handling-strings-in-elm.html)
+## Siehe Auch
+
+- [Elm String Modul Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Einführung in Elm: Eine funktionale Programmiersprache für das Web](https://medium.com/@NStorandt/die-einf%C3%BChrung-in-elm-f3adff55d8df)
+- [Grundlagen der Zeichenfolgenmanipulation in Elm](https://elmprogramming.com/string-basics.html)

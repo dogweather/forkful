@@ -1,35 +1,49 @@
 ---
-title:    "Clojure: Überprüfen, ob ein Verzeichnis existiert."
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/checking-if-a-directory-exists.md"
+title:                "Clojure: Überprüfen, ob ein Verzeichnis vorhanden ist"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+Warum: 
+Warum sollte man überprüfen, ob ein Verzeichnis existiert? Eine der Hauptgründe ist die Vermeidung von Fehlern bei der Ausführung von Code, der auf Verzeichnisse zugreift. Durch die Überprüfung auf die Existenz eines Verzeichnisses können unerwünschte Abstürze oder Fehlermeldungen vermieden werden.
 
-Das Überprüfen, ob ein Verzeichnis vorhanden ist, ist eine wichtige Aufgabe in der Programmierung. Es kann hilfreich sein, um sicherzustellen, dass bestimmte Dateien oder Ressourcen vorhanden sind, bevor sie verwendet werden, und um zu vermeiden, dass Fehler auftreten.
-
-## Wie geht man vor
-
-Die "file-seq" Funktion in Clojure ermöglicht es uns, alle Dateien und Verzeichnisse unter einem angegebenen Pfad aufzulisten. Um zu überprüfen, ob ein bestimmtes Verzeichnis vorhanden ist, können wir diese Funktion verwenden und die Ausgabe mit dem gewünschten Verzeichnis vergleichen.
+Wie: Um ein Verzeichnis auf seine Existenz zu prüfen, gibt es in Clojure verschiedene Möglichkeiten. Eine einfache Möglichkeit ist die Verwendung der Funktion "dir-exists?", die als Argument den Pfad des zu überprüfenden Verzeichnisses annimmt. 
 
 ```Clojure
-(def directory "/Users/Benutzername/Dokumente")
-
-(def directory-exists? 
-  (some #(= % directory) (map :path (file-seq "/Users/Benutzername/"))))
-
-(println directory-exists?)
-;; Output: true
+(if (dir-exists? "Pfad/zum/Verzeichnis")
+  (println "Das Verzeichnis existiert.")
+  (println "Das Verzeichnis existiert nicht."))
 ```
 
-## Tiefer Einblick
+Die Ausgabe dieses Codes könnte wie folgt aussehen:
 
-Beim Überprüfen, ob ein Verzeichnis vorhanden ist, ist es wichtig, den vollständigen Pfad zu angeben. Wenn wir nur den relativen Pfad verwenden, kann es sein, dass die Funktion nicht das gewünschte Ergebnis zurückgibt. Außerdem ist es ratsam, sicherzustellen, dass der angegebene Pfad ein gültiges Verzeichnis ist, bevor wir versuchen, darauf zuzugreifen.
+```
+Das Verzeichnis existiert.
+```
 
-## Siehe auch
+Um sicherzustellen, dass es sich wirklich um ein Verzeichnis und nicht um eine Datei handelt, kann die Funktion "dir?" verwendet werden.
 
-- Die offizielle Dokumentation von Clojure zur "file-seq" Funktion: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/file-seq
-- Ein Tutorial zur Arbeit mit Dateien und Verzeichnissen in Clojure: https://www.tutorialspoint.com/clojure/clojure_working_with_files.htm
-- Eine Übersicht über die gängigsten Datei- und Verzeichnisoperationen in Clojure: https://www.baeldung.com/clojure-file-directory-operations
+```Clojure
+(if (and (dir-exists? "Pfad/zum/Verzeichnis") (dir? "Pfad/zum/Verzeichnis"))
+  (println "Es handelt sich um ein Verzeichnis.")
+  (println "Es handelt sich nicht um ein Verzeichnis."))
+```
+
+Die Ausgabe wäre:
+
+```
+Es handelt sich um ein Verzeichnis.
+```
+
+Tieferer Einblick: Beim Überprüfen von Verzeichnissen gibt es einige Dinge zu beachten. Zum Beispiel kann es vorkommen, dass ein Verzeichnis gelöscht wird, während ein Programm darauf zugreift. In diesem Fall kann es nützlich sein, einen Mechanismus zu implementieren, um den Zugriff auf das Verzeichnis in solchen Fällen zu verhindern. Auch die Verwendung von absoluten oder relativen Pfaden kann Auswirkungen auf die Überprüfung haben.
+
+Ein weiterer Faktor ist die Plattformunabhängigkeit. Clojure bietet die Funktion "file-separator" an, um das richtige Trennzeichen für Pfadangaben je nach Betriebssystem zu ermitteln. Dies kann bei der Überprüfung von Verzeichnissen hilfreich sein, da das Trennzeichen in den Pfaden variieren kann.
+
+Siehe auch: 
+
+- [Clojure Dokumentation für Verzeichnisfunktionen](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- [Blog-Post über Datei- und Verzeichnisoperationen in Clojure](https://www.rockyourcode.com/clojure-create-directory-check-if-directory-exists/) 
+- [Clojure Cheatsheet für Datei- und Verzeichnisoperationen](https://clojuredocs.org/quickref#_file_and_directory_functions)

@@ -1,47 +1,63 @@
 ---
-title:    "Elm recipe: Getting the current date"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elm/getting-the-current-date.md"
+title:                "Elm recipe: Getting the current date"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Have you ever needed to display the current date in your Elm program? Whether it's for a simple reminder or a more complex feature, getting the current date is an essential task for many programs.
+
+Imagine you are working on a project where you need to keep track of the current date. Maybe you want to display the current date on your website or use it for some calculations. Whatever the reason may be, getting the current date in Elm is a useful skill to have.
 
 ## How To
-Getting the current date in Elm is actually quite straightforward. We'll be using the `Time` library, which provides functions for working with date and time. Let's take a look at a simple example:
+
+Getting the current date in Elm is a simple process. The `Time` module provides us with a function called `now` which returns the current date in the `Posix` format. In order to use this function, we need to import the `Time` module in our Elm file.
 
 ```Elm
-import Time exposing (today, Date)
-
--- get today's date
-currentDate : Date
-currentDate = today
+import Time exposing (now)
 ```
 
-In this example, we import the `today` and `Date` functions from the `Time` library. We can then use the `today` function to get the current date, which is a `Date` type. We can then store it in a variable called `currentDate` for future use.
-
-But what if we want to display the current date in a specific format, such as "Monday, October 04, 2021"? We can use the `format` function from the `Date` module to achieve this. Here's an example:
+Once we have imported the `Time` module, we can use the `now` function to get the current date and assign it to a variable. Let's call this variable `currentDate`.
 
 ```Elm
-import Time exposing (today, Date)
-import Date exposing (format)
-
--- get today's date and format it
-currentDate : String
-currentDate = today
-    |> format "%A, %B %d, %Y"
+currentDate = now
 ```
 
-In this example, we use the `format` function to specify the format we want our date to be in. We use `%A` to get the full weekday name, `%B` for the full month name, `%d` for the day of the month, and `%Y` for the full year. The result will be stored in the `currentDate` variable.
+This will give us the current date in the `Posix` format. Now, we can convert this into a more readable format using the `Time` module's `toYearMonthDay` function.
+
+```Elm
+import Time exposing (now, toYearMonthDay)
+
+currentDate = now
+
+prettyDate = toYearMonthDay currentDate
+
+```
+
+If we print out `prettyDate` using `Debug.log`, we will get the current date in the `YYYY-MM-DD` format. Note that the `toYearMonthDay` function also takes into account the time zone and daylight savings, making it a reliable way to get the current date.
+
+```Elm
+Debug.log "Current Date" prettyDate
+```
+
+Output:
+
+```
+Current Date: 2021-07-01
+```
 
 ## Deep Dive
-Behind the scenes, the `Date` type in Elm is actually a representation of a date in the ISO-8601 format (e.g. "2021-10-04"). This makes working with dates in Elm much easier, as there are no concerns about different date formats or time zones.
 
-The `Time` library also provides functions for comparing dates, adding or subtracting time, and converting between time zones. This can be incredibly useful for more complex programs that need to handle different time zones or perform calculations with dates.
+Behind the scenes, the `now` function uses JavaScript's `Date.now()` method to get the current time. It then converts this time into the `Posix` format. The `Posix` format is a numerical representation of time, measured in milliseconds since January 1, 1970 UTC. This format makes it easier for computers to work with dates and times.
+
+Additionally, the `Time` module also provides other useful functions to work with dates and times, such as `add`, `sub`, and `fromIsoString`. These functions allow us to perform calculations and manipulate dates in Elm.
 
 ## See Also
-- [Elm Date module documentation](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Elm Time module documentation](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Elm programming language website](https://elm-lang.org/)
+
+If you want to learn more about working with dates and times in Elm, check out these helpful resources:
+
+- [Elm Time library documentation](https://package.elm-lang.org/packages/elm/time/latest/)
+- [How to Format Dates in Elm](https://medium.com/@go_to_victor/how-to-format-dates-in-elm-443b0e4dd7c3)
+- [A Guide to Dates and Times in Elm](https://www.gizra.com/content/dates-and-times-elm/)

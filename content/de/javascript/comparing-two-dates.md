@@ -1,38 +1,59 @@
 ---
-title:    "Javascript: Vergleich von zwei Daten"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/comparing-two-dates.md"
+title:                "Javascript: Vergleich von zwei Datumsangaben"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-##Warum
-Das Vergleichen von zwei Daten kann hilfreich sein, um festzustellen, ob ein Datum vor oder nach dem anderen liegt. Dies ist besonders nützlich bei der Sortierung von Daten oder beim Erstellen von Bedingungen in einer Anwendung.
+## Warum
 
-##Wie geht es
-Das Vergleichen von zwei Daten in Javascript ist relativ einfach. Zuerst müssen Sie beide Daten in das Date-Objekt umwandeln, wenn sie nicht bereits in diesem Format vorliegen. Dann können Sie den Vergleichsoperator (`<`, `>`, `<=`, `>=`) verwenden, um die Beziehung zwischen den beiden Daten zu überprüfen. Hier ist ein Beispielcode, der zwei Daten vergleicht und das Ergebnis in der Konsole ausgibt:
+Das Vergleichen von zwei Datumswerten ist ein nützliches Werkzeug in der Javascript Programmierung, um zu überprüfen, welches Datum früher oder später liegt. Dies ist besonders hilfreich, wenn man komplexe Zeitberechnungen durchführen muss oder mit Ereignissen arbeitet, die zu bestimmten Datumswerten gehören.
+
+## Wie man es macht
+
+Um zwei Datumswerte in Javascript zu vergleichen, gibt es mehrere Möglichkeiten. Eine Möglichkeit ist die Verwendung der `Date()` Funktion, die ein Datum-Objekt erstellt. Im folgenden Beispiel werden zwei mögliche Eingaben als Argumente für die `Date()` Funktion verwendet. Diese werden dann verglichen und das Ergebnis wird in der Konsole ausgegeben.
 
 ```Javascript
-const date1 = new Date('2021-01-01');
-const date2 = new Date('2021-02-01');
+var date1 = new Date("June 1, 2021");
+var date2 = new Date("July 1, 2021");
 
-if (date1 < date2) {
-  console.log('date1 liegt vor date2');
-} else if (date1 > date2) {
-  console.log('date1 liegt nach date2');
+if (date1 > date2) {
+  console.log("Date1 ist später als Date2.");
+} else if (date1 < date2) {
+  console.log("Date1 ist früher als Date2.");
 } else {
-  console.log('Beide Daten sind gleich');
+  console.log("Beide Daten sind gleich.");
 }
 ```
 
-Die Ausgabe dieses Codes wäre `date1 liegt vor date2`, da der 1. Januar 2021 vor dem 1. Februar 2021 liegt. Beachten Sie, dass bei der Verwendung der `<=` und `>=` Operatoren das Gleichheitszeichen berücksichtigt wird.
+Das obige Beispiel zeigt, wie man mit dem Vergleichsoperator `>` und `<` arbeiten kann, um zwei Datumswerte zu vergleichen. Die Ausgabe für dieses Beispiel wäre `Date1 ist früher als Date2.`
 
-##Tiefer tauchen
-Beim Vergleichen von zwei Daten gibt es einige Dinge zu beachten. Zum Beispiel kann es zu unerwarteten Ergebnissen führen, wenn Sie Daten mit unterschiedlichen Zeitzonen vergleichen. Auch die Zeitkomponente eines Datums muss berücksichtigt werden. Wenn Sie also zwei Daten mit der gleichen Datumsangabe, aber unterschiedlichen Uhrzeiten vergleichen, werden sie nicht als gleich betrachtet.
+Man kann auch eine andere Methode namens `getTime()` verwenden, um das Datum in Millisekunden zu konvertieren und dann zu vergleichen. Hier ist ein Beispiel:
 
-Ein guter Tipp ist es, bei der Arbeit mit Daten immer einheitliche Vergleichsstandards zu verwenden, z.B. die Datumsangabe in UTC Zeit oder die Verwendung von Datumsfunktionen, die Zeitunterschiede berücksichtigen. Es ist auch wichtig zu beachten, dass durch die Umwandlung von Daten in das Date-Objekt bestimmte Genauigkeitsverluste auftreten können, so dass Vergleiche zu Fehlern führen können. Es ist daher ratsam, die Zeitkomponente in einem Datumsvergleich zu berücksichtigen.
+```Javascript
+var date1 = new Date("2021-01-01");
+var date2 = new Date("2021-01-02");
 
-##Siehe auch
-- [MDN Web Docs - Date objects](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools - Compare Dates](https://www.w3schools.com/js/js_dates_compare.asp)
-- [Stack Overflow - How to compare two dates in Javascript](https://stackoverflow.com/questions/492994/compare-two-dates-with-javascript)
+if (date1.getTime() > date2.getTime()) {
+  console.log("Date1 ist später als Date2.");
+} else if (date1.getTime() < date2.getTime()) {
+  console.log("Date1 ist früher als Date2.");
+} else {
+  console.log("Beide Daten sind gleich.");
+}
+```
+
+In diesem Beispiel wird das Datum in das ISO-Format (Jahr-Monat-Tag) umgewandelt und dann mit der `getTime()` Methode in Millisekunden konvertiert. Die Ausgabe für dieses Beispiel wäre `Date1 ist früher als Date2.`
+
+## Tiefgehende Information
+
+Wenn man zwei Datumswerte in Javascript vergleicht, werden sie als Objekte behandelt. Wenn die Vergleichsoperatoren verwendet werden, vergleicht Javascript die Zeitstempel der beiden Datumswerte. Dies kann zu ungenauen Ergebnissen führen, wenn man nicht auf die Zeitzone und die Sommer-/Winterzeit achten.
+
+Um dies zu vermeiden, ist es ratsam, die Zeit in UTC (koordinierte Weltzeit) zu konvertieren. Dies kann durch die Verwendung von Methoden wie `getUTCFullYear()`, `getUTCMonth()`, `getUTCDate()` und so weiter erreicht werden. Diese Methoden geben die UTC-Zeit zurück, anstatt die lokale Zeit zu verwenden.
+
+## Siehe auch
+
+- [Javascript Date Referenz](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Javascript Vergleichsoperatoren](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Vergleichsoperatoren)

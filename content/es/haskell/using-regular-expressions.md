@@ -1,45 +1,50 @@
 ---
-title:    "Haskell: Utilizando expresiones regulares"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/haskell/using-regular-expressions.md"
+title:                "Haskell: Utilizando expresiones regulares"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué utilizar expresiones regulares en Haskell?
+# Por qué
 
-Las expresiones regulares son una herramienta poderosa para manipular y buscar texto en cualquier lenguaje de programación, incluyendo Haskell. Son especialmente útiles para aquellos que trabajan con grandes cantidades de datos de texto, como en el análisis de datos o la creación de herramientas para procesar texto. El uso de expresiones regulares en Haskell puede ahorrar tiempo y esfuerzo al automatizar tareas repetitivas y complejas.
+Siempre que necesite buscar y manipular patrones de texto de manera eficiente, las expresiones regulares pueden ser una herramienta muy útil y poderosa para los programadores de Haskell.
 
-## Cómo utilizar expresiones regulares en Haskell
+Las expresiones regulares permiten buscar en una cadena de texto utilizando patrones específicos en lugar de buscar caracteres exactos. Esto es especialmente útil cuando se tienen grandes cantidades de datos o cuando se necesita encontrar patrones complejos dentro de un texto.
 
-Primero, necesitamos importar el módulo `Text.Regex.Posix` para utilizar expresiones regulares en Haskell. Luego, podemos utilizar la función `matchRegex` para buscar patrones en una cadena de texto. Por ejemplo:
+Con el uso de expresiones regulares, los programadores pueden escribir algoritmos más eficientes y elegantes para manipular cadenas de texto, ahorrando tiempo y esfuerzo.
+
+## Cómo hacerlo
+
+Para utilizar expresiones regulares en Haskell, es necesario importar el módulo "Text.Regex.Posix". A continuación, se pueden utilizar las funciones "matchRegex" y "matchRegexAll" para buscar y extraer patrones de texto.
+
+Por ejemplo, si tenemos una cadena de texto que contiene varias direcciones de correo electrónico, podemos utilizar una expresión regular para extraer solo los dominios de esos correos electrónicos.
 
 ```Haskell
 import Text.Regex.Posix
-let texto = "Hola mundo"
-let patron = "mundo"
-let resultado = matchRegex texto patron :: Maybe (String, String, String)
-```
 
-El resultado será `Just ("Hola ", "m", "undo")`, ya que el patrón "mundo" se encuentra en la cadena "Hola mundo". También podemos utilizar la función `subRegex` para reemplazar un patrón en una cadena de texto con otra cadena. Por ejemplo:
+main :: IO ()
+main = do
+  let email = "ejemplo1@gmail.com, ejemplo2@hotmail.com, ejemplo3@yahoo.com"
+  let regex = "[+-]?[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+  let domains = matchRegexAll regex email
+  print domains
+  ```
 
-```Haskell
-let texto = "Hola amigo"
-let patron = "amigo"
-let reemplazo = "amiga"
-let resultado = subRegex texto patron reemplazo :: String
-```
+En este ejemplo, la expresión regular utilizada busca patrones de correo electrónico válidos y utiliza la función "matchRegexAll" para devolver una lista de dominios encontrados en la cadena de texto.
 
-El resultado será "Hola amiga", ya que el patrón "amigo" ha sido reemplazado por "amiga". Los patrones en las expresiones regulares pueden incluir caracteres comodín, clases de caracteres y operadores de repetición, lo que permite una gran flexibilidad en la búsqueda y manipulación de texto.
+El resultado sería: `[Just "gmail.com", Just "hotmail.com", Just "yahoo.com"]`
 
-## Profundizando en el uso de expresiones regulares en Haskell
+## Profundizando
 
-Además de las funciones `matchRegex` y `subRegex`, el módulo `Text.Regex.Posix` también ofrece otras funciones útiles, como `getAllTextMatches` para obtener todas las coincidencias en una lista, `matchRegexAll` para realizar una búsqueda global en una cadena de texto y `splitRegex` para dividir una cadena en una lista utilizando un patrón. También hay módulos adicionales disponibles para trabajar con expresiones regulares, como `Text.Regex.TDFA` y `Text.Regex.PCRE`.
+Además de la función "matchRegexAll", el módulo "Text.Regex.Posix" también ofrece otras funciones útiles para trabajar con expresiones regulares en Haskell, como "subRegex" para reemplazar patrones en una cadena de texto y "splitRegex" para dividir una cadena en una lista utilizando un patrón como delimitador.
 
-Es importante tener en cuenta que el uso de expresiones regulares puede tener un impacto en el rendimiento de nuestro código, especialmente si se utilizan patrones complejos en cadenas de texto más largas. Por lo tanto, es importante considerar alternativas más eficientes en situaciones en las que la velocidad de procesamiento es crucial.
+También es importante mencionar que las expresiones regulares en Haskell siguen la sintaxis del estándar POSIX, por lo que es importante estar familiarizado con las reglas y convenciones para obtener los mejores resultados.
 
-## Ver también
+¡Experimente con diferentes patrones y funciones para descubrir la versatilidad y potencia de las expresiones regulares en Haskell!
 
-- [Documentación oficial de Haskell sobre expresiones regulares](https://www.haskell.org/onlinereport/haskell2010/haskellch9.html)
-- [Tutorial de expresiones regulares en Haskell](https://wiki.haskell.org/Regular_expressions)
-- [Expresiones regulares en Haskell: técnicas y trucos](https://www.rosettacode.org/wiki/Regular_expressions#Haskell)
+# Ver también
+
+- [Haskell Docs: Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix/docs/Text-Regex-Posix.html)
+- [Tutorial: Expresiones regulares en Haskell](https://www.fpcomplete.com/blog/2017/03/reimplementing-grep-explicit-recursion)

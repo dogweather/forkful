@@ -1,77 +1,44 @@
 ---
-title:    "Arduino: 将字符串转换为小写"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/converting-a-string-to-lower-case.md"
+title:                "Arduino: 将字符串转换为小写字母"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+低级转换 大小 In this blog post, we will be exploring the process of converting a string to lower case in Arduino programming. Whether you are just starting out with Arduino or are looking to expand your programming skills, understanding how to convert a string to lower case can be a useful tool in your coding arsenal. 完整过程
 
-在编写Arduino程序时，有时会需要将字符串转换为小写格式，以满足特定的需求。例如，当需要比较两个字符串时，为了避免大小写造成的差异，就需要将它们都转换成小写。
+ 首先，让我们来看一下为什么要进行字符串转换为小写。在编程中，字符串是一系列字符的序列，有时候我们需要对字符串进行格式化，使其符合特定的条件。一种常见的需求是将字符串转换为小写，这可以让我们更容易地进行比较和处理字符串。
 
-## 如何做到
+怎么做
 
-要将字符串转换为小写格式，可以使用Arduino的`toLowerCase()`函数。该函数接受一个字符串参数，并返回一个新的字符串，其中所有的字符均转换为小写。
-
-```
-Arduino String str = "HELLO WORLD";
-Arduino String lowerStr = str.toLowerCase();
-```
-
-下面是一个完整的示例程序，在串口监视器中打印出转换前后的字符串：
+Arduino编程语言有许多内置函数，可以帮助我们实现字符串转换为小写的功能。其中一个函数是toLowerCase（），它可以将字符串中的所有字符转换为小写。让我们来看一个简单的例子：
 
 ```
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  String str = "Hello World";
-  Serial.println(str);
-
-  String lowerStr = str.toLowerCase();
-  Serial.println(lowerStr);
-
-  delay(1000);
-}
+Arduino String str = "Hello World!";
+str = str.toLowerCase();
+Serial.println(str); // output: hello world!
 ```
 
-输出结果如下所示：
+在这个例子中，我们首先创建一个字符串变量，并将其赋值为“Hello World!”。然后，我们使用toLowerCase（）函数将字符串转换为小写，并将其重新赋值给原来的变量。最后，我们使用Serial.println（）将转换后的字符串输出到串行监视器中，结果会显示为小写。
 
-```
-Hello World
-hello world
-```
+深入探讨
 
-## 深入了解
+嗯，现在我们已经知道了如何在Arduino中进行字符串转换为小写，但是你可能会想知道这个函数的工作原理是什么。事实上，在字符串转换为小写的过程中，toLowerCase（）函数会遍历字符串中的每一个字符，并针对每个字符使用tolower（）函数进行转换。tolower（）函数将大写字母转换为小写字母，而对于已经是小写的字母则不做处理。这样，就能实现整个字符串的转换为小写。
 
-在Arduino中，字符串是使用C语言的`char`数组来表示的。而C语言本身并没有直接的函数来将字符串转换为小写格式，所以Arduino的`toLowerCase()`函数实际上是实现了以下的算法：
+另外值得一提的是，toLowerCase（）函数只对字母字符有效，对于数字、特殊字符或空格则不会做任何转换。这意味着在对字符串进行转换前，我们需要先确保字符串中只包含字母字符。
 
-```
-// 遍历字符串的每个字符
-for (int i = 0; i < str.length(); i++) {
-  // 获取当前字符的ASCII码
-  int ascii = str.charAt(i);
+参考链接
 
-  // 如果是大写字母，则加上32转换为小写
-  if (ascii >= 65 && ascii <= 90) {
-    ascii += 32;
-  }
+- 将字符串转换为小写: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/
 
-  // 将转换后的ASCII码重新赋值给原来的字符
-  str.setCharAt(i, ascii);
-}
-```
+- toLowerCase（）函数文档: https://www.arduino.cc/reference/en/language/functions/character-functions/tolower/
 
-因此，如果需要在Arduino以外的环境中使用类似的功能，可以参考这段代码来实现字符串转换为小写的功能。
+- 字符串概述: https://www.arduino.cc/reference/en/language/variables/data-types/string/
 
-## 参考链接
+查看更多
 
-- [Arduino官方文档 - toLowerCase()](https://www.arduino.cc/reference/en/language/variables/data-types/stringfunctions/tolowercase/)
-- [C语言字符串基础知识](https://www.cprogramming.com/tutorial/c/lesson9.html)
+希望这篇文章能帮助你学习如何在Arduino中进行字符串转换为小写。如果你想了解更多关于字符串的知识，可以参考上面提供的参考链接。
 
-## 参见
-
-- [字符串比较指南](https://example.com/string-comparison)
-- [如何在Arduino中处理字符串](https://example.com/arduino-string-processing)
+也别忘了浏览我们的其他博客文章，帮助你更深入地了解Arduino编程。

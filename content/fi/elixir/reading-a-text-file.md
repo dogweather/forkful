@@ -1,51 +1,35 @@
 ---
-title:    "Elixir: Lukeminen tekstitiedostosta"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/reading-a-text-file.md"
+title:                "Elixir: Tekstitiedoston lukeminen"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi lukea tekstitiedostoja Elixirilla?
+## Miksi
 
-Elixir on toimiva ja monipuolinen ohjelmointikieli, joka tarjoaa laajan valikoiman työkaluja datan käsittelyyn. Yksi näistä työkaluista on tiedostojen lukeminen, mikä voi olla hyödyllistä esimerkiksi datan analysoinnissa tai käsittelyssä. Tässä artikkelissa näytämme, miten voit lukea tekstitiedostoja Elixirilla.
+Voit ehkä ihmetellä, miksi haluaisit lukea tekstitiedoston Elixir-ohjelmoinnilla. On monia syitä, miksi tekstitiedostojen lukeminen on hyödyllistä: voit esimerkiksi lukea ja analysoida suuria määriä dataa tai käyttää sitä osana sovellustasi.
 
-## Miten?
+## Kuinka Tehdä
 
-Tiedostojen lukeminen Elixirilla on helppoa ja suoraviivaista. Voit tehdä sen yksinkertaisesti käyttämällä File-moduulia ja sen lukufunktioita. Esimerkiksi voit lukea tekstirivit yksitellen ja tulostaa ne konsoliin seuraavasti:
+Elixirilla tekstitiedoston lukeminen on helppoa ja tehokasta. Käytä `File.read!/1` -funktiota lukeaksesi tiedoston sisällön. Katso alla olevaa koodiesimerkkiä ja tulostetta:
 
-```elixir
-file = File.open("tiedosto.txt")
-Enum.each(File.stream!(file), fn line -> IO.puts(line) end)
-File.close(file)
-```
-
-Yllä oleva koodi avaa tiedoston "tiedosto.txt", lukee sen sisällön riveittäin ja tulostaa jokaisen rivin konsoliin. Huomaathan, että tiedoston lukeminen tapahtuu streamin kautta, mikä mahdollistaa suuren datamäärän käsittelyn tehokkaasti.
-
-Voit myös lukea ja käsitellä tiedoston sisältöä tavallisena listana käyttämällä File.read!/1 -funktiota. Alla oleva koodi esimerkiksi laskee, kuinka monta sanaa tiedostossa on.
-
-```elixir
+```Elixir
 file = File.read!("tiedosto.txt")
-words = Enum.reduce(String.split(file), 0, fn word, acc -> acc + 1 end)
-IO.puts("Tiedostossa on #{words} sanaa.")
+IO.puts file
 ```
 
-## Syvempi sukellus
+Tässä koodissa luemme tiedoston nimeltä `tiedosto.txt` ja tulostamme sen sisällön. Voit myös käyttää muita `File` -moduulin funktioita, kuten `File.read/1`, `File.stream!/2` ja `File.stream/2`, lisätäksesi toimintoja tiedostojen lukemiseen.
 
-Tiedostojen lukeminen Elixirilla on mahdollista myös muilla tavoilla, kuten esimerkiksi erilaisten tietorakenteiden avulla. Voit esimerkiksi luoda listan tiedoston sisällöstä käyttämällä Enum.into/3 -funktiota.
+## Syvempi Sukellus
 
-```elixir
-file = File.read!("tiedosto.txt")
-lines = file |> String.split("\n")
-Enum.into(lines, [])
-```
+Kun luet tekstitiedostoja Elixirilla, on tärkeää ottaa huomioon tiedoston koodaus. Voit määrittää tiedoston koodauksen `File.read!/2` ja `File.stream!/3` -funktioilla. Voit myös käyttää `File.cwd/0` -funktiota määrittääksesi nykyisen työhakemiston, josta tiedosto pitäisi lukea.
 
-Tässä tapauksessa lista nimeltä "lines" sisältää tiedoston rivit ja voit käsitellä niitä haluamallasi tavalla. Voit myös käyttää Map-moduulia, jolla voit luoda hajautetun tietorakenteen tiedoston avaimista ja arvoista.
+On myös hyvä huomioida, että tiedoston lukeminen on synkroninen operaatio, joka tarkoittaa sitä, että ohjelmasi pysähtyy lukemisen ajaksi. Jos haluat tehdä tiedoston lukemisen asynkronisesti, voit käyttää `Task.async/1` -funktiota ja ottaa käyttöön Elixirin oma kilta-järjestelmä.
 
-Lisätietoa tiedostojen lukemisesta Elixirilla löydät esimerkiksi [virallisesta dokumentaatiosta](https://hexdocs.pm/elixir/File.html) ja [tästä Honeypot-blogikirjoituksesta](https://www.honeypot.io/blog/elixir-file-i-o-tutorial/).
+## Katso Myös
 
-# Katso myös
+[Elixirin Virallinen Dokumentaatio](https://hexdocs.pm/elixir/File.html)
 
-- [Elixir-opas: Filen käyttö tiedostojen lukemiseen ja kirjoittamiseen](https://elixir-lang.org/getting-started/File.html)
-- [Elixir School: File-moduulin käyttö tiedostojen käsittelyssä](https://elixirschool.com/lessons/basics/file-io/)
-- [Honeypot-blogikirjoitus: Tiedostojen käsittely Elixirilla](https://www.honeypot.io/blog/elixir-file-i-o-tutorial/)
+[Elixirin Virallinen Ohjelmointiopas](https://elixir-lang.org/getting-started/introduction.html)

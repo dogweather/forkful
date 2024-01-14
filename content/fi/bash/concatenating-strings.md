@@ -1,50 +1,46 @@
 ---
-title:    "Bash: Merkkijonojen yhdistäminen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/concatenating-strings.md"
+title:                "Bash: Jonon yhdistäminen"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi joku haluaisi yhdistää merkkijonoja ohjelmointia tehdessään? Yhdistäminen tai konkatenointi on tärkeä osa ohjelmointia, sillä se mahdollistaa monimutkaisempien merkkijonojen luomisen yksinkertaisista paloista.
+Miksi haluaisin yhdistää merkkijonoja? Merkkijonojen yhdistäminen on hyödyllistä, kun halutaan luoda dynaamisia tekstejä esimerkiksi skriptien tai ohjelmien avulla.
 
-## Kuinka
-
-Yhdistäminen tapahtuu Bashissa käyttämällä oikea- ja vasenpuolista lainausmerkkiä merkkijonojen ympärillä ja plussamerkkiä niiden välissä. Esimerkiksi:
+## Miten
 
 ```Bash
-string1="Hei"
-string2="maailma"
-echo $string1$string2 #tulostaa "Heimaailma"
+# Luodaan muuttuja "nimi" ja sijoitetaan siihen teksti "Maailma"
+nimi="Maailma"
+# Käytetään yhdistämiseen merkkiä "+"
+tervehdys="Hei " + $nimi
+# Tulostetaan tervehdys
+echo $tervehdys
 ```
 
-Voit myös yhdistää useita merkkijonoja käyttämällä lisäksi toista plussamerkkiä. Esimerkiksi:
-
-```Bash
-string1="Tämä on "
-string2="hyödyllinen "
-string3="artikkeli"
-echo $string1$string2$string3 #tulostaa "Tämä on hyödyllinen artikkeli"
+Tulostus:
+```
+Hei Maailma
 ```
 
-## Syvässä luotaamisessa
+Merkkijonojen yhdistämiseen Bash-ohjelmoinnissa käytetään usein kahta erilaista merkkiä: kahta lainausmerkkiä (") ja plus-merkkiä (+). Lainausmerkit ympäröivät yhdistettävät merkkijonot ja plus-merkki yhdistää ne toisiinsa.
 
-Bashissa yhdistäminen ei rajoitu vain muuttujien väliseen yhdistämiseen. Voit myös yhdistää merkkijonoja funktion palauttamiin arvoihin. Esimerkiksi:
+Jos haluat yhdistää useampia merkkijonoja, voit käyttää useampia plus-merkkejä tai yksinkertaisesti kirjoittaa merkkijonot peräkkäin ilman merkkejä välissä.
 
-```Bash
-function tervehdi() {
-  echo "Hei!"
-}
-tervehdi=" " #huomaa välilyönti
-echo $(tervehdi)maailma #tulostaa "Hei maailma"
-```
+## Syväsukellus
 
-Lisäksi voit käyttää erilaisia erikoismerkkejä, kuten \n uuden rivin luomiseen yhdistettäessä merkkijonoja.
+Merkkijonojen yhdistäminen voi myös olla hyödyllistä, kun halutaan luoda monimutkaisempia tekstejä esimerkiksi käyttäjän syötteen tai järjestelmän muuttujien avulla. Bash-ohjelmointikielen sisäänrakennetut muuttujat, kuten $USER, voivat helpottaa tekstien luomista ja yhdistämistä.
+
+Lisäksi Bashilla on joitakin käteviä komentoja, kuten "echo", jotka tekevät merkkijonojen yhdistämisestä entistä helpompaa ja nopeampaa.
+
+Merkkijonojen yhdistäminen on myös hyödyllistä silloin, kun halutaan luoda dynaamisia komentoja, jotka pohjautuvat erilaisiin muuttujiin tai käyttäjän syötteeseen.
 
 ## Katso myös
 
-- [Bashin virallinen opas merkkijonojen käsittelystä](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
-- [Opi Bashin perusteet](https://flaviocopes.com/bash-scripting/)
-- [Merkkijonojen konkatenointiohjeet eri ohjelmointikielissä](https://www.computerhope.com/issues/ch001721.htm)
+- [Merkkijonon yhdistäminen Pythonilla](https://www.digitalocean.com/community/tutorials/how-to-use-string-concatenation-in-python-3)
+- [Bash-ohjelmoinnin perusteet](https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
+- [Käyttäjän syötteen lukeminen Bashilla](https://linuxize.com/post/bash-read/)

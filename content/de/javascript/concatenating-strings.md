@@ -1,55 +1,68 @@
 ---
-title:    "Javascript: Strings verknüpfen"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/concatenating-strings.md"
+title:                "Javascript: Verketten von Zeichenketten"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Beim Programmieren in Javascript ist es manchmal erforderlich, Strings zusammenzufügen, um eine Gesamtausgabe zu erstellen. Dies kann dazu dienen, verschiedene Teile von Informationen zu einer lesbaren Nachricht oder zur Generierung dynamischer Inhalte auf einer Webseite zu kombinieren.
+Strängenkonkatenation ist ein wichtiges Konzept in der Javascript-Programmierung. Sie ermöglicht es uns, mehrere Strings miteinander zu verbinden und effizient große Textblöcke zu erstellen. Durch die Verwendung von Konkatenation können wir auch dynamische Texte erstellen, die sich je nach Bedingungen oder Benutzereingaben ändern können.
 
-## Wie man Strings in Javascript zusammenfügt
+## Wie geht es
 
-Die einfachste Methode, um Strings in Javascript zu verbinden, ist die Verwendung des "+ (Plus)" Operators. Hier ein Beispiel:
+Um zwei Strings in Javascript zu verbinden, können wir den "+" Operator verwenden. Zum Beispiel:
 
 ```Javascript
-var name = "Max";
-var greeting = "Hallo " + name + "!";
-console.log(greeting);
+var str1 = "Hallo";
+var str2 = "Welt";
+var combined = str1 + " " + str2;
+
+console.log(combined);
+// Output: "Hallo Welt"
+```
+Wir können auch mehr als zwei Strings verketten, indem wir den Operator mehrmals verwenden. Beachten Sie jedoch, dass die Reihenfolge der Strings in der Ausgabe der Reihenfolge entsprechen wird, in der sie verketten wurden.
+
+```Javascript
+var first = "Das";
+var second = "ist";
+var third= "eine";
+var fourth = "Verkettung";
+var sentence = first + " " + second + " " + third + " " + fourth;
+
+console.log(sentence);
+// Ausgabe: "Das ist eine Verkettung"
 ```
 
-Die Ausgabe dieses Codes wird folgende Nachricht sein: "Hallo Max!". Die Variablen "name" und "greeting" werden mit dem "+" Operator zusammengefügt und als Ergebnis erscheint die auf der Konsole ausgegebene Nachricht.
+## Tiefergehende Einblicke
 
-Eine andere Möglichkeit, Strings zu verbinden, ist die Verwendung von Template Strings, auch bekannt als Template Literals. Beispiel:
+Beim Verketten von Strings in Javascript ist es wichtig, die Datentypen zu beachten. Wenn einer der zu verkettenen Werte kein String ist, wird dieser implizit in einen String konvertiert. Zum Beispiel:
+
+```Javascript
+// Automatische Konvertierung in Strings
+var num = 2020;
+var str = "Das Jahr ";
+var result = str + num;
+
+console.log(result);
+// Output: "Das Jahr 2020"
+```
+
+Ein weiterer wichtiger Punkt ist die Verwendung von Backticks (`) anstelle von Anführungszeichen (") für Strings, die Variablen oder Ausdrücke enthalten. Dadurch können wir Platzhalter in unserem String verwenden, die beim Ausführen dynamisch ersetzt werden können. Zum Beispiel:
 
 ```Javascript
 var name = "Maria";
-var greeting = `Hallo ${name}!`;
-console.log(greeting);
+var age = 25;
+
+var message = `Hallo, mein Name ist ${name} und ich bin ${age} Jahre alt.`;
+
+console.log(message);
+// Ausgabe: "Hallo, mein Name ist Maria und ich bin 25 Jahre alt."
 ```
-
-Die Ausgabe dieses Codes wird die gleiche wie oben sein. Der Unterschied besteht darin, dass Template Strings die Verwendung von Variablen innerhalb von ${...} ermöglichen, was besonders nützlich ist, wenn innerhalb des Strings Berechnungen oder Funktionen verwendet werden sollen.
-
-## Tiefergehender Einblick
-
-Beim Zusammenfügen von Strings in Javascript ist es wichtig zu beachten, dass der Datentyp der Ausgabe vom Datentyp der Variablen abhängt, die zusammengefügt werden. Beispielsweise, wenn eine Variable vom Typ String und eine Variable vom Typ Integer (Zahl) miteinander verbunden werden, wird das Ergebnis eine String-Konkatenation sein.
-
-Ein weiterer wichtiger Punkt ist die Reihenfolge der Verknüpfung. Bei der Verwendung von Template Strings wird die Reihenfolge der Verknüpfung gemäß der Position der Variablen im String befolgt. Beispiel:
-
-```Javascript
-var num1 = 5;
-var num2 = 10;
-var num3 = 15;
-var calculation = `Das Ergebnis lautet: ${num3 + num2 / num1}`;
-console.log(calculation);
-```
-
-Die Ausgabe dieses Codes wird "Das Ergebnis lautet: 17" sein, da zuerst die Division ausgeführt wird (10/5=2) und dann die Addition (2+15=17).
 
 ## Siehe auch
 
-- [W3Schools Tutorial: Concatenation](https://www.w3schools.com/jsref/jsref_concat_string.asp)
-- [MDN Web Docs: Template Literals](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings)
-- [Stack Overflow: Best way to concatenate strings in JavaScript](https://stackoverflow.com/questions/5612787/best-way-to-concatenate-strings-in-javascript)
+- [MDN Web Docs: Stringkonkatenation](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String#Konkatenationen)
+- [W3Schools: Javascript Zeichenketten](https://www.w3schools.com/js/js_strings.asp)

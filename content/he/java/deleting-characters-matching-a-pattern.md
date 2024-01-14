@@ -1,45 +1,62 @@
 ---
-title:    "Java: מחיקת תווים המתאימים לתבנית"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/deleting-characters-matching-a-pattern.md"
+title:                "Java: מחיקת תווים התואמים לתבנית"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה?
+## למה
 
-בהתחלה, מחיקת תווים שמתאימים לתבנית עשויה להראות כמו משימה פשוטה ולא כה חשובה. אך למעשה, בשימוש מתכנתים רבים בכל העולם, מחיקת תווים זו היא כלי עז וחשוב בבניית קוד יעיל ונקי. יתר על כן, למדען המחשב נוכים המעוניינים להבין באופן מעמיק את פעולת המחיקה הזו ואת הטכניקות השונות שניתן להשתמש בהן בבניית פתרונות מתקדמים.
+למה כדאי למתכנתים לעניין את עצמם במחיקת תווים לפי מטרה?
 
-# איך לבצע?
+## כיצד
 
-מחיקת תווים לפי תבנית ניתן לבצע באמצעות שימוש בתוכנות כתיבת קוד כמו Java. באמצעות פקודות ותנאים פשוטים, ניתן לחפש ולמחוק תווים המתאימים לתבנית ספציפית. לדוגמה, בקוד הבא נמחוק את כל הציפורניים הקטנים מהטקסט:
+כדי למחוק תווים לפי מבנה, תוכלו להשתמש בפונקציות ייחוס של ליבת ה-java כמו `replace` ו-`replaceAll`. למשל, אם נרצה למחוק את כל המספרים ממחרוזת מסוימת, נשתמש בכך:
 
-```java
-String text = "הנה חלק מתווים שנמחקים: 🐤🐦🐥";
-text = text.replaceAll("🐦", "");
-System.out.println(text);
+```Java
+String str = "רק 123 תווים ישארו במחרוזת זו";
+str = str.replaceAll("[0-9]", "");
+System.out.println(str);
 ```
 
 פלט:
-
 ```
-הנה חלק מתווים שנמחקים: 🐤🐥
+רק תווים ישארו במחרוזת זו
 ```
 
-כמו כן, ניתן גם להשתמש בביטויים רגולריים כדי לחפש תבניות יותר מורכבות ולמחוק תווים בהתאם. לדוגמה, בקוד הבא נמחוק את כל המספרים מהטקסט:
+כדי למחוק כל האותיות הקטנות במחרוזת, נשתמש בכך:
 
-```java
-String text = "123אבגד456הוזחט0987654";
-text = text.replaceAll("\\d", "");
-System.out.println(text);
+```Java
+String str = "המחרוזת הזו תהפוך להיות רק באותיות גדולות";
+str = str.replace("[a-z]", "");
+System.out.println(str);
 ```
 
 פלט:
-
 ```
-אבגדהוזחט
+המחרוזת הזו תהפוך להיות רק 
 ```
 
-# חקירה מעמיקה
+כדי למחוק תווים מסוימים, נוכל להשתמש בפונקציית `replace` ולציין את התו שנרצה למחוק יחד עם התו החלפה. למשל, אם נרצה להסיר את כל הקווים משולשים ממחרוזת, נשתמש בכך:
 
-המחיקה של תווים לפי תבנית היא תהליך נפוץ וחשוב במתכנתי Java. ניתן לשרטט מטריצה של נתונים כדי לבדוק ולברר את העיבוד הסלקטיבי של התווים. ישנם גם כלים נוספים כגון חיפוש ומחיקה ברש
+```Java
+String str = "המחרוזת הזו כוללת מספר קווים - שוליים ומטה-קוויים";
+str = str.replace("-", "");
+str = str.replace("_", "");
+System.out.println(str);
+```
+
+פלט:
+```
+המחרוזת הזו כוללת מספר קווים  שוליים ומטהקוויים
+```
+
+## גילוי עמוק
+
+למחוק תווים לפי מבנה הוא פעולה מאוד נפוצה ביישומי ה-java. זה יכול לשמש להסרת תווים מיותרים ממחרוזות, לניקוי נתונים ועוד. כדאי להתנסות ולשלב פונקציות נוספות כמו `contains` ו-`replaceAll` כדי ליישם מחיקת תווים לפי מבנה בצורה מושלמת.
+
+## ראו גם
+
+כדי לקרוא עוד על האפשרויות של ה-java כאשר מדובר במחיק

@@ -1,41 +1,56 @@
 ---
-title:    "Haskell: 컴퓨터 프로그래밍에 대한 기사 제목: 커맨드 라인 인수 읽기"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/reading-command-line-arguments.md"
+title:                "Haskell: 컴퓨터 프로그래밍에서 명령 줄 인수 읽기"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-커맨드 라인 인수를 읽는 것에 대해서는 많은 이유가 있습니다. 첫째, 프로그램을 실행할 때 다른 설정 값을 전달하고 싶을 때 등 여러 용도로 사용할 수 있습니다.
 
-## 사용 방법
-커맨드 라인 인수를 읽는 것은 간단합니다. `System.Environment` 모듈에서 제공하는 `getArgs` 함수를 사용하면 됩니다. 이 함수는 `IO [String]` 타입을 반환하므로 결과를 얻기 위해서는 `IO` 모나드 내에서 작성해야 합니다.
+이 글을 읽는 이유는 무엇일까요? 우리가 Haskell 프로그래밍을 하다보면 종종 커맨드 라인 인자를 다루어야 하는 경우가 있습니다. 이 글에서는 인자를 읽는 방법을 다루고, 이를 통해 더 나은 프로그램을 만드는 방법을 알아보겠습니다.
+
+## 어떻게
+
+커맨드 라인 인자를 다루는 것은 매우 간단합니다. Haskell의 `System.Environment` 모듈에는 `getArgs`라는 함수가 있습니다. 이 함수는 `IO [String]` 타입을 반환하며, 커맨드 라인에서 입력된 인자들의 리스트를 제공합니다.
 
 ```Haskell
 import System.Environment
 
-main :: IO ()
 main = do
   args <- getArgs
-  putStrLn ("입력받은 인수: " ++ show args)
+  putStrLn ("총 " ++ show (length args) ++ "개의 인자가 입력되었습니다.")
+  putStrLn "인자 리스트:"
+  mapM_ putStrLn args
 ```
 
-위 예제 코드를 컴파일하고 실행하면 아래와 같은 결과를 얻을 수 있습니다.
+위 예제에서 `getArgs` 함수를 사용하여 인자를 읽고, `length` 함수를 통해 총 인자의 개수를 구한 뒤, `putStrLn`을 사용하여 결과를 출력합니다.
+
+이제 컴파일 후 커맨드 라인에서 다음과 같이 입력해보세요.
 
 ```
-$ ghc argument_example.hs
-$ ./argument_example Hello World
-입력받은 인수: ["Hello", "World"]
+$ ./example arg1 arg2 arg3
 ```
 
-## 깊이 들어가기
-커맨드 라인 인수를 읽을 때 유의해야 할 몇 가지 사항이 있습니다.
+아래와 같은 결과가 출력될 것입니다.
 
-- `getArgs` 함수는 인수를 리스트 형태로 반환합니다. 이 때, 인수 마다 따옴표가 붙어 반환되는데, `show` 함수를 사용하면 해당 따옴표가 포함된 채로 문자열로 변환됩니다. 따라서, 인수를 파싱할 때에는 따옴표를 제거해주는 작업이 필요합니다.
-- 만약 프로그램을 실행할 때 인수를 전달하지 않으면 `getArgs` 함수는 빈 리스트 `[]`를 반환합니다. 따라서, 이에 대한 예외 처리를 해주는 것이 좋습니다.
+```
+총 3개의 인자가 입력되었습니다.
+인자 리스트:
+arg1
+arg2
+arg3
+```
 
-## 관련 자료
-- [Haskell 공식 문서: System.Environment 모듈](https://www.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
-- [Haskell Wikibook: Command line arguments](https://en.wikibooks.org/wiki/Haskell/Command_line_arguments)
-- [Haskell By Example: Reading Command Line Arguments](https://lotz84.github.io/haskellbyexample/ex/reading-command-line-arguments)
+## 심층 분석
+
+`System.Environment` 모듈은 `getArgs` 함수 외에도 여러 가지 유용한 함수를 제공합니다. 예를 들어, `getProgName` 함수는 현재 실행중인 프로그램의 이름을 반환합니다. 이를 활용하면 프로그램의 이름에 따라 다르게 동작하는 프로그램을 만들 수 있습니다. 또한, `getEnv` 함수를 사용하면 환경 변수를 읽어올 수도 있습니다.
+
+더 깊이 들어가서 다양한 함수들을 살펴보면서, 커맨드 라인 인자 외에도 다양한 환경 정보를 읽고 활용하는 방법을 알아볼 수 있습니다. 하지만 이러한 함수들을 자세히 다루는 것은 다른 글의 주제이므로 여기서는 패스하겠습니다.
+
+## 서로 참고하기
+
+- [Haskell 기본 가이드](https://www.haskell.org/documentation)
+- [Haskell 튜토리얼](https://www.tutorialspoint.com/haskell/index.htm)
+- [Haskell 프로그래밍 입문](https://en.wikibooks.org/wiki/Haskell/Getting_started)

@@ -1,32 +1,56 @@
 ---
-title:    "Clojure: Gerando Números Aleatórios"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/generating-random-numbers.md"
+title:                "Clojure: Gerando números aleatórios."
+programming_language: "Clojure"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que Gerar Números Aleatórios?
+# Por que gerar números aleatórios em Clojure?
 
-A geração de números aleatórios é uma ferramenta útil em muitas áreas da programação, desde jogos eletrônicos até algoritmos de criptografia. Com a capacidade de gerar números aleatórios, podemos criar aplicações mais dinâmicas e imprevisíveis, aumentando a complexidade e diversão do processo de desenvolvimento.
+Gerar números aleatórios é uma técnica comum em programação para criar variabilidade e imprevisibilidade em um algoritmo. Isso pode ser útil em diversas aplicações, como jogos, simulações, entre outros.
 
-## Como Fazer
+## Como fazer isso em Clojure
 
-Para gerar números aleatórios em Clojure, vamos usar a função `rand`, que retorna um número aleatório entre 0 e 1. Podemos multiplicar o resultado por um número para expandir o intervalo de valores possíveis. Por exemplo, para gerar um número aleatório entre 1 e 10, podemos multiplicar o resultado de `rand` por 10 e então arredondar para baixo com a função `Math/floor`.
+Em Clojure, podemos gerar números aleatórios utilizando a função `rand` do pacote `clojure.core`. Veja um exemplo simples abaixo:
 
 ```Clojure
-(Math/floor (* (rand) 10))
+(rand) ; gera um número aleatório entre 0 e 1
 ```
 
-Isso irá gerar um número inteiro entre 0 e 9. Você pode experimentar diferentes valores para expandir ainda mais o intervalo de valores possíveis.
+Podemos também especificar um intervalo utilizando parâmetros adicionais na função `rand`. Por exemplo, para gerar um número aleatório entre 1 e 10, podemos fazer o seguinte:
 
-## Deep Dive
+```Clojure
+(rand 1 10) ; gera um número aleatório entre 1 e 10
+```
 
-A função `rand` usa o gerador de números pseudorandomicos do Java, que é baseado no algoritmo de congruência linear. Isso significa que os números gerados não são verdadeiramente aleatórios, mas sim uma sequência de números previsíveis. No entanto, essa sequência é tão complexa e caótica que pode ser considerada suficientemente aleatória para a maioria dos casos de uso.
+Outra forma de gerar números aleatórios em Clojure é utilizando o pacote `java.util.Random` e sua função `nextInt`. Veja um exemplo:
 
-Se precisarmos de uma geração mais precisa e realmente aleatória, podemos utilizar a biblioteca `clojure.math.numeric-tower` e a função `random-sample` para gerar uma sequência de números a partir de uma distribuição uniforme. Essa função usa o gerador de números aleatórios do sistema operacional e é mais indicada para aplicações que envolvem criptografia ou simulações científicas.
+```Clojure
+(require '[java.util.Random :as random])
 
-## Veja Também
+(random/nextInt 10) ; gera um número inteiro aleatório entre 0 e 9
+```
 
-- [Documentação do Clojure sobre a função `rand`](https://clojure.org/reference/numbers#var_rand)
-- [Pergunta e resposta sobre geração de números aleatórios no Stack Overflow](https://stackoverflow.com/questions/27086174/generate-random-number-in-clojure)
+## Dando um mergulho mais profundo
+
+Para criar números aleatórios com uma distribuição específica, podemos utilizar a função `rand-nth` em conjunto com uma sequência de valores. Por exemplo, para gerar um número aleatório entre 1 e 10 com distribuição exponencial, podemos fazer o seguinte:
+
+```Clojure
+(def seq-exp (map #(Math/pow 2 %) (range))) ; cria uma sequência com valores exponenciais crescentes
+(rand-nth seq-exp) ; gera um número aleatório entre 1 e 10 com distribuição exponencial
+```
+
+Além disso, podemos também gerar sequências de números aleatórios utilizando a função `repeatedly` em conjunto com `rand`. Por exemplo, para gerar uma sequência de 10 números aleatórios entre 1 e 100, podemos fazer o seguinte:
+
+```Clojure
+(take 10 (repeatedly #(rand 1 100))) ; gera uma sequência de 10 números aleatórios entre 1 e 100
+```
+
+# Veja também
+
+- Documentação oficial da função `rand`: https://clojuredocs.org/clojure.core/rand
+- Documentação oficial da função `rand-nth`: https://clojuredocs.org/clojure.core/rand-nth
+- Documentação oficial da função `repeatedly`: https://clojuredocs.org/clojure.core/repeatedly
+- Documentação oficial do pacote `java.util.Random`: https://docs.oracle.com/javase/8/docs/api/java/util/Random.html

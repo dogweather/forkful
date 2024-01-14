@@ -1,41 +1,42 @@
 ---
-title:    "Gleam: Die aktuelle Datum erhalten"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/gleam/getting-the-current-date.md"
+title:                "Gleam: Das aktuelle Datum abrufen"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
 
-Das Abrufen des aktuellen Datums kann in vielen Programmiersprachen sehr nützlich sein. Es ermöglicht uns, dynamische Daten in unsere Anwendungen einzubinden und sie immer auf dem neuesten Stand zu halten. In Gleam ist dies dank einiger eingebauter Funktionen besonders einfach.
+In diesem Blogpost werden wir uns damit beschäftigen, wie man das aktuelle Datum mit der Programmiersprache Gleam abrufen kann. Aber warum sollte man überhaupt das aktuelle Datum abrufen wollen?
 
-# Wie Geht Es
+Das aktuelle Datum kann in vielen Anwendungsfällen nützlich sein. Zum Beispiel wenn wir eine Anwendung haben, die abhängig vom Datum unterschiedliche Prozesse ausführen soll. Oder wenn wir einfach nur das Datum in unserem Programm anzeigen wollen. Mit Gleam ist es einfach, das aktuelle Datum zu bekommen und es für unsere Bedürfnisse zu nutzen.
 
-In Gleam können wir das aktuelle Datum mithilfe der Funktion `DateTime.now()` erhalten. Diese Funktion gibt eine Struktur zurück, die das aktuelle Datum, die Uhrzeit und die Zeitzone enthält. Wir können dann diese Struktur verwenden, um die einzelnen Komponenten des Datums abzurufen und in unserer Anwendung zu nutzen. Schauen wir uns dazu ein Beispiel an:
+# Wie geht das?
+
+Um das aktuelle Datum in Gleam abzurufen, müssen wir die Funktion `DateTime.now()` verwenden. Diese Funktion gibt uns ein Objekt vom Typ `DateTime` zurück, welches das aktuelle Datum und die aktuelle Uhrzeit enthält.
+
+Lassen Sie uns einen Blick auf ein einfaches Beispiel werfen:
 
 ```Gleam
-let date = DateTime.now()
-IO.debug("Das aktuelle Datum ist:")
-IO.debug("Jahr: {}", date.year)
-IO.debug("Monat: {}", date.month)
-IO.debug("Tag: {}", date.day)
+let current_date = DateTime.now()
+io.println("Das aktuelle Datum ist: #{current_date.date}")
 ```
 
-Dieses Beispiel gibt das aktuelle Datum in die Konsole aus und gibt uns die Möglichkeit, mit den einzelnen Komponenten des Datums zu arbeiten. Hier ist eine mögliche Ausgabe:
+Dieses Beispiel nutzt die Funktion `io.println()` um das aktuelle Datum auf der Konsole auszugeben. Dabei greifen wir auf das Feld `date` des `DateTime` Objekts zu, um nur das Datum ohne die Uhrzeit auszugeben.
 
-```
-Das aktuelle Datum ist:
-Jahr: 2021
-Monat: 4
-Tag: 10
-```
+Das oben genannte Beispiel gibt zum Beispiel die Ausgabe `Das aktuelle Datum ist: 2020-06-23` aus.
 
-# Tiefer Eintauchen
+# Tiefer Einblick
 
-In Gleam gibt es noch viele weitere Funktionen, die uns bei der Arbeit mit Datum und Uhrzeit unterstützen. Zum Beispiel können wir mit `DateTime.add()` ein Datum um eine bestimmte Anzahl an Tagen, Monaten oder Jahren erweitern. Oder mit `DateTime.diff()` können wir die Differenz zwischen zwei Datumswerten berechnen. Es lohnt sich, diese Funktionen genauer zu untersuchen, um das volle Potenzial von Gleam bei der Arbeit mit Datum und Uhrzeit auszuschöpfen.
+In Gleam wird das Datum im ISO-8601-Format gespeichert, was bedeutet, dass es folgendes Format hat: `YYYY-MM-DD`. Wenn wir also das aktuelle Datum abrufen, erhalten wir es im Format `YYYY-MM-DD` zurück. Wir können auch auf die Uhrzeit und andere Informationen wie Wochentag oder Zeitzone zugreifen, indem wir auf die entsprechenden Felder des `DateTime` Objekts zugreifen.
 
-# Siehe Auch
+Es gibt auch weitere Funktionen, die es uns erlauben, das aktuelle Datum auf verschiedene Weisen zu manipulieren, zum Beispiel `DateTime.add()` um Tage oder Monate hinzuzufügen oder `DateTime.diff()` um die Differenz zwischen zwei Daten zu berechnen.
 
-- [Gleam-Dokumentation zu Datum und Uhrzeit](https://gleam.run/documentation/standard-library/date-time)
-- [Gleam-Zeitpaket auf GitHub](https://github.com/gleam-lang/time)
+In der offiziellen Dokumentation von Gleam können Sie weitere Informationen über die `DateTime` Struktur und ihre Funktionen finden.
+
+# Siehe auch
+
+- [Offizielle Gleam Dokumentation](https://gleam.run/documentation/)
+- [ISO-8601-Format](https://en.wikipedia.org/wiki/ISO_8601)

@@ -1,54 +1,58 @@
 ---
-title:    "Arduino recipe: Comparing two dates"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/comparing-two-dates.md"
+title:                "Arduino recipe: Comparing two dates"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Using Arduino to compare two dates can be a helpful tool when creating projects that involve tracking and organizing time. This feature allows for more precise control over events and can enhance the functionality of your project.
+Comparing two dates may seem like a simple task, but it can actually be quite complex. Whether you are trying to check if a certain date has passed or if two events occur on the same day, understanding how to compare dates can be a useful skill in many projects. In this blog post, we will explore how to compare dates using Arduino programming.
 
 ## How To
 
-To compare two dates on Arduino, you will first need to declare two variables with the data type "time_t". This data type is used to store date and time values. For example:
+To compare two dates in Arduino, we will use the built-in "millis()" function. This function returns the number of milliseconds that have passed since the Arduino board began running the current program. We can use this value to create a reference point in time.
+
+Let's take a look at an example where we want to check if a certain amount of time has passed since the Arduino board was turned on. First, we need to create a variable to store the reference point:
 
 ```Arduino
-time_t date1 = {year, month, day, hours, minutes, seconds};
-time_t date2 = {year, month, day, hours, minutes, seconds};
+long startTime = millis(); //store the current time in milliseconds
 ```
-Next, you can use the built-in function "difftime()" to calculate the difference between the two dates. The syntax for this function is:
+
+Next, we can use a conditional statement to check if the current time minus the reference point is equal to or greater than the desired time interval. For example, if we want to check if 5 seconds have passed, our code would look like this:
 
 ```Arduino
-long difftime(time_t timer2, time_t timer1);
+if (millis() - startTime >= 5000) { //check if the current time minus the reference point is greater than or equal to 5 seconds
+    //do something
+}
 ```
 
-Where "timer1" is the starting date and "timer2" is the ending date. This function will return the difference between the two dates in seconds. You can then convert this value into a more readable format, such as days, hours, and minutes, by dividing by the appropriate time unit.
+Now, let's look at an example where we want to check if two dates are the same. We will use the "day()" and "month()" functions to get the day and month of each date, and then use a conditional statement to compare them. Our code would look like this:
 
 ```Arduino
-long difference = difftime(date2, date1);
-int days = difference / 86400; // 86400 seconds in a day
-int hours = (difference % 86400) / 3600; // 3600 seconds in an hour
-int minutes = ((difference % 86400) % 3600) / 60; // 60 seconds in a minute
+int firstDay = day(2020, 8, 20); //store the day of the first date
+int secondDay = day(2020, 8, 20); //store the day of the second date
+int firstMonth = month(2020, 8, 20); //store the month of the first date
+int secondMonth = month(2020, 8, 20); //store the month of the second date
 
-Serial.print("Difference: ");
-Serial.print(days);
-Serial.print(" days, ");
-Serial.print(hours);
-Serial.print(" hours, ");
-Serial.print(minutes);
-Serial.println(" minutes");
+if (firstDay == secondDay && firstMonth == secondMonth) { //check if the days and months are the same
+    //do something
+}
 ```
+
+By using these functions and conditional statements, we can easily compare two dates in our Arduino projects.
 
 ## Deep Dive
 
-When comparing two dates, it is important to take into account things like leap years and daylight saving time. Fortunately, the "time_t" data type automatically adjusts for these factors, making it a reliable method for tracking time.
+When comparing dates, it is important to understand different date formats and the limitations of the Arduino board. The millis() function returns a value of type "unsigned long", which has a maximum value of 4,294,967,295. This means that the reference point we create using millis() will only work for a certain amount of time before it resets.
 
-Additionally, the "difftime()" function also takes into account time zones. By default, it will use the local time zone of the Arduino board. However, you can adjust this by setting the time zone using the "setTimezone()" function from the "Timezone" library.
+Additionally, the day(), month(), and year() functions only accept values from 2000 to 2049. This means that we cannot use these functions for dates outside of this range. If we need to compare dates from a wider range, we will need to use other techniques such as converting the dates to an integer value.
 
 ## See Also
 
-- [Arduino Reference](https://www.arduino.cc/reference/en/language/functions/time/difftime/)
-- [Using Arduinos to Build Timers and Clocks](https://hackaday.com/2012/10/15/using-arduinos-to-build-timers-and-clocks/)
-- [Time and Date Library for Arduino](https://www.pjrc.com/teensy/td_libs_Time.html)
+- [Arduino Reference - millis() function](https://www.arduino.cc/reference/en/language/functions/time/millis/)
+- [Arduino Reference - day() function](https://www.arduino.cc/reference/en/language/functions/time/day/)
+- [Arduino Reference - month() function](https://www.arduino.cc/reference/en/language/functions/time/month/)
+- [Arduino Reference - year() function](https://www.arduino.cc/reference/en/language/functions/time/year/)

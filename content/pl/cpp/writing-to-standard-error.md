@@ -1,40 +1,47 @@
 ---
-title:    "C++: Pisanie do standardowego błędu"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/writing-to-standard-error.md"
+title:                "C++: Pisanie do standardowego błędu"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto pisać do standardowego błędu
 
-Pisanie do standardowego wyjścia błędu może wydawać się niepotrzebnym krokiem w procesie programowania, ale jest to bardzo ważne narzędzie do debugowania i poprawiania błędów w naszym kodzie. W tym wpisie na blogu dowiedz się, dlaczego pisanie do standardowego wyjścia błędu jest tak istotne.
+Pisanie do standardowego błędu jest często używaną techniką w programowaniu C++. Pozwala ona programistom na wyświetlanie informacji o błędach i problemach w swoim kodzie. Używanie tego narzędzia może znacznie ułatwić debugowanie i znalezienie błędów w programie.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Pisanie do standardowego wyjścia błędu w języku C++ jest bardzo proste. Wystarczy skorzystać z funkcji `std::cerr` i przekazać do niej naszą wiadomość. Poniżej znajduje się przykładowy kod, w którym przekazujemy do standardowego wyjścia błędu informację o dzieleniu przez zero:
+Pisanie do standardowego błędu odbywa się za pomocą funkcji ```C++ std::cerr```. Poniżej przedstawiamy przykładowy kod, który wyświetli informację o błędzie na standardowym wyjściu błędu:
 
 ```C++
 #include <iostream>
+using namespace std;
 
 int main() {
-    int x = 10;
-    int y = 0;
-    std::cerr << "Nie można dzielić przez zero!" << std::endl;
+    int num = 10;
+    if (num > 5)
+        cerr << "Błąd: liczba jest większa niż 5" << endl;
     return 0;
 }
 ```
 
-Po skompilowaniu i uruchomieniu tego kodu, otrzymamy na standardowym wyjściu błędu wiadomość "Nie można dzielić przez zero!".
+Output:
+```
+Błąd: liczba jest większa niż 5
+```
 
-## Wnikliwa Analiza
+W powyższym przykładzie wykorzystaliśmy funkcję ```C++ cerr``` do wyświetlenia informacji o błędzie. Możemy także wykorzystać tę funkcję do wyświetlania innych ważnych informacji, które pomogą nam w debugowaniu naszego programu. Jest to szczególnie przydatne w przypadku większych projektów, gdzie łatwo można zagubić się w kodzie.
 
-Pisanie do standardowego wyjścia błędu jest niezwykle użyteczne w procesie debugowania naszego kodu. Umożliwia nam wyświetlanie informacji o błędach, które mogą nam pomóc w identyfikacji i naprawie problemów w naszym programie. Jest to szczególnie przydatne w przypadku większych projektów, gdzie posiadanie jednoznacznych informacji o błędach jest kluczowe dla sprawnego rozwiązywania problemów.
+## Głębszy wgląd
 
-Ponadto, pisanie do standardowego wyjścia błędu pozwala nam również na wyświetlanie diagnostycznych informacji w czasie wykonania programu. Możemy na przykład wyświetlić wartości zmiennych w kluczowych punktach naszego kodu, co pozwoli nam lepiej zrozumieć, co dzieje się w naszym programie i gdzie występują ewentualne problemy.
+Pisanie do standardowego błędu jest szczególnie ważne w dużych projektach, ponieważ wtedy łatwo można popełnić błędy. Często programiści dodają wiele instrukcji warunkowych i indeksów tablic, co może prowadzić do nieprzewidzianych błędów. Wykorzystanie funkcji ```C++ cerr``` pozwala na szybkie wyświetlenie informacji o błędach i znalezienie problemów w naszym kodzie.
+
+Pamiętaj, że warto także dbać o czytelność swojego kodu, aby łatwo było go zrozumieć i debugować w razie potrzeby. Unikaj nadmiernego używania instrukcji warunkowych i pisanie zrozumiałego i przejrzystego kodu.
 
 ## Zobacz także
 
-- [Dokumentacja funkcji `std::cerr` w C++](https://en.cppreference.com/w/cpp/io/cerr)
-- [Poradnik o debugowaniu w C++](https://www.tutorialspoint.com/cplusplus/cpp_debugging.htm)
-- [Przydatne wskazówki dla początkujących programistów C++](https://www.geeksforgeeks.org/c-plus-plus/)
+- [Przewodnik po debugowaniu w C++](https://pl.wikipedia.org/wiki/Debugowanie)
+- [Narzędzia do debugowania w C++](https://www.kompilatory.net/debugowanie-c/)
+- [Wyjątki w C++](https://pl.wikibooks.org/wiki/C%2B%2B/Wyj%C4%85tki)

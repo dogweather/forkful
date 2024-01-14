@@ -1,36 +1,38 @@
 ---
-title:    "Javascript: Finne lengden til en streng"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/finding-the-length-of-a-string.md"
+title:                "Javascript: Å finne lengden av en tekststreng"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-I JavaScript, er en streng en sekvens av karakterer som brukes til å representere tekst. Det finnes ulike scenarioer der det kan være nyttig å finne lengden av en streng, for eksempel når man ønsker å sjekke om en brukers input er for lang eller for kort, eller for å manipulere tekst på en bestemt måte. 
+## Hvorfor
+I denne bloggposten skal vi utforske hvordan man kan finne lengden til en tekststreng i Javascript. Enten du er nybegynner eller en erfaren programmerer, er det alltid nyttig å kunne håndtere og manipulere strenger på en effektiv måte. Å kjenne til lengden på en streng er en grunnleggende ferdighet som kan være nyttig i mange ulike situasjoner. Enten det er for å validere brukerinput, formatere tekst eller gjøre beregninger basert på strenglengden, er det viktig å kunne finne lengden til en streng på en enkel og effektiv måte.
 
-# Slik gjør du det
-For å finne lengden av en streng i JavaScript, kan du bruke `length` egenskapen. Denne egenskapen returnerer antall karakterer i strengen og kan anvendes på både enkeltstående skjert og variabler som inneholder en streng.
-    
+## Slik gjør du det
+For å finne lengden til en streng i Javascript, kan vi bruke metoden `length` på et variabelnavn som inneholder en streng. La oss se på et eksempel for å forstå hvordan dette fungerer:
+
 ```Javascript
-let string = "Hei, dette er en bloggpost";
-console.log(string.length);
-// Output: 27
+let tekst = "Hei, verden!";
+console.log(tekst.length); // Output: 12
 ```
+
+Som vi ser, returnerer metoden `length` verdien 12, som er antall tegn i strengen "Hei, verden!". Det er viktig å merke seg at metoden ikke inkluderer mellomrom når den teller antall tegn i en streng. La oss se på et annet eksempel for å demonstrere dette:
+
 ```Javascript
-let brukerInput = prompt("Skriv inn din personlige melding:");
-if (brukerInput.length > 50) {
-    console.log("Meldingen din er for lang, vennligst kutt den ned til 50 karakterer");
-} else {
-    console.log("Meldingen din er lagret!");
-}
+let tekst = "Dette er en lang tekst.";
+console.log(tekst.length); // Output: 23
 ```
-I det første eksempelet bruker vi `length` egenskapen på variabelen `string` for å finne lengden av strengen som er lagret i den. I det andre eksempelet bruker vi `length` egenskapen til å sjekke om brukerens input er for lang og gir en tilbakemelding basert på det. 
 
-# Dypdykk
-Når vi bruker `length` egenskapen, må vi være oppmerksomme på at den kun returnerer antall *karakterer*, ikke antall *ord*. Dette kan være viktig å huske på hvis man ønsker å begrense teksten basert på et visst antall ord i stedet for antall karakterer. Det er også viktig å være klar over at blanke mellomrom og spesielle tegn også telles med i lengden av en streng.
+Vi ser at selv om det er 24 tegn i strengen, returnerer metoden `length` verdien 23, siden den ikke tar med mellomrommet i tellingen.
 
-# Se også
-- [String.prototype.length - JavaScript MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [JavaScript String Length - W3Schools](https://www.w3schools.com/jsref/prop_string_length.asp)
-- [Understanding String Length - SitePoint](https://www.sitepoint.com/understanding-string-length-javascript/)
+## I dybden
+Det kan være lurt å vite at metoden `length` ikke bare fungerer på tekststrenger, men også på andre datatyper som for eksempel arrays. Den teller da antall elementer i arrayet. Dette kan være nyttig når du jobber med lister og trenger å vite antall elementer i listen.
+
+En annen viktig ting å være klar over er at metoden `length` returnerer et tall som er basert på indeksering. Dette betyr at den første indeksen i en streng eller array er 0, og derfor vil lengden være en høyere verdi enn indeksen til det siste elementet. Dette kan være til hjelp når du jobber med løkker og behandler hver enkelt indeks.
+
+## Se også
+- [MDN: String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [W3Schools: JavaScript String length Property](https://www.w3schools.com/jsref/jsref_length_string.asp)
+- [Stack Overflow: What is the way to get string length in JavaScript?](https://stackoverflow.com/questions/26229791/what-is-the-way-to-get-string-length-in-javascript)

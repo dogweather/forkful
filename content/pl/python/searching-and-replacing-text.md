@@ -1,46 +1,47 @@
 ---
-title:    "Python: Wyszukiwanie i zamiana tekstu"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/searching-and-replacing-text.md"
+title:                "Python: Wyszukiwanie i zamienianie tekstu"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Kiedy piszemy kod w języku Python, zawsze warto pomyśleć o sposobach, które ułatwią nam pracę i pozwolą zaoszczędzić czas. Jednym z narzędzi, które mogą okazać się bardzo przydatne, jest wyszukiwanie i zastępowanie tekstu. Dzięki temu możemy szybko dokonać zmian w naszym kodzie, bez konieczności ręcznego edytowania wszystkich wystąpień danego fragmentu. W tym artykule opowiemy o tym, jak łatwo wykonać to zadanie w Pythonie.
+Jeśli pracujesz z dużymi ilościami tekstu, wiedza o wyszukiwaniu i zastępowaniu jest niezbędna w twoim arsenale programisty Pythona. Używanie funkcji wyszukiwania i zastępowania pozwala na szybką i efektywną zmianę tekstu, bez potrzeby ręcznego edytowania całego pliku.
 
 ## Jak to zrobić
 
-Aby wykonać wyszukiwanie i zastępowanie tekstu w Pythonie, możemy skorzystać z kilku różnych metod. Pierwsza z nich to użycie metody `replace()`, która pozwala nam na prostą zamianę jednego słowa na inne. Przykładowo, jeśli chcemy zamienić wszystkie wystąpienia słowa "hello" na "cześć", wpisujemy:
+W Pythonie, możesz użyć metody `.replace()` aby dokonać wyszukiwania i zastępowania tekstu. Jeśli na przykład chcesz zmienić wszystkie wystąpienia słowa "kot" na słowo "pies" w naszym tekście, możesz to zrobić w następujący sposób:
 
 ```Python
-text = "hello world, hello everyone"
-new_text = text.replace("hello", "cześć")
+text = "Lubię mojego kota, nazywa się Mruczek"
+new_text = text.replace("kot", "pies")
 print(new_text)
-
->> cześć world, cześć everyone
 ```
+**Output:**
+```
+Lubię mojego psa, nazywa się Mruczek
+```
+Wywołanie metody `replace()` na zmiennej `text` spowoduje zamianę wszystkich wystąpień słowa "kot" na słowo "pies". Warto również zauważyć, że metoda ta zwraca nowy ciąg znaków, więc musimy przypisać tę nową wartość do zmiennej `new_text`.
 
-Możemy także użyć biblioteki `re`, która udostępnia nam narzędzia do pracy z wyrażeniami regularnymi. Dzięki temu możemy dokonać bardziej złożonych zmian w tekście. Na przykład, jeśli chcemy usunąć wszystkie samogłoski z danego tekstu, możemy użyć następującego kodu:
+## Wszystkie aspekty poszukiwania i zastępowania tekstu
+
+Podstawowa składnia metody `.replace()` jest następująca:
 
 ```Python
-import re
-text = "Hello World"
-new_text = re.sub('[aeiou]', '', text)
-print(new_text)
-
->> Hll Wrld
+string.replace(old, new, count)
 ```
 
-W ten sposób możemy wykonać bardzo różnorodne operacje na tekście, np. zmieniać wielkość liter, wyciągać określone fragmenty tekstu czy usuwać niepotrzebne znaki.
+- `string` to ciąg znaków, na którym chcemy wykonać wyszukiwanie i zastępowanie.
+- `old` to ciąg znaków, które chcemy znaleźć i zastąpić. Może to być pojedynczy znak, wyrażenie regularne lub inny ciąg znaków.
+- `new` to ciąg znaków, które chcemy wstawić w miejsce `old`.
+- `count` (opcjonalne) to liczba wystąpień `old`, które chcemy zamienić. Jeśli nie zostanie podane, wszystkie wystąpienia zostaną zastąpione.
 
-## Wnikliwsze spojrzenie
+Metoda ta jest również na tyle elastyczna, że pozwala na podmianę nie tylko pojedynczych znaków, ale także całych wyrażeń lub fragmentów tekstu. Aby dowiedzieć się więcej na temat wykorzystania wyrażeń regularnych w metodzie `.replace()`, zobacz ten artykuł [link do artykułu o wyrażeniach regularnych w Pythonie].
 
-Jeśli chcemy poznać więcej funkcji związanych z wyszukiwaniem i zastępowaniem tekstu w Pythonie, warto zapoznać się z oficjalną dokumentacją. Tam znajdziemy wiele przykładów oraz opis wszystkich dostępnych metod. Warto także eksperymentować z różnymi wyrażeniami regularnymi, aby dostosować je do swoich potrzeb.
+## Zobacz również
 
-## Zobacz także
-
-- [Dokumentacja Pythona](https://docs.python.org/3/library/stdtypes.html#str.replace)
-- [Poradnik na temat wyrażeń regularnych w Pythonie](https://realpython.com/regex-python/)
-- [Składnia Markdown](https://www.markdownguide.org/basic-syntax/)
+- [Dokumentacja Pythona - metoda replace()](https://docs.python.org/3/library/stdtypes.html#str.replace)
+- [Tutorial o wyrażeniach regularnych w Pythonie](https://www.programiz.com/python-programming/regex)

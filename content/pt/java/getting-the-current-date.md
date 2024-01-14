@@ -1,68 +1,85 @@
 ---
-title:    "Java: Obtendo a data atual."
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/getting-the-current-date.md"
+title:                "Java: Obtendo a data atual."
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que obter a data atual?
 
-Em programação, muitas vezes precisamos trabalhar com datas e horas. Portanto, é importante saber como obter a data atual em nosso código Java. A data atual pode ser útil para fins de registro, comparação ou simplesmente para mostrar a data em um formato desejado. Felizmente, a linguagem Java facilita muito a obtenção da data atual.
+Às vezes, precisamos saber a data atual em nossos programas Java. Isso pode ser útil para rastrear a hora em que um determinado processo foi executado, criar um carimbo de data/hora em arquivos ou até mesmo para exibir a data para o usuário. Felizmente, obter a data atual em Java é bastante simples e pode ser realizado com apenas algumas linhas de código.
 
 ## Como fazer:
 
-Primeiro, precisamos importar a classe "java.util.Date" para o nosso código:
-
 ```Java
+// Importando a biblioteca java.util.Date
 import java.util.Date;
+
+// Criando um objeto Date
+Date data = new Date();
+
+// Imprimindo a data atual
+System.out.println(data);
 ```
 
-Em seguida, podemos criar um objeto do tipo Date e atribuí-lo à data atual usando o construtor padrão:
+A saída desse código será algo como:
 
-```Java
-Date dataAtual = new Date();
+```
+Seg Jun 15 10:30:00 UTC 2020
 ```
 
-Podemos imprimir a data atual em milissegundos usando o método "getTime()":
+Além disso, é possível formatar a data para exibi-la de forma mais legível para o usuário. Vamos ver como isso pode ser feito utilizando a classe SimpleDateFormat:
 
 ```Java
-System.out.println(dataAtual.getTime());
-```
-
-Isso nos dará um número representando a data atual em milissegundos a partir de 1º de janeiro de 1970. Além disso, podemos obter a data atual em um formato legível usando o método "toString()":
-
-```Java
-System.out.println(dataAtual.toString());
-```
-
-Este comando irá imprimir a data atual em uma forma como "Wed Sep 08 12:53:39 BRT 2021". Mas se quisermos mostrar a data em um formato específico, podemos usar a classe "SimpleDateFormat" e seu método "format()" para formatar nossa data atual:
-
-```Java
+// Importando a biblioteca java.text.SimpleDateFormat
 import java.text.SimpleDateFormat;
 
-SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-System.out.println(formatador.format(dataAtual));
+// Criando um objeto SimpleDateFormat com o formato desejado
+SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+
+// Utilizando o objeto para formatar a data
+String dataFormatada = formato.format(data);
+
+// Imprimindo a data formatada
+System.out.println(dataFormatada);
 ```
 
-Isso imprimirá a data atual no formato "08/09/2021". Podemos alterar o formato de acordo com nossas necessidades, basta consultar a documentação da classe "SimpleDateFormat" para conhecer os códigos de formatação disponíveis.
+A saída agora será a data atual no formato especificado, por exemplo:
 
-## Deep Dive:
+```
+15/06/2020
+```
 
-A partir do Java 8, foi introduzida a classe "LocalDateTime", que nos permite trabalhar com a data e hora atuais mais facilmente. Além disso, também foi adicionado o método "now()" à classe "LocalDateTime" que retorna a data e hora atuais sem a necessidade de criar um objeto. Podemos usá-lo da seguinte forma:
+## Profundando:
+
+A classe Date em Java é utilizada para representar uma data e hora específica. Quando criamos um objeto Date sem passar nenhum parâmetro, ele é inicializado com a data e hora atual do sistema. No entanto, a classe Date não possui métodos para manipular ou extrair informações específicas, como dia, mês ou ano.
+
+Por esse motivo, a partir do Java 8, foi introduzida a classe LocalDateTime, que possui métodos para lidar especificamente com datas e horas. Vamos ver como podemos utilizá-la para obter a data atual:
 
 ```Java
+// Importando as bibliotecas java.time.LocalDateTime e java.time.format.DateTimeFormatter
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
+// Criando um objeto LocalDateTime
 LocalDateTime dataAtual = LocalDateTime.now();
-System.out.println(dataAtual);
+
+// Utilizando um objeto DateTimeFormatter para formatar a data
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+// Obtendo a data formatada
+String dataFormatada = dataAtual.format(formatter);
+
+// Imprimindo a data
+System.out.println(dataFormatada);
 ```
 
-Este comando imprimirá a data e hora atuais em um formato como "2021-09-08T14:05:48.932". Podemos usar métodos como "getDayOfMonth()" ou "getYear()" para obter apenas o dia ou o ano atual, respectivamente. Além disso, também podemos usar essa classe para manipular datas e horas de maneira mais precisa e eficiente.
+A saída será a mesma do exemplo anterior, porém utilizando uma classe mais recente e específica para datas e horas.
 
 ## Veja também:
 
-- Documentação oficial do Java sobre a classe Date: https://docs.oracle.com/javase/8/docs/api/java/util/Date.html
-- Documentação oficial do Java sobre a classe LocalDateTime: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html
-- Exemplos práticos de uso da classe Date: https://www.baeldung.com/java-date
-- Tutorial sobre a classe LocalDateTime: https://www.baeldung.com/java-8-date-time-intro
+- [Documentação da classe Date em Java](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Documentação da classe LocalDateTime em Java](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
+- [Tutorial sobre formatação de datas em Java](https://www.baeldung.com/java-simpledateformat)

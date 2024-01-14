@@ -1,53 +1,43 @@
 ---
-title:    "Gleam: Leyendo un archivo de texto."
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/reading-a-text-file.md"
+title:                "Gleam: Leyendo un archivo de texto"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué leer un archivo de texto en Gleam
+## Por qué
 
-Leer un archivo de texto es una tarea común en la programación. Puede ser útil para leer datos de entrada, procesar archivos de registro o simplemente para obtener información almacenada en un archivo. En Gleam, esto se puede hacer de manera sencilla y eficiente.
+Muchas veces, como programadores, nos encontramos con la necesidad de leer archivos de texto para realizar diferentes tareas. Esto puede ser desde leer un archivo de configuración hasta procesar una gran cantidad de datos. En este post, te explicaremos por qué es importante aprender a leer archivos de texto en Gleam y cómo puedes hacerlo de manera eficiente.
 
-## Cómo hacerlo
+## Cómo leer un archivo de texto en Gleam
 
-Para leer un archivo de texto en Gleam, primero debemos importar el módulo `gleam/io`.
+Para leer un archivo de texto en Gleam, utilizamos la función `File.read` pasando como argumento la ruta del archivo que queremos leer. A continuación, podemos utilizar la función `String.split` para dividir el contenido del archivo en líneas y así poder acceder a cada una de ellas. Veamos un ejemplo:
 
 ```Gleam
-import gleam/io
+let file_content = File.read("ejemplo.txt") //Lee el archivo "ejemplo.txt"
+let lines = String.split(file_content, "\n") //Divide el contenido del archivo en líneas
 ```
 
-A continuación, podemos usar la función `read_file` para leer el archivo de texto. Esta función acepta como argumento una ruta de archivo y devuelve una tupla con un resultado exitoso o un error.
+Ahora, podemos imprimir cada línea utilizando un ciclo `for` y la función `IO.puts`:
 
 ```Gleam
-result = io.read_file("my_file.txt")
-```
-
-Si el archivo se lee correctamente, podemos acceder al contenido del archivo a través del resultado exitoso.
-
-```Gleam
-case result {
-  Ok(contents) -> {
-    // hacer algo con el contenido del archivo
-  }
-  Err(err) -> {
-    // manejar el error
-  }
+for line in lines {
+    IO.puts(line) //Imprime cada línea en la consola
 }
 ```
 
-Si el archivo no se puede leer, el patrón `Err` se obtendrá junto con el mensaje de error correspondiente.
+Si ejecutas este código, podrás ver en la consola el contenido del archivo de texto. ¡Genial!
 
-## Profundizando
+## Un vistazo más profundo
 
-La función `read_file` utiliza una función de bajo nivel llamada `read` que acepta un descriptor de archivo y devuelve una cadena de bytes. Esto hace que sea posible leer archivos binarios además de archivos de texto.
+Además de leer y procesar archivos de texto, Gleam también ofrece diferentes funciones para trabajar con el contenido de estos archivos. Por ejemplo, podemos utilizar la función `String.substr` para obtener un fragmento específico del texto, o la función `String.trim` para eliminar espacios en blanco al principio y al final de una línea.
 
-También es posible especificar opciones adicionales al leer el archivo, como el número máximo de bytes a leer o el desplazamiento desde donde empezar a leer.
-
-En resumen, leer un archivo de texto en Gleam es sencillo y ofrece opciones adicionales para adaptarse a diferentes necesidades.
+También es importante mencionar que podemos especificar un modo de lectura al abrir el archivo utilizando la función `File.open`. Esto nos permite tener más control sobre cómo se lee el archivo, como por ejemplo, leer solo una cierta cantidad de bytes o saltar ciertas líneas.
 
 ## Ver también
-- [Documentación del módulo `gleam/io`](https://gleam.run/modules/gleam_io.html)
-- [Tutorial de Gleam](https://gleam.run/book/tour.html)
-- [Ejemplos de código de Gleam](https://github.com/gleam-lang/examples)
+
+- [Documentación oficial de Gleam sobre lectura de archivos](https://gleam.run/documentation/libraries/files/#Reading-files)
+- [Artículo sobre manipulación de archivos en Gleam](https://medium.com/@erikschierboom/handling-files-in-gleam-9416fd5f0d8)
+- [Ejemplo de lectura y escritura de archivos de texto en Gleam](https://github.com/gleam-lang/gleam/blob/master/examples/files/read_and_write_text_file.gleam)

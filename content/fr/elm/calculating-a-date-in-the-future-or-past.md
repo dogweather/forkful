@@ -1,61 +1,40 @@
 ---
-title:    "Elm: Calculer une date dans le futur ou le passé"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/calculating-a-date-in-the-future-or-past.md"
+title:                "Elm: Calculer une date dans le futur ou le passé"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Dans la programmation, il est souvent nécessaire de calculer des dates dans le futur ou dans le passé. Par exemple, pour afficher la date de naissance d'un utilisateur dans un format plus lisible ou pour planifier des tâches à une date précise, il est important de comprendre comment calculer des dates. Dans cet article, nous allons explorer comment utiliser Elm pour calculer une date dans le futur ou dans le passé.
+Si vous êtes développeur en Elm, vous avez peut-être rencontré des situations où vous avez besoin de calculer une date dans le futur ou dans le passé. Que ce soit pour afficher un événement à venir ou pour calculer les intérêts sur un prêt, la manipulation de dates est un aspect important de la programmation. Dans cet article, nous verrons comment calculer une date en Elm en utilisant la bibliothèque Time.
 
-## Comment faire
+# Comment faire
 
-Pour commencer, nous allons décomposer le processus en plusieurs étapes simples. Tout d'abord, nous devons créer une fonction qui prendra en compte la date actuelle et le nombre de jours à ajouter ou à soustraire. Nous pouvons utiliser la fonction `add` ou `sub` de la bibliothèque `Time` d'Elm pour cela. Ensuite, nous devons formater la date pour qu'elle soit facilement lisible. Nous pouvons utiliser la fonction `format` de la bibliothèque `Time` pour cela. Voyons un exemple concret :
+Pour calculer une date dans le futur ou dans le passé en Elm, nous allons utiliser la fonction `add` de la bibliothèque Time. Cette fonction prend en paramètres une durée et une date de référence. Elle renvoie alors la date résultante en ajoutant ou en soustrayant la durée à la date de référence.
 
 ```Elm
 import Time
 
--- fonction pour calculer la date dans le futur
-getDateFuture : Int -> String
-getDateFuture days =
-    let
-        currentDate = Time.now
-        futureDate = Time.add Time.day (days) currentDate
-        formattedDate = Time.format "%d/%m/%Y" futureDate
-    in
-        formattedDate
+-- Calculer une date dans 2 semaines à partir d'aujourd'hui
+let futureDate = Time.add (Time.weeks 2) Time.now
 
--- fonction pour calculer la date dans le passé
-getDatePast : Int -> String
-getDatePast days =
-    let
-        currentDate = Time.now
-        pastDate = Time.sub Time.day (days) currentDate
-        formattedDate = Time.format "%d/%m/%Y" pastDate
-    in
-        formattedDate
+-- Calculer une date il y a 3 mois à partir d'aujourd'hui
+let pastDate = Time.add (Time.months (-3)) Time.now
 ```
 
-Dans cet exemple, nous avons créé deux fonctions, `getDateFuture` et `getDatePast`, qui prennent toutes deux un entier représentant le nombre de jours à ajouter ou soustraire et renvoient la date correspondante dans un format facilement lisible.
+Dans cet exemple, nous importons d'abord la bibliothèque Time, puis nous utilisons la fonction `add` pour calculer une date dans le futur en ajoutant 2 semaines à la date actuelle. Nous faisons de même pour calculer une date dans le passé, en soustrayant cette fois-ci 3 mois à la date actuelle.
 
-Maintenant, pour utiliser ces fonctions dans notre code, nous pouvons simplement les appeler en leur donnant le nombre de jours en paramètre. Par exemple :
+# Plongée profonde
 
-```Elm
-getDateFuture 5  -- renvoie la date dans 5 jours
-getDatePast 10  -- renvoie la date il y a 10 jours
-```
+Maintenant que nous savons comment utiliser la fonction `add`, examinons de plus près la manière dont les durées sont traitées en Elm. La bibliothèque Time utilise le type de données `Time.Duration` pour représenter une durée. Ce type de données peut être créé à l'aide de différentes fonctions, telles que `Time.minutes`, `Time.hours`, `Time.days`, etc.
 
-Et voilà, nous avons maintenant la possibilité de calculer des dates dans le futur ou dans le passé en utilisant Elm !
+De plus, il est important de noter que `Time.Duration` utilise un système de type fort pour éviter toute confusion entre les différentes unités de temps. Par exemple, vous ne pouvez pas ajouter une durée de 3 minutes à une date en utilisant `Time.add`, car `Time.minutes` accepte uniquement un `Int` en tant que paramètre. Vous devez plutôt convertir la valeur de minutes en secondes en utilisant `Time.seconds`. Ce système de type garantit une manipulation précise des dates et heures en Elm.
 
-## Plongée profonde
+# Voir aussi
 
-Comme mentionné précédemment, nous avons utilisé la fonction `add` et `sub` pour ajouter ou soustraire des jours à la date actuelle. Il est important de noter que nous pouvons également utiliser ces fonctions pour ajouter ou soustraire d'autres unités de temps telles que les heures, les minutes, etc. De plus, la fonction `format` nous permet de personnaliser le format de la date affichée en utilisant des symboles spécifiques. Par exemple, `%d` représente le jour, `%m` représente le mois et `%Y` représente l'année.
+Pour en savoir plus sur la bibliothèque Time en Elm, consultez la documentation officielle [ici](https://package.elm-lang.org/packages/elm/time/latest/).
 
-Il existe également d'autres fonctions utiles dans la bibliothèque `Time` qui peuvent être utilisées pour manipuler les dates et les heures en Elm. N'hésitez pas à explorer davantage et à en apprendre davantage sur ces fonctions.
-
-## Voir aussi
-
-- La documentation de la bibliothèque `Time` : [https://package.elm-lang.org/packages/elm/time/latest/](https://package.elm-lang.org/packages/elm/time/latest/) 
-- L'article "Manipuler les dates et les heures en Elm" : [https://dev.to/salakar/manipulating-dates-and-times-in-elm-bi1](https://dev.to/salakar/manipulating-dates-and-times-in-elm-bi1)
+Découvrez également comment gérer les fuseaux horaires en Elm en lisant cet article [Comment gérer les fuseaux horaires en Elm](https://dev.to/jessicalevine328/managing-timezones-in-elm-99k).

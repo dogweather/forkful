@@ -1,53 +1,69 @@
 ---
-title:    "Swift: Das heutige Datum erhalten"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/getting-the-current-date.md"
+title:                "Swift: Das aktuelle Datum erhalten"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In diesem Blog-Beitrag werden wir uns damit beschäftigen, wie man das aktuelle Datum in Swift erhalten kann. Das ist eine essentielle Funktion, die in vielen Anwendungen benötigt wird. Wir werden sehen, wie einfach es ist, das aktuelle Datum in Swift zu bekommen und wie man es in verschiedenen Formaten anzeigen kann.
+Das aktuelle Datum ist ein wichtiges Element unserer täglichen Programmierarbeit. Es kann verwendet werden, um Zeitstempel zu erstellen, Ereignisse in unserer App zu verfolgen, oder um einfach nur die aktuelle Uhrzeit anzuzeigen. In diesem Blog-Beitrag werden wir uns damit beschäftigen, wie man in Swift das aktuelle Datum bekommt und welche Optionen es dafür gibt.
 
-## Wie man das aktuelle Datum erhält
-
-Die Verwendung von Swift-Befehlen ist ein nützlicher Weg, um das aktuelle Datum in einer Anwendung zu bekommen. Dazu muss man lediglich die `Date()` Funktion verwenden und sie einer Variablen zuweisen:
+## Wie man das aktuelle Datum in Swift bekommt
 
 ```Swift
-let currentDate = Date()
+let date = Date()
+print(date)
 ```
 
-Mit dieser Variablen kann man nun auf verschiedene Funktionen von Swift zugreifen, um das Datum in verschiedenen Formaten zu erhalten. Zum Beispiel:
+Der obige Code erstellt eine neue Instanz der Klasse Date, die das aktuelle Datum und die Uhrzeit enthält. Dies kann beliebig oft wiederholt werden, um das Datum zu aktualisieren.
+
+Wenn wir jedoch nur das aktuelle Datum ohne die Uhrzeit benötigen, gibt es eine sogenannte Calendar-Klasse, die uns dabei hilft.
 
 ```Swift
-// aktuelles Datum als String DD.MM.YYYY
-let currentDateAsString = currentDate.toString(format: "dd.MM.yyyy")
+let calendar = Calendar.current
+let date = Date()
 
-// aktuelles Datum als String mit Tag und Monatsnamen
-let currentDateWithNames = currentDate.toString(format: "EEE, MMMM dd, yyyy")
+let components = calendar.dateComponents([.year, .month, .day], from: date)
+print(components)
 ```
 
-Man kann auch auf spezifische Teile des Datums zugreifen, wie Tag, Monat und Jahr, und diese in Variablen speichern:
+Der obige Code gibt uns das aktuelle Datum im Format von Jahr, Monat und Tag aus.
+
+Wir können auch die Zeitzone für das aktuelle Datum festlegen, indem wir die Eigenschaft timeZone der Date-Klasse verwenden.
 
 ```Swift
-let day = currentDate.getDay()
-let month = currentDate.getMonth()
-let year = currentDate.getYear()
+let date = Date()
+print(date)
+date.timeZone = TimeZone.current
+print(date)
 ```
 
-Es gibt auch die Möglichkeit, das aktuelle Datum in einer bestimmten Zeitzone zu erhalten. Dazu muss man nur den `TimeZone` Parameter in der `Date()` Funktion angeben:
+## Tiefgreifende Informationen über das aktuelle Datum
+
+Der Date-Klasse hat viele nützliche Methoden, die uns dabei helfen, das aktuelle Datum zu bearbeiten und auszugeben.
+
+Zum Beispiel können wir mit der Methode date(byAdding:to:) das aktuelle Datum um eine bestimmte Anzahl von Tagen, Monaten oder Jahren verändern.
 
 ```Swift
-// aktuelles Datum in der Zeitzone Deutschland
-let currentDateInGermany = Date(timeIntervalSinceNow: TimeZone(identifier: "Europe/Berlin")!.secondsFromGMT())
+let date = Date()
+let changedDate = Calendar.current.date(byAdding: .day, value: 7, to: date)
+print(changedDate)
 ```
 
-## Tiefergehende Informationen
+Es ist auch möglich, das aktuelle Datum in ein anderes Format umzuwandeln, indem wir die date(withFormattedString:) Methode verwenden und einen String als Argument übergeben.
 
-Die `Date()` Funktion ist in der Lage, das Datum aufgrund der Systemzeit des Geräts zu erhalten. Dabei ist es wichtig zu beachten, dass die Systemzeit des Geräts möglicherweise nicht immer korrekt ist. Dies kann auf verschiedene Faktoren wie beispielsweise eine falsche Zeiteinstellung des Benutzers zurückzuführen sein. Deshalb ist es ratsam, das Datum mit Vorsicht zu verwenden und im Zweifelsfall eine alternative Quelle zu nutzen.
+```Swift
+let date = Date()
+let formattedString = date.date(withFormattedString: "dd.MM.yyyy")
+print(formattedString)
+```
+
+Es lohnt sich, sich mit den verschiedenen Möglichkeiten der Date-Klasse auseinanderzusetzen, um das aktuelle Datum optimal zu nutzen.
 
 ## Siehe auch
 
-- [Apple Dokumentation zu Date](https://developer.apple.com/documentation/foundation/date)
-- [Stack Overflow Frage zu Zeitzone in Swift](https://stackoverflow.com/questions/25315484/convert-utc-date-into-local-time-in-swift)
+* [Apple Dokumentation über die Date-Klasse](https://developer.apple.com/documentation/foundation/date)
+* [Swift Standard Library Documentation - Date](https://developer.apple.com/documentation/swift/date)

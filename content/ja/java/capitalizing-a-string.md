@@ -1,63 +1,48 @@
 ---
-title:    "Java: 文字列を大文字化する"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/capitalizing-a-string.md"
+title:                "Java: 文字列の先頭を大文字にする"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+文字列の大文字化を行う理由を、たった1-2文で説明します。
 
-文字列を大文字にするのに、なぜ誰かが参加するかの説明を、1〜2文で示す。
-
-文字列を大文字にすることは、プログラミングにおいて非常に便利で、データ処理や出力での一貫性を保つのに役立ちます。
+文字列の大文字化は、プログラミングにおいてとても重要な操作です。例えば、ユーザーからの入力を正しく扱うために、コード内の文字列を統一された形式に変換する必要があります。また、文字列を比較する際にも大文字と小文字を区別する場合があり、そのような場合にも大文字化は必要です。
 
 ## 方法
+大文字化を行うための具体的なコーディング例と、その出力結果を「```Java ... ```」のコードブロックを使用して説明します。
 
-```Java
-// 文字列を大文字にするメソッドの例
-public static String toUpperCase(String str) {
-    StringBuilder result = new StringBuilder();
-    for (int i = 0; i < str.length(); i++) {
-        char c = str.charAt(i);
-        if (Character.isLetter(c)) {
-            result.append(Character.toUpperCase(c));
-        } else {
-            result.append(c);
-        }
-    }
-    return result.toString();
-}
+#### コード例1
+```
+String str = "hello world";
+String upperCaseStr = str.toUpperCase();
+System.out.println(upperCaseStr);
 ```
 
-**入力**："hello world"  
-**出力**："HELLO WORLD"
+#### 出力結果1
+```
+HELLO WORLD
+```
 
-この例では、まず与えられた文字列をループで走査し、文字がアルファベットの場合は大文字に変換し、それ以外の場合はそのまま出力するようにしています。
+#### コード例2
+```
+String name = "john";
+String capitalizedName = name.substring(0,1).toUpperCase() + name.substring(1);
+System.out.println(capitalizedName);
+```
 
-## 深く掘り下げる
+#### 出力結果2
+```
+John
+```
 
-文字列を大文字にするメソッドには、いくつかの実装方法があります。例えば、Javaの標準ライブラリには`toUpperCase()`というメソッドが用意されており、これを使用することでも文字列を大文字にできます。また、正規表現やStream APIを使用しても同様の結果を得ることができます。
+## ディープダイブ
+文字列の大文字化には、さまざまな方法があります。上記のコード例のように、`toUpperCase()`メソッドを使用する方法以外にも、正規表現やループ処理を使用することで大文字化を行うことができます。また、Java以外のプログラミング言語でも同様の操作が可能です。
 
-また、多言語対応を考慮する必要がある場合や、特殊文字の扱いを決める必要がある場合には、さらに複雑な実装が必要になるかもしれません。
-
-## もっと詳しく知りたい方へ
-
-ここまでの例では、文字列を大文字に変換する際に全ての文字を変換していますが、実際には例外的な文字や言語によるルールも存在します。下記のリンクは、これらのルールをより詳しく説明した記事です。
-
-[文字の大文字と小文字の変換のルール](https://techacademy.jp/magazine/23791)
-
-[Javaの正規表現による文字列の変換方法](https://www.tomoare.com/column/columnJava/e-commerce/javaRegex2.html)
-
-## 関連サイト
-
-[JavaのStringクラスドキュメント](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-
-[JavaのStream APIドキュメント](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html)
-
-[Javaで文字列を操作する方法](https://techbookfest.org/product/5670822523514368)
-
----
-## 関連するものを見る
-
-[文字列を小文字に変換する方法](https://github.com/mimorin2017/markdown_blog/blob/master/how_to_lowercase_string.md)
+## その他の参考資料
+- [Java公式ドキュメント - StringクラスのtoUpperCase()メソッド](https://docs.oracle.com/javase/jp/11/docs/api/java.base/java/lang/String.html#toUpperCase())
+- [Java公式ドキュメント - Stringクラスのsubstring()メソッド](https://docs.oracle.com/javase/jp/11/docs/api/java.base/java/lang/String.html#substring(int%2Cint))
+- [Programming with Mosh - Java Tutorial for Beginners](https://www.youtube.com/watch?v=eIrMbAQSU34)（英語）

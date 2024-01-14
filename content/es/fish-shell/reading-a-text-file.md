@@ -1,53 +1,64 @@
 ---
-title:    "Fish Shell: Leyendo un archivo de texto."
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/reading-a-text-file.md"
+title:                "Fish Shell: Leyendo un archivo de texto"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué leer un archivo de texto en Fish Shell?
+# ¿Por qué leer un archivo de texto en Fish Shell?
 
-Hay muchas razones por las cuales puede ser útil leer un archivo de texto en Fish Shell. Por ejemplo, puedes querer extraer información específica de un archivo de configuración o de un archivo de registro. También puedes utilizar esta técnica para realizar tareas de mantenimiento en el sistema o para automatizar ciertas tareas. En este artículo, te mostraremos cómo leer un archivo de texto en Fish Shell de manera fácil y eficiente.
+Si eres un programador que trabaja con Fish Shell, probablemente estés familiarizado con la importancia de leer archivos de texto en tus scripts. Estos archivos pueden contener datos importantes que son necesarios para realizar tareas específicas, como por ejemplo extraer información de registros o configurar parámetros en tus programas. En esta publicación, veremos cómo puedes leer fácilmente un archivo de texto en Fish Shell y algunas consideraciones importantes a tener en cuenta. ¡Sigue leyendo para descubrir cómo!
 
 ## Cómo hacerlo
 
-Para leer un archivo de texto en Fish Shell, podemos utilizar el comando ```cat```. Este comando muestra el contenido de un archivo de texto en la terminal. Por ejemplo, si queremos leer el archivo "info.txt", podemos escribir lo siguiente en la terminal:
+La forma más sencilla de leer un archivo de texto en Fish Shell es utilizando el comando `cat`. Este comando muestra el contenido completo de un archivo en la consola. Por ejemplo, si tenemos un archivo llamado "datos.txt" con la siguiente información:
 
-```Fish Shell
-cat info.txt
+```
+Nombre: Juan
+Edad: 25
+Trabajo: Programador
 ```
 
-Esto mostrará todo el contenido del archivo "info.txt" en la terminal. También podemos usar el comando ```head``` o ```tail``` para mostrar solo las primeras o últimas líneas del archivo, respectivamente. Por ejemplo:
+Podemos utilizar el siguiente comando para ver su contenido en la consola:
 
-```Fish Shell
-head info.txt
+```
+cat datos.txt
 ```
 
-Esto mostrará solo las primeras 10 líneas del archivo. Si queremos especificar cuántas líneas mostrar, podemos usar la opción ```-n``` seguido del número de líneas que queremos mostrar. Por ejemplo:
+Esto mostrará lo siguiente en la consola:
 
-```Fish Shell
-head -n 5 info.txt
+```
+Nombre: Juan
+Edad: 25
+Trabajo: Programador
 ```
 
-Esto mostrará solo las primeras 5 líneas del archivo. De manera similar, podemos usar la opción ```-n``` con ```tail``` para mostrar las últimas líneas del archivo.
+## Deep Dive
 
-## Profundizando
+Ahora, si queremos guardar este contenido en una variable en nuestro script de Fish Shell, podemos utilizar el comando `set`. Por ejemplo, podemos guardar el contenido del archivo en una variable llamada "datos" de la siguiente manera:
 
-Cuando leemos un archivo de texto en Fish Shell, podemos usar diferentes comandos para manipular el contenido del archivo. Por ejemplo, podemos usar el comando ```grep``` para buscar una cadena de texto específica en el archivo. También podemos usar otros comandos como ```sed``` o ```awk``` para realizar modificaciones en el contenido del archivo.
-
-Además, también podemos usar el símbolo de redirección ```>``` para escribir el contenido del archivo en un nuevo archivo o ```>>``` para añadir el contenido al final de un archivo existente. Por ejemplo:
-
-```Fish Shell
-cat info.txt >> new_info.txt
+```
+set datos (cat datos.txt)
 ```
 
-Esto copiará el contenido del archivo "info.txt" y lo añadirá al final del archivo "new_info.txt". 
+Luego, podemos acceder a los datos de la variable utilizando la sintaxis de Fish Shell, por ejemplo:
 
-¡Con estos comandos, puedes leer y manipular fácilmente archivos de texto en Fish Shell!
+```
+echo $datos
+```
+
+Esto mostrará el contenido del archivo en la consola de nuevo. También podemos utilizar el comando `string split` para separar cada línea del archivo en diferentes variables, lo que facilita el acceso y el manejo de los datos.
+
+Es importante tener en cuenta que, si el archivo contiene caracteres especiales o saltos de línea, debemos utilizar herramientas adicionales como `sed` o `awk` para manipular los datos antes de guardarlos en una variable.
 
 ## Ver también
 
+¡Y eso es todo! Esperamos que esta publicación te haya sido útil en tu trabajo con Fish Shell. Si quieres profundizar aún más en la lectura de archivos de texto en este shell, te recomendamos consultar los siguientes enlaces:
+
 - [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [10 comandos útiles de Fish Shell](https://www.ostechnix.com/10-fish-shell-commands-for-linux-beginners/)
-- [Tutorial de Fish Shell](https://www.hostinger.es/tutoriales/comando-fish-shell/)
+- [Tutorial de Fish Shell en español](https://www.muylinux.com/2019/06/15/fish-shell/)
+- [Ejemplos de comandos útiles para Fish Shell](https://gist.github.com/reinoutvanrees/07ed0126ed463b986a0360479f4eb2a4)
+
+¡Sigue explorando y mejorando tus habilidades con Fish Shell! ¡Hasta la próxima!

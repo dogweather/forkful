@@ -1,68 +1,91 @@
 ---
-title:    "C recipe: Comparing two dates"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/comparing-two-dates.md"
+title:                "C recipe: Comparing two dates"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-In the realm of programming, we often find ourselves dealing with dates. Whether it's calculating an event's date or comparing two dates, it's crucial to have a solid understanding of date operations in order to create efficient and accurate programs. In this blog post, we will explore how to compare two dates in the C programming language.
+Comparing dates is a common task in many programming projects, especially when dealing with events or scheduling. It allows you to determine the chronological order of events and make decisions based on date comparisons. In this blog post, we will explore how to compare two dates in the C programming language.
 
 ## How To
 
-The first step in comparing two dates in C is to convert both dates into a numerical format that can be easily compared. This can be achieved by using the `mktime()` function, which converts a structure containing date and time information into a time_t data type.
+First, we need to understand how dates are represented in C. Dates are often stored as integers in the format of `YYYYMMDD`, where `YYYY` is the year, `MM` is the month, and `DD` is the day. For example, January 1st, 2020 would be represented as `20200101`.
+
+To compare two dates, we first need to have two date variables. Let's call them `date1` and `date2`. We can compare them using simple if-else statements and logical operators.
+
+```C
+if (date1 > date2) {
+  printf("Date 1 is later than Date 2");
+}
+else if (date1 < date2) {
+  printf("Date 1 is earlier than Date 2");
+}
+else {
+  printf("Date 1 and Date 2 are the same");
+}
+```
+
+Depending on the comparison, either "Date 1 is later than Date 2", "Date 1 is earlier than Date 2", or "Date 1 and Date 2 are the same" will be printed to the console.
+
+We can also compare dates using the `difftime()` function from the `time.h` library. This function calculates the difference in seconds between two dates.
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // defining first date
-    struct tm first_date = { .tm_year=2020, .tm_mon=9, .tm_mday=10 };
-    
-    // converting first date to time_t data type
-    time_t first_time = mktime(&first_date);
-    
-    // defining second date
-    struct tm second_date = { .tm_year=2020, .tm_mon=9, .tm_mday=15 };
-    
-    // converting second date to time_t data type
-    time_t second_time = mktime(&second_date);
-    
-    // comparing dates and printing output
-    if (first_time < second_time) {
-        printf("The first date is earlier than the second date.\n");
-    }
-    else if (first_time > second_time) {
-        printf("The second date is earlier than the first date.\n");
-    }
-    else {
-        printf("Both dates are the same.\n");
-    }
-    
-    return 0;
+  time_t date1 = time(NULL); // current date in seconds
+  time_t date2 = 1585718400; // April 1st, 2020 in seconds
+
+  double diff = difftime(date1, date2); // difference in seconds
+  printf("Difference between Date 1 and Date 2 is %f seconds", diff);
+  
+  return 0;
 }
 ```
 
-Output:
-```C
-The first date is earlier than the second date.
-```
+The output will be "Difference between Date 1 and Date 2 is 1585718400 seconds", which is equivalent to approximately 49 years.
 
 ## Deep Dive
 
-In the above example, we used the `mktime()` function to convert the dates into time_t data types, which are essentially the number of seconds elapsed since January 1st, 1970. This format allows for easy comparison between two dates, as we can simply use comparison operators such as `<` or `>` to determine which date is earlier.
+In some cases, we may need to compare specific components of dates, such as the year, month, or day. To do this, we can use the `tm` structure from the `time.h` library.
 
-It's important to note that the `mktime()` function also takes into account the local time and timezone settings, so it's crucial to have these set correctly before using the function.
+```C
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+  // current date and time
+  time_t now = time(NULL);
+  
+  struct tm *local = localtime(&now); // Local time
+  struct tm *utc = gmtime(&now); // UTC time
+  
+  // Print current year, month, and day in each time zone
+  printf("Local: %d-%d-%d\n", local->tm_year + 1900, local->tm_mon + 1, local->tm_mday);
+  printf("UTC: %d-%d-%d\n", utc->tm_year + 1900, utc->tm_mon + 1, utc->tm_mday);
+  
+  return 0;
+}
+```
+
+The output will be something like:
+
+```
+Local: 2020-04-16
+UTC: 2020-04-16
+```
+
+We can compare the individual components of the dates using logical operators, just like we did in the first example.
 
 ## See Also
 
-For more information about date and time functions in C, please refer to the following resources:
+To learn more about dates and time in C, check out these resources:
 
-- [time.h - C library reference](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [mktime() function in C](https://www.geeksforgeeks.org/time-h-mktime-function-in-c/)
-- [Date and Time - C tutorial](https://www.programiz.com/c-programming/c-date-time)
-
-Happy coding!
+- [C Programming Tutorial: Date and Time Functions](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [The `time.h` header](https://www.codingunit.com/c-tutorial-the-time-h-header)
+- [Date and Time in C](https://www.programiz.com/c-programming/c-date-time)

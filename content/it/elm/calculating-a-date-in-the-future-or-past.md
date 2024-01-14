@@ -1,46 +1,44 @@
 ---
-title:    "Elm: Calcolare una data nel futuro o nel passato"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/calculating-a-date-in-the-future-or-past.md"
+title:                "Elm: Calcolare una data nel futuro o nel passato"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Non c'è niente di più frustrante di dover calcolare una data nel futuro o nel passato manualmente. Fortunatamente, con Elm, è possibile automatizzare questo processo. In questo articolo, esploreremo come calcolare date in modo efficiente utilizzando Elm.
+Calcolare una data nel futuro o nel passato può essere utile in molte situazioni, come ad esempio la programmazione di eventi o la gestione di scadenze.
 
 ## Come fare
 
-Per calcolare una data nel futuro o nel passato, è necessario utilizzare la libreria standard `Time` di Elm. Iniziamo importando questa libreria all'inizio del nostro file:
+Per calcolare una data in Elm, esistono due opzioni: utilizzare la libreria "elm/time" o scrivere una funzione personalizzata. Se si sceglie di utilizzare la libreria, ecco un semplice esempio:
 
-```Elm
-import Time
+```
+import Time exposing (..)
+
+addDays 7 (fromUtcTime 1593000000)
+
+-- Output: 2020-06-29T00:00:00+00:00
 ```
 
-Per calcolare una data nel futuro, possiamo utilizzare la funzione `Time.fomDate` che prende come argomenti l'anno, il mese e il giorno desiderati e restituisce una stringa formattata in modo leggibile:
+In questo esempio, stiamo aggiungendo 7 giorni alla data 1593000000, che corrisponde al primo luglio 2020. È possibile utilizzare le funzioni della libreria "elm/time" per aggiungere o sottrarre giorni, ore, minuti o secondi da una data specifica.
 
-```Elm
-let
-  futureDate = Time.fromDate 2021 10 31
-in
-  "La data nel futuro è: " ++ futureDate -- Output: "La data nel futuro è: dom 31 ott 2021" 
-```
-
-Per calcolare una data nel passato, possiamo utilizzare la funzione `Time.toTime` che prende come argomento una stringa formattata in modo leggibile e restituisce una data in millisecondi dal 1° gennaio 1970:
-
-```Elm
-let
-  pastDate = Time.toTime "mer 31 mar 1993"
-in
-  "La data nel passato è: " ++ pastDate -- Output: "La data nel passato è: -781321200000"
-```
+Se si preferisce scrivere una funzione personalizzata, si può utilizzare la libreria "elm/time-extras" che offre funzioni più avanzate per il calcolo delle date. Ad esempio, la funzione `addDays` prende in input una data e il numero di giorni da aggiungere e restituisce la data modificata.
 
 ## Approfondimento
 
-È possibile calcolare date in modo ancora più preciso utilizzando le funzioni di `Time` come `year`, `month` e `day`. Inoltre, è possibile utilizzare il modulo `Time.Calendar` per ottenere il numero di giorni in un dato mese o per verificare se un anno è bisestile.
+Per calcolare una data in futuro o nel passato, è importante considerare alcune cose. In primo luogo, bisogna essere consapevoli dei fusi orari e utilizzare le funzioni adeguate per convertire le date in formato UTC. Inoltre, bisogna considerare l'eventualità di avere un anno bisestile e gestire correttamente il cambio di anno durante il calcolo.
 
-See Also
+Un altro aspetto importante è la gestione degli orari estivi e invernali, che possono influire sulla durata di un giorno. In questi casi, è necessario utilizzare funzioni più avanzate che tengano conto di queste variazioni per avere risultati precisi.
 
-- Documentazione di Time https://package.elm-lang.org/packages/elm/time/latest/Time
-- Tutorial di Elm https://guide.elm-lang.org/
+## Vedi anche
+
+- [Documentazione della libreria "elm/time"](https://package.elm-lang.org/packages/elm/time/latest/)
+
+- [Documentazione della libreria "elm/time-extras"](https://package.elm-lang.org/packages/elm-explorations/time/latest/)
+
+- [Articolo sull'utilizzo dei fusi orari in Elm](https://thoughtbot.com/blog/working-with-time-and-time-zones-in-elm)
+
+- [Esempi di calcolo delle date in Elm](https://elmprogramming.com/elm-dates.html)

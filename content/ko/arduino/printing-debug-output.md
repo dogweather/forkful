@@ -1,41 +1,47 @@
 ---
-title:    "Arduino: 디버깅 출력 프린팅"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/printing-debug-output.md"
+title:                "Arduino: 디버그 출력 출력"
+programming_language: "Arduino"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 디버그 출력을 하는가?
+# 왜
 
-디버그 출력은 프로그래밍에서 중요한 역할을 합니다. 이를 통해 코드를 디버깅하고 오류를 찾아 해결할 수 있습니다. 따라서 디버그 출력을 통해 더 나은 코드를 작성할 수 있습니다.
+디버그 메시지를 출력하는 것의 이유는 프로그래밍 중에 오류를 추적하고 해결하는 데에 큰 도움이 됩니다. 디버그 출력을 사용하면 프로그램이 실행되는 동안 어떤 값이나 변수가 변하는지, 어떤 함수나 루프가 정확하게 작동하는지 확인할 수 있습니다.
 
-# 디버그 출력 방법
+# 방법
 
-디버그 출력을 하기 위해서는 Arduino의 `Serial.print()` 함수를 사용해야 합니다. 이 함수는 디버그 메시지를 연결된 시리얼 모니터에 출력합니다.
+만약 우리가 `pinMode()` 함수로 아두이노 핀을 설정해야 한다고 가정해 봅시다. 예를 들어, 우리가 13번 핀을 출력으로 설정하고 싶은 경우 다음과 같이 코드를 작성할 수 있습니다.
 
-아래 예시를 통해 이해해보겠습니다.
 ```Arduino
-int sensorValue = analogRead(A0); // 아날로그 핀 A0에서 값 읽기
-Serial.print("센서 값: "); // 문자열 출력
-Serial.println(sensorValue); // 아날로그 값 출력
+pinMode(13, OUTPUT);
+
 ```
-위 코드를 실행하면 시리얼 모니터에 "센서 값: 512"와 같은 메시지가 출력됩니다.
 
-# 디버그 출력 깊이 알아보기
+그러나 우리가 실제로 핀의 상태를 확인하고 싶다면, 다음과 같이 코드에 디버그 출력을 추가할 수 있습니다.
 
-디버그 출력을 할 때 주의할 점이 있습니다. 많은 출력은 마이크로컨트롤러의 메모리를 사용하기 때문에 불필요한 출력은 피하는 것이 좋습니다. 따라서 필요한 경우에만 디버그 출력을 사용하는 것이 좋습니다.
+```Arduino
+pinMode(13, OUTPUT);
+Serial.println(digitalRead(13)); //디버그 출력
+```
 
-또한 `Serial.print()` 함수는 다양한 형식의 데이터도 출력할 수 있습니다. 예를 들어 `Serial.print()` 함수에 `String`, `float` 등 다양한 데이터를 넣어서 출력할 수 있습니다.
+이렇게 하면 프로그램 실행 중에 핀의 상태를 확인할 수 있습니다. 만약 핀을 입력으로 설정하고서도 디버그 출력을 사용하고 싶다면, 다음과 같이 `INPUT` 매개변수를 사용하면 됩니다.
 
-# 더 알아보기
+```Arduino
+pinMode(13, INPUT);
+Serial.println(digitalRead(13)); //디버그 출력
+```
 
-디버그 출력에 대해 더 알아보려면 아래 링크를 참고하세요.
+# 깊게 파헤치기
 
-* [Arduino 공식 문서 - Serial.print() 함수](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-* [Arduino Korea 포럼 - 아두이노 디버깅 방법](https://forum.arduino.cc/t/how-to-debug-arduino-code/36917/2)
+디버그 출력은 프로그래밍 중에 오류를 추적할 때 매우 유용하지만, 프로그램이 끝난 후 디버그 출력을 제거하는 것을 잊지 마세요. 디버그 출력은 프로그램의 메모리를 소모하므로, 프로그램을 완성한 후에는 꼭 지워주어야 합니다.
+
+또한, 디버그 출력을 효과적으로 사용하기 위해서는 적절한 메시지를 출력해야 합니다. 메시지는 간결하면서도 프로그램의 실행 상태를 명확하게 설명할 수 있도록 해야 합니다.
 
 # 관련 링크
 
-* [마크다운(Markdown) 사용법](https://www.markdownguide.org/basic-syntax/)
-* [시리얼 모니터에서 시리얼 출력을 읽는 방법](https://forum.arduino.cc/t/how-to-read-serial-output-on-the-serial-monitor/665767)
+- [아두이노 공식 홈페이지](https://www.arduino.cc/)
+- [아두이노 포럼](https://forum.arduino.cc/)
+- [아두이노 디버깅 가이드](https://learn.sparkfun.com/tutorials/how-to-debug-your-arduino-project)

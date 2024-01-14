@@ -1,48 +1,57 @@
 ---
-title:    "C: 提取子字符串"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/extracting-substrings.md"
+title:                "C: 提取子字串"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要提取子串？
+#为什么：如何提取子字符串
 
-在C编程中，我们经常需要从字符串中提取部分内容，这就是提取子串的过程。例如，我们可能需要从一个字符串中提取出特定的单词或者一段字符。提取子串可以帮助我们更方便地处理字符串，并且提高代码的可读性和可维护性。
+在C编程中，经常需要处理字符串。有时候，我们可能只需要字符串中的一部分，而不是整个字符串。这时，提取子字符串就会变得非常有用。它可以帮助我们简化程序，提高效率。
 
-## 如何提取子串？
+##如何做：
+
+下面是一个简单的示例代码，演示如何使用C语言提取子字符串。
 
 ```C
-#include <stdio.h>
-#include <string.h>
+#include<stdio.h>
+#include<string.h>
 
 int main()
 {
-    // 声明一个字符串
-    char str[50] = "这是一个示例字符串";
-    
-    // 提取子串
-    char substr[10];
-    strncpy(substr, str + 4, 4); // 提取字符串中下标为4-7的字符
-    substr[4] = '\0'; // 手动在末尾添加结束符
-    
-    // 输出结果
-    printf("提取的子串为：%s", substr);
-    
+    char string[] = "Hello World!";
+    int length = strlen(string);
+    char substring[6];
+
+    // 提取子字符串
+    strncpy(substring, string+6, 5);
+
+    // 打印输出
+    printf("原始字符串: %s\n", string);
+    printf("提取的子字符串: %s\n", substring);
     return 0;
 }
 ```
+运行结果：
+```
+原始字符串: Hello World!
+提取的子字符串: World
+```
+在上面的代码中，我们使用了`strncpy()`函数来提取子字符串。它的第一个参数是我们要存储子字符串的数组，第二个参数是原始字符串中要提取的子字符串的起始索引，第三个参数是要提取的子字符串的最大长度。
 
-输出结果为：示例
+##深入了解：
 
-这个例子中，我们使用了字符串函数`strncpy`来提取子串。首先，我们声明了一个字符串`str`，然后用`strncpy`函数从字符串中提取下标为4-7的字符，存放到新的字符串`substr`中。最后，我们手动添加了一个结束符以确保提取的子串正确。
+在C语言中，提取子字符串的方法有很多种。除了`strncpy()`函数，还可以使用`strcpy()`、`strncpy_s()`等函数来完成。这些函数都属于C标准库中的字符串处理函数。
 
-## 深入了解提取子串
+当我们提取子字符串时，要注意以下几点：
+- 确保提取的子字符串长度不超过原始字符串的长度，否则可能会导致内存溢出。
+- 如果需要在提取的子字符串末尾添加`\0`字符来表示字符串的结尾，可以使用`strlen()`函数来确定需要提取的子字符串的长度。
 
-提取子串的过程其实就是从一个字符串中“截取”出一部分字符。在C语言中，我们可以使用`strncpy`函数来进行子串提取。这个函数有三个参数，第一个参数为目标字符串（即提取的子串），第二个参数为源字符串，第三个参数为需要提取的字符数量。值得注意的是，`strncpy`函数在提取子串时，会自动在末尾添加结束符`\0`，但是该函数会忽略`\0`，因此我们需要手动添加`\0`来确保提取的子串正确。
+#见此：
 
-# 另请参阅
-
-- [C语言字符串函数手册](https://www.runoob.com/cprogramming/c-standard-library-string-h.html)
-- [C语言字符串操作教程](https://www.runoob.com/cprogramming/c-standard-library-string-operations.html)
-- [C语言中的字符串提取](https://www.geeksforgeeks.org/c-program-extracting-substring-from-a-string/)
+了解更多关于C语言提取子字符串的内容，请参考以下链接：
+- [C 库 - <string.h>](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [C语言字符串处理函数](https://www.runoob.com/cprogramming/c-standard-library-string-h.html)
+- [C中字符串处理函数的使用](https://www.jianshu.com/p/341bac3426eb)

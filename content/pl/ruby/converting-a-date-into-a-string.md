@@ -1,39 +1,46 @@
 ---
-title:    "Ruby: Konwertowanie daty na ciąg znaków"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/converting-a-date-into-a-string.md"
+title:                "Ruby: Konwersja daty na ciąg znaków"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jednym z ważnych zadań programisty jest umiejętność manipulowania danymi w różnych formatach. Często stosowanym formatem jest data, jednak zdarza się, że musimy ją przekonwertować na tekst, aby móc wykorzystać ją w naszej aplikacji. W tym artykule odkryjemy jak w prosty sposób wykonać tę konwersję w języku Ruby.
+Konwersja daty na ciąg znaków jest częstym wyzwaniem dla programistów Ruby. W tym artykule dowiesz się, dlaczego tak jest i jak możesz sprawnie przekształcić datę w ciąg znaków w swoim kodzie.
 
 ## Jak to zrobić
 
-W Ruby mamy dostęp do metody `to_s`, która pozwala na przekonwertowanie daty na string. Przykładowo, jeśli chcemy wyświetlić aktualną datę w formacie DD.MM.YYYY należy wywołać `Time.now.to_s('%d.%m.%Y')`. Oto pełny kod i jego wynik:
+Konwersja daty na ciąg znaków jest możliwa dzięki użyciu metody `strftime`, która przekształca datę na formatowany ciąg znaków. Przykładowy kod wykorzystujący tę metodę wygląda następująco:
 
 ```Ruby
-puts Time.now.to_s('%d.%m.%Y')
-
-# 14.08.2021
+Time.now.strftime("%d/%m/%Y")
 ```
 
-Możemy również wykorzystać metodę `strftime` aby określić własny format daty. Poniższy przykład wyświetli datę w formacie Dzień Tygodnia, DD.MM.YYYY.
+Powstały ciąg znaków będzie składł się z liczb reprezentujących dzień, miesiąc i rok, oddzielonych ukośnikami.
+
+Można również użyć innych symboli formatujących, na przykład `%B` dla nazwy miesiąca lub `%A` dla nazwy dnia tygodnia. Więcej symboli dostępnych jest w dokumentacji Rubiego.
+
+Poniżej przedstawiamy przykładowy kod oraz wynik dla daty 1 lipca 2021 roku:
 
 ```Ruby
-puts Time.now.strftime('%A, %d.%m.%Y')
-
-# Sobota, 14.08.2021
+Time.new(2021, 7, 1).strftime("%d/%m/%Y")
 ```
 
-## Głębsze zanurzenie
+Wynik: `01/07/2021`
 
-W Ruby istnieje wiele metod i opcji, które pozwalają na dokładną kontrolę nad konwersją daty na string. Warto zapoznać się z dokumentacją, aby poznać wszystkie możliwości. Najważniejsze rzeczy, które należy pamiętać, to użycie wielkich liter w formatowaniu daty (np. `%d` zwróci dzień jako liczby, `%D` jako datę w formacie MM/DD/RRRR) oraz sprawdzenie różnic w formacie dat w zależności od systemu operacyjnego.
+## Zagłębienie w temat
+
+Aby lepiej zrozumieć, jak działa konwersja daty na ciąg znaków, warto poznać strukturę daty w Rubym. Obiekt `Time` reprezentuje datę i czas w Rubym, a metoda `strftime` służy do formatowania tego obiektu.
+
+Przykładowo, jeśli chcesz wyświetlić godzinę, możesz skorzystać z symbolu `%H`, czyli 24-godzinnego zapisu. Dzięki temu kod `Time.now.strftime("%H:%M:%S")` zwróci aktualną godzinę, minutę i sekundę.
+
+Konwertując datę na ciąg znaków, musisz pamiętać o odpowiednim ustawieniu strefy czasowej. W przeciwnym razie może dojść do nieprawidłowego wyświetlenia daty.
 
 ## Zobacz również
 
-- [Dokumentacja Ruby: Time](https://ruby-doc.org/core-2.5.1/Time.html)
-- [Pełna lista formatowanie daty w Ruby](http://ruby-doc.org/core-2.2.0/Time.html#method-i-strftime)
-- [Poradnik dla początkujących: Manipulacja datami w Ruby](https://www.rubyguides.com/2019/02/ruby-time/)
+- Dokumentacja Rubiego dotycząca działania metody `strftime`: https://ruby-doc.org/core-3.0.1/Time.html#method-i-strftime
+- Przykładowe formaty i symbole dla metody `strftime`: https://devhints.io/datetime
+- Artykuł na blogu Kamilahodjaeva.com o konwersji daty na ciąg znaków: https://kamilahodjaeva.com/blog/tips-and-tricks-datetime-formatting-in-ruby/

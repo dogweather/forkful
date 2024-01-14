@@ -1,45 +1,50 @@
 ---
-title:    "Java: वर्तमान तिथि प्राप्त करना"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/java/getting-the-current-date.md"
+title:                "Java: तारीख को प्राप्त करना"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Kyun
+## क्यों
 
-* Yadi aap ek Java programmer hai aur aapko apne code mein current date ka use karna hai, to aapko current date ko kaise obtain karna hai sikhna bahut zaroori hai. Yeh aapke code ko advanced aur accurate banayega.
+क्या आपने कभी सोचा है कि कंप्यूटर कैसे तारीख और समय को जानता है? यदि हाँ, तो आप शायद ये भी जानना चाहेंगे कि आप ऐसा कैसे कर सकते हैं। इस ब्लॉग पोस्ट के माध्यम से मैं आपको बताऊंगा कि आप अपने जावा प्रोग्राम में दैनिक तारीख कैसे प्राप्त कर सकते हैं।
 
-# Kaise Karein
+## कैसे
 
 ```Java
-// Java mein current date ko obtain karna bahut hi aasaan hai. Hum SimpleDateFormat class ka use karke isey kar sakte hain.
-// Sabse pehle hum SimpleDateFormat class ka object create karenge.
-SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+import java.time.LocalDate;
 
-// Phir hum current date ko obtain karenge.
-Date currentDate = new Date();
+public class DateExample{
+    public static void main(String[] args){
+        // वर्तमान दिनांक को प्राप्त करें
+        LocalDate today = LocalDate.now();
+        System.out.println("आज का दिनांक: " + today);
 
-// Ab hum SimpleDateFormat class ke format method se current date ko humare desired format mein convert karenge.
-String formattedDate = dateFormat.format(currentDate);
+        // अन्य संभावित फार्मेट के साथ दिनांक प्राप्त करें
+        LocalDate customDate = LocalDate.of(2021, 8, 15);
+        System.out.println("मेरा जन्म तिथि: " + customDate);
 
-// Aur aakhri mein, hum yeh formatted date print kar sakte hain.
-System.out.println(formattedDate);
+        // दिनांक में विशेष विवरण जैसे महीना और साल प्राप्त करें
+        int month = today.getMonthValue();
+        int year = today.getYear();
+        System.out.println("वर्तमान महीना: " + month);
+        System.out.println("वर्तमान साल: " + year);
+    }
+}
 ```
 
-**Output: 27/11/2021**
+**आउटपुट:**
+```
+आज का दिनांक: 2021-08-29
+मेरा जन्म तिथि: 2021-08-15
+वर्तमान महीना: 8
+वर्तमान साल: 2021
+```
 
-# Gahrai Mein Jaayein
+## डीप डाइव
 
-Java mein current date ko obtain karna kaafi simple hai, lekin iskey peeche ka logic samajhna bhi zaroori hai. Yeh understanding aapko future mein apne code ko customize aur improve karne mein madad karegi.
+जब हम जावा प्रोग्राम में `LocalDate.now()` फंक्शन का उपयोग करते हैं, तो वह वर्तमान समय क्षेत्र की दिनांक और समय को लौटाता है। यह Java 8 वर्जन में जोड़ी गई एक नई क्लास है जो दिनांक, समय और समय क्षेत्र को हैंडल करती है।
 
-Sabse pehle, hum SimpleDateFormat class ka use karte hain kyunki yeh date ko humare desired format mein convert karne ka functionality provide karta hai. Is class mein humein ek pattern specify karna hota hai, jiske according yeh date ko format karta hai.
-
-Phir hum Date class ka use karke actual current date ko obtain karte hain. Yeh class humein current system date aur time ko return karta hai.
-
-Aur aakhri mein, hum SimpleDateFormat class ka format method use karke current date ko humare desired format mein convert karte hain. Yeh formatted date string ko return karta hai.
-
-# Dekhein Bhi
-
-* [Java SimpleDateFormat Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-* [Java Date Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+दिनांक कार्यक्षेत्र निर्धारित करना भी आसान है, हम इसे मदद से स्थानीय दिनांक क्षेत्र और `of()` फंक्शन का उपयोग कर सकते हैं। `of()` फंक्शन को वर्गीकृत करने के लिए आप साल,

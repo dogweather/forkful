@@ -1,60 +1,62 @@
 ---
-title:    "Arduino: Calcolare una data nel futuro o nel passato"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/calculating-a-date-in-the-future-or-past.md"
+title:                "Arduino: Calcolare una data nel futuro o passato"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-Calcolare una data futura o passata può essere utile in molti progetti di Arduino, come ad esempio per attivare sensori o eseguire operazioni in specifici momenti.
+Calcolare le date nel futuro o nel passato può essere utile per diversi progetti Arduino, come ad esempio un calendario elettronico o un orologio digitale. Può anche essere utile per creare un sistema di notifiche basato sulla data.
 
 ## Come fare
+Per calcolare una data futura o passata con Arduino, è necessario utilizzare la libreria "Time". Inoltre, è necessario impostare l'orario corrente utilizzando un modulo RTC (Real Time Clock) o una connessione Internet. Una volta impostato l'orario corrente, è possibile utilizzare le funzioni della libreria "Time" per calcolare la data desiderata.
 
-Per calcolare una data in futuro o passata, è necessario utilizzare due variabili: la prima conterrà la data attuale e la seconda conterrà il numero di giorni da aggiungere o sottrarre. Utilizzando la libreria Time di Arduino, è possibile ottenere la data attuale e salvarla nella variabile apposita. Successivamente, utilizzando la funzione timeAddsecond() o timeDecisecond(), è possibile aggiungere o sottrarre i giorni desiderati alla data attuale. Di seguito un esempio di codice:
+Ecco un esempio di codice Arduino per calcolare una data nel futuro usando la libreria "Time":
 
+```Arduino
+#include <TimeLib.h>
+#include <Time.h>
+
+// Imposta l'orario corrente
+const int giorno = 30;
+const int mese = 6;
+const int anno = 2021;
+const int ora = 12;
+const int minuti = 0;
+const int secondi = 0;
+
+void setup(){
+  // Imposta l'orario corrente
+  setTime(ora, minuti, secondi, giorno, mese, anno);
+}
+
+void loop(){
+  // Calcola la data in futuro
+  time_t future = now() + 86400; // Aggiunge un giorno in secondi
+
+  // Stampa la data
+  Serial.print(day(future));
+  Serial.print("/");
+  Serial.print(month(future));
+  Serial.print("/");
+  Serial.print(year(future));
+
+  delay(1000); // attende un secondo prima di calcolare di nuovo la data
+}
 ```
-#include <Time.h> // includere la libreria Time
-const int numGiorni = 5; // variabile con il numero di giorni da aggiungere/sottrarre
-time_t myDate = time(null); // ottenere la data attuale
-myDate = timeAddsecond(myDate, (numGiorni * 86400)); // aggiungere il numero di secondi corrispondenti a numGiorni
-Serial.println(myDate); // stampare la data ottenuta
-```
 
-L'output di questo codice sarà la data attuale più 5 giorni. Di seguito un esempio di output:
+Ecco l'output che verrà visualizzato nella console seriale:
 
-`1589437324`
+`1/7/2021`
 
 ## Approfondimento
+Calcolare una data nel futuro o nel passato può sembrare semplice, ma ci sono alcuni fattori da tenere in considerazione, come ad esempio gli anni bisestili e il cambio dell'ora durante l'orario legale. La libreria "Time" tiene conto di questi fattori e assicura che la data calcolata sia sempre corretta.
 
-Inoltre, è possibile anche utilizzare la libreria TimeAlarms di Arduino per impostare un timer per una data futura o passata. Utilizzando la funzione setAlarm() è possibile impostare una data e una funzione da eseguire in quel momento specifico. Di seguito un esempio di codice:
-
-```
-#include <Time.h>
-#include <TimeAlarms.h> // includere la libreria TimeAlarms
-
-void setup() {
-    Serial.begin(9600);
-    
-    // impostare un alarm per il 17 maggio 2020 alle 18:30
-    Alarm.alarmRepeat(18, 30, 0, myFunction); 
-}
-
-void loop() {
-    // altre operazioni del codice
-}
-
-// funzione da eseguire quando scatta l'alarm
-void myFunction() {
-    Serial.println("Alarm attivato!");
-}
-```
-
-L'alarm verrà attivato ogni volta che la data e l'ora specificata vengono raggiunte, permettendo di eseguire delle operazioni in quel momento specifico. 
+Inoltre, è possibile utilizzare le funzioni della libreria "Time" per calcolare non solo la data, ma anche l'orario nel futuro o nel passato.
 
 ## Vedi anche
-
-- [Libreria Time di Arduino](https://github.com/PaulStoffregen/Time)
-- [Libreria TimeAlarms di Arduino](https://github.com/PaulStoffregen/TimeAlarms)
-- [Documentazione ufficiale di Arduino](https://www.arduino.cc/reference/en/libraries/time/)
+- Documentazione ufficiale della libreria "Time": https://www.arduino.cc/en/reference/time
+- Tutorial su come utilizzare una libreria di orologio in tempo reale con Arduino: https://create.arduino.cc/projecthub/madartsystm/using-an-rtc-in-arduino-project-da3f05
+- Video tutorial su come calcolare una data futura o passata con Arduino: https://www.youtube.com/watch?v=ZN6nHYxI4LM

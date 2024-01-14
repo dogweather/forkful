@@ -1,65 +1,43 @@
 ---
-title:    "Elixir: Omvandla ett datum till en sträng"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/converting-a-date-into-a-string.md"
+title:                "Elixir: Omvandla ett datum till en sträng"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+I denna blogginlägg kommer vi att gå igenom hur man konverterar datum till strängar i Elixir. Detta är en viktig del av programmering eftersom datum ofta används för att representera tid och det är viktigt att kunna arbeta med dem på ett effektivt sätt.
 
-Att konvertera ett datum till en sträng är en vanlig uppgift inom Elixir-programmering, särskilt när man arbetar med externa API:er eller behöver presentera datumet på ett visst sätt för användaren. Det kan också hjälpa till att sortera eller filtrera data baserat på datum. I denna bloggpost kommer vi att utforska hur man konverterar ett datum till en sträng i Elixir.
-
-## Så här gör du
-
-För att konvertera ett datum till en sträng i Elixir, behöver vi använda funktionen `DateTime.to_iso8601/1` eller `DateTime.to_string/2`. Dessa funktioner tar ett `DateTime`-objekt som argument och returnerar en sträng i ISO 8601-format eller ett anpassat format, baserat på angivna alternativ.
-
-Låt oss titta på ett exempel på hur man använder `DateTime.to_iso8601/1`:
+## Hur man gör
+För att konvertera datum till strängar i Elixir kan vi använda funktionen `to_string` tillsammans med en formateringssträng. Här är ett exempel:
 
 ```elixir
-DateTime.to_iso8601(~U[2020-10-10 12:00:00])
+# Skapar ett datum-objekt för 1 januari 2021
+date = ~D[2021-01-01]
+
+# Konverterar datumet till en sträng med formatet "YYYY-mm-dd"
+date_str = to_string(date, "YYYY-mm-dd")
+
+IO.puts(date_str) # Output: "2021-01-01"
 ```
 
-Output:
+Som du kan se i exemplet ovan måste vi ange ett format som passar vårt behov. Detta kan innehålla olika kombinationer av år, månad och dag, beroende på vad vi vill ha med i vår slutgiltiga sträng. Här är några av de vanligaste formateringssträngarna:
 
-```
-"2020-10-10T12:00:00Z"
-```
+- `YYYY` - Fyra siffror för året
+- `YY` - Två siffror för året
+- `mm` - Två siffror för månaden
+- `dd` - Två siffror för dagen
 
-Vi kan också använda `DateTime.to_string/2` för att konvertera ett datum till en sträng i ett anpassat format. Det första argumentet är fortfarande ett `DateTime`-objekt och det andra argumentet är en sträng som definierar formatet. Vi kommer att använda "YYYY-MM-DD HH:MM:SS" för att få ut samma resultat som ovan.
-
-```elixir
-DateTime.to_string(~U[2020-10-10 12:00:00], "YYYY-MM-DD HH:MM:SS")
-```
-
-Output:
-
-```
-"2020-10-10 12:00:00"
-```
-
-Vi kan också använda `DateTime.to_string/2` för att konvertera ett datum till en sträng på olika språk baserat på landets inställningar. Till exempel, om vi vill ha datumet i tyska formatet "TT.MM.YYYY", kan vi göra:
-
-```elixir
-DateTime.to_string(~U[2020-10-10 12:00:00], "DD.MM.YYYY", format: :long, locale: :de)
-```
-
-Output:
-
-```
-"10.10.2020"
-```
-
-Det finns många andra anpassningsalternativ för att konvertera ett datum till en sträng i Elixir, och du kan läsa mer om dem i dokumentationen för `DateTime.to_string/2` och `DateTime.to_iso8601/1`.
+Det finns också flera andra mönster som vi kan använda, beroende på vilken information vi vill ha med eller exakt hur vi vill formatera vår sträng. Mer information om detta kan hittas i Elixirs officiella dokumentation för `Calendar`.
 
 ## Djupdykning
+När vi konverterar datum till strängar är det viktigt att förstå vilken tidszon som är inställd på vårt system. Om vi inte specifikt anger en tidszon i vår konvertering, kommer den att använda den systeminställda tidszonen. Det kan resultera i att strängen ser annorlunda ut än vad vi förväntade oss om vi arbetar i ett annat tidszon.
 
-När vi använder funktionerna `DateTime.to_iso8601/1` eller `DateTime.to_string/2` för att konvertera datum till strängar, bör vi vara medvetna om tidszoner, eftersom det kan påverka den resulterande strängen. Standardtidszonen i Elixir är UTC, men vi kan ändra den i vår applikation med hjälp av modulen `Timex` eller funktionen `DateTime.from_naive/3`.
+Det är också värt att notera att om vi försöker konvertera ett ogiltigt datum, t.ex. 30 februari, kommer det att generera ett undantag. Därför är det bra att alltid kontrollera att våra datum är giltiga innan vi konverterar dem till strängar.
 
-Vi måste också vara medvetna om att vi konverterar ett datum till en sträng, vilket inte är reversibelt. Det betyder att vi inte kan konvertera tillbaka en sträng till ett datum utan att hålla reda på det ursprungliga formatet eller inställningarna som användes för att konvertera det till en sträng.
-
-## Se också
-
-- [Elixir Date and Time](https://hexdocs.pm/elixir/1.12/DateTime.html)
-- [Elixir Timex](https://hexdocs.pm/timex/Timex.html)
-- [ISO 8601 standard](https://www.iso.org/iso-8601-date-and-time-format.html)
+## Se även
+- Elixirs officiella dokumentation för `Calendar`: https://hexdocs.pm/elixir/Calendar.html
+- Mer om formateringssträngar för datum: https://hexdocs.pm/elixir/Calendar.html#strftime-and-strftime-1
+- Diskussion om tidszoner i Elixir: https://elixirforum.com/t/time-zones-in-elixir-ecto/26566

@@ -1,49 +1,57 @@
 ---
-title:    "Ruby: Stora bokstäver i en sträng"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/capitalizing-a-string.md"
+title:                "Ruby: Att göra en sträng stor"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
- 
-Att skriva kod som är lätt att läsa och förstå är viktigt för alla programmerare. En av de enklaste sätten att göra detta är att följa konventionerna som används av standardspråket. Att kapitalisera en sträng är en av dessa konventioner som kan hjälpa till att göra koden mer läsbar och strukturerad.
 
-## Hur man gör 
+Det är väldigt vanligt att man behöver konvertera en sträng så att första bokstaven i varje ord är stor. Det kan vara för att presentera information eller bara för estetiskt syfte. I denna blogginlägg kommer vi att lära oss hur man gör det med Ruby-programmeringsspråket.
+
+
+## Hur man gör
+
+För att börja, måste vi först definiera en sträng som vi vill ändra. Låt oss använda "hej världen" som ett exempel.
 
 ```Ruby
-# Skapa en variabel med en sträng som inte är kapitaliserad
-strang = "hej alla"
+sträng = "hej världen"
+```
+Nu, för att konvertera strängen med stor bokstav på varje ord, kan vi använda metoden "capitalize".
 
-# Använd metoden .capitalize för att ändra strängen till att börja med en stor bokstav
-kapitaliserad_strang = strang.capitalize
-
-puts kapitaliserad_strang
-
-# Output: "Hej alla"
+```Ruby
+sträng.capitalize
 ```
 
-Det är också möjligt att använda metoden .upcase för att helt kapitalisera hela strängen:
+Detta kommer att ge oss följande utmatning:
 
 ```Ruby
-strang = "hej alla"
+"Hej världen"
+```
 
-kapitaliserad_strang = strang.upcase
+Om du vill ändra endast den första bokstaven i hela strängen kan du använda metoden "capitalize!".
 
-puts kapitaliserad_strang
+```Ruby
+sträng.capitalize!
+```
+Nu kommer strängen att bli permanent ändrad till:
 
-# Output: "HEJ ALLA"
+```Ruby
+"Hej världen"
 ```
 
 ## Djupdykning
 
-När man kapitaliserar en sträng, är det viktigt att förstå att det bara påverkar den första bokstaven i strängen. Om strängen innehåller en mix av stora och små bokstäver, kommer alla andra bokstäver att förbli oförändrade. Det betyder också att om den första bokstaven redan är kapitaliserad, så kommer det inte att göras några förändringar.
+Om vi gräver lite djupare i hur metoden "capitalize" fungerar, kommer vi att märka att det i själva verket konverterar endast den första bokstaven i varje ord, medan resten av bokstäverna förblir oförändrade. Om strängen innehåller en accent eller specialtecken, kommer de fortfarande att behållas efter konverteringen.
 
-Det finns också andra metoder som kan användas för att manipulera strängen, såsom .downcase som helt omvandlar strängen till små bokstäver eller .swapcase som byter ut alla stora bokstäver mot små och vice versa. Det är viktigt att välja den metod som passar dina specifika programmål.
+Det finns också en annan metod som heter "titleize" som fungerar på liknande sätt som "capitalize", förutom att den också konverterar alla mellanrum till "-" tecken. Detta kan vara användbart om du till exempel vill skapa en URL från en sträng.
 
-## Se också
+## Se även
 
-- [Ruby dokumentation om strängar](https://ruby-doc.org/core-3.0.0/String.html)
-- [Skillshare kurs: Introduction to Ruby Programming](https://www.skillshare.com/classes/Introduction-to-Ruby-Programming/1210676953)
-- [Ruby community forum](https://www.ruby-forum.com/)
+Här är några användbara länkar för att lära dig mer om strängmanipulation i Ruby:
+
+- [Ruby dokumentation för metoden "capitalize"](https://ruby-doc.org/core-2.6.1/String.html#method-i-capitalize)
+- [En handledning om strängmanipulation i Ruby](https://www.digitalocean.com/community/tutorials/how-to-use-string-manipulation-methods-in-ruby)
+- [En

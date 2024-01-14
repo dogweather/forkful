@@ -1,42 +1,65 @@
 ---
-title:    "Clojure: Calcolare una data nel futuro o nel passato"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/calculating-a-date-in-the-future-or-past.md"
+title:                "Clojure: Calcolare una data nel futuro o nel passato"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Calcolare una data nel futuro o nel passato può essere utile per progetti che si basano su eventi temporali o per ottenere informazioni su date specifiche. Inoltre, può essere utile per automatizzare compiti o per creare applicazioni che tengono traccia di scadenze.
+Calcolare una data nel futuro o nel passato può essere necessario per molti motivi, come la pianificazione di eventi o la gestione di appuntamenti. La programmazione in Clojure offre strumenti potenti per eseguire questi calcoli con facilità e precisione.
 
-## Come eseguire il calcolo
+## Come fare
 
-Per iniziare a calcolare date in Clojure, è necessario utilizzare la libreria datetime, che contiene funzioni utili per la gestione del tempo. Iniziamo importando questa libreria nel nostro codice:
+Per calcolare una data nel futuro o nel passato in Clojure, possiamo utilizzare la funzione `clj-time.core/plus` e `clj-time.core/minus`. Queste funzioni accettano tre argomenti: una data di partenza, un intervallo di tempo e una stringa che specifica l'unità di tempo (giorni, settimane, mesi, etc.).
 
-```Clojure
-(ns date-calc
-  (:require [clojure.java-time :as t]))
-```
-
-Per calcolare una data nel futuro, utilizziamo la funzione ```t/plus```, specificando il numero di anni, mesi, giorni, ore e minuti che vogliamo aggiungere alla data attuale. Ad esempio, se vogliamo ottenere la data di oggi più 1 mese e 5 giorni, il codice sarà il seguente:
+Ecco un esempio del codice per ottenere la data di oggi più due settimane:
 
 ```Clojure
-(t/plus (t/today) {:months 1 :days 5})
+(require '[clj-time.core :as time])
+
+(def oggi (time/today))
+(def due-settimane (time/days 14))
+(def nuova-data (time/plus oggi due-settimane :days))
+
+(println nuova-data)
+; => #inst"2021-04-26T00:00:00.000000000-00:00"
 ```
 
-Il risultato sarà una data nel futuro. Per calcolare una data nel passato, possiamo utilizzare la funzione ```t/minus``` con lo stesso approccio.
+Possiamo anche specificare una data specifica come punto di partenza e ottenere una data nel passato utilizzando la funzione `clj-time.core/minus`. Ecco un esempio del codice per ottenere la data del 1° gennaio 2021 meno 3 mesi:
+
+```Clojure
+(def inizio-2021 (time/date 2021 1 1))
+(def tre-mesi (time/months -3))
+(def data-passata (time/minus inizio-2021 tre-mesi :months))
+
+(println data-passata)
+; => #inst"2020-10-01T00:00:00.000000000-00:00"
+```
 
 ## Approfondimento
 
-Clojure offre diverse funzioni utili per la gestione del tempo, come ```t/with-zone``` per impostare un fuso orario specifico, ```t/days-in-month``` per ottenere il numero di giorni in un determinato mese e ```t/week-day``` per ottenere il giorno della settimana di una data specifica.
+Per eseguire calcoli più complessi per date nel futuro o nel passato in Clojure, possiamo utilizzare la libreria `clj-time`, che fornisce una sintassi più semplice e intuitiva per lavorare con le date. Possiamo anche utilizzare la funzione `clj-time.core/interval` per specificare un intervallo di tempo più preciso, come giorni lavorativi o ore.
 
-Inoltre, è possibile utilizzare le funzioni di confronto delle date, come ```t/before?``` e ```t/after?```, per verificare se una data si trova prima o dopo un'altra.
+Ad esempio, possiamo calcolare la data di oggi più 5 giorni lavorativi utilizzando la libreria `clj-time`:
 
-Per maggiori informazioni su queste funzioni e per scoprire altre utili funzioni di datetime, si consiglia di consultare la documentazione ufficiale di Clojure.
+```Clojure
+(require '[clj-time.core :as time]
+         '[clj-time.periodic :as periodic])
+
+(def oggi (time/today))
+(def cinque-giorni-lavorativi (periodic/hours (periodic/weeks 1 :days "mon,tue,wed,thu,fri")))
+(def nuova-data (time/plus oggi cinque-giorni-lavorativi :hours))
+
+(println nuova-data)
+; => #inst"2021-04-23T00:00:00.000000000-00:00"
+```
+
+Utilizzando la libreria `clj-time`, possiamo anche convertire facilmente le date in vari formati, come stringhe o oggetti JodaTime.
 
 ## Vedi anche
-
-- Documentazione ufficiale di Clojure: https://clojure.org/
-- Documentazione della libreria datetime: https://cljdoc.org/d/clojure.java-time/clojure.java-time/0.3.2/doc/javadoc/index
-- Esempi pratici di utilizzo di datetime in Clojure: https://gist.github.com/rkneufeld/11e5164c1125451ab922
+- [Funzioni di calcolo di date in Clojure](https://cljdoc.org/d/clj-time/clj-time/0.15.2/api/clj-time.core#plus)
+- [Libreria clj-time](https://github.com/clj-time/clj-time)
+- [Documentazione su JodaTime](https://www.joda.org/joda-time/)

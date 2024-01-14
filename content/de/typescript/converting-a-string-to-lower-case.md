@@ -1,33 +1,46 @@
 ---
-title:    "TypeScript: Umwandeln eines Strings in Kleinbuchstaben"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/converting-a-string-to-lower-case.md"
+title:                "TypeScript: Ein String in Kleinbuchstaben umwandeln"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-##Warum
+## Warum
 
-Die Umwandlung von Zeichenketten in Kleinbuchstaben ist eine gängige Aufgabe in der Programmierung, insbesondere wenn es um die Verarbeitung von Benutzereingaben oder Daten aus externen Quellen geht. Indem man Zeichenketten in Kleinbuchstaben umwandelt, wird die Vergleichbarkeit und Verarbeitung von Daten erleichtert.
+Das Konvertieren einer Zeichenfolge in Kleinbuchstaben ist eine häufige Aufgabe beim Programmieren. Es kann nützlich sein, um eine einheitliche Formatierung in verschiedenen Teilen eines Programms zu gewährleisten oder um Vergleiche zwischen Zeichenfolgen unabhängig von Groß- und Kleinschreibung durchzuführen.
 
-##Wie man Zeichenketten in Kleinbuchstaben umwandelt
+## Wie geht man vor
 
 ```TypeScript
-let string = "Hallo, WORLD!";
-console.log(string.toLowerCase());
+const string = "Hallo Welt";
+const lowerCaseString = string.toLowerCase();
+console.log(lowerCaseString);
+// Output: hallo welt
 ```
-Output: "hallo, world!"
 
-Die Methode "toLowerCase()" wird auf einer Zeichenkette angewendet und gibt eine neue Zeichenkette zurück, in der alle Buchstaben in Kleinbuchstaben umgewandelt wurden. Dies funktioniert für alle Sprachen, nicht nur für Englisch.
+Der Vorgang ist sehr einfach und kann mit der Methode `toLowerCase()` auf einer Zeichenfolge durchgeführt werden. Diese Methode gibt eine neue Zeichenfolge in Kleinbuchstaben zurück und verändert nicht die ursprüngliche Zeichenfolge. Dies ermöglicht es, die unveränderte Zeichenfolge später wiederzuverwenden, wenn nötig.
 
-##Tiefergehende Informationen über die Umwandlung von Zeichenketten in Kleinbuchstaben
+Eine weitere Möglichkeit ist die Verwendung von regulären Ausdrücken, um alle Großbuchstaben in einer Zeichenfolge zu finden und durch ihre entsprechenden Kleinbuchstaben zu ersetzen.
 
-Bei der Umwandlung von Zeichenketten in Kleinbuchstaben muss beachtet werden, dass nicht alle Schriftzeichen und Sonderzeichen in allen Sprachen automatisch korrekt umgewandelt werden. Manche Sprachen haben Buchstaben, die aus mehreren Zeichen bestehen oder spezielle Akzente und Symbole, die in der Umwandlung möglicherweise verloren gehen.
+```TypeScript
+const string = "Hello World";
+const lowerCaseString = string.replace(/[A-Z]/g, (match) => match.toLowerCase());
+console.log(lowerCaseString);
+// Output: hello world
+```
 
-Es ist auch wichtig zu wissen, dass die Umwandlung in Kleinbuchstaben keine Änderungen an der ursprünglichen Zeichenkette vornimmt, sondern eine neue Zeichenkette zurückgibt. Deshalb ist es wichtig, die Ergebnisse der Umwandlung in einer neuen Variablen zu speichern.
+## Tiefgehende Informationen
 
-##Siehe auch
+Während die Konvertierung einer Zeichenfolge in Kleinbuchstaben eine einfache Aufgabe ist, gibt es einige wichtige Dinge zu beachten. Zum Beispiel kann der Vorgang bei Sprachen mit speziellen Großbuchstaben wie dem deutschen Umlaut (ä, ö, ü) oder dem Eszett (ß) zu unerwarteten Ergebnissen führen.
 
-- [MDN Web Docs - String.toLowerCase()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [W3Schools - TypeScript Strings](https://www.w3schools.com/js/js_string_methods.asp)
-- [Codecademy - Intro to TypeScript](https://www.codecademy.com/learn/introduction-to-typescript)
+In solchen Fällen sollte man die Methode `toLocaleLowerCase()` anstelle von `toLowerCase()` verwenden, um sicherzustellen, dass diese Sonderzeichen korrekt behandelt werden.
+
+Es ist auch wichtig, die kulturelle oder regionale Sensibilität bei der Verwendung von `toLowerCase()` zu berücksichtigen. Die Ausgabe kann je nach Sprache, in der das Programm ausgeführt wird, variieren. In manchen Fällen kann es daher sinnvoller sein, eine andere Methode zur Konvertierung in Kleinbuchstaben zu verwenden, die speziell auf die betreffende Sprache zugeschnitten ist.
+
+## Siehe auch
+
+- [MDN Web Docs - String.prototype.toLowerCase()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [MDN Web Docs - Regular Expressions](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/replace)

@@ -1,43 +1,55 @@
 ---
-title:    "Kotlin: 「文字列を小文字に変換する」"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/converting-a-string-to-lower-case.md"
+title:                "Kotlin: 文字列を小文字に変換する"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+こんにちは、Kotlinプログラミングの皆さん！今日の記事では、どのように文字列を小文字に変換するかについてお話ししたいと思います。文字列を小文字に変換すると何が良いのか、そしてどのように行うのかを説明します。さらに、深いレベルまでその仕組みを掘り下げていきます。
 
-今日私たちは、Kotlinで文字列を小文字に変換する方法について説明します。文字列を小文字に変換する必要があるのは、より柔軟な文字列の処理や比較検索がしたい場合です。また、データベースやAPIからのデータを正規化する必要がある場合もあります。
+## Why
 
-## 方法
+文字列を小文字に変換すると、大文字と小文字の区別が無くなって、文字列の検索や比較がより簡単になります。また、プログラムの可読性も上がるため、より効率的にコードを書くことができます。
 
-文字列を小文字に変換するには、 `toLowerCase()` メソッドを使用します。このメソッドは、文字列を全て小文字に変換します。
+## How To
 
-```Kotlin
-val name = "JULIA"
-val lowerCaseName = name.toLowerCase()
-println(lowerCaseName) // 出力: julia
-```
-
-このように、 `toLowerCase()` メソッドを使用することで、簡単に文字列を小文字に変換できます。
-
-## 深堀り
-
-文字列を小文字に変換する際には、文字コードの違いに注意が必要です。KotlinではデフォルトでUTF-16文字コードが使用されるため、文字列がASCII文字で構成されている場合でも、文字コードは異なることがあります。そのため、文字列を小文字に変換する際には、`toLowerCase()` メソッドではなく、 `toLowerCase(Locale.ENGLISH)` メソッドを使用することをお勧めします。
+文字列を小文字に変換する方法はいくつかありますが、今回はKotlinの組み込み関数である `toLowerCase()` を使います。以下の例をご覧ください。
 
 ```Kotlin
-val name = "JULIA"
-val lowerCaseName = name.toLowerCase(Locale.ENGLISH)
-println(lowerCaseName) // 出力: julia
+val str = "Hello World!"
+val lowerCaseStr = str.toLowerCase()
+
+println(str)
+// 出力: Hello World!
+println(lowerCaseStr)
+// 出力: hello world!
 ```
 
-また、文字列を小文字に変換する際には、元の文字列が変更されるのではなく、新しい小文字の文字列が返されることにも注意してください。
+`toLowerCase()` 関数は、指定した文字列を小文字に変換してその結果を返します。オリジナルの文字列は変更されないため、新しい変数に代入する必要があります。
 
-## 関連情報
+また、文字列を比較する際には、両方の文字列を小文字に変換してから比較することで、大文字と小文字の区別を無くすことができます。例えば、以下のようなコードになります。
 
-参考リンク：
-- https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html
-- https://stackoverflow.com/questions/39474114/string-to-lowercase-in-kotlin
+```Kotlin
+val str1 = "kotlin"
+val str2 = "KOTLIN"
 
-## 参考リンク
+if(str1.toLowerCase() == str2.toLowerCase()) {
+    println("同じ文字列です")
+} else {
+    println("異なる文字列です")
+}
+// 出力: 同じ文字列です
+```
+
+## Deep Dive
+
+文字列を小文字に変換する際には、言語やライブラリによって実装方法が異なることがあります。Kotlinの `toLowerCase()` 関数は、プラットフォームの基本的なルールに従って、Unicode標準を使用して小文字に変換を行います。つまり、英数字以外の文字を含む場合にも正しく変換されます。また、Turkish（トルコ語）のように、大文字と小文字が文字ごとに異なる言語にも対応しています。
+
+さらに、文字列に `Locale` を指定することができるため、特定の言語における小文字への変換も可能です。例えば、日本語の場合は `Locale.JAPAN` を指定することで、ひらがなやカタカナも正しく小文字に変換されます。
+
+## See Also
+
+- [Kotlin's toLowerCase() function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
+- [Unicode Standard](https://www.unicode.org/standard/standard.html)

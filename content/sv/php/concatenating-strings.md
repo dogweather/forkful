@@ -1,43 +1,45 @@
 ---
-title:    "PHP: Sammanslagning av strängar"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/concatenating-strings.md"
+title:                "PHP: Sammanslagning av strängar"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-När du arbetar med PHP-programmering, kommer du ofta att behöva kombinera flera strängar eller textbitar till en enda sträng. Denna process kallas för strängsammanfogning eller concatenation, och är en viktig del av att bygga dynamiska webbapplikationer.
 
-## Hur man gör det
-För att sammanfoga strängar i PHP, använder man sig av operatorn `.` (punkt). Det gör att strängarna slås ihop och blir en enda sträng. Låt oss titta på ett enkelt exempel:
+Att sammanfoga strängar är en grundläggande funktion inom PHP-programmering som hjälper till att manipulera och bygga upp textsträngar. Detta kan vara användbart för att skapa dynamiska meddelanden, generera HTML-kod eller bara för att bearbeta data på ett effektivt sätt. Att förstå hur man sammangfogar strängar ger dig en stark grund för att kunna skapa dynamiska och användbara PHP-applikationer.
 
-```PHP
-$name = "Maria";
-$greeting = "Hej " . $name . "! Välkommen till vår hemsida.";
-echo $greeting;
-```
+## Hur Man Gör
 
-Output:
-Hej Maria! Välkommen till vår hemsida.
-
-Som du kan se, så kombinerar vi här tre strängar men användning av punktoperatorn. Man kan också använda sig av variabler i strängsammanfogning, vilket gör det enkelt och effektivt att skapa dynamisk och personlig text.
-
-## Djupdykning
-En intressant egenskap med strängsammanfogning i PHP är att man även kan använda sig av andra datatyper, såsom tal eller boolean-värden. I sådana fall konverteras de automatiskt till en sträng och kan sedan läggas till i concatenation-processen. Detta gör det möjligt att skapa komplexa och dynamiska utskrifter med hjälp av enkla kodrader.
+För att sammanslå strängar i PHP använder man operatorn "." eller funktionen "concat()". Låt oss titta på några exempel:
 
 ```PHP
-$age = 25;
-$output = "Jag är " . $age . " år gammal.";
-echo $output;
+<?php
+
+// Operatornar " . "
+$förnamn = "Lisa";
+$efternamn = "Johansson";
+echo $förnamn . " " . $efternamn; // Skriver ut "Lisa Johansson"
+
+// Funktionen "concat()"
+$stad = "Stockholm";
+$land = "Sverige";
+echo concat($stad, ", ", $land); // Skriver ut "Stockholm, Sverige"
+?>
 ```
 
-Output:
-Jag är 25 år gammal.
+Som ni kan se i exemplet ovan, används operatorn " . " för att sammanfoga strängar och vi kan använda den för att lägga till mellanslag eller andra tecken mellan strängarna. Funktionen "concat()" tar emot flera argument, separerade med komma, och sammanfogar dem till en sträng.
 
-Det är också viktigt att komma ihåg att vid strängsammanfogning, så sammanfogas strängarna i den ordning som de skrivs i koden. Detta kan ha betydelse när man väljer att använda sig av variabler eller annan data som ligger i en annan ordning än det som man vill ha i den slutliga strängen.
+## Deep Dive
 
-## Se även
-- PHP - officiell webbplats: https://www.php.net/
-- PHP-konkatenering - dokumentation: https://www.php.net/manual/en/language.operators.string.php
-- Enkla kodexempel med strängsammanfogning: https://www.w3schools.com/php/php_operators.asp (på engelska)
+När vi sammanslår strängar i PHP skapas en ny sträng som innehåller de sammanlagda strängarna. Detta kan vara användbart om vi till exempel vill skapa en dynamisk HTML-tagg baserat på variabler. Detta kan uppnås genom att sätta samman variablerna och sedan skriva ut det som en tagg.
+
+Det är också viktigt att notera att i PHP kan man sammanslå både strängar och andra datatyper, som till exempel numeriska värden. Detta kan dock leda till buggar om man inte är noga med typen av datatyperna.
+
+## Se Även
+
+- [PHP Manual: Strings](https://www.php.net/manual/en/language.types.string.php)
+- [Concatenation on W3 Schools](https://www.w3schools.com/php/php_operators.asp)
+- [PHP String Functions](https://www.php.net/manual/en/ref.strings.php)

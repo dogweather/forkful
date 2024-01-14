@@ -1,43 +1,49 @@
 ---
-title:    "Arduino recipe: Checking if a directory exists"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/checking-if-a-directory-exists.md"
+title:                "Arduino recipe: Checking if a directory exists"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-As an Arduino programmer, you may come across situations where you need to check if a directory exists. This is particularly useful when working with files, as it allows you to ensure that the file you are trying to access actually exists before proceeding with your code.
+As an Arduino programmer, you may encounter situations where you need to check if a directory exists. This can be useful for tasks such as data logging or file management, where you need to ensure that a specific directory is present before proceeding with the rest of your program.
 
 ## How To
-
-To check if a directory exists, we will use the Arduino `File` object and the `exists()` method. First, we need to create a `File` object and pass in the path of the directory we want to check. Then, we can use the `exists()` method to determine if the directory exists or not. Here's an example code block:
+To check if a directory exists, we will be using the `SD.exists()` function from the Arduino SD library. Let's say we want to check for the existence of a directory named "logs" on our SD card. We can do so with the following code:
 
 ```Arduino
-// Create a File object for the directory "myDirectory"
-File myDirectory = SD.open("myDirectory");
-
-// Check if the directory exists
-if (myDirectory.exists()) {
-  Serial.println("The directory exists!");
+#include <SD.h> // include the SD library
+...
+if (SD.exists("/logs")) { // check if "logs" directory exists
+    // directory exists, do something here
 } else {
-  Serial.println("The directory does not exists!");
+    // directory does not exist, handle the error
 }
 ```
 
-If the directory "myDirectory" exists, the output will be `The directory exists!`, and if it doesn't exist, the output will be `The directory does not exist!`.
+You can replace "logs" with the name of the directory you want to check for. If the directory exists, the `SD.exists()` function will return `true` and the code within the `if` statement will be executed. Otherwise, the `else` statement will be executed.
+
+To make sure that the `SD.exists()` function works, let's print the result to the serial monitor. We will modify our code as follows:
+
+```Arduino
+#include <SD.h> // include the SD library
+...
+if (SD.exists("/logs")) { // check if "logs" directory exists
+    Serial.println("Directory exists!");
+} else {
+    Serial.println("Directory does not exist!");
+}
+```
+
+If the directory exists, you will see "Directory exists!" printed to the serial monitor. If it does not exist, you will see "Directory does not exist!".
 
 ## Deep Dive
+The `SD.exists()` function internally calls the `SD.open()` function, which attempts to open a file or directory. If the file or directory exists, `SD.open()` will return `true`, indicating that the file or directory exists. Otherwise, it will return `false`.
 
-When we use the `exists()` method, it checks for both file and directory existence. If the specified path exists and it is a valid directory, then the method will return `true`. However, if the path exists but is not a valid directory, the method will return `false`.
-
-It is important to note that the `exists()` method does not check for the validity of the path itself. So it is possible for the method to return `false` even if the path is correctly specified. Therefore, it is recommended to check the return value of the `exists()` method before proceeding with any further file operations.
+It is important to note that the `SD.exists()` function only checks for the existence of a directory or file, it does not guarantee that the directory or file is accessible. There may be other factors such as file permissions or incorrect file path that can prevent files or directories from being accessed.
 
 ## See Also
-
-If you want to learn more about using the `exists()` method and other methods available in the `File` object, here are some useful resources:
-
-- [Arduino Reference - File Object](https://www.arduino.cc/reference/en/libraries/sd-card-library/file-object/)
-- [Arduino Code Examples - SD Library](https://www.arduino.cc/en/Reference/SD)
-- [How to Read and Write Files on an SD Card with Arduino](https://www.circuitbasics.com/how-to-write-files-to-and-read-files-from-sd-cards/)
+- [SD library reference](https://www.arduino.cc/en/Reference/SD)
+- [Arduino and SD card tutorial](https://www.arduino.cc/en/tutorial/SDCardNotes)

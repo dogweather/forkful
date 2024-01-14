@@ -1,43 +1,48 @@
 ---
-title:    "Rust: Comparando duas datas"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/comparing-two-dates.md"
+title:                "Rust: Comparando duas datas"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas em Rust é importante
+## Porquê
 
-Comparar datas é uma tarefa comum e essencial em muitos programas de computador. Ao comparar duas datas em Rust, podemos verificar se uma data é anterior, posterior ou igual a outra. Isso pode ser útil em uma variedade de cenários, como gerenciamento de eventos, controle de versão de arquivos ou análise de dados temporais. Nesta postagem do blog, exploraremos como comparar duas datas em Rust e exibiremos exemplos práticos.
+Comparar datas pode ser uma tarefa comum quando se trabalha com programação. No entanto, pode ser desafiador encontrar uma maneira eficiente e precisa de realizar essa comparação. Neste artigo, vamos explorar como a linguagem de programação Rust pode nos ajudar a comparar duas datas de forma eficiente e confiável.
 
-## Como comparar duas datas em Rust
+## Como Fazer
 
-Em Rust, podemos comparar duas datas por meio do operador `==` ou dos métodos `eq()`, `ne()`, `lt()`, `gt()` e `cmp()` da estrutura `DateTime` da biblioteca `chrono`. Vejamos um exemplo de comparação de datas usando o operador `==`:
+Em Rust, podemos utilizar o tipo `DateTime` do crate `chrono` para representar uma data e hora específica. Para comparar duas datas, podemos utilizar o método `.cmp()`, que retorna um enum `Ordering`. Vamos ver um exemplo prático:
 
-```rust
-use chrono::{Date, Datelike, Utc};
+```Rust
+use chrono::{DateTime, Utc};
 
-let date1 = Utc::today();
-let date2 = Date::from_ymd(2022, 1, 1);
-
-if date1 == date2 {
-    println!("As duas datas são iguais!");
-} else {
-    println!("As datas são diferentes!");
+fn main() {
+    let data1 = DateTime::parse_from_rfc3339("2021-01-01T00:00:00Z").unwrap();
+    let data2 = DateTime::parse_from_rfc3339("2021-01-02T00:00:00Z").unwrap();
+    
+    match data1.cmp(&data2) {
+        Ordering::Less => println!("A data 1 é anterior à data 2."),
+        Ordering::Equal => println!("As datas são iguais."),
+        Ordering::Greater => println!("A data 1 é posterior à data 2.")
+    }
 }
 ```
 
-Este código criará duas datas, uma referente ao dia atual e outra ao dia 1 de janeiro de 2022. Em seguida, o operador `==` é utilizado para compará-las e, dependendo do resultado, uma mensagem será exibida.
+A saída deste programa será:
 
-Outros métodos também podem ser usados, como por exemplo `lt()`, que verifica se a primeira data é menor que a segunda, ou `ne()`, que verifica se elas são diferentes. Além disso, o método `cmp()` retorna um resultado `Ordering` baseado na comparação entre as datas, que pode ser usado em estruturas de controle de fluxo.
+```
+A data 1 é anterior à data 2.
+```
 
-## Mergulhando mais fundo
+Podemos também utilizar os métodos `.lt()`, `.eq()` e `.gt()` para realizar comparações específicas. Além disso, o crate `chrono` possui uma série de funções úteis para realizar cálculos e manipulações com datas. Certifique-se de consultar a documentação oficial para obter mais informações.
 
-Ao comparar duas datas em Rust, é importante entender como esses métodos funcionam e como as datas são representadas. Internamente, as datas são armazenadas como a quantidade de segundos a partir de uma data de referência, conhecida como "época". Em Rust, a época é definida como sendo o dia 1º de janeiro de 1970 às 00:00:00 UTC. Isso significa que podemos comparar datas de diferentes fusos horários sem nos preocuparmos com a diferença de horário.
+## Mergulho Profundo
 
-Além disso, é importante notar que, ao criar uma data sem especificar um fuso horário, o padrão é ser utilizada a hora UTC.
+Ao comparar duas datas em Rust, é importante ter em mente que estamos comparando não apenas o dia e o mês, mas também o ano e a hora. Isso significa que devemos ser cuidadosos ao trabalhar com fusos horários e dados que podem estar em diferentes formatos de data. Além disso, é importante entender como Rust lida com a comparação de tipos diferentes, como `DateTime` e `Date`.
 
-## Veja também
+## Veja Também
 
-- [Documentação da biblioteca `chrono`](https://docs.rs/chrono/latest/chrono/)
-- [Tutorial sobre manipulação de datas em Rust](https://dev.to/adam_orlowsky/how-to-manipulate-dates-and-times-in-rust-4g8m)
+- Documentação do crate `chrono`: https://docs.rs/chrono/
+- Tutorial "Trabalhando com Datas em Rust": https://stevedonovan.github.io/rust-gentle-intro/7-dates-times.html

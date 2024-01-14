@@ -1,56 +1,42 @@
 ---
-title:    "Clojure: Ekstrakcja podciągów"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/extracting-substrings.md"
+title:                "Clojure: Wycinanie podciągów"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Wyciąganie podciągów jest jedną z podstawowych i ważnych czynności w programowaniu, która pozwala na manipulowanie i przetwarzanie danych tekstowych. W tym artykule dowiecie się, jak łatwo i szybko wykorzystać tę funkcjonalność w języku Clojure.
+Wyciąganie podciągów (lub części ciągów) jest nieodłączną częścią wielu zadań programistycznych. Może to być konieczne, gdy chcemy przetworzyć dłuższe ciągi znaków, aby uzyskać tylko pewne wybrane wartości. Na przykład, gdy chcemy wyodrębnić numer telefonu lub adres e-mail z dłuższego tekstu. Clojure posiada wiele funkcji, które ułatwiają nam to zadanie.
 
 ## Jak to zrobić
 
-Wyciąganie podciągów w Clojure jest bardzo proste dzięki funkcji `subs`, która pozwala na zdefiniowanie zakresu indeksów wewnątrz podanego tekstu. Poniżej znajdują się przykłady użycia tej funkcji:
+Aby wyodrębnić podciągi w Clojure, musimy skorzystać z funkcji `subs` lub `substring`. Obie funkcje przyjmują dwa argumenty: ciąg znaków oraz indeksy określające początek i koniec wyciąganego podciągu. Przykładowo, gdy chcemy uzyskać podciąg z ciągu "Hello World!" zaczynający się od indeksu 2 i kończący na indeksie 6, musimy wpisać:
 
 ```Clojure
-(def text "To jest przykładowy tekst")
-(subs text 7 16)
+(subs "Hello World!" 2 6)
 ```
 
-Output: `przykładowy`
+Dzięki temu otrzymamy wartość "llo W".
 
-Funkcja `subs` przyjmuje trzy argumenty - tekst, początkowy indeks i końcowy indeks. Pierwszy znak w tekście ma indeks 0, a ostatni indeks jest o 1 mniejszy niż długość tekstu. Można także wykorzystać ujemne indeksy, które oznaczają odliczanie od końca tekstu. 
+Możemy również wykorzystać funkcję `split` do rozdzielenia ciągu na podciągi za pomocą określonego separatora. Na przykład, gdy chcemy rozdzielić adres e-mail na część przed "@" i część po "@", możemy wykorzystać funkcję `split`, wpisując:
 
 ```Clojure
-(subs text -5 -1)
+(split "example@example.com" #"\@")
 ```
 
-Output: `tekst`
+Jako oddzielacz używamy tu wyrażenia regularnego, które jest ujęte w "#". Dzięki temu otrzymamy dwa podciągi: "example" oraz "example.com".
 
-Inną przydatną funkcją jest `subs-from`, która pozwala na wyciągnięcie podciągu od danego indeksu do końca tekstu.
+## Głębszy zanurzenie
 
-```Clojure
-(subs-from text 3)
-```
+Funkcje `subs` i `substring` są bardzo podobne, jednak różnią się w kwestii indeksów. Funkcja `subs` przyjmuje indeksy początkowe i końcowe włącznie, natomiast funkcja `substring` przyjmuje indeks początkowy włącznie, a indeks końcowy jest wyłączony. Może to wprowadzać nieco nieoczekiwane wyniki, dlatego ważne jest zawsze uważnie czytać dokumentację funkcji.
 
-Output: `jest przykładowy tekst`
+Clojure posiada także wiele innych funkcji do operacji na ciągach, takich jak `take` czy `drop`, które mogą również być wykorzystane do wyodrębniania podciągów.
 
-## Głębsze pogłębienie
+## Zobacz również
 
-W języku Clojure istnieje również funkcja `subs-by`, która pozwala na wyciągnięcie podciągu o określonej długości, zaczynając od podanego indeksu. Na przykład, jeśli chcemy wyciągnąć podciąg z tekstu o długości 5 zaczynający się od indeksu 3, możemy wykorzystać tę funkcję w następujący sposób:
-
-```Clojure
-(subs-by text 3 5)
-```
-
-Output: `jest`
-
-Funkcja `subs-by` jest szczególnie przydatna, gdy chcemy wyciągnąć kolejne fragmenty tekstu o stałej długości.
-
-## Zobacz też
-
-- Dokumentacja funkcji `subs`: https://clojuredocs.org/clojure.string/subs
-- Przykłady użycia wyciągania podciągów: https://www.tutorialspoint.com/clojure/clojure_strings.htm
-- Krótki kurs o wyciąganiu podciągów w Clojure: https://clojureverse.org/t/crash-course-string-manipulation-in-clojure/6632
+- Dokumentacja funkcji `subs` i `substring`: https://clojuredocs.org/clojure.core/substring
+- Dokumentacja funkcji `split`: https://clojuredocs.org/clojure.string/split
+- Więcej funkcji do operacji na ciągach w Clojure: https://www.braveclojure.com/core-functions-in-depth/#Functions_for_Working_with_Clojure_St

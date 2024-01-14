@@ -1,68 +1,80 @@
 ---
-title:    "C#: Tekstitiedoston lukeminen"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/reading-a-text-file.md"
+title:                "C#: Tiedoston lukeminen"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Lukeminen on keskeinen osa ohjelmoinnin oppimista. Tekstikäsikirjoitusten lukeminen on erityisen tärkeää, sillä se antaa meille arvokasta tietoa siitä, miten tiedostot tallennetaan, jäsennellään ja käsitellään tietokoneella. Tässä blogikirjoituksessa opimme, miten voimme lukea tekstikäsikirjoituksia käyttämällä C# -ohjelmointikieltä.
+Tekstitiedostojen lukeminen on tärkeä ja usein tarvittu taito kaikille ohjelmoijille. Monissa projekteissa joudutaan käsittelemään tekstiä, kuten lokitiedostoja, tietokantojen kenttiä, tai käyttäjän syöttämiä tietoja. Tässä blogipostissa opit lukemaan tekstitiedostoja C# ohjelmointikielellä!
 
-## Miten
+## Kuinka
 
-Käytämme C# -ohjelmointikieltä lukemaan tiedostoja. Ensimmäisen vaiheen tulisi olla tiedoston avaaminen ja lukeminen. Se voidaan tehdä käyttämällä `StreamReader` -luokkaa, joka auttaa lukemaan tekstikäsikirjoituksia ja tallentamaan sen sisällön muuttujaan.
-
-```C#
-using System.IO;
-
-// Avataan tiedosto "tiedostonimi.txt"
-StreamReader tiedosto = new StreamReader("tiedostonimi.txt");
-
-// Luetaan tiedoston sisältö ja tallennetaan se muuttujaan "sisalto"
-string sisalto = tiedosto.ReadToEnd();
-// Suljetaan tiedosto
-tiedosto.Close();
-
-// Tulostetaan tiedoston sisältö konsoliin
-Console.WriteLine(sisalto);
-```
-
-Yllä olevassa esimerkissä luomme ensin uuden `StreamReader` -ilmentymän ja annamme sille tiedostonimen, jonka haluamme lukea. Tämän jälkeen käytämme `ReadToEnd()` -metodia lukemaan ja tallentamaan tiedoston sisällön `sisalto`-muuttujaan. Lopuksi suljemme tiedoston käyttämällä `Close()` -metodia.
-
-### Tulos
-
-Tulostamme konsoliin tiedoston sisällön käyttämällä `Console.WriteLine` -metodia ja antamalla sille `sisalto`-muuttujan.
-
-```
-Tervetuloa tekstikäsikirjoituksen maailmaan!
-```
-
-Voit myös lukea tekstikäsikirjoituksia rivin kerrallaan käyttämällä `ReadLine()` -metodia.
+Jotta voit lukea tekstitiedostoja C# kielellä, sinun täytyy ensin avata tiedosto input stream -komennolla. Tämän jälkeen voit lukea tiedoston sisältöä käyttämällä TextReader luokkaa. Alla olevassa esimerkissä luomme teksti tiedoston nimi “teksti.txt” ja kirjoitamme siihen muutaman rivin tekstiä:
 
 ```C#
-// Luetaan tiedoston ensimmäinen rivi ja tallennetaan se muuttujaan "rivi"
-string rivi = tiedosto.ReadLine();
+public static void Main(){
+  // Luodaan tekstitiedosto
+  File.WriteAllText("teksti.txt", "Tämä on esimerkkitiedosto tekstinlukemista varten.");
+
+  // Avataan tiedosto input stream -komennolla
+  FileStream fs = new FileStream("teksti.txt", FileMode.Open);
+
+  // Luodaan TextReader ja luetaan tiedoston sisältöä
+  using (TextReader reader = new StreamReader(fs)){
+    string line;
+
+    while ((line = reader.ReadLine()) != null){
+      Console.WriteLine(line);
+    }
+  }
+}
 ```
 
-## Syvällinen sukellus
+#### Output:
+Tämä on esimerkkitiedosto tekstinlukemista varten.
 
-Lukeminen on vain yksi osa tiedoston käsittelyä. Voit myös muuttaa tiedoston sisältöä ja tallentaa sen takaisin käyttämällä `StreamWriter` -luokkaa.
+Kuten näet, avasimme tiedoston input stream -komennolla ja luimme sen sisältöä riviltä riville käyttämällä TextReader luokkaa. TextReader luokassa on muitakin hyödyllisiä metodeja tiedoston lukemiseen, kuten Read() ja ReadToEnd(), jotka voit oppia lisää dokumentaatiosta.
+
+## Syväsukellus
+
+Tekstitiedostojen lukeminen ei kuitenkaan rajoitu vain yksittäisiin riveihin. Voit myös käyttää C# kielen säännöllisiä lausekkeita (regular expressions) helpottamaan tiedoston lukemista ja tietojen parseerausta. Tämä säästää paljon aikaa ja vaivaa, varsinkin jos käsiteltävät tiedostot ovat suurempia.
+
+Alla olevassa esimerkissä käytämme Regex luokkaa löytämään ja tulostamaan kaikki sanoja, jotka alkavat isolla kirjaimella tiedostosta “teksti.txt”:
 
 ```C#
-// Luodaan uusi "StreamWriter" -ilmentymä ja annetaan sille tiedoston nimi
-StreamWriter kirjoittaja = new StreamWriter("uusitiedosto.txt");
+public static void Main(){
+  // Luodaan tekstitiedosto
+  File.WriteAllText("teksti.txt", "Tämä on esimerkkitiedosto tekstinlukemista varten.");
 
-// Muutetaan tiedoston sisältöä ja tallennetaan se käyttämällä "WriteLine" -metodia
-kirjoittaja.WriteLine("Tämä on uusi rivi.");
-// Suljetaan tiedosto
-kirjoittaja.Close();
+  // Avataan tiedosto input stream -komennolla
+  using (var sr = new StreamReader("teksti.txt")){
+    var regex = new Regex(@"[A-Z]\w+");
+
+    // Käydään läpi tiedoston jokainen rivi
+    while(!sr.EndOfStream){
+      string line = sr.ReadLine();
+
+      // Etsitään kaikki sanat, jotka alkavat isolla kirjaimella ja tulostetaan ne
+      MatchCollection matches = regex.Matches(line);
+
+      foreach (Match match in matches){
+        Console.WriteLine(match.Value);
+      }
+    }
+  }
+}
 ```
 
-Yllä olevassa esimerkissä käytämme `StreamWriter` -luokkaa tallentamaan uuden rivin tiedostoon. Voit myös käyttää muita metodeja, kuten `Write()` tai `Append()`, muokkaamaan tai lisäämään sisältöä tiedostoon.
+#### Output:
+Tämä
+Tiedosto
+Lukemista
+
+Tässä esimerkissä käytämme säännöllistä lauseketta [A-Z]\w+, joka etsii kaikki sanat, jotka alkavat isolla kirjaimella (A-Z) ja ovat vähintään yhden merkin pituisia (\w+). Regex luokka tarjoaa paljon eri mahdollisuuksia tiedoston lukemiseen ja datan käsittelyyn, joten kannattaa ottaa selvää siitä lisää dokumentaatiosta.
 
 ## Katso myös
-
-- [Microsoft C# -dokumentaatio](https://docs.microsoft.com/en-us/dotnet/csharp/)
-- [SoloLearn C# -kurssi](https://www.sololearn.com/Course/CSharp/)
+- [C# TextReader luokka](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=

@@ -1,78 +1,62 @@
 ---
-title:    "Elm: Verketten von Zeichenfolgen"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/concatenating-strings.md"
+title:                "Elm: Verketten von Zeichenketten"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Zusammenfügen oder Verketten von Strings ist eine wichtige Fähigkeit in vielen Programmiersprachen, einschließlich Elm. Es ermöglicht es Programmierern, dynamische Texte zu erstellen, die auf Variablen oder Benutzereingaben basieren. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie man Strings in Elm konkateniert.
+In der Programmierung gibt es oft die Notwendigkeit, Texte zu verbinden, um einen längeren String zu erzeugen. Dies kann hilfreich sein, um Benutzereingaben zu speichern, komplexe Fehlermeldungen zu generieren oder einfach nur Text auf einer Benutzeroberfläche darzustellen. In Elm gibt es verschiedene Möglichkeiten, Strings zu verbinden, je nach den spezifischen Anforderungen des Programms. In diesem Artikel werden wir uns genauer ansehen, wie man Strings in Elm concatenieren kann.
 
-## Anleitung
+## Wie geht das?
 
-Die Verkettung von Strings in Elm ist einfach und unkompliziert. Im Folgenden sind einige Beispiele aufgeführt, die die verschiedenen Möglichkeiten der String-Konkatenation zeigen.
+Um Strings in Elm zu concatenieren, gibt es zwei Hauptmethoden: die Verwendung des (+++) Operators und die Verwendung der String.concat Funktion. Der (+++) Operator fügt zwei Strings zusammen, während die String.concat Funktion eine Liste von Strings in einen einzelnen String zusammenfügt.
 
-```Elm
-fullName : String
-fullName = "Max" ++ " Mustermann"
-
--- Output: Max Mustermann
-```
+### (+++) Operator Beispiel:
 
 ```Elm
-message : String
-message = "Hallo " ++ "Welt"
-
--- Output: Hallo Welt
+"Hello " +++ "World"
 ```
+
+Ausgabe: "Hello World"
+
+### String.concat Beispiel:
 
 ```Elm
-greeting : String -> String
-greeting name =
-    "Hello " ++ name ++ "!"
-
--- Output: Hello Max!
+String.concat ["Hello ", "World"]
 ```
 
-Wie Sie sehen können, können wir mit dem Operator "++" Strings einfach aneinanderreihen, um dynamische Nachrichten zu erstellen. Wir können auch Variablen oder Funktionen verwenden, um die Konkatenation noch flexibler zu gestalten.
+Ausgabe: "Hello World"
 
-## Tiefergehende Einblicke
+In beiden Fällen können auch Variablen oder Funktionen verwendet werden, die Strings zurückgeben, anstatt die Strings direkt einzugeben.
 
-In Elm gibt es auch die Funktion "String.concat", die es uns ermöglicht, Listen von Strings zu verkettet. Dies kann nützlich sein, wenn wir mehrere Strings in einem Stück zusammenführen möchten.
+Die Verwendung des (+++) Operators ist in der Regel hilfreicher, wenn nur wenige Strings concateniert werden müssen. Wenn jedoch eine größere Anzahl von Strings zusammengefügt werden muss, ist die Verwendung der String.concat Funktion effizienter, da sie eine Liste von Strings bearbeiten kann.
+
+## Tiefer eintauchen
+
+In Elm gibt es auch die Möglichkeit, Strings mit Mustern zu concatenieren. Dazu werden Muster angegeben, die angeben, welche Teile der zu concatenierenden Strings hinzugefügt oder entfernt werden sollen. Dies kann besonders nützlich sein, wenn komplexe Textmanipulation erforderlich ist, z.B. beim Zusammenfügen von Teilen einer URL.
+
+Ein Beispiel für die Verwendung von Mustern beim Concatenieren von Strings:
 
 ```Elm
-names : List String
-names = ["Max", "Sarah", "Tim"]
+mustache = "mustache"
+beard = "beard" 
 
-fullName : String
-fullName = String.concat names
-
--- Output: MaxSarahTim
+concatWithPattern = 
+    case (mustache, beard) of
+        ("mustache", "beard") ->
+            mustache ++ " & " ++ beard
+        (_, _) ->
+            "No facial hair found."
 ```
 
-Es ist auch möglich, Strings in mehreren Schritten zu verkettet und dabei die Lesbarkeit zu verbessern. Zum Beispiel:
-
-```Elm
-firstName : String
-firstName = "Max"
-
-lastName : String
-lastName = "Mustermann"
-
-message : String
-message =
-    "Hello, my name is "
-        ++ firstName
-        ++ " "
-        ++ lastName
-        ++ "."
-
--- Output: Hello, my name is Max Mustermann.
-```
+Ausgabe: "mustache & beard"
 
 ## Siehe auch
 
-- [Offizielle Elm-Dokumentation zu Strings](https://guide.elm-lang.org/strings/)
-- [Einführung in Elm – eine funktionale Programmiersprache für das Frontend](https://www.codementor.io/@sarahlieder/intro-to-elm-a-functional-programming-language-for-the-frontend-q517gakn0)
+- "Official Elm Language Guide" (https://guide.elm-lang.org/)
+- "Elm in Action" von Richard Feldman (https://www.manning.com/books/elm-in-action)
+- "Elm Tutorial" von Derek Cicerone (https://www.elm-tutorial.org/de/)

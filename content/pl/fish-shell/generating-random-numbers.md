@@ -1,57 +1,44 @@
 ---
-title:    "Fish Shell: Generowanie losowych liczb"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/generating-random-numbers.md"
+title:                "Fish Shell: Generowanie losowych liczb"
+programming_language: "Fish Shell"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Generowanie liczb losowych jest nieodłączną częścią wielu programów i skryptów. Może to być przydatne do testowania lub losowych wyborów. W tym artykule dowiesz się, jak wygenerować liczby losowe w języku skryptowym Fish Shell.
+Generowanie losowych liczb może być niezbędne w wielu projektach programistycznych. Może być wykorzystane do testowania kodu, tworzenia losowych unikalnych identyfikatorów czy symulacji zachowań losowych. W tym wpisie dowiesz się, jak wygenerować losowe liczby w powłoce Fish Shell.
 
 ## Jak to zrobić
 
-Aby wygenerować liczbę losową w Fish Shell, użyjemy polecenia `math` wraz z funkcją `rand`.
+Aby wygenerować losową liczbę w Fish Shell, wykorzystujemy wbudowaną funkcję `random`. Możemy wybrać, ile liczb chcemy wygenerować oraz zakres, w jakim mają się znajdować. Przykładowe użycie wygląda następująco:
 
-```
-Fish Shell
-math rand -0.5 0.5
-```
-
-Ta komenda spowoduje wygenerowanie liczby losowej z zakresu od -0.5 do 0.5. Możesz zmienić ten zakres według potrzeb, podając odpowiednie wartości jako argumenty funkcji `rand`.
-
-Możesz również wygenerować więcej niż jedną liczbę losową, dodając opcję `-c` i podając liczbę żądanych wyników.
-
-```
-Fish Shell
-math -c 5 rand 0 10
+```Fish Shell
+set i 0
+while test $i -lt 10
+    random 1 100
+    set i (math $i + 1)
+end
 ```
 
-Powyższa komenda wygeneruje 5 liczb losowych z przedziału od 0 do 10.
+Powyższy kod wygeneruje 10 liczb losowych z zakresu od 1 do 100. Wynik zostanie wyświetlony na ekranie w kolejnych liniach. Możemy również przypisać wynik do zmiennej, aby go wykorzystać w dalszych obliczeniach.
 
-## Pogłębiona analiza
+## Głębszy zanurzenie
 
-W języku Fish Shell do generowania liczb losowych możemy również użyć polecenia `seq`. Polecenie to przyjmuje trzy argumenty: wartość początkową, wartość końcową i krok. Następnie generuje sekwencję liczb pomiędzy wartością początkową a końcową z określonym krokiem.
+Funkcja `random` wykorzystuje generator liczb pseudolosowych, który działa na podstawie "ziarna" (seed). W przypadku powtórnego uruchomienia kodu z takim samym ziarnem, wynik będzie taki sam. Aby uniknąć anulowania losowości, warto zmieniać ziarno przekazywane do funkcji. Możesz to zrobić, wykorzystując zmienną systemową `$RANDOM`, która jest aktualizowana po każdym wywołaniu funkcji `random`.
 
-```
-Fish Shell
-seq 1 2 10
-```
-
-Komenda ta wygeneruje sekwencję liczb od 1 do 10 z krokiem równym 2.
-
-Możesz również skorzystać z polecenia `head` do wyświetlenia określonej liczby wygenerowanych liczb.
-
-```
-Fish Shell
-seq 1 1 100 | head -n 10
+```Fish Shell
+set i 0
+while test $i -lt 10
+    random $RANDOM 1 100
+    set i (math $i + 1)
+end
 ```
 
-Powyższa komenda wygeneruje sekwencję liczb od 1 do 100 i wyświetli tylko pierwsze 10 liczb.
+## Zobacz także
 
-## Zobacz również
-
-- Dokumentacja polecenia `math` w języku Fish Shell: https://fishshell.com/docs/current/cmds/math.html
-- Przykłady użycia funkcji `rand` w języku Fish Shell: https://fishshell.com/docs/current/cmds/math.html#math-rand
-- Dokumentacja polecenia `seq` w języku Fish Shell: https://fishshell.com/docs/current/cmds/seq.html
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/cmds/random.html)
+- [Wprowadzenie do powłoki Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Wprowadzenie do generowania liczb pseudolosowych](https://pl.wikipedia.org/wiki/Generator_liczb_pseudolosowych)

@@ -1,46 +1,44 @@
 ---
-title:    "Fish Shell: Convirtiendo una cadena a minúsculas"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/converting-a-string-to-lower-case.md"
+title:                "Fish Shell: Convirtiendo una cadena a minúsculas"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué convertir una cadena a minúsculas en Fish Shell?
 
-La conversión de una cadena de texto a minúsculas es una tarea común en la programación. En lugar de escribir constantemente código para convertir manualmente cada letra a minúscula, el Fish Shell ofrece una forma rápida y sencilla de hacerlo.
+Al programar en Fish Shell, a menudo nos encontramos con la necesidad de manipular cadenas de texto. Una de las tareas más comunes es convertir una cadena a minúsculas, ya sea para fines de validación o para normalizar los datos. En este artículo, exploraremos cómo hacerlo de manera eficiente en Fish Shell.
 
-## Cómo
+## Pasos para convertir una cadena a minúsculas en Fish Shell
 
-Para convertir una cadena de texto a minúsculas en Fish Shell, simplemente utilizamos el comando ```string tolower``` seguido de la cadena que queremos convertir. Por ejemplo:
+Para convertir una cadena a minúsculas en Fish Shell, podemos utilizar el comando ```string tolower``` seguido de la cadena que queremos convertir. Aquí hay un ejemplo:
 
-```Fish Shell
-string tolower "HOLA A TODOS"
+```
+set cadena "Hola Mundo"
+string tolower $cadena
 ```
 
-La salida de este comando sería "hola a todos" en minúsculas.
+La salida de este ejemplo sería ```"hola mundo"```, ya que el comando ```string tolower``` convierte todos los caracteres de la cadena a minúsculas.
 
-Otra forma de realizar esta tarea es utilizando el operador ```|```, que permite utilizar el resultado de un comando como entrada para otro. Por ejemplo:
+También podemos utilizar la función ```string lower``` para lograr el mismo resultado. Aquí está un ejemplo:
 
-```Fish Shell
-echo "HOLA A TODOS" | string tolower
+```
+set cadena "Fish Shell"
+string lower $cadena
 ```
 
-La salida de este comando sería la misma que en el ejemplo anterior.
+La salida sería ```"fish shell"```. Ambos métodos son igualmente eficientes y usan la misma lógica para convertir una cadena a minúsculas.
 
-## Deep Dive
+## Profundizando en la conversión de cadenas a minúsculas en Fish Shell
 
-Detrás de escena, el comando ```string tolower``` utiliza la función ```lowercase``` del lenguaje de programación interno de Fish Shell, que convierte cada letra en la cadena a su equivalente en minúscula. Además, esta función también es sensible a la localización, lo que significa que tomará en cuenta la configuración regional del sistema para la conversión de ciertos caracteres especiales.
+Internamente, Fish Shell utiliza el sistema Unicode para manejar las cadenas de texto. Esto significa que los caracteres se representan mediante códigos numéricos en lugar de simplemente ser letras o números. Por lo tanto, al convertir una cadena a minúsculas, Fish Shell mapea los códigos de caracteres a sus equivalentes en minúsculas, lo que permite una conversión precisa independientemente del idioma utilizado en la cadena.
 
-En caso de que necesite convertir una cadena en minúsculas pero mantener algunas letras en mayúsculas, puede utilizar el operador ```[^]``` y especificar los caracteres que desea mantener. Por ejemplo:
+Es importante tener en cuenta que la conversión a minúsculas no siempre es compatible con todos los idiomas y escribir idiomas distintos al inglés puede dar lugar a resultados inesperados. Además, la conversión no afecta a los caracteres que no tienen un equivalente en minúsculas, por lo que los caracteres especiales se mantendrán sin cambios en la salida.
 
-```Fish Shell
-string tolower "Hola A Todos" | string replace '[^o]' 'O'
-```
+## Consulta también
 
-Este comando reemplaza todas las letras "O" que fueron convertidas a minúsculas por el comando anterior, y las devuelve a mayúsculas.
-
-## Ver también
-
-- [Guía de referencia de Fish Shell](https://fishshell.com/docs/current/cmds/lowercase.html)
-- [Cómo convertir texto a minúsculas en Fish Shell](https://fishshell.com/docs/current/cmds/string.html#tolower)
+- [Documentación oficial de Fish Shell sobre el comando ```string tolower```](https://fishshell.com/docs/current/cmds/string.html#string-tolower)
+- [Página de GitHub de Fish Shell con ejemplos y guías de programación](https://github.com/fish-shell/fish-shell)
+- [Convertir una cadena a mayúsculas en Fish Shell](https://www.ejemplo.com/articles/convertir-cadena-a-mayusculas-fish-shell)

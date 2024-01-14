@@ -1,48 +1,37 @@
 ---
-title:    "Fish Shell recipe: Calculating a date in the future or past"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/calculating-a-date-in-the-future-or-past.md"
+title:                "Fish Shell recipe: Calculating a date in the future or past"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Calculating dates in the future or past is a common task in many programming projects. It allows you to manipulate and track dates, making it easier to manage deadlines, schedule events, and more. With Fish Shell, this process becomes even more efficient and simple.
+As a programmer, it is often necessary to calculate dates in the future or past for various tasks. This can include tasks such as setting reminders, scheduling events, or performing time-sensitive operations. In this blog post, we will explore how to easily calculate dates in the Fish Shell.
 
 ## How To
+Fish Shell has a built-in function called `date` which is used for displaying the current date and time. However, we can also use this function to perform date calculations. Let's take a look at a few examples.
 
-Using Fish Shell, you can easily calculate dates in the future or past with just a few lines of code. Let's take a look at some examples:
+```Fish Shell
+# To calculate a date 7 days in the future
+date --date "+7 days"
 
-```
-# Calculate one week from today
-set one_week (date -v+1w)
-echo $one_week
+# To calculate a date 3 months and 2 weeks in the past
+date -d "-3 months -2 weeks"
 
-# Calculate three months from a specific date
-set start_date "2021/01/01"
-set three_months (date -v+3m $start_date)
-echo $three_months
-
-# Calculate a specific date from today
-set future_date (date -v+2021y)
-echo $future_date
+# To calculate a specific date, such as 1st of next month
+date --date "next month" "+%m/%d/%Y"
 ```
 
-In the first example, we use the `date` command with the `-v` flag, which specifies a date to add or subtract from. In this case, we add one week from the current date. The output will be the date one week from today.
-
-Similarly, in the second example, we start with a specific date and add three months to it. The output will be a date that falls three months from the start date. You can also use the `-v` flag with different units, such as years (`y`), months (`m`), weeks (`w`), and days (`d`).
-
-Lastly, in the third example, we calculate a future date by specifying a specific year. This will output the date in the year 2021.
+The first example uses the `--date` flag to specify the date format, followed by a string representing the desired time frame. In this case, we wanted to calculate 7 days in the future. The second example uses the `-d` flag to specify a date to be manipulated, followed by a string representing the desired time frame to be subtracted. In this case, we wanted to calculate 3 months and 2 weeks in the past. Lastly, the third example uses the `--date` flag to specify a specific date, and the `+%m/%d/%Y` format to display the date in the specified format.
 
 ## Deep Dive
+Behind the scenes, Fish Shell uses the GNU `date` command to perform these date calculations. This command has many different options and flags that can be used to manipulate dates in various ways. You can refer to the `man` page for more information on the different options available.
 
-Behind the scenes, Fish Shell uses the `date` command to manipulate and calculate dates. The `-v` flag allows for easy manipulation of dates by adding or subtracting a specific amount of time. Additionally, you can use other flags and options with the `date` command to further customize your date calculations.
-
-For more information about the `date` command and its different flags and options, you can check out the manual page by running `man date` in your terminal.
+One important thing to note is that the calculations are based on the system's current date and time. So if you need to perform calculations based on a different date, you may need to manipulate the system's date and time first.
 
 ## See Also
-
-- Fish Shell documentation: https://fishshell.com/docs/current/
-- Using Arrays in Fish Shell: https://fishshell.com/docs/current/tutorial.html#tut_arrays
-- Advanced usage of the `date` command: https://www.unix.com/man-page/osx/1/date/
+- [Fish Shell documentation on `date` function](https://fishshell.com/docs/current/cmds/date.html)
+- [Man page for GNU `date` command](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Tutorial on date calculations in Bash shell](https://www.linuxjournal.com/content/normalizing-date-and-time-data-bash-shell)

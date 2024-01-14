@@ -1,74 +1,51 @@
 ---
-title:    "Ruby: 编写测试"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/writing-tests.md"
+title:                "Ruby: 编写测试"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么?
+## 为什么
 
-写测试，是软件开发中不可或缺的一个环节。通过编写测试代码，可以确保我们的软件在每次更改后仍然能够正常运行。同时，它也能够帮助开发者在编码过程中发现潜在的问题，并提高整体代码质量。
+写测试是一个关键的程序设计实践。它可以帮助开发者确保他们的代码质量，并提供一种可靠的方法来验证新功能是否有效。在Ruby编程中，写测试也可以帮助开发者更快地发现和修复潜在的错误。
 
-# 如何编写测试?
+## 如何
 
-编写测试并不难，下面我们通过一些实例来解释如何使用Ruby进行测试。
-
-首先，我们需要安装RSpec库。在终端输入以下命令即可：
+为了编写测试，我们可以使用Ruby中的内置测试框架，例如RSpec或MiniTest。下面的代码展示了基本的测试用例以及它们的输出：
 
 ```Ruby
-gem install rspec
-```
+# 测试用例
+require 'minitest/autorun'
 
-接着创建一个新的Ruby文件，命名为“calculator.rb”，包含两个方法：add和subtract。
-
-```Ruby
-def add(x, y)
-  x + y
-end
-
-def subtract(x, y)
-  x - y
-end
-```
-
-现在，我们为这些方法编写测试代码。在同一目录下，创建一个新的RSpec测试文件，命名为“calculator_spec.rb”。
-
-```Ruby
-require_relative "calculator" # 导入我们刚刚创建的“calculator”文件
-
-RSpec.describe "Calculator" do
-  describe "add" do
-    it "returns the sum of two numbers" do
-      expect(add(1, 2)).to eq(3)
-    end
+# 声明测试类
+class StringTest < Minitest::Test
+  # 定义测试方法
+  def test_length
+    # 声明断言
+    assert_equal 5, "Hello".length
   end
 
-  describe "subtract" do
-    it "returns the difference of two numbers" do
-      expect(subtract(5, 3)).to eq(2)
-    end
+  def test_include
+    assert_includes "Ruby", "R"
   end
 end
 ```
 
-现在我们可以运行测试文件来验证代码是否正确。在终端输入以下命令：
-
-```Ruby
-rspec calculator_spec.rb
+Output:
+```
+MiniTest::Unit::TestCase is now Minitest::Test. From /usr/local/rvm/rubies/ruby-2.5.0/lib/ruby/2.5.0/test/unit/testcase.rb:8:X
+. 2 tests, 2 assertions, 0 failures, 0 errors, 0 skips
 ```
 
-如果一切顺利，你将会得到两个通过的测试案例。
+这是一个简单的例子，展示了如何使用MiniTest进行测试。开发者可以在测试方法中使用不同的断言来确保代码的正确性。使用测试框架可以节省大量的时间和精力，同时也可以提高代码质量。
 
-# 深入了解
+## 深入了解
 
-编写测试并不只是为了验证代码是否按预期运行。它也能帮助我们为未来的改动做好准备，避免不必要的错误。此外，编写测试也能够让我们更加自信地重构代码，从而提高整体代码质量。
+写测试还包括一些特定的技巧和最佳实践，可以帮助开发者更有效地测试他们的代码。例如，我们可以使用mock对象来模拟外部依赖项，从而使测试更加可靠和独立。还有一些常见的错误和陷阱，开发者需要注意和避免。
 
-总的来说，编写测试是一种良好的编程习惯，能够帮助我们更加高效地开发软件。
+## 参考资料
 
-# 参考资料
-
-* [RSpec官方网站](https://rspec.info/)
-* [RSpec教程](https://www.tutorialspoint.com/rspec/index.htm)
-* [Ruby编程语言官方网站](https://www.ruby-lang.org/en/)
-* [Ruby文档](https://www.ruby-doc.org/)
+- [RSpec – Testing Framework for Ruby](https://rspec.info)
+- [MiniTest::Unit – Testing Library for Ruby](https://github.com/seattlerb/minitest)

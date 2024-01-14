@@ -1,35 +1,36 @@
 ---
-title:    "Elixir: בדיקת קיום תיקייה"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elixir/checking-if-a-directory-exists.md"
+title:                "Elixir: לבדיקה אם תיקייה קיימת"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-"## למה"
+## למה
 
-בכתיבת קוד בלשון אליקסיר, חשוב לבדוק אם תיקייה קיימת לפני התחלת פעולות עליה. זה יכול למנוע בעיות מיותרות ולהבטיח שהתוכנית תרוץ בצורה אמינה ומדויקת.
+בכדי לבנות יישומים מבוססי ווב או סקרייפטים מבוססי משתמש בקבצים, חשוב לדעת את המיקום שלהם במערכת הקבצים. כדי לוודא שאנו מחפשים קבצים על ידי הפעלת כלכלת מבנה של הנתיבים המסומנים מרחבת הזמן של "משתמשים", יש לבדוק אם התיקייה oקיימת לפני שאנו מנסים לגשת אליה ולעבור על הקבצים המסוממים בתוכה. בכך אנו מונעים שגילוף תיקיות נוצרות לבד ומאפשרים לנו לוודא את הפעלות ההנאה שלנו במערכת הקבצים באופן יעיל יותר.
 
-"## איך לבדוק אם תיקייה קיימת"
+## איך לבצע זאת
 
-```elixir
-def check_directory(directory) do
-  if File.exists?(directory) do
-    IO.puts "#{directory} קיימת."
-  else
-    IO.puts "#{directory} לא קיימת."
+```Elixir
+defmodule FileCheck do
+  def does_exist?(directory) do
+    File.dir?(directory)
   end
 end
 
-check_directory("documents") 
-# documents קיימת.
+FileCheck.does_exist?("/Users/Desktop/Example")
+# output: true
+FileCheck.does_exist?("/Users/Desktop/Nonexistent")
+# output: false
 ```
 
-"## חקר מעמיק יותר"
+## מגע עמוק
 
-ביצוע בדיקה על קיומה של תיקייה מבוצע באמצעות הפונקציה `File.exists?` שמחזירה ערך בוליאני של `true` אם התיקייה קיימת ו-`false` אם היא לא קיימת. בדיקה זו נעשית באמצעות השתמשות בפונקציה הכיבושית `if`, כך שניתן לתת תנאי לבדיקה האם תיקייה מסוימת קיימת.
+כאשר אנו משתמשים בפונקציות על גבי המערכת הקבצים באליקסיר, הן מחזירות ערך בוליאני שמציין האם הקובץ או התיקייה קיימת או לא. לדוגמא, הפונקציה File.dir? מקבלת כפרמטר קבצים או תיקיות ובודקת אם הם קיימים. אם הקובץ או התיקייה קיימת, היא מחזירה ערך true, אחרת היא מחזירה false. בכדי לוודא את תנאי הקיום של קבצים או תיקיות מסוימות, ניתן להשתמש בפונקציות נוספות כגון File.regular?, המקבלת כפרמטר קבצים ובודקת אם הם קיימים והאם הם קבצים נורמליים.
 
-"## ראה גם"
+## ראו גם
 
-- [הגדרת הפונקציה File.exists? באתר הרשמי של אליקסיר](https://hexdocs.pm/elixir/File.html#exists%3F/1)
-- [אילן ל מדמה, "כניסה לקובץ ומילוי תיקיות באמצעות אליקסיר"](https://medium.com/@ilanlm/how-to-open-files-and-create-directories-using-elixir-d72e32f1dfea)
+- [פוקנציות מערכת הקבצים באליקסיר](https://hexdocs.pm/elixir/File.html)
+- [קריאת קבצים ותיקיות ממערכת הקבצים באליקסיר](https

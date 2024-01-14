@@ -1,41 +1,51 @@
 ---
-title:    "Java: Escrevendo para o erro padrão"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/writing-to-standard-error.md"
+title:                "Java: Escrevendo para o erro padrão"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão em Java
+## Por que escrever para o erro padrão?
 
-Escrever para o erro padrão (stderr) em Java é uma prática muito comum para os programadores. Isso acontece porque a saída do stderr é geralmente utilizada para exibir mensagens de erro ou de informação ao usuário sobre o funcionamento do programa. Além disso, escrever para o stderr é útil para identificar e solucionar problemas durante o processo de desenvolvimento de um código.
+Escrever para o erro padrão é uma prática comum na programação Java. Ela permite que os desenvolvedores possam visualizar mensagens de erro e depuração do código durante a execução do programa.
 
-## Como fazer em Java
+## Como fazer isso:
 
-Para escrever para o stderr em Java, podemos utilizar a classe `System.err` e seu método `println()`. Veja um exemplo abaixo:
+Existem duas maneiras de escrever para o erro padrão em Java: usando a classe System e usando a classe Logger. Veja abaixo exemplos de código em Java e suas respectivas saídas.
 
-```Java
-System.err.println("Esta é uma mensagem de erro!");
-```
-
-Ao executar esse código, a mensagem "Esta é uma mensagem de erro!" será exibida no console como a saída do stderr. É importante lembrar que essa mensagem será exibida em vermelho para facilitar a identificação de erros.
-
-Mas e se quisermos exibir uma mensagem de erro de forma mais específica, como incluir informações adicionais? Podemos utilizar o método `printf()` da classe `System.err`, que permite utilizar formatação de strings. Veja o exemplo abaixo:
+#### Usando a classe System:
 
 ```Java
-int idade = 25;
-String nome = "Maria";
-System.err.printf("A %s tem %d anos.", nome, idade);
+System.err.println("Ocorreu um erro!");
 ```
 
-A saída desse código será "A Maria tem 25 anos." no console.
+Saída:
+```
+Ocorreu um erro!
+```
 
-## Mergulho aprofundado
+#### Usando a classe Logger:
 
-Além do método `println()` e `printf()`, a classe `System.err` possui outros métodos, como `write()` e `print()`, que também podem ser utilizados para escrever para o stderr em Java. Além disso, podemos também utilizar o objeto `System` para acessar o erro padrão através do seu atributo `err`. Vale lembrar que é importante utilizar o stderr para exibir mensagens de erro, enquanto o stdout (saída padrão) é mais adequado para mensagens de informação.
+```Java
+Logger logger = Logger.getLogger("MeuPrograma");
+logger.warning("Aviso: a conexão com o banco de dados falhou!");
+```
 
-## Veja também
+Saída:
+```
+06-Mai-2021 12:00:00 WARNING MeuPrograma: Aviso: a conexão com o banco de dados falhou!
+```
 
-- Documentação oficial do Java sobre a classe `System.err`: https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err
-- Tutorial em vídeo sobre como imprimir mensagens de erro em Java: https://www.youtube.com/watch?v=98zD1YsDkJg
-- Perguntas frequentes sobre a escrita no stderr em Java: https://stackoverflow.com/questions/18729632/how-to-write-to-standard-error-in-java
+## Mergulho profundo:
+
+Escrever para o erro padrão com a classe System permite que o desenvolvedor exiba mensagens de erro e depuração diretamente no console. Já a utilização da classe Logger oferece mais recursos, como a possibilidade de definir o nível de severidade das mensagens e o destino das mesmas (console, arquivo de log, entre outros).
+
+Existem diferentes níveis de severidade em um Logger, sendo os principais: info, warning e severe. É possível definir o nível desejado para cada mensagem, o que facilita a identificação e filtragem das mesmas.
+
+## Veja também:
+
+- Documentação oficial do Java sobre a classe System: https://docs.oracle.com/javase/tutorial/essential/io/sysout.html
+- Documentação oficial do Java sobre a classe Logger: https://docs.oracle.com/javase/8/docs/api/java/util/logging/Logger.html
+- Tutorial sobre como usar a classe Logger em Java: https://www.baeldung.com/java-logging-intro

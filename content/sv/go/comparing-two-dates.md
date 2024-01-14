@@ -1,84 +1,56 @@
 ---
-title:    "Go: Jämförande av två datum"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/comparing-two-dates.md"
+title:                "Go: Jämförande av två datum"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att jämföra två datum är en vanlig uppgift när man programmerar. Det kan vara användbart för att utröna skillnaden mellan två datum eller för att se om ett visst datum finns mellan två andra datum.
+# Varför
 
-## Hur man gör
-Det första steget i att jämföra två datum i Go är att skapa två `time.Time` variabler med de två datumen som vi vill jämföra. Sedan kan vi använda funktionen `Before()` och `After()` för att se om ett datum kommer före eller efter ett annat.
+Om du är ny inom programmering och precis har börjat lära dig Go, kan du undra varför det är viktigt att kunna jämföra två datum i ett program. Att kunna hantera datum och tid är en viktig del av många applikationer och det är därför viktigt att ha en god förståelse för hur man jämför och arbetar med datum i Go.
 
-```Go
-package main
+# Hur man gör det
 
-import (
-	"fmt"
-	"time"
-)
+För att jämföra två datum i Go kan du använda funktionen `Before` eller `After` från paketet `time`. Dessa funktioner tar två datum som argument och returnerar en boolean som indikerar om det första datumet är före eller efter det andra. Här är ett exempel på hur man skulle använda dessa funktioner:
 
-func main() {
-	// Skapa två tidvariabler
-	datum1 := time.Date(2021, time.March, 16, 0, 0, 0, 0, time.UTC)
-	datum2 := time.Date(2021, time.March, 17, 0, 0, 0, 0, time.UTC)
+```
+Go func main() {
+    firstDate := time.Date(2021, time.July, 15, 0, 0, 0, 0, time.UTC)
+    secondDate := time.Date(2021, time.July, 20, 0, 0, 0, 0, time.UTC)
 
-	// Jämför datumen och skriv ut resultatet
-	if datum1.Before(datum2) {
-		fmt.Println("Datum 1 kommer före Datum 2")
-	} else {
-		fmt.Println("Datum 2 kommer före Datum 1")
-	}
+    if firstDate.Before(secondDate) {
+        fmt.Println("Första datumet är före det andra")
+    } else {
+        fmt.Println("Andra datumet är före det första")
+    }
 }
 ```
 
-Detta kommer att skriva ut "Datum 1 kommer före Datum 2" eftersom 16 mars kommer före 17 mars.
+I detta exempel skapar vi två datum med funktionen `Date` från paketet `time` och sedan använder vi `Before` för att jämföra dem. Eftersom första datumet är tidigare än det andra, kommer utskriften att vara "Första datumet är före det andra". Du kan också använda `After` funktionen på samma sätt för att jämföra två datum.
 
-## Deep Dive
-För att jämföra mer exakt mellan två datum kan vi använda funktionen `Equal()` som jämför ned till millisekundnivå. Vi kan även använda funktionen `Year()`, `Month()` och `Day()` för att jämföra specifika delar av datumen.
+# Djupdykning
 
-```Go
-package main
+Om du vill ha en mer detaljerad jämförelse av två datum kan du också använda funktionen `Equal` från paketet `time`. Detta jämför båda datumets år, månad och dag och returnerar en boolean som indikerar om de är lika. Här är ett exempel på hur man skulle använda den:
 
-import (
-	"fmt"
-	"time"
-)
+```
+Go func main() {
+    firstDate := time.Date(2021, time.July, 15, 0, 0, 0, 0, time.UTC)
+    secondDate := time.Date(2021, time.July, 15, 0, 0, 0, 0, time.UTC)
 
-func main() {
-	// Skapa två tidvariabler
-	datum1 := time.Date(2021, time.March, 16, 0, 0, 0, 0, time.UTC)
-	datum2 := time.Date(2021, time.March, 16, 12, 30, 0, 0, time.UTC)
-
-	// Jämför datumen och skriv ut resultatet
-	if datum1.Equal(datum2) {
-		fmt.Println("Datumen är lika")
-	}
-
-	// Jämför år
-	if datum1.Year() == datum2.Year() {
-		fmt.Println("Åren är lika")
-	}
-	
-	// Jämför månad
-	if datum1.Month() == datum2.Month() {
-		fmt.Println("Månaderna är lika")
-	}
-	
-	// Jämför dag
-	if datum1.Day() == datum2.Day() {
-		fmt.Println("Dagarna är lika")
-	}
+    if firstDate.Equal(secondDate) {
+        fmt.Println("Båda datumen är samma")
+    } else {
+        fmt.Println("Datumen är inte samma")
+    }
 }
 ```
 
-Detta kommer att skriva ut "Datumen är lika", "Åren är lika", "Månaderna är lika", "Dagarna är lika" eftersom datumen är exakt lika i detta exempel.
+I detta exempel kommer utskriften att vara "Båda datumen är samma" eftersom både år, månad och dag är samma för båda datumen.
 
-## Se även
-Här är några resurser som kan vara användbara för att lära sig mer om hur man jämför datum i Go:
+# Se också
 
-- [Go Time Package Documentation](https://golang.org/pkg/time/)
-- [Go By Example: Time](https://gobyexample.com/time)
-- [StackOverflow: Comparing two dates in Go](https://stackoverflow.com/questions/12118635/comparing-two-dates-in-go)
+- [Golang Time Package Documentation](https://pkg.go.dev/time)
+- [A Guide to Implementing Time and Date in Go](https://blog.golang.org/examples-time)
+- [Understanding Date and Time in Go](https://www.calhoun.io/working-with-date-and-time-in-go/)

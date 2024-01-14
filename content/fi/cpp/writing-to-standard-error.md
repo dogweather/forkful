@@ -1,75 +1,44 @@
 ---
-title:    "C++: Tiedon kirjoittaminen standardivirheelle"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/writing-to-standard-error.md"
+title:                "C++: Kirjoittaminen standardivirheeseen"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi kirjoittaa virhekoodia standardiin?
+## Miksi kirjoittaa virhetiedostoon?
 
+Kirjoittaminen standardivirhetiedostoon (stderr) on tärkeä osa C++ ohjelmointia. Se antaa kehittäjille mahdollisuuden tarkkailla ja hallita virheitä, jotka voivat ilmetä ohjelman suorituksen aikana. Tämä on erityisen hyödyllistä silloin, kun halutaan varmistaa, että ohjelma toimii odotetulla tavalla.
 
-Kirjoittaminen standardiin virheohjelmana on tärkeä taito C++:ssa ja muissa ohjelmointikielissä. Se antaa mahdollisuuden viestiä ohjelman suorituksessa tapahtuvista ongelmista tai virheistä käyttäjälle tai ohjelman kehittäjälle. Tämä auttaa ohjelman virheenkorjaamisessa ja tekee siitä käyttäjäystävällisemmän.
+## Kuinka tehdä se?
 
-Kuinka kirjoittaa virhekoodia standardiin?
-
-Virheen kirjoittaminen standardiin tapahtuu hyödyntämällä ```C++ std::cerr```-funktiota. Tämä lähettää viestin standardivirhekoodiin ja tulostaa sen konsoliin. Seuraava koodinäyte näyttää, kuinka virhekoodi voidaan kirjoittaa standardiin:
+Kirjoittaminen stderr:iin on melko yksinkertaista C++:ssa. Seuraavassa esimerkissä näytämme, kuinka voit tulostaa virheilmoituksen virhetiedostoon käyttämällä standardikirjaston funktiota `fprintf()`:
 
 ```C++
-#include <iostream>
+#include <stdio.h>
 
-using namespace std;
-
-int main(){
-    int num = 0;
-    if(num == 0){
-        // tulostetaan virheviesti standardiin
-        std::cerr << "Numero ei voi olla nolla!" << std::endl;
-    }
-    return 0;
+int main() {
+  fprintf(stderr, "Virheilmoitus: Luvun jakaminen nollalla ei ole sallittua\n");
+  return 0;
 }
 ```
 
-Yllä oleva koodi tulostaa virheviestin "Numero ei voi olla nolla!" jos käyttäjä syöttää nollan ohjelman suorituksessa. Tämä auttaa ohjelman kehittäjää löytämään ja korjaamaan virheen helpommin.
+**Tulostus:**
 
-Syöte: 0
-Tuloste:
-Numero ei voi olla nolla!
+```
+Virheilmoitus: Luvun jakaminen nollalla ei ole sallittua
+```
 
-Syöte: 5
-Tuloste:
+## Syvällisempi sukellus
 
-Voi jatkaa ohjelman suorittamista normaalisti ilman virheviestiä.
+Voit myös käyttää `cerr` ja `clog` objekteja kirjoittamaan virheilmoituksia ja lokitietoja stderr:iin. Ne ovat osa C++ standardikirjastoa ja mahdollistavat virheiden ja muun merkittävän tiedon erottamisen lokitietojen avulla.
 
-Syöte: -2
-Tuloste:
-Numero ei voi olla negatiivinen!
+Suuremmissa ohjelmissa voi olla hyödyllistä luoda oma virhetiedostoluokka, joka käsittelee eri virhetilanteita ja kirjoittaa ne stderr:iin. Tämä auttaa eriyttämään koodia ja helpottaa virheiden ja lokitietojen hallintaa.
 
-Sydyntä: 5
-Tuloste:
-Voi jatkaa ohjelman suorittamista normaalisti ilman virheviestiä.
+## Katso myös
 
-Syöte: "ei numero"
-Tuloste:
-n:aominani: Isäntä osoittelussa (core dumped)
+- [C++ Standard Library - virhetiedosto](http://www.cplusplus.com/reference/cstdio/stderr/)
+- [Cppreference - C - virheiden käsittely](https://en.cppreference.com/w/c/error)
 
-Tämä tapahtuu, koska ohjelma yrittää verrata merkkijonoa num-variableen, mikä johtaa virheeseen ja ohjelman kaatumiseen.
-
-Syöte: 5
-Tuloste:
-Voi jatkaa ohjelman suorittamista normaalisti ilman virheviestiä.
-
-Syöte: 5.5
-Tuloste:
-Virhe: Syöte ei voi olla kokonaisluku!
-
- Tämän osoittaa, että mikä tahansa syöte, joka ei ole kokonaisluku, tulosteetetaan virheviestinä standardiin.
-
-Syvällinen tutustuminen standardiin kirjoittamiseen
-
-Optimaalisen koodin laatimiseksi on parempi käyttää yhtä standardipakettia, jotta virheet eivät sekoittuisi. Lisäksi suurten ohjelmien kehittämiseksi kehittäjät käyttävät pääsääntöisesti mukautettuun virtaan kirjoitushetkeä paljastavaa virhesuodatuspakettia, kuten perfection. Tällä tavalla ohjelman kehittelijä voi havaita virheen aikana, kun virhe tapahtuu.
-
-Katso myös:
-- [Virheiden käsittely C++:ssa](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)
-- [Virheenkorjaus vianetsinnässä](https://www.youtube.com/watch?v=3RNYukMsXaM)
-- [C++-koodin debuggaus Visual Studiolla](https://docs.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour?view=vs-2019)
+Voit oppia lisää C++:n virheiden käsittelystä ja stderr:iin kirjoittamisesta näiden linkkien kautta. Toivottavasti tämä artikkeli auttaa sinua ymmärtämään, miksi ja kuinka stderr:iin kirjoittaminen on tärkeää ohjelmoinnissa. Onnea ohjelmointiin!

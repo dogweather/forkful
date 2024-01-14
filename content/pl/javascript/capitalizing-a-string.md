@@ -1,56 +1,45 @@
 ---
-title:    "Javascript: Zamiana na wielkie litery w ciągu znaków"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/capitalizing-a-string.md"
+title:                "Javascript: Zastosowanie wielkich liter w ciągu znaków"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto używać JavaScript do zmiany wielkości liter w zmiennych?
+## Dlaczego trzeba używać JavaScript do zapisywania tekstu?
 
-W programowaniu często zdarza się sytuacja, w której konieczne jest zmienienie wielkości liter w zmiennej. Na przykład, powinno się uniknąć błędów związanych z nieprawidłowym formatowaniem tekstu lub chce się podkreślić pewną część zdania. W takiej sytuacji stosuje się funkcję, która zmienia większe litery na mniejsze lub na odwrót. W tym blogu omówimy, jak w prosty sposób zaimplementować tę funkcję w języku JavaScript.
+Zapewne wielu programistów korzysta z JavaScript w swoich projektach, jednak niektórzy mogą zastanawiać się, dlaczego konieczne jest używanie go również do prostych zadań, takich jak zmiana pierwszej litery tekstu na wielką. W tym artykule wyjaśnimy, dlaczego warto poświęcić czas na napisanie kodu do zapisywania tekstu oraz pokażemy, jak to zrobić w praktyce.
 
 ## Jak to zrobić?
 
-Aby zmienić wielkość liter w zmiennej, używamy funkcji "toUpperCase()" i "toLowerCase()". Obie te funkcje są wbudowane w język JavaScript i służą do zmiany liter na wielkie i małe odpowiednio. Przeanalizujmy poniższy kod:
+```Javascript
+const string = "javascript jest niesamowitym językiem programowania.";
 
-```javascript
-let text = "Witaj na Blogu!";
-console.log(text.toUpperCase());
-console.log(text.toLowerCase());
+// Używamy metody 'charAt' do pobrania pierwszej litery tekstu
+// i metody 'toUpperCase' do zmiany jej na wielką literę
+const firstLetter = string.charAt(0).toUpperCase();
+
+// Używamy metody 'slice' do pobrania reszty tekstu poza pierwszą literą
+const remainingLetters = string.slice(1);
+
+// Połączamy pierwszą wielką literę i resztę tekstu razem
+const capitalizedString = firstLetter + remainingLetters;
+
+console.log(capitalizedString); // Output: "JavaScript jest niesamowitym językiem programowania."
 ```
 
-W powyższym przykładzie tworzymy zmienną "text" z tekstem "Witaj na Blogu!". Następnie, używając funkcji "toUpperCase()" zmieniamy wszystkie litery na wielkie. W drugim przypadku, przy użyciu "toLowerCase()" zmieniamy wszystkie litery na małe. W obu przypadkach, otrzymamy następujący wynik:
+W powyższym przykładzie wykorzystaliśmy tylko kilka podstawowych metod JavaScript, aby zmienić pierwszą literę tekstu na wielką. Można również wykorzystać inne metody, takie jak `replace()` lub `charAt()`, w zależności od preferencji programisty. Ważne jest, aby pamiętać o uwzględnieniu przypadków, w których tekst może zaczynać się od znaków specjalnych lub spacji.
 
-```
-WITAJ NA BLOGU!
-witaj na blogu!
-```
+## Deep Dive
 
-Jeśli chcemy zmienić tylko pierwszą literę w zdaniu na wielką, możemy użyć metody "charAt()" i połączyć ją z "toUpperCase()". Zobaczmy to na przykładzie:
+Zapisywanie tekstu i modyfikowanie go za pomocą JavaScript jest często nieodzowną częścią tworzenia aplikacji internetowych. Nie tylko ułatwia to manipulację tekstem, ale także pozwala na dostosowywanie go do potrzeb użytkowników. W przypadku skomplikowanych aplikacji, które obsługują wiele języków lub generują dynamiczny tekst, metody takie jak `toUpperCase` czy `slice` mogą być niezwykle przydatne.
 
-```javascript
-let name = "anna";
-let capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
-console.log(capitalizedName);
-```
+Jednak byłoby niewystarczające jedynie używanie tych metod do zapisywania tekstu. W przypadku dłuższych i bardziej skomplikowanych stringów, warto zwrócić uwagę na wydajność i najnowsze funkcje JavaScript, takie jak `replaceAll` czy `trim`. Ponadto, istnieją również różne biblioteki, które mogą pomóc w zapisywaniu tekstu, takie jak lodash czy string.js.
 
-W powyższym przykładzie, tworzymy zmienną "name" z tekstem "anna". Następnie, używając metody "charAt()" pobieramy pierwszą literę (indeks 0) i zmieniamy ją na wielką za pomocą "toUpperCase()". Następnie, łączymy tę pierwszą literę z resztą tekstu za pomocą metody "slice(1)", która pobiera część tekstu od drugiego znaku do końca. W ten sposób, otrzymujemy zmieniony tekst, który wyświetlamy za pomocą funkcji "console.log()".
+## Zobacz również
 
-```
-Anna
-```
-
-## Głębsza analiza
-
-W JavaScript, zmienne przechowują wszystkie rodzaje danych, takie jak liczby, stringi lub obiekty. Kiedy używamy funkcji do zmiany wielkości liter, nie modyfikujemy ich w miejscu. Zamiast tego, tworzymy nową wartość i przypisujemy ją do zmiennej. Jest to ważne, ponieważ zmienne są traktowane jako niezmiennikowalne (immutable), co oznacza, że nie można zmienić ich wartości bezpośrednio.
-
-W przypadku, gdy nie chcemy tworzyć nowej wartości, ale zmienić aktualną zmienną, możemy użyć metody "replace()" i wyrażenia regularnego (regular expression). Wyrażenia regularne to wzorce służące do identyfikowania i manipulowania tekstu. Na przykład, jeśli chcielibyśmy zamienić wszystkie spacje na myślniki w tekście, możemy to zrobić za pomocą poniższego kodu:
-
-```javascript
-let text = "To jest przykładowy tekst";
-let updatedText = text.replace(/\s/g, "-");
-console.log(updatedText);
-```
-
-W powyższym przykładzie, używamy metody "replace()" i wyrażenia regularnego "/\s/g", które oznacza "wszystkie znaki białe" i zastępujemy je myślnikami "-". Dzięki tem
+- [Metoda `string.charAt()` w dokumentacji MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/charAt)
+- [Tutorial o podstawach JavaScript](https://developer.mozilla.org/pl/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+- [Biblioteka Lodash](https://lodash.com/)
+- [Biblioteka string.js](https://stringjs.com/)

@@ -1,62 +1,62 @@
 ---
-title:    "Fish Shell: 서브스트링 추출하기"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/extracting-substrings.md"
+title:                "Fish Shell: 부분 문자열 추출"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-서브스트링을 추출하게 되는 이유는 여러 가지가 있을 수 있습니다. 일반적으로 텍스트의 일부분만 필요한 경우, 특정 패턴을 찾아내는 등의 이유로 서브스트링을 추출하게 됩니다.
+파일을 다룰 때 종종 사람들은 특정 부분을 추출하고 싶어합니다. 이를 위해 여러 가지 방법이 있지만, `substr` 함수는 특정 문자열에서 원하는 부분을 추출하는 데에 유용하게 사용될 수 있습니다.
 
-## 해는
+## 어떻게
 
-```Fish Shell```에서는 다양한 방법으로 서브스트링을 추출할 수 있습니다.
+먼저, `substr`을 사용하기 전에 먼저 Fish Shell을 적극적으로 사용해야 합니다. 그 후 Fish Shell을 설치하고 사용할 수 있게 되면, `substr` 함수를 사용하여 원하는 부분을 추출할 수 있습니다.
 
-### 1. ```cut```
+```
+Fish Shell에서 문자열 추출하기
 
-```Fish Shell```에는 ```cut```이라는 커맨드가 있습니다. 이를 사용하면 문자열에서 원하는 부분만 추출할 수 있습니다.
+$ set string "안녕하세요"
 
-예를 들어, 다음과 같은 문자열이 있을 때:
-
-```bash
-my_string="안녕하세요, 반가워요"
+$ echo (substr -l 2 $string)
+안녕
 ```
 
-```cut```을 사용하여 "안녕하세요"만 추출할 수 있습니다.
+위의 예시에서 보듯이, `substr` 함수를 사용할 때는 먼저 추출하고자 하는 길이를 지정해야 합니다. `-l` 옵션을 사용하여 추출할 길이를 지정해줄 수 있습니다. 여기서는 `2`를 지정하여 "안녕"이 추출되었습니다.
 
-```bash
-echo $my_string | cut -d ',' -f1
+## 깊게 들어가기
+
+`substr` 함수는 추출할 문자열이 시작하는 위치를 지정하는 `-b` 옵션도 제공합니다. 기본값은 `0`으로, 문자열의 처음부터 시작하는 것을 의미합니다. 따라서 `-b` 옵션을 사용하여 추출하고자 하는 문자열의 시작 위치를 지정해줄 수 있습니다.
+
+```
+Fish Shell에서 문자열 추출하기
+
+$ set string "첫번째부터 다섯번째까지의 문자열"
+
+$ echo (substr -b 0 -l 5 $string)
+첫번째
 ```
 
-위의 커맨드는 "안녕하세요"를 출력합니다.
+또한 `substr` 함수는 `-e` 옵션을 제공하여 추출하고자 하는 문자열의 끝 위치를 지정해줄 수도 있습니다. 이 옵션은 추출할 문자열의 길이가 아닌 끝 위치를 지정하는 것이기 때문에, `-l` 옵션과 함께 사용하여 추출하고자 하는 문자열의 길이를 지정해줘야 합니다.
 
-### 2. ```grep```
+```
+Fish Shell에서 문자열 추출하기
 
-```Fish Shell```에서는 ```grep``` 커맨드를 사용하여 특정 패턴을 찾아내는 것도 가능합니다.
+$ set string "처음부터 여섯번째까지의 문자열"
 
-다음과 같은 문자열이 있을 때:
-
-```bash
-my_string="abc def 123"
+$ echo (substr -b 0 -e 6 $string)
+처음부
 ```
 
-```grep```을 사용하여 숫자만 추출할 수 있습니다.
+## 더 알아보기
 
-```bash
-echo $my_string | grep -o '[0-9]\+'
-```
+`substr` 함수는 길이나 시작/끝 위치를 지정하는 옵션 외에도 다양한 옵션을 제공합니다. 또한 주어진 문자열이 아닌 파일에서도 문자열을 추출할 수 있는 `substr < FILE` 형태의 사용법도 있습니다. 더 많은 정보는 [Fish Shell 공식문서](https://fishshell.com/docs/current/cmds/substr.html)를 참고하세요.
 
-위의 커맨드는 "123"을 출력합니다.
+## 연관 정보
 
-## 딥 다이브
-
-서브스트링을 추출하는 방법은 다양하며, 여러 고급 기능을 사용할 수도 있습니다. 예를 들어, 정규식을 사용하여 문자열에서 특정 패턴을 찾을 수 있고, 특정 위치에서부터 일정 길이의 문자열을 추출할 수도 있습니다.
-
-더 자세한 내용은 [```Fish Shell``` 공식 문서](https://fishshell.com/docs/current/)를 참고하세요.
-
-## 또 보기
-
-- [```cut``` 커맨드 문서](https://fishshell.com/docs/current/cmds/cut.html)
-- [```grep``` 커맨드 문서](https://fishshell.com/docs/current/cmds/grep.html)
+* [Fish Shell 설치 방법](https://fishshell.com/)
+* [Fish Shell 공식문서](https://fishshell.com/docs/current/)
+* [Fish Shell의 유용한 기능들](https://github.com/fish-shell/fish-shell/wiki/Built-in-Functions)
+* [Fish Shell의 고급 설정 및 사용법](https://en.wikipedia.org/wiki/Fish_(Unix_shell))

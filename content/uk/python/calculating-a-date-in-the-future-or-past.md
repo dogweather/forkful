@@ -1,69 +1,59 @@
 ---
-title:    "Python: Обчислення дати у майбутньому або минулому"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/python/calculating-a-date-in-the-future-or-past.md"
+title:                "Python: Обчислення дати у майбутньому або минулому"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
+Програмування Python: Розуміння та використання обчислення дати у майбутньому чи минулому
+
 ## Чому
 
-Розрахунок дат у майбутньому та минулому може бути корисним для планування подій, висвітлення історичних дат або для швидкого знаходження різниці між двома датами.
+Навіщо люди до того залучаються в обчислення дати у майбутньому чи минулому? Ви знаєте, як важливо бути орієнтованим у часі. Наприклад, ви можете потребувати знати, коли прийде робочий день на визначений тиждень, чи коли відбудеться наступний важливий подія у вашому житті. Такі обчислення дозволяють бути готовими до майбутніх подій та поставити собі цілі з відповідними дедлайнами.
 
 ## Як
 
-Для розрахунку дат у майбутньому або минулому використовується модуль `datetime` у Python. Цей модуль містить функції та методи для роботи з датами та часом.
-
-Наприклад, щоб додати 5 днів до поточної дати, використовуйте наступний код:
+Для початку, вам потрібно запустити Python на вашому комп'ютері. Якщо у вас вже є встановлений Python, ви можете розпочати. В іншому випадку, ви можете завантажити та встановити його з офіційного сайту Python. Після запуску Python, ви можете використовувати декілька бібліотек для обчислення дати, наприклад `datetime` і `calendar`. Ось приклад коду, який показує, як обчислити дату через тиждень від поточної дати:
 
 ```Python
-import datetime
-today = datetime.date.today()
-new_date = today + datetime.timedelta(days=5)
-print(new_date)
+from datetime import datetime, timedelta
+
+current_date = datetime.today()
+future_date = current_date + timedelta(days=7)
+
+print("Поточна дата:", current_date)
+print("Дата через тиждень:", future_date)
 ```
 
-Виведення буде таким: `2020-08-28 00:00:00`.
+Результат буде виглядати так:
 
-Щоб відняти 10 днів від поточної дати, скористайтеся таким кодом:
+```bash
+Поточна дата: 2020-11-06 15:24:30.272265
+Дата через тиждень: 2020-11-13 15:24:30.272265
+```
+
+Ви також можете обчислити минулу дату шляхом віднімання від поточної дати:
 
 ```Python
-import datetime
-today = datetime.date.today()
-new_date = today - datetime.timedelta(days=10)
-print(new_date)
+past_date = current_date - timedelta(days=7)
+
+print("Дата попереднього тижня:", past_date)
 ```
 
-Виведення буде таким: `2020-08-13 00:00:00`.
+Результат:
 
-## Глибока поглиблення
-
-Модуль `datetime` дозволяє також виконувати більш складні розрахунки дат. Наприклад, можна визначити різницю між двома датами, використовуючи метод `date`:
-
-```Python
-import datetime
-date_1 = datetime.date(2020, 8, 28)
-date_2 = datetime.date(2019, 8, 28)
-difference = date_1 - date_2
-print(difference.days)
+```bash
+Дата попереднього тижня: 2020-10-30 15:24:30.272265
 ```
 
-Виведення буде таким: `365`.
+## Глибока погруження
 
-Також можна порахувати зсув у днях за допомогою методу `timedelta`:
+Обчислення дати у майбутньому чи минулому може бути корисно у багатьох випадках. Наприклад, ви можете використовувати їх для створення розкладу подій або подорожей, для обчислення термінів здійснення платежів і багато іншого. Також, використання `datetime` дозволяє працювати з часовими зонами та перевіряти наявність високосних років.
 
-```Python
-import datetime
-date_1 = datetime.date(2020, 8, 20)
-date_2 = datetime.date(2020, 8, 25)
-difference = date_2 - date_1
-print(difference.days)
-```
+## Дивіться також
 
-Виведення буде таким: `5`.
-
-## Дивись також
-
-- [Офіційна документація з модуля datetime](https://docs.python.org/3/library/datetime.html)
-- [Стаття "Робота з датами та часом в Python"](https://uk.pycon.org/2018/programme/talks/working-with-dates-and-time-in-python/)
-- [Відеоурок "Робота з датами у Python"](https://www.youtube.com/watch?v=6wDb2rH8RYE)
+- [Офіційний сайт Python](https://www.python.org/)
+- [Документація з бібліотеки datetime](https://docs.python.org/3/library/datetime.html)
+- [Документація з бібліотеки calendar](https://docs.python.org/3/library/calendar.html)

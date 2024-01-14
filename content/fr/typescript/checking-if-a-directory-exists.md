@@ -1,45 +1,42 @@
 ---
-title:    "TypeScript: Vérification de l'existence d'un répertoire"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/checking-if-a-directory-exists.md"
+title:                "TypeScript: Vérification de l'existence d'un répertoire"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi il est important de vérifier si un répertoire existe
+## Pourquoi
 
-Il est essentiel de vérifier si un répertoire existe avant d'effectuer des opérations de lecture ou d'écriture sur celui-ci. Cela permet de s'assurer que le programme ne rencontrera pas d'erreurs et fonctionnera de manière fluide en cas d'absence de ce répertoire.
+Il est important de vérifier l'existence d'un répertoire lors de la programmation TypeScript car cela permet de s'assurer que votre code peut traiter toutes les situations possibles, y compris lorsque le répertoire cible n'existe pas.
 
 ## Comment faire
 
-Dans TypeScript, il existe une fonction prédéfinie appelée ```existsSync()``` qui permet de vérifier si un répertoire existe ou non. Voici un exemple de code:
+La vérification de l'existence d'un répertoire peut être facilement réalisée en utilisant les méthodes natives de TypeScript. Voici un exemple de code pour vérifier si un répertoire existe :
 
-```
-const fs = require('fs');
-
-if (fs.existsSync('/chemin/vers/mon/repertoire')) {
-  console.log("Le répertoire existe!");                  
-} else {
-  console.log("Le répertoire n'existe pas.");                  
+```TypeScript
+function checkDirectory(directoryName: string) {
+    if(fs.existsSync(directoryName)) {
+        console.log(`Le répertoire ${directoryName} existe.`);
+    } else {
+        console.log(`Le répertoire ${directoryName} n'existe pas.`);
+    }
 }
+
+checkDirectory("monRepertoire");
 ```
 
-Si le répertoire existe, le programme affichera "Le répertoire existe!" dans la console. Sinon, il affichera "Le répertoire n'existe pas.".
+Lorsque vous exécutez ce code, la sortie sera soit "Le répertoire monRepertoire existe." ou "Le répertoire monRepertoire n'existe pas." en fonction de la présence ou de l'absence du répertoire spécifié.
 
-Il est également possible d'utiliser la fonction ```statSync()``` pour obtenir plus d'informations sur un répertoire spécifique, telles que sa taille, sa date de création, etc.
+## Plongez plus en profondeur
 
-## Plongée en profondeur
+Maintenant que vous savez comment vérifier si un répertoire existe, vous pouvez aller plus loin en manipulant le répertoire lui-même. Vous pouvez utiliser la méthode `mkdir()` pour créer un nouveau répertoire ou `rmdir()` pour le supprimer. Vous pouvez également utiliser `readdir()` pour afficher le contenu d'un répertoire existant.
 
-Il est important de noter que la fonction ```existsSync()``` utilise une approche synchrone, ce qui signifie que l'exécution du programme sera bloquée jusqu'à ce que la vérification soit terminée. Pour éviter cela, il est possible d'utiliser la méthode asynchrone ```exists()```, qui utilise des callbacks pour traiter le résultat.
-
-Il est également important de prendre en compte les différentes erreurs possibles lors de la vérification d'un répertoire, telles que l'absence de permissions pour y accéder, et de les gérer correctement dans le code.
+Cependant, n'oubliez pas de toujours vérifier l'existence d'un répertoire avant de tenter de le manipuler pour éviter les erreurs dans votre code.
 
 ## Voir aussi
 
-Voici quelques liens utiles pour en savoir plus sur la vérification des répertoires en TypeScript:
-
-- [Documentation officielle de la fonction existsSync()](https://nodejs.org/dist/latest-v12.x/docs/api/all.html#all_fs_existssync_path)
-
-- [Tutorial sur la gestion des erreurs en TypeScript](https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-typescript)
-
-- [Guide pour gérer les fichiers et les répertoires en Node.js](https://nodejs.org/api/fs.html)
+- [Documentation officielle de TypeScript](https://www.typescriptlang.org/docs/)
+- [Guide de démarrage avec TypeScript](https://www.tutorialspoint.com/typescript/typescript_quick_guide.htm)
+- [Gestion des fichiers et répertoires avec TypeScript](https://morioh.com/p/a0af96b6c830)

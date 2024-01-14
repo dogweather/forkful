@@ -1,42 +1,46 @@
 ---
-title:    "Kotlin recipe: Converting a string to lower case"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/converting-a-string-to-lower-case.md"
+title:                "Kotlin recipe: Converting a string to lower case"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Converting a string to lower case is a common task in many programming projects. It allows for easier comparison of strings and can improve the performance of some algorithms that are case sensitive.
+
+Converting a string to lower case is a common task in programming, especially when dealing with user input. By converting a string to lower case, we can ensure consistency in our data and make it easier to compare and manipulate strings.
 
 ## How To
-To convert a string to lower case in Kotlin, there are two main ways to accomplish this. The first method involves using the `toLowerCase()` function, which is a member function of the `String` class. Let's take a look at an example:
 
-```
-Kotlin val str = "HELLO" 
-val lowerCaseStr = str.toLowerCase()
-println(lowerCaseStr)
-```
+To convert a string to lower case in Kotlin, we can use the `toLowerCase()` function. Let's take a look at an example:
 
-The output of this code would be "hello". As you can see, the `toLowerCase()` function converts all of the characters in the string to lowercase.
-
-The second method involves using the `toLowerCase()` function from the `java.lang.String` class. This method works the same way as the previous one, but it can also be used on null strings without throwing an exception. Here's an example:
-
-```
-Kotlin val str: String? = null 
-val lowerCaseStr = str?.toLowerCase()
-println(lowerCaseStr) 
+```Kotlin
+val name = "John Doe"
+val lowercaseName = name.toLowerCase()
+println(lowercaseName) // Output: john doe
 ```
 
-In this case, the output would be null. This can be useful when dealing with data that may have missing or null values.
+In the code above, we first declare a string variable `name` with the value "John Doe". Then, we use the `toLowerCase()` function to convert the string to lower case and assign it to a new variable `lowercaseName`. Lastly, we use `println()` to print the output, which is "john doe" in this case.
+
+But what if we want to convert an entire sentence or paragraph to lower case? We can do that by using the `toLowerCase()` function on a larger string:
+
+```Kotlin
+val sentence = "I LOVE TO CODE IN KOTLIN"
+val lowercaseSentence = sentence.toLowerCase()
+println(lowercaseSentence) // Output: i love to code in kotlin
+```
+
+As you can see, the `toLowerCase()` function converts all characters in the string to lower case.
 
 ## Deep Dive
-When converting a string to lower case, it's important to understand how this function works behind the scenes. In Kotlin, strings are immutable, meaning they cannot be changed once created. So when we use the `toLowerCase()` function, a new string object is created with the converted characters.
 
-It's also worth noting that this function uses the default locale for conversion. If you want to convert to a specific locale, you can use the `toLowerCase(Locale)` function and specify the locale you want to use.
+Behind the scenes, the `toLowerCase()` function uses the `CharSequence` interface to iterate through each character in the string and convert it to lower case. The `CharSequence` interface allows us to access a sequence of characters in a string without modifying the string itself.
 
-Lastly, it's important to remember that the `toLowerCase()` function only converts alphabetic characters. Any non-alphabetic characters, such as numbers or symbols, will remain unchanged.
+It's also worth noting that the `toLowerCase()` function uses the default locale for the conversion. This means that if you're working with different languages or characters, the conversion may not be what you expect. In these cases, we can use the overloaded version of the function that takes in a `Locale` parameter to specify the desired locale for the conversion.
 
 ## See Also
-- [Kotlin String class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Java String class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
+
+- [Kotlin Strings](https://kotlinlang.org/docs/strings.html)
+- [CharSequence interface](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html)
+- [toLowerCase() function documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)

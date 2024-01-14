@@ -1,40 +1,51 @@
 ---
-title:    "PHP: Scrivere test"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/php/writing-tests.md"
+title:                "PHP: Scrivere test"
+programming_language: "PHP"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché scrivere test è importante in PHP
 
-Scrivere test è una pratica fondamentale per uno sviluppatore PHP professionista. Non solo aiuta a garantire il corretto funzionamento del codice, ma anche a facilitare il processo di debugging e a migliorare la qualità del software.
+Scrivere test è un'importante pratica di sviluppo che aiuta a garantire che il codice scritto funzioni correttamente e senza errori. In PHP, il testing è ancora più importante poiché il linguaggio è dinamico e può portare a degli errori difficili da trovare. Scrivere test aiuta a prevenire questi problemi e a mantenere il codice pulito e funzionante.
 
-## Come fare
+## Come scrivere test in PHP
 
-Per scrivere test in PHP, è necessario utilizzare un framework di testing come PHPUnit. Di seguito viene mostrato un esempio di codice di un test di unità per una semplice funzione di somma:
+Per scrivere test in PHP, è necessario utilizzare uno strumento di testing come PHPUnit. Ecco un esempio di come scrivere un test per una semplice funzione che calcola il doppio di un numero:
 
 ```PHP
-public function testSomma()
-{
-    $risultato = somma(2, 3);
-    $this->assertEquals(5, $risultato);
+// Includi il file PHPUnit
+require 'vendor/autoload.php';
+
+// Definisci la funzione che vuoi testare
+function double($number) {
+  return $number * 2;
 }
+
+// Definisci il test con PHPUnit
+class DoubleTest extends \PHPUnit\Framework\TestCase
+{
+  // Definisci la funzione di test con il prefisso "test"
+  public function testDouble()
+  {
+    // Chiama la funzione da testare
+    $result = double(5);
+
+    // Assicurati che il risultato sia corretto
+    $this->assertEquals(10, $result);
+  }
 ```
 
-Questa funzione testa se la funzione "somma" restituisce correttamente il risultato atteso, ovvero 5, quando chiamata con gli argomenti 2 e 3. Il codice all'interno del blocco ```PHP ... ``` viene eseguito come codice PHP normale, ma le affermazioni come "assertEquals" sono metodi di PHPUnit specifici per i test.
+## Approfondimento sui test in PHP
 
-## Deep Dive
+Oltre a testare le funzioni singolarmente, è importante scrivere test sulle interazioni tra più funzioni e sul comportamento del sistema nel suo complesso. Inoltre, è anche possibile testare il codice di frontend con strumenti come PHPUnit e Selenium.
 
-Scoprire tutte le funzionalità e i metodi disponibili in PHPUnit richiede del tempo e della pratica, ma ci sono alcune best practice da tenere a mente per scrivere test efficaci:
-
-- Scrivere test prima di scrivere il codice effettivo (TDD - Test Driven Development).
-- Testare tutte le funzionalità e i casi limite possibili.
-- Utilizzare nomi significativi per i test e gli output dei messaggi di errore per facilitare il debugging.
-- Rimuovere i test inutili o ridondanti per mantenere la suite di test snella e facile da mantenere.
+È importante anche scrivere test per i casi limite e per gestire gli errori, per assicurarsi che il codice sia robusto e gestisca tutti i possibili scenari.
 
 ## Vedi anche
 
-- [PHPUnit Documentation](https://phpunit.de/documentation.html)
-- [PHP Testing: Beginner's Guide](https://code.tutsplus.com/tutorials/php-testing-beginners-guide--net-5144)
-- [The Art of Unit Testing with Examples in PHP](https://www.amazon.com/Art-Unit-Testing-Examples/dp/1617291502)
+- [PHPUnit documentazione](https://phpunit.readthedocs.io/en/9.3/)
+- [Come scrivere test in PHP](https://www.jetbrains.com/help/phpstorm/php-unit-testing.html)
+- [Tutorial di PHPUnit](https://www.tutorialspoint.com/phpunit/)

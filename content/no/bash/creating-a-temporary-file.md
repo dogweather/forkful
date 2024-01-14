@@ -1,65 +1,63 @@
 ---
-title:    "Bash: Oppretting av en midlertidig fil"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/creating-a-temporary-file.md"
+title:                "Bash: Oppretting av midlertidig fil"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å opprette en midlertidig fil er et vanlig programmeringsteknikk som kan være nyttig når man jobber med å lagre midlertidige data eller behandle store mengder informasjon. Det kan også brukes for å sikre at programmet ditt fungerer som det skal ved å teste det med forskjellige datasett.
+Å lage midlertidige filer i Bash-programmering kan være nyttig for å lagre data eller informasjon som kun trengs midlertidig i en kode. Dette kan være en nyttig teknikk for å holde koden din ren og organisert.
 
-# Hvordan
+## Hvordan lage en midlertidig fil
 
-For å opprette en midlertidig fil i Bash, kan du bruke kommandoen "mktemp". Dette vil automatisk generere en unik filnavn og opprette en tom fil med dette navnet. For eksempel:
-
-```Bash
-mktemp
-```
-
-Dette vil produsere følgende utgang:
+For å opprette en midlertidig fil i Bash, kan du bruke `mktemp` kommandoen. Denne kommandoen oppretter automatisk en unik midlertidig fil og returnerer stien til filen slik at du kan bruke den videre i koden din. Her er et eksempel på å lage en midlertidig fil og skrive noe innhold i den:
 
 ```Bash
-/tmp/tmp.x6W2VVJi
+temp_file=$(mktemp)
+echo "Dette er en midlertidig fil" > $temp_file
+
+echo $temp_file # Skriver ut stien til den midlertidige filen
+cat $temp_file # Skriver ut innholdet i den midlertidige filen
 ```
 
-Du kan også spesifisere et prefiks for filnavnet ved å bruke "-p" flagget. For eksempel:
+Dette vil produsere følgende output:
 
 ```Bash
-mktemp -p myfiles
+/tmp/tmp.qrK2TS32
+Dette er en midlertidig fil
 ```
 
-Dette vil produsere følgende utgang:
+`mktemp` lar deg også spesifisere et prefiks for filnavnet, slik at du kan gi et mer meningsfylt navn til den midlertidige filen. For eksempel:
 
 ```Bash
-myfiles/tmp.p2hNDHAY
+prefiks="temp"
+temp_file=$(mktemp -t $prefix)
 ```
 
-Du kan også angi en filtype ved hjelp av "-t" flagget. For eksempel:
+Den midlertidige filen vil da følge navnekonvensjonen `temp.XXXXXX`.
+
+## Deep Dive
+
+Når en midlertidig fil er opprettet, vil den automatisk bli slettet når programmet er ferdigkjørt. Dette er nyttig for å unngå rot og forebygge personvernproblemer. Hvis du imidlertid ønsker å beholde den midlertidige filen for å undersøke dataene senere, kan du bruke `trap` kommandoen for å fange opp signaler som utløses når programmet avsluttes.
+
+For eksempel kan du bruke følgende kode for å fjerne den midlertidige filen når programmet avsluttes, men beholde den hvis programmet avsluttes med `CTRL+C`:
 
 ```Bash
-mktemp -t .txt
+cleanup() {
+  rm $temp_file
+}
+
+trap cleanup EXIT # Kjør cleanup-funksjonen når programmet avsluttes
+
+# Resten av koden din her
 ```
 
-Dette vil produsere følgende utgang:
+Du kan også bruke `mktemp` kommandoen til å opprette midlertidige mapper ved å bruke flagget `-d`.
 
-```Bash
-/tmp/tmp.JR5j9Fpp.txt
-```
+## Se også
 
-# Dypdykk
-
-Når du oppretter en midlertidig fil, vil det genererte filnavnet være unikt og tilfeldig. Dette sikrer at filen ikke vil kollidere med andre filer som allerede eksisterer eller som kan bli opprettet senere. Det er også viktig å slette den midlertidige filen når den ikke lenger trengs, for å unngå rot og hindre at personlige data lekkes.
-
-For å slette den midlertidige filen, kan du bruke "rm" kommandoen og spesifisere navnet på filen. For eksempel:
-
-```Bash
-rm /tmp/tmp.x6W2VVJi
-```
-
-En annen fordel med å bruke midlertidige filer er at de er automatiske slettes når systemet blir startet på nytt, noe som hjelper til å frigjøre plass på harddisken.
-
-# Se Også
-- [Bash dokumentasjon](https://www.gnu.org/software/bash/)
-- [mktemp dokumentasjon](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html)
+- [Official Bash documentation on mktemp](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#index-mktemp-378) (Offisiell Bash-dokumentasjon om mktemp)
+- [An introduction to Bash scripting](https://opensource.com/resources/bash) (En introduksjon til Bash-skripting)

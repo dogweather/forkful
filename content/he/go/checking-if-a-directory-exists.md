@@ -1,49 +1,46 @@
 ---
-title:    "Go: לבדיקת האם תיקייה קיימת"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/go/checking-if-a-directory-exists.md"
+title:                "Go: בדיקה אם ספרייה קיימת"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-למה לבדוק אם תיקייה קיימת? כאשר אנו מפתחים תוכניות בשפת גו, ייתכן שהתוכנית שלנו תצטרך לגשת לקבצים או תיקיות שנמצאים במחשב. בדיקת קיום של תיקייה היא חלק חשוב של פיתוח התוכניות הללו, שכן על ידי כך אנו יכולים לוודא שהתיקייה או הקובץ שאנו מנסים לגשת אליהם קיימים ומוכנים לשימוש.
+בפוסט הזה נדבר על כיצד ניתן לבדוק אם ספריית מדורגה קיימת בפרויקט הגו שלכם. נלמד את הפעולה הזו, למה זה חשוב ונעבור לעומק בנושא.
 
-## איך לבדוק אם תיקייה קיימת
+## איך לבדוק אם ספרייה קיימת
 
-בשפת גו ניתן לבדוק אם תיקייה קיימת על ידי שימוש בפונקציה `os.Stat`. הפונקציה מחזירה את המסלול המלא של התיקייה ומחזירה שגיאה אם התיקייה לא קיימת. נהרוץ את הקוד הבא כדי לבדוק אם תיקייה קיימת:
+בשפת גו, ניתן לבדוק אם ספרייה קיימת באמצעות פונקציית `os.Stat()`. ניתן להשתמש בקוד הבא כדי לבדוק את הקיום של ספרייה בשם `myDirectory`.
 
-```go
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
-func main() {
-    path := "path/to/directory"
-    if _, err := os.Stat(path); os.IsNotExist(err) {
-        fmt.Println("תיקייה לא קיימת")
-        return
-    }
-
-    fmt.Println("תיקייה קיימת!")
+```Go
+info, err := os.Stat("myDirectory")
+if err != nil {
+    // הספרייה אינה קיימת או שקרתה שגיאה בזמן הבדיקה
 }
 ```
 
-פלט:
+אם הפונקציה `os.Stat()` לא מחזירה שגיאה, זאת אומרת שהספרייה קיימת. המשתנה `info` יכיל מידע נוסף אודות הספרייה, כגון גודל ותאריך יצירה.
+
+## הכנסה לנתונים יותר מעמוקה
+
+אם תרצו לבדוק אם ספרייה מסוימת נמצאת בתיקייה מסוימת, ניתן להשתמש בפונקציית `filepath.Join()` כדי לבנות את הנתיב המלא של הספרייה. לדוגמה, אם נרצה לבדוק אם הספרייה `myDirectory` נמצאת בתיקייה `Users/Documents`, נשתמש בקוד הבא:
+
+```Go
+import "path/filepath"
+
+directory := filepath.Join("Users", "Documents", "myDirectory")
+info, err := os.Stat(directory)
+if err != nil {
+    // הספרייה אינה קיימת בתיקייה זו
+}
 ```
-תיקייה קיימת!
-```
 
-## העמקה נוספת
+בנוסף, ניתן להשתמש בפונקציות אחרות כדי לבדוק גם את התיקייה האב או את תתי הספריות בתוך הספרייה היעד. כך ניתן לבדוק בדיוק איפה נמצאת הספרייה בתוך המערכת הקבצים.
 
-למידע נוסף על איך לבדוק אם תיקייה קיימת בשפת גו ניתן להציץ במדריך הרשמי של גו: https://golang.org/pkg/os/#Stat 
+## ראה גם
 
-## ראו גם
-
-* https://www.digitalocean.com/community/tutorials/how-to-use-the-os-package-in-go
-* https://golangdocs.com/check-if-a-file-or-directory-exists-in-go
-* https://opensource.com/article/19/6/golang-directory
+- [פקודת מבחינת שם שבמערכת הקבצים בשפת גו](https://golang.org/pkg/os/#Stat)
+- [פקודת הנתיב המלא בשפת גו](https

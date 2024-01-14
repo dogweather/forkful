@@ -1,53 +1,56 @@
 ---
-title:    "C: Å bruke regulære uttrykk"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/using-regular-expressions.md"
+title:                "C: Å bruke regulære uttrykk"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor 
 
-Hvorfor skal du bry deg om regular expressions? Vel, hvis du ønsker å effektivisere søk og manipulasjon av tekst i dine C-programmer, er dette verktøyet for deg!
+Regular expressions, eller i norsk, regulære uttrykk, er et kraftig verktøy for å arbeide med tekststrenger i C-programmering. Det tillater enkelt å finne og manipulere spesifikke deler av en tekststreng basert på mønstre. Dette kan være svært nyttig når du må behandle store mengder data og ønsker å automatisere prosessen. 
 
-## Hvordan
+## Hvordan 
 
-For å bruke regular expressions i C-programmering må du inkludere libraryet `regex.h` i koden din. La oss se på et enkelt eksempel:
+For å bruke regulære uttrykk i C-programmering, må du inkludere `regex` biblioteket ved å skrive `#include <regex.h>` i begynnelsen av koden din. Deretter kan du bruke funksjonen `regcomp` for å kompilere uttrykket ditt og lagre det i en `regex_t` variabel. For eksempel, hvis du ønsker å finne alle tall i en tekststreng, kan du bruke følgende kode:
 
 ```C
-#include <stdio.h>
-#include <regex.h>
+regex_t regex;
+char * pattern = "[0-9]+";
+regcomp(&regex, pattern, REG_EXTENDED);
+```
 
-int main()
-{
-    // Opprette et regex-objekt med mønsteret "a*b"
-    regex_t regex;
-    int ret = regcomp(&regex, "a*b", 0);
+Deretter kan du bruke funksjonen `regexec` for å søke etter dette mønsteret i en tekststreng. Det vil returnere verdien `0` hvis det finner et samsvar, og `-1` hvis det ikke gjør det. For å få tilgang til den faktiske teksten som matcher mønsteret, kan du bruke `regmatch_t` strukturen og `regexec` funksjonen. Her er et eksempel på hvordan du kan skrive ut matchene dine på skjermen:
 
-    // Sjekke om "aaab" matcher mønsteret
-    ret = regexec(&regex, "aaab", 0, NULL, 0);
-    if (ret == 0)
-        printf("Det er en match!");
-    else if (ret == REG_NOMATCH)
-        printf("Ingen match.");
-
-    // Frigjøre minnet til regex-objektet
-    regfree(&regex);
-    return 0;
+```C
+char * input = "Det er 2021, og vi programmerer i C!";
+regmatch_t matches;
+if(regexec(&regex, input, 1, &matches, 0) == 0){
+    printf("Fant match på indeks %d, med lengde %d\n", matches.rm_so, matches.rm_eo);
+    printf("Matchet tekst: %.*s\n", (int)(matches.rm_eo - matches.rm_so), input + matches.rm_so);
 }
 ```
 
-I dette eksempelet definerer vi et regex-objekt med mønsteret "a*b", som betyr at vi leter etter teksten "a" etterfulgt av null eller flere "b"-er. Deretter sjekker vi om teksten "aaab" matcher mønsteret. Hvis det gjør det, vil vi få beskjed om at det er en match, ellers vil vi få beskjed om at det ikke er en match. Til slutt frigjør vi minnet til regex-objektet for å unngå potensielle lekkasjer.
+Dette vil skrive ut følgende på skjermen:
 
-Du kan også bruke regular expressions i funksjoner som `regexec` og `regerror` for å få mer detaljert informasjon om en match eller eventuelle feil.
+```C
+Fant match på indeks 6, med lengde 4
+Matchet tekst: 2021
+```
 
-## Dypdykk
+Du kan også bruke regulære uttrykk for å erstatte matcher i en tekststreng. Dette gjøres ved hjelp av `regreplace` funksjonen. Du kan se en fullstendig oversikt over funksjonene og deres parametere på [denne siden](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html#Regular-Expressions). 
 
-Regular expressions kan være litt tricky å forstå i begynnelsen, men når du blir vant til dem, vil du sette pris på hvor kraftig de er. Det finnes mange vanlige metakarakterer og spesielle syntakser for å lage mønstre, for eksempel `*` for å matche null eller flere forekomster, `+` for å matche én eller flere forekomster og `()` for å gruppere deler av mønsteret. Det er også mulig å bruke regex-objekter til å finne og bytte ut tekst i en streng.
+## Dypdykk 
 
-Hvis du vil lære mer om regular expressions, anbefaler vi å se på dokumentasjonen til `regex.h` eller søke etter ressurser på nettet.
+Regular expressions kan virke komplisert ved første øyekast, men de er utrolig nyttige når du blir mer kjent med dem. En av styrkene er at de tillater deg å søke etter mer komplekse mønstre enn bare en streng med tekst. For eksempel kan du bruke parenteser `()` for å gruppere deler av uttrykket ditt og bruke pipes `|` for å matche flere forskjellige alternativer. 
 
-## Se også
+En annen viktig ting å merke seg er at det finnes forskjellige varianter av regulære uttrykk som for eksempel POSIX og Perl. Disse har litt forskjellig syntaks, så det er viktig å dobbeltsjekke hvilken versjon du bruker når du ser på dokumentasjonen for regulære uttrykk. Du kan lese mer om forskjellene mellom disse variantene på [denne siden](https://www.regular-expressions.info/posix.html). 
 
-* [Dokumentasjon for regex.h (på engelsk)](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-* [Regex Cheat Sheet (på engelsk)](https://www.rexegg.com/regex-quickstart.html)
+## Se også 
+
+For å lære mer om regulære uttrykk i C-programmering, kan du se på følgende ressurser: 
+
+- [Dokumentasjon for `regex.h`](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html) 
+- [En interaktiv tutorial om regulære uttrykk](https://regexone.com/) 
+- [En praktisk guide for å lage effektive regulære uttrykk](https://www.rexegg.com/regex-quickstart.html)

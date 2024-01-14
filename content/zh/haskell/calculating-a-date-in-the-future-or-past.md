@@ -1,44 +1,34 @@
 ---
-title:    "Haskell: 计算未来或过去的日期"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/calculating-a-date-in-the-future-or-past.md"
+title:                "Haskell: 计算未来或过去的日期"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+Learn Haskell - 认识Haskell
 
-当我们需要确定未来或过去的某一天时，比如计算明天是几月几号，或距今天数月后的日期，计算机编程可以帮助我们轻松解决这个问题。
+为什么：计算未来或过去日期是一项有用的技能，它可以帮助我们有效地安排时间和计划未来的任务。
 
-## 如何做
-
-我们可以使用Haskell编写一个程序来计算未来或过去的日期。首先，我们需要导入Data.Time模块，这个模块提供了处理日期和时间数据的功能。然后，我们可以使用DateTime函数来创建一个表示当前时间的对象。最后，我们可以使用addDays函数来向DateTime对象添加指定的天数，从而计算将来或过去的日期。
+如何计算日期：在Haskell中，我们可以使用Data.Time模块来计算日期。下面是一个简单的示例，在当前日期的基础上添加两周并输出结果。
 
 ```Haskell
 import Data.Time
 
--- 创建DateTime对象表示今天
-today = DateTime
-
--- 添加一天，计算明天的日期
-tomorrow = addDays 1 today
-
--- 添加一个月，计算一个月后的日期
-nextMonth = addDays 30 today
-
--- 打印结果
-print tomorrow -- 输出：2021-09-26
-print nextMonth -- 输出：2021-10-26
+main :: IO ()
+main = do
+    currentTime <- getCurrentTime
+    let futureDate = addDays 14 (utctDay currentTime)
+    print futureDate
 ```
 
-## 深入了解
+输出结果：2021-07-13
 
-当计算未来或过去的日期时，我们需要注意一些特殊情况。比如，闰年会影响2月份的天数，所以我们需要在计算日期时进行判断。此外，不同的国家和文化可能使用不同的日历系统，我们也需要考虑这一点。
+深入了解：我们可以通过组合`addDays`、`addMonths`和`addYears`等函数来计算复杂的日期。此外，我们还可以使用`diffDays`和`diffMonths`函数来比较两个日期之间的差距。这些函数在处理日期的过程中非常有用，并有助于我们更好地了解时间。
 
-另外，我们可以使用DateTime对象的其他函数来获取日期的详细信息，比如年、月、日、星期等。这些函数可以帮助我们更加灵活地处理日期数据。
+另请参阅：
 
-# 参考链接
-
+- [Haskell官方文档](https://www.haskell.org/documentation/)
 - [Data.Time模块文档](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Haskell教程](https://learnyouahaskell.com/)
-- [Haskell入门指南](https://www.haskell.org/tutorial/)
+- [Haskell编程语言简介](https://www.geeksforgeeks.org/haskell-programming-language/#:~:text=Haskell%E7%94%B1%E4%B8%80%E4%B8%AA%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E5%99%A8%E5%89%8D%E7%BE%8E%E5%AD%A6Haskell%EB%B0%94%EB%A5%B4%E7%94%9F%E6%95%88%EF%BC%8C,%E5%8F%AF%E8%A7%A3%E5%86%B3%E7%9A%84%E5%92%8C%E5%93%88%E5%B8%8C%E5%B8%8C%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82)

@@ -1,49 +1,42 @@
 ---
-title:    "C++: Oppretting av midlertidig fil"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/creating-a-temporary-file.md"
+title:                "C++: Lage en midlertidig fil"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å opprette en midlertidig fil kan være nyttig når du jobber med programmering i C++. Dette tillater deg å lagre midlertidige data som ikke er nødvendige for din endelige kode, men som kan være nyttig for testing eller feilsøking.
+Å opprette midlertidige filer kan være en nyttig teknikk i programmering for å behandle data midlertidig eller lagre midlertidige resultater uten å måtte lagre permanent på harddisken. Dette kan også være en effektiv måte å håndtere data som ikke trengs etter kjøring av programmet.
 
-## Slik gjør du det
+## Hvordan
 
-For å opprette en midlertidig fil i C++, må du først inkludere fstream biblioteket. Deretter kan du bruke ofstream-funksjonen til å opprette en midlertidig filnavn. Et eksempel på kode som oppretter en midlertidig fil og skriver til den kan se slik ut:
+For å opprette en midlertidig fil i C ++ kan vi bruke funksjonen `tmpfile`, som oppretter en tom midlertidig fil og returnerer en strømpeker til filen. Når programmet avsluttes, vil filen automatisk bli slettet fra systemet. Her er et eksempel på implementasjon:
 
 ```C++
-#include <iostream>
-#include <fstream> 
+#include <stdio.h>
+#include <stdlib.h>
 
-int main() { 
-  // Oppretter en midlertidig fil 
-  std::ofstream temp("midlertidigfil.txt"); 
-  
-  // Sjekker om filen er åpen 
-  if(temp.is_open()){ 
-    temp << "Dette er en midlertidig fil.\n"; 
-    temp << "Denne teksten vil bli skrevet til filen."; 
-    temp.close(); // Lukker filen 
-  } else { 
-    std::cout << "Kunne ikke åpne filen."; 
-  } 
-  return 0; 
-} 
+int main() {
+    FILE *fp;
+    fp = tmpfile(); // Opprette en midlertidig fil
+    fprintf(fp, "Dette er en midlertidig fil."); // Skrive innhold i filen
+    rewind(fp); // Flytte pekeren til starten av filen
+    char c = fgetc(fp); // Lese enkelttegn fra filen
+    printf("%c\n", c); // Skriver ut "D" som er det første tegnet i setningen
+    fclose(fp); // Hvis filen ikke lenger er behov, må den lukkes og fjernes fra systemet
+}
 ```
 
-Når koden kjøres, vil den opprette en fil kalt "midlertidigfil.txt" og skrive teksten "Dette er en midlertidig fil. Denne teksten vil bli skrevet til filen." til den.
+Utskrift: `D`
 
-## Dykk dypere
+## Deep Dive
 
-Når du oppretter en midlertidig fil i C++, blir den vanligvis lagret i operativsystemets midlertidige filområde. Dette området kan variere avhengig av hvilket operativsystem du bruker. For eksempel på Windows vil filen bli lagret i mappen "C:\Users\brukernavn\AppData\Local\Temp", mens den på Mac kan bli lagret i "/tmp/" mappen.
-
-Det kan også være nyttig å vite at C++ ikke vil slette midlertidige filer automatisk når programmet ditt avsluttes. Det er ditt ansvar å slette filen manuelt ved hjelp av remove() -funksjonen etter at du er ferdig med å bruke den.
+Funksjonen `tmpfile` oppretter en midlertidig fil i det midlertidige katalogen som er tilknyttet systemet. Denne katalogen kan være forskjellig fra system til system, men kan vanligvis finnes ved å bruke kommandoen `tmpdir` på Linux og `tempdir` på Windows. Det er også viktig å merke seg at midlertidige filer vil bli slettet automatisk ved systemstart, noe som betyr at de ikke er det beste alternativet for å lagre data som trenger å være tilgjengelig over flere kjøringer av programmet.
 
 ## Se også
 
-- [C++ Standard Library - fstream](https://www.cplusplus.com/reference/fstream/)
-- [C++ File Handling](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
-- [Creating temporary files in C++](https://www.geeksforgeeks.org/creating-temporary-file-cpp/)
+- [C++ Reference - tmpfile](https://www.cplusplus.com/reference/cstdio/tmpfile/)
+- [C++ Programming Language - Midlertidige filer](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)

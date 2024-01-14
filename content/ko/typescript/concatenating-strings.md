@@ -1,47 +1,51 @@
 ---
-title:    "TypeScript: 문자열 연결하기"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/concatenating-strings.md"
+title:                "TypeScript: 스트링 연결하기"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-문자열을 연결하는 것에 대해 공부하는 것은 TypeScript 프로그래밍에서 필수적입니다. 문자열을 결합하면 사용자와 상호작용하는 데 유용한 정보를 제공할 수 있으며 코드를 간결하고 효율적으로 유지할 수 있습니다.
+문자열을 연결하는 과정에 참여하는 이유는 문자열을 조합해 새로운 문자열을 생성하는 직관적이고 간단한 방법이기 때문입니다.
 
-## 하는 법
-```TypeScript
-// 두 개의 문자열을 결합하는 예제
-let text1: string = "안녕하세요";
-let text2: string = "저는 TypeScript를 공부 중입니다.";
-let combinedText: string = text1 + text2;
-
-console.log(combinedText); // 출력결과: 안녕하세요저는 TypeScript를 공부 중입니다.
-```
+## 하는 방법
+우리가 TypeScript를 사용할 때 문자열을 연결하는 가장 일반적인 방법은 `+` 연산자를 사용하는 것입니다. 하지만 여러분은 `+` 연산자를 사용하지 않고도 해당 작업을 수행할 수 있습니다.
 
 ```TypeScript
-// 문자열을 수량에 따라 반복해 결합하는 예제
-let text: string = "안녕하세요";
-let repeatedText: string = text.repeat(3);
+// 예시 1
+let str1 = "안녕하세요";
+let str2 = "반가워요";
+let result = str1 + str2;
+console.log(result); // 안녕하세요반가워요
 
-console.log(repeatedText); // 출력결과: 안녕하세요안녕하세요안녕하세요
+// 예시 2
+let str1 = "안녕하세요";
+let str2 = "반가워요";
+let result = `${str1} ${str2}`;
+console.log(result); // 안녕하세요 반가워요
 ```
+
+또한, 여러 개의 문자열을 연결하는 데에는 `concat()` 메서드를 사용할 수도 있습니다.
 
 ```TypeScript
-// 문자열과 변수를 결합하는 예제
-let name: string = "예린";
-let age: number = 23;
-let message: string = `안녕하세요, 제 이름은 ${name}이고 제 나이는 ${age}살입니다.`;
+// 예시 1
+let str1 = "안녕하세요";
+let str2 = "반가워요";
+let str3 = "저는 TypeScript를 공부하고 있어요";
+let result = str1.concat(str2, str3);
+console.log(result); // 안녕하세요반가워요저는 TypeScript를 공부하고 있어요
 
-console.log(message); // 출력결과: 안녕하세요, 제 이름은 예린이고 제 나이는 23살입니다.
+// 예시 2
+let str = "안녕하세요";
+let result = str.concat("반가워요", "저는 TypeScript를 공부하고 있어요");
+console.log(result); // 안녕하세요반가워요저는 TypeScript를 공부하고 있어요
 ```
 
-## 딥 다이브
-문자열을 연결하는 데는 다양한 방법이 있습니다. 위의 예제 외에도 `concat()` 함수나 템플릿 리터럴을 사용하는 방법 등이 있습니다. 또한 문자열을 결합할 때 유의해야할 점은 문자열과 숫자를 함께 결합할 때 발생하는 자료형 변환 오류입니다. 이를 해결하기 위해 `toString()` 함수나 `String()` 함수를 사용할 수 있습니다.
+## 더 들어가보기
+문자열을 연결하는 두 가지 방법(`+` 연산자, `concat()` 메서드) 모두 새로운 문자열을 만드는 것이 아니라 기존의 문자열을 변형시키는 것입니다. 따라서, 메모리를 절약하기 위해서는 새로운 문자열을 생성하지 않고 기존의 문자열을 이용하는 것이 좋습니다. 또한, `+` 연산자는 작업이 많아질수록 성능이 떨어질 수 있으므로, 가능하다면 템플릿 리터럴을 사용하는 것이 좋습니다.
 
-## 참고 자료
-- [TypeScript 문자열 결합 방법](https://www.typescriptlang.org/docs/handbook/variable-declarations.html#string-concatenation)
-- [TypeScript 템플릿 리터럴 사용법](https://www.typescriptlang.org/docs/handbook/variable-declarations.html#template-literals)
-- [자료형 변환 오류 해결 방법](https://medium.com/better-programming/handling-string-and-number-conversion-errors-2331e8c04b74)
-
-## 더 알아보기
+## 참고자료
+- [MDN Web Docs: String concatenation](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [MDN Web Docs: Template literals](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals)

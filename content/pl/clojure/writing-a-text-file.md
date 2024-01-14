@@ -1,62 +1,39 @@
 ---
-title:    "Clojure: Pisanie pliku tekstowego"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-a-text-file.md"
+title:                "Clojure: Tworzenie pliku tekstowego"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Pisanie plików tekstowych jest ważnym elementem programowania w języku Clojure. Płynne operowanie na plikach tekstowych pozwala na łatwe przetwarzanie i analizę danych. Dodatkowo, tworzenie plików tekstowych jest często wykorzystywane do komunikacji z innymi programami.
+Czemu warto napisać plik tekstowy w Clojure? To jedno z podstawowych narzędzi programowania i często używane w praktyce. Pisanie plików tekstowych może pomóc w tworzeniu stosunkowo prostych skryptów, a także w przenoszeniu danych pomiędzy różnymi aplikacjami.
 
 ## Jak to zrobić
-
-Aby zapisać treść do pliku tekstowego, możemy skorzystać z funkcji `spit` w następujący sposób:
-
-```Clojure
-(spit "tekst.txt" "To jest przykładowy tekst.")
-```
-
-Powyższy kod utworzy plik "tekst.txt" i wypełni go tekstem "To jest przykładowy tekst." W przypadku, gdy chcemy dopisywać tekst do istniejącego już pliku, możemy użyć funkcji `spit` wraz z flagą `:append`:
+Pisanie plików tekstowych w Clojure jest dość proste i polega na użyciu funkcji `spit`, która zapisuje dane do pliku. Oto przykładowy kod, który zapisuje listę liczb do pliku "numbers.txt":
 
 ```Clojure
-(spit "tekst.txt" "To jest kolejny tekst." :append)
+(spit "numbers.txt" (str "(1 2 3 4 5)"))
 ```
 
-Teraz nasz plik "tekst.txt" zawiera oba teksty.
-
-Możemy także odczytywać dane z pliku tekstowego przy użyciu funkcji `slurp`:
+Wykorzystując funkcję `spit` możemy także tworzyć pliki z dowolnym typem danych, takich jak np. słowniki czy listy zagnieżdżone. Poniżej znajduję się przykładowy kod z wykorzystaniem funkcji `spit` do zapisania słownika w pliku "dictionary.txt":
 
 ```Clojure
-(slurp "tekst.txt")
+(spit "dictionary.txt" (str "{:name \"John\", :age 30, :country \"Poland\"}"))
 ```
 
-Powyższa funkcja zwróci nam zawartość pliku jako string.
+Po wykonaniu powyższych kodów, w katalogu projektu powinny pojawić się nowo utworzone pliki z odpowiednimi danymi.
 
-## Wnikliwa analiza
-
-Clojure oferuje również bardziej zaawansowane możliwości manipulacji plikami. Na przykład, możemy użyć funkcji `file-seq`, aby stworzyć sekwencję plików w danym katalogu:
+## Wgląd w temat
+W Clojure istnieje również funkcja `slurp`, która pozwala na odczytanie zawartości pliku tekstowego do zmiennej. Jest to przydatne, gdy chcemy przetworzyć dane z pliku wewnątrz naszego programu. Oto przykładowy kod, który odczytuje dane z pliku "numbers.txt" i zapisuje je do zmiennej `data`:
 
 ```Clojure
-(file-seq (io/file "katalog"))
+(def data (slurp "numbers.txt"))
 ```
 
-Powyższy przykład zwróci nam sekwencję zawierającą wszystkie pliki w folderze "katalog". Możemy także wykorzystać funkcję `file?`, aby sprawdzić, czy dany plik jest plikiem tekstowym:
+Możemy także manipulować zawartością pliku tekstowego poprzez wykorzystanie funkcji `subs` lub `split`, aby np. odczytać wybraną część tekstu lub podzielić tekst na listę.
 
-```Clojure
-(file? (io/file "tekst.txt"))
-```
-
-Ostatnią funkcją, którą warto poznać, jest `file-lines`, która zwraca sekwencję wierszy z pliku tekstowego:
-
-```Clojure
-(file-lines "tekst.txt")
-```
-
-Teraz możemy łatwo przejść przez wszystkie linie z pliku i dokonywać na nich różnych operacji.
-
-## Zobacz też
-
-- Dokumentacja Clojure dotycząca obsługi plików (https://clojuredocs.org/clojure.core/spit)
-- Przykładowe projekty wykorzystujące ładowanie i zapisywanie danych do plików tekstowych (https://github.com/search?q=clojure+file+handling&type=Repositories)
+## Zobacz także
+- Dokumentacja Clojure dotycząca funkcji `spit`: https://clojuredocs.org/clojure.core/spit
+- Polska społeczność Clojure: https://clojure.pl/

@@ -1,61 +1,59 @@
 ---
-title:    "Haskell: 테스트 작성하기"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/writing-tests.md"
+title:                "Haskell: 테스트 작성하기"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜 테스트를 작성하는가
 
-소프트웨어와 프로그래밍 분야에서 가장 중요한 것 중 하나는 코드를 테스트하는 것입니다. 왜냐하면 테스트를 통해 코드의 안정성과 신뢰성을 보장할 수 있기 때문입니다. 따라서 프로그래머나 개발자가 코드를 작성할 때 테스트를 케어하며 작업하는 것은 매우 중요합니다.
+소프트웨어 개발에서 테스트는 매우 중요합니다. 테스트를 작성하는 것은 코드의 품질과 안정성을 보증하고 결함을 발견하는 데 도움이 됩니다. 이를 통해 유지보수가 더욱 쉬워지고 프로젝트의 성공 확률이 높아집니다.
 
-## 작성 방법
+## 어떻게 작성하는가
 
-Haskell에서 테스트를 작성하는 방법은 매우 간단합니다. 먼저 테스트 프레임워크인 HUnit을 설치해야 합니다. 그리고 ```import Test.HUnit```을 통해 모듈을 불러오고, 테스트 케이스를 작성합니다. 일반적으로 각 함수마다 하나의 테스트 케이스를 작성하며, 이를 하나의 테스트 스위트로 묶어서 실행합니다.
-
-예를 들어, 다음은 간단한 덧셈 함수를 테스트하는 코드입니다.
+가장 대표적인 함수형 프로그래밍 언어인 Haskell에서 코드를 테스트하는 방법을 알아보겠습니다. 먼저 `hspec` 패키지를 사용하여 간단한 테스트 프레임워크를 만들어보겠습니다. 코드 블록은 아래와 같이 작성할 수 있습니다.
 
 ```Haskell
-import Test.HUnit
+import Test.Hspec
 
--- 덧셈 함수 코드
-add :: Int -> Int -> Int
-add a b = a + b
-
--- 테스트 케이스
-testAddition :: Test
-testAddition = TestCase $ assertEqual "add 함수가 제대로 동작하지 않습니다." 10 (add 4 6)
-
--- 테스트 스위트
-tests :: Test
-tests = TestList [TestLabel "덧셈 함수 테스트" testAddition]
-
--- 실행
 main :: IO ()
-main = runTestTT tests
+main = hspec $ do
+    describe "더하기 함수" $ do
+        it "1 더하기 1은 2를 출력해야 합니다." $
+            1 + 1 `shouldBe` 2
 ```
 
-위 코드를 실행하면 콘솔에 테스트 결과가 나타납니다. 그 결과는 다음과 같습니다.
+위의 예제에서 `describe`와 `it`은 테스트를 조직화하는 데 사용되는 함수입니다. `shouldBe`는 두 값이 같은지 여부를 비교하고 다르면 테스트를 실패시킵니다. 위의 코드를 실행하면 테스트가 통과하지 못하며, 아래와 같은 결과를 얻을 수 있습니다.
 
-```
-Cases: 1  Tried: 1  Errors: 0  Failures: 0
-Cases: 1  Tried: 1  Errors: 0  Failures: 0
-Counts {cases = 1, tried = 1, errors = 0, failures = 0}
-
-Finished in 0.0001 seconds
+```Haskell
+더하기 함수
+  [x] 1 더하기 1은 2를 출력해야 합니다.
 ```
 
-만약 테스트 케이스가 실패하는 경우, 이를 표시해줍니다. 따라서 위와 같이 제대로 동작하는 경우 모든 테스트 케이스가 통과하며 콘솔에 결과가 출력됩니다.
+## 더 깊이 있게
 
-## 깊이있는 탐구
+Haskell에서는 `QuickCheck`이라는 패키지를 사용하여 프로퍼티 기반 테스트를 작성할 수도 있습니다. 이를 사용하면 무작위로 생성한 입력 값을 테스트 함수에 전달하고 결과가 기대하는 프로퍼티를 충족하는지 검사할 수 있습니다. 예를 들어, 다음과 같은 코드를 작성할 수 있습니다.
 
-테스트를 작성할 때 주의해야 할 몇 가지 사항이 있습니다. 첫째, 테스트의 범위는 충분히 넓어야 합니다. 너무 작은 단위의 테스트는 코드를 신뢰할 수 없게 만들 수 있습니다. 또한 각 테스트 케이스는 독립적이어야 합니다. 한 테스트 케이스가 다른 테스트 케이스에 영향을 주거나 의존하지 않도록 작성해야 합니다.
+```Haskell
+import Test.QuickCheck
 
-둘째, 어떤 시나리오에서도 코드가 일관되게 동작하도록 여러 테스트 케이스를 작성해야 합니다. 특히 예외 상황에 대한 테스트를 꼭 포함하도록 주의해야 합니다. 예외 상황에서도 코드가 제대로 동작하도록 테스트해야 실제로 사용할 때 불안정한 동작을 방지할 수 있습니다.
+prop_reverse :: [Int] -> Bool
+prop_reverse list = reverse (reverse list) == list
 
-마지막으로, 테스트 코드도 역시 관리되어야 합니다. 이는 일반적으로 작성한 코드보다 더 중요한 부분입니다. 테스트 코드는 만들어진 코드가 변경되면 함께 변경되어야 하며, 필요한 경우 테스트 코드를 수정해야 합니다.
+main :: IO ()
+main = quickCheck prop_reverse
+```
 
-# 더 알아보기
+위의 예제에서는 어떤 리스트를 뒤집어도 원래 리스트와 같은지 검사하는 프로퍼티를 정의하고, `quickCheck`를 통해 테스트를 실행합니다. 만약 프로퍼티를 만족하지 않는 입력 값이 생성되면 테스트는 실패하게 됩니다.
 
-- [HUnit 사용
+## 더 알아보기
+
+더 많은 테스트 방법과 패키지를 알아보려면 아래의 링크를 참고해보세요.
+
+## 참고하기
+
+- [Hspec 패키지 문서](https://hackage.haskell.org/package/hspec)
+- [QuickCheck 패키지 문서](https://hackage.haskell.org/package/QuickCheck)
+- [Haskell 테스트를 위한 패키지 목록](https://wiki.haskell.org/Testing_packages)

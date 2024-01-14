@@ -1,50 +1,41 @@
 ---
-title:    "Fish Shell: Å bruke regulære uttrykk"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/using-regular-expressions.md"
+title:                "Fish Shell: Å bruke regulære uttrykk"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Hvorfor skal man bruke regulære uttrykk i programmering? Regulære uttrykk er et kraftig verktøy for å finne, filtrere og manipulere tekst og gjør det enklere og raskere å utføre komplekse søk og handlinger.
+Regular expressions, eller regulære uttrykk, er et kraftig verktøy for tekstbehandling og datahåndtering. Det kan hjelpe deg med å søke, filtrere og manipulere tekst på en mer avansert og effektiv måte. Dette kan være spesielt nyttig for utviklere, dataanalytikere og andre som jobber med store mengder tekst og data.
 
-## Hvordan
+# Hvordan
 
-Å bruke regulære uttrykk i Fish Shell er enkelt og effektivt. Her er noen eksempler på hvordan du kan bruke det:
+For å bruke regulære uttrykk i Fish Shell, må du først forstå grunnstrukturer som brukes til å representere tekstmønstre. La oss for eksempel si at vi vil finne alle e-postadresser i en tekstfil.
 
-```Fish Shell
-# Søk etter alle linjer som inneholder ordet "fisk"
-grep "fisk" filnavn.txt
+```
+Fish Shell kodeblokk:
 
-# Finn alle tall i en tekststreng
-grep -E "[0-9]+" filnavn.txt
-
-# Endre alle forekomster av "sea" til "ocean" i en tekstfil
-sed -i "s/sea/ocean/g" filnavn.txt
+set emails (pcregrep -o "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}" file.txt)
+echo $emails
 ```
 
-Output for det siste eksempelet vil bli:
+I dette eksempelet bruker vi kommandoen "pcregrep" som står for "Perl Compatible Regular Expression grep". Vi oppgir regex-mønsteret som skal matches, i dette tilfellet en standard e-postadresse. Deretter bruker vi uttrykket "set emails" for å lagre resultatet i en variabel, som vi kan bruke senere. Til slutt skriver vi ut alle e-postadressene ved å bruke kommandoen "echo" og variabelen vår.
 
-```Fish Shell
-Dype havet er fylt med liv og mysterier.
-```
-til
-```Fish Shell
-Dype oceanet er fylt med liv og mysterier.
-```
+# Dypdykk
 
-## Dykke Dypere
+Regulære uttrykk kan være ganske komplekse og ha mange forskjellige muligheter. Her er noen tips for å hjelpe deg med å bli mer effektiv med regex i Fish Shell:
 
-Regulære uttrykk har et stort utvalg av spesialtegn som kan brukes for å gjøre søk mer spesifikke og nøyaktige. Du kan også kombinere forskjellige uttrykk for å lage mer komplekse søk.
+- Bruk Flag-completion: Fish Shell har en innebygd funksjon for å fullføre valgflagg ved hjelp av "Tab"-tasten, noe som gjør det enklere å huske alle mulighetene.
 
-En annen nyttig funksjon med regulære uttrykk er at du kan bruke dem sammen med andre kommandoer i Fish Shell, som for eksempel sed, awk og cut. Dette gir deg muligheten til å manipulere tekst på flere forskjellige måter og å automatisere oppgaver som tidligere kunne vært tidkrevende og kjedelige.
+- Bruk forsvarlig: Dette vil vise deg et vindu med alle resulterende treff for et gitt regex-mønster, slik at du kan inspisere og bekrefte resultatene før du fortsetter med behandlingen.
 
-Før du begynner å bruke regulære uttrykk, er det viktig å forstå hvordan de fungerer og å øve deg på å lage dem. Det finnes mange online ressurser og bøker som kan hjelpe deg med å lære mer om dette kraftige verktøyet.
+- Bruk regex tester: Det er mange online verktøy du kan bruke til å teste og feilsøke regex-mønstrene dine før du bruker dem i Fish Shell.
 
-## Se Også
+# Se også
 
-- [Fish Shell's offisielle nettside](https://fishshell.com/)
-- [Regulære uttrykk tutorial fra W3Schools](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [Bruke regulære uttrykk i Fish Shell blogginnlegg fra Stack Abuse](https://stackabuse.com/using-regular-expressions-in-fish-shell/)
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Regulære uttrykk referanse](https://www.regular-expressions.info/)
+- [Fish Shell - Nyttige triks og tips](https://fishshell.com/docs/current/tutorial.html)

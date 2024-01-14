@@ -1,38 +1,53 @@
 ---
-title:    "Java: המרת תאריך למחרוזת"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/converting-a-date-into-a-string.md"
+title:                "Java: המרת תאריך למחרוזת"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# מדוע
-המרת תאריך למחרוזת היא תהליך חשוב בתכנות ג'אווה ויכולה להיות שימושית במגוון רחב של מקרים. למשל, להצגת תאריך בפורמט נוח לקריאה עבור המשתמש או לשמירת התאריך במסד נתונים כמחרוזת. במאמר זה נלמד איך לבצע את המרת התאריך למחרוזת בצורה פשוטה ויעילה בג'אווה.
+## למה
 
-# איך לבצע את המרת תאריך למחרוזת
-כדי להמיר תאריך למחרוזת בג'אווה, אנו צריכים להשתמש בפעולת "format" של האובייקט "SimpleDateFormat". בפעולת זו נגדיר את התבנית הרצויה של המחרוזת ונעביר את התאריך שרוצים להמיר כפרמטר. לדוגמה:
+למה לעסוק בהמרת תאריך למחרוזת? יתרונותיו של המרת תאריך למחרוזת הן הגמישות והיכולת לנטרל כלליות מסוימות במיצוב התאריך.
 
-```java
-// יצירת אובייקט של SimpleDateFormat עם תבנית תאריך ושעה
-SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+## איך לעשות
 
-// תאריך קבוע להמרה
-Date date = new Date();
+בקוד הבא אתם תמצאו דוגמאות להמרת תאריך למחרוזת ולפלט משובק:
 
-// המרת התאריך למחרוזת בהתאם לתבנית המוגדרת
-String dateString = dateFormat.format(date);
+```Java
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
-// הדפסת התאריך לבדיקה
-System.out.println(dateString);
+class DateToString {
+   public static void main(String[] args) {
+      try {
+         // יצירת אובייקט תאריך
+         Date date = new Date();
+
+         // הגדרת פורמט של התאריך כמחרוזת
+         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+         // המרת התאריך למחרוזת והדפסת התוצאה
+         System.out.println(sdf.format(date));
+      } catch (Exception e) {
+         System.out.println("שגיאה בהמרת תאריך");
+      }
+   }
+}
 ```
 
-הפלט של קטע הקוד הנ"ל יהיה כדלקמן:
+פלט:
 
 ```
-29/12/2020 14:30:00
+31/10/2021 16:35:20
 ```
 
-ניתן להשתמש בתבניות שונות להמרת התאריך למחרוזת, כגון "yyyy-MM-dd" עבור פורמט תאריך מלא או "E, d MMMM yyyy" עבור תאריך בפורמט של יום וחודש במלואם.
+## יעדר
 
-# עימוד עמוק
-כשמדובר במרת תאריך למחרוזת, חשוב לציין שאין תבנית אחת שתתאים לכל מקרה. הפעולה "format" מקבלת כפרמטר את התבנית הרצויה ומועברת לאובייקט "SimpleDateFormat". כדי להתאים את התבנית לכל מקרה, ניתן להשתמש באופציות שונות אשר משתנות בהתאם לצורך. כאלה יכולים להיות תבני
+העמקת המבוא יכולה לנסות להפוך את התאריך למחרוזת בפורמטים שונים, כגון רצף של תווים (למשל "31/10/21"), או שיבוצעו טכניקות נוספות כגון הוספת תאריך נוסף. בנוסף, ישנן פונקציות מוכנות שניתן להשתמש בהן כדי להמיר את התאריך למחרוזת בפורמטים מתקדמים יותר עם תמיכה בארכיטקטורות מקור, כגון פקודות על ציוד חוץ מערכי ניהול מחשבים שונים.
+
+## ראה גם
+
+- [תיעוד Oracle על המרת תאריך למחרוזת](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+- [מדריך מבוא MS להמרת תאריכים למחרוזת](https://msdn.microsoft.com/he-il/library/ms187928.aspx)

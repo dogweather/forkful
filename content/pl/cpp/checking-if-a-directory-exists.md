@@ -1,105 +1,47 @@
 ---
-title:    "C++: Sprawdzanie, czy istnieje katalog"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/checking-if-a-directory-exists.md"
+title:                "C++: Sprawdzanie, czy katalog istnieje."
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Sprawdzanie, czy katalog istnieje, jest ważną częścią pisania oprogramowania w języku C++. Pomaga to upewnić się, że program będzie działać poprawnie, a także uniknąć błędów.
+Sprawdzanie czy katalog istnieje jest ważną częścią programowania w C++. Stwarza to możliwość sprawdzenia, czy dana ścieżka jest poprawna i czy możemy z niej korzystać w naszym kodzie.
 
 ## Jak to zrobić
 
-Sprawdzenie, czy katalog istnieje, jest stosunkowo proste w języku C++. Aby to zrobić, użyjemy funkcji `opendir` z biblioteki `dirent.h`. Następnie wykonamy pętlę, aby przejść przez wszystkie pliki w katalogu i sprawdzić, czy któryś z nich jest katalogiem.
+Jeśli chcesz sprawdzić, czy dany katalog istnieje, musisz użyć funkcji `std::filesystem::exists()`. Najpierw musisz jednak zaimportować odpowiednią bibliotekę za pomocą `#include <filesystem>`. Następnie w bloku `main()` możesz stworzyć zmienną typu `bool` i przypisać jej wartość zwracaną przez funkcję `exists()`. Na przykład:
 
 ```C++
-#include <dirent.h>
-#include <string>
 #include <iostream>
-
-using namespace std;
+#include <filesystem>
 
 int main() {
-    // Utworzenie wskaźnika na katalog
-    DIR *dir;
-    // Utworzenie struktury przechowującej informacje o pliku w katalogu
-    struct dirent *entry;
+    bool exists = std::filesystem::exists("sciezka/do/katalogu");
 
-    // Nazwa katalogu do sprawdzenia
-    string directory_name = "testowy_katalog";
-
-    // Otwarcie katalogu
-    dir = opendir(directory_name.c_str());
-    
-    // Sprawdzenie, czy udało się otworzyć katalog
-    if (dir == nullptr) {
-        cerr << "Nie można otworzyć katalogu!";
-        return -1;
-    }
-
-    // Pętla przez wszystkie pliki w katalogu
-    while ((entry = readdir(dir)) != nullptr) {
-        // Jeśli jest to katalog, wyświetl informację
-        if (entry->d_type == DT_DIR) {
-            cout << "Katalog " << entry->d_name << " istnieje!" << endl;
-        }
-    }
-
-    // Zamknięcie katalogu
-    closedir(dir);
-    
-    return 0;
-}
-```
-
-### Przykładowy wynik:
-
-```
-Katalog . istnieje!
-Katalog .. istnieje!
-Katalog podkatalog istnieje!
-```
-
-## Vertigo jako pomoc
-
-Vertigo jest narzędziem, które może znacznie ułatwić pracę z plikami i katalogami w języku C++. Jest to open-source'owy projekt, który zawiera wiele przydatnych funkcji, w tym również funkcję `isDirectory` do sprawdzania, czy podana ścieżka jest katalogiem.
-
-Jeśli zdecydujesz się skorzystać z Vertigo, aby sprawdzić, czy katalog istnieje, kod będzie wyglądał następująco:
-
-```C++
-#include "vertigo.hpp"
-#include <iostream>
-
-using namespace std;
-using namespace Vt;
-
-int main() {
-    // Nazwa katalogu do sprawdzenia
-    string directory_name = "testowy_katalog";
-    
-    // Wykorzystanie funkcji isDirectory z Vertigo
-    if (isDirectory(directory_name)) {
-        cout << "Katalog istnieje!" << endl;
+    if (exists) {
+        std::cout << "Katalog istnieje.";
     } else {
-        cout << "Katalog nie istnieje!" << endl;
+        std::cout << "Katalog nie istnieje.";
     }
-    
+
     return 0;
 }
 ```
 
-## Zanurzenie się
+W powyższym przykładzie najpierw zaimportowaliśmy bibliotekę `<filesystem>`, następnie w bloku `main()` stworzyliśmy zmienną `exists` typu `bool`, do której przypisaliśmy wartość zwracaną przez funkcję `exists()` z podaniem ścieżki do katalogu. Następnie w zależności od wartości zmiennej `exists` wyświetlamy odpowiedni komunikat.
 
-Dodatkową informacją, którą warto wiedzieć, jest fakt, że funkcja `opendir` zwraca wskaźnik do pierwszego pliku w katalogu. Jeśli chcemy wylistować wszystkie pliki, a nie tylko katalogi, musimy użyć funkcji `lstat` z biblioteki `sys/types.h` wewnątrz pętli.
+## Pogłębiona analiza
 
-Zamiast `entry->d_type == DT_DIR` możemy użyć `lstat(entry->d_name, &buf) != 0 && S_ISREG(buf.st_mode)`, aby sprawdzić, czy plik jest zwykłym plikiem, a nie katalogiem.
+Sprawdzanie, czy katalog istnieje, może być przydatne w wielu przypadkach. Na przykład przy tworzeniu programów, które w swoim działaniu korzystają z plików zapisanych w określonych lokalizacjach. Dzięki wykorzystaniu funkcji `exists()` możemy upewnić się, że kod wykonamy tylko w przypadku, gdy dana ścieżka jest poprawna. Jest to szczególnie ważne w projekcie, w którym pracuje wiele osób, ponieważ może zdarzyć się, że ktoś wprowadził niepoprawną ścieżkę do pliku, przez co cały program przestanie działać.
 
-Dzięki temu możemy uzyskać dostęp nie tylko do katalogów, ale również do innych plików wewnątrz badanego katalogu.
+Ponadto, funkcja `exists()` może być również wykorzystana do sprawdzenia, czy dany katalog został utworzony przez nasz program. W przypadku, gdy chcemy zapisać plik w określonej lokalizacji, warto najpierw sprawdzić, czy dany katalog istnieje. Jeśli nie, możemy go utworzyć za pomocą funkcji `std::filesystem::create_directory()`.
 
-## Zobacz także
+## Zobacz również
 
-- [Dokumentacja funkcji opendir](http://man7.org/linux/man-pages/man3/opendir.3.html)
-- [Dokumentacja funkcji readdir](http://man7.org/linux/man-pages/man3/readdir.3.html)
-- [Dokumentacja funkcji lstat](http://man7.org/linux/man-pages/man
+- [Dokumentacja C++ - std::filesystem::exists()](https://en.cppreference.com/w/cpp/filesystem/exists)
+- [Artykuł na temat tworzenia i usuwania katalogów w C++](https://www.techiedelight.com/create-delete-directory-cpp/)
+- [Poradnik dla początkujących - Tworzenie plików i katalogów w C++](https://www.learncpp.com/cpp-tutorial/creating-and-deleting-directories/)

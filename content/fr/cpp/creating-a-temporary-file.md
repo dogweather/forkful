@@ -1,52 +1,54 @@
 ---
-title:    "C++: Créer un fichier temporaire"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/creating-a-temporary-file.md"
+title:                "C++: Création d'un fichier temporaire"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi créer un fichier temporaire en programmation C++
 
-Les fichiers temporaires sont souvent utilisés en programmation pour stocker des données de manière temporaire ou pour effectuer des opérations. Ils peuvent également être utiles lors de la création de scripts ou de programmes qui nécessitent l'utilisation de fichiers, mais où la présence d'un fichier permanent n'est pas nécessaire. Créer un fichier temporaire peut être utile dans de nombreuses situations où il est nécessaire de manipuler des données de manière temporaire.
+Si vous travaillez en programmation C++, vous avez peut-être entendu parler de la création de fichiers temporaires. Mais pourquoi créer un fichier temporaire en premier lieu ? La réponse est simple : pour stocker temporairement des données ou des informations nécessaires à votre programme, sans avoir à créer un fichier permanent qui prendrait de l'espace et serait difficile à gérer.
 
-## Comment faire
+## Comment créer un fichier temporaire en C++
 
-Voici un exemple de code en C++ pour créer un fichier temporaire :
+La création d'un fichier temporaire en C++ est facile grâce à la bibliothèque standard. Tout ce que vous avez à faire est d'inclure la bibliothèque `<fstream>` et d'utiliser la fonction `tmpfile()` pour créer un fichier temporaire vide. Ensuite, vous pouvez écrire des données dans le fichier temporaire à l'aide des fonctions d'E/S de fichier telles que `fprintf()` ou `fwrite()`. Voici un exemple de code :
 
 ```C++
 #include <iostream>
 #include <fstream>
 
+using namespace std;
+
 int main() {
-    // Créer un fichier temporaire
-    std::ofstream fichiertemp;
-    fichiertemp.open("temp.txt");
-    
-    // Écrire des données dans le fichier
-    fichiertemp << "Ceci est un fichier temporaire." << std::endl;
-    
-    // Fermer le fichier
-    fichiertemp.close();
-    
-    // Supprimer le fichier temporaire
-    remove("temp.txt");
-    
-    return 0;
+
+  FILE* tempFile = tmpfile();
+
+  if (tempFile != NULL) {
+    fprintf(tempFile, "Hello, world!");
+    cout << "Données écrites avec succès dans le fichier temporaire." << endl;
+    fclose(tempFile); // ferme le fichier temporaire
+  } else {
+    cout << "Impossible de créer le fichier temporaire." << endl;
+  }
+
+  return 0;
 }
 ```
 
-La sortie de ce code serait un fichier vide appelé "temp.txt". Ce fichier sera supprimé automatiquement une fois que le programme aura terminé d'exécuter toutes les instructions.
+Le fichier temporaire créé sera automatiquement supprimé lorsque le programme se termine ou lorsque vous fermez le fichier à l'aide de `fclose()`. N'oubliez pas que vous pouvez également utiliser des fonctions telles que `fseek()` ou `fread()` pour gérer les données dans le fichier temporaire.
 
-## Plongée en profondeur
+## Plongée en profondeur dans la création d'un fichier temporaire
 
-Il existe plusieurs façons de créer un fichier temporaire en programmation en utilisant différentes bibliothèques et fonctions. Cependant, il est important de noter que les fichiers temporaires peuvent causer des problèmes lorsqu'ils ne sont pas gérés correctement. Il est donc important de s'assurer que le fichier temporaire est supprimé une fois qu'il n'est plus nécessaire.
+Lorsqu'un fichier temporaire est créé, il est stocké dans le répertoire de travail actuel du programme. Il est également attribué un nom unique pour éviter les conflits avec d'autres fichiers temporaires. Vous pouvez obtenir ce nom en utilisant la fonction `tmpnam()` et même l'utiliser pour créer un fichier permanent si nécessaire.
 
-De plus, il est également important de prendre en compte l'emplacement du fichier temporaire. Il est recommandé de créer le fichier dans un répertoire spécifique destiné à contenir des fichiers temporaires plutôt que de le créer dans le répertoire du programme principal. Cela évite les risques de confusion avec d'autres fichiers et facilite la suppression des fichiers temporaires.
+De plus, la fonction `tmpfile()` crée un fichier dans le mode binaire, ce qui signifie que les informations écrites dans le fichier ne seront pas converties ou traitées en fonction du système d'exploitation. Cela peut être utile si vous avez besoin de stocker des données de manière précise et fiable.
 
 ## Voir aussi
 
-- [Documentation de la bibliothèque `<fstream>` en français](https://fr.cppreference.com/w/cpp/header/fstream)
-- [Guide de programmation en C++](https://www.cplusplus.com/doc/tutorial/)
+- [Documentation de la bibliothèque `<fstream>` en C++](https://www.cplusplus.com/reference/fstream/)
+- [Tutoriel sur la gestion des fichiers en C++](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+- [Exemple de code pour la création de fichiers temporaires en C++](https://www.geeksforgeeks.org/creating-temporary-file-names-in-c-programming/)
 
-*Note: Ce code est fourni à titre d'exemple et n'est pas destiné à être utilisé dans un environnement de production. Il est important de bien comprendre les concepts avant d'implémenter du code dans un projet réel.*
+En utilisant la fonction `tmpfile()` en conjonction avec d'autres fonctions d'E/S de fichier, vous pouvez facilement créer et gérer des fichiers temporaires dans vos programmes C++. Alors n'hésitez pas à utiliser cette fonction pratique pour faciliter votre développement !

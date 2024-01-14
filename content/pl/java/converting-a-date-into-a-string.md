@@ -1,46 +1,50 @@
 ---
-title:    "Java: Konwersja daty na ciąg znaków"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/java/converting-a-date-into-a-string.md"
+title:                "Java: Konwersja daty na ciąg znaków"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Istnieje wiele powodów, dla których konwersja daty na ciąg znaków może być niezbędna w programowaniu. Na przykład, może być konieczna do wyświetlenia daty w łatwo czytelnym formacie dla użytkownika, lub do zapisania daty w bazie danych.
+Czasami w programowaniu potrzebujemy konwertować datę na łańcuch znaków, aby móc wyświetlić ją użytkownikowi w czytelnej formie lub przekazać jako argument do innej funkcji. Jest to bardzo powszechne zadanie, dlatego w tym artykule opowiemy o tym, jak to zrobić w języku Java.
 
 ## Jak to zrobić
 
-Konwersja daty na ciąg znaków jest stosunkowo prosta w języku Java. Pierwszym krokiem jest utworzenie obiektu klasy Date, który przechowuje informacje o dacie. Następnie używamy metody SimpleDateFormat, aby sformatować datę zgodnie z naszymi wymaganiami. Przykładowy kod wyglądałby następująco:
+Konwersja daty na łańcuch znaków w Javie jest bardzo prosta i wymaga użycia klasy DateFormat oraz jej metody format. To pozwala na zdefiniowanie odpowiedniego formatu dla daty i przekonwertowanie jej do żądanej postaci. Poniżej znajduje się przykładowy kod w języku Java oraz jego wynik:
 
 ```java
-Date data = new Date();
-SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-System.out.println(format.format(data));
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class FormatowanieDaty {
+
+    public static void main(String[] args) {
+        Date data = new Date();
+        DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        
+        String dataJakoString = format.format(data);
+        
+        System.out.println(dataJakoString);
+    }
+}
 ```
 
-W powyższym przykładzie użyto formatu "dd-MM-yyyy", który wyświetla datę w formacie dzień-miesiąc-rok. Istnieje wiele innych formatów, które możemy wybrać w zależności od potrzeb. Pełna lista dostępnych formatów znajduje się w dokumentacji klasy SimpleDateFormat.
-
-Poniżej przedstawione są przykładowe wyniki dla różnych formatów daty:
-
-- "dd.MM.yyyy" -> 12.10.2021
-- "MM/dd/yyyy" -> 10/12/2021
-- "EEEE, dd MMMM yyyy" -> Tuesday, 12 October 2021
-
-Możemy również zastosować metodę parse(), aby przekonwertować ciąg znaków na obiekt Date. Przykładowy kod wyglądałby następująco:
-
-```java
-String stringData = "2021-10-12";
-DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-Date data = format.parse(stringData);
+```
+07/08/2021
 ```
 
-## Głębsza analiza
+W powyższym przykładzie użyliśmy klasy SimpleDateFormat, aby określić format daty jako "dzień/miesiąc/rok" i przekonwertować bieżącą datę do łańcucha znaków.
 
-Podczas konwersji daty na ciąg znaków, ważne jest, aby zachować odpowiedni format daty, ponieważ niektóre formaty mogą interpretować datę różnie. Na przykład, jeśli użyjemy jednocyfrowego formatu miesiąca ("d-M-yyyy"), to dla daty 12-10-2021 otrzymalibyśmy wynik 12-10-2021, ale dla daty 2-10-2021 otrzymalibyśmy wynik 2-10-2021. To może spowodować problemy w późniejszej pracy z datami. Dlatego ważne jest, aby wybrać odpowiedni format dla swoich potrzeb.
+## Deep Dive
+
+Jeśli chcesz dowiedzieć się więcej na temat konwertowania daty na łańcuch znaków w Javie, to polecamy zapoznać się z dokumentacją klasy DateFormat oraz jej różnych implementacji, takich jak SimpleDateFormat czy DateTimeFormatter. W niektórych przypadkach, konwersja daty może wymagać użycia również metody parse, która pozwala na przetworzenie łańcucha znaków w datę.
 
 ## Zobacz również
 
-- [Dokumentacja klasy SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
-- [Poradnik konwersji daty na ciąg znaków w języku Java](https://www.baeldung.com/java-date-to-string-conversion)
+- [JavaDocs: DateFormat (javadoc.io)](https://javadoc.io/doc/javax.xml.bind/jaxb-api/2.2.12/javax/xml/bind/DatatypeConverter.html)
+- [JavaDocs: SimpleDateFormat (javadoc.io)](https://javadoc.io/doc/java.base/java/text/SimpleDateFormat.html)
+- [JavaDocs: DateTimeFormatter (javadoc.io)](https://javadoc.io/doc/java.base/java/time/format/DateTimeFormatter.html)

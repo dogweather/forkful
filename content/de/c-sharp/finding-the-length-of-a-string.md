@@ -1,36 +1,45 @@
 ---
-title:    "C#: Die Länge eines Strings finden"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/finding-the-length-of-a-string.md"
+title:                "C#: Die Länge eines Strings finden"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Warum: Das Finden der Länge einer Zeichenfolge ist eine grundlegende Aufgabe beim Programmieren. Es ermöglicht uns, die Größe eines Textes zu bestimmen und ihn entsprechend zu verarbeiten.
+## Warum
 
-Wie: Die Länge einer Zeichenfolge kann in C# auf verschiedene Arten gefunden werden. Eine Möglichkeit ist die Verwendung der integrierten Methode `Length`, die uns die Anzahl der Zeichen in der Zeichenfolge zurückgibt. Beispielcode:
+Die Länge einer Zeichenkette oder eines Strings zu finden, ist eine grundlegende Aufgabe in der Programmierung. Es ist wichtig zu wissen, wie viele Zeichen ein String enthält, um korrekt damit zu arbeiten und Fehler zu vermeiden.
 
- ```C#
- string text = "Hallo Welt!";
- int length = text.Length;
- Console.WriteLine(length); // Gibt 11 aus
-```
+## Wie man es macht
 
-Eine andere Möglichkeit ist die Verwendung der Methode `ToCharArray`, die uns ein Array mit allen Zeichen der Zeichenfolge zurückgibt. Wir können dann einfach die Länge des Arrays bestimmen, um die Länge der Zeichenfolge zu erhalten. Beispielcode:
+Die Länge eines Strings in C# kann mithilfe der Methode `Length` in der Klasse `String` ermittelt werden. Hier ist ein Beispielcode, der demonstriert, wie man dies in C# macht:
 
 ```C#
- string text = "Hallo Welt!";
- char[] charArray = text.ToCharArray();
- int length = charArray.Length;
- Console.WriteLine(length); // Gibt 11 aus
+string text = "Hallo Welt";
+int length = text.Length;
+Console.WriteLine(length); // Output: 11
 ```
 
-Tipp: Beachten Sie, dass bei der Verwendung von `Length` die Leerzeichen und Sonderzeichen in der Zeichenfolge ebenfalls gezählt werden, während bei der Verwendung von `ToCharArray` diese als separate Zeichen betrachtet werden.
+Der Code definiert eine Variable `text` und weist ihr den Wert "Hallo Welt" zu. Dann wird die Methode `Length` aufgerufen, um die Länge des Strings zu ermitteln und in der Variablen `length` zu speichern. Schließlich wird die Länge ausgegeben.
 
-Tiefergehende Informationen: Um die Länge einer Zeichenfolge besser zu verstehen, ist es hilfreich, zu verstehen, wie Zeichen in C# gespeichert werden. In C# werden Zeichen als Unicode-Codepoints gespeichert, was bedeutet, dass nicht jedes Zeichen die gleiche Größe hat und daher die Länge einer Zeichenfolge variieren kann. Zum Beispiel haben einige Sonderzeichen zwei Codepoints, was bedeutet, dass sie als zwei separate Zeichen gezählt werden.
+Ein weiteres Beispiel zeigt, wie man die Länge eines Strings in einem Array von Strings ermitteln kann:
 
-Siehe auch:
+```C#
+string[] words = {"Hallo", "Welt", "wie", "geht", "es?"};
+Console.WriteLine(words[4].Length); // Output: 3
+```
 
-- [MSDN-Dokumentation zu `Length`](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netframework-4.8)
-- [MSDN-Dokumentation zu `ToCharArray`](https://docs.microsoft.com/en-us/dotnet/api/system.string.tochararray?view=netframework-4.8)
-- [Unicode-Codepoints in C#](https://docs.microsoft.com/en-us/dotnet/api/system.char?view=netframework-4.8)
+Hier wird die Länge des fünften Elements in dem Array `words` ausgegeben.
+
+## Tiefer eintauchen
+
+Um die Länge eines Strings in C# zu finden, verwendet die `Length`-Methode die Eigenschaft `Length` des Typs `int`. Diese Eigenschaft gibt die Anzahl der Elemente in einem String oder einem Array zurück. Wenn es sich bei dem Objekt um ein String handelt, zählt die Eigenschaft die Anzahl der Unicode-Zeichen in dem String. Wenn es sich um ein Array von Strings handelt, zählt die Eigenschaft die Anzahl der Elemente in dem Array.
+
+Die `Length`-Methode ist eine der nützlichsten Methoden in der Klasse `String` und wird häufig verwendet, um die Länge eines Strings zu überprüfen, bevor man damit arbeitet.
+
+## Siehe auch
+
+- [C# String Class](https://docs.microsoft.com/de-de/dotnet/api/system.string?view=netcore-3.1)
+- [C# Arrays](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/arrays/)
+- [C# Length Property](https://docs.microsoft.com/de-de/dotnet/api/system.array.length?view=netcore-3.1)

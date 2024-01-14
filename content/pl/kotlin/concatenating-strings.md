@@ -1,57 +1,41 @@
 ---
-title:    "Kotlin: Łączenie ciągów znaków"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/concatenating-strings.md"
+title:                "Kotlin: Łączenie ciągów znaków"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-W dzisiejszych czasach nieodłączną częścią programowania jest manipulowanie ze stringami – czyli ciągami znaków. Często zdarza się, że chcemy połączyć dwa lub więcej stringów w celu utworzenia jednego, kompletnego wyrażenia. W tym przypadku bardzo przydatne jest stosowanie tzw. "konkatenacji" stringów.
+Konkatenacja ciągów znaków jest niezbędnym elementem programowania w Kotlinie, ponieważ pozwala na łączenie różnych fragmentów tekstu w jedną zmienną, co jest bardzo przydatne w wielu zastosowaniach. Bez niej trudno byłoby tworzyć czytelne i skuteczne aplikacje.
 
 ## Jak to zrobić
+Aby zastosować konkatenację ciągów znaków w swoim kodzie Kotlin, należy użyć operatora plus (+) lub metody plus(). Poniżej znajdują się przykłady, jak można to zrealizować:
 
-Język Kotlin oferuje nam kilka sposobów na konkatenację stringów. Pierwszym i najbardziej popularnym jest użycie operatora plus (`+`). Dzięki niemu możemy połączyć dwa stringi w jeden, jak pokazano poniżej:
-
-```Kotlin
-val firstString = "Hello "
-val secondString = "world!"
-val result = firstString + secondString
-println(result) // wyświetli "Hello world!"
+```
+Kotlin val imie = "Anna"
+val nazwisko = "Kowalska"
+val witaj = "Witaj w naszej aplikacji, " + imie + " " + nazwisko
+println(witaj)
 ```
 
-Innym sposobem jest wykorzystanie funkcji `plus()` zadeklarowanej na klasie `String`. Działanie jest podobne, ale w tym przypadku operator `+` jest zamieniany na wywołanie metody `plus()`.
+W powyższym przykładzie operator plus (+) został użyty do połączenia trzech zmiennych ze znakami spacji między nimi. Wynikiem wywołania metody println() będzie tekst: "Witaj w naszej aplikacji, Anna Kowalska".
 
-```Kotlin
-val firstString = "Hello "
-val secondString = "world!"
-val result = firstString.plus(secondString)
-println(result) // wyświetli "Hello world!"
+```
+Kotlin val wiek = 25
+val rokUrodzenia = 1996
+val dataUrodzenia = "Urodziłeś się w " + (rokUrodzenia - wiek) + " roku."
+println(dataUrodzenia)
 ```
 
-Możemy również użyć funkcji `stringOf()` lub `concat()` – jednak w praktyce rzadko się to zdarza, ponieważ są one mniej czytelne.
+W powyższym przykładzie widoczne jest użycie operatora plus (+) oraz nawiasów, aby wykonać operację matematyczną przed konkatenacją. Wynikiem wywołania metody println() będzie tekst: "Urodziłeś się w 1971 roku.".
 
-## Wnikliwa analiza
+## Głębszy wgląd
+W Kotlinie konkatenacja ciągów znaków jest obsługiwana przy pomocy mechanizmu zwanego operator overloading, co oznacza, że można zdefiniować zachowanie dla operatora plus (+) zależnie od typu danych, z którymi jest używany. Dzięki temu można np. wykonać konkatenację dwóch list lub obiektów.
 
-W języku Kotlin zmienne typu `String` są niemodyfikowalne (ang. immutable), co oznacza, że nie możemy zmienić ich zawartości. Dlatego też przy konkatenacji nie jest tworzony nowy obiekt typu `String`, a jedynie utworzone jest nowe wyrażenie zawierające oba stringi.
+String, jako klasa w Kotlinie, udostępnia również różne metody do pracy z ciągami znaków, takie jak replace(), substring(), trim(), format() i wiele innych, co czyni możliwym wygodniejsze i bardziej rozbudowane operacje na tekstach.
 
-Jednak należy uważać przy konkatenacji dużej ilości stringów, ponieważ może to negatywnie wpłynąć na wydajność naszej aplikacji. W takiej sytuacji lepiej wykorzystać klasę `StringBuilder`, która została stworzona specjalnie do operacji na ciągach znaków. Przykład wykorzystania `StringBuilder` jest pokazany poniżej:
-
-```Kotlin
-val firstString = "Hello "
-val secondString = "world!"
-val builder = StringBuilder()
-builder.append(firstString)
-builder.append(secondString)
-val result = builder.toString()
-println(result) // wyświetli "Hello world!"
-```
-
-## Zobacz też
-
-[Dokumentacja poprawności konkatenacji stringów w języku Kotlin](https://kotlinlang.org/docs/tutorials/kotlin-for-py/str-templates.html)
-
-[Różnice między konkatenacją, interpolacją i wykorzystywaniem funkcji `format()`](https://proandroiddev.com/string-interpolation-vs-format-string-vs-concatenation-in-kotlin-c26aa1c01476)
-
-[Trywialne funkcje stringowe w języku Kotlin](https://blog.kotlin-academy.com/trivial-string-functions-strings-in-kotlin-e44ab9ee2ef8?gi=7de6764c2227)
+## Zobacz również
+- [Dokumentacja Kotlin o konkatenacji ciągów](https://kotlinlang.org/docs/basic-types.html#strings)
+- [Kotlin dla początkujących: konkatenacja ciągów znaków](https://kotlin.pl/kotlin-dla-poczatkujacych-konkatenacja-ciagow-znakow/)

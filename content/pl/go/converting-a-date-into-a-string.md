@@ -1,54 +1,49 @@
 ---
-title:    "Go: Konwertowanie daty na ciąg znaków."
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/converting-a-date-into-a-string.md"
+title:                "Go: Konwertowanie daty na ciąg znaków"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Konwersja daty na ciąg znaków jest ważnym procesem przy programowaniu w języku Go. Pozwala ona na wyświetlenie daty w czytelnej dla człowieka formie, co jest szczególnie przydatne w aplikacjach, gdzie wyświetlanie daty jest częścią interfejsu użytkownika.
+Konwersja daty na ciąg znaków jest niezbędnym elementem wielu aplikacji, szczególnie tych związanych z przetwarzaniem danych lub interfejsem użytkownika. W tym artykule dowiesz się, jak w łatwy sposób dokonać tej konwersji w języku Go.
 
-# Jak to zrobić
+## Jak to zrobić
 
-Aby skonwertować datę na ciąg znaków w języku Go, wystarczy wykorzystać funkcję `Format()` z pakietu `time`. Przykładowy kod wyglądałby następująco:
+Konwersja daty na string w języku Go jest bardzo prosta i wymaga zastosowania funkcji `Format()` z pakietu `time`. Przyjmijmy, że chcemy wyświetlić obecną datę w formacie "dd/mm/yyyy". W tym celu użyjemy następującego kodu:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-    // Utworzenie obiektu typu Time z aktualną datą i czasem
-    t := time.Now()
-
-    // Konwersja na ciąg znaków z wykorzystaniem odpowiedniego formatu
-    result := t.Format("02-01-2006")
-
-    // Wyświetlenie wyniku
-    fmt.Println(result)
+	now := time.Now()
+	dateString := now.Format("02/01/2006")
+	fmt.Println(dateString)
 }
 ```
 
-W powyższym przykładzie, użyliśmy formatu `02-01-2006`, który oznacza, że wyświetlona zostanie data w formacie `dzień-miesiąc-rok`. Jednak istnieje wiele innych formatów, które można wykorzystać w zależności od potrzeb. Pełną listę formatów można znaleźć w dokumentacji języka Go.
+W wyniku otrzymamy następujący output:
 
-Po uruchomieniu powyższego kodu, otrzymamy następujący wynik:
+`06/08/2019`
 
-```
-15-04-2019
-```
+Możemy dostosować formatowanie daty, zmieniając kolejność cyfr i używając różnych znaków separujących (np. "/","-","."). Ważne jest jednak, aby zawsze używać określonych symboli podanych w dokumentacji pakietu `time`, ponieważ inaczej otrzymamy błąd.
 
-# Głębokie zanurzenie
+## Głębsza analiza
 
-Aby lepiej zrozumieć proces konwertowania daty w Go, warto wiedzieć, że funkcja `Format()` korzysta z metody `String()` zaimplementowanej w structurze `Time` w pakiecie `time`. Metoda ta wykorzystuje formatowanie typu tekstowego oparte na wyrażeniach regularnych.
+W języku Go istnieje wiele różnych sposobów na konwersję daty na string, jednak najczęściej wykorzystuje się funkcję `Format()` z pakietu `time`. Dzięki temu rozwiązaniu możemy dostosować formatowanie daty do naszych potrzeb, bez konieczności używania dodatkowych bibliotek lub skomplikowanych operacji.
 
-Funkcja `Format()` zawiera również wbudowane formaty, takie jak: `ANSIC`, `UnixDate`, `RubyDate` etc, które mogą być wykorzystane bezpośrednio bez konieczności deklarowania oddzielnego formatu.
+Inną popularną metodą na przekształcanie daty na string jest użycie funkcji `Parse()` z pakietu `time`. Pozwala ona na wczytanie daty w podanym formacie i przekonwertowanie jej na obiekt typu `time.Time`. Następnie możemy użyć funkcji `Format()` do wyświetlenia wczytanej daty w innym formacie.
 
-# Zobacz również
+## Zobacz także
 
-1. [Dokumentacja języka Go na temat konwersji daty](https://golang.org/pkg/time/#Time.Format)
-2. [Kurs języka Go w języku polskim](https://www.golang.cafe/)
+- [Dokumentacja pakietu `time` w języku Go](https://golang.org/pkg/time/)
+- [Przetwarzanie dat w języku Go - Poradnik Programera](https://blog.golang.org/go-time)
+- [Konwersja daty na string w języku Go - Poradnik Wędkarski](https://marcusguarded.com/blog/konwersja-daty-w-go/)

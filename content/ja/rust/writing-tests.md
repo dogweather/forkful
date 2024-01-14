@@ -1,58 +1,48 @@
 ---
-title:    "Rust: テストの書き方"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/rust/writing-tests.md"
+title:                "Rust: テストの作成"
+programming_language: "Rust"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-##なぜテストを書くのか
-プログラミングにおいて、私たちは常に正しいコードを書くことを目指しています。しかし、実際の開発ではバグが発生することもあります。テストを書くことで、コードの正しさを確認し、バグを発見しやすくすることができます。さらに、テストを書くことでコードの品質が向上し、今後の変更や追加に対しても安心してコードを変更することができます。
+## なぜ
 
-##テストの書き方
-テストを書くには、以下のような手順を踏みます。
+テストを書くことの重要性を説明する必要があります。テストを書くことによって、コードのクオリティが向上し、バグを減らすことができます。また、テストを通じてコードの機能や挙動をより深く理解することができます。
 
-1. テスト用のRustプロジェクトを作成する
+## どのように
+
+テストを書くためには、Rustの標準ライブラリで提供されているテストフレームワークである`std::test`モジュールを使用します。以下の例を参考に、テストを書く方法を見ていきましょう。
+
 ```Rust
-cargo new myproject --lib
-```
-
-2. `src/lib.rs`ファイルにテストしたいコードを記述する
-```Rust
-pub fn add(a: i32, b: i32) -> i32 {
-    a + b
-}
-
 #[cfg(test)]
 mod tests {
+    // テストのために必要なライブラリをインポート
     use super::*;
 
+    // テスト関数を定義
     #[test]
     fn test_add() {
-        assert_eq!(add(2, 3), 5);
+        let result = add(2, 3);
+        assert_eq!(result, 5); // 期待する値をassertマクロでチェック
     }
 }
 ```
- `add`関数を`pub`で公開し、テスト用の`tests`モジュール内でテストを定義します。`assert_eq`マクロを使うことで、テストが成功したかどうかを確認します。
 
-3. テストを実行する
-```Rust
-cargo test
-```
-ターミナルには以下のような出力が表示されるでしょう。
-```text
-running 1 test
-test tests::test_add ... ok
+上記の例では、`#[cfg(test)]`属性で`tests`モジュールをテスト用に指定し、テストするための関数`test_add`を定義しています。そして、`assert_eq`マクロを使用して`result`の値が期待する値と等しいことをチェックしています。これにより、`add`関数が正しく動作するかをテストすることができます。
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
-```
+## ディープダイブ
 
-##テストの深掘り
-テストを書く際には、テストカバレッジやTDD（Test Driven Development）など、さまざまなテスト手法があります。また、`#[should_panic]`や`#[ignore]`といったアトリビュートを使用することで、より複雑なテストケースを作成することもできます。
+テストを書く際には、テストカバレッジやモックを使用することでさらに効果的にテストを行うことができます。テストカバレッジはテストがカバーするコードの割合を示し、モックは実際の関数をテスト用の仮想関数に差し替えることで、より細かくテストすることができます。
 
-しかし、テストを書くにあたって最も大切なのは、コードが読みやすいことです。テストを読めば、そのコードがどのような動作をするかがわかるようにすることが重要です。また、テストを書くことで多くのバグを未然に防ぐことができます。テストはプログラムの信頼性を高めるために欠かせないものです。
+その他にも、テストを書く際にはコードの読みやすさや再利用性を考えることも重要です。また、テストを書くことでデバッグがしやすくなり、ソフトウェアの品質を向上させることができます。
 
-##See Also
-- [Official Rust Testing Documentation](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Rust Test Tutorial: Getting Started with Writing Tests](https://www.youtube.com/watch?v=aHyxqJdY4zo)
-- [The Red, Green, Refactor Cycle of Test Driven Development](https://medium.com/@amlcurran/the-red-green-refactor-cycle-of-test-driven-development-ee98d973b4d9)
+## その他のリソース
+
+- [Rustの公式ドキュメント - テスト](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Rustでテストを書く方法](https://doc.rust-jp.rs/the-rust-programming-language-ja/1.6/book/testing.html)
+- [テストカバレッジを高める方法](https://gihyo.jp/book/2020/978-4-297-11156-1)
+- [モックを使用したテストの書き方](https://tech.mercari.com/entry/2018/06/18/160000)
+
+## 関連リンク

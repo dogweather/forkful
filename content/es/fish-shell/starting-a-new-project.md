@@ -1,46 +1,51 @@
 ---
-title:    "Fish Shell: Comenzando un nuevo proyecto"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/starting-a-new-project.md"
+title:                "Fish Shell: Comenzando un nuevo proyecto"
+programming_language: "Fish Shell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué iniciar un nuevo proyecto en Fish Shell
+## Por qué
 
-Iniciar un nuevo proyecto en Fish Shell puede ser una excelente manera de mejorar tus habilidades de programación y aumentar tu flujo de trabajo. Fish Shell es una shell de línea de comandos moderna y fácil de usar que ofrece una amplia gama de características y funcionalidades para agilizar tus tareas de programación.
+¿Alguna vez has querido empezar un proyecto desde cero pero no sabes por dónde empezar? Con la ayuda de Fish Shell, puedes crear y configurar rápidamente nuevos proyectos de programación para que puedas ponerte manos a la obra en tu próximo desafío.
 
 ## Cómo hacerlo
 
-Para iniciar un nuevo proyecto en Fish Shell, sigue estos sencillos pasos:
+Empezar un proyecto nuevo en Fish Shell es tan fácil como seguir estos pasos:
 
-1. Primero, abre tu terminal y asegúrate de que Fish Shell esté instalado en tu sistema.
-2. Crea una carpeta para tu nuevo proyecto y luego muévete a ella utilizando el comando `cd`.
-3. Inicia Fish Shell en la carpeta recién creada utilizando el comando `fish`.
-4. Ahora puedes comenzar a escribir tu código dentro de Fish Shell utilizando la sintaxis y funciones disponibles.
-5. Puedes probar tu código usando el comando `eval` para ver el resultado de tu código en tiempo real.
+1. Crea un nuevo directorio para tu proyecto usando el comando `mkdir`.
+2. Ingresa a ese directorio con `cd` y luego inicializa un nuevo repositorio con `git init`.
+3. Crea un archivo de configuración de Fish Shell con `touch config.fish` para establecer tus preferencias de entorno.
 
-Aquí hay un ejemplo de un programa de "Hola Mundo" escrito en Fish Shell:
+Dentro del archivo `config.fish`, puedes personalizar tu promt con el comando `set -U fish_prompt "Mi Proyecto >"`. También puedes establecer alias útiles para comandos largos y tediosos, como `alias gc='git commit'`.
 
-````Fish Shell
-#!/usr/bin/fish
-echo "Hola Mundo"
-````
+```Fish Shell
+set -U fish_prompt "Mi Proyecto >"
+alias gc='git commit'
+```
 
-Este código imprimirá "Hola Mundo" en la terminal cuando se ejecute. Puedes usar este ejemplo para familiarizarte con la sintaxis y funcionalidades de Fish Shell.
+Esto te ahorrará tiempo y esfuerzo en el futuro al escribir comandos repetitivos.
 
-## Una mirada más profunda
+## Profundizando
 
-Al iniciar un nuevo proyecto en Fish Shell, es importante tener en cuenta algunas cosas:
+Empezar un proyecto nuevo no se trata solo de configurar el entorno correcto, sino también sobre la organización y estructura del proyecto en sí. Una buena práctica es dividir tu código en diferentes archivos y carpetas, para mantenerlo limpio y fácil de navegar.
 
-- Puedes personalizar tu Fish Shell según tus preferencias utilizando el comando `fish_config`.
-- Fish Shell ofrece una amplia gama de plugins para extender su funcionalidad. Puedes encontrar y descargar plugins desde el sitio web oficial de Fish Shell.
-- También puedes encontrar ejemplos de código y soluciones a problemas comunes en la comunidad de Fish Shell, ¡así que no dudes en buscar ayuda en línea si la necesitas!
+En Fish Shell, puedes crear fácilmente nuevos archivos usando `touch` y nuevas carpetas con `mkdir`. Además, puedes utilizar el comando `echo` para escribir contenido en un archivo desde la línea de comandos.
+
+Por ejemplo, si queremos crear un archivo `main.py` en una carpeta llamada `codigo`, podríamos escribir los siguientes comandos:
+
+```Fish Shell
+mkdir codigo
+touch codigo/main.py
+echo "print('¡Hola Mundo!')" > codigo/main.py
+```
+
+Esto creará la carpeta y el archivo con el código escrito en el mismo comando. ¡Simple y eficiente!
 
 ## Ver también
 
-- [Sitio web oficial de Fish Shell](https://fishshell.com/)
-- [Documentación de Fish Shell](https://fishshell.com/docs/current/)
-- [Lista de plugins de Fish Shell](https://github.com/fish-shell/fish-shell/wiki/Plugins)
-
-¡Ahora estás listo para comenzar tu nuevo proyecto en Fish Shell! Con estas herramientas y recursos, podrás mejorar tu flujo de trabajo y aprovechar al máximo esta poderosa shell de línea de comandos. ¡Buena suerte en tu aventura de programación con Fish Shell!
+- Documentación oficial de Fish Shell: https://fishshell.com/docs/current/index.html
+- Guía de inicio rápido de Fish Shell para principiantes: https://medium.com/@jaxzin/fish-shell-quick-start-guide-for-beginners-3cfd5b0639c7
+- Revisa más alias útiles para Fish Shell: https://github.com/fish-shell/awesome-fish

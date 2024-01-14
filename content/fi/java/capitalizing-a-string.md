@@ -1,59 +1,43 @@
 ---
-title:    "Java: Merkkijonon suurennus"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/capitalizing-a-string.md"
+title:                "Java: Kirjoita merkkijono isolla alkukirjaimella"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi kannattaa tehdä merkkijonon kirjoitus isoiksi aakkosiksi
+## Miksi?
 
-Merkkijonon kirjoittaminen isoiksi aakkosiksi on yleinen ohjelmointitekniikka, jota käytetään useissa Java-sovelluksissa. Se antaa mahdollisuuden muokata tekstin ulkonäköä ja tehdä siitä helpommin luettavaa ja yhtenäisempää. Lisäksi käyttäjät voivat tuntea itsensä mukavammaksi käyttämällä isoja kirjaimia tekstin lukemiseen.
+Joissain tapauksissa on tarpeen muuttaa merkkijonon kirjaimia muuttamalla ne isoiksi tai pieniksi. Tämä voi olla esimerkiksi tarpeellista, jos halutaan syöttää käyttäjän syöttämä teksti tietokantaan ja varmistaa, että se tallennetaan yhtenäisellä tavalla. Tai toisessa tapauksessa halutaan vain esittää tietoa käyttäjälle visuaalisesti isoina kirjaimina.
 
-# Miten: Merkkijonon kirjoittaminen isoiksi aakkosiksi Java-ohjelmoinnissa
+## Kuinka tehdä se?
 
-Java tarjoaa muutaman eri tapaa muuttaa merkkijono isoiksi aakkosiksi. Tässä esimerkissä käytämme String.toUpperCase () -metodia.
-
-```Java
-String s = "tämä on esimerkki";
-
-// muuta merkkijono isot aakkoset
-String capitalized = s.toUpperCase();
-System.out.println(capitalized);
-```
-
-Tämä koodi antaa seuraavan tulosteen:
-
-```
-TÄMÄ ON ESIMERKKI
-```
-
-Voit myös käyttää Character.toUpperCase () -metodia, jolla voit muuttaa yksittäinen kirjain isoksi.
+Onneksi Javan String-luokka tarjoaa valmiin toiminnon merkkijonon muuttamiseen isoiksi kirjaimiksi. Tämä toiminto on nimeltään `toUpperCase()`. Se voidaan kutsua suoraan merkkijonoon ja se palauttaa uuden merkkijonon, jossa kaikki kirjaimet ovat isoja.
 
 ```Java
-char c = 'a';
+String teksti = "Hei Maailma!";
+String isoilla = teksti.toUpperCase();
 
-// muuta kirjain isot aakkoset
-char capitalized = Character.toUpperCase(c);
-System.out.println(capitalized);
+System.out.println(isoilla); // Tulostaa "HEI MAAILMA!"
 ```
 
-Tämä koodi antaa seuraavan tulosteen:
+Huomaa, että `toUpperCase()` ei muuta alkuperäistä merkkijonoa vaan palauttaa uuden muokatun version. Jos haluat muuttaa alkuperäisen merkkijonon isoiksi kirjaimiksi, voit korvata sen uudella versiolla:
 
+```Java
+String teksti = "Hei Maailma!";
+teksti = teksti.toUpperCase();
+
+System.out.println(teksti); // Tulostaa "HEI MAAILMA!"
 ```
-A
-```
 
-# Syvällinen erittely: Merkkijonon kirjoittaminen isoiksi aakkosiksi
+## Syvemmälle pintaan
 
-Merkkijonon kirjoittamisen isoksi aakkosiksi Java-ohjelmoinnissa taustalla on Unicode-merkkijonojen standardi. Jokaisella tallennetulla merkillä on oma numeronsa Unicode-taulukossa ja pienet kirjaimet ovat peräkkäin isojen kirjainten kanssa.
+Vaikka `toUpperCase()`-toiminto on helppo käyttää, on hyvä ymmärtää hieman enemmän siitä, miten se toimii taustalla. Javan String-luokka tallentaa merkkijonot taulukkona, jossa jokainen merkki on erillinen elementti. `toUpperCase()`-toiminto käy läpi tämän taulukon ja muuntaa jokaisen merkin isoiksi vastaavien ASCII-koodien avulla.
 
-Joten, kun käytät toUpperCase () -metodia, se tarkistaa jokaisen merkin Unicode-numeron ja jos se on pieni kirjain, muuttaa sen vastaavaksi isoksi kirjaimeksi.
+On myös hyvä huomata, että `toUpperCase()` ei muuta muita merkkejä kuin kirjaimia. Numerot ja erikoismerkit säilyvät samoina. Tämä kannattaa ottaa huomioon, jos merkkijonossa on esimerkiksi välimerkkejä tai numeroita.
 
-On myös tärkeää huomata, että merkkijonot ovat muuttumattomia Java-ohjelmoinnissa, mikä tarkoittaa, että kun muutat merkkijonoa isoksi, sinun täytyy tallentaa muutettu merkkijono uuteen muuttujaan.
+## Katso myös
 
-# Katso myös
-
-- [Java String-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java Character-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html)
-- [Unicode standardi](https://unicode.org/standard/standard.html)
+- Javan String-luokan tiedot: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+- ASCII-koodit: https://www.ascii-code.com/

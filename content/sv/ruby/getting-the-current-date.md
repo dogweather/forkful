@@ -1,59 +1,37 @@
 ---
-title:    "Ruby: Hämta aktuellt datum"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/getting-the-current-date.md"
+title:                "Ruby: Att få den aktuella datumen"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna hämta den aktuella datumet är en viktig del av programmering. Det kan användas för att spåra tidsstämplar för data eller för att visa aktuellt datum på en webbplats. Låt oss fördjupa oss i hur man kan göra detta med hjälp av Ruby-programmering.
+Att hämta den nuvarande datumet är en vanlig uppgift som många programmerare kommer att stöta på i sitt arbete. Oavsett om du behöver visa den aktuella tiden på en webbapplikation eller använda den i beräkningar eller för att organisera data, är det viktigt att veta hur man enkelt kan hämta datumet med hjälp av Ruby-programmering.
 
-## Hur man gör
-
-För att hämta det aktuella datumet i Ruby, behöver vi använda oss av klassen "Date" och dess metod "today".
+## Hur man gör det
 
 ```Ruby
-require 'date'
+current_date = Time.now
+puts current_date
 
-puts Date.today
+#Återger: 2021-04-21 16:10:47 +0200
 ```
-Output: 2021-10-11
 
-Om vi vill ändra formatet på datumet kan vi använda metoderna "strftime" och "strptime".
+För att hämta det nuvarande datumet i Ruby, kan du använda den inbyggda metoden "Time.now". Detta returnerar ett objekt av klassen Time, som representerar den aktuella tiden. Med hjälp av "puts" kommandot kan du sedan skriva ut detta värde till konsolen.
 
-```Ruby
-require 'date'
+Det finns också andra inbyggda metoder i Ruby som kan användas för att anpassa hur den nuvarande tiden visas, till exempel "strftime" för att ange det önskade formatet.
 
-puts Date.today.strftime("%d/%m/%Y")
-```
-Output: 11/10/2021
+## Djupdykning
 
-Vi kan också ange ett specifikt datum och få det att returneras i Date-format med hjälp av "strptime" metoden.
+Att förstå hur klockan och datumet fungerar i en programmeringsspråk som Ruby är viktigt eftersom det kan påverka andra delar av din kod. Till exempel, om du behöver jämföra olika tidsvärden eller göra beräkningar baserat på datum, är det viktigt att lära dig hur man hanterar tidszoner och hur de påverkar den nuvarande tiden.
 
-```Ruby
-require 'date'
+Det finns också många användbara juveler (gems) tillgängliga i Ruby för att hjälpa till med datumbehandling, till exempel "timecop" för att simulera olika tidpunkter och "chronic" för att översätta naturligt språk till datum och tider.
 
-puts Date.strptime("01/01/2021", "%d/%m/%Y")
-```
-Output: 2021-01-01
+## Se även
 
-## Fördjupning
-
-Som nämnts tidigare är "Date" en klass i Ruby som ger oss tillgång till metoden "today" för att hämta det aktuella datumet. Denna klass har också andra användbara metoder som låter oss jämföra datum och utföra olika operationer på dem.
-
-En annan viktig aspekt att veta är att datumet som returneras är i UTC (koordinerad universell tid) format. Om du behöver konvertera det till en annan tidszon kan du använda "localtime" metod.
-
-```Ruby
-require 'date'
-
-puts Date.today.localtime("+02:00")
-```
-Output: 2021-10-11
-
-## Se också
-
-- Ruby Dokumentation om Date-klassen: https://ruby-doc.org/stdlib-3.0.2/libdoc/date/rdoc/Date.html
-- En tutorial om hur man hanterar datum och tid i Ruby: https://www.rubyguides.com/2015/09/working-with-dates-and-time-in-ruby/
-- En diskussion om användbarheten av "Date" klassen i Ruby: https://stackoverflow.com/questions/7963581/how-to-manipulate-dates-in-ruby
+- [Ruby Time dokumentation](https://ruby-doc.org/core-3.0.0/Time.html)
+- [Stoverclock: Date and Time Handling in Ruby](https://www.sitepoint.com/ruby-date-time-handling/)
+- [RubyGems.org](https://rubygems.org/)

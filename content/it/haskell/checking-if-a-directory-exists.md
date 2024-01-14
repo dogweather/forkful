@@ -1,39 +1,72 @@
 ---
-title:    "Haskell: Verifica dell'esistenza di una directory"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/checking-if-a-directory-exists.md"
+title:                "Haskell: Verifica dell'esistenza di una directory"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Spesso durante la programmazione potremmo trovarci nella situazione in cui abbiamo bisogno di verificare se una directory esiste o meno. Questo può essere utile per garantire che il nostro programma funzioni correttamente e per gestire possibili errori.
+Controllare l'esistenza di una directory è un'operazione fondamentale in programmazione Haskell. Ci permette di controllare se una specifica cartella esiste nel nostro sistema, e in caso contrario, di crearla per potervi scrivere o leggere file.
 
-## Come fare
+## Come Fare
 
-Per verificare se una directory esiste in Haskell, possiamo utilizzare la funzione `doesDirectoryExist` presente nel modulo `System.Directory`. Questa funzione prende come argomento il percorso della directory e restituisce un valore booleano, True se la directory esiste, False altrimenti.
-
-Ecco un semplice esempio di come utilizzare questa funzione:
+Per controllare l'esistenza di una directory, possiamo utilizzare la funzione `doesDirectoryExist` del modulo `System.Directory`. Questa funzione prende come parametro una stringa contenente il percorso della directory che vogliamo controllare, e restituisce un valore booleano indicando se la directory esiste o meno.
 
 ```Haskell
-import System.Directory (doesDirectoryExist)
+import System.Directory
 
+-- Definizione del percorso della directory
+directoryPath = "C:\\Users\\utente\\Desktop\\documenti"
+
+-- Chiamata alla funzione doesDirectoryExist
+doesExist = doesDirectoryExist directoryPath
+
+-- Stampa del risultato
 main = do
-    result <- doesDirectoryExist "Documents"
-    if result
-        then putStrLn "La directory esiste!"
-        else putStrLn "La directory non esiste."
+    putStrLn $ "La directory " ++ directoryPath ++ " esiste? " ++ show doesExist
 ```
 
-Nell'esempio, utilizziamo la funzione `doesDirectoryExist` per controllare se la directory "Documents" esiste nel nostro sistema. Se la directory esiste, stampiamo un messaggio di conferma, altrimenti stampiamo un messaggio di errore.
+Questo codice restituirà il seguente output:
+
+```
+La directory C:\Users\utente\Desktop\documenti esiste? True
+```
+
+Se la directory non esiste, il risultato sarà `False`.
 
 ## Approfondimento
 
-Oltre alla funzione `doesDirectoryExist`, il modulo `System.Directory` mette a disposizione altre utili funzioni per manipolare le directory. Ad esempio, possiamo utilizzare la funzione `getDirectoryContents` per ottenere una lista dei file e delle directory presenti all'interno di una determinata directory. Inoltre, possiamo utilizzare la funzione `createDirectory` per creare una nuova directory e la funzione `removeDirectoryRecursive` per rimuovere una directory e tutti i suoi contenuti.
+In Haskell, esistono diverse funzioni e librerie che ci permettono di controllare le directory in modo più approfondito. Ad esempio, con la funzione `listDirectory` del modulo `System.Directory`, possiamo ottenere una lista di tutte le sottodirectory presenti all'interno di una directory specifica.
 
-## Vedi anche
+```Haskell
+import System.Directory
 
-- Documentazione ufficiale di Haskell su System.Directory: https://www.haskell.org/cabal/users-guide/installing-packages.html
-- Una guida dettagliata sull'utilizzo delle directory in Haskell: https://en.wikibooks.org/wiki/Haskell/directory
-- Esempi di codice per gestire le directory in Haskell: https://github.com/fpco/haskell-ide-engine/blob/master/hie-plugin-api/src/Util.hs
+-- Definizione del percorso della directory
+directoryPath = "C:\\Users\\utente\\Desktop\\documenti"
+
+-- Chiamata alla funzione listDirectory
+subDirectories = listDirectory directoryPath
+
+-- Stampa del risultato
+main = do
+    putStrLn $ "Sottodirectories presenti in " ++ directoryPath ++ ": "
+    mapM_ putStrLn subDirectories
+```
+
+Questo codice restituirà il seguente output:
+
+```
+Sottodirectories presenti in C:\Users\utente\Desktop\documenti:
+foto
+video
+musiche
+```
+
+## Vedi Anche
+
+- [Documentazione ufficiale di Haskell su System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [Tutorial su come lavorare con le directory in Haskell](https://wiki.haskell.org/Working_with_files)
+- [Domande frequenti su Haskell](https://wiki.haskell.org/FAQ)

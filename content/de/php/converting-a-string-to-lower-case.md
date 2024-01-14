@@ -1,38 +1,43 @@
 ---
-title:    "PHP: String in Kleinbuchstaben umwandeln"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/converting-a-string-to-lower-case.md"
+title:                "PHP: Umwandlung eines Strings in Kleinbuchstaben"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Man könnte sich fragen, warum man überhaupt den Aufwand betreiben sollte, eine Zeichenfolge in Kleinbuchstaben umzuwandeln. Die Antwort ist einfach: In bestimmten Situationen kann es wichtig sein, dass die Groß- und Kleinschreibung von Wörtern einheitlich ist, um beispielsweise Suchanfragen oder Vergleiche korrekt ausführen zu können.
+Wer sich mit der Programmiersprache PHP beschäftigt, wird früher oder später auf die Aufgabe stoßen, einen String in Kleinbuchstaben umzuwandeln. Dies kann aus verschiedenen Gründen notwendig sein, beispielsweise um die Eingabe eines Benutzers im gleichen Format zu erhalten oder um eine einheitliche Formatierung von Daten zu gewährleisten.
 
-## Wie man eine Zeichenfolge in Kleinbuchstaben umwandelt
+## Wie
 
-Es gibt mehrere Möglichkeiten, eine Zeichenfolge in Kleinbuchstaben umzuwandeln. Eine davon ist die Verwendung der PHP-Funktion `strtolower()`. Diese Funktion nimmt als Parameter die zu konvertierende Zeichenfolge und gibt sie in Kleinbuchstaben zurück.
-
-```PHP
-$word = "HELLO";
-echo strtolower($word); // Output: hello
-```
-
-Eine andere Möglichkeit ist die Verwendung der PHP-Funktion `mb_strtolower()`. Diese Funktion ist speziell für Multibyte-Zeichen wie z.B. Umlaute geeignet.
+Die Umwandlung eines Strings in Kleinbuchstaben ist in PHP sehr einfach und kann mit der Funktion `strtolower()` durchgeführt werden. Diese Funktion nimmt als Argument den zu konvertierenden String und gibt anschließend den neuen, in Kleinbuchstaben geschriebenen String zurück. Im Folgenden sind einige Beispiele für die Verwendung von `strtolower()` aufgeführt:
 
 ```PHP
-$word = "ÜBER";
-echo mb_strtolower($word, 'UTF-8'); // Output: über
+$input = "Hallo, WELT!";
+
+echo strtolower($input); // gibt "hallo, welt!" aus
 ```
 
-## Tiefergehende Informationen
+```PHP
+$input = "DU Und ICH";
 
-Bei der Verwendung der `strtolower()` Funktion ist es wichtig zu beachten, dass die Funktion auf die aktuelle Systemsprache des Servers begrenzt ist. Das bedeutet, dass die Funktion unter Umständen auch Zeichenfolgen in andere Sprachen als Englisch nicht korrekt umwandeln kann. In solchen Fällen sollte die `mb_strtolower()` Funktion verwendet werden.
+echo strtolower($input); // gibt "du und ich" aus
+```
 
-Außerdem ist es wichtig zu beachten, dass bei beiden Funktionen die Rückgabe der umgewandelten Zeichenfolge ein neues String-Objekt ist und nicht das ursprüngliche. Das bedeutet, dass der ursprüngliche String unverändert bleibt.
+Wie in den obigen Beispielen gezeigt, werden alle Buchstaben in der originalen Groß-/Kleinschreibung in Kleinschreibung umgewandelt. Es ist auch möglich, nur den ersten Buchstaben des Strings in einen Kleinbuchstaben zu verwandeln und den Rest unverändert zu lassen. Dies kann mit der Funktion `lcfirst()` erreicht werden, die ähnlich wie `strtolower()` funktioniert, jedoch nur den ersten Buchstaben in Kleinschreibung umwandelt.
+
+## Deep Dive
+
+Der Grund, warum die Funktionen `strtolower()` und `lcfirst()` so effektiv und einfach zu verwenden sind, liegt in ihrem Umgang mit Sonderzeichen und Umlauten. PHP ist eine Unicode-fähige Sprache und kann daher mit einer Vielzahl von Zeichen und Zeichensätzen umgehen. Die Funktionen `strtolower()` und `lcfirst()` sind so konzipiert, dass sie die Sprach- und Zeichensatzspezifikationen des Betriebssystems und der verwendeten Zeichenkodierung berücksichtigen. Dies bedeutet, dass sie nicht nur mit den Buchstaben des englischen Alphabets funktionieren, sondern auch mit Buchstaben aus anderen Sprachen, wie beispielsweise deutschen Umlauten (`ä`, `ö`, `ü`), französischen Akzenten (`é`, `è`, `ê`) oder sogar kyrillischen Buchstaben.
+
+Es ist jedoch wichtig zu beachten, dass die Art und Weise, wie Buchstaben in Kleinbuchstaben umgewandelt werden, von der verwendeten Programmiersprache und den spezifischen Sprach- und Zeichensatzkodierungen abhängt. Es kann daher zu Unterschieden kommen, wenn dieselbe Aufgabe in anderen Programmiersprachen ausgeführt wird.
 
 ## Siehe auch
 
-- [PHP strtolower() Funktion](https://www.php.net/manual/de/function.strtolower.php)
-- [PHP mb_strtolower() Funktion](https://www.php.net/manual/de/function.mb-strtolower.php)
+- [PHP Dokumentation zu strtolower()](https://www.php.net/manual/de/function.strtolower.php)
+- [PHP Dokumentation zu lcfirst()](https://www.php.net/manual/de/function.lcfirst.php)
+- [Unicode Consortium](https://unicode.org/)
+- [Unicode-Zeichenkodierung in PHP](https://www.php.net/manual/de/book.unicode.php)

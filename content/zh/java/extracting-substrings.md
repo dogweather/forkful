@@ -1,44 +1,74 @@
 ---
-title:    "Java: 提取子字符串"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/java/extracting-substrings.md"
+title:                "Java: 提取子串"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+##为什么
 
-在编写Java程序时，有时候我们需要从一个字符串中提取出一部分内容。这可以帮助我们处理文本数据更加方便和灵活，例如搜索和替换特定的文本。因此，提取子字符串是Java编程中常用的基本操作。
+提取子字符串是一项在Java编程中非常有用的技术。它可以让您从一个大字符串中获取特定部分的信息，使您的代码更加灵活和可读。让我们来看看如何在Java中提取子字符串。
 
-## 如何做
+##如何进行提取
 
-为了提取子字符串，我们需要使用Java中的substring()方法。这个方法接受两个参数，分别是要开始提取的索引和要结束提取的索引。例如，如果我们想从一个字符串中提取出前5个字符，可以这样写：
+为了提取子字符串，我们使用Java中内置的字符串方法 `substring()`。它需要两个参数：起始索引和结束索引。起始索引是您想要提取子字符串的起始位置，而结束索引是您想要提取子字符串的结束位置。让我们来看一个例子:
 
-```Java
-String str = "Hello World";
-String subStr = str.substring(0, 5);
-System.out.println(subStr); // Output: Hello
+```java
+String str = "Hello World!";
+String subStr = str.substring(6,11);
+System.out.println(subStr);
+```
+输出:
+```
+World
 ```
 
-需要注意的是，Java中的索引是从0开始的，所以如果想要提取第一个字符，索引应该为0。另外，如果不指定结束索引，那么substring()方法会一直提取到字符串的末尾。
+在上面的例子中，`substring()`方法从索引6到索引11提取了子字符串，并将其存储在`subStr`变量中。我们可以使用这个方法来提取任意长度的子字符串，只需调整起始和结束索引即可。
 
-我们还可以根据需要，使用substring()方法提取出多个子字符串，然后再进行处理和拼接。
+##深入了解
 
-## 深入了解
+除了指定起始和结束索引，我们也可以使用`substring()`方法来提取从指定索引开始到字符串末尾的子字符串，如下所示:
 
-除了起始和结束索引，substring()方法还可以接受一个可选的第三个参数，用于指定每个提取的子字符串的长度。这样可以更灵活地提取出特定长度的子字符串，而不需要手动计算索引。
+```java
+String str = "Java is an amazing programming language!";
+String subStr = str.substring(11);
+System.out.println(subStr);
+```
 
-另外，需要特别注意的是，String类中的substring()方法会返回一个新的字符串对象，而不是修改原始的字符串。如果需要修改原始字符串，可以使用StringBuilder或StringBuffer类。
+输出:
+```
+amazing programming language!
+```
 
-## 查看更多
+我们也可以将`substring()`方法的第二个参数省略不写，这样它会自动将字符串的长度作为结束索引。这对于我们想要提取从指定位置到字符串末尾的子字符串很有用。
 
-如果想要了解更多关于提取子字符串的知识，可以参考以下链接：
+此外，我们还可以使用`substring()`方法来提取包含特定字符串的子字符串，如下所示:
 
-- [Java String类文档](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
-- [Java Substring方法教程](https://www.w3schools.com/java/java_ref_string.asp)
-- [Java String类视频教程](https://www.youtube.com/watch?v=V9UG5k1UjwA)
+```java
+String str = "I love to code";
+String subStr = str.substring(7,12);
+System.out.println(subStr);
+```
 
-## 参考链接
+输出:
+```
+code
+```
 
-- [在Java中提取子字符串的方法](https://www.codejava.net/coding/how-to-extract-a-substring-from-a-string-in-java)
-- [Java String类的substring()方法详解](https://blog.csdn.net/weixin_34327244/article/details/86769831)
+这里我们使用`substring()`方法提取了包含特定单词“code”的子字符串，它可以帮助我们从一个字符串中提取出我们需要的内容。
+
+##参考资料
+
+- [Java String docs](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html)
+- [Java substring method](https://www.geeksforgeeks.org/java-string-substring-function-with-examples/)
+- [Java substring online](https://www.javatpoint.com/java-string-substring)
+- [Substring tutorial](https://www.baeldung.com/java-string-substring)
+- [Substring vs Subsequence](https://stackoverflow.com/questions/19758987/difference-between-substring-subsequence-and-sublist)
+
+##另请参阅
+
+- [Markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/)
+- [Java学习资源](https://www.cs.rochester.edu/u/nelson/courses/csc_162/resources.html)
+- [Java编程入门指南](https://www.ntu.edu.sg/home/ehchua/programming/index.html)

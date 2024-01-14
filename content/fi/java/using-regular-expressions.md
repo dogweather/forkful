@@ -1,50 +1,52 @@
 ---
-title:    "Java: Säännöllisten lausekkeiden käyttö"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/using-regular-expressions.md"
+title:                "Java: Säännöllisten lausekkeiden käyttö"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita Java-ohjelmoinnissa?
+## Miksi
 
-Säännölliset lausekkeet ovat erittäin hyödyllisiä työkaluja, kun halutaan käsitellä tekstipohjaista dataa Java-ohjelman sisällä. Ne mahdollistavat monimutkaisempien hakutoimintojen suorittamisen lyhyillä ja tehokkailla koodinpätkillä. Käyttämällä säännöllisiä lausekkeita voit esimerkiksi etsiä ja korvata tiettyjä merkkijonoja tai suodattaa tietoja haluamallasi tavalla.
+Jos olet koskaan joutunut etsimään tietoa tekstistä, niin tiedät kuinka aikaa vievää ja työlästä se voi olla. Regular expressionit, tai regexit, tarjoavat tehokkaan tavan etsiä ja manipuloida tekstiä käyttämällä tiettyä syntaksia. Ne voivat säästää paljon aikaa ja vaivaa.
 
-## Miten käyttää säännöllisiä lausekkeita Java-ohjelmoinnissa?
+## Miten
 
-Säännöllisten lausekkeiden käyttö Java-ohjelmoinnissa tapahtuu pääasiassa java.util.regex-paketin kautta. Voit aloittaa käyttämällä säännöllisiä lausekkeita luomalla Pattern-objektin, joka ottaa vastaan säännöllisen lausekkeen ja halutun merkkijonon. Tämän jälkeen voit käyttää Matcher-objektia suorittamaan haluamasi toiminnot. Alla on yksinkertainen esimerkki:
+Regular expressionit käytetään pääasiassa ohjelmointikielissä, kuten Javassa, ja ne ovat hyödyllisiä esimerkiksi tietojen validointiin ja hakemiseen tekstistä. Alla on esimerkki siitä, miten löydetään kaikki sähköpostiosoitteet annetusta tekstistä.
 
 ```Java
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegularExpressions {
+String teksti = "Osoitteeni on esimerkki@esimerkki.com ja ystäväni osoite on toinen@esimerkki.fi";
+Pattern p = Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}");
+Matcher m = p.matcher(teksti);
 
-    public static void main(String[] args) {
-        String inputString = "Tämä on esimerkki tekstipohjaisesta datasta";
-        String regex = "esimerkki";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(inputString);
-        while (matcher.find()) {
-            System.out.println("Löytyi osumat: " + matcher.group());
-        }
-    }
+while (m.find()) {
+  System.out.println("Löydetty sähköpostiosoite: " + m.group());
 }
 ```
 
-Koodin tulos:
+Tulostus olisi:
 
 ```
-Löytyi osumat: esimerkki
+Löydetty sähköpostiosoite: esimerkki@esimerkki.com
+Löydetty sähköpostiosoite: toinen@esimerkki.fi
 ```
 
-Tämä yksinkertainen esimerkki etsii annetusta merkkijonosta säännöllisen lausekkeen "esimerkki" ja tulostaa kaikki löydetyt osumat.
+## Syväsukellus
 
-## Syvempää tietoa säännöllisten lausekkeiden käytöstä
+Regular expressioneilla on paljon erilaisia syntakseja ja mahdollisuuksia, joten niiden käytön syvällisempi ymmärtäminen voi viedä aikaa ja harjoittelua. Alla on muutamia esimerkkejä erilaisista syntakseista:
 
-Säännölliset lausekkeet ovat hyvin monipuolisia ja niillä voi suorittaa monenlaisia toimintoja, kuten esimerkiksi metakarakterien käyttöä, jolla voit hakea merkkijonoja tiettyjen kriteerien mukaan. Voit myös käyttää säännöllisiä lausekkeita merkkijonojen muotoiluun ja validointiin. On tärkeää tutustua säännöllisten lausekkeiden eri ominaisuuksiin ja toimintoihin, jotta voit hyödyntää niitä tehokkaasti Java-ohjelmoinnissa.
+- `[a-z]` vastaa mihin tahansa pieniin kirjaimiin välillä a-z
+- `+` vastaa yhteen tai useampaan samaan merkkiin
+- `|` vastaa joko vasemmalla tai oikealla puolella olevaan ilmaisuun
+
+Syntaksit riippuvat käytettävästä ohjelmointikielestä ja niitä voi olla hyvä tutkia lisää esimerkiksi Java-luokkakirjastojen dokumentaatiosta.
 
 ## Katso myös
 
-- Java Regular Expressions Tutorial: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
-- Regular Expressions Cheat Sheet: https://www.rexegg.com/regex-quickstart.html
+- [Regex tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+- [Java luokkakirjasto: Pattern](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
+- [Regex crossword](https://regexcrossword.com/) (hyvä tapa harjoitella regexeja!)

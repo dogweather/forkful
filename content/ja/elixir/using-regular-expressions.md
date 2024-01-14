@@ -1,58 +1,39 @@
 ---
-title:    "Elixir: 正規表現の利用"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/using-regular-expressions.md"
+title:                "Elixir: 正規表現の使用"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ正規表現を使うのか？
 
-正規表現を使用することのメリットは、テキスト処理をより簡単に、より柔軟に行うことができることです。正規表現を使用することで、特定のパターンに一致するテキストを検索したり、置換したりすることができます。
+正規表現は、テキストデータを処理する際に非常に便利です。例えば、特定のパターンを持つ文字列を検索したり、置換したりすることができます。また、文章の自然言語処理やデータの検証などにも活用できます。
 
-## 使い方
+## 正規表現の使い方
 
-まず、正規表現のためのElixirライブラリであるRegexをロードする必要があります。
-
-```Elixir
-import Regex
-```
-
-次に、正規表現パターンを定義します。例えば、"Elixir"という文字列を含むテキストを検索する正規表現パターンは、次のようになります。
+正規表現はElixirの標準ライブラリに含まれており、```Regex```モジュールを使用して利用することができます。以下のコード例では、文字列から特定のパターンを持つ単語を抽出しています。
 
 ```Elixir
-pattern = ~r/Elixir/
+string = "私の名前はジョンです"
+Regex.scan(~r/私の名前は(\w+)/u, string) |> List.first |> List.last
 ```
 
-パターンが定義されたら、`match?`関数を使用してテキストがパターンに一致するかどうかをチェックすることができます。
+上記のコードの実行結果は、```ジョン```という文字列になります。
 
-```Elixir
-match? pattern, "I love Elixir!" # => true
-match? pattern, "Ruby is my favorite language." # => false
-```
+## 深堀りする
 
-パターンに一致した部分文字列を取得するには、`match`関数を使用します。
+正規表現の表記法や特殊文字の扱いなど、さらに詳細な情報を知りたい場合は、正規表現のドキュメントやチュートリアルを参考にすることができます。また、正規表現を使用する際に気をつけるべき点として、パフォーマンスの問題があります。大きなテキストデータを処理する際は、正規表現の最適化を行う必要があります。
 
-```Elixir
-match pattern, "Elixir is amazing." # => %Regex.MatchData{...}
-```
+## 参考
 
-また、正規表現を使用してテキストの一部を置換することもできます。
+- [Elixir Regexモジュールのドキュメント](https://hexdocs.pm/elixir/Regex.html)
+- [正規表現チュートリアル (英語)](https://www.regular-expressions.info/tutorial.html)
+- [正規表現最適化の方法 (英語)](https://www.regular-expressions.info/optimization.html)
 
-```Elixir
-replace "I love Ruby and Python.", ~r/Ruby|Python/, "Elixir" # => "I love Elixir and Elixir."
-```
+## その他のリソース
 
-## 深堀り
-
-正規表現を使用する際に注意しなければならないことがいくつかあります。まず、正規表現パターン内で使用できる特殊文字やメタ文字には制限があります。また、パターンのマッチングはデフォルトで大文字と小文字を区別するため、文字列を比較する前に大文字や小文字に統一する必要があります。
-
-また、正規表現はパフォーマンスに影響を与える可能性があります。パターンが複雑で長いテキストを検索する場合は、効率的なアルゴリズムが必要です。
-
-## 関連情報
-
-See Also (参考資料):
-
-- [ElixirSchoolの正規表現チュートリアル](https://elixirschool.com/ja/lessons/basics/pattern-matching/)
-- [ElixirのRegexドキュメンテーション](https://hexdocs.pm/elixir/Regex.html)
-- [正規表現チートシート](https://www.debuggex.com/cheatsheet/regex/elixir)
+- [Elixir公式サイト](https://elixir-lang.org/)
+- [Elixirチュートリアル (日本語)](https://elixir-ja.sena-net.works/guide/basic_types.html)
+- [正規表現の基礎 (日本語)](https://www.slideshare.net/zensh75/61-japanese-tutorial)

@@ -1,44 +1,47 @@
 ---
-title:    "C#: Obteniendo la fecha actual"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/getting-the-current-date.md"
+title:                "C#: Obteniendo la fecha actual"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-En el mundo de la programación, tener la habilidad para obtener la fecha y hora actual es esencial en muchas situaciones. Ya sea para registrar el tiempo de un evento, generar un archivo con la fecha en su nombre o simplemente para fines de organización, siempre es importante tener acceso a esta información en el código. En este artículo, aprenderemos cómo obtener la fecha actual en C# de una manera sencilla y efectiva.
+Si eres un programador de C# y estás buscando una forma de obtener la fecha actual dentro de tu código, entonces este artículo es para ti. Obtener la fecha y hora actual es una tarea común en la programación, y en este post te enseñaremos diferentes formas de hacerlo con el lenguaje C#.
 
 ## Cómo hacerlo
-Para obtener la fecha actual en C#, podemos utilizar la clase `DateTime`. Esta clase contiene métodos útiles para trabajar con fechas y horas, incluyendo `Now()` que nos devuelve la fecha y hora actuales.
+Hay varias formas de obtener la fecha actual en C#, pero aquí te mostraremos dos métodos diferentes utilizando la clase "DateTime". Primero, puedes utilizar la propiedad "Now" para obtener la fecha y hora actual:
+
 ```C#
-DateTime currentTime = DateTime.Now;
+DateTime currentDate = DateTime.Now;
+Console.WriteLine(currentDate);
 ```
-También podemos especificar un formato específico para la fecha utilizando el método `ToString()`:
+
+La salida de este código será algo como: "10/13/2021 19:30:00". También puedes utilizar el método "Today" para obtener solo la fecha actual sin la hora:
+
 ```C#
-DateTime currentTime = DateTime.Now;
-string currentDate = currentTime.ToString("dd-MM-yyyy"); // en formato día-mes-año
+DateTime currentDate = DateTime.Today;
+Console.WriteLine(currentDate);
 ```
-Podemos hacer lo mismo para obtener solo la hora actual:
+
+La salida de este código sería simplemente: "10/13/2021". Ahora, si deseas obtener la fecha o la hora por separado, puedes utilizar varios métodos de la clase "DateTime" como "Year", "Month", "Day", "Hour", "Minute", etc. Por ejemplo:
+
 ```C#
-DateTime currentTime = DateTime.Now;
-string currentTime = currentTime.ToString("HH:mm:ss"); // en formato de 24 horas
-```
-Podemos imprimir la fecha y hora actuales en la consola con un simple `Console.WriteLine()`:
-```C#
-Console.WriteLine("La fecha y hora actuales son: " + currentTime);
-```
-La salida sería algo como:
-```
-La fecha y hora actuales son: 29-06-2021 13:45:23
+DateTime currentDate = DateTime.Now;
+Console.WriteLine(currentDate.Year); // salida: 2021
+Console.WriteLine(currentDate.Month); // salida: 10 (octubre)
+Console.WriteLine(currentDate.Hour); // salida: 19 (7pm)
 ```
 
 ## Profundizando
-Si queremos obtener información más detallada sobre la fecha actual, podemos utilizar otros métodos de la clase `DateTime`. Por ejemplo, `DateTime.Today` nos devuelve solo la fecha actual sin la hora, mientras que `DateTime.UtcNow` nos devuelve la hora universal coordinada (UTC).
+Ahora que sabes cómo obtener la fecha y hora actual en C#, es importante entender cómo funciona en realidad la clase "DateTime". Esta clase es parte del espacio de nombres "System" y se utiliza para representar fechas y horas. Incluye métodos y propiedades para manipular fácilmente la fecha y la hora según tus necesidades.
 
-También podemos combinar la fecha y hora actual con otras operaciones para realizar acciones específicas en nuestro código. Por ejemplo, podemos comparar la fecha actual con otra fecha específica para saber cuántos días han pasado. Podemos sumar o restar días, meses o años a la fecha actual utilizando los métodos `Add()` y `Subtract()`, o utilizar la clase `TimeSpan` para calcular la diferencia entre dos fechas.
+Una cosa importante a mencionar es que la fecha y hora actuales pueden variar dependiendo de la zona horaria en la que se encuentre el sistema en el que se está ejecutando el código. Por lo tanto, si deseas obtener la fecha y hora precisas en una zona horaria específica, debes utilizar el método "UtcNow" en lugar de "Now". También puedes especificar la zona horaria usando el método "ToLocalTime".
+
+En resumen, aprender a obtener la fecha y hora actual en C# es una habilidad útil y necesaria para muchos proyectos de programación. Ya sea que necesites mostrar la fecha en una aplicación, registrar eventos o realizar cálculos de tiempo, la clase "DateTime" te ayudará a hacerlo de manera sencilla y eficiente.
 
 ## Ver también
-- [Documentación de Microsoft sobre la clase DateTime](https://docs.microsoft.com/es-es/dotnet/standard/datetime/?view=netframework-4.7.2)
-- [Tutoriales de C# en Español](https://www.tutorialspoint.com/csharp/index.htm)
-- [GitHub repository para ejemplos de código de C#](https://github.com/TutorialRepository/CSharp)
+- [Clase DateTime en C#](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [Métodos para obtener diferentes partes de la fecha y hora en C#](https://www.c-sharpcorner.com/article/how-to-get-current-date-time-in-c-sharp/)
+- [Cómo trabajar con zonas horarias en C#](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tolocaltime?view=net-5.0)

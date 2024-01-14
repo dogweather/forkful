@@ -1,46 +1,41 @@
 ---
-title:    "Rust: Å få gjeldende dato"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/rust/getting-the-current-date.md"
+title:                "Rust: Å få dagens dato"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+Den nåværende datoen er en viktig del av mange programmer, spesielt de som håndterer tidsfølsomme oppgaver som fakturering, kalenderapplikasjoner og planleggingsverktøy. I Rust, kan vi enkelt få den nåværende datoen ved å bruke standardbiblioteket.
 
-Å få den nåværende dato kan være nyttig for mange programmeringsscenarioer. Kanskje du vil registrere når en bruker opprettet en konto, eller når en transaksjon ble gjort. Uansett hva grunnen måtte være, er det enkelt å få den nåværende dato i Rust.
-
-## Hvordan
-
-For å få den nåværende dato i Rust, kan du bruke standardbiblioteket "time". Først må du importere biblioteket ved å legge til følgende linje øverst i koden din:
+# Hvordan
+Vi kan få den nåværende datoen ved å bruke funksjonen `now()` fra `chrono`-biblioteket. Dette biblioteket er en standarddel av Rust og hjelper oss med å håndtere dato og tid. Først må vi importere biblioteket i vår kode ved å skrive `extern crate chrono;`. Deretter kan vi bruke `now()`-funksjonen for å få dagens dato, og lagre den i en variabel for videre bruk.
 
 ```
-use time;
+extern crate chrono;
+use chrono::{Local, DateTime};
+
+fn main() {
+    let now: DateTime<Local> = Local::now();
+    println!("{}", now); // 2021-02-05 04:52:27.153245 +01:00 local
+}
 ```
 
-Deretter kan du bruke funksjonen "now()" for å få den nåværende lokale tiden. Du kan også spesifisere en spesifikk tidsone ved å bruke funksjonen "at()". Her er et eksempel på hvordan du kan få den nåværende tiden og datoen i Oslo:
+Koden ovenfor vil skrive ut datoen og tiden i UTC-format ved å bruke `println!`-makroen. Men vi kan også formatere datoen og tiden som vi ønsker ved å bruke `format!`-makroen og angi ønsket format.
 
 ```
-let oslo_tz: time::Tm = time::now().at("Europe/Oslo");
-println!("Nåværende tid og dato i Oslo: {}", oslo_tz.to_local());
+...
+println!("{}", format!("{}", now.format("%A, %b %d, %Y"))); // Friday, Feb 05, 2021
+...
 ```
 
-Dette vil gi følgende utgang:
+Her har vi brukt formatet `%A, %b %d, %Y` for å få datoen på formen "day of the week, month day, year". Det er mange forskjellige formatmuligheter som kan brukes, og du kan finne en full liste over disse på Chronos dokumentasjonsside.
 
-```
-Nåværende tid og dato i Oslo: Mon May 03 2021 16:15:52 GMT+0200 (Central European Summer Time)
-```
+# Dypdykk
+Den nåværende datoen i Rust er representert ved hjelp av structen `DateTime`. Denne structen inneholder informasjon om dato, tid og tidsforskyvning i forhold til UTC. Hvis du vil lære mer om tidsstyring i Rust, kan du lese Chronos dokumentasjon eller Utforske Rust-serien på bloggen vår.
 
-## Dypdykk
-
-For de som ønsker å utforske dette emnet nærmere, er det verdt å merke seg at "time" biblioteket i Rust er basert på "Chrono" biblioteket. Dette betyr at du også kan bruke funksjoner fra Chrono for å håndtere dato og tid i Rust.
-
-En annen ting å være oppmerksom på er forskjellen mellom lokale og universelle tider. Lokal tid tar hensyn til tidsforskjellen mellom ulike tidszoner, mens universell tid er basert på UTC (Coordinated Universal Time).
-
-## Se også
-
-Her er noen nyttige lenker for å lære mer om å få den nåværende datoen i Rust:
-
-- [Rust time dokumentasjon](https://doc.rust-lang.org/std/time/index.html)
-- [Chrono dokumentasjon](https://docs.rs/chrono/0.4.19/chrono/)
-- [Rust tidsbehandling med Chrono](https://medium.com/@simonvreux/rust-date-and-time-tools-with-chrono-e98549488f30) (på engelsk)
+# Se også
+- Chronos offisielle dokumentasjon: https://docs.rs/chrono/
+- Utforske Rust-serien: https://www.myrustjourney.com/category/exploring-rust/

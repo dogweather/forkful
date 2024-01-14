@@ -1,62 +1,49 @@
 ---
-title:    "PHP: Stor bokstav i en streng"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/capitalizing-a-string.md"
+title:                "PHP: Stor bokstav i en streng"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å endre bokstavene i en streng (eller tekst) til store bokstaver kan være nyttig når man for eksempel ønsker å lage titteltekst eller markere viktig informasjon.
+I denne blogginnlegget skal vi se nærmere på hvordan du kan konvertere små bokstaver til store bokstaver i PHP, også kjent som å "capitalize" en streng. Dette er en vanlig oppgave når du jobber med tekstbehandling og formatering av tekst, så det er nyttig å vite hvordan man gjør det i PHP.
 
 ## Hvordan
 
-Kapitalisering av en streng kan gjøres på flere måter i PHP. En metode er å bruke funksjonen "strtoupper", som gjør om alle bokstavene i en streng til store bokstaver. Se eksempel nedenfor:
+For å gjøre dette i PHP, kan du bruke funksjonen `strtoupper()` som tar et argument (en streng) og returnerer en ny streng med alle bokstavene i store bokstaver. La oss se på et eksempel:
 
 ```PHP
-$input = "dette er en streng med små bokstaver";
-$uppercase = strtoupper($input);
-echo $uppercase; // Dette er en streng med små bokstaver
+$string = "hei alle sammen!";
+$capitalized_string = strtoupper($string);
+echo $capitalized_string;
 ```
+Output:
+`HEI ALLE SAMMEN!`
 
-En annen måte å kapitalisere en streng på er å bruke funksjonen "ucwords", som gjør om første bokstav i hvert ord til stor bokstav. Se eksempel nedenfor:
+Som du ser, blir alle bokstavene i strengen forandret til store bokstaver ved hjelp av `strtoupper()` funksjonen.
+
+Hvis du vil at kun den første bokstaven i strengen skal være stor, kan du bruke funksjonen `ucfirst()` i tillegg til `strtoupper()`:
 
 ```PHP
-$input = "dette er en streng med små bokstaver";
-$capitalized = ucwords($input);
-echo $capitalized; // Dette Er En Streng Med Små Bokstaver
+$string = "hei alle sammen!";
+$capitalized_string = ucfirst(strtolower($string));
+echo $capitalized_string;
 ```
+Output:
+`Hei alle sammen!`
 
-Man kan også lage sin egen funksjon for å kapitalisere en streng, som tar hensyn til unntaksord og andre spesifikke krav. Se eksempel nedenfor:
-
-```PHP
-function capitalizeString(string $input) {
-    $exceptions = ["og", "i", "for", "av", "på"]; // legg til egne unntaksord her
-    $words = explode(" ", $input); // deler opp strengen i ord
-
-    foreach ($words as $key=>$word) {
-        if (!in_array($word, $exceptions)) { // sjekker om ordet er et unntaksord
-            $words[$key] = ucfirst($word); // gjør første bokstav til stor bokstav
-        }
-    }
-
-    return implode(" ", $words); // setter sammen ordene igjen til en streng
-}
-
-$input = "dette er en streng med små bokstaver";
-$customCapitalized = capitalizeString($input);
-echo $customCapitalized; // Dette er en Streng med Små Bokstaver
-```
+I dette eksempelet brukte vi også `strtolower()` funksjonen for å gjøre alle bokstavene små før vi brukte `ucfirst()` for å gjøre den første bokstaven stor.
 
 ## Deep Dive
 
-Når man skal kapitalisere en streng, er det viktig å være klar over at bokstavene som skal endres må være i riktig format. Det vil si at de må være enten ASCII eller UTF-8 format. Dette kan påvirke resultatet hvis strengen inneholder spesialtegn eller bokstaver fra andre språk enn engelsk.
+Hvis du vil forstå mer om hvordan `strtoupper()` og `ucfirst()` funksjonene fungerer, kan vi ta en titt på det underliggende konseptet - ASCII-kodene til bokstavene. I ASCII-tabellen er det et nummer tilordnet til hver bokstav, og denne verdien avgjør om bokstaven er stor eller liten. For eksempel er "a" representert av tallet 97 og "A" av tallet 65.
 
-I tillegg er det også viktig å sjekke om det finnes allerede-eksisterende funksjoner som kan kapitalisere strenger på en bedre måte enn det man selv kan lage.
+Når du bruker `strtoupper()` funksjonen, kan du tenke på det som å "øke" ASCII-koden til hver bokstav med 32, slik at små bokstaver blir til store bokstaver. På samme måte, når du bruker `ucfirst()` funksjonen, øker den ASCII-koden til den første bokstaven i strengen med 32, mens resten av bokstavene forblir uendret.
 
-## Se Også
+## Se også
 
-- "PHP string functions" (https://www.w3schools.com/php/php_ref_string.asp)
-- "strtoupper PHP documentation" (https://www.php.net/manual/en/function.strtoupper.php)
-- "ucwords PHP documentation" (https://www.php.net/manual/en/function.ucwords.php)
+- [PHP string funksjoner](https://www.php.net/manual/en/ref.strings.php)
+- [ASCII-kode og ASCII-tabellen](https://www.ascii-code.com/)

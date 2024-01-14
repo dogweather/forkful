@@ -1,48 +1,38 @@
 ---
-title:    "Bash: Beregning av en dato i fremtiden eller fortiden"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/calculating-a-date-in-the-future-or-past.md"
+title:                "Bash: Beregning av dato i fremtiden eller fortiden"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
+Det kan være flere grunner til å ønske å beregne en dato i fremtiden eller fortiden, enten det er for å planlegge en reise, huske på viktige hendelser eller bare for å tilpasse kalenderen din. Heldigvis kan dette enkelt gjøres med Bash-programmering.
 
-Noen ganger kan det være nyttig å kunne beregne en dato i fremtiden eller fortiden. Kanskje du planlegger en ferie og vil vite nøyaktig når du skal dra tilbake, eller kanskje du bare er nysgjerrig på hvilken dato det var for ti år siden. Uansett årsak, kan Bash-programmering hjelpe deg med å beregne datoer.
-
-# Hvordan gjøre det
-
-For å beregne en dato i Bash, må du først vite hvilken dato du vil starte fra. La oss si at vi vil beregne datoen to uker fra i dag. Vi kan gjøre dette ved å bruke kommandoen `date` i Bash.
-
+## Slik gjør du det
+For å beregne en dato i fremtiden eller fortiden i Bash, trenger vi å bruke kommandoen `date` og dens mange muligheter. Her er et eksempel på hvordan du kan beregne datoen 30 dager fra nå:
 ```Bash
-today=$(date +%s)
+date -d "+30 days"
 ```
+Dette vil gi oss outputen `Mon Nov 15 00:00:00 CET 2021`, noe som betyr 30 dager fra datoen programmet ble kjørt.
 
-Her bruker vi `date` med argumentet `+%s` for å få datoen i sekunder siden 1. januar 1970. Dette nummeret representerer dagens dato og lagres i variabelen `today`.
-
-Nå kan vi legge til to uker til dagens dato ved hjelp av `expr` kommandoen.
-
+For å beregne en dato i fortiden, kan vi bruke kommandoen `date` sammen med parameteren `-` etterfulgt av antall dager. Her er et eksempel på hvordan du kan beregne datoen 100 dager tilbake i tid:
 ```Bash
-future_date=$(expr $today + 1209600)
+date -d "-100 days"
 ```
+Dette vil gi oss outputen `Thu Aug 05 00:00:00 CEST 2021`.
 
-Siden vi vet at det er 60 sekunder i et minutt og 60 minutter i en time, multipliserer vi antallet uker (2) med antallet sekunder i en uke (604800) for å få den totale summen av sekunder som må legges til.
-
-Til slutt kan vi bruke `date` kommandoen igjen for å konvertere det nye nummeret til en lesbar dato.
-
+## Dykk dypere
+Hvis du vil gå enda dypere i å beregne datoer i Bash, kan du også bruke kommandoen `date` til å arbeide med konkrete datoer. For eksempel, hvis du vil beregne datoen 1. mai neste år, kan du bruke følgende kommando:
 ```Bash
-future_date=$(date -d @$future_date)
-echo "Datoen to uker fra nå vil være $future_date"
+date -d "1st may next year"
 ```
+Dette vil gi oss outputen `Sun May 01 00:00:00 CEST 2022`.
 
-Resultatet vil være noe lignende "Datoen to uker fra nå vil være 28. juni 2019". For å beregne en dato i fortiden, kan du bruke `-` i stedet for `+` i `expr` kommandoen og velge et nummer mindre enn `today` for å trekke fra.
+Det er også mulig å bruke `date` til å arbeide med tidsperioder og endre formatet på datoen som vises. Du kan lese mer om dette og andre nyttige tips i `date`'s manual.
 
-# Dypdykk
-
-Det er mange muligheter for å bruke Bash-programmering til å beregne datoer. Du kan for eksempel bruke `while` løkker for å beregne en rekke datoer, eller bruke betingelser for å sjekke om datoen faller på en bestemt ukedag. Det finnes også en rekke tilgjengelige funksjoner og verktøy som gjør det enklere å håndtere datoer i Bash.
-
-# Se også
-
-- [Bash dokumentasjon om date kommandoen](https://www.gnu.org/software/bash/manual/html_node/Shell-Builtin-Commands.html)
-- [Dato- og tidskalkulator i Bash script](https://tecadmin.net/calculate-date-time-bash-script/)
-- [Video tutorial om å beregne datoer i Bash](https://www.youtube.com/watch?v=kbY5xnlvCxw)
+## Se også
+- `date`'s manual: https://linux.die.net/man/1/date
+- How to format dates in Bash: https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/
+- GNU's informative page about the `date` command: https://www.gnu.org/software/coreutils/date

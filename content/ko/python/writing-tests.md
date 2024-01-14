@@ -1,60 +1,53 @@
 ---
-title:    "Python: 테스트 작성하기"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/python/writing-tests.md"
+title:                "Python: 테스트 작성"
+programming_language: "Python"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜: 왜 테스트 코드를 작성하는 것이 중요한지 간단히 설명합니다.
+## 왜?
 
-사실, 테스트 코드는 개발 과정에서 가장 중요한 부분입니다. 왜냐하면 테스트 코드를 작성함으로써 우리는 우리가 작성한 코드에 대한 믿음을 갖게 되고, 코드의 품질을 높일 수 있기 때문입니다. 또한, 테스트 코드는 버그를 예방하고 디버깅 시간을 줄여줍니다.
+코드를 작성하는 것만으로는 충분하지 않습니다. 테스트를 작성하는 이유를 알아야 합니다. 테스트는 코드의 신뢰성을 확보하고 잠재적인 버그를 찾는 데 도움이 됩니다. 이러한 이유들로 인해, 테스트를 작성하는 것은 매우 중요합니다.
 
-## 어떻게: 테스트 코드를 작성하는 방법
+## 작성하는 법
 
-```Python
-# 간단한 함수
-def add(num1, num2):
-    return num1 + num2
-
-# 함수의 테스트 코드
-def test_add():
-    assert add(2, 3) == 5
-    assert add(5, 7) == 12
-    assert add(-1, 1) == 0
-```
-
-이렇게 간단한 함수의 경우에는 모든 경우의 수를 테스트할 수 있지만, 실제로는 더 복잡한 함수를 다루게 됩니다. 이때는 더 다양한 테스트 케이스를 고려해야 합니다.
+테스트를 작성하는 방법은 매우 쉽습니다! 우선, 테스트를 하고자 하는 함수나 클래스를 만들어야 합니다. 그리고 나서, 입력값을 주고 예상한 결과를 가져오는 함수를 작성합니다. 예를 들어, 다음과 같습니다:
 
 ```Python
-# 복잡한 함수
-def divide(num1, num2):
-    # 두 수를 나누기 전 0인지 체크
-    if num2 == 0:
-        raise ValueError("Cannot divide by zero!")
-    else:
-        return num1/num2
+def multiply(a, b):
+    return a * b
 
-# 함수의 테스트 코드
-def test_divide():
-    # 예외 처리 테스트
-    try:
-        divide(10, 0)
-    except ValueError:
-        pass
-    # 일반적인 경우 테스트
-    assert divide(10, 2) == 5
-    assert divide(10, 5) == 2
-    assert divide(5, 10) == 0.5
+def test_multiply():
+    assert multiply(2, 3) == 6
 ```
 
-이렇게 다양한 테스트 케이스를 고려하여 코드를 작성하면 예상치 못한 버그를 방지할 수 있습니다.
+이렇게 하면, `test_multiply()` 함수에서 `assert` 구문으로 입력값을 2와 3으로 주고 실행한 결과가 6이 나오는지 검사합니다. 만약에 6이 나오지 않는다면, 테스트가 실패한 것입니다.
 
-## 딥 다이브: 테스트 코드에 대해 더 알아보기
+이제, 커맨드 라인에서 `pytest` 명령어를 입력하면 테스트 결과가 나옵니다:
 
-테스트 코드를 작성할 때는 여러 가지 기능을 활용할 수 있습니다. 예를 들어, `assert` 문을 사용해서 조건문이 참인지 검증할 수 있고, 예외 처리를 통해 테스트를 하는 것도 가능합니다. 또한, `pytest`와 같은 파이썬 라이브러리를 사용하면 더욱 효율적이고 체계적인 테스트를 할 수 있습니다.
+```Bash
+=============================== test session starts ===============================
+platform darwin -- Python 3.8.4, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
+rootdir: /Users/john/doctest
+collected 1 item 
 
-# 또한 보기
+doctest.py .                                                             [100%]
 
-[Python으로 테스트 코드 작성하기](https://www.edwith.org/boostcourse-cs-test-driven-development/lecture/60105/)  
-[Pytest: 파이썬으로 단위 테스트 작성하기](https://velog.io/@leejh3224/pytest-follow-up-post)
+=============================== 1 passed in 0.34s ================================
+```
+
+이렇게 테스트를 작성하고 실행하면, 코드의 신뢰성과 안전성을 확보할 수 있습니다.
+
+## 깊게 알아보기
+
+물론, 테스트를 작성하는 과정에서 더 깊이 알아보아야 할 것들도 있습니다. 대부분의 테스트가 성공했을 때의 결과만을 확인하지만, 실패했을 때의 코드를 살펴볼 필요도 있습니다. 이를 통해 더 많은 버그를 찾을 수 있고, 코드의 품질을 향상시킬 수 있습니다. 또한, 테스트를 작성할 때 다양한 입력값과 예외 상황들을 고려하여 테스트 케이스를 구성하는 것도 중요합니다. 이를 통해 더 강력한 코드를 작성할 수 있습니다.
+
+## 관련 정보
+
+자세한 내용을 알고 싶다면 아래의 링크들을 참고해보세요:
+
+- [pytest documentation](https://docs.pytest.org/en/stable/)
+- [realpython: pytest](https://realpython.com/tutorials/testing/pytest/)
+- [soohwan: 파이썬 테스트를 잘 작성하기 위한 알고리즘](https://soohwan.kr/python-test/)

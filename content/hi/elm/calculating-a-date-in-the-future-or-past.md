@@ -1,41 +1,38 @@
 ---
-title:    "Elm: भविष्य या भूतकाल में एक दिनांक की गणना"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/elm/calculating-a-date-in-the-future-or-past.md"
+title:                "Elm: भविष्य या भूतकाल में एक दिन की गणना"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
+## इल्म में तारीख का पता कैसे लगाएं
 
-किसी भी प्रोग्रामिंग कार्य में तारीख की परिभाषा समझना अत्यावश्यक होता है। एल्म (Elm) में तारीख के साथ काम करना भी महत्वपूर्ण है, और समय को नियंत्रित रूप से बनाना काफी सरल है। इस ब्लॉग पोस्ट में हम एल्म में तारीख कैसे गणना कर सकते हैं, वह भी भविष्य और भूतकाल में, इसके बारे में जानेंगे।
+दोस्तों, हम सभी जानते हैं कि तारीख की गणना आजकल बहुत जरूरी हो गई है। एल्म में भी तारीख की गणना बनाना एक बहुत आसान काम है। लेकिन अगर आप इसे अभी तक नहीं जानते हैं तो निराश मत होइए, आज हम आपको इस आर्टिकल के माध्यम से इल्म में तारीख की गणना करना सिखाएंगे।
 
-# कैसे करें
+## कैसे करें
 
-"```Elm
-Date.fromTime 0
-    |> Date.day |> toString -- वर्तमान दिन का नाम
-    "Friday"
+इल्म में तारीख की गणना करने के लिए हमें `Time` मॉड्यूल का उपयोग करना होगा। यहां मैं आपको कुछ कोडिंग उदाहरण और साथ ही सैंपल आउटपुट भी दिखाऊंगा जिससे आपको यह समझने में आसानी होगी।
 
-Date.fromTime 0
-    |> Date.day |> Date.nextDay |> toString -- अगले दिन का नाम
-    "Saturday"
+```Elm
+import Time exposing (..)
 
-Date.fromTime 0
-    |> Date.day |> Date.inMonth Date.July |> toString -- भविष्य में गणना की गई माह का नाम
-    "July"
+-- अगर हम आज की दिनांक को 5 दिन बाद की दिनांक जानना चाहते हैं तो हम निम्नलिखित कोड का उपयोग कर सकते हैं।
+let
+  today = Date.fromTimeStamp 1586321200
+  -- आज की तारीख को timeStamp में बदलना होगा और फिर फ़ुट्यर में मापने के लिए 5 दिन जोड़ने होंगे।
+  future = add (days 5) today
+in
+  -- समय से निकाल कर, हम आज की दिनांक मिलती है।
+  Date.format "dd MMM yyyy" future
+-- आउटपुट - 16 May 2020
+```
 
-Date.fromTime 0
-    |> Date.day |> Date.inWeek 2 |> toString -- भूतकाल में गणना की गई हफ्ते का नाम
-    "Tuesday"
-"```
+इसी तरह, अगर हम आज की तारीख को 5 दिन पहले की दिनांक जानना चाहते हैं, तो हम `sub` फंक्शन का उपयोग कर सकते हैं।
 
-# गहराई जानें
-
-एल्म में तारीख को गणना करने के लिए हम `Date.fromTime` का उपयोग कर सकते हैं। यह फंक्शन समय को एक मिलीसेकंड की श्रृंखला में लेता है और उसे `Date` डेटा टाइप में वापस देता है। इसके बाद हम `Date` टाइप के और अन्य फंक्शन्स का उपयोग कर सकते हैं। हम भविष्य और भूतकाल में तारीख को गणना करने का उदाहरण भी दे रहे हैं।
-
-# देखें भी
-
-- [Date module documentation](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Learn Elm in Hindi](https://www.youtube.com/playlist?list=PLnoB1G2wCLOmOkf_DzK0UUSdYdL1KuqW2)
-- [Official Elm website](https://elm-lang.org/)
+```Elm
+let
+  today = Date.fromTimeStamp 1586321200
+  -- आज की तारीख को timeStamp में बदलना होगा और फिर प्रश्न चिह्न में दिए गए सांख्यिक को घटाना होगा।
+  past = sub (days 5) today

@@ -1,52 +1,54 @@
 ---
-title:    "Java: Перевірка наявності каталогу"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/java/checking-if-a-directory-exists.md"
+title:                "Java: Перевірка наявності директорії"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/java/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Для чого
+## Чому
 
-Перевірка існування директорії є важливим кроком у роботі з файлами і структурами каталогів у Java. Вона дозволяє перевірити, чи наявна потрібна нам директорія перед намаганням працювати з ними. Це уникне помилок та допоможе поліпшити продуктивність роботи з файловою системою.
+Перевірка існування директорії є важливим етапом в роботі багатьох програм, особливо тих, що працюють з файловою системою. Цей процес дозволяє зберегти час та зусилля і уникнути помилок при взаємодії з файлами та директоріями.
 
-# Як це зробити
-
-Для того, щоб перевірити існування директорії в Java, ми можемо скористатися методом `exists()` класу `File`. Для цього необхідно створити об’єкт типу `File` з шляхом до директорії, яку ми хочемо перевірити. Приклад коду можна побачити нижче.
+## Як
 
 ```Java
 import java.io.File;
-
-public class DirectoryExistence {
-
+public class DirectoryChecker {
     public static void main(String[] args) {
-
-        // шлях до директорії, яку ми хочемо перевірити
-        String directoryPath = "C:\\Users\\User\\Documents\\MyDirectory";
+        String path = "C://Users//Username//Documents";
+        File directory = new File(path);
         
-        // створення об’єкту типу File
-        File directory = new File(directoryPath);
-
-        // перевірка існування директорії
         if (directory.exists()) {
-            System.out.println("Директорія існує.");
+           System.out.println("Директорія існує.");
         } else {
-            System.out.println("Директорія не існує.");
+           System.out.println("Директорія не існує.");
         }
     }
-
 }
 ```
 
-Після запуску цього коду, якщо директорія `MyDirectory` існує, ми побачимо повідомлення "Директорія існує." у консолі. Якщо директорія не існує - "Директорія не існує.".
+В даному прикладі ми використовуємо клас `File` для створення об'єкту директорії. Метод `exists()` перевіряє, чи існує директорія за вказаним шляхом. Далі за допомогою умовного оператору `if` ми виводимо відповідне повідомлення на екран.
 
-# Поглиблене дослідження
+Ви також можете використовувати метод `isDirectory()` для перевірки, чи вказаний об'єкт є директорією, а не просто файлом.
 
-Існує кілька інших способів перевірки існування директорії в Java. Для прикладу, ми можемо використовувати метод `isDirectory()` для перевірки, чи переданий об'єкт є директорією. Також, можна використовувати метод `listFiles()`, який повертає масив файлів у директорії, або метод `list()`, який повертає масив імен файлів у директорії. Крім того, бібліотека Apache Commons IO містить метод `DirectoryUtils.exists()` для перевірки існування директорії, який є зручнішим для використання.
+```Java
+if (directory.isDirectory()) {
+   System.out.println("Це директорія.");
+} else {
+   System.out.println("Це файл.");
+}
+```
 
-# Дивіться також
+## Глибоке поглиблення
 
-- [Офіційна документація Java: `File.exists()`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/io/File.html#exists())
-- [Офіційна документація Java: `File.isDirectory()`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/io/File.html#isDirectory())
-- [Офіційна документація Java: `File.listFiles()`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/io/File.html#listFiles())
-- [Офіційна документація Java: `File.list()`](https://docs.oracle.com/en/java
+Перевірка існування директорії може бути корисною не тільки при створенні файлів або папок, але і при роботі з існуючими. Наприклад, ви можете перевірити, чи існують всі необхідні директорії перед збереженням файлів в певне місце.
+
+Також, якщо директорія не існує, ви можете створити її за допомогою методу `mkdir()` або `mkdirs()`, який автоматично створює всі необхідні батьківські директорії, якщо вони не існують. 
+
+## Дивись також
+
+- [Клас File у Java](https://www.javatpoint.com/java-file)
+- [Робота з файлами та директоріями у Java](https://metanit.com/java/tutorial/10.6.php)
+- [Робота зі строками у Java](https://prog.kiev.ua/forum/topic/2056-rabota-so-strokami-vo-vremya-programmirovaniya-na-java/)

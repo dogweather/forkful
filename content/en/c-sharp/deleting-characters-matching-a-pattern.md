@@ -1,68 +1,41 @@
 ---
-title:    "C# recipe: Deleting characters matching a pattern"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/deleting-characters-matching-a-pattern.md"
+title:                "C# recipe: Deleting characters matching a pattern"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-As programmers, we often encounter situations where we need to manipulate strings in our code. One common task is to delete characters that match a specific pattern. This can be useful for tasks such as data cleansing or formatting output. In this blog post, we will explore how to delete characters matching a pattern in C#.
+Have you ever had a text file with thousands of lines and you needed to delete certain characters that matched a specific pattern? Or perhaps you've encountered a situation where you needed to clean up a database by removing certain characters from a particular column. Whatever the case may be, being able to efficiently delete characters matching a pattern can save you a lot of time and effort.
 
 ## How To
-
-To delete characters matching a pattern in C#, we can use the `Regex.Replace()` method from the `System.Text.RegularExpressions` namespace. This method allows us to specify a regular expression pattern to identify the characters we want to delete and replace them with an empty string. Let's look at an example:
-
+To start off, let's take a look at a simple example where we have a string with numbers and symbols and we want to remove the symbols. Our string looks like this: "12#3%45&".
 ```C#
-using System;
-using System.Text.RegularExpressions;
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        string str = "Hello123World";
-        string pattern = "[0-9]"; // this pattern will match any digit
-
-        string result = Regex.Replace(str, pattern, "");
-
-        Console.WriteLine(result); // output: HelloWorld
-    }
-}
+string myString = "12#3%45&";
+string result = Regex.Replace(myString, "[^0-9]", "");
+Console.WriteLine(result);
 ```
+The output of this code will be "12345", which is our desired result. Let's break down the code a bit. The first line creates a string variable with our original string. The second line uses the Regex.Replace method to replace any character that is not a number (represented by the regular expression [^0-9]) with an empty string. This essentially removes all symbols from the string. Finally, the third line prints out the updated string.
 
-In this example, we first declare a string variable `str` with the value "Hello123World". This string contains some numbers that we want to get rid of. Next, we declare a string variable `pattern` that contains our regular expression pattern. The pattern `[0-9]` specifies that we want to match any digit. Finally, we use the `Regex.Replace()` method to replace any characters in `str` that match our pattern with an empty string. The resulting string is assigned to the `result` variable and printed to the console.
-
-We can also use the `Regex.Replace()` method with more complex patterns and multiple replacements. For example, let's say we want to delete all numbers, special characters, and spaces from a string. We can use the following code:
-
+But what if we want to remove a specific character instead of a pattern? We can do that too! Let's say we want to remove all the letter "a" from a string. Here's an example code:
 ```C#
-using System;
-using System.Text.RegularExpressions;
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        string str = "H3ll0 W0rld!@";
-        string pattern = "[0-9!@ ]"; // this pattern will match any digit, !, @ and spaces
-
-        string result = Regex.Replace(str, pattern, "");
-
-        Console.WriteLine(result); // output: HelloWorld
-    }
-}
+string myString = "apple";
+string result = myString.Replace("a", "");
+Console.WriteLine(result);
 ```
-
-In this example, we are using the character class `[0-9!@ ]` in our pattern which will match any digits, exclamation marks, @ symbols, and spaces. The result is the same as our previous example, but this time we are removing multiple types of characters.
+The output will be "pple" as all instances of "a" have been removed. Notice that we used the Replace method instead of Regex.Replace this time.
 
 ## Deep Dive
+Now, let's take a deeper look into how these methods work. The Regex.Replace method uses regular expressions to find and replace characters that match a specific pattern. This gives us more flexibility and allows us to delete multiple characters at once. On the other hand, the Replace method simply looks for an exact match and replaces it with the specified value.
 
-When using regular expressions to delete characters matching a pattern, it is important to understand the syntax and rules behind them. Regular expressions allow us to specify a pattern of characters that we want to match in a string. The `[]` character class that we used in our examples allows us to specify a range of characters or character classes that we want to match. We can also use metacharacters such as `.` or `^` to match any character or the beginning of a line, respectively.
+It's also important to note that both methods return a new string instead of modifying the original string. This means that if we want to keep the original string, we need to assign the updated string to a new variable, as shown in our code examples above.
 
-Regular expressions can get quite complex, so it's important to test and debug our patterns to ensure they are matching the characters we want. Online tools such as [Regex101](https://regex101.com/) can be useful in this process.
+Another useful thing to know is that these methods are case sensitive. So if we want to match and remove both upper and lowercase versions of a character, we need to specify that in our regular expression.
 
 ## See Also
+- [C# Strings](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
+- [C# Regular Expressions](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
 
-- Microsoft Docs on [Regex.Replace() Method](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=net-5.0)
-- [Regular Expression Tutorial](https://www.regular-expressions.info/tutorial.html)
+And that's it! You now know how to efficiently delete characters matching a pattern in C#.

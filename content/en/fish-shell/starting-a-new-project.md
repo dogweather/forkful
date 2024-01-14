@@ -1,47 +1,53 @@
 ---
-title:    "Fish Shell recipe: Starting a new project"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/starting-a-new-project.md"
+title:                "Fish Shell recipe: Starting a new project"
+programming_language: "Fish Shell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why Start a New Project in Fish Shell?
 
-If you're a developer or programmer looking to streamline your workflow and improve your productivity, then creating a new project with Fish Shell may be just what you need. Fish Shell is a user-friendly, open-source command-line shell that offers a variety of features and customization options for a seamless coding experience.
+Starting a new project may seem daunting, especially if you've never used Fish Shell before. However, there are many benefits to using Fish Shell for your programming projects. Fish Shell is a user-friendly, interactive shell that offers powerful features and customization options. It also has a growing community of users who are constantly sharing tips and tricks for improving productivity. So why not give it a try and see how it can enhance your programming experience?
 
-## How To
+## How To Start a New Project in Fish Shell
 
-To get started with Fish Shell, you first need to install it on your system. This can be easily done by following the instructions on the official Fish Shell website (https://fishshell.com/). Once installed, you can open Fish Shell by typing `fish` in your terminal.
+To start a new project in Fish Shell, follow these simple steps:
 
-To create a new project, you can use the `mkdir` command to make a new directory for your project. For example, you can type `mkdir my_project` to create a folder named "my_project". Then, you can use the `cd` command to navigate into the new project directory.
-
-Next, you can use the `touch` command to create a new file within the project directory. For example, you can type `touch index.js` to create a JavaScript file named "index.js". Then, you can use your preferred code editor to start writing your code.
-
-```Fish Shell
-mkdir my_project
-cd my_project
-touch index.js
+```
+Fish Shell> mkdir new_project
+Fish Shell> cd new_project
 ```
 
-Once you have finished writing your code, you can run it using Fish Shell's built-in interpreter. For example, if you have a Python project, you can use the `python` command to run your code. If you have a JavaScript project, you can use the `node` command. This makes it easy to test and debug your code without having to switch between multiple programs.
+This creates a new directory for your project and navigates you into it. Next, you'll need to initialize a new Git repository for version control:
 
-```Fish Shell
-python main.py
+```
+Fish Shell> git init
 ```
 
-## Deep Dive
+Now, let's create a simple script file for your project:
 
-One of the great things about using Fish Shell for your projects is the ability to customize your shell environment. You can create aliases for commonly used commands, functions to automate repetitive tasks, and even customize your prompt to show relevant information.
+```
+Fish Shell> touch script.fish
+```
 
-Additionally, Fish Shell also has a built-in package manager called "fisher" that allows you to easily install and manage extensions for your shell. These extensions can add even more features and functionality to help streamline your workflow.
+You can then open the script file in your preferred text editor and start writing your code! Don't forget to save your changes and commit them to your Git repository.
 
-Lastly, Fish Shell has a vibrant community with a wiki, forum, and IRC channel where you can find help and resources for your projects. This makes it easy to get support and learn new tips and tricks for using Fish Shell.
+## Deep Dive into Starting a New Project
+
+When starting a new project in Fish Shell, there are a few things to keep in mind:
+
+- Use `set -x` to debug your scripts: This will print each command as it is executed, helping you identify any errors.
+- Take advantage of Fish Shell's tab completion: Use the `tab` key to autocomplete commands, file names, and even variable names.
+- Customize your prompt: Fish Shell allows for easy customization of your command prompt, making it easier to keep track of your current location and Git status.
+
+By exploring Fish Shell's documentation and community forums, you'll discover even more tips and techniques for starting and managing projects in Fish Shell.
 
 ## See Also
 
-- Official Fish Shell Website: https://fishshell.com/
-- Fish Shell GitHub Page: https://github.com/fish-shell/fish-shell
-- Fisherman: The Fish Shell Package Manager: https://fisherman.github.io/
-- Fish Shell Wiki: https://fishshell.com/docs/current/index.html
-- Fish Shell Community Forum: https://fishshell.com/community.html
+For more information on Fish Shell and its capabilities, check out these helpful links:
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/)
+- [Fish Shell GitHub Repository](https://github.com/fish-shell/fish-shell)
+- [Fish Shell User Forums](https://fishshell.com/forums/)

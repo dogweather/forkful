@@ -1,54 +1,48 @@
 ---
-title:    "Elm: Calculando uma data no futuro ou passado"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/calculating-a-date-in-the-future-or-past.md"
+title:                "Elm: Calculando uma data no futuro ou passado"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que calcular uma data futura ou passada em Elm?
+## Por que
 
-Calcular datas futuras ou passadas pode ser útil em uma variedade de situações de programação, como a criação de calendários ou agendas, agendamento de eventos e outras aplicações relacionadas ao tempo. Com o Elm, é possível realizar esses cálculos com facilidade, graças às suas funções de manipulação de datas.
+Calculando uma data futura ou passada pode ser útil em diversas aplicações, desde a criação de um calendário até a determinação de prazos em projetos de software. Neste artigo, vamos explorar como realizar essa tarefa usando a linguagem de programação Elm.
 
-# Como fazer em Elm
+## Como Fazer
 
-Para calcular uma data futura ou passada em Elm, primeiro precisamos importar o módulo Date e a função addDays. Dessa forma, podemos adicionar um determinado número de dias a uma data específica e obter uma nova data resultante. Por exemplo, para calcular uma data 30 dias no futuro, podemos fazer o seguinte:
-
-```Elm
-import Date exposing (..)
-import Date.Extra exposing (addDays)
-
-dataAtual = Date.fromIsoString "2021-07-10"
-dataFutura = addDays 30 dataAtual
+Para calcular uma data no futuro ou passado em Elm, podemos utilizar a biblioteca `elm/time`. Primeiro, precisamos importar essa biblioteca no início do nosso código:
+ 
+```
+Elm import DateTime
 ```
 
-Neste exemplo, definimos uma data atual e, em seguida, adicionamos 30 dias a ela usando a função addDays. Isso resulta na data "2021-08-09".
-
-Também podemos usar o mesmo método para calcular uma data passada, simplesmente alterando o sinal do número de dias para um valor negativo. Por exemplo, para calcular uma data 30 dias no passado, podemos fazer o seguinte:
-
-```Elm
-import Date exposing (..)
-import Date.Extra exposing (addDays)
-
-dataAtual = Date.fromIsoString "2021-07-10"
-dataPassada = addDays -30 dataAtual
+Em seguida, podemos utilizar a função `DateTime.fromDate` para criar uma data a partir de valores específicos para ano, mês e dia:
+```
+Elm DateTime.fromDate 2021 12 31
 ```
 
-Isso resultará na data "2021-06-10".
+Para calcular uma data no futuro ou passado, usamos a função `DateTime.add` e, como argumentos, passamos a unidade de tempo desejada (como anos, meses ou dias) e o número de unidades:
+```
+Elm DateTime.add DateTime.Month 3 (DateTime.fromDate 2021 12 31)
+```
+No exemplo acima, estamos adicionando 3 meses à data 31 de dezembro de 2021, resultando em 31 de março de 2022.
 
-# Mais detalhes sobre cálculos de data em Elm
+Podemos também calcular uma data no passado, passando um número negativo como o número de unidades:
+```
+Elm DateTime.add DateTime.Day -7 (DateTime.fromDate 2021 10 10)
+```
+No caso acima, estamos subtraindo 7 dias da data 10 de outubro de 2021, resultando em 3 de outubro de 2021.
 
-Além de adicionar dias a uma data, existem outras funções úteis no módulo Date para manipular datas em Elm. Algumas delas incluem:
+## Profundidade
 
-- `addMonths`: adiciona um determinado número de meses a uma data
-- `addYears`: adiciona um determinado número de anos a uma data
-- `subtract`: subtrai uma outra data de uma data específica
+Ao usar a biblioteca `elm/time` para calcular datas no futuro ou passado, é importante ter em mente que ela leva em consideração os fusos horários. Portanto, é recomendável sempre fornecer o horário para evitar resultados inesperados.
 
-É importante notar que todas essas funções retornam um novo valor de data, em vez de alterar o valor original. Isso garante uma programação mais segura e evita efeitos colaterais indesejados.
+Além disso, podemos utilizar outras funções da biblioteca, como `DateTime.toYear`, `DateTime.toMonth`, `DateTime.toDay` para extrair informações específicas de uma data e `DateTime.toTime` para converter uma data em um timestamp Unix (um número inteiro que representa a quantidade de segundos desde 1º de janeiro de 1970).
 
-Além disso, o módulo Date também possui funções para obter informações sobre uma data, como o dia da semana, o último dia do mês e assim por diante. Consulte a documentação oficial do Elm para obter mais detalhes sobre essas funções.
+## Veja Também
 
-# Veja também
-- Documentação oficial do módulo Date em Elm: https://package.elm-lang.org/packages/elm-lang/core/latest/Date
-- Exemplos de cálculos de data em Elm: https://ellie-app.com/new
-- Tutorial sobre manipulação de data em Elm: https://programmingwithmosh.com/elm/elm-dates/
+- Documentação oficial da biblioteca `elm/time`: https://package.elm-lang.org/packages/elm/time/latest/
+- Guia de Elm para iniciantes: https://guide.elm-lang.org/

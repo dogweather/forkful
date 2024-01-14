@@ -1,53 +1,50 @@
 ---
-title:    "Javascript recipe: Getting the current date"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/getting-the-current-date.md"
+title:                "Javascript recipe: Getting the current date"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Do you ever find yourself needing to know what the current date is? Maybe you're creating a to-do list app and want to display the date for each task, or maybe you're building a weather forecast app and need to show the current date on the forecast. Whatever the reason may be, getting the current date is a common need in web development. In this blog post, we'll dive into how to get the current date using Javascript.
+In today's digital world, accurate and up-to-date information is crucial, especially when it comes to conducting operations or making decisions based on time-sensitive data. In the realm of programming, getting the current date is an essential task, and understanding how to do it can improve the functionality and reliability of any application or website.
 
 ## How To
+Getting the current date in JavaScript is a simple yet powerful process that involves utilizing the built-in Date object. To get started, all you need to do is declare a new instance of the Date object and assign it to a variable, like this:
 
-Getting the current date in Javascript is actually quite simple. We can use the built-in Date object to retrieve the current date and time. Let's take a look at an example code snippet:
-
-```Javascript
-let today = new Date();
-console.log(today);
+```javascript
+let currentDate = new Date();
 ```
 
-When we run this code, the output will be the current date and time in the format "Day Month Date Year Time". For example, if today is November 19, 2021 and the time is 10:30 PM, the output will be `Fri Nov 19 2021 22:30:00 GMT-0500 (Eastern Standard Time)`. 
+You can also specify a specific date and time by passing in the year, month, day, hour, minute, and second parameters to the Date constructor, like this:
 
-But what if we want to display the date in a specific format? We can use various methods provided by the Date object to do just that. For example, let's say we want to display the date in the format "MM/DD/YYYY". We can use the `getMonth()`, `getDate()`, and `getFullYear()` methods to retrieve each component of the date and concatenate them together to form our desired format. Let's take a look at the code:
-
-```Javascript
-let today = new Date();
-let month = today.getMonth() + 1; // months start from 0, so we add 1 to get the actual month
-let date = today.getDate();
-let year = today.getFullYear();
-let formattedDate = month + '/' + date + '/' + year;
-console.log(formattedDate);
+```javascript
+let specificDate = new Date(2021, 9, 15, 12, 30, 45);
 ```
 
-The output for this code will be `11/19/2021`.
+To output the current date, you can use the `getDate()`, `getMonth()`, and `getFullYear()` methods, respectively, to retrieve the day, month, and year of the date stored in the Date instance. Here's an example:
+
+```javascript
+console.log(currentDate.getDate()); // Output: 15
+console.log(currentDate.getMonth()); // Output: 9 (October)
+console.log(currentDate.getFullYear()); // Output: 2021
+```
+
+In addition, there are various other methods to retrieve the current time, day of the week, and even milliseconds. Check out the "Deep Dive" section for more information.
 
 ## Deep Dive
+The Date object in JavaScript is a powerful tool that allows for precise manipulation and retrieval of date and time information. Here are some additional methods that can be used to get various details from a Date instance:
 
-Now that we know how to get the current date, let's dive into some more details about the Date object and its methods.
+- `getDay()` - Returns the day of the week (0 for Sunday, 1 for Monday, etc.)
+- `getHours()` - Returns the hour value (from 0 to 23)
+- `getMinutes()` - Returns the minute value (from 0 to 59)
+- `getSeconds()` - Returns the second value (from 0 to 59)
+- `getMilliseconds()` - Returns the millisecond value (from 0 to 999)
 
-The Date object has various methods that allow us to retrieve different components of the date and time, such as `getMonth()`, `getDate()`, `getFullYear()`, `getHours()`, `getMinutes()`, and so on. These methods return the values of their respective components in numerical form. For example, `getMonth()` will return a number from 0 to 11, where 0 represents January and 11 represents December.
-
-There are also methods available to set different components of the date and time, such as `setMonth()`, `setDate()`, `setFullYear()`, `setHours()`, `setMinutes()`, and so on. These methods allow us to modify the current date and time to a specific value.
-
-Additionally, the Date object also has a `toLocaleString()` method which can be used to display the date and time in a localized format based on the user's language and location.
+In addition to these methods, the Date object also has setters that allow for easy modification of the current date and time. For example, you can use the `setDate()` method to change the day of the month or the `setFullYear()` method to change the year. These setters are useful when working with date calculations or creating custom date formats.
 
 ## See Also
-
-To learn more about the Date object and its methods, check out the following resources:
-
-- MDN web docs on Date: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-- W3Schools tutorial on Date: https://www.w3schools.com/jsref/jsref_obj_date.asp
-- FreeCodeCamp article on formatting dates in Javascript: https://www.freecodecamp.org/news/javascript-date-format-explained/
+- [MDN Web Docs - Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Date and time in JavaScript](https://javascript.info/date)
+- [W3Schools - JavaScript Dates](https://www.w3schools.com/js/js_dates.asp)

@@ -1,33 +1,51 @@
 ---
-title:    "Clojure: パターンに合致する文字を削除する"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/deleting-characters-matching-a-pattern.md"
+title:                "Clojure: パターンに一致する文字を削除する"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+誰かがパターンにマッチする文字を削除することについて取り組む必要があるのか、その理由を簡単に説明します。
 
-文字列のパターンにマッチする文字を削除することの重要性は、データのクリーニングや処理において非常に役立ちます。例えば、特定のフォーマットに合わない文字を削除することで、データの整合性を保つことができます。また、ユーザーが入力したデータから不要な文字を取り除くことで、アプリケーションのパフォーマンスを向上させることもできます。
+## やり方
+コーディングの例とサンプルの出力を、 ```Clojure ... ```というコードブロックの中に記載します。
 
-## 方法
+パターンにマッチする文字を削除する方法は簡単です。まず、<code>clojure.string/replace</code>関数を使って文字列からパターンにマッチする部分を削除します。
 
-Clojureでは、文字列を扱う際にはjava.lang.Stringクラスを使用することができます。このクラスには、文字列の操作に役立つ多くのメソッドが組み込まれています。例えば、```replaceAll()```メソッドを使用することで、指定した文字列を別の文字列に置換することができます。また、正規表現を使用することで、複雑なパターンにもマッチすることができます。
+<code>clojure.string/replace</code>関数の使用例を以下に示します。パターンとして```"a"```を指定すると、文字列から"a"が削除されます。サンプルの出力では、文字列から"a"が削除されたことが確認できます。
 
+ ```Clojure
+(clojure.string/replace "banana" "a" "")
+;; => "bnn"
 ```
-Clojure
 
-(def str "Hello, World!")
-(.replaceAll str "[aeiou]" "") ; => "Hll, Wrld!"
+これに加えて、正規表現を使うことでより複雑なパターンにもマッチすることができます。例えば、```"b[aeiou]n"```というパターンを使うと、文字列から"ban"や"ben"などの部分が削除されます。
+
+ ```Clojure
+(clojure.string/replace "banana" #"b[aeiou]n" "")
+;; => "ana"
 ```
 
-このように、```replaceAll()```メソッドを使用することで、文字列中の母音を削除することができます。
+## 詳細な説明
+パターンにマッチする文字を削除する方法について、さらに詳細に説明します。
 
-## ディープダイブ
+まず、Clojureでは文字列を表すデータ型として```java.lang.String```クラスを使用します。このクラスには、文字列の操作を行うための多くのメソッドが用意されています。
 
-文字列を扱う際には、文字の長さや位置、エンコーディングなど様々な要素に注意する必要があります。また、文字列に含まれるパターンによっては、効率的な処理方法が異なる場合もあります。Clojureを使用する際には、java.lang.Stringクラスのメソッドだけでなく、Clojureの関数も組み合わせて使用することで、より効率的な処理が可能になります。
+Clojureでは文字列をハッシュマップと見なすことができ、そのキーと値を使って文字列の操作を行うことができます。例えば、```"banana"```という文字列をハッシュマップと見なした場合、以下のように表現することができます。
 
-## 参考リンク
+ ```Clojure
+{:b 2, :a 3, :n 2}
+```
 
-- [java.lang.Stringクラスの仕様 (Oracle)](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Clojureユーザーガイド (日本語訳)](https://clojure-doc.org/)
+このように、文字列が実際にはキーと値の組み合わせで表現されているため、ハッシュマップの操作を利用してパターンにマッチする文字を削除することができます。
+
+## 参考文献
+- [Clojure入門](https://www.clojure.or.jp/gokaiban/clojure_intro.html)
+- [Clojureでの文字列操作](https://qiita.com/tadsan/items/ed2d36e3964e337aaa9a)
+
+## 関連リンク
+- [Clojureリファレンス](https://clojure.github.io/clojure/clojure.core-api.html)
+- [正規表現を使った文字列の置換](https://qiita.com/shintakuya/items/9b0014b56fad1c9ed09f)

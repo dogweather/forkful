@@ -1,43 +1,37 @@
 ---
-title:    "C: Utskrift av felsökningsutdata"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/printing-debug-output.md"
+title:                "C: Utskrift av felsökningsspårning"
+programming_language: "C"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att skriva kod är en viktig del av programmering, men ibland kan det vara svårt att veta vad som händer bakom kulisserna. Det är här debugging kommer in i bilden. Genom att skriva ut debug output kan du enkelt se vad som händer i din kod och på så sätt hitta och korrigera eventuella felaktigheter eller buggar. I denna bloggpost kommer vi att titta närmare på hur du kan skriva debug output i C-programmering.
+Felsökning är en viktig del av programmering, och ibland kan det vara svårt att förstå vad som händer i en kod. Att skriva ut debug-utgång kan vara ett värdefullt verktyg för att identifiera problem och förbättra din kod.
 
 ## Hur man gör
-
-För att skriva debug output i ditt C-program behöver du först inkludera standardbiblioteket "stdio.h". Du kan sedan använda funktionen "printf()" för att skriva ut önskad information. Här är ett enkelt exempel:
+För att skriva ut debug-utgång i C-programmering, kan du använda funktionen "printf". Det finns olika sätt att använda denna funktion, men här är ett enkelt exempel:
 
 ```C
-#include <stdio.h>
-
-int main(){
-    int x = 5; //En variabel för att testa debug output
-    printf("Variabelns värde är %d\n", x);
-    return 0;
+int main() {
+    int x = 5;
+    printf("Värdet på x är %d\n", x);
 }
 ```
 
-I detta exempel använder vi "%d" för att skriva ut värdet av variabeln "x". Du kan också använda andra formatteringsalternativ beroende på typen av variabel du vill skriva ut. Till exempel "%s" för strängar eller "%f" för flyttal.
+I detta exempel använder vi "printf" för att skriva ut värdet på variabeln "x". Notera att vi använder "%d" för att specificera att vi vill skriva ut ett heltal och "\n" för att lägga till en ny rad efter utskriften.
 
-En annan användbar funktion för debug output är "fprintf()". Den fungerar på samma sätt som "printf()" men låter dig skriva ut information till en specifik fil istället för standardutmatningen. Detta kan vara användbart för att logga viktig information under körning av ditt program.
+Output av detta program skulle vara "Värdet på x är 5".
 
 ## Djupdykning
+När du använder "printf" finns det flera formateringsalternativ du kan använda för att skriva ut olika typer av data. Till exempel kan du använda "%f" för att skriva ut flyttal och "%c" för att skriva ut tecken.
 
-Att skriva debug output är en viktig del av att utveckla C-program. Det hjälper dig att förstå vad som händer i ditt program och hitta eventuella fel eller buggar. Det finns dock några saker att tänka på när du skriver debug output.
+Du kan också använda "printf" för att skriva ut värden från olika datatyper, som strängar och arrayer. Det kan också vara användbart att kombinera "printf" med andra funktioner, som "strlen" för att skriva ut längden på en sträng.
 
-För det första bör du undvika att skriva ut för mycket information. Det kan bli överväldigande och göra det svårt att hitta viktig information. Välj istället noga ut vad som är relevant för det specifika problem du försöker lösa.
-
-För det andra bör du ta bort eller kommentera ut dina debug statements när ditt program är färdigt och fungerar som det ska. Att behålla dem kan leda till onödig overhead och göra koden svårare att läsa.
+Det finns också andra funktioner som "fprintf" och "sprintf" som erbjuder mer flexibilitet för utskrifter. Det är också möjligt att hänvisa till variabler med hjälp av adressoperatorn "&" för att skriva ut deras adresser istället för värden.
 
 ## Se även
-
-- 10 Essential Debugging Tips for C Programmers (https://www.linuxjournal.com/article/2584)
-- Using Debug Statements for Detecting Errors in C Programs (https://www.geeksforgeeks.org/using-debug-statements-for-detecting-errors-in-c-programs/)
-- How to Use Debug Statements Effectively (https://www.thoughtco.com/print-error-statements-2908485)
+- [Debugging with printf() in C](https://www.geeksforgeeks.org/debugging-in-c/)
+- [C - printf() function](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm)
+- [How to Use Debugging in C](https://www.dummies.com/programming/c/how-to-use-debugging-in-c/)

@@ -1,39 +1,46 @@
 ---
-title:    "Python: Usuwanie znaków odpowiadających wzorcowi"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/deleting-characters-matching-a-pattern.md"
+title:                "Python: Usuwanie znaków odpowiadających wzorcowi"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto usuwać znaki pasujące do wzorca w programowaniu Python?
+## Dlaczego
 
-W programowaniu można napotkać sytuacje, w których potrzebujemy usunąć znaki, które odpowiadają określonemu wzorcowi. Niekiedy jest to potrzebne do oczyszczenia tekstu lub danych, innym razem do przeprowadzenia analizy tekstu. W takich sytuacjach warto znać sposoby na usuwanie znaków pasujących do wzorca w języku Python.
+Często zdarza się, że w trakcie programowania musimy poradzić sobie z nierządnie sformatowanymi danymi. Jeden ze sposobów na poradzenie sobie z takim problemem jest usuwanie znaków pasujących do pewnego wzorca. W tym artykule pokażę, jak to zrobić w języku Python.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Istnieje kilka sposobów na usuwanie znaków pasujących do wzorca w języku Python. Jedną z nich jest użycie funkcji `re.sub()` z modułu regular expression (wyrażenia regularne). Przykładowo, używając wyrażenia regularnego `[a-z]` można usunąć wszystkie litery występujące w danym tekście. Poniższy przykład kodu przedstawia to w praktyce:
+Ten problem można rozwiązać za pomocą metody ```strip()``` w języku Python. Ta metoda usuwa wszystkie znaki, które pasują do podanego wzorca z końca lub początku stringa. Poniżej przedstawiam przykład, jak usunąć wszystkie znaki spacji z końca stringa:
 
 ```Python
-import re
-text = "Przykładowy *tekst* zawierający, różne znaki @special! ##characters"
-new_text = re.sub(r'[a-z]', "", text)
-print(new_text)
+text = "Przykładowy tekst do usunięcia "
+print(text.strip())
 ```
 
 Output:
+
+```Przykładowy tekst do usunięcia```
+
+Aby usunąć znaki pasujące do wzorca z dowolnego miejsca w stringu, należy użyć metody ```replace()```. Poniżej przedstawiam przykład, jak usunąć wszystkie litery 'a' z dowolnego miejsca w stringu:
+
+```Python
+text = "Przykładowy tekst do ususnięcia"
+print(text.replace('a', ''))
 ```
-* @#! ##
-```
 
-W powyższym przykładzie, funkcja `re.sub()` wymaga trzech argumentów - pierwszy to wzorzec, drugi to zastępujący znak (w tym przypadku pusty ciąg znaków), a trzeci to tekst, w którym chcemy dokonać zmian. Dzięki wyrażeniom regularnym można także określić bardziej skomplikowane wzorce do usunięcia.
+Output:
 
-## Dogłębne wyjaśnienie
+```Przykłdowy tekst do uśnięci```
 
-Funkcja `re.sub()` jest często używana przez programistów do usuwania znaków pasujących do wzorca w języku Python. Jednak warto pamiętać, że jest to tylko jedna z wielu metod dostępnych w języku Python do manipulacji tekstem. Warto także zapoznać się z innymi modułami, takimi jak `string` czy `regex`, które mogą być przydatne w różnych sytuacjach.
+## Głębszy rozkład
 
-## Zobacz także
+Język Python oferuje wiele innych możliwości manipulacji stringami. Możesz również użyć operatorów logicznych, wyrażeń regularnych lub popularnej biblioteki ```re``` do usuwania znaków pasujących do określonego wzorca.
 
-- [Dokumentacja funkcji re.sub() w języku Python](https://docs.python.org/3/library/re.html#re.sub) 
-- [Podstawy wyrażeń regularnych w języku Python](https://www.w3schools.com/python/python_regex.asp)
-- [Przykłady wykorzystania wyrażeń regularnych w języku Python](https://realpython.com/regex-python/)
+## Zobacz również
+
+[Zręczne dzielenie tekstu na fragmenty w Pythonie](https://www.programiz.com/python-programming/methods/string/split)
+[Pomocne funkcje do manipulowania stringami w języku Python](https://www.geeksforgeeks.org/python-output-formatting/)
+[Manipulacja stringami przy użyciu modułu ```re``` w języku Python](https://www.tutorialspoint.com/python/string_re_replace.htm)

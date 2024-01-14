@@ -1,31 +1,46 @@
 ---
-title:    "Swift: दो तारीखों का तुलना करना"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/swift/comparing-two-dates.md"
+title:                "Swift: दो तारीखों की तुलना"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-दो तारीखों को तुलना करने में शामिल होने की *क्यों* करने के लिए कुछ महत्वपूर्ण कारण हैं। इसके अलावा, यह स्ट्रिंग, अखंड गणना, और डेटा संग्रहण में उपयोगी हो सकता है। हालांकि, इसके अतिरिक्त इसका उपयोग विविध संदर्भों में भी किया जा सकता है। 
+Kya aap kabhi socha hai ki aap sabhi tarikhon ke beech mein dhundh rahe hain? Aapko ek specific tarikh ke saath kaam karna hai aur aap chahtey hain ki kya woh tarikh kisi different tarikh se pehle ya baad mein hai? Aapko pareshan hone ki zaroorat nahin hai! Swift programming ke madhyam se, aap aasani se do tarikhon ko compare kar sakte hain.
 
-## कैसे
+## Kaise Karein
 
-इस स्विफ्ट प्रोग्राम में हम दो तारीखों को तुलना करने के लिए तीन अलग-अलग तरीकों को देखेंगे। पहले, हम ```compare (_: डेट, to: डेट, toGranularity: Calendar.Unit) फंक्शन``` का उपयोग करके तारीखों को तुलना करेंगे। दूसरे, हम ``` <``` और ```>``` ऑपरेटर का उपयोग करके तारीखों को तुलना करेंगे। तीसरा तरीका है ```isDate(_: equalTo: to Granularity:)``` फंक्शन का उपयोग करना जो तारीखों को तुलना करता है और विशिष्ट ग्रेन्यूलैरिटी या श्रृंखला में बांटता है।
+Tarikhon ko compare karne ke liye, hum "Date" data type ka istemaal karenge. Yeh Swift mein built-in data type hai aur humein exact tareeke se tarikhon ka kaam karna allow karta hai. Sabse pehle, hum do Date variables create karenge, jise hum "date1" aur "date2" naam se refer karenge.
 
-```Swift
-// इस उदाहरण में, हम एक हैं क्लासिक रूप से तारीख और समय मिलाते हैं और अनुलोमित हैं |
-let date1 = Calendar.current.date(from: DateComponents(year: 2020, month: 1, day: 1, hour: 12, minute: 0))!
-let date2 = Calendar.current.date(from: DateComponents(year: 2020, month: 1, day: 1, hour: 12, minute: 0))!
+```
+Swift
+let date1 = Date()
+let date2 = Date(timeIntervalSinceNow: 86400)
+```
 
-// कॉम्पेयर फंक्शन का उपयोग करके तारीखों को तुलना करें
-let result1 = date1.compare(date2, toGranularity: .minute) // अपने आप से 0
-let result2 = date1.compare(date2, toGranularity: .hour) // अपने आप से 0
-let result3 = date1.compare(date2, toGranularity: .day) // अपने आप से 0
+Yahan, humne "let" keyword ka istemaal kiya hai, kyunki humein yeh values change nahin karni hain. Ab humein "date1" aur "date2" ko compare karne ke liye, hum ek if-else statement ka istemaal karenge. Agar "date1" "date2" se pehle hai, toh hum print statement mein "date1 is before date2" print karenge, warna "date1 is after date2" print karenge.
 
-// < और > ऑपरेटर का उपयोग करके तारीखों को तुलना करें
-let result4 = date1 < date2 // false
-let result5 = date1 > date2 // false
+```
+Swift
+if date1 < date2 {
+    print("date1 is before date2")
+} else {
+    print("date1 is after date2")
+}
 
-// विशिष्ट ग
+// Output: date1 is before date2
+```
+
+Hamein apne code mein aur functions aur methods add kar sakte hain, jaise ki date formats change karna, specific tareekh ya waqt compare karna, lekin basic concept yahi hai.
+
+## Gehraai mein jaana
+
+Tarikhon ko compare karne ke liye, humare paas kuch important concepts hote hain jaise ki date formats, date components, aur time zones. Hum apne code mein in concepts ko implement kar sakte hain aur date comparison mein aur accuracy la sakte hain.
+
+See Also:
+- [Apple Developer Documentation: Date](https://developer.apple.com/documentation/foundation/date)
+- [Swift Tutorial: Working with Dates in Swift](https://www.raywenderlich.com/160322/swift-tutorial-working-dates)
+- [Hacking with Swift: Easy Date Calculations](https://www.hackingwithswift.com/example-code/dates/easy-date-calculations-using-swift)

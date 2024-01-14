@@ -1,45 +1,40 @@
 ---
-title:    "Gleam: Iniziare un nuovo progetto"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/starting-a-new-project.md"
+title:                "Gleam: Avviare un nuovo progetto"
+programming_language: "Gleam"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché iniziare un nuovo progetto con Gleam?
+## Perché
 
-Se sei un programmatore alla ricerca di un linguaggio funzionale moderno e performante, allora Gleam è la scelta perfetta per te. Con la sua sintassi user-friendly e la potenza della compilazione statica, questo linguaggio ti permetterà di scrivere codice efficiente e robusto per i tuoi progetti.
+Se sei un programmatore in cerca di una nuova sfida o vuoi imparare un linguaggio di programmazione funzionale, allora Gleam potrebbe essere il linguaggio perfetto per te. Con il suo sistema di tipizzazione forte e la robustezza del codice, Gleam è una scelta eccellente per progetti di grandi dimensioni e complessi.
 
-# Come iniziare
+## Come fare
 
-Per iniziare a sfruttare il potenziale di Gleam, basta seguirere pochi semplici passi. Prima di tutto, assicurati di avere installato sul tuo computer l'ultima versione di Erlang/OTP e di Elixir.
+Per iniziare a scrivere codice in Gleam, è necessario avere installato il compilatore e l'interprete del linguaggio. Una volta fatto ciò, sarà possibile compilare ed eseguire il codice con facilità.
 
-Una volta completata l'installazione, puoi creare un nuovo progetto Gleam con il seguente comando nel terminale:
+Ecco un semplice esempio di codice in Gleam che stampa "Ciao mondo" sulla console:
 
-```Gleam new nome-progetto```
+```Gleam
+pub fn main() {
+  show("Ciao mondo")
+}
+```
 
-Questo comando creerà una struttura di base per il tuo progetto composta da una cartella "src" contenente il file "main.gleam" e una cartella "test" contenente un file di test di esempio.
+Output:
 
-Per compilare il tuo progetto, utilizza il seguente comando:
+```
+Ciao mondo
+```
 
-```Gleam build```
+## Deep Dive
 
-E per eseguire il tuo codice, usa il comando:
+Per avviare un nuovo progetto in Gleam, è importante conoscere le diverse librerie e strumenti disponibili per aiutare nello sviluppo. Inoltre, è essenziale avere una buona comprensione del sistema di tipizzazione del linguaggio e delle sue caratteristiche uniche. In questo modo, sarà possibile sfruttare al massimo il potenziale di Gleam e creare progetti efficienti e robusti.
 
-```Gleam run```
+## Vedi anche
 
-Il risultato verrà visualizzato direttamente nel terminale.
-
-# Approfondimento
-
-Per iniziare a scrivere codice Gleam, è importante comprendere i principi fondamentali del linguaggio. Gleam utilizza la sintassi funzionale e la programmazione basata sui tipi, il che significa che tutte le espressioni e le funzioni devono avere un tipo specificato.
-
-Inoltre, Gleam utilizza il concetto di moduli per strutturare il codice. Un modulo è una collezione di dichiarazioni, funzioni e tipi, che possono essere importati ed utilizzati in altri moduli. Questo permette una maggiore organizzazione e modularità nel tuo codice.
-
-Infine, Gleam ha un forte sistema di tipo e un sistema di gestione degli errori robusto che aiuta a prevenire errori comuni durante la compilazione e l'esecuzione del tuo codice.
-
-# Vedi anche
-
-- Documentazione ufficiale di Gleam: https://gleam.run/
-- Repository GitHub di Gleam: https://github.com/gleam-lang/gleam
-- Tutorial di introduzione a Gleam: https://dev.to/cscott/functional-programming-in-gleam-5cdi
+- [Sito ufficiale di Gleam](https://gleam.run/)
+- [Documentazione di Gleam](https://gleam.run/documentation/)
+- [Esempi di codice in Gleam](https://github.com/gleam-lang/gleam/tree/master/examples)

@@ -1,53 +1,71 @@
 ---
-title:    "Arduino: Skapa en temporär fil"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/creating-a-temporary-file.md"
+title:                "Arduino: Skapa en temporär fil"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skapa temporära filer är en viktig del av Arduino-programmering eftersom det ger dig möjlighet att lagra data på ett flexibelt sätt. Genom att använda temporära filer kan du tillfälligt spara data som du kan använda i ditt Arduino-program.
+Skapande av temporära filer kan vara användbart för att lagra data som endast behövs temporärt under körningen av ditt Arduino program. Det kan också hjälpa till att minska användningen av mikrokontrollerns minne.
 
-## Så här gör du
+## Hur man gör
 
-För att skapa en temporär fil behöver du följa några enkla steg:
-
-1. Skapa en variabel för din temporära fil och ge den ett namn.
-2. Öppna filen med "File.open" kommandot och ange vad filen ska heter.
-3. Skriv in den data som ska sparas i filen med hjälp av "File.print" eller "File.println" kommandon.
-4. Stäng filen med "File.close" kommandot för att säkerställa att all data har sparats korrekt.
-
-Här är ett exempel på hur koden kan se ut i ett Arduino-program:
+För att skapa en temporär fil på ett Arduino kort, behöver du använda "File" biblioteket:
 
 ```Arduino
-File tempFile; // skapar variabel för temporär fil
+#include <SPI.h>
+#include <SD.h>
+
+File tempFile;
 
 void setup() {
-  Serial.begin(9600);
-  tempFile = SPIFFS.open("/temp.txt", "w"); // öppnar filen för skrivning
-  tempFile.print("Arduino är en fantastisk mikrokontroller!"); // skriver data i filen
-  tempFile.close(); // stänger filen
+  // Mappar upp SD kortet
+  SD.begin(SD_CS_PIN);
+  
+  // Öppnar en temporär fil för skrivning
+  tempFile = SD.open("temp_file.txt", FILE_WRITE);
+  
+  // Skriver data till filen
+  tempFile.print("Det här är en temporär fil.");
+  
+  // Stänger filen
+  tempFile.close();
 }
 
 void loop() {
-  // kod för ditt program
+  // Ditt huvudsakliga program
 }
 ```
 
-När du laddar detta program på din Arduino kommer en temporär fil med namnet "temp.txt" att skapas och innehålla texten "Arduino är en fantastisk mikrokontroller!". Du kan sedan använda denna fil för att hämta och använda data i ditt program.
+Detta kodexempel visar hur man skapar en fil med namnet "temp_file.txt" på SD-kortet och skriver texten "Det här är en temporär fil" till den. När filen är stängd finns den tillgänglig för läsning och kan sedan tas bort när den inte längre behövs.
 
 ## Djupdykning
 
-Att skapa temporära filer är också användbart när du behöver spara information som bara är relevant för en kort period av ditt program. Det kan hjälpa till att spara minnesutrymme och göra din kod mer effektiv.
+För att förstå varför och hur man skapar en temporär fil på ett Arduino kort, är det viktigt att förstå hur RAM och tillfällig lagring fungerar. RAM, eller Random Access Memory, är den del av mikrokontrollerns minne som används för att lagra programvariabler och data under körningen av programmet. Eftersom RAM ofta är begränsat på mikrokontrollrar, kan användningen av en temporär fil hjälpa till att frigöra dessa begränsningar.
 
-Du kan också använda temporära filer för att skapa loggar eller spara sensorvärden som sedan kan användas för att analysera dina projekt.
+När en temporär fil skapas på SD-kortet, kan data skrivas till den utan att påverka RAM. Detta betyder att mer data kan lagras utan att orsaka minnesproblem. Dessutom kan filen läsas och skrivas flera gånger utan att påverka tillgången till RAM.
+
+För att ta bort en temporär fil från SD-kortet, kan "SD.remove()" funktionen användas:
+
+```Arduino
+SD.remove("temp_file.txt");
+```
+
+Detta kommer att ta bort den angivna filen från SD-kortet och frigöra utrymme för andra filer.
 
 ## Se även
 
-Här är några länkar som kan vara användbara för att lära dig mer om att skapa temporära filer i Arduino:
+- Arduino File Library: https://www.arduino.cc/en/Reference/SD
+- Arduino SD Library: https://www.arduino.cc/en/Reference/SD
+- SD Card tutorial: https://www.arduino.cc/en/Tutorial/SD
 
-- [Arduino Fil Referens](https://www.arduino.cc/en/Reference/File)
-- [Sparkfun guide till SPIFFS för ESP8266](https://learn.sparkfun.com/tutorials/spiffs---using-the-littlefs-arduino-library/all)
-- [Video tutorial om att spara data på SPIFFS med ESP32](https://www.youtube.com/watch?v=fNkGKqJ2LMs)
+
+[In Swedish]
+## Se även
+
+- Arduino File Library: https://www.arduino.cc/en/Reference/SD
+- Arduino SD Library: https://www.arduino.cc/en/Reference/SD
+- SD Card tutorial: https://www.arduino.cc/en/Tutorial/SD

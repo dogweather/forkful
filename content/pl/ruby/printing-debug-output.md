@@ -1,73 +1,46 @@
 ---
-title:    "Ruby: Wydrukuj wyjście debugowania"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/printing-debug-output.md"
+title:                "Ruby: Wydrukowanie wyników debugowania."
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-W ciągu naszej kariery programistycznej często napotykamy na błędy w kodzie, które trudno jest nam zlokalizować. W takich przypadkach bardzo przydatne jest wypisywanie wiadomości debugujących, dzięki którym możemy śledzić działanie programu i zidentyfikować problem. W tym wpisie dowiesz się, jak skutecznie używać funkcji wypisywania debugu w języku Ruby.
+Każdy programista, niezależnie od stopnia zaawansowania, musi czasem śledzić kod i znaleźć błędy. Właśnie wtedy przydaje się wydrukowanie informacji na temat przebiegu kodu, czyli tzw. "debug output". Pozwala to na lepsze zrozumienie działania programu i szybsze znalezienie ewentualnych błędów.
 
 ## Jak to zrobić
 
-W celu wypisania wiadomości debugujących w Ruby, możemy skorzystać z metody `puts` lub `p`. Poniższy przykład wypisuje zmienną `x` na ekran:
+Najprostszym sposobem na wyświetlenie debug output jest użycie metody "puts", która wypisze przekazany jej argument na ekranie. Możemy także wykorzystać specjalną metodę "p" lub "print", która również można znaleźć w dokumentacji języka Ruby.
 
 ```Ruby
-x = 5
-puts x            # Output: 5
-p x               # Output: 5
+puts "Hello World"
+p "Debug output"
+print "Output without newline"
 ```
 
-Warto również wiedzieć, że `p` wypisuje również typ danych danej zmiennej:
+W powyższych przykładach widzimy, że każda z tych metod działa w podobny sposób, ale ma pewne różnice, które mogą mieć znaczenie w zależności od sytuacji.
+
+## Głębszy zanurzenie
+
+Ponieważ wyświetlanie debug output jest tak powszechnie stosowaną techniką, istnieje wiele sposobów na dostosowanie go do własnych potrzeb. Na przykład możemy użyć metody "p" zamiast "puts" w celu uzyskania dokładniejszej informacji na temat typu i wartości wyświetlanych danych. Możemy również dodać warunek, dzięki któremu debug output będzie wyświetlany tylko wtedy, gdy będzie spełniony.
 
 ```Ruby
-x = 5
-puts x            # Output: 5
-p x               # Output: Integer(5)
+p 123                 # wyświetli: 123
+puts [1, 2, 3]        # wyświetli: 1
+                      #            2
+                      #            3
+puts 123 if true      # wyświetli: 123
+
+p 123 if false        # nie wyświetli niczego
 ```
 
-Możemy również dodać wiadomość w celu lepszej orientacji w outputcie:
+Ponadto, poza standardowym wyświetlaniem danych, możemy również korzystać z różnych gemów i bibliotek, które oferują bardziej zaawansowane metody debugowania. Przykładem może być popularny gem "pry", który umożliwia interaktywne wyświetlanie i manipulację danymi w czasie wykonywania programu.
 
-```Ruby
-x = 5
-puts "Wartość zmiennej x to #{x}."
-p "Wartość zmiennej x to #{x}."  # Output: "Wartość zmiennej x to 5."
-```
+## Zobacz także
 
-Możliwe jest również używanie wielu wyrażeń w jednej linii:
-
-```Ruby
-x = 5
-y = 10
-puts "Suma x i y to #{x + y}."
-p "Suma x i y to #{x + y}."  # Output: "Suma x i y to 15."
-```
-
-Jeśli chcemy dodać więcej informacji do wiadomości debugujących, możemy wykorzystać specjalną składnię `<<`:
-
-```Ruby
-x = 5
-y = 10
-puts "Wartość x: #{x} i y: #{y}."
-p "Wartość x: #{x} i y: #{y}."
-puts <<~DEBUG              # Output: "Wartość x: 5 i y: 10."
-#{x} + #{y} to #{x + y}.
-DEBUG
-p <<~DEBUG                # Output: "Wartość x: 5 i y: 10.\n15"
-#{x} + #{y} to #{x + y}.
-DEBUG
-```
-
-## Deep Dive
-
-Podczas wypisywania debug outputu warto pamiętać o kilku ważnych aspektach. Po pierwsze, nie należy nadużywać tej funkcji, ponieważ może ona spowolnić działanie naszego programu. Najlepiej używać jej tylko w wyjątkowych sytuacjach, kiedy faktycznie jest to potrzebne.
-
-Warto również starannie dobierać wiadomości debugujące, aby były czytelne i łatwe do zrozumienia. Możemy np. dodawać informacje o aktualnej wartości zmiennych lub miejscu w kodzie, w którym została wywołana wiadomość debugująca. Dzięki temu w razie potrzeby łatwiej będzie nam się odnaleźć w kodzie.
-
-## Zobacz również
-
-- [Ruby Dokumentacja](https://ruby-doc.org/core-2.7.2/Kernel.html#method-i-p)
-- [Wypisywanie debug outputu w języku Ruby](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-programming/lessons/debugging)
-- [Przewodnik dla początkujących w języku Ruby](https://www.rubyguides.com/2019/01/p-print-and-puts/)
+- ["Debugowanie w Ruby" na stronie DZone](https://dzone.com/articles/a-debugging-tutorial-for-ruby)
+- ["Praktyczny poradnik debugowania w Ruby" na stronie Medium](https://medium.com/rubyinside/practical-guide-debugging-ruby-b6f6db8dbc97)
+- ["Przydatne techniki debugowania w Ruby" na stronie RubyGuides](https://www.rubyguides.com/2019/09/ruby-debugging/)

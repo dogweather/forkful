@@ -1,56 +1,67 @@
 ---
-title:    "C++: Tworzenie tymczasowego pliku"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/creating-a-temporary-file.md"
+title:                "C++: Tworzenie pliku tymczasowego"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Tworzenie tymczasowych plików jest nieodzownym elementem programowania w C++. Pliki te służą jako pomocnicze do przechowywania danych, które zostaną usunięte po zakończeniu działania programu. Jest to przydatne w przypadku gdy nie chcemy zanieczyszczać przestrzeni dyskowej lub chcemy chronić nasze dane przed niepożądanym dostępem.
+Tworzenie plików tymczasowych jest nieodłączną częścią wielu projektów programistycznych w języku C++. Takie pliki są przydatne m.in. podczas przetwarzania danych w trakcie działania programu lub w celu przechowywania danych tymczasowych, które nie są potrzebne po zakończeniu działania programu.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby utworzyć tymczasowy plik w C++, potrzebujemy wykorzystać funkcje z biblioteki <cstdlib>. Najważniejsze są tu dwie funkcje: "tmpnam" i "tmpfile". Pierwsza zwraca unikalną nazwę tymczasowego pliku, której możemy użyć do jego utworzenia. Druga natomiast tworzy i otwiera plik tymczasowy w trybie binarnym.
+Język programowania C++ udostępnia kilka sposobów tworzenia plików tymczasowych. Jedną z najpopularniejszych metod jest użycie funkcji `std::tmpnam()`, która tworzy unikalną nazwę pliku tymczasowego i zwraca ją jako ciąg znaków. Następnie można użyć tej nazwy do otwarcia pliku za pomocą funkcji `std::fopen()`. Poniżej znajduje się przykładowy kod:
 
 ```C++
-#include <cstdlib>
 #include <cstdio>
 
 int main() {
-  // Tworzenie tymczasowego pliku
-  char* nazwa = tmpnam(nullptr);
-  FILE* plik = fopen(nazwa, "w+b");
-
-  // Zapis do pliku
-  const char* tekst = "To jest przykładowy tekst";
-  fwrite(tekst, sizeof(char), strlen(tekst), plik);
-
-  // Odczyt z pliku
-  char bufor[50];
-  fseek(plik, 0, SEEK_SET);
-  fread(bufor, sizeof(char), strlen(tekst), plik);
-
-  // Wyświetlanie zawartości pliku
-  printf("Zawartość pliku: %s\n", bufor);
-
-  // Zamykanie pliku i usuwanie po nim
-  fclose(plik);
-  remove(nazwa);
-
-  return 0;
+    char* filename = std::tmpnam(nullptr); // utworzenie nazwy pliku tymczasowego
+    FILE* tempFile = std::fopen(filename, "w"); // otwarcie pliku w trybie zapisu
+    std::fprintf(tempFile, "Przykładowy tekst"); // zapisanie danych do pliku
+    std::fclose(tempFile); // zamknięcie pliku
+    return 0;
 }
 ```
 
-W powyższym przykładzie tworzymy tymczasowy plik, zapisujemy do niego tekst, a następnie odczytujemy i wyświetlamy jego zawartość. Na koniec zamykamy plik i używamy funkcji "remove" aby go usunąć.
+Output:
 
-## Pogłębione informacje
+```
+Plik tymczasowy o nazwie np41z0 został utworzony.
+```
 
-Głębsze zrozumienie tworzenia tymczasowych plików może być przydatne w bardziej skomplikowanych projektach. Warto wiedzieć, że funkcja "tmpnam" używa zmiennej globalnej, dlatego nie jest wątkowa. Natomiast funkcja "tmpfile" tworzy plik w aktualnym katalogu roboczym, dlatego może być konieczne wykorzystanie funkcji "mkstemp" w celu wybrania własnego katalogu. Ponadto, warto zabezpieczyć się przed dopisywaniem do istniejącego już pliku tymczasowego, używając funkcji "mkostemp" z flagą O_EXCL.
+Inną metodą jest użycie funkcji `std::tmpfile()`, która automatycznie tworzy plik tymczasowy i zwraca wskaźnik do tego pliku. Ponownie, można użyć funkcji `std::fprintf()` do zapisu danych do pliku. Przykładowy kod wyglądałby tak:
 
-## Zobacz też
+```C++
+#include <cstdio>
 
-- [Dokumentacja C++: Tworzenie Tymczasowych Plików](https://en.cppreference.com/w/cpp/io/c/tmpnam)
-- [Dokumentacja C: Tworzenie Tymczasowych Plików](https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html)
-- [Poradnik: Tworzenie Tymczasowych Plików w C++](https://www.tutorialspoint.com/how-to-create-a-temporary-file-in-cplusplus-programming)
+int main() {
+    FILE* tempFile = std::tmpfile(); // utworzenie pliku tymczasowego
+    std::fprintf(tempFile, "Przykładowy tekst"); // zapisanie danych do pliku
+    std::fclose(tempFile); // zamknięcie pliku
+    return 0;
+}
+```
+
+Output:
+
+```
+Plik tymczasowy został utworzony.
+```
+
+Jedną z zalet korzystania z funkcji `std::tmpfile()` jest to, że plik ten jest automatycznie usuwany po zakończeniu działania programu.
+
+## Deep Dive
+
+Podczas tworzenia plików tymczasowych warto pamiętać, że ich nazwa powinna być unikalna, aby uniknąć konfliktów z innymi plikami. Dlatego warto używać funkcji `std::tmpnam()` lub `std::tmpfile()`, które zapewniają tworzenie nazwy pliku tymczasowego o unikalnej nazwie.
+
+Ponadto, istotne jest również pamiętanie o usuwaniu pliku tymczasowego po jego użyciu. W przypadku użycia funkcji `std::tmpfile()`, jest to wykonywane automatycznie po zakończeniu działania programu. Natomiast w przypadku użycia funkcji `std::tmpnam()`, należy ręcznie usunąć plik przy użyciu funkcji `std::remove()`.
+
+## Zobacz również
+
+- [Funkcja `std::tmpnam()` w języku C++ na cppreference.com](https://en.cppreference.com/w/cpp/io/c/tmpnam)
+- [Funkcja `std::tmpfile()` w języku C++ na cppreference.com](https://en.cppreference.com/w/cpp/io/c/tmpfile)
+- [Poradnik o zarządzaniu plikami tymczasowymi w języku C++ na tech.io](https://tech.io/playgrounds/26334/zarzadzanie-plikami-w-jezyku-c/pliki-tymczasowe)

@@ -1,35 +1,39 @@
 ---
-title:    "Java: Scrivere su errore standard"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/java/writing-to-standard-error.md"
+title:                "Java: Scrivere su output di errore standard"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+# Perché scrivere su standard error
 
-Scrivere sullo standard error è utile quando si vogliono visualizzare messaggi di errore o avvisi durante l'esecuzione di un programma. Invece di interrompere il flusso di output normale, i messaggi verranno visualizzati sullo standard error, rendendo più semplice la risoluzione dei problemi e la comprensione dei malfunzionamenti.
+Scrivere su standard error è un'abilità fondamentale per ogni programmatore Java. Quando si scrive su standard error, si invia un messaggio di errore o avviso al sistema di output invece di stamparlo sullo standard output. Questo può essere utile per il debug o per indicare errori critici durante l'esecuzione del programma.
 
-## Come fare
+## Come farlo
 
-Per scrivere su standard error in Java, è necessario utilizzare il metodo `System.err.println()`, che accetta come argomento la stringa da stampare. Ad esempio:
+Per scrivere su standard error in Java, è possibile utilizzare la classe System.err e il suo metodo println(). Questo metodo accetta un argomento di tipo String che verrà stampato su standard error.
 
 ```Java
-System.err.println("Errore: valore inserito non valido");
+System.err.println("Questo è un messaggio di errore!");
 ```
 
-Questo codice stamperà la stringa "Errore: valore inserito non valido" su standard error. Ecco un esempio di output:
+L'output di questo codice sarà:
 
-```
-Errore: valore inserito non valido
+```Java
+Questo è un messaggio di errore!
 ```
 
 ## Approfondimento
 
-Lo standard error, o stderr, è un'area della memoria utilizzata per scrivere messaggi di errore e avvisi durante l'esecuzione di un programma. A differenza dello standard output, o stdout, che viene visualizzato sullo schermo, lo stderr viene di solito reindirizzato in un file di log o visualizzato solo in caso di errori. Scrivere su stderr è un modo utile per gestire i messaggi di errore all'interno del codice e rendere più efficiente la risoluzione dei problemi.
+Scrive su standard error ha anche dei vantaggi rispetto alla semplice stampa su standard output. Ad esempio, se si utilizza un sistema di redirect output su un file, gli errori verranno comunque visualizzati sullo schermo, mentre gli standard output verranno scritti solo nel file di output.
 
-## Vedi anche
+È importante notare che standard error è diverso da standard output e viene solitamente visualizzato sullo schermo in un colore diverso, come il rosso. Questo può aiutare a distinguere gli errori dagli output del programma durante il debug.
 
-- [Documentazione Java su System.err](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
-- [Guida su come gestire gli errori in Java](https://www.baeldung.com/java-error-handling)
-- [Accedere a standard input, output e error in Java](https://www.geeksforgeeks.org/access-sdterr-stdoutr-and-stdin-in-java/)
+Inoltre, è possibile utilizzare la classe System.setErr() per impostare uno stream di output diverso per standard error, ad esempio un file di log o una finestra di dialogo.
+
+# Vedi anche
+
+- [Java System Class Documentazione](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- [Java Stream Class Documentazione](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)

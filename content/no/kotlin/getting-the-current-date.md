@@ -1,46 +1,75 @@
 ---
-title:    "Kotlin: Å få gjeldende dato"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/getting-the-current-date.md"
+title:                "Kotlin: Hente nåværende dato"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-En av de mest grunnleggende oppgavene til et programmeringsspråk er å håndtere datoen. Uansett om du utvikler et spill, en mobilapp eller en nettside, er det viktig å kunne få tak i og håndtere den nåværende datoen. Heldigvis gjør Kotlin dette til en enkel oppgave, og i denne bloggposten vil jeg vise deg hvordan du kan få tak i den nåværende datoen ved hjelp av Kotlin.
+
+Det å kunne hente inn og håndtere datoer er en viktig del av enhver programmeringsoppgave. Uansett om du lager en kalenderapplikasjon, holder oversikt over bestillinger eller bare ønsker å vise datoen på skjermen, så er det å kunne hente inn dagens dato en nødvendighet i mange tilfeller.
 
 ## Hvordan
-Først må vi importere pakken som lar oss få tilgang til dato og tidsfunksjoner i Kotlin. Dette gjøres ved å legge til følgende linje øverst i kildekoden:
+
+Med Kotlin er det enkelt å få tak i dagens dato ved hjelp av innebygde funksjoner. Først må vi importere klassen "LocalDate" fra biblioteket "java.time". Deretter kan vi bruke funksjonen "now()" for å hente ut dagens dato og lagre den i en variabel. Her er et eksempel på hvordan dette kan gjøres:
 
 ```Kotlin
-import java.time.*
+import java.time.LocalDate
+
+val today: LocalDate = LocalDate.now()
+
+print(today)
 ```
 
-Deretter kan du få tak i den nåværende datoen ved å bruke klassen LocalDate og funksjonen now(). Dette vil gi deg datoen i form av år, måned og dag som vist under:
+Dette vil gi oss følgende utskrift:
 
 ```Kotlin
-val currentDate = LocalDate.now()
+2021-10-19
 ```
 
-Utskriften vil da se noe lignende ut: 2021-02-09.
-
-Hvis du ønsker å få tak i mer spesifikk informasjon om datoen, for eksempel bare måned og år, kan du bruke funksjonen get():
+Vi kan også hente ut andre detaljer fra datoen, som for eksempel måneden, dagen og året. Dette gjøres ved hjelp av funksjonene "monthValue", "dayOfMonth" og "year". Her er et eksempel på hvordan dette kan gjøres:
 
 ```Kotlin
-val currentMonth = currentDate.get(ChronoField.MONTH_OF_YEAR)
-val currentYear = currentDate.get(ChronoField.YEAR)
+import java.time.LocalDate
+
+val today: LocalDate = LocalDate.now()
+
+val month: Int = today.monthValue
+val day: Int = today.dayOfMonth
+val year: Int = today.year
+
+print("$year-$month-$day")
 ```
 
-Utskriften for måned vil da være februar (i form av tall 2), og for år vil det være 2021.
+Dette vil gi oss følgende utskrift:
 
-## Deep Dive
-I Kotlin kan du også håndtere og manipulere datoer på en fleksibel og enkel måte. Du kan for eksempel få tak i en bestemt fremtidig eller tidligere dato ved hjelp av funksjonen plusDays() for å legge til dager eller minusDays() for å trekke fra dager.
+```Kotlin
+2021-10-19
+```
 
-Du kan også formatere datoen ved hjelp av funksjonen format(). Dette lar deg endre hvordan datoen blir presentert, for eksempel å legge til månedsnavn eller endre rekkefølgen på dato, måned og år.
+## Dypdykk
 
-Det er også viktig å merke seg at Kotlin automatisk konverterer datoen til den lokale tiden til datamaskinen. Dette kan være nyttig å vite hvis du jobber med koder som brukes på tvers av ulike tidssoner.
+Bak kulissene bruker Kotlin den moderne datatypen "LocalDate" for å representere datoer. Denne typen er en del av biblioteket "java.time", som ble introdusert i Java 8. "LocalDate" gjør det enkelt å håndtere datoer og tilbyr blant annet funksjoner for konvertering mellom forskjellige datoformater og utregning av fremtidige eller tidligere datoer.
+
+En annen viktig funksjon er "of()", som gjør det mulig å opprette en spesifikk dato ved å angi år, måned og dag som parametere. Her er et eksempel på hvordan dette kan gjøres:
+
+```Kotlin
+import java.time.LocalDate
+
+val date: LocalDate = LocalDate.of(2021, 10, 31)
+
+print(date)
+```
+
+Dette vil gi oss følgende utskrift:
+
+```Kotlin
+2021-10-31
+```
 
 ## Se også
-- [Kotlin Docs - Dates and Times](https://kotlinlang.org/docs/dates.html)
-- [JavaDocs - LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Tutorialspoint - Kotlin Date Time](https://www.tutorialspoint.com/kotlin/kotlin_date_time.htm)
+
+- Kotlin sin offisielle dokumentasjon om "java.time": https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/
+- Java sin offisielle dokumentasjon om "java.time": https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html

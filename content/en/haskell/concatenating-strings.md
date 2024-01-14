@@ -1,46 +1,65 @@
 ---
-title:    "Haskell recipe: Concatenating strings"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/concatenating-strings.md"
+title:                "Haskell recipe: Concatenating strings"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why
-Concatenating strings is a powerful tool in any programming language, and Haskell is no exception. By joining two or more strings together, we can create longer and more complex strings that can be used in a variety of ways. Whether you need to generate dynamic text, format data, or build URLs, understanding how to concatenate strings is an important skill for any Haskell programmer.
+## Why
 
-# How To
-To concatenate strings in Haskell, we use the `++` operator. Let's take a look at an example:
+String concatenation is a fundamental concept in programming where we combine two or more strings into one. This can be useful when we need to display information to users or manipulate strings for data processing. In Haskell, string concatenation is a powerful tool that allows us to create new strings from existing ones.
 
-```Haskell
-str1 = "Hello"
-str2 = "World"
-concatStr = str1 ++ str2
+## How To
 
-print concatStr
-```
-
-In this code, we have two strings - "Hello" and "World" - and we use the `++` operator to combine them into one string. When we print out the `concatStr` variable, we get the output: "HelloWorld". We can also concatenate multiple strings at once by using the `++` operator in between each string.
+To concatenate strings in Haskell, we can use the `++` operator. Let’s take a look at an example:
 
 ```Haskell
-str1 = "I"
-str2 = "love"
-str3 = "coding"
-concatStr = str1 ++ str2 ++ str3
-
-print concatStr
+let firstWord = "Hello"
+let secondWord = "World"
+print (firstWord ++ secondWord)
 ```
 
-This time, the output would be: "Ilovecoding".
+The output of this code will be: `HelloWorld`
 
-We can also use the `++` operator with string literals, variables, and even functions that return strings. The possibilities are endless!
+We can also combine more than two strings by chaining multiple `++` operators:
 
-# Deep Dive
-Under the surface, Haskell uses the `append` function to concatenate strings. This function takes in two strings and returns a new string that is the result of concatenating them. Thus, when we use the `++` operator, we are essentially using the `append` function behind the scenes.
+```Haskell
+let sentence = "The" ++ " quick" ++ " brown" ++ " fox"
+print sentence
+```
 
-It's important to note that concatenation in Haskell is not just limited to strings. We can also use it with other data types such as lists and numbers. However, when concatenating numbers, we need to first convert them into strings using the `show` function.
+The output of this code will be: `The quick brown fox`
 
-# See Also
-- [Haskell Official Documentation](https://www.haskell.org/documentation/)
-- [Concatenation in Haskell](https://wiki.haskell.org/Concatenation)
-- [Haskell String Tutorial](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
+We can also use string interpolation to dynamically concatenate strings. For example:
+
+```Haskell
+let myName = "John"
+let age = 30
+let greeting = "Hello, my name is " ++ myName ++ " and I am " ++ show (age) ++ " years old!"
+print greeting
+```
+
+The `show` function is used to convert the integer value of `age` into a printable string. The output of this code will be: `Hello, my name is John and I am 30 years old!`
+
+## Deep Dive
+
+In Haskell, strings are represented as lists of characters. Therefore, string concatenation is essentially an operation on lists. This makes it easy to use functions like `map` and `filter` to manipulate strings.
+
+We can also use the `++` operator with empty strings to concatenate multiple strings together. For example:
+
+```Haskell
+let empty = ""
+let helloWorld = "Hello" ++ empty ++ "World"
+print helloWorld
+```
+
+The output of this code will be: `HelloWorld`
+
+Another important thing to note is that the `++` operator has a higher precedence than other operators in Haskell. This means that it will be evaluated first when used in conjunction with other operators. Therefore, it is important to use parentheses when necessary to avoid unexpected results.
+
+## See Also
+- [Haskell Documentation on Strings](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html)
+- [Functional Programming in Haskell](https://wiki.haskell.org/Functional_programming)
+- [Haskell for Beginners](https://www.haskell.org/learn/)

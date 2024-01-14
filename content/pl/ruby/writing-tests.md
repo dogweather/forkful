@@ -1,48 +1,43 @@
 ---
-title:    "Ruby: Pisanie testów"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/writing-tests.md"
+title:                "Ruby: Pisanie testów"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pisać testy w programowaniu Ruby?
+# Dlaczego warto pisać testy w języku Ruby?
 
-Pisanie testów jest kluczowym elementem każdego projektu programistycznego. Pozwala ono zweryfikować poprawność kodu oraz uniknąć potencjalnych błędów w przyszłości. W przypadku języka Ruby, testy są niezwykle ważne ze względu na jego oparty na interpretacji charakter. Dzięki testom możemy upewnić się, że nasz kod działa poprawnie i uniknąć nieprzewidzianych problemów.
+Testowanie kodu jest nieodłączną częścią procesu tworzenia oprogramowania. Dzięki testom możemy upewnić się, że nasze aplikacje działają zgodnie z oczekiwaniami oraz zapobiec pojawianiu się błędów w przyszłości. W języku Ruby istnieje wiele narzędzi do tworzenia testów, co sprawia, że pisanie testów jest łatwe i przyjemne.
 
-## Jak pisać testy w języku Ruby?
+## Jak to zrobić?
 
-Pisanie testów w języku Ruby jest bardzo proste i intuicyjne. Najpopularniejszym narzędziem używanym do tego celu jest framework RSpec. Poniżej przedstawiam przykładowy kod testowy wraz z komentarzami:
+Pisanie testów w języku Ruby jest bardzo proste i przejrzyste. Wystarczy zdefiniować testy w specjalnych plikach z rozszerzeniem `.rb` oraz wykorzystać dostępne biblioteki do asercji. Poniżej przedstawiam przykładowy kod testu w języku Ruby: 
 
 ```Ruby
-# Importujemy potrzebne biblioteki
-require 'rspec'
-require 'calculator'
+require 'test/unit'
 
-# Tworzymy opis naszego testu
-describe Calculator do
-  # Tworzymy testową metodę "add" i definiujemy jej działanie
-  describe "#add" do
-    it "returns the sum of two numbers" do
-      # Tworzymy obiekt kalkulatora
-      calculator = Calculator.new
-      # Wywołujemy metodę add i przekazujemy jej dwa argumenty
-      result = calculator.add(2, 3)
-      # Sprawdzamy, czy wynik jest poprawny
-      expect(result).to eq(5)
-    end
+class CalculatorTest < Test::Unit::TestCase
+  def test_addition
+    sum = 1 + 2
+    assert_equal(3, sum)
   end
 end
 ```
 
-W powyższym kodzie mamy opisany test metody "add" z wykorzystaniem frameworka RSpec. Tworzymy obiekt klasy Calculator i używamy jej metody "add", a następnie sprawdzamy, czy otrzymany wynik jest zgodny z oczekiwanym. Takie podejście pozwala nam na szybkie i skuteczne testowanie naszego kodu.
+W powyższym przykładzie, wykorzystaliśmy bibliotekę `test/unit` do tworzenia testów oraz metodę `assert_equal` do porównania oczekiwanego wyniku z rzeczywistym. Testy możemy uruchomić w konsoli, wpisując polecenie `ruby nazwa_pliku_testowego.rb`.
 
-## Głębszy wgląd w pisanie testów
+Dodatkowo, w języku Ruby istnieje wiele innych bibliotek, takich jak `RSpec` czy `Cucumber`, które umożliwiają jeszcze bardziej zaawansowane i czytelne sposoby tworzenia testów.
 
-Pisanie testów w języku Ruby może być nie tylko prostym sposobem na zweryfikowanie poprawności kodu, ale również sposobem na ulepszenie procesu programowania. Częste wykonywanie testów podczas tworzenia aplikacji pozwala na szybsze wykrywanie błędów i unikanie problemów w przyszłości. Ponadto, dzięki testom, możemy łatwiej wprowadzać zmiany w kodzie i mieć pewność, że nie spowodują one żadnych nieoczekiwanych efektów.
+## Wnikliwa analiza
 
-## Zobacz również
+Pisanie testów w języku Ruby może być nie tylko prostym sposobem na sprawdzenie poprawności kodu, ale także pozwala na głębsze zrozumienie jego działania. Poprzez pisanie testów, możemy wykryć potencjalne błędy oraz ulepszyć projektowanie naszego kodu.
 
-- [RSpec - oficjalna dokumentacja](https://rspec.info/)
-- [Ruby on Rails - testowanie aplikacji](https://guides.rubyonrails.org/testing.html)
-- [Praktyczne przykłady testowania w języku Ruby](https://github.com/rspec/rspec-expectations/blob/master/Should.md)
+Jedną z zalet testów jest także to, że pozwala ono na sukcesywne wprowadzanie zmian w kodzie bez obawy o jego poprawne działanie. Dzięki temu, testy pomagają w szybkiej i bezpiecznej iteracji naszej aplikacji.
+
+# Zobacz również
+
+- [Dokumentacja biblioteki test/unit](https://apidock.com/ruby/Test/Unit/TestCase)
+- [Oficjalna strona biblioteki RSpec](https://rspec.info/)
+- [Poradnik "Tworzenie testów w języku Ruby z użyciem biblioteki RSpec"](https://semaphoreci.com/community/tutorials/how-to-test-your-ruby-code-with-rspec)

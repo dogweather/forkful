@@ -1,35 +1,32 @@
 ---
-title:    "Arduino: Skriving til standardfeil"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/arduino/writing-to-standard-error.md"
+title:                "Arduino: Skriver til standardfeil"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Et av de mest vanlige spørsmålene som nybegynnere har når de begynner å lære å programmere Arduino er - hvorfor skal jeg skrive til standard error? Det er en god praksis å følge når du skriver kode, og i denne artikkelen vil vi forklare hvorfor det er viktig og hvordan du kan gjøre det.
+Det kan ofte være nødvendig å skrive informasjon til standard error i Arduino-programmering. Dette kan være nyttig for debugging og feilsøking, da utskrift til standard error vil vises i Serial Monitor og gi deg bedre innsikt i hva som skjer i koden din.
 
-## Hvordan man gjør det
+## Hvordan gjøre det
 
-For å skrive til standard error i Arduino, kan du bruke funksjonen ```Serial.print()```. Denne funksjonen tar en tekststreng eller tall som parameter og sender det til seriellporten. For eksempel, hvis du vil skrive ut teksten "Hei, verden!" til standard error, kan du bruke følgende kode:
+For å skrive til standard error i Arduino, bruker du funksjonen ```Serial.print()``` eller ```Serial.println()```, og setter deretter parameteren til ```stderr```. Her er et eksempel på hvordan dette kan se ut i koden din:
 
 ```Arduino
-Serial.print("Hei, verden!");
+Serial.println("Dette er en feilmelding", stderr);
 ```
 
-Når du kjører denne koden, vil teksten "Hei, verden!" bli sendt til seriellporten og vises i seriellmonitorvinduet. 
+Når du laster opp koden og åpner Serial Monitor, vil du se at meldingen vises med røde bokstaver for å indikere at det er en feilmelding.
 
-## Dykk dypere
+## Dypdykk 
 
-Så hvorfor er det viktig å skrive til standard error? Det er fordi når du skriver til standard error, skiller du ut feilmeldinger fra standard utskrift. Dette gjør det lettere å finne og feilsøke problemer i koden din. Ved å få feilmeldingene separert, kan du fokusere mer på å forbedre koden din enn å lete etter feil.
+Ved å skrive til standard error i Arduino, kan du få mer informasjon om potensielle feil i koden din og pinpointe hvor problemet ligger. Dette kan være spesielt nyttig når du jobber med større eller komplekse koder, da det kan være vanskelig å finne feilene kun ved å se på koden.
 
-En annen fordel med å skrive til standard error er at du kan sende variabler og annen informasjon som er nyttig for feilsøking til seriellmonitorvinduet. Dette kan hjelpe deg med å forstå hva som skjer med koden din og hvor problemet ligger.
+## Se også
 
-## Se Også
-
-Du kan lese mer om Serial.print() funksjonen og hvordan du kan bruke den på Arduino sin offisielle nettside: https://www.arduino.cc/reference/en/language/functions/communication/serial/print/ 
-
-For mer informasjon om feilsøking i Arduino, kan du sjekke ut denne guiden fra Arduino-prosjektet: https://www.arduino.cc/en/Guide/Troubleshooting 
-
-Og hvis du vil lære mer om Arduino-programmering generelt, kan du ta en titt på våre andre artikler på [Nettsiden] (https://www.nettsted.no/arduino-programmering). Lykke til med å skrive til standard error i dine fremtidige prosjekter!
+- [Arduino Serial.print() referanse](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- [Arduino Serial.println() referanse](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+- [Feilsøking i Arduino: Slik bruker du Serial Monitor](https://www.roboticsclassesinpune.com/blogs/arduino-debugging-serial-monitor/)

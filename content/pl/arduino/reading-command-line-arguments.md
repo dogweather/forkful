@@ -1,40 +1,59 @@
 ---
-title:    "Arduino: Odczytywanie argumentów wiersza poleceń"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/reading-command-line-arguments.md"
+title:                "Arduino: Odczytywanie argumentów wiersza poleceń"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Czy kiedykolwiek zastanawiałeś się, jak można wpływać na działanie programów, wprowadzając różne argumenty z linii poleceń? Jeśli jesteś zainteresowany dowiedzeniem się, jak łatwo można osiągnąć ten cel, ten artykuł jest dla Ciebie!
+Arduino jest jedną z najpopularniejszych platform programistycznych, a jego możliwości są ogromne. Jednak, żeby w pełni wykorzystać potencjał tej platformy, ważne jest, aby poznać różne sposoby programowania. Dziś postaram się przybliżyć wam jedną z nich – czytanie argumentów wiersza poleceń.
 
 ## Jak to zrobić
+Aby odczytać argumenty wiersza poleceń, musimy wykorzystać metodę ```readCommandLine()```. Przykładowy kod wyglądałby następująco:
 
-Aby odczytać argumenty z linii poleceń w Arduino, należy użyć funkcji ```Arduino.args()```, która zwraca tablicę z argumentami przekazanymi do programu. Następnie można wykorzystać pętlę ```for``` do przejrzenia każdego argumentu i wykonania odpowiednich działań. Oto prosty przykład kodu:
+```Arduino
+String argument = readCommandLine(); // Przypisanie pierwszego argumentu do zmiennej "argument"
 
+Serial.println(argument); // Wyświetlenie argumentu w monitorze szeregowym
 ```
-Arduino.args();
-for(int i=0; i<Arduino.args().length; i++){
-  Arduino.print("Argument " + i + ": " + Arduino.args()[i]);
+
+Przykładowy output:
+```
+> mój-program pierwszy_argument drugi_argument
+pierwszy_argument
+```
+
+W powyższym przykładzie, wykorzystaliśmy metodę ```readCommandLine()``` oraz funkcję ```Serial.println()```, aby wyświetlić pierwszy argument wiersza poleceń.
+
+## Głębszy zanurzenie
+Oczywiście, argumentów wiersza poleceń może być więcej niż jeden. W takiej sytuacji, może być przydatne wykorzystanie tablicy do przechowywania każdego argumentu. Przykładowy kod wyglądałby następująco:
+
+```Arduino
+int maxArgs = 3; // Maksymalna liczba argumentów
+String args[maxArgs]; // Tablica przechowująca argumenty
+
+for(int i = 0; i < maxArgs; i++) {
+  args[i] = readCommandLine(); // Odczytanie argumentów i zapisanie ich do tablicy
+
+  Serial.print("Argument ");
+  Serial.print(i);
+  Serial.print(": ");
+  Serial.println(args[i]); // Wyświetlenie każdego argumentu w monitorze szeregowym
 }
 ```
 
-Przy założeniu, że do programu przekazano 3 argumenty, kod ten wyświetli na monitorze szeregu argumentów wraz z ich numerami:
-
+Przykładowy output:
 ```
-Argument 0: pierwszy
-Argument 1: drugi
-Argument 2: trzeci
+> mój-program pierwszy_argument drugi_argument trzeci_argument
+Argument 0: pierwszy_argument
+Argument 1: drugi_argument
+Argument 2: trzeci_argument
 ```
 
-Zauważ, że aby uzyskać dostęp do tablicy argumentów, musimy wywołać funkcję ```Arduino.args()``` więcej niż raz, ponieważ wartość ta może ulec zmianie podczas działania programu.
+W ten sposób, możemy wykorzystać tablicę do przechowywania różnych argumentów, zamiast robić to ręcznie.
 
-## Dogłębna analiza
-
-Odczytanie argumentów z linii poleceń może być przydatne w wielu sytuacjach, na przykład przy wykorzystaniu flag konfiguracyjnych lub wywoływaniu różnych funkcji w zależności od przekazanych argumentów. Dzięki temu będziemy mieć większą kontrolę nad działaniem naszych programów i łatwiej będzie je dostosowywać do różnych potrzeb.
-
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o funkcji ```Arduino.args()```, polecamy zapoznać się z oficjalną dokumentacją Arduino oraz przeczytać artykuł "Tutorial: Odczytywanie argumentów z linii poleceń w Arduino" na stronie [WiFi for Beginners](https://www.jclerc.com/wififorb.php).
+## Zobacz również
+- [Dokumentacja Arduino o funkcji ```readCommandLine()```](https://www.arduino.cc/reference/en/language/functions/communication/serial/readcommandline/)
+- [Tutorial o obsłudze argumentów wiersza poleceń w Arduino](https://learn.adafruit.com/serial-debugging-for-beginners/command-line-arguments)

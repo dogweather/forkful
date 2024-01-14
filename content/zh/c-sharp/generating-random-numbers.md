@@ -1,46 +1,62 @@
 ---
-title:    "C#: 生成随机数"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/generating-random-numbers.md"
+title:                "C#: 生成随机数"
+programming_language: "C#"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要生成随机数
+# 为什么要生成随机数？
 
-在编程过程中，有时我们需要生成随机的数字来模拟现实世界的情况，或者用作密码或加密等安全目的。生成随机数的能力可以为我们的程序增加更多的功能和保证安全性。接下来，我们将学习如何在C#中生成随机数，并深入了解其背后的工作原理。
+在编程中，我们经常需要使用随机数来模拟真实世界的情况或者进行测试。通过生成随机数，我们可以让程序具备一定的随机性，从而提高其可靠性和准确性。
 
-# 如何生成随机数
+## 如何生成随机数？
 
-在C#中，我们可以使用Random类来生成随机数。首先，我们需要在程序中导入System命名空间，代码如下所示：
+在C#中，可以使用内置的Random类来生成随机数。首先，我们需要在代码中引入Random类的命名空间。
+
 ```C#
 using System;
 ```
-接下来，我们需要创建一个Random的实例，代码如下所示：
+
+接下来，我们可以通过以下代码创建一个Random对象，并设置种子值：
+
 ```C#
-Random rand = new Random();
-```
-现在，我们可以使用此实例的Next()方法来生成随机整数，代码如下所示：
-```C#
-int randomInt = rand.Next();
-```
-我们还可以指定生成的随机数的范围，例如：生成一个1-10之间的随机数，代码如下所示：
-```C#
-int randomInt = rand.Next(1, 11);
-```
-此外，我们还可以生成随机小数，代码如下所示：
-```C#
-double randomDouble = rand.NextDouble();
+Random random = new Random(seed);
 ```
 
-# 深入了解生成随机数
+其中，种子值是一个可选的参数，用于初始化生成随机数的算法。如果不提供种子值，则默认使用当前时间作为种子值。接着，我们可以使用Random对象的Next方法来生成随机整数：
 
-在计算机中，生成随机数并不是一件容易的事情。因为计算机是按照特定的算法运行的，所以它们不能自己产生随机数。相反，它们可以使用特定的算法来生成看似随机的数字。Random类中使用的算法称为“线性同余法”，它使用一个称为“种子”的数字来计算下一个随机数。如果使用相同的种子，将会生成相同的随机数序列。
+```C#
+int randomNumber = random.Next();
+```
 
-为了避免这种情况，我们可以使用系统时间作为种子，因为它每次都是不同的。此外，Random类还提供了一个种子字段，我们可以手动设置不同的种子来生成不同的随机数序列。
+如果希望生成指定范围内的随机数，可以使用Next方法的重载形式：
 
-# 另请参阅
+```C#
+int randomNumberInRange = random.Next(minValue, maxValue);
+```
 
-- [Random Class (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
-- [How to Generate Random Numbers in C#](https://www.c-sharpcorner.com/UploadFile/cd7c2e/random-numbers-in-C-Sharp/)
-- [Understanding the Random Class in C#](https://www.codeproject.com/Tips/1110346/Understanding-the-Random-Class-in-Csharp)
+除了整数，Random类还可以生成其他类型的随机数，如随机双精度浮点数：
+
+```C#
+double randomDouble = random.NextDouble();
+```
+
+## 深入了解随机数生成
+
+随机数的生成实际上是一个伪随机的过程，因为计算机无法产生真正的随机数，只能通过算法来模拟随机性。Random类使用的是线性同余法来生成随机数，它根据当前的种子值和一组固定的数学公式来计算下一个随机数。
+
+另外，需要注意的是，同一个种子值会产生相同的随机数序列。因此，在使用Random类生成随机数时，建议选择一个不会重复的种子值，如当前时刻的毫秒数。
+
+## 参考链接
+
+- [MSDN官方文档](https://docs.microsoft.com/zh-cn/dotnet/api/system.random?view=netframework-4.8)
+- [C#随机数生成器的实现原理](https://www.cnblogs.com/jinchun/p/3554466.html)
+- [如何生成不重复的随机数](https://www.cnblogs.com/devshaw/archive/2009/04/06/1439853.html)
+
+# 查看相关资料
+
+- [学习C#编程的最佳途径](https://www.cnblogs.com/zqifa/p/csharp-learning-guide.html)
+- [随机数生成算法的选择](https://blog.csdn.net/kao_yong/article/details/84965028)
+- [在C#中使用LINQ来生成随机数序列](https://www.cnblogs.com/freshman0219/p/6662988.html)

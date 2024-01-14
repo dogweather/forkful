@@ -1,33 +1,38 @@
 ---
-title:    "Gleam: השוואת שתי תאריכים"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/gleam/comparing-two-dates.md"
+title:                "Gleam: השוואת שתי תאריכים"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
-קודם כל, מהו כלל השוואת תאריכים ולמה כדאי ללמוד עליה? משווה תאריכים זהו כלי חובה כאשר מתעסקים עם נתונים של זמן ותאריכים. השוואת תאריכים מאפשרת לך לבדוק אם תאריכים שונים נמצאים באותו התחום זמן, לבדוק מהו התאריך שלפני או לאחר תאריך מסוים, ולבדוק כמה זמן עבר מאז תאריך מסוים. כתוצאה מכך, השוואת תאריכים היא כלי מאוד שימושי ואפקטיבי בתחום פיתוח התוכנה.
+# למה
 
-## איך לעשות זאת
-כדי לשווה בין שני תאריכים ב-Gleam, נצטרך להשתמש בספריית הנתונים של התאריך בשם `gleam/datetime`. נשתמש בפונקציות `from_iso8601`, `equal` ו-`before` כדי לבצע השוואה בין שני תאריכים. למשל, נשווה בין תאריך היום לתאריך ספציפי ונדפיס את התוצאה בפקודת הדפסה:
+למה לאדם להשתתף בהשוואת שתי תאריכים? השוואת תאריכים היא חלק חשוב מתהליך התכנות, מאפשרת לנו לבדוק אם שני אירועים התרחשו באותו זמן או אם האחד התרחש לפני השני. זה יכול להיות מאוד שימושי כאשר אנו עובדים עם תאריכים וזמנים בבניית אפליקציות או אתרים.
+
+# כיצד לבצע
+
+הכיוון הראשון בהשוואת שני תאריכים הוא להשתמש בפונקציה `gleam/datetime` כדי ליצור תאריך חדש מתאריך קיים. ניתן לעשות זאת באמצעות המזהה המותאם להליך המסחרי של גלים `__builder/datetime`. בעזרת הפונקציה הזו, ניתן להשוות שתי תאריכים באמצעות הפונקציה `equal?` או `compare?` ולקבל תשובה בפורמט `gleam/datetime.CompareResult`.
 
 ```Gleam
 import gleam/datetime
+let jan1st = datetime.Builder.datetime(2020, gleam/datetime.January, 1)
+let dec25th = datetime.Builder.datetime(2019, gleam/datetime.December, 25)
 
-let today = datetime.now_local()
-let specific_date = datetime.from_iso8601("2020-12-25T00:00:00")
-let result = datetime.equal(today, specific_date)
-io.format("Today is the same as Christmas? {}", [result])
+// השוואת תאריכים
+let equal = jan1st |> datetime.equal?(dec25th)
+let comparison = jan1st |> datetime.compare?(dec25th)
+
+// פלט
+equal == false
+comparison == gleam/datetime.CompareResult.Greater
 ```
 
-הפלט של הקוד הנ"ל יהיה:
+# חפירה עמוקה
 
-```
-Today is the same as Christmas? false
-```
+השוואת שני תאריכים נותנת לנו מידע על דברים רבים נוספים מעבר למראה התאריכים הפשוט. למשל, אנו יכולים להשתמש בפונקציה `diff?` כדי למצוא את ההפרש המדויק בין שני תאריכים, או ניתן להשתמש בפונקציה `add?` כדי להוסיף או להחסיר ימים, שעות או דקות מתאריך נתון.
 
-כאן אנחנו בודקים האם התאריך היום זהה לתאריך הספציפי של חג המולד, וכפי שאתם יכולים לראות, התשובה היא לא.
+אם אנו רוצים לבדוק אם תאריך מסוים נופל ברחוב ודוקא ביום חג או יום שנה רביעי, ניתן להשתמש בפונקציה `isleapyear?` או `easter_sunday?`.
 
-## עומק התחום
-העברת נתונים של תאריך ממערכת אחת למערכת אחרת יכולה להיות מורכבת יותר ממה שנראה בהתחלה. בדרך כלל, בניית שירותי עבור מערכות גדולות משתמשת בחלוקה ליחידות קטנות יותר, ולכן שימוש בפונקציות מתקדמות כמו `span` ו-`duration` יכול להיות מאוד מ
+דבר אחרון שאנו יכולים לעש

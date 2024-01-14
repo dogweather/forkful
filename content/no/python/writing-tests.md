@@ -1,55 +1,40 @@
 ---
-title:    "Python: Skriver tester"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/writing-tests.md"
+title:                "Python: Skrive tester"
+programming_language: "Python"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når man skriver kode, kan det være fristende å hoppe over testingen og bare fokusere på å få programmet til å kjøre. Men å skrive tester er en essensiell del av en god utviklingsprosess, og kan spare deg for mye tid og frustrasjon på sikt.
+Å skrive tester er en viktig del av å utvikle programmer i Python. Tester sikrer at koden fungerer som den skal og bidrar til å redusere feil og problemer i programvaren din.
 
-## Slik gjør du det
+## Hvordan
 
-Det finnes flere ulike tester du kan skrive for å forsikre deg om at koden din fungerer som den skal. La oss se på et enkelt eksempel med en funksjon som adderer to tall:
+Det å skrive tester kan virke som en skremmende oppgave, spesielt for nybegynnere i Python. Men det er faktisk ganske enkelt å komme i gang. La oss se på et eksempel:
 
-```Python
-def adder(a, b):
-    return a + b
+```
+def multiply(x, y):
+    return x * y
 
-assert adder(2, 3) == 5
-assert adder(5, 5) == 10
+def test_multiply():
+    assert multiply(3, 4) == 12
+    assert multiply(2, 5) == 10
+    assert multiply(-1, 8) == -8
 ```
 
-Her har vi skrevet to assert-statements som sjekker funksjonen vår med ulike input. Hvis testene feiler vil vi få en AssertionError, og vi kan da gå tilbake og rette opp feilen. På denne måten kan vi raskt finne og fikse feil i koden vår før vi publiserer den til produksjon.
+I dette eksempelet har vi en enkel funksjon som multipliserer to tall, og en testfunksjon som sjekker om funksjonen returnerer riktig svar. Vi bruker `assert` for å sjekke om koden fungerer som forventet. Hvis alle testene passerer, vil vi få en "OK" -melding, men hvis en test feiler, vil vi få en feilmelding som indikerer hvilken test som feilet og hva den forventede verdien var.
 
-Et annet viktig aspekt ved testing er å sørge for at koden vår fungerer med ulike scenarier og input. For eksempel kan vi bruke en innebygd modul i Python som heter unittest, og skrive mer omfattende tester for vår adder-funksjon:
+## Deep Dive
 
-```Python
-import unittest
+Når vi skriver tester, er det viktig å tenke på alle mulige scenarier og sørge for at koden vår håndterer dem på en riktig måte. Dette innebærer å teste for både korrekte og ugyldige inputverdier, samt kantsituasjoner. Å ha gode tester kan også gjøre det enklere å finne og rette feil i koden, siden vi må forstå hvordan koden fungerer for å kunne skrive effektive tester.
 
-class TestAdder(unittest.TestCase):
-
-    def test_adder(self):
-        self.assertEqual(adder(3, 4), 7)
-        self.assertEqual(adder(-5, 5), 0)
-        self.assertNotEqual(adder(2, 2), 6)
-        self.assertRaises(TypeError, adder, 2, 'string')
-
-if __name__ == '__main__':
-    unittest.main()
-```
-
-Her har vi brukt testmetoder fra unittest-modulen for å sammenligne forventet output med det faktiske outputet fra funksjonen vår. Vi kan også teste for spesifikke feil, som for eksempel når vi gir inn en string som input i stedet for tall. Ved å strukturere testkoden vår på denne måten kan vi enkelt legge til flere tester etterhvert som koden vår blir mer kompleks.
-
-## Dypdykk
-
-Det finnes flere ulike former for testing, som for eksempel enhetstesting, integrasjonstesting og end-to-end testing. Det kan også være lurt å kombinere manuell testing med automatiserte tester for å få et mer helhetlig bilde av koden vår.
-
-En annen viktig del av testing er å sørge for at testene våre er pålitelige og gir oss riktig informasjon. Det kan være lurt å ha en balanse mellom å skrive for mange og for få tester, og å sørge for at testene våre dekker alle mulige utfall av koden vår.
+Det finnes flere forskjellige testrammeverk som kan hjelpe deg med å skrive tester i Python, for eksempel `unittest` og `pytest`. Det kan være lurt å undersøke og prøve ut forskjellige rammeverk for å finne det som fungerer best for deg og prosjektet ditt.
 
 ## Se også
 
-- [Pytest documentation](https://docs.pytest.org/)
-- [Unit testi
+- [Python unittest-dokumentasjon](https://docs.python.org/3/library/unittest.html)
+- [Python pytest-dokumentasjon](https://docs.pytest.org/en/stable/)
+- [En komplett guide til testdrevet utvikling i Python](https://medium.com/@andy-shea/an-ultimate-guide-to-test-driven-development-in-python-14fb874e6e74)

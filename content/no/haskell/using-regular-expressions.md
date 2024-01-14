@@ -1,43 +1,38 @@
 ---
-title:    "Haskell: Å bruke regulære uttrykk"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/using-regular-expressions.md"
+title:                "Haskell: Å bruke regulære uttrykk"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Hvorfor bør man bruke regulære uttrykk i Haskell-programmering? Regulære uttrykk er en kraftig verktøysett som lar deg søke og manipulere tekst på en effektiv måte. Dette kan være svært nyttig når du jobber med tekstbaserte data, som for eksempel loggfiler eller tekstfiler.
+Å bruke regulære uttrykk kan virke som en skremmende oppgave for mange programmerere, men det kan hjelpe deg med å effektivisere og forenkle kode. Regulære uttrykk lar deg søke, erstatte og manipulere tekst på en effektiv måte.
 
-# Hvordan
+## Hvordan
 
-For å bruke regulære uttrykk i Haskell, må du importere modulet "Text.Regex.Posix". Deretter kan du bruke funksjonen `match` til å søke etter et mønster i en tekststreng. Her er et eksempel på hvordan du kan finne alle forekomster av et tall i en tekststreng:
-
-```Haskell
-import Text.Regex.Posix
-
-tekst = "Jeg er 27 år gammel og har jobbet som programmerer i 4 år."
-match "([0-9]+)" tekst
-```
-
-Dette vil returnere en liste med matchende substringer, i dette tilfellet "27" og "4". Du kan også bruke regulære uttrykk til å erstatte deler av en tekststreng. For eksempel kan du endre alle forekomster av bokstaven "e" til "a":
+For å bruke regulære uttrykk i Haskell, må du først importere "Text.Regex.TDFA" modulen. Deretter kan du bruke funksjonen "makeRegex" for å lage et regulært uttrykk. For eksempel, hvis vi vil finne alle tall i en tekststreng, kan vi bruke følgende kode:
 
 ```Haskell
-tekst2 = "Dette er en test"
-subRegex (mkRegex "e") tekst2 "a"
+import Text.Regex.TDFA
+
+tekst = "Jeg er 27 år gammel"
+
+regex = makeRegex "[0-9]+" :: Regex
+
+match = matchAll regex tekst :: [[String]]
 ```
 
-Dette vil gi deg resultatet "Datta ar an tast".
+I dette eksempelet bruker vi "makeRegex" for å definere et mønster som skal søkes etter, i dette tilfellet alle tall. Deretter bruker vi funksjonen "matchAll" for å finne alle forekomster av dette mønsteret i teksten vår. Resultatet vil bli en liste av strenger som inneholder de matchende tallene, i dette tilfellet ["27"].
 
-# Dypere dykk
+## Dypt dykk
 
-Regulære uttrykk følger et spesielt syntaks, og det kan ta litt tid å bli kjent med den. Det finnes mange ulike tegn og operatorer som kan brukes til å lage mønstre, og det er viktig å forstå hvordan de påvirker søket ditt. Det finnes også avanserte funksjoner, som for eksempel å bruke "grupper" for å hente ut spesifikke deler av en matches tekststreng.
+Regulære uttrykk følger et sett med syntaksregler for å beskrive strenger som skal matches. Dette inkluderer spesielle karakterer som kan brukes til å representere ulike typer bokstaver, tall eller symboler. For å lære mer om disse syntaksreglene og hvordan de kan brukes til å lage mer avanserte regulære uttrykk, kan du se på dokumentasjonen for "Text.Regex.TDFA" modulen.
 
-En annen viktig ting å merke seg når du bruker regulære uttrykk, er at de kan være svært effektive ved riktig bruk, men også veldig ressurskrevende hvis de brukes feil. Det kan derfor være lurt å teste og optimalisere uttrykkene dine for å få bedre ytelse.
+## Se også
 
-# Se også
-
-- [Offisiell Haskell-dokumentasjon om regulære uttrykk](https://www.haskell.org/hoogle/?q=Text.Regex.Posix)
-- [Nyttig nettsted for å teste og øve på regulære uttrykk](https://regexr.com/)
-- [Mer avanserte eksempler på bruk av regulære uttrykk i Haskell](https://wiki.haskell.org/Regular_expressions)
+- [Tekst.Regex.TDFA dokumentasjon](https://hackage.haskell.org/package/regex-tdfa-1.3.1.0/docs/Text-Regex-TDFA.html)
+- [Haskell Regex Guide](https://wiki.haskell.org/Regular_expressions)
+- [Regex Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/haskell)

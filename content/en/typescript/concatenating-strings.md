@@ -1,53 +1,55 @@
 ---
-title:    "TypeScript recipe: Concatenating strings"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/typescript/concatenating-strings.md"
+title:                "TypeScript recipe: Concatenating strings"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-As programmers, we often need to manipulate strings in our code. Whether it's for displaying user input or generating dynamic content, string concatenation is a common task that we encounter. It involves combining two or more strings into one, and mastering it can greatly improve our code efficiency. In this blog post, we will dive into the world of concatenating strings using TypeScript and learn why it is an essential skill for any programmer.
+As a TypeScript programmer, you may have encountered the need to combine multiple strings together into one. This process, known as concatenation, allows you to create longer and more complex strings by joining smaller ones. In this blog post, we will explore the importance of concatenating strings and how to do it effectively in TypeScript.
 
 ## How To
 
-To concatenate strings in TypeScript, we simply use the plus operator (+) to join two or more strings together. Let's take a look at an example:
+Concatenating strings in TypeScript is a simple yet powerful tool in your coding arsenal. Let's take a look at some examples below using ```TypeScript``` code blocks:
 
-```TypeScript
-let greeting: string = "Hello";
-let name: string = "John";
-let message: string = greeting + " " + name + "! How are you?";
-console.log(message);
+```
+// Example 1: Using the "+" operator
+let firstName: string = "John";
+let lastName: string = "Doe";
+
+console.log(firstName + " " + lastName);
+// Output: John Doe
+
+// Example 2: Using the concat() method
+let sentence: string = "Hello";
+sentence = sentence.concat(" ", "world!");
+
+console.log(sentence);
+// Output: Hello world!
+
+// Example 3: Using template literals
+let num: number = 5;
+let result: string = `The number is: ${num}`;
+
+console.log(result);
+// Output: The number is: 5
 ```
 
-The code above will output "Hello John! How are you?" in the console. We can see that the plus operator acts as a "glue" between the strings and combines them into one. We can also use string interpolation to concatenate strings by using the ${} syntax within a template literal, like so:
-
-```TypeScript
-let farewell: string = `Goodbye ${name}! See you later!`;
-console.log(farewell);
-```
-
-The output here would be "Goodbye John! See you later!". We can use this syntax to inject variables or expressions into our strings, making it easier to manipulate and create dynamic content.
+In the first example, we use the "+" operator to combine the two strings, "John" and "Doe". This operator acts as a concatenation operator in TypeScript, allowing you to add strings together. In the second example, we use the built-in ```concat()``` method to join the words "Hello" and "world!". Lastly, we use template literals - a feature introduced in ES6 - to create a string using a template and variable values.
 
 ## Deep Dive
 
-Now that we know how to concatenate strings using TypeScript, let's dive deeper into some important concepts to keep in mind. Firstly, it's important to note that the plus operator converts non-string values into strings before concatenation. For example, if we have a number and a string, the number will be converted into a string and then joined with the other string.
+Behind the scenes, concatenation works by taking multiple strings and merging them into one new string. In TypeScript, strings are immutable, meaning they cannot be changed once created. Therefore, when concatenating strings, a new string is created with the desired values. This is why we can reassign the variable in the second example and use template literals to create a new string.
 
-Another important concept is the usage of String.concat() method. This method can take multiple arguments and concatenate them together, making it useful for joining more than two strings. For instance:
-
-```TypeScript
-let fullName: string = "John";
-fullName = fullName.concat(" ", "Doe");
-console.log(fullName);
-```
-
-The output will be "John Doe", as we have successfully concatenated the two names together. Additionally, we can also use the spread operator (...) to concatenate multiple arrays of strings.
+Additionally, it is important to note that the ```concat()``` method and template literals support any number of arguments, allowing you to concatenate multiple strings at once. It is also possible to concatenate other data types, such as numbers and booleans, by converting them to strings first.
 
 ## See Also
 
-- [TypeScript String concatenation](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html#literal-types)
-- [String concatenation in TypeScript](https://dzone.com/articles/concatenate-strings-in-typescript)
-- [Using Template Literals in TypeScript](https://dmitripavlutin.com/typescript-string-interpolation-with-template-literals/)
+To learn more about string concatenation in TypeScript, check out the official documentation: 
+- https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html#string-concatenation
+- https://www.typescriptlang.org/docs/handbook/basic-types.html#string 
 
-In conclusion, understanding and mastering string concatenation in TypeScript is crucial for any programmer. It allows us to create dynamic and efficient code, making our lives as developers much easier. So next time you need to manipulate strings, remember the plus operator and the String.concat() method, and you'll be a concatenation pro in no time. Happy coding!
+Happy coding!

@@ -1,34 +1,36 @@
 ---
-title:    "TypeScript: Convertire una stringa in minuscolo"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/typescript/converting-a-string-to-lower-case.md"
+title:                "TypeScript: Convertire una stringa in minuscolo"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Convertire una stringa in caratteri minuscoli è utile quando si vuole uniformare la formattazione o confrontare due stringhe in modo case-insensitive.
+Molte volte, quando si lavora con dati di input, si può ottenere una stringa in maiuscolo o nel formato sbagliato. Questo può portare a errori di confronto e ricerca all'interno del nostro codice. Per questo motivo, è importante conoscere come convertire una stringa in minuscolo in TypeScript.
 
-## Come fare
+## Come eseguire la conversione
+
+Per convertire una stringa in minuscolo in TypeScript, si utilizza il metodo `toLowerCase()`. Questo metodo accetta una stringa come argomento e restituisce la stessa stringa ma in formato minuscolo. Vediamo un esempio:
 
 ```TypeScript
-let stringaOriginale = "HELLO WORLD";
-let stringaMinuscola = stringaOriginale.toLowerCase();
-
-console.log(stringaMinuscola); // output: hello world
+let inputString = "CODICE";
+let outputString = inputString.toLowerCase();
+console.log(outputString); // Output: codice
 ```
 
-In questo esempio, abbiamo dichiarato una variabile ```stringaOriginale``` contenente il valore "HELLO WORLD" e abbiamo utilizzato il metodo ```toLowerCase()```per convertire tutti i caratteri in minuscolo.
+Come si può vedere dall'esempio, il metodo `toLowerCase()` ha convertito la stringa "CODICE" in "codice". È importante notare che questo metodo non modifica la stringa originale, ma ne restituisce una nuova. 
 
-## Deep Dive
+## Approfondimento
 
-Quando si lavora con i dati, può essere utile avere una formattazione uniforme tra le stringhe in modo da semplificare le operazioni di confronto e ricerca. Inoltre, utilizzare il metodo ```toLowerCase()``` garantisce un confronto case-insensitive, rendendo la logica del nostro programma più robusta.
+Esistono alcune eccezioni da considerare quando si esegue la conversione di una stringa in minuscolo. Ad esempio, la lettera "i" con puntini (o trema) in alcune lingue può risultare in una lettera diversa da "i" quando è maiuscola. Inoltre, ci possono essere delle differenze tra le codifiche dei caratteri che possono influenzare il risultato finale. 
 
-In TypeScript, il metodo ```toLowerCase()``` utilizza l'Unicode per la conversione dei caratteri in minuscolo, garantendo una formattazione coerente anche con caratteri speciali e accenti.
+In TypeScript, è anche possibile utilizzare il metodo `toLocaleLowerCase()` che tiene conto delle impostazioni regionali della lingua utilizzata nel sistema in cui viene eseguito il codice. Questo rende il processo di conversione più preciso e adatto anche per applicazioni multilingue.
 
 ## Vedi anche
 
-- [Metodo toLowerCase() di TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html#lowercase-and-uppercase-strings)
-- [Risorse su TypeScript per principianti](https://blog.logrocket.com/typescript-tutorial-for-beginners/)
-- [Sito ufficiale di TypeScript](https://www.typescriptlang.org/)
+- [Documentazione su toLowerCase() in TypeScript](https://www.typescriptlang.org/docs/handbook/variables.html#type-assertions)
+- [Esempi di conversione di stringhe in TypeScript](https://dev.to/beninada/how-to-convert-string-to-lowercase-in-typescript-o08)
+- [Documentazione su toLocaleLowerCase() in TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html#string-operations)

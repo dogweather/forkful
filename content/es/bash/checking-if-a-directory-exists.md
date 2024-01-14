@@ -1,62 +1,52 @@
 ---
-title:    "Bash: Comprobando si existe un directorio"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/bash/checking-if-a-directory-exists.md"
+title:                "Bash: Comprobando si un directorio existe"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-Comprobar si un directorio existe puede ser una tarea común en la programación Bash. Al hacerlo, podemos asegurarnos de que nuestro script no falle debido a la falta de un directorio necesario, o podemos tomar diferentes acciones dependiendo de si el directorio existe o no. En esta entrada, aprenderemos cómo realizar esta comprobación y profundizaremos en el tema.
+Si eres un programador de Bash, es probable que te preguntes si una carpeta específica existe o no antes de realizar ciertas acciones en tu código. Puede ser tedioso y poco efectivo continuar con el resto del código si la carpeta no existe. Por eso, es importante saber cómo verificar la existencia de una carpeta en Bash.
 
 ## Cómo hacerlo
-
-Hay varias formas de comprobar si un directorio existe en Bash. Una de ellas es utilizando el comando `test`, seguido de la opción `-d` (directorio) y el nombre del directorio que queremos comprobar. Veamos un ejemplo:
+Verificar si una carpeta existe en Bash es muy sencillo. Simplemente debemos utilizar el comando `test` con la opción `-d` seguida del nombre de la carpeta que queremos verificar. Por ejemplo:
 
 ```Bash
-if test -d directorio_ejemplo; then
-    echo "Sí existe el directorio"
-else 
-    echo "El directorio no existe"
+test -d mi_carpeta
+```
+
+En este caso, si la carpeta "mi_carpeta" existe, el comando devolverá el valor verdadero (0) y si no existe, devolverá el valor falso (1). Podemos utilizar esta lógica en nuestro código Bash para tomar decisiones basadas en la existencia de la carpeta.
+
+También podemos hacer uso del comando `if` junto con el comando `test` para realizar una acción determinada si la carpeta existe. Por ejemplo:
+
+```Bash
+if test -d mi_carpeta; then
+  echo "La carpeta existe"
 fi
 ```
 
-En este caso, si el directorio llamado "directorio_ejemplo" existe, el comando `test` devolverá un valor verdadero y el mensaje "Sí existe el directorio" será impreso en la consola. Si el directorio no existe, se imprimirá el mensaje "El directorio no existe".
+En este caso, el código dentro del `if` solo se ejecutará si la carpeta existe.
 
-Otra forma de realizar la comprobación es utilizando el comando `[[`, que es una versión mejorada del comando `test`. Este comando también acepta la opción `-d` y el nombre del directorio a comprobar, pero utiliza una sintaxis ligeramente diferente:
+## Profundizando
+Como mencionamos anteriormente, el comando `test` con la opción `-d` es la forma más común de verificar la existencia de una carpeta en Bash. Sin embargo, existen otras opciones que pueden ser útiles en distintas situaciones:
+
+- `-e` nos permite verificar si un archivo o directorio existe.
+- `-L` nos permite verificar si un enlace simbólico existe.
+- `-s` nos permite verificar si un archivo o directorio tiene un tamaño mayor a cero bytes.
+
+Además, si queremos realizar una acción si la carpeta no existe, podemos utilizar el comando `!` antes de `test`. Por ejemplo:
 
 ```Bash
-if [[ -d directorio_ejemplo ]]; then
-    echo "Sí existe el directorio"
-else 
-    echo "El directorio no existe"
+if ! test -d mi_carpeta; then
+  mkdir mi_carpeta
 fi
 ```
 
-En este caso, el resultado es el mismo que con el comando `test`, pero es importante destacar que la sintaxis utilizada por `[[` es más recomendada ya que es más robusta y acepta una mayor cantidad de opciones.
+En este caso, si la carpeta "mi_carpeta" no existe, se creará automáticamente.
 
-Finalmente, también es posible utilizar el comando `ls` con la opción `-d`, que lista sólo el directorio especificado sin mostrar los archivos contenidos en él. Si el directorio no existe, el comando `ls` devolverá un error y podemos aprovechar esto para imprimir el mensaje correspondiente:
+## Ver también
+Para más información sobre el comando `test`, puedes revisar la documentación oficial: https://www.gnu.org/software/coreutils/manual/html_node/test-invocation.html
 
-```Bash
-if ls -d directorio_ejemplo >/dev/null 2>&1; then
-    echo "Sí existe el directorio"
-else 
-    echo "El directorio no existe"
-fi
-```
-
-En este caso, utilizamos `>/dev/null 2>&1` para redirigir cualquier mensaje de error a la "nada", ya que solo nos interesa el código de retorno del comando `ls`.
-Tenga en cuenta que también podemos utilizar cualquiera de estos métodos dentro de una estructura `if-then-else` para tomar diferentes acciones dependiendo del resultado de la comprobación.
-
-## Profundizando en el tema
-
-Además de las opciones mencionadas anteriormente, existen otras formas de comprobar si un directorio existe en Bash utilizando herramientas como `grep`, `find` o incluso comparando cadenas de manera similar a lo que hicimos con `test` y `[[`.
-También es importante tener en cuenta que, al comprobar si un directorio existe, a menudo también queremos asegurarnos de que tengamos permisos adecuados para acceder a él. Esto se puede lograr utilizando los comandos `test` o `[[` con la opción `-x` (ejecutable).
-Por último, es importante destacar que, si bien es posible comprobar si un directorio existe, en general se recomienda simplemente intentar acceder al directorio y manejar cualquier error que pueda surgir en caso de que no exista.
-
-## Ver También
-
-- [Comando test en Bash](https://linux.die.net/man/1/test)
-- [Comando [[ en Bash](https://www.tldp.org/LDP/abs/html/special-chars.html#BRACKETSREF) 
-- [Estructuras de control en Bash](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
+También puedes aprender más sobre otros comandos útiles en Bash en nuestra guía de comandos básicos: https://linuxconfig.org/bash-scripting-tutorial-for-beginners

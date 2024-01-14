@@ -1,44 +1,37 @@
 ---
-title:    "Javascript: Écrire sur l'erreur standard"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/writing-to-standard-error.md"
+title:                "Javascript: Écrire vers l'erreur standard"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Il est important de comprendre pourquoi il est parfois nécessaire d'écrire dans la sortie d'erreur standard en programmation. Cela peut sembler un peu ennuyeux au premier abord, mais cela peut en fait être très utile pour déboguer votre code et gérer les erreurs de manière appropriée.
+Lorsque vous écrivez du code, il est important de tenir compte des erreurs potentielles. Mais saviez-vous que vous pouvez également écrire des erreurs à des fins de débogage? Cela peut sembler contre-intuitif, mais écrire à l'erreur standard peut être un outil précieux pour comprendre et résoudre les problèmes dans votre code.
 
-## Comment faire
+## Comment procéder
 
-Pour écrire dans la sortie d'erreur standard en JavaScript, il est essentiel d'utiliser la méthode "console.error()". Voici un exemple de code :
-
-```Javascript
-console.error("Une erreur s'est produite !");
-```
-
-Cela affichera le message d'erreur dans votre console de développement, qui peut être très utile pour détecter les erreurs dans votre code lorsque vous testez votre application.
-
-## Plongée en profondeur
-
-En plus de déboguer, écrire dans la sortie d'erreur standard peut également être utile pour gérer les erreurs dans votre code. Par exemple, si vous utilisez un bloc "try/catch" pour gérer les erreurs, vous pouvez utiliser "console.error()" pour afficher un message d'erreur personnalisé lorsque l'erreur est capturée.
+Pour écrire à l'erreur standard en JavaScript, vous devez utiliser la méthode console.error(). Elle prend en paramètre le message que vous souhaitez écrire et l'affiche dans la console du navigateur ou de l'éditeur de code que vous utilisez. Voici un exemple pour illustrer son utilisation:
 
 ```Javascript
-try {
-    // Code pouvant générer une erreur
-} catch (error) {
-    console.error("Une erreur s'est produite : " + error);
-}
+console.error("Il y a eu une erreur!")
 ```
 
-Cela vous permettra de mieux comprendre les erreurs qui se produisent dans votre code et de les gérer de manière appropriée.
+Cela produira le message d'erreur "Il y a eu une erreur!" dans la console de votre navigateur ou de votre éditeur de code.
+
+## Plongée plus profonde
+
+Écrire à l'erreur standard peut sembler simple, mais il existe en réalité quelques subtilités à prendre en compte. Par exemple, si vous utilisez plusieurs méthodes console.error() dans votre code, les messages seront affichés dans l'ordre inverse de leur appel. Vous pouvez également inclure des variables dans votre message en utilisant la syntaxe ${variable}.
+
+La méthode console.error() n'est pas la seule à écrire à l'erreur standard. Vous pouvez également utiliser console.warn() pour afficher des avertissements ou console.table() pour afficher des données sous forme de tableau.
 
 ## Voir aussi
 
-Voici quelques liens utiles pour en savoir plus sur l'écriture dans la sortie d'erreur standard en JavaScript :
-- [Documentation officielle de console.error() (en anglais)](https://developer.mozilla.org/fr/docs/Web/API/Console/error)
-- [Tutoriel sur le débogage en JavaScript (en français)](https://www.grafikart.fr/formations/debogage-javascript)
-- [Article sur la gestion des erreurs en JavaScript (en anglais)](https://blog.bitsrc.io/exception-handling-in-javascript-142e8f6340cd?gi=b4b16e6a5ae9)
+Pour en savoir plus sur les méthodes de console en JavaScript, vous pouvez consulter ces ressources (en anglais):
 
-En utilisant la méthode "console.error()" de manière appropriée, vous pourrez déboguer et gérer les erreurs de votre code JavaScript de manière plus efficace. N'hésitez pas à explorer davantage cette fonctionnalité pour en tirer le meilleur parti dans vos projets de programmation.
+- [Documentation MDN](https://developer.mozilla.org/en-US/docs/Web/API/Console)
+- [Article sur la console en JavaScript](https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-console)
+
+N'hésitez pas à explorer d'autres méthodes de console pour améliorer votre processus de débogage et faciliter votre travail en tant que développeur.

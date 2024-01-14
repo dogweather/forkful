@@ -1,44 +1,43 @@
 ---
-title:    "Gleam: स्ट्रिंग संयुक्त करना"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/gleam/concatenating-strings.md"
+title:                "Gleam: स्ट्रिंग्स को जोड़ना"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-"## Kyon"
+## क्यों
 
-Strings ko aapas mein jodne ka matlab hai ke hum alag-alag words ya sentences ko ek saath milakar ek bada string bana sake. Isse hamare program mein texts aur messages ko dynamic tarike se generate aur display karne mein madad milti hai. Is liye Gleam mein string concatenation bahut hi zaruri hai.
+कोई भी प्रोग्रामर या नये Gleam का उपयोग करने वाले इससे तार-समूहों (strings) को जोड़ने में शामिल हो सकते है।
 
-"## Kaise Kare"
+## कैसे करें
 
-Gleam mein strings ko jodne ke liye, hum "++" operator ka istemal karte hain. Isse hum do ya adhik strings ko aapas mein jod sakte hain. Neeche diye gaye code blocks mein samjhein:
+कोड उदाहरण और उत्पाद के साथ "```Gleam ... ```" कोड ब्लॉक के द्वारा समाप्त किया गया है।
 
 ```Gleam
-
-// Ek example ke taur par, hum ek variable mein "Hello" string ko store karenge
-let greeting = "Hello"
-
-// Ab hum is variable ke saath "World" string ko jodenge
-greeting ++ "World" 
-
-// Output: HelloWorld
+// तार-समूहों को जोड़ें
+let message = "नमस्ते" ++ "दोस्तों!"
+// उत्पाद: नमस्ते दोस्तों!
 ```
 
-Aap dekh sakte hain ke "++" operator se "Hello" aur "World" strings ek saath jod kar "HelloWorld" bana di gayi hai. Is tarah se hum do ya zyada strings ko jod sakte hain.
 
-"## Gehri Khurak"
+```Gleam
+// उत्पाद में नये गिनती के साथ तार-समूहों को जोड़ें
+let number = 7
+let output = "आपको " ++ number ++ " दिनों के बाद बधाई!" 
+// उत्पाद: आपको 7 दिनों के बाद बधाई!
+```
 
-Strings ko jodne ke alawa, Gleam mein hum "++" operator ke saath hi variables aur constants ko bhi jod sakte hain. Isse hume zyada flexibility milti hai apne program mein.
+## गहराई में जाएं
 
-Iske alawa, Gleam mein bahut se functions aur methods bhi hain jo hume strings ko concatenate karne mein madad karte hain. In functions aur methods se hum string manipulation kar sakte hain, jaise ki strings ko reverse karna, uppercase ya lowercase karna, ya phir specific words ko replace karna.
+तार-समूहों को जोड़ने का काम शायद सरल लगे, लेकिन इसमें कुछ गहराई छुपी हो सकती है। इसके उपयोग में दो वीशेषताएं हैं:
 
-"## Dekhein Bhi"
+- हम अनुमान लगा सकते हैं कि तार-समूहों को जोड़ने के परिणाम के आधार पर अधिक समारोह (performance) आने का संभावना हो सकता है।
+- तार-समूहों के गुणों को दोनों समूहों के बीच अपेक्षित रिक्त स्थानों का एक चयन (matching) के बीच आसानी से नियंत्रित किया जा सकता है और यह भी के साथ हरा साइतस (green thread) में धागा कार्यक्रम समाप्त होने तक प्रतिस्थिति के करने में विशेष रूप से हंसी रहती है।
 
-Agar aapko Gleam mein strings concatenate karna aur iska istemal karna aur seekhna hai, to aap in links par jaa kar is bare mein aur bhi gehri jaankari haasil kar sakte hain:
+## देखें भी
 
-- https://gleam.run/examples/
-- https://gleam.run/learn/documentation/
-- https://gleam.run/learn/getting-started/
+[Gleam की आधिकारिक दस्तावेज़ीकरण](https://gleam.run/documentation) - इस दस्तावेज़ीकरण में Gleam के बारे में गहराई से जानकारी दी गई है।
 
-Is tarah se aap strings ko concatenate karne ke baare mein poori tarah se samajh sakte hain aur iska istemal kar sakte hain apne Gleam programs mein. Happy coding!
+[Gleam का GitHub पेज](https://github.com/gleam-lang/gleam) - यह आ

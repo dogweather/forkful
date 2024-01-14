@@ -1,52 +1,36 @@
 ---
-title:    "PHP: 임의의 숫자 생성"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/generating-random-numbers.md"
+title:                "PHP: 랜덤 숫자 생성하기"
+programming_language: "PHP"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-난수 생성에 참여하는 이유는 다양할 수 있습니다. 예를 들어, 보안 관련 작업을 하거나 게임을 만들 때 사용할 수 있습니다. 또한 테스트나 평가를 위해 필요한 값들을 랜덤하게 가져오는데 활용할 수도 있습니다.
 
-## 하는 법
-PHP에서 난수를 생성하는 가장 기본적인 방법은 `rand()` 함수를 사용하는 것입니다. 아래는 몇 가지 예제 코드와 그에 대한 출력 결과입니다.
+난수 생성에 참여할 이유는 무엇인가요? 
 
-### 기본적인 난수 생성
+난수 생성은 프로그래밍에서 매우 중요한 역할을 합니다. 난수는 보안, 시뮬레이션 및 게임 등 다양한 분야에서 사용됩니다. 프로그래밍에서 가장 흥미로운 부분 중 하나는 난수를 생성하는 과정이며, 이를 통해 우리는 다양한 수학적 과정과 알고리즘을 배울 수 있습니다. 따라서 난수 생성은 프로그래밍을 배우는 과정에서 중요한 부분입니다.
+
+## 방법
+
 ```PHP
 <?php
-  $random_number = rand(); // 랜덤한 정수를 생성합니다.
-  echo $random_number; // 예: 483666
+// rand() 함수를 사용하여 1부터 10까지의 난수 생성
+echo rand(1, 10) . "\n";
+// 출력 결과는 예: 8
 ?>
 ```
 
-### 범위를 지정하여 난수 생성
-```PHP
-<?php
-  $random_number = rand(1, 100); // 1부터 100 사이의 난수를 생성합니다.
-  echo $random_number; // 예: 55
-?>
-```
+PHP에서 난수를 생성하는 가장 간단한 방법은 `rand()` 함수를 사용하는 것입니다. 이 함수는 두 개의 매개변수를 가지며, 첫 번째 매개변수는 난수의 최소값을, 두 번째 매개변수는 최대값을 나타냅니다. 위 예제에서는 1부터 10까지의 난수를 생성했습니다. `rand()` 함수 외에도, `mt_rand()` 함수와 `random_int()` 함수를 사용하여 난수를 생성할 수 있습니다.
 
-### 부동소수점 수를 포함한 난수 생성
-```PHP
-<?php
-  $random_number = rand(1, 100) / 10; // 1부터 100 사이의 난수를 생성하고 10으로 나누어 부동소수점 수를 포함합니다.
-  echo $random_number; // 예: 8.9
-?>
-```
+## 딥 다이브
 
-## 깊게 들어가기
-PHP에서 난수를 생성하는 다양한 함수와 사용법을 알아보았습니다. 이 외에도 `mt_rand()`, `random_int()`, `random_bytes()` 함수 등을 사용하여 난수를 생성할 수 있습니다. 이 함수들은 보안적인 측면에서 더 좋은 결과를 보장해주기 때문에 보안 관련 작업에 활용하는 것이 좋습니다. 하지만 기본적인 난수 생성을 위해서는 `rand()` 함수를 사용하면 충분합니다.
+난수를 생성하는 알고리즘 중 하나는 선형 합동 발생기 (Linear Congruential Generator)입니다. 이 알고리즘은 현재 시간 및 이전에 생성된 난수를 사용하여 새로운 난수를 생성합니다. 또 다른 알고리즘은 메르센 트위스터 (Mersenne Twister) 알고리즘입니다. 이 알고리즘은 최근에 가장 널리 사용되는 난수 생성 알고리즘 중 하나입니다. 난수 생성은 간단해 보이지만, 컴퓨터 과학 분야에서 여러 가지 문제와 연관되어 있습니다. 따라서 프로그래머는 난수를 사용할 때 항상 주의를 기울여야 합니다.
 
-## 또 다른 정보
-- [PHP 공식 매뉴얼 - 랜덤 함수](https://www.php.net/manual/en/function.rand.php)
-- [라라벨 랜덤 함수 가이드](https://laravel.com/docs/8.x/helpers#method-array-helpers)
-- [보안을 위한 PHP 난수 생성 방법](https://www.php.net/manual/en/function.random-int.php)
-- [난수 생성 방법 비교 및 성능 분석](https://www.php.net/manual/en/function.random-int.php)
+## 참고 자료
 
-## 참고
-- [Markdown 가이드](https://www.markdownguide.org/)
-  - [PHP에서 Markdown 사용하기](https://thephpdev.com/2019/03/29/how-to-render-markdown-files-using-php-erusev-parsedown/)
-- [Markdown 에디터 - Typora](https://typora.io/)
-- [IAMPARK - PHP 교육 강의 및 블로그](https://iampark.tistory.com/)
+- [PHP 공식 문서 - 난수 생성](https://www.php.net/manual/en/function.rand.php)
+- [선형 합동 발생기 (Wikipedia)](https://en.wikipedia.org/wiki/Linear_congruential_generator)
+- [메르센 트위스터 (Wikipedia)](https://en.wikipedia.org/wiki/Mersenne_Twister)

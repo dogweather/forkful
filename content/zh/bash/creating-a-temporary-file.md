@@ -1,47 +1,73 @@
 ---
-title:    "Bash: 创建临时文件"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/bash/creating-a-temporary-file.md"
+title:                "Bash: 创建临时文件"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：为什么要创建临时文件？创建临时文件可以在程序运行过程中存储临时数据，以避免数据混乱或重复使用之前的数据。
+## 为什么
 
-怎么做：创建临时文件的最基本方法是使用`mktemp`命令。例如，在终端输入以下命令：
+不论是作为初学者或者有经验的程序员，都会遇到创建临时文件的情况。临时文件在编程中扮演着重要的角色，它们可以充当日志文件、缓存文件或者是暂存数据的存储空间。因此，掌握创建临时文件的方法是非常有用的。
 
-```Bash
-mktemp -d
-```
+## 如何
 
-这将在当前目录中创建一个临时目录，并返回临时目录的路径。您也可以指定文件名或后缀来自定义临时文件名，如下所示：
+在Bash编程中，可以通过使用 `mktemp` 命令来创建临时文件。其基本语法如下：
 
 ```Bash
-mktemp my_temp_file.XXX
+TEMPFILE=$(mktemp)
 ```
 
-这将创建一个名为`my_temp_file.XXX`的文件。 可以使用`-p`参数来指定临时文件的目录，如下所示：
+这条命令将会在默认的临时文件目录中创建一个唯一的文件并将其赋值给 `TEMPFILE` 变量。也可以通过指定文件名前缀来创建有意义的文件名，例如：
 
 ```Bash
-mktemp -p /home/user/my_temp_dir my_temp_file.XXX
+LOGFILE=$(mktemp log.XXXXX)
 ```
 
-深入探讨：在Linux系统中，临时文件通常存储在`/tmp`或`/var/tmp`目录中。这些文件夹通常在系统启动时自动清理，但也可以手动清理以释放磁盘空间。创建临时文件时，可以使用`TMPDIR`环境变量来指定存储临时文件的目录。临时文件默认权限为`0600`，这意味着只有创建临时文件的用户可以访问它们。如果想让其他用户也能够访问临时文件，可以使用`umask`命令来更改文件的默认权限。
+其中， `XXXXX` 代表随机的字符串。这样可以让我们更容易地识别出不同的临时文件。
 
-此外，可以使用`trap`命令来捕获程序退出时的错误，以防止临时文件污染系统。在创建临时文件后，使用`trap`命令来删除该临时文件，如下所示：
+除了使用 `mktemp` 命令，我们也可以使用 `touch` 命令来创建临时文件：
 
 ```Bash
-trap "rm -f $TMPFILE" EXIT
+touch /tmp/tempfile
 ```
 
-这样，在程序退出之后，临时文件将自动被删除。
+但是需要注意的是，这种方法创建的文件可能不够安全，因为其他用户也有可能在同一时间创建相同名字的文件。
 
-另外，尽量避免在临时文件命名中使用随机数生成器，以防止被恶意创建大量临时文件，从而导致系统崩溃。
+创建临时文件之后，可以在其中写入数据，例如：
 
-相关阅读：如果想要深入了解Bash编程，可以参考以下链接：
+```Bash
+TEMPFILE=$(mktemp)
+echo "Hello World!" >> $TEMPFILE
+```
 
-- Bash文档：https://www.gnu.org/software/bash/manual/
-- BashGuide：https://mywiki.wooledge.org/BashGuide/
-- Bash中文站：https://andyhky.github.io/bashTutorial/
-- Shell脚本教程（含Bash）：https://wangdoc.com/bash/
-- Shell菜鸟教程：https://www.runoob.com/linux/linux-shell.html
+## 深入了解
+
+当我们在创建临时文件的时候，有时候需要指定文件的权限。在使用 `mktemp` 命令时，可以使用 `-m` 参数来指定文件的权限，例如：
+
+```Bash
+TEMPFILE=$(mktemp -m 777)
+```
+
+这样就会在创建文件的同时，将其权限设置为 `777`，即所有用户都有读写执行的权限。
+
+另外，可以使用 `-d` 参数来创建临时文件夹：
+
+```Bash
+TEMPDIR=$(mktemp -d)
+```
+
+这样就可以在需要的时候创建临时文件夹来存储临时文件。
+
+## 参考链接
+
+- [Bash脚本教程](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Shell脚本编程基础](https://www.tutorialspoint.com/unix/shell_scripting.htm)
+- [Shell脚本基础语法](https://www.tldp.org/LDP/abs/html/basic-syntax.htm)
+
+## 延伸阅读
+
+- [如何在Linux中管理临时文件](https://www.howtogeek.com/213899/how-to-manage-temporary-files-in-linux/)
+- [Shell脚本中的命令替换](https://www.cyberciti.biz/faq/unix-linux-replace-string-words-in-many-files/)
+- [Linux命令参考手册](https://www.linuxcommand.org/)

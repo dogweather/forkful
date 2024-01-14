@@ -1,46 +1,41 @@
 ---
-title:    "Arduino: Змінивши регістр рядка"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/capitalizing-a-string.md"
+title:                "Arduino: Форматування рядка"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому
-Програмування на Arduino може здатися складною та іноді незрозумілою задачею для багатьох українських користувачів. Однак, навіть найпростіші операції, такі як зміна регістру, можуть бути корисними для розв'язання певних завдань, як наприклад, управління клавішною або діодною LED лампочкою.
+# Чому
 
-## Як це зробити
-Використовуючи кілька рядків коду, ви можете створити функцію, яка приймає вхідний рядок та повертає його з капіталізованим першим символом. Нижче ви можете побачити приклад коду та вихідний результат:
+Цей блог-пост призначений для українських читачів, які цікавляться програмуванням на Arduino. Сьогодні ми говоритимемо про узагальнення (капіталізацію) стрічки, а саме про те, як зробити таке завдання за допомогою Arduino.
 
-``` Arduino
-String capitalizingString(String input) {
-  // Перевірка чи рядок не пустий
-  if (input.length() == 0) {
-    return "Порожній рядок!";
-  }
-  // Отримання першого символу рядка
-  char firstChar = input.charAt(0);
-  // Перевірка чи символ є буквою
-  if (isAlpha(firstChar)) {
-    // Перетворення символу на верхній регістр
-    firstChar = toupper(firstChar);
-    // Повертаємо рядок з першим символом у верхньому регістрі
-    return input.charAt(0) + input.substring(1);
-  } else {
-    return "Перший символ не є буквою!";
-  }
+# Як виконати
+
+У програмуванні на Arduino, узагальнення стрічки є досить простою задачею. Завдяки функції **toUpperCase** можна легко перетворити всі символи в стрічці на великі літери.
+
+```Arduino
+
+void setup() {
+  String text = "привіт світ!";
+  text.toUpperCase();
+  Serial.println(text); // виведе "ПРИВІТ СВІТ!"
 }
-// Застосування функції для рядка
-String inputString = "arduino";
-String outputString = capitalizingString(inputString);
-// Вивід результату
-Serial.print(outputString); // Arduino
+
+void loop() {
+
+}
+
 ```
 
-## Глибинний аналіз
-Окрім першого символу, ви також можете капіталізувати усі букви у рядку. Для цього просто потрібно перевірити кожен символ та використати функцію `toupper()` для зміни регістру. Можна також додати умову, щоб ігнорувати символи, які не є буквами.
+# Глибше занурення
 
-## Дивіться також
-- [Документація Arduino](https://www.arduino.cc/reference/en/language/functions/strings/capitalize/)
-- [Відеоурок "Змінюємо регістр рядка в Arduino"](https://www.youtube.com/watch?v=b99J8TqzgkY)
-- [Приклади програм для Arduino з капіталізацією рядка](https://github.com/markerzoo/Arduino-String-Capitalization-Examples)
+Але чи знаєте ви, що в програмуванні узагальнення стрічки реалізоване за допомогою ASCII кодів? ASCII код визначає числове значення для кожного символу, щоб комп'ютер міг розуміти його. Наприклад, буква "А" має ASCII код 65, а буква "а" - 97.
+
+Тому, коли ми викликаємо функцію **toUpperCase**, комп'ютер насправді замінює числове значення кожного символу на відповідну велику літеру. Це зроблено за допомогою арифметичних операцій, в яких до числа, що відповідає символу, додається 32 (65 + 32 = 97).
+
+# Дивіться також
+
+- [ASCII код](https://uk.wikipedia.org/wiki/ASCII)
+- [Функція toUpperCase](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/)

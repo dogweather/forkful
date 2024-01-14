@@ -1,36 +1,43 @@
 ---
-title:    "Elm: 检查目录是否存在"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elm/checking-if-a-directory-exists.md"
+title:                "Elm: 检查目录是否存在"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么选择 Elm 编程?
+# 为什么要检查目录是否存在？
 
-Elm 是一种功能强大的编程语言，它拥有清晰简单的语法和强大的类型系统。使用 Elm 可以帮助程序员编写更可靠、易于维护的代码。如果您是一名前端开发者，那么学习 Elm 会为您带来许多好处。它可以让您在构建 Web 应用程序时更加高效，并帮助您避免常见的错误。
+在编程中，有时候我们需要检查某个目录是否存在。这个功能可以让我们在程序中做出不同的逻辑分支，从而更好地控制程序的行为。接下来，我会介绍如何使用Elm语言来检查目录是否存在，并深入探讨这个功能的一些细节。
 
-## 如何检查目录是否存在？
+## 如何实现目录检查？
 
-如果您正在开发一个文件管理系统或者需要在应用程序中操作文件和目录，您可能需要检查某个目录是否存在。下面是使用 Elm 编程语言检查目录是否存在的示例代码：
+为了检查目录是否存在，我们需要使用`File`模块中的`exists`函数。一起来看一个简单的例子：
 
 ```Elm
-import File
+import File exposing (exists)
 
-checkDirectoryExists : String -> Cmd msg
-checkDirectoryExists path =
-    File.exists path
-        |> Task.perform (\exists -> if exists then "目录存在" else "目录不存在")
+main =
+    case exists "path/to/directory" of
+        True ->
+            -- do something if directory exists
+            "This directory exists!"
+
+        False ->
+            -- do something else if directory doesn't exist
+            "This directory does not exist."
 ```
 
-运行以上代码的输出结果将根据目录是否存在而不同。如果目录存在，则输出结果为“目录存在”，如果目录不存在，则输出结果为“目录不存在”。
+如果目录`path/to/directory`存在，那么`exists`函数会返回 `True`，我们可以在代码中进行相应的处理。如果目录不存在，则会返回`False`。
 
-## 深入了解检查目录是否存在
+## 深入介绍
 
-在 Elm 编程中，使用 File.exists 函数可以轻松检查指定路径的目录是否存在。该函数返回一个 Task，使用 Task.perform 可以处理 Task 的结果。如果目录存在，则可以执行相关任务，如创建文件或读取文件内容等。如果目录不存在，则可以执行错误处理任务，如提示用户目录不存在或者创建目录等。
+在Elm中，目录检查的基本原理是基于文件系统的权限，通过调用操作系统的系统接口来检查文件或目录的权限。所以，除非你对该目录拥有读取权限，否则`exists`函数总是会返回`False`。
+
+此外，`exists`函数也可以用于检查文件是否存在。同样的方法，我们只需将文件名作为参数传递给`exists`函数即可。
 
 ## 参考链接
 
-- [Elm 官方网站](https://elm-lang.org/)
-- [Elm 中文文档](https://elm-lang.org/docs)
-- [Elm 社区论坛](https://discourse.elm-lang.org/)
+- [Elm官方文档 - File模块](https://package.elm-lang.org/packages/elm/core/latest/File)
+- [Elm语言实战教程](https://elmprogramming.com/) by Bogdan Popa

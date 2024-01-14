@@ -1,76 +1,64 @@
 ---
-title:    "Python: Pobieranie aktualnej daty"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/getting-the-current-date.md"
+title:                "Python: Pobieranie aktualnej daty"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często w programowaniu potrzebujemy aktualnej daty. Może to być potrzebne do tworzenia plików, zapisywania danych lub wyświetlania informacji dla użytkownika. W tym artykule dowiesz się, jak w prosty sposób pobrać aktualną datę w języku Python.
+Pisanie kodu jest niesamowicie ważną częścią nauki tworzenia oprogramowania. Jednak czasami można zauważyć, że trudno jest znaleźć konkretne praktyczne przykłady, które pozwolą nam zrozumieć tę umiejętność w odniesieniu do codziennych zadań. Często używamy gotowych funkcji bez zastanowienia się nad tym, jak działają i dlaczego są nam potrzebne. W dzisiejszym poście zajmiemy się tematem pobierania daty w języku Python i wyjaśnimy, dlaczego jest to ważne oraz jak to zrobić.
 
 ## Jak to zrobić
 
-Aby pobrać aktualną datę w języku Python, możemy skorzystać z modułu "datetime". W pierwszym kroku musimy zaimportować ten moduł do naszego programu. Korzystając z funkcji "now()" i "date()" możemy pobrać odpowiednio bieżącą datę i czas lub tylko datę.
+Pobieranie aktualnej daty jest ważnym aspektem w wielu projektach programistycznych. Jest to przydatne do celów raportowania, ściągania danych z określonego okresu czasu czy też do zachowania porządku w plikach zapisywanych w określonych dniach. W języku Python istnieje wiele sposobów na pobranie aktualnej daty. Najprostszy z nich to użycie modułu `datetime`, który jest dostępny w standardowej bibliotece języka. Aby pobrać aktualną datę, użyjemy funkcji `date.today()` z tego modułu. Poniżej zamieszczamy przykładowy kod i jego wynik:
 
-```Python 
-import datetime
+```python
+from datetime import date
 
-# bieżąca data i czas
-current_datetime = datetime.now()
-print(current_datetime)
-
-# tylko data
-current_date = datetime.date()
-print(current_date)
+today = date.today()
+print(today)
 ```
+_# wynik: 2021-01-01_
 
-**Output:**
+Jeśli chcemy wyświetlić datę w innym formacie, możemy użyć metody `strftime()` i przekazać mu odpowiedni format jako argument. Przykład takiego użycia prezentuje poniższy kod:
 
-2021-10-19 13:22:34.125490
-2021-10-19
+```python
+from datetime import date
 
-Możemy również sformatować datę w dowolny sposób, korzystając z funkcji "strftime()". Dzięki temu możemy wyświetlić datę w wybranym przez nas formacie, na przykład w formacie "RRRR-MM-DD".
-
-```Python
-import datetime
-
-current_date = datetime.date()
-formatted_date = current_date.strftime("%Y-%m-%d")
-
-print(formatted_date)
+today = date.today()
+print(today.strftime("%d-%m-%Y"))
 ```
+_# wynik: 01-01-2021_
 
-**Output:**
+W powyższych przykładach użyliśmy funkcji `date.today()`, jednak istnieje również możliwość pobrania aktualnego czasu za pomocą funkcji `datetime.datetime.now()`, która zwraca obiekt zawierający zarówno datę, jak i czas. Poniżej przedstawiamy przykładowy kod i jego wynik:
 
-2021-10-19
+```python
+from datetime import datetime
 
-## Wnikliwsze spojrzenie
-
-W module "datetime" dostępne są również inne funkcje i metody, które pozwalają na manipulowanie datami. Na przykład możemy wyświetlić dzień tygodnia lub dodawać/odejmować dni od bieżącej daty.
-
-```Python
-import datetime
-
-# wyświetlenie dnia tygodnia (poniedziałek = 0, niedziela = 6)
-week_day = datetime.date().weekday()
-print(week_day)
-
-# dodawanie 7 dni do bieżącej daty
-new_date = datetime.date() + datetime.timedelta(days=7)
-print(new_date)
+now = datetime.now()
+print(now)
 ```
+_# wynik: 2021-01-01 12:34:56.789_
 
-**Output:**
+Tworzenie obiektu `datetime` pozwala także na dostęp do poszczególnych elementów daty i czasu, takich jak dzień, miesiąc, rok czy też godzina, minuty i sekundy. Przykładowo, aby wyświetlić tylko Godzinę i Minutę, możemy użyć poniższego kodu:
 
-1
-2021-10-26
+```python
+from datetime import datetime
 
-Warto również pamiętać o różnicach w datach i czasie, na przykład podczas pracy z różnymi strefami czasowymi. Możemy stosować różne metody, takie jak "utcnow()" lub "astimezone()" w celu dostosowania do naszych potrzeb.
+now = datetime.now()
+print(now.strftime("%H:%M"))
+```
+_# wynik: 12:34_
+
+## Deep Dive
+
+Podczas pobierania aktualnego czasu w języku Python warto zwrócić uwagę na różnice między czasem lokalnym, a uniwersalnym czasem koordynowanym (UTC). W przypadku funkcji `datetime.now()` zwracany jest czas lokalny, co może być przydatne dla użytkowników, którzy korzystają z programów w różnych strefach czasowych. Jednak w niektórych przypadkach warto przekonwertować czas lokalny na UTC lub odwrotnie, na przykład przy synchronizacji danych zapisanych w różnych strefach czasowych.
 
 ## Zobacz także
 
-- Dokumentacja modułu datetime: https://docs.python.org/3/library/datetime.html
-- Poradnik wideo dotyczący pracy z datami w Pythonie: https://www.youtube.com/watch?v=XKHEtdqhLK8
-- Przykłady z wykorzystaniem modułu datetime: https://www.programiz.com/python-programming/datetime
+- [Dokumentacja biblioteki datetime w języku Python](https://docs.python.org/3/library/datetime.html)
+- [Przetwarzanie dat i czasu w języku Python](https://realpython.com/python-datetime/)
+- [Tutorial o czasie w języku Python](https://www.programiz.com/python-programming/datetime)

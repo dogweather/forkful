@@ -1,46 +1,45 @@
 ---
-title:    "Java: Skrive til standard feil."
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/writing-to-standard-error.md"
+title:                "Java: Skriver til standardfeil"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
+## Hvorfor
 
-Å skrive til standard error er en viktig del av å være en effektiv Java-programmerer. Det lar deg enkelt identifisere og håndtere feil i koden din, noe som bidrar til å gjøre programmet ditt mer robust og pålitelig.
+Det å skrive ut feilmeldinger til standard error er en viktig del av programmering, spesielt når det kommer til feilsøking og debugging. Ved å sende feilmeldinger til standard error i stedet for standard output, kan du enkelt skille dem fra vanlig utdata og få en mer oversiktlig og nøyaktig oversikt over potensielle feil i koden din.
 
-##Slik gjør du det
+## Slik gjør du det
 
-Vi kan skrive til standard error ved å bruke `System.err.println()` metoden i Java. La oss se et eksempel:
+For å skrive til standard error i Java, kan du bruke metoden `System.err.println()` som tar inn en `String`-verdi som parameter. Dette vil skrive ut teksten til standard error og legge til et linjeskift på slutten. La oss se på et eksempel:
 
 ```Java
-public class StandardErrorDemo {
-
+public class StandardErrorExample {
     public static void main(String[] args) {
-        int result = divide(10, 0);
-        System.err.println("Resultatet er: " + result);
-    }
-
-    public static int divide(int num1, int num2) {
-        return num1 / num2;
+        System.err.println("Dette er en feilmelding");
     }
 }
 ```
 
-Når du kjører dette programmet, vil du få følgende utskrift i standard error-konsollen:
-`java.lang.ArithmeticException: division by zero`
+Når vi kjører dette programmet, vil vi få følgende utdata i konsollen:
+```
+Dette er en feilmelding
+```
 
-Her ser vi at programmet krasjet på grunn av et forsøk på å dele med null, og feilen ble skrevet ut i standard error-konsollen. Dette gjør det enkelt for oss å identifisere og håndtere feil i koden vår.
+Som du ser, er det ikke forskjell på utseendet av utdata fra `System.err.println()` og vanlig `System.out.println()`, men ved å bruke sistnevnte vil det bli lettere å fange opp og håndtere eventuelle feilmeldinger.
 
-##Dypdykk
+## Dykk dypere
 
-Å skrive til standard error er spesielt nyttig når du jobber med flertrådede applikasjoner. Standard out og standard error er separate strømmer, så ved å skrive feilmeldinger til standard error sørger vi for at de ikke blandes sammen med annen utskrift, noe som kan gjøre feilsøkingen mer utfordrende.
+En liten ekstra detalj å merke seg er at `System.err` og `System.out` er to forskjellige `PrintStream`-objekter, og de styrer henholdsvis output til standard error og standard output i Java. Så ved å kalle `println()`-metoden på `System.err`, skriver du faktisk til `System.err`-objektet.
 
-Det er også verdt å merke seg at standard error-konsollen vanligvis blir vist i rødt i konsollvinduet, noe som gjør det lettere å legge merke til feilmeldingene.
+Det er også verdt å nevne at det finnes flere metoder i `PrintStream`-klassen som kan brukes for å skrive til standard error. For eksempel kan du bruke `System.err.write()` for å skrive en enkelt byte til standard error, eller `System.err.printf()` for å formatere utdata på en spesifikk måte.
 
-##Se også
+## Se også
 
-- Java Error Handling: https://www.geeksforgeeks.org/exception-handling-in-java/
-- Writing to Standard Error in Java: https://www.baeldung.com/java-write-to-standard-error
-- The Benefits of Using Standard Error in Java: https://stackify.com/java-error-handling-best-practices/
+- Java API-dokumentasjon for `System`-klassen og `PrintStream`-klassen: [https://docs.oracle.com/javase/8/docs/api/][1]
+- En guide til Java-feilsøking: [https://www.tutorialspoint.com/debugging-in-java][2]
+
+[1]: https://docs.oracle.com/javase/8/docs/api/
+[2]: https://www.tutorialspoint.com/debugging-in-java

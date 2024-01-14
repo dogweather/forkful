@@ -1,49 +1,43 @@
 ---
-title:    "C++: Att skapa en tillfällig fil"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/creating-a-temporary-file.md"
+title:                "C++: Skapa en tillfällig fil"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför skapa en temporär fil?
 
-Att skapa en temporär fil är en vanlig uppgift inom programmering, särskilt inom C++. En temporär fil är en fil som skapas temporärt under körtiden av ett program och sedan automatiskt tas bort när programmet avslutas. Detta kan vara användbart för att lagra temporär data eller skapa temporary arbetsfiler för att utföra vissa operationer.
+Att skapa en temporär fil är en vanlig teknik inom C++ programmering för att hantera data som behöver tillfälligt lagras. Det kan vara användbart i situationer där man vill undvika att permanent ändra eller förstöra befintliga filer, till exempel när man bearbetar stora mängder data eller när man behöver skapa en temporär fil som endast är relevant för en specifik körning av programmet.
 
-## Hur man gör det
+## Hur man skapar en temporär fil
 
-Enklaste sättet att skapa en temporär fil är genom att använda "tmpfile()" funktionen i C++. Detta skapar en unik temporär fil i systemets temporära katalog och returnerar en pekare till den öppnade filen. Här är ett exempel på hur man använder denna funktion:
+Att skapa en temporär fil i C++ är enkelt och görs genom att använda standardbiblioteksfunktionen `tmpnam()`. Den returnerar en unik filnamn som kan användas för att skriva och läsa data från filen. Nedan finns ett exempel på hur man kan använda denna funktion:
 
 ```C++
 #include <cstdio>
- 
+
 int main() {
-    // Skapar en temporär fil och öppnar den för skrivning
-    FILE* temp_file = tmpfile();
- 
-    // Skriver något till filen
-    fprintf(temp_file, "Detta är en temporär fil.");
- 
-    // Stänger filen och raderar den automatiskt
-    // när programmet avslutas
-    fclose(temp_file);
- 
-    return 0;
+  char* filename = tmpnam(nullptr); // Skapa ett unikt filnamn
+  FILE* fp = fopen(filename, "w"); // Öppna fil i skrivläge
+  fprintf(fp, "Hej från min temporära fil!"); // Skriv data till filen
+  fclose(fp); // Stäng filen när man är klar
+  remove(filename); // Ta bort den temporära filen
+  return 0;
 }
 ```
 
-Det finns också andra sätt att skapa en temporär fil, som att använda "tmpnam()" funktionen, men denna metod är mindre säker eftersom filnamnet kan krocka med befintliga filer på systemet.
+När koden ovan körs, kommer filen att skapas och texten "Hej från min temporära fil!" kommer att skrivas till filen. Sedan stängs filen och tas bort för att inte längre vara tillgänglig på filsystemet.
 
-## Djupdykning
+## Djupdykning i skapandet av temporära filer
 
-En temporär fil kan vara användbar för att generera unika filnamn eller som arbetsfiler för att utföra vissa operationer. Det finns också flera sätt att kontrollera om en temporär fil har blivit skapad eller om den fortfarande är tillgänglig.
+I bakgrunden använder funktionen `tmpnam()` olika metoder för att skapa ett unikt filnamn. Det kan till exempel baseras på process-ID, tidsstämpel eller andra systemparametrar. Dessa filnamn kommer alltid att vara unika, även om flera processer körs samtidigt.
 
-En av dessa sätt är att använda "tmpnam()" och "tempnam()" funktionerna för att generera unika filnamn. Dessa funktioner returnerar ett namn baserat på angivna parametrar som katalog och prefix, som sedan kan användas för att skapa filen.
+När en temporär fil skapas, lagras den vanligtvis i den temporära mappen på operativsystemet. Detta är en speciell mapp som används för att lagra temporära filer som inte behövs för en längre tid. Det är viktigt att notera att dessa temporära filer kan tas bort av operativsystemet när de inte längre behövs, så det är viktigt att stänga och ta bort filen när man är klar med den.
 
-Det är också viktigt att notera att en temporär fil inte är en säker lösning för att lagra känslig information eftersom filen lämnas kvar på disk efter att programmet har avslutats och beroende på system och inställningar kan det vara möjligt att återskapa filen.
+# Se även
 
-## Se även
-
-- [C++ Standardbiblioteket för temporära filer](https://cppreference.com/tmpfile)
-- [Generering av unika filnamn med "tmpnam()" och "tempnam()"](https://www.tutorialspoint.com/c_standard_library/c_function_tmpnam.htm)
-- [Säkerhet och temporära filer](https://cheatsheetseries.owasp.org/cheatsheets/File_System_Security_Cheat_Sheet.html#creating-temporary-files)
+- [C++ Standardbibliotek](https://en.cppreference.com/w/cpp/filesystem/temporary_directory_path)
+- [PHP - Skapa temporär fil](https://www.php.net/manual/en/function.tempnam.php)
+- [Java - Skapa temporär fil](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-)

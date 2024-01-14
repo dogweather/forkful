@@ -1,42 +1,48 @@
 ---
-title:    "Elm: 디버그 출력 출력하기"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/printing-debug-output.md"
+title:                "Elm: 디버그 출력 출력"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-왜 개발자들이 디버그 출력을 출력할까요? 이것은 개발과정에서 발생하는 오류를 파악하고 해결하는데 도움을 줄 수 있기 때문입니다.
+코드 디버깅을 위해 디버그 출력을 활용하는 이유는 코드 내부를 분석하고 오류를 찾아내기 위해서입니다.
 
-## 출력하는 방법
+## 어떻게
 
-Elm 언어에서 디버그 출력을 하는 가장 간단한 방법은 `Debug.log` 함수를 사용하는 것입니다. 아래의 예제 코드를 참고해보세요.
-
-```Elm
-import Debug exposing (log)
-
-myFunction : String -> String
-myFunction name =
-    let
-        message = "Hello, " ++ name
-    in
-        message |> log "Function Message"
+```elm
+-- `Debug.log` 함수를 사용하여 디버그 출력을 생성할 수 있습니다.
+main : Html msg
+main =
+  let
+    name = "Elm"
+    age = 5
+  in
+    Debug.log "name" name -- "name: Elm"
+    Debug.log "age" age -- "age: 5"
+    Html.text "Hello World"
 ```
 
-위의 예제에서는 `Debug.log` 함수를 사용하여 `message` 변수 값을 "Function Message" 라는 레이블과 함께 출력하고 있습니다. 실제 실행결과는 아래와 같이 보일 것 입니다.
+위의 코드에서는 `Debug.log` 함수를 사용하여 변수 `name`과 `age`의 값을 확인하고 디버그 출력을 생성합니다. 코드 실행 시 콘솔 창에서 다음과 같은 결과를 볼 수 있습니다.
 
 ```
-Function Message: Hello, Kristine
+name: Elm
+age: 5
 ```
 
-## 깊숙한 이론
+## 딥 다이브
 
-디버그 출력은 개발과정에서 중요한 도구입니다. 디버그 출력을 사용하여 어떤 변수의 값이 어떻게 변하는지 추적하거나, 함수 실행 중 발생하는 오류를 파악할 수 있습니다. 또한 Elm 언어에서는 `Debug.watch`나 `Debug.crash`와 같은 다양한 디버그 함수를 제공하고 있습니다. 이러한 함수들을 잘 이용하면 코드의 디버깅 과정을 효율적으로 할 수 있습니다.
+디버그 출력을 사용할 때 유의해야 할 몇 가지 핵심적인 사항이 있습니다. 
 
-## 더 보기
+첫 번째로, 디버그 출력을 남겨놓은 상태로 제출하지 말아야 합니다. 디버그 출력은 오로지 코드 디버깅이나 테스트를 위해 사용하는 것이며, 실제로는 제출되는 코드에 영향을 미치지 않아야 합니다.
 
-- [Elm 공식 문서 - 디버깅과 출력](https://guide.elm-lang.org/development/debugging.html)
-- [Elm Debug 패키지 - 사용법 및 예제](https://package.elm-lang.org/packages/elm-lang/core/latest/Debug)
-- [예제로 배우는 Elm 프로그래밍 - 디버그와 디버그 함수 소개](https://elm-primer.oopsno.dev/#side-effects-debugging-and-debug-functions)
+또한, 디버그 출력이나 코드 디버깅의 지속적인 사용은 성능을 저하시킬 수 있습니다. 따라서 디버그 출력은 오직 코드 디버깅을 위해 잠깐 사용되어야 합니다. 
+
+## 또 다른 정보
+
+[Elm Official Website](https://elm-lang.org/) <br>
+[Elm Debug Module Documentation](https://package.elm-lang.org/packages/elm/debug/latest/Debug) <br>
+[Debugging in Elm: Console.log vs. Debug.log](https://medium.com/@ckoster22/debugging-in-elm-console-log-vs-debug-log-2877dae799dc)

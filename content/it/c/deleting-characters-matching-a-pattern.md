@@ -1,58 +1,41 @@
 ---
-title:    "C: Eliminazione di caratteri corrispondenti a un modello"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/c/deleting-characters-matching-a-pattern.md"
+title:                "C: Eliminazione di caratteri corrispondenti ad un modello"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Ci sono molte situazioni in cui potresti dover eliminare caratteri che corrispondono a un determinato pattern dal tuo codice C. Potrebbe essere necessario per eseguire una pulizia dei dati, filtrare informazioni non necessarie o semplicemente per eseguire una modifica specifica del tuo testo. In ogni caso, la capacità di eliminare caratteri in modo efficiente è un'abilità importante da avere nella programmazione in linguaggio C.
+Spesso quando si lavora con stringhe di testo in un programma di linguaggio C, può essere necessario eliminare determinati caratteri che corrispondono ad un particolare modello o pattern. Ciò può essere utile per pulire i dati di input o per manipolare le stringhe per una migliore elaborazione.
 
-## Come fare
+## Come
 
-Per eliminare caratteri che corrispondono a un pattern in C, puoi utilizzare la funzione `strpbrk ()`. Questa funzione cerca una stringa di caratteri specificata in un'altra stringa e restituisce un puntatore al primo carattere corrispondente trovato. Usando questa funzione, puoi scrivere una semplice funzione che elimina tutti i caratteri corrispondenti da una stringa fornita. Ecco un esempio di codice:
+Per eliminare i caratteri che corrispondono ad un certo modello, possiamo utilizzare la funzione `strchr()` che restituisce un puntatore al primo carattere in una stringa che corrisponde al carattere specificato. Possiamo quindi utilizzare un ciclo `while` per scorrere la stringa e verificare se ogni carattere corrisponde al modello. Se è così, possiamo utilizzare la funzione `memmove()` per spostare i caratteri successivi in avanti di una posizione, sovrascrivendo così il carattere corrispondente.
 
-```C
-#include <stdio.h>
-#include <string.h>
+Ecco un esempio di codice che elimina tutte le vocali da una stringa:
 
-// Funzione per eliminare un determinato carattere da una stringa
-void delete_char(char* str, char c) {
-    char* ptr = strpbrk(str, &c); // Trova il primo carattere corrispondente
-    while (ptr != NULL) {
-        memmove(ptr, ptr + 1, strlen(ptr)); // Sposta il resto della stringa di un carattere a sinistra
-        ptr = strpbrk(str, &c); // Trova il prossimo carattere corrispondente
-    }
-}
+```
+char stringa[] = "Ciao a tutti!";
+char *puntatore;
 
-int main() {
-    char str[] = "Hello World";
-    printf("Stringa originale: %s \n", str);
-    delete_char(str, 'l'); // Elimina tutti i caratteri "l" dalla stringa
-    printf("Stringa modificata: %s \n", str);
-    return 0;
+while ((puntatore = strchr(stringa, 'a')) != NULL) {
+    memmove(puntatore, puntatore + 1, strlen(puntatore));
 }
 ```
 
-Esempio di output:
-
-```
-Stringa originale: Hello World
-Stringa modificata: Heo Word 
-```
-
-Nell'esempio sopra, la funzione `delete_char` prende come argomenti una stringa e un carattere da eliminare. Viene utilizzata la funzione `strpbrk ()` per trovare il primo carattere corrispondente nella stringa e successivamente vengono eliminati tutti i caratteri corrispondenti spostando il resto della stringa di un carattere a sinistra.
-
-Oltre alla funzione `strpbrk ()`, è anche possibile utilizzare altre funzioni come `strchr ()` e `strstr ()` per eliminare caratteri corrispondenti da una stringa.
+L'output di questo codice sarebbe `C tt!`, poiché tutte le vocali sono state rimosse dalla stringa iniziale.
 
 ## Approfondimento
 
-Eliminare caratteri che corrispondono a un pattern può essere un'operazione utile quando si lavora con input utente o con file di dati non strutturati. Tuttavia, è importante prestare attenzione alla gestione della memoria quando si manipolano stringhe in questo modo. Assicurarsi di allocare memoria sufficiente per la stringa modificata e di liberare eventuali spazi di memoria non utilizzati per evitare memory leaks.
+Ci sono diverse funzioni in C che possono aiutare nella rimozione dei caratteri che corrispondono ad un determinato pattern. Ad esempio, la funzione `strsep()` può essere utilizzata per dividere una stringa in sottostringhe in base ad un delimitatore specificato. Questo può essere utile quando si cerca di eliminare parti specifiche di una stringa.
+
+Inoltre, esistono anche librerie di terze parti che forniscono funzioni più avanzate per la manipolazione delle stringhe in C, ad esempio la libreria PCRE (Perl Compatible Regular Expressions).
 
 ## Vedi anche
 
-- [Tutorial: Stringhe in C](https://www.programiz.com/c-programming/c-strings)
-- [Funzione strpbrk() in C](https://www.tutorialspoint.com/c_standard_library/c_function_strpbrk.htm)
-- [Gestione della memoria in C](https://www.tutorialspoint.com/cprogramming/c_memory_management.htm)
+- Documentazione sulla funzione `strchr()`: [https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm](https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm)
+- Esempi di uso della funzione `memmove()`: [https://www.programiz.com/c-programming/library-function/string.h/memmove](https://www.programiz.com/c-programming/library-function/string.h/memmove)
+- Libreria PCRE: [https://www.pcre.org/](https://www.pcre.org/)

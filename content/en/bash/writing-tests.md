@@ -1,88 +1,66 @@
 ---
-title:    "Bash recipe: Writing tests"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/writing-tests.md"
+title:                "Bash recipe: Writing tests"
+programming_language: "Bash"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-In the world of software development, writing tests is becoming an increasingly important aspect of the process. It serves as a way to ensure that your code is functioning as intended and helps catch any potential bugs or errors before they reach the end-user. Writing tests also promotes better code organization and improves overall code quality.
+Testing is an essential part of the software development process. It ensures that our code is functioning as expected and can catch any errors or bugs before they make it into production. Writing tests also helps to improve the overall quality and reliability of our code. In this blog post, we will discuss how to write tests in Bash programming.
 
 ## How To
-
-To write tests in Bash, we will be using a framework called "Bats". It provides a simple and easy-to-use syntax for writing tests in Bash scripts.
-
-First, we need to install Bats on our system. On a Mac, we can do this using Homebrew:
+To write tests in Bash, we will be using the `test` command. This command evaluates an expression and returns a status code of either 0 (true) or 1 (false). Let's take a look at a simple example:
 
 ```Bash
-$ brew install bats
+# Create a file called test.sh
+touch test.sh
+
+# Write a test for checking if a file exists
+if [ -f "test.sh" ]; then
+  echo "File exists!"
+else
+  echo "File does not exist!"
+fi
 ```
 
-Once installed, we can start writing our tests. Let's say we have a simple Bash function that adds two numbers:
+In this example, we are using the `-f` flag to check if the `test.sh` file exists. If it does, the `if` statement will return a status code of 0, and the `echo` statement will print "File exists!". Otherwise, the status code will be 1, and the `echo` statement will print "File does not exist!".
+
+We can also use the `!` (not) operator to negate the expression, for example:
 
 ```Bash
-add() {
-  echo $(($1 + $2))
-}
+# Check if a file does not exist
+if [ ! -f "test2.sh" ]; then
+  echo "File does not exist!"
+fi
 ```
 
-To test this function, we can create a new file called "test_add.sh" and add our test:
-
-```Bash
-#!/usr/bin/env bats
-
-@test "add() should add two numbers" {
-  result="$(add 5 3)"
-  [ "$result" -eq 8 ]
-}
-
-@test "add() should handle negative numbers" {
-  result="$(add -10 5)"
-  [ "$result" -eq -5 ]
-}
-```
-
-As you can see, Bats provides an intuitive syntax for writing tests. We use the "@test" keyword to define a new test and inside the curly braces, we can run our function and assert the expected result.
-
-To run our tests, we can simply execute the "test_add.sh" file:
-
-```Bash
-$ ./test_add.sh
-```
-
-If all tests pass, we will see a green "ok" for each test. If any tests fail, Bats will provide a detailed error message.
+This will return a status code of 0 if the file does not exist and print "File does not exist!".
 
 ## Deep Dive
-
-Bats also allows us to use setup and teardown functions to perform actions before and after each test, respectively. For example, we can add a setup function to our previous example to initialize a variable that stores the expected result:
-
-```Bash
-@test "add() should handle negative numbers" {
-  setup() {
-    expected=-5
-  }
-  result="$(add -10 5)"
-  [ "$result" -eq "$expected" ]
-}
-```
-
-Furthermore, Bats also supports looping through tests using the "@for" keyword. This can be useful if we have a large number of similar tests that we want to run:
+The `test` command has many other flags that we can use to perform different checks and comparisons. For example, we can use the `-d` flag to check if a directory exists, the `-s` flag to check if a file is not empty, and the `-eq` flag to compare two numbers:
 
 ```Bash
-@for number in 1 2 3 4 5; do
-  @test "add() should double $number" {
-    result="$(add "$number" "$number")"
-    [ "$result" -eq "$(($number * 2))" ]
-  }
-done
+# Check if a directory exists and is not empty
+if [ -d "testdir" ] && [ -s "testdir" ]; then
+  echo "Directory exists and is not empty!"
+fi
+
+# Compare two numbers
+if [ $1 -eq $2 ]; then
+  echo "The numbers are equal!"
+fi
+
+# Check for a substring match
+if [[ "$string" == *"$substring"* ]]; then
+  echo "Substring found in string!"
+fi
 ```
 
-For more advanced usage, Bats also offers features such as skipping certain tests, running tests in parallel, and capturing and checking output.
+It is important to note that when comparing strings, we need to wrap them in double quotes to prevent unexpected behavior.
 
 ## See Also
-
-- Bats documentation: https://github.com/bats-core/bats-core
-- Unit Testing in Bash with Bats: https://medium.com/@itseranga/unit-testing-in-bash-using-bats-b6844ac599ec
-- Bash Unit Testing: https://opensource.com/article/19/7/bash-testing
+- [Bash test command documentation](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
+- [Introduction to Bash scripting](https://www.tutorialspoint.com/unix/shell_scripting.htm)
+- [Writing tests in Bash using BATS](https://dev.to/carlosrufo/writing-tests-in-bash-using-bats-488a)

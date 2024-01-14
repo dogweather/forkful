@@ -1,51 +1,59 @@
 ---
-title:    "Gleam recipe: Extracting substrings"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/extracting-substrings.md"
+title:                "Gleam recipe: Extracting substrings"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-At some point in your coding journey, you may come across a situation where you need to extract a specific part of a string or text. This could be for various reasons such as data manipulation, formatting, or validation. The good news is, Gleam has a built-in function that makes this process quick and easy!
+Substring extraction is a useful tool for manipulating strings in programming. It allows for the extraction of specific parts of a string, making it easier to work with and manipulate. In this blog post, we will explore how to use substring extraction in Gleam, a functional programming language designed for building scalable applications.
 
 ## How To
 
-To extract substrings in Gleam, we will be using the `substring` function. This function takes in three parameters: the input string, the starting index, and the ending index. Let's take a look at a simple example:
+To extract substrings in Gleam, we will use the `String.slice` function. This function takes in three arguments: the string to be sliced, the starting index of the substring, and the ending index of the substring. Let's take a look at an example:
 
-```
-let input = "Hello, world!"
-let substring = substring(input, 7, 11)
+```Gleam
+let string = "Hello, world!"
 
-IO.println(substring) // Output: "world"
-```
+let substring = String.slice(string, 0, 5)
 
-In the above code, we have an input string of "Hello, world!" and we use the `substring` function to extract the part of the string that starts at index 7 (which is the letter "w") and ends at index 11 (which is the letter "d"). The output will be the substring "world".
-
-You can also use variables for the starting and ending indexes, making the `substring` function even more useful. For example:
-
-```
-let input = "Hello, world!"
-let start = 7
-let end = 11
-let substring = substring(input, start, end)
-
-IO.println(substring) // Output: "world"
+String.print(substring) // Outputs "Hello"
 ```
 
-In the above code, we use variables for the starting and ending indexes, making it easier to manipulate the substring extraction based on different inputs.
+In this example, we declare a string variable and then use the `String.slice` function to extract the substring from the first index (0) to the fifth index, which includes the letter "o". The resulting substring is then printed using the `String.print` function.
 
-It's important to note that the `substring` function is zero-indexed, meaning that the first character in the string has an index of 0. Keep this in mind when determining the starting and ending indexes for your substring.
+We can also use negative indices in `String.slice` to start counting from the end of the string. For example, if we wanted to extract the last three characters of our string, we could use the following code:
+
+```Gleam
+let string = "Hello, world!"
+
+let substring = String.slice(string, -3, String.length(string))
+
+String.print(substring) // Outputs "ld!"
+```
+
+Notice how we use the `String.length` function to determine the ending index of the substring. This is because negative indices start counting from the end of the string, and we need to specify the total length of the string as the ending index.
 
 ## Deep Dive
 
-The `substring` function in Gleam is actually a wrapper for the `slice` function in the standard library. The `slice` function takes in the same parameters as `substring`, but it returns a list of characters instead of a string.
+It's important to note that the `String.slice` function in Gleam is inclusive on the starting index and exclusive on the ending index. This means that the character at the starting index is included in the resulting substring, but the character at the ending index is not. Let's look at another example to better understand this:
 
-This means that you can also use pattern matching and list manipulation techniques to work with your substrings. For example, you can match on the returned list and extract specific elements from the list, or you can use methods such as `list.to_string` to convert the list back into a string.
+```Gleam
+let string = "Hello, world!"
+
+let substring = String.slice(string, 1, 5)
+
+String.print(substring) // Outputs "ello"
+```
+
+In this example, the resulting substring starts from the first index (1) and ends at the fifth index, which includes the letter "o", but excludes the comma after it.
 
 ## See Also
 
-- Official Gleam documentation on the `substring` function: https://gleam.run/documentation/stdlib/substring
-- Official Gleam documentation on the `slice` function: https://gleam.run/documentation/stdlib/slice
-- Learn more about pattern matching in Gleam: https://gleam.run/documentation/guides/pattern-matching
+To learn more about substring extraction in Gleam, check out the official documentation and the Gleam community forum.
+
+- [Official Documentation](https://gleam.run/documentation)
+- [Gleam Forum](https://gleam.run/forum)

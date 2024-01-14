@@ -1,64 +1,54 @@
 ---
-title:    "C: 向标准错误输出写入"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/writing-to-standard-error.md"
+title:                "C: 向標準錯誤輸出"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
+你为什么要向标准错误编写
+
 ## 为什么
 
-许多程序员都熟悉使用标准输出来打印信息，但是有时候，我们也需要将信息打印到标准错误（standard error，也称为stderr）流中。一般来说，标准错误流用于输出程序运行中的错误信息，而不是正常的程序输出。
+写入标准错误是C程序中一种重要的技术。当程序需要向用户显示错误或调试信息时，这种写入形式非常有用。通过向标准错误编写，我们可以确保这些信息会显示在用户的屏幕上，而不会干扰到程序的正常输出。
 
-为什么我们需要使用标准错误流？这有几个原因。首先，标准输出和标准错误流在大型程序中可以同时使用，从而允许程序员更方便地在不同的地方输出信息。其次，当我们使用管道（piping）命令来连接程序时，标准输出和标准错误流是分别处理的，这样能够更好地控制输出信息。因此，了解如何写入标准错误流对于程序员来说是很重要的。
+## 如何进行
 
-## 如何做
-
-在C语言中，我们可以使用fprintf函数来将信息写入标准错误流。它的原型如下：
+为了向标准错误编写，我们需要使用`fprintf`函数，并将标准错误流`stderr`作为参数。以下是一个简单的示例代码，演示如何向标准错误编写一条消息：
 
 ```C
-int fprintf(FILE *stream, const char *format, ...);
+fprintf(stderr, "这是一条错误信息\n");
 ```
 
-其中，stream参数指定了要输出到的流，我们需要使用stderr来指定标准错误流。format参数是一个字符串，可以使用类似于printf函数的格式化字符串来指定要输出的内容。最后的省略号表示我们可以传入多个参数，用来填充格式化字符串中的占位符。
+运行此程序会将消息打印到屏幕上，类似于这样：
 
-让我们来看一个简单的例子：
+```
+这是一条错误信息
+```
+
+我们还可以使用格式化字符串来添加变量或表达式的值。例如，下面的代码会在错误信息中显示文件名、行号以及一个变量的值：
 
 ```C
-#include <stdio.h>
-
-int main() {
-    int num = 100;
-    fprintf(stderr, "这里有一个数字：%d\n", num);
-    return 0;
-}
+fprintf(stderr, "文件 %s 中的第 %d 行出现错误。变量值为：%d\n", __FILE__, __LINE__, some_variable);
 ```
 
-上面的程序将输出以下信息到标准错误流中：
+输出效果如下：
 
 ```
-这里有一个数字：100
+文件 main.c 中的第 10 行出现错误。变量值为：42
 ```
 
-需要注意的是，标准错误流的输出不会打断程序的正常运行，也就是说即使我们将信息输出到标准错误流中，程序也会继续执行，直到结束。因此，它比标准输出更适合用来输出错误信息。
+## 深入了解
 
-## 深度探讨
+除了使用`fprintf`函数，我们还可以使用`fputc`和`fputs`等函数向标准错误编写。同时，C语言为我们提供了一些方便的宏定义，例如`__FILE__`和`__LINE__`，可以帮助我们打印出当前文件名和行号。此外，在多线程程序中，我们需要注意确保多个线程不会同时向标准错误编写，否则可能会导致信息的混乱。
 
-在深入使用标准错误流之前，我们需要了解一些有关流的基本知识。流是用来把数据从程序传输到其他设备中的抽象概念，它可以表示为输入流（input stream）或输出流（output stream）。标准错误流属于标准错误设备，通常与标准输出设备是分开的。
+## 参考链接
 
-如果我们想要在程序中同时使用标准输出和标准错误流，需要做一些额外的设置，比如使用`dup2()`函数来建立标准输出和标准错误流的映射关系。同时，我们也可以使用`stderr`宏来表示标准错误流，这样可以提高代码的可读性。
-
-除了使用fprintf函数，我们还可以使用fputs函数来将字符串直接输出到标准错误流中。此外，如果需要在标准错误流中输出一段较长的信息，我们还可以使用多行注释来实现，如下面的例子所示：
-
-```C
-/* 输出一段较长的错误信息到标准错误流中 */
-fprintf(stderr, "这是一段\n多行\n错误信息\n");
-```
+- [C语言手册 - fprintf函数](https://www.runoob.com/cprogramming/c-function-fprintf.html)
+- [C语言手册 - 标准错误流](https://www.runoob.com/cprogramming/c-standard-error.html)
+- [C语言手册 - 多线程编程](https://www.runoob.com/cprogramming/c-multithreading.html)
 
 ## 另请参阅
 
-如果想要了解更多关于标准错误流的知识，可以查看下面这些链接：
-
-- [C程序中的标准错误流详解](https://www.runoob.com/cprogramming/c-standard-error.html)
-- [Linux命令行中的标准输出和标准错误](https://linux.cn/article-10183-1.html)
-- [标准错误流的使用场景](https://stackoverflow.com/questions/2342826/when-to-use-stderr-instead-of-stdout-in-c)
+[C语言基础知识](https://www.runoob.com/cprogramming/c-tutorial.html)

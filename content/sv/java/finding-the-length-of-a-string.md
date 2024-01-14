@@ -1,42 +1,51 @@
 ---
-title:    "Java: Att hitta längden på en sträng"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/java/finding-the-length-of-a-string.md"
+title:                "Java: Att hitta längden på en sträng"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Har du någonsin undrat hur många tecken som finns i en viss text? Kanske håller du på att skriva en programvara som behöver beräkna längden på en sträng? Oavsett anledningen finns det flera sätt att hitta längden på en sträng i Java.
+Att hitta längden på en sträng är en vanlig uppgift inom programmering och används ofta för att kontrollera inmatade data eller för att manipulera text. Det är en grundläggande funktion som kan vara användbar för olika ändamål.
 
 ## Hur man gör
 
-För att hitta längden på en sträng i Java kan du använda metoden `length()` som finns inbyggd i klassen `String`. Här är ett enkelt exempel som visar hur man använder den:
+För att hitta längden på en sträng i Java kan du använda metoden `.length()`. Den här metoden returnerar antalet tecken i en sträng och använder syntaxen `strängnamn.length()`, där "strängnamn" är namnet på den sträng du vill hitta längden på.
 
-```java
-// Skapa en sträng
-String text = "Hej, världen!";
-
-// Hitta längden på strängen och spara den i en variabel
-int längd = text.length();
-
-// Skriv ut längden
-System.out.println("Längden på strängen är: " + längd);
-
-// Output: Längden på strängen är: 14
+```Java
+String namn = "Anna";
+int längd = namn.length();
+System.out.println("Längden på strängen \"" + namn + "\" är " + längd + " tecken.");
 ```
 
-Som du kan se i exemplet ovan, använder vi metoden `length()` tillsammans med namnet på vår sträng och sparar resultatet i en variabel. Därefter kan vi skriva ut längden genom att använda variabeln tillsammans med en textsträng.
+Output:
+```
+Längden på strängen "Anna" är 4 tecken.
+```
+
+Du kan också använda `.length()` på en tom sträng, vilket kommer att returnera värdet 0.
+
+```Java
+String tom = "";
+System.out.println("Längden på den tomma strängen är " + tom.length() + " tecken.");
+```
+
+Output:
+```
+Längden på den tomma strängen är 0 tecken.
+```
 
 ## Djupdykning
 
-Det finns flera saker att tänka på när det kommer till att hitta längden på en sträng i Java. En viktig sak att komma ihåg är att längden inkluderar alla tecken, även mellanslag och specialtecken. Detta kan påverka hur din programvara bearbetar och presenterar strängar.
+Bakom kulisserna använder `.length()` metoden egenskapen `.length` från klassen `String`, vilket är en viktig del av Java's standard bibliotek. Denna egenskap är en av flera som är tillgängliga för att manipulera och analysera strängar.
 
-En annan intressant sak att notera är att metoden `length()` egentligen är en egenskap för objektet `String`. Det betyder att du kan använda den utan att behöva skapa en ny instans av klassen `String`.
+En intressant sak att notera är att `.length()` metoden returnerar en `int` (heltal), vilket betyder att den inte kan hantera längder som är större än 2,147,483,647 tecken. Om du behöver hitta längden på en sträng som är större än det, måste du använda en alternativ metod.
 
 ## Se även
 
-- Dokumentation för `String`-klassen i Java: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
-- Java String Tutorial på W3Schools: https://www.w3schools.com/java/java_string.asp
-- En uttömmande guide om strängar i Java: https://www.baeldung.com/java-strings
+- [Java String API](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+- [Java Strings Tutorial](https://www.w3schools.com/java/java_strings.asp)
+- [Java String Class](https://www.geeksforgeeks.org/java-string-class/)

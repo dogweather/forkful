@@ -1,56 +1,45 @@
 ---
-title:    "PHP: 현재 날짜 받아오기"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/php/getting-the-current-date.md"
+title:                "PHP: 현재 날짜 가져오기"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜: 현재 날짜를 가져오는 일에 참여하는 이유
+## 왜: 현재 날짜를 구하는 데 참여해야 할 이유
 
-현재 날짜를 가져오는 것은 프로그래밍에서 매우 일반적인 작업입니다. 날짜를 사용하여 다양한 기능을 구현하고, 사용자의 시간대에 맞게 표시하고, 이벤트를 설정하는 등 다양한 용도로 활용할 수 있기 때문입니다. 따라서 PHP 프로그래밍에 입문하는 사람들은 날짜를 제어하는 방법에 대해 알아야 합니다.
+현재 날짜를 구하는 것은 프로그래머들에게 매우 중요합니다. 이는 소프트웨어에서 날짜를 기반으로 한 여러 가지 기능이 필요하고, 특히 온라인 서비스에서는 이를 사용하는 것이 필수적입니다. PHP는 날짜와 시간을 다루는 데 매우 편리한 기능을 제공합니다.
 
-## 하는 방법:
+## 어떻게: 코드 예제와 출력 값 내에서 "```PHP ... ```" 코드 블록을 사용하는 코딩 방법
 
-PHP에서 현재 날짜를 가져오는 가장 간단한 방법은 `date()` 함수를 사용하는 것입니다. 이 함수는 파라미터에 형식을 지정하여 원하는 형식으로 날짜를 출력할 수 있습니다. 예를 들어, `date('Y-m-d')`와 같이 지정하면 현재 날짜를 년-월-일 형식으로 출력할 수 있습니다.
+현재 날짜를 구하는 가장 간단한 방법은 date() 함수를 사용하는 것입니다. 이 함수는 첫 번째 매개변수로 포맷을 지정할 수 있으며, 두 번째 매개변수로는 원하는 날짜와 시간을 지정할 수 있습니다.
 
-```
-PHP에서 현재 날짜 가져오기 예제:
-
-<?php
-$date = date('Y-m-d');
-echo $date; // 현재 날짜 출력 (예: 2021-07-08)
-?>
+```PHP
+// 현재 시간과 날짜를 YYYY-MM-DD 형식으로 출력하는 예제
+echo date("Y-m-d"); // 2021-03-15
 ```
 
-또한 `time()` 함수를 사용하여 현재 시간을 가져올 수도 있습니다. 이 함수는 현재 시간을 초단위로 반환하므로, `date()` 함수와 함께 사용하여 원하는 형식으로 변환할 수 있습니다.
+출력 값은 현재 날짜를 기준으로 하여 변경될 수 있습니다. 예를 들어, 오늘이 2021년 3월 15일이라면 출력 값은 위의 예제와 같을 것입니다.
 
-```
-PHP에서 현재 시간 가져오기 예제:
+또 다른 방법으로는 strtotime() 함수를 사용하는 것입니다. 이 함수는 문자열로 표현된 날짜와 시간을 파싱하여 타임스탬프를 반환합니다. 이를 date() 함수와 함께 사용하면 특정 날짜와 시간에 대한 포맷을 만들 수 있습니다.
 
-<?php
-$time = time();
-echo date('H:i:s', $time); // 현재 시간 출력 (예: 14:20:33)
-?>
-```
-
-## 깊게 들어가기:
-
-PHP에서 현재 날짜를 가져오는 방법은 `date()` 함수를 이용하는 것 외에도 `DateTime` 클래스를 이용하여 보다 다양한 기능을 구현할 수 있습니다. 이 클래스는 날짜와 시간을 다루는 다양한 메서드를 제공하므로, 더 복잡한 날짜 관련 작업을 수행할 수 있습니다.
-
-```
-DateTime 클래스를 이용한 현재 날짜 가져오기 예제:
-
-<?php
-$date = new DateTime();
-echo $date->format('Y-m-d H:i:s'); // 현재 날짜와 시간 출력 (예: 2021-07-08 14:30:15)
-?>
+```PHP
+// 한 달 후의 날짜를 YYYY년 m월 d일 형식으로 출력하는 예제
+$futureDate = strtotime("+1 month");
+echo date("Y년 m월 d일", $futureDate); // 2021년 04월 15일
 ```
 
-더 많은 정보는 공식 PHP 문서를 참고하시면 됩니다.
+## 깊이 파고들기: 현재 날짜를 구하는 더 깊은 정보
 
-## 관련 링크:
+PHP는 기본적으로 시스템에서 설정된 타임존을 사용하여 날짜와 시간을 반환합니다. 하지만 만약 어느 시간대에서 실행되는 코드를 사용자가 설정한 시간대로 반환하고 싶다면, date_default_timezone_set() 함수를 사용하여 타임존을 변경할 수 있습니다.
 
-- [PHP date() 함수 공식 문서](https://www.php.net/manual/ko/function.date.php)
-- [PHP time() 함수 공식 문서](https://www.php.net/manual/ko/function.time.php)
-- [PHP DateTime 클래스 공식 문서](https://www.php.net/manual/ko/class.datetime.php)
+또한 날짜와 시간을 반환하는 다양한 함수 외에도, PHP는 날짜와 시간을 계산하는 데에도 유용한 함수들이 있습니다. 예를 들어, date_diff() 함수를 사용하여 두 날짜 간의 차이를 계산할 수 있으며, date_add() 함수를 사용하여 날짜에 일정한 시간 간격을 추가할 수 있습니다.
+
+## 또 다른 참고 자료
+
+- [PHP date() 함수 공식 문서](https://www.php.net/manual/en/function.date.php)
+- [PHP strtotime() 함수 공식 문서](https://www.php.net/manual/en/function.strtotime.php)
+- [PHP date_default_timezone_set() 함수 공식 문서](https://www.php.net/manual/en/function.date-default-timezone-set.php)
+- [PHP date_diff() 함수 공식 문서](https://www.php.net/manual/en/function.date-diff.php)
+- [PHP date_add() 함수 공식 문서](https://www.php.net/manual/en/function.date-add.php)

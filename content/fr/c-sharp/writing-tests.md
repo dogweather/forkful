@@ -1,48 +1,52 @@
 ---
-title:    "C#: Écriture de tests"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/writing-tests.md"
+title:                "C#: Ecriture de tests"
+programming_language: "C#"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi écrire des tests dans votre code ?
 
-Avant de parler de la façon d'écrire des tests en C#, il est important de comprendre pourquoi les tests sont si importants pour les développeurs. Les tests sont un moyen efficace de vérifier la fonctionnalité de notre code et de détecter les erreurs avant qu'elles ne deviennent un problème majeur. Ils nous aident également à maintenir notre code propre, organisé et facilement modifiable. En fin de compte, les tests nous donnent la confiance nécessaire pour lancer notre code en production en sachant qu'il fonctionne correctement.
+Si vous êtes nouveau dans le monde de la programmation, vous vous demandez peut-être pourquoi écrire des tests est si important. La principale raison est que cela aide à identifier les erreurs dans votre code avant même qu'il ne soit exécuté. En écrivant des tests, vous pouvez vous assurer que votre code fonctionne correctement et vous économiserez du temps à le déboguer plus tard.
 
-## Comment faire
+## Comment écrire des tests en C# ?
 
-Maintenant que nous avons compris pourquoi les tests sont si importants, passons à la partie pratique : comment écrire des tests en C#. Tout d'abord, nous devons ajouter une référence à la bibliothèque de test MSTest dans notre projet. Ensuite, nous pouvons commencer à écrire nos tests en utilisant la syntaxe suivante :
+L'écriture de tests en C# est assez simple et peut être réalisée en utilisant la bibliothèque de test NUnit. Voici un exemple de code pour tester une fonction qui calcule la somme de deux nombres :
 
-```C#
-[TestMethod]
-public void TestMaFonction()
+```
+[C#]
+using NUnit.Framework;
+
+[TestFixture]
+public class CalculatorTests
 {
-    // Arrange
-    MaClasse maClasse = new MaClasse();
-
-    // Act
-    int resultat = maClasse.MaFonction();
-
-    // Assert
-    Assert.AreEqual(10, resultat);
+    [Test]
+    public void Should_ReturnCorrectSum()
+    {
+        // Arrange
+        Calculator calculator = new Calculator();
+        
+        // Act
+        int result = calculator.Add(2, 2);
+        
+        // Assert
+        Assert.AreEqual(4, result);
+    }
 }
 ```
 
-Dans cet exemple, nous créons une classe de test et utilisons la méthode `Assert.AreEqual()` pour vérifier si le résultat de la méthode `MaFonction()` est égal à 10. Si le test échoue, cela signifie que quelque chose ne fonctionne pas correctement dans notre code et qu'il doit être corrigé.
+Dans cet exemple, nous créons une classe de test avec la bibliothèque NUnit et nous écrivons une méthode de test qui utilise la méthode "Add" de notre calculatrice pour vérifier si le résultat est correct. Vous pouvez écrire autant de tests que nécessaire pour couvrir toutes les fonctionnalités de votre code.
 
-Bien sûr, cela n'est qu'un exemple très basique de test. Vous pouvez également écrire des tests pour des scénarios plus complexes en utilisant d'autres méthodes de la classe `Assert` tels que `AreNotEqual()`, `IsTrue()`, `IsFalse()`, etc. Il est également recommandé de créer des classes de test séparées pour chaque classe que vous testez, afin de maintenir votre code organisé et facile à comprendre.
+## Plongée en profondeur : Pourquoi écrire des tests ?
 
-## Plongée en profondeur
-
-Écrire des tests peut sembler fastidieux et prendre plus de temps au début de votre projet, mais cela en vaut vraiment la peine à long terme. Non seulement cela vous permettra de détecter et de corriger les erreurs plus rapidement, mais cela vous aidera également à gagner en confiance et en efficacité en tant que développeur.
-
-De plus, les tests vous permettent de mieux comprendre votre propre code et de l'utiliser comme une sorte de documentation vivante. Vous pouvez également utiliser des outils tels que Microsoft's Code Coverage pour vous assurer que vous testez toutes les parties de votre code.
+Écrire des tests pour votre code peut sembler fastidieux, mais cela présente de nombreux avantages. Tout d'abord, cela aide à détecter et à corriger les erreurs plus rapidement. Cela vous permet également de vérifier si de nouveaux changements dans votre code n'ont pas cassé des fonctionnalités précédemment développées. De plus, en créant des tests pour votre code, vous écrivez également une documentation sur son utilisation. Enfin, cela peut aider d'autres développeurs qui travaillent sur votre code à comprendre son fonctionnement plus rapidement.
 
 ## Voir aussi
 
-Voici quelques ressources supplémentaires pour vous aider à en savoir plus sur l'écriture de tests en C# :
+- [Documentation NUnit](https://docs.nunit.org/)
+- [Avantages de l'écriture de tests automatisés en C#](https://www.visualstudio.com/fr-gb/learn/test/why-test-home-vs.aspx)
+- [Tutoriel de base pour écrire des tests en C#](https://docs.microsoft.com/fr-fr/dotnet/core/testing/)
 
-- [Documentation officielle de MSTest](https://docs.microsoft.com/fr-fr/dotnet/core/testing/unit-testing-with-mstest)
-- [Guide sur les bonnes pratiques pour l'écriture de tests avec C#](https://enterprisecraftsmanship.com/posts/best-practices-for-writing-c-unit-tests/)
-- [Introduction aux tests unitaires en C#](https://www.codeproject.com/Articles/178541/Introduction-to-Unit-Testing-with-Csharp)
+**À propos de l'auteur :** [John Doe](https://monsite.com) est un développeur passionné par l'écriture de tests pour son code en C#. N'hésitez pas à le contacter pour toute question ou suggestion.

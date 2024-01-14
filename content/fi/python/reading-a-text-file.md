@@ -1,54 +1,60 @@
 ---
-title:    "Python: Tekstitiedoston lukeminen"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/reading-a-text-file.md"
+title:                "Python: Tekstitiedoston lukeminen"
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Lukeminen ja kirjoittaminen ovat olennainen osa ohjelmointia. Tekstitiedostojen lukeminen on tärkeä taito, jota kaikki ohjelmoijat tarvitsevat käyttäessään Pythonia. Tekstitiedostoissa on usein tallennettuna tärkeitä tietoja, kuten käyttäjätietoja, tiedostojen polkuja tai konfiguraatioasetuksia. Näiden tietojen saaminen ja käsitteleminen voi joskus olla haastavaa, mutta onneksi Pythonilla se on helppoa ja tehokasta.
+Tekstitiedostojen lukeminen on tärkeä taito jokaiselle Python-ohjelmoijalle. Se antaa sinulle mahdollisuuden käsitellä suurta määrää tietoa ja tehdä muutoksia tiedostoihin nopeasti ja helposti.
 
-## Miten tehdä?
+## Kuinka
 
-Voit avata ja lukea tekstitiedostoja helposti käyttämällä `open()`-funktiota. Tämä funktio hyödyntää `with`-lausetta, mikä varmistaa, että tiedosto suljetaan automaattisesti lukemisen jälkeen. Tämän jälkeen voit käyttää `read()`-metodia lukeaksesi tiedoston sisällön ja tallentaa sen muuttujalle. Alla on esimerkki, jossa avataan tekstitiedosto nimeltä "tekstitiedosto.txt" ja luetaan sen sisältö tulostamalla se konsoliin:
-
-```Python
-with open("tekstitiedosto.txt", "r") as tiedosto:
-    sisalto = tiedosto.read()
-    print(sisalto)
-```
-
-Tämä tulostaa tekstitiedoston sisällön konsoliin seuraavassa muodossa:
-
-```
-Tämä on esimerkki tekstitiedostosta.
-Voit tallentaa tähän tärkeitä tietoja.
-```
-
-Voit myös käyttää muita lukemismetodeja, kuten `readline()`, joka lukee yhden rivin kerrallaan, ja `readlines()`, joka lukee kaikki rivit ja tallentaa ne listana.
-
-## Syvemmälle aiheeseen
-
-Pythonilla voit myös käsitellä tekstitiedostojen rivi kerrallaan `for`-loopin avulla. Alla on esimerkki, jossa käydään läpi tiedoston rivit ja tulostetaan kukin rivi konsoliin:
+Tekstitiedoston lukeminen Python-ohjelmassa on hyvin yksinkertaista. Sinun täytyy vain avata tiedosto, lukea sen sisältö ja sulkea se. Tässä on esimerkki koodista ja tulosteesta:
 
 ```Python
-with open("tekstitiedosto.txt", "r") as tiedosto:
-    for rivi in tiedosto:
-        print(rivi)
+# Avaa tiedosto lukemista varten
+tiedosto = open("tiedosto.txt", "r")
+# Lue ja tulosta tiedoston sisältö
+sisalto = tiedosto.read()
+print(sisalto)
+# Sulje tiedosto
+tiedosto.close()
 ```
 
-Voit myös kirjoittaa ja tallentaa tekstitiedostoja `write()`-metodin avulla. Alla on esimerkki, jossa luodaan uusi tekstitiedosto nimeltä "uusi_tiedosto.txt" ja kirjoitetaan siihen tietoja:
+Tämä koodi avaa tiedoston nimeltä "tiedosto.txt" ja lukee sen sisällön muuttujaan nimeltä "sisalto". Sitten se tulostaa sisällön konsoliin ja lopuksi sulkee tiedoston. 
+
+## Syvemmälle
+
+Voit myös lukea tiedostoa rivi kerrallaan käyttämällä "readlines()" -metodia:
 
 ```Python
-with open("uusi_tiedosto.txt", "w") as tiedosto:
-    tiedosto.write("Tämä on uusi tiedosto.")
-    tiedosto.write("Sisältö tallennetaan tähän.")
+# Avaa tiedosto lukemista varten
+tiedosto = open("tiedosto.txt", "r")
+# Lue tiedoston sisältö ja tallenna rivit listaan
+rivit = tiedosto.readlines()
+# Tulosta jokainen rivi erikseen
+for rivi in rivit:
+  print(rivi)
+# Sulje tiedosto
+tiedosto.close()
+```
+
+Voit myös avata, lukea ja sulkea tiedoston yhdellä komennolla "with", joka huolehtii automaattisesti tiedoston sulkemisesta:
+
+```Python
+# Avaa tiedosto lukemista varten
+with open("tiedosto.txt", "r") as tiedosto:
+  # Käsittele tiedoston sisältö tässä
+  # ...
+# Tiedosto suljetaan automaattisesti tämän jälkeen
 ```
 
 ## Katso myös
 
-- [Pythonin `open()`-funktio](https://docs.python.org/3/library/functions.html#open)
-- [Pythonin tiedostotoiminnot](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Markdownin käyttöönotto Pythonissa](https://www.python.org/dev/peps/pep-0008/#id50)
+- [Pythonin dokumentaatio tekstitiedoston lukemisesta](https://docs.python.org/fi/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [Tutorialspointin opas tekstitiedoston lukemiseen Pythonilla](https://www.tutorialspoint.com/python/python_files_io.htm)
+- [GeeksforGeeksin esimerkkejä tekstitiedoston lukemisesta Pythonilla](https://www.geeksforgeeks.org/reading-writing-text-files-python/)

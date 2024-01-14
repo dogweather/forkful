@@ -1,41 +1,53 @@
 ---
-title:    "Python: Drukowanie wyjścia debugowania"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/printing-debug-output.md"
+title:                "Python: Wydrukowanie wyników debugowania"
+programming_language: "Python"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego drukować informacje debugujące
+## Dlaczego
 
-Jeśli pracujesz z językiem Python, na pewno spotkałeś się z sytuacją, w której twój kod nie działa poprawnie. W tym przypadku, jednym z najprostszych sposobów na znalezienie błędu jest wyświetlenie informacji debugujących. W tym artykule dowiesz się dlaczego warto drukować takie informacje oraz jak to zrobić.
+W trakcie programowania, debugowanie jest jednym z najważniejszych procesów mających na celu poprawienie błędów w kodzie. Jedną z najprostszych i najczęściej stosowanych metod debugowania jest wyświetlanie informacji zwrotnych (debug output) na przestrzeni działania programu. W tym artykule dowiesz się, dlaczego warto korzystać z tej metody oraz jak to zrobić.
 
 ## Jak to zrobić
 
-Aby wyświetlić informacje debugujące w Pythonie, możesz skorzystać z funkcji `print()`. Przykładowo, w poniższym kodzie chcemy przetestować funkcję liczącą średnią z listy liczb.
+Wyświetlanie debug outputu w Pythonie jest bardzo proste. Wystarczy użyć funkcji `print()` i podać w niej odpowiednie wartości lub zmienne. Przykładowy kod wyglądałby następująco:
 
 ```Python
-numbers = [1, 2, 3, 4, 5]
-avg = sum(numbers) / len(numbers)
-print("Średnia to: ", avg)
+x = 5
+y = 10
+z = x + y
+
+print("Wartość zmiennej z wynosi:", z)
 ```
 
-Po uruchomieniu powyższego kodu, zobaczymy na ekranie następujący wynik:
+Powyższy kod wyświetli nam na konsoli napis "Wartość zmiennej z wynosi: 15". Jest to bardzo przydatne podczas debugowania, ponieważ możemy śledzić wartości zmiennych i sprawdzać, czy nasz kod działa zgodnie z oczekiwaniami.
 
+Możemy również wyświetlić więcej informacji za pomocą formatowania napisów. W tym celu używamy `f-strings` oraz wyrażenia `{}` wewnątrz napisu, do którego chcemy dodać nasze zmienne. Przykładowo:
+
+```Python
+imie = "Jan"
+nazwisko = "Kowalski"
+
+print(f"Moje imie to {imie} a nazwisko {nazwisko}")
 ```
-Średnia to: 3.0
-```
 
-Dzięki wyświetleniu informacji debugujących, mamy pewność, że liczenie średniej zostało wykonane poprawnie. Możemy także wyświetlić inne zmienne czy informacje, które pomogą nam zlokalizować błąd w kodzie.
+Wynikiem będzie napis "Moje imię to Jan, a nazwisko Kowalski".
 
-## Prześwietlenie
+## Deep Dive
 
-Drukowanie informacji debugujących jest szczególnie przydatne w przypadku bardziej skomplikowanych programów. Dzięki temu możemy zobaczyć, jak zmieniają się zmienne w różnych częściach kodu oraz dowiedzieć się, które linie są wykonywane.
+Istnieje wiele innych sposobów wyświetlania debug outputu w Pythonie, takich jak moduł `logging` czy function `repr()`. Jednakże, najważniejsze jest to, aby wybrać metodę, która najlepiej pasuje do naszych potrzeb i jest łatwa do zrozumienia dla nas oraz dla innych osób, które będą później czytać nasz kod.
 
-W niektórych przypadkach, możemy także skorzystać z modułu `logging`, który daje możliwość dodatkowej konfiguracji wyświetlanych informacji debugujących. Jest to szczególnie przydatne w większych projektach, gdzie chcemy mieć bardziej przejrzysty i kontrolowany sposób wyświetlania tych informacji.
+Niektóre z zalet wyświetlania debug outputu to:
+
+- Możliwość śledzenia wartości zmiennych i wykrywania błędów w kodzie
+- Prostota implementacji i korzystania z tej metody
+- Ułatwienie pracy w zespole i dzielenia się kodem z innymi osobami
 
 ## Zobacz także
 
-- [Dokumentacja Pythona na temat drukowania informacji debugujących](https://docs.python.org/3/library/functions.html#print)
-- [Poradnik na temat użycia modułu logging](https://realpython.com/python-logging/)
-- [Inne przydatne metody debugowania w Pythonie](https://realpython.com/python-debugging-pdb/)
+- [Śledzenie błędów w Pythonie przy użyciu debuggera](https://realpython.com/python-debugging-pdb/)
+- [Tutoriale Pythona o debugowaniu i wyświetlaniu informacji zwrotnych](https://realpython.com/python-debugging-pdb/)
+- [Dokumentacja Pythona o module logging](https://docs.python.org/3/library/logging.html)

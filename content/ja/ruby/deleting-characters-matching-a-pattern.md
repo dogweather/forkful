@@ -1,33 +1,41 @@
 ---
-title:    "Ruby: パターンに一致する文字を削除する"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/deleting-characters-matching-a-pattern.md"
+title:                "Ruby: パターンに一致する文字を削除する"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+Rubyプログラミングをする人々がパターンに一致する文字を削除することに取り組むのか、その理由を1〜2文で説明します。
 
-正規表現を使ってパターンにマッチする文字を削除することについて、なぜ誰かが取り組むのかを説明します。
+削除する文字のパターンを指定することで、文字列の特定の部分を簡単に削除することができます。例えば、特定の文字がファイル名に含まれている場合、それらを一括で削除することができます。また、文字列を処理する際に邪魔になる特定の文字を削除することで、コードをより簡潔にすることができます。
 
 ## 方法
+まず、削除する文字のパターンを定義します。例えば、ファイル名中に含まれる数字を全て削除する場合、 `/[0-9]/` のような正規表現を使用します。
+
+次に、文字列を削除するメソッドを使用します。Rubyには `gsub` メソッドがあり、これを使用することで文字列内の特定の文字を一括で削除することができます。例えば、以下のコードを使用するとファイル名内の数字を全て削除することができます。
 
 ```Ruby
-string = "123abc456def789ghi"
-new_string = string.gsub(/[a-z]/, "")
-puts new_string
+file_name = "my_file_123.png"
+new_file_name = file_name.gsub(/[0-9]/, "")
+puts new_file_name
 ```
 
-出力：123456789
-
-正規表現の`/[a-z]/`は、文字列からaからzまでの文字をマッチさせます。`gsub`メソッドを使って、そのマッチした文字を空の文字列に置き換えることで、文字列からマッチした文字を削除することができます。
+上記のコードの出力は、`my_file_.png`となります。
 
 ## 深堀り
+文字を削除する際に使用する正規表現には様々なオプションがあります。例えば、マッチした文字を置換する際に使用する `sub` メソッドや、マッチした文字列を取得する際に使用する `match` メソッドなどがあります。
 
-正規表現についてもっと詳しく学びたい方は、Rubyの公式ドキュメントやオンラインのチュートリアルを参考にしてください。
+また、文字列内の特定の文字を削除するだけでなく、特定のパターンに一致する文字を置換することもできます。例えば、ファイル名内の拡張子を変更する場合は `sub` メソッドを使用して、 `.png` を `.jpg` に置換することができます。
 
-## その他参考リンク
+深堀りをすると、より柔軟に文字を削除・置換することができるようになります。しかし、正規表現の使用は習得に時間がかかる場合がありますので、基本的なパターンから始めることをお勧めします。
 
-[正規表現チュートリアル: Ruby版](https://www.ruby-lang.org/ja/documentation/quickstart/2/)
-[正規表現メタキャラクタ](https://docs.ruby-lang.org/ja/latest/doc/spec=2fregexp.html#metachar)
-[正規表現を学習するためのオンラインコース](https://www.coursera.org/courses?query=ruby%20regular%20expressions)
+## おわりに
+文字列から特定の文字を削除する方法について学びました。正規表現を使用することで、より効率的に文字を削除・置換することができます。ぜひ実際にコードを書いて、試してみてください。
+
+## 関連リンク
+- [Rubyパターンマッチングガイド](https://docs.ruby-lang.org/ja/latest/doc/spec=2fregexp.html)
+- [Rubyの正規表現チートシート](https://www.ruby-lang.org/ja/about/cheatsheet/regex/)
+- [Rubyの文字列操作について学ぶ](https://www.ruby-lang.org/ja/documentation/quickstart/5/)

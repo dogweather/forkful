@@ -1,32 +1,45 @@
 ---
-title:    "Bash: 표준 오류에 쓰는 방법"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/writing-to-standard-error.md"
+title:                "Bash: 표준 에러 출력하기"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 # 왜
-
-*표준 오류에 쓰기를 하는 부분에 대해 더 알고 싶으면 그 대안을 제공하는 다른 스트림 또는 콘솔의 상세한 정보가 필요할 수 있습니다. 이는 디버깅이 필요한 코드에서 특히 중요하며, 콘솔에 출력되는 모든 정보를 알고 싶을 때 유용할 수 있습니다.*
+이 글을 쓰는 이유는 무엇일까요? "표준 오류"에 대해 직접적으로 쓸 필요가 있는 이유는 무엇이 있을까요? 일반적인 경우에는 애플리케이션의 실행 과정에서 오류가 발생할 수 있습니다. 이 오류를 적절히 처리하지 않으면 사용자는 애플리케이션에 대한 정보를 얻을 수 없습니다. 따라서 오류 메시지를 출력하는 것은 매우 중요합니다.
 
 ## 어떻게
-
+이제 "표준 오류"에 대해 어떻게 쓰는지 살펴보겠습니다. 우선, 오류를 출력하기 위해 "데이터 스트림 리디렉션"을 사용해야 합니다. 이를 통해 출력되는 메시지가 화면이 아닌 파일로 전송될 수 있습니다. 예를 들어, 다음과 같이 사용할 수 있습니다:
 ```Bash
-echo "이것은 표준 오류 출력입니다." 1>&2
+./my_app 2> error_log.txt
 ```
+위의 코드는 "my_app" 애플리케이션의 실행 결과를 "error_log.txt" 파일에 저장합니다. 만약 오류가 발생하면, 해당 오류 메시지가 "error_log.txt" 파일에 출력됩니다.
 
-위의 예시에서 볼 수 있듯이, 표준 오류는 기본적으로 2번 스트림에 연결되어 있으며, 표준 오류 출력을 원하는 명령어나 스크립트의 뒤에 `1>&2`를 추가하여 사용할 수 있습니다. 이렇게 하면 표준 출력이 아닌 표준 오류로 출력됩니다.
+## 깊이 들어가기
+이제 더 깊이 들어가보겠습니다. 표준 오류를 출력하는 가장 일반적인 방법은 "echo"명령어를 사용하는 것입니다. 예를 들어,
+```Bash
+echo "An error has occurred" 1>&2
+```
+위의 코드는 "echo" 명령어를 사용하여 "표준 오류"로 "An error has occurred"라는 메시지를 출력합니다. 우리는 "1>&2"라는 리디렉션 연산자를 사용하여 메시지를 표준 오류로 전송합니다.
 
-## 깊이 파고들기
+또 다른 유용한 방법은 "stderr" 명령어를 사용하는 것입니다. "stderr" 명령어는 오류 메시지를 출력할 때 사용할 수 있는 전역 변수입니다. 예를 들어,
+```Bash
+#!/bin/bash
+echo "This is a normal message"
+sleep 2
+>&2 echo "An error has occurred"
+```
+위의 코드는 "이것은 일반적인 메시지입니다"라는 메시지를 출력한 다음, 2초 후에 "stderr" 명령어를 사용하여 "An error has occurred"라는 메시지를 표준 오류로 출력합니다.
 
-표준 오류의 사용은 디버깅 외에도 유용할 수 있습니다. 예를 들어, 스크립트를 실행하다가 오류가 발생했을 때, 표준 오류에 메시지를 출력하여 사용자에게 알리는 것이 좋습니다.
+## 참고
+마지막으로, 더 많은 정보를 원한다면 다음 링크들을 참고하시기 바랍니다.
+- [리디렉션 연산자에 대한 자세한 내용](https://ryanstutorials.net/linuxtutorial/piping.php)
+- [오류 처리에 대한 좋은 설명](https://www.baeldung.com/linux/bash-standard-error)
+- [stdout과 stderr에 대한 깊이있는 설명](https://guides.yooseunghui.net/programming/bash-shell-scripting/chapter-output.html)
 
-또한, 표준 오류를 사용해 로그 파일을 작성할 수도 있습니다. 동일한 스크립트를 여러 번 실행하면서 표준 오류를 콘솔이 아닌 파일로 리디렉션하여 오류 메시지를 로그 파일에 저장할 수 있습니다.
-
-# 참고 자료
-
-* See Also (참고 자료)
-    * [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html)
-    * [Bash scripting cheatsheet](https://devhints.io/bash)
-    * [Bash scripting tutorial for beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+## 참고 문서
+- [리디렉션 연산자에 대한 자세한 내용](https://ryanstutorials.net/linuxtutorial/piping.php)
+- [오류 처리에 대한 좋은 설명](https://www.baeldung.com/linux/bash-standard-error)
+- [stdout과 stderr에 대한 깊이있는 설명](https://guides.yooseunghui.net/programming/bash-shell-scripting/chapter-output.html)

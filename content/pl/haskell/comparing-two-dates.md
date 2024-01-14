@@ -1,83 +1,44 @@
 ---
-title:    "Haskell: Porównywanie dwóch dat"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/comparing-two-dates.md"
+title:                "Haskell: Porównywanie dwóch dat"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Porównywanie dat jest częstym zadaniem w programowaniu, szczególnie gdy pracujemy z danymi, które są związane z czasem. W Haskellu istnieje wiele sposobów na porównywanie dat, a w tym artykule dowiesz się, jak to zrobić w sposób prosty i skuteczny.
+Porównywanie dwóch dat jest częstym problemem w programowaniu. Może to być przydatne w różnych aplikacjach, takich jak systemy rezerwacji, planowanie wydarzeń, czy generowanie raportów. W języku Haskell mamy dostęp do wielu narzędzi, które ułatwiają nam to zadanie.
 
 ## Jak to zrobić
 
-Pierwszym krokiem jest zaimportowanie modułu `Data.Time`:
+W Haskellu porównywanie dwóch dat jest bardzo proste. Najpierw musimy skonwertować daty na odpowiednią strukturę danych, na przykład ```Day```, a następnie wykorzystać funkcję ```compare```. Przykładowy kod wyglądałby mniej więcej tak:
 
 ```Haskell
 import Data.Time
+
+-- Definiujemy dwie daty
+firstDate = fromGregorian 2020 10 15
+secondDate = fromGregorian 2020 9 10
+
+-- Porównujemy dwie daty
+result = compare firstDate secondDate
+
+-- Wypisujemy rezultat porównania
+putStrLn (show result)
 ```
 
-Następnie, przyjrzyjmy się różnym sposobom na reprezentację daty w Haskellu. Możemy używać typu `Day`, który przechowuje datę w formacie rok-miesiąc-dzień, na przykład:
+Po wykonaniu tego kodu, powinniśmy zobaczyć w konsoli wartość ```GT```, co oznacza, że pierwsza data jest późniejsza niż druga. Ponadto, funkcja ```compare``` może zwrócić również wartości ```LT```, czyli pierwsza data jest wcześniejsza, oraz ```EQ```, gdy obie daty są identyczne.
 
-```Haskell
-let date1 = fromGregorian 2020 12 01 :: Day
-let date2 = fromGregorian 2020 11 30 :: Day
-```
+## Głębszy zanurzenie
 
-Możemy również używać typu `UTCTime`, który przechowuje datę i czas w formacie UTC, na przykład:
+Podczas porównywania dwóch dat w Haskellu, warto zwrócić uwagę na pewne szczegóły. Po pierwsze, funkcja ```compare``` jest bardzo ogólna i może porównać nie tylko daty, ale również inne typy danych, na przykład liczby czy napisy. Dlatego należy pamiętać o konwersji naszych dat na odpowiedni typ.
 
-```Haskell
-let dateTime1 = UTCTime (fromGregorian 2020 12 01) (secondsToDiffTime 0)
-let dateTime2 = UTCTime (fromGregorian 2020 11 30) (secondsToDiffTime 0)
-```
-
-Aby porównać daty, możemy używać operatorów porównania, takich jak `<`, `<=`, `>`, `>=`. Na przykład, aby sprawdzić, czy `date1` jest wcześniejsze niż `date2`, możemy napisać:
-
-```Haskell
-date1 < date2 -- zwróci True
-```
-
-Możemy również użyć funkcji `compare`, która zwraca wartość typu `Ordering` (Less, Equal lub Greater) w zależności od wyniku porównania. Na przykład:
-
-```Haskell
-compare date1 date2 -- zwróci LT
-```
-
-Aby uzyskać różnicę w czasie między dwoma datami, możemy użyć funkcji `diffDays`. Na przykład:
-
-```Haskell
-diffDays date1 date2 -- zwróci -1
-```
-
-## Deep Dive
-
-W Haskellu istnieje wiele funkcji i operacji, które możemy użyć do porównywania dat. Na przykład, możemy użyć funkcji `toGregorian` do konwersji daty `Day` na trójelementową tuplę z rokiem, miesiącem i dniem, na przykład:
-
-```Haskell
-toGregorian date1 -- zwróci (2020, 12, 01)
-```
-
-Możemy również użyć funkcji `diffUTCTime`, aby uzyskać różnicę w czasie między dwoma `UTCTime`. Na przykład:
-
-```Haskell
-diffUTCTime dateTime1 dateTime2 -- zwróci -86400 (w sekundach)
-```
-
-Inną przydatną funkcją jest `addDays`, która dodaje określoną liczbę dni do daty. Na przykład:
-
-```Haskell
-addDays 10 date1 -- zwróci 2020-12-11
-```
-
-W przypadku, gdy chcemy porównywać daty w różnych strefach czasowych, możemy użyć funkcji `zonedTimeToUTC`, aby przekonwertować datę w strefie czasowej na `UTCTime`, na przykład:
-
-```Haskell
-let zonedTime1 = ZonedTime (LocalTime (fromGregorian 2020 12 01) (TimeOfDay 12 0 0)) (hoursToTimeZone 1)
-zonedTimeToUTC zonedTime1 -- zwróci UTC 2020-12-01 11:00:00
-```
+Po drugie, warto zwrócić uwagę na to, że w języku Haskell daty są traktowane jako obiekty niemutowalne, czyli nie można zmienić wartości już wcześniej zdefiniowanej daty. W przypadku, gdy potrzebujemy porównać dwie daty i jedna z nich została zdefiniowana wcześniej, musimy wykorzystać odpowiednią funkcję, na przykład ```addDays```, aby dodać do niej określoną liczbę dni i otrzymać nowy obiekt daty.
 
 ## Zobacz także
 
-- Dokumentacja modułu Data.Time na stronie Hoogle: http://www.haskell.org/hoogle/?hoogle=Data.Time
-- Przykładowe projekty wykorzystujące operacje na datach w Haskellu: https://github.com/topics/haskell-date-time
+- [Dokumentacja języka Haskell](https://www.haskell.org/documentation/)
+- [Porównywanie typów danych w Haskellu](https://wiki.haskell.org/Type_compatibility_and_equality)
+- [Przykładowa implementacja porównywania dat w Haskellu](https://rosettacode.org/wiki/Compare_dates)

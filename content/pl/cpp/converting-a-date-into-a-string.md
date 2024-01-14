@@ -1,55 +1,56 @@
 ---
-title:    "C++: Konwertowanie daty na ciąg znaków"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/converting-a-date-into-a-string.md"
+title:                "C++: Konwersja daty na ciąg znaków"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwersja daty na ciąg znaków jest niezbędnym procesem w wielu aplikacjach, gdyż pomaga w wyświetlaniu czytelnego formatu daty dla użytkowników. Jest to również często wymagane przy przetwarzaniu danych wejściowych lub wyświetlaniu raportów. W tym blogu omówimy różne sposoby konwersji daty na string w języku C++.
+Często w programowaniu musimy konwertować różne typy danych, takie jak liczby, na tekstowe znaki. W tym przypadku, konwersja daty na ciąg znaków może być przydatna, gdy chcemy wyświetlić datę w czytelnej formie dla użytkownika lub zapisać ją w pliku tekstowym. W tym artykule dowiesz się, jak wykonać tę konwersję w języku C++.
 
 ## Jak to zrobić
 
- Istnieje wiele sposobów na dokonanie konwersji daty na ciąg znaków, ale w tym artykule skupimy się na dwóch najczęściej wykorzystywanych metodach: wykorzystanie biblioteki <ctime> oraz wykorzystanie biblioteki Boost.
+Aby przekonwertować datę na ciąg znaków w C++, użyjemy funkcji `strftime()` z biblioteki `ctime`. Oto przykładowy kod:
 
-Pierwsza metoda polega na wykorzystaniu funkcji z biblioteki <ctime> do zamiany daty na wartość typu time_t, a następnie wykorzystaniu funkcji strftime (znowu dostępnej w <ctime>) do sformatowania wartości time_t do wybranego przez nas formatu daty.
+```
+#include <iostream>
+#include <ctime>
 
-```c++
-#include <ctime> 
-#include <iostream> 
-
-int main() { 
-    time_t now = time(0); 
-    char buffer[80]; 
-    strftime(buffer, 80, "%d/%m/%Y", localtime(&now)); 
-    std::cout << buffer << std::endl; 
+int main()
+{
+    // Ustawienie aktualnej daty i czasu jako początkowej wartości
+    time_t now = time(0);
+    
+    // Utworzenie bufora do przechowywania wyniku konwersji
+    char buffer[80];
+    
+    // Przekonwertowanie daty do ciągu znaków i zapisanie jej w buforze
+    strftime(buffer, sizeof(buffer), "%d.%m.%Y", localtime(&now));
+    
+    // Wyświetlenie skonwertowanej daty
+    std::cout << "Dzisiejsza data to: " << buffer << std::endl;
+    
+    return 0;
 }
 ```
-
-Output: ```18/10/2021``` 
-
-Drugą metodą będzie wykorzystanie biblioteki Boost, która posiada wiele specjalistycznych narzędzi, w tym również do konwersji daty na string. Przy użyciu funkcji to_iso_extended_string z biblioteki Boost, można wygodnie skonwertować datę do wybranego przez nas formatu.
-
-```c++
-#include <boost/date_time.hpp> 
-#include <iostream> 
-
-int main() { 
-    boost::gregorian::date date(boost::gregorian::day_clock::local_day()); 
-    std::string date_string = boost::gregorian::to_iso_extended_string(date); 
-    std::cout << date_string << std::endl; 
-}
+**Wyjście:**
+```
+Dzisiejsza data to: 22.05.2021
 ```
 
-Output: ```2021-10-18``` 
+W powyższym przykładzie ustawiliśmy aktualną datę i czas jako początkową wartość, a następnie użyliśmy funkcji `strftime()` do skonwertowania daty do ciągu znaków w formacie "%d.%m.%Y", co oznacza dzień.miesiąc.rok. Możemy zmienić ten format według własnych preferencji, korzystając z różnych specyfikatorów dostępnych w tej funkcji.
 
 ## Deep Dive
 
-Konwersja daty na ciąg znaków może wydawać się prostym zadaniem, ale w rzeczywistości jest to proces wymagający od programisty dokładnej znajomości bibliotek i funkcji języka C++. W przypadku bardziej złożonych formatów daty, trzeba również brać pod uwagę ustawienia regionalne i różnice w sposobie wyświetlania dat dla różnych kultur.
+Funkcja `strftime()` przyjmuje trzy argumenty: bufor, maksymalny rozmiar bufora i formatowanie. Pierwszy argument to wskaźnik na bufor, do którego będzie zapisywana skonwertowana data. Drugi argument to maksymalny rozmiar bufora, który zapobiegnie przepełnieniu pamięci w przypadku dłuższego formatowania. Trzeci argument, czyli formatowanie, jest ciągiem znaków, które określają, w jakim formacie chcemy skonwertować datę. W tym formacie możemy używać różnych specyfikatorów, takich jak %d (dzień), %m (miesiąc) czy %Y (rok), aby dostosować wyjście do naszych potrzeb. Dokładny opis dostępnych specyfikatorów można znaleźć w dokumentacji języka C++.
 
-## Zobacz też
+Ważnym aspektem, o którym należy pamiętać przy konwersji daty do ciągu znaków, jest użycie funkcji `localtime()`, która konwertuje czas zapisany w formacie `time_t` na strukturę `tm`, zawierającą informacje o dacie i godzinie. Funkcja `localtime()` przyjmuje jako argument wskaźnik na czas i zwraca wskaźnik na strukturę `tm`, którą następnie możemy wykorzystać w konwersji do ciągu znaków.
 
-- [Przewodnik po bibliotece C++ <ctime>](https://pl.cppreference.com/w/cpp/header/ctime)
-- [Dokumentacja biblioteki Boost dla języka C++](https://www.boost.org/doc/libs/1_77_0/)
+## Zobacz również
+
+- [Dokumentacja języka C++ o funkcji `strftime()`](https://en.cppreference.com/w/cpp/chrono/c/strftime)
+- [Tutorial na temat manipulowania datami w C++](https://www.techiedelight.com/manipulating-dates-times-cpp/)
+- [Przykłady konwersji daty do ciągu znaków w C++](https://www.geeksforgeeks.org/cpp-program-convert-date-string/)

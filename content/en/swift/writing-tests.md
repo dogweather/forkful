@@ -1,44 +1,35 @@
 ---
-title:    "Swift recipe: Writing tests"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/writing-tests.md"
+title:                "Swift recipe: Writing tests"
+programming_language: "Swift"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-As developers, we all know the importance of writing tests for our code. It helps ensure that our code is functioning correctly and saves us from potential headaches in the future. In this blog post, we'll delve into the world of writing tests in Swift and understand the benefits it brings.
+Testing is an essential part of software development, and writing tests can save you a lot of time and effort in the long run. By catching bugs early on, you can prevent them from making it into your final product, resulting in a more high-quality and reliable codebase.
 
 ## How To
-
-To write tests in Swift, we'll need to create a separate target in our project with the ".test" extension. Let's name it "MyAppTests". Inside this target, we'll create a new Swift file and name it "MyAppTests.swift".
-
-Now, let's start writing our tests. We'll first need to import XCTest, which is the framework for writing tests in Swift. Then, we can start writing our test cases using the `XCTAssert` assertion functions.
-
-Below is an example of a test case that checks if a given array contains a specific element:
+Writing tests in Swift is relatively straightforward. First, create a new test target by going to File > New > Target and selecting "Test" under the category "iOS." Next, write your test function within the XCTestCase class, using the `XCTAssert` and `XCTAssertEqual` methods to check for expected results. For example:
 
 ```Swift
-import XCTest
-
-class MyAppTests: XCTestCase {
-  func testArrayContainsElement() {
-    let array = [1, 2, 3, 4]
-    XCTAssertTrue(array.contains(3))
-  }
+func testAddition() {
+    let result = addTwoNumbers(a: 2, b: 3)
+    XCTAssertEqual(result, 5, "The result should be 5")
 }
 ```
 
-We can also use `XCTAssertEqual` to check for specific values, `XCTAssertNil` to check for nil values, and many more assertion functions provided by XCTest. These tests will run automatically when we build our project, and we'll get a green or red indicator depending on the results.
+Once your test function is set up, you can run it by clicking the diamond icon next to the function name, or by pressing Command+U. If any of the assertions fail, the test will show as failed, indicating that there is a bug that needs to be fixed.
 
 ## Deep Dive
+There are a few best practices to keep in mind when writing tests in Swift. One of them is test-driven development (TDD), where you write the tests first before writing any production code. This approach helps ensure that your code is thoroughly tested and that all necessary functions are covered.
 
-In writing tests, we must make sure that the tests are independent and cover all possible scenarios. We can also use the `setUp` and `tearDown` functions to set up the environment and clean up after each test case, respectively.
+Another important aspect is test coverage, which measures the percentage of your code that is covered by tests. Ideally, you want to aim for a test coverage of 100% to ensure that all parts of your code are tested and functioning correctly.
 
-In addition, we should also make use of code coverage tools, such as Xcode's built-in coverage profiler, to see which parts of our code are tested and which are not. This helps us identify any missing test cases and ensure that our code is thoroughly tested.
+Additionally, consider using mocking frameworks like Quick and Nimble to simulate objects and behaviors in your tests. This can make testing complex code easier and more efficient.
 
 ## See Also
-
-- [Official XCTest Framework Documentation](https://developer.apple.com/documentation/xctest)
-- [An Introduction to Writing Unit Tests in Swift](https://www.raywenderlich.com/960290-an-introduction-to-writing-unit-tests-in-swift) 
-- [Code Coverage Tools for Swift](https://medium.com/@jamesrochabrun/ios-code-coverage-tools-259c74dd01da)
+- [Introduction to Unit Testing in Swift](https://www.raywenderlich.com/709-introduction-to-unit-testing-in-swift-with-xctest)
+- [Best Practices for iOS Unit Testing with TDD](https://www.toptal.com/ios/ios-unit-testing-with-tdd)
+- [10 Tips for iOS Unit Testing](https://medium.com/@jonathancrooke/10-tips-for-ios-unit-testing-33ad9f094a6d)

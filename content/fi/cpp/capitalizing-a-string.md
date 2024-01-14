@@ -1,66 +1,50 @@
 ---
-title:    "C++: Stringin kirjoittaminen isolla alkukirjaimella"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/capitalizing-a-string.md"
+title:                "C++: Merkkijonon muuttaminen isoin kirjaimin"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit käyttää aikaa ja vaivaa muuttamalla merkkijonon kirjaimet isoiksi? Eikö se ole vain kosmeettinen muutos? Vaikka se saattaa tuntua pieneltä ja merkityksettömältä, on olemassa joitain tilanteita, joissa isoiksi kirjainiksi muuttaminen voi olla hyödyllistä. Esimerkiksi käsitellessäsi käyttäjän syöttämää dataa, saatat haluta varmistaa, että annetut merkkijonot ovat kaikki samassa muodossa, jotta myöhemmin ei ilmene virheitä. Näin ollen, capitalizing voi auttaa sinua välttämään potentiaalisia ongelmia koodin suorituksessa.
+On monia syitä, miksi yksi saattaa haluta muuttaa merkkijonon ensimmäisen kirjaimen isoksi. Yksinkertaisimmillaan tämä voi olla pelkästään esteettinen valinta, mutta usein se on myös tarpeellista tietyn ohjelman tai sovelluksen toiminnan vuoksi.
 
-## Kuinka
+## Kuinka tehdä
 
-Tässä on esimerkki siitä, kuinka voit muuttaa merkkijonon sisältämät kirjaimet isoiksi kirjaimiksi C++:ssa:
+Merkinjonojen käsittely on perustavanlaatuinen osa ohjelmointia, ja niiden manipulointi tapahtuu monilla eri tavoilla. Tässä esittelemme yksinkertaisen esimerkin C++:lla merkkijonon ensimmäisen kirjaimen muuttamisesta isoksi:
 
 ```C++
 #include <iostream>
 #include <string>
-#include <locale>
 
-std::string capitalize(std::string str) {
-    // Luodaan olio, joka edustaa käytössä olevaa paikallistamista
-    std::locale loc;
-    
-    // Käydään läpi merkkijonon jokainen kirjain
-    for (size_t i = 0; i < str.length(); i++) {
-        
-        // Muutetaan kirjain isoksi kirjaimeksi käyttäen sijainnin mukana tulevaa paikallistamista
-        str[i] = std::toupper(str[i], loc);
-    }
-    
-    return str;
-}
+using namespace std;
 
-int main() {
-    // Kysytään käyttäjältä merkkijono
-    std::string input;
-    std::cout << "Anna merkkijono: ";
-    std::getline(std::cin, input);
+int main()
+{
+    string s = "esimerkki";
     
-    // Kutsutaan capitalize-funktiota ja tulostetaan palautettu merkkijono
-    std::cout << "Merkkijonon tulisi nyt olla isoilla kirjaimilla: " << capitalize(input) << std::endl;
+    // Muutetaan ensimmäinen kirjain isoksi
+    s[0] = toupper(s[0]);
+    
+    // Tulostetaan muokattu merkkijono
+    cout << s << endl;
     
     return 0;
 }
 ```
 
-**Tulostus:**
+Tämä ohjelma tulostaa "Esimerkki", mikäli ohjelmointikielesi on suunniteltu tuottamaan isoja kirjaimia. Jos käytät esimerkiksi Cia tai Sqla, tulee tulosteeseen "ESIMERKKI".
 
-```
-Anna merkkijono: Hei, Maailma!
-Merkkijonon tulisi nyt olla isoilla kirjaimilla: HEI, MAAILMA!
-```
+## Syvemmälle
 
-## Syvällinen sukellus
+Tähän mennessä olemme vain muuttaneet ensimmäistä kirjainta ja tulostaneet uudelleen muokatun merkkijonon. Mutta miten tämä muutos oikein tapahtuu?
 
-Kuten huomaat, tämä esimerkki käyttää `locale`-oliota paikallistamaan merkkijonon kirjaimet. Paikallistaminen määrittää, miten kulttuuri tai kieli käsittelee tiettyjä merkkejä, kuten aakkosia. Tämän avulla voit muuttaa kirjainkoot oikealla tavalla kulttuurista riippumatta.
-
-Paikallistaminen on tärkeää myös siksi, että se voi mahdollistaa muiden kirjoitusjärjestelmien, kuten kyrillisen tai kiinan, oikeanlaisen käsittelyn. Jos et käytä paikallistamista, saatat kohdata ongelmia esimerkiksi muuttaessaan merkkijonoja eri kirjoitusjärjestelmistä.
+Kun luodaan merkkijono eri ohjelmointikielillä, kuten C++:lla, se tallennetaan järjestelmään tavallisesti niin, että jokainen kirjain tallennetaan jonkun numeron perusteella. Esimerkiksi kirjain "a" saattaa vastata lukua 97. Joten kun haluamme muuttaa merkkijonon kirjainta, käytännössä muutamme vain kyseisen lukuarvon.
 
 ## Katso myös
 
-- ["[C++ String Case Conversion](https://www.tutorialspoint.com/cplusplus/cpp_strings_case_conversion.htm)" -sivusto](https://www.tutorialspoint.com/cplusplus/cpp_strings_case_conversion.htm)
-- ["C++ Strings" -esimerkki Cppreference.com-sivustolla](https://en.cppreference.com/w/cpp/string/basic_string)
-- ["Working With Strings in C++" -kirjoitus Guru99-sivustolla](https://www.guru99.com/cpp-string-processing.html)
+- [C++ opetusohjelma](https://www.ohjelmointiputka.net/opetusohjelmat/cpp-programmointi-opas)
+- [Stringin merkkijonon korvaaminen](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
+- [Stringin taulukon käyttö](https://www.geeksforgeeks.org/c-string-find-function/)

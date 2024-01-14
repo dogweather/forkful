@@ -1,44 +1,69 @@
 ---
-title:    "Ruby: 计算未来或过去的日期"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/calculating-a-date-in-the-future-or-past.md"
+title:                "Ruby: 未来或过去计算日期"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
-为什么我们要计算未来或过去的日期呢？这可能是因为我们需要在一个特定的日期做出决定，或者我们需要知道某个事件发生的具体日期。不管原因如何，计算日期的功能对于编程来说是非常有用的。
 
-## 怎么做
-要在Ruby中计算未来或过去的日期，我们需要使用Date类和它的相关方法。下面是一个简单的代码示例，我们将以当前日期为基础，计算一周后的日期，并将结果打印出来：
+计算未来或过去日期似乎是一个古老的编程问题，但它仍然是一个实用的技巧。无论是在编写日历应用程序还是在处理付款截止日期，计算日期是非常常见的需求。使用Ruby编程语言，我们可以轻松地解决这个问题。
+
+## 怎样做
+
+要计算未来或过去的日期，我们需要使用Ruby的`Date`类。首先，我们需要创建一个日期对象，指定日期的年份、月份和日。例如，如果我们想要计算5天后的日期，我们可以使用以下代码：
 
 ```Ruby
 require 'date'
-today = Date.today
-future_date = today + 7
-puts future_date
+
+today = Date.today # 获取今天日期
+future_date = today + 5 # 计算5天后的日期
+
+puts future_date # 输出：2019-12-31
 ```
 
-运行上面的程序，你将得到类似这样的输出：2019-02-18。我们也可以使用上面的代码来计算过去的日期，只需要改变“+”符号为“-”符号即可。
+温馨提示：`Date.today`方法用于获取当前日期。您也可以使用`Date.new(年份, 月份, 日)`方法手动创建日期对象。
+
+如果我们想要计算过去的日期，同样可以使用`-`运算符，例如：
+
+```Ruby
+require 'date'
+
+today = Date.today # 获取今天日期
+past_date = today - 10 # 计算10天前的日期
+
+puts past_date # 输出：2019-12-16
+```
+
+我们也可以使用其他方法来计算日期，例如`next_day`、`prev_day`、`next_month`等等。更多关于`Date`类的方法可以查阅官方文档。
 
 ## 深入探讨
-在计算日期时，我们需要考虑闰年、月份的天数等因素。例如，如果我们想要计算未来某个月的最后一天，我们可以使用下面的代码：
+
+使用Ruby计算日期还有更多有趣的用途，例如计算两个日期之间的天数：
 
 ```Ruby
 require 'date'
-today = Date.today
-future_date = today + 1.month
-last_day = future_date.end_of_month
-puts last_day
+
+future_date = Date.new(2020, 1, 10) # 创建一个未来日期对象
+today = Date.today # 获取今天日期
+
+days_remaining = (future_date - today).to_i # 计算剩余天数
+
+puts days_remaining # 输出：11
 ```
 
-这里的end_of_month方法会自动计算指定月份的最后一天，无论这个月份有多少天。
+您也可以使用`Date`类的`parse`方法来将日期字符串转换为日期对象，例如：
+
+```Ruby
+require 'date'
+
+future_date = Date.parse("2020-01-10") # 将日期字符串转换为日期对象
+```
 
 ## 参考资料
-- [Ruby日期计算教程](https://www.rubyguides.com/2015/03/ruby-date-time-tutorial/)
-- [Date类文档](https://ruby-doc.org/stdlib-2.6.1/libdoc/date/rdoc/Date.html)
-- [Ruby on Rails中的日期计算](https://guides.rubyonrails.org/active_support_core_extensions.html#time-and-date-calculations)
 
-## 参见
-- [Markdown教程](https://www.markdownguide.org/basic-syntax/)
-- [Markdown语法指南](https://ruby-china.org/wiki/markdown-syntax)（中文版）
+- 官方文档：https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html
+- 计算日期间隔：https://knavitkumar.blogspot.com/2018/06/ruby-date-manipulation-calculating-date.html
+- 使用`differnce`方法计算日期间隔：https://mathewsanders.com/sandbox/ormin-ruby-journey/ruby-tips-7-date-difference-in-days/

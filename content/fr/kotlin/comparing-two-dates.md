@@ -1,59 +1,80 @@
 ---
-title:    "Kotlin: Comparaison de deux dates"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/comparing-two-dates.md"
+title:                "Kotlin: Comparaison de deux dates"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
+Dans la programmation, il est souvent nécessaire de comparer deux dates. Que ce soit pour déterminer si une date est passée ou future, ou pour trier une liste de dates, la comparaison de dates est un outil essentiel pour tout développeur Kotlin. Dans cet article, nous allons expliquer comment comparer deux dates en utilisant le langage de programmation Kotlin.
 
-Comparer deux dates est une tâche courante dans la programmation, en particulier dans les applications de gestion de calendrier ou de réservation. Cela permet de vérifier si une date est antérieure, ultérieure ou égale à une autre, et peut être utile dans de nombreuses fonctions.
+## Comment faire
+Il existe plusieurs façons de comparer des dates en Kotlin, mais nous allons en explorer deux principales : en utilisant la classe `LocalDate` du package `java.time` et en utilisant des fonctions d'extension.
 
-## Comment Faire
+1. Comparaison avec la classe `LocalDate` :
 
-Pour comparer deux dates en Kotlin, vous pouvez utiliser la méthode `compareTo()` de la classe `LocalDate`. Voici un exemple de code pour comparer deux dates et afficher le résultat :
+Pour utiliser la classe `LocalDate`, nous devons l'importer dans notre fichier Kotlin :
 
-````Kotlin
-// Déclaration et initialisation des dates
-val date1 = LocalDate.of(2020, 5, 10)
-val date2 = LocalDate.of(2020, 5, 15)
+```Kotlin
+// Importer le package java.time
+import java.time.*
+```
 
-// Comparaison des dates
-val comparaison = date1.compareTo(date2)
+Ensuite, nous pouvons créer deux instances de la classe `LocalDate` et les comparer à l'aide de la méthode `compareTo()` :
 
-// Affichage du résultat
-println(comparaison) // Cela affichera -5 car la date 1 est antérieure à la date 2
-````
+```Kotlin
+// Créer deux instances de LocalDate
+val date1 = LocalDate.of(2021, 5, 1)
+val date2 = LocalDate.of(2022, 7, 15)
 
-Vous pouvez également utiliser les opérateurs `<` (inférieur à), `>` (supérieur à) et `==` (égal à) pour comparer les dates, comme dans l'exemple ci-dessous :
-
-````Kotlin
-// Déclaration et initialisation des dates
-val date1 = LocalDate.of(2020, 5, 10)
-val date2 = LocalDate.of(2020, 5, 15)
-
-// Comparaison avec l'opérateur < (inférieur à)
-if(date1 < date2) {
-    println("La date 1 est antérieure à la date 2")
+// Comparer les deux dates
+if (date1.compareTo(date2) < 0) {
+    println("$date1 est avant $date2")
+}
+else if (date1.compareTo(date2) > 0) {
+    println("$date1 est après $date2")
+}
+else {
+    println("$date1 et $date2 sont égales")
 }
 
-// Comparaison avec l'opérateur == (égal à)
-if(date1 == date2) {
-    println("Les deux dates sont égales")
+// Output : 2021-05-01 est avant 2022-07-15
+```
+
+2. Comparaison avec des fonctions d'extension :
+
+Kotlin permet également d'ajouter des fonctions d'extension à des classes existantes, ce qui est utile pour comparer des dates. Dans cet exemple, nous allons ajouter une fonction d'extension `isBefore()` à la classe `LocalDate` :
+
+```Kotlin
+// Ajouter une fonction d'extension pour comparer si une date est avant une autre
+fun LocalDate.isBefore(other: LocalDate): Boolean {
+    return this.year < other.year ||
+            (this.year == other.year && this.monthValue < other.monthValue) ||
+            (this.year == other.year && this.monthValue == other.monthValue && this.dayOfMonth < other.dayOfMonth)
 }
-````
 
-## Plongée en Profondeur 
+// Utiliser la fonction d'extension pour comparer les dates
+val date1 = LocalDate.of(2021, 5, 1)
+val date2 = LocalDate.of(2022, 7, 15)
 
-Il existe une différence entre la méthode `compareTo()` et les opérateurs de comparaison pour les dates en Kotlin. La méthode `compareTo()` utilise le concept de comparaison d'ordre ou de tri, tandis que les opérateurs de comparaison comparent les dates de manière absolue.
+if (date1.isBefore(date2)) {
+    println("$date1 est avant $date2")
+}
+else if (date1.isAfter(date2)) {
+    println("$date1 est après $date2")
+}
+else {
+    println("$date1 et $date2 sont égales")
+}
 
-De plus, il est important de noter que les dates sont comparées en fonction de leur ordre chronologique et non pas de leur format ou de leur chaîne de caractères correspondante. Par exemple, la date "10/05/2020" sera considérée comme égale à "2020-05-10" lors de la comparaison.
+// Output : 2021-05-01 est avant 2022-07-15
+```
 
-## Voir Aussi 
+## Plongée en profondeur
+En utilisant la classe `LocalDate` et les fonctions d'extension, il est facile de comparer des dates en Kotlin. Mais il est important de noter que la comparaison est basée sur l'ordre naturel des dates, c'est-à-dire que la date la plus petite sera celle qui se situe avant dans le temps. De plus, la classe `LocalDate` utilise le calendrier grégorien, ce qui signifie que les règles de calendrier telles que les années bissextiles sont prises en compte lors de la comparaison.
 
-Pour en savoir plus sur les dates en Kotlin, vous pouvez consulter les ressources suivantes :
-
-- Documentation officielle de Kotlin sur les dates : https://kotlinlang.org/docs/reference/datetime.html
-- Tutoriel sur la manipulation des dates en Kotlin : https://www.geeksforgeeks.org/kotlin-date-manipulation/
-- Exemples pratiques pour gérer les dates en Kotlin : https://dev.to/kotlin/examples-of-kotlin-datetime-manipulations-4okc
+## Voir aussi
+- [Documentation officielle de la classe `LocalDate`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/)
+- [Documentation officielle sur les fonctions d'extension en Kotlin](https://kotlinlang.org/docs/reference/extensions.html)

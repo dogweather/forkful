@@ -1,39 +1,51 @@
 ---
-title:    "PHP recipe: Finding the length of a string"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/php/finding-the-length-of-a-string.md"
+title:                "PHP recipe: Finding the length of a string"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Have you ever needed to find out the length of a string in your PHP code? Maybe you need to validate a user input or manipulate a string in some way. Knowing the length of a string is crucial in these situations, making it a useful skill to have in your PHP programming arsenal.
+
+When working with strings in PHP, it is often necessary to determine the length of a string. This can be useful for various reasons, such as validating user input or manipulating the string in a specific way. In this blog post, we will explore how to find the length of a string in PHP.
 
 ## How To
-To find the length of a string in PHP, we can use the built-in function `strlen()`. This function takes in a string as an argument and returns the number of characters in that string. Let's take a look at an example:
+
+Finding the length of a string in PHP is a simple task and can be achieved in a few different ways.
+
+First, we can use the built-in `strlen()` function. This function takes a string as an argument and returns the length of the string as an integer. For example:
 
 ```PHP
-$input = "Hello World";
-echo strlen($input);
+$str = "Hello world!";
+echo strlen($str); // Outputs: 12
 ```
 
-The output of this code would be `11`, since there are 11 characters in the string "Hello World". Simple, right?
-
-But what if we want to find the length of a string that contains special characters or is in a different language? In that case, we need to take into account the encoding of the string. Thankfully, the `mb_strlen()` function exists for this purpose. This function takes in a string and an optional parameter for the encoding, and it returns the length of the string, taking into account the specified encoding. Here's an example:
+Another way to find the length of a string is by using the `mb_strlen()` function. This function is similar to `strlen()`, but it takes into account multibyte characters. This is especially important if you are working with different languages that use multibyte characters, such as Chinese or Japanese. Here's an example:
 
 ```PHP
-$input = "こんにちは";
-echo mb_strlen($input, 'UTF-8');
+$str = "こんにちは、世界！";
+echo mb_strlen($str); // Outputs: 7
 ```
 
-The output of this code would be `5`, as the `mb_strlen()` function correctly counts the number of characters in the Japanese greeting.
+Lastly, we can also use the `str_split()` function to split a string into an array, and then use the `count()` function to determine the length of the array. This may be useful if you need to manipulate the string further after finding its length. Here's an example:
+
+```PHP
+$str = "Lorem ipsum dolor sit amet";
+$str_arr = str_split($str);
+
+echo count($str_arr); // Outputs: 26
+```
 
 ## Deep Dive
-Now, for those of you who are curious, here's a deeper explanation of how `strlen()` and `mb_strlen()` work under the hood. In PHP, strings are represented as arrays of bytes, with each byte corresponding to a single character. The `strlen()` function simply counts the number of bytes in a string, which may not always reflect the actual number of characters, especially if the string contains multibyte characters. This is where the `mb_strlen()` function becomes useful, as it takes the encoding into consideration and correctly counts the number of characters in a string.
 
-Additionally, if you're working with UTF-8 strings, you may come across the need to count the number of grapheme clusters (a combination of characters that form a single visual unit) in a string. In this case, the `grapheme_strlen()` function can be used.
+It's important to remember that the length of a string is determined by the number of characters, not words. This means that spaces and punctuation marks are also counted as characters.
+
+Additionally, the `strlen()` and `mb_strlen()` functions count the bytes in a string, which can affect the length if you have special characters or symbols in the string. In this case, it may be useful to use the `mb_strlen()` function to accurately determine the length.
 
 ## See Also
-- [PHP Manual: strlen() function](https://www.php.net/manual/en/function.strlen.php)
-- [PHP Manual: mb_strlen() function](https://www.php.net/manual/en/function.mb-strlen.php)
-- [PHP Manual: grapheme_strlen() function](https://www.php.net/manual/en/function.grapheme-strlen.php)
+
+- [PHP Manual: String Functions](https://www.php.net/manual/en/ref.strings.php)
+- [w3schools: PHP Strings](https://www.w3schools.com/php/php_string.asp)
+- [GeeksforGeeks: Find length of a string in PHP](https://www.geeksforgeeks.org/how-to-find-the-length-of-a-string-in-php/)

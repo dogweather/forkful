@@ -1,60 +1,35 @@
 ---
-title:    "C: Generowanie losowych liczb"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/generating-random-numbers.md"
+title:                "C: Generowanie losowych liczb"
+programming_language: "C"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego generowanie liczb losowych jest ważne
 
-Generowanie losowych liczb jest ważną częścią programowania w języku C. Losowe liczby są wykorzystywane w wielu aplikacjach, takich jak gry, symulacje, testowanie i wiele innych. W tym artykule dowiesz się jak wygenerować losowe liczby w Twoim programie w języku C.
+Generowanie liczb losowych jest ważną częścią programowania, ponieważ może być używane w różnych celach. Na przykład, może być wykorzystywane w grach wideo do losowego generowania przeciwników lub przedmiotów, w kryptografii do generowania kluczy szyfrujących, w testowaniu jednostkowym do generowania różnych wejść, a także w symulacjach naukowych. Dlatego też, umiejętność generowania liczb losowych jest ważna dla każdego programisty.
 
 ## Jak to zrobić
 
-Istnieje kilka sposobów na wygenerowanie losowych liczb w języku C. Jednym z nich jest użycie funkcji `rand()` w połączeniu z funkcją `srand()`, która ustawia ziarno dla generatora liczb pseudolosowych. Poniżej znajduje się kod, który wygeneruje 10 losowych liczb z zakresu od 1 do 10:
+Aby wygenerować liczbę losową w języku C, należy użyć funkcji `rand()` oraz `srand()` z biblioteki standardowej `stdlib.h`. Poniżej znajduje się przykładowy kod, który wygeneruje 10 liczb losowych z zakresu od 1 do 100 i wyświetli je na ekranie:
 
 ```C
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
-int main() {
-    // ustawienie ziarna dla generatora liczb pseudolosowych
-    srand(time(0));
+int main()
+{
+    // ustawienie ziarna generatora pseudo-losowego
+    srand(time(NULL));
 
-    for (int i = 0; i < 10; i++) {
-        // wygenerowanie losowej liczby z zakresu 1-10 i wyświetlenie jej na ekranie
-        int random_number = rand() % 10 + 1; 
-        printf("%d ", random_number);
-    }
-
-    return 0;
-}
-
-```
-
-Przykładowy wynik:
-
-```
-7 2 9 4 1 8 10 5 3 6
-```
-
-Możesz również użyć funkcji `random()` z biblioteki `stdlib.h` do generowania liczb pseudolosowych. Metoda ta działa na podobnej zasadzie jak `rand()`, ale może dawać lepsze wyniki w niektórych przypadkach. Poniżej znajduje się przykładowy kod wykorzystujący `random()`:
-
-```C
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-int main() {
-    // ustawienie ziarna dla generatora liczb pseudolosowych
-    srand(time(0));
-
-    for (int i = 0; i < 10; i++) {
-        // wygenerowanie losowej liczby z zakresu 1-10 i wyświetlenie jej na ekranie
-        int random_number = (random() % 10) + 1; 
-        printf("%d ", random_number);
+    int i;
+    for(i = 0; i < 10; i++)
+    {
+        // wygenerowanie liczby losowej i wyświetlenie jej na ekranie
+        int random = rand() % 100 + 1;
+        printf("%d\n", random);
     }
 
     return 0;
@@ -64,19 +39,32 @@ int main() {
 Przykładowy wynik:
 
 ```
-8 1 7 3 9 2 10 4 5 6
+56
+78
+2
+93
+24
+42
+17
+99
+10
+89
 ```
 
-## Deep Dive
+## Głębsze zagadnienia
 
-Generowanie liczb pseudolosowych jest w rzeczywistości generowaniem ciągu liczb w sposób deterministyczny, tzn. na podstawie określonych reguł. W przypadku funkcji `rand()` i `random()` używana jest metoda zwana liniowym kongruencji. Jest to prosta i szybka metoda, ale może dawać nieco przewidywalne wyniki, zwłaszcza gdy nie jest używana w odpowiedni sposób.
+Podczas generowania liczb losowych warto pamiętać, że są one generowane w sposób pseudo-losowy, co oznacza, że można przewidzieć kolejną liczbę w oparciu o poprzednie. Dlatego też, ziarno generatora powinno być ustawione za pomocą funkcji `srand()` w oparciu o zmieniający się czas lub inne wartości, aby uzyskać bardziej losowe wyniki.
 
-Aby uzyskać lepszą losowość, można wykorzystać bardziej złożone metody generowania liczb pseudolosowych, takie jak generator Mersenne Twister czy KISS (Keep It Simple Stupid) RNG. Te metody wymagają jednak dodatkowych bibliotek i są bardziej skomplikowane w użyciu.
+Kolejnym ważnym aspektem jest wybór odpowiedniego algorytmu generującego. Biblioteka `stdlib.h` używa standardowego algorytmu nazywanego "linear congruential generator" do generowania liczb losowych, ale istnieją lepsze i bezpieczniejsze alternatywy, takie jak Mersenne Twister czy Xorshift.
 
-## Zobacz także
+Warto również zwrócić uwagę na rozkład wygenerowanych liczb. Domyslnie, funkcja `rand()` zwraca liczby z rozkładu jednostajnego, co oznacza, że każda liczba ma taką samą szansę na wylosowanie. W niektórych przypadkach może jednak być potrzebny inny rodzaj rozkładu, na przykład normalny. Wtedy należy użyć odpowiednich funkcji z biblioteki `math.h` do przekształcenia liczby losowej z jednego rozkładu na drugi.
 
-- [Dokumentacja funkcji rand()](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
-- [Dokumentacja funkcji random()](https://www.tutorialspoint.com/c_standard_library/c_function_random.htm)
-- [Metoda liniowego kongruencji](https://pl.wikipedia.org/wiki/Generator_liczb_pseudolosowych#Metoda_liniowego_kongruencji)
-- [KISS RNG](https://pl.wikipedia.org/wiki/KISS_(Generator_liczb_pseudolosowych))
-- [Generator Mersenne Twister](https://pl.wikipedia.org/wiki/Generator_Mersenne_Twister)
+## Zostańmy w kontakcie
+
+Teraz, gdy znasz podstawy generowania liczb losowych w języku C, możesz je wykorzystać w swoich projektach. Pamiętaj jednak o ustawianiu ziarna generatora w sposób bezpieczny i wybieraniu odpowiedniego algorytmu i rozkładu dla swoich potrzeb.
+
+Zobacz także:
+
+- [Dokumentacja funkcji rand() w języku C](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
+- [Alternatywne algorytmy generujące w C](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+- [Wyjaśnienie podstawowych koncepcji generowania liczb losowych](https://www.eetimes.com/basics-of-random-number-generation/)

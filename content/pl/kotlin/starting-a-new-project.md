@@ -1,54 +1,56 @@
 ---
-title:    "Kotlin: Rozpoczynanie nowego projektu"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/starting-a-new-project.md"
+title:                "Kotlin: Rozpoczynanie nowego projektu"
+programming_language: "Kotlin"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto zacząć nowy projekt?
 
-Jednym z głównych powodów, dla których warto zacząć nowy projekt w języku Kotlin, jest to, że jest on szczególnie przyjazny dla programistów. Umożliwia on szybkie i efektywne pisanie aplikacji, co sprawia, że jest popularnym wyborem wśród programistów na całym świecie.
+Nie ma nic bardziej ekscytującego niż rozpoczynanie nowego projektu! Może chcesz stworzyć aplikację mobilną, strukturę danych lub prosty skrypt - niezależnie od tego, każdy nowy projekt w Kotlinie jest ekscytującym wyzwaniem! Samo programowanie w Kotlinie jest wygodne i intuicyjne, a jego nowoczesna składnia i narzędzia pozwalają na szybkie tworzenie aplikacji. Nie czekaj dłużej i zacznij swoją przygodę z nowym projektem w Kotlinie już dziś!
 
-## Jak to zrobić
+## Jak zacząć?
 
-Dla osób zaznajomionych z językiem Java, przystosowanie się do programowania w Kotlinie powinno być wyjątkowo łatwe. Najlepszym sposobem na zapoznanie się z tym językiem jest zapisanie kilku prostych przykładów kodu. Oto przykładowy kod, który wyświetli napis "Witaj świecie!" w konsoli:
+Pierwszym krokiem w tworzeniu nowego projektu w Kotlinie jest zainstalowanie odpowiedniego oprogramowania. Wymagane jest pobranie i zainstalowanie JDK (Java Development Kit), a następnie Kotlina jako języka programowania. Po zainstalowaniu możesz wybrać swoje ulubione narzędzie, takie jak IntelliJ IDEA, Android Studio lub inne, aby rozpocząć pracę.
 
-```Kotlin fun main(args: Array<String>) { println("Witaj świecie!") } ```
+Zanim zaczniesz pisać kod, warto zapoznać się z podstawową składnią Kotlina. Poniżej przedstawione są przykłady kodu, które pomogą Ci zacząć:
 
-Uruchomienie tego kodu powinno spowodować wyświetlenie następującego wyniku:
+```kotlin
+// Przykład prostej funkcji, która dodaje dwie liczby
+fun dodaj(x: Int, y: Int): Int {
+    return x + y
+}
 
-`Witaj świecie!`
+// Wywołanie funkcji i wyświetlenie wyniku
+val wynik = dodaj(5, 3)
+println(wynik) // Output: 8
 
-Kotlin jest również wyposażony w wiele funkcji, które są bardzo przydatne dla programistów. Na przykład można wykorzystać funkcję `when` do wykonywania różnych działań w zależności od wartości zmiennej:
+// Przykład definicji klasy i tworzenia obiektu
+class Osoba(val imie: String, val nazwisko: String) {
+    fun przedstawSie() {
+        println("Cześć, jestem $imie $nazwisko")
+    }
+}
 
-```Kotlin 
-fun main(args: Array<String>) { 
-    var ocena = 5 
-    
-    when (ocena) { 
-        1 -> println("Niedostateczny") 
-        2 -> println("Dopuszczający") 
-        3 -> println("Dostateczny") 
-        4 -> println("Dobry") 
-        5 -> println("Bardzo dobry") 
-        6 -> println("Celujący") 
-    } 
-} 
+val osoba = Osoba("Adam", "Kowalski")
+osoba.przedstawSie() // Output: Cześć, jestem Adam Kowalski
 ```
 
-Wynikiem tego kodu będzie:
+Zobaczysz, że składnia Kotlina jest czytelna i przypomina język angielski, co sprawia, że jest łatwy w użyciu i szybki do nauki. Ponadto, Kotlin jest w pełni interoperacyjny z Javą, co oznacza, że możesz używać istniejących bibliotek i frameworków Javy w swoim projekcie.
 
-`Bardzo dobry`
+## Głębsze zanurzenie
 
-## Deep Dive
+Tworzenie projektów w Kotlinie może być bardzo różnorodne, w zależności od twojego celu. Możesz używać Kotlina do tworzenia aplikacji mobilnych, aplikacji desktopowych, aplikacji serwerowych, czy też używać go do programowania struktur danych lub algorytmów. W zależności od wybranego celu, musisz dostosować swoje podejście.
 
-Kotlin jest językiem wieloplatformowym, co oznacza, że ​​może być używany do tworzenia aplikacji na różne platformy, takie jak Android, iOS, Windows czy Linux. Ponadto, język ten jest w pełni kompatybilny z językiem Java, dzięki czemu można w prosty sposób łączyć istniejący kod napisany w Javie z nowymi projektami w Kotlinie.
+Jeśli tworzysz aplikację mobilną, możesz wybrać framework Android lub korzystać z Kotlin Multiplatform, który pozwoli Ci tworzyć aplikację dla różnych platform, takich jak Android, iOS, czy też web. Natomiast jeśli tworzysz aplikację desktopową, może przydać Ci się biblioteka Kotlin/Native umożliwiająca kompilację kodu na natywny kod maszynowy.
 
-Istnieje również wiele rozszerzeń i bibliotek, które uczynią programowanie w Kotlinie jeszcze prostszym i przyjemniejszym. Na przykład, popularna biblioteka Anko oferuje wiele gotowych rozwiązań dla często powtarzających się zadań, jak na przykład tworzenie interfejsów użytkownika w aplikacjach Android.
+Pamiętaj również, aby korzystać z dokumentacji Kotlina i wspólnoty programistów, jeśli potrzebujesz pomocy lub inspiracji. Razem możemy stworzyć piękne i funkcjonalne projekty w Kotlinie!
 
-## Zobacz także
+# Zobacz również
 
-- Oficjalna strona języka Kotlin (https://kotlinlang.org/)
-- Dokumentacja języka Kotlin (https://kotlinlang.org/docs/)
-- Przewodnik po języku Kotlin dla początkujących (https://kotlinlang.org/docs/tutorials/getting-started.html)
+- Oficjalna strona Kotlina: https://kotlinlang.org/
+- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/
+- Kotlin Academy - blog o programowaniu w Kotlinie: https://blog.kotlin-academy.com/
+- Reddit Kotlin - społeczność programistów Kotlina: https://www.reddit.com/r/Kotlin/

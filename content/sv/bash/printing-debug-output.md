@@ -1,57 +1,85 @@
 ---
-title:    "Bash: Utskrift av felsökningsutdata"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/bash/printing-debug-output.md"
+title:                "Bash: Utskrift av felsökningsutdata"
+programming_language: "Bash"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-När man utvecklar programvara, stöter man ofta på problem som gör det svårt att förstå vad som händer i koden. I dessa situationer kan det vara till stor hjälp att lägga till debugutskrifter i ens skript för att få en bättre förståelse för hur programmet beter sig. Debugutskrifter kan också hjälpa till att identifiera eventuella fel och problem i koden.
+Att skriva ut debuggutdata är ett användbart verktyg för att felsöka och förbättra Bash-programmeringserfarenhet. Genom att skriva ut variabler, värden och steg i ditt program kan du enkelt följa flödet och hitta eventuella fel.
 
 ## Hur man gör
 
-För att skriva debugutskrifter i Bash, kan man använda kommandot "echo". Detta kommando skriver ut en angiven sträng till terminalen. Här är ett enkelt exempel:
+Det finns flera sätt att skriva ut debuggutdata i Bash. Det enklaste sättet är att använda kommandot "echo" för att skriva ut en variabel eller ett meddelande. Till exempel:
 
 ```Bash
-# Skriver ut "Hello World"
-echo "Hello World"
+#!/bin/bash
+namn="Emma"
+echo "Hej $namn!"
 ```
 
-Man kan också använda variabler i utskrifterna för att visa värden som ändras under körningen. Till exempel:
+Detta kommer att skriva ut meddelandet "Hej Emma!" när programmet körs.
+
+För mer detaljerad debuggutdata kan du använda kommandot "set -x" för att aktivera "trace mode". Detta kommer att skriva ut varje steg i ditt program tillsammans med dess värden. Till exempel:
 
 ```Bash
-# Deklarerar en variabel och tilldelar den ett värde
-name="John"
-# Skriver ut "Hej John"
-echo "Hej $name"
+#!/bin/bash
+set -x
+namn="Emma"
+ålder=25
+echo "$namn är $ålder år gammal"
 ```
 
-Det är också möjligt att skriva ut hela variabler eller resultatet av kommandon. Detta görs genom att lägga till ett dollar-tecken ($). Till exempel:
+Detta kommer att skriva ut:
 
-```Bash
-# Skriver ut aktuell mapp där skriptet körs
-echo "Nuvarande mapp: $PWD"
+```
++ namn=Emma
++ ålder=25
++ echo 'Emma är 25 år gammal'
+Emma är 25 år gammal
 ```
 
-Slutligen, om man vill att utskriften ska visas i en särskild färg för att enklare kunna särskilja den från andra utskrifter, kan man använda "printf" kommandot. Detta kommando ger mer kontroll över utskriften genom att man kan formatera den efter behov. Här är ett exempel:
+Det är också möjligt att skriva ut ett meddelande för att identifiera viktiga steg i ditt program. Till exempel:
 
 ```Bash
-# Skriver ut "Hello" i röd text
-printf "\033[31m Hello \033[0m \n"
+#!/bin/bash
+namn="Emma"
+echo "Följande kod visar värdet av variabeln namn:"
+echo "Namn: $namn"
+```
+
+Detta kommer att skriva ut:
+
+```
+Följande kod visar värdet av variabeln namn:
+Namn: Emma
 ```
 
 ## Djupdykning
 
-Att använda debugutskrifter i Bash kan vara mycket användbart för att få en bättre förståelse för hur ens program beter sig. Det kan också hjälpa till att identifiera eventuella fel och problem i koden. Men det är viktigt att använda debugutskrifter på ett effektivt sätt för att undvika att överflödiga utskrifter förvirrar och överväldigar användaren.
+Att skriva ut debuggutdata kan också vara användbart för att kontrollera och jämföra värden. Till exempel, om du har en loop som ska öka ett nummer med ett visst värde varje gång, kan du skriva ut det ökade värdet för att se om det är korrekt.
 
-Ett tips är att använda villkorliga utskrifter med hjälp av "if" eller "case" kommandot för att bara visa utskrifter när ett visst villkor är uppfyllt. Detta minskar mängden utskrifter som visas och gör det enklare att hitta relevant information.
+En annan användbar funktion är att använda "printf" för att skriva ut format och värden. Detta ger dig möjlighet att kontrollera och formatera hur din debuggutdata visas. Till exempel:
 
-Man kan också kombinera debugutskrifter med andra kommandon som "trap" för att få ännu mer information om ett visst programutförande. "Trap" kommandot används för att fånga och hantera signaler som skickas till skriptet. Genom att använda det tillsammans med en debugutskrift, kan man få en överblick av precis när och på vilket sätt signalen uppstår.
+```Bash
+#!/bin/bash
+number1=5
+number2=10
+summa=$(( $number1 + $number2 ))
+printf "Summan av %s och %s är %s\n" "$number1" "$number2" "$summa"
+```
 
-## Se även 
+Detta kommer att skriva ut:
 
-- [Bash Guide for Beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
-- [Man Pages for echo](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Printing-a-Prompt)
-- [Bash Hackers Wiki on Debugging](http://wiki.bash-hackers.org/scripting/debuggingtips)
+```
+Summan av 5 och 10 är 15
+```
+
+## Se även
+
+- [Bash referenshandbok](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash Guide för nybörjare](http://tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [10 Bash Tips och Tricks för att spara tid och förbättra produktiviteten](https://www.tecmint.com/best-linux-bash-tips-and-tricks/)

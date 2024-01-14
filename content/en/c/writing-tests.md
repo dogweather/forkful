@@ -1,92 +1,76 @@
 ---
-title:    "C recipe: Writing tests"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/writing-tests.md"
+title:                "C recipe: Writing tests"
+programming_language: "C"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Writing tests may seem like a daunting task, especially for new programmers. But trust me, it's worth the effort. Testing your code not only helps ensure that your program is functioning correctly, it also saves you time and headaches in the long run.
+## Why 
 
-## How To
-To write tests in C, all you need is a good understanding of the language, a compiler, and a testing framework. Let's take a look at an example using the popular CUnit testing framework.
+Testing in programming is often seen as a tedious and time-consuming task, but it is an essential part of the development process. It helps to catch bugs and errors early on, reducing the chances of them causing problems in the future. Writing tests also allows for easier and more efficient debugging of code, leading to a more robust and reliable program.
 
-First, we need to include the necessary headers and define our test function:
+## How To 
+
+Writing tests in C programming language can be done using various frameworks such as Unity, Check, or CUnit. In this blog post, we will focus on using Unity, a popular unit testing framework for C.
+
+To get started, first, create a C file named "test.c" and include the necessary Unity header file.
+
 ```C
-#include <CUnit/CUnit.h> // include CUnit header
-#include <CUnit/Basic.h> // include CUnit basic mode header
+#include "unity.h"
+```
 
-void test_function(void)
-{
+Next, we create a function using the `TEST()`macro provided by Unity, which will be our test case. The function takes two parameters - the name of the test case and the setup function.
+
+```C
+TEST(test_case_name, setup_function) {
     // test code goes here
 }
 ```
-Next, we need to initialize the CUnit framework and register our test function:
+
+Inside the test function, we can use various Unity assertion macros to verify different conditions. For example, the `UNITY_ASSERT_EQUAL` macro can be used to check if two values are equal.
+
 ```C
-int main(void)
-{
-    // initialize CUnit
-    CU_initialize_registry();
+UNITY_ASSERT_EQUAL(expected, actual);
+```
 
-    // register the test function
-    CU_pSuite suite = CU_add_suite("Test Example", NULL, NULL);
-    CU_add_test(suite, "test_func", test_function);
+After writing all the necessary assertions, we use the `UNITY_END()` macro to indicate the end of the test case.
 
-    // run all tests
-    CU_basic_run_tests();
+```C
+TEST(test_case_name, setup_function) {
+    // test code goes here
+    UNITY_END();
+}
+```
 
-    // cleanup CUnit
-    CU_cleanup_registry();
+Finally, we tie all our test cases together in the `main()` function by calling `UNITY_BEGIN()` and `UNITY_END()`.
+
+```C
+int main(void) {
+    UNITY_BEGIN();
+    RUN_TEST(test_case_name);
+    // add more test cases here
+    UNITY_END();
 
     return 0;
 }
 ```
-Finally, we write our test code within the test function and use CUnit's assertion functions to check for expected results:
-```C
-void test_function(void)
-{
-    // test code
-    int result = 2 + 2;
 
-    // assert expected result
-    CU_ASSERT_EQUAL(result, 4); // this test will pass
+To run the tests, compile the file and run the executable. The output will display the number of tests run, passed, and failed, along with the name of each test case and their result.
 
-    // another test
-    char str[10];
-    strcpy(str, "Hello World!");
+## Deep Dive 
 
-    // assert expected result
-    CU_ASSERT_STRING_EQUAL(str, "Hello World!"); // this test will also pass
-}
-```
-After running our program, we get an output like this:
-```bash
-CUnit - A Unit testing framework for C - Version 2.1-3
-http://cunit.sourceforge.net/
+Writing effective tests requires careful planning and consideration. One of the key principles of writing tests is to focus on testing the functionality or behavior of individual units or components rather than the entire program. This allows for easier identification and isolation of bugs and errors.
 
-Suite: Test Example
-  Test name: test_func...passed
-  Test name: test_func2...passed
+Another important aspect of writing tests is to ensure that they are independent and can be run in any order. This helps in avoiding any unexpected side effects or dependencies between test cases.
 
-Run Summary:    Type  Total    Ran Passed Failed Inactive
-              suites      1      1    n/a      0        0
-               tests      2      2      2      0        0
-             asserts      2      2      2      0      n/a
+There are various types of tests that can be written, such as unit tests, integration tests, and regression tests. Each type serves a different purpose and should be used accordingly in the development process.
 
-Elapsed time =    0.000 seconds
-```
+In addition to writing tests, it is also crucial to continuously run and update them as the codebase evolves and changes. This ensures that new code additions do not break existing functionality.
 
-## Deep Dive
-Writing effective tests involves understanding different types of testing, such as unit testing and integration testing, and knowing how to write tests that cover all possible scenarios.
+## See Also 
 
-Unit testing involves testing individual units or components of your code in isolation to ensure they behave as expected. This can be achieved using techniques like stubs and mocking, which simulate the behavior of external dependencies.
-
-Integration testing involves testing how different units work together to ensure the overall functionality of your code is correct. This type of testing is more complex and usually requires a testing framework that can handle multiple units.
-
-When writing tests, it is important to consider both positive and negative test cases to cover all possible scenarios and catch any potential errors. It is also helpful to write tests alongside your code as you develop, so that any bugs can be caught and fixed early on.
-
-## See Also
-- [CUnit official documentation](http://cunit.sourceforge.net/)
-- [Introduction to Unit Testing in C using CUnit](https://www.youtube.com/watch?v=mZZ-jJcJ2yU)
-- [Writing a Simple CUnit Test in C](https://eromoe.com/til/c/cunit-intro-01/)
+- [Unity - A unit testing framework for C](https://github.com/ThrowTheSwitch/Unity)
+- [Check - A unit testing framework for C](https://libcheck.github.io/check/)
+- [CUnit - A unit testing framework for C](http://cunit.sourceforge.net/)

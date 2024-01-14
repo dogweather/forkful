@@ -1,61 +1,63 @@
 ---
-title:    "Haskell: Skriving av tester"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/haskell/writing-tests.md"
+title:                "Haskell: Å skrive tester"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Why
 
-Hvorfor skrive tester?
+Det å skrive tester er en viktig del av enhver programmeringsjobb. Det hjelper med å sikre at koden fungerer som den skal, og reduserer risikoen for feil i produksjon. Dette kan spare både tid og penger i det lange løp.
 
-Å skrive tester er en viktig del av utviklingsprosessen for enhver programvare. Det tillater programmerere å sikre at koden deres fungerer som forventet og reduserer risikoen for feil i produksjon. Ved å skrive tester kan man også enklere finne og fikse eventuelle feil, og det kan bidra til å forbedre kvaliteten på koden.
+## How To
 
-## Hvordan
-
-Å skrive tester i Haskell er enkelt og effektivt. Det finnes ulike biblioteker og rammeverk tilgjengelig for å skrive tester, men vi skal fokusere på å bruke HUnit, et populært rammeverk for enhetstesting.
-
-Først må du importere HUnit biblioteket øverst i koden din:
+For å skrive tester i Haskell, kan du bruke et testbibliotek som HUnit eller QuickCheck. La oss se på et eksempel på hvordan man kan skrive en enkel enhetstest med HUnit:
 
 ```Haskell
+module Main where
+
 import Test.HUnit
+
+-- Tester at summen av to tall er riktig
+test_sum :: Test
+test_sum = TestCase $ assertEqual "Summen av 2 og 3 skal være 5" 5 (2+3)
+
+main :: IO Counts
+main = runTestTT $ TestList [test_sum]
 ```
 
-Deretter kan du definere enhetstester ved å bruke funksjonen `TestList`. For eksempel, la oss teste en enkel funksjon som legger sammen to tall:
+I dette eksempelet importerer vi testbiblioteket Test.HUnit, definerer en testfunksjon som sjekker om summen av 2 og 3 er lik 5, og kjører testen ved hjelp av funksjonen runTestTT.
+
+Haskell har også et annet testbibliotek kalt QuickCheck, som bruker egenskaper i stedet for konkrete tester. La oss se på et eksempel på hvordan man kan bruke QuickCheck:
 
 ```Haskell
--- Funksjonen vi skal teste
-sum :: Int -> Int -> Int
-sum x y = x + y
+module Main where
 
--- Definisjon av enhetstesten
-testSum :: Test
-testSum = TestLabel "Test sum" (
-    TestCase (assertEqual "1 + 2 skal være 3" 3 (sum 1 2))
-)
+import Test.QuickCheck
 
--- Kjøre testen
-main :: IO Counts
-main = runTestTT $ TestList [testSum]
+-- Tester om funksjonen f forandrer ikke på lengden av en liste
+test_length :: [Int] -> Property
+test_length list = (length list ==) . length $ map f list
+  where f x = x + 1
+
+main :: IO ()
+main = quickCheck test_length
 ```
 
-Her bruker vi funksjonen `assertEqual` for å sammenlikne den faktiske verdien av funksjonen vår med den forventede verdien, og sjekker om de er like. Dersom de ikke er det, vil testen feile.
+I dette eksempelet definerer vi en egenskapstest som sjekker om funksjonen f forandrer lengden på en liste. Vi bruker funksjonen quickCheck til å kjøre testen med tilfeldig genererte lister.
 
-For å kjøre testen kan vi bruke kommandoen `runTestTT` og teste alle definerte enhetstester ved å legge dem til i `TestList`.
+## Deep Dive
 
-## Dypdykk
+Å skrive gode tester er en viktig del av å lage robust og pålitelig programvare. Det er viktig å tenke gjennom hvilke deler av koden som trenger å bli testet, og hvordan man kan dekke alle mulige utfall.
 
-Å implementere gode tester kan være en kunst i seg selv. Det er viktig å tenke på hva slags scenarier og verdier man vil teste for, og ikke bare fokusere på å dekke så mye kode som mulig. Det er også viktig å skrive tydelige testnavn, slik at man enkelt kan identifisere hva som blir testet.
+Det er også viktig å gjøre testene enkle å vedlikeholde og utvide. Dette kan oppnås ved å følge god praksis som å skrive konsistente og beskrivende testnavn, og unngå avhengigheter mellom tester.
 
-En god praksis er å bruke et rammeverk som støtter "test-driven development" (TDD), hvor man skriver testene før man implementerer funksjonene. Dette hjelper til med å sikre at koden fungerer som den skal, og at den bare inneholder funksjonalitet som er nødvendig.
-
-Det kan også være nyttig å bruke en form for kontinuerlig integrasjon (CI) for å automatisk kjøre alle tester hver gang kode blir endret. Dette kan gi en rask tilbakemelding om eventuelle feil, og tillater utviklere å identifisere og fikse dem raskt.
+En annen viktig del av å skrive tester er å inkludere dem som en del av utviklingsprosessen. Ved å skrive tester mens man koder, kan man finne og fikse feil raskere, og sikre at koden ikke brytes når man gjør endringer.
 
 ## Se også
 
-Her er noen nyttige ressurser for å lære mer om å skrive tester i Haskell:
-
-- [HUnit dokumentasjon](https://hackage.haskell.org/package/HUnit)
-- [Haskell unit testing tutorial](https://www.tutorialspoint.com/haskell/haskell_testing.htm)
-- [Test-driven development i Haskell](https://donsbot.wordpress.com/2007/10/28/test-driven-haskell/)
+* [HUnit dokumentasjon](http://hackage.haskell.org/package/HUnit)
+* [QuickCheck dokumentasjon](http://hackage.haskell.org/package/QuickCheck)
+* [Haskell Wiki: Testing](https://wiki.haskell.org/Testing)

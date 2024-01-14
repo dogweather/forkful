@@ -1,72 +1,47 @@
 ---
-title:    "Fish Shell: Beregning av dato i fremtiden eller fortiden."
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/calculating-a-date-in-the-future-or-past.md"
+title:                "Fish Shell: Beregning av en dato i fremtiden eller fortiden"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Det kan være mange grunner til å beregne en dato i fremtiden eller fortiden, som for eksempel å planlegge reiser eller viktige hendelser, eller for å håndtere forfallsdatoer for regninger eller avtaler.
 
-Å beregne en dato i fortiden eller fremtiden kan være nyttig for å planlegge fremover eller se tilbake på fortiden. Det kan også være nyttig å ha en rasjonell måte å gjøre det på, som ved hjelp av Fish Shell.
-
-## Hvordan
-
-For å beregne en dato i fortiden eller fremtiden i Fish Shell, kan du bruke kommandoen `date`. Her er et eksempel på hvordan du kan bruke denne kommandoen for å beregne en dato 30 dager fra nå:
+## Hvordan bruke Fish Shell til å beregne datoer
+For å beregne en dato i fremtiden, kan du bruke følgende kode i Fish Shell:
 
 ```Fish Shell
-date -d "+30 days"
+set -l dato (date -d "1 week" +%Y-%m-%d)
+echo $dato
 ```
 
-Dette vil gi deg et resultat som dette:
+Dette vil gi deg datoen i dag plus en uke. Du kan også erstatte "1 week" med en annen tidsperiode, som for eksempel "3 months" eller "1 year".
 
-```shell
-Tir Apr 21 11:19:12 CEST 2020
-```
-
-Du kan også beregne en dato i fortiden ved å bruke et negativt tall. For eksempel, hvis du vil finne datoen 30 dager tilbake i tid, kan du bruke følgende kommando:
+For å beregne en dato i fortiden, må du erstatte "1 week" med "1 week ago". For eksempel:
 
 ```Fish Shell
-date -d "-30 days"
+set -l dato (date -d "1 week ago" +%Y-%m-%d)
+echo $dato
 ```
 
-Dette vil gi deg et resultat som dette:
-
-```shell
-Tor Feb 20 11:19:37 CET 2020
-```
-
-Her er noen andre nyttige eksempler på hvordan du kan bruke `date` kommandoen for å beregne ulike datoer:
-
-- Beregne en dato 3 måneder fra nå: `date -d "+3 months"`
-- Beregne en dato 1 uke fra nå: `date -d "+1 week"`
-- Beregne en dato 2 timer fra nå: `date -d "+2 hours"`
-- Beregne en dato 5 minutter fra nå: `date -d "+5 minutes"`
-
-Du kan også bruke `date` sammen med andre kommandoer for å få mer spesifikke resultater. For eksempel, hvis du vil finne datoen 1 måned og 2 uker fra nå, kan du bruke denne kommandoen:
-
-```Fish Shell
-date -d "+1 month +2 weeks"
-```
-
-Dette vil gi deg et resultat som dette:
-
-```shell
-Søn Mai 03 11:21:01 CEST 2020
-```
+Dette vil gi deg datoen for en uke siden.
 
 ## Dypdykk
+Fish Shell gir deg muligheten til å bruke ulike parameter for å beregne datoer i fremtiden eller fortiden. Noen nyttige eksempler på dette er "-d" for å definere dato og "-f" for å formatere utdataen.
 
-Det er viktig å forstå hvordan `date` kommandoen fungerer for å kunne beregne datoer i fortiden eller fremtiden nøyaktig. Når du bruker `-d` flagget, kan du angi datoen ved hjelp av mange forskjellige syntaks. Dette kan inkludere spesifikke kalenderdatoer, som "1st July" eller "June 30 2020", samt relative tidsenheter, som "1 day ago" eller "next week".
-
-Det er også mulig å legge til flere tidsenheter for å få et mer spesifikt resultat. For eksempel, hvis du vil finne datoen 6 måneder, 5 uker og 3 dager fra nå, kan du bruke denne kommandoen:
+Det er også mulig å kombinere flere parameter for å få en mer spesifikk dato. For eksempel:
 
 ```Fish Shell
-date -d "+6 months +5 weeks +3 days"
+set -l dato (date -d "1 week 1 day" -f "%d. %B %Y")
+echo $dato
 ```
 
-## Se også
+Dette vil gi deg datoen for en uke og en dag frem i tid, i formatet for eksempel "26. august 2020".
 
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
-- [Bash FAQ](https://mywiki.wooledge.org/BashFAQ)
-- [Hvordan beregne en dato i Python](https://stackabuse.com/how-to-calculate-future-or-past-dates-in-python/)
+## Se også
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/cmds/date.html)
+- [Guide til å formatere datoer med Fish Shell](https://www.baeldung.com/linux/fish-format-date)
+- [Video tutorial om å beregne datoer med Fish Shell](https://www.youtube.com/watch?v=dQw4w9WgXcQ)

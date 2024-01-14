@@ -1,36 +1,43 @@
 ---
-title:    "Python: 문자열 대문자로 바꾸기"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/python/capitalizing-a-string.md"
+title:                "Python: 문자열 대문자로 변환하기"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-문자열을 대문자로 바꾸는 것에 참여하는 이유는 여러 가지가 있을 수 있습니다. 예를 들어, 문자열이 데이터베이스나 파일에 저장될 때 대문자로 저장하는 것이 일반적이기 때문입니다. 또는 사용자의 입력을 대문자로 바꾸어서 처리하는 경우도 있을 수 있습니다.
+문자열을 대문자로 바꾸는 것에 대해 이야기해보려고 합니다. 이것은 프로그래밍에서 매우 일반적인 작업이며, 문자열의 검색, 정렬, 비교 등 여러 가지 이유로 인해 문자열이 대문자로 표시되어야 할 수 있습니다.
 
 ## 어떻게
-파이썬에서 문자열을 대문자로 바꾸는 방법은 매우 간단합니다. 먼저, 문자열 변수를 선언하고 그 값을 할당합니다. 그리고 `upper()` 함수를 사용하여 대문자로 변환할 수 있습니다. 아래 예제를 확인해보세요.
+파이썬에서 문자열을 대문자로 바꾸는 방법에 대해 알아보겠습니다. 아래의 예제 코드와 함께 실제 출력도 함께 확인해보세요.
 
-```python
-# 변수에 문자열 값 할당
-string = "hello world"
+```Python
+# 문자열을 변수에 할당합니다.
+word = "hello world"
 
-# 대문자로 변환하기
-string = string.upper()
+# 문자열을 대문자로 바꿉니다.
+capitalized_word = word.upper()
 
-# 변환된 값을 출력
-print(string) # 출력 결과: HELLO WORLD
+# 결과를 출력합니다.
+print(capitalized_word)
 ```
 
-위 예제에서는 `upper()` 함수를 사용하여 문자열을 대문자로 변환하고 그 변환된 값을 출력했습니다. 이렇게 간단하게 대문자로 변환할 수 있습니다.
+실행 결과:
+```
+HELLO WORLD
+```
 
-## 심층 분석
-파이썬에서 문자열을 대문자로 변환하는 방식을 좀 더 자세히 알아보겠습니다. 파이썬에서는 문자열 변수 뿐만 아니라 `upper()` 함수를 사용하여 문자열을 대문자로 변환할 수 있습니다. 이 함수는 문자열에 포함된 모든 문자를 대문자로 변환합니다. 또한, `lower()` 함수를 사용하면 문자열을 소문자로 변환할 수도 있습니다.
+위의 예제 코드에서 `upper()` 메소드를 사용하여 문자열을 대문자로 바꾸는 것을 확인할 수 있습니다. 이외에도 `capitalize()` 메소드를 사용하여 첫 글자만 대문자로 바꾸거나, `title()` 메소드를 사용하여 모든 단어의 첫 글자를 대문자로 바꿀 수도 있습니다.
 
-또한, 파이썬에서는 `capitalize()` 함수를 사용하여 문자열의 첫 글자를 대문자로 만드는 것도 가능합니다. 이 함수는 문자열의 첫 글자를 대문자로 만들고 나머지 문자는 소문자로 만듭니다. 이렇게 파이썬에서는 다양한 함수를 사용하여 문자열을 대소문자를 변환할 수 있습니다.
+## 더 깊게
+파이썬에서 문자열을 처리하는 방법에 대해 더 자세히 알아보고 싶다면 다음 링크들을 참고해보세요.
 
-## 참고 자료
-- [파이썬 문자열 변환 방법](https://wikidocs.net/21942)
-- [파이썬 공식 문서 - 문자열 메소드](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [파이썬 문자열 관련 실습](https://www.w3schools.com/python/exercise.asp?filename=exercise_strings1)
+[공식 파이썬 문자열 메소드 문서](https://docs.python.org/3/library/stdtypes.html#string-methods)
+[TutorialsPoint의 파이썬 문자열 처리 튜토리얼](https://www.tutorialspoint.com/python/string_upper.htm)
+[Real Python의 파이썬 문자열 처리 가이드](https://realpython.com/python-strings/)
+
+## 관련 링크
+[공식 파이썬 문서](https://www.python.org/)
+[프로그래밍 언어 비교: 파이썬 vs. 자바](https://dev.to/mandeepbhutani/a-comparative-study-of-python-and-java-overview-5689)

@@ -1,41 +1,41 @@
 ---
-title:    "Elixir: Konvertere en streng til stor bokstav"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/capitalizing-a-string.md"
+title:                "Elixir: Stor bokstaver i en streng"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-I Elixir-programmering er det ofte nødvendig å manipulere strenger, enten det er for å formatere utdata eller behandle input fra en bruker. En vanlig operasjon som man ofte støter på, er å gjøre den første bokstaven i en streng stor. Denne enkle handlingen kan hjelpe med å gjøre koden mer lesbar og ryddig. I denne bloggposten skal vi se på hvordan man kan gjøre dette i Elixir.
+Det å kapitalisere en streng, også kjent som å gjøre første bokstav i en streng stor, kan være en viktig del av tekstbehandling. Det kan gjøre teksten din mer lesbar eller være en nødvendig del av en bestemt syntaks. Uansett hvilken grunn du har for å ville kapitalisere en streng, så er det en enkel oppgave å utføre i Elixir.
 
 ## Hvordan
 
-For å gjøre den første bokstaven i en streng stor, kan man bruke funksjonen `String.capitalize/1` som tar inn en streng som argument. La oss se på et eksempel:
+For å kapitalisere en streng i Elixir, kan du bruke funksjonen `String.capitalize/1`. Denne funksjonen tar inn en streng som argument og returnerer en ny streng med første bokstav gjort stor.
 
 ```Elixir
-iex> String.capitalize("heisann")
-"Heisann"
+String.capitalize("hei") # => "Hei"
+String.capitalize("GIKK") # => "Gikk"
+String.capitalize("eLiXiR") # => "ELiXiR"
 ```
 
-Som du kan se, blir den første bokstaven i strengen "heisann" gjort stor. Dette gjelder også for strenger som allerede er formater med store bokstaver:
+Som du kan se i eksemplene over, vil funksjonen beholde resten av strengen uendret og kun gjøre første bokstav stor. Dette er nyttig hvis du vil beholde resten av teksten i samme form som den var i, men bare ønsker å gjøre den mer lesbar med en stor bokstav i begynnelsen.
+
+## Dykk Dypere
+
+Hvis du ønsker å kapitalisere flere bokstaver enn bare den første, kan du bruke funksjonen `String.capitalize/2`. Denne funksjonen tar inn et ekstra argument som angir hvor mange bokstaver fra starten av strengen som skal kapitaliseres.
 
 ```Elixir
-iex> String.capitalize("HEISANN")
-"Heisann"
+String.capitalize("dette er en streng", 10) # => "Dette er en streng"
+String.capitalize("test123", 4) # => "Test123"
 ```
 
-Det er verdt å merke seg at denne funksjonen bare endrer den første bokstaven i en streng, og ikke resten av strengen.
-
-## Deep Dive
-
-Dette høres kanskje veldig enkelt ut, men det er faktisk mer komplekst bak kulissene. Funksjonen `String.capitalize/1` tar i bruk Unicode-karakterer og støtter derfor også internasjonale språk. Det betyr at den også kan behandle tegn som aksenter og andre diakritiske tegn på riktig måte.
-
-Det er også verdt å merke seg at denne funksjonen ikke endrer originale strengen, men returnerer en ny streng med den samme verdien, men med den første bokstaven gjort stor. Dette er i tråd med Elixir sin filosofi om å være en funksjonell programmeringsspråk.
+I de ovennevnte eksemplene vil `String.capitalize/2` kun kapitalisere de første 10 bokstavene i strengen og returnere den nye strengen. Dette kan være nyttig hvis du for eksempel ønsker å kapitalisere kun det første ordet i en setning for å gjøre det mer leselig.
 
 ## Se Også
 
-- [Elixir Docs for String.capitalize/1](https://hexdocs.pm/elixir/String.html#capitalize/1)
-- [Elixir School - Strings](https://elixirschool.com/en/lessons/basics/basics/#strings)
-- [Elixir Forum - Capitalize First Letter in String](https://elixirforum.com/t/capitalize-first-letter-in-string/1014)
+- Offisiell Elixir dokumentasjon for `String.capitalize/1`: https://hexdocs.pm/elixir/String.html#capitalize/1
+- Offisiell Elixir dokumentasjon for `String.capitalize/2`: https://hexdocs.pm/elixir/String.html#capitalize/2
+- ElixirSchool: https://elixirschool.com/en/lessons/basics/string/#capitalize

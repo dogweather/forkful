@@ -1,46 +1,53 @@
 ---
-title:    "Elm: בדיקה האם תיקייה קיימת"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/checking-if-a-directory-exists.md"
+title:                "Elm: לבדוק אם תיקייה קיימת"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה:
+## למה
+בפוסט הזה נדבר על איך ניתן לבדוק אם תיקייה קיימת בשפת אלם. נלמד על כיצד הוא מתבצע ונכיר כמה דוגמאות כדי להבין אותו בצורה נכונה. 
 
-אחד הדברים החשובים ביותר בתכנות הוא ניהול קובצים ותיקיות. ברבים מהפעמים, אנו נדרשים לבדוק אם תיקייה מסוימת קיימת או לא לפני שאנו נמשיך בקוד שלנו. כתיבת קוד שבודק אם תיקייה קיימת יכולה לסייע לנו להימנע מבאגים ולשפר את אבטחת הפרויקט שלנו.
+## איך לעשות זאת
+נדגים כאן כמה דוגמאות של קוד באלם כדי להראות איך לבדוק אם תיקייה קיימת. תכלית הקוד הוא לחזור עם ערך בוליאני, טרו אם התיקייה קיימת ופולס אם היא אינה קיימת. 
 
-## כיצד לבדוק אם תיקייה קיימת באמצעות אלם:
+```Elm
+-- קוד דוגמה עם תיקייה קיימת
+directoryExists : String -> Bool
+directoryExists path =
+    True
 
-תחילה, נצטרך ליצור פונקציה כדי לבדוק אם תיקייה קיימת. הנה דוגמה של פונקציה כזו ופלט המתקבל:
-
-```elm
-import File
-import Http
-
-directoryExists : String -> Html msg
-directoryExists directory =
-    if File.isDirectory (File.Existing directory) then
-        Html.text (directory ++ " קיימת")
-    else
-        Html.text (directory ++ " לא קיימת")
-
-main =
-    Http.send directoryExists "כתובת-תיקייה-כאן"
+-- תוצאה: טרו
 ```
 
-פלט הבא יודפס בתוך הדפדפן שלכם:
+```Elm
+-- קוד דוגמה ללא תיקייה קיימת
+directoryExists : String -> Bool
+directoryExists path =
+    False
 
-כתובת-תיקייה-כאן לא קיימת
+-- תוצאה: פולס
+```
 
-## טיפים עמוקים יותר:
+אנו ניתן גם להשתמש בחבילת [elm-explorations/filesystem](https://package.elm-lang.org/packages/elm-explorations/filesystem/latest/) כדי לבדוק תיקייה קיימת במערכת הקבצים של המחשב. הנה דוגמא עם שימוש בחבילה זו:
 
-בחלק זה, נלמד טיפים נוספים לבדיקת תיקיות באמצעות אלם:
+```Elm
+import FileSystem
+import Result
 
-- כאשר אנו משתמשים בפונקציה `File.isDirectory`, אנו חייבים לוודא שהכתובת שאנו משתמשים מתאימה לכתובת של תיקייה באמצעות הפונקציה `File.Existing`. אחרת, הפונקציה תחזיר שגיאה.
+directoryExists : String -> Cmd msg
+directoryExists path =
+    FileSystem.access (FileSystem.file path) FileSystem.canRead ()
+        |> Task.perform (always <| Result.withDefault False) identity
 
-- נסו להשתמש במחרוזת בלוקליזציה מתאימה כדי להדפיס את הנתונים שלכם בשפה העברית הנכונה.
+main =
+    directoryExists "C:\\Users\\Example\\MyFolder"
 
-- אל תשתמשו בשם התיקייה בתוך הפונקציה. במקום זאת, השתמשו במשתנה כדי לחסוך זיכרון ולשפר את הקוד שלכם.
+-- תוצאה: טרו - אם התיקייה קיימת
+-- תוצאה: פולס - אם התיקייה לא קיימת
+```
 
-כעת, אתם מתמצאים עם יכולת לבדוק אם תיקייה קיימת באמצעות אלם. עכשיו תוכלו לכ
+## להתקן עומק
+מורכבות נוספת יכולה לתת מעט אור על הנושא. כאשר אנו בודקים אם תיקייה קיימת בשפת אלם, אנו מבצעים בדיקת קיומה רק בשלב הבדיקה. זה אומר שאם התיקייה מחולקת או מוסרת לתוכנית, ניתן לבצע שינויים לאחר מכן. זהו הקצה של משמעויות. כמו כן, כאשר אנו משתמשים בחבילת [elm-explorations/filesystem](https://package.elm-lang.org/packages/elm-explorations/filesystem/latest/), יש לנו גם את היכולת לבדוק אם תיקייה היא בפ

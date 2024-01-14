@@ -1,54 +1,35 @@
 ---
-title:    "Clojure: Перетворення дати в рядок"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/converting-a-date-into-a-string.md"
+title:                "Clojure: Перетворення дати в рядок"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Перетворення дати в рядок є важливою навичкою для кожного програміста, оскільки це один з ключових елементів для роботи з даними та введенням/виведенням інформації. Знання основ конвертування дат в рядок є необхідним для ефективної роботи з датами у своїх проектах.
+Конвертування дати в рядок є важливим завданням для багатьох програмістів і може бути корисним для подальшої обробки даних. Використовуючи Clojure для цього процесу, ми можемо полегшити собі життя та ефективно використовувати дані.
 
-## Як
-
-```Clojure
-(def data (java.util.Date.))
-
-;; перетворення дати у рядок у форматі "dd/MM/yyyy"
-(str (java.text.SimpleDateFormat. "dd/MM/yyyy") data)
-
-```
-
-Вивід: "02/03/2021"
+## Як це зробити
 
 ```Clojure
-;; перетворення дати у рядок за допомогою шаблону дати
-(def pattern "EEE, MMM dd yyyy")
-(def sdf (java.text.SimpleDateFormat. pattern))
-(sdf data)
+;; Використовуємо клас date та функцію format для конвертування дати в рядок
+(import 'java.util.Date)
+(-> (Date.)
+    (.format "dd MMMM, yyyy"))
 
+;; Виходить наприклад 20 листопада, 2021
 ```
 
-Вивід: "Tue, Mar 02 2021"
+## Глибша деталь
 
-```Clojure
-;; додавання часового поясу до рядку дати
-(def zone "Europe/Kiev")
-(.format (java.time.LocalDate/now)
-(java.time.format.DateTimeFormatter/ofPattern "dd/MM/yyyy"))
-```
+Коли ми використовуємо функцію `format`, нам потрібно передати патерн рядка, що визначає бажаний формат дати. Це може бути будь-яка комбінація літер та символів, які представляють різні деталі дати (наприклад, `dd` - день, `MMMM` - повне найменування місяця, `yyyy` - рік).
 
-Вивід: "02/03/2021 Europe/Kiev"
-
-## Глибоке занурення
-
-Інструкції, наведені вище, є основними для конвертування дат в рядок у Clojure. Однак, для більш детального розуміння цього процесу, важливо ознайомитися з різними вбудованими функціями та бібліотеками для роботи з датами. Наприклад, бібліотека clj-time містить багато корисних функцій для форматування та обробки дат у Clojure.
-
-Також варто звернути увагу на форматування дат, оскільки різні країни можуть мати свої вимоги до представлення дати у рядках. Наприклад, в США можуть використовуватися місяць перед днем в "простому" форматі (MM/dd/yyyy), тоді як у багатьох країнах Європи зазвичай використовується день перед місяцем.
+Також важливо відзначити, що конвертування дати в рядок залежить від локалізації. Якщо вам потрібно вивести дату у вигляді іншої мови, потрібно використовувати відповідну локалізацію.
 
 ## Дивись також
 
-- Офіційна документація з Clojure про конвертування дати у рядок: https://clojuredocs.org/clojure.java-time/local-date
-- Бібліотека clj-time для роботи з датами у Clojure: https://github.com/clj-time/clj-time/wiki/Formatting-and-Parsing
-- Стаття про форматування дат в Clojure: https://www.theserverside.com/feature/Working-with-dates-and-times-in-Clojure-functionality-and-formats
+- [Офіційна документація Clojure](https://clojure.org)
+- [Основи Clojure](https://clojure.org/guides/getting_started)
+- [Конвертування дати в Clojure](https://stackoverflow.com/questions/56542440/how-do-i-convert-clojure-date-to-string)

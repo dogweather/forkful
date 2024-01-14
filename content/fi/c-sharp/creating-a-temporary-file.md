@@ -1,42 +1,46 @@
 ---
-title:    "C#: Väliaikaisen tiedoston luominen"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/creating-a-temporary-file.md"
+title:                "C#: Väliaikaisen tiedoston luominen"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi luoda tilapäistiedosto?
+## Miksi luoda väliaikainen tiedosto?
 
-Tilapäistiedostojen luominen on yleinen käytäntö C# -ohjelmoinnissa. Niitä käytetään usein tiedon tallentamiseen väliaikaisesti, esimerkiksi ohjelman suorituksen aikana. Tilapäistiedostoja voidaan myös käyttää tilapäisten prosessien väliaikaiseen tallentamiseen, jotka eivät tarvitse pysyvää tallennuspaikkaa.
+Joskus ohjelmoidessa saattaa ilmetä tarve luoda väliaikaisia tiedostoja. Näitä tiedostoja käytetään yleensä tallentamaan väliaikaisia tietoja tai luomaan väliaikainen kopio olemassa olevasta tiedostosta. Ne voivat myös tarjota kätevän tavan käsitellä ja hallita tietoja eri vaiheissa ohjelman suorittamista.
 
-## Kuinka tehdä se?
+## Kuinka luoda väliaikainen tiedosto C#:lla
 
-Tilapäistiedostojen luominen C# -ohjelmoinnissa on helppoa. Voit käyttää "Path.GetTempFileName()" -funktiota luodaksesi tilapäistiedoston ja tallentaa sen muuttujaan. Tämän jälkeen voit käyttää muuttujaa kirjoittaaksesi tai lukeaksesi tiedostoon tarvittavat tiedot.
-
-```C#
-string tempFile = Path.GetTempFileName();
-Console.WriteLine(tempFile);
-```
-
-Tämä koodi luo tilapäistiedoston ja tulostaa sen polun konsoliin. Voit myös käyttää "File.WriteAllText()" ja "File.ReadAllText()" -funktioita kirjoittaaksesi ja lukemalla tiedostoon.
+Väliaikaisen tiedoston luominen C#:lla on helppoa ja tehokasta. Se voidaan tehdä käyttämällä .NET Frameworkin tarjoamaa `System.IO.Path` -luokkaa sekä `System.IO.File` ja `System.IO.FileStream` -luokkia. Alla on esimerkki C# -koodista, jossa luodaan väliaikainen tiedosto ja kirjoitetaan siihen tekstiä.
 
 ```C#
-File.WriteAllText(tempFile, "Tämä on tilapäistiedostoon tallennettava teksti.");
-string text = File.ReadAllText(tempFile);
-Console.WriteLine(text);
+// Luodaan väliaikainen tiedosto
+string tempFilePath = Path.GetTempFileName();
+
+// Avataan tiedosto kirjoittamista varten
+using (FileStream fs = File.Open(tempFilePath, FileMode.Open))
+{
+    // Luodaan StreamWriter käyttämällä FileStreamia
+    using (StreamWriter writer = new StreamWriter(fs))
+    {
+        // Kirjoitetaan teksti tiedostoon
+        writer.WriteLine("Tämä on väliaikainen tiedosto.");
+    }
+}
+
 ```
+Tämän koodin suorittamisen jälkeen näet uuden väliaikaisen tiedoston luoto hakemistossa. Voit myös lukea tiedoston sisällön samalla tavalla, kuin lukisit tavallista tiedostoa.
 
-Huomaa, että nämä esimerkit ovat vain yksinkertaisia tapoja käyttää tilapäistiedostoja. C# tarjoaa monia muitakin tapoja luoda, kirjoittaa ja lukea niitä.
+## Syvällinen sukellus väliaikaisen tiedoston luomiseen
 
-## Syvempi sukellus
+Väliaikaisen tiedoston luominen vaatii järjestelmän resursseja, joten ne olisi hyvä poistaa ohjelman suorituksen jälkeen. Tämä voidaan tehdä käyttämällä `File.Delete()` -metodia, mikä poistaa tiedoston. Jos väliaikainen tiedosto jää jotain kautta järjestelmään, sitä on mahdollista poistaa manuaalisesti myöhemmin.
 
-Tilapäistiedostojen luomisella on myös muita etuja. Yksi niistä on se, että ne poistetaan automaattisesti, kun ohjelma sulkeutuu. Tämä säästää tilaa ja estää turhien tiedostojen kertymisen järjestelmään.
-
-Lisäksi tilapäistiedostot luodaan automaattisesti ainutkertaisella nimellä, joten ongelmat nimien kaksoiskäytön kanssa eivät ole mahdollisia. Tämä tekee tilapäistiedostoista turvallisempia käyttää kuin manuaalisesti luodut tiedostot.
+Voit myös itse päättää, missä kansiossa väliaikaiset tiedostot luodaan käyttämällä `Path.GetTempPath()` -metodia. Tällä tavalla voit varmistaa, että tiedostot tallennetaan haluamaasi paikkaan.
 
 ## Katso myös
 
-- [C# -opas](https://docs.microsoft.com/en-us/dotnet/csharp/)
-- [Tilapäisten tiedostojen opas](https://docs.microsoft.com/en-us/dotnet/standard/io/temporary-files)
-- [Path-luokan dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.io.path?view=net-5.0)
+- [System.IO.Path-luokka (Microsoft)](https://docs.microsoft.com/fi-fi/dotnet/api/system.io.path)
+- [System.IO.File-luokka (Microsoft)](https://docs.microsoft.com/fi-fi/dotnet/api/system.io.file)
+- [System.IO.FileStream-luokka (Microsoft)](https://docs.microsoft.com/fi-fi/dotnet/api/system.io.filestream)

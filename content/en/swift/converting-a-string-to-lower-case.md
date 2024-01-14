@@ -1,59 +1,39 @@
 ---
-title:    "Swift recipe: Converting a string to lower case"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/converting-a-string-to-lower-case.md"
+title:                "Swift recipe: Converting a string to lower case"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-In Swift programming, converting a string to lower case can be a useful task when dealing with user input or comparing strings. It allows for easier manipulation and comparison of strings without having to worry about case sensitivity.
+Converting a string to lower case is a common task in Swift programming. By converting a string to lower case, we can ensure consistency in our data and make string comparisons easier. It also allows us to manipulate strings in a way that is more readable and user-friendly.
 
 ## How To
 
-Converting a string to lower case in Swift is a simple process. First, we declare a string variable with our desired phrase:
+To convert a string to lower case in Swift, we can use the `lowercased()` method. This method takes the string and returns a new string with all characters converted to lower case. Let's see an example of how we can use this method:
 
-```
-Swift let phrase = "HeLlO wOrLd"
-```
+```Swift
+let greeting = "Hello World"
+let lowercasedGreeting = greeting.lowercased()
 
-Next, we use the `lowercased()` method to convert the string to lower case:
-
-```
-Swift let lowercasedPhrase = phrase.lowercased()
+print(lowercasedGreeting) // Output: hello world
 ```
 
-And that's it! We now have a new string variable with our phrase in all lower case:
-
-```
-Swift print(lowercasedPhrase)
-// output: hello world
-```
-
-We can also use this method to directly convert user input to lower case, making it easier to compare with other strings:
-
-```
-Swift let userInput = "AppLe"
-let lowercasedInput = userInput.lowercased()
-if lowercasedInput == "apple" {
-    print("You entered the fruit!")
-}
-// output: You entered the fruit!
-```
+As we can see, the string "Hello World" is converted to lower case and stored in the new variable `lowercasedGreeting`.
 
 ## Deep Dive
 
-Behind the scenes, the `lowercased()` method uses the Unicode Standard to convert characters to their lower case counterparts. This means that it can handle any language or special characters. It also takes into account language-specific rules for conversion.
+It's important to note that the `lowercased()` method will only convert characters that have an uppercase equivalent. This means that any characters that do not have a lower case equivalent, such as emoji or special characters, will not be affected by this method.
 
-It's important to note that this method does not modify the original string. Instead, it returns a new string with the converted characters. This is because strings in Swift are immutable, meaning they cannot be changed after they are created. So, if you need to use the converted string multiple times, be sure to save it as a new variable.
+Additionally, the `lowercased()` method is dependent on the character set used by the device's operating system. This means that the output may vary on different devices or systems.
+
+Another way to convert a string to lower case is by using the `caseInsensitiveCompare()` method. This method compares two strings regardless of their case and can be useful when sorting strings alphabetically.
 
 ## See Also
 
-For more information on string manipulation in Swift, check out these helpful resources:
-
-- [Swift Strings and Characters - Apple Developer](https://developer.apple.com/documentation/swift/string)
-- [The Swift Programming Language: Strings and Characters - Swift.org](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Swift String Cheat Sheet - raywenderlich.com](https://www.raywenderlich.com/287-string-cheat-sheet-for-swift-4-0)
-
-Happy coding!
+- Apple Developer Documentation: [String.lowercased()](https://developer.apple.com/documentation/swift/string/2997157-lowercased)
+- Swift by Sundell: [Converting text case in Swift](https://www.swiftbysundell.com/tips/converting-text-case-in-swift/)
+- Hacking with Swift: [How to convert the case of a string using localized capitalization](https://www.hackingwithswift.com/example-code/strings/how-to-convert-the-case-of-a-string-using-localized-capitalization)

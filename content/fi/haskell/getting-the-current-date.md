@@ -1,57 +1,50 @@
 ---
-title:    "Haskell: Tämänhetkisen päivämäärän saaminen"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/getting-the-current-date.md"
+title:                "Haskell: Hanki nykyinen päivämäärä"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi Muodostaa Hästäkaltaiseen Päivämääriä
+Haskell ohjelmoinnissa on paljon hyödyllisiä ominaisuuksia, joita voi käyttää päivittäisessä ohjelmoinnissa. Yksi tärkeimmistä on tietyn päivämäärän saaminen. Tässä blogikirjoituksessa opit, kuinka saat tämän päivän päivämäärän käyttämällä Haskellia.
 
-Haskell on monipuolinen ohjelmointikieli, joka tarjoaa laajan valikoiman ominaisuuksia ja työkaluja. Yksi näistä hyödyllisistä toiminnoista on nykyisen päivämäärän hankkiminen. Tässä blogikirjoituksessa tutustumme siihen, miten kannattaa käyttää Haskellia nykyisen päivämäärän saamiseksi ja miksi se voi olla hyödyllistä.
+## Miksi?
 
-## Kuinka Tehdä Se
+Päivämäärän saaminen on tärkeää monessa ohjelmassa. Se voi auttaa sinua luomaan tehokkaampia ja paremmin jäsenneltyjä ohjelmia. Lisäksi päivämäärä voi auttaa seurata aikaa ja päivämäärästä riippuvia tapahtumia, kuten laskutuksia. 
 
-```haskell
-import Data.Time
+## Kuinka?
 
-main = do
-  t <- getCurrentTime
-  let d = utctDay t
-  putStrLn $ "Nykyinen päivämäärä on: " ++ show d
-```
+Aloitetaan luomalla yksinkertainen ohjelma, joka käyttää Haskellin `getCurrentTime` -funktiota saadaksesi tämän päivän päivämäärän. 
 
-Tämä yksinkertainen ohjelma hakee nykyisen päivämäärän ja tulostaa sen konsoliin. Ensimmäinen rivi tuo Data.Time -kirjaston, joka sisältää tarvittavat toiminnot päivämäärän käsittelyyn. Sitten `getCurrentTime` -funktio hakee nykyisen ajan ja tallentaa sen muuttujaan `t`. Seuraavassa rivissä käytämme `utctDay` -funktiota muuntamaan UTC (koordinoitu yleinaikaa) -ajan `Day` -tyypiksi, joka sisältää vain päivämäärän ilman aikatietoa. Lopuksi tulostamme päivämäärän konsoliin käyttämällä `putStrLn` -funktiota.
+```Haskell
+-- Tuodaan tarvittava kirjasto
+import Data.Time.Clock (getCurrentTime)
 
-```bash
-Nykyinen päivämäärä on: 2021-07-26
-```
-
-Tämä esimerkki toimii nykyisen päivämäärän saamiseksi vuoden, kuukauden ja päivän tarkkuudella. Mutta mitä jos haluamme saada tarkempaa tietoa, kuten tunteja, minuutteja ja sekunteja? Katsotaanpa, kuinka se tehdään:
-
-```haskell
-import Data.Time
-import Data.Time.Format
+-- Luodaan funktio, joka palauttaa tämän päivän päivämäärän
+getToday = do
+  time <- getCurrentTime -- Käytetään getCurrentTime -funktiota
+  return (show time) -- Palautetaan päivämäärä tekstinä
 
 main = do
-  t <- getCurrentTime
-  let d = formatTime defaultTimeLocale "%H:%M:%S" t
-  putStrLn $ "Nykyinen aika on: " ++ show d
+  today <- getToday -- Kutsutaan getToday -funktiota ja tallennetaan palautusmuuttujaan
+  print today -- Tulostetaan tulos
 ```
 
-Tässä esimerkissä olemme tuoneet toisen kirjaston, Data.Time.Format, joka tarjoaa lisää toimintoja ajanmuotoilulle. Käytämme `formatTime` -funktiota muuttamaan ajanmuodon haluamaksemme. Ensimmäinen parametri `defaultTimeLocale` kertoo muotoilun käyttämään oletuskieltä ja asetuksia, tässä tapauksessa annamme vain kellonajan ilman päivämäärää. Lopuksi tulostamme ajan konsoliin samalla tavalla kuin ensimmäisessä esimerkissä.
+Tämä ohjelma tulostaa tämän päivän päivämäärän seuraavassa muodossa:
 
-```bash
-Nykyinen aika on: 19:30:15
-```
+`2021-04-07 11:46:29.890116 UTC`
 
-## Syventävä Tarkastelu
+Voit myös muuttaa päivämäärän muodon käyttämällä erilaisia funktioita, kuten `formatTime` tai `toGregorian`. Kokeile rohkeasti erilaisia vaihtoehtoja ja löydä itsellesi sopivin ratkaisu.
 
-Nyt kun tiedämme, kuinka saada nykyinen päivämäärä tai aika Haskellilla, voimme tutkia tarkemmin niitä toimintoja, joita käytimme. Data.Time -kirjastoon kuuluu paljon muita toimintoja, kuten erilaisia muotoilumahdollisuuksia tai aikavyöhykkeiden käsittelyä. Voit tutustua niihin virallisessa dokumentaatiossa: https://hackage.haskell.org/package/time.
+## Syväsukellus
 
-On myös arvokasta huomata, että `getCurrentTime` -funktio palauttaa datatyypin `UTCTime`, joka sisältää sekä päivämäärän että ajan. Muuntamalla se eri tavoin voit saada tarkempia tietoja, kuten viikonpäivän tai vuodenajat.
+Haskellin päivämäärä- ja aikafunktiot perustuvat `Data.Time` -kirjastoon. Tämä kirjasto tarjoaa erilaisia työkaluja, joilla voit käsitellä päivämääriä, aikoja ja niiden eroja. Voit myös käydä läpi `Data.Time` -kirjaston dokumentaatiota löytääksesi lisää hyödyllisiä funktioita ja esimerkkejä.
 
-# Katso Myös
+On myös tärkeää huomata, että päivämäärät ja ajat voivat olla haastavia käsitellä. Kannattaa varmistaa, että ymmärrät hyvin miten käytät funktioita ja että otat huomioon erilaiset aikavyöhykkeet ja päivämäärämuodot.
 
-- https://haskell-lang.org/
-- https://hackage.haskell.org
+## Katso myös
+
+- Haskellin virallinen dokumentaatio `Data.Time` -kirjastosta: https://hackage.haskell.org/package/time-1.9/docs/Data-Time.html
+- Hyödyllinen opetusohjelma päivämäärän ja ajan käsittelyyn Haskellissa: https://mmhaskell.com/blog/2017/5/29/time-and-space-part-1
+- Tietoa päivämäärien säilyttämisestä tietokannoissa Haskellilla: https://www.robhu.org/2018/05/25/storing-dates-in-postgres-using-haskell/

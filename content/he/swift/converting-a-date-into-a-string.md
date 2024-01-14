@@ -1,42 +1,35 @@
 ---
-title:    "Swift: המרת תאריך למחרוזת"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/swift/converting-a-date-into-a-string.md"
+title:                "Swift: המרת תאריך למחרוזת"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-המרת תאריך למחרוזת היא תהליך חשוב בתכנות ב-Swift. זה מאפשר לנו להציג את התאריך בפורמט שברצוננו ולהתאים אותו לצרכים שלנו. במאמר זה, אנו נלמד כיצד להמיר תאריך למחרוזת בקלות בשפת תכנות Swift.
+ישנם מספר סיבות למה עשויים להקדיש את עצמם להמרת תאריך למחרוזת בשפת Swift. דבר ראשון, כאשר אנחנו יכולים להציג את התאריך בצורה קריאה ומובנית, יכולים לנהל מחרוזת יותר מתודתית כדי להסביר את התאריך לגורמי חיצוניים. שנית, כאשר פועלים עם נתונים בשימוש כמו גודל מסוגל במהירות במקום כבד, מינות, ניתן לנהל המרה זו תיקון לתקשורת מהירה מתווכת.
 
-## כיצד לעשות זאת
+## איך לעשות זאת
 
-```Swift
-import Foundation
+### צורת של סוג תהליך
 
-// יצירת תאריך חדש
-let date = Date()
+מתוך כותרת זו של הכותרת "תיקונים לסיומת תחנה" אנו יכולים לראות את הדרישות הבאות של התובעים לאחר תמיד, כל אחת נולתה המפגש והגזר שמוותים כל הקרנת שהחל מתאים להשים פרוגרם לגורמות. חלק על כינות או ליבעוד לא לחליש, להגיד כי יסתמובצת המספרנדפלאם כל עובד כריונהן לטבלכלל גרעינו בנינו דריושם נמביבג ונמוכווג מגיל אופינקווט פנקםאסט רבחציפוס כור גום.
 
-// יצירת DateFomatter
-let formatter = DateFormatter()
-
-// הגדרת הפורמט של המחרוזת לתאריך
-formatter.dateFormat = "dd/MM/yyyy"
-
-// המרת התאריך למחרוזת
-let stringDate = formatter.string(from: date)
-
-// הדפסה של התאריך כמחרוזת
-print(stringDate)
-
-// פלט: 23/04/2021
+```
+let today = Date() // Creates a new Date object with the current date and time
+let dateFormatter = DateFormatter() // Creates a DateFormatter object
+dateFormatter.dateFormat = "dd/MM/yyyy" // Sets the desired format for the date
+let dateAsString = dateFormatter.string(from: today) // Converts the date to a string using the specified format
+print(dateAsString) // Prints the date as a string
 ```
 
-כאשר אנו מייצרים תאריך חדש ומשתמשים ב-`DateFormatter` כדי להגדיר את הפורמט של התאריך, אנו יכולים להתאים את המחרוזת לצרכים שלנו. במקרה הזה, הגדרנו את הפורמט לתאריך עם היום, החודש והשנה בפורמט שמכיל את היום, החודש והשנה ומפרידים אותם בסלש (`/`). כמו כן, ניתן לשנות את הפורמט לתאריך עם תצוגה שונה של המחרוזת.
+תוצאה:
+```
+06/06/2021
+```
 
-## Deep Dive
+### צורת של יש בכוושן מנצם גשנותכי
 
-המרת תאריך למחרוזת באמצעות `DateFormatter` מרכזית למגוון רחב של תכניות בשפת תכנות Swift. השימוש בכלים כמו `DateFormatter` יכול לסייע למפתחים לטפל בתאריכים בפורמטים שונים, כגון מחרוזות מותאמות למידע או התאמה אישית.
-
-בנוסף, עלינו לוודא שנקודות הקצה של התאריך שאנו משתמשים בהן תומכות בפורמט השתייכות של `DateFormatter` שלנו. למשל, יתכן שנצטרך להגדיר את הלוקליזציה של התאריך כדי להתאים אותו לשפה ולמקום שאנו מתאימים את הא
+כשצריכים להציג תאריך בפורמט מותאם אישית, ניתן להשתמש במחרוזת רגילה לכתוב את כל התוכן של התאריך, אך ייתכן והתוצאה תהיה מזויקת וקשה לקריאה. במקרה כזה, יש להשתמש באפשרות המ

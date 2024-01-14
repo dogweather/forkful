@@ -1,85 +1,53 @@
 ---
-title:    "Clojure: Verkettung von Zeichenfolgen"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/concatenating-strings.md"
+title:                "Clojure: Zusammenführen von Zeichenfolgen"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In diesem Beitrag werden wir uns mit einem grundlegenden Konzept der Clojure-Programmierung beschäftigen: der Verkettung von Zeichenketten. Eine grundlegende, aber äußerst nützliche Technik, die Ihnen helfen wird, effizienter und eleganteren Code zu schreiben.
+Die Konkatenation von Zeichenfolgen (englisch: string) ist eine wichtige Fähigkeit, die in vielen Programmiersprachen verwendet wird, einschließlich Clojure. Durch die Verkettung von Zeichenfolgen können wir Texte und Variablen miteinander kombinieren und so dynamische Ausgaben erzeugen. In diesem Beitrag werden wir uns ansehen, wie man Strings in Clojure verketten kann.
 
-## Wie geht das?
+## Wie man Strings in Clojure verketten kann
 
-Das Verkettung von Zeichenketten in Clojure ist sehr einfach und intuitiv. Hier ist ein Beispiel, wie Sie zwei Zeichenketten miteinander verketten können:
-
-```Clojure
-(str "Hallo, " "Welt!")
-```
-
-Die Ausgabe davon wäre:
-
-```
-"Hallo, Welt!"
-```
-
-Sie können auch Variablen in die Verkettung einbeziehen, indem Sie sie in die Klammern einschließen. Hier ein Beispiel:
+Die Verkettung von Strings in Clojure ist sehr einfach und erfordert nur die Verwendung des Operators `str` sowie die Angabe der zu verkettenen Zeichenfolgen in Klammern. Hier ist ein Beispiel:
 
 ```Clojure
-(def name "Max")
-(str "Hallo, " name "!")
+(str "Hallo" "Welt!") ; Ausgabe: "HalloWelt!"
 ```
 
-Die Ausgabe wäre:
-
-```
-"Hallo, Max!"
-```
-
-Sie können auch mehrere Funktionen miteinander verketten, um komplexere Zeichenketten zu erstellen. Hier ein etwas komplizierteres Beispiel:
+Wie wir sehen können, werden die beiden übergebenen Zeichenfolgen ohne Leerzeichen verkettet. Wenn wir Leerzeichen oder andere Zeichen in die Ausgabe einfügen möchten, können wir dies mit dem `str` Operator tun, indem wir die Leerzeichen oder Zeichen in Anführungszeichen als eigene Zeichenfolge übergeben. Zum Beispiel:
 
 ```Clojure
-(def first-name "Max")
-(def last-name "Mustermann")
-(str "Mein vollständiger Name ist " (.toUpperCase first-name) " " (.toUpperCase last-name))
+(str "Hallo" " " "Welt!") ; Ausgabe: "Hallo Welt!"
 ```
 
-Die Ausgabe wäre:
-
-```
-"Mein vollständiger Name ist MAX MUSTERMANN"
-```
-
-## Tiefergehende Informationen
-
-In Clojure werden Zeichenketten als Sequenzen von Zeichen dargestellt. Dies erlaubt es uns, Funktionen wie `map` oder `filter` auf Zeichenketten anzuwenden. Hier ein Beispiel mit `map`:
+Wir können auch Variablen in die Verkettung einbeziehen, indem wir sie als Argumente an den `str` Operator übergeben. Zum Beispiel:
 
 ```Clojure
-(def city "Berlin")
-(map char city)
+(def name "Maria")
+(str "Mein Name ist" name "!") ; Ausgabe: "Mein Name ist Maria!"
 ```
 
-Die Ausgabe wäre:
+## Tief tauchen
 
-```
-(\B \e \r \l \i \n)
-```
-
-Sie können auch mehrere Zeichenketten miteinander verketten, indem Sie die Funktion `clojure.string/join` verwenden. Hier ein Beispiel:
+Clojure bietet auch die Funktion `str-join`, mit der wir eine Liste von Zeichenfolgen durch ein spezifisches Trennzeichen verkettet können. Hier ist ein Beispiel:
 
 ```Clojure
-(def fruits ["Apfel" "Banane" "Orange"])
-(clojure.string/join ", " fruits)
+(str-join "-" ["Mai" "Juni" "Juli"]) ; Ausgabe: "Mai-Juni-Juli"
 ```
 
-Die Ausgabe wäre:
+Wir können auch eine bedingte Verkettung von Zeichenfolgen mit der Funktion `str-if` durchführen, bei der wir eine Bedingung angeben und angeben, was verknüpft werden soll, wenn die Bedingung erfüllt ist. Hier ist ein Beispiel:
 
-```
-"Apfel, Banane, Orange"
+```Clojure
+(str-if true "Bonjour" "Hello") ; Ausgabe: "Bonjour"
+(str-if false "Bonjour" "Hello") ; Ausgabe: "Hello"
 ```
 
 ## Siehe auch
 
-- Tutorial zur Verwendung der `clojure.string` Bibliothek: https://clojuredocs.org/clojure.string
-- Offizielle Clojure Dokumentation zu Zeichenkettenfunktionen: https://clojure.org/reference/strings
+- [Offizielle Clojure Dokumentation](https://clojure.org/guides/string_concatenation)
+- [Clojure-Online-Tutorial](https://www.clojure.com/guides/learning-the-ropes/string-concatenation)

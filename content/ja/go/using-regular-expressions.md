@@ -1,56 +1,70 @@
 ---
-title:    "Go: 正規表現の使い方"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/using-regular-expressions.md"
+title:                "Go: 正規表現の使用"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-### なぜ
-正規表現を使用する理由を説明するために1-2文で説明します。
+## なぜ正規表現を使うのか
 
-正規表現はテキストのパターンを検索し、一致する文字列を返すことができる非常に強力なツールです。これを使用することで、データのフィルタリングや検索をより効率的に行うことができます。
+正規表現はテキスト処理において非常に便利であり、テキストから特定のパターンを検索する際には欠かせないツールです。特定の文字列やパターンが現れる場所を素早く見つけたり、置換を行ったりすることができ、手作業で行うよりも効率的に作業を行うことができます。
 
-### 使い方
-正規表現の使用方法を説明するために、いくつかのコーディング例とそれに対する出力を「```Go ... ```」のコードブロックで示します。
+## 正規表現の使い方
 
-例1: メールアドレスの検証
+正規表現を使用するには、Goプログラミング言語の標準ライブラリである"regexp"パッケージをインポートする必要があります。次に、パターンを定義するために`regexp.Compile()`を使用します。以下は、`searchString`が含まれる行を検索する例です。
 
 ```Go
-pattern := `^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$`
-valid := regexp.MustCompile(pattern).MatchString("example@email.com")
-fmt.Println(valid) // true
+// 必要なパッケージをインポートする
+import (
+    "fmt"
+    "regexp"
+)
+
+func main() {
+    // 検索する文字列を設定する
+    searchString := "今日はとてもいい天気ですね！"
+
+    // パターンを定義する
+    pattern := regexp.MustCompile("いい天気")
+
+    // パターンにマッチするかどうかをチェックする
+    if pattern.MatchString(searchString) {
+        fmt.Println("マッチしました！")
+    } else {
+        fmt.Println("マッチしませんでした。")
+    }
+}
 ```
 
-例2: 電話番号の検索
+上記のコードを実行すると、"マッチしました！"というメッセージが表示されます。
+
+また、正規表現を使用して置換を行うこともできます。次の例では、`searchString`内の"いい天気"を"悪い天気"に置換します。
 
 ```Go
-pattern := `^(\(\d{3}\)\s?|\d{3}-)\d{3}-\d{4}$`
-matches := regexp.MustCompile(pattern).FindStringSubmatch("My phone number is (123) 456-7890.")
-fmt.Println(matches[1]) // (123)
-fmt.Println(matches[2]) // 456-7890
+// 検索する文字列を設定する
+searchString := "今日はとてもいい天気ですね！"
+
+// "いい天気"を"悪い天気"に置換する
+newString := regexp.ReplaceAllString(searchString, "悪い天気")
+
+fmt.Println(newString)
 ```
 
-正規表現を使用する際には、``Compile()``や``FindString()``, ``FindStringSubmatch()``といったメソッドを使用することで、パターンをコンパイルし、テキスト内での一致する部分を検索することができます。
+上記のコードを実行すると、"今日はとても悪い天気ですね！"という出力が得られます。
 
-### 詳細
+## 正規表現の詳細
 
-更に詳細に正規表現を使用する際には、以下の点に注意してください。
+正規表現を使用する際には、カスタマイズ可能なオプションが多数あります。例えば、大文字と小文字を区別しないようにする、複数行のテキストにマッチさせる、などのオプションがあります。
 
-- 一般的なユーザー入力ではなく、信頼できるデータにのみ正規表現を適用することを推奨します。
-- 正規表現内の特殊文字やメタ文字について事前に学習することが重要です。
+また、特殊文字やメタ文字と呼ばれるものがあり、これらを正しく理解することでより複雑なパターンを作成することができます。
 
-正規表現はパターンマッチングのための非常に強力なツールですが、学習コストが高いとも言われています。そのため、慣れるまでは他のメソッドを使用することも検討してみてください。
+さらに、正規表現にはグループ化や後方参照といった高度な機能もあります。これらを使用することで、より柔軟なパターンを定義することができます。
 
-### 参考
+## 参考リンク
 
-正規表現の学習に役立つ以下のリンクを参考にしてみてください。
-
-- [正規表現入門](https://qiita.com/jnchito/items/893c887fbf19e17d3ff9)
-- [Goでの正規表現の使用方法](https://programmingistart.com/go/regular-expression-in-go/)
-- [Goのレギュラーエクスプレッションパッケージドキュメント](https://golang.org/pkg/regexp/)
-
-### 他の記事を参照
-
-- [正規表現を使用したデータ検索のパフォーマンス改善策](https://blog.example.com/regex-performance-improvement-ja)
-- [Google RE2とGoの正規表現エンジンの比較](https://engineer.example.com/re2-vs-go-regex-ja)
+- [Goの正規表現を使いこなす – Qiita](https://qiita.com/tenntenn/items/73b94df7d4468ede02a8)
+- [正規表現チュートリアル - ドットインストール](https://dotinstall.com/lessons/basic_regexp)
+- [Goで正規表現を使おう！ – RE:Archive](https://re-archive.com/golang/regexp)
+- [正規表現クイックリファレンス - 朝日インタラクティブ](https://www.as

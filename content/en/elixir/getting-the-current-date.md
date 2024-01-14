@@ -1,40 +1,54 @@
 ---
-title:    "Elixir recipe: Getting the current date"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/getting-the-current-date.md"
+title:                "Elixir recipe: Getting the current date"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-As an English reader, you may be wondering, why would I want to get the current date in an Elixir program? Well, there are a few reasons why you may want to do this. One common use case is to display the current date and time on a user interface, such as a website or mobile app. Another reason is for timestamping events or logging, to keep track of when specific actions or errors occur. Knowing the current date can also be helpful for scheduling tasks and setting reminders. 
+
+When it comes to programming, working with dates and times is a common task. Whether you are building a scheduling application, calculating time differences, or simply displaying the current date and time to your users, knowing how to get the current date in Elixir is an important skill to have.
 
 ## How To
-To get the current date in Elixir, we can use the `:calendar.local_time` function, which returns a tuple containing the year, month, day, hour, minute, and second. We can then destructure this tuple to access individual components or use the `:calendar.strftime` function to format the date in a specific way. Let's take a look at some code examples to better understand this process:
 
-```
-# Get the current date as a tuple
-{:ok, {year, month, day, hour, minute, second}} = :calendar.local_time()
-# Output: {:ok, {2021, 9, 23, 14, 30, 0}}
+Getting the current date in Elixir is very straightforward. We can use the `Calendar` module to retrieve the current date and time. Let's take a look at a simple example:
 
-# Destructure the tuple to access individual components
-IO.puts("Current year: #{year}")
-IO.puts("Current month: #{month}")
-# Output: Current year: 2021
-# Current month: 9
-
-# Format the date using strftime
-formatted_date = :calendar.strftime({year, month, day}, "%m/%d/%Y")
-IO.puts("Formatted date: #{formatted_date}")
-# Output: Formatted date: 09/23/2021
+```Elixir
+current_date = Calendar.utc_now()
 ```
 
-As you can see, we first call the `:calendar.local_time` function to get the current date as a tuple. Then, we can use pattern matching to destructure the tuple and access individual components. Alternatively, we can use the `:calendar.strftime` function to format the date in a specific way by passing in the desired format as a string. 
+In this code snippet, we are using the `Calendar.utc_now()` function to get the current date and time in UTC format. If we were to print out the `current_date` variable, we would see something like this:
+
+```Elixir
+#⇒ {{2019, 12, 14}, {22, 25, 36}}
+```
+
+As you can see, the date and time are represented as a tuple with the format `{{year, month, day}, {hour, minute, second}}`.
+
+We can also use the `Date` module to retrieve only the current date without the time component. Here's an example:
+
+```Elixir
+current_date = Date.utc_today()
+```
+
+If we were to print out the `current_date` variable, we would see something like this:
+
+```Elixir
+#⇒ {2019, 12, 14}
+```
 
 ## Deep Dive
-Now, let's take a deeper look into how Elixir handles dates and time. Elixir uses the Erlang standard library's `os:timestamp` function to retrieve the current time in UTC. This timestamp is then converted to a tuple containing all the necessary components for date and time calculations. The `:calendar` module provides functions for manipulating and formatting these tuples in various ways. However, it's important to note that Elixir does not handle time zones natively, so additional libraries may be needed for more complex operations in different time zones.
+
+Under the hood, the `Calendar` and `Date` modules use the Erlang `:calendar` and `:calendar_now` functions to get the current date and time. These functions rely on the system's clock, so it is important to ensure that your system's clock is accurate.
+
+It is also worth mentioning that the `Calendar` and `Date` modules allow us to convert the current date and time to different formats, such as local time or a specific time zone. This can be useful when working with global applications or when dealing with user-specific time zones.
 
 ## See Also
-- [Elixir Documentation: Calendar](https://hexdocs.pm/elixir/Calendar.html)
-- [Erlang Documentation: Calendar](http://erlang.org/doc/man/calendar.html)
-- [Moment: Timezone handling with Elixir](https://hexdocs.pm/moment/readme.html#timezone-handling-with-elixir)
+
+- [Elixir Calendar module documentation](https://hexdocs.pm/elixir/Calendar.html)
+- [Elixir Date module documentation](https://hexdocs.pm/elixir/Date.html)
+- [Elixir Getting Started guide](https://elixir-lang.org/getting-started/introduction.html)
+
+Now that you know how to get the current date in Elixir, you can confidently tackle any date-related tasks in your projects. Happy coding!

@@ -1,35 +1,34 @@
 ---
-title:    "Gleam: Nykyisen päivämäärän saaminen"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/getting-the-current-date.md"
+title:                "Gleam: Päivämäärän haku"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: 
-Joku voisi haluta saada nykyisen päivämäärän esimerkiksi sovelluksessa tapahtuvien aikaleimojen tallentamiseen tai tarvittavien päivämäärien laskemiseen. 
+## Miksi hankkia nykyinen päivämäärä?
 
-## Miten: 
-Koodiesimerkki, jossa näytetään kuinka saat nykyisen päivämäärän Gleamissa ja miten se tulostetaan komentokehotteelle: 
+Tulevien tapahtumien suunnittelu, tiedon tallentaminen ja aikaleimojen luominen ovat vain muutamia syitä, miksi joku haluaisi hankkia nykyisen päivämäärän ohjelmoinnissa. Onneksi Glean avulla tämä on helppoa.
 
-```Gleam
-let tanaan = \Gleam.Date.today()
-```
+## Kuinka tehdä se:
 
 ```Gleam
-\IO.print("Tänään on ", Gleam.Date.to_string(tanaan), "!")
+import Gleam.DateTime
+import Gleam.Pipe
+
+let current_date =
+  DateTime.local_now()
+  |> Date.to_string()
 ```
 
-Tämä koodi tuottaa seuraavan tulosteen komentokehotteelle: 
+Tämä yksinkertainen koodinpätkä käyttää DateTime-moduulia hankkimaan nykyisen päivämäärän ja sitten Date-moduulia muuntamaan sen merkkijonoksi. Voit myös muuttaa merkkijonon muotoilua käyttämällä Date.to_string_opts-funktiota ja antamalla haluamasi muodon. Esimerkiksi "YYYY-mm-dd".
 
-> Tänään on 2020-04-30!
+## Syvällinen sukellus:
 
-## Syvällinen tutkimus: 
-Nykyisen päivämäärän saaminen Gleamissa perustuu "Date" -moduuliin, joka sisältää toimintoja päivämäärän laskemiseen ja muotoiluun. Gleam käyttää ISO 8601 -standardia päivämäärien esittämiseen muodossa "YYYY-MM-DD". Voit tutustua moduulin API-dokumentointiin lisätietojen saamiseksi siitä, kuinka käyttää päivämäärien laskemisessa ja muotoilussa: [Gleam Date - Dokumentointi](https://gleam.run/modules/gleam_date/latest/)
+Jos haluat syvemmän ymmärryksen siitä, miten DateTime ja Date-moduulit toimivat, voit tarkastella niiden lähdekoodia. DateTime-moduuli käyttää Erlangin :os.date -toimintoa ja Date-moduuli käyttää :calendar.now_to_datetime-funktiota.
 
-## Katso myös: 
-- [Gleam - Verkkosivusto](https://gleam.run/)
-- [Gleam - Github](https://github.com/gleam-lang/gleam)
-- [Gleam - Opas aloittelijoille](https://gleam.run/book/tour/)
+## Katso myös:
 
-*Kiitos lukemisesta!*
+- Glean DateTime-dokumentaatio: https://gleam.run/modules/gleam_datetime
+- Gleam Date-dokumentaatio: https://gleam.run/modules/gleam_date

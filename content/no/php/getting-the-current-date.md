@@ -1,66 +1,46 @@
 ---
-title:    "PHP: Å få dagens dato"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/getting-the-current-date.md"
+title:                "PHP: Hente den nåværende datoen"
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvorfor bry seg om å få den nåværende datoen? Det kan virke som en liten detalj, men å kjenne til den eksakte dagen kan være avgjørende for mange programmeringsoppgaver. Uten å ha tilgang til den nåværende datoen, kan det være vanskelig å lage dynamiske og nøyaktige programmer.
+# Hvorfor få nåværende dato i PHP?
 
-## Hvordan få den nåværende datoen i PHP
-Det er flere måter å få tak i den nåværende datoen i PHP, men den mest vanlige og enkleste metoden er å bruke funksjonen "date()". Her er et eksempel på hvordan du kan hente ut den nåværende datoen i dagens datoformat:
+Å få nåværende dato i et programmeringsspråk som PHP kan være svært nyttig for å holde oversikt over tidsbegrensede funksjoner eller prosesser. Dette kan inkludere datofiltre for databaser eller å vise den nåværende datoen på et nettsted. Det kan også brukes til å vise dynamiske datoer for arrangementer eller tidsfrister. Uansett hva årsaken er, er det viktig å vite hvordan man kan få tak i den nåværende datoen i PHP.
 
-```PHP
-<?php
-echo date("d.m.Y"); // output: 30.09.2021
-?>
-```
+## Slik gjør du det
 
-Du kan også spesifisere et annet datoformat ved å endre parametere i "date()" funksjonen. For eksempel kan du få en dato i formatet "d/m/Y" ved å skrive:
+For å få tak i nåværende dato i PHP er det flere måter å gjøre det på. Den enkleste måten er ved å bruke innebygde funksjoner som "date()" eller "time()". Disse funksjonene returnerer nåværende dato og tid i en bestemt format, avhengig av hvilke parametere som er gitt.
 
 ```PHP
-<?php
-echo date("d/m/Y"); // output: 30/09/2021
-?>
+$date = date("d-m-Y"); //Dette vil returnere nåværende dato på formatet DD-MM-YYYY
+$time = time(); //Dette vil returnere nåværende tid i sekunder siden 1. januar 1970
 ```
 
-Det er også mulig å få tilgang til andre deler av den nåværende datoen, som dag, måned eller år, ved hjelp av "date()" funksjonen. Her er noen eksempler:
+En annen måte å få tak i nåværende dato på er ved å bruke "DateTime" klassen i PHP. Denne klassen gir mer fleksibilitet når det gjelder å manipulere datoer og tilpasse formatet.
 
 ```PHP
-<?php
-echo date("d"); // henter ut dagens dato (30)
-echo date("M"); // henter ut forkortet månedsnavn (Sep)
-echo date("Y"); // henter ut året (2021)
+$date = new DateTime(); //Oppretter et nytt DateTime objekt med nåværende dato og tid
+echo $date->format('d-m-Y'); //Dette vil returnere nåværende dato på formatet DD-MM-YYYY
 ```
-
-Det finnes også andre funksjoner for å få tak i den nåværende datoen, som "time() og "strtotime()", men "date()" funksjonen er den mest brukte og enkleste.
 
 ## Dykk dypere
-Å få den nåværende datoen i PHP handler ikke bare om å få tak i dagens dag, måned og år. Det finnes også andre nyttige funksjoner og metoder for å manipulere og sjekke datoer. Du kan for eksempel legge til eller trekke fra et bestemt antall dager, måneder eller år fra en dato ved hjelp av "strtotime()" funksjonen. Her er et eksempel:
+
+Nå som vi har sett på noen enkle måter å få tak i nåværende dato i PHP, la oss gå litt dypere inn i hvordan dette fungerer. Som nevnt tidligere, returnerer funksjonen "date()" og "time()" dato og tid i et bestemt format. Dette formatet bestemmes av de forskjellige parametrene som kan gis til funksjonene. For eksempel, for å få datoen på formatet "MM-DD-YYYY", må du bruke "date('m-d-Y')".
+
+I tillegg, hvis du ønsker å få tak i en spesifikk dato i fremtiden eller fortiden, kan du også legge til eller trekke fra antall dager, uker eller måneder til nåværende dato ved hjelp av "strtotime" funksjonen.
 
 ```PHP
-<?php
-$nyDato = date("d.m.Y", strtotime("+1 day")); // legger til en dag
-echo $nyDato; // output: 01.10.2021
-?>
+$date = date("d-m-Y", strtotime('+1 week')); //Dette vil returnere datoen 1 uke frem i tid
 ```
 
-Du kan også sammenligne to datoer og få ut forskjellen mellom dem ved hjelp av "strtotime()" funksjonen. Her er et eksempel:
+Det er også viktig å merke seg at nåværende dato og tid er avhengig av serverinnstillingene. Dette betyr at hvis du trenger å bruke en spesifikk tidssone eller datoformat, må du sørge for å angi dette i koden din.
 
-```PHP
-<?php
-$dato1 = strtotime("2021-09-30"); // første dato
-$dato2 = strtotime("2021-10-01"); // andre dato
-$antallDager = ($dato2 - $dato1) / (60 * 60 * 24); // antall dager mellom datoene
-echo $antallDager; // output: 1
-?>
-```
+# Se også
 
-Disse er bare noen få eksempler på hva som er mulig å gjøre med datoer i PHP. Det finnes mange flere funksjoner og metoder for å håndtere datoer på en mer avansert måte.
-
-## Se også
-- [PHP.net - date() funksjonen](https://www.php.net/manual/en/function.date.php)
-- [PHP.net - strtotime() funksjonen](https://www.php.net/manual/en/function.strtotime.php)
-- [W3Schools - PHP Date and Time](https://www.w3schools.com/php/php_date.asp)
+- [Date og time funksjoner i PHP](https://www.php.net/manual/en/function.date.php)
+- [DateTime klasse i PHP](https://www.php.net/manual/en/class.datetime.php)
+- [strtotime funksjon i PHP](https://www.php.net/manual/en/function.strtotime.php)

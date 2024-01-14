@@ -1,37 +1,53 @@
 ---
-title:    "C#: Skriva en textfil"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/writing-a-text-file.md"
+title:                "C#: Att skriva en textfil"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att kunna skriva till en textfil i C# är en användbar färdighet som kan komma till nytta i många olika scenarier. Det kan användas för att spara användardata, loggfiler eller annan information som behöver lagras lokalt på en dator eller enhet. Det är även ett viktigt koncept att förstå för att kunna arbeta med filer och textbehandling i allmänhet.
+## Varför?
 
-## Hur man gör
-Att skriva till en textfil i C# är relativt enkelt. Först behöver du skapa en instans av klassen "StreamWriter" och ange sökvägen till den fil du vill skriva till. Sedan kan du använda metoden "WriteLine" för att skriva en rad till filen. När du är klar med att skriva till filen behöver du stänga den genom att anropa metoden "Close". Nedan finns ett enkelt exempel på hur detta kan se ut:
+Att skriva textfiler är ett viktigt koncept inom programmering, speciellt inom C#. Textfiler används för att lagra och hantera data som kan vara viktig för ett program. Genom att lära sig hur man skriver en textfil kan man lätt manipulera och spara data för senare användning.
 
-```c#
-using (StreamWriter sw = new StreamWriter("minfil.txt"))
-{
-    sw.WriteLine("Detta är en rad som skrivs till textfilen.");
-    sw.Close();
-}
+## Så här gör du:
+
+För att skriva en textfil i C#, behöver vi först öppna en filström och ange sökvägen för den textfil vi vill skapa. Sedan använder vi StreamWriter-klassen för att skriva till filen och stänga filströmmen efteråt. Här är ett exempel på hur koden kan se ut:
+
+```C#
+// Skapa en filström och ange sökvägen till textfilen
+FileStream fs = new FileStream("mittDokument.txt", FileMode.Create);
+
+// Skapa en StreamWriter för att skriva till filen
+StreamWriter sw = new StreamWriter(fs);
+
+// Skriv till filen
+sw.WriteLine("Det här är en text som kommer att sparas i mittDokument.txt");
+sw.WriteLine("Jag kan skriva flera rader och också använda olika datatyper som int och double.");
+
+// Stäng StreamWriter och filströmmen
+sw.Close();
+fs.Close();
 ```
-Output i "minfil.txt":
-```
-Detta är en rad som skrivs till textfilen.
-```
 
-## Djupdykning
-När du skriver till en textfil i C# finns det några olika saker du bör ha i åtanke. Först och främst, om den fil du försöker skriva till redan finns kommer den att skrivas över helt och hållet. Om du vill lägga till ny information till en befintlig fil kan du använda "Append" som en parameter i "StreamWriter"-konstruktorn.
+När du kör koden ovan kommer det skapas en fil med namnet "mittDokument.txt" och texten som angavs i koden kommer att skrivas till filen. Resultatet kommer att se ut så här:
 
-Det är också viktigt att stänga filen när du är klar med att skriva till den. Detta kan göras manuellt genom att anropa "Close"-metoden eller genom att använda "using"-syntaxen som i kodexemplet ovan. Oavsett vilken metod du väljer är det viktigt att stänga filen för att undvika eventuella problem eller konflikter med andra delar av din kod.
+> Det här är en text som kommer att sparas i mittDokument.txt
+> Jag kan skriva flera rader och också använda olika datatyper som int och double.
 
-Slutligen, om du vill arbeta med specifika teckenkodningar när du skriver till textfiler kan du ange det som en parameter i "StreamWriter"-konstruktorn. Som standard kommer filen att skrivas med UTF-8-kodning, men du kan ändra detta till exempelvis ASCII eller Unicode beroende på dina behov.
+## Djupdykning:
 
-## Se även
-- [Microsoft Docs: StreamWriter Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-5.0)
-- [C-sharpcorner: Writing Text Files In C#](https://www.c-sharpcorner.com/article/writing-text-files-in-c-sharp/)  
-- [TutorialsTeacher: C# - File I/O](https://www.tutorialsteacher.com/csharp/csharp-file-io)
+Nu när vi vet hur vi kan skriva till en textfil, låt oss utforska några andra användbara funktioner som StreamWriter-klassen har.
+
+En av dessa funktioner är att kunna ange om filen ska fortsätta skrivas på eller om den ska skrivas över varje gång vi öppnar den. Detta kan göras genom att ange FileMode.Append istället för FileMode.Create i filströmmen.
+
+En annan användbar funktion är att kunna formatera texten som skrivs till filen. Detta görs genom att använda Format eller WriteFormat-metoderna istället för Write-metoden.
+
+Nu när du har en grundläggande förståelse för hur man skriver en textfil i C#, kan du utforska mer avancerade koncept som att läsa från och skriva till befintliga textfiler, eller hantera fel och undantag som kan uppstå. Det finns mycket att lära om textfiler och det är en viktig del av programmering.
+
+## Se även:
+
+- [MSDN dokumentation för StreamWriter-klassen](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter)
+- [Skillnaden mellan FileMode.Append och FileMode.Create](https://stackoverflow.com/questions/757310/whats-the-difference-between-filemode-create-and-filemode-append)
+- [Sköldpaddans beteende: Läs in data från en textfil](https://www.skoldpaddansbloggen.se/?p=1013)

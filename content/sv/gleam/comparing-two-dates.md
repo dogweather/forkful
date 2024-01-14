@@ -1,45 +1,31 @@
 ---
-title:    "Gleam: Jämföring av två datum"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/comparing-two-dates.md"
+title:                "Gleam: Jämförelse av två datum"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att jämföra två datum kan vara en vanlig uppgift i många program. Det kan hjälpa dig att avgöra om ett visst datum ligger före eller efter ett annat, eller om de är samma datum.
+Att jämföra två datum är en vanlig uppgift inom programmering. Det är användbart för att kontrollera om ett datum ligger före eller efter ett annat, eller om de två datumen är lika. Oavsett vilken typ av program du utvecklar, är det viktigt att ha en bra förståelse för hur man gör detta.
 
-## Så här gör du
-
-För att jämföra två datum i Gleam, kan du använda funktionen `Date.compare`. Det finns tre möjliga utfall av denna funktion: `Less`, `Equal` eller `Greater`. Dessa representerar om det första datumet är mindre än, lika med eller större än det andra datumet.
-
-För att använda funktionen behöver du skapa två `Date`-objekt och sedan använda dem som argument i `Date.compare`-funktionen.
+## Hur man gör 
 
 ```Gleam
-let startDate = Date.from_iso_8601("2021-01-01")
-let endDate = Date.from_iso_8601("2021-01-30")
-
-let result = Date.compare(startDate, endDate)
+Date.comparison(Date.new(2021, 01, 01), Date.new(2020, 12, 31))
 ```
 
-I det här exemplet kommer `result` att bli `Less`, eftersom `startDate` ligger tidigare än `endDate`. Du kan också använda operatorn `<`, `=` eller `>` för att jämföra direkt mellan två datum.
+Detta kodblock visar hur man använder den inbyggda funktionen "comparison" i Gleam för att jämföra två datum. Funktionen tar två datum som argument och returnerar ett heltal som indikerar hur de förhåller sig till varandra. Om det första datumet är tidigare än det andra kommer resultatet att vara -1, om det kommer efteråt blir det 1 och om de båda är samma kommer det att vara 0.
 
-## Djupdykning
+## Deep Dive
 
-Vid jämförelse av datum är det viktigt att förstå skillnaden mellan lokala och UTC-tider. En lokal tid är baserad på tidszonen där användaren befinner sig, medan UTC-tider är baserade på Universal Time Coordinated.
+Att jämföra datum kan verka enkelt, men det finns vissa saker att tänka på för att undvika fel. En viktig aspekt är att se till att båda datumen har samma format, annars kan jämförelsen ge ett felaktigt resultat.
 
-När du skapar `Date`-objekt i Gleam, skapas de automatiskt som UTC-tider. Detta kan påverka resultatet av en jämförelse om du inte tar hänsyn till tidszonen.
-
-För att hantera detta kan du använda funktionen `Date.with_timezone` för att omvandla ett `Date`-objekt till en lokal tid baserad på en specifik tidszon.
-
-```Gleam
-let localDate = Date.with_timezone(startDate, Timezone.from_name("Europe/Stockholm"))
-```
+En annan viktig detalj är att datumet måste konverteras till GMT-tid innan det kan jämföras, eftersom olika tidszoner och sommartider kan påverka resultatet. Detta kan åstadkommas genom att använda funktionen "DateTime.to_gmt".
 
 ## Se även
 
-Här är några användbara länkar för mer information om att jämföra datum i Gleam:
-
-- [Officiell dokumentation för Date-modulen](https://gleam.run/modules/date.html#Date.compare)
-- [Blogginlägg om att jämföra datum i Gleam av The Gleam Experiments](https://gleampowered.org/Comparing-dates-in-Gleam)
+- Gleams inbyggda datumfunktioner: https://gleam.run/docs/std/datetime/
+- En guide om hur man jämför datum i andra programmeringsspråk: https://www.w3schools.com/sql/func_sqlserver_formats.asp

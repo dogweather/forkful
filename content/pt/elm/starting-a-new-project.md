@@ -1,36 +1,40 @@
 ---
-title:    "Elm: Começando um novo projeto"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/starting-a-new-project.md"
+title:                "Elm: Iniciando um novo projeto"
+programming_language: "Elm"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto em Elm?
+## Porquê
 
-Se você está buscando uma linguagem funcional moderna e robusta para o desenvolvimento de front-end, então o Elm é uma ótima escolha. Ele é conhecido por sua sintaxe simples e fácil de aprender, além de ter um sistema de tipos forte para garantir código mais seguro e menos erros. Além disso, a comunidade de desenvolvedores de Elm está crescendo e oferece uma ampla gama de recursos e ferramentas para suporte e colaboração.
+Se você é um desenvolvedor em busca de uma linguagem de programação funcional moderna e eficiente, então pode considerar começar seu próximo projeto em Elm. Com uma sintaxe simples e forte sistema de tipos, Elm é uma excelente escolha para construir aplicações web escaláveis e confiáveis.
 
-## Como começar um projeto em Elm
+## Como
 
-Primeiramente, é necessário ter o Elm instalado em seu sistema. Em seguida, utilize o comando `elm init` para criar uma estrutura básica de projeto. Se estiver utilizando algum ambiente de desenvolvimento como o VS Code, é recomendável instalar a extensão Elm para uma melhor experiência de codificação. Agora, vamos criar um pequeno programa que irá imprimir "Hello World!" na tela:
+Para iniciar um novo projeto em Elm, você precisa primeiro instalar o compilador Elm e configurar seu ambiente de desenvolvimento. Em seguida, use o comando `elm init` para criar uma nova estrutura de diretórios para o seu projeto. Dentro dessa estrutura, você pode começar a escrever seu código Elm em arquivos `.elm`, que serão compilados em JavaScript e executados no navegador.
+
+Vamos dar uma olhada em um exemplo simples de código Elm:
 
 ```Elm
-module Main exposing (main)
+-- Declarando uma função
+saudar nome =
+    "Olá, " ++ nome ++ "!"
 
-import Html exposing (text)
-
+-- Chamando a função
 main =
-  text "Hello World!"
+    saudar "João"
 ```
 
-Para executar o programa, basta digitar `elm reactor` no terminal e acessar `localhost:8000` em seu navegador. Você verá a mensagem "Hello World!" na tela.
+A saída deste código será uma simples mensagem "Olá, João!". Perceba como a sintaxe de Elm é semelhante a outras linguagens funcionais como Haskell e F#, tornando-a fácil de aprender.
 
-## Mergulho profundo
+## Mergulho Profundo
 
-Ao começar um novo projeto em Elm, é importante seguir as práticas recomendadas pela comunidade e utilizar ferramentas populares, como o Elm UI e o Elm CSS. Além disso, tenha como meta manter seu código limpo e bem organizado para evitar problemas futuros. Fazer testes regulares também é essencial para garantir a qualidade do código.
+Ao iniciar um novo projeto em Elm, é importante entender alguns conceitos-chave, como o padrão de arquitetura “Model-View-Update” e como usar os tipos e funcionalidades do sistema de tipos de Elm para garantir um código seguro e sem erros. Também é útil explorar os pacotes da comunidade Elm para encontrar bibliotecas e ferramentas para ajudá-lo no desenvolvimento.
 
-## Veja também
+## Ver também
 
-- Documentação Oficial do Elm: https://guide.elm-lang.org/
-- Repositório do Elm UI: https://github.com/rtfeldman/elm-css
-- Comunidade Elm no Reddit: https://www.reddit.com/r/elm/
+- [Documentação oficial do Elm](https://elm-lang.org/docs)
+- [Pacotes da comunidade Elm](https://package.elm-lang.org/)
+- [Tutorial Elm em Português](https://medium.com/@allanmarquesdesouza/elm-a-linguagem-funcional-para-web-bd7f0c631ba0)

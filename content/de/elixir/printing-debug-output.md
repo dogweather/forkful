@@ -1,63 +1,73 @@
 ---
-title:    "Elixir: Druck von Debug-Ausgabe"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elixir/printing-debug-output.md"
+title:                "Elixir: Debug-Ausgabe drucken"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Debugging ist ein wichtiger Teil des Programmierens und das Drucken von Debug-Ausgaben kann dabei eine sehr nützliche Methode sein. Es hilft dabei, den Code während der Entwicklung zu verstehen, Fehler zu finden und zu beheben.
+Debug-Ausgaben sind ein wichtiger Teil der Entwicklung von Elixir-Anwendungen. Sie ermöglichen es Entwicklern, die internen Abläufe ihres Codes besser zu verstehen und Probleme zu lösen.
 
-## Wie
+# Wie man
 
-Es gibt verschiedene Möglichkeiten, um Debug-Ausgaben in Elixir zu drucken. Die einfachste Möglichkeit ist die Verwendung der `IO`-Funktion `inspect/2`, die eine lesbare Darstellung von Datenstrukturen zurückgibt. Zum Beispiel:
-
-```Elixir
-IO.inspect(["Hello", "World"])
-```
-
-Dies gibt die Ausgabe `"["Hello", "World"]"` zurück. Die Funktion kann auch mit Modulen und Funktionen verwendet werden, um Informationen über diese auszugeben. Zum Beispiel:
+Es gibt mehrere Möglichkeiten, Debug-Ausgaben in Elixir zu erstellen. Eine einfache Möglichkeit ist die Verwendung der `IO.inspect/2` Funktion:
 
 ```Elixir
-IO.inspect(Enum, pretty: true)
-```
-
-Dies gibt eine hübsch formatierte Ausgabe aller Funktionen im Modul `Enum` zurück.
-
-Eine weitere nützliche Funktion für das Drucken von Debug-Ausgaben ist `IO.puts/2`, die einfach eine Zeichenkette ohne Formatierung druckt. Zum Beispiel:
-
-```Elixir
-IO.puts("This is a debug message")
-```
-
-Dies wird einfach die Zeichenkette `"This is a debug message"` ausgeben.
-
-Es ist auch möglich, eigene formatierte Debug-Ausgaben zu erstellen, indem man die `~p`- und `~s`-Formatierungsoptionen verwendet. Zum Beispiel:
-
-```Elixir
-name = "John"
-age = 25
-IO.puts(~p"Name: #{name} - Age: #{age}")
-```
-
-Dies wird die Ausgabe `"Name: \"John\" - Age: 25"` erzeugen.
-
-## Tiefeneintauchen
-
-Beim Drucken von Debug-Ausgaben ist es wichtig, zu beachten, dass zu viele Ausgaben den Code unordentlich machen und hemmen können. Daher sollte man genau überlegen, welche Informationen ausgegeben werden sollen. Es ist auch möglich, die Ausgabe von Debug-Ausgaben anhand von Umgebungsvariablen oder Kompilierungsoptionen zu steuern. Zum Beispiel:
-
-```Elixir
-if System.get_env("DEBUG") == "true" do
-  IO.puts("This is a debug message")
+defmodule Beispiel do
+  def add(a, b) do
+    IO.inspect({a, b})
+    a + b
+  end
 end
+
+Beispiel.add(2, 3)
 ```
 
-Dies wird nur dann eine Debug-Ausgabe drucken, wenn die Umgebungsvariable `DEBUG` auf `true` gesetzt ist.
+Die `IO.inspect/2` Funktion gibt das übergebene Argument aus und gibt es auch als Rückgabewert zurück. In diesem Beispiel wird die Ausgabe `{2, 3}` sein.
 
-## Siehe auch
+Eine weitere Möglichkeit ist die Verwendung von `IO.puts/1`, um eine Nachricht direkt in die Konsole auszugeben:
 
-- Offizielle Elixir Dokumentation zu Debugging: https://elixir-lang.org/getting-started/debugging.html
-- Elixir Forum Diskussion über die Verwendung von Debug-Ausgaben: https://elixirforum.com/t/elixir-forum-diskussion
-- Elixir School Tutorial über Debug-Ausgaben: https://elixirschool.com/de/lessons/basics/io-debugger/
+```Elixir
+IO.puts "Eine Debug-Nachricht"
+```
+
+Dieser Ansatz ist nützlich, wenn Sie schnell eine einfache Nachricht an der gewünschten Stelle in Ihrem Code ausgeben möchten.
+
+# Tiefer tauchen
+
+Es ist wichtig zu beachten, dass Debug-Ausgaben in produktionsreifen Anwendungen vermieden werden sollten, da sie die Leistung beeinträchtigen können. Stattdessen können Entwickler die `Logger`-Bibliothek verwenden, um spezifische Debug-Nachrichten zu protokollieren. Diese Nachrichten können dann mithilfe von Konfigurationsdateien gesteuert werden und werden nur angezeigt, wenn die Anwendung in einer Debug-Umgebung ausgeführt wird.
+
+Um den Logger in Ihrer Anwendung zu verwenden, müssen Sie ihn zunächst konfigurieren, indem Sie eine `config/config.exs` Datei erstellen:
+
+```Elixir
+config :logger,
+ level: :debug,
+ format: "$time $metadata[$level] $message\\n",
+ color: [enabled: false]
+```
+
+Dieser Code aktiviert den Logger auf dem Debug-Level und gibt eine Standardformatierung für Debug-Nachrichten an. Sie können auch spezifische Module und Funktionen angeben, für die Debug-Nachrichten protokolliert werden sollen.
+
+Um nun den Logger in Ihren Code zu integrieren, können Sie den `Logger.debug/1` Befehl verwenden:
+
+```Elixir
+defmodule Beispiel do
+  def add(a, b) do
+    Logger.debug("Berechne #{a} + #{b}")
+    a + b
+  end
+end
+
+Beispiel.add(2, 3)
+```
+
+Diese Debug-Nachricht wird nur angezeigt, wenn der Logger auf dem Debug-Level aktiviert ist.
+
+# Siehe auch
+
+- Offizielle Elixir Dokumentation: https://elixir-lang.org/docs.html
+- Elixir Forum: https://elixirforum.com/
+- Elixir School: https://elixirschool.com/de/

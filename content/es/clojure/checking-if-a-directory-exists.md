@@ -1,34 +1,52 @@
 ---
-title:    "Clojure: Verificando si existe un directorio"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/checking-if-a-directory-exists.md"
+title:                "Clojure: Comprobando si existe un directorio"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-Hay varias razones por las cuales un programador podría necesitar verificar si un directorio existe en Clojure. Por ejemplo, puede ser necesario para determinar si un directorio está disponible para guardar archivos descargados o para buscar dependencias externas.
 
-## Cómo hacerlo
-Para verificar si un directorio existe en Clojure, podemos usar la función `file-seq`, que tomará un objeto de tipo `Java.io.File` como argumento. Aquí hay un ejemplo de cómo usarlo:
+Si estás programando en Clojure y necesitas saber si existe un directorio en tu sistema, es importante entender cómo hacerlo de manera eficiente y precisa.
+
+## Cómo Hacerlo
+
+Hay varias formas de verificar la existencia de un directorio en Clojure. Una forma sencilla es utilizar la función `file?` que devuelve `true` si la ruta especificada apunta a un archivo o directorio existente. Por ejemplo:
 
 ```Clojure
-(defn existe-directorio? [ruta-directorio]
-  (if (some? (file-seq (java.io.File. ruta-directorio)))
-    true
-    false))
-
-(def resultado (existe-directorio? "ruta de ejemplo"))
-(println resultado)
+(file? "home/user/mis-documentos")
+=> true
 ```
 
-Al ejecutar este código, si el directorio existe en la ruta proporcionada, obtendremos un resultado de `true`. Por el contrario, si el directorio no existe, el resultado será `false`.
-¡Eso es todo! Con unas pocas líneas de código, podemos verificar fácilmente si un directorio existe en Clojure.
+Sin embargo, esta forma no siempre es confiable ya que no toma en cuenta casos en los que el directorio especificado está vacío o no tiene permisos de lectura.
+
+Otra opción es utilizar la función `dir?` que verifica si la ruta especificada apunta a un directorio existente y con contenido. Por ejemplo:
+
+```Clojure
+(dir? "home/user/mis-documentos")
+=> true
+```
+
+Esta opción es más precisa ya que toma en cuenta tanto la existencia como el contenido del directorio.
+
+Sin embargo, si lo que se desea es saber si un directorio específico existe, sin importar si tiene contenido o no, se puede utilizar la función `exists?`. Por ejemplo:
+
+```Clojure
+(exists? "home/user/mis-documentos")
+=> true
+```
+
+Esta función devuelve `true` incluso en casos en los que el directorio existe pero está vacío. 
 
 ## Profundizando
-Si deseas profundizar más en el tema, puedes explorar otras funciones que pueden ser útiles al trabajar con directorios en Clojure, como `file`, `make-parents`, `list-files` y `list-directories`. También puedes revisar la documentación oficial de Clojure para obtener más información sobre cómo trabajar con archivos y directorios.
+
+Si quieres profundizar en el tema, puedes explorar diferentes posibilidades utilizando funciones como `files` y `dirs` que permiten obtener una lista de archivos y directorios en una ruta específica, respectivamente.
+
+Además, también se puede utilizar la librería `clojure.java.io` que ofrece una gran variedad de funciones para manipular archivos y directorios de manera más detallada y precisa.
 
 ## Ver también
-- [Documentación oficial de Clojure para manejo de archivos (en inglés)](https://clojure.org/reference/io)
-- [Ejemplo de codificación para verificar si un directorio existe en Clojure (en inglés)](https://gist.github.com/aphyr/3824575)
-- [Tutoriales de Clojure (en español)](http://clojurespanol.cl/tutoriales/)
+
+- [Documentación oficial de Clojure sobre archivos y directorios](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- [Ejemplos de código para trabajar con archivos y directorios en Clojure](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/05_io/5-13_working-with-directories.asciidoc)

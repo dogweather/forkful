@@ -1,40 +1,43 @@
 ---
-title:    "Kotlin: テキストファイルの読み込み"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/reading-a-text-file.md"
+title:                "Kotlin: テキストファイルの読み込み"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-テキストファイルを読み込むことは、プログラミングを学ぶ上で非常に重要なスキルです。テキストファイルは、データを保存し、処理し、分析するために広く使用されています。そのため、テキストファイルを読み込むことは、プログラミングでより高度なタスクを達成するための第一歩となります。
+テキストファイルを読むと、プログラマーがコンピューターの記憶容量にアクセスし、情報を取得したり変更したりすることができるようになります。これは、データを処理するために非常に重要なスキルです。
 
-## 使い方
+## 方法
 
-テキストファイルを読み込むには、以下のようなコードを使用します。
+テキストファイルを読むには、まずファイルを開く必要があります。Kotlinでは、以下のように記述します。
 
-```Kotlin
-val file = File("sample.txt")
-file.forEachLine {
-  println(it)
-}
+```
+Kotlin ファイルを開く
 ```
 
-このコードは、指定したテキストファイルを開き、ファイル内の各行を読み込んでコンソールに出力します。また、ファイルが見つからない場合や読み込みに失敗した場合には、例外が発生するためエラーハンドリングも適切に行う必要があります。
+次に、ファイルからデータを読み込みます。例えば、`readLine()`メソッドを使用すると、一行ずつデータを読み込むことができます。
 
-## 詳細を深く掘り下げる
+```
+Kotlin ファイルからデータを読み込む
+```
 
-テキストファイルを読み込むには、様々な方法があります。例えば、Kotlinでは`readText()`や`readLines()`といったメソッドを使用することで、ファイル内容を文字列やリストとして簡単に取得することができます。
+最後に、読み込んだデータを処理したり、必要なフォーマットに変換したりすることができます。例えば、読み込んだデータをコンソールに出力するには、以下のように記述します。
 
-また、テキストファイルのエンコーディングによっては、文字化けが起こる可能性があります。そのため、`Charset`クラスを使用して、正しいエンコーディングを指定することが重要です。
+```
+Kotlin ファイルから読み込んだデータを出力する
+```
 
-さらに、ファイルを読み込むだけでなく、Kotlinでは`FileWriter`を使用することでファイルに書き込むこともできます。これを組み合わせることで、テキストファイルの作成や編集も行うことができます。
+## 深堀り
 
-## 関連リンクを参照する
+テキストファイルを読む際に注意が必要な点があります。例えば、文字コードが異なる場合は、データの読み込みに問題が生じる可能性があります。また、ファイルのサイズが大きい場合は、一度に全てのデータを読み込まず、一定のバイト数ごとに読み込むようにすることが効率的です。
 
-- [Kotlin公式ドキュメント: Files](https://kotlinlang.org/docs/files.html)
-- [テキストファイルを読み書きする](https://qiita.com/pablo/items/777ebd21f5dfc6be79fe)
-- [Javaでファイルの読み書きをする方法](https://qiita.com/kzm4269/items/be8b52f982f8df8c6931)
+## 併せて読みたい
 
-ありがとうございました！
+- [Kotlin 公式ドキュメント](https://kotlinlang.org/docs/)
+- [Kotlin 公式チュートリアル](https://kotlinlang.org/docs/tutorials/)
+- [Kotlin ファイル操作の記事](https://www.baeldung.com/java-read-file)
+- [Kotlin ファイルの文字コードについて](https://stackoverflow.com/questions/874876)

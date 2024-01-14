@@ -1,36 +1,37 @@
 ---
-title:    "Rust: 표준 오류에 쓰기"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/rust/writing-to-standard-error.md"
+title:                "Rust: 표준 에러 쓰기"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
+## 왜
 
-개인 프로젝트를 할 때나 회사에서 개발을 할 때, 우리는 종종 오류 메세지 또는 디버깅 정보를 콘솔에 출력하도록 코드를 작성합니다. 이때 표준 에러 (standard error) 스트림을 사용하여 오류 메세지를 출력할 수 있습니다. 이렇게 함으로써 더 정확한 디버깅이 가능하고, 프로그램의 안정성을 높일 수 있습니다.
+컴퓨터 프로그래밍을 하는 사람이라면 누구나 생각해볼 수 있는 질문 중 하나는 "도대체 왜 에러 메시지가 중요한가?"입니다. 에러 메시지는 우리가 코딩을 할 때는 꼭 필요한 것이지만, 우리가 원하는 대로 프로그램이 동작하지 않을 때 우리에게 무슨 일이 벌어졌는지 알려줍니다. 이는 앞으로 발생할 문제를 해결하는 데 도움이 됩니다.
 
-## 어떻게?
+## 사용 방법
 
-Rust에서 표준 에러 스트림에 메세지를 출력하기 위해서는 `std::io::stderr()` 함수를 사용해야 합니다. 이 함수는 표준 에러 스트림에 접근할 수 있는 `Stderr` 값으로 결과를 반환합니다. `write!` 매크로를 사용하여 해당 값에 문자열을 씁니다. 마지막으로 `flush()`를 사용하여 버퍼를 비워줍니다.
+우리는 Rust 러스트 프로그래밍 언어로 코딩을 할 때 종종 `standard error`에 메시지를 쓸 필요가 있습니다.
+
+우선 우리는 `use std::io::{self, Write};`를 추가해줍니다. 그리고 `main` 함수 안에 아래 코드를 삽입합니다:
 
 ```Rust
-use std::io::{self, Write};
-
-fn main() {
-  let mut stderr = io::stderr();  // 스트림에 대한 접근 권한 얻기
-  write!(stderr, "오류가 발생했습니다. 관리자에게 문의하세요.").expect("메세지 출력 실패");
-  stderr.flush().expect("버퍼 비우기 실패");
-}
+let stderr = io::stderr();
+let mut handle = stderr.lock();
+let _ = handle.write(b"에러 메시지를 적어주세요!"); // 이 부분을 우리가 원하는 에러 메시지로 바꿔줍니다
 ```
 
-## 깊게 들어가기
+위 코드를 실행하면 우리가 원하는 에러 메시지가 `standard error`로 출력될 것입니다.
 
-표준 에러 스트림은 Rust의 `std::io` 모듈의 일부분입니다. 이 모듈은 입력 및 출력과 관련된 여러가지 기능을 제공합니다. `stdout()` 함수를 사용하면 표준 출력 스트림에 접근할 수 있으며, `stdin()` 함수를 사용하면 표준 입력 스트림에 접근할 수 있습니다. 이와 비슷하게, `stderr()` 함수를 사용하여 표준 에러 스트림에 접근할 수 있습니다.
+## 깊이 파고들기
 
-`Stderr` 값은 `Write` 트레이트를 구현하고 있습니다. 이는 매우 유용한 트레이트로, 쓰기 기능을 제공하는 타입에 구현되며 다양한 데이터 형식을 출력할 수 있게 해줍니다. `write!` 매크로를 사용하여 문자열 뿐만 아니라 다양한 형식의 데이터를 쓸 수 있습니다.
+1. [`std::io::Write`](https://doc.rust-lang.org/std/io/trait.Write.html): Rust에서 `Write` trait의 공식 문서입니다.
+2. [Rust 에러 핸들링(github repo)](https://github.com/sgrif/rustando/blob/master/src/error_handling.rs): 에러 핸들링 관련 예제 코드를 모아놓은 깃허브 레포지토리입니다.
 
-# 참고 자료
+## 참고자료
 
-- [The Rust Programming Language: Writing to Standard Error](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#writing-error-messages-to-standard-error)
-- [The Rust Standard Library Documentation: std::io module](https://doc.rust-lang.org/std/io/index.html)
+1. [Rust 공식 문서 - 에러 핸들링](https://doc.rust-lang.org/stable/book/ch09-00-error-handling.html): Rust의 에러 핸들링에 대한 자세한 설명이 담겨있는 공식 문서입니다.
+2. [Rust Programming Language (youtube playlist)](https://www.youtube.com/playlist?list=PLVvjrrRCBy2JSHf9tGxGKJ-bYAN_uDCUL): 러스트 프로그래밍 언어에 관한 유튜브 강의입니다.
+3. [Rust Forum](https://users.rust-lang.org/): 러스트 프로그래밍 언어에 관한 질문과 답변을 공유하는 포럼입니다.

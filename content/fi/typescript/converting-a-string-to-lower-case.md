@@ -1,36 +1,34 @@
 ---
-title:    "TypeScript: Merkkijonon muuntaminen pieniksi kirjaimiksi"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/converting-a-string-to-lower-case.md"
+title:                "TypeScript: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Merkkijonon muuntaminen pieniksi alkukirjaimiksi
+Merkkijonojen muuntaminen pieniksi alkukirjaimiksi on hyödyllinen ohjelmointitekniikka, jota voidaan käyttää monissa eri tilanteissa. Se voi auttaa tekstin muokkauksessa tai tarkkuuden parantamisessa tietojenkäsittelyssä.
 
-On usein tarpeen muuttaa merkkijono pieniksi kirjaimiksi erityyppisten tiedostojen, tietokantojen ja ohjelmien käsittelyyn. Tämän vuoksi on tärkeää ymmärtää, miten merkkijonon muotoilua voidaan muuttaa TypeScript-ohjelmoinnissa.
-
-## Miten
-
-Yksi tapa muuttaa merkkijonoa pieniksi kirjaimiksi TypeScriptillä on käyttää "toLowerCase()" -funktiota. Seuraava esimerkki näyttää, miten tämä tehdään:
-
-```TypeScript
-let teksti = "TÄMÄ ON MERKKIJONO";
-let pienetKirjaimet = teksti.toLowerCase();
-
-console.log(pienetKirjaimet);
+## Kuinka tehdä:
+Voit muuntaa merkkijonon pieniksi alkukirjaimiksi TypeScriptillä käyttämällä toimintoa `toLowerCase()`. Tämä toiminto muuntaa kaikki merkkijonon isot kirjaimet vastaaviin pieniin kirjaimiin ja palauttaa uuden muokatun merkkijonon.
+```
+TypeScript const sana = "Tämä On Esimerkki";
+console.log(sana.toLowerCase()); // tulostaa "tämä on esimerkki"
 ```
 
-Tulostus: "tämä on merkkijono"
+Voit myös käyttää `toLowerCase()` yhdessä muuttujien kanssa, jolloin voit muuntaa eri arvoja erikseen. Esimerkiksi:
+```
+TypeScript let etunimi = "JUHANI";
+let sukunimi = "VIRTANEN";
 
-Yllä olevassa koodissa luomme muuttuja nimeltä "teksti", jossa on isoja kirjaimia sisältävä merkkijono. Sitten käytämme "toLowerCase()" -funktiota luodaksemme uuden muuttujan nimeltä "pienetKirjaimet", joka sisältää muunnetun merkkijonon. Lopuksi tulostamme muutetun merkkijonon konsoliin.
+console.log(etunimi.toLowerCase()); // tulostaa "juhani"
+console.log(sukunimi.toLowerCase()); // tulostaa "virtanen"
+```
 
-## Syvällisempi tarkastelu
+## Syvempi sukellus:
+`toLowerCase()` toiminto hyödyntää Unicode-merkkijonojen muuntamista kirjainten kokoeriin. Tämän ansiosta se voi käsitellä erilaisia kieliä ja erikoismerkkejä oikein. On myös tärkeää huomata, että `toLowerCase()` ei tee muutoksia alkuperäiseen merkkijonoon, vaan palauttaa uuden muokatun version.
 
-Merkkijonon muuttaminen pieniksi kirjaimiksi TypeScriptillä ei rajoitu vain "toLowerCase()" -funktioon. Myös "toLocaleLowerCase()" -funktio voi olla hyödyllinen, jos haluat huomioida erilaisia kieliasetuksia merkkijonossa. Lisäksi voit käyttää myös "toUpperCase()" ja "toLocaleUpperCase()" -funktioita muuntamaan merkkijonon isoihin kirjaimiin. On tärkeää huomata, että nämä funktiot eivät muuta alkuperäisen muuttujan arvoa, vaan ne luovat uuden muuttujan, joka sisältää muunnetun merkkijonon.
-
-## Katso myös
-
-- [TypeScript virallinen dokumentaatio](https://www.typescriptlang.org/docs)
-- [Funktioita merkkijonojen käsittelyyn](https://www.geeksforgeeks.org/javascript-string-prototype-tolowercase-function/)
-- [Merkkijonon muotoilu TypeScriptissä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+## Katso myös:
+- [Microsoftin virallinen TypeScript dokumentaatio](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html)
+- [MDN Web Docs - JavaScript-toiminto `toLowerCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

@@ -1,52 +1,54 @@
 ---
-title:    "C++: המרת תאריך למחרוזת"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/cpp/converting-a-date-into-a-string.md"
+title:                "C++: המרת תאריך למחרוזת"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##מדוע
-המרת תאריך למחרוזת היא פעולה נפוצה בתכנות בשפת C++. זה מאפשר למשתמשים להציג תאריך בפורמט שונה או להשתמש בתאריך כחלק מנתונים במחרוזת.
+## למה
+
+כדי להציג תאריך בפורמט שנוח יותר לקריאה ושימוש בתוכניות, יש צורך להמיר את התאריך למחרוזת.
 
 ## איך לעשות זאת
-אם אתה מעוניין להמיר תאריך למחרוזת בשפת C++, ישנם כמה שלבים קלים לביצוע המשימה. באמצעות קריאת המאגר התאריכים של C++ והשתמשו בפונקציות מובנות, תוכלו להמיר תאריך למחרוזת בצורה נוחה ואינטואיטיבית.
+
+תהליך המרה פשוט יחסית: יש להשתמש בפונקציית `strftime()` ולציין את התבנית המתאימה לפורמט תאריך ואת המשתנים הרלוונטים. למשל:
 
 ```C++
 #include <iostream>
-#include <string>
-#include <iomanip>
+#include <ctime>
+
+using namespace std;
 
 int main()
 {
-    //יצירת משתנה מחרוזת לתאריך
-    std::string date;
-    
-    //פונקציות מובנות לקריאת תאריך נוכחי
-    time_t now = time(0);
-    tm *ltm = localtime(&now);
-    
-    //השמה של פורמט התאריך שתרצו להשתמש - בדיוק כמו בפוקנציית strftime בשפת C
-    //תוכלו לראות פורמטים נוספים כאן: https://en.cppreference.com/w/cpp/io/manip/put_time
-    std::string format = "%d/%m/%Y";
-    
-    //השמת התאריך למשתנה מחרוזת באמצעות פונקציית put_time
-    std::ostringstream oss;
-    oss << std::put_time(ltm, format.c_str());
-    date = oss.str();
-    
-    //הצגת התאריך
-    std::cout << "התאריך הנוכחי הוא: " << date << std::endl;
-    
+    //קביעת זמן נוכחי
+    time_t currentTime = time(0);
+
+    //המרת התאריך למחרוזת
+    string dateString = ctime(&currentTime);
+
+    cout << "התאריך הנוכחי הוא: " << dateString << endl;
+
     return 0;
 }
 ```
 
 פלט:
 
-```
-התאריך הנוכחי הוא: 28/10/2021
+```bash
+התאריך הנוכחי הוא: Mon Oct 25 21:50:40 2021
 ```
 
+כמו בדוגמה המוצגת, המרת התאריך תציג את התאריך בפורמט הכללי של מחרוזת תאריך ושעה. אפשר להוסיף את `#include <iomanip>` כדי להתאים את המתאריך לפורמט חלק יותר.
+
 ## חפירה עמוקה
-כדי להבין טוב יותר את התהליך של המרת תאריך למחרוזת בשפת C++, ניתן ללמוד עוד על הפונקציות הנדרשות והשימוש בפונקציה put_time. פונקציית put_time אחראית להמרת תאריך למחרוזת באמצעות הפורמט המבוקש והפונקציות המובנות localtime ו- time מספקות את התאריך הנוכחי בשפת C++. על מנת להשתמש בפונקציות המובנות הללו,
+
+כדאי לקחת בחשבון שפונקציית `strftime()` יכולה להימצא רק עבור מספר סיסמאות קבועות ומוגבלות. אם יש צורך בתבנית מיוחדת או בערך רלוונטי כמו פורמט של תאריך מותאם אישית, אפשר להשתמש במספר אפשרויות נוספות כמו `stringstream` ו- `put_time()`.
+
+## ראו גם
+
+- [פונקציית strftime ב-C++](https://en.cppreference.com/w/cpp/chrono/c/strftime)
+- [עבודה עם תאריכים ב-C++](https://www.programiz.com/cpp-programming/library-function/ctime)
+- [תצוגת תאריך מותאם אישית ב-C++](https://www.geeksforgeeks.org/strftime-function-in-c-with-examples/)

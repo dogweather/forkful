@@ -1,39 +1,46 @@
 ---
-title:    "TypeScript: Obliczanie długości ciągu znaków"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/finding-the-length-of-a-string.md"
+title:                "TypeScript: Znajdowanie długości ciągu znaków"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Dlaczego powinieneś/chciałbyś szukać długości stringa? Może planujesz stworzyć aplikację, która będzie wyświetlać pewien tekst, ale musisz wiedzieć, ile znaków ten tekst zawiera? Albo może chcesz zaimplementować funkcję, która będzie liczyć słowa w danym zdaniu? W obu tych przypadkach znajomość długości stringa jest niezbędna.
+Dlaczego warto dowiedzieć się, jak znaleźć długość łańcucha w programowaniu TypeScript? Ponieważ jest to podstawowa umiejętność, która jest wykorzystywana w wielu różnych zastosowaniach. Bez znajomości tej funkcji, wiele zadań programistycznych będzie o wiele trudniejszych do wykonania.
 
-## Jak To Zrobić
-
-```TypeScript
-let str: string = "To jest przykładowy string";
-console.log(str.length);
-```
-Ten prosty kawałek kodu w TypeScript pozwala nam wyświetlić długość stringa "To jest przykładowy string", która wynosi 26. Do uzyskania długości stringa używamy "length" po kropce, tak samo jak przy tablicach.
-
-Możemy także ustawić zmienną na daną długość stringa i wyświetlić ją w naszej aplikacji:
+## Jak to zrobić?
 
 ```TypeScript
-let str: string = "Długość tego zdania to";
-console.log(str.length + "znaki.");
+// Poniższy przykład kodu pokazuje, jak użyć funkcji .length w celu znalezienia długości łańcucha.
+
+// Tworzymy zmienną zawierającą łańcuch znaków
+let str: string = "To jest przykładowy tekst";
+
+// Używamy funkcji .length do zwrócenia długości łańcucha
+console.log(str.length); // Output: 24
 ```
-Output: Długość tego zdania to 26 znaki.
 
-## Deep Dive
+W powyższym przykładzie tworzymy zmienną `str` zawierającą łańcuch znaków. Następnie używamy funkcji `.length` na tej zmiennej, aby wyświetlić jej długość. W naszym przypadku zwróci to liczbę 24, ponieważ łańcuch ten zawiera 24 znaki.
 
-Istnieją różne sposoby na liczenie długości stringa w TypeScript. Możemy użyć metody "length" jak w przykładzie powyżej lub możemy skorzystać z funkcji "string.length", która również zwraca długość stringa. 
+Można również użyć funkcji `.length` do sprawdzenia, czy łańcuch jest pusty. Jeśli zwraca ona liczbę 0, oznacza to, że łańcuch jest pusty.
 
-Warto również pamiętać, że w TypeScript każdy znak jest traktowany jako osobny element w stringu, nawet jeśli jest to znak specjalny lub emoji. Dlatego też długość stringa może się różnić w zależności od ilości znaków.
+```TypeScript
+let emptyStr: string = "";
 
-## Zobacz też
+console.log(emptyStr.length); // Output: 0
+```
 
-- [Dokumentacja TypeScript na temat stringów](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [MDN web docs - String length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [Porównanie długości stringów w TypeScript](https://stackoverflow.com/questions/15499609/compare-length-of-two-strings-with-typescript)
+## Dogłębna analiza
+
+Funkcja `.length` jest dostępna dla wszystkich typów danych łańcuchowych w TypeScript. Pozwala ona na proste i szybkie sprawdzanie długości łańcucha oraz jego pustego stanu. Warto również pamiętać, że funkcja ta zwraca liczbę, a nie indeks ostatniego elementu. Jeśli chcemy uzyskać dostęp do konkretnego znaku w łańcuchu, musimy użyć indeksów.
+
+## Zobacz również
+
+- [Dokumentacja TypeScript dotycząca funkcji .length](https://www.typescriptlang.org/docs/handbook/2/functions.html#the-length-property)
+- [Inne przydatne funkcje łańcuchowe w TypeScript](https://www.w3schools.com/jsref/jsref_obj_string.asp)
+- [Porównanie różnych funkcji do znajdowania długości łańcucha](https://stackoverflow.com/questions/1852383/what-s-the-difference-between-size-length-count-for-javascript-arrays)
+
+Dziękujemy za przeczytanie tego wpisu blogowego. Mamy nadzieję, że dzięki niemu lepiej zrozumiesz, jak znaleźć długość łańcucha w programowaniu TypeScript. Zachęcamy również do eksperymentowania z różnymi funkcjami, aby lepiej zrozumieć ich działanie i wykorzystanie w praktyce. Powodzenia w nauce!

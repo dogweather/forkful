@@ -1,39 +1,39 @@
 ---
-title:    "PHP: ディレクトリが存在するかどうかをチェックする。"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/checking-if-a-directory-exists.md"
+title:                "PHP: 「ディレクトリが存在するかどうかを確認する」"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-ディレクトリが存在するかどうかをチェックする理由は何でしょうか？ディレクトリが存在するかどうかを確認することで、ファイルやデータが存在するかどうかを確認することができます。また、プログラムが期待通りに動作しているかを確認するためにも重要です。
+ディレクトリが存在するかどうかを確認するのは、プログラミングにおいて非常に重要なタスクです。データのストレージやファイル管理など、様々な理由でディレクトリの存在をチェックする必要があります。
 
 ## 方法
 
-ディレクトリが存在するかどうかを確認するには、 ```file_exists()``` 関数を使用します。以下の例をご覧ください。
+PHPでは、`is_dir()`関数を使用してディレクトリが存在するかどうかを確認することができます。以下は例です。
 
 ```PHP
-<?php
-$directory = 'example_directory';
+$directory = "/path/to/directory";
 
-if(file_exists($directory)){
-    echo "ディレクトリが存在します。";
-} else{
-    echo "ディレクトリが存在しません。";
+if (is_dir($directory)) {
+    echo "ディレクトリは存在します。";
+} else {
+    echo "ディレクトリは存在しません。";
 }
-?>
 ```
 
-この例では、まず ```$directory``` 変数に確認したいディレクトリの名前を指定します。その後、 ```file_exists()``` 関数を使用し、ディレクトリが存在するかどうかをチェックします。そして、条件分岐を使ってディレクトリが存在する場合は「ディレクトリが存在します。」と出力し、存在しない場合は「ディレクトリが存在しません。」と出力します。
+上記のコードを実行すると、指定したディレクトリが存在するかどうかに応じてメッセージが表示されます。
 
 ## ディープダイブ
 
-ディレクトリが存在するかどうかを確認する方法は他にもあります。例えば、 ```is_dir()``` 関数や ```scandir()``` 関数を使用する方法があります。また、ディレクトリが存在するかどうかだけでなく、パーミッションやパスの問題もチェックすることができます。さらに、ディレクトリの中身も取得して処理することができます。
+ディレクトリが存在するかどうかを確認する方法は、実際には非常にシンプルです。しかし、ディレクトリサイズやファイルパーミッションなど、より詳細な情報を知りたい場合は、`file_exists()`関数を使用することで可能になります。また、`glob()`関数を使うことで、ディレクトリ内のファイルやサブディレクトリを取得することもできます。このように、`is_dir()`関数はディレクトリが存在するかどうかを確認するだけではなく、さまざまな応用が可能な関数であることがわかります。
 
-## 参考リンク
+## 参考資料
 
-- [PHP公式マニュアル - file_exists()関数](http://php.net/manual/ja/function.file-exists.php)
-- [PHP公式マニュアル - is_dir()関数](http://php.net/manual/ja/function.is-dir.php)
-- [PHP公式マニュアル - scandir()関数](http://php.net/manual/ja/function.scandir.php)
+- [PHP マニュアル - is_dir()](https://www.php.net/manual/ja/function.is-dir.php)
+- [PHP マニュアル - file_exists()](https://www.php.net/manual/ja/function.file-exists.php)
+- [PHP マニュアル - glob()](https://www.php.net/manual/ja/function.glob.php)
+- [Qiita - PHPでディレクトリが存在するかどうかを確認する方法](https://qiita.com/sutara79/items/6ae3b629b52f6defef40)

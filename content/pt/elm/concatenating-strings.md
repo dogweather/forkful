@@ -1,57 +1,73 @@
 ---
-title:    "Elm: Juntando cadeias de caracteres"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/elm/concatenating-strings.md"
+title:                "Elm: Concatenando strings"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que 
 
-Concatenar strings é uma tarefa comum na programação, especialmente quando se trata de manipular dados e criar mensagens personalizadas. No Elm, isso pode ser feito de forma eficiente e concisa usando suas poderosas funções de concatenação de strings.
+Se você é um desenvolvedor iniciante ou já tem alguma experiência em programação, é importante saber como concatenar strings em seu código. Essa função é muito útil para juntar diferentes peças de informações e criar uma única string.
 
-## Como Fazer
+## Como Fazer 
 
-Existem duas maneiras de concatenar strings no Elm: usando a função `++` ou o operador de concatenação `++=`. Ambos tomam duas strings como argumentos e retornam uma nova string que é a combinação das duas. Veja um exemplo abaixo:
+Para concatenar strings no Elm, você pode usar o operador `++`. Esse operador pega duas strings e as coloca uma ao lado da outra, criando uma nova string combinada. Veja um exemplo abaixo:
 
-```elm
-nomeCompleto : String
-nomeCompleto = "João " ++ "Silva"
+```Elm 
+nome = "Ana"
+sobrenome = "Silva"
 
-mensagem : String
-mensagem = "Bem-vindo " ++= nomeCompleto ++ ", seu cadastro foi concluído com sucesso!"
+nomeCompleto = nome ++ " " ++ sobrenome
 
-main = text mensagem
+-- output: "Ana Silva"
 ```
 
-Ao rodar este código, a seguinte saída será exibida:
+Você também pode usar o operador `++` para concatenar strings com variáveis, números ou até mesmo outras strings concatenadas. Veja alguns exemplos a seguir:
 
-```
-Bem-vindo João Silva, seu cadastro foi concluído com sucesso!
-```
+```Elm
+idade = 25
+mensagem = "Minha idade é: "
 
-Além disso, é possível concatenar mais de duas strings, simplesmente encadeando vários operadores `++` ou `++=`. Por exemplo:
+mensagemCompleta = mensagem ++ (toString idade) 
 
-```elm
-mensagemPersonalizada : String
-mensagemPersonalizada = "Olá " ++= nomeCompleto ++ ", hoje é " ++= data ++ =", obrigado por se juntar a nós!"
+-- output: "Minha idade é: 25"
 ```
 
-## Profundidade
+```Elm
+mensagem = "Eu quero ter " ++ (toString 100) ++ " likes nessa postagem."
 
-Em Elm, as strings são representadas como listas de caracteres, o que significa que as funções de lista também podem ser usadas para manipular strings. Isso inclui a função `append` que pode ser usada para adicionar um caractere ao final de uma string. Veja um exemplo abaixo:
-
-```elm
-nome : String
-nome = "Maria"
-
-saudacao : String
-saudacao = "Olá " ++ String.fromList (List.append [Char.toCode "!" ++ nome
+-- output: "Eu quero ter 100 likes nessa postagem."
 ```
 
-Neste exemplo, usamos a função `String.fromList` para converter a lista resultante da concatenação para uma string novamente.
+```Elm 
+primeiraParte = "Hello"
+segundaParte = "world"
 
-## Veja Também
+mensagem = primeiraParte ++ ", " ++ "secondParte ++ "!"
 
-- Documentação oficial do Elm sobre concatenação de strings: https://guide.elm-lang.org/strings/concatenation.html
-- Exemplos de concatenação de strings em Elm: https://ellie-app.com/new
+-- output: "Hello, world!"
+```
+
+## Aprofundando 
+
+É importante notar que o operador `++` sempre retorna uma nova string e não modifica as strings originais. Além disso, podemos usar o operador `++` com mais de duas strings, criando uma cadeia de concatenação. Veja um exemplo abaixo:
+
+```Elm 
+primeiraParte = "Eu gosto de "
+segundaParte = "programar em "
+terceiraParte = "Elm"
+
+mensagem = primeiraParte ++ segundaParte ++ terceiraParte 
+
+-- output: "Eu gosto de programar em Elm" 
+```
+
+## Veja também 
+
+Aqui estão alguns recursos adicionais para ajudá-lo a aprender mais sobre como concatenar strings em Elm:
+
+- [Documentação oficial do operador ++](https://package.elm-lang.org/packages/elm/core/latest/String#++)
+- [Tutorial sobre strings em Elm](https://www.tutorialspoint.com/elm/elm_strings.htm)
+- [Outros operadores úteis em Elm](https://medium.com/@aleiadeveloper/10-must-know-elm-operators-part-1-27a3ef9d8c0e)

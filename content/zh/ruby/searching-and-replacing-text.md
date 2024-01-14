@@ -1,45 +1,66 @@
 ---
-title:    "Ruby: 搜索和替换文本"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/searching-and-replacing-text.md"
+title:                "Ruby: 搜索和替换文本。"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+# 为什么会搜索和替换文本？
 
-为什么要使用搜索和替换文本？这是一种非常常用的编程技巧，可以帮助我们轻松地找到特定的文本并进行替换。无论是更新数据、修改错误或者简单地改变文本内容，搜索和替换都是非常有效的方式。
+搜索和替换文本是编程中一个常见的任务，尤其是在处理大量文本文件时。通过搜索和替换，我们可以快速地修改文本中的特定内容，从而节省大量手动修改的时间和精力。
 
-# 如何
+# 如何进行搜索和替换文本？
 
-在Ruby中，使用`gsub`方法来进行搜索和替换文本是最常见的方式。以下是一个简单的示例代码：
+在Ruby中，我们可以使用gsub方法来进行搜索和替换文本。具体的用法如下：
 
-```
-text = "我爱学习Ruby编程语言。"
-new_text = text.gsub('爱', '喜欢')
+```Ruby
+text = "我爱Ruby语言，它非常有趣。我喜欢学习新的技能，对我来说很有成就感。"
+
+new_text = text.gsub("我", "你")
+
 puts new_text
 ```
 
-这段代码会输出：“我喜欢学习Ruby编程语言。”可以看到，使用`gsub`方法，我们可以轻松地找到`爱`这个词并将其替换为`喜欢`。
+输出结果为：
 
-除了单个字符，我们也可以使用正则表达式来匹配更复杂的模式。例如，如果我们想将所有的大写字母转换为小写字母，我们可以这样写：
-
+```Ruby
+你爱Ruby语言，它非常有趣。你喜欢学习新的技能，对你来说很有成就感。
 ```
-text = "我爱学习RUBY编程语言。"
-new_text = text.gsub(/[A-Z]/, &:downcase)
+
+在上面的代码中，我们先定义了一个字符串变量text，其中包含了一些内容。然后通过gsub方法，将字符串中的“我”替换为“你”。最后将替换后的结果输出到控制台。
+
+# 深入学习搜索和替换文本
+
+除了简单的替换外，gsub方法还可以接收一个正则表达式作为参数。这样就可以更加灵活地匹配需要替换的内容。例如，我们可以使用下面的代码将文本中的所有数字替换为问号：
+
+```Ruby
+text = "There are 20 apples in the basket."
+
+new_text = text.gsub(/\d+/, "?")
+
 puts new_text
 ```
 
-输出会是：“我爱学习ruby编程语言。”
+输出结果为：
 
-# 深入了解
+```Ruby
+There are ? apples in the basket.
+```
 
-对于搜索和替换文本，除了`gsub`方法，还有其他一些可用的方法，如`sub`、`tr`和`tr_s`。每种方法都有其特定的用途和语法，建议大家花时间去熟悉它们。
-
-此外，除了使用内置方法外，我们也可以通过自定义方法来实现搜索和替换文本的功能。这需要一定的编程知识，但也是值得探索的。
+正则表达式是一种强大的模式匹配工具，在掌握它之后，你可以轻松地进行复杂的搜索和替换操作。
 
 # 参考链接
 
-- [Ruby搜索和替换文本教程](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)
-- [Ruby gsub方法文档](https://ruby-doc.org/core-2.5.1/String.html#method-i-gsub)
-- [Ruby正则表达式教程](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Ruby文档 - gsub方法](https://ruby-doc.org/core-2.7.2/String.html#method-i-gsub)
+- [正则表达式教程](https://www.runoob.com/regexp/regexp-tutorial.html)
+- [Ruby正则表达式指南](https://www.regexp.cn/)
+
+---
+
+# 参见
+
+- [知乎 - 怎样学习和使用Ruby编程语言？](https://www.zhihu.com/question/20582839)
+- [菜鸟教程 - Ruby教程](https://www.runoob.com/ruby/ruby-tutorial.html)
+- [GitHub - Ruby官方仓库](https://github.com/ruby/ruby)

@@ -1,51 +1,55 @@
 ---
-title:    "C++: 今日の日付を取得する。"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/getting-the-current-date.md"
+title:                "C++: 「現在日付の取得」"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-プログラムを書く際、現在の日付を取得する必要があることがあります。例えば、レポートを自動的に日付付きで保存するためや、イベントの日付を表示するために使用することができます。
 
-## 作り方
-日付を取得するには、```std::chrono::system_clock```を使用します。```std::chrono::system_clock```は、現在の日付と時刻を取得するための標準ライブラリです。
+プログラミングをはじめたばかりの方や、C++言語を使い始めたばかりの方にとって、現在の日付を取得することは初めての経験かもしれません。しかし、日付を取得することはプログラミングの基礎であり、日時を扱うアプリケーションを作る上でとても重要なスキルです。今回は、C++言語で日付を取得する方法について説明していきます。
+
+## 方法
+
+まずは、現在の日付を取得するためにはどのようなコードを書けば良いのかを見ていきましょう。C++言語では、標準ライブラリの`<ctime>`ヘッダーファイルを使用して日付を取得することができます。以下のコードを参考にしてください。
 
 ```C++
 #include <iostream>
-#include <chrono>
 #include <ctime>
 
 int main() {
-    // 現在の日付と時刻を取得する
-    auto now = std::chrono::system_clock::now();
+    std::time_t current_time = std::time(0); // 現在の時間を取得
+    std::tm* now = std::localtime(&current_time); // 現在のローカル時間を取得
 
-    // タイムスタンプを取得する
-    std::time_t timestamp = std::chrono::system_clock::to_time_t(now);
-
-    // フォーマットを指定して文字列に変換する
-    char buffer[80];
-    std::strftime(buffer, 80, "%Y/%m/%d", std::localtime(&timestamp));
-
-    // 結果を出力する
-    std::cout << buffer << std::endl;
+    // 日付をフォーマットして出力
+    std::cout << "今日は" << now->tm_year + 1900 << "年"
+              << now->tm_mon + 1 << "月"
+              << now->tm_mday << "日です。" << std::endl;
 
     return 0;
 }
 ```
 
-**出力:**
+上記のコードを実行すると、以下のような出力が得られます。
+
 ```
-2021/01/01
+今日は2018年10月5日です。
 ```
 
-## ディープダイブ
-```std::chrono::system_clock::now()```は、```std::chrono::time_point```オブジェクトを返します。このオブジェクトには、現在の日付と時刻のキャスト方法や加算や減算などの様々な操作が可能です。
+このコードでは、`time()`関数を使用して現在の時間を秒単位で取得し、 `localtime()`関数を使用してその時間をローカル時間に変換しています。そして、`struct tm`を使用して日付をフォーマットして出力しています。
 
-また、```std::chrono::system_clock```は、UTC時間を返すため、必要に応じてタイムゾーンの変換を行う必要があります。これには、```std::localtime()```や```std::gmtime()```を使用することができます。
+## 深堀り
 
-## 参考リンク
-- [時間を扱うためのC++標準ライブラリ](https://www.fluentcpp.com/2018/01/12/times-and-dates-cpp/)
-- [std::chrono::system_clockのドキュメント](https://en.cppreference.com/w/cpp/chrono/system_clock)
-- [std::strftimeのドキュメント](https://en.cppreference.com/w/cpp/chrono/c/strftime)
+日付を取得する際に、日付時刻を扱うためのさまざまな関数が存在します。例えば、`mktime()`関数を使用すると、`struct tm`の形式の日付を取得することができます。また、`strftime()`関数を使用して任意のフォーマットの日付を取得することもできます。
+
+さらに、C++11からは`<chrono>`ヘッダーファイルが導入され、より柔軟な時間の扱いが可能になりました。`system_clock`クラスを使用すると、より高精度な時間を取得できます。
+
+## 併せて読みたい
+
+- [C++での日付と時刻の表現方法](https://www.ibm.com/developerworks/jp/linux/library/l-cpp-oop/time-and-date-cpp/index.html)
+- [C++ 公式ドキュメント - <ctime>ヘッダ](http://www.cplusplus.com/reference/ctime/)
+- [C++ 公式ドキュメント - <chrono>ヘッダ](http://www.cplusplus.com/reference/chrono/)
+
+### 併せて読みたい

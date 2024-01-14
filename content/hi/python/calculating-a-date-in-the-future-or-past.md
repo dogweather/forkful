@@ -1,37 +1,43 @@
 ---
-title:    "Python: भविष्य या भूतकाल में तिथि की गणना"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/python/calculating-a-date-in-the-future-or-past.md"
+title:                "Python: भविष्य या भूत की तारीख की गणना"
+programming_language: "Python"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-
-कोई भी व्यक्ति तारीख की गणना करने में इंटरेस्ट रख सकता है - शायद उनके पास एक नया साल के लिए एक उपहार ढूंढने की तारीख की आवश्यकता हो या कोई धार्मिक उत्सव की तारीख की जांच करना हो।
+अगले या पिछले दिनांक की गणना को करने में क्यों लग जाना उपयोगी हो सकता है।
 
 ## कैसे करें
+दिनांक की गणना करने के लिए, हम अनेक तरीकों का प्रयोग कर सकते हैं। कुछ मुख्य तरीके निम्नांकित हैं:
+```Python
+# आगामी 10 दिन का दिनांक प्राप्त करने के लिए
+import datetime
+today = datetime.date.today()
+future_date = today + datetime.timedelta(days=10)
+print("आगामी 10 दिनों का दिनांक:", future_date)
 
-```python
-# भविष्य की तारीख की गणना
-from datetime import date
-today = date.today()
-print("आज का दिन:", today)
+# पिछले 10 दिनों का दिनांक प्राप्त करने के लिए
+import datetime
+today = datetime.date.today()
+past_date = today - datetime.timedelta(days=10)
+print("पिछले 10 दिनों का दिनांक:", past_date)
 
-future_date = today + timedelta(days=365)
-print("भविष्य में आज की से 1 साल बाद:", future_date)
-
-past_date = today - timedelta(days=365)
-print("भूत प्रवृत्ति में आज से 1 साल पहले:", past_date)
+# दिनांक को तारीख में परिवर्तित करने के लिए
+import datetime
+date_str = "10-12-2023"
+date = datetime.datetime.strptime(date_str, "%d-%m-%Y").date()
+print("तारीख:", date)
 ```
 
-आप ऊपर दिए गए कोड उदाहरण का उपयोग करके भविष्य में या भूत प्रवृत्ति में आज से एक साल की तारीख की गणना कर सकते हैं। आप भावनी तारीखें भी गणना कर सकते हैं जैसे कि १० दिन पहले या २ महीने बाद।
+आप अपनी आवश्यकतानुसार इन तरीकों का प्रयोग कर सकते हैं और अपनी प्रोजेक्ट में दिनांक की गणना के लिए इनका उपयोग कर सकते हैं।
 
-## गहराई में जाएँ
-
-तारीख की गणना के लिए, हम datetime मॉड्यूल का उपयोग करते हैं जो पाइथन में डेटा और समय को गिनने और प्रबंधित करने के लिए उपयोगी फ़ंक्शन प्रदान करता है। इसमें हमें तिथियां, समय और गणनाओं को समायोजित करने के लिए कई फ़ंक्शन मिलते हैं।  इस ब्लॉग पोस्ट में, हमने date और timedelta दो क्लासेज़ का उपयोग किया है। तारीख और समय को गणने के लिए, हम इन फ़ंक्शनों के साथ मूल्य पास करते हैं और फिर गणना का परिणाम प्राप्त करते हैं।
+## गहरा अध्ययन
+अधिक जानकारी के लिए, दिनांक की गणना के लिए मूल्यवान साधनों के बारे में आप और जान सकते हैं। जैसे कि Python में उपलब्ध लाइब्रेरी `datetime` और `calendar` हैं जो दिनांक की गणना के लिए उपयोगी हो सकते हैं। आप इनका भी अध्ययन कर सकते हैं और अपने कोड में उन्हें शामिल करके दिनांक की गणना को और अधिक अनुकूल बना सकते हैं।
 
 ## देखें भी
+अगर आपको Python के अन्य गाइड और ट्यूटोरियल्स की तलाश है तो आप निम्नलिखित लिंक्स की सहायता ले सकते हैं:
 
-[datetime मॉड्यूल की विवरण](https://docs.python.org/3/library/datetime.html)
-[पाइथन में दिन
+- [आसान Python शुरू करें (ह

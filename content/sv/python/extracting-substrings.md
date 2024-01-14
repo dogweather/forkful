@@ -1,54 +1,57 @@
 ---
-title:    "Python: Utvinna delsträngar"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/python/extracting-substrings.md"
+title:                "Python: Extrahera delsträngar"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att extrahera substrängar kan vara en användbar teknik för att manipulera textdata i Python. Det tillåter dig att enkelt hämta delar av en sträng som matchar ett visst mönster eller kriterium. Detta kan vara till nytta för många olika programmeringsuppgifter, som att formatera datum, filtrera data eller hantera användarinput.
+Substringutvinning, eller att extrahera en del av en sträng, är en mycket användbar funktion i Python för att manipulera och behandla textdata. Det gör det möjligt för användare att enkelt hitta och manipulera specifika delar av en textsträng, vilket kan spara tid och göra koden mer effektiv.
 
-## Hur man gör det
+## Hur man gör
 
-För att extrahera en substräng i Python, kan du använda metoden `.substring()` eller indexering på en sträng. Låt oss säga att vi har en sträng som representerar en personens namn och vi vill extrahera bara förnamnet. Vi kan göra det på följande sätt:
+För att extrahera substrings i Python, använda sig av slice-funktionen med följande syntax: `[start:stop:step]`. Startargumentet specificerar var substrängen ska börja och stopargumentet specificerar var den ska sluta. Stegargumentet används för att välja hur många tecken som ska hoppas över i varje steg.
 
 ```python
-namn = "Sofia Andersson"
-förnamn = namn[0:5] # indexering från 0 till 5 ger oss "Sofia"
+# Exempel på substrängutvinning från en variabel:
+text = "Det här är en textsträng"
+print(text[4:10])              # Output: är en
+print(text[:7])                 # Output: Det här
+print(text[11:])               # Output: textsträng
 ```
 
-Om vi ville extrahera efternamnet, kan vi använda metoden `.substring()`:
-
 ```python
-efternamn = namn.substring(6) # ger oss "Andersson"
-```
-
-För att extrahera en specifik del av en sträng, kan vi använda indexering med hjälp av konceptet "slicing". Till exempel, om vi bara vill ha det andra till det femte tecknet i en sträng, kan vi göra det på detta sätt:
-
-```python
-sträng = "Hej hej"
-substring = sträng[1:5] # ger oss "ej h"
-```
-
-Det är också möjligt att använda indexering med negativa tal för att räkna bakifrån i en sträng. Till exempel, om vi ville extrahera de sista tre tecknen i en sträng kan vi göra det på följande sätt:
-
-```python
-sträng = "Hej hej"
-substring = sträng[-3:] # ger oss "hej"
+# Substrängutvinning från en given text:
+print("Python är ett populärt programmeringsspråk"[7:13])       # Output: populärt
 ```
 
 ## Djupdykning
 
-Det finns många olika sätt att använda substrängar i Python, men det är viktigt att notera att beroende på språket som används för strängmanipulering, så kan syntaxen och metoderna för att extrahera substrängar variera.
+Förutom slicefunktionen kan substrängutvinning också göras med hjälp av de inbyggda metoderna `find()` och `index()`. Dessa metoder söker igenom en sträng för en given delsträng och returnerar indexet för den första förekomsten. Om delsträngen inte hittas, returneras -1.
 
-Förutom det som presenteras ovan, finns det mer avancerade sätt att extrahera substrängar i Python, som att använda reguljära uttryck och använda inbyggda funktioner som `.split()` eller `.partition()`.
+```python
+# Exempel på substrängutvinning med `find()` och `index()`:
+text = "Denna textsträng innehåller igen"
+print(text.find("inne"))    # Output: 20
+print(text.index("innehåller"))  # Output: 18
+print(text.find("finns inte"))   # Output: -1
+print(text.index("finns inte"))  # Raises error
+```
 
-Det är också viktigt att förstå att strängar i Python är oföränderliga, vilket innebär att de inte kan ändras direkt. Om du vill manipulera en sträng måste du skapa en kopia och sedan ändra den.
+Substrängutvinning är också användbar för att manipulera och omvandla textsträngar. Till exempel, om man vill byta ut ett visst ord eller tecken med ett annat, kan man använda sig av slicefunktionen och konkatenera strängarna.
+
+```python
+# Exempel på manipulering av text med substrängutvinning:
+text = "Jag gillar bananer"
+ny_text = text[:5] + "älskar" + text[5:12]
+print(ny_text)      # Output: Jag älskar bananer
+```
 
 ## Se även
 
-- [Python String Methods](https://www.w3schools.com/python/python_strings_methods.asp)
-- [String slicing in Python](https://www.programiz.com/python-programming/methods/string/slice)
-- [Regular expressions in Python](https://docs.python.org/3/library/re.html)
+- [Python Slice Notation](https://docs.python.org/3/tutorial/introduction.html#strings)
+- [String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [The Power of Slicing in Python](https://www.geeksforgeeks.org/python-strings/)

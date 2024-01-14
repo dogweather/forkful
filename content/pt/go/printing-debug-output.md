@@ -1,42 +1,55 @@
 ---
-title:    "Go: Impressão de saída de depuração"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/printing-debug-output.md"
+title:                "Go: Imprimindo saída de depuração"
+programming_language: "Go"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração em Go
+## Por que imprimir saídas de depuração em Go?
 
-Debugging, ou depuração, é uma parte essencial do processo de desenvolvimento de software. Ao imprimir saída de depuração, podemos visualizar o fluxo do nosso código e encontrar erros e problemas mais facilmente. Isso nos ajuda a entender melhor o funcionamento do nosso programa e a resolver problemas de forma mais eficiente.
+Imprimir saídas de depuração é uma prática comum na programação em Go. Isso é feito para verificar o estado das variáveis e acompanhar o fluxo de execução de um programa. Isso é especialmente útil ao desenvolver e depurar código, pois pode ajudar a identificar erros e entender o comportamento do programa.
 
-## Como imprimir saída de depuração em Go
+## Como fazer
 
-Para imprimir saída de depuração em Go, podemos usar a função `fmt.Printf()` ou `fmt.Println()`. Vamos supor que temos uma variável `nome` que queremos imprimir para fins de depuração. Podemos fazer isso da seguinte maneira:
-
-```Go
-nome := "João"
-fmt.Printf("O valor da variável nome é: %s\n", nome)
-```
-
-O `%s` é um especificador de formato que indica que queremos imprimir uma string. Podemos usar outros especificadores de formato, dependendo do tipo de dado que queremos imprimir. Por exemplo, `%d` para inteiros e `%f` para números de ponto flutuante.
-
-Além disso, podemos usar a função `fmt.Sprintf()` para atribuir a saída de depuração a uma variável, ao invés de imprimir diretamente na tela:
+Para imprimir saídas de depuração em Go, você pode usar a função `fmt.Println()` ou `fmt.Printf()`, que são parte da biblioteca padrão do Go. Você pode passar variáveis como argumentos para essas funções para imprimir seus valores. Por exemplo:
 
 ```Go
-debug := fmt.Sprintf("O valor da variável nome é: %s", nome)
-//fazer algo com a string debug
+// Exemplo de saída de depuração com fmt.Println()
+var number = 10
+fmt.Println("O valor do número é:", number)
+
+// Exemplo de saída de depuração com fmt.Printf()
+var name = "Maria"
+fmt.Printf("Olá %s, seja bem-vindo!", name)
 ```
 
-## Deep Dive: Mais informações sobre a impressão de saída de depuração
+A saída para esse código seria:
 
-Além das funções `fmt.Printf()` e `fmt.Println()`, Go também possui outras ferramentas úteis para imprimir saída de depuração. Por exemplo, podemos usar a biblioteca `log` para imprimir mensagens de log em diferentes níveis de severidade. Isso pode ser útil para depurar problemas em diferentes partes do código.
+```
+O valor do número é: 10
+Olá Maria, seja bem-vindo!
+```
 
-Outra ferramenta útil é o pacote `spew`, que fornece funções para imprimir estruturas de dados complexas de forma bastante legível e organizada. Isso pode ser especialmente útil quando estamos lidando com dados grandes e complexos.
+Você também pode usar a função `fmt.Sprintf()` para formatar uma string e armazená-la em uma variável para uso posterior. Isso é útil quando você precisa imprimir um valor mais de uma vez no seu código. Por exemplo:
+
+```Go
+// Exemplo de uso de fmt.Sprintf()
+var number = 5
+var message = fmt.Sprintf("O dobro de %d é %d", number, number*2)
+fmt.Println(message)
+```
+A saída para esse código seria: `O dobro de 5 é 10`.
+
+## Aprofundando-se
+
+Há outras opções para imprimir saídas de depuração em Go, como a função `log.Print()`, que permite adicionar um nível de registro para a saída e pode ser útil ao rastrear erros. Além disso, você também pode usar a diretiva `DEBUG` para imprimir saídas de depuração somente quando um programa é executado em modo de depuração.
+
+Uma dica importante é usar o pacote `log` em vez do pacote `fmt`, pois ele fornece mais recursos e pode tornar a depuração de problemas mais eficiente.
 
 ## Veja também
 
-- [A documentação oficial sobre as funções de impressão de formato em Go](https://golang.org/pkg/fmt/)
-- [Um tutorial sobre depuração em Go usando a função `fmt.Printf()`](https://www.calhoun.io/how-to-debug-go-code-with-printf/)
-- [O pacote `log` em Go](https://golang.org/pkg/log/)
-- [O pacote `spew` em Go](https://github.com/davecgh/go-spew)
+- [Documentação oficial sobre a função fmt](https://golang.org/pkg/fmt/)
+- [Tutorial sobre depuração em Go](https://blog.golang.org/debuggers)
+- [Tutorial sobre o pacote log](https://www.geeksforgeeks.org/golang-log-package/)

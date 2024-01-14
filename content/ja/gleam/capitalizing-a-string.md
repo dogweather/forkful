@@ -1,43 +1,28 @@
 ---
-title:    "Gleam: 文字列の大文字化"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/capitalizing-a-string.md"
+title:                "Gleam: 文字列の大文字化"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-
-文字列の先頭を大文字に変換することの重要性を説明するために、最初になぜcapitalizingを行うのかについて考えてみましょう。一般的な理由としては、文字列をより見やすくしたり、データの整形や正規化を行ったりするために使用することが挙げられます。
+文字列を大文字に変換することにエンゲージする必要があるのか、その理由を説明します。
 
 ## 方法
-
-GLEAMでは、文字列を大文字に変換するための便利な関数が用意されています。以下のコード例を参考に、どのように文字列を大文字に変換するかを学んでみましょう。
-
 ```Gleam
-let sentence = "hello world"
-let capitalized = String.capitalize(sentence)
-# 出力: "Hello world"
+let string = "hello, world"
+let capitalized = string.to_upper
+hello, world
+HELLO, WORLD
 ```
 
-上記の例では、まず変数`sentence`に文字列"hello world"を代入します。次に、`String.capitalize`関数を使用して、`sentence`を大文字に変換し、`capitalized`という新しい変数に代入しました。出力を確認すると、文字列の先頭が大文字になっていることが分かります。
+## 詳細を掘り下げる
 
-また、GLEAMでは文字列の一部だけを大文字に変換することもできます。例えば、次のようにすることで文字列の2文字目を大文字に変換できます。
+文字列を大文字に変換することは、テキスト処理において非常に一般的な操作です。例えば、ユーザーの入力を正規化するために使われることがあります。また、文字列の比較を行う際にも大文字小文字の違いを無視する必要がある場合があります。大文字に変換することで、文字列の比較をより正確に行うことができます。
 
-```Gleam
-let sentence = "hello world"
-let partial = String.partial_capitalize(sentence, 1..1)
-# 出力: "hEllo world"
-```
-
-## ディープダイブ
-
-`String.capitalize`関数は内部でパターンマッチングを使用することで、より複雑な文字列の大文字変換がある文字列にも対応できるようになっています。また、`String.partial_capitalize`関数も同様にパターンマッチングを利用しています。
-
-さらに、GLEAMではUnicodeのサポートも含まれているため、英語以外の文字に対しても同じように大文字変換を行うことができます。
-
-## 参考リンク
-
-- GLEAMドキュメント (https://gleam.run/documentation/)
-- プログラミング言語GLEAMの基本 (https://qiita.com/hirokidaichi/items/e5c04fbad2ad531c3ca9)
-- Unicodeのサポートについて (https://gleam.run/documentation/introduction/text.html#unicode)
+## See Also
+- [Gleam 公式ドキュメント](https://gleam.run/)
+- [Gleam チュートリアル](https://gleam.run/tutorial/)
+- [Gleam コミュニティフォーラム](https://github.com/gleam-lang/gleam/issues)

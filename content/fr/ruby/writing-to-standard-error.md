@@ -1,47 +1,42 @@
 ---
-title:    "Ruby: Écriture vers le flux d'erreur standard"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/writing-to-standard-error.md"
+title:                "Ruby: Ecrire vers l'erreur standard"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-L'écriture vers la sortie d'erreur (standard error) est une compétence utile à maîtriser en programmation Ruby. Elle vous permet de mieux comprendre les erreurs et les bogues dans votre code, ce qui rend le débogage plus facile et efficace.
+L'écriture sur l'erreur standard est une technique utile pour déboguer et comprendre les erreurs dans le code Ruby. Cela permet aux développeurs de mieux comprendre où le code est en train d'échouer et comment le résoudre.
 
-## Comment faire
+# Comment faire
 
-Pour écrire vers la sortie d'erreur, vous pouvez utiliser la méthode `puts` avec le mot-clé `STDERR`. Voici un exemple de code :
+Pour écrire sur l'erreur standard, utilisez la méthode `STDERR.puts` suivi du message que vous souhaitez afficher. Par exemple :
 
-```ruby
-$stderr.puts "Une erreur s'est produite!"
+```Ruby
+STDERR.puts "Ce message est écrit sur l'erreur standard."
 ```
 
-Cela écrira le message "Une erreur s'est produite!" dans la sortie d'erreur, plutôt que la sortie standard. Vous pouvez également utiliser `STDERR.print` pour imprimer un message sans saut de ligne à la fin.
+Cela affichera le message sur la sortie d'erreur, plutôt que sur la sortie standard.
 
-La sortie d'erreur peut également être utilisée pour afficher des messages de débogage. Voici un autre exemple de code qui affiche le contenu d'une variable dans la sortie d'erreur :
+Il est également possible de rediriger la sortie d'erreur vers un fichier en utilisant l'opérateur de redirection `>` dans la ligne de commande. Par exemple :
 
-```ruby
-a = [1, 2, 3]
-$stderr.puts "Contenu de a : #{a}"
+```Ruby
+ruby script.rb > output.txt
 ```
 
-Lorsque vous exécutez ce code, vous verrez le contenu de la variable `a` dans la sortie d'erreur, ce qui peut être utile pour trouver l'origine d'un problème dans votre code.
+Cela redirigera toute la sortie du script vers le fichier output.txt, y compris les messages d'erreur.
 
-Les captures d'erreurs `(rescue)` sont également un bon endroit pour écrire vers la sortie d'erreur. Cela peut vous aider à déterminer quelle erreur a été levée et à quel moment.
+# Plongée en profondeur
 
-## Plongée en profondeur
+Alors que la sortie standard est destinée à afficher les résultats de votre code, la sortie d'erreur est utilisée pour les messages d'erreurs et les informations de débogage. Cela signifie que vous pouvez utiliser l'écriture sur l'erreur standard pour fournir des informations supplémentaires sur les erreurs qui se produisent dans votre code.
 
-L'écriture vers la sortie d'erreur peut être particulièrement utile pour déboguer du code en utilisant des outils comme `irb` ou `pry`. Ces outils affichent les erreurs dans la sortie d'erreur et les séparent clairement de la sortie standard, facilitant ainsi la compréhension des erreurs.
+De plus, en utilisant la méthode `STDERR.puts`, vous pouvez formatter les messages d'erreur avec des couleurs et des styles pour les rendre plus visibles et faciles à lire. Cela peut être particulièrement utile lorsque vous analysez de grands volumes d'erreurs.
 
-Il est également important de noter que la plupart des systèmes de logiciels utilisent la sortie d'erreur pour enregistrer les erreurs et les avertissements. En écrivant vers la sortie d'erreur, vous facilitez la collecte et l'analyse de ces erreurs dans vos applications.
+# Voir également
 
-Enfin, l'écriture vers la sortie d'erreur peut également être utilisée pour afficher des messages d'état ou de progression lors de l'exécution de votre code, en informant les utilisateurs qu'une certaine tâche a été effectuée ou qu'une erreur est survenue.
-
-## Voir aussi
-
-- [Documentation officielle de Ruby sur STDERR](https://ruby-doc.org/core-2.7.1/IO.html#method-c-new-label-IO+and+File+open+mode)
-- [Tutorial sur les sorties en Ruby](https://www.rubyguides.com/2018/10/puts-vs-print-vs-p-vs-printf/)
-
-Merci d'avoir lu cet article. Utilisez l'écriture vers la sortie d'erreur dans votre code Ruby pour améliorer votre expérience de débogage et faciliter la gestion des erreurs. À bientôt pour un prochain article !
+- [Documentation de Ruby sur la sortie d'erreur](https://ruby-doc.org/core-2.7.1/IO.html#method-c-new-label-Error+Output)
+- [Article sur la redirection de la sortie d'erreur en Ruby](https://www.rubyguides.com/2018/10/standard-error-output-in-ruby/)
+- [Vidéo sur l'utilisation de l'écriture sur l'erreur standard en Ruby](https://www.youtube.com/watch?v=s6kT5Mik_rQ)

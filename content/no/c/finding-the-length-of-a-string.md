@@ -1,81 +1,52 @@
 ---
-title:    "C: Å finne lengden av en streng"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/finding-the-length-of-a-string.md"
+title:                "C: Finn lengden av en streng"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
+Å finne lengden på en streng er en grunnleggende oppgave som ofte blir brukt i programmering. Det kan være nyttig å kjenne lengden på en streng når du for eksempel skal foreta en søkoperasjon eller når du trenger å begrense en brukers inndata.
 
-Å finne lengden på en streng er en veldig vanlig oppgave i C-programmering. Dette er ofte nødvendig for å håndtere tekst eller input fra brukeren. Det er også en god måte å øve på grunnleggende programmeringskonsepter på, som løkker og betingelser.
-
-## Hvordan
-
-Det finnes flere måter å finne lengden på en streng i C på. Den enkleste måten er å bruke `strlen` funksjonen fra standardbiblioteket. Her er en enkel kodebit som viser hvordan man kan bruke denne funksjonen:
+##Slik gjør du det
+Det finnes flere måter å finne lengden på en streng på i C-programmering, og her skal vi vise deg to eksempler. Først må du inkludere <string.h> biblioteket for å kunne bruke funksjonene som trengs.
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-    // Definerer en streng
-    char *tekst = "Dette er en streng";
+int main() {
+  // Definer en streng
+  char str[] = "Dette er en streng";
 
-    // Bruker strlen funksjonen for å finne lengden
-    int lengde = strlen(tekst);
+  // Eksempel 1: bruk av strlen() funksjonen
+  int lengde = strlen(str);
+  printf("Lengden på strengen er: %d\n", lengde);
 
-    // Skriver ut lengden
-    printf("Lengden på strengen er %d", lengde);
+  // Eksempel 2: bruk av sizeof() operatøren
+  int lengde2 = sizeof(str) / sizeof(str[0]) - 1;
+  printf("Lengden på strengen er: %d\n", lengde2);
 
-    return 0;
+  return 0;
 }
 ```
+**Utskrift:**
 
-Output:
-```
-Lengden på strengen er 20
-```
+Lengden på strengen er: 19
 
-Man kan også finne lengden på en streng ved å bruke en løkke og telle antall tegn. Her er en alternativ måte å finne lengden på samme streng som tidligere:
+Lengden på strengen er: 19
 
-```C
-#include <stdio.h>
+Som du kan se, kan du bruke enten strlen() funksjonen eller sizeof() operatøren for å finne lengden på en streng. Mens strlen() funksjonen returnerer antall tegn i en streng, returnerer sizeof() operatøren størrelsen på en variabel, som inkluderer \0 (null karakter) som blir brukt for å avslutte en streng.
 
-int main()
-{
-    // Definerer en streng
-    char *tekst = "Dette er en streng";
+##Dypdykk
+En vanlig misforståelse når man skal finne lengden på en streng er å tro at det er det samme som størrelsen på en array. Dette er ikke tilfelle, ettersom størrelsen på en array inkluderer også plass til \0 (null karakter) mens lengden på en streng er antall tegn før \0.
 
-    // Initialiserer en teller
-    int lengde = 0;
+Det er også viktig å merke seg at lengden på en streng ikke inkluderer selve \0 karakteren. For eksempel, en streng med ordet "Hei" vil ha en lengde på 3 siden det er tre tegn (H, e, i), men størrelsen på en array med denne strengen vil være 4, inkludert \0.
 
-    // Løkke som teller antall tegn
-    while (tekst[lengde] != '\0')
-    {
-        lengde++;
-    }
+Når det gjelder funksjonen strlen(), så itererer den gjennom hele strengen til den når \0 karakteren og returnerer antall tegn den har iterert gjennom. Mens den er enklere å bruke, kan den være litt tregere enn å bruke sizeof() operatøren siden den faktisk må gå gjennom strengen.
 
-    // Skriver ut lengden
-    printf("Lengden på strengen er %d", lengde);
-
-    return 0;
-}
-```
-
-Output:
-```
-Lengden på strengen er 20
-```
-
-## Dypdykk
-
-Når man bruker `strlen` funksjonen, vil den telle alle tegnene i en streng, inkludert mellomrom og spesialtegn. Det er viktig å være klar over dette når man manipulerer strenger i C, for å unngå uventede resultater.
-
-Det finnes også alternative måter å finne lengden på en streng på. For eksempel kan man bruke `sizeof` operatøren på en streng for å finne størrelsen på den i bytes. Dette vil være det samme som å bruke `strlen`, men det kan være nyttig å vite om når man jobber med andre datatyper.
-
-## Se også
-
-* [Offisiell C-dokumentasjon for strlen](https://www.ibm.com/developerworks/library/l-cstring/)
-* [En guide til strlen funksjonen](https://www.programiz.com/c-programming/library-function/string/strlen)
+##Se også
+- [Offisiell dokumentasjon for strlen() funksjonen](https://www.cplusplus.com/reference/cstring/strlen/) (engelsk)
+- [Offisiell dokumentasjon for sizeof() operatøren](https://www.cplusplus.com/reference/clibrary/cstring/strlen/) (engelsk)

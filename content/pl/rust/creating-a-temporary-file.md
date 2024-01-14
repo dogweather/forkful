@@ -1,55 +1,44 @@
 ---
-title:    "Rust: Tworzenie pliku tymczasowego"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/creating-a-temporary-file.md"
+title:                "Rust: Tworzenie tymczasowego pliku"
+programming_language: "Rust"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto tworzyć tymczasowe pliki w Rust?
 
-Wielu programistów często musi tworzyć tymczasowe pliki w swoich projektach. Jest to często stosowane w celu zapisania danych, tymczasowego przechowywania informacji lub tworzenia kopii zapasowych. W tym blogu przeprowadzimy Cię przez proces tworzenia tymczasowych plików w języku Rust.
+Tworzenie tymczasowych plików może być przydatne w wielu sytuacjach. Może być to konieczne, gdy chcemy zapisać jakieś dane tymczasowo, a nie mamy potrzeby trwałego zapisu na dysku. Może też być to potrzebne, gdy potrzebujemy wykonać jakieś operacje na pliku, ale nie chcemy nadpisywać oryginalnego pliku. W tym artykule pokażemy, jak w jaki sposób możesz tworzyć tymczasowe pliki w języku Rust.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Tworzenie tymczasowych plików w języku Rust jest proste i wygodne. Wystarczy użyć funkcji `tempfile` z biblioteki standardowej i przekazać jej nazwę pliku. Poniżej znajduje się kod przykładowy, który tworzy tymczasowy plik o nazwie "plik.txt" i zapisuje w nim ciąg znaków "Witaj, świecie!".
+Kodowanie tymczasowych plików w Rust jest bardzo proste. Wystarczy wykorzystać wbudowaną bibliotekę standardową `std::fs` oraz funkcję `std::fs::File::create`. Oto przykładowy kod tworzący tymczasowy plik i zapisujący do niego dane:
 
 ```Rust
 use std::fs::File;
-use std::io::prelude::*;
-use std::path::Path;
-use std::io::Error;
 
 fn main() {
-  // Tworzenie tymczasowego pliku
-  let mut temp_file = tempfile::tempfile().unwrap();
+    // Tworzenie pliku o nazwie "temp.txt" w aktualnym katalogu
+    let mut file = File::create("temp.txt").expect("Nie udało się utworzyć pliku");
 
-  // Zapisywanie tekstu do pliku
-  let text = "Witaj, świecie!";
-  temp_file.write_all(text.as_bytes()).unwrap();
+    // Zapisywanie danych do pliku
+    file.write_all(b"Przykładowe dane").expect("Nie udało się zapisać danych do pliku");
 
-  // Przeczytanie tekstu z pliku
-  let mut buffer = String::new();
-  temp_file.read_to_string(&mut buffer).unwrap();
-
-  println!("{}", buffer); // Output: Witaj, świecie!
-
-  // Usuwanie tymczasowego pliku
-  let path = Path::new("plik.txt");
-  match std::fs::remove_file(path) {
-    Ok(_) => println!("Plik usunięty"),
-    Err(e) => println!("Błąd: {}", e),
-  }
+    // Plik zostanie automatycznie usunięty po zakończeniu działania programu
+    // Ten sam mechanizm jest wykorzystywany w przypadku błędów lub wyjątków
 }
 ```
 
-## Deep Dive
+Po uruchomieniu tego kodu w aktualnym katalogu pojawi się plik o nazwie "temp.txt" zawierający napis "Przykładowe dane". Ważne jest, aby dodać instrukcję `mut` przed zmienną `file`, ponieważ będziemy modyfikować zawartość tego pliku.
 
-Funkcja `tempfile` zwraca strukturę `NamedTempFile`, która reprezentuje tymczasowy plik w systemie plików. Plik ten jest automatycznie usuwany, gdy jest zamknięty lub gdy struktura jest zwalniana (jest to zaimplementowane w metodzie `Drop`).
+## Głębszy insight
 
-Warto również zauważyć, że funkcja `tempfile` jest bezpieczna do wielowątkowego użytku, więc nie musisz martwić się o ryzyko wyścigów między wątkami.
+Tworzenie tymczasowych plików nie jest złożone, ale jest kilka rzeczy, które warto wiedzieć na temat tego procesu. Po pierwsze, w jaki sposób Rust usuwa tymczasowe pliki? Otóż, Rust tworzy plik w katalogu systemowym przeznaczonym do przechowywania tymczasowych plików, a następnie usuwa go po zakończeniu działania programu. Można także wykorzystać funkcję `std::fs::remove_file` do ręcznego usunięcia tymczasowego pliku.
 
-## Zobacz również
+Należy również zaznaczyć, że istnieje funkcja `std::fs::create_temp` umożliwiająca tworzenie tymczasowych plików w sposób bardziej złożony. Funkcja ta może przydać się, jeśli potrzebujemy tworzyć wiele tymczasowych plików o unikatowych nazwach.
 
-- [Dokumentacja funkcji tempfile](https://doc.rust-lang.org/std/fs/fn.tempfile.html)
-- [Przykładowe projekty wykorzystujące bibliotekę tempfile](https://crates.io/search?q=tempfile)
+## Zobacz też
+
+- [Dokumentacja Rust dla `std::fs`](https://doc.rust-lang.org/std/fs/)
+- [Przykład użycia funkcji `std::fs::create_temp`](https://doc.rust-lang.org/std/fs/fn.create_temp.html)

@@ -1,53 +1,41 @@
 ---
-title:    "PHP: 文字列の先頭を大文字にする"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/php/capitalizing-a-string.md"
+title:                "PHP: 文字列の大文字化"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ文字列を大文字化する必要があるのか？
+## なぜ
+文字列を大文字に変換することをするのか、その理由を説明します。
 
-文字列を大文字化するということは、人々にとってなぜ重要なのでしょうか？一見すると、それほど重要なタスクではないように見えるかもしれませんが、実際には多くの場面で重要な役割を果たしています。例えば、データベースの検索やソートなどの処理を行う際には、大文字と小文字を区別しなければならない場合があります。また、ユーザーから入力された情報の整形や、表示するテキストの統一感を保つためにも、文字列を大文字化する必要があるのです。
+## 方法
+文字列の大文字変換についてのコーディング例と、```PHP ... ```のコードブロック内でのサンプル出力を示します。
 
-# 大文字化する方法
+```
+// オリジナルの文字列を定義
+$str = "hello world";
 
-では、実際にPHPで文字列を大文字化する方法を見てみましょう。PHPでは、mb_strtoupper()という組み込み関数を使用することで簡単に大文字化することができます。以下のコード例をご覧ください。
+// 文字列を大文字に変換する
+$new_str = strtoupper($str);
 
-```PHP
-<?php
-$name = "japan";
-echo mb_strtoupper($name); //出力結果: JAPAN
-?>
+// 変換後の文字列を出力
+echo $new_str;
+
+// 出力結果
+HELLO WORLD
 ```
 
-このように、mb_strtoupper()関数を使用することで、簡単に文字列を大文字化することができます。
+## ディープダイブ
+文字列を大文字変換する機能について、より詳細な情報をご紹介します。
 
-# 深く掘り下げる
-
-文字列を大文字化するという単純な作業にも関わらず、実は少し深く掘り下げるといくつかの興味深い点が見つかります。例えば、mb_strtoupper()関数はどのようにして文字列を大文字化しているのでしょうか？実は、PHPのmbstring拡張モジュールを使用して、マルチバイト文字を正しく扱うことができるようにしています。これにより、アクセント付き文字や記号を含む文字列でも正しく大文字化が行われるようになります。
-
-また、ユニコード対応のmb_strtoupper()関数を使用することで、他の言語でも正しく大文字化することができるようになります。これにより、センシティブな国際化対応のアプリケーション開発にも役立つことができます。
-
-# 他にも参考になるリンク
+テキストエディタやオンラインツールでは、一度に複数の文字列を大文字変換することができます。また、大文字変換の際にはASCII文字のみを対象とするか、異なるロケールの文字にも対応するかを指定することも可能です。
 
 ## 参考リンク
-
-- [PHP公式ドキュメント: mb_strtoupper](https://www.php.net/manual/ja/function.mb-strtoupper.php)
-- [PHPハンドブック: 文字列を扱う](https://www.php.net/manual/ja/language.types.string.php)
-- [mbstring拡張モジュールのドキュメント](https://www.php.net/manual/ja/book.mbstring.php)
-
-コードを書く際には、文字列を大文字化する必要性や、どのようにmb_strtoupper()関数が動作しているのかを理解し、より柔軟に対応することができるようにしましょう。
-
-##  参考になるリンクを見る
-
-- [PHPとは？](https://ja.wikipedia.org/wiki/PHP)
-- [PHPの基本的な使い方](https://www.javadrive.jp/php/)
-- [マークダウン記法について学ぶ](https://www.markdownguide.org/basic-syntax/)
-
-
-
-## 参考になるリンクをみる
-
-- [PHPの変数の使い方について知る](https://www.javadrive.jp/php/variable/index1.html)
-- [PHPで条件分岐をためして見る
+- [PHP公式ドキュメント: strtoupper関数](https://www.php.net/manual/ja/function.strtoupper.php)
+- [W3Schools: PHP strtoupper() Function](https://www.w3schools.com/php/func_string_strtoupper.asp)
+- [TechAcademy: PHPの文字列を大文字、小文字変更する関数基礎まとめ](https://techacademy.jp/magazine/13604)
+ 
+## 参考
+参考になると思われる他の記事やリンクを紹介します。

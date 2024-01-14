@@ -1,46 +1,115 @@
 ---
-title:    "C++: Concatenando strings"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/concatenating-strings.md"
+title:                "C++: Juntando cadeias de caracteres"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar concatenação de strings?
+## Por que
 
-Se você está familiarizado com programação em C++, provavelmente já se deparou com o conceito de concatenação de strings em algum momento. Mas por que exatamente alguém iria querer unir duas ou mais strings em uma única string? A resposta é simples: para criar uma nova string que combine as informações ou mensagens contidas nas strings originais. Isso pode ser útil em diferentes situações, como exibição de mensagens personalizadas ao usuário ou manipulação de dados em uma aplicação.
+Às vezes, precisamos combinar várias cadeias de caracteres em uma única sequência. Isso pode ser útil para imprimir uma mensagem personalizada, criar uma URL dinâmica ou manipular dados em um arquivo. É aqui que entra em jogo a concatenação de strings em C++. 
 
-## Como fazer concatenação de strings em C++
+## Como fazer
 
-A concatenação de strings é uma tarefa relativamente simples em C++. Vamos supor que queremos unir as strings "Hello" e "world" para formar a frase "Hello world". Podemos fazer isso da seguinte maneira:
+A concatenação de strings em C++ é bastante fácil e pode ser feita de diferentes maneiras, dependendo da versão do C++ que você está usando. Aqui está um exemplo usando a sintaxe do C++11:
 
 ```C++
 #include <iostream>
 #include <string>
+using namespace std;
 
-int main() {
-  // declaramos as duas strings que queremos unir
-  std::string str1 = "Hello";
-  std::string str2 = "world";
-  
-  // usamos o operador de adição (+) para concatenar as strings
-  std::string frase = str1 + " " + str2;
-  std::cout << frase << std::endl; // output: Hello world
-  
-  return 0;
+int main()
+{
+    // Declare duas strings
+    string saudacao = "Olá";
+    string nome = "Maria";
+
+    // Concatene a saudação e o nome
+    string mensagem = saudacao + ", " + nome;
+
+    // Imprima a mensagem resultante
+    cout << mensagem << endl;
+
+    return 0;
 }
+
+/* Saída:
+Olá, Maria
+*/
 ```
 
-No código acima, declaramos duas variáveis do tipo string - "str1" e "str2" - e atribuímos a elas os valores "Hello" e "world", respectivamente. Em seguida, usamos o operador de adição (+) para unir as duas strings, adicionando também um espaço em branco (" ") entre elas. Finalmente, imprimimos a nova string criada ("Hello world") na tela.
+Aqui, usamos o operador `+` para concatenar as strings `saudacao` e `nome` e armazenamos o resultado em `mensagem`. No final, imprimimos `mensagem` para mostrar a saudação personalizada.
 
-## Profundidade na concatenação de strings
+Além do operador `+`, também é possível usar a função `std::stringstream` para concatenar strings em C++. Aqui está um exemplo:
 
-Embora a concatenação de strings seja uma tarefa simples, é importante ter cuidado ao utilizá-la em seu código. Por exemplo, é importante garantir que as strings que estão sendo unidas estejam no formato correto, pois uma pequena diferença pode resultar em uma saída inesperada. Além disso, é possível que ocorram problemas de desempenho caso a concatenação seja feita com um grande número de strings ou em loops repetitivos.
+```C++
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
 
-Outro ponto a ser destacado é que, em C++, as strings são imutáveis, ou seja, não é possível modificá-las diretamente após sua criação. Portanto, na verdade, a concatenação de strings cria uma nova string, e a original permanece inalterada.
+int main()
+{
+    // Declare duas strings
+    string saudacao = "Oi";
+    string nome = "João";
+
+    // Use a função std::stringstream para concatenar
+    stringstream ss;
+    ss << saudacao << ", " << nome;
+
+    // Imprima a mensagem resultante
+    cout << ss.str() << endl;
+
+    return 0;
+}
+
+/* Saída:
+Oi, João
+*/
+```
+
+## Mergulho profundo
+
+Na verdade, a concatenação de strings em C++ é mais complexa do que apenas usar o operador `+` ou a função `std::stringstream`. Por baixo dos panos, esses métodos estão criando novas strings em memória para armazenar o resultado concatenado. Isso pode ser ineficiente quando manipulamos grandes quantidades de dados.
+
+Uma abordagem mais eficiente é usar a classe `std::string` e sua função `append()`. Veja um exemplo:
+
+```C++
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    // Declare duas strings
+    string saudacao = "Oi";
+    string nome = "José";
+
+    // Reserve espaço em memória para a string resultante
+    string mensagem;
+    mensagem.reserve(saudacao.length() + nome.length() + 2); // 2 para os espaços e o caractere de nulo
+
+    // Use a função append() para concatenar
+    mensagem.append(saudacao).append(" ").append(nome);
+
+    // Imprima a mensagem resultante
+    cout << mensagem << endl;
+
+    return 0;
+}
+
+/* Saída:
+Oi, José
+*/
+```
+
+Usando `append()`, podemos economizar memória e tornar o processo de concatenação mais eficiente. No exemplo acima, usamos `reserve()` para pré-alocar espaço suficiente para a string resultante, o que evita realocações desnecessárias de memória.
 
 ## Veja também
 
-- [Tutorial de strings em C++ (em inglês)](https://www.programiz.com/cpp-programming/strings)
-- [Documentação oficial do C++ (em inglês)](https://en.cppreference.com/w/cpp/string/basic_string)
-- [Publicação sobre concatenação de strings em C++ (em português)](https://www.codepolitan.com/iniciando-com-cpp-concatenacao-de-strings-5b8faff7e9a22)
+- [Referência do operador + em C++](https://www.learncpp.com/cpp-tutorial/concatenating-strings-and-character-literals/#:~:text=The%20%2B%20operator%20can%20be,is%20concatenated%20to%20the%20string.)
+- [Referência da classe std::string em cppreference](https://en.cppreference.com/w/cpp/string/basic_string)
+- [Tutorial de C++ da w3schools](https://www.w3schools.com/cpp) (em português do Brasil)

@@ -1,23 +1,25 @@
 ---
-title:    "Rust: Iniciando um novo projeto"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/starting-a-new-project.md"
+title:                "Rust: Começando um novo projeto"
+programming_language: "Rust"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto em Rust?
-Muitos programadores estão optando por utilizar a linguagem Rust em seus projetos por sua grande performance, segurança e facilidade de uso. Além disso, a comunidade ao redor de Rust é altamente ativa e sempre disposta a ajudar, tornando-o uma excelente escolha para começar um novo projeto.
+##Por que iniciar um novo projeto em Rust?
 
-## Como iniciar um projeto em Rust
-Para iniciar um projeto em Rust, é necessário seguir alguns passos básicos:
+Rust é uma linguagem de programação moderna, segura e eficiente que tem ganhado cada vez mais popularidade. Com suas características únicas, como sistema de tipos estático e gerenciamento de memória sem coleta de lixo, Rust é ideal para desenvolvimento de sistemas e aplicativos de alto desempenho. Se você está procurando uma linguagem de programação versátil e poderosa, iniciar um novo projeto em Rust é uma ótima opção.
 
-1. Instale o Rust em sua máquina através do [site oficial](https://www.rust-lang.org/pt-BR/tools/install).
-2. Crie um novo diretório para o seu projeto e navegue até ele através do terminal.
-3. Dentro do diretório, inicialize o projeto utilizando o comando `cargo init`.
-4. O Cargo é o gerenciador de pacotes e build system de Rust, ele irá criar automaticamente o arquivo `Cargo.toml` que contém as informações do projeto e o arquivo `main.rs` que é onde será escrito o código inicial do projeto.
+## Como fazer:
 
-Agora, você está pronto para começar a programar em Rust!
+Para começar um novo projeto em Rust, você precisará ter o compilador Rust instalado em seu sistema. Você pode fazer o download em [rust-lang.org](https://rust-lang.org). Uma vez instalado, execute o seguinte comando em seu terminal para criar um novo projeto:
+
+```
+Rust novo meu_projeto
+```
+
+Isso criará um novo diretório com a estrutura de um projeto Rust básico. Dentro do diretório, você encontrará um arquivo `Cargo.toml`, que contém as informações do seu projeto, e um diretório `src`, onde você escreverá o código fonte. Aqui está um exemplo simples de código Rust que imprime "Olá Mundo!" na tela:
 
 ```Rust
 fn main() {
@@ -25,18 +27,19 @@ fn main() {
 }
 ```
 
-É possível compilar o código utilizando o comando `cargo build` e depois executá-lo com o comando `./target/debug/nome_do_projeto`. Alternativamente, você pode utilizar o comando `cargo run` para compilar e executar o código de uma só vez.
+Para executar este código, use o comando `cargo run` no diretório do seu projeto. Você também pode compilar e executar o código separadamente usando os comandos `cargo build` e `cargo run` respectivamente.
 
-## Mais sobre iniciar um projeto em Rust
-É importante conhecer algumas das melhores práticas ao iniciar um novo projeto em Rust. Algumas dicas incluem:
+## Mergulho Profundo:
 
-- Utilizar o gerenciador de dependências do Cargo para adicionar bibliotecas externas ao projeto.
-- Utilizar o sistema de tipos de Rust para garantir a segurança do código.
-- Utilizar a ferramenta de formatação automática `rustfmt` para manter um código limpo e legível.
+Antes de iniciar um novo projeto em Rust, é importante entender a estrutura e a sintaxe da linguagem. Rust é uma linguagem de tipos estáticos, o que significa que todas as variáveis devem ser declaradas com um tipo específico e não podem ser alteradas posteriormente. Além disso, Rust possui um sistema de gerenciamento de memória exclusivo, que garante que os programas sejam seguros e livres de erros de memória.
 
-Com essas dicas em mente, você pode começar a explorar as diversas possibilidades que Rust oferece para o desenvolvimento de aplicações rápidas, seguras e confiáveis.
+Outra característica importante de Rust é o conceito de propriedade (ownership). Basicamente, isso significa que cada valor criado em Rust tem um único dono e será automaticamente liberado da memória quando esse dono sair de escopo. Isso ajuda a evitar problemas comuns de gerenciamento de memória, como vazamentos e corrupção.
 
-## Veja também
-- [Site oficial de Rust](https://www.rust-lang.org/pt-BR/)
-- [Documentação oficial de Rust](https://doc.rust-lang.org/stable/)
-- [Repositório oficial do Cargo](https://github.com/rust-lang/cargo)
+Finalmente, Rust também possui um sistema de gerenciamento de pacotes chamado Cargo, que facilita o gerenciamento de dependências e a construção de projetos. Com o Cargo, você pode adicionar facilmente bibliotecas externas ao seu projeto e usá-las em seu código.
+
+## Veja também:
+
+- [Documentação oficial do Rust](https://doc.rust-lang.org)
+- [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/)
+- [Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/)
+- [Crates.io - repositório de pacotes do Rust](https://crates.io/)

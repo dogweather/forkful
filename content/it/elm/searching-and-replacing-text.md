@@ -1,38 +1,39 @@
 ---
-title:    "Elm: Cercare e sostituire testo"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/searching-and-replacing-text.md"
+title:                "Elm: Ricerca e sostituzione di testo"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-La ricerca e sostituzione di testo è una pratica comune nella programmazione, in particolare quando si lavora con grandi quantità di dati. Con Elm, è possibile automatizzare questo processo per risparmiare tempo e ridurre gli errori umani.
+Se sei un programmatore o sviluppatore di software, molto probabilmente hai già familiarità con il concetto di "cerca e sostituisci" nel tuo codice. Ma perché dovresti dedicare il tuo tempo a fare questo invece di utilizzare altre funzionalità? La risposta è semplice: la ricerca e sostituzione ti permette di modificare rapidamente e facilmente parti specifiche del tuo codice, risparmiando tempo e fatica.
 
 ## Come fare
 
-Per eseguire la ricerca e sostituzione di testo in Elm, si può utilizzare il comando `String.replace` che accetta tre argomenti: il testo da cercare, il testo di sostituzione e la stringa di input. Ad esempio:
+Per fare una ricerca e sostituzione in Elm, devi utilizzare la funzione `String.replace`. Questa funzione prende tre argomenti: la stringa originale, la parte di stringa che vuoi cercare e la parte di stringa con cui vuoi sostituire quella che hai trovato.
 
 ```Elm
-String.replace "ciao" "hello" "ciao mondo"
+String.replace "Ciao mondo!" "mondo" "amico"      -- Output: "Ciao amico!"
 ```
 
-Questa funzione restituirà la stringa "hello mondo", sostituendo ogni occorrenza di "ciao" con "hello".
-
-È inoltre possibile utilizzare espressioni regolari per una maggiore flessibilità nelle ricerche di testo. Ad esempio, per sostituire tutte le vocali di una parola con asterischi, si può utilizzare il seguente codice:
+Puoi anche specificare una stringa di sostituzione vuota per eliminare completamente la parte trovata.
 
 ```Elm
-RegExp.replace (RegExp.Regex "^[aeiouy]") (\_ -> "*") "elm"
+String.replace "Ciao mondo!" "mondo" ""           -- Output: "Ciao !"
 ```
 
 ## Approfondimento
 
-Esistono alcune considerazioni importanti da tenere a mente quando si effettua la ricerca e sostituzione di testo in Elm. In primo luogo, il comando `String.replace` è case-sensitive, quindi se si cerca di sostituire una parola come "ciao" con "hello", solo "ciao" sarà riconosciuto e sostituito. In secondo luogo, è importante prestare attenzione alla formattazione delle espressioni regolari per ottenere i risultati desiderati.
+Se vuoi approfondire ancora di più la ricerca e sostituzione nel tuo codice Elm, puoi anche utilizzare espressioni regolari. Ciò ti permette di effettuare ricerche più avanzate, come cercare parti di stringa che rispettano uno schema specifico. Per farlo, dovrai utilizzare la funzione `String.regexReplace`.
 
-È inoltre possibile utilizzare la funzione `String.filter` per rimuovere le parti del testo non desiderate prima di effettuare la ricerca e la sostituzione. Questo può essere utile per rimuovere eventuali caratteri di punteggiatura o spazi vuoti che potrebbero interferire con la ricerca.
+```Elm
+String.regexReplace (Regex.regex "a.*o") "Ciao mondo!" "amico"    -- Output: "Ciao amico!"
+```
 
 ## Vedi anche
 
-- Documentazione di Elm su `String.replace`: https://package.elm-lang.org/packages/elm/core/latest/String#replace
-- Tutorial sulle espressioni regolari in Elm: https://dev.to/elm-yoga/basics-of-regex-in-elm-2md9
+- [Documentazione delle funzioni di ricerca e sostituzione in Elm](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
+- [Tutorial di espressioni regolari in Elm](https://medium.com/@lorenzoguaragna/introduction-to-regular-expressions-with-elm-27b21a9aaaf4)

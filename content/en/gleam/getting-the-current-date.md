@@ -1,47 +1,34 @@
 ---
-title:    "Gleam recipe: Getting the current date"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/getting-the-current-date.md"
+title:                "Gleam recipe: Getting the current date"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Engage in Getting the Current Date? 
+## Why
+Getting the current date is an essential part of many programming tasks, from displaying the current date on a website to creating time-sensitive tasks or scheduling events. In Gleam, this can be done easily using a built-in function. 
 
-Getting the current date may seem like a trivial task, but it can actually be very useful in many programming scenarios. Whether you want to display the current date on a website, track user activity, or simply keep your code organized, being able to retrieve the current date is an important skill to have in your programming arsenal.
-
-## How To: Getting the Current Date in Gleam
-
-To get the current date in Gleam, we can use the `DateTime` module. Before we can use this module, we need to import it in our code by using the `import` statement. Let's take a look at some sample code below to see how it works.
+## How To
+To get the current date in Gleam, we will be using the `Date.from_local_iso8601` function. This function takes in a string of the current date in ISO 8601 format and returns a `Date` type. Let's see how this works in action:
 
 ```Gleam
-import gleam/datetime
+let today = Date.from_local_iso8601("2021-09-15")
 
-// Get the current date and time
-let current_date_time = DateTime.now()
+let output = String.join([today.day, "/", today.month, "/", today.year])
 
-// Format the date in a specific way
-let formatted_date = DateTime.format("%A, %B %d, %Y", current_date_time)
-
-// Print out the formatted date
-gleam@Blogger: {formatted_date}
+io.format("Today's date is {}", [output])
 ```
 
-The output of the above code will look something like this: 
+Running this code will give us the output `Today's date is 15/09/2021`. Here, we first create a `Date` type using the `Date.from_local_iso8601` function and then use the `String.join` function to format and join the day, month, and year values of the `Date` type. Finally, we use the `io.format` function to print the output in a user-friendly format.
 
-```Gleam
-Friday, July 30, 2021
-```
+## Deep Dive
+The `Date.from_local_iso8601` function is just one of the many built-in date and time functions available in Gleam. Other functions include `Date.from_components`, which allows you to create a `Date` type using individual components such as day, month, and year, and `Date.from_unix`, which converts a Unix timestamp into a `Date` type.
 
-As you can see, we imported the `DateTime` module, used the `now()` function to get the current date and time, and then used the `format()` function to format the date in the way we wanted. The `format()` function takes two arguments – the first one being the format string, which tells the function how to format the date, and the second one being the actual date and time we want to format.
-
-## Deep Dive: Understanding the Code
-
-Now, let's take a closer look at the code we just wrote. The `%A`, `%B`, and `%d` in the format string are known as placeholders. These placeholders are replaced with the actual values from the date and time passed in the `format()` function. For example, `%A` represents the full name of the day of the week, `%B` represents the full name of the month, and `%d` represents the day of the month.
-
-You can use different combinations of these placeholders to format the date and time in various ways. You can find a full list of all the available placeholders in the `DateTime` module documentation.
+It is important to note that the `Date` type in Gleam follows the Gregorian calendar and does not support time zones. If you need to work with time zones, you can use third-party libraries or create your own custom functions.
 
 ## See Also
-- [Gleam DateTime module documentation](https://gleam.run/documentation/language/datetime/)
-- [Gleam language website](https://gleam.run/) 
-- [Gleam on GitHub](https://github.com/gleam-lang/gleam)
+- Official Gleam documentation on Date and Time: https://gleam.run/book/standard-library.html#date-and-time
+- ISO 8601 standard: https://www.iso.org/iso-8601-date-and-time-format.html
+- Third-party Gleam date and time library: https://github.com/gleam-lang/ecdatetime

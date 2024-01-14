@@ -1,64 +1,47 @@
 ---
-title:    "Python: Odczytywanie argumentów wiersza poleceń"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/python/reading-command-line-arguments.md"
+title:                "Python: Odczytywanie parametrów linii poleceń"
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego programy Python mogą przyjąć argumenty z wiersza poleceń? Może wydaje ci się to mało pomocne lub bezużyteczne. Jednak jest to jeden z najbardziej przydatnych i wszechstronnych sposobów na wchodzenie w interakcję ze swoim programem. Dzięki argumentom wiersza poleceń możesz zmienić zachowanie programu bez konieczności zmiany kodu. W tym artykule dowiesz się, dlaczego warto poznać jak czytać argumenty z wiersza poleceń w Pythonie.
+Czy kiedykolwiek zastanawiałeś się, jak przełączyć opcje w swoim programie bez edytowania kodu? W tym blogu dowiesz się, dlaczego warto i jak możesz zacząć czytać argumenty linii poleceń w Pythonie.
 
 ## Jak to zrobić
 
-Jest kilka sposobów na czytanie argumentów z wiersza poleceń w Pythonie. Najprostszym z nich jest użycie modułu `sys`. Poniższy kod pokazuje, jak można wyświetlić wszystkie argumenty przekazane do programu:
+Zaczniemy od najprostszego przykładu, gdzie wprowadzimy tylko jeden argument z linii poleceń. Używając funkcji sys.argv, możemy odczytać argumenty, które zostaną przekazane do programu. Przykład:
 
 ```Python
-import sys
+import sys 
 
-print(sys.argv)
-```
-Wywołanie powyższego kodu z argumentami `python program.py argument1 argument2` da nam następujący wynik:
-
-```
-['program.py', 'argument1', 'argument2']
+print("Wprowadziłeś/aś argument: ", sys.argv[1])
 ```
 
-Widać tutaj, że pierwszym elementem listy jest nazwa programu. Następnie mamy wszystkie przekazane argumenty.
+Teraz, jeśli uruchomisz ten kod ze specyficznym argumentem (np. "python program.py argument"), program wyświetli wiadomość "Wprowadziłeś/aś argument: argument".
 
-Możesz również przekazać argumenty jako opcje z użyciem modułu `argparse`. Poniżej znajduje się przykładowy kod, który wyświetli przesłane argumenty oraz wartość opcji `--type`:
+Możesz także wprowadzić więcej niż jeden argument. Wtedy każdy kolejny argument będzie przechowywany w osobnej komórce sys.argv. Przykład:
 
 ```Python
-import argparse
+import sys 
 
-parser = argparse.ArgumentParser()
-parser.add_argument('arguments', nargs='*')
-parser.add_argument('--type')
-
-args = parser.parse_args()
-
-print(args.arguments)
-print(args.type)
+print("Wprowadziłeś/aś pierwszy argument: ", sys.argv[1])
+print("Wprowadziłeś/aś drugi argument: ", sys.argv[2])
 ```
 
-Wywołanie powyższego kodu z argumentami `python program.py argument1 argument2 --type string` da nam następujący wynik:
-```
-['argument1', 'argument2']
-string
-```
-
-Jak widać, możemy wygodnie dostosować kod przy użyciu opcji i opcjonalnych argumentów.
+Teraz, jeśli uruchomisz ten kod ze specyficznymi argumentami (np. "python program.py argument1 argument2"), program wyświetli wiadomość "Wprowadziłeś/aś pierwszy argument: argument1" oraz "Wprowadziłeś/aś drugi argument: argument2".
 
 ## Deep Dive
 
-Warto dokładniej zapoznać się z modułem `argparse` i wszystkimi możliwymi opcjami. Pozwala on na obsługę wielu różnych rodzajów argumentów i umożliwia dokładniejsze kontrolowanie programu.
+Funkcja sys.argv jest użyteczna, jednak warto zwrócić uwagę na kilka ważnych rzeczy. Po pierwsze, pierwszym argumentem w sys.argv jest nazwa pliku z kodem. Dlatego pierwszy argument, który wprowadzisz, będzie przechowywany w sys.argv[1].
 
-Ponadto, w razie potrzeby możesz użyć również innych modułów, takich jak `click` czy `docopt`, aby czytać argumenty z wiersza poleceń. Ważne jest, aby dobrać najlepsze rozwiązanie do konkretnego programu i jego potrzeb.
+Po drugie, argumenty przekazywane do programu są przechowywane jako ciągi znaków (stringi). Dlatego warto konwertować je na odpowiedni typ danych, jeśli chcesz wykonać działania matematyczne lub inne operacje na nich.
 
-## Zobacz też
+## Zobacz także
 
-- [Dokumentacja modułu `sys`](https://docs.python.org/3/library/sys.html)
-- [Dokumentacja modułu `argparse`](https://docs.python.org/3/library/argparse.html)
-- [Dokumentacja modułu `click`](https://click.palletsprojects.com/en/7.x/)
-- [Dokumentacja modułu `docopt`](https://github.com/docopt/docopt)
+- Dokumentacja Pythona na temat sys.argv: https://docs.python.org/3/library/sys.html
+- Wideo tutorial na YouTube "Python Command Line Arguments": https://youtu.be/niPBw_7DebM
+- Przykładowy kod na GitHubie: https://github.com/python-examples/learn-python/blob/master/read-command-line-arguments.py

@@ -1,74 +1,43 @@
 ---
-title:    "Clojure: Zufallszahlen erzeugen"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/generating-random-numbers.md"
+title:                "Clojure: Generierung von Zufallszahlen"
+programming_language: "Clojure"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum: Generierung von Zufallszahlen in Clojure
+# Warum
 
-Die Generierung von Zufallszahlen ist ein wichtiger Bestandteil vieler Programmieraufgaben. Oftmals werden Zufallszahlen benötigt, um bestimmte Abläufe oder Entscheidungen in Programmen zu simulieren oder zufällige Daten zu generieren. In Clojure gibt es verschiedene Möglichkeiten, Zufallszahlen zu generieren und in diesem Blog-Artikel möchten wir uns damit beschäftigen, wie das funktioniert.
+Warum sollte man sich überhaupt mit der Generierung von Zufallszahlen beschäftigen? Nun, in der Programmierung kann diese Fähigkeit sehr nützlich sein, z.B. für Simulationen, Spiele, kryptographische Anwendungen oder auch nur zum Testen von Funktionen.
 
-## Wie es geht
+# Wie geht das?
 
-Um in Clojure Zufallszahlen zu generieren, können wir die Funktion "rand" aus der Standartbibliothek `clojure.core` verwenden. Diese Funktion akzeptiert eine optionalen Parameter `n`, der die maximale Zahl angibt, die generiert werden soll. Wenn kein Parameter angegeben wird, werden Zufallszahlen im Bereich von 0 (inklusive) bis 1 (exklusive) generiert.
-
-```Clojure
-(rand) ;; generiert eine Zufallszahl zwischen 0 und 1
-;; Beispiel-Ausgabe: 0.452098327
-
-(rand 10) ;; generiert eine Zufallszahl zwischen 0 und 10
-;; Beispiel-Ausgabe: 5.34267589
-```
-
-Alternativ können wir die Funktion "rand-int" verwenden, um ganze Zufallszahlen zu generieren. Diese Funktion erwartet ebenfalls einen optionalen Parameter `n`, der als obere Grenze für die generierten Zufallszahlen dient.
+Um in Clojure Zufallszahlen zu generieren, gibt es mehrere Möglichkeiten. Eine einfache Methode ist die Verwendung der `rand`-Funktion, die eine Zufallszahl zwischen 0 und 1 zurückgibt. Beispiel:
 
 ```Clojure
-(rand-int 100) ;; generiert eine ganze Zufallszahl zwischen 0 und 100
-;; Beispiel-Ausgabe: 73
+(rand) ; Output: 0.8477345227
 ```
 
-Natürlich können wir auch eigene Grenzen für die generierten Zufallszahlen definieren, indem wir die "range" Funktion verwenden. Diese Funktion generiert eine Sequenz von Zahlen von einem Startwert (inklusive) bis zu einem Endwert (exklusive) mit einem optionalen Schritt, der standardmäßig 1 beträgt.
+Möchte man eine Zufallszahl innerhalb eines bestimmten Bereichs erhalten, kann man die `rand-int`-Funktion verwenden. Diese nimmt zwei Argumente entgegen, den unteren und den oberen Grenzwert. Beispiel:
 
 ```Clojure
-(range 10) ;; generiert eine Sequenz von Zahlen von 0 (inklusive) bis 10 (exklusive) mit einem Schritt von 1
-;; Beispiel-Ausgabe: (0 1 2 3 4 5 6 7 8 9)
-
-(range 20 30 2) ;; generiert eine Sequenz von Zahlen von 20 (inklusive) bis 30 (exklusive) mit einem Schritt von 2
-;; Beispiel-Ausgabe: (20 22 24 26 28)
+(rand-int 1 10) ; Output: 7
 ```
 
-Um nun eine zufällige Zahl aus dieser Sequenz zu wählen, können wir die "rand-nth" Funktion verwenden, die eine Sequenz akzeptiert und eine zufällige Element aus dieser zurückgibt.
+Man kann auch eine Liste von Zufallszahlen mit der `repeatedly`-Funktion generieren, indem man ihr als Argument die Anzahl der gewünschten Werte sowie eine Funktion übergibt, die Zufallszahlen erzeugt. Beispiel:
 
 ```Clojure
-(rand-nth (range 10)) ;; wählt eine zufällige Zahl aus der Sequenz (0 1 2 3 4 5 6 7 8 9)
-;; Beispiel-Ausgabe: 7
+(repeatedly 5 rand) ; Output: (0.627081839 0.3325115686 0.9662961649 0.47983 0.9021066034)
 ```
 
-## Tiefergehende Informationen
+# Tiefer eintauchen
 
-Die "rand" und "rand-int" Funktionen verwenden den Systemzeitpunkt als Seed für die Zufallszahlengenerierung. Das bedeutet, dass jedes Mal, wenn die Funktion aufgerufen wird, eine neue Zufallszahl generiert wird. Wenn wir jedoch eine bestimmte Zufallszahl mehrmals verwenden möchten, z.B. in einer Schleife, sollten wir den Seed manuell setzen, indem wir die Funktion "set-seed!" verwenden.
+Die `rand`-Funktion verwendet einen Pseudo-Zufallszahlengenerator, der auf dem Mersenne-Twister-Algorithmus basiert. Das bedeutet, dass die generierten Zahlen nicht wirklich zufällig sind, sondern auf einer vorhersehbaren Berechnung basieren. Wenn man absolute Zufälligkeit benötigt, sollte man daher einen externen Zufallszahlengenerator verwenden.
 
-```Clojure
-(set-seed! 2020) ;; setzt den Seed auf die Zahl 2020
-(rand) ;; generiert nun immer dieselbe Zufallszahl
-;; Beispiel-Ausgabe: 0.5603120015123885
-```
+Es ist auch möglich, den Zufallszahlengenerator zu initialisieren, um immer die gleiche Sequenz von Zahlen zu erhalten. Dafür kann man die `seed`-Funktion verwenden und ihr einen beliebigen Wert übergeben.
 
-Es ist auch möglich, benutzerdefinierte Seeds zu erstellen, indem wir die "seed-random" Funktion verwenden und einen Integer-Wert übergeben. Dadurch können wir sicherstellen, dass bei jedem Aufruf der Funktion dieselbe Zufallszahl generiert wird.
+# Siehe auch
 
-```Clojure
-(seed-random 1234)
-(rand)
-;; Beispiel-Ausgabe: 0.11474264970968126
-
-(seed-random 1234)
-(rand)
-;; Beispiel-Ausgabe: 0.11474264970968126
-```
-
-## Siehe auch
-
-Weitere Informationen und Beispiele zur Zufallszahlen-Generierung in Clojure finden Sie in der offiziellen Dokumentation: 
-- https://clojure.org/api
+- Clojure Dokumentation zu Zufallszahlen: https://clojuredocs.org/clojure.core/rand
+- Island of Clojure Artikel über Zufallszahlen: http://www.islandofclojure.com/clojure-random-numbers/

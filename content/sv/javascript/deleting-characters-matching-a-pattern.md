@@ -1,42 +1,34 @@
 ---
-title:    "Javascript: Radera tecken som matchar ett mönster"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/deleting-characters-matching-a-pattern.md"
+title:                "Javascript: Att ta bort tecken som matchar ett mönster"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att ta bort tecken som matchar ett mönster är en vanlig uppgift inom programmering som kan ha olika användningsområden. Det kan användas för att rena data, ersätta ogiltiga tecken eller för att förbättra prestandan hos en applikation.
+Att ta bort tecken som matchar ett mönster kan vara en viktig del av programmering för att filtrera genom data eller korrigera felaktig inmatning.
 
-## Hur man gör
+## Så här
 
-För att ta bort tecken som matchar ett specifikt mönster i JavaScript kan vi använda metoden `replace()` tillsammans med en reguljär uttryck (regEx). Nedan följer ett exempel på kod som tar bort siffrorna från en sträng:
+För att ta bort tecken som matchar ett visst mönster kan vi använda en kombination av Regex-mönster och `replace()` funktionen. Se nedan för en enkel kod som tar bort alla siffror från en sträng:
 
 ```Javascript
-let str = "123abc";
+let str = "Jag har 55 äpplen och 3 bananer.";
 str = str.replace(/[0-9]/g, '');
-console.log(str); // utmatning: abc
+console.log(str); // Output: Jag har äpplen och bananer.
 ```
 
-Vi använder `/[0-9]/g` som vårt regEx-mönster för att identifiera alla siffror (`0-9`) i strängen och `g` för att tala om för metoden att vi vill ersätta alla förekomster, inte bara den första.
-
-Vi kan också använda en annan metod, `split()`, för att ta bort tecken som matchar ett mönster. Denna metod delar upp strängen i delar baserat på mönstret och returnerar en array av delarna. Därefter kan vi enkelt sammanfoga dessa delar med hjälp av `join()`-metoden. Exempel:
-
-```Javascript
-let str = "abc123";
-str = str.split(/[0-9]/).join('');
-console.log(str); // utmatning: abc
-```
+Vi använder `replace()` funktionen och tilldelar sedan resultatet tillbaka till variabeln `str` för att uppdatera strängen utan siffrorna. Regular Expression `/[0-9]/g` matchar alla siffror i strängen och ersätter dem med en tom sträng (dvs. tar bort dem). Om du vill ta bort ett specifikt tecken kan du använda den exakta nyckeln istället för att använda intervallet som visas ovan, till exempel `/a/g` för att ta bort alla bokstäver "a" i strängen.
 
 ## Fördjupning
 
-Reguljära uttryck är en kraftfull funktion inom programmering som låter oss söka, matcha och manipulera text på ett effektivt sätt. De består av ett mönster och flaggor som specificerar hur sökningen ska utföras. RegEx stöds i många programmeringsspråk, inklusive JavaScript.
+Att använda Regex för att ta bort tecken som matchar ett mönster ger stor flexibilitet och effektivitet. Det finns flera olika metoder för att använda Regex, till exempel att använda fångargrupper för att behålla vissa delar av en sträng eller att använda negativa intervall för att behålla vissa tecken. Det är också viktigt att förstå skillnaden mellan någon tecken och alla tecken och hur det kan påverka resultatet. Genom att fördjupa dig i Regular Expressions kan du bli en mer effektiv och produktiv programmerare.
 
-Det finns många användbara verktyg och resurser online för att lära sig mer om reguljära uttryck och hur man använder dem i JavaScript, som [RegExr](https://regexr.com/) och [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
+## Se även
 
-## Se också
-
-- [Introduction to Regular Expressions in JavaScript](https://www.digitalocean.com/community/tutorials/an-introduction-to-regular-expressions-in-javascript)
-- [Mastering JavaScript Regular Expressions](https://www.pluralsight.com/blog/software-development/mastering-regular-expressions-in-javascript)
+- https://www.w3schools.com/jsref/jsref_replace.asp
+- https://www.w3schools.com/js/js_regexp.asp
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace

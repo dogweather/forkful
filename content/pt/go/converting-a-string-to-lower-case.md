@@ -1,61 +1,49 @@
 ---
-title:    "Go: Convertendo uma string para minúsculas"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/go/converting-a-string-to-lower-case.md"
+title:                "Go: Convertendo uma string para caixa baixa"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por Que
+# Por que converter uma string para letras minúsculas em Go?
 
-Convertendo uma string para letras minúsculas no Go pode ser muito útil em diversas situações, desde validação de formulários até a manipulação de dados em um banco de dados. Saber como realizar essa conversão pode facilitar e acelerar o desenvolvimento de aplicações em Go.
+Ao trabalhar com strings em Go, pode ser necessário converter todas as letras para minúsculas em algum momento. Isso é especialmente importante quando se trata de entrada do usuário, pois é importante garantir que as comparações de strings sejam feitas corretamente, independentemente do caso das letras.
 
-## Como Fazer
+# Como fazer isso em Go?
 
-Usando a função `ToLower()` da biblioteca `strings`, podemos facilmente converter uma string para letras minúsculas. Veja um exemplo abaixo:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"strings"
-)
-
-func main() {
-	str := "Olá, Mundo!"
-	fmt.Println(strings.ToLower(str))
-}
-```
-
-O código acima irá imprimir `olá, mundo!`, com todas as letras em minúsculo. É importante lembrar que essa função não altera a string original, mas retorna uma cópia convertida.
-
-Outra opção é utilizar o pacote `unicode` e sua função `ToLower()`, que lida com caracteres Unicode corretamente:
+Converter uma string para letras minúsculas em Go é bastante simples. Basta usar a função incorporada `strings.ToLower()` e passar a string desejada como argumento. Veja um exemplo abaixo:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"unicode"
+    "fmt"
+    "strings"
 )
 
 func main() {
-	str := "Ça Va?"
-	fmt.Println(unicode.ToLower(str))
+    original := "TEXTO DE EXEMPLO"
+    lower := strings.ToLower(original)
+    fmt.Println("String original:", original)
+    fmt.Println("String convertida para minúsculas:", lower)
 }
 ```
 
-Este código irá imprimir `ça va?` corretamente, com o caractere 'Ç' convertido para 'ç'. É importante notar que o uso da função `ToLower()` sem o pacote `unicode` pode não ser suficiente para converter caracteres de outros idiomas corretamente.
+A saída deste exemplo seria a seguinte:
 
-## Deep Dive
+```
+String original: TEXTO DE EXEMPLO
+String convertida para minúsculas: texto de exemplo
+```
 
-Ao converter uma string para letras minúsculas, é importante considerar a diferença entre minúsculas e maiúsculas pode variar de acordo com o idioma. Por exemplo, em alguns idiomas, como o turco, os caracteres com acentos podem ter versões maiúsculas e minúsculas diferentes.
+# Mergulho profundo
 
-O pacote `unicode` do Go lida com essa variação de caracteres ao fornecer funções específicas para converter letras para um caso determinado. Além disso, também é possível converter apenas a primeira letra de uma string para minúscula, usando a função `ToLowerSpecial()` do pacote `unicode`, que permite especificar o idioma desejado.
+A função `strings.ToLower()` em Go utiliza a tabela de conversão ASCII para converter as letras maiúsculas para minúsculas. Isso significa que apenas caracteres ASCII serão convertidos corretamente para minúsculas. Se a string contiver caracteres não ASCII, o resultado pode ser imprevisível. Portanto, é importante garantir que a string que você está convertendo contenha apenas caracteres ASCII para obter um resultado confiável.
 
-## Veja Também
+# Veja também
 
-- [Documentação oficial do pacote strings](https://golang.org/pkg/strings/)
-- [Documentação oficial do pacote unicode](https://golang.org/pkg/unicode/)
-- [Artigo sobre internacionalização de aplicações em Go](https://blog.golang.org/micro-i18n)
+- [Documentação oficial sobre strings em Go (em inglês)](https://golang.org/pkg/strings/)
+- [Tutorial sobre strings em Go (em português)](https://www.calhau.me/strings-em-go/)
+- [Exemplos de conversão de strings em Go (em inglês)](https://programming.guide/go/convert-string-to-lowercase-letters.html)

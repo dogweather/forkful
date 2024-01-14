@@ -1,66 +1,35 @@
 ---
-title:    "Javascript: 文字列の連結"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/concatenating-strings.md"
+title:                "Javascript: 「文字列を連結する」"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-なぜ私たちは文字列を連結するのでしょうか？文字列を連結する理由をお伝えします。
+「なぜ連結(concatenation)するのか」
 
-## 方法
-文字列を連結する方法は二つあります。まずは、`+` 演算子を使う方法です。
+文字列を連結することは、プログラミングにおいて非常に重要です。それでは、なぜプログラマーたちは文字列を連結するのでしょうか？それを学びましょう！
 
-```Javascript
-let str1 = "こんにちは";
-let str2 = "、";
-let str3 = "世界";
+「やり方」
 
-console.log(str1 + str2 + str3);
-```
-
-出力結果：
-```
-こんにちは、世界
-```
-
-もう一つの方法は、 `concat()` メソッドを使う方法です。
+文字列を連結する方法は、非常にシンプルです。JavaScriptでは、"+"演算子を使用して文字列を連結できます。以下の例を見てみましょう。
 
 ```Javascript
-let str1 = "こんにちは";
-let str2 = "、";
-let str3 = "世界";
+let firstName = "太郎";
+let lastName = "山田";
+let fullName = firstName + lastName;
 
-console.log(str1.concat(str2, str3));
+console.log(fullName);
 ```
 
-出力結果：
-```
-こんにちは、世界
-```
+出力結果は、"太郎山田"となります。
 
-## ディープダイブ
-文字列を連結するときは、コードの効率性や可読性を考えることが重要です。短い文字列を連結するときには `+` 演算子が便利ですが、長い文字列を連結する場合は、 `concat()` メソッドを使った方が効率的です。また、ES6からはテンプレート文字列を使う方法もあります。
+「深堀り」
 
-```Javascript
-let str1 = "こんにちは";
-let str2 = "、";
-let str3 = "世界";
+JavaScriptでは、文字列を連結するために"+"演算子以外にも、"concat()"メソッドを使用することができます。また、テンプレートリテラルを使用することで、より簡潔なコードを書くことができます。
 
-// concat() メソッドを使う場合
-console.log(str1.concat(str2, str3));
+「See Also」
 
-// テンプレート文字列を使う場合
-console.log(`${str1}${str2}${str3}`);
-```
-
-出力結果：
-```
-こんにちは、世界
-こんにちは、世界
-```
-
-## 関連情報
-- [String.prototype.concat() - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [Template literals - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Template_literals)
+- JavaScriptでの文字列の連結方法: https://www.w3schools.com/js/js_strings_concat.asp
+- テンプレートリテラルについて：https://www.w3schools.com/js/js_string_templates.asp

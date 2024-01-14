@@ -1,45 +1,32 @@
 ---
-title:    "Haskell: Löschen von Zeichen mit entsprechendem Muster"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/deleting-characters-matching-a-pattern.md"
+title:                "Haskell: Löschen von Zeichen, die einem Muster entsprechen"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In der Programmierung gibt es oft die Notwendigkeit, bestimmte Zeichen in einem Text zu löschen, die einem bestimmten Muster entsprechen. Dies kann hilfreich sein, um unerwünschte Zeichen oder Leerzeichen zu entfernen oder um bestimmte Formate einzuhalten.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann nützlich sein, wenn man bestimmte Daten filtern oder formatieren möchte.
 
-## Wie Funktioniert es
+## Wie funktioniert es
 
-Die grundlegende Funktion, die wir verwenden werden, ist die `filter` Funktion, die in Haskell bereits vordefiniert ist. Diese Funktion ermöglicht es uns, eine Liste zu durchlaufen und Elemente basierend auf einer angegebenen Bedingung zu filtern.
+Die Funktion `filter` in Haskell kann verwendet werden, um eine Liste von Zeichen zu durchlaufen und Zeichen zu löschen, die einem bestimmten Muster entsprechen. Hier ist ein Beispielcode, der alle Vokale aus einem Wort löscht:
 
-Eine beispielhafte Verwendung dieser Funktion, um Zeichen aus einem String zu löschen, könnte folgendermaßen aussehen:
-
-```haskell
-deleteCharacters :: Char -> [Char] -> [Char]
-deleteCharacters char = filter (/=char)
+```Haskell
+filter (\x -> notElem x "aeiou") "Hallo"
 ```
 
-Wir können diese Funktion dann auf einen beliebigen String anwenden, zum Beispiel auf "Hallo Welt!" und bestimmen, welche Zeichen wir löschen möchten.
+Die Ausgabe wäre dann `"Hll"`.
 
-```haskell
-deleteCharacters 'l' "Hallo Welt!"
-```
+## Tiefergehende Informationen
 
-Dies würde `"Hao Wett!"` ausgeben, da alle Vorkommen des Zeichens "l" aus dem String gelöscht werden.
-
-## Tiefer Einblick
-
-Um das Problem der Löschung von Zeichen noch weiter zu erläutern, möchten wir uns ein spezifischeres Beispiel anschauen. Angenommen, wir haben einen String mit Zahlen, die durch Leerzeichen getrennt sind, und möchten alle Leerzeichen löschen, um eine Datei ohne Leerzeichen zu erstellen.
-
-```haskell
-deleteCharacters ' ' "1 2 3 4 5"
-```
-
-Die Ausgabe dieses Codes würde dann `"12345"` ergeben, da alle Leerzeichen gelöscht wurden. Hierbei wird also die `filter` Funktion verwendet, um alle Leerzeichen aus der Liste zu entfernen.
+In Haskell gibt es verschiedene Möglichkeiten, Zeichen aus einer Liste zu filtern. Die oben genannte Methode ist nur eine davon. Man kann auch reguläre Ausdrücke verwenden oder eine eigene Funktion schreiben, die auf spezifische Zeichen eines Musters überprüft. Mit der richtigen Kombination aus Funktionen und Mustern kann man sehr flexibel Zeichen löschen.
 
 ## Siehe auch
 
-- [Haskell Dokumentation über filter Funktion](https://www.haskell.org/tutorial/arrays.html#sect13.3)
-- [Tutorial zu Zeichen und Zeichenreihen in Haskell](https://wiki.haskell.org/Character_and_string_explorations)
+- [Die offizielle Haskell Dokumentation](https://www.haskell.org/documentation/)
+- [Ein Tutorial zu Listen in Haskell](https://wiki.haskell.org/Introduction_to_Lists)
+- [Ein nützlicher Blog Post zum Thema Zeichenfilterung in Haskell](https://blog.jakuba.net/2014/06/11/filtering-characters-in-haskell/)

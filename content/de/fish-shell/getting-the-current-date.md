@@ -1,49 +1,44 @@
 ---
-title:    "Fish Shell: Das aktuelle Datum erhalten"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/getting-the-current-date.md"
+title:                "Fish Shell: Das aktuelle Datum erhalten"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn Sie jemals ein Skript geschrieben haben, das auf die aktuelle Zeit oder das aktuelle Datum zugreifen musste, werden Sie verstehen, warum es wichtig ist, das Datum in der Fish Shell abzurufen. Das Datum ist eine grundlegende und häufig verwendete Information in der Programmierung und kann in vielen Situationen nützlich sein.
+Es gibt viele Gründe, warum man das aktuelle Datum in seinem Fish Shell Programm nutzen möchte. Vielleicht möchtest du es als Teil eines Dateinamens verwenden oder als Teil einer automatisierten Backups-Routine. Egal aus welchem Grund, das Erlernen des Befehls zur Abfrage des aktuellen Datums kann deine Programmierfähigkeiten erweitern und dein Fish Shell-Erlebnis verbessern.
 
-## Wie es geht
+# Wie geht das?
 
-Es gibt mehrere Möglichkeiten, in der Fish Shell auf das aktuelle Datum zuzugreifen. Eine Möglichkeit ist die Verwendung des `date`-Befehls. Geben Sie einfach `date` in der Shell ein und Sie erhalten das aktuelle Datum im Format "Wochentag Monat Tag Stunde:Minute: Sekunde Zeitzone Jahr". Sie können auch das `date`-Kommando mit verschiedenen Optionen verwenden, um das Format des Datums anzupassen.
-
-```Fish Shell
-$ date
-Fri Feb 19 15:23:31 EST 2021
-```
-
-Eine weitere Möglichkeit besteht darin, die `strftime`-Funktion zu verwenden, um das Datum in einem bestimmten Format auszugeben. Hier ist ein Beispiel, das das Datum im Format "Tag.Monat.Jahr" ausgibt:
+Um das aktuelle Datum im Fish Shell zu erhalten, musst du den Befehl `date` verwenden. Dieser Befehl akzeptiert verschiedene Formatierungsoptionen, um das Datum in deiner gewünschten Form anzuzeigen. Schauen wir uns einige Beispiele an:
 
 ```Fish Shell
-$ set datum (strftime "%d.%m.%y")
-$ echo $datum
-19.02.21
+date +"%d.%m.%Y"
 ```
-
-Eine weitere nützliche Funktion ist `now`, mit der Sie das aktuelle Datum und die Uhrzeit in verschiedenen Formaten abrufen können.
+Dieser Befehl gibt das aktuelle Datum im Format "Tag.Monat.Jahr" aus. Zum Beispiel `21.05.2021`.
 
 ```Fish Shell
-$ echo (now) # Gibt das aktuelle Datum und die Uhrzeit im ISO-Format aus
-2021-02-19T20:23:31
-$ echo (now '%H:%M') # Gibt die aktuelle Uhrzeit im Format Stunden:Minute aus
-20:23
+date +"%A"
+```
+Diese Zeile gibt den aktuellen Wochentag aus, z.B. `Freitag`.
+
+Es gibt viele verschiedene Formatierungsoptionen, die du ausprobieren kannst. Um eine vollständige Liste der verfügbaren Optionen zu sehen, kannst du den Befehl `man date` eingeben, um die man-Seite des Datei-Befehls aufzurufen.
+
+# Tiefere Einblicke
+
+Wenn du einen tieferen Einblick in die Welt der Datumsmethoden im Fish Shell erhalten möchtest, kannst du das `strftime`-Tool verwenden. Dieses Tool ermöglicht es dir, eigene benutzerdefinierte Datumsformate zu erstellen. Zum Beispiel:
+
+```Fish Shell
+echo (strftime "%d. %B %Y" (language "de") (date))
 ```
 
-## Tiefere Einblicke
+Dieser Befehl nutzt die strftime-Funktion, um das aktuelle Datum im Format "Tag. Monat Jahr" auszugeben, wobei der Monat in deutscher Sprache angezeigt wird. Du kannst auch andere Sprachen ausprobieren, indem du den entsprechenden Sprachcode anstelle von "de" verwendest.
 
-Es gibt noch viel mehr Möglichkeiten, in der Fish Shell auf das aktuelle Datum zuzugreifen und es zu formatieren. Sie können beispielsweise die `tzselect`-Funktion verwenden, um die Zeitzone für das Datum festzulegen. Sie können auch Benutzervariablen verwenden, um das Datum in Ihrem Skript zu speichern und zu verwenden.
+# Sieh dir auch an
 
-Das aktuelle Datum ist auch nützlich, wenn Sie Skripte schreiben, die bestimmte Aktionen an bestimmten Tagen oder zu bestimmten Zeiten ausführen sollen. Sie können das Datum mit Bedingungen und Schleifen kombinieren, um komplexe Skripte zu erstellen.
-
-## Siehe auch
-
-- [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
-- [Tutorial: Shell-Scripting im Fish Shell](https://dev.to/bameyrick/shell-scripting-in-fish-a-tutorial-2mek)
-- [Offizieller Fish Shell GitHub-Repository](https://github.com/fish-shell/fish-shell)
+- Offizielle Fish Shell Dokumentation für den `date` Befehl: [https://fishshell.com/docs/current/cmds/date.html](https://fishshell.com/docs/current/cmds/date.html)
+- Manpage für den `strftime`-Befehl: [https://fishshell.com/docs/current/cmds/strftime.html](https://fishshell.com/docs/current/cmds/strftime.html)
+- Eine Liste von verfügbaren Sprachcodes für die strftime-Funktion: [https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)

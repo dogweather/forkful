@@ -1,47 +1,45 @@
 ---
-title:    "Fish Shell: Omvandla ett datum till en sträng"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/converting-a-date-into-a-string.md"
+title:                "Fish Shell: Omvandling av datum till sträng"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att kunna konvertera datum till strängar är en användbar funktion när du arbetar med Fish Shell-programmering. Detta kan hjälpa dig att visa datum i ett läsbart format eller använda det för att sortera och filtrera data.
 
-Att konvertera ett datum till en sträng är ett vanligt problem som kan uppstå när man jobbar med datorprogrammering. En vanlig anledning kan vara att man behöver skapa en rapport eller utskrift där datumet ska visas på ett särskilt sätt. I detta blogginlägg ska vi titta på hur man gör detta i Fish Shell och varför det kan vara en nyttig färdighet att ha i sin programmering.
-
-## Hur man gör det
-
-För att konvertera ett datum till en sträng i Fish Shell kan man använda kommandot `date -f`. Detta kommando tar emot ett datum och en formateringssträng som argument och ger tillbaka datumet som en sträng i det önskade formatet.
+## Så här gör du
+För att konvertera ett datum till en sträng i Fish Shell, kan du använda kommandot `date`. Det finns flera olika format som du kan använda för att anpassa utseendet på den genererade strängen. Här är några exempel:
 
 ```Fish Shell
-date -f "%A, %B %d, %Y" "2021-07-15"
+# Visa dagens datum i formatet "YYYY-MM-DD"
+date +%F
+
+# Visa dag, månad, år och timme i formatet "DD.MM.YYYY HH:MM"
+date +"%d.%m.%Y %H:%M"
+
+# Visa datumet med fullständigt namn på månaden och veckodagen
+date +"%A, %B %d, %Y"
 ```
 
-Detta kommer att ge följande utmatning:
+Output:
 
-`Thursday, July 15, 2021`
-
-Det finns en mängd olika formateringsalternativ som man kan använda, beroende på hur man vill att datumet ska visas. Här är några exempel:
-
-```Fish Shell
-date -f "%m/%d/%Y" "2021-07-15"
+```
+2020-08-07
+07.08.2020 15:30
+Friday, August 07, 2020
 ```
 
-`07/15/2021`
+Det finns många fler formatalternativ som du kan använda beroende på dina behov. Du kan också kombinera flera format för att skapa dina egna anpassade datumsträngar.
 
-```Fish Shell
-date -f "%Y-%m-%d" "2021-07-15"
-```
+## Djupgående
+När du använder `date` för att konvertera datum till strängar, är det viktigt att förstå hur det fungerar. Detta kommando använder sig av din systemklocka för att hämta aktuellt datum och tid. Det betyder att du kan få olika resultat beroende på inställningarna för din systemklocka.
 
-`2021-07-15`
-
-## Djupdykning
-
-Som vi nämnde tidigare finns det många olika formateringsalternativ som man kan använda när man konverterar ett datum till en sträng. En utmärkt resurs för att lära sig mer om vilka alternativ som finns tillgängliga är Fish Shells officiella dokumentation för `date` kommandot.
-
-Några saker att tänka på när man arbetar med datum och strängar är att vissa tecken kan ha en särskild betydelse och måste därför backslashas för att visas rätt. Exempelvis representerar `%Y` det fullständiga året med fyra siffror, medan `%y` endast representerar de två sista siffrorna. För att undvika förvirring kan det vara bra att testa olika formateringssträngar med ett datum och se vilken utmatning man får.
+Det är också värt att nämna att kommandot `date` är en del av paketet `coreutils`, vilket betyder att det kan variera beroende på vilken version du använder. Se till att kolla dokumentationen för att hitta de rätta formatalternativen för din version.
 
 ## Se även
-
-- [Fish Shell dokumentation för date kommandot](https://fishshell.com/docs/current/cmds/date.html)
+- [Fish Shell Wiki](https://github.com/fish-shell/fish-shell/wiki)
+- [Date(1) manual page](https://fishshell.com/docs/current/cmds/date.html)
+- [Coreutils Date documentation](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)

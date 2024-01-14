@@ -1,42 +1,38 @@
 ---
-title:    "Clojure: Scrivere su errore standard"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/writing-to-standard-error.md"
+title:                "Clojure: Scrivere su standard error"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Scrivere su standard error può essere utile per visualizzare informazioni di debug durante l'esecuzione di un programma Clojure. Invece di stampare tutto sullo standard output, possiamo inviarlo a standard error per mantenerlo separato e più facile da analizzare.
+Scrivere alla standard error è un'attività fondamentale per la risoluzione dei bug e il debugging nel processo di sviluppo di un programma in Clojure. È uno strumento utile per individuare rapidamente possibile errori nel codice e determinare dove si trovano.
 
 ## Come Fare
 
-Per scrivere su standard error in Clojure, possiamo utilizzare la funzione `println` insieme alla macro `System/err`. Ecco un esempio di codice:
+Per scrivere alla standard error in Clojure, è necessario utilizzare la funzione `println` all'interno di un blocco `try/catch`. Ad esempio, se vogliamo scrivere il messaggio "Questo è un errore" alla standard error, possiamo utilizzare il seguente codice:
 
-```Clojure
-(ns blog-post.core
-  (:import (java.lang System)))
-  
-(println "Questo viene stampato su standard output")
-
-(System/err println "Questo viene stampato su standard error")
+```Clojure 
+(try
+  (throw (Exception. "Questo è un errore"))
+  (catch Exception e 
+    (println System/err (.getMessage e))))
 ```
 
-L'output di questo esempio sarà il seguente:
+L'output sarà:
 
-```
-Questo viene stampato su standard output
-Questo viene stampato su standard error
+```bash
+Questo è un errore
 ```
 
 ## Approfondimento
 
-Scrivere su standard error è particolarmente utile quando stiamo sviluppando un programma che utilizza lo standard output per mostrare informazioni al nostro utente. In questo modo, possiamo distinguere facilmente i messaggi di debug dal normale output del programma.
-
-Inoltre, quando stiamo scrivendo un programma che deve essere eseguito in background o in uno script, gli errori e i messaggi di debug su standard error sono più facili da catturare e analizzare.
+La standard error è un flusso di output separato dalla standard output, utilizzato per stampare i messaggi di errore. Nel processo di sviluppo di un programma, è importante utilizzare la standard error per separare i messaggi di errore dai messaggi di output regolari. Inoltre, utilizzando la standard error possiamo inviare i messaggi di errore ad altri servizi o log per un'ulteriore analisi.
 
 ## Vedi Anche
-
-- Documentazione ufficiale di Clojure su `println`: https://clojuredocs.org/clojure.core/println
-- Esempi avanzati di utilizzo di `System/err`: https://clojuredocs.org/clojure.java.io/system/err
+- [Documentazione ufficiale di Clojure](https://clojure.org/)
+- [Tutorial di Clojure per principianti](https://clojure.org/guides/getting_started)
+- [Tutorial di debugging in Clojure](https://clojure.org/guides/development_debugging)

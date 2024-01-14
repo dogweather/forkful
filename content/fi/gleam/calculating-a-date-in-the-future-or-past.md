@@ -1,42 +1,52 @@
 ---
-title:    "Gleam: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/calculating-a-date-in-the-future-or-past.md"
+title:                "Gleam: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monissa ohjelmointiprojekteissa on tarve laskea tietty päivämäärä tulevaisuudessa tai menneisyydessä. Tämän voi tehdä helposti Gleam-ohjelmointikielellä.
+Tulevaisuuden tai menneen päivän laskeminen on tärkeää monissa ohjelmoinnin projekteissa, kuten sovellusten suunnittelussa tai raporttien luomisessa.
 
 ## Kuinka
 
-Gleamissa käytetään `gleam/time`-kirjastoa päivämäärien käsittelyyn. Voit aloittaa käyttämällä päivämäärän luomiseen tarvittavia funktioita ja antamalla niille halutut päivämäärät tai ajanjaksoja.
+Voit käyttää Gleam-ohjelmointikieltä helposti laskemaan tietyn päivän tulevaisuudessa tai menneisyydessä. Seuraavassa on esimerkkejä koodista ja tulostuksesta Gleam-koodilohkoissa:
 
-```Gleam
-import time
+````Gleam
+import Time
 
-// Luodaan tuleva päivämäärä 14 päivää nykyisestä päivästä
-let future_date = time.add_days(time.now(), 14)
+let tulevaisuuden_paiva = Time.add_days(Date.now(), 7)
 
-// Luodaan menneisyyden päivämäärä 7 päivää nykyisestä päivästä
-let past_date = time.subtract_days(time.now(), 7)
+let menneen_paiva = Time.add_days(Date.now(), -14)
 
-// Tulostetaan luodut päivämäärät
-time.format(future_date, "d.m.YYYY") // 30.08.2021
-time.format(past_date, "d.m.YYYY") // 09.08.2021
+println("Viikon kuluttua on päivämäärä: {}", tulevaisuuden_paiva)
+println("Kaksi viikkoa sitten oli päivämäärä: {}", menneen_paiva)
 ```
 
-Gleam tarjoaa myös muita funktioita, kuten `add_months` ja `subtract_months`, joiden avulla päivämääriin voi lisätä tai vähentää kuukausia.
+Tämä koodi käyttää "Time" -moduulia, joka tarjoaa valmiita toimintoja päivämäärän laskemiseen. "add_days" -funktio ottaa parametreikseen nykyisen päivämäärän ja halutun määrän päiviä, jotka haluat lisätä tai vähentää. Lopuksi "println" -funktio tulostaa lasketun päivämäärän.
 
-## Syvemmälle sukeltaminen
+## Syvemmälle
 
-Päivämäärien laskeminen tulevaisuudessa tai menneisyydessä voi tuntua aluksi vaikealta, mutta Gleamin `gleam/time`-kirjasto tekee siitä helpompaa. Kirjastosta löytyy myös muita hyödyllisiä funktioita, kuten `is_leap_year`, jolla voi tarkistaa onko vuosi karkausvuosi, sekä `is_before` ja `is_after`, jotka auttavat vertailemaan päivämääriä.
+Mikäli tarvitset tarkempaa laskentaa päivämäärille, voit käyttää "Calendar" -moduulia, joka tarjoaa enemmän toimintoja päivämäärien käsittelyyn. Voit esimerkiksi verrata kahta päivämäärää, tarkistaa onko se arkipäivä tai laskemalla määrän päiviä kahden päivämäärän välillä.
 
-On myös hyvä tietää, että Gleamissa päivämäärät ovat oliona, eli ne eivät ole muuttumattomia. Tämä tarkoittaa sitä, että niitä voi muokata käyttämällä erilaisia funktioita ja metodinviauttajia.
+````Gleam
+import Calendar
 
-## Katso myös
+let tarkistus_paiva = Date.from_calendar(2021, 12, 31)
 
-- Gleam `gleam/time` dokumentaatio: https://gleam.run/modules/time.html
-- Gleamin oppaat: https://gleam.run/book/index.html
+let tanaan = Date.now()
+
+println("Onko {} arkipäivä? {}", tarkistus_paiva, Date.is_weekday(tarkistus_paiva))
+println("Tänään on {} päivien päästä yhden vuoden kuluttua: {}", tanaan, Calendar.add_days(Date.add_years(tanaan, 1), 30))
+```
+
+Tämä koodi käyttää "Calendar" -moduulia vertaamaan antamaasi päivämäärää toimintoja käyttäen. Lisäksi voit lisätä päiviä haluamaasi päivämäärään käyttäen "add_days" -funktiota ja "Date.add_years" -funktiota, joka lisää vuoden nykyiseen päivämäärään.
+
+## Katso Myös
+
+- [Gleam-ohjelmointikielen viralliset kotisivut](https://gleam.run/)
+- [Gleam-ohjelmointikielen dokumentaatio päivämäärän käsittelyyn](https://gleam.run/documentation/stdlib/date)
+- [Esimerkkikoodit päivämäärän laskemiseen Gleamilla](https://github.com/gleam-lang/gleam/tree/main/examples/dates)

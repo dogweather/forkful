@@ -1,58 +1,46 @@
 ---
-title:    "Gleam: Utskrift av felsökningsutdata"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/printing-debug-output.md"
+title:                "Gleam: Utskrift av felsökningsutdata"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att skriva kod är som att lösa ett pussel. Ibland kan det vara svårt att förstå varför bitarna inte hamnar på rätt plats. Att använda print-satser för att få ut felmeddelanden eller värden från variabler kan vara otroligt hjälpsamt för att lösa problemet och få en bättre förståelse för koden.
+Att kunna identifiera och lösa buggar i kod är en viktig del av programmering och kan vara en utmanande uppgift. Att skriva ut debug-utmatning är ett användbart verktyg för att kunna undersöka och förstå vad som händer i koden, och därmed underlätta felsökning.
 
-## Hur man gör
+## Så här gör du
 
-Det finns olika sätt att skriva ut debug information i Gleam. Ett sätt är att använda funktionen `debug.print/1`, som tar emot ett argument och skriver ut det i konsolen. Här är ett exempel:
-
-```
-Gleam debug.print("Hello world!")
-```
-
-Detta kommer att skriva ut "Hello world!" i konsolen när koden körs.
-
-Om du vill skriva ut flera värden eller variabler kan du använda funktionen `debug.fmt/1`, som tar emot en lista av argument och formaterar dem för utskrift. Här är ett exempel på hur man kan använda den:
+För att skriva ut debug-utmatning i Gleam kan du använda funktionen `debug!()` som tar emot en parameter. Till exempel:
 
 ```
-Gleam let
-    name = "John"
-    age = 30
-in
-    debug.fmt(["Name: {}", name])
-    debug.fmt(["Age: {}", age])
+Gleam.debug!("Värdet på variabeln är:", variabel)
 ```
 
-Detta kommer att skriva ut följande i konsolen:
+Denna kod kommer att skriva ut texten "Värdet på variabeln är:" följt av värdet på den angivna variabeln.
+
+Du kan också skriva ut flera värden på samma gång genom att använda en lista som parameter:
 
 ```
-Name: John
-Age: 30
+Gleam.debug!("Värdena på variablerna är:", [variabel1, variabel2, variabel3])
 ```
+
+Genom att använda debug-utmatning kan du få information om variabler, funktioner och uttryck i din kod, vilket kan hjälpa dig att upptäcka och åtgärda eventuella problem.
 
 ## Djupdykning
 
-I Gleam finns det också möjlighet att använda makron för att skriva ut debug-information. Detta kan vara användbart om du bara vill att din debug-kod ska köras i ett visst byggsteg eller miljö. Du kan också använda string interpolation för att enkelt formatera dina utskrifter. Här är ett exempel på hur man kan använda detta:
+När man använder debug-utmatning är det viktigt att känna till att uttryck som skrivs ut kommer att påverka prestandan i din kod. Detta beror på att utmatningen kräver extra resurser för att kunna skrivas ut och visas på skärmen. Därför bör du bara använda debug-utmatning när det verkligen behövs, och ta bort den när du inte längre behöver den.
 
-```
-Gleam // #conditional(Prod, debug, {log/2})
-        print_me = "I'm being printed!"
-        // #string()
-        debug ~ "Debugging: {print_me}"
-```
-
-I det här exemplet kommer koden att skriva ut värdet av variabeln `print_me` bara om du bygger koden i ett icke-produktionsläge.
+Det är också viktigt att inte använda debug-utmatning i produktionskoden eftersom den kan avslöja kritisk information om din kod och dina system som kan utnyttjas av obehöriga.
 
 ## Se även
 
-- [Gleam dokumentation: Debugging](https://gleam.run/book/tour/debugging.html)
-- [Gleam dokumentation: Macro Debugging](https://gleam.run/book/tour/macros.html#debugging)
-- [Gleam Discord community](https://discord.gg/vWVWBzmMdy)
+Här är några användbara länkar för att lära dig mer om debug-utmatning i Gleam:
+
+- [Dokumentation för debug funktionen i Gleam](https://gleam.run/documentation/stdlib/debug)
+- [En guide till felsökning i Gleam](https://medium.com/swlondon-fel/felsökning-i-gleam-367a70e155f4)
+- [Diskussion om användningen av debug-utmatning i olika scenarier](https://github.com/gleam-lang/gleam/issues/305)
+
+Lycka till med debugging i Gleam!

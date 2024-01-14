@@ -1,49 +1,53 @@
 ---
-title:    "Haskell: Stampa dell'output di debug"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/haskell/printing-debug-output.md"
+title:                "Haskell: Stampa della risoluzione dei problemi di output"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-Stampare output di debug è una pratica utile quando si sta sviluppando un programma in Haskell. Può aiutare ad individuare errori e comprendere l'esecuzione del codice.
+Stampare output di debug è uno strumento utile per comprendere e risolvere i problemi nel codice Haskell. Può aiutare a identificare errori, tracciare il flusso dei dati e verificare l'esecuzione dei programmi.
 
-## Come fare
+## Come Fare
 
-Per stampare output di debug in Haskell, è sufficiente utilizzare la funzione `print`. Ad esempio:
+Per stampare output di debug in Haskell si utilizza la funzione `Debug.Trace.trace`. Qui di seguito è riportato un esempio di codice che mostra come utilizzare questa funzione:
+
+```Haskell
+import Debug.Trace
+
+factorial :: Int -> Int
+factorial n = if n < 0 then error "Il fattoriale è definito solo per numeri positivi!" else
+    trace ("Calcolo il fattoriale di " ++ show n) $
+    if n == 0 then 1 else n * factorial (n-1)
+
+main = do
+  let result = factorial 5
+  print result
+```
+
+L'output di questo codice sarà:
 
 ```
-Haskell
-    value = 5
-    print value
+Calcolo il fattoriale di 5
+Calcolo il fattoriale di 4
+Calcolo il fattoriale di 3
+Calcolo il fattoriale di 2
+Calcolo il fattoriale di 1
+120
 ```
 
-Questo codice stamperà il valore 5 sulla console durante l'esecuzione del programma.
+In questo esempio, la funzione `trace` viene utilizzata per stampare delle informazioni aggiuntive durante l'esecuzione del codice. È possibile utilizzare qualsiasi tipo di dato all'interno della stringa passata alla funzione `trace` utilizzando la funzione `show`.
 
 ## Approfondimento
 
-La funzione `print` in Haskell fa parte del modulo `Prelude` e ha il tipo `Show a => a -> IO ()`. Ciò significa che può essere applicata a qualsiasi tipo che implementi la classe di tipo `Show`, come Int, String o Bool. Inoltre, la funzione `print` restituisce un'azione di input/output (IO), quindi può essere utilizzata all'interno di una monade IO.
+Esistono altri modi per effettuare il debugging in Haskell, come ad esempio l'utilizzo del modulo `Debug.Trace`. Questo modulo contiene diverse funzioni utili, come ad esempio `traceShow`, che stampa sia la stringa passata come primo argomento che il valore passato come secondo argomento.
 
-Una pratica comune è quella di utilizzare la funzione `trace` del modulo `Debug.Trace` per stampare output di debug condizionali. Ad esempio:
+È importante tenere presente che utilizzare la funzione `trace` è consigliato solo per scopi di debugging. Infatti, se il codice viene eseguito senza la funzione `trace`, il risultato sarà diverso a causa dell'introduzione di chiamate aggiuntive alla funzione `trace`. Quindi, è importante rimuovere tutti i riferimenti alla funzione `trace` prima di eseguire il codice in produzione.
 
-```
-Haskell
-    import Debug.Trace
-    factorial n = trace "funzione di calcolo fattoriale" $ product [1..n]
-    main = do
-        print "Inserisci un numero:"
-        input <- getLine
-        let num = read input :: Int
-        let result = factorial num
-        print result
-```
+## Vedi Anche
 
-In questo caso, la stringa "funzione di calcolo fattoriale" verrà stampata solo quando la funzione `factorial` viene chiamata.
-
-## Vedi anche
-
-- Documentazione ufficiale di Haskell: https://www.haskell.org/documentation/
-- Tutorial di Haskell: https://www.haskell.org/docs/
-- Modulo `Debug.Trace` del pacchetto standard di Haskell: https://hackage.haskell.org/package/base/docs/Debug-Trace.html
+- [Haskell Debugging - Official Documentation](https://wiki.haskell.org/Debugging)
+- [Debugging Techniques in Haskell - Real World Haskell](http://book.realworldhaskell.org/read/testing-and-quality-assurance.html#debugging-techniques)

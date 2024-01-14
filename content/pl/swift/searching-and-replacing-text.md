@@ -1,41 +1,27 @@
 ---
-title:    "Swift: Wyszukiwanie i zastępowanie tekstu"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/swift/searching-and-replacing-text.md"
+title:                "Swift: Wyszukiwanie i zastępowanie tekstu"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-W tym blogu omówimy ważną i często używaną funkcję w programowaniu Swift - wyszukiwanie i zamiana tekstu. Jest to niezbędne w wielu przypadkach, na przykład kiedy chcemy zmienić wszystkie wystąpienia pewnego słowa w naszym kodzie lub przetworzyć dane pobrane z zewnętrznego źródła. Pozwala to zaoszczędzić czas i wysiłek, a także uniknąć błędów ludzkich.
+Wiele razy w trakcie programowania napotkasz sytuacje, w których konieczne będzie przeszukiwanie i zamiana tekstu. Może to wynikać z potrzeby zmiany określonego wyrażenia, poprawienia błędów lub po prostu dostosowania kodu do nowych wymagań. W takim przypadku szybkie i skuteczne narzędzia do wyszukiwania i zamiany tekstu mogą okazać się nieocenione.
 
 ## Jak to zrobić
-
-Aby przeprowadzić wyszukiwanie i zamianę tekstu w Swift, musimy użyć metody `replacingOccurrences(of:with:)` na obiekcie typu `String`. Spójrzmy na przykład:
-
+Aby przeszukać i zmienić tekst w kodzie Swift, należy wykorzystać metodę `replacingOccurrences(of:with:)`. Przyjmuje ona dwa argumenty - pierwszy to wyszukiwane wyrazy, a drugi to wyraz lub ciąg znaków, który ma zastąpić znaleziony. Na przykład:
 ```Swift
-// Tworzenie przykładowego tekstu do zmiany
-let text = "Cześć, jestem Swift i lubię jąc, jambu"
-
-// Wyświetlenie oryginalnego tekstu
-print(text) // wypisze "Cześć, jestem Swift i lubię jąc, jambu"
-
-// Zamiana słowa "lubię" na "uwię"
-let newText = text.replacingOccurrences(of: "lubię", with: "uwię")
-
-// Wyświetlenie nowego tekstu
-print(newText) // wypisze "Cześć, jestem Swift i uwię jąc, jambu"
+let text = "Witamy wśród kodera"
+let newText = text.replacingOccurrences(of: "Witamy", with: "Cześć")
+print(newText) // Output: Cześć wśród kodera
 ```
+Ponadto, istnieje możliwość wskazania dodatkowych parametrów, takich jak ignorowanie wielkości liter czy ustalenie limitu liczby zamian. Szczegóły i przykłady wykorzystania tej metody można znaleźć w oficjalnej dokumentacji języka Swift.
 
-W powyższym przykładzie użyliśmy metody `replacingOccurrences(of:with:)`, dostępnej na każdym obiekcie typu `String`, aby zamienić wszystkie wystąpienia słowa "lubię" na "uwię". Metoda ta przyjmuje dwa argumenty: słowo, które chcemy zamienić, oraz nowe słowo, na które chcemy je zamienić. 
+## Głębszy zanurzenie
+Warto pamiętać, że przy użyciu metody `replacingOccurrences(of:with:)` tylko pierwsze wystąpienie danego wyrażenia będzie zamienione. Jeśli chcesz zamienić wszystkie wystąpienia, możesz wykorzystać metodę `replacingOccurrences(of:with:options:)`, która dodatkowo przyjmuje argument `options`. Możesz w nim określić, czy wymiana ma odbywać się dla wszystkich wystąpień, czy tylko dla pierwszego, a także czy ignorować wielkość liter.
 
-## Głębsze wgląd
-
-Wyszukiwanie i zmiana tekstu w Swift ma wiele możliwości. Możemy na przykład użyć metody `replacingOccurrences(of:with:options:range:)`, która pozwala określić opcje oraz zakres tekstu, na którym ma być dokonana zamiana. Możemy również użyć wyrażeń regularnych, aby odnaleźć i zmienić tekstu zawierające konkretny wzorzec. 
-
-Istnieją także inne metody, które mogą pomóc w procesie wyszukiwania i zamiany tekstu, takie jak `replacingCharacters(in:with:)` czy `replacingOccurrences(of:, with:, options:, range:)`. Warto zapoznać się z dokumentacją i eksperymentować z różnymi metodami, aby znaleźć najlepsze rozwiązanie dla danego problemu.
-
-## Zobacz także
-- Dokumentacja Swift: [String.metody wyszukiwania i zamiany](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292)
-- Przykładowe zastosowania wyszukiwania i zamiany w Swift: [Searching and Replacing Text in Swift](https://medium.com/@toptensoftware/swift-searching-and-replacing-text-in-strings-32391b7f619d)
+## Zobacz również
+- Oficjalna dokumentacja języka Swift: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID297
+- Przykłady wykorzystania metody `replacingOccurrences(of:with:)`: https://www.hackingwithswift.com/example-code/strings/how-to-replace-a-substring-with-another-substring

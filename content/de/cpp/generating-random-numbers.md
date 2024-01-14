@@ -1,49 +1,69 @@
 ---
-title:    "C++: Erzeugung von Zufallszahlen"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/generating-random-numbers.md"
+title:                "C++: Zufallszahlen generieren"
+programming_language: "C++"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Erzeugen von Zufallszahlen ist eine wesentliche Fähigkeit in der Programmierung. Mit Zufallszahlen können wir realistischere Simulationen erstellen, komplexere Probleme lösen und sicherstellen, dass unser Code nicht deterministisch ist. In diesem Blogbeitrag werden wir uns mit der Erzeugung von Zufallszahlen in C++ beschäftigen und zeigen, warum es eine nützliche Fähigkeit ist.
+Das Generieren von Zufallszahlen ist ein häufig verwendetes Konzept in der Programmierung, das in verschiedenen Anwendungen nützlich sein kann. Es kann zum Beispiel in Simulationen, Spielen oder in der Kryptographie eingesetzt werden, um eine zufällige und nicht voraussagbare Komponente zu integrieren.
 
-## So geht's
+## Wie man Zufallszahlen in C++ generiert
 
-Das Erzeugen von Zufallszahlen in C++ erfordert die Verwendung der <random> Bibliothek. Zunächst müssen wir ein Zufallszahlengenerator-Objekt erstellen, das wir dann verwenden können, um verschiedene Verteilungen von Zufallszahlen zu erstellen.
+Es gibt verschiedene Ansätze, um Zufallszahlen in C++ zu generieren. Der einfachste davon ist die Verwendung der Standardbibliotheksfunktion `rand()`. Diese Funktion gibt eine Zufallszahl zwischen 0 und einer vom Benutzer angegebenen Obergrenze zurück.
 
 ```C++
+#include <cstdlib>
 #include <iostream>
-#include <random>
 
-int main() {
-
-// Erstellen des Zufallszahlengenerator-Objekts
-std::default_random_engine generator;
-
-// Erstellen einer Zufallszahl zwischen 1 und 10
-std::uniform_int_distribution<int> distribution(1, 10);
-int random_number = distribution(generator);
-
-std::cout << "Eine Zufallszahl zwischen 1 und 10: " << random_number << std::endl;
-return 0;
+int main()
+{
+    // Generiere eine Zufallszahl zwischen 0 und 10
+    int random_num = rand() % 11;
+    std::cout << "Die Zufallszahl ist: " << random_num << std::endl;
+    return 0;
 }
+
+// Output: Die Zufallszahl ist: 8
 ```
 
-Dieses Beispiel wird immer eine zufällige Ganzzahl zwischen 1 und 10 erzeugen. Durch die Verwendung verschiedener Verteilungen wie uniform_int_distribution, normal_distribution oder exponential_distribution können wir verschiedene Arten von Zufallszahlen erzeugen.
+Eine bessere Methode ist die Verwendung der C++ Standardbibliothek `random`. Diese bietet verschiedene Funktionen und Distributionen, um Zufallszahlen in einem bestimmten Bereich zu generieren.
 
-## Tief tauchen
+```C++
+#include <random>
+#include <iostream>
 
-Das Erzeugen von Zufallszahlen ist kein vollständig zufälliger Prozess, sondern basiert auf mathematischen Algorithmen. Diese Algorithmen beginnen mit einem sogenannten "Seed" und verwenden dann verschiedene mathematische Operationen, um eine Folge von Zufallszahlen zu erzeugen.
+int main()
+{
+    // Erstelle einen Generator und eine gleichmäßige Verteilung zwischen 1 und 10
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distr(1, 10);
+    
+    // Generiere eine Zufallszahl zwischen 1 und 10
+    int random_num = distr(gen);
+    std::cout << "Die Zufallszahl ist: " << random_num << std::endl;
+    return 0;
+}
 
-Es ist wichtig zu beachten, dass bei der Verwendung von Zufallszahlengeneratoren in C++ immer der gleiche Seed verwendet wird, wenn das Programm erneut ausgeführt wird. Wenn wir also eine bestimmte Zufallszahl voraussagen wollen, müssen wir den Seed wissen und ihn beim Erstellen des Zufallszahlengenerators angeben.
+// Output: Die Zufallszahl ist: 6
+```
 
-Es gibt auch Möglichkeiten, die gleichmäßige Verteilung von Zufallszahlen zu beeinflussen, um bessere Ergebnisse zu erzielen. Dafür gibt es fortgeschrittenere Techniken, aber ein grundlegendes Verständnis dieser Konzepte kann dazu beitragen, die Erzeugung von Zufallszahlen in C++ besser zu verstehen.
+Es sollte beachtet werden, dass die Verwendung von `rand()` nicht für kryptographische Zwecke geeignet ist, da die erzeugten Zufallszahlen vorhersagbar sind. Für solche Zwecke gibt es spezielle Pseudozufallszahlengeneratoren, die in der C++ Standardbibliothek vorhanden sind.
+
+## Tiefergehende Informationen
+
+Das Generieren von wirklich zufälligen Zahlen in der Computerwelt ist eine komplexe Aufgabe, da Computer deterministische Maschinen sind. Daher wird bei der Generierung von Zufallszahlen im Allgemeinen ein sogenannter Seed verwendet, der als Ausgangspunkt für die Erzeugung von Pseudozufallszahlen dient. Es ist wichtig, einen guten Seed auszuwählen, um eine gleichmäßige Verteilung der Zufallszahlen zu gewährleisten.
+
+Es gibt auch verschiedene Verteilungen, die für die Generierung von Zufallszahlen verwendet werden können, wie zum Beispiel die Normalverteilung, die Binomialverteilung oder die gleichmäßige Verteilung. Je nach Anwendung sollte die passende Verteilung ausgewählt werden, um realistische Ergebnisse zu erzielen.
 
 ## Siehe auch
 
-- [C++ Referenz: Zufallszahlengeneratoren](http://www.cplusplus.com/reference/random/)
-- [GeeksForGeeks: Random number generation in C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
-- [Wikipedia: Pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- [C++ Standardbibliotheksfunktion `rand()`](https://en.cppreference.com/w/cpp/numeric/random/rand)
+- [C++ Standardbibliothek `random`](https://en.cppreference.com/w/cpp/header/random)
+- [Generierung von Zufallszahlen in C++](https://www.learncpp.com/cpp-tutorial/59-random-number-generation/)
+- [Pseudozufallszahlen und Seed in C++](https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/)
+- [Verteilungen in C++](https://www.geeksforgeeks.org/box-muller-transform-method-for-generating-gaussian-distribution/)

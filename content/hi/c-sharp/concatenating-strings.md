@@ -1,29 +1,35 @@
 ---
-title:    "C#: स्ट्रिंग्स को जोड़ना"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/concatenating-strings.md"
+title:                "C#: स्ट्रिंग्स के जोड़ने"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-कोई भी व्यक्ति रीडिंग कон्केटनेटिंग स्ट्रिंग के लिए दृष्टिगत हो सकता है क्योंकि यह वेरिएबल्स को एक साथ जोड़ने के लिए एक सरल और भरोसेमंद तरीका है।
+
+कई बार हमको प्रोग्रामिंग में एक से ज्यादा टेक्स्ट स्ट्रिंग्स को साथ जोड़ना होता है। जैसे कि नाम, पता या कोई भी अन्य जानकारी। इसके लिए हम अलग-अलग स्ट्रिंग्स को एक साथ जोड़कर आसानी से एक संयुक्त स्ट्रिंग बना सकते हैं। यह भी हमारे कोड को बहुत अधिक स्वचालित बनाता है। 
 
 ## कैसे करें
+
 ```C#
-string str1 = "मैं";
-string str2 = "एक";
-string str3 = "कॉडर";
-string res = str1 + str2 + str3;
+string firstName = "जॉन";
+string lastName = "डो";
+string fullName = firstName + " " + lastName;
 
-Console.WriteLine(res);
+Console.WriteLine(fullName);
+
+// आउटपुट: "जॉन डो"
 ```
-उपरोक्त कोड के अनुसार, आपको स्ट्रिंग्स को जोड़ने के लिए अपने अवयवों को एक साथ जोड़कर एक उत्पाद वाली स्ट्रिंग का निर्माण करना होगा। इस उदाहरण को रन करने पर, आपको नया स्ट्रिंग `मैं एक कॉडर` मिलेगा।
 
-## गहराई तक
-स्ट्रिंग्स को जोड़ने के लिए, आपको ध्यान रखने की आवश्यकता है कि आपके द्वारा चयनित स्ट्रिंग्स का उपयोग आपके साथ किया जा सकता है, अन्यथा यह अमान्य स्ट्रिंग हो सकती है। इसके अलावा, आप विभिन्न कोडिंग स्टाइल का उपयोग करके स्ट्रिंग्स को जोड़ सकते हैं, जैसे शार्प ऑपरेटर (+) या `.Concat()` फ़ंक्शन।
+ऊपर कोड हमें दो अलग-अलग स्ट्रिंग्स को जोड़कर एक संयुक्त स्ट्रिंग बनाने को दिखाता है। कोड के इस तरीके से हम आसानी से परिवर्तित भाषा में निर्धारित जानकारी को एक साथ मिलाकर उसका उपयोग कर सकते हैं। यह भी हमारे कोड को और लचीला बनाने में मदद करता है। 
+
+## गहराई में खोज
+
+स्ट्रिंग्स को संयुक्त करना अधिकांश भाषाओं में काफी सामान्य है। C# में इस काम के लिए ```+``` ऑपरेटर का उपयोग किया जाता है। इसके साथ हम ```+=``` ऑपरेटर भी उपयोग कर सकते हैं। यह भी महत्वपूर्ण है कि हम स्ट्रिंग्स को एक साथ जोड़ने के लिए कुछ सही नियमों का पालन करें। स्ट्रिंग्स के सरल जोड़ने के लिए मेसेज फॉर्मेटर (string.Format) का उपयोग किया जा सकता है। 
 
 ## देखें भी
-- [Microsoft डॉक्यूमेंटेशन आधिकारिक वेबसाइट](https://docs.microsoft.com/en-us/dotnet/api/system.string.concat?view=net-5.0)
-- [तुलना अनुक्रम (Concatenation Operator)](https://www.tutorialspoint.com/csharp/csharp_string_concatenation.htm)
-- [कॉनकेटनेशन और स्ट्रिंग वारिएबल्स (Concatenation and String Variables)](https://www.geeksforgeeks.org/c-sharp-concatenation-and-string-variables/)
+
+- [संयुक्त स्ट्रिंग्स स्थापित करें (MSDN)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/concatenate-strings)
+- [C# में स्ट्रिंग्स को निर्ध

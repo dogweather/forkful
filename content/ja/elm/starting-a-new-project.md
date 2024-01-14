@@ -1,44 +1,35 @@
 ---
-title:    "Elm: 新しいプロジェクトを始める"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/starting-a-new-project.md"
+title:                "Elm: 新しいプロジェクトを開始する"
+programming_language: "Elm"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜElmを始めるのか？
+## なぜ
+新しいプロジェクトを始めるかを説明するために、私たちがElmプログラミングを選んだ理由を見てみましょう。Elmは強力な型システムを備えており、コードの安全性を確保することができます。また、コードの読みやすさと再利用性を高めるために、関数型プログラミングの概念を取り入れています。
 
-新しいプロジェクトを始める理由はたくさんありますが、Elmは簡潔で学習しやすい言語であり、優れたユーザーインターフェースを提供することができます。それに加えて、Elmは信頼性が高く、バグが少ないことでも知られています。
+## 作り方
+まず、Elmをインストールすることから始めましょう。次に、AtomやVSCodeなどのテキストエディタを使用して、プロジェクトの新しいディレクトリを作成し、それをElmプロジェクトとして宣言します。その後、プロジェクトに必要なパッケージをインストールし、`elm package`コマンドを使用してモジュールを管理します。最後に、`elm make`コマンドを使用してコードをコンパイルし、実行します。
 
-## どのように始めるか？
+```Elm
+module Main exposing (..)
 
-まずはElmをインストールする必要があります。次に、プロジェクトのフォルダを作成し、そのフォルダ内で以下のコマンドを実行します。
+import Html exposing (text)
 
-```
-Elm package install
-```
-
-このコマンドは、プロジェクトで使用するパッケージをインストールします。次に、以下のコマンドを実行してElmの開発サーバーを起動します。
-
-```
-Elm reactor
+main =
+  text "Hello, World!"
 ```
 
-これで、ブラウザで `http://localhost:8000` にアクセスすると、Elmの開発環境が起動します。ここから、新しいプロジェクトを開始して、Elmのコーディングを始めることができます。
+このコードを実行すると、ブラウザに"Hello, World!"というメッセージが表示されます。
 
-## もっと深く掘り下げる
-
-新しいプロジェクトを始める際には、以下のポイントに注意してください。
-
-- プロジェクトの構造を決めること
-- 開発環境の設定をすること
-- 重要なパッケージの選択をすること
-
-その他にも、書籍やチュートリアルなどを参考にすることで、より詳細な情報を得ることができます。
+## 深堀り
+新しいElmプロジェクトを始める際に考慮すべき重要な側面があります。まず、プロジェクトの目的を明確に定義することが重要です。それから、モデル、ビュー、アップデートのパターンを使用してアプリケーションを構築することをお勧めします。また、デバッグやエラーハンドリングなどの機能を追加するために、Elmデバッガーを使用することもできます。
 
 ## 参考リンク
-
-- [Elm公式サイト](https://elm-lang.org/)
-- [Elm Package](https://package.elm-lang.org/)
-- [Elmの開発サーバー](https://elm-lang.org/0.19.1/tools/elm-reactor)
-- [Elmチュートリアル](https://www.elm-tutorial.org/jp/)
+- 公式Elmウェブサイト: https://elm-lang.org/
+- Elmパッケージマネージャーの使用方法: https://guide.elm-lang.jp/install.html#elm-package
+- ビューパターンを使用したコードサンプル: https://guide.elm-lang.jp/architecture/effects
+- Elmデバッガーのドキュメント: https://debug.elm-lang.org/
+- デバッグ中に役立つコマンド: https://guide.elm-lang.jp/model/update_remove_p.html#_architecture-cmds-debug

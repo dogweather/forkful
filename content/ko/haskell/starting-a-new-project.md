@@ -1,79 +1,40 @@
 ---
-title:    "Haskell: 새 프로젝트 시작하기"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/starting-a-new-project.md"
+title:                "Haskell: 새 프로젝트 시작하기"
+programming_language: "Haskell"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-새로운 프로젝트를 시작하는 이유는 다양합니다. 어떤 사람들은 자신의 스킬을 발전시키기 위해 새로운 언어나 프레임워크에 도전하고 싶어 할 것입니다. 또 다른 사람들은 현재 사용 중인 기존 솔루션보다 더 효율적이고 강력한 도구를 찾고 있을 것입니다. 어떤 이유로든 새로운 프로젝트를 시작하는 것은 항상 도전적이고 흥미로운 일이 될 수 있습니다.
+새로운 프로젝트를 시작하는 이유는 여러 가지가 있을 수 있습니다. 예를 들어, 새로운 언어나 프레임워크를 배우고 싶거나, 기존의 문제를 더 나은 방식으로 해결하고 싶을 수도 있습니다. 또는 더 효율적인 코드를 작성하고 싶거나, 개인적인 만족감을 얻기 위해서일 수도 있습니다.
 
-## 어떻게
+# 시작하기
 
-Haskell은 함수형 프로그래밍 언어로서 매우 강력하고 표현력이 뛰어납니다. 새로운 프로젝트를 시작하기 위해서는 몇 가지 단계를 따라야 합니다.
-
-### 프로젝트 만들기
-
-우선 프로젝트의 디렉토리를 만듭니다. 다음으로 `stack new` 명령어를 사용하여 기본적인 프로젝트를 생성합니다.
+Haskell은 함수형 프로그래밍 언어로, 다른 언어와는 달리 조금 독특한 문법을 가지고 있습니다. 하지만 한 번 익숙해지고 나면 매우 강력한 언어라는 것을 알게 될 것입니다. 여기서는 간단한 예제를 통해 Haskell의 기본 문법을 살펴보고, 새로운 프로젝트를 시작하는 방법을 알아보겠습니다.
 
 ```Haskell
-stack new my-project
+-- "Hello, world!"를 출력합니다.
+main = putStrLn "Hello, world!"
+
+-- 숫자를 입력받아 제곱을 계산하는 함수입니다.
+square :: Int -> Int
+square x = x * x
+
+-- 위에서 정의한 square 함수를 사용하여 5의 제곱을 계산합니다.
+-- 출력 결과는 25가 됩니다.
+main = print (square 5)
 ```
 
-이 명령어는 `my-project` 디렉토리를 생성하고 기본적인 프로젝트를 설정합니다.
+# 깊게 들어가기
 
-### 모듈 만들기
+새로운 프로젝트를 시작할 때 가장 중요한 것은 처음부터 제대로 계획하는 것입니다. 그렇기 때문에 인터넷에서 찾은 다양한 자료들을 참고하고, 다른 프로그래밍 언어를 배울 때처럼 기초적인 것부터 차근차근 학습하는 것이 좋습니다. 또한 레퍼런스 문서를 자주 참고하고, 지속적으로 코드를 수정하며 발전시켜 나가는 것이 중요합니다.
 
-프로젝트 내에서 사용할 모듈을 만듭니다. 모듈은 프로젝트의 코드를 구조화하는 데 유용합니다. 모듈을 만들기 위해서는 `src` 디렉토리 안에 `MyModule.hs` 파일을 생성합니다.
+# 관련 자료
 
-```Haskell
-module MyModule
-  ( someFunction
-  , anotherFunction
-  ) where
-
-someFunction :: Int -> Int
-someFunction = ...
-
-anotherFunction :: String -> String
-anotherFunction = ...
-```
-
-### 메인 함수 만들기
-
-프로젝트의 주 실행 함수를 만듭니다. `main.hs` 파일을 `app` 디렉토리 안에 생성하고 `main` 함수를 작성합니다.
-
-```Haskell
-module Main where
-
-import MyModule
-
-main :: IO ()
-main = do
-  putStrLn "Hello, World!"
-  let result = someFunction 42
-  print result
-```
-
-### 빌드 및 실행
-
-마지막으로 `stack` 명령어를 사용하여 프로젝트를 빌드하고 실행합니다.
-
-```Haskell
-stack build
-stack exec my-project
-```
-
-위의 예제 코드는 "Hello, World!"를 출력하고 `someFunction`을 실행한 결과를 출력합니다.
-
-## 딥 다이브
-
-새로운 프로젝트를 시작할 때 가장 중요한 것은 기본적인 설계와 구조를 잘 세우는 것입니다. Haskell은 자유롭게 기능을 나누고 모듈화할 수 있도록 유연한 구조를 제공합니다. 또한 타입 시스템을 통해 코드의 안전성을 보장하므로 더 나은 유지 보수성과 가독성을 제공할 수 있습니다. 새로운 프로젝트를 시작할 때는 기본적인 컨셉과 설계를 확실히 하고 그에 맞는 모듈 구조를 생각하는 것이 중요합니다.
-
-## 참고 자료
-
-- [Haskell 공식 웹사이트](https://www.haskell.org/)
-- [Haskell 튜토리얼 - Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
-- [Haskell 샘플 프로젝트 - Real World Haskell](http://book.realworldhaskell.org/)
+- [Haskell Wiki](https://wiki.haskell.org)
+- [Real World Haskell (한국어 번역판)](https://github.com/smilejay/real-world-haskell-ko)
+- [Learn You a Haskell for Great Good](http://learnyouahaskell.com)
+- [Hackage: Haskell 패키지 저장소](https://hackage.haskell.org)

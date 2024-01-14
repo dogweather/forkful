@@ -1,61 +1,55 @@
 ---
-title:    "Elixir: 编写测试"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/writing-tests.md"
+title:                "Elixir: 编写测试 (Biānxiě cèshì)"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么需要写测试 (Why)
 
-写测试是编程中不可或缺的一部分。它可以帮助我们保证我们的代码质量，减少潜在的错误和故障，并且提供更好的可读性和可维护性。
+编写测试是软件开发过程中必不可少的一部分。通过编写测试，我们可以验证代码的正确性，减少错误和问题，提高代码质量和稳定性。
 
-## 如何
+## 如何编写测试 (How To)
 
-下面是一个简单的例子来展示如何使用Elixir编写测试：
+编写测试可以分为两步：1）编写代码；2）运行测试。首先，我们需要创建一个测试文件，命名为 "example_test.exs"。然后，在文件中导入 "ExUnit" 的模块，并定义一个测试模块，例如 "ExampleTest"。在该模块中，可以使用 "test" 函数来编写具体的测试代码。
 
-```elixir
-# 一个简单的函数，用来计算两个数的和
-def add(a, b) do
-  a + b
-end
-
-# 测试用例
-test "add函数应正确计算两个数的和" do
-  assert add(2, 3) == 5 # 断言add(2, 3)的结果应为5
+```Elixir
+defmodule ExampleTest do
+  use ExUnit.Case
+  test "addition" do
+    assert 1 + 1 == 2
+  end
 end
 ```
 
-运行测试：
+运行测试的方法有多种，可以使用命令行工具 "mix test"，也可以在编辑器中使用相应的插件来运行测试。
+
+测试代码的输出结果如下所示：
 
 ```
-mix test
+1) test addition (ExampleTest)
+     test/example_test.exs:3
+      Assertion with == failed
+      code:  assert 1 + 1 == 2
+      left:  2
+      right: 3
+
+Finished in 0.07 seconds
+1 test, 1 failure
+
+Randomized with seed 52289
 ```
 
-输出应该为：
+## 深入了解测试 (Deep Dive)
 
-```
-Compiling 1 file (.ex)
-…
+编写测试的目的是为了验证代码的正确性，在测试中通常会包含断言(assertion)，即我们预期的代码结果。除了基本的等式判断，我们还可以使用其他函数来编写更加复杂的测试。例如，可以使用 "assert_raise" 函数来测试代码是否会抛出异常，使用 "assert_receive" 函数来测试代码是否可以正确接收消息。
 
-Finished in 0.01 seconds
-1 test, 0 failures
-```
+此外，我们也可以编写 "setup" 和 "teardown" 函数，用于准备测试环境和清理测试环境，在测试代码之间保持独立性。
 
-通过编写测试，我们可以确保add函数能够正确计算两个数的和，并且在未来的修改中保持正确。
+## 参考链接 (See Also)
 
-## 深入探讨
-
-编写测试可以为我们提供更多的保障和安全感，但是要想确保测试的有效性，还需要注意以下几点：
-
-- 测试应该覆盖代码的不同路径和边界情况，以保证代码的鲁棒性。
-- 当代码发生变化时，测试也应该相应地更新，以保证测试的有效性。
-- 良好的测试应该能够隔离出发生错误的具体部分，帮助我们更快地定位和解决问题。
-- 除了单元测试，还应该结合使用集成和端到端测试来确保整个系统的稳定性。
-
-总的来说，编写测试是一项很重要的开发实践，它可以帮助我们开发出更加可靠和健壮的代码。
-
-## See Also
-
-- [Elixir官方文档 - 测试](https://hexdocs.pm/elixir/1.12.0/testing-with-elixir.html)
-- [《Elixir程序设计 - 测试](https://alanmacd.gitee.io/elixir/introduction/testing.html)
+- [ExUnit 指南](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Elixir 测试实践](https://hexdocs.pm/ex_unit/writing-tests.html)
+- [Elixir 断言函数示例](https://hexdocs.pm/ex_unit/ExUnit.Assertions.html)

@@ -1,57 +1,48 @@
 ---
-title:    "Ruby: 比较两个日期"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/comparing-two-dates.md"
+title:                "Ruby: 比较两个日期"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-#为什么要比较两个日期？
+为什么：比较两个日期在编程中是非常常见的任务，它可以帮助我们在处理时间数据时更加准确和高效。
 
-在编程中，比较两个日期是非常常见的场景。例如，我们可能想要检查某个事件是否已经发生，或者计算两个事件之间的时间间隔。比较两个日期可以帮助我们做出合理的决策和计算，从而更好地处理我们的数据。
+如何做：实现日期比较有多种方法，这里我们将介绍使用 Ruby 编程语言进行比较的方法。下面是一个使用 `-` 操作符来比较两个日期的示例代码：
 
-##如何比较两个日期
+```Ruby
+date_1 = Date.parse('2021-01-01')
+date_2 = Date.parse('2021-01-10')
 
-在Ruby中，我们可以通过使用Date类来比较日期。让我们来看一个例子：
-
-\n```Ruby
-date1 = Date.new(2021, 9, 1)
-date2 = Date.new(2021, 9, 3)
-
-if date1 > date2
-    puts "日期1晚于日期2"
-elsif date1 < date2
-    puts "日期1早于日期2"
+if date_1 < date_2
+  puts "日期 1 在日期 2 之前"
+elsif date_1 > date_2
+  puts "日期 1 在日期 2 之后"
 else
-    puts "两个日期相同"
+  puts "两个日期相等"
 end
 ```
 
-输出结果将是“日期1早于日期2”，因为2021年9月1日比2021年9月3日早。
+运行上面的代码，你会得到以下输出：
 
-我们还可以使用比较运算符（例如`>`和`<`）来比较日期，或者使用Date类提供的`#between?`方法来检查日期是否在两个给定日期之间。
-
-##深入研究
-
-如果我们想要比较更复杂的日期，比如带有时区信息的日期，我们可以使用DateTime类来处理。DateTime与Date类非常相似，但它还支持对时区进行操作。让我们来看一个例子：
-
-\n```Ruby
-time1 = DateTime.new(2021, 9, 1, 12, 30, 0, '-3')
-time2 = DateTime.new(2021, 9, 1, 12, 30, 0, '+3')
-
-if time1 > time2
-    puts "时间1晚于时间2"
-elsif time1 < time2
-    puts "时间1早于时间2"
-else
-    puts "两个时间相同"
-end
+```Ruby
+日期 1 在日期 2 之前
 ```
 
-输出结果将是“两个时间相同”，因为尽管两个日期和时间相同，但时区不同。
+深入探讨：要理解日期比较的原理，我们需要了解日期是如何在计算机中表示的。在 Ruby 中，日期是以自公元前4713年的一月一日开始计算的“儒略日”的形式存储的。我们可以使用 `year`、`month` 和 `day` 来访问日期对象中的年、月和日信息。所以，当我们比较两个日期时，实际上是在比较它们对应的“儒略日”数值。
 
-##请参阅
+我们还可以通过 `DateTime` 类来实现日期比较，它是 `Date` 类的子类，可以处理更加复杂的日期和时间操作。详细的用法可以参考 Ruby 官方文档。
 
-- [Ruby日期比较指南](https://www.rubyguides.com/2015/03/ruby-comparable/)
-- [Ruby DateTime类文档](https://ruby-doc.org/stdlib-2.6.3/libdoc/date/rdoc/DateTime.html)
-- [Ruby Date类文档](https://ruby-doc.org/stdlib-2.6.3/libdoc/date/rdoc/DateTime.html)
+另外，比较日期时还需要注意不同月份的天数不同，以及闰年的处理。
+
+## 参考资料
+
+* [Ruby Date 类文档](https://ruby-doc.org/stdlib-2.6.3/libdoc/date/rdoc/Date.html)
+* [Ruby DateTime 类文档](https://ruby-doc.org/stdlib-2.6.3/libdoc/date/rdoc/DateTime.html)
+* [Ruby 日期和时间操作指南](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)
+
+## 参见
+
+* [如何使用 Ruby 计算日期间隔](https://www.example.com/calculate-date-difference-ruby)
+* [Ruby 日期格式化指南](https://www.example.com/ruby-date-formatting)

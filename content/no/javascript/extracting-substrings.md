@@ -1,56 +1,52 @@
 ---
-title:    "Javascript: Utvinning av delstrenger"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/extracting-substrings.md"
+title:                "Javascript: Utvinning av substringer"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å utvinne substringer kan være nyttig i mange forskjellige programmeringsscenarioer. Det kan hjelpe deg å manipulere tekst på en mer effektiv måte, for eksempel ved å fjerne uønskede deler av en streng eller få tak i spesifikke deler av en streng.
+Hvorfor skulle noen ønske å trekke ut substrings i kodesnutten sin? Det er mange grunner til dette, men en vanlig årsak er å håndtere og manipulere tekst. Å eksperimentere med substrings kan også gi bedre kontroll over data og gjøre det enklere å hente ut spesifikke deler av en string.
 
-## Hvordan du gjør det
+## Hvordan
 
-```Javascript
-// Eksempel på å utvinne en del av en streng
-const navn = "Johan Olsen";
-const etternavn = navn.substring(6);
-console.log(etternavn); // Output: Olsen
+For å ekstrahere en substring i JavaScript, kan du bruke metoden `substring()`. Denne metoden tar to parametere: startindeksen og sluttpindeksen, og returnerer en ny string som inneholder delen av den opprinnelige stringen du ønsker å trekke ut.
 
-// Eksempel på å utvinne en del av en streng fra en bestemt indeks
-const setning = "Denne artikkelen er skrevet på norsk.";
-const del = setning.substring(17,22);
-console.log(del); // Output: norsk
-```
-
-I disse eksemplene brukte vi metoden `substring` på en streng og anga hvilke deler av strengen vi ønsket å utvinne. Den første parameteren er startindeksen, mens den andre er sluttposisjonen. Hvis ingen sluttposisjon er angitt, vil metoden utvinne resten av strengen fra startindeksen.
-
-Du kan også bruke en lignende metode, `slice`, som også tar en start- og sluttposisjon som argumenter, men som også lar deg bruke negative tall for å begynne fra slutten av strengen.
+Her er et eksempel på hvordan du kan bruke `substring()`-metoden:
 
 ```Javascript
-// Eksempel på å bruke slice med negative tall
-const navn = "Maria Hernandez";
-const etternavn = navn.slice(-9);
-console.log(etternavn); // Output: Hernandez
-
-// Eksempel på å bruke slice med negative tall for å utvinne en del av en streng fra slutten
-const setning = "Denne artikkelen er skrevet på norsk.";
-const del = setning.slice(-6,-1);
-console.log(del); // Output: norsk
+let string = "Dette er en tekst";
+let substring = string.substring(10, 13);
 ```
 
-Begge disse metodene kan også brukes på arrays for å utvinne deler av dem.
+I dette tilfellet vil verdien av `substring` variabelen være "tek". Det første tallet er startindeksen, som i dette tilfellet er 10, og det andre tallet er sluttpindeksen, som her er 13. Det er viktig å merke seg at sluttpindeksen ikke er inkludert i den ekstraherte substringen, så den faktiske teksten som hentes ut er fra indeks 10 til indeks 12.
+
+Det er også verdt å nevne at både startindeksen og sluttpindeksen kan være negative tall. Hvis startindeksen er et negativt tall, vil substringsøkningen starte fra slutten av stringen. Hvis sluttpindeksen er et negativt tall, vil substringsøkningen stoppe før det angitte negative tallet, og dermed trekke ut en lengre substring. Her er et eksempel som bruker negative tall:
+
+```Javascript
+let string = "Dette er en tekst";
+let substring = string.substring(-5, -1);
+
+```
+
+I dette tilfellet vil `substring`-variabelen inneholde "tekst", siden substringsøkningen startet fra slutten av stringen og trakk ut alle tegnene frem til det nest siste tegnet.
 
 ## Dypdykk
 
-Det er også verdt å nevne at det finnes flere andre metoder for å utvinne substringer, for eksempel `substr` og `split`. Det er også mulig å bruke regulære uttrykk for å utvinne deler av en streng.
+I tillegg til `substring()`-metoden, finnes det også andre metoder som lar deg trekke ut substrings i JavaScript. En av disse er `slice()`-metoden, som fungerer på samme måte som `substring()`, men tar også negative tall som input. En annen metode er `substr()`, som tar to parametere: startindeksen og lengden på substringen du vil trekke ut.
 
-Husk at i Javascript, så er strenger immutable (kan ikke endres), så utvinning av substringer vil alltid gi deg en ny streng, istedenfor å endre den opprinnelige.
+En annen viktig ting å huske på er at substringsøkning i JavaScript er null-basert, slik at det første tegnet i en string har indeks 0. Dette må tas i betraktning når du bestemmer startindeksen og sluttpindeksen for å unngå feil i koden din.
 
 ## Se også
 
-- [MDN dokumentasjon om substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN dokumentasjon om slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [MDN dokumentasjon om substr](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-- [MDN dokumentasjon om split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+Her er noen nyttige ressurser for å lære mer om å trekke ut substrings i JavaScript:
+
+- [MDN - String.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN - String.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [MDN - String.substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+- [W3Schools - JavaScript Substrings](https://www.w3schools.com/js/js_string_substrings.asp)
+
+Det finnes enda flere metoder og teknikker for å håndtere substrings i JavaScript, så det kan være lurt å utforske disse og finne ut hva som fungerer best for deg og ditt kodeprosjekt. Lykke til!

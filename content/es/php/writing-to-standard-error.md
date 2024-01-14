@@ -1,47 +1,42 @@
 ---
-title:    "PHP: Escribiendo en el error estándar"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/writing-to-standard-error.md"
+title:                "PHP: Redactando en el error estándar"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué escribir a la salida de error en PHP
 
-Escribir al error estándar es una práctica común en la programación de PHP que puede ser beneficiosa por varias razones. Por un lado, ayuda a los desarrolladores a identificar y solucionar errores en su código, lo que puede mejorar la calidad del mismo. Además, escribir al error estándar también puede ser útil para depurar y analizar el flujo de ejecución de un programa.
+Escribir a la salida de error (stderr) en PHP es una técnica importante que puede ayudar a los programadores a depurar y solucionar problemas en sus códigos. Al identificar y registrar errores, los desarrolladores pueden encontrar rápidamente y corregir los errores en sus aplicaciones PHP.
 
 ## Cómo hacerlo
 
-Para escribir al error estándar en PHP, se puede utilizar la función `fwrite()` junto con la constante `STDERR`, que representa el descriptor de archivo del error estándar. Un ejemplo de cómo se puede utilizar esta función es el siguiente:
+Para escribir a la salida de error en PHP, se puede utilizar la función ```error_log()```. Esta función acepta dos parámetros, el mensaje de error y una constante que indica la ubicación donde se debe escribir el error. En este caso, usaremos la constante ```E_STRERR```, que indica que el error debe ser enviado a la salida de error.
 
 ```PHP
 <?php
-// Abrir el archivo para escribir
-$file = fopen('error_log.txt', 'a');
-
-// Escribir mensaje de error en el error estándar
-fwrite(STDERR, 'Ha ocurrido un error en el programa.');
-
-// Cerrar el archivo
-fclose($file);
+$message = "¡Este es un mensaje de error!";
+error_log($message, E_STRERR);
 ```
 
-El código anterior abrirá un archivo llamado `error_log.txt` en modo de escritura y escribirá un mensaje de error en el error estándar utilizando la función `fwrite()`. Una vez que se haya escrito el mensaje, el archivo se cerrará correctamente.
-
-El resultado de este código puede ser algo similar a:
-
-```
-PHP Notice: Ha ocurrido un error en el programa. in /Users/Usuario/Documents/programa.php on line 4
-```
+Al ejecutar este código, el mensaje de error se enviará a la salida de error, que normalmente se muestra en la consola o en un archivo de registro.
 
 ## Profundizando
 
-Escribir al error estándar en PHP puede ser muy útil tanto para pruebas como para la resolución de problemas en programas más complejos. Además de utilizar la función `fwrite()` mencionada anteriormente, también se pueden utilizar otras técnicas para personalizar y mejorar la información que se envía al error estándar.
+Además de utilizar la función ```error_log()```, también se pueden escribir errores personalizados en la salida de error utilizando la función ```fwrite()```. Esta función acepta tres parámetros, el descriptor de archivo, el mensaje de error y el tamaño del mensaje. Usando el descriptor de archivo ```STDERR```, podemos escribir mensajes de error directamente en la salida de error.
 
-Por ejemplo, se puede utilizar la función `error_log()` para enviar mensajes de error a diferentes destinos, como un archivo, una dirección de correo electrónico o el registro del sistema. También se puede utilizar la función `set_error_handler()` para personalizar cómo se manejan y muestran los errores en un programa.
+```PHP
+<?php
+$message = "¡Este es un mensaje de error personalizado!";
+fwrite(STDERR, $message);
+```
 
-## Vea también
+También es importante mencionar que es posible escribir a la salida de error desde cualquier lugar en el código, no solo en las secciones de manejo de errores. Esto puede ser útil para registrar errores y realizar un seguimiento de la ejecución de su código.
 
-- [Documentación de PHP sobre fwrite()](https://www.php.net/manual/es/function.fwrite.php)
-- [Escribir al error estándar en PHP](https://www.samuelaguilera.com/post/escribir-al-error-estandar-en-php/)
-- [Personalizar el manejo de errores en PHP](https://www.php.net/manual/es/function.set-error-handler.php)
+# Ver también
+
+- Documentación oficial de PHP sobre la función ```error_log()```: https://www.php.net/manual/en/function.error-log.php
+- Documentación oficial de PHP sobre la constante ```E_STRTERR```: https://www.php.net/manual/en/errorfunc.constants.php
+- Tutorial de Tuts+: https://code.tutsplus.com/tutorials/writing-logging-to-the-php-standard-error-outputs--cms-28261

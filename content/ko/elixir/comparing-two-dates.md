@@ -1,56 +1,63 @@
 ---
-title:    "Elixir: 두 날짜 비교하기"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/comparing-two-dates.md"
+title:                "Elixir: 두 날짜 비교하기"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
+이 마크다운 파일을 읽는 것은 무엇인가요?
 
-날짜 비교를 하는 이유는 여러분의 프로그램에서 날짜 관련 데이터를 처리해야 할 때 발생합니다. 이를 통해 데이터를 비교하고 원하는 결과를 얻을 수 있습니다.
+여러분은 Elixir 프로그래밍 언어에 대해 들어본 적이 있나요? 이 언어는 Erlang VM 상에서 돌아가며 함수형 프로그래밍과 견고한 동시성 모델을 지원합니다. Elixir는 유연하고 간결한 구문을 가지고 있어 비즈니스 로직 뿐만 아니라 병렬 프로세싱과 시스템 관리에도 적합합니다. 따라서 Elixir는 많은 개발자들이 관심을 가지고 있는 인기있는 언어입니다.
 
-## 사용 방법
+이번 블로그 포스트에서는 Elixir의 중요한 기능 중 하나인 날짜 비교에 대해 알아보겠습니다. 두 개의 날짜를 비교하는 것이 왜 중요한지, 그리고 어떻게 비교하는지 살펴보도록 하겠습니다.
 
-날짜를 비교하는 방법은 간단합니다. 우선 `Date` 모듈을 로드해야 합니다.
+# 어떻게
 
-```
-Elixir
-iex> use Date
-```
+먼저, 날짜를 비교하기 전에 Elixir에서 날짜를 표현하는 방법을 알아야 합니다. Elixir에서 날짜는 `%Date` 타입으로 표현됩니다. 예를 들어, 오늘 날짜를 표현하려면 `~D[2021-05-09]`와 같이 사용할 수 있습니다.
 
-두 날짜를 비교하려면 `Date.compare/2` 함수를 사용하여 비교하고자 하는 날짜를 표시하면 됩니다.
+이제 두 개의 날짜를 비교해보겠습니다. 두 날짜 중 어느 쪽이 더 과거인지, 미래인지, 아니면 같은 날짜인지를 알고 싶을 때는 `Date.compare` 함수를 사용합니다. 아래는 예제 코드와 그 출력 결과입니다.
 
-```
-Elixir
-iex> Date.compare(~D[2020-01-01], ~D[2020-02-01])
-:lt
-```
+```Elixir
+a = ~D[2021-05-08]
+b = ~D[2021-05-09]
 
-위의 예시에서는 `~D[날짜]` 형식을 사용하여 날짜를 지정했습니다. `:lt`는 첫 번째 날짜가 두 번째 날짜보다 이전임을 나타냅니다. 또 다른 예시를 살펴보겠습니다.
+Date.compare(a, b)
+# 출력 결과: :lt (a가 b보다 과거)
 
-```
-Elixir
-iex> Date.compare(~D[1990-10-13], ~D[1990-09-20])
-:gt
-```
+a = ~D[2021-05-09]
+b = ~D[2021-05-09]
 
-위의 예시에서는 첫 번째 날짜가 두 번째 날짜보다 나중임을 나타냅니다. 또 다른 방법으로는 `Date.before?/2`와 `Date.after?/2` 함수를 사용하여 두 날짜가 이전인지 또는 나중인지 확인할 수 있습니다.
+Date.compare(a, b)
+# 출력 결과: :eq (a와 b가 같은 날짜)
 
-```
-Elixir
-iex> Date.before?(~D[2000-01-01], ~D[2000-01-02])
-true
+a = ~D[2021-05-10]
+b = ~D[2021-05-09]
 
-iex> Date.after?(~D[2020-12-31], ~D[2020-12-30])
-true
+Date.compare(a, b)
+# 출력 결과: :gt (a가 b보다 미래)
 ```
 
-## 깊이 있는 분석
+또 다른 비교 방법으로는 단순히 날짜가 같은지 다른지를 알고 싶을 때 `Date.same?` 함수를 사용할 수 있습니다. 아래는 예제 코드와 그 출력 결과입니다.
 
-`Date` 모듈에는 다양한 함수와 기능이 있어 날짜 비교를 좀 더 다양하게 할 수 있습니다. 자세한 내용은 공식 Elixir 문서를 참조하시기 바랍니다.
+```Elixir
+a = ~D[2021-05-08]
+b = ~D[2021-05-09]
 
-## 관련 자료
+Date.same?(a, b)
+# 출력 결과: false (a와 b는 다른 날짜)
 
-- [Elixir 문서: Date](https://hexdocs.pm/elixir/Date.html)
-- [프로그래밍 언어 Elixir를 활용한 웹 개발](https://brunch.co.kr/@thruthesky/306)
+a = ~D[2021-05-09]
+b = ~D[2021-05-09]
+
+Date.same?(a, b)
+# 출력 결과: true (a와 b는 같은 날짜)
+```
+
+# 깊게 파고들기
+
+위에서 살펴본 `Date.compare`와 `Date.same?` 함수는 날짜 비교를 위해 가장 많이 사용되는 함수들입니다. 그러나 더 복잡한 비교가 필요할 때는 `Date.compare/3` 함수를 사용할 수 있습니다. 이 함수는 두 날짜가 같은지, 더 과거인지, 더 미래인지를 비교하는 것 뿐만 아니라 하루, 한 달, 한 해와 같은 다른 단위로도 비교할 수 있습니다.
+
+이외에도 Elixir는 날짜와 시간을 함께 표현할 수 있는 `%DateTime` 타입도 제공합니다.

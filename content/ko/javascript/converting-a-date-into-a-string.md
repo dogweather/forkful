@@ -1,55 +1,50 @@
 ---
-title:    "Javascript: 날짜를 문자열로 변환하기"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/converting-a-date-into-a-string.md"
+title:                "Javascript: 날짜를 문자열로 변환하기"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-날짜를 문자열로 변환할 이유는 무엇일까요? 자바스크립트에서 날짜를 다루는 방법을 배울 때, 날짜를 문자열로 변환하는 것은 매우 중요합니다. 이 기능을 알아두면 프로그래밍에서 유용하게 사용할 수 있습니다.
+## 왜?
 
-## 어떻게
-날짜를 문자열로 변환하는 방법을 알아보겠습니다. 먼저 `toString()` 메서드를 사용하여 날짜 객체를 문자열로 변환할 수 있습니다. 아래는 예제 코드입니다.
+개발자의 입장에서 날짜와 시간을 처리하는 것은 매우 중요합니다. 또한, 날짜와 시간을 문자열로 변형하는 것은 많은 경우에 필요합니다. 이 블로그 글에서는 날짜를 문자열로 변환하는 방법을 알아보고, 이를 왜 해야 하는지 알아보겠습니다.
 
-```Javascript
-const today = new Date();
-const dateString = today.toString();
-console.log(dateString); // Wed Sep 09 2020 18:49:37 GMT+0900 (Korean Standard Time)
-```
-
-또는 `getFullYear()`, `getMonth()`, `getDate()`, `getHours()`, `getMinutes()`, `getSeconds()` 메서드를 사용하여 개별 날짜 요소를 추출한 후, 문자열로 변환할 수 있습니다. 아래는 예제 코드입니다.
+## 어떻게?
 
 ```Javascript
 const today = new Date();
-const year = today.getFullYear();
-const month = String(today.getMonth() + 1).padStart(2, '0');
-const date = String(today.getDate()).padStart(2, '0');
-const hours = String(today.getHours()).padStart(2, '0');
-const minutes = String(today.getMinutes()).padStart(2, '0');
-const seconds = String(today.getSeconds()).padStart(2, '0');
-const dateString = `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`;
-console.log(dateString); // 2020-09-09 18:49:37
+
+// Date 객체를 문자열로 변환하기
+const dateAsString = today.toString();
+console.log(dateAsString); // "Tue Sep 28 2021 17:30:47 GMT+0900 (Korea Standard Time)"
+
+// 날짜 포맷을 원하는 형식으로 지정하기 
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const customDate = today.toLocaleDateString('ko-KR', options);
+console.log(customDate); // "2021년 9월 28일 화요일"
+
+// 다양한 날짜 포맷 예시
+const date1 = today.toLocaleDateString('en-US'); 
+console.log(date1); // "9/28/2021"
+
+const date2 = today.toLocaleDateString('ja-JP'); 
+console.log(date2); // "2021/9/28"
+
+const date3 = today.toLocaleDateString('fr-FR'); 
+console.log(date3); // "28/09/2021"
+
 ```
 
-## 깊게 파보기
-날짜를 문자열로 변환하는 방법을 자세히 살펴보겠습니다. 자바스크립트에서는 날짜를 표현하는 다양한 형식이 있습니다. `toString()` 메서드를 사용하면 표준 시간대의 날짜 및 시간 정보와 함께 문자열로 변환됩니다. `getFullYear()` 메서드는 4자리 연도를 가져오고, `getMonth()` 메서드는 0부터 시작하는 월을 가져옵니다. 이러한 메서드들을 조합하여 원하는 형식의 문자열로 만들 수 있습니다.
+위의 예시 코드를 보면, ```Date``` 객체의 ```toString()``` 메소드를 사용하면 그대로 날짜 객체의 문자열 표현을 얻을 수 있습니다. 또한, 원하는 형식으로 날짜 포맷을 지정할 수도 있습니다. 이는 다국어 지원이 필요한 경우 유용하게 사용할 수 있습니다.
 
-아래는 다양한 형식의 날짜를 문자열로 변환하는 예제 코드입니다.
+## 딥 다이브
 
-```Javascript
-const today = new Date();
-const fullDate = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
-const dayOfWeek = ['일', '월', '화', '수', '목', '금', '토'][today.getDay()];
-const fullTime = `${today.getHours()}시 ${today.getMinutes()}분 ${today.getSeconds()}초`;
-console.log(`오늘은 ${fullDate} (${dayOfWeek})이며, 현재 시간은 ${fullTime} 입니다.`); // 오늘은 2020년 9월 9일 (수)이며, 현재 시간은 18시 49분 37초 입니다.
-```
+자바스크립트의 ```Date``` 객체는 날짜와 시간을 다루는 매우 유용한 기능을 제공합니다. 이 객체를 사용하면, 날짜와 시간을 이용한 계산이나 표현이 매우 편리해집니다. 또한, 문자열로 변환하면서 날짜 포맷을 지정할 수 있다는 것도 큰 장점입니다. 따라서, 개발자들은 자주 사용하는 기능 중 하나인 날짜를 문자열로 변환하는 기능을 잘 숙지할 필요가 있습니다.
 
-## 더 알아보기
-이외에도 다양한 날짜 정보를 문자열로 변환하는 방법이 있습니다. `toDateString()`, `toTimeString()`, `toLocaleDateString()` 등의 메서드를 사용하여 원하는 형식으로 날짜를 문자열로 변환할 수 있습니다.
+## See Also
 
-## 더 많은 자료
-- [MDN Web Docs - Date.prototype.toString()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/toString)
-- [MDN Web Docs - Date.prototype.getFullYear()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear)
-- [MDN Web Docs - Array.prototype.padStart()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/padStart)
-- [MDN Web Docs - Date Format Strings](https://
+- [MDN Date](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [DateFormat.js](https://formatjs.io/docs/core-concepts/icu-syntax/)
+- [Convert Date to String in JavaScript](https://stackabuse.com/how-to-convert-a-date-to-string-in-javascript/)

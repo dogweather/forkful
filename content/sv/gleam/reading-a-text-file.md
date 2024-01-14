@@ -1,43 +1,52 @@
 ---
-title:    "Gleam: Läsning av en textfil"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/reading-a-text-file.md"
+title:                "Gleam: Läsa en textfil"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att läsa en textfil är en avgörande färdighet för alla som vill bli en framgångsrik programmerare. Genom att kunna läsa och förstå innehållet i en textfil kan du samla in och hantera stora mängder data, vilket är en viktig del av många programmeringsuppgifter.
+Att läsa en textfil är en viktig del av alla programmeringsprojekt. Det är ett sätt att få tillgång till data som kan användas för att bygga ett program eller analys av information. I denna bloggpost kommer vi att utforska hur man läser en textfil med hjälp av Gleam-programmeringsspråket.
 
-## Så här gör du
+## Hur man gör
 
-För att läsa en textfil i Gleam behöver du först öppna filen och sedan använda en läsrutin för att läsa innehållet. Det finns olika läsrutiner beroende på vilken typ av datafil du arbetar med, men en grundläggande läsrutin i Gleam ser ut så här:
-
-```Gleam
-file, error = File.open("textfil.txt")
-```
-
-Den här koden öppnar filen "textfil.txt" och tilldelar sedan en variabel "file" för att lagra filens innehåll. Om det finns några fel kommer de också att tilldelas till variabeln "error".
-
-För att sedan läsa innehållet i filen kan du använda läsrutinen:
+För att läsa en textfil i Gleam, kan du använda funktionen `gleam/file.open`. Detta kommer att öppna filen för läsning och returnera en `Result` typ som antingen innehåller filens innehåll eller ett felmeddelande. Vi kan använda `ok_or_raise` funktionen för att hantera detta resultat.
 
 ```Gleam
-content, error = File.read(file)
+let result = file.open("mitt_dokument.txt")
+let content =
+  ok_or_raise(result)
+  // Filens innehåll returneras om resultatet var `Ok`
+  // Annars kastas ett felmeddelande
 ```
 
-Genom att använda variabeln "file" som ett argument till läsrutinen "read" kan du få tillgång till innehållet i filen. Detta innehåll kommer att sparas i en variabel "content" och eventuella felmeddelanden kommer att tilldelas till "error".
+Nu när vi har filens innehåll, kan vi göra vad vi vill med det. Vi kan till exempel skriva ut det till konsolen med hjälp av funktionen `io.print`.
 
-För att kunna använda innehållet i din kod kan du också behöva omvandla det till rätt datatyp, beroende på hur det är strukturerat i din fil. Till exempel, om innehållet är en lista av tal, kan du använda omvandlingsfunktionen "List.map" för att omvandla alla element till rätt datatyp.
+```Gleam
+io.print(content)
+```
 
-## Deep Dive
+Det är viktigt att notera att filens innehåll kommer att returneras som en `String` typ. Om du vill omvandla det till en lista av tecken kan du använda funktionen `string.to_char_list`.
 
-När du läser en textfil i Gleam finns det några olika inställningar du kan ange för att anpassa hur filen läses. Till exempel kan du ange en maximal filstorlek, vilket kan vara användbart om du arbetar med stora eller potentiellt skadliga textfiler. Du kan också välja en specifik teckenuppsättning om din textfil använder olika tecken än standard Unicode.
+## Djupdykning
 
-Det finns också andra läsfunktioner tillgängliga som du kanske vill utforska beroende på dina behov, som att läsa en fil rad för rad eller bara läsa en del av filen.
+När du läser en textfil är det viktigt att tänka på hur innehållet är strukturerat. Om du till exempel vill dela upp innehållet baserat på radbrytningar, kan du använda funktionen `string.split` tillsammans med tecknet för radbrytning `"\n"`.
+
+```Gleam
+let lines = content |> string.split("\n")
+
+// Nu har vi en lista av varje rad i filen, som vi kan arbeta med
+for line in lines {
+  io.print(line)
+}
+```
+
+Det är även möjligt att läsa filen rad för rad med hjälp av `file.read_line` funktionen. Detta kan vara till hjälp om filen är mycket stor och du inte vill läsa hela innehållet på en gång.
 
 ## Se även
 
-- Läs mer om Gleams "File" bibliotek: https://gleam.run/lib/file.html
-- Utforska olika möjligheter för att läsa filer i Gleam: https://gleam.run/lib/file.html#reading-and-writing-files
-- Lär dig mer om grundläggande programmeringsfärdigheter i Gleam: https://gleam.run/docs/
+- Dokumentation för `gleam/file` modulen: [dokumentation](https://gleam.run/modules/gleam/file/latest/)
+- Lista av Gleam tutorials på svenska: [svenska tutorials](https://gleam.run/docs/tutorials/sv/)

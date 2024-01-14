@@ -1,43 +1,35 @@
 ---
-title:    "Clojure: Druck von Debug-Ausgabe"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/printing-debug-output.md"
+title:                "Clojure: Debug-Ausgabe drucken"
+programming_language: "Clojure"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Drucken von Debug-Ausgaben während der Programmierung ist eine einfache und effektive Möglichkeit, um Fehler in Ihrem Code zu finden und zu beheben. Es ermöglicht es Ihnen, den genauen Ablauf Ihres Programms zu überprüfen und potenzielle Probleme zu identifizieren. 
+Wahrscheinlich gibt es kaum einen Programmierer da draußen, der noch nicht debuggen musste. Und eine der nützlichsten Techniken beim Debuggen ist das Ausgeben von Debug-Informationen. Doch warum ist das eigentlich so? Nun, Debug-Output ermöglicht es uns, den Programmablauf zu verfolgen und zu verstehen, welche Werte an bestimmten Stellen im Code verwendet werden. Es ist eine effektive Methode, um Fehler in unserem Code zu finden und zu beheben.
 
-## Wie das geht
+# Wie
 
-Um Debug-Ausgaben in Clojure zu drucken, können Sie die `println` Funktion verwenden. Diese Funktion akzeptiert eine beliebige Anzahl von Argumenten und druckt sie in der Konsole aus. Hier ist ein Beispiel:
-
-```Clojure
-(println "Debug-Ausgabe" 42)
-```
-
-Dies wird `Debug-Ausgabe 42` in der Konsole ausgeben. Sie können auch Variablen oder Ausdrücke in `println` verwenden, um deren Werte zu überprüfen. 
-
-Eine andere Möglichkeit, Debug-Ausgaben zu drucken, ist die Verwendung der `clojure.pprint` Bibliothek. Diese Bibliothek bietet mehrere Funktionen, mit denen Sie das Format und die Darstellung Ihrer Ausgabe anpassen können. Hier ist ein Beispiel:
+Um Debug-Informationen auszugeben, können wir die "println" Funktion in Clojure verwenden. Diese Funktion ermöglicht es uns, beliebige Werte auszugeben, indem wir sie als Parameter übergeben. Schauen wir uns dazu ein Beispiel an:
 
 ```Clojure
-(require '[clojure.pprint :refer [pprint]])
-
-(pprint {:name "John" :age 27})
+(def x 5)
+(println "Der Wert von x ist:" x)
 ```
 
-Dies wird ein formatiertes Output mit dem Schlüssel `:name` und Wert `"John"` und dem Schlüssel `:age` und Wert `27` ausgeben. 
+Die Ausgabe dieses Codes wäre "Der Wert von x ist: 5". Wie wir sehen können, können wir nicht nur konkrete Werte, sondern auch Variablen ausgeben. Das ist besonders hilfreich, um den tatsächlichen Wert einer Variable zu überprüfen, wenn wir den Verdacht haben, dass dort ein Fehler vorliegt. Wir können auch mehrere Werte ausgeben, indem wir sie mit einem Leerzeichen trennen, z.B. `(println x "ist größer als" y)`.
 
-## Tiefer schürfen
+# Deep Dive
 
-Das Drucken von Debug-Ausgaben kann auch nützlich sein, um zu verstehen, wie Ihre Funktionen und Makros arbeiten. Durch das Hinzufügen von Debug-Ausgaben an verschiedenen Stellen in Ihrem Code können Sie den Ablauf verfolgen und mögliche Probleme wie unerwartete Werte oder Schleifen erkennen. 
+Nun, da wir wissen, wie man Debug-Output in Clojure verwendet, wollen wir uns noch genauer damit beschäftigen. Es gibt ein paar Tipps und Tricks, die uns helfen können, noch effektiver zu debuggen. Zum Beispiel können wir die "pr" Funktion verwenden, um auch die Datenstruktur unseres Werts auszugeben. Außerdem können wir die "with-out-str" Funktion verwenden, um die Ausgabe in eine Variable zu speichern, anstatt sie auf der Konsole auszugeben. Und wenn wir nur Debug-Output für bestimmte Teile unseres Codes möchten, können wir die "when" oder "if" Funktion verwenden, um die Ausgabebedingung zu bestimmen.
 
-Sie können auch verschiedene Level von Debug-Ausgaben verwenden, um zwischen grundlegenden Informationen und detaillierten Einblicken zu unterscheiden. Dies kann hilfreich sein, um nur wichtige Ausgaben anzuzeigen und die Menge an Output zu reduzieren.
+# Siehe auch
 
-## Siehe auch
-
-- [clojure.pprint Dokumentation](https://clojuredocs.org/clojure.pprint)
-- [Clojure für Anfänger](https://learnxinyminutes.com/docs/clojure/) 
-- [Web development mit Clojure](https://gettingclojure.com/)
+- https://clojuredocs.org/clojure.core/println
+- https://clojuredocs.org/clojure.core/pr
+- https://clojuredocs.org/clojure.core/with-out-str
+- https://clojuredocs.org/clojure.core/when
+- https://clojuredocs.org/clojure.core/if

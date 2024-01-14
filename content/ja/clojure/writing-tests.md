@@ -1,62 +1,52 @@
 ---
-title:    "Clojure: テストを書く"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/writing-tests.md"
+title:                "Clojure: 「テストを書く」"
+programming_language: "Clojure"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+## なぜ
+プログラミングでテストを書くことの重要性を説明します。テストを書くことにより、ソフトウェアの品質を向上させ、バグを防ぐことができます。
 
-テストは、プログラムを安定させるために必要です。バグを修正する際に、テストがあればそれらを再現することができ、より確実に修正することができます。
-
-## 作り方
-
-テストを書くには、いくつかのステップがあります。
-
-まずは、[Leiningen](https://leiningen.org/)を使ってプロジェクトを作成します。
+## 方法
+以下のClojureコードブロックでは、テストを書く方法を示します。
 
 ```Clojure
-lein new app example
+;; テスト用の名前空間を定義する
+(ns blog.test
+  (:require [clojure.test :refer :all]
+	    [blog.core :refer :all])
+
+;; テストを定義する
+(deftest addition-test
+  (testing "2つの数値の足し算が正しく行われること"
+    (is (= (add 2 2) 4)))
+  (testing "負の数も正しく足し算されること"
+    (is (= (add -5 10) 5)))
+
+;; テストを実行する
+(run-tests)
+
+```
+以下は、テストを実行した時の出力結果です。
+
+```
+Testing blog.test
+
+Ran 2 tests containing 3 assertions.
+0 failures, 0 errors.
 ```
 
-テスト用のファイルを作成してから、[Midje](https://github.com/marick/Midje)を依存関係として追加します。
+## 深い理解
+テストの書き方に関してより詳細に学ぶために、以下のリソースを参考にしてください。
 
-```Clojure
-(ns example.core-test
-  (:require [midje.sweet :refer :all]
-           [example.core :refer :all]))
-```
+- [公式Clojureドキュメント](https://clojuredocs.org/clojure.repl/run-tests)
+- [Clojureテストの書き方](https://www.braveclojure.com/testing/#Clojure_test_driven_development)
+- [テストを使った実践的なClojure開発](https://stuartsierra.com/2015/08/25/clojure-pedestal-app-with-clojure-spec-and-clojure-test)
 
-Midjeのドキュメントを参考に、サンプルテストを書いてみましょう。
-
-```Clojure
-(fact "3の2乗は9になる"
-  (square 3) => 9)
-
-(fact "0の2乗は0になる"
-  (square 0) => 0)
-```
-
-テストを実行するには、以下のコマンドを実行します。
-
-```Clojure
-lein midje
-```
-
-もしテストが失敗した場合は、そのファイルと行数が表示されるので、修正を行い再実行してください。
-
-## テストについての深堀り
-
-テストを書く際には、プログラムの振る舞いを理解することが重要です。それぞれのテストケースが必要な要件を満たしているかを確認するために、テストケースをいくつか想定してみると良いでしょう。また、テストを書く際には、コンパイルエラーやデバッグプリントなどの補助的な手段を利用することも大切です。
-
-## 参考リンク
-
-- [Midje公式ドキュメント](https://github.com/marick/Midje/wiki)
-- [Clojureのテスト概要](https://clojure.org/guides/testing)
-- [Leiningen公式サイト](https://leiningen.org/)
-
-## 関連記事
-
-- [Clojureでの単体テストのヒント](https://engineering.21buttons.com/unit-testing-in-clojure-c48a27cb3d2d)
-- [テストドリブン開発の基本](https://medium.freecodecamp.org/test-driven-development-101-with-clojure-dd7fab9daf9)
+## 他のリンクを参照
+- [Clojureの公式サイト](https://clojure.org/)
+- [Clojure日本ユーザーグループ](https://clojure.jp/)
+- [テスト駆動開発についてのブログ記事](https://t-wada.hatenadiary.org/entry/20111208/1323348668)

@@ -1,43 +1,42 @@
 ---
-title:    "C++: Die Länge eines Strings finden"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/finding-the-length-of-a-string.md"
+title:                "C++: Die Länge eines Strings finden"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Viele Programmierer müssen oft die Länge von Zeichenketten in ihren Programmen ermitteln. Dies kann aus verschiedenen Gründen erforderlich sein, zum Beispiel um die Eingaben der Benutzer zu überprüfen oder um bestimmte Funktionen zu implementieren, die auf der Länge einer Zeichenkette basieren. Egal aus welchem ​​Grund, das Finden der Länge einer Zeichenkette ist eine grundlegende Aufgabe in vielen Programmiersprachen, einschließlich C++.
+Das Finden der Länge eines Strings ist eine grundlegende, aber wichtige Fähigkeit beim Programmieren von C++. Ohne diese Fähigkeit ist es schwer, mit Strings effektiv zu arbeiten und ihre Inhalte zu manipulieren. Daher ist es wichtig zu wissen, wie man die Länge eines Strings findet.
 
-## How To
+## Wie geht das
 
-Um die Länge einer Zeichenkette in C++ zu finden, verwenden wir die eingebaute Funktion `strlen()`. Diese Funktion erwartet eine Zeichenkette als Eingabe und gibt die Anzahl der Zeichen in der Zeichenkette zurück. Hier ist ein Beispielcode, der die Verwendung von `strlen()` zeigt:
+Um die Länge eines Strings in C++ zu finden, verwenden wir die Funktion `length()` oder `size()`. Diese Funktionen geben die Anzahl der Zeichen in einem String zurück, einschließlich Leerzeichen und Sonderzeichen. Hier ist ein Beispielcode, der das illustriert:
 
 ```C++
 #include <iostream>
-#include <cstring>
-
 using namespace std;
 
 int main() {
-    char name[] = "Max Mustermann";
-    int length = strlen(name);
-    
-    cout << "Die Länge des Namens beträgt: " << length << endl;
-    
+    string name = "Max Mustermann";
+    cout << "Der Name hat die Länge " << name.length() << " Buchstaben." << endl;
     return 0;
 }
+
+// Output: Der Name hat die Länge 14 Buchstaben.
 ```
 
-Die Ausgabe für dieses Beispiel lautet: `Die Länge des Namens beträgt: 14`. Wie Sie sehen können, ist die Länge der Zeichenkette 14, einschließlich der Leerzeichen und des Abschlussterminals `'\0'`.
+In diesem Beispiel haben wir die Funktion `length()` verwendet, um die Länge des Strings `name` zu finden und sie dann mit einem kurzen Textausdruck ausgegeben. Wir können auch die Funktion `size()` statt `length()` verwenden und das Ergebnis wäre dasselbe.
 
-## Deep Dive
+## Tiefere Einblicke
 
-Die Funktion `strlen()` durchläuft die Zeichenkette, bis sie auf das Abschlussterminal `'\0'` stößt, das am Ende jeder Zeichenkette platziert ist. Sie zählt alle Zeichen, die sie auf dem Weg trifft, und gibt die Gesamtzahl zurück. Beachten Sie, dass `strlen()` nur mit Zeichenketten funktioniert, die mit einem Abschlussterminal enden. Wenn die Zeichenkette kein Abschlussterminal hat, kann die Funktion nicht richtig arbeiten und möglicherweise falsche Ergebnisse liefern. Es ist daher wichtig, sicherzustellen, dass alle verwendeten Zeichenketten korrekt formatiert sind, um unerwartete Fehler zu vermeiden.
+Wenn wir uns die C++-Dokumentation ansehen, werden wir feststellen, dass `length()` und `size()` keine tatsächlichen Funktionen sind, sondern Methoden, die zur `std::string`-Klasse gehören. Das bedeutet, dass sie nur auf `string`-Objekten funktionieren. Außerdem können wir die Länge eines Strings auch mit der Funktion `strlen()` aus der Header-Datei `cstring` finden. Diese Funktion erwartet jedoch ein C-Zeichenarray als Parameter.
+
+Es ist auch wichtig zu wissen, dass die Länge eines Strings in C++ abhängig von der Verwendung der Zeichenkodierung ist. Wenn wir beispielsweise einen String mit deutschen Umlauten haben, kann die Länge je nach verwendeter Kodierung variieren.
 
 ## Siehe auch
 
-- [C++ String Tutorial in Deutsch](https://www.programmierenlernenhq.de/c-plus-plus-zeichenketten-string/) 
-- [C++ Dokumentation zu `strlen()`](https://www.cplusplus.com/reference/cstring/strlen/)
-- [C++ Zeichenketten und ihre Eigenschaften](https://www.geeksforgeeks.org/strings-in-c-2/)
+- C++ Dokumentation für `std::string`: https://en.cppreference.com/w/cpp/string/basic_string
+- Dokumentation für `strlen()`: https://en.cppreference.com/w/c/string/byte/strlen

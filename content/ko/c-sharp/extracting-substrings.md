@@ -1,33 +1,35 @@
 ---
-title:    "C#: 부문 추출하기"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/extracting-substrings.md"
+title:                "C#: 문자열 추출하기"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 
+# 왜: 부분 문자열 추출에 참여하는 이유
 
-자바 프로그래밍에서 substring을 추출하는 것이 유용한 이유는 다양합니다. 예를 들어, 문자열에서 필요한 정보만 추출하고 싶을 때 사용할 수 있습니다. 또는 문자열 파싱에 유용하게 사용할 수 있습니다. substring은 문자열을 조작하는 데 매우 유용한 기능입니다.
+부분 문자열 추출은 프로그래밍에서 자주 사용되는 기술 중 하나입니다. 이 기술을 배우는 것은 더 효율적인 코드 작성과 데이터 처리를 위해 매우 중요합니다.
 
-## 어떻게 
+# 추출하는 방법
 
-자바에서 substring을 추출하는 것은 매우 간단합니다. 아래 코드는 입력 문자열에서 일부를 추출하는 방법을 보여줍니다.
+부분 문자열을 추출하는 데, 우리는 기본적으로 두 가지 주요한 방법을 사용할 수 있습니다. 첫 번째 방법은 .Substring() 함수를 사용하는 것이고, 두 번째 방법은 .Split() 함수를 사용하는 것입니다.
 
 ```C#
-string input = "안녕하세요, 한국의 독자 여러분!";
-string result = input.Substring(5, 3); // 결과: "하세요"
-Console.WriteLine(result);
+// .Substring() 함수를 이용한 예시
+string sentence = "나는 한국 사람입니다.";
+string substring = sentence.Substring(3); // 결과: "국 사람입니다."
+
+// .Split() 함수를 이용한 예시
+string sentence = "나는 프로그래머입니다.";
+string[] words = sentence.Split(' '); // 결과: ["나는", "프로그래머입니다."]
 ```
 
-입력 문자열 "안녕하세요, 한국의 독자 여러분!"에서 시작 위치 5부터 3개의 문자를 추출하여 결과 변수에 할당합니다. 그리고 이를 출력하는 코드입니다.
+# 심층 분석
 
-## 깊이 파헤치기 
+.Substring() 함수는 문자열을 추출하는 데 매우 유용하지만, 반드시 문자열의 길이를 설정해야만 가능합니다. 반면, .Split() 함수는 특정 기준으로 문자열을 분리하여 배열로 반환해줍니다. 이 두 가지 방법을 적절히 조합한다면, 매우 다양한 상황에서 문자열 추출을 수행할 수 있습니다.
 
-substring은 문자열을 조작하는 데 매우 유용한 기능입니다. 그러나 실제로는 더 많은 기능을 가지고 있습니다. 예를 들어, 시작 위치를 지정하지 않고 문자열의 끝까지 추출할 수도 있습니다. 또한, 입력 문자열이 없는 경우 예외를 발생시키지 않고 빈 문자열을 반환합니다. 이러한 유용한 기능들을 잘 숙지하고 적절하게 활용하면 더욱 효율적인 코드를 작성할 수 있습니다.
+## 참고 링크
 
-# See Also 
-
-- [String.Substring 메서드 문서 (MSDN)](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.substring)
-- [C# 문자열 다루기 (네이버 블로그)](https://blog.naver.com/PostView.nhn?blogId=cjs12242&logNo=221781237609&categoryNo=0&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=search)
-- [C# 자습서 - substring과 trim 사용 방법 (YouTube)](https://www.youtube.com/watch?v=mVvWbkvIhh8)
+- [.Substring() 함수에 관한 자세한 설명](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.substring)
+- [.Split() 함수에 관한 자세한 설명](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.split)

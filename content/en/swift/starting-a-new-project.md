@@ -1,52 +1,57 @@
 ---
-title:    "Swift recipe: Starting a new project"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/starting-a-new-project.md"
+title:                "Swift recipe: Starting a new project"
+programming_language: "Swift"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-You may be wondering, "why should I start a new Swift programming project?" Well, the answer is simple: Swift is a powerful, modern programming language that is constantly evolving and being used in a wide range of applications. Engaging in a new project can not only improve your programming skills, but also open up opportunities for creating innovative and impactful projects.
+Starting a new project can be daunting, but developing a new app or program can also be an exciting challenge. Whether you're a beginner or experienced developer, starting a new project allows you to expand your skills, showcase your creativity, and potentially create something that can improve someone's life.
 
 ## How To
 
-First and foremost, you will need to have Xcode installed on your Mac computer. This is the official IDE for Swift and will make your programming experience much smoother. Once Xcode is installed, you can follow these simple steps to create a new Swift project:
+To start a new project in Swift, follow these easy steps:
 
-1. Open Xcode and select "Create a new Xcode project" from the welcome screen
-2. Choose "Single View App" as the template for your project
-3. Give your project a unique name and select Swift as the programming language
-4. Choose a location for your project and click "Create"
+1. Open Xcode and select "Create a new Xcode project".
+2. Choose the template for your project. This can vary from a basic Single View App to a more complex game template.
+3. Enter a name for your project and select the location where you want to save it.
+4. Choose Swift as the programming language and select your desired devices and language options.
+5. Click "Next" and choose a location for your project's source control (if desired).
+6. Click "Create" and your project will be ready for coding!
 
-Congratulations, you have successfully created a new Swift project! Now, let's dive into some coding examples to get you started.
-
-```Swift
-// Hello World example
-print("Hello, world!") // output: Hello, world!
-```
+Now that you have your project set up, let's look at some code examples:
 
 ```Swift
-// Constant and variable declaration
-let pi = 3.14 // constant value
-var radius = 5.0 // variable value
-print("The area of a circle with radius \(radius) is \(pi * radius * radius)") 
-// output: The area of a circle with radius 5.0 is 78.5
+// Creating a simple variable in Swift
+var myName:String = "John"
+
+// Printing a message to the console
+print("Hello " + myName + "!")
+
+// Creating a function in Swift
+func addNumbers(num1: Int, num2: Int) -> Int {
+  let sum = num1 + num2
+  return sum
+}
+
+// Calling the function and printing the output
+print(addNumbers(num1: 5, num2: 10)) // Output: 15
 ```
 
 ## Deep Dive
 
-Before diving into coding, it's important to have a clear plan and understanding of your project. Here are some tips to help you get started:
+When starting a new project, it's important to have a clear understanding of your goals and your target audience. This will help you determine the features and design of your project. Make sure to also consider any potential challenges or limitations that may arise during development.
 
-1. Define the purpose and goal of your project. This will guide your coding decisions and keep you focused.
-2. Create a project structure and break down tasks into smaller, manageable chunks.
-3. Familiarize yourself with Swift's syntax and programming concepts. You can refer to Apple's official Swift documentation for more information.
-4. Take advantage of the numerous online resources, such as tutorials, forums, and communities, for support and guidance.
+Additionally, it's crucial to stay organized and maintain good coding practices. This includes regularly commenting your code, using meaningful variable and function names, and properly indenting your code for readability.
 
-Remember, starting a new project can be challenging, but don't get discouraged. With practice and determination, you can become a proficient Swift programmer. 
+Don't be afraid to seek help and resources when needed. There are many online communities and forums dedicated to Swift programming where you can ask for assistance or share your progress with others.
 
 ## See Also
 
+For more information on starting a new project in Swift, check out these helpful resources:
 - [Apple's official Swift documentation](https://developer.apple.com/documentation/swift)
-- [Swift.org](https://swift.org/)
-- [Swift Playgrounds](https://www.apple.com/swift/playgrounds/)
+- [Hacking with Swift](https://www.hackingwithswift.com/)
+- [Codecademy's Learn Swift course](https://www.codecademy.com/learn/learn-swift)

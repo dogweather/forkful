@@ -1,55 +1,50 @@
 ---
-title:    "Java: Berechnen eines Datums in der Zukunft oder Vergangenheit"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/calculating-a-date-in-the-future-or-past.md"
+title:                "Java: Ein Datum in der Zukunft oder Vergangenheit berechnen"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Berechnen von Datumsangaben in der Zukunft oder Vergangenheit kann in vielen Situationen nützlich sein, z.B. um Fristen einzuhalten oder um Erinnerungen zu setzen. In diesem Blog-Beitrag zeigen wir Ihnen, wie Sie mit Java programmatisch ein Datum in der Zukunft oder Vergangenheit berechnen können.
+Die Berechnung von zukünftigen oder vergangenen Daten ist eine wichtige Fähigkeit in der Programmierung, die in vielen Anwendungsfällen benötigt wird. Es ermöglicht uns, präzise Zeiten für Aufgaben, Ereignisse oder Prozesse zu planen und zu verwalten.
 
-## Wie es geht
+## Wie man es macht
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, verwenden wir die Klasse `Calendar` aus dem Paket `java.util`. Diese Klasse bietet verschiedene Methoden, um Datumsangaben zu manipulieren. Wir werden uns auf die Methode `add()` konzentrieren, die es uns ermöglicht, eine bestimmte Zeiteinheit (z.B. Tage, Monate) zu einem gegebenen Datum hinzuzufügen oder davon abzuziehen.
-
-Wir werden zunächst ein `Calendar`-Objekt erstellen und es auf das aktuelle Datum setzen:
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die `LocalDate` Klasse aus der Java 8 Date and Time API verwenden. Zuerst müssen wir ein heutiges Datum festlegen, indem wir die `now()` Methode aufrufen:
 
 ```Java
-Calendar calendar = Calendar.getInstance();
+LocalDate today = LocalDate.now();
 ```
 
-Nun können wir mit der `add()`-Methode eine bestimmte Anzahl von Tagen zu diesem Datum hinzufügen oder davon abziehen. Wir verwenden dazu die Konstanten `Calendar.DATE` und `Calendar.MONTH`, um anzugeben, welche Zeiteinheit wir manipulieren wollen:
+Dann können wir mithilfe der `plus()` und `minus()` Methoden ein zukünftiges bzw. vergangenes Datum berechnen. Zum Beispiel, um 4 Tage in die Zukunft zu berechnen, können wir Folgendes tun:
 
 ```Java
-calendar.add(Calendar.DATE, 7); // Fügt 7 Tage hinzu
-calendar.add(Calendar.MONTH, -3); // Zieht 3 Monate ab
+LocalDate futureDate = today.plusDays(4);
 ```
 
-Nachdem wir die Datumsberechnung durchgeführt haben, können wir das Ergebnis in einem bestimmten Format ausgeben, z.B. als `String`:
+Auf ähnliche Weise können wir ein Datum in der Vergangenheit berechnen, indem wir die `minus()` Methode verwenden. Zum Beispiel, um 2 Monate in der Vergangenheit zu berechnen, können wir Folgendes tun:
 
 ```Java
-// Formatierung des Datums als "Tag.Monat.Jahr"
-SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-String futureDate = format.format(calendar.getTime());
-System.out.println("Datum in der Zukunft: " + futureDate);
+LocalDate pastDate = today.minusMonths(2);
 ```
 
-Die Ausgabe sieht dann z.B. so aus:
+Wir können auch andere Zeitangaben wie Stunden, Wochen oder Jahre verwenden, um die Berechnung durchzuführen.
 
-```Console
-Datum in der Zukunft: 25.07.2021
+## Tiefergehende Informationen
+
+Wenn wir ein detailliertes Datum mit Angaben wie Jahr, Monat und Tag berechnen möchten, können wir auch die `LocalDate.of()` Methode verwenden. Zum Beispiel, um den 20. April 2022 zu berechnen, können wir Folgendes tun:
+
+```Java
+LocalDate specificDate = LocalDate.of(2022, 4, 20);
 ```
 
-## Tiefer Einblick
-
-Die Klasse `Calendar` bietet noch viele weitere Methoden, um mit Datumsangaben zu arbeiten. Sie können z.B. verschiedene Kalender-Systeme verwenden (z.B. gregorianischer oder chinesischer Kalender), die Zeitzone anpassen oder bestimmte Feiertage berücksichtigen. Es gibt auch die Möglichkeit, benutzerdefinierte `Calendar`-Objekte zu erstellen und zu verwenden.
-
-Es ist wichtig zu beachten, dass die Klasse `Calendar` veraltet ist und durch die neuere Klasse `LocalDate` aus dem Paket `java.time` ersetzt wurde. `LocalDate` bietet eine einfachere und präzisere Möglichkeit, mit Datumsangaben zu arbeiten. Wir empfehlen daher, `LocalDate` anstelle von `Calendar` zu verwenden.
+Es ist auch möglich, unterschiedliche Zeitzonen und Kalendersysteme zu berücksichtigen, indem wir die entsprechenden Klassen aus der Java 8 Date and Time API verwenden.
 
 ## Siehe auch
 
-- [Java Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Java Tutorials: Date Time](https://docs.oracle.com/javase/tutorial/datetime/index.html)
-- [Baeldung: How to Calculate Date/Time Difference in Java](https://www.baeldung.com/java-date-difference)
+- [Offizielle Dokumentation von Java 8 zu Date and Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Tutorial zu Datum und Zeit in Java 8](https://www.baeldung.com/java-8-date-time-intro)
+- [Java-Dokumentation zu LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

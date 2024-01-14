@@ -1,38 +1,32 @@
 ---
-title:    "Haskell: קריאת קובץ טקסט"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/haskell/reading-a-text-file.md"
+title:                "Haskell: קריאת קובץ טקסט"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+## למה?
 
-קריאת קובץ טקסט היא כלי חשוב למתכנתי Haskell. בכתיבת עקביות, או בטיפול בנתונים מורכבים, קריאת קובץ טקסט היא כלי חיוני שיעזור לנו לעבוד בצורה יעילה ומהירה.
+תכנות בּאָשקאַל הינו חוויה מרתקת ומאתגרת המאפשרת ליצור מערכות מתוחכמות באמצעות קוד קצר וקל לקריאה. קריאת קובץ טקסט היא יכולת חשובה בתכנות וניתן להשתמש בה במגוון של מטרות, כגון עיבוד מידע וניתוח נתונים.
 
-## כיצד לעשות זאת
+## איך להשתמש?
 
-קוד ה-Haskell הבא מדגים כיצד לקרוא קובץ טקסט באמצעות ספריית Prelude של השפה:
+האתגר העיקרי בקריאת קובץ טקסט הוא להבין איך לתאם את הקוד לפורמט של הקובץ ולייצר תוצאה מוצלחת. נתחיל עם דוגמה פשוטה של קוד הקורא קובץ טקסט באמצעות הפונקציה "openFile" ויצירת אובייקט מסוג "Handle" לשימוש בקריאה וכתיבה לקובץ. לאחר מכן, נשתמש בלולאת "readFile" כדי לקרוא את תוכן הקובץ ולהדפיס אותו למסך.
 
 ```Haskell
 import System.IO
 
 main = do
-    handle <- openFile "example.txt" ReadMode
-    contents <- hGetContents handle
-    putStr contents
-    hClose handle
+  fileHandle <- openFile "myFile.txt" ReadMode
+  fileContents <- hGetContents fileHandle
+  putStrLn fileContents
+  hClose fileHandle
 ```
 
-על מנת לקרוא את הקובץ, אנו משתמשים בפונקציה openFile כדי לפתוח את הקובץ וליצור ידית שמייצגת אותו. לאחר מכן, אנו משתמשים בפונקציה hGetContents כדי לקרוא את התוכן של הקובץ ולתתו למשתנה בשם contents. לבסוף, אנו מסגרים את הקובץ על ידי שימוש בפונקציה hClose.
+הפונקציה "hGetContents" מאפשרת לנו לקרוא את התוכן של הקובץ כמחרוזת ולהדפיס אותו למסך. בסוף הקוד נסגר את האובייקט של הקובץ עם הפונקציה "hClose". בכל פעם שנרצה לקרוא קובץ, נוכל לחדש את האובייקט של הקובץ ולהשתמש בו לקריאה נוספת.
 
-הקוד ידפיס את כל התוכן של הקובץ על המסך.
+## מעומק הנושא
 
-## עיון מעמיק
-
-קריאת קובץ טקסט היא פעולה יחסית פשוטה, אבל לאחריה יש לטפל בקובץ כדי לנקות ולעקוב אחריו כדי להימנע מאיות עקביות בשינויים. בנוסף, אנו יכולים להשתמש בפונקציות נוספות כמו hGetLine ו-hPutStr כדי לקרוא או לכתוב קווים ספציפיים בקובץ.
-
-הנה כמה כתובות מועילות על קריאת קבצים ב-Haskell שיעזרו לך להשתמש בכלי זה בצורה טובה יותר:
-
-- [Hackage: System.IO](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html) - מסמך המציג את ממשק ה-IO של Haskell, המכיל את הפונקציות הנכונות לשימוש בפתרון הללו.
-- [Real World Haskell - Chapter 7: Input and Output](https://www.oreilly.com/library/view/real-world-haskell/9780596800692/ch
+קריאת קבצי טקסט באמצעות Haskell מאפשרת לנו לעבוד עם תוכן טקסטואלי בצורה יעילה וקלה לקריאה. ניתן להשתמש בפונקציות נוספות כמו "hPutStrLn" כדי לכתוב לקובץ טקסט או "hGetLine" כדי לקרוא שורה אחת מהקובץ. ניתן גם לבצע פעול

@@ -1,60 +1,75 @@
 ---
-title:    "C: Suchen und Ersetzen von Text"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/searching-and-replacing-text.md"
+title:                "C: Suchen und Ersetzen von Text"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Wenn Sie jemals mit großen Textdateien oder umfangreichen Codeprojekten gearbeitet haben, wissen Sie, wie mühsam es sein kann, Text manuell zu suchen und zu ersetzen. Aber zum Glück gibt es in der C-Programmierung eine einfache Möglichkeit, dies automatisch zu erledigen. Durch das Schreiben von Code, der Text sucht und ersetzt, können Sie Zeit sparen und Fehler minimieren.
+Das Suchen und Ersetzen von Text ist eine grundlegende Funktion beim Programmieren, die dabei hilft, unerwünschte oder veraltete Informationen zu aktualisieren oder zu entfernen. Mit C-Programmierung können Sie effizient ganze Dateien oder Teilabschnitte nach bestimmten Wörtern oder Zeichenketten durchsuchen und diese durch neue Informationen ersetzen.
 
-## Wie geht das
+## Wie funktioniert es?
 
-Das Suchen und Ersetzen von Text in C ist einfach mit der Verwendung der Funktion `strstr()` zu erreichen. Diese Funktion sucht nach dem ersten Vorkommen eines bestimmten Teilstrings in einem größeren String und gibt einen Zeiger auf die erste Position des Teilstrings zurück. Die Syntax sieht wie folgt aus:
+Die Suche und Ersetzungsfunktion in C basiert auf der Verwendung von Zeichenkettenfunktionen wie "strstr", die eine bestimmte Zeichenkette in einer anderen suchen und die Position des ersten Vorkommens zurückgeben. Um eine Zeichenkette in einer Datei zu ersetzen, kann die Funktion "sprintf" verwendet werden, um die neue Zeichenkette zusammen mit der alten Zeichenkette in eine temporäre Variable zu speichern. Anschließend kann die Funktion "fputs" verwendet werden, um den Inhalt der temporären Variable in die eigentliche Datei zu schreiben.
 
-```C
-char *strstr(const char *haystack, const char *needle);
-```
-Um diese Funktion zu verwenden, müssen Sie zunächst den zu durchsuchenden Text und den zu suchenden Teilstring angeben. Der folgende Code zeigt, wie man `strstr()` in einem einfachen Programm verwenden kann:
+Lassen Sie uns anhand eines Beispiels genauer betrachten, wie das Suchen und Ersetzen von Text in C funktioniert:
 
 ```C
 #include <stdio.h>
-#include <string.h>
 
 int main()
 {
-    // Text, in dem gesucht wird
-    char text[] = "Informatik ist toll";
+    // Öffnen der Datei im Lesemodus
+    FILE *fp = fopen("test.txt", "r");
+    // Öffnen einer neuen Datei im Schreibmodus
+    FILE *new_fp = fopen("neue_datei.txt", "w");
+    // Suchen und Ersetzen aller Instanzen von "Hallo" mit "Guten Tag"
+    char search_string[] = "Hallo";
+    char replace_string[] = "Guten Tag";
+    // Buffer zum Speichern der temporären Zeichenkette
+    char temp[1000];
 
-    // Teilstring, der ersetzt werden soll
-    char needle[] = "toll";
-
-    // Text durchsuchen und Zeiger auf das erste Vorkommen des Teilstrings erhalten
-    char *position = strstr(text, needle);
-
-    // Teilstring durch neuen Text ersetzen
-    sprintf(position, "fantastisch");
-
-    // Ergebnis ausgeben
-    printf("%s", text);
-
+    while (!feof(fp))
+    {
+        // Lesen der Datei bis zum ersten Vorkommen von search_string
+        // und Speichern des Inhalts in temp
+        fscanf(fp, "%[^\n]s", temp);
+        // Suchen nach search_string in temp
+        char *position = strstr(temp, search_string);
+        // Wenn found, dann ersetzen mit replace_string und schreiben in neue_datei.txt
+        if (position != NULL)
+        {
+            // Verwenden von sprintf, um die neue Zeichenkette in temp zu speichern
+            sprintf(temp, "%s%s", replace_string, (position + strlen(search_string)));
+            // Schreiben von temp in neue_datei.txt
+            fputs(temp, new_fp);
+        }
+        else
+        {
+            // Ansonsten einfach den Inhalt von temp in neue_datei.txt schreiben
+            fputs(temp, new_fp);
+        }
+    }
+    // Schließen der Dateien
+    fclose(fp);
+    fclose(new_fp);
     return 0;
 }
 ```
-Dieses Programm durchsucht den Text "Informatik ist toll" nach dem Teilstring "toll" und ersetzt ihn dann durch "fantastisch". Das Ergebnis lautet "Informatik ist fantastisch".
 
-Natürlich ist dies nur ein einfaches Beispiel und es gibt viele weitere Möglichkeiten, die `strstr()` Funktion in Ihrem Code zu verwenden. Es kann auch hilfreich sein, die Funktion `strchr()` zu kennen, die nach dem ersten Vorkommen eines bestimmten Zeichens in einem String sucht.
+Mit diesem Beispiel können alle Instanzen von "Hallo" in der Datei "test.txt" durch "Guten Tag" ersetzt werden.
 
-## Tiefere Einblicke
+## Tiefergehende Informationen
 
-Für anspruchsvollere Such- und Ersatzoperationen kann es sinnvoll sein, in die Verwendung von regulären Ausdrücken einzutauchen. Reguläre Ausdrücke sind ein leistungsstarkes Werkzeug, das in vielen Programmiersprachen verwendet wird, um nach bestimmten Mustern in Texten zu suchen und sie zu ersetzen. Die C-Standardbibliothek bietet jedoch keine native Unterstützung für reguläre Ausdrücke, daher müssen Sie möglicherweise eine externe Bibliothek wie PCRE (Perl-kompatible reguläre Ausdrücke) nutzen.
+Beim Suchen und Ersetzen von Text in C ist es wichtig, einige wichtige Funktionen wie "feof", "fscanf", "fgets" und "fputs" zu verstehen. "feof" wird verwendet, um festzustellen, ob das Dateiende erreicht wurde, während "fscanf" und "fgets" zum Lesen von Zeichen, Wörtern oder Zeilen aus einer Datei verwendet werden. "fputs" hingegen wird zum Schreiben von Zeichenketten in eine Datei verwendet.
 
-Eine weitere Sache, die Ihren Code effektiver machen kann, ist die Verwendung von Befehlszeilenargumenten. Durch das Lesen von Benutzereingaben aus der Befehlszeile können Sie Ihr Such- und Ersatzprogramm flexibler gestalten und es dem Benutzer ermöglichen, verschiedene Optionen anzugeben, wie z.B. welchen Teilstring er sucht oder welcher Text ersetzt werden soll.
+Es ist auch wichtig zu beachten, dass Suchen und Ersetzen in C case-sensitive ist, was bedeutet, dass "Hallo" nicht mit "hallo" oder "HALLO" ersetzt wird. Für nicht case-sensitive Suchanfragen können die Funktionen "strcasestr" und "strncasecmp" verwendet werden.
 
 ## Siehe auch
 
-- [Die offizielle C-Dokumentation zur strstr() Funktion](https://en.cppreference.com/w/c/string/byte/strstr)
-- [Eine einfache Einführung in reguläre Ausdrücke in C](https://www.linuxjournal.com/article/1130)
-- [PCRE-Bibliothek](https://www.pcre.org/) für die Verwendung von regulären Ausdrücken in C
+- [Die offizielle Dokumentation von C](https://devdocs.io/c/)
+- [Tutorial zum Suchen und Ersetzen von Text in C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- [Weitere nützliche Zeichenkettenfunktionen in C](https://www.geeksforgeeks.org/string-handling-cc/)

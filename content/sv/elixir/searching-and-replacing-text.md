@@ -1,43 +1,44 @@
 ---
-title:    "Elixir: Söka och ersätta text"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/searching-and-replacing-text.md"
+title:                "Elixir: Sökning och ersättning av text"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-När du arbetar med Elixir-programmering, kan det ibland vara nödvändigt att söka och ersätta text i din kod. Detta kan vara till nytta om du vill snabba upp processen att uppdatera flera filer eller för att göra en snabb ändring i koden.
+Att söka och ersätta text är en grundläggande uppgift inom programmering. Det kan hjälpa till att effektivisera arbetsflödet och göra det lättare att hantera data på ett enhetligt sätt.
 
-## Så här gör du
+## Hur man gör det
 
-För att söka och ersätta text i Elixir, kan du använda funktionen "String.replace". Här är ett exempel på hur du kan söka och ersätta en sträng i en lista:
+För att söka och ersätta text i Elixir använder vi funktionen `String.replace/3`. Här är ett enkelt exempel på hur vi kan ersätta en sträng i en variabel:
 
-```Elixir
-
-lista = ["Hej", "världen", "hej"]
-
-lista
-|> Enum.map(fn(x) -> String.replace(x, "hej", "Hej då") end)
-
-# Output: ["Hej", "världen", "Hej då"]
-
+```elixir
+sträng = "Hej världen"
+String.replace(sträng, "världen", "värld")
 ```
 
-Som du kan se i exemplet ovan, använde vi funktionen "String.replace" för att söka efter "hej" och ersätta det med "Hej då". Denna funktion tar tre argument: den ursprungliga strängen, den sökta texten och den ersättningssträngen.
+Detta kommer att ersätta "världen" med "värld" i vår strängvariabel och returnera "Hej värld".
+
+Det finns också möjlighet att använda reguljära uttryck i sök- och ersättningsprocessen. Till exempel, om vi vill ersätta alla siffror i en sträng med stjärnor, kan vi använda följande kod:
+
+```elixir
+sträng = "Det finns 12345 stjärnor på himlen"
+Regex.replace(~r/\d+/, sträng, "*")
+```
+
+Detta kommer att returnera "Det finns ***** stjärnor på himlen".
 
 ## Djupdykning
 
-Förutom funktionen "String.replace" finns det också andra hjälpsamma funktioner för sökning och ersättning i Elixir. Till exempel kan du använda "String.replace_leading" respektive "String.replace_trailing" om du bara vill ersätta text i början eller slutet av en sträng.
+Förutom de enkla fallen som vi har sett ovan, finns det många andra sätt att söka och ersätta text i Elixir. Vi kan till exempel använda oss av options för att specificera hur vi vill att sökningen ska utföras, såsom att ignorera skiftlägeskänslighet eller att endast göra ersättningar på vissa positioner.
 
-Det finns också möjlighet att använda reguljära uttryck (regex) för att söka efter och ersätta text. Du kan göra detta genom att använda "Regex.replace". Det är bra att lära sig använda regex i Elixir, eftersom det är en kraftfull funktion för sökning och ersättning.
+Vi kan också använda funktionen `String.replace_all/3` för att göra flera ersättningar samtidigt i en sträng. Denna funktion tar emot en lista med tuple av formen `{"söksträng", "ersättning"}` och applicerar alla ersättningar i en enda sökning.
 
 ## Se även
 
-Om du vill ha mer information om sökning och ersättning i Elixir, kan du kolla in dessa länkar:
-
-- Officiell Elixir dokumentation för String-modulet: https://hexdocs.pm/elixir/String.html
-- Bra tutorial om användning av reguljära uttryck (regex) i Elixir: https://adoptingerlang.org/docs/elixir-guide/understanding-regular-expressions/
-
-Förhoppningsvis har denna guide gett dig en grundläggande förståelse för hur du kan söka och ersätta text i Elixir. Lycka till med din kodning!
+- [Elixir dokumentation: String.replace/3](https://hexdocs.pm/elixir/String.html#replace/3)
+- [Elixir dokumentation: String.replace_all/3](https://hexdocs.pm/elixir/String.html#replace_all/3)
+- [Regular expressions in Elixir](https://www.amberbit.com/blog/2017/10/16/regular-expressions-in-elixir/)

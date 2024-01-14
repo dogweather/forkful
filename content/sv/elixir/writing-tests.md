@@ -1,49 +1,40 @@
 ---
-title:    "Elixir: Skriva tester"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/writing-tests.md"
+title:                "Elixir: Skriva tester"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva test är en viktig del av utvecklingsprocessen i Elixir programmering. Det hjälper till att säkerställa kodens kvalitet och funktionalitet, samt ger en möjlighet att snabbt hitta eventuella fel eller buggar.
+Att skriva tester kan verka tidskrävande och överflödigt för många programmerare, men det är faktiskt en viktig del av utvecklingsprocessen. Tester hjälper till att hitta och förebygga buggar, vilket sparar tid och möjligtvis frustration längre fram i utvecklingen. Det säkerställer även att koden fungerar som den ska och ger en ökad tilltro till slutprodukten.
 
 ## Hur man skriver tester i Elixir
 
-Att skriva tester i Elixir är enkelt och smidigt, tack vare Elixirs inbyggda testramverk ExUnit. För att skriva ett enkelt test, definiera en funktion som heter "test", lägg sedan till ens  kod som ska testas inom "do"-blocket.
+För att skriva tester i Elixir använder man sig av ett inbyggt ramverk vid namn ExUnit. Detta tillhandahåller en mängd olika funktioner och assertioner för att testa olika aspekter av koden. Ett enkelt testfall skulle kunna se ut såhär:
 
-```Elixir
-defmodule Math do
-    def sum(a, b) do
-        a + b
-    end
+```elixir
+defmodule MyModuleTest do
+  use ExUnit.Case
+
+  test "addition test" do
+    result = MyModule.add(2, 3)
+    assert result == 5
+  end
 end
 
-defmodule MathTest do
-    use ExUnit.Case
-
-    test "should calculate the sum of two numbers" do
-        assert Math.sum(2, 3) == 5
-    end
-
-    test "should return the correct result for negative numbers" do
-        assert Math.sum(-5, 3) == -2
-    end
-end
 ```
 
-Kör sedan testerna genom att skriva "mix test" i terminalen. Om alla tester passerar, kommer du se grön text och om något test misslyckas, kommer du se röd text tillsammans med specifik information om felet.
+I detta exempel har vi skapat ett testfall med namnet "addition test" som kallar på en funktion i vårt modul "MyModule" och förväntar oss att få ett resultat på 5. Om testet går igenom, så betyder det att vår funktion fungerar som den ska. Om det däremot skulle returnera ett annat resultat, så skulle testet misslyckas och vi skulle behöva gå tillbaka och titta på vår kod för att identifiera problemet.
 
-## Djupdykning
+## Djupdykning i att skriva tester
 
-För att skriva mer avancerade tester, kan du använda dig av olika funktioner som "asserts" och "refutes" för att kontrollera specifika värden eller beteenden hos din kod. Du kan också använda "setup" och "teardown" funktioner för att förbereda och avsluta tester, samt använda dig av "tags" för att gruppera och köra specifika tester.
+När man skriver tester är det viktigt att täcka så många fall som möjligt för att säkerställa att koden fungerar som den ska. Det är även bra att inkludera edge-cases, alltså situationer som kan vara ovanliga men ändå måste tas hänsyn till. Det finns även möjlighet att skriva tester för asynkrona funktioner, använda mocks och stubs för att simulera externa anrop, och mycket mer. Det finns en mängd olika resurser tillgängliga för att hjälpa dig att blir en expert på testning i Elixir.
 
-Det finns också många olika bibliotek och verktyg tillgängliga för att hjälpa till med testning i Elixir, som till exempel "mocks" för att simulera externa beroenden och "property-based testing" för att testa med slumpmässiga värden.
+## Se även
 
-## Se också
-
-- [ExUnit Documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Elixir School - Testing](https://elixirschool.com/sv/lessons/basics/testing/)
-- [The Power of Elixir Testing](https://engineering.shopify.com/blogs/engineering/deep-dive-into-testing-elixir)
+- Officiell ExUnit dokumentation (https://hexdocs.pm/ex_unit/)
+- Elixir Skolan (https://elixirschool.com/sv/lessons/basics/testing/)
+- Test Driven Elixir (https://pragprog.com/book/lmelixir/test-driven-elixir)

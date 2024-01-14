@@ -1,42 +1,60 @@
 ---
-title:    "Arduino: Sammansättning av strängar"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/concatenating-strings.md"
+title:                "Arduino: Sammanslagning av strängar"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att sammanfoga eller "concatenate" strängar är en vanlig operation inom programmering för att kombinera flera enskilda ord eller tecken till en enda sträng. Detta kan vara användbart för att skapa dynamiska meddelanden eller för att skapa variabler med olika värden.
 
-Concatenating (ihopsättning) av strängar är ett viktigt koncept inom programmering som gör det möjligt att skapa dynamiska och anpassade meddelanden eller instruktioner. Genom att lägga ihop flera strängar kan du skapa en ny, längre sträng som innehåller information från flera olika källor. Detta kan vara till stor hjälp när du arbetar med sensorer, LCD-skärmar eller annan hårdvara som kräver specifika meddelanden.
-
-## Hur man gör
-
-För att concatenate strängar i Arduino, behöver du använda den inbyggda funktionen `String()`. Detta gör det möjligt att skapa en ny sträng genom att kombinera flera andra strängar. Låt oss anta att vi vill skapa ett meddelande som visar temperaturen från en sensor. Vi börjar med att definiera en variabel för vår temperatur som en `float`:
+## Hur man gör:
+För att sammanslå strängar i Arduino krävs det att man använder en speciell funktion som kallas för "concat()". Denna funktion kan användas tillsammans med olika datatyper som int, float och char.
 
 ```Arduino
-float temp = 25.5;
+//Exempel på hur man sammanslår två strängar
+String str1 = "Hej ";
+String str2 = "Arduino";
+
+String result = str1.concat(str2);
+
+Serial.println(result); // Resultatet blir "Hej Arduino"
 ```
-Vi kan sedan använda `String()` för att skapa en ny sträng som kombinerar texten "Temperaturen är" med vår variabel `temp`, som visas nedan:
+
+Det är även möjligt att sammanslå flera strängar samtidigt genom att använda funktionen multiple times:
 
 ```Arduino
-String meddelande = "Temperaturen är " + String(temp);
-```
-Resultatet blir en ny sträng, `meddelande`, som ser ut så här:
+//Exempel på hur man sammanslår flera strängar
+String str1 = "Dessa ";
+String str2 = "är ";
+String str3 = "många ";
+String str4 = "strängar";
 
+String result = str1.concat(str2).concat(str3).concat(str4);
+
+Serial.println(result); // Resultatet blir "Dessa är många strängar"
 ```
-Temperaturen är 25.5
+
+För att sammanslå en sträng med en numerisk variabel kan man använda sig av funktionen "concat(String string, int var)" där första argumentet är den sträng som man vill ha concatenaten på och det andra argumentet är den numeriska variabeln.
+
+```Arduino
+//Exempel på hur man sammanslår en sträng med en numerisk variabel
+String str1 = "Min ålder är: ";
+int age = 27;
+
+String result = str1.concat(age);
+
+Serial.println(result); // Resultatet blir "Min ålder är: 27"
 ```
-Notera att vi använde funktionen `String()` för att konvertera vår `float` till en sträng innan vi lade ihop dem.
 
 ## Djupdykning
+Vid skapandet av strängar i Arduino är det viktigt att komma ihåg att det påverkar minnet på mikrokontrollern. Ju fler strängar som sammanslogs, desto mer minne kommer det att ta upp. Det är även viktigt att hålla koll på antalet tecken i de sammanslagna strängarna, eftersom Arduino har en begränsning på 64 tecken för varje sträng.
 
-En annan viktig aspekt av ihopläggning av strängar är att det kan vara särskilt användbart när man arbetar med flerspråkiga projekt. Genom att lägga ihop olika strängar baserat på språk kan du enkelt skapa dynamiska meddelanden på olika språk baserat på dina behov.
-
-Det är också viktigt att komma ihåg att när du arbetar med större och mer komplicerade projekt, kan det vara mer effektivt att använda "char arrays" istället för `String`. Detta kan minimera minnesanvändningen och göra din kod mer lättläst och snabbare.
+En annan viktig faktor är att hantera specialtecken som till exempel "åäö" inom Arduino. För att undvika problem med dessa tecken är det bäst att använda sig av Unicode-kompatibla teckenkodningar som "UTF-8".
 
 ## Se även
-
-- [Official Arduino documentation on String](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [A tutorial on concatenating strings in Arduino](https://www.tutorialspoint.com/arduino/arduino_strings.htm)
-- [A video tutorial on using `String()`](https://www.youtube.com/watch?v=gympLD6iOXo)
+- [Concatenate Strings in Arduino - GeeksforGeeks](https://www.geeksforgeeks.org/concatenate-strings-in-arduino/)
+- [Arduino Strings - Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Arduino Concat() - Arduino Forum](https://forum.arduino.cc/index.php?topic=39642.0)

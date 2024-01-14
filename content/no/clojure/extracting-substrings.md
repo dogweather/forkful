@@ -1,63 +1,44 @@
 ---
-title:    "Clojure: Utvinne understrenger"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/extracting-substrings.md"
+title:                "Clojure: Ekstrahering av delstrenger"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når du jobber med tekstbehandling, kan det være nyttig å kunne hente ut deler av en streng. Dette kalles å ekstrahere substringer, og det kan være en nyttig funksjon å ha i verktøykassen din når du programmerer i Clojure. I denne bloggposten vil jeg vise deg hvordan du kan ekstrahere substringer enkelt og effektivt.
+Når du jobber med tekstbehandling i Clojure, kan du ofte ha behov for å hente ut deler av en streng (substring). Dette kan være nyttig for å manipulere data eller for å få en bedre forståelse av teksten. I denne bloggposten vil vi dykke dypere ned i hvordan vi kan ekstrahere substrings i Clojure, og hvorfor det kan være nyttig.
 
 ## Hvordan
 
-For å ekstrahere en substring i Clojure, bruker vi funksjonen `subs`, som tar tre argumenter: strengen du vil ekstrahere fra, startindeksen til substringen og eventuelt sluttpindeksen (eksklusiv). Her er et enkelt eksempel:
+Det første vi må gjøre er å importere funksjonen "subs" fra "clojure.string" biblioteket. Deretter kan vi bruke "subs" til å hente ut en delstreng basert på en plassering og lengde:
 
 ```Clojure
-(def s "Hei, dette er en tekststreng!")
-(subs s 4 9)
+(require '[clojure.string :as str])
+
+(def tekst "Denne teksten er ment for å demonstrere substring funksjonen.")
+
+(str/subs tekst 6 13) ; dette vil returnere "teksten"
 ```
 
-Dette vil gi følgende output:
-
-```
-"dette"
-```
-
-Vi kan også bruke negative indekser, som gjør at vi teller bakfra. For eksempel vil `subs s -5` gi oss de siste fem tegnene i strengen. Vi kan også bruke `subs` til å ekstrahere fra en gitt indeks til slutten av strengen ved å utelate sluttpindeksen:
+Vi kan også bruke "subs" til å hente ut en delstreng basert på et bestemt mønster. For eksempel, hvis vi ønsker å hente ut alle ord som starter med bokstaven "d" fra en tekst, kan vi gjøre følgende:
 
 ```Clojure
-(subs s 7)
+(def tekst "Ord som starter med bokstaven d er for eksempel dette og dette.")
+
+(str/subs tekst #"(d\w+)") ; dette vil returnere "dette og dette"
 ```
 
-Dette vil gi følgende output:
+## Dypdykk
 
-```
-"dette er en tekststreng!"
-```
+Nå når vi har sett på noen eksempler på hvordan vi kan bruke "subs" funksjonen, la oss dykke dypere inn i hva som skjer under overflaten. Den første parameteren som vi gir til "subs" er strengen vi ønsker å hente ut delstrenger fra. Den andre parameteren er plasseringen hvor vi ønsker å starte (den første bokstaven vil være 0). Den tredje parameteren er lengden på delstrengen vi ønsker å hente ut.
 
-Vi kan også bruke `subs` med andre datatyper enn strenger. For eksempel kan vi ekstrahere fra en liste ved å konvertere den til en streng først:
-
-```Clojure
-(def lst [1 2 3 4 5])
-(subs (str lst) 1 4)
-```
-
-Dette vil gi følgende output:
-
-```
-"234"
-```
-
-Hvis du vil ha en mer nøyaktig ekstrahering, kan du bruke funksjonen `subseq`, som tar de samme argumentene som `subs`, men returnerer en sekvens i stedet for en streng. Dette kan være nyttig hvis du vil jobbe med substringer på en mer fleksibel måte.
-
-## Deep Dive
-
-Når du bruker `subs` eller `subseq`, er det viktig å være klar over at disse funksjonene tar inn indekser i Unicode-format, ikke enkelttegn. Dette betyr at hvis du har en flerspråklig streng, kan enkelte tegn telles som mer enn én indeks, og dette kan påvirke resultatet ditt. Det er også viktig å være nøye med om du bruker inclusive eller exclusive indekser, for å få ønsket resultat.
+Hvis vi bruker et regex-mønster som andre parameter, vil "subs" returnere alle matchende delstrenger. Merk at "subs" funksjonen er null-basert, som betyr at første match vil være på indeks 0.
 
 ## Se Også
 
-- [ClojureDocs - subs](https://clojuredocs.org/clojure.core/subs)
-- [ClojureDocs - subseq](https://clojuredocs.org/clojure.core/subseq)
-- [Unicode character encoding](https://www.unicode.org/versions/Unicode11.0.0/)
+- [Clojure Documentation - String Functions](https://clojuredocs.org/clojure.string/subs)
+- [Clojure Cookbook - Extracting Substrings](https://clojure-cookbook.github.io/string/extracting-substrings.html)
+- [Regular Expressions in Clojure](https://luminusweb.com/docs/clojure/regular-expressions.html)

@@ -1,35 +1,67 @@
 ---
-title:    "PHP: Cambiando a mayúsculas una cadena"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/php/capitalizing-a-string.md"
+title:                "PHP: Capitalizar un string"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-Es común que en la programación, ya sea en PHP u otros lenguajes, nos enfrentemos a la necesidad de manipular cadenas de texto. Una de las tareas más comunes es capitalizar una cadena, es decir, convertir todas las primeras letras de cada palabra en mayúsculas. En este artículo exploraremos cómo hacer esto en PHP y por qué es útil.
+
+¿Alguna vez has necesitado convertir una cadena en mayúsculas para mejorar la legibilidad de tu código? Saber cómo capitalizar una cadena es una habilidad esencial en la programación de PHP y en este artículo, aprenderás cómo hacerlo de manera sencilla y eficiente.
 
 ## Cómo hacerlo
-En PHP, podemos capitalizar una cadena usando la función `ucwords()`. Esta función recibe como argumento una cadena y devuelve esa misma cadena con todas las primeras letras de cada palabra en mayúsculas. Veamos un ejemplo:
+
+Para capitalizar una cadena en PHP, se utiliza la función `strtoupper()` que convierte todos los caracteres de una cadena a mayúsculas. Veamos un ejemplo de cómo se implementaría esto en código:
 
 ```PHP
-$cadena = "¡hola mundo!";
-echo ucwords($cadena);
+$cadena = "hola mundo";
+echo strtoupper($cadena);
 ```
 
-El resultado de este código sería: ¡Hola Mundo! Como se puede ver, la primera letra de cada palabra ha sido convertida en mayúscula. Además, `ucwords()` también respeta los caracteres acentuados y caracteres especiales.
+La salida de este código sería:
 
-## Deep Dive
-Detrás de la función `ucwords()`, se encuentra una función más poderosa llamada `ucfirst()`. Esta función también capitaliza una cadena, pero solo convierte la primera letra en mayúscula. Esto puede ser útil si solo queremos convertir la primera letra de una palabra en mayúscula. Veamos un ejemplo:
+```
+HOLA MUNDO
+```
+
+Sin embargo, si solo queremos capitalizar la primera letra de la cadena y mantener el resto en minúsculas, podemos utilizar la función `ucfirst()` de la siguiente manera:
 
 ```PHP
-$cadena = "quién soy";
+$cadena = "hola mundo";
 echo ucfirst($cadena);
 ```
 
-La salida de este código sería: Quién soy. Como se puede observar, solo la primera letra de la primera palabra ha sido capitalizada.
+La salida sería:
 
-## Ver También
-* [Documentación oficial de PHP: strtoupper()](https://www.php.net/manual/es/function.ucwords.php)
-* [Ejemplos de uso de ucwords()](https://www.php.net/manual/es/function.ucwords.php#104191)
-* [Conversión de cadenas con caracteres especiales en PHP](https://www.php.net/manual/es/ref.mbstring.php)
+```
+Hola mundo
+```
+
+También es posible capitalizar cada palabra en una cadena utilizando la función `ucwords()`, que convierte la primera letra de cada palabra a mayúscula. Aquí hay un ejemplo:
+
+```PHP
+$cadena = "hola mundo";
+echo ucwords($cadena);
+```
+
+La salida sería:
+
+```
+Hola Mundo
+```
+
+## Profundizando
+
+Ahora que sabemos cómo capitalizar una cadena en PHP, es importante entender cómo esta función no solo cambia la apariencia de nuestro código, sino que también puede tener un impacto en la lógica del mismo. Por ejemplo, si tenemos una cadena que contiene nombres de países y queremos compararla con otra cadena que también contiene nombres de países pero con diferentes capitalizaciones, el resultado puede ser inesperado.
+
+Además, es importante tener en cuenta que estas funciones solo afectan a los caracteres que están reconocidos por el conjunto de caracteres ASCII. Si tienes una cadena que contiene caracteres especiales o letras acentuadas, puede que no se capitalicen correctamente. En estos casos, es necesario utilizar la función `mb_strtoupper()` o `mb_ucfirst()` que permiten trabajar con diferentes conjuntos de caracteres.
+
+## Ver también
+
+- Documentación oficial de `strtoupper()`: https://www.php.net/manual/es/function.strtoupper.php
+- Documentación oficial de `ucfirst()`: https://www.php.net/manual/es/function.ucfirst.php
+- Documentación oficial de `ucwords()`: https://www.php.net/manual/es/function.ucwords.php
+- Documentación oficial de `mb_strtoupper()`: https://www.php.net/manual/es/function.mb-strtoupper.php
+- Documentación oficial de `mb_ucfirst()`: https://www.php.net/manual/es/function.mb-ucfirst.php

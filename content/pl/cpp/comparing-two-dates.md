@@ -1,58 +1,88 @@
 ---
-title:    "C++: Porównywanie dwóch dat"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/comparing-two-dates.md"
+title:                "C++: Porównywanie dwóch dat"
+programming_language: "C++"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-### Dlaczego
+## Dlaczego
 
-W dzisiejszych czasach programowanie stało się nieodłączną częścią naszego życia. Musimy pisać kody na co dzień, aby rozwiązywać różne problemy i tworzyć innowacyjne rozwiązania. Jedną z podstawowych umiejętności w programowaniu jest porównywanie różnych wartości, w tym także dat. W tym artykule dowiecie się, dlaczego jest to ważne oraz jak wykonać porównywanie dwóch dat w języku C++.
+Porównywanie dwóch dat jest ważnym aspektem wielu programów i aplikacji. W C++, porównywanie dat może być szczególnie przydatne, na przykład w celu sortowania lub filtrowania danych. W tym blogu wyjaśnimy, jak porównywać daty za pomocą języka C++ i jak to zrobić prawidłowo.
 
-### Jak to zrobić
+## Jak to zrobić
 
-Porównywanie dwóch dat w języku C++ może wydawać się trudne na początku, ale jest to w rzeczywistości dość proste. Do porównania dat będziemy używać struktury `tm` oraz funkcji `difftime()`. Poniżej przedstawione jest przykładowe porównanie dwóch dat i jego wynik w postaci kodu w języku C++:
+Porównywanie dat w języku C++ może być wyraźne i proste, jeśli zastosujemy odpowiednie metody. Przedstawimy teraz przykładowy kod i wynik, aby pokazać, jak porównywać daty w C++:
 
-```
+```C++
 #include <iostream>
 #include <ctime>
-
-using namespace std;
-
-int main() {
-  struct tm firstDate, secondDate;
-  double difference;
-
-  firstDate.tm_year = 2020 - 1900;
-  firstDate.tm_mon = 6 - 1;
-  firstDate.tm_mday = 8;
-
-  secondDate.tm_year = 2020 - 1900;
-  secondDate.tm_mon = 8 - 1;
-  secondDate.tm_mday = 20;
-
-  difference = difftime(mktime(&secondDate), mktime(&firstDate));
-
-  if (difference > 0) {
-    cout << "Druga data jest późniejsza od pierwszej.";
-  } else if (difference < 0) {
-    cout << "Pierwsza data jest późniejsza od drugiej.";
-  } else {
-    cout << "Daty są identyczne.";
-  }
-
-  return 0;
+ 
+int main()
+{
+    // tworzenie dwóch dat
+    std::tm d1 = { 0, 0, 0, //sekundy, minuty, godziny
+                   1,  // dzień
+                   0,  // miesiąc
+                   118 }; // rok (od 1900 roku)
+    std::tm d2 = { 0, 0, 0, //sekundy, minuty, godziny
+                   1,  // dzień
+                   0,  // miesiąc
+                   120 }; // rok (od 1900 roku)
+ 
+    // konwertowanie dat do typu time_t
+    std::time_t t1 = std::mktime(&d1);
+    std::time_t t2 = std::mktime(&d2);
+ 
+    // porównywanie dat i wyświetlanie wyniku
+    if (t1 < t2)
+        std::cout << "Data 1 jest wcześniejsza niż Data 2";
+    else if (t1 > t2)
+        std::cout << "Data 2 jest wcześniejsza niż Data 1";
+    else
+        std::cout << "Obie daty są takie same";
+ 
+    return 0;
 }
 ```
 
-Przykład ten wykorzystuje funkcję `mktime()` do konwersji daty z struktury `tm` do wartości liczbowej, a następnie funkcję `difftime()` do obliczenia różnicy pomiędzy datami. Następnie używamy instrukcji warunkowych `if...else` do porównania wyniku i wyświetlenia odpowiedniej informacji.
+```
+Output:
+Data 1 jest wcześniejsza niż Data 2
+```
 
-### Rzeczowa analiza
+W powyższym przykładzie używamy funkcji `mktime`, aby skonwertować daty do typu `time_t`, który może być porównywany przy użyciu operatorów logicznych. Należy również pamiętać, że miesiące są indeksowane od 0, więc styczeń ma wartość 0, luty 1 itd.
 
-Mimo że porównanie dwóch dat jest pozornie prostym zadaniem, może ono stwarzać pewne problemy i wymagać głębszej analizy. W języku C++, daty są przechowywane jako wartości liczbowe, które są konwertowane przy użyciu różnych formatów. Dlatego ważne jest, aby upewnić się, że porównujemy daty w tym samym formacie i uwzględniamy różne ustawienia regionalne. Ważne jest również, aby uwzględnić przestępne lata i różnice w długości miesięcy.
+## Glebokie przedmiot
 
-### Zobacz także
+W języku C++ można również użyć klasy `std::chrono::system_clock` do porównywania dat. Klasa ta zawiera wiele przydatnych funkcji, takich jak `now()`, która zwraca aktualny czas systemowy. Przykładowy kod wykorzystujący tę klasę może wyglądać następująco:
 
-- [Dokumentacja języka C++ na temat funkcji difftime()](https://en.cppreference.com/w/cpp/chrono/c/difftime)
-- [Porównywanie dat w języku C++ - poradnik na stronie programiz.com](https://www.programiz.com/cpp-programming/library-function/ctime/difftime)
+```C++
+#include <iostream>
+#include <chrono>
+ 
+int main()
+{
+    // tworzenie dwóch punktów w czasie
+    std::chrono::system_clock::time_point tp1 = std::chrono::system_clock::now();
+    std::chrono::system_clock::time_point tp2 = tp1 + std::chrono::minutes(5);
+ 
+    // porównywanie czasu
+    if (tp1 < tp2)
+        std::cout << "Czas 1 jest wcześniejszy niż Czas 2";
+    else if (tp1 > tp2)
+        std::cout << "Czas 2 jest wcześniejszy niż Czas 1";
+    else
+        std::cout << "Oba czasy są takie same";
+ 
+    return 0;
+}
+```
+
+W powyższym przykładzie używamy funkcji `now()` do uzyskania aktualnego czasu systemowego, a następnie używamy operatora `+` do dodania 5 minut do czasu. Należy również pamiętać, że porównywanie punktów w czasie odbywa się na podstawie liczby sekund od początku epoki (1 stycznia 1970 roku).
+
+## Zobacz również
+
+- [Dokumentacja C++ dla funkcji mktime](https://www.cplusplus.com/reference/ctime/mktime/)
+- [D

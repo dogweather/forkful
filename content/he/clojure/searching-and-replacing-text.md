@@ -1,30 +1,32 @@
 ---
-title:    "Clojure: חיפוש והחלפת טקסטים."
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/clojure/searching-and-replacing-text.md"
+title:                "Clojure: חיפוש והחלפת טקסטים"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
-מעולם לא חפשתם בקוד טקסט והחלפתם תווים? תהיו מוכנים למצוא דרך פשוטה ויעילה לעשות זאת במערכת Clojure. כתבו קוד פשוט ותוכלו להחליף תווים בקוד בכדי ליצור קוד חדש ונקי. 
+
+תחת כל פרוייקט תכנות ייתכנו מצבים שבהם עלינו לחלות רצף של טקסט ולהחליפו עם מחרוזת אחרת. לדוגמה, ייתכן שנוסיף או נחליף מילים במסמך או בקובץ קוד. השימוש במחרוזות יכול לעזור לנו להחליף את הטקסט בצורה יעילה ומהירה.
 
 ## איך לעשות זאת
-מודים כל הטקסט עכשיו וקודם כל למצוא את הקוד הרלוונטי שאתם רוצים לשנות. לדוגמא האם אתם רוצים להחליף את התו "a" ל"b"? השתמשו ב-fn-replace "a" "b" ולאחר מכן רצו את התוצאות בגלילת הקוד של הקוד החדש תהיה לכם תמיד פונקציה של זוג ישומים של הפרמטרים האחד לזוג השני בבת אחת. הקוד אמור להראות כמו זה:
+
+לכל מי שמעוניין לחלות טקסט ולהחליפו במחרוזת אחרת בשפת Clojure, יהיה עליו להשתמש בפונקציית `replace`, המקבלת שני ארגומנטים - הראשון הוא הטקסט המקורי והשני הוא המחרוזת המדויקת. למשל:
 
 ```Clojure
-(fn-replace "a" "b" {"Hello" "a"}) ; => {"Hello" "b"}
-(fn-replace "a" "b" {"Cat" "a" "Dog" "a"}) ; => {"Cat" "b" "Dog" "b"}
+(replace "שלום עולם!" "עולם" "אדון")
 ```
 
-## לצלול בעומק
-כדי לצלול בעומק יותר בנושא של חיפוש והחלפת טקסט במערכת Clojure, אפשר לשים לב לפונקציה regex-replace. בניגוד ל-fn-replace, היא מאפשרת לנו להשתמש בביטויים רגולריים לזיהוי והחלפת טקסט. לדוגמא, אם נרצה למצוא ולהחליף את כל המספרים הנמצאים בטקסט עם מבנה תקין, נוכל לעשות זאת עם regex-replace באמצעות ביטוי רגולרי. הקוד יתעדכן לכך:
+תוצאה: "שלום אדון!"
 
-```Clojure
-(regex-replace #"\d{3}-\d{3}-\d{4}" "XXX-XXX-XXXX" "My phone number is 123-456-7890") ; => "My phone number is XXX-XXX-XXXX"
-```
+## טיול עמוק
 
-כמו כן, ניתן להשתמש בפונקציה regex-replace בכדי לחלוף תווים בטקסט תוך שמירה על האותיות הראשונות. הקוד יראה כך:
+ניתן לנסות גם להשתמש בפונקציות נוספות כמו `replace-first` ו- `replace-regexp` לשנים הנוספית ולחילופין של טקסט לפי תבנית מסוימת. בנוסף, ישנם כמה מודלים לשפת Clojure שמציעים פתרונות בכדי לבצע החלפת טקסט בצורה יעילה יותר.
 
-```Clojure
-(regex-replace #"^
+## ראה גם
+
+- [פונקצית replace](https://dzone.com/articles/clojure-string-function-replace)
+- [מדריך מקיף על החלפת טקסט בשפת Clojure](https://www.baeldung.com/clojure-replace)
+- [מידע על פונקציות נוספות כמו `replace-first` ו- `replace-regexp`](https://tech.noredink.com/post/151494568018/string-replace-in-clojure)

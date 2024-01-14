@@ -1,46 +1,50 @@
 ---
-title:    "Clojure: Att hitta längden på en sträng."
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/finding-the-length-of-a-string.md"
+title:                "Clojure: Att hitta längden på en sträng"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att hitta längden på en sträng är ett grundläggande koncept inom programmering, oavsett vilket språk man använder. Det är en viktig färdighet att behärska eftersom strängar är en central del av datahanteringen inom de flesta program.
+Att hitta längden på en sträng är en grundläggande programmeringsutmaning som är användbar i många olika situationer, oavsett vilket programmeringsspråk man använder. I Clojure är det också ett bra sätt att introducera och öva med sekvenser, vilket är en viktig del av språket.
 
-# Hur man gör
+## Hur man gör
 
-För att hitta längden på en sträng i Clojure, kan man använda funktionen "count". Här är ett enkelt exempel:
-
-```Clojure
-(count "Hej!")
-```
-
-Detta kommer att returnera värdet 4, eftersom strängen "Hej!" innehåller fyra tecken. Här är ett annat exempel där vi använder "count" för att räkna antalet tecken i en variabel "namn":
+För att hitta längden på en sträng i Clojure använder vi funktionen "count". Det här är en inbyggd funktion som tar en sekvens som argument och returnerar antalet element i sekvensen. Eftersom en sträng är en samling av tecken, så kommer "count" att räkna antalet tecken i strängen.
 
 ```Clojure
-(def namn "Jenny")
-(count namn)
+(count "Hej, världen!") ; => 13
 ```
 
-Detta kommer att returnera värdet 5, eftersom "Jenny" innehåller fem bokstäver.
-
-Det är också viktigt att notera att "count" också fungerar på andra typer av datastrukturer, som vektorer och listor. Här är ett exempel där vi använder "count" för att räkna antalet element i en vektor:
+Vi kan också använda "count" på en vektor, en lista eller en annan typ av sekvens:
 
 ```Clojure
-(def vektor [1 2 3 4])
-(count vektor)
+(count ["a" "b" "c" "d"]) ; => 4
+(count (range 10)) ; => 10
 ```
 
-Detta kommer att returnera värdet 4, eftersom vektorn innehåller fyra element.
+## Fördjupning
 
-# Fördjupning
+Bortsett från att bara använda "count" för att hitta längden på en sträng, så kan vi också använda funktionen "count" inuti andra funktioner. Till exempel, om vi har en vektor av strängar och vi bara vill ha de strängar som är längre än 10 tecken, så kan vi använda "count" tillsammans med "filter" funktionen:
 
-För de som är intresserade av att förstå hur funktionen "count" fungerar bakom kulisserna, så är den implementerad som en "seq"-funktion som först omvandlar datan till en sekvens, och sedan räknar antalet element i sekvensen. Detta innebär även att "count" fungerar för alla datatyper som har en sekvens-implementation, inte bara för strängar, vektorer och listor.
+```Clojure
+(def strängar ["Clojure" "är" "ett" "fantastiskt" "programmeringsspråk"])
 
-# Se även
+(filter #(> (count %) 10) strängar) ; => ("programmeringsspråk")
+```
 
-- Funktionen "count" i Clojure dokumentationen: https://clojuredocs.org/clojure.core/count
-- En jämförelse av hur "count" fungerar i olika programmeringsspråk: https://en.wikibooks.org/wiki/Clojure_Programming/Examples/API_Examples/Counting_elements_in_a_sequence
+Vi kan också använda "count" för att räkna antalet tecken i en sträng utan att behöva använda funktionen "count". Till exempel:
+
+```Clojure
+(def sträng "Ikväll ska jag äta middag med mina vänner.")
+
+(count sträng) ; => 45
+```
+
+## Se även
+
+- [Clojure Dokumentation: count](https://clojuredocs.org/clojure.core/count)
+- [Clojure Dokumentation: filter](https://clojuredocs.org/clojure.core/filter)

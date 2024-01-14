@@ -1,48 +1,69 @@
 ---
-title:    "Arduino: Pobieranie bieżącej daty"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/getting-the-current-date.md"
+title:                "Arduino: Pobieranie bieżącej daty"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Często informacja o aktualnej dacie jest niezbędna do wykonywania projektów związanych z elektroniką. Na przykład może to być potrzebne do uruchomienia alarmu o określonej godzinie lub wyświetlania aktualnej daty na ekranie. W tym artykule omówimy jak w prosty sposób uzyskać aktualną datę na Arduino.
+Jesteś ciekawy, jak program może pobrać aktualną datę? To jeden ze sposobów, aby dowiedzieć się, jak świat elektroniki może być zintegrowany z czasem rzeczywistym.
 
 ## Jak to zrobić
 
-```Arduino
-#include <RTClib.h>
+Wykorzystaj funkcję "tńow" do pobrania aktualnej daty. Oto przykładowy kod dla Arduino Uno:
 
-RTC_DS1307 rtc;
-DateTime now;
+```arduino
+#include <Time.h>
 
 void setup() {
   Serial.begin(9600);
-  rtc.begin();
-
-  // Uzyskanie aktualnej daty i godziny z RTC
-  now = rtc.now();
-
-  // Wyswietlenie daty w formacie dd/mm/yyyy
-  Serial.println(String(now.day()) + "/" + String(now.month()) + "/" + String(now.year()));
-
-  // Wyswietlenie godziny w formacie hh:mm:ss
-  Serial.println(String(now.hour()) + ":" + String(now.minute()) + ":" + String(now.second()));
+  setTime(12, 30, 0, 1, 1, 2018); // ustawia czas na godzinę 12:30, dzień 1, stycznia 2018 r.
 }
 
 void loop() {
+  // pobiera aktualną datę i czas
+  int year = year();
+  int month = month();
+  int day = day();
+  int hour = hour();
+  int minute = minute();
+  int second = second();
+
+  // wyświetla aktualną datę i czas w terminalu
+  Serial.print("Aktualna data i czas: ");
+  Serial.print(year);
+  Serial.print("/");
+  Serial.print(month);
+  Serial.print("/");
+  Serial.print(day);
+  Serial.print(" - ");
+  Serial.print(hour);
+  Serial.print(":");
+  Serial.print(minute);
+  Serial.print(":");
+  Serial.println(second);
+
+  // opóźnienie jednej sekundy
+  delay(1000);
 }
 ```
 
-Przede wszystkim musimy zainstalować bibliotekę RTClib, która pozwala na obsługę modułu RTC (Real Time Clock). Następnie, korzystając z funkcji `.begin()`, inicjalizujemy moduł RTC. W celu uzyskania aktualnej daty i godziny, używamy funkcji `.now()`, która zwraca obiekt klasy `DateTime`. Następnie możemy wyświetlić aktualną datę i godzinę w formacie, który wybierzemy. W tym przykładzie wyświetlamy je w formatach `dd/mm/yyyy` oraz `hh:mm:ss`.
+Wyjście będzie wyglądać następująco:
+
+```markdown
+Aktualna data i czas: 2018/1/1 - 12:30:1
+```
 
 ## Deep Dive
 
-Moduł RTC jest wyposażony w baterię, która pozwala na zachowanie aktualnej daty i godziny nawet w przypadku zaniku zasilania. W związku z tym, nie musimy ustawiać daty i godziny za każdym razem po ponownym uruchomieniu Arduino. Moduł RTC może również działać jako timer, umożliwiając np. wykonywanie określonych czynności w ustalonych odstępach czasu.
+Funkcja "time" jest częścią biblioteki "Time.h", która jest dostarczana z Arduino IDE. Biblioteka ta definiuje funkcje do manipulacji czasem i datą. Funkcja "setTime" jest wykorzystywana do ustawiania bieżącego czasu i daty, podczas gdy funkcje "year", "month" itd. służą do pobierania odpowiednich części daty i czasu.
 
-## Zobacz także
+Pamiętaj, że funkcja "time" zwraca między innymi datę w formacie ponad 32 bitów, więc jeśli chcesz wyświetlić wszystkie elementy daty, musisz użyć odpowiednich typów zmiennych, np. "int" lub "long".
 
-- Dokumentacja biblioteki RTClib: https://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit
-- Poradnik dotyczący korzystania z modułu RTC: https://arduinogetstarted.com/tutorials/arduino-real-time-clock-ds1307-tutorial
+## Zobacz też
+
+- [Dokumentacja Time.h](https://www.arduino.cc/en/reference/time)
+- [Przykładowy projekt z wykorzystaniem Time.h](https://www.arduino.cc/en/Tutorial/BuiltInExamples/TimeSerial)

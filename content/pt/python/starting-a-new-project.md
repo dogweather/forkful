@@ -1,60 +1,52 @@
 ---
-title:    "Python: Começando um novo projeto"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/python/starting-a-new-project.md"
+title:                "Python: Iniciando um novo projeto"
+programming_language: "Python"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por que iniciar um novo projeto de programação?
+## Por que iniciar um novo projeto em Python?
 
-Iniciar um novo projeto de programação pode ser motivado por uma série de razões, incluindo aprender uma nova linguagem de programação, criar um aplicativo útil para si mesmo ou para outras pessoas, ou simplesmente explorar sua criatividade e paixão pela programação. Independentemente do motivo, iniciar um novo projeto pode ser uma experiência emocionante e gratificante!
+Iniciar um novo projeto em Python pode parecer uma tarefa assustadora no início, mas pode trazer muitos benefícios. Python é uma linguagem de programação versátil e popular, usada em muitas áreas, desde desenvolvimento web e científico até automação de processos e análise de dados. Começar um novo projeto em Python pode oferecer uma oportunidade para aprender e aprimorar suas habilidades de programação, além de criar algo valioso e útil no processo.
 
-##Como começar
+## Como fazer em Python
 
-Se você está procurando iniciar um novo projeto de programação em Python, aqui estão alguns exemplos de código para ajudá-lo a começar:
+Para começar um novo projeto em Python, primeiro é necessário ter o Python instalado no seu computador. Você pode baixá-lo gratuitamente no site oficial (www.python.org). Depois de instalado, você pode utilizar qualquer editor de texto ou IDE (ambiente de desenvolvimento integrado) para escrever e executar seu código. O código em Python é organizado em "módulos", que podem ser importados e usados em seu projeto. Veja um exemplo básico de código em Python abaixo:
 
-```Python
-# Olá mundo
-print("Olá mundo!")
+```python
+# Importar módulo "math" para usar funções matemáticas
+import math
+
+# Definir uma função para calcular o quadrado de um número
+def calcula_quadrado(x):
+    return x*x
+
+# Imprimir o quadrado de um número selecionado
+num = 5
+print("O quadrado de", num, "é:", calcula_quadrado(num))
+
+# Utilizar função "log" do módulo "math" para calcular o logaritmo de um número
+print("O log de", num, "é:", math.log(num))
 ```
 
-Esse é um exemplo simples, mas importante, que pode ajudá-lo a entender a estrutura básica de um código em Python. Também pode ser um ótimo ponto de partida para se familiarizar com a sintaxe da linguagem.
+A saída deste código seria:
 
-```Python
-# Calculadora simples
-num1 = int(input("Digite um número: "))
-num2 = int(input("Digite outro número: "))
-operador = input("Digite o operador (+, -, *, /): ")
-
-resultado = 0
-
-if operador == "+":
-    resultado = num1 + num2
-elif operador == "-":
-    resultado = num1 - num2
-elif operador == "*":
-    resultado = num1 * num2
-elif operador == "/":
-    resultado = num1 / num2
-else:
-    print("Operador inválido!")
-
-print("O resultado é:", resultado)
+```
+O quadrado de 5 é: 25
+O log de 5 é: 1.6094379124341003
 ```
 
-Aqui, temos um exemplo de um código um pouco mais complexo, mas que ainda é acessível para iniciantes. Esse código cria uma calculadora simples que permite ao usuário inserir dois números e escolher uma operação para realizar.
+Com este exemplo básico, você pode começar a explorar as possibilidades e funcionalidades do Python em seu novo projeto.
 
-##Mergulho profundo
+## Detalhes sobre o início de um novo projeto
 
-Ao iniciar um novo projeto de programação, é importante planejar adequadamente e seguir boas práticas de codificação. Isso inclui definir claramente os objetivos do seu projeto, usar comentários para documentar seu código, e testar e depurar regularmente para garantir que seu programa esteja funcionando como esperado.
+Antes de mergulhar de cabeça em seu novo projeto em Python, é importante ter uma planilha ou documento que descreva seus objetivos, estrutura do projeto e as etapas necessárias para alcançá-los. Isso pode ajudar a organizar suas ideias e manter o foco no desenvolvimento. Também é importante pesquisar e utilizar recursos online, como documentação oficial, fóruns de discussão e tutoriais, para ajudar a resolver eventuais problemas e aprimorar seu conhecimento em Python.
 
-Além disso, também é útil pesquisar e ver exemplos de outros projetos semelhantes para obter inspiração e aprender com as melhores práticas de outros programadores. Considere também participar de fóruns ou comunidades online de programação, onde você pode obter ajuda e trocar ideias com outros desenvolvedores.
+## Veja também
 
-##Veja também
-
-- [Documentação oficial do Python](https://docs.python.org/pt-br/)
-- [Codecademy: Curso de Python](https://www.codecademy.com/learn/learn-python)
-- [Pythontutor: Ferramenta de visualização de código em tempo real](http://www.pythontutor.com/)
-
-Esperamos que estas dicas e exemplos tenham ajudado você a dar o pontapé inicial em seu novo projeto de programação em Python. Lembre-se de sempre aprender continuamente e se divertir no processo de desenvolvimento!
+- [Documentação oficial do Python](https://docs.python.org/3/)
+- [Fórum de discussão do Python no Reddit](https://www.reddit.com/r/Python/)
+- [Lista de tutoriais do Python](https://wiki.python.org/moin/BeginnersGuide/Programmers)
+- [Comunidade Python no Brasil](https://python.org.br/)

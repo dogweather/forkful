@@ -1,44 +1,37 @@
 ---
-title:    "Clojure: टेस्ट लिखना"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/writing-tests.md"
+title:                "Clojure: टेस्टों की लेखन"
+programming_language: "Clojure"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-महत्व: टेस्ट लिखने में क्यों संलग्न होना आवश्यक है?
+## क्यों
+टेस्ट लिखने के फायदे हैं क्योंकि वे प्रोग्राम को सुरक्षित बनाकर और बग्स को खोजने में मदद करते हैं। यह प्रोग्राम को दूरस्थ परीक्षण के लिए भी अधिक सुविधाजनक बनाता है।
 
-अगर आप कोडिंग में ंआनंद लेते हैं, तो आप बिना टेस्ट लिखे हुए कोड का आनंद नहीं ले पाएंगे। टेस्ट लिखने से, आपको अपने कोड की सत्यता की निश्चितता होती है और आप अपने कोड को अधिक सुधार सकते हैं।
-
-कैसे करें:
-
-आप Clojure में कैसे टेस्ट लिख सकते हैं, इसके बारे में समोचित जानकारी मिलेगी। Clojure में टेस्ट केस लिखने के लिए, आप (ns) नामक फंक्शन का इस्तेमाल कर सकते हैं। नीचे दिये गये उदाहरण में, हम एक छोटा सा स्ट्रिंग "Hello" टेस्ट करेंगें।
-
+## कैसे करें
 ```Clojure
-(ns my-namespace.test
-  (:require [clojure.test :refer :all]))
+(ns example.core-test
+       (:require [clojure.test :refer :all]
+                  [example.core :refer :all]))
 
-(deftest my-test
-    (testing "Hello test"
-        (is (= "Hello" "Hello"))))
+(deftest addition-test
+  (testing "दो संख्याओं को जोड़ना"
+    (is (= (addition 2 4) 6)))
+  (testing "सही विकल्प के साथ गलत नंबरों की जोड़"
+    (is (= (addition "two" 4) :error))))
+
+(deftest subtraction-test
+  (testing "दो संख्याओं को घटाना"
+    (is (= (subtraction 10 5) 5)))
+  (testing "सही विकल्प के साथ गलत नंबरों की घटाई"
+    (is (= (subtraction "ten" 5) :error))))
 ```
 
-उत्पादन:
+## गहराई में जाएँ
+टेस्ट लिखने में गहराई में जाने के लिए, हमें अपने कोड के सभी पीसीजी और यूनिट टेस्ट को हल करना होगा। इसमें प्रोग्राम को टेस्ट करने के लिए क्लोजर यूनिट टेस्टिंग में। यह ब्लोग पोस्ट प्रोग्रामिंग और क्लोजर अधिक जानकारी और संदर्भ के लिए उपयोगी हो सकता है।
 
-```
-Testing my-test
-FAIL in (my-test) (form-init72.clj:5)
-Hello test
-expected: (= "Hello" "Hello")
-actual: (not (= "Hello" "Hello"))
-```
-
-डिप डाइव:
-
-टेस्ट केस को समझने के लिए, आपको माइंडसेट बनाना होगा कि आप अपने कोड को कैसे टेस्ट करना चाहते हैं और कैसे अपने कोड को खराब स्थिति से बचाएं। हर टेस्ट केस में, आप इन प्रश्नों के जवाब ढूंढ सकते हैं।
-
-See Also:
-
-- [Clojure Testing Library](https://github.com/clojure/tools.deps.alpha)
-- [Clojure Test Examples](https://clojure.org/guides/devtesting)
-- [Clojure Testing Tutorial](https://www.braveclojure.com/testing/)
+## देखें भी
+- [क्लोजर यूनिट टेस्टिंग](https://www.tutorialspoint.com/clojure/clojure_testing.htm)
+- [एफपीआई के लिए क्लोजर अभिलेख](https://clojure.github.io/clojure/clojure.test-api.html)

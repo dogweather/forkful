@@ -1,57 +1,52 @@
 ---
-title:    "Kotlin: Sammanslagning av strängar"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/concatenating-strings.md"
+title:                "Kotlin: Slå ihop strängar"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att sammanslå strängar är en viktig del av programmering, eftersom det gör det möjligt att kombinera flera olika strängar till en enda och därmed skapa mer dynamiska och läsbara texter i våra program. Det kan vara till nytta när du behöver skriva ut data eller skapa meddelanden för användaren.
+I Kotlin-programmering är det väldigt vanligt att behöva kombinera flera strängar för att skapa en längre sträng. Detta kan vara till exempel för att skapa en textsträng som ska skrivas ut i en logg eller för att visa en dynamiskt genererad sträng i en användargränssnitt. I den här bloggposten kommer vi att titta närmare på hur man kan kombinera strängar i Kotlin.
 
-## Så här gör du
+## Hur man gör det
 
-För att sammanslå strängar i Kotlin, används operatorn "plus" (+) mellan två eller flera strängar. Detta kan göras på flera sätt, beroende på vad du vill uppnå. Nedan finns några exempel på hur man kan sammanfoga strängar i Kotlin, tillsammans med det förväntade resultatet.
+För att kombinera flera strängar i Kotlin använder man operatorn `+` eller funktionen `plus()`. Operatorn `+` används för att lägga till två strängar och returnerar en ny sträng som innehåller båda de ursprungliga strängarna. Här är ett exempel på hur man använder operatorn `+` för att kombinera två strängar:
 
 ```Kotlin
-val förnamn = "Maria"
-val efternamn = "Larsson"
-
-val namn = förnamn + " " + efternamn
-println(namn) // Output: Maria Larsson
-
-val hälsning = "Hej " + namn + ", välkommen till min blogg!"
-println(hälsning) // Output: Hej Maria Larsson, välkommen till min blogg!
-
-val tal1 = 10
-val tal2 = 5
-
-val summa = "Summan av " + tal1 + " och " + tal2 + " är " + (tal1 + tal2)
-println(summa) // Output: Summan av 10 och 5 är 15
+val firstName = "Johan"
+val lastName = "Andersson"
+val fullName = firstName + " " + lastName
 ```
 
-Som du kan se i exemplen ovan, kan du använda operatorn "+" för att kombinera både strängar och andra typer av variabler. Observera att operatorn "+" alltid måste användas mellan två strängar, annars kommer det att uppstå ett fel.
+I det här exemplet kombineras strängarna "Johan" och "Andersson" för att skapa den längre strängen "Johan Andersson". Det är viktigt att notera att det finns ett extra mellanslag mellan förnamn och efternamn i kombineringssträngen. Detta beror på att inget mellanslag ingår i variablerna firstName och lastName och måste därför läggas till manuellt.
+
+Man kan också använda funktionen `plus()` för att kombinera flera strängar. Funktionen `plus()` tar en parameter av typen `String` och returnerar en ny sträng som kombinerar den befintliga strängen med den angivna parametern. Här är samma exempel som ovan, fast med användning av `plus()`:
+
+```Kotlin
+val firstName = "Johan"
+val lastName = "Andersson"
+val fullName = firstName.plus(" ").plus(lastName)
+```
 
 ## Djupdykning
 
-När du kombinerar strängar i Kotlin, skapas en ny sträng varje gång som operatorn "+" används. Detta kan ha en påverkan på prestandan i stora och komplexa program. För att undvika detta, kan du använda funktionen "StringBuilder", som finns inbyggd i Kotlin's standardbibliotek.
-
-StringBuilder erbjuder bättre prestanda vid sammanslagning av strängar, eftersom den skapar och manipulerar en enda sträng istället för att skapa flera nya strängar. Detta kan vara särskilt användbart om du behöver sammanfoga många strängar inuti en for-loop eller i andra prestandakänsliga delar av koden.
-
-Här är ett exempel på hur du kan använda StringBuilder för att sammanfoga strängar:
+När man kombinerar flera strängar med operatorn `+` skapas en ny sträng varje gång. Detta kan bli ineffektivt vid större mängder data och orsaka onödig minnesallokering. För att undvika detta kan man istället använda sig av funktionen `StringBuilder`. `StringBuilder` är en effektivare metod att kombinera strängar eftersom den inte skapar en ny sträng varje gång man lägger till data, utan istället bygger på en befintlig sträng. Här är ett exempel på hur man kan använda `StringBuilder` för att kombinera flera strängar:
 
 ```Kotlin
-val förnamn = "Erik"
-val efternamn = "Andersson"
-
-val namn = StringBuilder().append(förnamn).append(" ").append(efternamn).toString()
-println(namn) // Output: Erik Andersson
+val firstName = "Johan"
+val lastName = "Andersson"
+val fullName = StringBuilder(firstName)
+        .append(" ")
+        .append(lastName)
+        .toString()
 ```
 
-Som du kan se i exemplet ovan, bygger vi upp en enda sträng med hjälp av metoden "append" istället för operatorn "+". När vi är färdiga kallar vi på metoden "toString" för att få den slutgiltiga strängen.
+Det är viktigt att avsluta med att anropa `toString()`-funktionen för att få ut en slutgiltig sträng från `StringBuilder`.
 
 ## Se även
 
-- [Dokumentation om strängar i Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Dokumentation om StringBuilder i Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/index.html)
+- [Kotlin String Interpolation](https://kotlinlang.org/docs/strings.html#string-interpolation)
+- [Google Kotlin style guide](https://developer.android.com/kotlin/style-guide)

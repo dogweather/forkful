@@ -1,67 +1,57 @@
 ---
-title:    "TypeScript: Scrivere in standard error"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/typescript/writing-to-standard-error.md"
+title:                "TypeScript: Scrittura su errore standard"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Scrivere su standard error è utile per rendere il codice più robusto e per gestire gli errori in modo più efficace. Quando i programmatori sono consapevoli di dove e come si verificano gli errori, possono risolverli in modo più efficiente.
 
-Scrivere a stderr (standard error) è un modo per gestire gli errori in un programma TypeScript. Quando il codice ha incontrato un errore durante l'esecuzione, scrivere a stderr consente di informare l'utente e raccogliere informazioni sull'errore per risolverlo.
+## Come Scrivere su Standard Error
+Scrivere su standard error è semplice usando il TypeScript. Basta seguire i seguenti passaggi:
 
-## Come fare
-
-Scrivere a stderr in TypeScript è semplice. Basta utilizzare la funzione `process.stderr.write()` e passare il messaggio da scrivere come argomento. Ecco un esempio di codice:
+1. Prima, dobbiamo importare il modulo `process` nel nostro file TS:
 
 ```TypeScript
-const num1 = 10;
-const num2 = 0;
+import * as process from 'process';
+```
 
-if (num2 === 0) {
-  // scrive il messaggio di errore a stderr
-  process.stderr.write("Impossibile dividere per 0");
-} else {
-  const result = num1 / num2;
-  console.log(result); // output: Infinity
+2. Poi, possiamo accedere all'oggetto `process.stderr` e utilizzare il metodo `write` per scrivere sullo standard error:
+
+```TypeScript
+process.stderr.write("Questo è un messaggio di errore!");
+```
+3. È possibile usare anche il metodo `write` per scrivere su standard error in qualsiasi punto del codice, anche durante la gestione degli errori:
+
+```TypeScript
+try {
+  // codice che può generare un errore
+} catch(error) {
+  process.stderr.write("Errore durante l'esecuzione del codice");
 }
 ```
 
-Quando il codice viene eseguito, verrà visualizzato il messaggio di errore a stderr e il risultato della divisione verrà stampato sulla console. Ecco un'esempio di output:
-
-```
-Impossibile dividere per 0
-Infinity
-```
-
-## Approfondimento
-
-Ci sono altre opzioni per gestire gli errori e scrivere a stderr in TypeScript. Ad esempio, è possibile utilizzare la classe `console` di Node.js e il metodo `error()` per scrivere a stderr. Inoltre, è possibile personalizzare il messaggio di errore passando un secondo argomento alla funzione `write()`, come mostrato di seguito:
+Ecco un esempio di output:
 
 ```TypeScript
-const num1 = 10;
-const num2 = 0;
+import * as process from 'process';
 
-if (num2 === 0) {
-  // passa un codice di errore come secondo argomento
-  process.stderr.write("Impossibile dividere per 0", "ERROR");
-} else {
-  const result = num1 / num2;
-  console.log(result); // output: Infinity
-}
+process.stderr.write("Questo è un messaggio di errore!");
 ```
 
-L'output di questo codice sarà il seguente:
-
 ```
-ERROR: Impossibile dividere per 0
-Infinity
+Questo è un messaggio di errore!
 ```
 
-Inoltre, è possibile utilizzare la funzione `process.exit()` per terminare l'esecuzione del programma in caso di errore e fornire un codice di uscita specifico per indicare il tipo di errore.
+## Deep Dive
+Scrivere su standard error è importante quando si cerca di individuare e risolvere gli errori nel nostro codice. Molti ambienti di esecuzione permettono agli sviluppatori di leggere i messaggi di errore da standard error, il che rende più facile individuare e risolvere i problemi.
 
-## Vedi anche
+Inoltre, scrivere su standard error ci dà la possibilità di gestire gli errori in modo più efficace, fornendo un messaggio di output chiaro e specifico sull'errore che si è verificato.
 
-- [La documentazione ufficiale di Node.js su stdout e stderr](https://nodejs.org/api/process.html#process_a_note_on_process_i_o)
-- [Un articolo su come gestire gli errori in TypeScript](https://blog.logrocket.com/error-handling-typescript-node-js/)
-- [Un tutorial su come utilizzare la classe console in Node.js](https://www.digitalocean.com/community/tutorials/how-to-use-the-node-js-console)
+## Vedi Anche
+- [Documentazione del processo di Node.js](https://nodejs.org/dist/latest-v14.x/docs/api/process.html)
+- [Gestione degli errori in TypeScript](https://github.com/Microsoft/TypeScript/wiki/%CA%61pierrorset)
+- [Standard output vs standard error](https://stackoverflow.com/questions/2990414/standard-output-vs-standard-error)

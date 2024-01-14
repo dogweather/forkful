@@ -1,31 +1,55 @@
 ---
-title:    "Javascript: एक पाठ फाइल को पढ़ना"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/reading-a-text-file.md"
+title:                "Javascript: टेक्स्ट फाइल पढ़ना"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों 
+# क्यों
 
-यदि आप एक प्रोग्रामर हैं और आपको किसी भी भाषा में प्रोग्रामिंग करना पसंद है, तो आपने शायद अपनी कोड फाइलों को पढ़ने के लिए टेक्स्ट फाइल का उपयोग किया होगा। टेक्स्ट फाइल भाषा के साथ संपत्ति भाग आपकी पहुंच और सभी उपकरणों में समर्थ होने के कारण, यह एक उपयोगी तरीका है कोड को आधार रूप में संग्रहित करने के लिए। 
+क्या आप जानना चाहते हैं कि कैसे जावास्क्रिप्ट की मदद से एक टेक्स्ट फाइल को पढ़ा जाता है? यह आपको अपने कोडिंग कौशल पर विश्वास देगा और आपको नए स्किल्स सीखने में मदद करेगा। यह आपको अपने कोड को और अधिक व्यावहारिक बनाता है।
 
-## कैसे करें
+# कैसे करें
 
 ```Javascript
-const fs = require('fs');  // fs (File System) मॉड्यूल निकालें 
-const path = './test.txt';  // पढ़ने के लिए फ़ाइल का पथ निर्दिष्ट करें 
-fs.readFile(path, 'utf8', function (err, data) {  // टेक्स्ट फाइल पढ़ें 
-  if (err) {
-    return console.log(err);  // यदि त्रुटि हो, तो उसे मुद्रित करें 
-  }
-  console.log(data);  // अन्यथा डेटा प्रिंट करें 
-});
+// टेक्स्ट फाइल के लिए एक HttpServletRequest बनाएं
+const request = new XMLHttpRequest();
+// फाइल के पथ और प्रकार को सेट करें
+request.open('GET', 'example.txt', true);
+// डेटा को लोड करते समय को ट्रैक करने के लिए एक onload ईवेंट हैंडलर जोड़ें
+request.onload = () => {
+  // सफलतापूर्वक डेटा लोड हो जाता है, तो उसे एक वेरिएबल में स्टोर करें
+  const data = request.response;
+  // डेटा को कंसोल पर प्रिंट करें
+  console.log(data);
+}
+// रिक्वेस्ट को भेजने के लिए स्टार्ट करें
+request.send();
 ```
 
-**आउटपुट:** 
-फाइल में संग्रहित सभी उपकरणनों का प्रिंट 
+आप जब यह कोड चलाएंगे, आपको अपनी कंसोल में टेक्स्ट फाइल का सामग्री दिखाई देगी।
 
-## गहराई से जाने 
+# गहराई तक
 
-टेक्स्ट फाइल पढ़ने के लिए, हम `fs` मॉड्यूल का उपयोग करते हैं। इस मॉड्यूल का उपयोग त्रुटियों को संबूधित करने की सुविधा प्रदान करता है, जैसे कि यदि फाइल मौजूद न हो। इसके अलावा, हम फ़ाइल के पथ को संदेश के साथ निर्दिष्ट कर सकते हैं, जिस से यह सुनिश्चित होता है कि हम आवश्यक फ़ाइल को खोज सकते हैं। आप उस समय `fs` मॉड्यूल के अलावा भी अन्य मॉड्यूल जैसे `path` का उपयोग कर सकते हैं, जो आपको फ़ाइल के साथ कुछ अतिरिक्त ऑपर
+यदि आप अधिक गहराई तक जानना चाहते हैं, तो आप एक अन्य तरीके से भी टेक्स्ट फाइल को पढ़ सकते हैं। आप एक फ़ंक्शन का उपयोग करके भी डेटा लोड कर सकते हैं।
+
+```Javascript
+// एक उदाहरण फ़ंक्शन
+function readTextFile(file) {
+  const rawFile = new XMLHttpRequest();
+  // true को synchronous परिभाषित करने से अनुरोध अपडेट होने तक प्रतीक्षा नहीं करेगा
+  rawFile.open("GET", file, false);
+  rawFile.onreadystatechange = () => {
+    if (rawFile.readyState === 4) {
+      if (rawFile.status === 200 || rawFile.status == 0) {
+        const allText = rawFile.responseText;
+        console.log(allText);
+      }
+    }
+  }
+  rawFile.send(null);
+}
+
+// फ़ंक्शन को उन फाइलों के साथ बुलाएं जिन्ह

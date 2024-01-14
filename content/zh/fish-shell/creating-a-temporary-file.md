@@ -1,61 +1,48 @@
 ---
-title:    "Fish Shell: 创建临时文件"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/creating-a-temporary-file.md"
+title:                "Fish Shell: 创建临时文件"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么
 
-在编程的过程中，我们经常需要在临时文件中保存数据。这样可以帮助我们更有效地处理数据，并且可以在编程完成后自动删除这些临时文件，避免占用硬盘空间。
+## 为什么要创建临时文件？
 
-## 如何操作
+临时文件的创建可以帮助我们在编程过程中临时存储数据或者作为程序的中间文件，从而使我们的代码更加整洁、高效。
 
-为了在Fish Shell中创建临时文件，我们可以使用`mktemp`命令。下面是一个示例代码，展示如何使用该命令创建一个临时文件，并将数据写入其中：
+# 如何
 
-```Fish Shell
-# 创建临时文件
-set temp_file (mktemp)
+## Fish Shell中创建临时文件的方法
 
-# 将数据写入临时文件
-echo "这是一行数据" > $temp_file
-```
-
-接下来，我们可以使用`cat`命令来查看临时文件中的数据：
+使用Shell中的 `mktemp` 命令可以方便地创建临时文件，示例如下：
 
 ```Fish Shell
-cat $temp_file
+# 创建一个以 tmp 开头的临时文件
+mktemp -t tmp
+# 创建一个以 prefix 开头的临时文件
+mktemp -p prefix
 ```
 
-输出结果应该是：
+当命令执行成功后，会返回创建的临时文件的完整路径。也可以使用 `echo $TMPDIR` 命令来查看系统设置的临时文件目录。
+
+## 示例输出
 
 ```
-这是一行数据
+/tmp/fishXXXXXX
+/prefix/fishXXXXXX
 ```
 
-最后，我们可以使用`rm`命令来删除这个临时文件：
+# 深入了解
 
-```Fish Shell
-rm $temp_file
-```
+创建临时文件的方法可以根据需要进行更多的定制性设置，例如使用 `-d` 参数可以同时创建一个临时文件和对应的临时文件夹。同时，临时文件可以通过 `rm` 命令来清理，在程序结束时可以同时删除临时文件和对应的临时文件夹。
 
-这样，我们就成功创建并删除了一个临时文件。
+# 参考链接
 
-## 深入了解
+[Linux Shell-创建临时文件的一些方法](https://blog.csdn.net/csbhahaha/article/details/7627027)
 
-除了`mktemp`命令之外，还有其他方法来在Fish Shell中创建临时文件。例如，使用`tempfile`命令可以直接在当前目录中创建一个临时文件，而不需要指定文件名。此外，我们还可以使用`mktemp -d`命令来创建一个临时目录，用来存放多个临时文件。
+# 另请参阅
 
-另外，对于不同的操作系统，创建临时文件的路径也可能不同。如果需要跨平台使用，可以使用`os.tmpname()`函数来获取系统临时文件夹的路径。
-
-## 参考链接
-
-- [Fish Shell官方文档](https://fishshell.com/docs/current/)
-- [Linux手动创建临时文件](https://www.linuxidc.com/Linux/2019-08/159538.htm)
-- [Bash和Fish Shell中的临时文件管理](https://blog.csdn.net/rainbow_eagle/article/details/82765276)
-
-## 参见
-
-- [Fish Shell教程](https://www.purescript.org/learn/fish-shell.html)
-- [如何在Fish Shell中获取命令行参数](https://www.jianshu.com/p/ce8a3c7f3ebf)
-- [使用Fish Shell自定义命令提示符](https://brokenglass.io/tech-tutorials/fish-shell-prompt.html)
+[如何在Fish Shell中删除临时文件](https://blog.csdn.net/shadowfaxhmx/article/details/85622459)

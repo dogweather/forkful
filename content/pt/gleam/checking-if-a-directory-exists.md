@@ -1,45 +1,48 @@
 ---
-title:    "Gleam: Verificando se um diretório existe"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/checking-if-a-directory-exists.md"
+title:                "Gleam: Verificando se um diretório existe"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que verificar a existência de um diretório em Gleam?
+## Por que verificar se um diretório existe?
 
-Às vezes, ao escrever um programa em Gleam, precisamos verificar se um determinado diretório já existe antes de executar determinadas tarefas. Isso pode ser útil para garantir que não haja conflitos ou para evitar erros durante a execução do código. Felizmente, a linguagem Gleam facilita essa verificação.
+Verificar se um diretório existe é um passo importante ao lidar com arquivos e pastas em um programa Gleam. É uma maneira de garantir que o código funcione corretamente e evite erros ao tentar acessar um diretório inexistente.
 
-## Como fazer isso em Gleam
+## Como fazer
 
-Para verificar se um diretório existe em Gleam, podemos usar a função `is_dir` do módulo `gleam/directory`. Ela recebe uma string contendo o caminho do diretório como parâmetro e retorna um valor booleano indicando se o diretório existe ou não. Veja o exemplo abaixo:
+A verificação de diretório pode ser facilmente feita usando a função "file::exists" do módulo "Builtins". Esta função retorna um valor booleano indicando se o diretório existe ou não. Veja um exemplo de uso abaixo:
 
-```gleam
-import gleam/directory
+```
+Gleam
+import Builtins
 
-let dir_path = "./meu_diretorio"
-let dir_exists = directory.is_dir(dir_path)
+fn check_directory(directory: String) {
+  let exists = Builtins.file::exists(directory)
 
-if dir_exists {
-  // O código para executar se o diretório existir
-} else {
-  // O código para executar se o diretório não existir
+  case exists {
+    true -> io.println("O diretório " ++ directory ++ " existe.")
+    false -> io.println("O diretório " ++ directory ++ " não existe.")
+  }
 }
 
-println("O diretório existe? ${dir_exists}")
+// Exemplo de chamada da função
+check_directory("caminho/para/o/diretorio")
 ```
 
 Saída:
 
 ```
-O diretório existe? true
+O diretório caminho/para/o/diretorio existe.
 ```
 
-## Detalhes sobre a verificação da existência de um diretório
+## Mergulho Profundo
 
-Ao usar a função `is_dir`, é importante entender algumas coisas. Primeiro, ela não verifica se o caminho fornecido é realmente um diretório, apenas se existe um diretório com esse caminho. Além disso, ela pode ser usada tanto com caminhos absolutos quanto relativos. Por fim, é importante lembrar que o caminho deve ser válido e acessível pelo programa.
+Além de verificar se o diretório existe, também é possível verificar permissões de acesso e outras propriedades do diretório usando funções como "file::has_permissions" e "file::get_attributes". Estas funções são úteis para um controle mais específico do diretório e podem ajudar a evitar possíveis erros no código.
 
-# Veja também
+## Veja também
 
-- Documentação oficial sobre o módulo `gleam/directory`: https://gleam.run/modules/gleam_directory.html
-- Outros módulos úteis do Gleam: https://gleam.run/modules/
+- [Documentação do módulo Builtins](https://gleam.run/modules/builtin.html)
+- [Exemplos de uso da função file::exists](https://github.com/gleam-lang/gleam/blob/master/examples/file/file.gleam)

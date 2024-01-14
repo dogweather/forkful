@@ -1,40 +1,58 @@
 ---
-title:    "Bash: Lancer un nouveau projet"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/starting-a-new-project.md"
+title:                "Bash: Commencer un nouveau projet"
+programming_language: "Bash"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Vous êtes peut-être un programmeur débutant, ou peut-être que vous êtes un expert en informatique qui cherche un nouveau défi. Quelle que soit votre raison, vous avez décidé qu'il est temps de démarrer un nouveau projet Bash et de découvrir tout ce que ce langage de script a à offrir.
+Si vous êtes intéressé par la programmation, vous pourriez avoir envie de démarrer un nouveau projet en utilisant Bash. Ce langage de script est utilisé pour automatiser des tâches et peut être très utile pour simplifier des tâches répétitives.
 
-# Comment faire
+## Comment faire
 
-Commençons par les bases. Pour écrire un script Bash, vous devez d'abord ouvrir un éditeur de texte et créer un nouveau fichier avec l'extension ".sh". Ensuite, vous devez donner à votre script les permissions d'exécution en utilisant la commande "chmod + x" suivie du nom de votre fichier.
+Tout d'abord, vous devez installer Bash sur votre ordinateur si ce n'est pas déjà fait. Selon le système d'exploitation que vous utilisez, vous pouvez le trouver dans les dépôts ou le télécharger à partir du site officiel.
 
-Ensuite, vous pouvez commencer à écrire votre script en utilisant les éléments de base de la programmation Bash tels que les commentaires, les variables et les boucles. Voici un exemple de script Bash simple qui imprime le message "Bonjour, il fait beau aujourd'hui !" :
+Une fois que vous avez Bash installé, vous pouvez ouvrir un nouveau fichier avec l'extension .sh pour commencer à écrire votre code. Voici un exemple simple pour afficher "Bonjour" dans votre terminal :
 
+```Bash
+#!/bin/bash
+echo "Bonjour"
 ```
-# Ceci est un commentaire
-message="Bonjour, il fait beau aujourd'hui !"
-echo $message
+
+Enregistrez le fichier et ouvrez votre terminal. Assurez-vous d'être dans le même répertoire que votre fichier et exécutez la commande suivante pour rendre le fichier exécutable :
+
+```Bash
+chmod +x nom_fichier.sh
 ```
-Lorsque vous exécutez ce script, vous devriez voir le message s'afficher dans votre terminal.
 
-Maintenant que vous avez les bases, vous pouvez explorer davantage en apprenant à utiliser des commandes telles que "cd", "ls" et "grep". Vous pouvez également découvrir comment créer des fonctions et des scripts interactifs pour améliorer vos compétences en Bash.
+Ensuite, vous pouvez exécuter le fichier en tapant :
 
-# Plongée en profondeur
+```Bash
+./nom_fichier.sh
+```
 
-Si vous souhaitez vraiment maîtriser Bash, il est important de comprendre les principes de base de la programmation, comme les structures de contrôle, les fonctions et les variables. Cela vous aidera à écrire des scripts plus efficaces et plus lisibles.
+Vous devriez voir "Bonjour" s'afficher dans votre terminal. Félicitations, vous avez écrit et exécuté avec succès votre premier code Bash !
 
-Il est également important de savoir comment utiliser les arguments de ligne de commande et les structures de données telles que les tableaux et les dictionnaires. Ceci est particulièrement utile si vous souhaitez créer des scripts plus complexes et polyvalents.
+Vous pouvez maintenant approfondir votre projet en ajoutant des variables, des boucles, des conditions et bien plus encore. N'hésitez pas à explorer toutes les possibilités de Bash pour créer un programme unique et efficace.
 
-Enfin, pour tout projet Bash, il est important de garder votre code bien organisé et commenté pour faciliter la maintenance et la collaboration. N'hésitez pas à consulter des ressources en ligne telles que des tutoriels et des forums communautaires pour en apprendre davantage et améliorer vos compétences.
+## Plongée en profondeur
 
-# Voir aussi
+Pour démarrer un nouveau projet Bash, il est important de bien planifier et organiser votre code. Voici quelques conseils pour vous aider :
 
-- [Tutoriel Bash par OpenClassrooms](https://openclassrooms.com/fr/courses/43538-reprenez-le-controle-a-laide-de-linux/42004-titre-du-chapitre)
-- [Forums du site LinuxCommand](https://www.linuxcommand.org/tlcl.php)
-- [Documentation officielle de GNU Bash](https://www.gnu.org/software/bash/manual/bash.html#Bash-Features)
+- Déterminez l'objectif de votre projet. Qu'essayez-vous d'accomplir avec votre code ?
+- Divisez votre code en fonctions pour le rendre plus modulaire et facile à comprendre.
+- Utilisez des commentaires pour expliquer votre code et rendre votre projet plus convivial pour les autres utilisateurs.
+- Testez votre code régulièrement pour repérer et résoudre les erreurs.
+
+N'oubliez pas de faire des recherches en ligne si vous rencontrez des problèmes ou si vous avez besoin d'aide pour certaines fonctions spécifiques de Bash. De nombreuses ressources sont disponibles pour vous aider dans votre parcours de développement.
+
+## Voir aussi
+
+- [Documentation officielle de Bash](https://www.gnu.org/software/bash/manual/)
+- [Tutoriels Bash sur YouTube](https://www.youtube.com/results?search_query=tutoriel+bash)
+- [Exemples de projets Bash sur GitHub](https://github.com/topics/bash)
+
+Bonne chance pour votre nouveau projet Bash et n'oubliez pas de vous amuser en apprenant ce langage puissant et polyvalent !

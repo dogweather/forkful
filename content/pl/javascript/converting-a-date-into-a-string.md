@@ -1,41 +1,41 @@
 ---
-title:    "Javascript: Konwertowanie daty na ciąg znaków"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/converting-a-date-into-a-string.md"
+title:                "Javascript: Konwersja daty na ciąg znaków"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Konwertowanie daty na ciąg znaków jest niezwykle ważną czynnością w programowaniu. Wiele systemów i aplikacji wymaga od nas sprawdzenia i wyświetlenia aktualnej daty, a często konieczne jest także przechowywanie jej w postaci stringu. Dlatego warto znać ten proces i umieć go zaimplementować w swoich projektach.
+Konwertowanie daty na łańcuch znaków jest niezbędnym elementem programowania w JavaScript. Pozwala nam to wyświetlać daty w czytelny sposób dla użytkowników lub przechowywać je w wybranej formie.
 
 ## Jak to zrobić
 
-```javascript
-// Utworzenie obiektu daty
+```Javascript
 const date = new Date();
 
-// Utworzenie zmiennej przechowującej format daty
-const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+// Konwertowanie daty na łańcuch znaków w formacie YYYY-MM-DD
+const dateString = date.toISOString().split('T')[0];
+console.log(dateString); // wyświetli "2020-04-27"
 
-// Wykorzystanie metody toLocaleString() do konwersji daty na string
-const dateString = date.toLocaleString('pl-PL', options);
+// Konwertowanie daty na łańcuch znaków w formacie DD.MM.YYYY
+const day = date.getDate();
+const month = date.getMonth() + 1;
+const year = date.getFullYear();
 
-// Wyświetlenie wyniku w konsoli
-console.log(dateString); // "niedziela, 15 sierpnia 2021"
+const dateString = `${day < 10 ? '0' : ''}${day}.${month < 10 ? '0' : ''}${month}.${year}`;
+console.log(dateString); // wyświetli "27.04.2020"
 ```
 
-W powyższym przykładzie wykorzystujemy obiekt daty, który jest wbudowany w język Javascript. Następnie tworzymy zmienną `options`, która przechowuje informacje o tym, w jakim formacie chcemy wyświetlić datę. W tym przypadku, wybieramy długi dzień tygodnia, pełny rok, nazwę miesiąca oraz dzień miesiąca. Na koniec, wykorzystujemy metodę `toLocaleString()` do konwersji daty na string w wybranym przez nas formacie. 
+Powyższe przykłady wykorzystują metodę `toISOString()` oraz wbudowane funkcje daty, takie jak `getDate()`, `getMonth()` i `getFullYear()`, aby uzyskać wybrany format daty w postaci łańcucha znaków. Dzięki temu możemy dostosować wyświetlanie daty do naszych potrzeb i wybrać odpowiedni format dla naszego projektu.
 
-## Głębsza analiza
+## Głębszy wgląd
 
-Istnieją różne sposoby konwertowania daty na string w języku Javascript. Jednym z nich jest wykorzystanie konstruktora `Date()` lub metody `toString()`. W przypadku konstruktora, przyjmuje on datę jako argument, a następnie zwraca string w formacie "Dziedzień Miesiąc Rok Godzina:Minuta: Sekunda". Dzięki temu możemy mieć kontrolę nad wyświetlaną datą, jednak wymaga to trochę więcej kodu. 
-
-Natomiast metoda `toString()`zwraca datę w formacie ISO, czyli "Rok-Miesiąc-DzieńTgodzina:Minuta: Sekunda.Godzina". Ta metoda może być przydatna, jeśli konieczne jest przekazywanie daty pomiędzy różnymi systemami w jednym standardzie.
+Konwertowanie daty na łańcuch znaków może wydawać się prostym zadaniem, ale istnieje wiele innych metod i funkcji, które mogą pomóc nam w tym procesie. Na przykład, możemy wykorzystać metodę `toLocaleString()` do uzyskania daty w postaci lokalizowanej dla danego języka i regionu. Istnieją także biblioteki, takie jak moment.js, które udostępniają wiele użytecznych funkcji do pracy z datami.
 
 ## Zobacz także
-
-- [Dokumentacja Javascript - Date](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools - JavaScript Date Formats](https://www.w3schools.com/js/js_date_formats.asp)
-- [GeeksforGeeks - JavaScript toString() Method](https://www.geeksforgeeks.org/javascript-tostring-method/)
+- [Dokumentacja JavaScript - obiekt Date](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Date)
+- [Poradnik programisty - Konwertowanie daty na tekst w JavaScript](https://www.freecodecamp.org/news/javascript-date-now-converting-guide-how-to-create-date-object-in-javascript-date-to-iso-string-javascript)
+- [Moment.js - biblioteka do pracy z datami](https://momentjs.com/)

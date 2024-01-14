@@ -1,40 +1,52 @@
 ---
-title:    "Elixir: כתיבת אותיות ראשות במחרוזת"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elixir/capitalizing-a-string.md"
+title:                "Elixir: ניצחון למחרת"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה:
-במאמר זה, אני אסביר לכם מדוע כדאי להשתמש ב-Elixir כדי לשנות את תוכן המחרוזת שלנו לאותיות רישיות.
-למרבה המזל, Elixir מספק פונקציה פשוטה למניפולציה זו. 
+## מדוע
 
-## איך לעשות זאת:
-תחילה, יש להתקין את Elixir על המחשב שלכם ולכתוב את הקוד הבא בתוך קובץ `.exs`:
+עושים קיפיטליזציה של מחרוזת ב-Elixir? זהו פעולה נפוצה בכתיבת קוד ועשויה להיות שימושית כאשר נרצה להציג את המחרוזת המתאימה באופן מובן יותר למשתמש.
 
-```elixir
-string = "מחרוזת לצורך מניפולציה"
-new_string = String.capitalize(string)
-IO.puts(new_string)
-```
+## איך לעשות
 
-תוצאה:
-
-```bash
-מחרוזת לצורך מניפולציה
-```
-
-ניתן גם להשתמש בפונקציית `String.capitalize/1` ישירות בתוך המחרוזת עצמה, כך שלא צריך להגדיר משתנה נוסף:
+דוגמאות קוד ופלט המתארות את התהליך קיפיטליזציית המחרוזת:
 
 ```elixir
-string = "מחרוזת לצורך מניפולציה"
-IO.puts(String.capitalize(string))
-``` 
+string = "hello world"
+capitalized_string = String.capitalize(string)
+IO.puts capitalized_string
+```
 
-## נחקר בעומק:
-כדי להבין טוב יותר את פונקציית `String.capitalize/1`, נחקור מעט בניתוח שלה. כמו שראינו, היא מקבלת כארגומנט את המחרוזת שברצוננו לשנות ומחזירה חזרה את אותה מחרוזת עם האות הראשונה שלה מופיעה כאות רישיות. הפונקציה גם יודעת להתמודד עם מחרוזות המכילות מילים באותיות גדולות או ספריות. כמו כן, אם המחרוזת מכילה רווחים בין המילים, היא תשנה את האות הראשונה של כל מילה לאות רישיות.
+הפלט של הדוגמא הבאה הוא "Hello world".
 
-## ראו גם:
-למידע נוסף על שפת Elixir ופונקציות נוספות להמניפולציה של מחרוזות, ניתן לקרוא את המאמרים הבאים (בעברית):
-- [מתחילים ב-Elixir](https://medium.com/nextfertt/%D7%9E%D7%AA%D7%97%D7%99%D7%9C%D7%99%D7%9D-%D7%91-elixir-%D7%97%D7%9C%D7%A7-%D7%A8%D7%90%D7%A9%D7%99-%D7%A9%D7%9C%D7%A0%D7%95
+```elixir
+string = "elixir is awesome"
+capitalized_string = String.capitalize(string)
+IO.puts capitalized_string
+```
+
+הפלט של הדוגמא הבאה הוא "Elixir is awesome".
+
+בנוסף, ניתן לבצע קיפיטליזציה רק על האות הראשונה של המחרוזת, באמצעות הפונקציה `String.capitalize/2` והפרמטר `character`. למשל:
+
+```elixir
+string = "hi there"
+capitalized_string = String.capitalize(string, "h")
+IO.puts capitalized_string
+```
+
+הפלט של הדוגמא הבאה הוא "Hi there".
+
+## עיון מעמיק
+
+כעת, כשאנו יודעים איך לבצע קיפיטליזציה על מחרוזת ב-Elixir, ניתן לעיין במתודות נוספות שמאפשרות עבודה על מחרוזות בצורה מתקדמת יותר. למשל, המתודה `String.upcase/1` משנה את כל האותיות במחרוזת לאותיות גדולות, ו- `String.downcase/1` משנה את כל האותיות במחרוזת לאותיות קטנות. ניתן גם לעבוד על מחרוזות באמצעות יישומים של מתודות מחרוזתיות כמו `String.replace/4`, `String.contains?/2`, ועוד.
+
+## ראה גם
+
+- [מדריך רשמי: פונקציות מחרוזות ב-Elixir](https://hexdocs.pm/elixir/master/String.html)
+- [שיעורים מתוחזקים ללימוד Elixir](https://elixirschool.com/)
+- [קהילת Elixir העברית בפייסבוק](https://www.facebook.com/groups/200373093804986)

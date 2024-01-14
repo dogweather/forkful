@@ -1,64 +1,83 @@
 ---
-title:    "Ruby recipe: Reading command line arguments"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/ruby/reading-command-line-arguments.md"
+title:                "Ruby recipe: Reading command line arguments"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Command line arguments are a powerful tool in a programmer's arsenal. They allow us to pass information to our programs directly from the command line, making our scripts more user-friendly and versatile. In this blog post, we will explore the basics of reading command line arguments in Ruby.
+
+Reading command line arguments may seem like a daunting task for beginner programmers, but it is an essential skill to have in order to create more dynamic and interactive programs. By being able to read and manipulate command line arguments, you can add a whole new level of customization and versatility to your Ruby programs. In this blog post, we will explore the ins and outs of reading command line arguments in Ruby and why it is an important skill for any programmer to have.
 
 ## How To
-To start, let's create a simple Ruby script that reads and outputs command line arguments. Open your favorite text editor and follow along!
 
-First, we need to declare a variable to store our arguments. In Ruby, this is done using the `ARGV` global variable. It's an array that stores all the arguments passed to our script.
-
-```
-Ruby
-my_arguments = ARGV
-```
-
-Next, we can use a loop to iterate through the arguments and output them to the terminal. Let's also add a conditional to check for an empty argument array, just in case our user forgets to pass in any arguments.
+Reading command line arguments in Ruby is actually quite simple. Let's take a look at a basic example:
 
 ```
-Ruby
-if my_arguments.empty?
-  puts "Please provide some arguments."
-else
-  my_arguments.each do |arg|
-    puts "Argument: #{arg}"
-  end
-end
+# program.rb
+
+# gets the first command line argument and stores it in a variable
+user_name = ARGV[0]
+
+# prints a personalized greeting for the user
+puts "Hello, #{user_name}! Welcome to my program."
 ```
 
-Save your file as `read_args.rb` and let's test it out! Open a terminal and navigate to the directory where you saved your script. We can run our script by typing `ruby read_args.rb` followed by any arguments we want to pass in. For example:
+To run this program, we would type the following into our terminal:
 
 ```
-Terminal
-ruby read_args.rb hello world
+ruby program.rb John
 ```
 
-This should output:
+The output would then be:
+
 ```
-Argument: hello
-Argument: world
+Hello, John! Welcome to my program.
 ```
+
+As you can see, the first command line argument after the name of the program (in this case "John") is being stored in the variable `user_name` and is being used to create a personalized greeting. 
+
+But what if we want to have multiple command line arguments? We can simply add more elements to the `ARGV` array and access them by their index. For example:
+
+```
+# program.rb
+
+# gets the first and last command line arguments and stores them in variables
+first_name = ARGV[0]
+last_name = ARGV[1]
+
+# prints a personalized message for the user
+puts "Welcome, #{first_name} #{last_name}! We hope you enjoy this program."
+```
+
+To run this program, we would type the following into our terminal:
+
+```
+ruby program.rb John Smith
+```
+
+The output would then be:
+
+```
+Welcome, John Smith! We hope you enjoy this program.
+```
+
+Command line arguments can also be very useful when dealing with user input. Instead of asking the user to input their name every time, we can simply use a command line argument to save time and make our program more efficient.
 
 ## Deep Dive
-Now that we have a basic understanding of how to read command line arguments, let's take a deeper look at some of the concepts involved.
 
-One important concept to keep in mind is the distinction between arguments and options. Arguments are the actual values passed to our script after the file name, while options are additional flags or switches that modify the behavior of our script. For example, in the command `ruby script.rb -v`, `-v` is an option.
+Within our Ruby programs, we have access to a special array called `ARGV` that contains all of the command line arguments entered after the name of the program. This array is zero-indexed, meaning the first command line argument will be at index 0, the second at index 1, and so on. We can use the `ARGV` array just like any other array in Ruby, meaning we can use methods like `length` and `each` to manipulate it.
 
-Additionally, we can access individual arguments using their index in the `ARGV` array. For example, `ARGV[0]` will return the first argument, `ARGV[1]` the second argument, and so on.
+It's important to note that command line arguments will always be read in as strings, so if you need to convert them to a different data type (such as an integer or a float), you will need to use methods like `to_i` or `to_f`.
 
-It's also worth noting that command line arguments are always passed in as strings, so we may need to perform type conversions if we want to use them as numbers or booleans in our script.
+Another useful feature when working with command line arguments is the ability to use flags. Flags are designated by a `-` or `--` before the argument and are used to specify certain options or configurations for the program. For example, running `ruby program.rb -v` could be used to display the version of the program.
 
 ## See Also
-Here are some additional resources for reading command line arguments in Ruby:
 
-- [Ruby documentation on ARGV](https://ruby-doc.org/core-3.0.1/ARGF.html)
-- [A Beginner's Guide to Command Line Arguments in Ruby](https://www.sitepoint.com/ruby-command-line/)
-- [Ruby Command Line Arguments Explained](https://rubyguides.com/ruby-command-line-arguments/)
+For more information on reading command line arguments in Ruby, check out these helpful resources:
 
-Happy coding with your newfound knowledge of reading command line arguments in Ruby!
+- [Official Ruby documentation](https://ruby-doc.org/core-2.7.1/ARGF.html)
+- [Command line arguments in Ruby](https://www.rubyguides.com/2019/05/ruby-command-line-arguments/)
+- [Passing command line arguments in Ruby](https://medium.com/@bdov_/passing-command-line-arguments-in-ruby-4020f262c893)

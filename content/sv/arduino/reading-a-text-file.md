@@ -1,45 +1,55 @@
 ---
-title:    "Arduino: Att läsa en textfil"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/reading-a-text-file.md"
+title:                "Arduino: Läsning av en textfil"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
-Det kan vara viktigt att kunna läsa en textfil i Arduino-programmering, speciellt om du behöver lagra eller hämta data från en extern källa. Detta kan vara användbart för att utöka funktionaliteten hos dina projekt och skapa mer interaktiva och dynamiska lösningar.
+##Varför
 
-# Hur du gör det
-För att läsa en textfil i Arduino-programmering behöver du använda File-läsare-biblioteket. Detta bibliotek ger dig möjlighet att öppna och läsa en textfil från ett SD-kort eller ett annat extern lagringsmedium.
+Att läsa en textfil på Arduino kan vara användbart för att lagra data eller komma åt information utan behov av en internetuppkoppling.
 
-Här är ett exempel på kod som visar hur du kan läsa en textfil från ett SD-kort och skriva ut dess innehåll i seriell monitor:
+##Så här gör du
+
+För att läsa en textfil på Arduino behöver du först öppna filen med hjälp av funktionen `File.read()`. Sedan kan du använda `File.available()` för att kontrollera om filen är tillgänglig och `File.read()` för att läsa in en karaktär i taget. Till exempel:
 
 ```Arduino
-#include <SPI.h>
-#include <SD.h>
-
-void setup() {
-    Serial.begin(9600); // starta seriell kommunikation
-    SD.begin(4); // initialisera SD-kortpinne
-    File textFil = SD.open("textfil.txt"); // öppna textfilen
-    while (textFil.available()) { // loopa igenom filen tills all text har lästs
-        char text = textFil.read(); // läs en tecken från filen
-        Serial.print(text); // skriv ut tecknet i seriell monitor
-    }
-    textFil.close(); // stäng filen när allting har lästs
+File fil = SD.open("textfil.txt");
+if (fil) {
+  while (fil.available()) {
+    char tecken = fil.read();
+    //Gör något med tecknet här
+  }
+  fil.close();
 }
+```
+Detta kodavsnitt öppnar filen "textfil.txt" och läser sedan in den en karaktär åt gången tills hela filen har lästs.
 
-void loop() {
-    // din kod här
+##Djupdykning
+
+För att kunna läsa mer komplexa textfiler, som till exempel CSV-filer med kommaseparerade värden, kan det vara användbart att använda funktionen `strtok()` för att dela upp strängen i olika delar. Till exempel:
+
+```Arduino
+File fil = SD.open("data.csv");
+if (fil) {
+  while (fil.available()) {
+    char rad[50]; //spara tillräckligt med utrymme för raden
+    fil.readBytes(rad, 50); //läs in raden som en sträng
+    char *datum = strtok(rad, ","); //delar upp strängen vid varje kommatecken
+    char *temperatur = strtok(NULL, ","); //hämtar nästa del av strängen efter kommatecknet
+    char *fuktighet = strtok(NULL, ",");
+    //gör något med datan här
+  }
+  fil.close();
 }
 ```
 
-När du kör denna kod kommer du att se innehållet i din textfil skrivas ut i seriell monitor. Du kan också anpassa koden för att göra mer avancerade operationer med texten, till exempel spara den i en variabel eller utföra beräkningar på den.
+Genom att använda `strtok()` kan du läsa in specifika delar av en textfil och arbeta med dem separat.
 
-# Djupdykning
-För att förstå mer om hur File-läsare-biblioteket fungerar kan du läsa dokumentationen på Arduino:s hemsida eller titta på källkoden för biblioteket. Du kanske också vill lära dig mer om hur man hanterar textfiler i allmänhet, till exempel hur man skriver till en textfil eller lägger till data i en befintlig fil.
+##Se även
 
-# Se även
-- [File-läsare-bibliotekets dokumentation](https://www.arduino.cc/en/Reference/SD)
-- [Källkod för File-läsare-biblioteket](https://github.com/arduino-libraries/SD)
-- [Tips för att hantera textfiler i Arduino-projekt](https://learn.sparkfun.com/tutorials/how-to-work-with-text-files/all)
+* [Arduino - Fil](https://www.arduino.cc/reference/en/language/functions/communication/fil/)
+* [Arduino - SD-bibliotek](https://www.arduino.cc/en/Reference/SD)
+* [Arduino - strtok()](https://www.arduino.cc/reference/sv/language/functions/string/bytecode/strtok/)

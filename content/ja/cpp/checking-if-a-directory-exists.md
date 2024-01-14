@@ -1,46 +1,49 @@
 ---
-title:    "C++: ディレクトリが存在するかどうかをチェックする"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/checking-if-a-directory-exists.md"
+title:                "C++: ディレクトリが存在するかどうかをチェックする"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-ディレクトリが存在するかどうかを確認することの重要性は、プログラミングにおいて非常に大切です。ディレクトリが存在するかどうかをチェックすることで、プログラムの実行中に意図しないエラーが起きることを防ぐことができます。
+＃＃なぜ？
+コンピュータープログラミングにおいて、ファイルやフォルダーの存在をチェックすることは重要です。特に、ファイルを確実に読み込むために、事前にファイルが存在するかどうかを確認する必要があります。この記事では、ディレクトリが存在するかどうかをチェックする方法を紹介します。
 
-## ハウツー
-ディレクトリが存在するかどうかをチェックするためのC++のコーディング例を以下に示します。また、サンプルの出力も掲載します。
-
-```C++
+＃＃方法
+"```C++
 #include <iostream>
 #include <filesystem>
 using namespace std;
-
-int main() {
-    string directoryPath = "c:/Documents";
-    
-    // ディレクトリが存在するかどうかをチェックする
-    if (filesystem::exists(directoryPath)) {
-        cout << "ディレクトリが存在します。" << endl;
-    } else {
-        cout << "ディレクトリが存在しません。" << endl;
+namespace fs = std::filesystem;
+int main()
+{
+    // チェックするディレクトリのパスを指定
+    fs::path path = "C:\\Users\\User\\Documents\\Folder";
+    // ディレクトリが存在するかをチェック
+    if(fs::exists(path))
+    {
+        cout << "フォルダーが存在します。" << endl;
     }
-    
+    else
+    {
+        cout << "フォルダーが存在しません。" << endl;
+    }
+    // サブディレクトリも含めてチェックする場合はrecursiveオプションを指定
+    if (fs::exists(path, fs::directory_options::skip_permission_denied | fs::directory_options::recursive))
+    {
+        cout << "サブディレクトリも含めてフォルダーが存在します。" << endl;
+    }
     return 0;
 }
+```"
+コード例を見るとわかるように、<code>std::filesystem</code>ライブラリを使用し、<code>fs::exists</code>関数を使用してディレクトリが存在するかどうかをチェックします。また、<code>recursive</code>オプションを使用することで、サブディレクトリも含めてチェックすることができます。
 
-```
+＃＃ディープダイブ
+ファイルやフォルダーの存在をチェックする方法は、実際にはさまざまな手法があります。例えば、<code>stat</code>システムコールを使用したり、ファイルシステムへの直接アクセスを行ったりする方法もあります。しかし、<code>std::filesystem</code>ライブラリを使用することで、より簡単かつ安全にディレクトリの存在をチェックすることができます。
 
-出力：
-```
-ディレクトリが存在します。
-```
-
-## ディープダイブ
-ディレクトリの存在をチェックする方法には様々な手法がありますが、一般的なものは`filesystem::exists()`関数を使用する方法です。この関数は、引数としてチェックしたいディレクトリのパスを受け取り、ディレクトリが存在するかどうかを真偽値で返します。また、`filesystem`ライブラリはC++17から標準ライブラリとして追加されました。
-
-## その他の関連リンク
-- [C++標準ライブラリ：ファイルシステム操作](https://cpprefjp.github.io/reference/filesystem.html)
-- [ディレクトリが存在するかどうかをチェックする方法（Qiita）](https://qiita.com/uzuki05/items/9c6d100ba3fab0cee590)
-- [C++のfilesystemライブラリ - ディレクトリの操作（TechTarget）](https://searchwindevelopment.techtarget.com/ja/tip/FileSystem-Library-in-C-filesystem-library)
+＃＃参考資料
+- [C++でファイルやディレクトリの存在をチェックする方法](https://cpprefjp.github.io/reference/filesystem/exists.html)
+- [std::filesystem：C ++ 17のファイルシステムライブラリ](https://cpprefjp.github.io/reference/filesystem.html)
+- [ファイル/ディレクトリが存在するかチェックする方法を調べる](https://stackoverflow.com/questions/12774207/fastest-way-to-check-if-a-file-exist-using-standard-c-c11-c)
+- [statシステムコールについての詳細](https://qiita.com/bamchoh/items/792196d1c8c689563d48)

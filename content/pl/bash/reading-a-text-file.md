@@ -1,65 +1,43 @@
 ---
-title:    "Bash: Odczytywanie pliku tekstowego"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/reading-a-text-file.md"
+title:                "Bash: Odczytywanie pliku tekstowego"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jeśli jesteś początkującym programistą lub chcesz po prostu nauczyć się bardziej skomplikowanych zadań w Bash, przeczytanie pliku tekstowego może być bardzo przydatne. W tym krótkim artykule pokażemy Ci, jak czytać pliki tekstowe w Bash i jakie są najczęstsze zastosowania tej umiejętności.
+W dzisiejszych czasach programowanie jest jedną z najważniejszych umiejętności, zwłaszcza dla osób związanych z technologią. Bash, czyli popularny język skryptowy w systemach Linux i Unix, jest często wykorzystywany do automatyzacji wielu zadań. Jego podstawowa funkcjonalność obejmuje m.in. czytanie i edycję plików tekstowych. W tym artykule dowiesz się, dlaczego warto nauczyć się czytać pliki tekstowe w Bashu.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Czytanie plików tekstowych w Bash jest bardzo proste i wykorzystuje komendę `cat`. Umożliwia ona wyświetlenie zawartości pliku tekstowego w konsoli. W poniższych przykładach użyjemy pliku o nazwie "dane.txt", ale możesz zastąpić ją dowolnym innym plikiem tekstowym.
+Aby czytać pliki tekstowe w Bashu, możesz wykorzystać kilka prostych komend, takich jak `cat`, `grep` czy `awk`. Przykładowo, jeśli chcesz wyświetlić zawartość pliku tekstowego, możesz użyć komendy `cat nazwa_pliku`. Jeśli chcesz znaleźć konkretną frazę w pliku, użyj komendy `grep "fraza" nazwa_pliku`. Natomiast komenda `awk` pozwala wykonywać bardziej zaawansowane operacje na plikach tekstowych, na przykład wyświetlanie konkretnych kolumn lub sortowanie danych.
 
-### Przykład 1: Wyświetlenie całego pliku
-
-Poniższe polecenie wyświetli całą zawartość pliku "dane.txt" w konsoli:
+Poniższy przykład kodu przedstawia użycie komendy `awk` do wyświetlania pierwszej kolumny z pliku `dane.csv`:
 
 ```Bash
-cat dane.txt
+awk -F"," '{print $1}' dane.csv
 ```
 
-### Przykład 2: Wyświetlenie wybranego wiersza
+Wynik wykonania tej komendy może wyglądać następująco:
 
-Możesz również wyświetlić tylko wybrany wiersz z pliku tekstowego, podając jego numer. Na przykład, jeśli chcesz wyświetlić drugi wiersz, użyj poniższego polecenia:
-
-```Bash
-cat dane.txt | awk 'NR==2'
 ```
-
-### Przykład 3: Wyświetlenie wybranej kolumny
-
-Polecenie `awk` może również pomóc w wyświetleniu wybranej kolumny z pliku tekstowego. W poniższym przykładzie wyświetlimy drugą kolumnę z pliku "dane.txt":
-
-```Bash
-cat dane.txt | awk '{print $2}'
-```
-
-### Przykład 4: Zastosowanie pętli dla każdego wiersza
-
-Jeśli chcesz wykonać jakieś operacje dla każdego wiersza pliku tekstowego, możesz wykorzystać pętlę `while` w Bash. W poniższym przykładzie wyświetlimy każdy wiersz pliku "dane.txt" w osobnej linii:
-
-```Bash
-while read line; do
-    echo $line
-done < dane.txt
+Imię
+Adam
+Ewa
+Jan
 ```
 
 ## Deep Dive
 
-Często będziesz musiał pracować z większą ilością danych w plikach tekstowych i konieczne będzie przetworzenie ich w sposób bardziej złożony. W Bash istnieje wiele narzędzi, które mogą pomóc w takich zadaniach, takich jak `grep` czy `sed`. Niektóre programy wykorzystujące te narzędzia mogą nawet przyjmować plik tekstowy jako argument.
-
-Dla przykładu, poniższe polecenie wyświetli liczbę słów w pliku tekstowym "dane.txt":
-
-```Bash
-grep -o '\w\+' dane.txt | wc -w
-```
+Czytanie plików tekstowych w Bashu może wydawać się proste i przydatne, ale istnieje wiele bardziej zaawansowanych funkcjonalności, które warto poznać. Możesz na przykład wykorzystać pętlę `while` lub `for` do czytania plików linia po linii i wykonywania na nich różnych operacji. Możliwości są praktycznie nieograniczone, a im bardziej poznasz Bash, tym więcej pomysłów będziesz miał na wykorzystanie czytania plików tekstowych.
 
 ## Zobacz również
 
-- [Podstawowe polecenia Bash](https://linux.die.net/man/1/bash)
-- [Polecenie `cat` w Bash](https://linux.die.net/man/1/cat)
-- [Polecenie `awk` w Bash](https://linux.die.net/man/1/awk)
+- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/)
+- [10 przykładów czytania plików tekstowych w Bashu](https://www.cyberciti.biz/faq/unix-howto-read-line-by-line-from-file/)
+- [Inne przydatne komendy Bash](https://www.codecademy.com/articles/touch-and-mkdir)
+
+Dziękujemy za przeczytanie tego artykułu na temat czytania plików tekstowych w Bashu. Mamy nadzieję, że przydał się on w Twojej przygodzie z programowaniem. Powodzenia!

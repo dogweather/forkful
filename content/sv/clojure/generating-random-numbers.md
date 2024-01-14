@@ -1,42 +1,43 @@
 ---
-title:    "Clojure: Generering av slumpmässiga nummer"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/generating-random-numbers.md"
+title:                "Clojure: Generera slumpmässiga nummer"
+programming_language: "Clojure"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
+Att generera slumpmässiga nummer är en avgörande del av datavetenskap och programmering. Det möjliggör skapande av olika användbarheter såsom simuleringar, spel och kryptografi.
 
-Att generera slumpmässiga tal är ett vanligt problem inom programmering och kan vara användbart för många olika ändamål, såsom spelutveckling, simuleringar och kryptografi.
-
-# Hur man gör det
-
-För att generera slumpmässiga tal i Clojure, kan använda funktionen `rand`, som returnerar ett tal mellan 0 och 1 (exklusive 1). Till exempel:
+## Hur man gör
+För att generera slumpmässiga nummer i Clojure, kan vi använda oss av inbyggda funktioner som "rand" och "rand-int". Dessa funktioner tar argument och producerar ett slumpmässigt nummer med hjälp av en pseudorandom generator.
 
 ```Clojure
-(rand)
+(rand) ; => 0.572945789935983
+(rand) ; => 0.136297439679616
 ```
 
-Detta kommer att generera ett slumpmässigt tal varje gång koden körs. Om du vill generera ett heltal, kan du använda `rand-int` istället, som tar ett argument för det önskade intervallet. Till exempel:
+Vi kan också begränsa intervallet av slumpmässiga nummer genom att ange ett argument till funktionen "rand-int":
 
 ```Clojure
-(rand-int 10) ; genererar ett tal mellan 0 och 9
+(rand-int 10) ; => 5
+(rand-int 50) ; => 22
 ```
 
-För att generera ett slumpmässigt tal med decimaler, kan du använda `rand-nth`, som tar ett argument för antalet decimaler som du vill ha. Till exempel:
+Slutligen kan vi använda funktionen "repeatedly" för att generera ett specifikt antal slumpmässiga nummer:
 
 ```Clojure
-(rand-nth 5) ; genererar ett tal med 5 decimaler
+(repeatedly 5 rand-int) ; => (3 1 4 7 9)
+(repeatedly 10 #(rand-int 100)) ; => (26 78 4 65 89 15 90 31 98 53)
 ```
 
-# Djupdykning
+## Djupdykning
+Slumpmässiga nummer som genereras av "rand" och "rand-int" är inte riktigt slumpartade i matematisk mening. De skapas med hjälp av en så kallad pseudorandom generator, vilket innebär att de är baserade på ett startvärde och sedan använder en algoritm för att generera serier av nummer som verkar slumpmässiga.
 
-För att förstå hur funktionen `rand` fungerar, måste vi förstå att den egentligen använder en pseudoslumpgenerator, vilket innebär att den genererar tal som är baserade på en matematisk algoritm istället för att vara helt slumpmässiga. Detta gör den eftersom det är mycket svårt för en dator att producera verkligt slumpmässiga tal.
+Clojure erbjuder också ett sätt att använda en egendefinierad generator genom funktionen "set!" och "seed-random". Detta kan vara användbart om du vill ha mer kontroll över dina slumpmässiga nummer.
 
-Clojure använder en variant av Mersenne Twister-algoritmen för att generera pseudoslumpmässiga tal. Detta är en väldigt effektiv algoritm som producerar högkvalitativa tal, men den är inte helt slumpmässig och bör inte användas för kryptografiska ändamål.
-
-# Se även
-
-- [The Clojure Cheatsheet](https://clojure.org/api/cheatsheet)
-- [Mersenne Twister in Wikipedia (Swedish)](https://sv.wikipedia.org/wiki/Mersenne_Twister)
+## Se även
+- [ClojureDocs: random](https://clojuredocs.org/clojure.core/rand)
+- [ClojureDocs: repeated](https://clojuredocs.org/clojure.core/repeatedly)
+- [Wikipedia: Pseudorandom generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

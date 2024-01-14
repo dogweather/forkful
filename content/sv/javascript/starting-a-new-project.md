@@ -1,54 +1,56 @@
 ---
-title:    "Javascript: Att påbörja ett nytt projekt"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/starting-a-new-project.md"
+title:                "Javascript: Att starta ett nytt projekt"
+programming_language: "Javascript"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför:
+Att starta ett nytt programmeringsprojekt kan vara en spännande och utmanande upplevelse. Det ger dig möjlighet att utveckla dina färdigheter, utforska nya tekniker och skapa något som är unikt för dig.
 
-Att starta ett nytt projekt kan vara både utmanande och inspirerande för en Javascript programmerare. Det ger dig möjlighet att utveckla dina färdigheter, lära dig nya tekniker och skapa något unikt och kreativt. Dessutom kan det vara ett sätt att lösa problem eller uppfylla ett behov som du eller andra har. I denna bloggpost kommer vi att titta på hur man kan påbörja ett nytt projekt i Javascript och ge några tips för att göra processen smidigare.
-
-## Så här
-
-För att starta ett nytt Javascript projekt kan du följa dessa enkla steg:
-
-1. Definiera målet: Först och främst måste du definiera vad du vill uppnå med ditt projekt. Ska det vara ett webbaserat spel, en webbapplikation eller en enkel hemsida?
-
-2. Välj en utvecklingsmiljö: Det är viktigt att välja en lämplig utvecklingsmiljö för ditt projekt. Du kan använda olika redigerare eller IDE:er som Visual Studio Code, Sublime Text eller Atom.
-
-3. Sätt upp en versionhantering: Att använda ett versionhanteringssystem som Git kan hjälpa dig att hålla koll på dina projektfiler och göra det lättare att samarbeta med andra.
-
-4. Skapa grundläggande filer och mappstruktur: Börja med att skapa en index.html fil där du kan lägga till din HTML-kod och en style.css fil för din CSS. Skapa också en mappstruktur för ditt projekt och håll filerna organiserade.
-
-5. Lär dig grundläggande Javascript: Om du inte redan är bekant med Javascript, ta dig tid att lära dig de grundläggande koncepten och syntaxen. Detta kommer att hjälpa dig att skapa interaktivitet och funktionalitet i ditt projekt.
-
-6. Använd externa bibliotek och ramverk: För att göra ditt liv som programmerare lättare kan du använda externa bibliotek och ramverk som jQuery, React eller Angular.
-
-Här är ett exempel på hur man kan skriva en enkel "Hello World!" skript i Javascript:
+##Så här:
+Att starta ett nytt projekt är inte alltid en lätt uppgift, men det är viktigt att ha en solid grund att bygga på. Här är några steg att följa för att komma igång:
 
 ```Javascript
-Var hälsning = "Hello World!";
-Console.log(hälsning);
+// Skapa en mapp för ditt projekt och navigera till den i terminalen eller kommandotolken.
+mkdir mitt-projekt
+cd mitt-projekt
+
+// Initialisera ett nytt npm-projekt.
+npm init
+
+// Installera eventuella beroenden som du vill använda.
+npm install paket-namn
+
+// Skapa en fil för din huvudkod och börja koda!
+touch index.js
 ```
 
-Output: Hello World!
+Här är ett enkelt exempel på hur du kan använda `console.log()` för att skriva ut en hälsning i konsolen:
 
-## Djupdykning
+```Javascript
+console.log("Hej världen!");
+```
 
-Att starta ett nytt projekt kan vara överväldigande och det är lätt att fastna i detaljer. Här är några tips som kan hjälpa dig att hålla igång och göra processen smidigare:
+Output: `Hej världen!`
 
-- Planera och bryt ner projektet i mindre delar: Det hjälper dig att hålla fokus och undvika att bli överväldigad av projektet som helhet.
+Det finns en mängd olika verktyg och ramar som du kan använda för att underlätta utvecklingen, såsom React, Angular och Vue. Utforska vilka som passar bäst för ditt projekt och lär dig mer om hur de fungerar.
 
-- Använd debuggning och testning: Testa din kod ofta och använd debugger för att hitta och lösa problem snabbt. Det kan spara dig mycket tid och frustration i slutändan.
+##Djupdyk:
+Att starta ett nytt projekt kräver mycket mer än bara att skriva kod. Det är viktigt att ha en klar förståelse för vad du vill uppnå och vad som krävs för att göra det.
 
-- Sök hjälp och lär av andra: Ta hjälp av olika online-resurser, guider, videos och forum för att få tips och råd från andra programmerare. Detta kan även hjälpa dig att hitta nya sätt att lösa problem.
+En viktig del av att starta ett projekt är att definiera dess syfte och mål. Det hjälper dig att hålla fokus och undvika att göra onödiga förändringar senare. Det är också viktigt att planera och strukturera ditt projekt på ett sätt som gör det enkelt att underhålla och utöka i framtiden.
 
-## Se även
+Glöm inte bort vikten av att dokumentera din kod och använda bästa praxis för att göra den lättläst och lättförståelig för andra utvecklare.
 
-- [10 Tips för att starta ett nytt Javascript projekt](https://www.dynatrace.com/blog/best-practices-for-starting-a-new-javascript-project/)
+##Se också:
+- [10 steg för att starta ett nytt programmeringsprojekt](https://medium.com/better-programming/10-steps-to-start-your-next-programming-project-f5b5a4fff28)
+- [Det viktigaste steget vid start av ett projekt](https://www.techopedia.com/how-to-successfully-start-a-software-development-project/2/34325)
+- [Bästa praxis för att starta ett nytt programmeringsprojekt](https://www.coherentlogic.com/blog/best-practices-for-starting-a-new-software-project/)
 
-- [En djupdykning i att starta ett nytt Javascript projekt](https://blog.usejournal.com/dive-into-javascript-3aef6b804145)
-
-- [Kom igång med Javascript](https://www.javascript.com/learn)
+##Se också:
+- [10 steg för att starta ett nytt programmeringsprojekt](https://medium.com/better-programming/10-steps-to-start-your-next-programming-project-f5b5a4fff28)
+- [Det viktigaste steget vid start av ett projekt](https://www.techopedia.com/how-to-successfully-start-a-software-development-project/2/34325)
+- [Bästa praxis för att starta ett nytt programmeringsprojekt](https://www.coherentlogic.com/blog/best-practices-for-starting-a-new-software-project/)

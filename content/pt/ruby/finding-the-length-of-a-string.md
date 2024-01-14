@@ -1,38 +1,46 @@
 ---
-title:    "Ruby: Encontrando o tamanho de uma sequência de caracteres"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/finding-the-length-of-a-string.md"
+title:                "Ruby: Encontrando o comprimento de uma string"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que
+Se você é engajado em aprender linguagens de programação ou já é um desenvolvedor, provavelmente já se deparou com a necessidade de encontrar o comprimento de uma string (cadeia de caracteres). Embora possa parecer uma tarefa simples, entender como encontrar o comprimento de uma string é uma habilidade fundamental para trabalhar com dados de texto em Ruby.
 
-Se você é novo na programação Ruby, pode ficar se perguntando por que é importante encontrar o comprimento de uma string. A resposta é simples: saber o comprimento de uma string é essencial para muitas tarefas de programação, como validar inputs do usuário, formatar saídas e alocar espaço para armazenamento de dados.
-
-## Como fazer
-
-Em Ruby, há algumas maneiras diferentes de encontrar o comprimento de uma string. Aqui estão duas das formas mais comuns:
-
+## Como Fazer
+Encontrar o comprimento de uma string é uma tarefa fácil em Ruby. Basta usar o método #length ou #size da classe String. Por exemplo:
+```Ruby
+nome = "João"
+puts nome.length
+puts nome.size
 ```
-# Método 1: usando o método length
-string = "Olá, mundo!"
-puts string.length
-#Output: 12
+Neste exemplo, usamos o método #length e #size para encontrar o comprimento da string "João". O output será `4` em ambos os casos, pois a string contém quatro caracteres.
 
-# Método 2: usando contagem de caracteres
-count = 0
-string.each_char { |c| count += 1 }
-puts count
-#Output: 12
+Você também pode usar o método #length ou #size diretamente em uma string sem atribuí-la a uma variável. Por exemplo:
+```Ruby
+puts "Olá".length
+puts "Olá".size
 ```
+O output será novamente `4`.
 
-## Deep Dive
+## Profundidade
+Ao encontrar o comprimento de uma string em Ruby, é importante entender que ele conta todos os caracteres, incluindo espaços e caracteres especiais. Por exemplo, se tivermos a string "olá mundo!" e contarmos o comprimento usando o método #length ou #size, o output será `11`, pois há onze caracteres, incluindo o espaço entre as palavras.
 
-Para entender completamente como os métodos length e each_char funcionam, é necessário entender a estrutura de string em Ruby. Em Ruby, uma string é um objeto que contém uma sequência de caracteres. Isso significa que cada letra, espaço e símbolo em uma string é considerado como um único caractere. Quando usamos o método length em uma string, ele nos retorna o número total de caracteres na string. Já o método each_char itera sobre cada caractere da string e executa uma ação especificada. Neste exemplo, estamos incrementando a variável de contagem para cada caractere encontrado.
+Outro detalhe importante é que o método #length e #size retornam um número inteiro, o que significa que não são adequados para contar a quantidade de palavras em uma string. Para isso, pode-se usar o método #split combinado com o método #count ou #length. Por exemplo:
+```Ruby
+frase = "Esta é uma frase de exemplo"
+palavras = frase.split(" ")
+puts palavras.count 
+# ou puts palavras.length
+```
+O output será `6` neste caso, pois a string foi dividida em seis palavras.
 
-## Veja também
+## Veja Também
+- [Documentação do método #length em Ruby](https://ruby-doc.org/core-2.7.1/String.html#method-i-length)
+- [Documentação do método #size em Ruby](https://ruby-doc.org/core-2.7.1/String.html#method-i-size)
+- [Como contar palavras em Ruby](https://www.rubyguides.com/2018/11/ruby-count-words/)
 
-- [Documentação do Ruby para string](https://www.ruby-doc.org/core-2.7.2/String.html)
-- [Tutorial de Ruby para iniciantes](https://www.tutorialspoint.com/ruby/index.htm)
-- [Blog de programação em Ruby da Brasil MaisTech](https://brasilmaistech.com.br/blog/programacao-em-ruby/)
+O comprimento de uma string é um conceito simples, mas é uma ferramenta poderosa ao trabalhar com dados em texto em Ruby. Com o conhecimento deste conceito e dos métodos corretos, você pode manipular e analisar facilmente strings em seus projetos. Espero que este artigo tenha sido útil para você em seu aprendizado de Ruby. Até a próxima!

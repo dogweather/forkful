@@ -1,36 +1,57 @@
 ---
-title:    "Clojure: Escrevendo um arquivo de texto"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/writing-a-text-file.md"
+title:                "Clojure: Escrevendo um arquivo de texto"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto em Clojure?
+## Por que escrever um arquivo de texto?
 
-Escrever um arquivo de texto é uma tarefa comum em muitas linguagens de programação, incluindo Clojure. Essa prática pode ser útil para armazenar dados, como resultados de um programa, ou para criar arquivos de configuração que possam ser facilmente lidos e modificados.
+Escrever um arquivo de texto pode ser uma tarefa simples, mas é extremamente útil quando se trata de armazenar informações ou configurar um programa. Além disso, ao usar uma linguagem funcional como Clojure, a escrita de arquivos de texto pode ser feita de forma elegante e concisa.
 
-## Como fazer?
+## Como fazer
 
-Para escrever um arquivo de texto em Clojure, primeiro precisamos criar um objeto "java.io.FileWriter" e passar o caminho e o nome do arquivo que desejamos criar. Em seguida, podemos usar o comando "write" para adicionar conteúdo ao arquivo. Aqui está um exemplo de código em Clojure que escreve "Hello World!" em um arquivo chamado "exemplo.txt":
+Para escrever um arquivo de texto em Clojure, podemos usar a função "spit", que recebe como parâmetros o caminho do arquivo e o conteúdo que será escrito. Por exemplo:
 
 ```Clojure
-(with-open [fw (java.io.FileWriter. "exemplo.txt")]
-  (.write fw "Hello World!"))
+(spit "arquivo.txt" "Olá, mundo!")
 ```
 
-Podemos verificar se o arquivo foi criado com sucesso usando o comando "ls" no terminal. A saída deve incluir o arquivo "exemplo.txt". Quando abrimos o arquivo, devemos ver a mensagem "Hello World!" dentro dele.
+Com isso, criamos um arquivo chamado "arquivo.txt" que contém o texto "Olá, mundo!".
 
-## Mergulho Profundo
+Podemos também usar o operador ">>" para adicionar conteúdo a um arquivo já existente, como mostrado no exemplo abaixo:
 
-Ao escrever um arquivo de texto em Clojure, é importante lembrar de fechar o objeto "FileWriter" após terminar de escrever. Podemos fazer isso usando o comando "close" ou usando "with-open" como no exemplo anterior.
+```Clojure
+(>> "arquivo.txt" "Isso é um texto adicionado ao arquivo!")
+```
 
-Também é possível usar outros métodos, como "append" para adicionar conteúdo a um arquivo já existente ou "println" para escrever uma nova linha. Além disso, podemos usar o comando "print-str" para escrever conteúdo semelhante a um objeto "String" diretamente no arquivo.
+Outra opção é usar a função "with-open" para garantir que o arquivo seja fechado após a escrita. Veja o exemplo:
+
+```Clojure
+(with-open [arq (writer "arquivo.txt")]
+  (.write arq "Este texto é escrito dentro do bloco 'with-open'"))
+```
+
+## Mergulho profundo
+
+Quando escrevemos um arquivo de texto, podemos especificar o tipo de codificação que será utilizado, se o arquivo será criado se não existir, entre outras configurações. Para isso, podemos passar mapas como argumentos para a função "spit".
+
+Por exemplo, para escrever um arquivo usando a codificação UTF-8 e criá-lo caso ele não exista, podemos usar o seguinte código:
+
+```Clojure
+(spit "arquivo.txt" "Conteúdo do arquivo" {:encoding "UTF-8" :append false})
+```
+
+Também é possível usar a função "slurp" para ler o conteúdo de um arquivo de texto, e a função "read-string" para transformar esse conteúdo em uma estrutura de dados do Clojure. Veja o exemplo:
+
+```Clojure
+(def texto (slurp "arquivo.txt"))
+(def dados (read-string texto))
+```
 
 ## Veja também
 
-Aqui estão alguns links úteis para aprender mais sobre como escrever arquivos de texto em Clojure:
-
-- [Documentação oficial de FileWriter](https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html)
-- [Exemplo de escrita de arquivo em Clojure](https://www.baeldung.com/clojure-writing-text-files)
-- [Tutorial em vídeo sobre como escrever arquivos em Clojure](https://www.youtube.com/watch?v=aBaAa4fCrPc)
+- [Documentação oficial do Clojure sobre escrita de arquivos](https://clojuredocs.org/clojure.core/spit)
+- [Tutorial de Clojure para iniciantes em português](https://www.tundebabzy.com/pt/tutorials/clojure/collections)

@@ -1,42 +1,65 @@
 ---
-title:    "Arduino: Lettura di un file di testo"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/reading-a-text-file.md"
+title:                "Arduino: Lettura di un file di testo"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-La lettura di un file di testo è un'operazione comune nella programmazione di Arduino. Questo può essere utile per leggere dati o configurazioni da un file, riducendo la quantità di codice necessaria per implementare tali funzionalità direttamente nel programma.
+Leggere un file di testo è fondamentale quando si lavora con Arduino. Questo processo consente di acquisire dati esterni e utilizzarli all'interno del programma, consentendo una maggiore versatilità e possibilità di personalizzazione dei progetti. In questo articolo scoprirai come leggere un file di testo utilizzando Arduino.
 
 ## Come fare
 
-Per leggere un file di testo in Arduino, il primo passo è aprire il file utilizzando la funzione `SD.open()`. Questo richiederà il percorso del file e specificare la modalità di lettura (lettura, scrittura, ecc). Quindi, possiamo utilizzare un loop `while` per leggere il contenuto del file e salvare i dati in una variabile utilizzando i metodi della classe `File`.
+Per iniziare, avrai bisogno di un Arduino e un file di testo contenente i dati che desideri utilizzare. Segui questi semplici passaggi per leggere il file di testo:
+
+1. Collega il tuo Arduino al computer utilizzando un cavo USB.
+2. Apri l'IDE di Arduino sul tuo computer.
+3. Copia e incolla il seguente codice nell'IDE:
 
 ```Arduino
-File myFile = SD.open("nomefile.txt", FILE_READ); // Apri il file in modalità lettura
+// Definizione delle variabili
+File file;
+String data;
 
-if(myFile){ // Controllo se il file è stato aperto con successo
-  while(myFile.available()){ // Continua finché c'è del contenuto da leggere
-    char data = myFile.read(); // Leggi un carattere dal file e salvalo in una variabile
-    Serial.println(data); // Stampa il carattere sulla console seriale
+void setup() {
+  // Avvia la comunicazione seriale
+  Serial.begin(9600);
+
+  // Apri il file di testo
+  file = SD.open("file_testo.txt");
+
+  // Leggi il contenuto del file
+  while (file.available()) {
+    data = file.readString();
+    Serial.println(data);
   }
 
-  myFile.close(); // Chiudi il file una volta completata la lettura
- }
-```
+  // Chiudi il file
+  file.close();
 
-L'esempio sopra leggerà il contenuto di `nomefile.txt` e lo stamperà sulla console seriale. È importante ricordare di chiudere il file dopo averlo utilizzato per evitare eventuali problemi di memoria.
+}
+
+void loop() {
+  // Inserisci qui eventuali altre attività da eseguire
+}
+```
+4. Modifica il nome del file di testo nella riga `file = SD.open("file_testo.txt");` con il nome del tuo file.
+5. Carica il codice sul tuo Arduino.
+6. Apri il monitor seriale nella finestra dell'IDE di Arduino per visualizzare i dati letti dal file di testo.
 
 ## Approfondimento
 
-Quando si lavora con file di testo, è importante conoscere i diversi metodi e funzioni della classe `File` di Arduino. Ad esempio, è possibile utilizzare il metodo `File.seek()` per spostare il cursore di lettura in una posizione specifica all'interno del file. Questo può essere molto utile quando si lavora con dati strutturati all'interno del file.
+La funzione `SD.open()` viene utilizzata per aprire il file di testo e restituisce un oggetto di tipo `File`, che contiene il contenuto del file. A questo punto, il contenuto del file viene letto e memorizzato nella variabile `data` utilizzando la funzione `readString()`. Infine, il file viene chiuso utilizzando la funzione `close()`.
 
-Inoltre, è possibile scrivere su file utilizzando il metodo `File.println()` o `File.write()`, che funzionano in modo simile alla loro controparte di lettura. È importante notare che quando si scrive su un file, verrà sovrascritto il contenuto precedente, a meno che non si utilizzi il metodo `File.available()` per posizionare il cursore di scrittura in una posizione specifica.
+È importante ricordare che il file di testo deve essere posto nella stessa cartella del file di sketch di Arduino. Inoltre, il file deve essere formattato correttamente per essere letto correttamente dal codice.
+
+In aggiunta ai dati, è possibile anche leggere informazioni sul file stesso, come il nome, il percorso e la dimensione utilizzando le funzioni `name()`, `fileSize()` e `dirPath()` rispettivamente.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Arduino sulla classe File](https://www.arduino.cc/en/Reference/File)
-- [Esempio di lettura file su Arduino](https://www.arduino.cc/en/Tutorial/ReadASCIIFile)
-- [Tutorial più avanzato sulla lettura e scrittura di file su Arduino](https://www.toptal.com/arduino/arduino-reading-and-writing-text-file-tutorial)
+- [Tutorial: Leggere un file di testo con Arduino](https://www.arduino.cc/en/Tutorial/ReadASCIIString)
+- [Funzione `SD.open()` di Arduino](https://www.arduino.cc/en/Reference/SDopen)
+- [Esempi di codice per la lettura di file di testo con Arduino](https://github.com/arduino-libraries/SD/blob/master/examples/ReadWrite/ReadWrite.ino)

@@ -1,49 +1,37 @@
 ---
-title:    "Gleam: 文字列を小文字に変換する"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/converting-a-string-to-lower-case.md"
+title:                "Gleam: 「文字列を小文字に変換する」"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ 
-
-文字列を小文字に変換することに何か意味があるのでしょうか？答えはシンプルです - 文字列を比較するためには、大小文字を無視する必要があるからです。文字列を小文字に変換することで、同じ文字列を異なる大文字で入力されてもプログラムはそれらを同じものとして認識することができます。
+## なぜ
+人々はなぜ文字列を小文字に変換することを行うのか、その理由はなんでしょうか。一言で説明すると、小文字に変換することで文字列をより柔軟に扱うことができるようになります。
 
 ## 方法
+以下のようなGleamのコードを使って、文字列を小文字に変換する方法を示します。
 
-まず、文字列を小文字に変換するには、`String.to_lower_case()`関数を使用します。例えば、以下のようにコードを記述します。
-
-```
-Gleam 1.0.0
-
-import gleam/string
-
-let string = "HELLO WORLD"
-let lower_string = string
-    |> string.to_lower_case()
-
+```Gleam
+let string = "Hello World"
+let lower_string = String.to_lower_case(string)
 ```
 
-このコードを実行すると、`lower_string`の値は`"hello world"`になります。文字列を変数に代入せずに、直接以下のように表示することもできます。
-
-```
-Gleam 1.0.0
-
-import gleam/string
-
-io.println(string.to_lower_case("HELLO WORLD"))
-```
-
-実行すると、コンソールには`"hello world"`と表示されます。
+上記のコードを実行すると、`lower_string`には"hello world"という文字列が格納されます。これにより、大文字や小文字の違いを気にしなくても文字列を比較することができるようになります。
 
 ## ディープダイブ
+文字列を小文字に変換する方法をより詳しく説明します。まず、Gleamの標準ライブラリに含まれる`String`モジュールには、`to_lower_case`以外にも文字列を操作するための便利な関数があります。例えば、`contains`関数を使うと任意の文字列が他の文字列に含まれているかどうかを判定することができます。また、`starts_with`や`ends_with`といった関数を使うことで、文字列が特定の文字列で始まるか終わるかを簡単にチェックすることができます。
 
-`to_lower_case()`関数は実際には非常にシンプルなものです。内部的には、文字列をリストとして表現し、それぞれの文字を小文字に変換し、最終的にリストを結合して新しい文字列を作成しています。
+さらに、日本語のようにUnicode文字がたくさん含まれる文字列でも、`to_lower_case`関数を使うことで正しく小文字に変換することができます。これはGleamがUnicodeをサポートしているためです。
 
-また、日本語の文字列に対しても同様に機能します。例えば、`"こんにちは"`という文字列を小文字に変換すると、`"こんにちは"`という文字列が返されます。これは、日本語の文字はすでに小文字であるため、変換に差異がないためです。
+## それでは次の記事をどうぞ
+これらの記事も合わせてお読みください。
 
-## 関連リンク
+- [Gleamの公式ドキュメント](https://gleam.run/)
+- [Gleamで文字列を操作する方法](https://gleam.run/articles/strings.html)
+- [Gleamで文字列をフォーマットする方法](https://gleam.run/articles/printf.html)
 
-- `String.to_lower_case()`関数のドキュメント: https://gleam.run/modules/gleam_stdlib/gleam-string.html#type:string-to_lower_case/1 
-- ASCII規格についての説明: https://ja.wikipedia.org/wiki/ASCII
+## 参考リンク
+- [GleamのGitHubリポジトリ](https://github.com/gleam-lang/gleam)
+- [Unicodeについての詳細な説明](https://unicode.org/)

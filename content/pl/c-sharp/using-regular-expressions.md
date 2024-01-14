@@ -1,55 +1,47 @@
 ---
-title:    "C#: Wykorzystywanie wyrażeń regularnych"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/using-regular-expressions.md"
+title:                "C#: Używanie wyrażeń regularnych"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego używać wyrażeń regularnych?
+# Dlaczego korzystać z wyrażeń regularnych w C#?
 
-Wyrażenia regularne, zwane również regexami, są potężnym narzędziem w programowaniu, które pomagają w przetwarzaniu tekstów i wyszukiwaniu wyrażeń dopasowujących do określonych wzorców. Używanie wyrażeń regularnych pozwala zaoszczędzić czas i wysiłek przy przetwarzaniu danych tekstowych. Jest to szczególnie przydatne w przypadku analizy dużych ilości informacji lub w przypadku gdy tekst ma różne formatowanie.
+Czy wiesz, że wyrażenia regularne to potężne narzędzie, które może uprościć twój kod i ułatwić ci pracę z tekstem? Dzięki nim możesz szybko i precyzyjnie przetwarzać dane, odwzorowywać wzorce oraz sprawdzać poprawność wprowadzonych danych. W tym artykule dowiesz się, dlaczego warto wykorzystywać wyrażenia regularne w swoim kodzie.
 
 ## Jak używać wyrażeń regularnych w C#?
 
-Język C# zapewnia biblioteki i narzędzia do wykorzystania wyrażeń regularnych. Poniżej znajduje się przykładowy kod, który wyjaśni jak używać wyrażeń regularnych w C#:
+Aby móc korzystać z wyrażeń regularnych w języku C#, musisz najpierw dołączyć przestrzeń nazw `System.Text.RegularExpressions`. Następnie możesz użyć klasy `Regex`, która zawiera wiele przydatnych metod. Przykładowo, jeśli chcesz wykryć wszystkie wystąpienia słowa "programowanie" w tekście, możesz zastosować funkcję `Matches`:
 
 ```C#
-string input = "To jest przykładowy tekst do przetworzenia."
-string pattern = "^To jest (.*) tekst do przetworzenia.$"; // wzorzec dopasowujący tekst między "To jest" a "tekst do przetworzenia"
-Match match = Regex.Match(input, pattern); // dopasowanie tekstu do wzorca
-if (match.Success)
+using System.Text.RegularExpressions;
+
+string tekst = "Uczę się programowania w C#, a ty?";
+string wzorzec = "programowanie";
+
+MatchCollection dopasowania = Regex.Matches(tekst, wzorzec);
+
+foreach (Match dopasowanie in dopasowania)
 {
-    Console.WriteLine(match.Groups[1].Value); // wyświetlenie dopasowanego tekstu
+    Console.WriteLine("Znaleziono dopasowanie: " + dopasowanie.Value);
 }
+
+// Wynik:
+// Znaleziono dopasowanie: programowanie
 ```
 
-```
-Output:
-przykładowy
-```
+W powyższym przykładzie zastosowaliśmy metodę `Matches`, która zwraca kolekcję wszystkich dopasowań wzorca w tekście. Następnie za pomocą pętli `foreach` wypisujemy znalezione dopasowania. Dzięki temu możemy szybko odnaleźć interesujące nas części tekstu.
 
-Możemy również użyć wyrażeń regularnych do wykrywania i zamiany tekstów. Na przykład, możemy chcieć zmienić format numeru telefonu z "123-456-7890" na "(123) 456-7890". W tym celu możemy użyć następującego kodu:
+## Głębszy wgląd w wyrażenia regularne
 
-```C#
-string input = "123-456-7890";
-string pattern = "(\\d{3})-(\\d{3})-(\\d{4})"; // wzorzec dopasowujący trzy cyfry, myślnik, trzy cyfry, myślnik, cztery cyfry
-string replacement = "($1) $2-$3"; // znaki z grupy odnoszą się do kolejności dopasowanych wyrażeń w wzorcu
-string result = Regex.Replace(input, pattern, replacement); // zamiana dopasowanego tekstu według wzorca
-Console.WriteLine(result);
-```
+Wyrażenia regularne w języku C# umożliwiają również wykonywanie bardziej zaawansowanych operacji, takich jak grupowanie i używanie wyrażeń warunkowych. Możesz także wykorzystać wyrażenia regularne wraz z wyrażeniami lambda, co może ułatwić jeszcze bardziej przetwarzanie tekstu.
 
-```
-Output:
-(123) 456-7890
-```
+Ponadto, warto zapoznać się z różnymi składniami i wyrażeniami, które można stosować w wyrażeniach regularnych, aby móc wykorzystać je w różnych przypadkach. Przydatne może być także korzystanie z narzędzi online do sprawdzania poprawności wyrażeń regularnych, takich jak regex101 czy regexr.
 
-## Głębsze zanurzenie w używaniu wyrażeń regularnych
+# Zobacz także
 
-Wyrażenia regularne w C# posiadają wiele zaawansowanych funkcji, takich jak metaznaki, grupowanie lub wyrażenia regularne wielowierszowe, które pozwalają na jeszcze bardziej zaawansowane przetwarzanie tekstu. Warto poświęcić czas na naukę tych możliwości, ponieważ może to znacznie przyspieszyć pracę z tekstem w programowaniu.
-
-## Zobacz też
-
-- [Dokumentacja C# - Wyrażenia regularne](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/regular-expressions) 
-- [Tutorial wyrażeń regularnych w C#](https://www.dotnetperls.com/regex)
-- [Lista wyrażeń regularnych w C#](https://www.rexegg.com/regex-csharp.html)
+- [Dokumentacja Microsoft o wyrażeniach regularnych w C#](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [Porównanie wyrażeń regularnych w C# i JavaScript](https://dev.to/bjhaid_93/host-spotlight-net-regex-vs-javascript-regex-49m0)
+- [Przykładowe zastosowania wyrażeń regularnych w C#](https://www.tutorialspoint.com/csharp/csharp_regular_expressions.htm)

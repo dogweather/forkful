@@ -1,49 +1,42 @@
 ---
-title:    "Ruby: Majuscule d'une chaîne de caractères"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/capitalizing-a-string.md"
+title:                "Ruby: Capitaliser une chaîne de caractères"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La capitalisation d'une chaîne de caractères est une tâche courante en programmation, surtout lorsque l'on travaille avec des chaînes de texte provenant de différentes sources. Cela peut également être nécessaire pour respecter certaines conventions d'écriture dans un projet de développement.
+Nous avons tous rencontré des situations où nous avons besoin de changer la casse d'une chaîne de caractères. Que ce soit pour rendre un texte plus lisible ou pour suivre une convention de nommage, la capitalisation des chaînes de caractères est un problème courant dans la programmation.
 
 ## Comment faire
 
-Il existe différents moyens de capitaliser une chaîne de caractères en Ruby, en fonction des besoins et des préférences de chaque développeur. Voici quelques exemples de méthodes couramment utilisées :
+Pour capitaliser une chaîne de caractères en Ruby, il suffit d'utiliser la méthode `capitalize` :
 
 ```Ruby
-# Utilisation de la méthode capitalize
-string = "hello world"
-puts string.capitalize #=> "Hello world"
-
-# Utilisation de la méthode upcase
-string = "hello world"
-puts string.upcase #=> "HELLO WORLD"
-
-# Utilisation de la méthode capitalize pour une lettre spécifique
-string = "hello world"
-puts string.capitalize[0] #=> "H"
-
-# Utilisation de la méthode gsub pour remplacer une lettre par une majuscule
-string = "hello world"
-puts string.gsub(/\b\w/, &:upcase) #=> "Hello world"
+"bonjour".capitalize  #=> "Bonjour"
 ```
 
-Comme on peut le voir dans ces exemples, il est possible de capitaliser une chaîne de caractères en utilisant des méthodes intégrées à Ruby, telles que `capitalize`, `upcase` et `gsub`.
+Si vous souhaitez capitaliser chaque mot d'une phrase, vous pouvez utiliser la méthode `titleize` :
+
+```Ruby
+"je suis un programmeur en ruby".titleize  #=> "Je Suis Un Programmeur En Ruby"
+```
+
+Il est également possible de capitaliser uniquement la première lettre de chaque mot, en utilisant la méthode `swapcase` :
+
+```Ruby
+"banane est un fruit".swapcase  #=> "Banane Est Un Fruit"
+```
 
 ## Plongée en profondeur
 
-Pour comprendre ce qui se passe lorsqu'on capitalise une chaîne de caractères en Ruby, il est important de comprendre comment les caractères sont représentés en arrière-plan. Ruby utilise l'encodage UTF-8 par défaut, ce qui signifie que chaque caractère peut être représenté par un ou plusieurs octets en fonction de sa complexité.
-
-Lorsque l'on utilise des méthodes comme `capitalize` ou `upcase`, Ruby va simplement convertir le premier caractère de la chaîne en majuscule en fonction de sa représentation en arrière-plan. Cela peut sembler simple, mais cela peut poser des problèmes si l'on travaille avec des caractères spéciaux ou des accents.
-
-Afin de s'assurer que la capitalisation est correcte dans toutes les situations, il est important de bien comprendre la façon dont les caractères sont représentés en arrière-plan et de choisir la méthode appropriée en fonction de cela.
+Maintenant que nous avons vu comment capitaliser une chaîne de caractères en Ruby, il est intéressant de comprendre comment cela fonctionne en interne. En réalité, Ruby utilise la méthode `capitalize` pour effectuer cette tâche. Cette méthode modifie simplement la première lettre de la chaîne en majuscule et laisse le reste de la chaîne inchangé. Cependant, la méthode `titleize` utilise des règles de capitalisation plus complexes pour les langues telles que l'anglais, qui capitalise également la première lettre après un symbole de ponctuation et convertit les acronymes en majuscules.
 
 ## Voir aussi
 
-- [La documentation officielle de Ruby sur les méthodes de chaînes de caractères](https://ruby-doc.org/core-3.0.1/String.html)
-- [Un tutoriel sur la capitalisation de chaînes de caractères en Ruby](https://www.rubyguides.com/2017/09/ruby-string-methods/)
-- [Une discussion sur Stack Overflow sur les différentes méthodes de capitalisation en Ruby](https://stackoverflow.com/questions/2016536/capitalize-words-in-string-array-using-ruby)
+- [Documentation officielle de Ruby sur la méthode `capitalize`](https://ruby-doc.org/core-2.7.1/String.html#method-i-capitalize)
+- [Documentation officielle de Ruby sur la méthode `titleize`](https://apidock.com/rails/String/titleize)
+- [Documentation officielle de Ruby sur la méthode `swapcase`](https://ruby-doc.org/core-2.7.1/String.html#method-i-swapcase)

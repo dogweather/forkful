@@ -1,44 +1,94 @@
 ---
-title:    "Rust: Extraindo substrings"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/extracting-substrings.md"
+title:                "Rust: Extraindo subcadeias"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que extrair subcadeias
 
-Ao trabalhar com strings em qualquer linguagem de programação, é comum a necessidade de extrair partes específicas dessa string. Em Rust, essa tarefa pode ser realizada de forma eficiente com a função `substring()`. Neste artigo, vamos discutir por que é importante saber como extrair substrings em Rust e como fazê-lo de maneira efetiva.
+Extrair subcadeias, ou substrings, é uma tarefa comum em programação. Isso geralmente é necessário quando queremos separar uma parte específica de uma string maior para manipulá-la ou usá-la em outro contexto. Em Rust, existem várias maneiras de extrair substrings de uma string, dependendo das necessidades do seu programa.
 
-## Como Fazer
+## Como fazer
 
-Extrair substrings em Rust pode ser feito facilmente com a função `substring()`. Primeiro, criamos uma string em que desejamos extrair a substring:
+A primeira maneira de extrair substrings em Rust é usando o método `split()` da struct `str`. Este método retorna um `Split` iterator, que pode ser iterado usando o método `next()` para obter as substrings desejadas. Por exemplo:
 
-```
-let frase = "Este é um exemplo de frase";
-```
-
-Em seguida, podemos usar a função `substring()` para extrair uma parte específica dessa string. Por exemplo, se quisermos extrair a palavra "exemplo", podemos usar a função da seguinte maneira:
-
-```
-let substring = frase.substring(11, 17);
-println!("{}", substring);
+```Rust
+let s = "Esta é uma string de exemplo";
+let mut splitted = s.split(" ");
+println!("As substrings são: ");
+for substring in splitted {
+    println!("{}", substring);
+}
 ```
 
-O código acima irá imprimir a palavra "exemplo". A função `substring()` recebe dois argumentos: o índice inicial e o índice final da substring que desejamos extrair.
+A saída deste código será:
 
-## Deep Dive
+```
+As substrings são:
+Esta
+é
+uma
+string
+de
+exemplo 
+```
 
-Existem algumas coisas importantes a serem observadas ao extrair substrings em Rust. Primeiro, é importante lembrar que o índice inicial começa em 0, assim como qualquer outra linguagem de programação. Além disso, o índice final não é incluído na substring resultante. Por exemplo, se quisermos extrair a palavra "uma" da nossa string de exemplo, devemos usar os índices 8 e 11.
+Outra maneira de extrair substrings é usando os métodos `get()` ou `slice()` da struct `str`. O método `get()` retorna uma referência à substring em uma determinada posição, enquanto o método `slice()` retorna uma cópia da substring. Por exemplo:
 
-Também é importante estar ciente dos limites dos índices ao extrair substrings. Se usarmos um índice maior que o comprimento da string, o programa irá retornar um erro. Além disso, se o índice inicial for maior que o índice final, a função irá retornar uma string vazia.
+```Rust
+let s = "Exemplo";
+let substring = &s[0..3]; // obtém os primeiros três caracteres
+println!("A substring é: {}", substring);
+```
+
+A saída deste código será:
+
+```
+A substring é: Exe
+```
+
+Ambos os métodos também podem ser usados com `Range` e `RangeFrom` para extrair substrings com base em intervalos. Por exemplo:
+
+```Rust
+let s = "Exemplo";
+let substring = &s[3..]; // obtém os últimos quatro caracteres
+println!("A substring é: {}", substring);
+```
+
+A saída deste código será:
+
+```
+A substring é: plo
+```
+
+Finalmente, se você precisar de mais controle ao extrair substrings, pode usar o método `chars()` da struct `str` para obter um iterador de caracteres. Isso permite que você acesse cada caractere individualmente e, a partir daí, construa a substring desejada. Por exemplo:
+
+```Rust
+let s = "Exemplo";
+let characters = s.chars();
+let mut substring = String::new();
+// obtém os dois últimos caracteres
+for _ in 0..2 {
+    substring.push(characters.next().unwrap());
+}
+println!("A substring é: {}", substring);
+```
+
+A saída deste código será:
+
+```
+A substring é: lo
+```
+
+## Mergulho profundo
+
+Vale ressaltar que as operações de substring em Rust são `O(len)` devido à codificação das strings na memória. Isso pode causar problemas de desempenho em strings muito grandes ou em situações em que a extração de substrings é feita repetidamente em um loop. Nesses casos, é recomendável considerar o uso de uma implementação de string que armazena os índices de início e fim de cada caractere em vez de codificá-los em bytes. Além disso, antes de extrair substrings, sempre verifique se os índices estão dentro dos limites da string para evitar erros.
 
 ## Veja também
 
-Aqui estão alguns recursos adicionais que podem ser úteis ao trabalhar com a função `substring()` em Rust:
-
-- Documentação oficial da função `substring()`: https://doc.rust-lang.org/std/string/struct.String.html#method.substring
-- Tutorial sobre manipulação de strings em Rust: https://www.therustbook.com/strings-manipulating.html
-- Exemplos práticos de uso da função `substring()`: https://www.dotnetperls.com/substring-rust
-
-Com essas informações e recursos, você deverá estar pronto para começar a extrair substrings em suas strings em Rust com facilidade. Lembre-se de sempre verificar os índices e limites para garantir um código seguro e eficiente. Happy coding!
+- [Documentação oficial do Rust sobre strings](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Tutorial de uso de strings em Rust](https://brson.github.io/rust-cookbook/text/strings.html)
+- [Exemplo de split e concatenação de strings em Rust](https://www.rust-lang.org/pt-BR/learn/whats-new/rust-1-56#split-and-concatenation-of-strings)

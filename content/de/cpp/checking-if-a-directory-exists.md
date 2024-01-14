@@ -1,58 +1,62 @@
 ---
-title:    "C++: Überprüfen, ob ein Verzeichnis existiert"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/checking-if-a-directory-exists.md"
+title:                "C++: Überprüfen, ob ein Verzeichnis existiert"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+##Warum
+Beim Programmieren kann es oft vorkommen, dass man überprüfen muss, ob ein bestimmtes Verzeichnis existiert. Dies kann zum Beispiel beim Speichern von Daten oder beim Zugriff auf Dateien wichtig sein. In diesem Blogpost werde ich erklären, wie man in C++ überprüfen kann, ob ein Verzeichnis existiert und was dabei zu beachten ist.
 
-In der Welt des Programmierens gibt es viele Aufgaben, die uns dazu zwingen, bestimmte Bedingungen zu überprüfen, um sicherzustellen, dass unser Code reibungslos funktioniert. Eine dieser Aufgaben ist das Überprüfen, ob ein Verzeichnis existiert. Obwohl es auf den ersten Blick wie eine einfache Aufgabe erscheint, ist es wichtig, sie richtig zu verstehen und zu implementieren, um zukünftige Fehler zu vermeiden.
+##Wie geht das?
+Um zu überprüfen, ob ein Verzeichnis existiert, verwenden wir die "filesystem" Bibliothek von C++. Diese wurde in C++17 eingeführt und bietet viele nützliche Funktionen für die Arbeit mit Dateien und Verzeichnissen.
 
-## Wie
+Um diese Bibliothek in unserem Code zu nutzen, müssen wir sie zunächst im Header-Teil unseres Programms mit `#include <filesystem>` einbinden.
 
-Um zu überprüfen, ob ein Verzeichnis existiert, müssen wir zuerst die Header-Datei `fstream` inkludieren. Diese Header-Datei enthält die Funktion `opendir()`, die uns dabei helfen wird, das Verzeichnis zu öffnen. Wir müssen auch die Funktion `closedir()` verwenden, um das Verzeichnis nach der Überprüfung wieder zu schließen.
+Als nächstes benötigen wir eine Variable vom Typ `std::filesystem::path`, die den Pfad zum Verzeichnis, welches wir überprüfen möchten, enthält. Dieser Pfad kann entweder absolut oder relativ sein. Mit folgendem Code können wir überprüfen, ob das Verzeichnis existiert:
 
 ```
-#include <fstream>
+#include <filesystem>
 
-bool checkDirectory(std::string path){
-    DIR *dir = opendir(path.c_str());
-    if (dir){
-        closedir(dir);
-        return true;
-    }
-    else{
-        return false;
-    }
+// Pfad zum Verzeichnis festlegen
+std::filesystem::path meinVerzeichnis("/home/benutzer/Dokumente");
+
+// Überprüfen, ob das Verzeichnis existiert
+if (std::filesystem::exists(meinVerzeichnis)) {
+    std::cout << "Das Verzeichnis existiert!" << std::endl;
+} else {
+    std::cout << "Das Verzeichnis existiert nicht!" << std::endl;
 }
 ```
 
-In diesem Beispiel verwenden wir die Funktion `opendir()` und übergeben ihr den Pfad des Verzeichnisses als Argument. Wenn das Verzeichnis erfolgreich geöffnet werden kann, wird die Funktion `opendir()` eine gültige Zeiger-Adresse für das Verzeichnis zurückgeben. Andernfalls wird sie `NULL` zurückgeben. Wir überprüfen diese Rückgabe und schließen das Verzeichnis entsprechend.
+Die Funktion `std::filesystem::exists()` gibt true zurück, wenn das Verzeichnis existiert, ansonsten wird false zurückgegeben. Wir können also anhand des Rückgabewertes entscheiden, wie wir weiter vorgehen wollen.
 
-Um die Funktion verwenden zu können, müssen wir den Pfad des Verzeichnisses als Argument übergeben. Hier sind zwei Beispiele:
+Manchmal reicht es nicht aus, nur zu überprüfen, ob ein Verzeichnis existiert. Wir möchten vielleicht auch wissen, ob es sich dabei tatsächlich um ein Verzeichnis handelt und nicht um eine Datei. Dafür können wir die Funktion `std::filesystem::is_directory()` verwenden. Diese gibt ebenfalls true oder false zurück und kann zusammen mit `std::filesystem::exists()` genutzt werden.
 
 ```
-std::string path = "/usr/bin";
-bool result = checkDirectory(path);
-// Ergebnis: result = true
-
-std::string path2 = "/usr/fake";
-bool result = checkDirectory(path2);
-// Ergebnis: result = false
+// Überprüfen, ob das Verzeichnis existiert und ob es sich dabei um ein Verzeichnis handelt
+if (std::filesystem::exists(meinVerzeichnis) && std::filesystem::is_directory(meinVerzeichnis)) {
+    // Hier können wir z.B. auf das Verzeichnis zugreifen oder weitere Aktionen ausführen
+}
 ```
 
-In diesem Beispiel übergeben wir verschiedene Pfade an unsere Funktion `checkDirectory()` und erhalten entsprechende Ergebnisse zurück. Wir können diese Funktion auch innerhalb unserer Programme verwenden, um bestimmte Bedingungen abzufangen und unseren Code daran anzupassen.
+##Tiefere Einblicke
+Wenn wir `#include <filesystem>` in unserem Code verwenden, wird die gesamte "filesystem" Bibliothek eingebunden. Das kann allerdings zu Problemen führen, zum Beispiel wenn wir auch andere Bibliotheken einbinden, die ebenfalls Datei- und Verzeichnis-Funktionen anbieten.
 
-## Deep Dive
+Um dies zu vermeiden, können wir die einzelnen Funktionen gezielt einbinden, indem wir `#include <filesystem>` durch den gewünschten Funktionsaufruf ersetzen. Zum Beispiel:
 
-Während die Funktion `opendir()` eine wirklich hilfreiche Funktion ist, gibt es noch einige Dinge, die wir beachten müssen. Zum Beispiel müssen wir sicherstellen, dass der übergebene Pfad gültig ist und dass wir die Funktion `closedir()` nach der Verwendung von `opendir()` aufrufen.
+```
+// Nur die Funktionen exists() und is_directory() einbinden
+#include <filesystem>
+using std::filesystem::exists;
+using std::filesystem::is_directory;
+```
 
-Außerdem gibt es noch eine andere Funktion namens `access()`, die uns dabei helfen kann, zu überprüfen, ob ein Verzeichnis existiert. Diese Funktion ist jedoch ein bisschen anders als `opendir()` und benötigt verschiedene Berechtigungen, wie z.B. Lese- und Schreibrechte, um erfolgreich zu sein.
+Das gibt uns mehr Kontrolle darüber, welche Funktionen wir verwenden und vermeidet potenzielle Konflikte mit anderen Bibliotheken.
 
-## Siehe auch
-
-- [Verzeichnis erstellen in C++](https://www.geeksforgeeks.org/create-directoryfolder-cc-program/)
-- [Prüfen, ob Datei existiert in C++](https://www.geeksforgeeks.org/check-if-a-file-exists-in-c-cpp/)
-- [FSM-Programmierer-Handbuch](https://www.fsm.com/programmiererhandbuch/verzeichnisprogrammierung)
+##Siehe auch
+- [Offizielle Dokumentation zur "filesystem" Bibliothek](https://en.cppreference.com/w/cpp/filesystem)
+- [Übersicht über nützliche C++17 Funktionen](https://www.heise.de/select/ct/2018/25/1543912245472471) (auf Deutsch)
+- [Artikel zur Verwendung von C++17 Bibliotheken in älteren Versionen](https://abseil.io/blog/20200313-filesystem-detection) (auf Englisch)

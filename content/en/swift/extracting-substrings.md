@@ -1,48 +1,57 @@
 ---
-title:    "Swift recipe: Extracting substrings"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/extracting-substrings.md"
+title:                "Swift recipe: Extracting substrings"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Extracting Substrings is Useful
+## Why
 
-Substring extraction is a commonly used operation in programming, and Swift offers a variety of tools to make this task easier. Whether you need to manipulate strings for data processing or user input validation, extracting substrings can save you time and effort.
+Have you ever needed to extract a specific part of a string in your Swift code? Whether it's for formatting purposes or to retrieve important data, extracting substrings can be a useful skill for any Swift programmer. In this blog post, we will dive into the topic of substring extraction and learn how it can benefit us in our coding endeavors.
 
-## How To Extract Substrings in Swift
+## How To
 
-To extract substrings in Swift, we can use the `substring` method or the `range` property. Let's take a look at some coding examples:
-
-```Swift
-let word = "Hello World"
-let startIndex = word.startIndex
-let endIndex = word.index(startIndex, offsetBy: 4)
-let extractedSubstring = word[startIndex...endIndex] // Output: "Hello"
-```
-
-In this example, we first declare a string variable `word` with the value "Hello World". Then, we use `startIndex` to indicate the beginning of the string and `endIndex` to indicate the end of the substring we want to extract. Finally, we use `substring` with the range `startIndex...endIndex` to extract the substring "Hello".
-
-Another way to extract substrings in Swift is by using the `range` property:
+First, let's start with understanding what a substring is. A substring is a part of a larger string that can be extracted based on a specific set of criteria. In Swift, we can use the `subString(from:to:)` function to extract substrings. Let's see an example of how this works:
 
 ```Swift
-let sentence = "I love learning Swift"
-let range = sentence.range(of: "love")!
-let extractedSubstring = sentence[range] // Output: "love"
+var sentence = "I love coding in Swift!"
+var substring = sentence.subString(from: 2, to: 6)
+print(substring)
+```
+The output of this code will be "love", as we are extracting the characters from the 2nd index to the 6th index of the original string.
+
+But what if we don't know the exact index of the characters we want to extract? In that case, we can use the `subString(from:)` function to extract all characters starting from a specific index to the end of the string. Let's see an example:
+
+```Swift
+var sentence = "I love coding in Swift!"
+var substring = sentence.subString(from: 7)
+print(substring)
+```
+The output of this code will be "coding in Swift!", as we are extracting all characters from the 7th index to the end of the string.
+
+We can also extract substrings based on a specific pattern using the `range(of:)` function. For example, if we want to extract everything before the word "coding", we can do so with the following code:
+
+```Swift
+var sentence = "I love coding in Swift!"
+var range = sentence.range(of: "coding")
+var substring = sentence.subString(to: range!.lowerBound)
+print(substring)
 ```
 
-This method uses the `range(of: )` function to specify the substring we want to extract, and then we use the `range` property to extract the substring "love".
+The output of this code will be "I love ", as we are extracting all characters before the word "coding". 
 
-## Deep Dive into Extracting Substrings
+## Deep Dive
 
-There are a few things to keep in mind when extracting substrings in Swift. The first is that `substring` and `range` both use zero-based indexing. This means that the first character in a string is at index 0, the second character is at index 1, and so on.
+In Swift, substrings are represented using the `Substring` type, which is a thin wrapper around the original string. This means that when we extract a substring, it shares the same memory as the original string, making it more efficient than creating a new string.
 
-Additionally, the `substring` method is inclusive of both the start and end indices, while the `range` property is not. This means that if we use `substring` with the range `startIndex...endIndex`, the resulting substring will include the character at the end index. However, if we use `range` with the same range, the resulting substring will not include the character at the end index.
+It's also worth noting that substrings are not limited to just strings. We can extract substrings from any type that conforms to the `Collection` protocol, such as arrays and dictionaries.
 
-Furthermore, Swift also offers the `prefix` and `suffix` methods for extracting substrings from the beginning and end of a string, respectively. These methods take in a parameter indicating the number of characters to extract and return a substring of that length.
+Lastly, it's important to be aware that since substrings are just a portion of the original string, any changes made to the substring will also affect the original string. If we want to create a new string with the extracted substring, we can use the `String` initializer and pass in the substring as an argument.
 
 ## See Also
 
-- [String Manipulation with Swift](https://www.hackingwithswift.com/articles/162/how-to-use-string-interpolation-in-swift)
-- [Working with Substrings in Swift](https://www.appcoda.com/swift-string-substring/)
-- [Swift String Cheat Sheet](https://academy.realm.io/posts/tryswift-mikkoswift-string-cheat-sheet/)
+- [Swift Substrings: Explained with Code Examples](https://www.swiftbysundell.com/basics/substring/)
+- [Substring in Swift: Explained with Code Examples](https://www.programiz.com/swift-programming/substring)
+- [The Power of Substring in Swift](https://medium.com/@lucasfarah/using-the-power-of-substring-in-swift-60c297b7bc4a)

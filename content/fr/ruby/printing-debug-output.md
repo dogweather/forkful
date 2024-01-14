@@ -1,56 +1,61 @@
 ---
-title:    "Ruby: Affichage du débogage"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/printing-debug-output.md"
+title:                "Ruby: Impression de sortie de débogage"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-L'impression d'un débogage est un outil précieux pour les programmeurs. Cela permet de suivre pas à pas l'exécution du code et d'identifier les erreurs plus facilement. Cela peut également être utilisé pour comprendre le fonctionnement d'une partie spécifique du code.
+L'impression de sortie de débogage est un outil utile pour les programmeurs de Ruby pour identifier et résoudre les problèmes dans leur code. Cela permet de visualiser les valeurs des variables à différents points du programme et de comprendre comment le code s'exécute.
 
 ## Comment faire
 
-Il existe plusieurs façons d'imprimer un débogage en Ruby, mais la méthode la plus courante est d'utiliser la méthode `puts`. Cette méthode permet d'imprimer un message sur la console, ce qui est utile pour vérifier les valeurs des variables à différents points du code.
+Pour imprimer une sortie de débogage en Ruby, utilisez la méthode "puts" avec le message que vous souhaitez afficher. Vous pouvez également inclure des variables en utilisant l'opérateur de concaténation "+" pour les afficher avec le message.
 
 ```Ruby
-puts "Débogage: la valeur de x est #{x}"
+# Exemple de code pour imprimer une sortie de débogage
+age = 25
+puts "L'âge est: " + age.to_s
 ```
 
-L'utilisation de la méthode `p` est également courante car elle imprime directement la valeur de la variable sans la modifier.
+Cela affichera la phrase "L'âge est: 25" dans votre terminal.
+
+## Plongée en profondeur
+
+Il existe également d'autres méthodes pour imprimer une sortie de débogage, telles que "p", "pp" et "inspect". La méthode "p" est similaire à "puts", mais elle affichera également le type de variable.
 
 ```Ruby
-p x # imprime la valeur actuelle de x
+# Exemple de code pour utiliser la méthode p
+name = "Julie"
+p "Le nom est: " + name
+# Sortie: "Le nom est: Julie" => String
 ```
 
-Une autre méthode utile est `pp`, qui imprime un objet de manière plus lisible en le séparant par des sauts de ligne.
+La méthode "pp" est utile pour imprimer des objets complexes tels que des tableaux ou des hashs. Elle les affichera de manière plus organisée.
 
 ```Ruby
-pp hash # imprime le contenu du hash sur plusieurs lignes
+# Exemple de code pour utiliser la méthode pp
+numbers = [1, 2, 3, 4]
+pp numbers
+# Sortie: [1, 2, 3, 4]
 ```
 
-## Plongeons plus en profondeur
-
-L'impression d'un débogage peut également être utilisée pour afficher des informations sur l'exécution du code, telles que le temps écoulé entre certaines étapes ou le nombre de fois qu'une boucle a été exécutée.
+Enfin, la méthode "inspect" est similaire à "pp", mais elle vous permet de personnaliser la sortie en fournissant un bloc de code.
 
 ```Ruby
-start_time = Time.now # sauvegarde le temps actuel
-# Code à déboguer
-puts "Temps d'exécution: #{Time.now - start_time}s" # imprime le temps écoulé
+# Exemple de code pour utiliser la méthode inspect
+age = 25
+puts age.inspect { |num| "L'âge est #{num}" }
+# Sortie: L'âge est 25
 ```
 
-Il est également possible d'imprimer des informations spécifiques à certaines parties du code, en utilisant des conditions pour contrôler l'impression.
+## Voir aussi
 
-```Ruby
-# Code à déboguer
-if x > 10
-  puts "Débogage: x est supérieur à 10"
-end
-```
+Pour en savoir plus sur l'impression de sortie de débogage en Ruby, consultez ces liens utiles :
 
-## Voir également
-
-- [Documentation Ruby: Debugging](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-puts)
-- [Rubrique de débogage dans le tutoriel Ruby](https://www.ruby-lang.org/fr/documentation/quickstart/)
-- [Blog sur le débogage en Ruby](https://www.rubyguides.com/2019/04/ruby-debugging/)
+- [Documentation officielle de Ruby](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-puts)
+- [Guide de débogage Ruby de The Odin Project](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-programming/lessons/debugging)
+- [Article sur la détection d'erreurs avec print et puts en Ruby](https://www.digitalocean.com/community/tutorials/how-to-debug-ruby-processes-with-print-and-puts-statements-fr)

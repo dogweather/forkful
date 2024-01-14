@@ -1,67 +1,50 @@
 ---
-title:    "C++: Å bruke regulære uttrykk"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/using-regular-expressions.md"
+title:                "C++: Å bruke regulære uttrykk"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor bruke regulære uttrykk i C++?
+## Hvorfor
 
-Regulære uttrykk er en viktig del av programmeringsverktøykassen til enhver profesjonell utvikler. De gir et effektivt og nøyaktig verktøy for å søke og manipulere tekststrenger innenfor et program. Med regulære uttrykk kan du enkelt finne og behandle ulike mønstre i tekst, som for eksempel e-postadresser, telefonnummer eller variabelnavn. Dette gjør det mye lettere å håndtere store mengder data og automatisere oppgaver i C++.
+Har du noensinne sittet fast i en situasjon hvor du trenger å søke etter et bestemt mønster i en tekst, men det føles umulig å finne det manuelt? Her kommer regular expressions til unnsetning! Regular expressions, også kjent som regex, er et kraftig verktøy som lar deg søke, filtrere og manipulere tekst basert på et gitt mønster. Med regular expressions kan du gjøre tekstbehandling og søk mye mer effektivt og presist.
 
-## Hvordan bruke regulære uttrykk i C++?
+## Slik gjør du det
 
-Det første steget for å kunne bruke regulære uttrykk i C++ er å inkludere biblioteket `<regex>` i koden. Dette gir tilgang til de nødvendige funksjonene og klassene for å lage og bruke regulære uttrykk.
-
-Her er et enkelt eksempel på hvordan du kan bruke regulære uttrykk i C++:
+For å bruke regular expressions i C++, må du inkludere <regex> -biblioteket. La oss si at du har en streng som inneholder en e-postadresse, og du vil sjekke om den er gyldig. Du kan gjøre dette ved å bruke en regex-uttrykk som matcher et vanlig e-postmønster:
 
 ```C++
 #include <iostream>
 #include <regex>
 
 int main() {
-    // Definerer et regulært uttrykk som finner alle tall i en tekststreng
-    std::regex reg("(\\d+)");
-
-    // Tekststreng for å søke i
-    std::string tekst = "Jeg er 25 år gammel.";
-
-    // Bruker std::sregex_iterator for å finne alle forekomster av uttrykket
-    std::sregex_iterator it(tekst.begin(), tekst.end(), reg);
-    std::sregex_iterator end;
-
-    // Går gjennom alle forekomster og skriver ut resultatene
-    while (it != end) {
-        std::smatch match = *it;
-        std::cout << match.str() << std::endl;
-        it++;
+    std::string email = "john@example.com";
+    std::regex pattern("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b", std::regex_constants::icase);
+    if (std::regex_match(email, pattern)) {
+        std::cout << "Gyldig e-postadresse!" << std::endl;
+    } else {
+        std::cout << "Ugyldig e-postadresse!" << std::endl;
     }
-
     return 0;
 }
 ```
 
-Dette eksempelet vil skrive ut tallet 25 i konsollen. Her brukes funksjonen `std::sregex_iterator` til å finne alle forekomster av det definerte regulære uttrykket i tekststrengen.
+I dette eksemplet brukes funksjonene ```std::regex_match()``` og ```std::regex_constants::icase``` for å sjekke om e-postadressen matcher det gitte mønsteret. Husk å bruke dobbel backslash (```\```) når du definerer mønsteret, da ```\``` også er et escape-tegn i C++.
 
-## Dypdykk i bruk av regulære uttrykk i C++
+## Dykke dypere
 
-Regulære uttrykk i C++ er basert på Perl-versjonen av regulære uttrykk og følger samme syntaks. Dette gjør det enklere for de som allerede er kjent med regulære uttrykk fra andre programmeringsspråk.
+Regular expressions har et omfattende sett med regler og metoder som kan være overveldende i begynnelsen. Men med litt øvelse og tålmodighet kan du mestre dette kraftige verktøyet. Her er noen nyttige tips og triks for å hjelpe deg med å bli en regex-ekspert:
 
-I C++ finnes det ulike typer uttrykk som du kan bruke for å søke og manipulere tekst. Noen av de mest nyttige er:
+- Bruk regex tester for å prøve ut mønstre før du bruker dem i koden din.
+- Lær de forskjellige metoder og egenskapene til regex-objekter, for eksempel ```std::regex_search()``` og ```std::regex_replace()```.
+- Øv deg på å bruke regulære uttrykk på forskjellige tekstformater for å få en bedre forståelse av hvordan de fungerer.
+- Bruk kommentarer og linjeskift i dine regex-uttrykk for å gjøre dem mer leselige.
+- Søk etter tutorials og eksempler på nettet for å få mer innsikt i bruken av regular expressions.
 
-- `\\d` - matche et hvilket som helst tall
-- `\\w` - matche en bokstav, tall eller understrek
-- `[ ]` - definere en karakterklasse, for eksempel `[abc]` matcher a, b eller c
-- `+` - matche en eller flere forekomster av den forrige karakteren eller karakterklassen
-- `*` - matche null eller flere forekomster av den forrige karakteren eller karakterklassen
-- `^` - matche begynnelsen på en linje
-- `$` - matche slutten på en linje
+## Se også
 
-Det er også mulig å bruke regulære uttrykk for å erstatte deler av en tekststreng eller holde styr på grupper av tekst. Det finnes mange fler funksjoner og muligheter med regulære uttrykk i C++, og det er verdt å utforske dem nærmere for å forbedre dine programmeringsferdigheter.
-
-# Se også
-
-- <https://en.cppreference.com/w/cpp/regex>
-- <https://www.regular-expressions.info/>
-- <https://www.codesdope.com/cpp-regular-expressions/>
+- [cppreference - regex](https://en.cppreference.com/w/cpp/regex)
+- [RegExr - Regex tester](https://regexr.com/)
+- [C++ Tutorials - Regular expressions](https://www.learncpp.com/cpp-tutorial/regular-expressions/)

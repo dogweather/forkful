@@ -1,58 +1,66 @@
 ---
-title:    "C: ディレクトリが存在するかどうかをチェックする"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/checking-if-a-directory-exists.md"
+title:                "C: ディレクトリが存在するかチェックする"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## もし、ディレクトリが存在するかどうかをチェックするのか
+## なぜ？
 
-ディレクトリが存在するかどうかをチェックすることは、プログラミングにおいて非常に重要なことです。なぜなら、プログラムが正しく動作するためには、特定のフォルダが存在することが前提条件となるからです。そのため、ディレクトリの存在をチェックすることは、プログラムをより堅牢にするために欠かせない作業なのです。
+プログラミングをしていると、時には特定のディレクトリが存在するかどうかを知りたい時があります。例えば、あるファイルを書き出す前にそのファイルを保存するディレクトリが存在するかどうかを確認しなければならないかもしれません。そのような場合に、C言語でディレクトリが存在するかどうかを確認する方法についてご紹介します。
 
-## 方法: プログラミングの例と出力
+## 使い方
 
-ディレクトリの存在をチェックするためには、C言語の ```opendir()``` と ```closedir()``` の関数を使用します。例えば、以下のコードを参考にしてください。
+まずはじめに、確認したいディレクトリのパスを変数に保存します。次に、`opendir()`関数を使用してディレクトリを開きます。この関数は、成功した場合には`DIR`型のポインタを返し、失敗した場合には`NULL`ポインタを返します。そして、`readdir()`関数を使用してディレクトリ内のファイルを1つずつ読み込みます。最後に、`closedir()`関数を使用してディレクトリを閉じます。
+
+以下に、実際にコーディングしたサンプルとその出力を示します。
 
 ```C
 #include <stdio.h>
+#include <sys/types.h>
 #include <dirent.h>
 
 int main() {
-    struct dirent *dptr;
-    DIR *dir = opendir("my_directory"); // チェックしたいディレクトリ名を指定
-    if (dir == NULL) { // ディレクトリが存在しない場合
-        printf("ディレクトリは存在しません\n");
-    } else { // ディレクトリが存在する場合
-        printf("ディレクトリが存在します\n");
-        closedir(dir); // ディレクトリを閉じる
-    }
-    return 0;
+  // ディレクトリのパスを指定
+  char *directory = "/Users/username/Demo/";
+
+  // ディレクトリを開く
+  DIR *dir = opendir(directory);
+
+  // ディレクトリ内のファイルを1つずつ読み込む
+  struct dirent *file;
+  while ((file = readdir(dir)) != NULL) {
+    printf("File name: %s\n", file->d_name);
+  }
+  
+  // ディレクトリを閉じる
+  closedir(dir);
+
+  return 0;
 }
 ```
+
 出力結果:
 ```
-ディレクトリが存在します
+File name: file1.txt
+File name: file2.txt
+File name: file3.txt
 ```
 
-このように、ディレクトリの存在をチェックすることができます。
+## ディープダイブ
 
-## 深堀り: ディレクトリの存在をチェックする方法
-
-ディレクトリの存在をチェックするには、基本的に以下の手順を踏みます。
-
-1. ```opendir()``` 関数を使ってディレクトリを開く。
-2. もし ```opendir()``` が ```NULL``` を返した場合、ディレクトリは存在しないと判断する。
-3. ディレクトリが存在する場合は、そのディレクトリを読み込んだ後、```closedir()``` 関数を使ってディレクトリを閉じる。
-
-また、ディレクトリの存在をチェックする方法は、プログラムの実行環境によって異なる場合があります。そのため、プログラムを書く前に、使用する関数やライブラリのドキュメントを確認することが重要です。
-
-## 参考リンク
-
-- [C言語 - ディレクトリ存在チェック - opendirとclosedir](https://www.yoheim.net/blog.php?q=20111003)
-- [C言語のファイル操作](https://pioneel.hatenablog.com/entry/20090417/1240013229)
-- [opendir() function in C](https://www.geeksforgeeks.org/opendir-call-in-c-with-examples/)
+ディレクトリが存在するかどうかを確認するには、`opendir()`関数の戻り値が`NULL`かどうかをチェックするという方法が一般的です。しかし、`opendir()`関数はディレクトリが存在しない場合にもエラーを返さない場合があります。そのため、`stat()`関数を使用してディレクトリの属性を取得し、`S_ISDIR()`マクロを使用してディレクトリかどうかをチェックする方法もあります。
 
 ## 参考文献
 
-- [データ構造とアルゴリズム - C言語による実装と理解](https://www.amazon.co.jp/dp/4822245908/ref=cm_sw_r_tw_dp_j3LsFbPM27A7T?language=en_US)
+- [opendir(3) man page](https://linux.die.net/man/3/opendir)
+- [readdir(3) man page](https://linux.die.net/man/3/readdir)
+- [closedir(3) man page](https://linux.die.net/man/3/closedir)
+- [stat(2) man page](https://linux.die.net/man/2/stat) 
+
+## 関連情報
+
+- [How to check if a directory exists in C programming?](https://www.programiz.com/c-programming/examples/check-directory-exists)
+- [C言語によるファイル・ディレクトリの操作](https://www2.kumagaku.ac.jp/teacher/~hirata/class/C/fileAccess.html)

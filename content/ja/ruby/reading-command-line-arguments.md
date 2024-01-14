@@ -1,61 +1,48 @@
 ---
-title:    "Ruby: コンピュータプログラミング：コマンドライン引数の読み込み"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/reading-command-line-arguments.md"
+title:                "Ruby: コンピュータプログラミングにおける「コマンドライン引数の読み取り」"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
+# なぜ
 
-プログラミングを学ぶ中で、様々な方法でコードを実行することに慣れてくると思います。しかし、コマンドライン引数を読み取るという方法は、より効率的にプログラムを実行するための重要なスキルです。そこで今回は、Rubyでコマンドライン引数を読み取る方法について紹介します。
+コマンドライン引数を読むのに *なぜ* 読者が参加する必要があるのか、についての 1-2 文字の説明です。
 
-## 方法
+コマンドライン引数を読むことは、よりオプションを使ってプログラムを実行したい場合や、ユーザーからの入力を受け入れたい場合に役立ちます。また、複数のファイルを同時に処理する場合や、特定の処理を行うために必要な情報をプログラムに提供することができます。
 
-コマンドライン引数を読み取るには、`ARGV`という変数を使用します。例えば、以下のようなコードを実行すると、引数として渡した値が`ARGV`の配列に格納されます。
+# 方法
 
-```Ruby
-ruby my_program.rb arg1 arg2 arg3
-```
-
-`my_program.rb`の中で、`ARGV[0]`は`arg1`を、`ARGV[1]`は`arg2`を、`ARGV[2]`は`arg3`を表します。複数の引数を読み取る場合は、それぞれのインデックスを指定することで値にアクセスできます。
-
-また、`ARGV`は文字列型の配列であるため、整数や浮動小数点数に変換したい場合は、`to_i`や`to_f`メソッドを使用して変換する必要があります。
-
-## ディープダイブ
-
-コマンドライン引数をより詳細に扱いたい場合、`OptionParser`というクラスを使用することができます。このクラスを使用すると、より高度なコマンドライン引数の読み取りやバリデーションが可能になります。
-
-例えば、以下のように使用することができます。
+コマンドライン引数を読むためには、プログラムの引数として `ARGV` を使用します。`ARGV` は Ruby の特別なグローバル変数であり、コマンドラインに渡された引数が配列として格納されています。
 
 ```Ruby
-require 'optparse'
-
-options = {}
-OptionParser.new do |opts|
-  opts.banner = "使い方: my_program.rb [オプション]"
-
-  opts.on("-f", "--file FILE", "ファイル名を指定") do |file|
-    options[:file] = file
-  end
-  opts.on("-t", "--type TYPE", "種類を指定") do |type|
-    options[:type] = type
-  end
-
-  opts.on("-h", "--help", "使い方を表示") do
-    puts opts
-    exit
-  end
-end.parse!
-
-puts "ファイル名：#{options[:file]}" if options[:file]
-puts "種類：#{options[:type]}" if options[:type]
+input = ARGV[0]
+puts "入力された引数は #{input} です。"
 ```
 
-このように`OptionParser`を使用することで、コマンドライン引数をより柔軟に扱うことができます。
+上記の例では、最初の引数を `ARGV` から取得し、それを文字列の一部として出力しています。
 
-## 参考リンク
+出力:
 
-- [Ruby - ARGF](https://ruby-doc.org/core-2.7.1/ARGF.html)
-- [Ruby - OptionParser](https://ruby-doc.org/stdlib-2.7.1/libdoc/optparse/rdoc/OptionParser.html)
-- [RubyでARGVを読み取る方法](https://qiita.com/ohr486/items/7dbd4348b82de72166e4)
+```
+$ ruby read_argv.rb hello
+入力された引数は hello です。
+```
+
+# 詳細を掘り下げる
+
+コマンドライン引数をより詳しく学ぶには、Ruby のドキュメントを見ることができます。また、`OptionParser` クラスを使用して、より複雑なコマンドライン引数を処理することもできます。
+
+さらに、ARGV を使ってプログラムに入力を提供する方法だけでなく、環境変数や標準入力からのデータを取得する方法もあります。Ruby には様々な方法でプログラムから入力を受け取る機能が用意されているため、使いやすい方法を選択することができます。
+
+# はてしなく続く
+
+コマンドライン引数の読み方は、プログラミングにおいて非常に重要な機能の一つです。これまでの例では簡単な入力を扱いましたが、実際にはより複雑な引数を扱う必要が出てくるでしょう。そのためには、より詳細な学習や実践が必要になりますが、それによってプログラムの機能性が向上することができます。
+
+# 関連リンク
+
+- [Ruby ドキュメント - `ARGV`](https://docs.ruby-lang.org/ja/latest/class/ARGV.html)
+- [Ruby ドキュメント - `OptionParser`](https://docs.ruby-lang.org/ja/latest/class/OptionParser.html)
+- [Ruby チュートリアル - コマンドライン引数を扱う](https://www.ruby-lang.org/ja/documentation/tutorials/quickstart/2/)

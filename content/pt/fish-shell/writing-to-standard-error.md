@@ -1,51 +1,59 @@
 ---
-title:    "Fish Shell: Escrevendo para o erro padrão."
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/writing-to-standard-error.md"
+title:                "Fish Shell: Escrevendo no Erro Padrão"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão
+## Por que usar a saída de erro padrão em programação?
 
-Escrever para o erro padrão, também conhecido como "stderr", é uma parte importante do processo de programação. Ao direcionar mensagens de erro para o erro padrão, podemos identificar e corrigir possíveis problemas em nosso código, tornando-o mais preciso e confiável.
+A saída de erro padrão é uma ferramenta útil para programadores porque permite que erros e mensagens de aviso sejam exibidos em tempo de execução. Isso é especialmente importante ao lidar com grandes quantidades de código, pois é uma forma de rastrear e encontrar erros rapidamente.
 
-## Como fazer
+## Como usar a saída de erro padrão no Fish Shell
 
-Para escrever para o erro padrão no Fish Shell, podemos usar o comando `echo` seguido do operador `>`:
-
-```Fish Shell
-echo "Este é um exemplo de mensagem de erro" > stderr
-```
-
-Podemos então verificar o conteúdo do arquivo "stderr", que deve conter a mensagem que acabamos de escrever:
+Para utilizar a saída de erro padrão no Fish Shell, basta adicionar o comando `echo` seguido do texto que deseja exibir entre aspas. Por exemplo:
 
 ```Fish Shell
-cat stderr
+echo "Oops, parece que algo deu errado!"
 ```
 
-A saída seria:
+Isso resultaria na seguinte saída:
 
 ```
-Este é um exemplo de mensagem de erro
+Oops, parece que algo deu errado!
 ```
 
-Também podemos redirecionar as mensagens de erro diretamente ao escrever o comando, usando o operador `2>`:
+Você também pode usar a variável de ambiente `stderr` para redirecionar a saída de erro para um arquivo em vez de exibi-la no terminal. Por exemplo:
 
 ```Fish Shell
-comando_inexistente 2> stderr
+echo "Oops, parece que algo deu errado!" 2 > stderr.txt
 ```
 
-Isso irá redirecionar as mensagens de erro geradas pelo comando inexistente para o arquivo "stderr", permitindo-nos identificar e resolver possíveis problemas.
+Isso criaria um arquivo chamado "stderr.txt" contendo a mensagem de erro.
 
-## Mergulho Profundo
+## Mergulho profundo: Escrevendo para a saída de erro padrão
 
-Ao escrever para o erro padrão, é importante ter em mente que ele é utilizado principalmente para mensagens de erro e não deve ser usado para saídas regulares do programa. Além disso, é possível direcionar as mensagens de erro para outros lugares, como para um arquivo de log, se necessário.
+Além de simplesmente exibir mensagens de erro, você também pode utilizar a saída de erro padrão para fins de depuração. Por exemplo, você pode exibir o valor de uma variável utilizando o comando `set` combinado com `echo`:
 
-Vale ressaltar também que, no Fish Shell, podemos usar o comando `&>` para redirecionar tanto as saídas quanto as mensagens de erro para um mesmo destino. Isso pode ser útil em situações em que queremos salvar todo o registro de execução de um determinado comando.
+```Fish Shell
+set foo "bar"
+echo $foo
+```
+
+Isso exibiria o valor da variável "foo" na saída de erro. Isso pode ser útil para identificar problemas em partes específicas do seu código.
+
+Também é possível redirecionar a saída de erro para outro processo em vez de para um arquivo. Por exemplo, utilizando o comando `|` para conectar o resultado de um comando à entrada de outro comando:
+
+```Fish Shell
+ls | grep "arquivos"
+```
+
+Isso executaria o comando "ls" e em seguida encaminharia sua saída de erro para o comando "grep", que filtraria os arquivos contendo a palavra "arquivos". Esse é um exemplo simples, mas essa técnica pode ser útil para depurar scripts mais complexos.
 
 ## Veja também
 
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guia básico para iniciantes em Fish Shell](https://dev.to/dusanpucik/getting-started-with-fish-shell-a-simple-guide-for-beginners-2o00)
-- [Como escrever scripts no Fish Shell](https://www.shell-tips.com/pt-br/2010/08/02/how-to-write-a-shell-script-in-fish-shell/)
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)
+- [Artigo sobre redirecionamento de saída no Fish Shell](https://www.maketecheasier.com/redirect-output-fish-shell/)
+- [Tutorial sobre depuração de código no Fish Shell](https://tech.teamed.io/articles/51-depth-guide-into-debugging-fish-shell-scripts/)

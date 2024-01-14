@@ -1,54 +1,57 @@
 ---
-title:    "Clojure: Generare numeri casuali"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/clojure/generating-random-numbers.md"
+title:                "Clojure: Generazione di numeri casuali"
+programming_language: "Clojure"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Generare numeri casuali è una pratica comune nella programmazione e può essere utile per una varietà di scopi, come generare un input casuale per testare il codice o creare giochi che richiedono elementi casuali.
+
+Generating random numbers è una funzionalità essenziale nella programmazione. Può essere utilizzata per testare il codice o creare dati casuali per applicazioni come giochi o simulazioni.
 
 ## Come Fare
-Per generare numeri casuali, possiamo utilizzare la funzione "rand-int" in Clojure. Ad esempio, il codice seguente genererà un numero casuale compreso tra 1 e 10:
 
-```Clojure
-(rand-int 10)
+Per generare numeri casuali in Clojure, possiamo utilizzare la funzione `rand` della libreria `clojure.core`.
+
 ```
-Output: 7
-
-Possiamo anche specificare un limite inferiore e superiore per il numero casuale, come in questo esempio:
-
-```Clojure
-(rand-int 5 15)
+Clojure
+(let [random-num (rand)]
+  (println random-num))
 ```
-Output: 12
 
-Per generare numeri decimali casuali, possiamo utilizzare la funzione "rand" e specificare il limite superiore desiderato. Ad esempio:
+Questo codice stampa un numero casuale tra 0 e 1. Possiamo anche fornire dei limiti come argomenti alla funzione `rand`, per esempio per generare un intero casuale tra 1 e 10:
 
-```Clojure
-(rand 10.0)
 ```
-Output: 4.793033436622162
-
-È anche possibile utilizzare la funzione "rand-nth" per selezionare casualmente un elemento da una sequenza. Ad esempio, possiamo utilizzarlo per selezionare casualmente un numero dalla lista [1 2 3 4 5]:
-
-```Clojure
-(rand-nth [1 2 3 4 5])
+Clojure
+(let [random-num (rand-int 10)]
+  (println random-num))
 ```
-Output: 3
+
+Possiamo anche utilizzare la funzione `rand-nth` per selezionare un elemento casuale da una sequenza:
+
+```
+Clojure
+(let [numbers [1 2 3 4 5]]
+  (println (rand-nth numbers)))
+```
 
 ## Approfondimento
-La funzione "rand-int" utilizza un algoritmo di generazione di numeri casuali basato sull'orario di sistema. Ciò significa che se viene chiamata più volte nello stesso secondo, restituirà lo stesso valore. Per evitare ciò, possiamo utilizzare la funzione "with-casual-seed" per generare un seed diverso ogni volta. Ad esempio:
 
-```Clojure
-(def random-number (with-casual-seed (rand-int 10)))
+La funzione `rand` utilizza l'algoritmo Park-Miller per generare numeri pseudo-casuali. Questo significa che i numeri generati possono sembrare casuali, ma in realtà seguono un pattern prevedibile. Per generare numeri veramente casuali, possiamo utilizzare la libreria di terze parti `alea`, che implementa l'algoritmo Mersenne Twister.
+
+Ecco un esempio di utilizzo della libreria `alea` per generare 10 numeri casuali tra 1 e 100:
+
 ```
-Output: 7
-
-Viene generato un diverso numero casuale ogni volta che viene chiamata la variabile "random-number".
+Clojure
+(require '[alea.core :refer [mt-random]])
+(let [random-numbers (repeatedly 10 #(mt-random 1 100))]
+  (println random-numbers))
+```
 
 ## Vedi Anche
-- [Guida alla Programmazione con Clojure](https://www.clojure.org/guides/getting_started)
-- [Documentazione su Funzioni Casuali in Clojure](https://clojuredocs.org/clojure.core/rand-int)
-- [Tutorial su Programmazione con Numeri Casuali in Clojure](https://www.baeldung.com/clojure-random)
+
+- [Documentazione di Clojure sulle funzioni `rand`, `rand-int` e `rand-nth`](https://clojuredocs.org/clojure.core/rand)
+- [Documentazione di Clojure sulla libreria `alea`](https://clojure.github.io/alea/)
+- [Articolo di Medium sulla generazione di numeri casuali in Clojure](https://medium.com/@kumarshubham1987/random-number-generation-in-clojure-5a4a13f4bace)

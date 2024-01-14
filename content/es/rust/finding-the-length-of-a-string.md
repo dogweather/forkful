@@ -1,49 +1,56 @@
 ---
-title:    "Rust: Encontrando la longitud de una cadena"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/rust/finding-the-length-of-a-string.md"
+title:                "Rust: Encontrando la longitud de una cadena."
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
 
-En la programación, a menudo necesitamos conocer la longitud de una cadena de caracteres. Ya sea para validar una entrada de usuario o para realizar operaciones específicas en una cadena, es una tarea común en muchos programas. En este artículo, aprenderemos cómo encontrar la longitud de una cadena en Rust y algunas cosas interesantes a tener en cuenta durante el proceso.
+En la programación, a menudo necesitamos encontrar la longitud de una cadena de texto para realizar ciertas operaciones. En este artículo, aprenderemos cómo hacerlo en Rust de manera eficiente.
 
 ## Cómo hacerlo
 
-Para encontrar la longitud de una cadena en Rust, podemos utilizar el método `len()` disponible para cualquier tipo de dato `String`. Veamos un ejemplo:
+Para encontrar la longitud de una cadena de texto en Rust, podemos usar el método `len()` que está disponible en todos los tipos de datos `String` y `&str`. Aquí hay un ejemplo de cómo usarlo:
 
 ```Rust
-let mi_cadena = "¡Hola mundo!";
+let mi_cadena = "¡Hola, mundo!";
 let longitud = mi_cadena.len();
 
-println!("La longitud de la cadena es {}", longitud);
-
-// Output: La longitud de la cadena es 12
+println!("La longitud de la cadena es: {}", longitud);
 ```
 
-Como se puede ver, el método `len()` devuelve un valor de tipo `usize`, que representa el número de bytes en la cadena. Si queremos obtener la longitud en caracteres, podemos utilizar el método `chars()` y luego contar la cantidad de elementos en el iterador resultante. Por ejemplo:
+Este código imprimirá: `La longitud de la cadena es: 13`.
+
+También podemos usar `len()` en una cadena de texto que almacenamos en una variable de tipo `String`:
 
 ```Rust
-let mi_cadena = "¡Hola mundo!";
-let cantidad = mi_cadena.chars().count();
+let mi_cadena = String::from("¡Hola, mundo!");
+let longitud = mi_cadena.len();
 
-println!("La cantidad de caracteres en la cadena es {}", cantidad);
-
-// Output: La cantidad de caracteres en la cadena es 11
+println!("La longitud de la cadena es: {}", longitud);
 ```
 
-Aquí es importante tener en cuenta que el método `count()` devuelve un `usize` también, por lo que es importante tener en cuenta las limitaciones de este tipo de datos al trabajar con cadenas de longitud extrema.
+De esta manera, también obtendremos una longitud de `13`.
 
 ## Profundizando
 
-Es importante tener en cuenta que en Rust, las cadenas son representadas internamente como slices (`&str`) y no como arrays de caracteres (`[char]`). Esto significa que cuando trabajamos con cadenas, en realidad estamos trabajando con referencias a una secuencia de caracteres y no con los caracteres en sí mismos. Por lo tanto, al encontrar la longitud de una cadena, en realidad estamos encontrando la longitud de la referencia a esa cadena.
+Hay una diferencia técnica entre usar `len()` en una cadena de texto almacenada en una variable de tipo `String` y en una cadena de texto literal. Al usarlo en una variable de tipo `String`, se llama al método `len()` del tipo `String`, mientras que en una cadena de texto literal, se llama al método `len()` del tipo `&str`.
 
-También es importante mencionar que debido a que las cadenas en Rust son inmutables, no podemos modificar su contenido directamente. Por lo tanto, al trabajar con cadenas mutables, es recomendable convertirlas a tipo `String` antes de realizar cualquier operación de modificación, como por ejemplo, encontrar la longitud.
+Además, también podemos utilizar el método `chars()` en una cadena de texto para obtener un iterador que nos permite recorrer cada carácter de la cadena. Luego, podemos usar el método `count()` en este iterador para obtener la cantidad total de caracteres en la cadena.
 
-## Ver también
+```Rust
+let mi_cadena = "¡Hola, mundo!";
+let cantidad_caracteres = mi_cadena.chars().count();
 
-- [Documentación oficial de Rust sobre el tipo `String`](https://doc.rust-lang.org/std/string/index.html)
-- [Tutorial de Rust en español](https://www.rust-lang.org/es-ES/learn/get-started)
-- [Ejemplos de código de Rust en GitHub](https://github.com/rust-lang/rust-by-example)
+println!("La cantidad de caracteres en la cadena es: {}", cantidad_caracteres);
+```
+
+Este código imprimirá: `La cantidad de caracteres en la cadena es: 13`.
+
+## Véase también
+
+- [La documentación oficial de Rust sobre la manipulación de cadenas de texto](https://doc.rust-lang.org/std/string/index.html)
+- [El tutorial de Rust Strings de Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)

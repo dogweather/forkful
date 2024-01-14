@@ -1,35 +1,39 @@
 ---
-title:    "Gleam: Att få den aktuella datumen"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/getting-the-current-date.md"
+title:                "Gleam: Att få den aktuella datumet."
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att få den nuvarande datumen är en av de mest grundläggande funktionerna i programmering. Det är en viktig del av att skapa dynamiska applikationer och hålla reda på tidsstämplar i olika processer.
+Att kunna hämta den aktuella datumen är en viktig funktion i många program och webbapplikationer. Det gör det möjligt för användare att se när information senast uppdaterades eller för att automatiskt hantera schemalagda uppgifter.
 
-## Hur man gör
+## Så här gör du
 
-För att få den nuvarande datumen i Gleam, behöver vi använda funktionen `Date.now()` som returnerar ett värdet motsvarande aktuell tid i millisekunder. För att omvandla detta till ett mer läsbart format, kan vi använda funktionen `Date.toString()` som returnerar ett strängvärde av datumet enligt ett specifikt format.
+För att få den aktuella datumen i Gleam kan du använda "Date" modulen. Först måste du importera modulen och sedan använda funktionen "now" för att hämta den aktuella datumen. Sedan kan du använda andra funktioner, såsom "get_day", "get_month" och "get_year", för att extra information från datumen.
 
 ```Gleam
-let current_date = Date.now()
-let readable_date = Date.toString(current_date, "%Y-%m-%d") 
-```
+import Date
 
-Detta kommer att tilldela det nuvarande datumen i formatet "år-månad-dag" till variabeln `readable_date`.
-Vi kan också specificera ett mer detaljerat format genom att använda placeholders som `%H` för timmar, `%M` för minuter och `%S` för sekunder.
+let current_date = Date.now()
+
+let day = Date.get_day(current_date)
+let month = Date.get_month(current_date)
+let year = Date.get_year(current_date)
+
+// Output: "Idag är det den 28:e mars 2021."
+io.print("Idag är det den " ++ day ++ "e " ++ month ++ " " ++ year ++ ".")
+```
 
 ## Djupdykning
 
-Det finns många fler funktioner som kan användas för att manipulera eller omvandla datum i Gleam. Till exempel `Date.add()` för att lägga till ett visst antal millisekunder till ett datum, `Date.difference()` för att räkna antalet millisekunder mellan två datum och `Date.from_string()` för att konvertera ett datum från en sträng till ett gleam Date-värde.
+För de som är intresserade av att lära sig mer om hantering av datum i Gleam, finns det flera andra användbara funktioner i "Date" modulen. Till exempel så kan du använda "format", "parse" och "diff" för att formatera datum, konvertera mellan olika datumformat och beräkna tidsdifferenser.
 
-Det är också möjligt att använda bibliotek som tillhandahåller mer avancerade funktioner för datummanipulering, som till exempel [gleam-time](https://github.com/gleam-lang/gleam-time).
+## Se även
 
-## Se också
-
-- [Dokumentation för Gleams Date-modul](https://gleam.run/modules/date.html)
-- [Gleam-timelib-Dokumentation](https://github.com/gleam-lang/gleam-time)
-- [Gleam-discussion about date handling](https://github.com/gleam-lang/gleam/discussions/2223)
+- [Gleam Date Dokumentation](https://gleam.run/lib/date.html)
+- [Gleam Standardbibliotek](https://gleam.run/lib/)
+- [Gleam Officiell hemsida](https://gleam.run/)

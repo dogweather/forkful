@@ -1,57 +1,43 @@
 ---
-title:    "C recipe: Starting a new project"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c/starting-a-new-project.md"
+title:                "C recipe: Starting a new project"
+programming_language: "C"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Starting a new project can seem daunting, especially in a complex and extensive programming language like C. However, taking on new challenges and expanding your skills as a programmer is always worthwhile, and starting a new project can lead to personal growth and expanded knowledge in the field.
+Starting a new project can be an exciting and challenging endeavor. Whether you're a beginner programmer or an experienced developer, creating something from scratch allows you to exercise your creativity and problem-solving skills. Plus, once your project is complete, you can showcase it to others and potentially even use it to advance your career. So why not give it a try?
 
 ## How To
 
-Below are some steps to help get you started on your journey of creating a new project in C:
-
-1. Choose a coding environment:
-Before diving into coding, it's important to have a comfortable and organized environment set up for your project. Some popular options for C programming include Visual Studio, Code::Blocks, and Eclipse.
-
-2. Plan your project:
-Before writing any code, it's crucial to have a clear idea of what you want your project to accomplish. This can be in the form of a written outline, flowchart, or even just a mental picture.
-
-3. Write the code:
-Now it's time to start coding! Below is a simple example of a "Hello World" program in C:
+To start a new project in C programming, you'll need to follow a few simple steps. First, make sure you have a C compiler installed on your computer. Some popular options include GCC, Clang, and Visual Studio. Next, create a new folder for your project and open it in your preferred code editor. From there, you can begin writing your code. Here's a simple "Hello World" example to get you started:
 
 ```C
 #include <stdio.h>
- 
-int main()
-{
-   printf("Hello World!\n");
-   return 0;
+
+int main() {
+    printf("Hello, world!\n");
+    return 0;
 }
 ```
 
-4. Test and troubleshoot:
-After writing your code, it's important to thoroughly test and debug it. This can help catch any errors or bugs that may have been missed during coding.
-
-5. Refine and improve:
-As with any project, there is always room for improvement. Take the time to review and refine your code, making it more efficient and user-friendly.
+Save this code in a file called "hello.c" and then compile it using your chosen compiler. You should now have an executable file that, when run, will print "Hello, world!" to the console. Congratulations, you've successfully started your first C project!
 
 ## Deep Dive
 
-Starting a new project is more than just writing code. It involves planning, problem-solving, and creativity. Here are some tips to help you get the most out of your new project:
+Now that you have the basics down, it's time to dive deeper into starting a new project. One important aspect to consider is your project's structure. It's a good idea to organize your code into separate files, with each file handling a specific aspect of your program. This can help make your code more modular and easier to maintain.
 
-- Start small: Don't be overwhelmed by trying to create a massive project all at once. Break it down into smaller, manageable tasks.
-- Seek help: Don't be afraid to ask for help or consult online resources when facing a problem. The programming community is always willing to offer assistance and guidance.
-- Document your progress: Keeping track of your progress and documenting your journey can be helpful in troubleshooting and also serve as a reference for future projects.
+Another important aspect to consider is using version control for your project. This allows you to keep track of changes to your code and revert to previous versions if needed. Git is a popular version control system that is frequently used in C programming projects.
 
-Remember, starting a new project is an opportunity for growth and learning. Embrace the challenges and enjoy the process!
+Lastly, don't forget to write comments in your code. Comments are lines of text that are not executed by the compiler, but serve as helpful notes for yourself and others who may read your code. It's a good practice to comment on the purpose and logic of each section of code, making it easier to understand and modify in the future.
 
 ## See Also
 
-- [C Programming - A Beginner's Guide](https://www.programiz.com/c-programming)
-- [Top 10 Tools for Writing C Code](https://stackify.com/top-10-tools-for-writing-c-code/)
+Ready to start your first C programming project? Check out these helpful resources for more tips and guidance:
 
-Start your new project with confidence and happy coding! 🚀
+- [The C Programming Language by Brian Kernighan and Dennis Ritchie](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628)
+- [Learn C Programming - Full Course for Beginners by freeCodeCamp.org](https://www.youtube.com/watch?v=KJgsSFOSQv0)
+- [Git Tutorial for Beginners: Command-Line Fundamentals](https://www.freecodecamp.org/news/git-tutorial-for-beginners-command-line-fundamentals/)

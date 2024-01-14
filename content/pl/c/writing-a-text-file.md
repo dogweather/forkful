@@ -1,43 +1,68 @@
 ---
-title:    "C: Pisanie pliku tekstowego"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/writing-a-text-file.md"
+title:                "C: Tworzenie pliku tekstowego"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Pisanie tekstowego pliku jest kluczowym elementem w wielu programach. Pozwala nam zapisywać i przechowywać dane, a także udostępniać je innym użytkownikom. Bez możliwości tworzenia i modyfikowania plików tekstowych, nasze programy straciłyby wiele ze swojej funkcjonalności.
+Pisanie plików tekstowych jest częstym zadaniem w programowaniu C. Pozwala nam ono na przechowywanie i przetwarzanie danych w czytelnej formie. Jest to również niezbędne do komunikacji z użytkownikiem lub innymi programami. W tym artykule dowiesz się jak tworzyć i manipulować tekstowymi plikami w języku C.
 
 ## Jak to zrobić
 
-Tworzenie tekstowych plików w języku C jest bardzo proste. Najważniejszą funkcją, która pozwala nam na to, jest funkcja `fopen()`. Musimy podać jej dwa argumenty: nazwę pliku, który chcemy stworzyć oraz tryb, w jakim chcemy go otworzyć. Przykładowy kod wyglądałby następująco:
+Aby pisać pliki tekstowe w języku C, potrzebujemy wykorzystać dwie funkcje z biblioteki standardowej - `fopen()` i `fprintf()`. Oto prosty przykład kodu, który zapisze tekst do pliku:
 
+```C
+#include <stdio.h>
+
+int main()
+{
+    // otwórz plik w trybie do zapisu
+    FILE *plik = fopen("tekst.txt", "w");
+
+    // sprawdź czy plik został poprawnie otwarty
+    if (plik == NULL) {
+        printf("Nie udało się otworzyć pliku!");
+        return 1;
+    }
+
+    // zapisz tekst do pliku
+    fprintf(plik, "To jest przykładowy tekst.");
+
+    // zamknij plik
+    fclose(plik);
+
+    return 0;
+}
 ```
-FILE *plik; // deklaracja zmiennej plikowej
-plik = fopen("moj_plik.txt", "w"); // otwarcie pliku w trybie zapisu
+
+Powyższy kod otwiera plik o nazwie "tekst.txt" w trybie do zapisu i zapisuje w nim tekst "To jest przykładowy tekst.". Należy pamiętać, że jeśli plik o podanej nazwie już istnieje, zostanie on nadpisany. Aby uniknąć takiej sytuacji, możemy użyć trybu do dopisywania (`"a"`) lub stworzyć funkcję, która będzie sprawdzać istnienie pliku przed jego otwarciem.
+
+Aby wczytywać dane z pliku tekstowego, używamy funkcji `fscanf()` w pętli while, dopóki nie osiągniemy końca pliku (`EOF`):
+
+```C
+while (fscanf(plik, "%s", slowo) != EOF) {
+    printf("%s ", slowo);
+}
 ```
 
-Następnie możemy użyć funkcji `fprintf()` aby zapisać dowolny tekst do naszego pliku. Przykładowy kod wykorzystujący tę funkcję wyglądałby tak:
+## Deep Dive
 
-```
-fprintf(plik, "To jest przykładowy tekst, który zostanie zapisany do pliku.");
-```
+Chcąc lepiej zrozumieć jak działa pisanie plików tekstowych, warto poznać wyrażenia formatujące używane przez funkcję `fprintf()`. Oto kilka najczęściej wykorzystywanych:
 
-Po zakończeniu zapisu, musimy pamiętać o zamknięciu pliku przy użyciu funkcji `fclose()`:
+- `%s` - zapisuje ciąg znaków
+- `%d` - zapisuje liczbę całkowitą
+- `%f` - zapisuje liczbę zmiennoprzecinkową
+- `%c` - zapisuje pojedynczy znak
+- `%p` - zapisuje wskaźnik
 
-```
-fclose(plik); // zamknięcie pliku
-```
+Ponadto, warto również pamiętać o zamknięciu pliku po zakończeniu zapisu lub odczytu danych. Niezamknięte pliki mogą powodować błędy w programie lub utrudnić dalsze działania związane z danym plikiem.
 
-Po wykonaniu tych kroków, nasz plik tekstowy zostanie stworzony i będzie zawierał wprowadzony przez nas tekst. Możemy również odczytać dane z pliku przy użyciu funkcji `fscanf()`.
+## Zobacz również
 
-## Głębsze zagadnienia
-
-Kiedy zaczynamy pisać bardziej skomplikowane programy, często chcemy aby nasz kod był czytelniejszy i łatwiejszy w modyfikacji. W takich przypadkach przydatne może być wykorzystanie funkcji `fgetc()` i `fgets()`, które pozwalają na odczyt pojedynczych znaków lub całych linii z pliku tekstowego. Możemy również wykorzystać funkcje `fseek()` i `ftell()` aby przechodzić pomiędzy różnymi miejscami w pliku oraz sprawdzić jego rozmiar.
-
-## Zobacz także
-
-- Dokładna dokumentacja funkcji `fopen()` w języku C: https://www.cplusplus.com/reference/cstdio/fopen/
-- Przykładowe programy wykorzystujące pisanie i odczytywanie plików tekstowych w języku C: https://www.geeksforgeeks.org/c-programming-language/?ref=leftbar-rightbar
+- [Dokumentacja C - Pliki](https://www.w3schools.in/c-programming/file-handling/)
+- [Tutorial C - Pliki tekstowe](https://www.programiz.com/c-programming/c-file-input-output)
+- [Wideo tutorial - Pliki tekstowe w C](https://www.youtube.com/watch?v=5DyYAF9ynME)

@@ -1,42 +1,65 @@
 ---
-title:    "Fish Shell recipe: Comparing two dates"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/comparing-two-dates.md"
+title:                "Fish Shell recipe: Comparing two dates"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-When working with dates, it can be useful to compare them to determine which one is greater or if they are equal. This can be especially helpful in tasks such as sorting data or organizing events in chronological order. With Fish Shell, comparing two dates is a quick and simple process.
+##Why
 
-## How To
-To compare two dates in Fish Shell, we will use the ```fish_date``` command. This command returns the current time and date in the format specified by the user. Here's an example of how it works:
+When working with dates in programming, it can be useful to compare them in order to determine which one is earlier, later, or if they are equal. This can be particularly helpful in sorting data or validating user input. In this blog post, we will explore how to compare two dates using the Fish Shell programming language.
+
+##How To
+
+Comparing dates in Fish Shell is a simple process. You can use the `date` command to display the current date, and the `-d` option to specify a different date to compare. For example:
 
 ```Fish Shell
-fish_date +%s
+date -d "2021-01-01"
 ```
 
-The ```+%s``` option tells the ```fish_date``` command to return the date in seconds since the Unix epoch, which is January 1, 1970, 00:00:00 UTC. This format is useful as it allows for easy comparison of dates. 
-
-Now, let's say we want to compare two dates to see which one is greater. We can do this by using the ```-lt``` (less than) and ```-gt``` (greater than) options in a conditional statement. Here's an example:
+This will display the date in the specified format. Now let's compare two dates and see the output:
 
 ```Fish Shell
-if [ (fish_date -lt "2021-01-01") and (fish_date -gt "2020-01-01") ]
-    echo "2020 is greater than 2021"
+if [ "2021-01-01" > "2020-12-31" ]
+  echo "2021-01-01 is later than 2020-12-31"
 else
-    echo "2021 is greater than 2020"
+  echo "2021-01-01 is not later than 2020-12-31"
 end
 ```
 
-In this example, we are comparing two dates, one being the current date (2021-02-12) and the other being a past date (2020-01-01). Since 2021 is greater than 2020, the output will be "2021 is greater than 2020". 
+The output will be:
 
-## Deep Dive
-It's important to note that when comparing dates, Fish Shell uses the YYYY-MM-DD format. This means that when using the ```-lt``` and ```-gt``` options, the dates must be entered in this format for the comparison to work correctly. Additionally, for more complex comparisons, Fish Shell also has the ```-eq``` (equal to) and ```-ne``` (not equal to) options.
+`2021-01-01 is later than 2020-12-31`
 
-## See Also
-For more information on the ```fish_date``` command and its options, check out the official Fish Shell documentation: 
-- https://fishshell.com/docs/current/cmds/date.html 
+As you can see, the `>` symbol is used to indicate that the first date is later than the second one. Similarly, you can use `<` and `=` to check for earlier or equal dates.
 
-For additional tips and tricks on using Fish Shell, take a look at these helpful resources:
-- https://fishshell.com/docs/current/tutorial.html 
-- https://fishshell.com/docs/current/index.html
+Another useful command for comparing dates is `date -s`, which allows you to specify a date in the shell. This can be helpful when comparing user input or dates from a file. Here's an example:
+
+```Fish Shell
+set mydate "2021-01-01"
+date -s $mydate
+if [ (date +%Y-%m-%d) > $mydate ]
+  echo "New date is set to a later date"
+end
+```
+
+This script will set the date to January 1st, 2021 and then check if the current date is later than the one we entered. If it is, the output will be:
+
+`New date is set to a later date`
+
+##Deep Dive
+
+When comparing dates, it's important to keep in mind that the format of the date can affect the comparison. For example, using the format `DD-MM-YYYY` will give different results compared to `YYYY-MM-DD`. Make sure to use a consistent format for accurate comparisons.
+
+Additionally, when using the `>` or `<` symbols, the comparison is done based on the string value of the dates. This means that dates with a higher number will be deemed later, even if they are technically earlier. For example, `2021-01-01` will be considered later than `2020-12-31` because `2` is higher than `1`.
+
+Finally, you can also use the `-d` option with the `date` command to specify a specific time along with the date. This can be useful for more precise comparisons, such as determining if one date is within a certain time range of another date.
+
+##See Also
+
+For more information on working with dates and times in Fish Shell, check out these links:
+
+- [Fish Shell documentation on `date` command](https://fishshell.com/docs/current/cmds/date.html)
+- [Stack Overflow thread on comparing dates in Fish Shell](https://stackoverflow.com/questions/55632433/how-do-i-compare-dates-in-the-fish-shell)

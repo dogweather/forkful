@@ -1,83 +1,46 @@
 ---
-title:    "Clojure: Escrevendo para o erro padrão"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/writing-to-standard-error.md"
+title:                "Clojure: Escrevendo para o erro padrão"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-Porque escrever para o erro padrão em Clojure é importante?
+## Por que escrever para o erro padrão?
 
-Quando estamos desenvolvendo em Clojure, é essencial que tenhamos uma forma de monitorar e diagnosticar possíveis erros que podem ocorrer durante a execução do programa. Escrever para o erro padrão nos permite acessar essas informações e entender melhor o que está acontecendo no nosso código.
+Escrever para o erro padrão é uma habilidade importante para qualquer programador. Isso permite que você registre mensagens de erro e outras informações úteis durante a execução de um programa. Isso pode ajudar a localizar e corrigir problemas em seu código e melhorar a qualidade de seus programas.
 
-Como fazer:
+## Como fazer
 
-```Clojure
-(defn erro-exemplo []
-    (println "Executando função de exemplo")
-    (throw (Exception. "Isso é um erro de exemplo")))
-```
-
-Ao executar a função acima, teremos o seguinte resultado no erro padrão:
+Para escrever para o erro padrão em Clojure, você pode usar a função "println", que irá imprimir a mensagem fornecida para o console. Você também pode usar a função "eprintln" para imprimir a mensagem com a indicação de erro padrão. Veja alguns exemplos abaixo:
 
 ```
-Executando função de exemplo
-Exception: Isso é um erro de exemplo
+Clojure
+(println "Hello World!")
+;; output: Hello World!
+
+(def num 10)
+(eprintln "O valor de num é" num)
+;; output: O valor de num é 10 - com a indicação de erro padrão
 ```
 
-Podemos também gravar o erro padrão em um arquivo para utilizá-lo posteriormente para debug:
+## Profundidade
 
-```Clojure
-(defn erro-arquivo []
-    (with-open [writer (io/writer "erros.txt")]
-        (binding [*out* writer]
-            (println "Escrevendo erro no arquivo!")
-            (throw (Exception. "Isso é um erro simulado")))))
-```
+Agora que você sabe como escrever para o erro padrão em Clojure, vamos dar uma olhada em algumas informações mais avançadas sobre o assunto. Existem outras funções que você pode usar para lidar com as mensagens de erro, como "pr-str" para converter um valor em uma string e "pr" para imprimir um valor sem adicionar uma nova linha no final.
 
-Desta forma, o erro será gravado no arquivo "erros.txt" e poderemos acessá-lo para análise.
-
-Deep Dive:
-
-Caso queiramos uma forma mais personalizada de lidar com os erros e suas informações, podemos utilizar a função `prn` para imprimir uma estrutura de dados no erro padrão, ao invés de exibir apenas a mensagem de erro:
-
-```Clojure
-(defn erro-estrutura []
-    (prn {:mensagem "Erro personalizado" :numero 404 :função "Erro estruturado"}))
-```
-
-Isso irá produzir a seguinte saída no erro padrão:
+Além disso, você também pode personalizar a saída de erro padrão usando a macro "with-out-str", que captura a saída para uma string e permite que você a use de diferentes maneiras. Por exemplo:
 
 ```
-{:mensagem "Erro personalizado" :numero 404 :função "Erro estruturado"}
+Clojure
+(with-out-str (pr "Hoje é" (java.util.Date.)))
+;; output: Hoje é Tue Apr 07 10:10:26 PST 2020
 ```
 
-Podemos até mesmo utilizar `prn` dentro de um `try/catch` para capturar e tratar o erro de forma mais controlada:
+Lembre-se de que é importante ter cuidado ao escrever para o erro padrão. Você não quer sobrecarregar o console com muitas informações, pois isso pode dificultar a leitura e a compreensão dos dados de saída.
 
-```Clojure
-(defn erro-tratado []
-    (try
-        (throw (Exception. "Erro simulado"))
-        (catch Exception e
-            (prn {:mensagem "Erro tratado!" :erro e}))))
-```
+## Veja também
 
-Neste caso, a saída no erro padrão será:
-
-```
-{:mensagem "Erro tratado!" :erro #object[java.lang.Exception 0x4b739ae4 "Erro simulado"]}
-```
-
-Isso nos permite ter um controle mais preciso sobre os erros que ocorrem em nosso código.
-
-Veja também:
-
-- [Visão geral da função `println` em Clojure](https://clojure.org/guides/io)
-- [Documentação oficial de `prn` em Clojure](https://clojuredocs.org/clojure.core/prn)
-- [Artigo sobre tratamento de erros em Clojure](https://hackernoon.com/exception-handling-in-clojure-4a8911e93a3d)
-
-## Veja também:
-
-- [Documentação oficial de `io/writer` em Clojure](https://clojuredocs.org/clojure.java.io/writer)
-- [Explicação mais detalhada sobre a função `throw` em Clojure](https://clojuredocs.org/clojure.core/throw)
-- [Exemplos de código para lidar com erros em Clojure](https://medium.com/@haiderkhantcs/handling-errors-in-clojure-8e1867f7b083)
+- [Documentação oficial de Clojure sobre escrita para o erro padrão](https://clojuredocs.org/clojure.core/eprintln)
+- [Tutorial em vídeo: Como escrever no erro padrão em Clojure](https://www.youtube.com/watch?v=8zJavuFePKQ)
+- [Exemplos de uso do Clojure: Função "println"](https://github.com/clojure/clojure/blob/master/src/main/clojure/clojure/core.clj#L3236)

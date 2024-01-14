@@ -1,64 +1,46 @@
 ---
-title:    "Clojure: Die Verwendung von regulären Ausdrücken"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/using-regular-expressions.md"
+title:                "Clojure: Verwenden von regulären Ausdrücken"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+##Warum
+Warum sollte man sich überhaupt mit regulären Ausdrücken in der Programmierung beschäftigen? Nun, reguläre Ausdrücke sind sehr nützlich, wenn es darum geht, bestimmte Muster in Texten oder Datensätzen zu finden und zu bearbeiten. Sie können auch dabei helfen, komplexe Daten zu untersuchen und zu filtern. In diesem Blog-Beitrag werden wir uns ansehen, wie man reguläre Ausdrücke in Clojure verwenden kann und warum sie eine wichtige Fähigkeit für jeden Programmierer sind.
 
-Wenn du schon eine Weile mit Clojure programmierst, hast du vielleicht schon von regulären Ausdrücken gehört. Aber warum sollte jemand sie verwenden? Reguläre Ausdrücke sind eine nützliche Möglichkeit, Textmuster zu analysieren und zu manipulieren, was sie zu einem wertvollen Werkzeug in der Programmierung macht.
-
-## Wie man sie verwendet
-
-Um reguläre Ausdrücke in Clojure zu verwenden, müssen wir zuerst das `re-seq`-Modul importieren.
+##Wie man reguläre Ausdrücke in Clojure verwendet
+Um reguläre Ausdrücke in Clojure zu verwenden, müssen wir das "re-seq" Modul importieren:
 
 ```Clojure
-(ns meinprojekt.core
-  (:require [clojure.string :as str]
-            [clojure.re-seq :as re]))
+(ns example-regex.core
+(:require [clojure.string :as str]))
 ```
 
-Als nächstes können wir `re-seq` in Aktion sehen, indem wir eine Liste von Zeichenfolgen erstellen und ein reguläres Ausdrucksmuster angeben, nach dem wir suchen möchten.
+Wir können dann verschiedene Funktionen verwenden, um Strings zu durchsuchen und zu bearbeiten. Zum Beispiel, um alle Vorkommen von Zahlen in einem String zu finden, können wir die Funktion "str/replace" verwenden:
 
 ```Clojure
-(def emails ["john@example.com", "jane@domain.com", "foobar@server.net"])
-
-; Wir suchen nach E-Mail-Adressen, die auf ".com" enden
-(def pattern #"(.com)$")
-
-; Wir können jetzt das re-seq-Modul verwenden, um die passenden E-Mail-Adressen zu extrahieren
-(def matches (re-seq pattern emails))
-
-; Die Ausgabe wird eine Liste mit den passenden E-Mail-Adressen sein
-["john@example.com", "jane@domain.com"]
+(str/replace "I have 5 apples and 3 oranges" #"\d+" "X")
 ```
 
-Wir können auch reguläre Ausdrücke verwenden, um Textmuster zu ersetzen oder zu ändern. Zum Beispiel können wir alle Vokale in einem String durch Sternchen ersetzen.
+Dies würde den String in "I have X apples and X oranges" ändern. Hier wird die reguläre Ausdruckssyntax #"\d+" verwendet, um nach ganzen Zahlen (1 oder mehr) zu suchen und sie durch den Platzhalter "X" zu ersetzen. Weitere Funktionen, die mit regulären Ausdrücken verwendet werden können, sind "str/split" und "re-find". Es gibt noch viele weitere Möglichkeiten, reguläre Ausdrücke in Clojure zu verwenden, also experimentiere ruhig mit ihnen!
 
-```Clojure
-(def text "Reguläre Ausdrücke sind großartig!")
+##Tiefen Tauchgang in reguläre Ausdrücke
+Reguläre Ausdrücke folgen einer bestimmten Syntax und es kann eine Weile dauern, bis man sie vollständig versteht. Sie bestehen aus bestimmten Zeichen und Kombinationen, die verwendet werden, um Muster zu definieren, die dann in einem String gefunden und bearbeitet werden können. Zum Beispiel muss man zwischen "greedy" und "non-greedy" Quantifiern unterscheiden, um zu vermeiden, dass man zu viele oder zu wenige übereinstimmende Teile findet. Auch die Verwendung von Backslash-Fluchtsequenzen kann verwirrend sein, insbesondere wenn wir tatsächlich einen Backslash in unserem regulären Ausdruck benötigen.
 
-(def pattern #"[aeiou]")
+Eine wichtige Sache, die zu beachten ist, ist, dass reguläre Ausdrücke möglicherweise nicht immer die beste Lösung für alle Probleme sind. In einigen Fällen kann es möglicherweise effizienter sein, eine andere Methode zu verwenden, um die gleichen Ergebnisse zu erzielen. Es ist auch wichtig, Vorsicht bei der Verwendung von regulären Ausdrücken in produktiven Code zu walten, da sie eine niedrige Lesbarkeit und Wartbarkeit haben können.
 
-; Wir verwenden `str/replace` mit unserem regulären Ausdrucksmuster und dem Ersatztext " * "
-(str/replace text pattern " * ")
+##Weitere Informationen
+Hier sind einige nützliche Links, um mehr über die Verwendung von regulären Ausdrücken in Clojure zu erfahren:
 
-; Die Ausgabe wird "R*g*l*r* *sdr*ck* *nd *gr*ß*rt*g!" sein
-```
+- Clojure Cheat Sheet zu regulären Ausdrücken: https://clojure.org/api/cheatsheet
+- Offizielle Dokumentation zu regulären Ausdrücken in Clojure: https://clojure.org/guides/reducers
+- Interaktive reguläre Ausdrücke: https://regex101.com/
 
-## Tiefer Einblick
+ Viel Spaß beim Erkunden und Ausprobieren von regulären Ausdrücken in Clojure! 
 
-Reguläre Ausdrücke können natürlich viel komplexer sein und verschiedenste Anwendungen haben. Mit ihnen kannst du zum Beispiel E-Mail-Adressen, URLs, Telefonnummern oder sogar ganze Codeblöcke aus Texten extrahieren. Sie können auch verwendet werden, um Text zu validieren oder zu filtern, je nachdem was du brauchst.
-
-Falls du tiefer in die Welt der regulären Ausdrücke eintauchen möchtest, gibt es viele Ressourcen im Internet, die dir dabei helfen können. Hier sind einige nützliche Links:
-
-- [Clojure Dokumentation zu regulären Ausdrücken](https://clojure.org/reference/regular_syntax)
-- [Regexr - Ein online Tool zum Erstellen und Testen von regulären Ausdrücken](https://regexr.com/)
-- [Regular Expressions Cookbook für Clojure](https://github.com/maria-c/clojure-regular-expressions-cookbook)
-
-## Siehe auch
-
-- [Wie man mit Zeichenfolgen in Clojure arbeitet](https://www.maria-example.com/strings-in-clojure)
-- [Einführung in das Parsing von Daten mit Instaparse in Clojure](https://www.maria-example.com/parsing-data-with-instaparse)
+##Siehe auch
+- Einführung in die Nutzung von regulären Audrücken: https://blog.codinghorror.com/regular-expressions-now-you-have-two-problems/
+- Verwendung von regulären Ausdrücken in anderen Programmiersprachen: https://www.regular-expressions.info/clojure.html
+- Unterschiede zwischen "greedy" und "non-greedy" Quantifiern: https://stackoverflow.com/questions/3075130/what-is-the-difference-between-and-regular-expressions

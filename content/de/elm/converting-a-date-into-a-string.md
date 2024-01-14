@@ -1,54 +1,32 @@
 ---
-title:    "Elm: Umwandlung eines Datums in einen String"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/elm/converting-a-date-into-a-string.md"
+title:                "Elm: Ein Datum in eine Zeichenkette umwandeln"
+programming_language: "Elm"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Das Konvertieren eines Datums in einen String ist ein häufiger Schritt beim Programmieren von Webanwendungen. Es ermöglicht es uns, Daten in einem spezifischen Format anzuzeigen, das für die Benutzer leichter verständlich ist.
 
-Das Umwandeln von Daten in eine Zeichenkette ist ein grundlegender Schritt bei der Entwicklung von Webanwendungen. Mit dieser Fähigkeit können wir Datumsangaben auf einfache Weise darstellen und sie für unsere Benutzer leicht lesbar machen.
-
-## Wie Geht's
-
-Um ein Datum in eine Zeichenkette zu konvertieren, müssen wir die Funktion `toString` verwenden. Diese Funktion nimmt einen `Date`-Wert entgegen und gibt eine String-Repräsentation des Datums zurück. Hier ist ein Beispiel:
+## So geht's
+Das Konvertieren eines Datums in einen String ist in Elm einfach, da die Sprache eine integrierte Funktion dafür besitzt. Wir verwenden die `toString` Funktion, um ein Datum in einen String zu konvertieren. Hier ist ein Beispielcode, der ein Datum in das amerikanische Datumsformat umwandelt:
 
 ```Elm
-toString (Date.fromTime 0)
+import Date exposing (..)
+import Date.Format exposing (format)
+
+date = Date.fromCalendarDate 2021 3 24
+str = date |> format "mm/dd/yyyy"
+-- 03/24/2021
 ```
 
-Dies würde den String `"Jan 1, 1970"` zurückgeben, da der übergebene `Date`-Wert 0 Millisekunden seit dem 1. Januar 1970 entspricht.
+In diesem Beispiel importieren wir das `Date` und `Date.Format` Modul und verwenden die `fromCalendarDate` Funktion, um ein Datum zu erstellen. Dann verwenden wir die `format` Funktion, um das Datum in das gewünschte Format zu konvertieren, in diesem Fall das amerikanische Datumsformat mit Monat/Tag/Jahr. Das Ergebnis wird in der Variable `str` gespeichert und kann dann in unserer Anwendung angezeigt werden.
 
-Eine weitere nützliche Funktion ist `fromIsoString`, die es uns ermöglicht, ein Datum aus einer Zeichenkette zu erstellen, die dem ISO-8601-Format entspricht. Hier ist ein Beispiel:
-
-```Elm
-Date.fromIsoString "2019-06-05"
-```
-
-Dies würde den `Date`-Wert `Ok (Date.fromTime 1559702400000)` zurückgeben.
-
-## Tiefentauchen
-
-Es ist wichtig zu beachten, dass die Funktionen `toString` und `fromIsoString` standardmäßig im UTC-Format arbeiten. Wenn wir jedoch möglicherweise verschiedene Zeitzonen berücksichtigen müssen, können wir die `Time`-Bibliothek nutzen. Mit dieser Bibliothek können wir Daten in eine bestimmte Zeitzone konvertieren und auch die aktuelle Zeitzone des Benutzers abrufen.
-
-Hier ist ein Beispiel, in dem wir die aktuelle Zeitzone des Benutzers nutzen, um ein Datum in eine Zeichenkette im entsprechenden Format zu konvertieren:
-
-```Elm
-import Time exposing (..)
-import Time.Format exposing (..)
-
-zoneDate : Date -> String
-zoneDate date =
-    Time.format "%d-%m-%Y" (convert (zoneFor date) date)
-
-zoneDate (fromIsoString "2019-06-05")
-```
-
-Dies würde beispielsweise in der amerikanischen Zeitzone `"06-05-2019"` zurückgeben, aber in der europäischen Zeitzone `"05-06-2019"`.
+## Tiefergehende Informationen
+Die `format` Funktion akzeptiert einen zweiten Parameter, der das Format des Datums angibt. Dies ermöglicht es uns, das Datum in verschiedenen Formaten zu konvertieren, je nach unseren Anforderungen. Wir können auch die `Date` und `Date.Format` Module verwenden, um die Wochentage und Monate in verschiedenen Sprachen anzuzeigen. Weitere Informationen zu diesen Funktionen finden Sie in der Elm Dokumentation.
 
 ## Siehe auch
-
-- [Elm Dokumentation zu Dates](https://package.elm-lang.org/packages/elm-lang/core/latest/Date)
-- [Time Bibliothek](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Time Format Bibliothek](https://package.elm-lang.org/packages/elm/time/latest/Time-Format)
+- [Elm Datum Dokumentation] (https://package.elm-lang.org/packages/elm/time/latest/)
+- [Formatieren von Datumsangaben in Elm] (https://dev.to/kadysz/how-to-format-dates-in-elm-gfc)

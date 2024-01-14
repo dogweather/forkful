@@ -1,55 +1,60 @@
 ---
-title:    "Kotlin: חיפוש אורך של מחרוזת"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/finding-the-length-of-a-string.md"
+title:                "Kotlin: מציאת אורך של מחרוזת"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה:
+## למה
 
-למה לשחק בחיפוש אורך של מחרוזת?
+למה יש לאדם להתעסק במציאת אורך של מחרוזת? מציאת אורך של מחרוזת חיוני ביותר לפתרון בעיות תכנותיות שונות. כאשר אנחנו עולים על פינג פונג של שרשרת תווים, חשוב לנו לדעת את האורך של השרשרת כדי לכוון את הפעולות התכנותיות המתאימות.
 
-מחרוזות הן חלק בלתי נפרד מהתכנות בכל שפת תכנות. במקרה שלנו, אנו רוצים לדעת את אורך המחרוזת כדי לבצע פעולות אחרות עליה, לדוגמה לחתוך חתיכת מחרוזת מסוימת או לבדוק אם המחרוזת מכילה מילה ספציפית. לכן, היכולת למצוא את אורך המחרוזת היא יכולת חשובה לתכנן ולהתפתח כמתכנת.
+## איך לעשות זאת
 
-## איך לעשות זאת:
-
-הנה דוגמא פשוטה בשפת קוטלין למציאת אורך מחרוזת:
+על מנת למצוא את האורך של מחרוזת בקוד קוטלין, ניתן להשתמש בפונקציית "length". לדוגמה:
 
 ```Kotlin
-// מחרוזת לדוגמה
-val string = "שלום עולם!" 
+var string = "כתוב blog post על תכנות בקוטלין"
+var length = string.length
 
-// מציאת אורך המחרוזת והדפסתו
-println("אורך המחרוזת הוא ${string.length}") 
-
-// פלט:
-// אורך המחרוזת הוא 9
+println("אורך המחרוזת הוא $length") // הופקד לסך של 33
 ```
 
-בקוד הזה, אנו משתמשים בפונקציה `length` המובנית במחלקת מחרוזות של קוטלין כדי למצוא את אורך המחרוזת. אנו גם משתמשים בתווים רב שמשמשים כדי לייצג את המחרוזת בשפה העברית.
+## חקירה מעמיקה
 
-כאן עוד דוגמא בשילוב עם לולאת `for` לחישוב אורך של מילים במשפט:
+כעת נתאר מספר פעולות נוספות שניתן לבצע על מחרוזות בקוטלין:
+
+- ניתן להשתמש בפונקציית "substring" כדי לקבל חלק מסוים של מחרוזת, על ידי ציון אינדקס התחלה ואינדקס סיום.
 
 ```Kotlin
-// משפט לדוגמה
-val sentence = "אני אוהב לתכנת בקוטלין"
+var string = "Hello World"
+var subString = string.substring(0, 5)
 
-// מפרקים את המשפט למערך של מילים
-val words = sentence.split(" ") 
-
-var count = 0
-
-// עבור כל מילה במערך, מוסיפים אחת למונה
-for (word in words){
-    count++
-}
-
-// מציאת כמות המילים במשפט והדפסת התוצאה
-println("כמות המילים במשפט הוא $count מילים.") 
-
-// פלט:
-// כמות המילים במשפט הוא 5 מילים.
+println(subString) // הופקד "Hello"
 ```
 
-בדוגמא זו, אנו משתמשים בפונקציה `split` כדי לפרק את המשפט למערך של מילים, ואז בעזרת הל
+- ניתן לשנות את ערכי התווים במחרוזת באמצעות הפונקצייה "replace". לדוגמה, נשנה את התו "l" לתו "r".
+
+```Kotlin
+var string = "Hello World"
+var newString = string.replace("l", "r")
+
+println(newString) // הופקד "Herr World"
+```
+
+- ניתן להמיר את המחרוזת למערך של תווים באמצעות הפונקצייה "toCharArray".
+
+```Kotlin
+var string = "Hello World"
+var charArray = string.toCharArray()
+
+println(charArray) // הופקד מערך התווים ['H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd']
+```
+
+## ראה גם
+
+- [פונקציות מובנות בקוטלין](https://www.geeksforgeeks.org/kotlin-built-in-functions/)
+- [מדריך לתכנות בקוטלין](https://www.tutorialspoint.com/kotlin/index.htm)
+- [מאמר על פונקציית "length" בקוטלין](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/length.html)

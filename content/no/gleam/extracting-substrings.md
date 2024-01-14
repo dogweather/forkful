@@ -1,45 +1,38 @@
 ---
-title:    "Gleam: Utenpåhogging av substringer"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/gleam/extracting-substrings.md"
+title:                "Gleam: Ekstrahering av delstrenger"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å trekke ut delstrenger er ofte en viktig del av programmering, spesielt når man arbeider med tekstbehandling og parsing av data. Det kan være nødvendig å isolere bestemte deler av en streng for å kunne utføre operasjoner eller sammenligne data. I Gleam, et funktionelt programmeringsspråk for moderne utviklere, er det en enkel måte å trekke ut delstrenger på, som vil bli forklart i denne bloggposten.
+Å trekke ut delstrenger er en vanlig og nyttig operasjon i programmering, spesielt når du arbeider med tekst eller strenger. Det lar deg hente ut spesifikke deler av en streng basert på bestemte kriterier, som for eksempel en bestemt lengde eller et visst mønster. Dette kan være nyttig for å manipulere data, filtrere ut uønsket informasjon, eller for å lage mer dynamiske og tilpassede tekstelementer i programmene dine.
 
-## Hvordan
+## Hvordan Gjøre Det
 
-For å trekke ut en delstreng i Gleam, bruker man funksjonen `string.split_at()` sammen med indekseringsoperatøren (`[]`). Denne funksjonen tar to argumenter: en streng og en indeks, og returnerer to delstrenger - en som viser strengen fra starten frem til indeksen, og en som viser strengen fra indeksen og ut. La oss bruke et eksempel for å forklare bedre.
-
-```Gleam
-let streng = "Husky Valper"
-let (første_ord, siste_ord) = string.split_at(streng, 5)
-
-// Første ord blir "Husky" og siste ord blir "Valper"
-```
-
-Som du kan se, var `første_ord` og `siste_ord` de to delstrengene som ble returnert fra funksjonen `string.split_at()`.
-
-## Dypdykk
-
-Det er også mulig å trekke ut flere delstrenger ved å bruke `string.split_at()` flere ganger. La oss se på et annet eksempel:
+Å trekke ut substrings i Gleam er enkelt og intuitivt, takket være det funksjonelle språkets ryddige og leselige syntaks. La oss se på et eksempel:
 
 ```Gleam
-let streng = "1-2-3-4-5"
-let (første_tall, resten) = string.split_at(streng, 1)
+let navn = "Ole Olesen"
 
-let (andre_tall, endelig) = string.split_at(resten, 1)
+let mellomnavn = String.slice(navn, 4, 8)
 
-// Første tall blir "1", andre tall blir "2" og endelig blir "3-4-5"
 ```
 
-Som du kan se, brukte vi `string.split_at()` to ganger for å isolere de tre tallene fra strengen. Først delte vi strengen ved tegnet "-" for å få den første delen, og deretter delte vi resten av strengen ved samme tegn for å få de to siste tallene.
+I denne koden definerer vi variabelen "navn" som en streng med verdien "Ole Olesen". Deretter bruker vi funksjonen "String.slice" for å trekke ut en del av denne strengen. Her er "4" og "8" start- og sluttindeksene vi vil bruke for å definere vår delstreng. I dette tilfellet vil "mellomnavn" ha verdien "Oles".
 
-## Se også
+Det er også mulig å bruke en rekke andre funksjoner for å trekke ut substrings i Gleam, som for eksempel "String.left", "String.right" og "String.substr". Disse funksjonene lar deg gjøre ulike justeringer og hente ut deler av strengen basert på ulike kriterier.
 
-- [Offisiell Gleam dokumentasjon om strengebehandling](https://gleam.run/documentation/#strings)
-- [Gleam sin offisielle nettside](https://gleam.run/)
-- [Andre nyttige ressurser og eksempler på Gleam-prosjekter](https://github.com/gleam-lang/awesome-gleam)
+## Dypdykk 
+
+Å trekke ut substrings kan også gjøres ved hjelp av mønstre og regulære uttrykk. Dette kan gi deg større fleksibilitet og kontroll over hvilke deler av strengen du vil hente ut. For å bruke regulære uttrykk i Gleam, kan du importere modulen "Regex" og bruke funksjonen "Regex.find".
+
+Det er også verdt å merke seg at når du trekker ut substrings i Gleam, returnerer funksjonene alltid en kopi av den opprinnelige strengen. Dette betyr at det originale strengobjektet ikke endres, og du må derfor lagre den resulterende delstrengen i en ny variabel for å bruke den senere i koden din.
+
+## Se Også
+
+- [Gleam sin offisielle dokumentasjon om strenger](http://gleam.run/documentation/std/string.html)
+- [En guide til regulære uttrykk i Gleam](https://andy-whiteley.github.io/preview_area/language_documentation/code_examples/regex.html)

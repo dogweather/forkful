@@ -1,49 +1,60 @@
 ---
-title:    "TypeScript: יצירת מספרים אקראיים"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/typescript/generating-random-numbers.md"
+title:                "TypeScript: יצירת מספרים אקראיים"
+programming_language: "TypeScript"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-##למה
+## למה
 
-כמה פעמים בתהליך התכנות נדרש ליצור מספרים אקראיים? בדוקים את המפתחים הגנטיים שלך לדוגמה. ניתן ליצור מספרים אקראיים לצורך ניסויים או כלי בדיקה במגוון רב של תחומי תכנות.
+כתיבת קוד טיפוסקריפט מדורג מהספריה "Math" היא כלי מצוין ליצירת מספרים רנדומליים. זה יכול להיות שימושי לאימות, מבחנים או גרפיים. זה גם משמש ככלי ליצירת פעוטות יישומיים כמו משחקי מחשב או הגרלות מקרים.
 
-## כיצד לעשות זאת
+## איך לעשות זאת
 
-הקוד הבא מדגים כיצד ליצור מספר אקראי בטווח נתון בצורת TypeScript:
+אם אתם מחפשים כתיבת קוד בסיסית שיכולה לייצר מספרים רנדומליים, כאן יש כמה דוגמאות שאפשר לעקוב אחריהם.
 
 ```TypeScript
-// Importing the Math library
-import { Math } from "core-js";
+// ייבוא מהספריה של Math
+import { Math } from 'math';
 
-// Generates a random number between 1 and 10
-let randomNumber = Math.floor(Math.random() * 10) + 1;
-
-// Prints the generated number
+//  הפונקציה "random" תחזיר מספר רנדומלי בין 0 ל-1
+let randomNumber: number = Math.random();
 console.log(randomNumber);
+
+// כדי לקבל מספר רנדומלי בין 0 ל-100, נדגל לפעולה "floor" פנימה
+let randomRange: number = Math.floor(Math.random() * 100);
+console.log(randomRange);
 ```
 
-פלט הקוד הוא מספרים אקראיים בתחום שנקבע על ידי המשתמש. כדי ליצור מספר אקראי בצורה אקראית יותר, ניתן להשתמש בזמן המוגדר כברירת מחדל כספר זרימתי.
-
-```TypeScript
-// Generates a random number between 1 and 100 with a default seed value
-let randomNumber = Math.floor(Math.random() * 100) + 1;
-
-// Generates a random number between 1 and 1000 with a specified seed value
-let otherRandomNumber = Math.floor(Math.random() * 1000) + 1;
+פלט:
+```
+0.3475789549785
+54
 ```
 
-בנוסף, ניתן גם להשתמש בספריית של Math.random בשפת JavaScript כדי ליצור מספרים אקראיים.
+ולהלן דוגמא נוספת עם שימוש בספריית "lodash", כמו בברסר מכונת מצב:
 
-```TypeScript
-// Generates a random number between 1 and 5
-let randomNumber = Math.floor(Math.random() * 5) + 1;
+```TypeScript 
+// ייבוא מהספריה של "lodash"
+import _ from 'lodash';
+
+// פעולה זו תחזיר לנו מספר רנדומלי בטווח על-הגבלה
+let randomNonNegative: number = _.random(0, 100, true);
+console.log(randomNonNegative);
+
+// עכשיו נדגל לפעולה
+let randomNegaive: number = _.random(-100, 0, true);
+console.log(randomNegative);
 ```
 
-## חקירה מעמיקה
+פלט:
+```
+38.56476987
+-85.467689
+```
 
-פקודת Math.random מחזירה מספרים אקראיים בין 0 ל-1. כדי ליצור מספרים אקראיים בתחומים שונים, יש להשתמש בנוסחאות שונות. לדוגמה, ניתן להשתמש בפונקציות מתמטיות כגון Math.floor, Math.ceil ו-Math.round לייצור מספרים שלמים או לעגל את התוצאה.
+## חפירה רחבה
 
-בנוסף, ישנם מספר פקודות נוספות שניתן להשתמש בהן כדי ליצור מספרים אקראיים רבים יותר. למשל, פקודת Math.random ניתנת לשימוש עם פונקציות כגון Math.sin ו-Math.cos כדי ליצור מספרים אקראיים בא
+מהו בדיוק מספר רנדומלי? זה מספר שנבחר מתוך טווח כלשהו באופן בלתי צפוי. בקוד טיפוסקריפט, פעולות המתייחסות לאובייקט "Math" מייצגות את הספריה המובנית של פעולות מתמטיות וחישוביות. באמצעות הפעולה "random", אנחנו יכולים ליצור מספרים רנדומליים בטווח שנרצה. יש לציין שהמ

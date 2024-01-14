@@ -1,41 +1,45 @@
 ---
-title:    "Javascript: Tulostaminen virheenjäljityslähtöön"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/printing-debug-output.md"
+title:                "Javascript: Tulostuksen virheenkorjaustulosteet"
+programming_language: "Javascript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Kun kehitämme ohjelmia, debuggaus on tärkeä osa prosessia. Se auttaa löytämään virheitä ja korjaamaan niitä. Tulostaminen debug-tietoa voi auttaa meitä ymmärtämään, mitä koodi tekee ja missä virheet ovat. 
+# Miksi ohjelmoijien tulisi käyttää debug-tulostusta?
 
-## Miten
-JavaScriptissä voimme käyttää `console.log()` funktiota tulostamaan tietoa konsoliin. Tämä on hyödyllinen tapa tarkistaa, mitä ohjelma tekee tietyllä hetkellä. 
+Debug-tulostus on tärkeä työkalu ohjelmoijille, sillä se auttaa selvittämään ohjelmien virheitä ja ongelmia. Kun ohjelma ei toimi odotetulla tavalla, debug-tulostus voi antaa tärkeää tietoa siitä, mistä ongelma johtuu ja auttaa korjaamaan sen.
 
-```Javascript
-// Esimerkki koodista
-let a = 5;
-let b = 10;
-let summa = a + b;
-console.log(summa);
-```
+## Miten käyttää debug-tulostusta
 
-Tulostus konsoliin olisi `15`, joka kertoo meille, että muuttujien `a` ja `b` arvojen summa tallennetaan muuttujaan `summa`.
-
-Konsolin lisäksi voimme myös tulostaa tietoa suoraan verkkosivulle käyttäen HTML-elementtiä `div`.
+Debug-tulostuksen käyttö on melko yksinkertaista. Ensinnäkin, sinun tulee sisällyttää koodiisi print-komento, joka tulostaa haluamasi tiedot. Esimerkiksi:
 
 ```Javascript
-// Esimerkki koodista
-let teksti = "Tervetuloa!";
-document.getElementById("debug").innerHTML = teksti;
+console.log("Tervetuloa debuggaamaan ohjelmaa!");
 ```
 
-Tämä tulostaisi `<div>` elementin sisällä olevan tekstin "Tervetuloa!". 
+Tämä tulostaa konsoliin "Tervetuloa debuggaamaan ohjelmaa!".
 
-## Syventävä sukellus
-Debuggaus on kätevä tapa tarkistaa koodin toimivuutta ja löytää virheitä. Tulostamalla debug-tietoa voimme paikallistaa ongelmalliset kohdat koodissa ja korjata ne nopeasti. On kuitenkin tärkeää muistaa poistaa kaikki debug-tulostukset ennen ohjelman julkaisemista, jotta sivu ei näytä epäammattimaiselta käyttäjille.
+Voit myös tulostaa muuttujien arvoja debug-tulostuksen avulla, mikä voi auttaa hahmottamaan ohjelman toimintaa. Esimerkiksi:
+
+```Javascript
+let nimi = "Maija";
+console.log("Hei " + nimi + ", tervetuloa sivustolle!");
+```
+
+Tämä tulostaisi "Hei Maija, tervetuloa sivustolle!".
+
+## Syventävä tietoa debug-tulostuksesta
+
+Debug-tulostuksen käyttö voi olla hyödyllistä myös silloin, kun sinulla on monimutkaisempi koodi, jota on vaikea hahmottaa ohjelman toimiessa. Voit tulostaa debug-tulostuksia vaiheittain koodin suorituksen aikana saadaksesi paremman kuvan siitä, miten ohjelma toimii.
+
+Debug-tulostuksen avulla voit myös selvittää, missä kohtaa koodia virhe tapahtuu ja mitkä muuttujat vaikuttavat siihen. Tämä voi säästää paljon aikaa virheiden etsinnässä ja korjaamisessa.
+
+Lopuksi, on tärkeää muistaa poistaa debug-tulostukset lopullisesta koodista, sillä ne voivat hidastaa ohjelman suoritusta ja tehdä koodista sekavan.
 
 ## Katso myös
-- [MDN - Console API](https://developer.mozilla.org/en-US/docs/Web/API/Console)
-- [Debugging JavaScript with Console Commands](https://www.digitalocean.com/community/tutorials/how-to-debug-javascript-within-the-browser-console#using-console-methods)
-- [JavaScript Debugging Tips and Tricks](https://blog.bitsrc.io/15-javascript-debugging-tips-and-tricks-that-will-make-you-a-better-developer-875a4146b119)
+
+- [Debuggausopas Javascriptille](https://www.w3schools.com/js/js_debugging.asp)
+- [Debug-tulostuksen käyttö Node.js:ssä](https://nodejs.org/de/docs/guides/debugging-getting-started/)
+- [Vianmäärityksen perusteet ohjelmoinnissa](https://www.codingdojo.com/blog/20-pro-tips-and-tools-for-debugging-any-code)

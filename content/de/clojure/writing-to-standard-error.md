@@ -1,53 +1,45 @@
 ---
-title:    "Clojure: Schreiben auf den Standardfehler"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/clojure/writing-to-standard-error.md"
+title:                "Clojure: Schreiben an die Standardfehlerausgabe"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Schreiben von Standardfehlern (standard error) ist eine nützliche Technik beim Programmieren in Clojure. Es ermöglicht es Entwicklern, Fehler und Warnungen in ihren Programmen zu erkennen und zu beheben.
+Das Schreiben in den Standardfehler ist ein nützliches Werkzeug für Entwickler und Programmierer, um Fehlermeldungen und Debugging-Informationen in ihre Programme einzubetten.
 
-## Wie man es macht
+## Wie Es Geht
 
-Um etwas in die standard error-Konsole zu schreiben, können wir die `System/err` Funktion verwenden. Zum Beispiel:
-
-```Clojure
-(System/err "Dies ist eine Fehlermeldung!")
-```
-
-Die Ausgabe sieht folgendermaßen aus:
-
-```
-Dies ist eine Fehlermeldung!
-```
-
-Dies ist besonders hilfreich, wenn wir versuchen, Fehler in unserem Code zu finden und zu beheben, da sie in der Konsole sichtbar werden und uns dabei unterstützen. Wir können auch die `println` Funktion verwenden, um zusätzliche Informationen zu unserem Fehler auszugeben.
+Die Verwendung des `clojure.core`-Moduls in Kombination mit dem `clojure.java.io`-Modul ermöglicht es uns, problemlos in den Standardfehler zu schreiben. Sehen wir uns ein Beispiel an:
 
 ```Clojure
-(println "Fehler beim Ausführen des Codes!")
-(System/err "Dies ist eine Fehlermeldung!")
+(ns standard-error-demo.core
+  (:require [clojure.java.io :as io]))
+
+(defn write-to-stderr [msg]
+  (binding [*err* (io/writer System/err)]
+    (print msg)))
+
+(write-to-stderr "Eine Fehlermeldung")
 ```
 
-Die Ausgabe sieht jetzt so aus:
+Output:
 
 ```
-Fehler beim Ausführen des Codes!
-Dies ist eine Fehlermeldung!
+Eine Fehlermeldung
 ```
 
-## Tiefergehende Informationen
+## Tiefer Einblick
 
-In Clojure gibt es verschiedene Mittel, um mit Fehlern und Warnungen umzugehen. Eine davon ist das Verwenden von `clojure.main/repl` Funktion, um in einer interaktiven Umgebung mit unserem Code zu experimentieren. Hier können wir auch die `pst` Funktion verwenden, um das Stack-Trace unseres Fehlers zu sehen und zu analysieren.
+Das `binding`-Makro bindet zeitweise einen neuen Wert an eine Variable und stellt sicher, dass der ursprüngliche Wert nach einer Funktion oder einem Block wiederhergestellt wird. Durch die Bindung der `*err*`-Variable an `System/err`, können wir den Standardfehler so lange ändern, wie wir uns innerhalb der `write-to-stderr`-Funktion befinden.
 
-Eine weitere Möglichkeit ist das Verwenden von `try/catch` Blöcken, um mögliche Fehler in unserem Code abzufangen und damit umzugehen.
+Zusätzlich bietet Clojure verschiedene andere Möglichkeiten, um in den Standardfehler zu schreiben, wie zum Beispiel die Verwendung des `println`-Befehls mit der `System/err`-Variable oder die Verwendung des `eprintln`-Befehls mit dem `clojure.java.shell`-Modul.
 
-Es ist auch wichtig zu beachten, dass das Schreiben von Nachrichten in die standard error-Konsole nicht immer die beste Option ist, da sie möglicherweise nicht in bestimmten Situationen sichtbar sind. In solchen Fällen kann das Verwenden von Protokollierungsfunktionen wie `log/error` besser sein.
+## Siehe Auch
 
-## Siehe auch
-
-- Dokumentation für die `System/err` Funktion: [https://clojuredocs.org/clojure.core/System/err](https://clojuredocs.org/clojure.core/System/err)
-- Dokumentation für `clojure.main/repl`: [https://clojuredocs.org/clojure.main-repl](https://clojuredocs.org/clojure.main-repl)
-- Informationen über Ausnahmebehandlung in Clojure: [https://clojure.org/guides/exceptions](https://clojure.org/guides/exceptions)
+- [Clojure Dokumentation zu `binding`](https://clojuredocs.org/clojure.core/binding)
+- [Clojure Dokumentation zu `println` und `eprintln`](https://clojuredocs.org/clojure.core/println)
+- [Clojure Dokumentation zu `clojure.java.shell`](https://clojuredocs.org/clojure.java.shell)

@@ -1,62 +1,31 @@
 ---
-title:    "Bash: Store bokstaver i en streng"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/capitalizing-a-string.md"
+title:                "Bash: Stor bokstaver i en tekststreng"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+##Hvorfor
+Velkommen til min blogg om Bash-programmering! I dette innlegget skal vi snakke om hvordan du kan kapitalisere en streng i Bash. Dette kan være nyttig hvis du for eksempel ønsker å endre utseendet på visse ord i en tekstfil eller for å sikre konsistent formatering i en variabel.
 
-Å øke første bokstav i en streng er en vanlig utfordring i mange programmeringsspråk. Som med de fleste oppgaver i programmering, finnes det mange forskjellige måter å løse dette på. I denne bloggposten skal vi se på hvordan å gjøre akkurat dette ved hjelp av Bash-skripting.
+##Slik gjør du det
+For å kapitalisere en streng i Bash, kan du bruke kommandoen "tr", som står for "translate". Dette er en kommando som utfører en enkel substitusjon i en tekstfil. Her er et eksempel på hvordan du kan bruke det til å kapitalisere en streng:
 
-# Hvordan
-
-Først må vi definere hva vi mener med å øke første bokstav i en streng. I dette tilfellet vil vi endre den første bokstaven i hvert ord til stor bokstav. For eksempel, "hei verden" skal bli "Hei Verden".
-
-For å gjøre dette i Bash, må vi bruke innebygde funksjoner som `tr` og `sed`. Her er et eksempel på hvordan du kan gjøre dette ved hjelp av `tr`:
-
-```
-#!/bin/bash
-input="hei verden"
-echo "$input" | tr '[:lower:]' '[:upper:]'
+```Bash
+tekst="dette er et eksempel"
+kapitalisert=$(echo $tekst | tr '[:lower:]' '[:upper:]')
+echo $kapitalisert
 ```
 
-Dette vil gi følgende utgang:
+Dette vil returnere "DETTE ER ET EKSEMPEL" som output. La oss ta en nærmere titt på hva som skjer her. Først lagrer vi teksten vi vil kapitalisere i en variabel kalt "tekst". Deretter bruker vi kommandoen "tr" og spesifiserer to sett med tegn som vi ønsker å bytte ut. I dette tilfellet bruker vi "[:lower:]" for å representere alle små bokstaver og "[:upper:]" for å representere alle store bokstaver. Så bruker vi kommandoen "echo" for å skrive ut den kapitaliserte strengen til skjermen.
 
-```
-HEI VERDEN
-```
+##Dykk dypere
+Det er verdt å merke seg at denne metoden for å kapitalisere strenger i Bash ikke støtter mer enn et enkelt sett med tegn. For å kunne endre mer enn et sett, må du bruke et skript eller en løkke. Du kan også bruke andre kommandoer som "sed" eller "awk" for å oppnå det samme resultatet.
 
-Som du kan se, bruker vi `tr` til å konvertere alle små bokstaver til store bokstaver. Det er også mulig å bruke `sed` for å løse dette problemet. Her er en annen måte å øke første bokstav i en streng ved hjelp av `sed`:
+En annen ting å merke seg er at dette bare endrer utseendet på strengen, men ikke selve variabelen. Dette betyr at hvis du senere bruker variabelen, vil den fortsatt være skrevet i små bokstaver. For å permanent endre variabelen til en kapitalisert versjon, kan du bruke kommandoen "export" og deretter se på dokumentasjonen for "tr" for å utforske flere muligheter for substitusjon.
 
-```
-#!/bin/bash
-input="hei verden"
-echo "$input" | sed -e "s/\b\w/\u&/g"
-```
-
-Dette vil gi følgende utgang:
-
-```
-Hei Verden
-```
-
-Her bruker vi `\u` for å konvertere den første bokstaven i hvert ord til stor bokstav.
-
-# Deep Dive
-
-Både `tr` og `sed` er kraftige verktøy som kan brukes til en rekke formål i Bash. Når det gjelder å øke første bokstav i en streng, er det viktig å forstå de forskjellige parametrene og mulighetene disse verktøyene har å tilby. Du kan lese mer om dem ved å bruke `man` kommandoen:
-
-```
-man tr
-man sed
-```
-
-Det er også verdt å merke seg at det finnes andre måter å løse dette problemet på, for eksempel ved å bruke `awk` eller `perl`. Å utforske forskjellige måter å løse et problem på er en viktig del av å lære programmering.
-
-# Se Også
-
-- [Bash Manualen](https://linux.die.net/man/1/bash)
-- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
-- [How to Convert String to Title Case in Bash](https://linuxhint.com/convert_string_title_case_bash/)
+##Se også
+1. [Bash-triks som vil gjøre livet ditt lettere](https://www.alias.tm/tutorials/2016/06/bash-tricks.html)
+2. [The Bash Academy - en ressurs for å lære Bash-programmering](https://www.bash.academy/)

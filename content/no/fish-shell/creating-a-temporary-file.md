@@ -1,36 +1,53 @@
 ---
-title:    "Fish Shell: Lage en midlertidig fil"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/creating-a-temporary-file.md"
+title:                "Fish Shell: Oppretting av en midlertidig fil"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor?
+## Hvorfor
 
-Når du skriver programmer, er det ofte behov for å opprette midlertidige filer for å lagre midlertidig informasjon som ikke er nødvendig å lagre permanent på datamaskinen din. Dette kan være nyttig for å behandle store datasett eller for å utføre komplekse oppgaver uten å overskride grenser for tilgjengelig minne. Å opprette midlertidige filer kan også være nyttig når du ønsker å opprettholde sikkerheten og rensligheten til filene dine ved bare å beholde de filene som er nødvendige for det endelige programmet.
+Å lage midlertidige filer er en vanlig og nyttig operasjon i utviklingen av programmering. De kan brukes til å midlertidig lagre data, lage backup-filer, eller brukes som en midlertidig buffer for kommunikasjon mellom forskjellige deler av en applikasjon. Uansett hva behovet ditt er, er det en enkel og effektiv måte å lage midlertidige filer i Fish Shell.
 
-## Hvordan
+## Hvordan lage en midlertidig fil
 
-Fish Shell har en innebygd funksjon for å opprette midlertidige filer. Denne funksjonen er veldig enkel å bruke og krever minimal mengde kode.
+Det enkleste måten å lage en midlertidig fil i Fish Shell er å bruke `mktemp` kommandoen. Dette kommandoen vil automatisk opprette en midlertidig fil i det eksisterende katalogen. Her er et eksempel på hvordan man kan lage en midlertidig fil og skrive litt data inn i den:
 
 ```Fish Shell
-set filename (mktemp)  # Opprett en midlertidig fil og lagre den under variabelen "filename"
-echo "Dette er en midlertidig fil" > $filename  # Skriv tekst til den midlertidige filen
-cat $filename  # Vis innholdet i den midlertidige filen
-rm $filename  # Slett den midlertidige filen
+set my_file (mktemp)
+echo "Dette er en midlertidig fil" > $my_file
 ```
 
-Det første trinnet er å bruke kommandoen "mktemp" for å opprette en unik og midlertidig fil. Denne filen vil være tom når den først blir opprettet. Deretter kan du bruke variabelen til å utføre ulike operasjoner på den midlertidige filen. I dette eksempelet vises hvordan du skriver tekst til filen, viser innholdet og til slutt sletter filen ved å bruke kommandoen "rm".
+La oss nå se på innholdet i den nye midlertidige filen ved å bruke `cat` kommandoen:
+
+```Fish Shell
+cat $my_file
+```
+
+Her er den forventede utgangen:
+
+```
+Dette er en midlertidig fil
+```
+
+Som du kan se, ble den midlertidige filen opprettet og data ble skrevet inn i den. Når du er ferdig med å bruke den midlertidige filen, kan du slette den ved å bruke `rm` kommandoen. Husk å bruke `$my_file` variabelen når du sletter filen.
+
+```Fish Shell
+rm $my_file
+```
 
 ## Dypdykk
 
-Når du oppretter en midlertidig fil, vil den bli lagret i en midlertidig katalog som er spesifisert i miljøvariabelen "TMPDIR". Du kan sjekke denne variabelen ved å kjøre kommandoen "echo $TMPDIR" i terminalen. Hvis du ikke allerede har en miljøvariabel satt for "TMPDIR", vil den bli lagret i /tmp-katalogen som standard.
+For de som ønsker en dypere forståelse av hvordan midlertidige filer fungerer, kan vi se på noen av de interne funksjonene i Fish Shell som brukes til å opprette og administrere disse filene.
 
-En annen god praksis ved å opprette midlertidige filer er å legge til et kort identifikasjonsnummer i filnavnet. Dette sikrer at filen er enestående og unngår eventuelle konflikter hvis du oppretter flere midlertidige filer i samme program.
+En midlertidig fil er opprettet ved å bruke `mktemp` kommandoen og denne kommandoen bruker faktisk en intern funksjon kalt `_fish_mktemp` for å generere filnavnet. Denne funksjonen bruker utgangen fra `mktemp -q` kommandoen som et grunnlag for å generere et unikt filnavn. Filnavnet inneholder også brukernavn og prosessidentifikasjon (PID) for å sikre at det er unikt for hver bruker og prosess.
+
+Når filen er opprettet og brukes til å lagre data, blir innholdet i den vanligvis kopiert til en midlertidig buffer i minnet. Dette gjør at programmet kan oppdatere dataene uten å skrive tilbake til den fysiske filen, noe som forbedrer hastigheten på programmet.
 
 ## Se også
 
-- [The mktemp command in Fish Shell](https://fishshell.com/docs/current/cmds/mktemp.html)
-- [How to create a temporary file in Bash](https://linuxhint.com/create_temporary_file_bash/)
-- [Creating and removing temporary files](https://askubuntu.com/questions/634796/creating-and-removing-temporary-files)
+- http://fishshell.com/docs/current/cmds/mktemp.html
+- http://fishshell.com/docs/current/index.html#variables
+- http://fishshell.com/docs/current/scripting.html#internal-functions

@@ -1,74 +1,43 @@
 ---
-title:    "Swift: テストを書く"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/swift/writing-tests.md"
+title:                "Swift: テストの書き方"
+programming_language: "Swift"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜテストを書くのか
 
-テストを書く理由はたくさんありますが、最も重要な理由はプログラムの信頼性を高めることです。テストをすることで、プログラムのバグやエラーを事前に発見し、品質の高いコードを作成することができます。
+テストを書くことは、安定性や品質の高いアプリを開発する上で非常に重要です。テストを書くことによって、バグやエラーを早期に発見し、修正することができます。また、将来的な変更やアップデートに対してもより柔軟に対応することができます。
 
-## テストの書き方
+## テストを書く方法
 
-このブログでは、Swift言語でのテストの書き方について説明します。まずはテストコードを書く前に、以下のコマンドを実行し、テスト用のファイルを作成しましょう。
-
-```Swift
-touch ExampleTests.swift
-```
-
-次に、テストする対象のコードを用意し、その下にテストコードを書きます。例えば、以下のようなコードがあったとします。
+テストを書くには、Xcodeのテスト構造を使用することができます。例えば、以下のコードブロックには、加算関数のテストを行うためのサンプルコードが含まれています。
 
 ```Swift
-func add(_ a: Int, _ b: Int) -> Int {
-    return a + b
+func add(num1: Int, num2: Int) -> Int {
+    return num1 + num2
 }
+
+func testAdd() {
+    let result = add(num1: 10, num2: 5)
+    let expected = 15
+        
+    assert(result == expected, "Result should be 15")
+}
+
+testAdd()
 ```
 
-このコードをテストするために、ExampleTests.swiftにテストコードを書きます。
+このコードでは、`add()`関数を使用して2つの数値を加算し、その結果をテストしています。テストを行うには、`assert()`メソッドを使用し、テスト結果が期待通りになるようにチェックします。テストを実行すると、`Result should be 15`というエラーメッセージが表示されるはずです。
 
-```Swift
-import XCTest
-@testable import Example
+## テストを書く際の深い掘り下げ
 
-class ExampleTests: XCTestCase {
-    func testAdd() {
-        // テストしたいコードを呼び出し、その結果を変数に格納する
-        let result = add(3, 5)
-        // 期待する結果と実際の結果が一致するかどうかを判定する
-        XCTAssertEqual(result, 8)
-    }
- }
-```
+テストを書く際には、コードカバレッジや単体テスト、結合テストなど、さまざまな観点からアプリのテストを行うことができます。また、テストを自動化することも重要です。自動化によって、テストを繰り返し行う手間を省くことができるだけでなく、テストの信頼性を高めることもできます。
 
-これでテストコードの書き方は完了です。以下のコマンドを実行すると、テストが実行されます。
+## 併せて読みたい
 
-```Swift
-xcodebuild test -scheme Example -destination 'platform=iOS Simulator,OS=latest,name=iPhone X'
-```
-
-テストが成功した場合は、以下のような結果が表示されます。
-
-```
-Test Suite 'ExampleTests' passed at <日付と時刻>. <実行時間> seconds
-```
-
-## テストの詳細
-
-テストの書き方がわかったところで、さらに詳しくテストについて学んでみましょう。
-
-### テストの種類
-
-テストには大きく分けて２つの種類があります。ひとつは単体テストで、個々のコードが正しく動作するかを確かめるものです。もうひとつは結合テストで、複数のコードやコンポーネントが協調して動作するかを確かめるものです。
-
-### テストカバレッジ
-
-テストカバレッジはテストの範囲を示す指標です。プログラムの全行数に対してテストした行数の割合を表します。テストカバレッジは高いほど、プログラムの全体のテストに対する信頼性が高くなります。
-
-## See Also
-
-- [Swiftの公式ドキュメント](https://docs.swift.org/swift-book/LanguageGuide/Functions.html)
-- [Xcodeのテストガイド](https://help.apple.com/xcode/mac/current/#/devc3a1cb1cb)
-- [単体テストと結合テストの違い](https://www.ibm.com/docs/ja/i/7.4?topic=test-func-apptestunit_vs_integration)
-- [テストカバレッジの計算方法](https://www.tricentis.com/resources/what-is-test-coverage/)
+- [Xcodeのテスト構造の使い方](https://www.appcoda.com/xcode-testing/)
+- [テスト駆動開発とは？](https://i-beam.org/2019/12/24/test-driven-development-and-basic-cycle/)
+- [アプリ開発におけるテスト自動化の重要性](https://www.isdr.co.jp/blog/future/20170622125443.html)

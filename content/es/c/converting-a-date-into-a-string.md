@@ -1,59 +1,51 @@
 ---
-title:    "C: Convirtiendo una fecha en una cadena"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c/converting-a-date-into-a-string.md"
+title:                "C: Convirtiendo una fecha en una cadena."
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una fecha en una cadena en C?
+## Por qué
 
-Al trabajar con fechas en un programa en C, es importante poder mostrarlas en un formato legible y fácil de entender para el usuario final. Convertir una fecha en una cadena de caracteres nos permite lograr esto. En este artículo, aprenderás cómo convertir una fecha en una cadena en C utilizando código de ejemplo y profundizarás en cómo funciona este proceso.
+Convertir una fecha en una cadena de texto es un paso clave en el desarrollo de programas en lenguaje C. Esta transformación permite mostrar la información de la fecha de una manera legible para los usuarios, así como también facilita la manipulación y cálculo de fechas en el código.
 
 ## Cómo hacerlo
 
-Para convertir una fecha en una cadena en C, primero debemos obtener los valores de día, mes y año de la fecha. Esto se puede hacer utilizando la función `localtime()` de la biblioteca `time.h`. A continuación, utilizaremos la función `sprintf()` para formatear estos valores en una cadena. Aquí hay un ejemplo de código:
+Para realizar esta conversión en C, podemos utilizar la función `strftime()` de la biblioteca estándar `time.h`. Esta función toma tres argumentos: un puntero a una cadena de caracteres donde se almacenará la fecha en formato de texto, el tamaño máximo de la cadena y un formato especificando cómo se desea que se muestre la fecha.
+
+Un ejemplo de código para convertir la fecha actual en una cadena de texto se vería así:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main(){
-    
-    // Obtener la fecha actual del sistema
+int main() {
     time_t now = time(NULL);
-    
-    // Convertir a estructura de tiempo
-    struct tm *date = localtime(&now);
-    
-    // Obtener los valores de día, mes y año
-    int day = date->tm_mday;
-    int month = date->tm_mon + 1;
-    int year = date->tm_year + 1900;
-    
-    // Convertir a una cadena en formato DD-MM-AAAA
-    char date_string[11];
-    sprintf(date_string, "%02d-%02d-%04d", day, month, year);
-    
-    // Imprimir la cadena resultante
-    printf("La fecha actual es: %s \n", date_string);
-    
+    char date[50];
+    strftime(date, 50, "%A, %d de %B de %Y", localtime(&now));
+    printf(date);
     return 0;
 }
 ```
 
-El código anterior imprimirá la fecha actual en formato DD-MM-AAAA, por ejemplo: `La fecha actual es: 16-11-2021`.
+En este ejemplo, se está utilizando el formato "%A, %d de %B de %Y" para mostrar la fecha en formato día de la semana, día del mes, mes y año. Al ejecutar el programa, se obtendría la siguiente salida:
+
+```
+Lunes, 15 de octubre de 2018
+```
 
 ## Profundizando
 
-La función `sprintf()` utilizada en el ejemplo anterior es una función de la biblioteca estándar de C que nos permite formatear una cadena de caracteres. Su primer argumento es un puntero a una cadena, y los argumentos siguientes son valores que se colocarán en esa cadena.
+La función `strftime()` ofrece una amplia variedad de opciones para personalizar el formato de la fecha. Por ejemplo, se puede cambiar el orden en que se muestran los elementos de la fecha, agregar información como la hora o el año con dos dígitos, entre otras posibilidades.
 
-En nuestro caso, utilizamos `%02d` para indicar que el valor debe tener un ancho mínimo de dos caracteres y debe tener un cero delante si es necesario. De esta forma, si el día es menor a 10, la cadena resultante incluirá el cero delante y tendrá siempre dos dígitos. El resto de los argumentos se utilizan para obtener los valores de la fecha y se colocan en el orden deseado en la cadena resultante.
+Además, es importante tener en cuenta que la función `strftime()` solo funciona con fechas locales, por lo que si se desea convertir una fecha en horario UTC, se debe utilizar la función `gmtime()` en lugar de `localtime()`.
 
-Es importante tener en cuenta que al utilizar la función `localtime()` para obtener los valores de la fecha, estos pueden variar dependiendo del sistema operativo y la configuración regional. Por lo tanto, es recomendable utilizar la función `snprintf()` en su lugar, ya que es más segura que `sprintf()` y tiene la ventaja de poder especificar la longitud máxima de la cadena de destino.
+Para obtener más información y ejemplos de cómo utilizar la función `strftime()`, se recomienda consultar la documentación oficial de C o buscar tutoriales en línea.
 
 ## Ver también
 
-- [Función localtime()](https://es.cppreference.com/w/c/chrono/localtime)
-- [Función sprintf()](https://es.cppreference.com/w/c/io/fprintf)
-- [Función snprintf()](https://es.cppreference.com/w/c/io/snprintf)
+- [Documentación de la función `strftime()` (en inglés)](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
+- [Tutorial para convertir fechas en C (en español)](https://es.wikibooks.org/wiki/Programaci%C3%B3n_en_C/Fechas_y_horas)
+- [Ejemplos de uso de `strftime()` en diferentes formatos (en inglés)](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)

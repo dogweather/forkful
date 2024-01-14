@@ -1,55 +1,65 @@
 ---
-title:    "C#: 编写测试"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/writing-tests.md"
+title:                "C#: 编写测试"
+programming_language: "C#"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要编写测试
+## 为什么
 
-在软件开发中，编写测试是一个非常重要的环节。它可以帮助我们发现代码中潜在的错误，更好地理解代码功能，并且可以保证功能的稳定性和可靠性。虽然编写测试可能会花费些许额外的时间和精力，但是它可以节省更多的时间和精力在后期修复由未经测试的代码导致的问题。
+为什么要写测试？这可能是你在编写C#代码时最常听到的问题之一。答案很简单：测试是保证代码质量的关键步骤。
 
-## 如何编写测试
+写测试可以验证你的代码是否按照预期工作，帮助你发现并修复潜在的bug，从而提升整体代码质量。它也可以帮助你在将来进行重构或修改代码时，更加有信心和安全感。
 
-首先，让我们来学习如何使用C#编写测试。下面是一个简单的例子，用来测试一个加法函数：
+## 如何做？
+
+首先，让我们看一个简单的示例。假设我们有一个简单的函数，用于计算两个数字的和，并将结果打印出来。
 
 ```C#
-public int Add(int a, int b)
+int Add(int a, int b)
 {
-    return a + b;
+    int sum = a + b;
+    Console.WriteLine($"The sum of {a} and {b} is {sum}");
+    return sum;
 }
 ```
 
-现在，我们可以编写一个测试来验证这个函数是否按照预期工作。我们可以使用C#的单元测试框架xUnit来编写测试代码：
+下一步，我们可以编写相关的测试代码，检查这个函数是否按照预期工作。使用C#的内置测试框架，可以轻松实现这一点。
 
 ```C#
-[Fact]
+[TestMethod]
 public void TestAdd()
 {
-    int result = Add(3, 5);
-    Assert.Equal(8, result);
+    Assert.AreEqual(5, Add(2, 3));
+}
+
+[TestMethod]
+public void TestAddNegativeNumbers()
+{
+    Assert.AreEqual(-10, Add(-5, -5));
 }
 ```
 
-在上面的代码中，我们使用xUnit中的`Fact`特性来标记这个测试方法，然后调用我们要测试的加法函数并进行断言。运行这个测试，如果加法函数返回的结果与我们预期的相同，测试就会通过。否则，就会抛出断言错误。
+在这个示例中，我们编写了两个测试用例来验证Add函数的功能。`[TestMethod]` 表示一个测试方法，而 `Assert.AreEqual` 则是断言函数，用于比较预期结果和实际结果。
 
-## 深入了解测试
+现在，当我们运行这些测试时，如果一切正常，两个测试用例都会通过，这说明Add函数工作正常。
 
-编写测试不仅仅是为了验证代码是否按照预期工作，它还可以帮助我们改善代码质量。通过编写测试，我们可以更早地发现潜在的错误，并且在开发过程中持续保障代码的可靠性。相比手动测试，自动化测试可以更有效地发现问题，并且可以随时运行来验证代码的正确性。
+测试不仅可以用于函数，也可以用于类、接口等。在C#中，我们可以通过使用属性 `[TestClass]` 和 `[TestMethod]` 来标识测试类和测试方法。
 
-另外，编写测试还可以促使我们编写可测试性更强的代码。即使是良好的代码也不一定是可测试的，编写测试可以让我们更深入地思考代码架构和设计，从而提高代码的可维护性和可扩展性。
+## 深入了解
 
-总之，编写测试是一项非常重要的软件开发技能。它可以增加代码的可靠性和可测试性，为我们的代码提供更好的保障。所以，无论是在工作中还是在个人项目中，我们都应该学习并且始终坚持编写测试。
+除了简单的断言函数之外，C#测试框架还提供了许多其他功能，例如 `[ExpectedException]` 属性来测试是否抛出了预期的异常，以及 `[Timeout]` 属性来设置测试方法的超时时间。
 
-# 更多学习资源
+此外，还有许多第三方的测试框架可供选择，例如NUnit，xUnit等，它们提供了更多的功能和灵活性。
 
-- [xUnit官方文档](https://xunit.net/)
-- [单元测试教程](https://www.tutorialspoint.com/csharp/csharp_unit_testing.htm)
-- [写好单元测试的13个技巧](https://www.guru99.com/unit-testing-guide.html)
+无论你选择哪种测试框架，重要的是要保持一致和频繁地进行测试。它可以帮助你编写高质量的代码，并在日常开发中提升你的生产力。
 
 ## 参考链接
 
-- [Why Writing Tests Matters](https://www.codemag.com/Article/1906051/Big-Why-Tests-Matter-in-Software-Development)
-- [The Importance of Writing Automated Tests](https://www.pluralsight.com/blog/software-development/the-importance-of-writing-automated-tests)
-- [The Benefits of Writing Unit Tests](https://medium.com/@rginferno10/the-benefits-of-writing-unit-tests-9308fdcb21b4)
+- [Microsoft Docs: 使用C#进行单元测试](https://docs.microsoft.com/zh-cn/visualstudio/test/walkthrough-creating-and-running-unit-tests-for-managed-code?view=vs-2019)
+- [C# Guide: 测试](https://docs.microsoft.com/zh-cn/dotnet/csharp/testing/)
+- [NUnit官网](https://nunit.org/)
+- [xUnit官网](https://xunit.net/)
+- [C#单元测试示例](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/unit-testing-using-nunit)

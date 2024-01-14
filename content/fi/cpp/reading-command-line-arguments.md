@@ -1,52 +1,56 @@
 ---
-title:    "C++: Asetusten lukeminen komentoriviltä"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/reading-command-line-arguments.md"
+title:                "C++: Komentoriviparametrien lukeminen"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi käyttää komentoriviparametrejä ohjelmoinnissa
+## Miksi
 
-Komentoriviparametrit ovat tärkeitä osia ohjelmoinnissa, sillä ne mahdollistavat ohjelman käyttäjän vuorovaikutuksen ja antavat mahdollisuuden ohjelman käyttämiseen eri tavoilla. Niiden avulla voit ohjelmoida monipuolisempia ja käytännöllisempiä sovelluksia.
+On monia syitä miksi lukijamme saattavat haluta oppia kuinka lukea komentoriviparametrejä C++-ohjelmoinnissa. Saatat tarvita tätä taitoa, jotta voit kirjoittaa ohjelmia, jotka ovat yhteensopivia muiden komentorivipohjaisten työkalujen kanssa, tai ehkä haluat tehdä ohjelmastasi käyttäjäystävällisemmän antamalla käyttäjien syöttää parametreja suoraan ohjelmalle.
 
-## Miten käyttää komentoriviparametrejä
+## Kuinka
 
-Esimerkiksi, jos haluat ohjelmasi ottamaan vastaan käyttäjän antaman luvun ja kertomaan sen kahdella, voit käyttää komentoriviparametrejä tämän saavuttamiseksi. Alla olevassa esimerkissä luodaan yksinkertainen C++ ohjelma, joka ottaa vastaan yhden komentoriviparametrin ja tulostaa sen kaksinkertaisena.
+Aloita luomalla pääfunktio, joka ottaa parametreiksi "argc" ja "argv". Tämä pääfunktio olioina voidaan käyttää lukemaan komentoriviparametreja. Tässä on yksinkertainen esimerkki:
 
-```C++ 
-#include <iostream> 
+```C++
+#include <iostream>
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-    // tarkistetaan, että ohjelmaan on annettu yksi parametri
-    if(argc != 2)
-    {
-        cout << "Anna luku komentoriviparametrina!" << endl;
-        return 1; 
+    // tulosta komentoriviparametrien lukumäärä
+    cout << "Komentoriviparametrien lukumäärä: " << argc << endl;
+
+    // tulosta kaikki parametrit 
+    for (int i = 0; i < argc; ++i) {
+        cout << "Parametri " << i << ": " << argv[i] << endl;
     }
-
-    // muutetaan parametri merkkijonosta kokonaisluvuksi
-    int luku = atoi(argv[1]);
-
-    // tulostetaan luku kaksinkertaisena
-    cout << "Annoit luvun " << luku << ", sen kaksinkertainen on " << luku * 2 << endl;
 
     return 0;
 }
 ```
 
-Ajamalla ohjelma komentorivillä antamalla parametri, esimerkiksi `./kaksinkertainen 5`, ohjelma tulostaa `Annoit luvun 5, sen kaksinkertainen on 10`.
+Tässä esimerkissä käytämme "cout" -toimintoa tulostamaan lukumäärän ja kaikki parametrit. Voit käyttää myös muita C++:n toimintoja, kuten "string" -luokkaa, käsittelläksesi parametrit haluamallasi tavalla.
 
-## Syvällisempi sukellus komentoriviparametreihin
+Kun suoritat tämän ohjelman komentoriviltä antamalla sille muutaman parametrin, esimerkiksi "ohjelmamme parametri1 parametri2", saamme seuraavan tuloksen:
 
-Komentoriviparametrit välitetään ohjelmalle käynnistettäessä ja ne tallennetaan `argv` (argument vector) taulukkoon ja niiden määrä tallennetaan muuttujaan `argc` (argument count). Taulukon ensimmäinen alkio sisältää aina ohjelman nimen, joten varsinaiset parametrit sijaitsevat sijainneissa 1, 2, jne. Taulukon alkiot ovat aina merkkijonoja, joten tarvittaessa ne täytyy muuttaa halutuiksi tietotyypeiksi, kuten esimerkissämme teimme käyttämällä `atoi()` funktiota.
+```
+Komentoriviparametrien lukumäärä: 3
+Parametri 0: ohjelmamme
+Parametri 1: parametri1
+Parametri 2: parametri2
+```
 
-On myös hyvä mainita, että ohjelmat voivat ottaa vastaan useita komentoriviparametrejä ja että niitä voi käyttää monella eri tapaa riippuen ohjelman tarpeista. Esimerkiksi, jos ohjelmasi on graafinen käyttöliittymä, voit käyttää komentoriviparametreja määrittämään, millä tavalla ohjelma käynnistetään, kuten pienenä ikkunana tai koko näytöllä.
+## Syvempi sukellus
 
-# Katso myös
+Kun ohjelmasi on saanut komentoriviparametrit, voit käsitellä niitä ja tehdä ohjelmastasi vieläkin monipuolisemman esimerkiksi käyttämällä "if"-lausekkeita tai luokkia. Voit myös käyttää "stringstream" -luokkaa muuttamaan parametrit eri tyypeiksi, kuten "int" tai "double". Muista myös käsitellä mahdollisia virheilmoituksia, jos käyttäjä ei anna oikeaa määrää parametreja tai antaa virheellisen parametrin.
 
-- [C++ Foundation - Komentoriviparametrit](https://www.includehelp.com/cpp-tutorial/command-line-arguments-in-cpp.aspx)
-- [GeeksforGeeks - Komentoriviparametrit C++:ssa](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+## Katso myös
+
+- [C++:n "main"-funktio](https://www.cplusplus.com/articles/4z18T05o/)
+- [string-luokka](https://www.cplusplus.com/reference/string/string/)
+- [stringstream-luokka](https://www.cplusplus.com/reference/sstream/stringstream/)

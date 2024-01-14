@@ -1,43 +1,49 @@
 ---
-title:    "Kotlin: 获取当前日期"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/getting-the-current-date.md"
+title:                "Kotlin: 获取当前日期"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
-获取当前日期是每个程序员都会遇到的任务。无论是在日常的工作中还是做项目开发，我们都会需要使用到日期。因此，了解如何获取当前日期是非常有用的。
+## 为什么要获取当前日期
 
-## 如何
-在Kotlin中，获取当前日期最简单的方法是使用``java.time.LocalDate``类。以下是一个例子：
-```
-val currentDate = LocalDate.now()
-println(currentDate)
-```
-输出应为：2021-09-11
+在当今的数字时代，时间和日期的重要性越来越明显。无论是在应用程序开发中还是在日常生活中，获取当前日期是非常常见的需求。通过获取当前日期，我们可以正确地跟踪时间，记录事件，以及进行相关的数据分析。
 
-我们也可以根据需求获取特定格式的日期，例如：
-```
-val currentDate = LocalDate.now()
-println("今天是${currentDate.year}年${currentDate.monthValue}月${currentDate.dayOfMonth}日")
-```
-输出应为：今天是2021年9月11日
+## 如何获取当前日期
 
-## 深入了解
-在Kotlin中，``LocalDate``类是专门用来表示日期的。它使用了ISO-8601标准来表示日期格式，即``yyyy-MM-dd``。我们还可以通过使用``LocalDate.parse()``方法来将一个字符串转换为日期对象。例如：
-```
-val date = LocalDate.parse("2021-09-11")
-println(date)
-```
-输出应为：2021-09-11
+在Kotlin中，我们可以使用`java.util`库中的`Date()`来获取当前日期。下面是一个简单的示例代码，展示如何使用`Date()`获取当前日期并将其打印出来：
 
-除了``LocalDate``类，我们还可以使用``LocalDateTime``类来表示日期和时间，以及``LocalTime``类来表示时间。这些类都有各自的方法来获取当前的日期、时间或日期时间。
+```Kotlin
+import java.util.*
 
-# 参考链接
-- [Kotlin官方文档：日期与时间](https://kotlinlang.org/docs/datetime.html)
-- [使用Kotlin获取日期与时间](https://www.baeldung.com/kotlin/dates)
-- [Kotlin实战：日期与时间的处理](https://www.geeksforgeeks.org/kotlin-date-time/)
-# 参见
-* [Java中的日期与时间](https://github.com/fei-huang/java-blog-posts/blob/main/Date%20and%20Time%20in%20Java.md)
-* [Java中的format()方法和parse()方法](https://github.com/fei-huang/java-blog-posts/blob/main/Formatting%20and%20Parsing%20Dates%20in%20Java.md)
+fun main() {
+    val currentDate = Date()
+    println(currentDate) // 输出：Mon Jun 28 18:13:51 CST 2021
+}
+```
+
+我们还可以使用`SimpleDateFormat`来格式化当前日期。下面是一个示例代码，展示如何将日期格式化为指定的格式：
+
+```Kotlin
+import java.util.*
+import java.text.SimpleDateFormat
+
+fun main() {
+    val currentDate = Date()
+    val dateFormat = SimpleDateFormat("yyyy-MM-dd")
+    val formattedDate = dateFormat.format(currentDate)
+    println(formattedDate) // 输出：2021-06-28
+}
+```
+
+## 深入了解获取当前日期
+
+在Kotlin中，我们还可以使用其他类来获取当前日期，例如`LocalDateTime`、`Calendar`等。每种方法都有其自己独特的优缺点，可以根据自己的需求选择适合的方法。此外，我们还可以通过修改时区设置来获取不同时区的当前日期。
+
+## 查看更多资源
+
+- [Kotlin官方文档-Date](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/index.html)
+- [Java.util Date类介绍](https://www.runoob.com/manual/jdk1.6/java/util/Date.html)
+- [Kotlin中日期时间的使用](https://www.jianshu.com/p/9421d0143b76)

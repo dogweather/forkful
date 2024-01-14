@@ -1,50 +1,56 @@
 ---
-title:    "Java: Sammenføying av strenger"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/concatenating-strings.md"
+title:                "Java: Sammenføyning av tekststrenger"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å kombinere strenger er en viktig del av Java programmering. Med denne enkle handlingen kan du legge sammen flere strenger og danne en ny. Dette er nyttig for å lage tekstutdata eller for å bygge komplekse uttrykk som krever å sette sammen flere deler av informasjon.
+Noen ganger i programmering trenger vi å kombinere flere tekststrenger til en enkelt, lengre streng. Dette prosessen kalles "concatenation" på engelsk, eller "konkatenering" på norsk. Det kan være nyttig når vi for eksempel ønsker å skrive ut en tekst med variabler, eller når vi trenger å bygge URLer.
 
-## Hvordan gjøre det
+## Slik gjør du det
 
-For å sette sammen strenger i Java, bruker du "+" operatøren. Du trenger bare å plassere den mellom de to strengene du ønsker å kombinere. La oss se på et enkelt eksempel:
-
-```Java
-String navn = "Maria";
-String hilsen = "Hei, mitt navn er " + navn;
-System.out.println(hilsen);
-```
-
-I dette eksempelet vil programmet skrive ut "Hei, mitt navn er Maria". Du kan også kombinere flere strenger ved å bruke flere "+" operatører, for eksempel:
+Å konkatenerer strenger i Java er enkelt, og kan gjøres på flere måter. En måte er å bruke operatøren "+" for å legge sammen to strenger. Se eksempelet under:
 
 ```Java
-String fornavn = "John";
-String etternavn = "Doe";
-String fulltNavn = fornavn + " " + etternavn;
-System.out.println(fulltNavn);
+String navn = "Ingrid";
+String etternavn = "Nilsen";
+
+String navnSammen = navn + etternavn; // Resultatet blir "IngridNilsen"
 ```
 
-Dette vil skrive ut "John Doe".
+En annen måte er å bruke String-metoden `concat()`. Her passer det også å inkludere en variabel og en konstant tekststreng:
+
+```Java
+String navn = "Ole";
+String alder = "30 år";
+
+String tekst = navn.concat(" er ").concat(alder); // Resultatet blir "Ole er 30 år"
+```
+
+Merk at det også går an å bruke `concat()`-metoden sammen med numeriske variabler ved å konvertere dem til strenger først.
 
 ## Dypere dykk
 
-En viktig ting å huske når du kombinerer strenger i Java er at verdier av andre typer, som for eksempel tall eller boolean, vil bli automatisk konvertert til string før de blir satt sammen. For eksempel:
+I Java blir hver streng representert som et objekt av typen `String`. Når vi bruker operatøren "+" eller `concat()`-metoden, blir det egentlig laget et nytt objekt med den sammenslåtte strengen. Dette skjer fordi strenger i Java er uforanderlige, så det gamle objektet kan ikke bare endres.
+
+Derfor kan det være mer effektivt å bruke `StringBuilder`-klassen til å utføre konkatenering. Denne klassen lar deg endre strenger i stedet for å lage nye objekter hele tiden. Her er et eksempel på hvordan det kan gjøres:
 
 ```Java
-int nummer = 25;
-String tallTekst = "Jeg er nummer " + nummer;
-System.out.println(tallTekst);
+StringBuilder sb = new StringBuilder();
+
+sb.append("Hei, ").append("er du ").append("klar for helgen?"); // Resultatet blir "Hei, er du klar for helgen?"
+
+String resultat = sb.toString(); // Konverterer StringBuilder-objektet til en vanlig streng og lagrer det i en variabel
 ```
 
-Dette vil skrive ut "Jeg er nummer 25". Også, hvis du prøver å kombinere en streng med "null", vil det resultere i at strengen "null" blir satt sammen. Det er derfor viktig å passe på å håndtere spesielle tilfeller og sørge for at strenger blir kombinert på en måte som gir mening.
+Bruken av `StringBuilder` er spesielt nyttig når vi trenger å konkatenerer mange strenger, for eksempel i en løkke.
 
 ## Se også
 
-- [Offisiell Java Strings dokumentasjon](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
-- [Tutorialspoint Java Strings tutorial](https://www.tutorialspoint.com/java/java_strings.htm)
-- [En guide til konkatenering i Java](https://www.geeksforgeeks.org/java-string-concatenation/)
+- [Java String Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java StringBuilder Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
+- [Java String Concatenation Tutorial](https://www.baeldung.com/java-string-concatenation)

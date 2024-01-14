@@ -1,71 +1,47 @@
 ---
-title:    "Rust: Att extrahera delsträngar"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/rust/extracting-substrings.md"
+title:                "Rust: Utvinna substränger"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Varför skulle någon vilja extrahera substrängar? Det finns många scenarier där det kan vara användbart, som att bearbeta text från en användare eller filtrera data från en fil. Med Rusts kraftfulla stränghanteringsfunktioner kan du enkelt extrahera önskade delar av en sträng för att använda i ditt program.
 
-Substring-extrahering är en viktig del av programmering, och det kan vara användbart i många olika scenarier. Med hjälp av Rusts effektiva och korrekta syntax, kan man enkelt extrahera substrings från en given sträng.
+## Så här gör du
+För att extrahera en substräng i Rust kan du använda metoden `.slice()`. Till exempel, om du har en sträng som heter "Hej, jag heter Svensk Rust" och du vill extrahera "Svensk Rust", kan du göra så här:
 
-## Hur man gör
-
-För att extrahera substrings i Rust behöver du först importera `std::str::Chars`, som ger tillgång till strängens tecken. Sedan kan du använda `range`-syntaxen för att välja vilka tecken du vill extrahera.
-
-```Rust
-use std::str::Chars;
-
-let string = "Hej! Välkommen";
-let chars = string.chars(); // få tillgång till strängens tecken
-let substring = chars.range(4..11); // välja tecken från position 4 till 11
-
-println!("Din substring är: {}", substring); // output: Välkommen
+```rust
+let string = "Hej, jag heter Svensk Rust";
+let slice = string.slice(16..); // skär ut från index 16 till slutet av strängen
+println!("{}", slice); // kommer att skriva ut "Svensk Rust"
 ```
 
-Om du vill extrahera en del av strängen från ett specifikt tecken till slutet kan du använda `range_from`-syntaxen istället.
+Du kan också använda metoden `.chars()` för att få en slice av enskilda tecken i en sträng. Om du till exempel har en sträng som heter "abcde" och du bara vill ha de första tre bokstäverna, kan du göra det så här:
 
-```Rust
-use std::str::Chars;
-
-let string = "Hej! Välkommen";
-let chars = string.chars();
-let substring = chars.range_from(4); // välja tecken från position 4 och framåt
-
-println!("Din substring är: {}", substring); // output: Välkommen
+```rust
+let string = "abcde";
+let chars = string.chars().take(3); // tar de första tre bokstäverna
+println!("{:?}", chars); // kommer att skriva ut ["a", "b", "c"]
 ```
 
-Det är också möjligt att extrahera en del av strängen från början till en viss position genom att använda `range_to`-syntaxen.
+Om du behöver extrahera en specifik del av en sträng baserat på ett visst mönster kan du använda regex med hjälp av paketet `regex` från Rusts standardbibliotek. Till exempel kan du extrahera alla siffror från en sträng genom att använda en regex som matchar siffror:
 
-```Rust
-use std::str::Chars;
-
-let string = "Hej! Välkommen";
-let chars = string.chars();
-let substring = chars.range_to(6); // välja tecken från början till position 6
-
-println!("Din substring är: {}", substring); // output: Hej!
+```rust
+let string = "Detta är ett tal: 12345";
+let re = Regex::new(r"\d+").unwrap(); // skapar en regex som matchar en eller flera siffror
+let digits: String = re.find(string).unwrap().as_str().to_string(); // extraherar siffrorna (12345) och konverterar dem till en sträng
+println!("{}", digits); // kommer att skriva ut "12345"
 ```
 
 ## Djupdykning
+Att extrahera substrängar i Rust är snabbt och effektivt tack vare Rusts string slices, som inte kräver att en ny sträng skapas och allokeras i minnet. Detta leder till bättre prestanda och minskad risk för minnesläckor.
 
-För att få tillgång till alla funktioner för att extrahera substrings i Rust, kan du titta på dokumentationen för `std::str::Chars`. Där kan du hitta fler exempel på hur man kan använda `range`-syntaxen för att välja delar av strängen.
-
-Det är också värt att notera att `Chars`-modulen även har en `take`-funktion som gör det möjligt att välja ett specifikt antal tecken från början av strängen.
-
-```Rust
-use std::str::Chars;
-
-let string = "Hej! Välkommen";
-let chars = string.chars();
-let substring = chars.take(4); // välja de första 4 tecknen från början
-
-println!("Din substring är: {}", substring); // output: Hej!
-```
+En annan fördel med att använda Rust för att extrahera substrängar är dess djupa integrering med mönstermatchning. Genom att använda match-syntaxen kan du enkelt extrahera specifika delar av en sträng baserat på mönster, vilket sparar tid och gör koden mer läsbar.
 
 ## Se även
-
-- [Rust officiell dokumentation för substrings](https://doc.rust-lang.org/std/primitive.str.html#method.char_indices)
-- [Tutorial: Substring-extrahering i Rust](https://scastie.scala-lang.org/P98V5hNdTruSpo2RlAtF6w)
-- [Exempel på hur man använder `range`-syntaxen för substring-extrahering](https://doc.rust-lang.org/rust-by-example/std/str.html#slicing)
+- Rust Dokumentation: Strängar https://doc.rust-lang.org/std/string/
+- Rust Dokumentation: Regex https://doc.rust-lang.org/regex/
+- Officiell Rust hemsida https://www.rust-lang.org/

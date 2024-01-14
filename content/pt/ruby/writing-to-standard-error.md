@@ -1,56 +1,53 @@
 ---
-title:    "Ruby: Escrevendo no erro padrão"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/writing-to-standard-error.md"
+title:                "Ruby: Escrevendo para o erro padrão"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que escrever para erro padrão?
 
-Escrever para o erro padrão é uma habilidade importante para qualquer programador de Ruby. Isso permite que você saiba quando algo deu errado em seu programa e fornece informações úteis para depuração. Também ajuda a melhorar a qualidade do código, tornando-o mais robusto e confiável.
+Se você é um programador Ruby, com certeza já ouviu falar sobre a saída padrão e a saída de erro padrão. Enquanto a saída padrão é usada para exibir resultados e mensagens relevantes ao usuário, a saída de erro padrão é usada para exibir mensagens de erro e falhas no código. Mas por que devemos nos preocupar em escrever para o erro padrão? A resposta é simples: para garantir que nosso código esteja funcionando corretamente e para facilitar a solução de problemas em caso de erros.
 
-## Como Fazer
+## Como fazer?
 
-Existem algumas maneiras de escrever para o erro padrão em Ruby. Uma delas envolve o uso da função `puts` juntamente com o objeto `STDERR`. Veja um exemplo abaixo:
-
-```Ruby
-puts "Algo deu errado" if x == nil
-STDERR.puts "Variável x é nula"
-```
-
-A saída desse código seria:
-
-```
-Variável x é nula
-```
-
-Isso significa que a mensagem "Algo deu errado" será impressa no fluxo de saída padrão, enquanto "Variável x é nula" será impressa no fluxo de erro padrão.
-
-Outra maneira é usar a classe `Logger` do Ruby, que oferece mais opções de configuração. Veja um exemplo usando o `Logger` abaixo:
+Escrever para erro padrão no Ruby é bem simples. Basta utilizar o método `STDERR.puts()` seguido da mensagem que você deseja exibir. Veja um exemplo abaixo:
 
 ```Ruby
-require 'logger'
-logger = Logger.new(STDERR)
-logger.error("Algo deu errado")
+STDERR.puts("Ops, algo deu errado!")
 ```
 
-A saída desse código seria:
+Este código irá exibir a mensagem "Ops, algo deu errado!" na saída de erro padrão. Você também pode utilizar a sintaxe de `warn()` para escrever para o erro padrão. Veja:
 
+```Ruby
+warn("Cuidado, esse código está com um erro!")
 ```
-E, [2018-02-01T13:45:50.781859 #9578] ERROR -- : Algo deu errado
+
+Além disso, você também pode utilizar variáveis dentro da mensagem. Veja:
+
+```Ruby
+num = 5
+STDERR.puts("O número #{num} é inválido.")
 ```
 
-Aqui, a mensagem de erro foi formatada automaticamente e inclui o data e hora em que foi registrado.
+A saída seria "O número 5 é inválido." na saída de erro padrão. Agora que você sabe como escrever para o erro padrão, vamos nos aprofundar um pouco mais.
 
-## Viagem Profunda
+## Mergulho profundo no erro padrão
 
-Ao escrever para o erro padrão, é importante lembrar que você também pode personalizar a saída, adicionando informações extras para ajudar na depuração. Além disso, você também pode redirecionar o fluxo de erro para um arquivo, se necessário.
+Além de exibir mensagens de erro, o uso do erro padrão também é útil para fazer logs de erros em seus próprios programas. Você pode criar um arquivo de log e escrever a saída de erro padrão nele ao invés de exibi-la apenas na tela. Isso pode ser útil para verificar erros em momentos específicos no código e também para manutenção futura.
 
-Por exemplo, se você estiver desenvolvendo um script que realiza uma operação em um banco de dados, pode ser útil registrar erros nesse script em um arquivo de log, em vez de apenas vê-los no console. Isso é útil, pois torna mais fácil rastrear os problemas e corrigi-los posteriormente.
+Outra opção interessante é redirecionar a saída de erro padrão para um arquivo, utilizando o símbolo `>`. Por exemplo:
 
-## Veja Também
+```Ruby
+ruby meu_programa.rb > erro.log
+```
 
-- [Documentação Oficial do Ruby sobre a Classe Logger](https://ruby-doc.org/stdlib-2.5.0/libdoc/logger/rdoc/Logger.html)
-- [Artigo sobre Logging em Ruby](https://medium.com/rubyinside/logging-in-ruby-cf8b94c5e946)
-- [Vídeo: How to write to standard error in Ruby](https://www.youtube.com/watch?v=CfCgUMJwBoo)
+Isso irá criar um arquivo "erro.log" contendo todas as mensagens de erro que foram exibidas durante a execução do programa. Isso pode ajudar na depuração de problemas e também facilita a identificação de erros recorrentes.
+
+## Veja também
+
+- [Documentação oficial do Ruby para saída de erro padrão](https://ruby-doc.org/core-2.6/IO.html#method-c-new-label-Standard+Streams)
+- [Artigo sobre saída padrão e saída de erro padrão no Ruby](https://www.rubyguides.com/2016/08/ruby-print-vs-puts/)
+- [Tutorial sobre como fazer logs de erros no Ruby](https://www.rubyguides.com/2016/04/debugging-logs-basic-guide-ruby/)

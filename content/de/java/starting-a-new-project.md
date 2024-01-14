@@ -1,46 +1,54 @@
 ---
-title:    "Java: Ein neues Projekt beginnen"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/starting-a-new-project.md"
+title:                "Java: Ein neues Projekt beginnen"
+programming_language: "Java"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Es gibt viele Gründe, warum jemand ein neues Java-Projekt starten möchte. Vielleicht möchten Sie eine neue Technologie ausprobieren, Ihre Programmierkenntnisse erweitern oder einfach nur aus Leidenschaft für das Coden. Was auch immer Ihr Grund sein mag, das Erstellen eines neuen Projekts kann Ihnen viele Vorteile bringen und eine aufregende Herausforderung sein.
 
-Egal, ob Sie ein Anfänger oder ein erfahrener Programmierer sind, das Starten eines neuen Projekts kann eine aufregende Herausforderung sein. Es bietet die Möglichkeit, neue Fähigkeiten zu erlernen, kreative Lösungen zu finden und etwas Nützliches oder Unterhaltsames zu schaffen. Ein neues Projekt kann auch die Chance bieten, mit anderen Entwicklern zusammenzuarbeiten und von ihnen zu lernen. 
-
-## Wie man anfängt
-
-Um ein neues Java-Projekt zu starten, gibt es ein paar Schritte, die Sie befolgen müssen. Zunächst müssen Sie sicherstellen, dass Sie eine aktuelle Version von Java auf Ihrem Computer installiert haben. Dann können Sie einen Texteditor oder eine integrierte Entwicklungsumgebung (IDE) wie IntelliJ IDEA oder Eclipse verwenden, um mit dem Codieren zu beginnen. Eine grundlegende Java-Anwendung könnte so aussehen:
+## Wie geht es
+Um ein neues Java-Projekt zu starten, müssen Sie zuerst eine Entwicklungsumgebung einrichten und das JDK herunterladen und installieren. Dann können Sie mit dem Schreiben Ihres Codes in einer geeigneten IDE wie IntelliJ oder Eclipse beginnen. Um Ihnen den Einstieg zu erleichtern, hier sind einige Code-Beispiele mit Beispielausgaben:
 
 ```Java
-public class MeineApp {
+public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hallo Welt!");
     }
 }
 ```
+Ausgabe: Hallo Welt!
 
-Dieses Beispiel definiert eine Klasse mit dem Namen "MeineApp" und eine Methode namens "main", die ausgeführt wird, wenn die Anwendung gestartet wird. Die Methode verwendet "System.out.println", um die Nachricht "Hallo Welt!" auf die Konsole auszugeben. Wenn Sie diese Datei mit dem Namen "MeineApp.java" speichern und in der Kommandozeile mit dem Befehl "javac MeineApp.java" kompilieren, können Sie dann "java MeineApp" ausführen, um das Programm auszuführen und die Nachricht auf der Konsole zu sehen. 
+```Java
+import java.util.Scanner;
 
-Es gibt zahlreiche Ressourcen online, die Ihnen dabei helfen können, die Grundlagen der Java-Programmierung zu erlernen und weitere fortgeschrittene Konzepte zu entdecken. Eine gute Methode, um Fortschritte zu verfolgen und zu üben, ist das Lösen von Coding-Herausforderungen auf Plattformen wie HackerRank oder CodeWars.
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Geben Sie zwei Zahlen ein:");
+        double num1 = input.nextDouble();
+        double num2 = input.nextDouble();
+        double sum = num1 + num2;
+        System.out.println("Die Summe ist: " + sum);
+    }
+}
+```
+Ausgabe: Geben Sie zwei Zahlen ein:
+10
+20
+Die Summe ist: 30.0
 
-## Tiefere Einblicke
+Diese einfachen Beispiele zeigen, wie einfach es ist, mit dem Schreiben von Java-Code zu beginnen. Sie können auch viele Tutorials und Ressourcen im Internet finden, die Ihnen dabei helfen, Ihre Fähigkeiten zu verbessern.
 
-Das Starten eines neuen Projekts erfordert auch ein gewisses Maß an Planung und Organisation. Bevor Sie mit dem Codieren beginnen, sollten Sie sich darüber im Klaren sein, was genau Sie erreichen möchten und welches grundlegende Konzept oder Design das Projekt umfasst. Auch die Auswahl der richtigen Technologien und Bibliotheken ist entscheidend für den Erfolg Ihres Projekts.
+## Tiefer eintauchen
+Wenn Sie sich entscheiden, ein neues Java-Projekt zu starten, gibt es einige Dinge, die Sie berücksichtigen sollten. Zunächst müssen Sie ein geeignetes Projektthema finden und einen klaren Plan erstellen, was Sie erreichen möchten. Dann sollten Sie sich mit den Grundlagen von Java und objektorientierter Programmierung vertraut machen, einschließlich Klassen, Methoden und Variablen.
 
-Ein weiterer wichtiger Aspekt ist die Versionskontrolle, insbesondere wenn Sie mit anderen Entwicklern zusammenarbeiten oder das Projekt in Zukunft weiterentwickeln möchten. Die Verwendung von Tools wie Git und Plattformen wie GitHub oder BitBucket kann Ihnen dabei helfen, Ihre Code-Änderungen zu verfolgen, zu verwalten und mit anderen zu teilen.
-
-Schließlich ist es wichtig, bei der Entwicklung eines neuen Projekts nicht aufzugeben, wenn Sie auf Herausforderungen stoßen. Bleiben Sie geduldig, nehmen Sie sich Zeit, um die Konzepte zu verstehen, und nutzen Sie die vorhandenen Ressourcen, um weiter Fortschritte zu erzielen.
+Eine weitere wichtige Sache ist das Verständnis der Konzepte von Testen und Debugging, um sicherzustellen, dass Ihr Code effizient und fehlerfrei ist. Außerdem ist es immer gut, die Prinzipien von Clean Code zu befolgen, damit Ihr Code gut strukturiert und leicht verständlich bleibt.
 
 ## Siehe auch
-
-- [Offizielle Java-Tutorials](https://docs.oracle.com/javase/tutorial/)
-- [HackerRank](https://www.hackerrank.com/)
-- [CodeWars](https://www.codewars.com/)
-- [Git](https://git-scm.com/)
-- [GitHub](https://github.com/)
-- [BitBucket](https://bitbucket.org/)
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-- [Eclipse](https://www.eclipse.org/)
+- [Java Development Kit (JDK) herunterladen](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [IntelliJ IDEA herunterladen](https://www.jetbrains.com/idea/download)
+- [Eclipse herunterladen](https://www.eclipse.org/downloads/)

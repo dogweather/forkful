@@ -1,50 +1,52 @@
 ---
-title:    "TypeScript: Tworzenie pliku tekstowego"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/writing-a-text-file.md"
+title:                "TypeScript: Tworzenie pliku tekstowego"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Pisanie plików tekstowych jest niezbędne dla każdego, kto pracuje z kodem. Pozwala to na przechowywanie i udostępnianie swoich programów, bez obawy o utratę kodu.
+Czy kiedykolwiek zastanawiałeś się, dlaczego tworzenie plików tekstowych jest tak ważną częścią programowania? Pisanie plików tekstowych może być nieco nużące, ale jest to niezbędna umiejętność dla każdego programisty. Pliki tekstowe pozwalają na zapisywanie danych w czytelnej formie, dzięki czemu można je łatwo przeczytać i analizować. W tym artykule dowiesz się, dlaczego pisanie plików tekstowych jest ważne i jak można to zrobić w języku TypeScript.
 
 ## Jak to zrobić
 
-Aby zapisać plik tekstowy za pomocą TypeScript, wystarczy użyć wbudowanej funkcji `writeFileSync` z modułu `fs`. Przykładowy kod wyglądałby następująco:
+Pisanie plików tekstowych w TypeScript jest bardzo prostym procesem, który wymaga użycia wbudowanego modułu 'fs'. Aby rozpocząć, należy utworzyć nowy plik tekstowy o nazwie 'tekst.txt' za pomocą metody 'createWriteStream'. Następnie należy ustawić kodowanie pliku na 'utf-8' za pomocą metody 'setEncoding'.
 
 ```TypeScript
 import * as fs from 'fs';
 
-fs.writeFileSync('plik.txt', 'To jest przykładowy tekst.');
+// tworzenie nowego pliku tekstowego
+const plik = fs.createWriteStream('tekst.txt');
+
+// ustalenie kodowania pliku na utf-8
+plik.setEncoding('utf-8');
 ```
 
-Po uruchomieniu kodu, w bieżącym folderze pojawi się plik tekstowy `plik.txt`, zawierający tekst "To jest przykładowy tekst.". Jeśli chcesz dodać tekst do już istniejącego pliku, możesz użyć funkcji `appendFileSync` zamiast `writeFileSync`.
+Następnie można użyć metody 'write' do zapisania danych w pliku tekstowym. Przykładowe dane do zapisania to "Witaj, świecie!".
 
 ```TypeScript
-import * as fs from 'fs';
+// zapisywanie danych w pliku
+plik.write("Witaj, świecie!");
 
-fs.appendFileSync('plik.txt', '\nTo jest kolejny tekst.');
+// zamykanie pliku
+plik.end();
 ```
 
-Teraz plik będzie zawierał dwa wiersze tekstu: "To jest przykładowy tekst." i "To jest kolejny tekst.".
+Po wykonaniu powyższych kroków, w bieżącym folderze pojawi się nowy plik tekstowy o nazwie 'tekst.txt' z zapisanym tekstem "Witaj, świecie!". Proces ten można powtarzać, aby dopisywać kolejne dane do pliku.
 
 ## Deep Dive
 
-Istnieje wiele opcji, które możesz podać jako drugi parametr funkcji `writeFileSync` lub `appendFileSync`, aby dostosować sposób zapisu pliku. Możesz na przykład określić kodowanie znaków, tryb zapisu, a nawet funkcję zwrotną, która zostanie wywołana po zapisaniu pliku.
+Pisanie plików tekstowych w języku TypeScript nie ogranicza się tylko do zapisywania tekstu. Można również wykorzystać wbudowane moduły, aby tworzyć bardziej złożone pliki. Na przykład można użyć modułu 'path' do tworzenia nowych folderów lub modułu 'fs/promises' do asynchronicznego zapisywania danych w pliku.
 
-```TypeScript
-import * as fs from 'fs';
+Pamiętaj również, aby zawsze zamknąć plik po zakończeniu zapisywania, używając metody 'end', aby upewnić się, że wszystkie dane zostały poprawnie zapisane.
 
-fs.writeFileSync('plik.txt', 'To jest przykładowy tekst.', { encoding: 'utf-8', mode: 0o666 }, () => {
-    console.log('Plik został zapisany.');
-});
-```
+## Zobacz także
 
-W powyższym przykładzie, zostanie zapisany plik tekstowy o nazwie `plik.txt` z kodowaniem UTF-8 i trybem zapisu 0o666 (czyli wszystkie prawa dostępu). Po zapisaniu, zostanie wywołana funkcja zwrotna, która wypisze w konsoli komunikat "Plik został zapisany.".
+Jeśli chcesz dowiedzieć się więcej o tworzeniu plików w języku TypeScript, polecamy zapoznanie się z następującymi artykułami:
 
-## Zobacz również
-
-- [Oficjalna dokumentacja TypeScript](https://www.typescriptlang.org/docs/home.html)
-- [Wprowadzenie do programowania w TypeScript](https://codeburst.io/a-beginners-guide-to-typescript-13b33062580b?source=language_selector)
+- [Dokumentacja oficjalna: Moduł fs w TypeScript](https://www.typescriptlang.org/docs/handbook/nodejs.html#rest-parameters)
+- [Blog TypeScript na Medium](https://medium.com/@typescript)
+- [Kurs online: Wprowadzenie do TypeScript](https://www.udemy.com/course/typescript-the-complete-developers-guide/)

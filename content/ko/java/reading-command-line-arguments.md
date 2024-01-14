@@ -1,39 +1,49 @@
 ---
-title:    "Java: 컴퓨터 프로그래밍에서의 명령 줄 인수 읽기"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/reading-command-line-arguments.md"
+title:                "Java: 컴퓨터 프로그래밍에서 명령 줄 인수 읽기"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-커맨드 라인 인수를 읽는 방법에 대해 궁금할 수 있습니다. 이 글을 통해 라인 인수를 읽는 이유에 대해 배워보세요!
+커맨드 라인 인자를 읽는 방법에 대해 배우기 전에, 커맨드 라인 인자를 읽는 이유는 무엇일까요? 자바 프로그래밍에서 커맨드 라인 인자는 매우 중요한 역할을 하며, 프로그램을 실행할 때 유저가 입력한 정보를 전달하는 역할을 합니다. 따라서 이 기능을 제대로 이해하고 사용하는 것은 중요합니다.
 
 ## 어떻게
 
-커맨드 라인 인수를 읽는 방법은 매우 간단합니다. 먼저, main 메소드의 매개변수로 String 배열을 사용합니다. 이 배열은 프로그램 실행 시 전달된 인수들을 담고 있습니다. 그리고 우리는 인수들을 반복문을 통해 하나씩 가져와서 필요한 작업을 수행할 수 있습니다. 아래의 예제 코드를 참고해보세요.
+커맨드 라인 인자를 읽는 방법은 간단합니다. 우선 `public static void main(String[] args)` 메소드 안에 있는 `String[] args` 파라미터는 커맨드 라인 인자를 저장하는 배열입니다. 이 배열을 `for` 루프나 인덱스를 이용하여 접근할 수 있습니다. 예를 들어서, 만약 유저가 `java Program.java hello 123`라는 명령어를 입력했다면, `args[0]`에는 `"hello"`가, `args[1]`에는 `"123"`이 저장됩니다.
 
 ```Java
-public static void main(String[] args) {
-    for (String arg : args) {
-        System.out.println(arg);
+public class Program {
+    public static void main(String[] args) {
+        for (String arg : args) {
+            System.out.println(arg);
+        }
     }
 }
 ```
 
-만약 프로그램을 아래와 같은 커맨드로 실행한다면, "Hello"와 "World"라는 두 개의 인수가 출력될 것입니다.
+위의 코드를 실행하면, 다음과 같은 결과를 볼 수 있습니다.
 
 ```
-java Program Hello World
+hello
+123
 ```
 
-## 깊이 파고들기
+## 상세히 알아보기
 
-커맨드 라인 인수를 읽는 것은 프로그래밍에서 매우 유용한 기능입니다. 이를 통해 사용자로부터 입력을 받거나, 여러 가지 설정값을 지정할 수 있습니다. 또한 커맨드 라인 인수를 사용하면 프로그램을 실행할 때마다 다르게 동작하도록 만들 수 있습니다.
+더 깊이 있는 정보를 알고 싶다면, 커맨드 라인 인자를 읽는 방법에 대해 더 많이 알아보아야 합니다. 예를 들어, `java Program.java -h`라는 명령어를 입력하면, `args[0]`에는 `"-h"`가 저장되는 것이 아니라, `args[0]`에는 `"-h"`와 같은 옵션을 구분하는 데 사용되는 특별한 문자(`'-'`)가 저장됩니다. 또한 `args[0]`에만 해당되는 것이 아니고, 모든 커맨드 라인 인자에 적용됩니다.
 
-## 참고 자료
+## 더 읽어보기
 
-- [Java Docs: Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [GeeksforGeeks: Command Line arguments in Java](https://www.geeksforgeeks.org/command-line-arguments-in-java/)
-- [Baeldung: Guide to Java Command-Line arguments](https://www.baeldung.com/java-command-line-arguments)
+깊이 있는 정보를 알기 위해 다른 링크들을 참조해 보세요.
+
+[Java의 커맨드 라인 인자 확인하기](https://www.baeldung.com/java-command-line-arguments)
+
+[자바 커맨드 라인 인자에 대해 더 알아보기](https://www.lifewire.com/passing-command-line-arguments-2034314)
+
+[심화 자바 프로그래밍: 커맨드 라인 인자 읽기](https://www.geeksforgeeks.org/command-line-arguments-in-java/)
+
+## 더 알아보기

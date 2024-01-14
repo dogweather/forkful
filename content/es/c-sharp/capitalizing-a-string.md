@@ -1,66 +1,52 @@
 ---
-title:    "C#: Capitalizar una cadena"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/capitalizing-a-string.md"
+title:                "C#: Capitalizar una cadena"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué capitalizar una cadena en C#
 
-Capitalizar una cadena de texto es una tarea común en la programación, especialmente cuando se trabaja con nombres o títulos de texto. Al capitalizar una cadena, se asegura de que la primera letra de cada palabra esté en mayúscula, lo que facilita la lectura y presentación de la información.
+Capitalizar una cadena en C# es una tarea común en la programación ya que permite mejorar la legibilidad de los textos para los usuarios. Al capitalizar una cadena, se pueden resaltar términos importantes o hacer que un texto se vea más profesional y organizado. Además, puede ser necesario en ciertas situaciones para cumplir con estándares de formato de texto.
 
-## Cómo hacerlo
+## Cómo capitalizar una cadena en C#
 
-Para capitalizar una cadena en C#, podemos usar el método `ToUpper` de la clase `TextInfo`. Primero, necesitamos importar el espacio de nombres `System.Globalization` en nuestro código. Luego, creamos una instancia de la clase `TextInfo` y usamos el método `ToUpper` para capitalizar la cadena deseada.
+La función de capitalización en C# se conoce como "ToUpper()" y se puede usar en una cadena para convertir todos los caracteres a mayúsculas. Por ejemplo, si tenemos una cadena llamada "hola mundo", al aplicar la función "ToUpper()", obtendremos "HOLA MUNDO".
 
+```C#
+string cadena = "hola mundo";
+string capitalizada = cadena.ToUpper();
+Console.WriteLine(capitalizada);
 ```
+
+Esto imprimirá en la consola: "HOLA MUNDO". También existe la función "ToLower()" que convierte todos los caracteres a minúsculas, en caso de que sea necesario.
+
+Otra opción es usar la función "CultureInfo" que permite elegir el idioma para la capitalización de la cadena. Por ejemplo, si queremos capitalizar una cadena en español, podemos usar el código "es-ES" dentro de la función.
+
+```C#
+string cadena = "hola mundo";
+string capitalizada = cadena.ToUpper(new CultureInfo("es-ES"));
+Console.Write(capitalizada);
+```
+
+## Profundizando en la capitalización de cadenas en C#
+
+Además de la función "ToUpper()", también existen otras maneras de capitalizar una cadena en C#. Por ejemplo, se puede utilizar la función "TextInfo.ToTitleCase()" para capitalizar cada palabra de una cadena, en lugar de solo la primera letra.
+
+```C#
 using System.Globalization;
-
-string nombre = "maría";
-TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
-
-string nombreCapitalizado = ti.ToUpper(nombre);
-Console.WriteLine(nombreCapitalizado);
-
-// Output: María
+string cadena = "hola mundo";
+TextInfo textInfo = new CultureInfo("es-ES").TextInfo;
+string capitalizada = textInfo.ToTitleCase(cadena);
+Console.WriteLine(capitalizada);
 ```
 
-También podemos utilizar el método `ToTitleCase` de la clase `TextInfo` para capitalizar solo la primera letra de cada palabra en la cadena.
-
-```
-using System.Globalization;
-
-string titulo = "el gran gatsby";
-TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
-
-string tituloCapitalizado = ti.ToTitleCase(titulo);
-Console.WriteLine(tituloCapitalizado);
-
-// Output: El Gran Gatsby
-```
-
-## Profundizando
-
-Existen algunas consideraciones importantes al capitalizar una cadena en C#. Por ejemplo, si la cadena contiene caracteres unicode, el método `ToUpper` no los capitalizará correctamente. En cambio, podemos usar el método `ToUpperInvariant` que trata los caracteres unicode de manera adecuada.
-
-Otra cosa a tener en cuenta es que si estamos trabajando con una cadena en mayúsculas, el método `ToUpper` no cambiará nada en la cadena original. En su lugar, podemos usar el método `ToLower` para forzar la capitalización.
-
-```
-using System.Globalization;
-
-string titulo = "EL GRAN GATSBY";
-TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
-
-string tituloCapitalizado = ti.ToLower(titulo);
-Console.WriteLine(tituloCapitalizado);
-
-// Output: El gran gatsby
-```
-
-¡Con estos métodos, capitalizar una cadena en C# es fácil y nos aseguramos de tener una salida correcta en cualquier situación!
+Esto imprimirá en la consola: "Hola Mundo". También se pueden usar expresiones regulares para capitalizar de manera más precisa según las necesidades del usuario.
 
 ## Ver también
 
-- [String.ToUpper Method (System) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netcore-3.1)
-- [Examples of String Capitalization in C# - C# Corner](https://www.c-sharpcorner.com/article/string-capitalization-in-C-Sharp/)
+- [Documentación oficial de C# sobre capitalizar cadenas](https://docs.microsoft.com/es-es/dotnet/api/system.string.toupper?view=net-5.0)
+- [Expresiones regulares en C#](https://www.c-sharpcorner.com/UploadFile/b942f9/expresiones-regulares-en-c-sharp/)
+- [CultureInfo en C#](https://www.c-sharpcorner.com/UploadFile/87b416/culture-specific-methods-in-C-Sharp/)

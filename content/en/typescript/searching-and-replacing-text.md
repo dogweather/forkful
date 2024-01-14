@@ -1,53 +1,61 @@
 ---
-title:    "TypeScript recipe: Searching and replacing text"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/typescript/searching-and-replacing-text.md"
+title:                "TypeScript recipe: Searching and replacing text"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-The ability to search and replace text is an essential tool for any programmer. It allows you to quickly and efficiently make changes to your code without having to manually go through each line. In TypeScript, there are several ways to perform this task and it is important to understand them in order to optimize your coding experience.
+
+When working with a large amount of text, it can be tedious and time-consuming to manually search and replace certain words or phrases. This is where the power of programming comes in, specifically using TypeScript. By utilizing its string manipulation methods, we can easily automate the process of searching and replacing text.
 
 ## How To
-To search and replace text in TypeScript, we can use the `replace()` method. This method takes two parameters - the text to be replaced and the new text to replace it with. Let's take a look at a simple example:
+
+To start off, we will need a string that we want to perform the search and replace on. For this example, we will use the sentence, "I love TypeScript." We can assign this string to a variable, let's call it `text`.
 
 ```TypeScript
-let sentence = "I love TypeScript!";
-let newSentence = sentence.replace("TypeScript", "coding");
-
-console.log(newSentence);
+let text: string = "I love TypeScript.";
 ```
 
-The output of this code will be: `I love coding!` As you can see, the `replace()` method searched through the `sentence` variable and replaced the word "TypeScript" with "coding". 
-
-But what if we want to replace multiple occurrences of a word? We can use regular expressions with the `replace()` method to do so. Regular expressions are patterns used to match character combinations in strings. Let's see this in action:
+To search for a specific word or phrase within the string, we can use the `indexOf()` method. This method will return the index position of the first occurrence of the word or phrase we are searching for. For example, if we want to search for the word "love" within our `text` variable, we can use the following code:
 
 ```TypeScript
-let sentence = "I love TypeScript! TypeScript is the best.";
-let newSentence = sentence.replace(/TypeScript/g, "coding");
-
-console.log(newSentence);
+let index: number = text.indexOf("love");
+console.log(index); // Output: 2
 ```
 
-The output of this code will be: `I love coding! coding is the best.` By adding the `g` modifier to our regular expression, we are telling the `replace()` method to replace all occurrences of "TypeScript" in the `sentence` variable.
+As we can see, the index position of the word "love" in the string is 2.
+
+Next, we can use the `replace()` method to replace the word "love" with another word or phrase. This method takes in two parameters - the word or phrase we want to replace, and the word or phrase we want to replace it with.
+
+```TypeScript
+let newText: string = text.replace("love", "adore");
+console.log(newText); // Output: I adore TypeScript.
+```
+
+We can also use regular expressions in the `replace()` method to make more complex replacements. For example, if we want to replace all instances of the word "TypeScript" with "JavaScript", we can do so using the following code:
+
+```TypeScript
+let newText: string = text.replace(/TypeScript/g, "JavaScript");
+console.log(newText); //Output: I love JavaScript.
+```
 
 ## Deep Dive
-In the previous examples, we used the `replace()` method directly on a string. However, we can also use it on a variable that contains a regular expression. This allows us to easily reuse the same pattern for multiple replacements. Take a look at this code:
+
+The `indexOf()` method can take in a second parameter, which specifies the starting index of the search. This can be useful if we only want to search for a word or phrase after a certain point in the string. For example, if we only want to search for the word "love" after the word "I" in our string, we can use the following code:
 
 ```TypeScript
-let sentence = "I love TypeScript. TypeScript is amazing.";
-let regex = /TypeScript/g;
-let newSentence = sentence.replace(regex, "coding");
-
-console.log(newSentence);
+let index: number = text.indexOf("love", 2);
+console.log(index); // Output: 2
 ```
 
-The output will be the same as our previous example, but with the added flexibility of being able to easily change or reuse the regular expression. Additionally, the `replace()` method also accepts a function as the second parameter, allowing for even more customization in the replacement process.
+We can also use the `lastIndexOf()` method to search for the last occurrence of a word or phrase in a string. This can be useful if we want to replace the last instance of a word or phrase rather than the first. The syntax for this method is the same as `indexOf()`.
+
+In addition to `replace()`, TypeScript also has a `replaceAll()` method that will replace all instances of a word or phrase in a string. This can be useful for making multiple replacements in one go. The syntax for this method is the same as `replace()`, with the addition of the global `g` flag.
 
 ## See Also
-For more information on the `replace()` method and regular expressions in TypeScript, check out the following resources:
 
-- [MDN Web Docs: String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [TypeScript Documentation: Regular Expressions](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [TypeScript Regular Expressions Playground](https://regex101.com/r/QNkENi/1)
+- [TypeScript documentation on string methods](https://www.typescriptlang.org/docs/handbook/strings.html#string-methods)
+- [Regular expressions in TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)

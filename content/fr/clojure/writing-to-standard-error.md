@@ -1,46 +1,33 @@
 ---
-title:    "Clojure: Écrire sur l'erreur standard"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/writing-to-standard-error.md"
+title:                "Clojure: Écrire vers l'erreur standard"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Écrire sur une sortie d'erreur standard (standard error output) peut être utile dans le processus de débogage en affichant des informations d'erreur en temps réel.
+L'écriture sur la sortie standard d'erreur, également appelée stderr, peut être utile lors du débogage de programmes. Elle permet aux développeurs de suivre les erreurs et les problèmes de leur code en temps réel. Cela peut également aider à identifier les parties du code qui nécessitent une attention particulière.
 
 ## Comment faire
 
-```Clojure 
-;; Importer la bibliothèque 'clojure.java.io' pour accéder à la fonction
-;; pour écrire sur la sortie d'erreur standard
-(require '[clojure.java.io :as io])
+Dans Clojure, l'écriture sur stderr peut être réalisée avec la fonction `println` combinée avec la fonction `System/err`. Par exemple, pour imprimer un message sur stderr, nous pouvons utiliser le code suivant :
 
-;; Utiliser 'with-out-str' pour capturer ce qui est écrit dans la sortie
-;; d'erreur standard dans une chaîne
-(with-out-str
-  (println "Voici un message d'erreur."))
-
-;; Afficher la chaîne capturée en utilisant la fonction 'err' de 'io'
-(println (io/err))
-
-;; Vous pouvez également écrire directement sur la sortie d'erreur standard
-;; en utilisant 'println' et 'System/err'
-(println "Ceci est un autre message d'erreur." System/err)
+```Clojure
+(println "Il y a une erreur dans le code." (System/err))
 ```
 
-Output:
-```
-Voici un message d'erreur.
-Ceci est un autre message d'erreur.
-```
+Ce code imprimera le message "Il y a une erreur dans le code." suivi de la sortie standard d'erreur. En utilisant cette méthode, nous pouvons facilement suivre les erreurs et les problèmes dans notre code.
 
-## Une plongée en profondeur
+## Plongée en profondeur
 
-Outre l'utilisation principale pour le débogage, écrire sur la sortie d'erreur standard peut également être utile pour afficher des informations de diagnostic ou pour des tests. Il est important de noter que les messages écrits sur la sortie d'erreur standard sont généralement visibles par l'utilisateur final, il est donc essentiel de les utiliser avec parcimonie et de les supprimer une fois qu'ils ont servi leur but.
+Il est important de noter que l'écriture sur la sortie standard d'erreur ne doit être utilisée que pour le débogage et le suivi des erreurs. Elle ne doit pas être utilisée comme moyen de communication avec l'utilisateur final. Pour cela, nous devons utiliser la sortie standard, également appelée stdout.
+
+De plus, il est possible d'utiliser la fonction `System/err` pour gérer les exceptions dans notre code. Par exemple, nous pouvons utiliser `System/err` pour imprimer une trace d'erreur personnalisée si une exception est levée dans notre code.
 
 ## Voir aussi
 
-- [Documentation officielle de Clojure pour la bibliothèque 'clojure.java.io'](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Article sur l'utilisation de 'with-out-str' en Clojure](https://danielcompton.net/2011/08/06/ouput-capture-in-clojure)
+- [Documentation officielle de Clojure sur la sortie standard d'erreur](https://clojuredocs.org/clojure.core/printerr)
+- [Article sur la gestion des erreurs en Clojure](https://purelyfunctional.tv/article/handling-errors-in-clojure/)

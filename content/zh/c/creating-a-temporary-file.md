@@ -1,59 +1,40 @@
 ---
-title:    "C: 创建临时文件"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/creating-a-temporary-file.md"
+title:                "C: 创建临时文件"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要创建临时文件？
+## 为什么
 
-在编写C程序时，您可能会发现需要创建临时文件的情况。临时文件是暂时存储数据的文件，通常在程序运行结束后会被自动删除。创建临时文件可以帮助程序更高效地运行，同时也可以保护您的系统免受不必要的文件占用。
+有时，编程过程中我们需要创建临时文件来存储临时数据，而不是直接操作主要文件。这样可以避免意外覆盖或损坏主要文件，并且在程序执行完毕后，临时文件会自动删除，保持电脑整洁。
 
-## 如何创建临时文件？
+## 创建临时文件的方法
 
-在C语言中，可以使用`tmpfile()`函数来创建临时文件。该函数会在操作系统的临时目录中自动创建一个空白文件，并返回一个指向该文件的指针。下面是一个示例代码：
+我们可以使用C语言中的`tmpfile()`函数来创建临时文件。下面是一个简单的例子：
 
 ```C
-#include <stdio.h>
-
-int main() {
-  FILE *tmp_file;
-  char text[] = "This is a temporary file.";
-
-  tmp_file = tmpfile(); // 创建临时文件
-
-  if (tmp_file != NULL) {
-    // 向临时文件中写入数据
-    fprintf(tmp_file, "%s", text);
-
-    // 从临时文件中读取数据
-    rewind(tmp_file);
-    fscanf(tmp_file, "%s", text);
-    printf("Temporary file contents: %s\n", text);
-
-    // 关闭临时文件
-    fclose(tmp_file);
-  }
-
-  return 0;
-}
+FILE *fp; //声明文件指针
+char data[10] = "Hello"; //创建需要写入临时文件的数据
+fp = tmpfile(); //使用tmpfile()函数创建临时文件
+fprintf(fp, "%s", data); //将数据写入临时文件中
 ```
 
-运行上述代码后，您会发现在临时目录中出现了一个名为`tmp.XXXXXX`的文件，其中`XXXXXX`是随机生成的字符串。临时文件内容为`This is a temporary file.`。
+运行程序后，我们可以在临时文件中找到存储的数据。临时文件的名称将在运行时自动生成，我们可以通过使用`tmpnam()`函数获取临时文件的完整路径和名称。
+
+```C
+char* filename = tmpnam(NULL); //使用tmpnam()函数获取临时文件路径和名称
+printf("临时文件路径和名称：%s", filename); 
+```
 
 ## 深入了解临时文件
 
-创建临时文件的具体实现方式会根据操作系统的不同而有所差异。在Windows系统中，`tmpfile()`函数会创建一个具有临时性质的文件，即文件不会出现在任何目录中，只能通过指针来访问。而在Unix/Linux系统中，`tmpfile()`函数会直接在临时目录中创建一个文件。不同的操作系统也可能会有不同的临时目录地址和文件命名规则。
-
-另外，通过`tmpfile()`函数创建的临时文件会在程序运行结束后自动删除。如果您想要在程序运行期间保留临时文件，可以使用`mkstemp()`函数来创建临时文件。
+除了`tmpfile()`和`tmpnam()`函数，C语言还提供了其他一些函数来操作临时文件，例如`tmpfile_s()`函数和`tempnam()`函数。这些函数的使用方法和效果略有不同，但都能实现创建临时文件的功能。需要注意的是，临时文件会在程序结束时自动删除，但我们也可以使用`fclose()`函数来手动关闭并删除临时文件。
 
 ## 参考链接
 
-- [C语言中的临时文件和临时目录](https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html)
-- [tmpfile()函数文档](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
-- [mkstemp()函数文档](https://www.tutorialspoint.com/c_standard_library/c_function_mkstemp.htm)
-
-# 参见
-
-- [如何在C语言中使用文件操作？](https://www.howtoblog.cn/how-to-use-file-io-in-c-language/)
+- [C语言临时文件教程](https://www.runoob.com/cprogramming/c-function-tmpfile.html)
+- [临时文件与假文件的区别](https://zhidao.baidu.com/question/1751853642630800527.html)
+- [tmpfile()函数文档](http://www.cplusplus.com/reference/cstdio/tmpfile/)

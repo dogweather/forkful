@@ -1,43 +1,48 @@
 ---
-title:    "Elm: Verifica dell'esistenza di una directory"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/checking-if-a-directory-exists.md"
+title:                "Elm: Verificare se una directory esiste"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Controllare se una directory esiste può essere un'operazione importante quando si lavora con file e dati all'interno di un programma Elm. Essere in grado di verificare facilmente se una directory è presente o meno può aiutare a garantire la validità e l'integrità dei dati utilizzati.
+
+La verifica dell'esistenza di una directory è uno dei compiti fondamentali nella programmazione. Sapere se una determinata directory esiste o meno è importante per garantire che il programma funzioni correttamente e per gestire gli errori in modo efficiente.
 
 ## Come fare
-Per verificare se una directory esiste in Elm, possiamo utilizzare la funzione `File.System.isDirectory` e passare come parametro il percorso della directory che vogliamo controllare. Di seguito un esempio di codice:
+
+Per verificare se una directory esiste in Elm, è possibile utilizzare la funzione `elm/file` di Elm. Ecco un esempio di codice che illustra come farlo:
 
 ```Elm
-import File.System exposing (Directory, isDirectory)
+import File
+import Task exposing (Task)
 
-isExistingDirectory : Directory -> Task x Bool
-isExistingDirectory directory =
-   isDirectory directory
+verificaDirectory : Task File.Error Bool
+verificaDirectory =
+  File.exists "percorso/alla/directory"
 ```
 
-L'output di questa funzione sarà un `Task`, che ci permette di gestire in modo asincrono il risultato della verifica. Possiamo utilizzare la funzione `Task.andThen` per eseguire altre operazioni sul risultato, come ad esempio stampare un messaggio a schermo se la directory esiste oppure gestire eventuali errori.
+In questo esempio, stiamo importando il modulo `File` e la funzione `exists` che ci permette di verificare l'esistenza di una directory. Passiamo come argomento il percorso alla directory che vogliamo verificare e la funzione ci restituirà un `Task` che rappresenta il risultato della nostra verifica.
+
+Per eseguire il `Task` e ottenere il risultato effettivo, possiamo utilizzare la funzione `Task.perform` e gestire il risultato in modo appropriato. Ad esempio, possiamo stampare il risultato a console utilizzando `Debug.log`:
 
 ```Elm
-isExistingDirectory "cartella_mia" |> Task.andThen
-   (\exists ->
-       if exists then
-           -- la directory esiste, si possono eseguire altre operazioni
-           Task.succeed ()
-       else
-           -- la directory non esiste, possiamo gestire l'errore
-           Task.fail "La directory non esiste"
-   )
+Task.perform
+  (\exists -> Debug.log "La directory esiste? " (toString exists))
+  (\error -> Debug.log "Errore nella verifica della directory" error)
+  verificaDirectory
 ```
 
-## Approfondimento
-Potrebbe essere utile sapere che il tipo `Task` in Elm viene utilizzato per gestire operazioni asincrone, come l'accesso a file e directory. L'utilizzo di questo tipo ci permette di gestire in modo sicuro eventuali errori e di scrivere codice più robusto e affidabile. Inoltre, la funzione `File.System.isDirectory` fa parte del pacchetto `elm/file` che contiene diverse utili funzioni per lavorare con file e directory.
+Questo codice stamperà `True` o `False` a seconda che la directory esista o meno.
+
+## Approfondimenti
+
+La funzione `File.exists` ritornerà un `Task File.Error Bool`, che può essere interpretato come una `Promise` in JavaScript. Se non si è familiari con questa struttura, è consigliato approfondire le proprie conoscenze prima di utilizzarla in modo efficace.
 
 ## Vedi anche
-- [Documentazione ufficiale di Elm su File System](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Esempi di utilizzo di Task in Elm](https://guide.elm-lang.org/error_handling/tasks.html)
-- [Gestione degli errori in Elm](https://guide.elm-lang.org/error_handling/)
+
+- Documentazione ufficiale di `elm/file`: https://package.elm-lang.org/packages/elm/file/latest/
+- Un tutorial su come utilizzare `Task` in Elm: https://dennisreimann.de/articles/elm-task.html
+- Una guida di riferimento su come gestire gli errori in Elm: https://elmprogramming.com/handling-errors-elm.html

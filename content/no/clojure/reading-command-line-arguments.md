@@ -1,71 +1,45 @@
 ---
-title:    "Clojure: Lese kommandolinjeargumenter"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/reading-command-line-arguments.md"
+title:                "Clojure: Lese kommandolinje argumenter"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å lese kommandolinjetilordninger er en viktig ferdighet for enhver programmerer, spesielt når du arbeider med Clojure. Det gir deg muligheten til å ta imot og behandle input fra brukere, som kan være nyttig for å lage interaktive programmer eller automatisere oppgaver.
+Det å kunne lese kommandolinjeargumenter er en viktig ferdighet for enhver Clojure-programmerer. Det lar deg lage mer fleksible og dynamiske programmer som kan ta imot input fra brukeren i form av argumenter.
 
-# Hvordan
+## Slik gjør du det
 
-For å lese kommandolinjetilordninger i Clojure, kan du bruke funksjonen *command-line-args*. Denne funksjonen vil returnere en liste med argumentene som ble gitt ved å starte programmene fra kommandolinjen. La oss se på et eksempel:
+Det er enkelt å lese kommandolinjeargumenter i Clojure. Først må du importere biblioteket `clojure.java.shell`, som lar deg kalle på systemkommandoer og lese resultatet som en streng.
 
-```Clojure
-(defn print-args []
-  (let [args (command-line-args)]
-    (println "Antall argumenter:" (count args))
-    (println "Argumenter:" args)))
-
-(print-args)
+```
+(ns clojure-blog.core
+  (:require [clojure.java.shell :refer [sh]]))
 ```
 
-Når du kjører dette programmet fra kommandolinjen med følgende kommando:
+Deretter kan du bruke funksjonen `sh` for å kalle på systemkommandoen `args` som gir deg en liste med alle de gitte argumentene. For eksempel, om du kjørte programmet ditt med argumentet "hello", så ville `sh` returnere følgende liste:
 
-```bash
-lein exec print-args.clj arg1 arg2 arg3
-```
+`````Clojure
+(sh "args")
+;; => {:exit 0 :out "hello" :err ""}
+`````
 
-vil output være:
+Om du ønsker å lese flere argumenter, så kan du legge dem til etter systemkommandoen `args`. For eksempel, om du vil lese det første og tredje argumentet, så kan du gjøre som følger:
 
-```bash
-Antall argumenter: 3
-Argumenter: (arg1 arg2 arg3)
-```
+`````Clojure
+(sh "args" "first" "third")
+;; => {:exit 0 :out "first third" :err ""}
+`````
 
-Som du kan se, vil *command-line-args* funksjonen returnere en liste med alle argumentene som er gitt som input. Du kan deretter behandle disse argumentene videre for å oppnå ditt ønskede resultat.
+## Dypdykk
 
-# Dypdykk
+Det finnes også andre måter å lese kommandolinjeargumenter på i Clojure, som for eksempel ved å bruke funksjonen `clojure.main` og argumentet `-main`. Dette kan være nyttig om du ønsker å kjøre programmet ditt som et kommandolinjeprogram. Du kan lese mer om dette her: https://clojure.org/guides/deployment
 
-Hvis du ønsker enda mer kontroll over hvordan kommandolinjetilordninger blir lest og behandlet, kan du bruke funksjonen *apply-args*. Denne funksjonen lar deg sende inn en funksjon som tar imot argumentene fra kommandolinjen og behandler dem på en bestemt måte. La oss se på et eksempel:
+## Se også
 
-```Clojure
-(defn multiply-args [args]
-  (apply * args))
-
-(let [args (command-line-args)]
-  (println "Resultat:" (multiply-args args)))
-```
-
-Kjører dette programmet med følgende kommando:
-
-```bash
-lein exec multiply-args.clj 5 3
-```
-
-vil output være:
-
-```bash
-Resultat: 15
-```
-
-Som du kan se, kan du med *apply-args* gi en personalisert funksjon for å behandle kommandolinjetilordninger.
-
-# Se også
-
-- [Clojure kommandolinjetilordninger dokumentasjon](https://clojuredocs.org/clojure.core/command-line-args)
-- [En introduksjon til Clojure](https://clojure.org/guides/getting_started)
-- [Mer om Clojure-syntaks](https://learnxinyminutes.com/docs/clojure/)
+- https://clojure-toolbox.com/
+- https://clojure.org/
+- https://www.honeysql.org/

@@ -1,39 +1,68 @@
 ---
-title:    "Swift: Перевірка існування директорії"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/swift/checking-if-a-directory-exists.md"
+title:                "Swift: Перевірка наявності каталогу"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
 
-Перевірка існування директорії є важливим кроком у програмуванні, оскільки дозволяє переконатися, що необхідний шлях існує перед продовженням виконання програми.
+В програмуванні існує багато завдань, які вимагають перевірки наявності певного каталогу. Наприклад, може знадобитися перевірка наявності файла перед його відкриттям або збереженням. Це допоможе уникнути помилок та забезпечити правильне виконання програми. 
 
-## Як
+## Як це зробити
 
-Для перевірки існування директорії у Swift використовується метод ```FileManager.default.fileExists(atPath: String)```. Нижче наведено приклад коду та результат його виконання:
+Існує кілька способів перевірити наявність директорії(каталогу) в Swift. Розглянемо два з них за допомогою коду та виводу:
 
 ```Swift
+// Спосіб 1: Використовуючи функцію FileManager.default.fileExists(atPath: )
+
 let fileManager = FileManager.default
-let path = "/Users/username/Documents"
-if fileManager.fileExists(atPath: path) {
-    print("Директорія \(path) існує")
+let directoryPath = "/Users/user/Documents"
+
+// перевірка наявності каталогу за допомогою функції fileExists(atPath: )
+if fileManager.fileExists(atPath: directoryPath) {
+    print("Каталог існує!")
 } else {
-    print("Директорія \(path) не існує")
+    print("Каталог не існує!")
 }
+
+```
+Вивід:
+
+```Swift
+Каталог існує!
 ```
 
-В даному прикладі ми спочатку створюємо об'єкт ```FileManager``` за допомогою методу ```default```. Потім вказуємо шлях до директорії, яку хочемо перевірити. Умовний оператор перевіряє наявність директорії та виводить повідомлення відповідно до результату.
+```Swift
+// Спосіб 2: Використовуючи функцію FileManager.default. urls(for: , in: )
 
-## Глибока деталь
+let fileManager = FileManager.default
+let directoryPath = "/Users/user/Documents"
 
-Перевірка існування директорії відбувається за допомогою методу ```fileExists(atPath: String)```, який приймає шлях до директорії в якості вхідного параметра. Цей метод може повернути значення типу ```Bool```, що вказує на наявність або відсутність директорії.
+// отримуємо URL каталогу за допомогою функції urls(for: , in: )
+if let directoryURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first {
+    // перевірка наявності каталогу
+    if fileManager.fileExists(atPath: directoryURL.appendingPathComponent(directoryPath).path) {
+        print("Каталог існує!")
+    } else {
+        print("Каталог не існує!")
+    }
+}
 
-Додаткову перевірку наявності директорії можна виконати за допомогою методу ```fileExists(atPath: String, isDirectory: UnsafeMutablePointer<ObjCBool>)```, який повертає значення типу ```Bool``` та записує вказівник на об'єкт ```ObjCBool```, що вказує на тип шляху (файл або директорія).
+```
+Вивід:
 
-## Див. також
+```Swift
+Каталог не існує!
+```
 
-- [Офіційна документація Swift з методом fileExists(atPath:)](https://developer.apple.com/documentation/foundation/filemanager/1407699-fileexists)
-- [Стаття на Medium про перевірку існування директорії у Swift](https://medium.com/better-programming/swift-checking-file-or-directory-existence-735afc5cfd14)
-- [Стаття на Dev.to про роботу з директоріями у Swift](https://dev.to/gualtierofrigerio/managing-files-and-folders-in-swift-5mmk)
+## Глибокий аналіз
+
+У Swift існує багато інших методів та функцій для перевірки наявності каталогу, таких як `fileExists(atPath: isDirectory:)`, `isReadableFile(atPath: )`, `isDeletableFile(atPath: )` та інші. Детальніше про ці методи та їх використання можна дізнатися в [офіційній документації Swift](https://developer.apple.com/documentation/foundation/filemanager). Також варто пам’ятати про використання обробки помилок при роботі з файлами та каталогами, щоб уникнути непередбачених ситуацій.
+
+## Дивись також
+
+- [Перевірка існування файла в Swift](https://github.com/apple/swift-evolution/blob/master/proposals/0116-filename-conventions.md)
+- [Робота з файлами та каталогами в Swift](https://medium.com/@surjeetsngh159/working-with-files-and-directories-in-swift-9227bae80335)

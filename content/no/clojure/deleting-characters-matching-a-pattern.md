@@ -1,61 +1,41 @@
 ---
-title:    "Clojure: Sletting av tegn som matcher et mønster"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/deleting-characters-matching-a-pattern.md"
+title:                "Clojure: Slette tegn som samsvarer med et mønster"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å slette tegn som matcher et mønster er en vanlig oppgave i programmering. Det kan hjelpe deg med å forenkle og rydde opp i dataene dine, og gjøre dem mer leselige og effektive å arbeide med. I Clojure er det flere måter å håndtere dette på, avhengig av dine spesifikke behov og preferanser.
+Noen ganger kan vi finne oss selv i situasjoner der vi trenger å slette tegn som matcher et bestemt mønster i en streng. Dette kan være nyttig for å rydde opp i data, formatere tekst eller filtrere ut uønskede tegn. Å forstå hvordan man kan utføre denne handlingen i Clojure kan være nyttig for å effektivisere og optimalisere kode.
 
-## Hvordan
+## Hvordan Du Gjør Det
 
-En av de mest brukte funksjonene for å slette tegn som matcher et mønster er `re-seq`. Denne funksjonen tar et regulært uttrykk og en streng som argumenter, og returnerer en liste med delstrenger som matcher mønsteret.
+I Clojure kan vi bruke funksjonen `clojure.string/replace` for å erstatte deler av en streng basert på et gitt mønster. For å slette tegn som matcher et mønster, kan vi bruke et tomt streng som erstatning. Her er et eksempel på hvordan dette vil se ut:
 
-```Clojure 
-(re-seq #"[aeiou]" "Hei på deg!")
-;;=> ("e" "i" "å" "e")
-
-(re-seq #"\d+" "I dag er det 17. mai.")
-;;=> ("17")
-
-(re-seq #"[a-z]+" "Han er anonym123.")
-;;=> ("anonym")
-```
-
-Dette er nyttig hvis du bare ønsker å slette spesifikke typer tegn, som vokaler, tall eller bokstaver. Men hva om du vil slette mer komplekse mønstre? En annen tilnærming er å bruke `clojure.string/replace-first` og `clojure.string/replace`. Disse funksjonene tar henholdsvis et mønster og en erstatning, og en streng som argumenter, og returnerer en ny streng med det første, eller alle, forekomster av mønsteret erstattet med erstatningen.
-
-```Clojure 
+```Clojure
 (require '[clojure.string :as str])
-(str/replace-first "Hvem er kongen av feltet?" #"feltet" "tronen")
-;;=> "Hvem er kongen av tronen?"
-
-(str/replace "Peter Parker" #"P[a-z]+" "")
-;;=> " "
-
-(str/replace "0000-1111-2222-3333" #"\d" "X" 4)
-;;=> "XXXX-1111-2222-3333"
+(str/replace "Hello world!" #"[aeiou]" "")
 ```
+Dette vil gi oss outputen "Hll wrld!", siden alle vokaler i strengen har blitt slettet.
+
+Vi kan også bruke et regex-uttrykk for å spesifisere hvilke tegn vi ønsker å slette. I dette eksempelet vil vi slette alle tall fra en streng:
+
+```Clojure
+(str/replace "I have 5 apples" #"\d" "")
+```
+Outputen vil da bli "I have apples".
 
 ## Dypdykk
 
-Hvis du trenger mer avansert funksjonalitet, kan du også bruke `clojure.string/replace-first` og `clojure.string/replace` sammen med `clojure.string/replace-matcher`. Dette vil tillate deg å tilpasse den nye strengen basert på et `re-matcher` objekt som returneres av `replace-matcher`, noe som gir deg enda mer kontroll over prosessen.
+I tillegg til å bruke `clojure.string/replace`, kan vi også bruke funksjonen `clojure.string/replace-first` for å slette kun det første tegnet som matcher mønsteret. Dette kan være nyttig hvis vi ønsker å fjerne kun en del av strengen.
 
-```Clojure 
-(require '[clojure.string :as str])
-(defn transform-matcher [matcher]
-  (let [current (apply str (str/replace-matcher matcher))
-        next (str/replace current #"mølle" "foss")]
-    (clojure.string/replace-first next #"verden" "jorden")))
+Vi kan også kombinere flere mønstre ved å bruke `clojure.string/replace-pattern`. Dette vil tillate oss å slette ulike typer tegn fra en streng basert på flere forskjellige mønstre.
 
-(str/replace "Jeg elsker å se på møllen i verden." #"\w+" transform-matcher)
-;;=> "Jeg elsker å se på fossen i jorden."
-```
+## Se Også
 
-## Se også
-
-- Offisiell dokumentasjon for `re-seq`: https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/re-seq
-- Offisiell dokumentasjon for `clojure.string/replace-first` og `clojure.string/replace`: https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/replace-first
-- Offisiell dokumentasjon for `clojure.string/replace-matcher`: https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/replace-matcher
+- [Clojure's string manipulation functions](https://clojuredocs.org/clojure.string)
+- [Regular expressions in Clojure](https://clojuredocs.org/clojure.core/re-find)
+- [Tutorial on replacing characters in strings in Clojure](https://www.guru99.com/clojure-string-manipulations.html)

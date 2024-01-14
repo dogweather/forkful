@@ -1,43 +1,54 @@
 ---
-title:    "Bash: Großschreibung einer Zeichenkette"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/capitalizing-a-string.md"
+title:                "Bash: Ein String großschreiben"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Wenn Sie sich jemals gefragt haben, wie Sie Großbuchstaben in einem Bash-Skript verwenden können, dann sind Sie hier richtig! Hier werden wir besprechen, warum es wichtig sein könnte, eine Zeichenfolge zu capitalisieren und wie man es richtig macht.
+Das Kapitalisieren von Strings ist ein wichtiger Teil der Programmierung, da es uns ermöglicht, Texte in Großbuchstaben darzustellen. Dies kann in verschiedenen Szenarien nützlich sein, wie z.B. bei der Validierung von Benutzereingaben oder der Erstellung von Benennungen in einer Anwendung.
 
-## Wie geht das?
-Das Capitalizing von Strings in Bash ist eine einfache Aufgabe, die mit dem `tr` Befehl durchgeführt werden kann. Der `tr` Befehl steht für "Translate" und kann verwendet werden, um Zeichen in einer Zeichenfolge zu ändern. Hier folgt ein Beispiel, wie man eine Zeichenfolge in Großbuchstaben übersetzt:
+## Wie geht man vor
+Um einen String in Bash zu kapitalisieren, gibt es mehrere Ansätze. Wir werden hier die folgenden beiden Methoden betrachten:
+1. Verwendung der internen Shell Variablen `^^`
+2. Verwendung der `tr` Funktion
+
+### Methode 1 - Verwendung von `^^`
+Diese Methode ist relativ neu und wurde in Bash 4.0 eingeführt. Sie verwendet die interne Shell-Variable `^^`, um einen String in Großbuchstaben umzuwandeln. Hier ist ein Beispielcode, der eine interaktive Eingabe vom Benutzer entgegennimmt und sie dann in Großbuchstaben ausgibt:
 
 ```Bash
-# Erstelle eine Variable mit einer Zeichenfolge
-string="hallo welt"
- 
-# Verwende den `tr` Befehl, um die Zeichenfolge in Großbuchstaben zu übersetzen
-string_caps=$(echo $string |tr '[:lower:]' '[:upper:]')
-
-# Gib das Ergebnis aus
-echo $string_caps # Output: HALLO WELT
+echo "Bitte gib deinen Namen ein:"
+read name
+echo "Hallo ${name^^}!"
 ```
 
-Hier haben wir zunächst eine Variable mit der Zeichenfolge "hallo welt" erstellt. Dann wurde der `tr` Befehl verwendet, um alle Kleinbuchstaben in Großbuchstaben zu übersetzen. Schließlich wurde das Ergebnis mit dem `echo` Befehl ausgegeben.
+Die Ausgabe für die Eingabe von "Peter" wäre:
 
-## Deep Dive
-Der `tr` Befehl verwendet eine spezielle Syntax, um Zeichen in einer Zeichenfolge zu übersetzen. Hier ist ein Überblick über diese Syntax:
+```Bash
+Hallo PETER!
+```
 
-1. Der `tr` Befehl wird immer mit zwei Zeichensätzen verwendet. Der erste Satz ist der Satz, der übersetzt werden soll, und der zweite Satz ist der Satz, in den übersetzt werden soll.
-2. Der Befehl wird in der Form `tr '[zeichensatz1]' '[zeichensatz2]'` verwendet.
-3. Die einzelnen Zeichen in jedem Satz werden mit Doppelpunkten getrennt.
-4. Wenn ein Bindestrich (-) verwendet wird, bedeutet dies, dass alle Zeichen zwischen den angegebenen Zeichen übersetzt werden sollen.
+Wie man sieht, wird der String `^^` für die Kapitalisierung verwendet.
 
-Eine vollständige Liste der verfügbaren Zeichensätze und deren Verwendung finden Sie in der [manpage](https://man7.org/linux/man-pages/man1/tr.1.html) zur `tr` Befehl.
+### Methode 2 - Verwendung von `tr`
+Die `tr`-Funktion ist ein älterer Ansatz zur String-Manipulation und wird in vielen Unix-basierten Systemen verwendet. Sie kann verwendet werden, um einzelne Zeichen oder Zeichenfolgen in einem String zu ersetzen. Hier ist ein Beispielcode, der dieselbe Funktionalität wie die vorherige Methode erreicht:
+
+```Bash
+echo "Bitte gib deinen Namen ein:"
+read name
+echo "Hallo $(echo $name | tr '[:lower:]' '[:upper:]')!"
+```
+
+Die Ausgabe würde wiederum "Hallo PETER!" sein.
+
+### Bemerkungen zur Performance
+Bei der Verwendung der `tr`-Funktion kann es zu einer geringeren Performance im Vergleich zur Variante mit `^^` kommen, da sie ein externes Programm aufruft. Auch die Lesbarkeit des Codes kann durch die Verwendung von `tr` beeinträchtigt werden.
+
+## Tiefergehende Informationen
+Beim Kapitalisieren von Strings gibt es auch bestimmte Ausnahmen zu beachten, wie z.B. die Behandlung von Sonderzeichen oder Umlauten. Diese müssen eventuell gesondert behandelt werden, um unerwünschte Ergebnisse zu vermeiden. Eine erweiterte Diskussion darüber würde jedoch den Rahmen dieses Artikels sprengen.
 
 ## Siehe auch
-- [The `tr` Befehl in der Bash-Referenz](https://www.gnu.org/software/bash/manual/html_node/The-tr-Builtin.html)
-- [Eine Einführung in die Bash-Programmierung](https://www.tutorialspoint.com/unix/unix-shell.htm)
-- [Eine Übersicht über Linux-Befehle](https://www.linux.com/training-tutorials/linux-commands-beginners/)
-
-Danke fürs Lesen und viel Spaß beim Capitalizing Ihrer Strings mit Bash!
+- [Bash Referenz](https://www.gnu.org/software/bash/manual/bashref.html)
+- [Detaillierte Erklärung zu `tr`](https://linux.die.net/man/1/tr)

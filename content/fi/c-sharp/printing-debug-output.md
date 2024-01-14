@@ -1,59 +1,44 @@
 ---
-title:    "C#: Virheenkorjaustulosteen tulostaminen"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/printing-debug-output.md"
+title:                "C#: Virheenjäljitystulosteen tulostaminen"
+programming_language: "C#"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+### Miksi?
 
-Debug-tulosteen tulostaminen on tärkeä osa C# ohjelmoinnissa, koska se auttaa havaitsemaan ja korjaamaan virheitä koodissa.
+Printtaaminen debug-tulostetta on tärkeä osa ohjelmointia, koska se auttaa kehittäjiä löytämään ja korjaamaan virheitä ja ongelmia koodissa. Se on myös erinomainen tapa oppia ja ymmärtää koodin toimintaa.
 
-## Miten tehdä
+### Miten?
 
-```C#
-Console.WriteLine("Tämä on debug-tuloste");
-```
-
-Debug-tulosteen tulostaminen C#-koodissa on hyvin yksinkertaista. Käytämme Console-luokkaa ja sen WriteLine-metodia tulostamaan haluamamme viestin. Tätä voidaan käyttää esimerkiksi kohdennettujen muuttujien tai keskeisten arvojen tulostamiseen koodin suorituksen aikana. Tämä auttaa selvittämään, mikä koodin osa aiheuttaa ongelman tai missä vaiheessa virhe tapahtuu.
+Koodin debuggaaminen voi olla haastavaa ja aikaa vievää, mutta printtaaminen debug-tulostetta voi tehdä siitä helpompaa. Käytä ```Console.WriteLine()``` -komennolla tulostaaksesi muuttujien arvot ja viestit koodissa.
 
 ```C#
-int x = 10;
-int y = 5;
-Console.WriteLine("x:n arvo on: " + x);
-Console.WriteLine("y:n arvo on: " + y);
+int x = 5;
+string message = "Hei maailma!";
+Console.WriteLine("x:n arvo on: " + x); // Tulostaa "x:n arvo on: 5"
+Console.WriteLine(message); // Tulostaa "Hei maailma!"
 ```
 
-Tuloste:
-
-```
-x:n arvo on: 10
-y:n arvo on: 5
-```
-
-Kuten näette, voimme myös yhdistää merkkijonoja ja muuttujia tulosteessa käyttämällä "+" operaattoria.
-
-## Syvempi sukellus
-
-Debug-tulosteen tulostaminen on hyödyllistä myös silloin, kun koodia testataan ja halutaan varmistaa sen toimivuus. Voimme tulostaa tärkeitä tietoja, kuten muuttujan arvoja tai koodipolun suoritusjärjestystä, ja verrata niitä odotettuun tulokseen.
-
-Voimme myös käyttää Debug-luokkaa, joka tarjoaa laajemman valikoiman toimintoja ja ominaisuuksia debug-tulostamiseen. Debug-luokka on osa System.Diagnostics nimiavaruutta ja se toimii samalla tavalla kuin Console-luokka.
+Et voi vain tulostaa muuttujien arvoja, vaan voit myös käyttää ehtolauseita ja silmukoita tulostaaksesi tietoa. Tämä auttaa sinua ymmärtämään tarkemmin koodin toimintaa ja löytämään mahdolliset ongelmat.
 
 ```C#
-Debug.WriteLine("Tämä on debug-tuloste");
+for (int i = 0; i < 10; i++)
+{
+    Console.WriteLine("i:n arvo on: " + i);
+}
+// Tulostaa luvut 0-9
 ```
 
-Voimme myös määrittää ehtoja tulostamiselle Debug.Assert-metodin avulla:
+### Syvällinen sukellus
 
-```C#
-Debug.Assert(x > y, "x ei voi olla pienempi kuin y");
-```
+On myös hyödyllistä tietää, että voit käyttää muita vastaavia komentoja, kuten ```Debug.WriteLine()``` ja ```Trace.WriteLine()```, riippuen tarpeistasi. Myös C# 6.0 ja uudemmat versiot tarjoavat uusia tapoja printata debug-tulosteita, kuten käyttämällä {n} -muotoiluja ja C# 7.0 tarjoaa mahdollisuuden käyttää inline-muotoiluja.
 
-Tämä tulostaa viestin vain silloin, kun ehto ei täyty.
+Ymmärtääksesi tarkemmin, kuinka printata debug-tulosteita ja miten voit käyttää niitä hyödyksesi, lue Microsoftin opas aiheesta. Se tarjoaa kattavaa tietoa ja esimerkkejä, joita voit käyttää oman koodisi debuggaamiseen.
 
-## Katso myös
+### Katso myös
 
-- [Microsoft C# Debug.WriteLine dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug.writeline?view=net-5.0)
-- [Microsoft C# Debug.Assert dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug.assert?view=net-5.0)
-- [C# - Debugging for beginners](https://www.c-sharpcorner.com/article/c-sharp-debugging-for-beginners/)
+- Microsoft - Debuggaus dokumentaatio: https://docs.microsoft.com/fi-fi/dotnet/standard/using-threads/debugging
+- C# - Debuggaus opas: https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/debugging/

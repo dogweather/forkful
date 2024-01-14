@@ -1,68 +1,57 @@
 ---
-title:    "Gleam recipe: Using regular expressions"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/gleam/using-regular-expressions.md"
+title:                "Gleam recipe: Using regular expressions"
+programming_language: "Gleam"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Regular expressions are a powerful tool that can greatly increase the efficiency of your programming tasks. They allow for precise pattern matching and manipulation of text, making tasks such as data parsing and text replacement much easier.
+Regular expressions are a powerful tool for string pattern matching and manipulation. They allow for efficient and accurate searching and replacing of text in a given string. As a Gleam programmer, understanding and utilizing regular expressions can greatly enhance your coding abilities and make your programs more versatile.
 
 ## How To
 
-To use regular expressions in Gleam, you first need to import the `re` module. This can be done with the following code:
+To use regular expressions in Gleam, we first need to import the `regex` package. This package provides the necessary functions and types for working with regular expressions. We can do this by adding the following line to our Gleam code:
 
 ```Gleam
-import re
+import regex
 ```
 
-Once imported, you can use the `match` function to search for a specific pattern within a string. For example, if you wanted to find all words that contain the letter "a" in a string, you could use the following code:
+Next, we need to construct a regular expression using the `regex.compile` function. This function takes a string as its argument, which is the pattern we want to match. For example, if we want to find all words that start with the letter "c" in a given string, our pattern would be `^c\w*`. This will match any character that starts with the letter "c" and is followed by any number of alphanumeric characters.
+
+Now, we can use the regular expression we created with the `regex.matches` function. This function takes two arguments: the regular expression we want to match and the string we want to search. It returns a list of matches, which we can then process in our code. Here is an example of how we could use regular expressions to find all words starting with "c" and print them out:
 
 ```Gleam
-let sentence = "She sells seashells by the seashore"
-let pattern = re.compile("a")
+import regex
 
-match(pattern, sentence)
+let pattern = regex.compile("^c\\w*")
+let string = "Coding is cool and creative!"
 
-// Output: ["sells", "seashells", "seashore"]
+let matches = regex.matches(pattern, string) // ["Coding" "cool" "creative"]
+for match in matches {
+  io.println(match)
+}
 ```
 
-Additionally, you can use the `sub` function to replace certain patterns with other strings. For example, if you wanted to replace all occurrences of "sea" with "ocean" in the above string, you could use the following code:
+Running this code would output:
 
-```Gleam
-let sentence = "She sells seashells by the seashore"
-let pattern = re.compile("sea")
-
-sub(pattern, "ocean", sentence)
-
-// Output: "She sells oceanoceans by the oceanoceanore"
+```
+Coding
+cool
+creative
 ```
 
 ## Deep Dive
 
-Regular expressions are not limited to simple pattern matching and replacement. They can also handle more complex operations such as grouping, capturing, and lookaround. These advanced features allow for even more precise manipulation of text.
+Regular expressions offer even more functionality and power when combined with other built-in functions in Gleam. For example, we can use the `regex.replace` function to substitute certain patterns with new text. We can also use the `regex.split` function to split a string into a list of substrings based on a specified pattern.
 
-For example, if you wanted to match a date in the format of "dd/mm/yyyy", you could use the following code:
+Regular expressions also have various special characters and modifiers that allow for more complex and specific pattern matching. Some common ones include `+` for one or more occurrences, `?` for zero or one occurrence, and `*` for zero or more occurrences.
 
-```Gleam
-let date = "Today's date is 16/02/2021"
-let pattern = re.compile("(\d{2}/\d{2}/\d{4})")
-
-match(pattern, date)
-
-// Output: ["16/02/2021"]
-```
-
-The parentheses in the pattern create a capturing group, allowing you to access the specific date that was matched.
+For more in-depth information on regular expressions and their usage in Gleam, refer to the official Gleam documentation or external resources listed in the "See Also" section below.
 
 ## See Also
-
-To learn more about regular expressions in Gleam, check out the official documentation and additional resources below:
-
-- [Gleam Documentation: re Module](https://gleam.run/articles/learn/regular-expressions.html#re-module)
-- [Regular Expressions 101: Interactive Regex Tutorial](https://regex101.com/)
-- [Python Documentation: Regular Expression Syntax](https://docs.python.org/3/library/re.html#regular-expression-syntax)
-
-Happy coding with regular expressions in Gleam! 🚀
+- [Gleam documentation on regular expressions](https://gleam.run/book/tour/regular_expressions.html)
+- [Regexone - learn regular expressions interactively](https://regexone.com/)
+- [Regex cheat sheet](https://www.rexegg.com/regex-quickstart.html)

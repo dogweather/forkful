@@ -1,38 +1,35 @@
 ---
-title:    "Java: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/converting-a-string-to-lower-case.md"
+title:                "Java: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisi muuntaa merkkijono pienaikaiseksi? Tämä on yleinen tarve monissa Java-ohjelmointiprojekteissa, joissa käyttäjien syötteet on tarkistettava ja vertailtava. Pienaikaiset merkkijonot ovat myös helpompia käsitellä ja vertailla, mikä tekee koodista selkeämpää ja tehokkaampaa.
+Miksi haluaisit muuttaa merkkijonon pieniksi kirjaimiksi? Yksi syy voisi olla, että haluat vertailla merkkijonoja ilman, että isot ja pienet kirjaimet vaikuttavat vertailuun. Toinen syy voisi olla, että käyttäjät syöttävät tietoja eri tavoin ja haluat muuttaa ne yhtenäiseen muotoon esimerkiksi tietokantaa tai hakutoimintoa varten.
 
-## Miten
+## Näin teet sen
 
-Pienaikaisen merkkijonon luominen Java-ohjelmassa on helppoa käyttämällä String-luokan toLowercase() -metodia. Alla olevassa koodiesimerkissä näytetään, miten muuttaa syötetty merkkijono pienaikaiseksi ja tulostaa se konsoliin:
+Merkkijonon muuttaminen pieniksi kirjaimiksi on helppoa Java-ohjelmoinnissa. Käytä yksinkertaisesti `.toLowerCase()`-metodia merkkijonon perässä. Tässä on esimerkki koodista:
 
 ```Java
-// Syötetty merkkijono
-String s = "TÄMÄ ON TÄRKEÄÄ";
-// Kutsutaan toLowercase() -metodia
-String lowerCaseString = s.toLowerCase();
-// Tulostetaan pienaikainen merkkijono
-System.out.println(lowerCaseString);
+String s = "TÄMÄ ON MERKKIJONO";
+String lowerCase = s.toLowerCase();
+System.out.println(lowerCase);
 ```
 
-Koodin tulostama tulos on "tämä on tärkeää". Huomaa, että koodi on helposti muokattavissa ja voi käsitellä erilaisia merkkijonoja.
+Tämä tulostaisi "tämä on merkkijono" konsolille. Huomaa, että alkuperäisen merkkijonon arvo ei muutu, vaan `.toLowerCase()`-metodi palauttaa uuden merkkijonon.
 
-## Syväsukeltaminen
+## Syvällisemmin
 
-Pienaikaisen merkkijonon taustalla on Unicode-standardi, joka määrittelee jokaiselle merkille uniikin numerokoodin. Suuri ja pieni kirjain eroavat toisistaan numerokoodinsa perusteella. ToLowercase() -metodi lukee merkkijonon jokaisen merkin numerokoodin ja vähentää siitä tarvittaessa tietyn määrän. Tällä tavalla se pystyy muuttamaan suuret kirjaimet pieniksi kirjaimiksi.
+Merkkijonon muuttaminen pieniksi kirjaimiksi perustuu Unicode-standardiin. Jokaisella kirjaimella on omaa vastaava pieni kirjain ja `.toLowerCase()`-metodi käyttää tätä tietoa muuttaessaan merkkijonon kirjaimia.
 
-On myös hyvä huomioida, että toLowercase() -metodi käyttää laitteiston paikallista asetusta määrittääkseen, mitkä merkit ovat suuria ja pieniä kirjaimia. Tämä voi johtaa eroihin eri kielten välillä.
+On myös huomioitava, että kun käytetään esimerkiksi suomen kieltä, niin tiettyjen kirjainten muuttaminen pieniksi kirjaimiksi voi antaa erilaisen lopputuloksen kuin signaalia käytettäessä. Tämä johtuu siitä, että suomen kielen aakkoset eivät ole samassa järjestyksessä kuin englannin kielen vastaavat kirjaimet.
 
 ## Katso myös
 
 - [Java String-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Unicode-standardi](https://unicode.org/charts/)
-- [Java merkkijonotutoriaali (englanniksi)](https://www.javatpoint.com/java-string-to-lowercase)
+- [Unicode-taulukko](http://unicode.org/charts/)

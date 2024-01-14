@@ -1,69 +1,39 @@
 ---
-title:    "Arduino: Extraction de sous-chaînes"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/extracting-substrings.md"
+title:                "Arduino: Extraction de sous-chaînes"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 # Pourquoi
 
-La manipulation des chaînes de caractères est un élément essentiel de la programmation arduino. L'extraction de sous-chaînes est particulièrement utile lorsqu'on a besoin de traiter des données spécifiques à partir d'une chaîne plus grande. Cela peut être particulièrement utile pour extraire des informations des capteurs ou des données envoyées par un utilisateur.
+Si vous travaillez sur un projet Arduino qui implique des chaînes de caractères, vous devrez peut-être extraire une partie spécifique de cette chaîne. Pour ce faire, vous devrez utiliser la fonction d'extraction de sous-chaîne dans votre code. Dans cet article, nous allons vous expliquer comment le faire en utilisant l'IDE Arduino et vous donner une vue d'ensemble de son fonctionnement.
 
-## Comment faire
+# Comment faire
 
-L'extraction de sous-chaînes peut être réalisée en utilisant la fonction `substring()` en arduino. Voici un exemple de code qui extrait une sous-chaîne à partir d'une chaîne définie :
+Pour extraire une sous-chaîne dans Arduino, vous pouvez utiliser la fonction `substring()`. Cette fonction prend deux paramètres: l'index de départ et la longueur de la sous-chaîne à extraire. Par exemple, si nous avons la chaîne "Bonjour tout le monde" et que nous voulons extraire la sous-chaîne "tout le monde", nous utiliserions la fonction de cette manière:
 
-```Arduino
-String phrase = "Bonjour tout le monde";
-String sousPhrase = phrase.substring(8, 15);
-
-Serial.println(sousPhrase);
+```arduino
+String str = "Bonjour tout le monde";
+String sub = str.substring(8, 12);
 ```
 
-Dans cet exemple, nous avons créé une chaîne de caractères appelée "phrase" et lui avons donné la valeur "Bonjour tout le monde". Nous avons ensuite utilisé la fonction `substring()` avec les paramètres 8 et 15 pour extraire une sous-chaîne à partir de la position 8 (incluse) jusqu'à la position 15 (non incluse). La sous-chaîne extraite sera donc "tout le".
+La variable `str` contient la chaîne complète, tandis que la variable `sub` contient la sous-chaîne extraite qui commence à l'index 8 et a une longueur de 12 caractères.
 
-Nous pouvons également utiliser cette fonction pour extraire une sous-chaîne à partir d'une position spécifique jusqu'à la fin de la chaîne en n'indiquant qu'un seul paramètre :
+Dans l'exemple ci-dessus, nous avons utilisé des valeurs statiques pour l'index et la longueur, mais vous pouvez également les remplacer par des variables. Cela vous permet de changer facilement la sous-chaîne extraite en fonction des besoins de votre projet.
 
-```Arduino
-String phrase = "Bonjour tout le monde";
-String sousPhrase = phrase.substring(8);
+# Plongée en profondeur
 
-Serial.println(sousPhrase);
-```
+La fonction `substring()` peut également être utilisée pour extraire des sous-chaînes à partir d'autres types de données tels que des tableaux de caractères ou des tableaux de chaînes. Vous pouvez également utiliser des expressions régulières pour spécifier la sous-chaîne à extraire.
 
-Ici, nous obtenons comme résultat "tout le monde" car nous avons indiqué la position 8 jusqu'à la fin de la chaîne.
-
-## Plongée en profondeur
-
-La fonction `substring()` peut également prendre en compte des valeurs négatives en spécifiant une position relative à la fin de la chaîne. Par exemple, si nous voulons extraire les trois derniers caractères d'une chaîne, nous pouvons utiliser les valeurs -3 et -1 comme paramètres :
-
-```Arduino
-String phrase = "Bonjour tout le monde";
-String sousPhrase = phrase.substring(-3, -1);
-
-Serial.println(sousPhrase);
-```
-
-Cela nous donnera la sous-chaîne "de" car nous avons indiqué la position -3 comme inclus et la position -1 comme non inclus.
-
-Il est également possible d'utiliser la fonction `substring()` pour extraire une partie d'une sous-chaîne. Par exemple, si nous avons une sous-chaîne "tout le" et que nous voulons extraire seulement les deux premiers caractères, nous pouvons le faire en utilisant les valeurs 0 et 2 comme paramètres :
-
-```Arduino
-String sousPhrase = "tout le";
-String nouvelleSousPhrase = sousPhrase.substring(0, 2);
-
-Serial.println(nouvelleSousPhrase);
-```
-
-Cela nous donnera comme résultat "to" car nous avons indiqué la position 0 comme incluse et la position 2 comme non incluse.
+Il est important de noter que la fonction `substring()` ne modifie pas la chaîne d'origine et ne renvoie qu'une copie de la sous-chaîne extraite. Si vous souhaitez modifier la chaîne d'origine, vous devrez utiliser la fonction `replace()`.
 
 # Voir aussi
 
-Vous pouvez consulter les liens suivants pour en savoir plus sur l'extraction de sous-chaînes en arduino :
+- [Documentation officielle sur la fonction substring() dans l'IDE Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
+- [Tutoriel vidéo sur l'extraction de sous-chaînes dans Arduino](https://www.youtube.com/watch?v=C1p82_8-GqE)
+- [Exemples de projets Arduino utilisant la fonction substring()](https://create.arduino.cc/projecthub/projects/tags/substring)
 
-- [Documentation officielle de la fonction `substring()` en arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Tutoriel sur l'extraction de sous-chaînes en arduino](https://www.robocircuits.com/arduino-strings-explained-and-examples/)
-- [Forum de la communauté arduino pour poser vos questions et en savoir plus](https://forum.arduino.cc/)
-
-Maintenant que vous savez comment extraire des sous-chaînes en arduino, vous pourrez facilement manipuler et traiter des données spécifiques pour vos projets. Bonne programmation !
+Merci d'avoir lu cet article sur l'extraction de sous-chaînes dans Arduino. Nous espérons que cela vous a été utile dans vos projets futurs ! Bon codage !

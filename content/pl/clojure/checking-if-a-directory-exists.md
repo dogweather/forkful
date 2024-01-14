@@ -1,48 +1,36 @@
 ---
-title:    "Clojure: Sprawdzanie istnienia katalogu"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/checking-if-a-directory-exists.md"
+title:                "Clojure: Sprawdzanie istnienia katalogu"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Sprawdzanie czy istnieje katalog jest ważnym elementem tworzenia aplikacji w Clojure. Pozwala to na uniknięcie błędów w przypadku braku katalogu, który jest niezbędny do działania programu. Dzięki takiemu sprawdzeniu, można zapewnić niezawodność i bezpieczeństwo naszej aplikacji.
+Często w programowaniu potrzebujemy sprawdzić, czy dany katalog istnieje przed wykonaniem pewnych operacji na plikach wewnątrz niego. Jest to ważne, ponieważ jeśli katalog nie istnieje, nasz program może generować błędy lub nie działać prawidłowo. W tym wpisie dowiesz się, jak w łatwy sposób sprawdzić istnienie katalogu w Clojure.
 
 ## Jak to zrobić
 
-### Sprawdzenie istnienia katalogu
-
-W celu sprawdzenia czy dany katalog istnieje, możemy skorzystać z funkcji `fs/exist?` z biblioteki `clojure.java.io`.
+Sprawdzenie istnienia katalogu w Clojure jest bardzo proste. Wystarczy użyć funkcji `clojure.java.io/file` do utworzenia obiektu katalogu, a następnie użyć funkcji `exists?` do sprawdzenia czy istnieje. Poniżej znajduje się przykładowy kod:
 
 ```Clojure
-(require '[clojure.java.io :as fs])
-
-(fs/exist? "ścieżka/do/katalogu")
+(require '[clojure.java.io :as io])
+(def directory (io/file "/ścieżka/do/katalogu"))
+(exists? directory)
 ```
 
-Jeśli katalog istnieje, funkcja zwróci wartość `true`, w przeciwnym przypadku wartość `false`.
-
-### Obsługa błędów
-
-Aby uniknąć błędów w przypadku nieistniejącego katalogu, możemy skorzystać z funkcji `fs/maybe-file` lub `fs/maybe-dir`, które zwracają `nil` w przypadku braku pliku lub katalogu.
-
-```Clojure
-(require '[clojure.java.io :as fs])
-
-(fs/maybe-dir "ścieżka/do/katalogu")
-```
-
-W powyższym przykładzie jeśli katalog istnieje, zostanie zwrócony, w przeciwnym przypadku otrzymamy wartość `nil`.
+W powyższym przykładzie używamy funkcji `exists?` do sprawdzenia czy katalog istnieje. Funkcja ta zwraca `true` jeśli istnieje, lub `false` jeśli nie istnieje. Możemy również użyć tej funkcji do sprawdzania istnienia plików.
 
 ## Deep Dive
 
-Funkcje `fs/exist?`, `fs/maybe-file` i `fs/maybe-dir` wykorzystują podstawową operację systemową, która sprawdza czy dany plik lub katalog istnieje w podanej ścieżce.
+Podczas wywoływania funkcji `exists?`, Clojure wywołuje pod spodem funkcję `java.io.File#exists` z języka Java. Zwraca ona również `true` lub `false` w zależności od istnienia pliku lub katalogu. Jest to wygodne, ponieważ nie musimy importować dodatkowych bibliotek do operacji na plikach.
 
-Dzięki temu, możemy skorzystać z nich w różnych przypadkach, na przykład w pętlach czy też rekurencyjnych funkcjach, aby sprawdzać istnienie katalogów lub plików na bieżąco i odpowiednio dostosować działanie programu.
+Jeśli chcesz dowiedzieć się więcej o funkcjach dostępnych w Clojure do pracy z plikami i katalogami, polecam przeczytać dokumentację Clojure na temat funkcji `clojure.java.io/file` i `exists?`.
 
-## Zobacz również
+## Zobacz także
 
-- Dokumentacja biblioteki `clojure.java.io`: [https://clojure.github.io/clojure/clojure.java.io-api.html](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- Poradnik tworzenia aplikacji w Clojure: [https://clojure.org/guides/getting_started](https://clojure.org/guides/getting_started)
+- [Dokumentacja Clojure o pracy z plikami i katalogami](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- [Poradnik na temat operacji na plikach w Clojure](https://medium.com/@gonewest818/working-with-files-in-clojure-60ee19a594e4)
+- [Funkcja exists? na stronie ClojureDocs](https://clojuredocs.org/clojure.java.io/exists_q)

@@ -1,52 +1,50 @@
 ---
-title:    "Arduino: 文字列の連結"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/concatenating-strings.md"
+title:                "Arduino: 文字列の連結"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ、文字列をつなげるのか？
+Arduinoプログラミングブログ
 
-C++言語で使用される、文字列をつなげるとは、2つ以上の文字列を合わせて1つの新しい文字列を作ることです。文字列をつなげることで、複数のデータを統合してより複雑なプログラムを作ることができます。また、Arduinoでは、文字列をつなげることでシリアルモニターにデータを表示させたり、データの送受信にも使用することができます。
+## なぜ
 
-# つなげ方の手順
+文字列の連結を行う理由について1〜2文で説明します。
 
-Arduinoでは、文字列をつなげるために連結演算子「+」を使用します。下記のような例で、2つの文字列をつなげてシリアルモニターに表示させてみましょう。
+コードを書く上で文字列の連結が必要な場合があります。例えば、センサーから取得した数値を文字列として表示する場合や、複数の文字列を組み合わせてメッセージを作成する場合などです。文字列の連結は、より柔軟なプログラムを作成するために欠かせない機能です。
 
-```Arduino
-String str1 = "Hello";
-String str2 = "World";
+## 方法
 
-String result = str1 + str2; 
-// Hello Worldという文字列が結果として表示される
-Serial.println(result);
-```
+まず、連結したい文字列を ```Arduino``` プログラム内で宣言します。例えば、```String str1 = "Hello"```、```String str2 = "world!"```のようにです。そして、連結したい文字列を一つの変数に代入することで、文字列の連結が行えます。例えば、```String str3 = str1 + str2```のようにします。
 
-このように、連結演算子を使用することで複数の文字列を簡単につなげることができます。また、文字列の前後に数字や変数を組み合わせることも可能です。下記の例では、「Hello1」や「Hello2」のように、変数と文字列を結合させて表示しています。
+また、文字列を結合する際には、文字列の間に```+```を用いて連結することができます。例えば、```String str1 = "Hello " + "world!"```のようにすることで、二つの文字列を一つの変数に代入することなく連結できます。
 
-```Arduino
-String str = "Hello";
-int num = 1;
+連結した文字列は```Serial.println()```を用いて出力することができます。例えば、 ```Serial.println(str3)```のようにすることで、```Hello world!```というメッセージがシリアルモニターに表示されます。
 
-String result1 = str + num; 
-// Hello1という文字列が結果として表示される
-Serial.println(result1);
+## 深堀り
 
-num++; // numの値を1増やして2にする
-String result2 = str + num; 
-// Hello2という文字列が結果として表示される
-Serial.println(result2);
-```
+文字列の連結を行う際には、メモリ管理に注意する必要があります。連結した文字列を一つの変数に代入すると、新しいメモリが割り当てられ、古い文字列は自動的に削除されます。しかし、頻繁に文字列の連結を行うとメモリの使用量が増え、プログラムのパフォーマンスに影響を与える可能性があります。そのため、必要以上に文字列の連結を行わないように注意しましょう。
 
-# 深く掘り下げる
+## 参考
 
-Arduinoでは、Stringクラスに用意された関数を使用することで、より高度な文字列の操作ができます。例えば、substring()関数を使用することで、ある範囲にある文字列を取り出したり、indexOf()関数を使用することで、特定の文字列が含まれる位置を取得したりすることができます。
+[Arduino Reference - Strings](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
 
-また、文字列の操作にはメモリの使用量にも注意する必要があります。文字列をつなげるたびに、新しいメモリ領域が必要となり、メモリの枯渇やプログラムの動作が遅くなる可能性があります。そのため、必要以上に文字列をつなげることは避けるようにしましょう。
+[GeeksforGeeks - Concatenation of two strings in Arduino](https://www.geeksforgeeks.org/concatenation-of-two-strings-in-arduino/)
 
-# 今後も参考にしてほしいリンク
+[Arduinoプログラミングの基本 - Arduinoの文字列の操作](http://www.pangaea.co.jp/arduino/basic19.html)
 
-- Stringクラスの詳細: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- 文字列のつなげ方について詳しく学ぶ: https://www.arduino.cc/en/Tutorial/StringConcatenation
-- Stringクラスの関数一覧: https://www.arduino.cc/reference/en/language/functions/communication/serial/println/
+# もっと詳しく
+
+Arduinoの文字列操作について詳しく知りたい方は、以下のリンクを参考にしてください。
+
+[Arduino Reference - StringsObjクラス](https://www.arduino.cc/reference/jp/language/variables/data-types/stringobject/)
+
+[Arduino - Strig クラス](https://www.arduino.cc/en/Reference/String)
+
+[スケッチファイルからリソースにアクセスする](http://www.pangaea.co.jp/arduino/reference/libraries/BINARYFILES/index.html)
+
+## 参考
+
+[Embedding Strings in Your Arduino Sketch](https://www.allaboutcircuits.com/technical-articles/embedding-strings-in-arduino-sketches/)

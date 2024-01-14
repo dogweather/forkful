@@ -1,47 +1,48 @@
 ---
-title:    "Haskell recipe: Using regular expressions"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/using-regular-expressions.md"
+title:                "Haskell recipe: Using regular expressions"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Regular expressions, commonly known as regex, are powerful tools used for pattern matching and text manipulation in programming languages. They allow for efficient and flexible processing of textual data, making them essential for tasks such as data validation, text parsing, and even text mining. Whether you are a beginner or an experienced programmer, understanding regular expressions can greatly improve your coding skills and make your programs more efficient and effective.
+Regular expressions are powerful tools used in programming to search, match, and manipulate strings of text. They allow us to quickly and efficiently perform tasks such as validating user input, extracting information from files, and formatting data. Using regular expressions can save time and effort when working with text data, making them a valuable skill for any programmer.
 
 ## How To
+Using regular expressions in Haskell is simple and straightforward. First, we need to import the `Text.Regex` library, which provides functions for working with regular expressions. Then, we can use the `=~` operator to apply a regular expression to a string and return a Boolean value if it matches.
 
-Using regular expressions in Haskell is made easy with the `regex-applicative` library. To install it, open your terminal and run the command `stack install regex-applicative`. Once installed, import the library in your Haskell file with `import Text.Regex.Applicative`.
-
-To create a regex pattern, use the `RE` data type and its various constructors. For example, to match a string that starts with "Hello" and ends with "world", the pattern would be `RE "Hello.*world"`. The `.*` in the pattern indicates that the string can contain any number of characters in between "Hello" and "world".
-
-To use this pattern for matching, we can use the `match` function from the `Text.Regex.Applicative.Text` module. This function takes in the pattern as the first argument and the string you want to match as the second argument. The output of this function is a `Maybe` type, which can either be `Just` containing the matched string or `Nothing` if the match is unsuccessful.
+Let's take a look at a simple example. Suppose we have a string `myString = "Hello, world!"` and we want to check if it contains the word "world". We can use the following code:
 
 ```Haskell
-import Text.Regex.Applicative
-import Text.Regex.Applicative.Text
+import Text.Regex
 
-main = do
-  let pattern = RE "Hello.*world"
-  let string = "Hello there, world!"
-  print $ match pattern string
+myString = "Hello, world!"
+
+print (myString =~ "world" :: Bool)
 ```
 
-The output of this code would be `Just "Hello there, world!"`, indicating a successful match.
+The output of this code would be `True`, since the regex found a match for "world" in the string. We can also use regular expressions to extract information from a string using the `=~` operator with capture groups. For example, if we have a string `address = "123 Main St, Anytown, USA"`, we can use the following code to extract the street number and name:
+
+```Haskell
+import Text.Regex
+
+address = "123 Main St, Anytown, USA"
+
+print (address =~ "([0-9]+) (.*)" :: (String, String))
+```
+
+The first element of the tuple returned by `=~` will be the entire match, while the second element will be the first capture group (in this case, the street number). We can also use capture groups to replace text in a string using the `subRegex` function.
 
 ## Deep Dive
+Haskell's `Text.Regex` library provides many useful functions for working with regular expressions. Some key functions to keep in mind are `matchRegex`, which returns a list of all matches for a given pattern, and `splitRegex`, which splits a string into a list based on a delimiter specified by a regular expression.
 
-Regular expressions have a complex syntax that may seem daunting for beginners. Some common patterns include character classes, repetition, and alternation.
+Additionally, we can use special characters in our regular expressions to specify patterns, such as `*` for zero or more repetitions, `+` for one or more repetitions, and `?` for zero or one repetitions. We can also use character sets, such as `[a-z]` to specify any lowercase letter, and `\d` to specify any digit.
 
-Character classes are used to match specific sets of characters. For example, `[0-9]` would match any digit from 0 to 9. This can also be written as `\d` using the escape character `\` to indicate a special character like digits. 
-Repetition is denoted by symbols such as `*` for zero or more occurrences, `+` for one or more, and `?` for zero or one. For example, the pattern `RE "ba?d"` would match both "bd" and "bad". 
-Alternation is used to match one of multiple patterns. This is denoted by the `|` symbol. For example, the pattern `RE "cat|dog"` would match either "cat" or "dog".
-
-There are many more advanced features and techniques for using regular expressions, such as capturing groups and lookarounds. It is important to practice and experiment with different patterns to fully grasp their capabilities.
+It's important to note that regular expressions can be powerful, but they can also be complex and difficult to read. It's always a good idea to test your regular expressions thoroughly and use comments to explain their purpose.
 
 ## See Also
-
-- [Official Haskell documentation on regular expressions](https://www.haskell.org/onlinereport/standard-prelude.html#t:Regex)
-- [Regex tutorial on TutorialsPoint](https://www.tutorialspoint.com/regex/)
-- [Video tutorial on regular expressions in Haskell](https://www.youtube.com/watch?v=z88DjFdgEwk)
+- Official Haskell Documentation for Regular Expressions: https://wiki.haskell.org/Regular_expressions
+- Regex Tutorial for Beginners: https://www.regular-expressions.info/tutorial.html
+- Regex Cheatsheet: https://www.rexegg.com/regex-quickstart.html

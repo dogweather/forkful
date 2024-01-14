@@ -1,46 +1,37 @@
 ---
-title:    "Elm: 디렉터리 존재 여부 확인하기"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elm/checking-if-a-directory-exists.md"
+title:                "Elm: 디렉토리가 존재하는지 확인하는 방법"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 디렉토리가 존재하는지 체크해야 하는가
+## 왜
 
- Elm은 안전한 타입 시스템과 함수형 프로그래밍의 장점을 결합하여, 신뢰할 수 있고 유지보수가 용이한 코드 작성을 도와줍니다. 따라서, Elm을 사용하는 개발자들은 디렉토리가 존재하는지 여부를 체크하는 것을 통해 코드의 안정성과 견고성을 높일 수 있습니다.
+Elm 프로그래밍을 배우는 동안, 당신은 아마도 '디렉토리가 존재하는지 확인하는 방법'이 이유가 궁금해 지셨을 것입니다. 쉽게 말해서, 디렉토리가 존재하는지 확인하는 것은 파일이나 데이터를 저장하는데 사용하는 디렉토리가 실제로 존재하는지 알아보기 위해서입니다.
 
-# 디렉토리가 존재하는지 체크하는 방법
+## 어떻게 할까요
 
-```elm
+먼저, `elm/file` 모듈을 가져옵니다. 다음으로, `File.exists` 함수를 사용하여 디렉토리의 존재 여부를 확인합니다. 코드는 다음과 같습니다:
+```
 import File
 
-checkDirectory : String -> Cmd msg
-checkDirectory path =
-    File.isDirectory path
-        |> Task.andThen
-            ( \isDirectory ->
-                if isDirectory then
-                    -- 디렉토리가 존재한다면 원하는 작업을 수행합니다.
-                    performSomeTask
-                        |> Task.toCmd
-                else
-                    -- 디렉토리가 존재하지 않는다면 에러를 띄우고 실패를 알려줍니다.
-                    Task.fail "해당 디렉토리가 존재하지 않습니다."
-                        |> Task.toCmd
-            )
+directoryPath : String
+directoryPath = "data"
+
+File.exists directoryPath
 ```
+위의 코드를 실행하면 "True" 또는 "False" 값을 얻을 수 있습니다. True는 디렉토리가 존재하는 것을 의미하고, False는 디렉토리가 존재하지 않는 것을 의미합니다.
 
-위 예시 코드는 `File.isDirectory` 함수를 사용하여 원하는 디렉토리가 존재하는지 확인하고, 그에 따라 적절한 작업을 수행하는 방법을 보여줍니다.
+## 깊게 파보기
 
-# 깊이있게 알아보기
+`File.exists` 함수는 실제적으로 디렉토리가 존재하는지 확인하기 위해 시스템 호출을 수행합니다. 이 함수는 비동기적으로 실행되기 때문에, 결과를 얻기 위해서는 콜백 함수를 사용해야 합니다.
 
-`File.isDirectory` 함수는 어떻게 작동하고, 디렉토리를 찾는 데 어떤 방법을 사용하는지 자세히 살펴보겠습니다.
+파일 시스템에 대한 좀 더 자세한 정보를 알고 싶다면, `elm/virtual-dom` 모듈을 살펴보십시오. 또한 Elm에는 Elm 파일 시스템 모듈 이외에도 다른 방법을 제공하기 때문에, 더 많은 선택권을 가지고 싶다면, 더 많은 리서치를 해보십시오.
 
-먼저, `File.isDirectory` 함수는 주어진 경로(`path`)가 디렉토리인지 확인하는 `Task`를 반환합니다. 이를 통해, 디렉토리의 존재 여부를 확인할 수 있습니다. 따라서 이 함수를 사용할 때는 `Task.andThen` 함수를 함께 사용하여, 존재하지 않는 디렉토리를 체크할 때 발생할 수 있는 에러를 적절한 방식으로 처리할 수 있도록 해야 합니다.
+## 연관된 자료
 
-# See Also
-
-- [Elm 공식 문서 - File](https://package.elm-lang.org/packages/elm/file/latest/File#isDirectory)
-- [Elm 공식 문서 - Task](https://package.elm-lang.org/packages/elm/core/latest/Task)
-- [Elm으로 디렉토리 내부의 파일 목록 가져오기(영문)](https://medium.com/@praveenweb/elm-loop-through-file-name-873c25843459)
+* [File system in Elm](https://guide.elm-lang.org/architecture/effects/filesystem.html)
+* [Files and directories in Elm](https://package.elm-lang.org/packages/elm/file/latest/)
+* [Using Virtual DOM in Elm](https://package.elm-lang.org/packages/elm/virtual-dom/latest/)

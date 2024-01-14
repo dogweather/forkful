@@ -1,58 +1,47 @@
 ---
-title:    "Ruby: Ein Datum in einen String umwandeln"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/converting-a-date-into-a-string.md"
+title:                "Ruby: Eine Datumsangabe in eine Zeichenfolge umwandeln"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+### Warum
 
-Das Konvertieren von einem Datum in einen String ist ein wichtiges Konzept in Ruby, das es uns ermöglicht, Datumsangaben in einem bestimmten Format auszugeben. Es kann hilfreich sein, wenn wir beispielsweise Daten in unserem Programm anzeigen oder speichern möchten.
+Das Konvertieren eines Datums in einen String kann eine nützliche Fähigkeit für jeden Ruby-Programmierer sein. Sie können es verwenden, um Datumstempel in ein bestimmtes Format für Anzeigezwecke zu verwandeln oder es als Teil eines größeren Datumsmanipulationsprozesses zu verwenden. In diesem Blog-Beitrag werde ich Ihnen zeigen, wie Sie ein Datum in einen String konvertieren können und einige tiefergehende Konzepte beleuchten.
 
-## Wie man es macht
+### Wie geht es?
 
-Um ein Datum in einen String umzuwandeln, können wir die `strftime` Methode verwenden. Diese Methode formatiert das Datum entsprechend dem angegebenen Format und gibt es als String zurück. Hier ist ein Beispiel:
-
-```Ruby
-date = Time.now
-puts date.strftime("%d.%m.%Y")
-```
-
-Dieses Code-Beispiel gibt das aktuelle Datum im Format "Tag.Monat.Jahr" aus. Hier sind einige gängige Formatierungsoptionen:
-
-- `%d` - Tag (z.B. 01, 02, 03)
-- `%m` - Monat (z.B. 01, 02, 03)
-- `%Y` - Jahr (z.B. 2021)
-- `%H` - Stunde im 24-Stunden-Format (z.B. 13, 14, 15)
-- `%M` - Minute (z.B. 05, 10, 15)
-- `%S` - Sekunde (z.B. 01, 02, 03)
-
-Es gibt noch viele weitere Optionen, die je nach Bedarf angepasst werden können. Eine vollständige Liste der Formatierungsoptionen findest du in der offiziellen Ruby-Dokumentation.
-
-## Tiefergehende Informationen
-
-Das Konvertieren von Datum in einen String kann auch eine Zeitzone angegeben werden, wenn du mit Zeitangaben in verschiedenen Zeitzonen arbeiten möchtest. Dazu kannst du die `strftime` Methode um den Parameter `%z` erweitern.
+Das Konvertieren eines Datums in einen String in Ruby ist relativ einfach und kann auf verschiedene Arten erfolgen. Hier sind zwei Möglichkeiten, dies zu erreichen.
 
 ```Ruby
-date = Time.now
-puts date.strftime("%d.%m.%Y - %H:%M %z")
+# Beispiel 1: Verwendung der strftime-Methode
+date = Time.now # Aktuelles Datum und Uhrzeit
+puts date.strftime("%m/%d/%Y") # Ausgabe: 09/20/2021
+
+# Beispiel 2: Verwendung der to_s-Methode
+date = Date.today # Aktuelles Datum
+puts date.to_s # Ausgabe: 2021-09-20
 ```
 
-Dieses Code-Beispiel gibt das aktuelle Datum und die Uhrzeit aus, zusammen mit der Zeitzone (z.B. +0200 für Mitteleuropäische Sommerzeit).
+Wie Sie sehen können, können Sie entweder die strftime-Methode mit einem bestimmten Format verwenden oder einfach die to_s-Methode verwenden, um das Datum in ein Standardformat zu konvertieren. Es gibt auch andere Methoden und Optionen, die Sie ausprobieren können, um das Datum in verschiedene Formate zu konvertieren.
 
-Außerdem können wir auch die `parse` Methode verwenden, um einen String wieder in ein Datum umzuwandeln. Hier ist ein Beispiel:
+### Tiefes Eintauchen
 
-```Ruby
-date_string = "10.05.2021"
-date = Time.parse(date_string)
-puts date.strftime("%d.%m.%Y")
-```
+Bei der Konvertierung eines Datums in einen String gibt es einige tiefergehende Konzepte zu beachten. Zum Beispiel können Sie durch die Verwendung von Internationalisierungsgemäßen und gem-Dateien die Standardformate ändern oder benutzerdefinierte Formate erstellen. Sie können auch die verschiedenen Formate verwenden, die von strftime unterstützt werden, um das Datum in verschiedenen Sprachen anzuzeigen.
 
-Dieses Code-Beispiel nimmt den String "10.05.2021" und konvertiert ihn wieder in ein Datum, welches dann wieder im gewünschten Format ausgegeben wird.
+Ein weiteres wichtiges Konzept beim Konvertieren eines Datums in einen String ist die Zeitzone. Ruby bietet eine Reihe von Methoden, mit denen Sie die Zeitzone des Datums ändern oder in Bezug auf eine bestimmte Zeitzone konvertieren können.
 
-## Siehe auch
+Um noch tiefer zu gehen, können Sie verschiedene Ruby-Gem-Dateien erkunden, die speziell für die Datums- und Zeitmanipulation entwickelt wurden und die Ihnen noch mehr Funktionen und Flexibilität bieten können.
 
-- [Offizielle Ruby-Dokumentation zu `strftime`](https://ruby-doc.org/core-3.0.0/Time.html#method-i-strftime)
-- [Liste der Formatierungsoptionen für `strftime`](https://apidock.com/ruby/Time/strftime)
-- [Offizielle Ruby-Dokumentation zu `parse`](https://ruby-doc.org/core-3.0.0/Time.html#method-i-parse)
+### Siehe Auch
+
+Hier sind einige nützliche Links, die Ihnen helfen können, Ihre Fähigkeiten bei der Konvertierung von Datum zu vertiefen:
+
+- [Ruby-Dokumentation zur strftime-Methode](https://ruby-doc.org/core-3.0.0/DateTime.html#method-i-strftime)
+- [Ruby-Dokumentation zur to_s-Methode](https://ruby-doc.org/core-3.0.0/DateTime.html#method-i-to_s)
+- [Ruby on Rails Datums- und Zeitmanipulations-Gem](https://github.com/rails/rails/tree/master/activesupport)
+- [Internationalisierungsgem für Ruby](https://github.com/svenfuchs/i18n)
+
+Mit diesen Informationen sollten Sie jetzt in der Lage sein, problemlos ein Datum in einen String umzuwandeln und die verschiedenen Aspekte dieses Prozesses zu verstehen. Viel Spaß beim Programmieren mit Ruby!

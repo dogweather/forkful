@@ -1,57 +1,48 @@
 ---
-title:    "Java: Lecture d'un fichier texte"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/java/reading-a-text-file.md"
+title:                "Java: La lecture d'un fichier texte"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+##Pourquoi
 
-Si vous êtes un développeur Java, il est fort probable que vous ayez déjà dû lire des fichiers texte dans vos projets. Les fichiers texte sont un moyen courant de stocker des données et de les lire dans une application. Dans cet article, nous allons explorer comment lire efficacement un fichier texte en utilisant Java.
+La lecture de fichiers texte est une tâche essentielle en programmation Java. Que vous souhaitiez lire des données à partir d'un fichier de configuration ou traiter un document texte, savoir comment manipuler les fichiers texte est très utile pour tout programmeur Java.
 
-## Comment
+##Comment faire
 
-Pour lire un fichier texte en Java, nous allons utiliser la classe InputStreamReader et BufferedReader. Voici un exemple de code qui lit un fichier texte et affiche son contenu sur la console :
+Pour lire un fichier texte en utilisant Java, vous pouvez suivre ces étapes simples:
 
+1. Ouvrez le fichier en utilisant la classe `File` et `FileReader`. Vous pouvez également spécifier l'encodage du fichier en utilisant `Charset`.
 ```Java
-import java.io.*;
+File file = new File("monfichier.txt");
+FileReader fileReader = new FileReader(file, Charset.forName("UTF-8"));
+```
 
-public class LectureFichier {
-
-    public static void main(String[] args) {
-        File fichier = new File("test.txt");
-        try {
-            FileInputStream fis = new FileInputStream(fichier);
-            InputStreamReader isr = new InputStreamReader(fis);
-            BufferedReader br = new BufferedReader(isr);
-
-            String ligne;
-            while ((ligne = br.readLine()) != null) {
-                System.out.println(ligne);
-            }
-
-            br.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+2. Enveloppez le `FileReader` avec un `BufferedReader` pour améliorer les performances de lecture. Vous pouvez également lire le fichier ligne par ligne avec la méthode `readLine()` jusqu'à ce que vous atteigniez la fin du fichier.
+```Java
+BufferedReader bufferedReader = new BufferedReader(fileReader);
+String line;
+while ((line = bufferedReader.readLine()) != null) {
+  // Faites quelque chose avec la ligne lue
 }
 ```
 
-En utilisant la méthode `readLine()` de la classe BufferedReader, nous pouvons lire chaque ligne du fichier et l'afficher sur la console. N'oubliez pas de fermer le BufferedReader après avoir terminé de lire le fichier.
+3. Enfin, n'oubliez pas de fermer le `BufferedReader` pour libérer les ressources après avoir terminé la lecture.
+```Java
+bufferedReader.close();
+```
 
-Lors de l'exécution de ce code, vous devriez voir le contenu du fichier `test.txt` s'afficher sur la console.
+##Plongée en profondeur
 
-## Plongée en profondeur
+Outre les étapes de base pour la lecture d'un fichier texte, il existe également de nombreuses options pour personnaliser votre méthode de lecture. Vous pouvez utiliser des classes telles que `Scanner` pour lire des données formatées à partir du fichier ou `LineNumberReader` pour suivre le numéro de ligne de chaque ligne lue.
 
-La classe BufferedReader offre également d'autres méthodes utiles pour lire des fichiers texte, telles que `read()`, qui lit un seul caractère, ou encore `skip()`, qui permet de sauter un nombre spécifié de caractères. Vous pouvez également spécifier un paramètre de taille de buffer pour la classe BufferedReader afin d'optimiser les performances de lecture.
+Il est également essentiel de comprendre différentes erreurs possibles lors de la lecture d'un fichier, telles que les exceptions `FileNotFoundException` et `IOException`. Veillez à les gérer correctement dans votre code pour éviter les plantages inattendus.
 
-De plus, en utilisant la classe FileWriter et BufferedWriter, vous pouvez également écrire dans un fichier texte de manière similaire. Assurez-vous de fermer le BufferedWriter après avoir terminé d'écrire dans le fichier.
+##Voir aussi
 
-## Voir aussi
-
-- [Documentation sur la classe BufferedReader en français] (https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
-- [Tutoriel en français sur la lecture et l'écriture de fichiers en Java] (https://openclassrooms.com/fr/courses/6173501-apprenez-les-bases-du-developpement-dapplications-avec-java/6228911-gerez-des-donnees-persistantes-dans-vos-applications-avec-java)
-
-Merci d'avoir lu cet article sur la lecture de fichiers texte en Java. Nous espérons que cela vous a été utile dans vos projets de développement. N'hésitez pas à consulter les liens ci-dessus pour en savoir plus sur la manipulation de fichiers en Java. À bientôt !
+- [Tutoriel sur la lecture et l'écriture de fichiers en Java](https://www.tutorialspoint.com/java/io/java_io_filewriter.htm)
+- [Documentation officielle sur la classe File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Exemples de code pour la lecture de fichiers en Java](https://www.programiz.com/java-programming/examples/read-file)

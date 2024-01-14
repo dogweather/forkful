@@ -1,47 +1,37 @@
 ---
-title:    "C#: בדיקת קיום תיקייה"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/checking-if-a-directory-exists.md"
+title:                "C#: לבדיקה אם תיקייה קיימת"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-עשרות מיליונים של אפשרויות קידום רק מחפשות את הכתובת הראשית הנמצאת במערכת הפעלה. אם אתה מעוניין להתחיל תהליך קידום אתרים, חשוב להיות בטוח שהתיקייה המיועדת למכירה שלך קיימת וגלוית מתחת לדף שימוש עם Windows. במקרה כזה, ידיות צריכות להיות לנו, אם גם כן, עיצוב מסדים ועיצוב הגנה ואפשרויות מתקדמות להצלחתך.
+בדיקת האם תיקייה קיימת היא תהליך חשוב בעליית פעולה של אפליקציות בסביבת C# .NET. בדיקה זו מאפשרת לנו לוודא שכל הקבצים והתיקיות הנדרשים קיימים ומוכנים לשימוש, מה שמבטיח פעולה חלקה ונכונה של האפליקציה.
 
-אם אתה רוצה לדעת אם קיימת תיקייה מסוימת עבור חובה כזו, כדאי לבדוק את הלוחות ולכתוב בשפת עבר הנו אלף שיניים.
+## איך לבצע בדיקת קיום תיקייה
 
-## איך לעשות
-
-כדי לבדוק אם תיקייה קיימת, ניתן להשתמש בפקודת השאילתה `Directory.Exists (path)` בשפת התכנות C#. זה יחזור `true` אם התיקייה קיימת ו- `false` אם אינה קיימת. ניתן גם להשתמש בשליחת תצוגה חזותית למשתמש באמצעות פקודת בדיקת תצוגה `if (Directory.Exists (path))` עבור שימוש עם תיקיות קיימת.
-
-קוד דוגמה:
+ניתן לבדוק האם תיקייה קיימת בניסוחים שונים בסביבת C# .NET. אחת הדרכים הנפוצות לבדיקת קיום התיקייה היא על ידי השתמשות במתודת Directory.Exists. הנה דוגמה לקוד המדגים את שימושה:
 
 ```C#
-using System;
+// ייבוא הספריה הנדרשת
 using System.IO;
 
-class MainClass {
-  public static void Main (string[] args) {
-    string path = @"C:\Users\Example\User\Documents"; // Replace with your desired path
-    if (Directory.Exists(path)) {
-      Console.WriteLine("The directory exists.");
-      // Additional code for your website optimization process
-    } else {
-      Console.WriteLine("The directory does not exist.");
-      // Additional code if the directory does not exist
-    }
-  }
-}
+// נבדוק האם התיקייה "MyDirectory" קיימת
+bool isDirectoryExists = Directory.Exists(@"C:\MyDirectory");
+
+// הדפסת הפלט - אמת או שקר
+Console.WriteLine("האם התיקייה קיימת? " + isDirectoryExists);
 ```
 
-תוצאה דוגמה:
+הפלט שיודפס במסך יהיה "האם התיקייה קיימת? אמת" או "האם התיקייה קיימת? שקר" לפי התוצאה של בדיקת התיקייה.
 
-```
-The directory exists.
-```
+## שקיפויות נמוכות יותר ובדיקות מתקדמות
 
-## צעד נסתר
+ישנן כמה שקיפויות נמוכות יותר שניתן לבצע כדי לבדוק האם תיקייה קיימת, כגון ביצוע בדיקת קיום עם השתמשות בפעולת File.Exists או בדיקה של תכולת תיקייה עם השתמשות במתודת File.GetAttributes. בנוסף, ניתן להגדיר מאפייני תיקייה כגון הרשאות גישה ובדיקות באמצעות מתודות נוספות כגון Directory.GetAccessControl ו-Directory.GetCreationTime. בדיקות אלה מאפשרות לנו לבדוק את פרטי התיקייה ולקבוע אם היא מעניקה גישה נכונה עבור האפליקציה.
 
-בנוסף להשתמש בפקודת השאילתה `Directory.Exists`, ישנם חלקות נוספים לבדיקה האם תיקייה קיימת המאפשרת רמיה. למשל, ניתן להשתמש בפקודת השאילתה `Directory.GetDirectories (path)` לקבלת רשימת תיקיות המבוססות בתיקייה מסוימת. אם הרשימה נמצאת ריקה, זה אומר שאין תיקיות מקושר
+## רקע נוסף
+
+קיימים הרבה דרכ

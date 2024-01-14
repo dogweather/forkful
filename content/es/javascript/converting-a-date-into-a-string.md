@@ -1,59 +1,38 @@
 ---
-title:    "Javascript: Convirtiendo una fecha en una cadena"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/converting-a-date-into-a-string.md"
+title:                "Javascript: Convirtiendo una fecha en un texto"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-Convertir una fecha en una cadena de texto es una tarea común y necesaria en programación. Ya sea para mostrar la fecha en un formato específico o para realizar cálculos con fechas, es importante saber cómo convertir una fecha en una cadena.
+En la programación, a menudo es necesario trabajar con fechas y horas. Sin embargo, a menudo estas son almacenadas en un formato de objeto de fecha, lo que puede ser difícil de leer para los usuarios. Convertir una fecha en una cadena de texto puede hacer que sea más fácil de entender y manejar para los usuarios.
 
 ## Cómo hacerlo
+Para convertir una fecha en una cadena de texto, hay dos métodos que se pueden utilizar: `toDateString()` y `toLocaleDateString()`. Ambos métodos tienen ligeras diferencias en la forma en que formatean la fecha, por lo que es importante elegir el más adecuado para tus necesidades.
 
-Para convertir una fecha en una cadena de texto en Javascript, primero necesitas tener una fecha de partida, ya sea en formato de objeto de fecha o en milisegundos. A continuación, puedes utilizar el método `toISOString()` para obtener la fecha en formato ISO, o `toLocaleString()` para obtener la fecha en formato local.
-
-```Javascript
-// Fecha como objeto de fecha
-var fecha = new Date("2020-01-01");
-
-// Obtener fecha en formato ISO
-console.log(fecha.toISOString()); // Output: 2020-01-01T00:00:00.000Z
-
-// Obtener fecha en formato local
-console.log(fecha.toLocaleString()); // Output: 1/1/2020, 12:00:00 AM
-```
-
-También puedes utilizar la librería Moment.js para tener más control sobre el formato de la fecha. Por ejemplo:
+A continuación se muestra un ejemplo de cómo convertir una fecha en una cadena de texto utilizando ambos métodos:
 
 ```Javascript
-// Fecha como objeto de fecha
-var fecha = moment("2020-01-01");
-
-// Obtener fecha en formato personalizado
-console.log(fecha.format("DD/MM/YYYY")); // Output: 01/01/2020
+let currentDate = new Date(); // Hoy es Sat Sep 04 2021 10:14:13 GMT-0400 (hora de verano oriental)
+console.log(currentDate.toDateString()); // muestra "Sat Sep 04 2021"
+console.log(currentDate.toLocaleDateString()); // muestra "09/04/2021"
 ```
+
+Como se puede ver en el ejemplo, `toDateString()` devuelve la fecha en un formato más legible para los humanos, mientras que `toLocaleDateString()` da la opción de especificar un idioma o localización específica para el formato de la fecha.
+
+También es importante tener en cuenta que estos métodos solo funcionan con objetos de fecha válidos, por lo que si se intenta convertir una fecha inválida, se obtendrá un resultado de "Invalid Date".
 
 ## Profundizando
+Además de los dos métodos mencionados anteriormente, también existe una biblioteca popular llamada moment.js que ofrece una gama aún más amplia de opciones para formatear fechas en cadenas de texto. Esta biblioteca también maneja fechas inválidas y da la opción de especificar formatos personalizados para la fecha.
 
-Convertir una fecha en una cadena de texto puede ser un poco confuso cuando se trata de zonas horarias. Por ejemplo, si usas el método `toISOString()` para una fecha en formato UTC y luego lo conviertes de nuevo a un objeto de fecha, obtendrás una fecha que se ha convertido a tu zona horaria local. Para evitar esto, puedes utilizar el método `toJSON()` en lugar de `toISOString()`.
+Otra cosa a tener en cuenta es que las fechas en JavaScript se muestran en función de la zona horaria del dispositivo en el que se está ejecutando el código. Para asegurarse de que se muestren las fechas correctas en diferentes zonas horarias, se pueden utilizar métodos para obtener el desfase horario actual y ajustar la fecha en consecuencia.
 
-```Javascript
-// Fecha como objeto de fecha
-var fecha = new Date("2020-01-01");
-
-// Convertir a formato JSON y luego a objeto de fecha
-var fechaJSON = fecha.toJSON();
-var fechaObjeto = new Date(fechaJSON);
-
-// Comparar las dos fechas
-console.log(fecha); // Output: Wed Jan 01 2020 00:00:00 GMT+0100 (hora estándar de Europa central)
-console.log(fechaObjeto); // Output: Wed Jan 01 2020 02:00:00 GMT+0100 (hora estándar de Europa central)
-```
+En resumen, convertir una fecha en una cadena de texto puede facilitar su lectura y manipulación para los usuarios. Hay varias opciones a considerar, desde los métodos incorporados hasta bibliotecas externas, dependiendo de las necesidades específicas del proyecto.
 
 ## Ver también
-
-- [Documentación de Date en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date) 
-- [Moment.js documentation](https://momentjs.com/docs/) 
-- [Convertir fecha a formato ISO en Javascript](https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_toisostring)
+- Documentación de toDateString(): https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date/toDateString
+- Documentación de toLocaleDateString(): https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date/toLocaleDateString
+- Moment.js: https://momentjs.com/

@@ -1,41 +1,55 @@
 ---
-title:    "C#: Escribiendo en el error estándar."
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/writing-to-standard-error.md"
+title:                "C#: Escribiendo en error estándar."
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir a la salida estándar de error en C#
+## Por qué
 
-Escribir a la salida estándar de error es una herramienta útil para los programadores de C#. Permite mostrar mensajes de error y depurar código de una manera sistemática, lo que facilita la identificación y resolución de problemas en el código.
+Escribir a la salida de error estándar puede ser una habilidad muy valiosa para cualquier programador. Esta técnica permite identificar y solucionar problemas en el código de manera más eficiente, lo que ahorra tiempo y esfuerzo en el proceso de depuración.
 
 ## Cómo hacerlo
 
-Para escribir a la salida estándar de error en C#, podemos utilizar el objeto "Console" y su método "Error.WriteLine()". Por ejemplo:
+Para escribir a la salida de error estándar en C#, se utiliza el método `Console.Error.WriteLine()`. Este método toma un argumento de tipo `string` que contiene el mensaje a imprimir en la consola de errores.
 
 ```C#
-Console.Error.WriteLine("¡Ha ocurrido un error!");
+Console.Error.WriteLine("Este es un mensaje de error");
 ```
 
-Esto imprimirá el mensaje "¡Ha ocurrido un error!" en la consola de error, lo que nos ayudará a identificar dónde se produjo el error en nuestro código.
+Este código imprimirá el mensaje "Este es un mensaje de error" en la consola de errores cuando se ejecute.
 
-También podemos utilizar el operador "<<" para escribir a la salida estándar de error. Por ejemplo:
+Otra forma de escribir a la salida de error estándar es utilizando el objeto `StreamWriter`. Para hacerlo, primero se debe crear una instancia de este objeto y luego utilizar su método `WriteLine()` para imprimir el mensaje en la consola de errores.
 
 ```C#
-Console.Error << "El resultado es: " << resultado;
+StreamWriter errorWriter = new StreamWriter(Console.Error);
+errorWriter.WriteLine("Este es otro mensaje de error");
 ```
 
-En este caso, se imprimirá el mensaje "El resultado es: " seguido del valor de la variable "resultado" en la consola de error.
+Este método también toma un argumento de tipo `string` con el mensaje a imprimir en la consola de errores.
 
-## Profundizando en la escritura a la salida estándar de error
+## Profundizando
 
-Además de imprimir mensajes de error, también podemos utilizar la salida estándar de error para mostrar mensajes de depuración o advertencias. Esto puede ser especialmente útil cuando tenemos código complejo y queremos asegurarnos de que está funcionando correctamente.
+Además de imprimir mensajes de error en la consola, también es posible redirigir la salida de error estándar a un archivo de texto. Esto puede ser útil cuando se necesita guardar los mensajes de error para su posterior análisis.
 
-Otra ventaja de escribir a la salida estándar de error es que podemos redirigir los mensajes a un archivo de registro o a un sistema de gestión de errores. Esto nos permite almacenar y analizar los mensajes de error en un lugar centralizado, lo que facilita la identificación de problemas recurrentes en el código.
+Para hacer esto, se utiliza el método `Console.SetError()` para establecer el archivo donde se escribirán los mensajes de error. Luego, se utiliza el método `Console.Error.WriteLine()` para imprimir los mensajes.
+
+```C#
+// Establecer el archivo para escribir los mensajes de error
+Console.SetError(new StreamWriter("archivo_errores.txt"));
+
+// Imprimir un mensaje de error
+Console.Error.WriteLine("Este es un mensaje de error que será guardado en el archivo");
+
+// Cerrar el archivo
+Console.Error.Close();
+```
+
+Es importante recordar cerrar el archivo después de terminar de usarlo.
 
 ## Ver también
 
-- Documentación oficial de C# sobre la clase Console en español: https://docs.microsoft.com/es-es/dotnet/api/system.console?view=net-5.0
-- Tutorial sobre la escritura a la salida estándar de error en C#: https://www.tutorialspoint.com/csharp/csharp_error_reporting.htm
-- Preguntas frecuentes sobre la salida estándar de error en C#: https://stackoverflow.com/questions/122594/c-sharp-how-to-write-to-the-console-errorstream
+- [Documentación de Microsoft sobre la clase Console](https://docs.microsoft.com/es-es/dotnet/api/system.console?view=net-5.0)
+- [Tutorial sobre depuración en C#](https://docs.microsoft.com/es-es/visualstudio/debugger/debugging-basics-csharp?view=vs-2019)

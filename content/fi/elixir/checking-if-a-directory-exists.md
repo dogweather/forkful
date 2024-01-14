@@ -1,33 +1,41 @@
 ---
-title:    "Elixir: Tarkistetaan, onko hakemisto olemassa"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/checking-if-a-directory-exists.md"
+title:                "Elixir: Tarkistetaan onko hakemisto olemassa"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Monissa ohjelmointiprojekteissa voi olla tarve tarkistaa, onko tietty hakemisto olemassa. Tämä on erityisen tärkeää, jos haluat varmistaa, että tietyn tiedoston tallentaminen tai lukeminen on mahdollista.
 
-## Kuinka
-Voit tarkistaa hakemiston olemassaolon Elixirin `File`-moduulin avulla. Käytä `File.exists?` -funktiota ja anna funktiolle hakemiston polku parametrina. Tässä on esimerkki koodi, joka tarkistaa, onko `logs`-hakemisto olemassa:
+On monia syitä sille, miksi haluat ehkä tarkistaa, löytyykö hakemisto Elixir-ohjelmassa. Ehkä haluat välttää virheitä myöhemmin koodissasi, jotta voit käsitellä tilanteen, jossa hakemistoa ei löydy. Tai ehkä tarvitset kyseistä hakemistoa ohjelmasi toimivuuden kannalta. Riippumatta siitä miksi haluat tarkistaa hakemiston olemassaolon, tämä blogipostaus auttaa sinua tekemään sen Elixirillä.
+
+## Kuinka tehdä
+
+Voit tarkistaa, löytyykö hakemisto Elixir-ohjelmassa käyttämällä `File.cwd?` -funktiota. Tämä palauttaa `true` jos hakemisto löytyy ja `false` jos sitä ei löydy. Katso alla oleva esimerkki:
 
 ```Elixir
-if File.exists?("logs") do
-  IO.puts "Logs-hakemisto löytyi!"
+if File.cwd?("/polku/hakemistoon") do
+  IO.puts "Hakemisto löytyi!"
 else
-  IO.puts "Logs-hakemisto ei ole käytettävissä."
+  IO.puts "Hakemistoa ei löytynyt."
 end
 ```
 
-Tämän koodin tulostuksena näet joko "Logs-hakemisto löytyi!" tai "Logs-hakemisto ei ole käytettävissä." riippuen siitä, onko `logs`-hakemisto olemassa vai ei.
+Esimerkin tulostus riippuu siitä, löytyykö annetusta polusta hakemisto vai ei.
 
-## Syvällisempi tarkastelu
-Tarkastellessamme `File.exists?` funktiota tarkemmin, huomaamme, että se palauttaa arvon `true` jos hakemisto on olemassa ja `false` jos sitä ei löydy. Tämän avulla voit tehdä lisätoimintoja sen perusteella, onko tietty hakemisto käytettävissä vai ei.
+```
+Hakemisto löytyi! // jos hakemisto löytyy
+Hakemistoa ei löytynyt. // jos hakemistoa ei löydy
+```
 
-`File`-moduulin lisäksi voit myös käyttää Elixirin `Path`-moduulia tarkistaaksesi hakemiston olemassaolon. `Path.expand/2` -funktio laajentaa polun ja `Path.wildcard?/1`-funktio palauttaa arvon `true` jos polku vastaa hakemiston nimeä.
+## Syvä sukellus
+
+`File.cwd?` -funktio käyttää Elixirin `File` -moduulia, joka tarjoaa monia hyödyllisiä toimintoja tiedostojen ja hakemistojen käsittelyyn. Voit käyttää `File.cwd?` -funktion sijasta myös `File.dir?` -funktiota, joka palauttaa `true` jos parametrina annettu polku osoittaa hakemistoon ja `false` jos se osoittaa tiedostoon. Voit myös käyttää `File.ls` -funktiota saadaksesi listan hakemistossa olevista tiedostoista ja alihakemistoista.
 
 ## Katso myös
-- [Elixir File-moduulin dokumentaatio](https://hexdocs.pm/elixir/File.html)
-- [Elixir Path-moduulin dokumentaatio](https://hexdocs.pm/elixir/Path.html)
-- [Kuinka luoda hakemistoja Elixirissa](https://blog.appsignal.com/2018/07/03/how-to-create-a-directory-in-elixir.html)
+
+- [Elixirin virallinen tiedostojen käsittely dokumentaatio](https://hexdocs.pm/elixir/File.html)
+- [Elixirin virallinen tiedostojen käsittely oppitunti](https://elixir-lang.org/getting-started/file-operations.html)
+- [Tiedostojen ja hakemistojen käsittely Elixirissä - kirjoittanut Vicent Gozalbes](https://medium.com/erlang-battleground/working-with-files-and-directories-in-elixir-37c978edc3c8)

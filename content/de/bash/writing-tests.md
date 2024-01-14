@@ -1,43 +1,82 @@
 ---
-title:    "Bash: Tests schreiben"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/writing-tests.md"
+title:                "Bash: Tests schreiben"
+programming_language: "Bash"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Tests zu schreiben ist ein wichtiger Teil des Programmierens. Sie helfen uns, unsere Codes zu überprüfen und zu verbessern, bevor wir sie in die Produktion schicken. Auch können Tests helfen, mögliche Fehler frühzeitig zu erkennen und zu beheben, was uns Zeit und Mühe ersparen kann. Deshalb ist es wichtig, sich mit dem Thema Tests vertraut zu machen und sie in unsere Entwicklungspraxis zu integrieren.
+bash programming hat sich in den letzten Jahren zu einer beliebten Methode der Entwicklung von Automatisierungs- und Skripting-Tools entwickelt. Einer der wichtigsten Aspekte dieser Programmierung ist das Testen des Codes, um sicherzustellen, dass er zuverlässig und fehlerfrei funktioniert. Das Schreiben von Tests ermöglicht es Entwicklern, Probleme frühzeitig zu erkennen und zu beheben, was Zeit und Frustration bei der Entwicklung sparen kann. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie man effektive Tests in Bash schreibt.
 
-## Wie geht man vor?
+## Wie man Tests in Bash schreibt
 
-Um Tests zu schreiben, nutzen wir in der Regel sogenannte Testframeworks, wie zum Beispiel **Bash Automated Testing System (BATS)** oder **shUnit2**. Diese ermöglichen es uns, Testfälle zu schreiben und auszuführen, um die Funktionen unserer Codes zu prüfen. Hier ist ein Beispiel, wie wir die BATS-Testframework in einem Bash-Script verwenden können:
+Das Schreiben von Tests in Bash ist relativ einfach und erfordert keine speziellen Vorkenntnisse. Hier ist ein Beispiel für eine Funktion, die einen String umkehrt:
 
 ```Bash
-#!/bin/bash
-
-@test "Funktionsname muss richtig formatiert sein" {
-  result="$(./script.sh test)"
-  [ "$result" == "Success" ]
-}
-
-@test "Wiegen in Kilogramm sollte richtig berechnet werden" {
-  result="$(./script.sh weight)"
-  [ "$result" == "5 kg" ]
+# Funktion zum Umkehren eines Strings
+function reverse_string {
+    # Überprüfen, ob ein String übergeben wurde
+    if [ $# -eq 0 ]
+    then
+        echo "Bitte geben Sie einen String als Argument ein."
+        exit 1
+    fi
+    # Loop über alle Buchstaben im String und füge sie in umgekehrter Reihenfolge zu einem neuen String zusammen
+    local reversed_string=""
+    for (( i=${#1} - 1; i >= 0; i-- ))
+    do
+        reversed_string+="${1:i:1}"
+    done
+    echo "$reversed_string"
 }
 ```
+Dies ist eine grundlegende Funktion, die jedoch viele verschiedene Fehler enthalten könnte. Wir können nun Tests schreiben, um sicherzustellen, dass die Funktion zuverlässig funktioniert. Hier ist ein Beispiel dafür:
 
-In diesen Testfällen überprüfen wir, ob die Funktionen "Funktionsname" und "Wiegen" unseres Skripts die erwarteten Ergebnisse liefern. Wir testen sie, indem wir das Skript mit verschiedenen Parametern ausführen und die Ausgabe mit den erwarteten Ergebnissen vergleichen.
+```Bash
+function test_reverse_string {
+    # Überprüfen, ob die Funktion einen leeren String richtig umkehrt
+    if [ $(reverse_string "") != "" ]
+    then
+        echo "Fail: Funktion gibt einen falschen Wert zurück."
+    else
+        echo "Pass: Funktion gibt den korrekten Wert zurück."
+    fi
+    # Überprüfen, ob die Funktion einen einzelnen Buchstaben richtig umkehrt
+    if [ $(reverse_string "a") != "a" ]
+    then
+        echo "Fail: Funktion gibt einen falschen Wert zurück."
+    else
+        echo "Pass: Funktion gibt den korrekten Wert zurück."
+    fi
+    # Überprüfen, ob die Funktion einen längeren String richtig umkehrt
+    if [ $(reverse_string "Hallo Welt") != "tleW ollaH" ]
+    then
+        echo "Fail: Funktion gibt einen falschen Wert zurück."
+    else
+        echo "Pass: Funktion gibt den korrekten Wert zurück."
+    fi
+}
+# Aufrufen der Test-Funktion
+test_reverse_string
+```
 
-## Tiefer tauchen
+Die Ausgabe sollte folgendermaßen aussehen:
 
-Tests zu schreiben erfordert ein gutes Verständnis unserer Codes und ihrer Funktionen. Deshalb sollten wir beim Schreiben von Tests auch auf die Einhaltung von Best Practices achten. Zum Beispiel sollten wir sicherstellen, dass unsere Tests unabhängig voneinander und wiederholbar sind. Auch ist es wichtig, verschiedene Szenarien abzudecken und Grenzfälle zu testen, um sicherzustellen, dass unsere Codes robust und fehlerfrei sind.
+```Bash
+Pass: Funktion gibt den korrekten Wert zurück.
+Pass: Funktion gibt den korrekten Wert zurück.
+Pass: Funktion gibt den korrekten Wert zurück.
+```
 
-Ein weiterer wichtiger Aspekt ist es, unsere Tests regelmäßig auszuführen und die Ergebnisse zu überprüfen. Wenn wir Änderungen an unserem Code vornehmen, müssen wir auch unsere Tests anpassen oder neue hinzufügen, um sicherzustellen, dass alle Funktionen weiterhin ordnungsgemäß arbeiten.
+Mit diesen Tests haben wir nun überprüft, ob unsere Funktion leere Strings, einzelne Buchstaben und längere Strings korrekt umkehrt. Wir können auch weitere Tests hinzufügen, um sicherzustellen, dass die Funktion mit Sonderzeichen oder Zahlen umgehen kann.
 
-## Siehe auch
+## Tiefergehende Informationen über das Schreiben von Tests
 
-- [Bash Automated Testing System (BATS)](https://github.com/bats-core/bats-core)
-- [shUnit2](https://github.com/kward/shunit2)
-- [Test-Driven Development (TDD) in Bash](https://blog.dcycle.com/blog/2014-07-13/test-driven-development-tdd-bash/)
+Das Schreiben von Tests sollte nicht als lästige Aufgabe betrachtet werden, sondern als wichtiger Teil des Entwicklungsprozesses. Es ermöglicht es uns, sicherzustellen, dass unser Code zuverlässig und fehlerfrei funktioniert, sowie Änderungen oder Hinzufügungen im Code zu überprüfen. Es ist auch eine gute Möglichkeit, um sicherzustellen, dass unser Code gut dokumentiert und verständlich ist.
+
+Es gibt viele verschiedene Test-Frameworks für Bash, die Entwickler nutzen können. Einige beliebte Beispiele sind [Bats](https://github.com/sstephenson/bats), [shUnit2](https://github.com/kward/shunit2) und [bats-mock](https://github.com/jasonkarns/bats-mock). Diese Frameworks bieten zusätzliche Funktionen wie Assertions, Mocking und Coverage-Tests, die das Schreiben von Tests noch einfacher und effektiver machen.
+
+Es ist auch wichtig, die Tests regelmäßig auszuführen und bei Änderungen im Code zu aktualisieren. Auf diese Weise können potenzielle Fehler früh

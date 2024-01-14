@@ -1,35 +1,63 @@
 ---
-title:    "Arduino: ディレクトリが存在するかどうかを確認する"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/checking-if-a-directory-exists.md"
+title:                "Arduino: ディレクトリが存在するかを調べる"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-ディレクトリが存在するかどうかを確認することは、Arduinoプログラミングで非常に重要です。デバイスやセンサーからのデータを保存するために、正しいフォルダーにアクセスする必要があります。そのため、ディレクトリの存在をチェックすることは、データ管理や正しいプログラムの実行にとって必要不可欠です。
+ディレクトリが存在するかどうかを確認する必要がある理由は、プログラムの中で特定のファイルを動的に読み込む必要があるからです。例えば、センサーからのデータをログファイルに保存する場合、プログラムが実行されるたびに新しいファイルが作成されるため、事前にそのディレクトリの存在を確認する必要があります。
 
 ## 方法
-Arduinoでは、ディレクトリをチェックするための便利な関数が用意されています。それは「SD.exists（）」です。以下の例では、SDカードに「sample.txt」というファイルが存在するかどうかをチェックしています。
+ディレクトリが存在するかどうかを確認するには、```File::exists()```関数を使います。例えば以下のように書きます：
+
+```Arduino
+#include <SPI.h>
+#include<SD.h>
+
+File dataFile; // ファイルオブジェクトを作成
+
+void setup() {
+  Serial.begin(9600);
+  
+  if(!SD.begin(10)){  // SDカードが初期化できない場合
+    Serial.println("SD card initialization failed!");
+    return;  // エラーを出力してプログラムを実行しない
+  }
+  
+  // dataフォルダを作成
+  if(!SD.exists("/data")){
+    SD.mkdir("/data");
+    Serial.println("Created 'data' directory");
+  }
+  
+  // dataフォルダが存在するかどうかを確認
+  if(SD.exists("/data")){
+    Serial.println("Directory 'data' exists!");
+  } else {
+    Serial.println("Directory 'data' does not exist!");
+  }
+}
+
+void loop() {
+  // メインのプログラムを実行
+}
 
 ```
-Arduino ...
-if(SD.exists("sample.txt")){
-  Serial.println("sample.txt exists in the SD card.");
-}
-else{
-  Serial.println("sample.txt does not exist.");
-}
+実行結果：
 ```
-
-上記のコードを実行すれば、シリアルモニターに「sample.txt exists in the SD card.」というメッセージが表示されるはずです。
+Created 'data' directory
+Directory 'data' exists!
+```
 
 ## ディープダイブ
-SD.exists（）関数は、ファイルではなくディレクトリをチェックすることもできます。SDカード内にフォルダーがあるかどうかをチェックするには、「SD.exists（「/ samplefolder」）」のように、フォルダーパスを指定します。
+さらに詳しく知りたい方のために、ディレクトリの存在を確認する方法について詳しく説明します。ディレクトリが存在するかどうかを確認するには、```File::exists()```関数を使用します。この関数の戻り値は```bool```型であり、ディレクトリが存在する場合は```true```を、存在しない場合は```false```を返します。
 
-また、SD.exists（）関数は、複数のファイルやフォルダーを一度にチェックすることもできます。たとえば、「SD.exists（「/ samplefolder / sample1.txt」、「/ samplefolder / sample2.txt」、「/ samplefolder2」）」のように、引数に複数のパスを指定できます。
+また、ディレクトリが存在しない場合は、```File::mkdir()```関数を使用してディレクトリを作成することもできます。この関数は新しいディレクトリを作成し、作成できた場合は```true```を、作成できなかった場合は```false```を返します。
 
-## 参考リンク
-- [SD.exists() - Arduino Reference](https://www.arduino.cc/reference/en/libraries/sd/sdexists/)
-- [How to Check if a File Exists Using Arduino](https://maker.pro/arduino/tutorial/how-to-check-if-a-file-exists-using-arduino)
-- [Arduino File Input and Output Tutorial](https://www.arduino.cc/en/Tutorial/Files)
+## さらに参考になる情報
+- [Official Arduino Documentation on File::exists()](https://www.arduino.cc/en/Reference/FileExists)
+- [Official Arduino Documentation on File::mkdir()](https://www.arduino.cc/en/Reference/FileMkdir)
+- [SD library for Arduino](https://www.arduino.cc/en/Reference/SD)

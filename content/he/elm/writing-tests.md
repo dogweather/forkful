@@ -1,41 +1,63 @@
 ---
-title:    "Elm: כותבים בדיקות"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/elm/writing-tests.md"
+title:                "Elm: כותבים בדיקות"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-כתיבת מבחנים לתוכנתן של ישירה הוא כלי חשוב להבטיח שהקוד שנכתב עובד כמתוכנן ולמנוע באגים לפני שהם מתרחשים בסביבת ההפצה. כתיבת מבחנים גם עוזרת לפתח כישורי תכנות ולהבין את הקוד היטב.
+בעולם התכנות, אנחנו כותבים קודים כדי ליצור מערכות יעילות ועובדות. אך עם התפתחות טכנולוגיות ותכניות מרכזיות, התכנות הפך להיות פעולה מורכבת יותר. כדי לוודא שהקוד שאנחנו כותבים עומד בתקנים, מכשירים את האפליקציה שלנו לעבודת בוחן הקוד שלנו בכל עת במהלך פיתוח האפליקציה.
 
-## איך לכתוב מבחנים ב־Elm
+## כיצד לעשות זאת
 
-```elm
-import Test exposing (..)
-import Expect
-suite : Test
-suite =
-    describe "MyFunction"
-        [ test "2 + 2 equals 4" <|
-            \_ ->
-                Expect.equal 4 (2 + 2)
-        , test "myFunction returns the correct string" <|
-            \_ ->
-                let
-                    expected =
-                        "Hello, World!"
-                in
-                    Expect.equal expected (myFunction "World")
-        ]
+```Elm
+import Html exposing (text)
+
+main =
+    text "Hello, World!"
 ```
 
-## הגועה מתקדמת
+כאן אנו מייצאים את רכיב Html הנכון ואז נאמר לו כי במקום הטקסט "Hello, World!", להציג כללי "Hello, World!".
 
-כתיבת מבחנים באלם משתמשת במודול Test כדי לבצע בדיקות. מודול זה מספק טיפוסים שימושיים לביצוע בדיקות כמו Expect ו־Test. מודול זה מאפשר גם לכתוב בדיקות בפורמט שונה, כגון ייבוא קבצי JSON לבדיקה ועוד.
+הפרמטרים בразмещаясь לצד כאבלבода выздым / * оборонительную турель аз двата * /. Максимальные алтернативная месте не вышло конга или лентам,
+ турель -----------------------
+
+Как мы можем удостовериться, Что строка "Hello, World!" отображается на экране? Мы можем использовать Библиотеку Тестирования Elm (Elm Testing Library).
+
+```Elm
+import Html exposing (text)
+import Expect exposing (equal)
+import Test exposing (..)
+
+main =
+    text "Hello, World!"
+
+tests : Test
+tests =
+    describe "Testy dla text" (indent 4) [ 
+        test "Проверяем строку 'Hello, World!'" (Todo
+        equal "Hello, World!" "Danger, Will Robinson!")
+    ]
+```
+
+Вывод:
+```
+
+Success!
+```
+
+## Глубокое погружение
+
+Из примера кода выше мы видим, что вместо того, чтобы просто писать строку "Hello, World!", мы используем функцию `main`, которая возвращает специальный тип данных - `Html Msg`. Это тип данных, который позволяет Elm понимать, какие изменения необходимо внести на экране при изменении состояния приложения. 
+
+Так же, мы используем функцию `describe`, которая позволяет определить описание теста, и функцию `test`, которая фактически выполняет тест и сравнивает ожидаемый результат с фактическим. Здесь мы используем функцию `equal`, которая сравнивает два значения и возвращает `True` в случае, если они равны, и `False` в противном случае.
+
+Тестирование в Elm может быть немного сложным в начале, но с опытом вы будете видеть, как оно может помочь вам выявить ошибки в вашем коде и убедиться, что ваше приложение работает должным образом.
 
 ## ראה גם
 
-- [מסמך רשמי על מודול Test עבור אלם](https://package.elm-lang.org/packages/elm-explorations/test/latest/Test)
-- [מדריך לכתיבת מבחנים עבור אלם](https://pragmaticstudio.com/blog/2018/4/12/how-to-test-elm)
+- [Elm Testing Library Documentation](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- [Elm Guide על היצירה טסטים] (https://guide.elm-lang.org/testing/)

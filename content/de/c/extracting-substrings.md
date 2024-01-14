@@ -1,47 +1,52 @@
 ---
-title:    "C: Extrahieren von Teilstrings"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/extracting-substrings.md"
+title:                "C: Extrahieren von Teilstrings"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
+Substring-Extraktion ist eine nützliche Funktion in der Programmierung, die es ermöglicht, bestimmte Teile eines Textes zu extrahieren, anstatt den gesamten Text zu bearbeiten. Dies kann zeitsparend sein und die Effizienz des Codes erhöhen. In diesem Blog-Beitrag werden wir uns damit beschäftigen, wie man Substrings in C extrahiert und tiefer in dieses Konzept eintaucht.
 
-Das Extrahieren von Teilzeichenketten ist eine wichtige Fähigkeit im C-Programmieren. Es ermöglicht Ihnen, Teile einer Zeichenkette zu isolieren und für spezifische Aufgaben zu verwenden. Zum Beispiel könnten Sie nur den Vornamen einer Person aus einer vollständigen Namen-Zeichenkette extrahieren, um sie in einer Begrüßungsnachricht anzuzeigen. Das Extrahieren von Teilzeichenketten gibt Ihnen mehr Kontrolle über die Daten, mit denen Sie arbeiten, und macht Ihr Programm effizienter und lesbarer.
+# Wie man Substrings in C extrahiert
+Um Substrings in C zu extrahieren, können wir die Funktion `strncpy` verwenden, die Teil der `string.h` Bibliothek ist. Diese Funktion wird verwendet, um einen Teil eines Strings in einen anderen String zu kopieren. Der Syntax für die Verwendung von `strncpy` ist wie folgt:
 
-## Wie geht's
+```C
+strncpy(Zielstring, Ausgangsstring, Anzahl_der_Zeichen)
+```
+Dabei ist `Zielstring` der String, in den der Substring kopiert werden soll, `Ausgangsstring` ist der ursprüngliche String, aus dem der Substring extrahiert wird und `Anzahl_der_Zeichen` gibt an, wie viele Zeichen kopiert werden sollen.
 
-Um eine Teilzeichenkette in C zu extrahieren, können Sie die Funktion "strncpy" verwenden. Diese Funktion kopiert eine bestimmte Anzahl von Zeichen aus einer Zeichenkette in eine andere Zeichenkette. Hier ist ein Beispielcode, der den Vornamen aus einer vollständigen Namen-Zeichenkette extrahiert und ihn in einer separaten Variablen speichert:
+Um dies besser zu verstehen, werfen wir einen Blick auf ein Beispiel:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-  char name[] = "Max Mustermann";
-  char first_name[6]; // speichert maximal 5 Zeichen (plus Null-Terminierung)
+int main()
+{
+    char ursprungsstring[] = "Willkommen";
+    char zielstring[5];
 
-  strncpy(first_name, name, 5); // kopiert 5 Zeichen von name nach first_name
-  first_name[5] = '\0'; // fügt Null-Terminierung an
-  printf("Hallo %s!", first_name);
+    strncpy(zielstring, ursprungsstring, 5);
 
-  return 0;
+    printf("Der Substring ist: %s", zielstring);
+
+    return 0;
 }
 ```
 
-Die Ausgabe dieses Codes wäre "Hallo Max!", da der Vornamen aus der Namen-Zeichenkette extrahiert wurde und in der neuen Variablen gespeichert ist. Beachten Sie, dass die Funktion "strncpy" auch die Null-Terminierung automatisch anfügt, wenn die Anzahl der kopierten Zeichen kleiner ist als die Größe der Zielvariablen.
+In diesem Beispiel haben wir den ursprünglichen String "Willkommen" und kopieren die ersten 5 Zeichen in den Zielstring. Ausgegeben wird der Substring "Willk".
 
-## Tiefergehende Informationen
+# Tiefer Einblick in die Substring-Extraktion
+Neben `strncpy` gibt es auch andere Funktionen, die für die Substring-Extraktion verwendet werden können, wie zum Beispiel `strncat` und `strndup`. Diese Funktionen haben jedoch unterschiedliche Syntax und Funktionsweise.
 
-Die Funktion "strncpy" hat einige Besonderheiten, die Sie beim Extrahieren von Teilzeichenketten beachten sollten. Zum Beispiel kopiert sie immer die angegebene Anzahl von Zeichen, auch wenn die Quellen-Zeichenkette kürzer ist. Wenn Sie also versuchen, 10 Zeichen aus einer 5-Zeichen-Zeichenkette zu kopieren, wird die Null-Terminierung an die 6. Stelle der Zielvariablen angefügt.
+Ein weiteres wichtiges Konzept bei der Substring-Extraktion ist das Indexing. In C beginnt das Indexing bei 0, was bedeutet, dass das erste Zeichen eines Strings den Index 0 hat. Um einen bestimmten Substring zu extrahieren, müssen wir daher wissen, an welcher Stelle im String er beginnt und wo er endet.
 
-Außerdem sollten Sie beachten, dass die Funktion "strncpy" keine Überlappungen zwischen den Quellen- und Zielvariablen zulässt. Wenn Sie also versuchen, Zeichen aus einer Zeichenkette in die gleiche Zeichenkette zu kopieren (z.B. "strncpy(name, name + 5, 5)"), wird das Verhalten nicht definiert.
+Es ist auch wichtig zu beachten, dass bei Verwendung der Funktion `strncpy` der Zielstring immer länger sein muss als der zu kopierende Substring. Andernfalls kann es zu Speicherzugriffsverletzungen und Fehlern im Code kommen.
 
-Um mögliche Probleme zu vermeiden, können Sie die Funktion "strlcpy" verwenden, die in der Bibliothek "string.h" verfügbar ist. Diese Funktion behandelt Überlappungen und sorgt dafür, dass die Zielvariable immer richtig abgeschlossen wird.
-
-## Siehe auch
-
-- [Dokumentation zu strncpy (auf Englisch)](https://en.cppreference.com/w/c/string/byte/strncpy)
-- [Dokumentation zu strlcpy (auf Englisch)](https://man.openbsd.org/strlcpy)
-- [Weitere Funktionen zum Manipulieren von Zeichenketten in C (auf Deutsch)](https://www.cplusplus.com/reference/cstring/)
+# Siehe auch
+- [C String Operations](https://www.tutorialspoint.com/cprogramming/c_string.htm)
+- [C Strncpy Function](https://www.w3schools.in/c-tutorial/string-handling/strncpy-function/)
+- [C Examples - String handling functions](https://www.programiz.com/c-programming/examples/string-handling-functions)

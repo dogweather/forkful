@@ -1,41 +1,52 @@
 ---
-title:    "TypeScript: Używanie wyrażeń regularnych"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/using-regular-expressions.md"
+title:                "TypeScript: Używanie wyrażeń regularnych"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto używać wyrażeń regularnych?
+## Dlaczego
 
-Wyrażenia regularne są niezwykle przydatnym narzędziem w programowaniu, pozwalającym na wykonywanie zaawansowanych operacji na tekstach, takich jak wyszukiwanie, wycinanie lub zastępowanie określonych wzorców. Są niezwykle wszechstronne i potrafią przyspieszyć proces tworzenia oprogramowania. Jeśli pracujesz z dużymi ilościami danych tekstowych lub często musisz przetwarzać dane wejściowe, warto poznać wyrażenia regularne i wykorzystać je w swoim kodzie.
+Regular expressions są powszechnie używane w programowaniu do wyszukiwania i manipulacji ciągami znaków. Są one nie tylko wygodne, ale także bardzo skuteczne w wykonywaniu złożonych operacji na tekstach. W tym artykule dowiesz się, dlaczego warto nauczyć się korzystać z regular expressions w TypeScript.
 
-## Jak używać wyrażeń regularnych w TypeScript?
+## Jak to zrobić
 
-Aby zacząć korzystać z wyrażeń regularnych w TypeScript, musisz najpierw utworzyć obiekt klasy `RegExp`, który będzie przechowywał szukany wzorzec. Następnie możesz wykorzystać różne metody tej klasy, takie jak `test()` czy `exec()`, aby przeprowadzić operacje na tekście. Poniżej znajdują się dwa przykładowe kody, które wyjaśniają jak wyszukać i podmienić określone wzorce w tekście:
+Poniżej przedstawiamy kilka przykładów kodu TypeScript wykorzystujących regular expressions, wraz z odpowiadającym im wyjściem.
 
+```typescript
+// Wyszukiwanie słów rozpoczynających się od litery "a"
+const regex = /a\w+/g;
+const text = "Ala ma kota i amorka.";
+const matches = text.match(regex);
+console.log(matches);
+// Output: ['Ala', 'amorka']
 ```
-// Przykład 1: Wyszukiwanie słowa "Hello" w tekście
-let tekst = "Witaj na blogu o programowaniu w TypeScript!";
-let szukanyWzorzec = /Hello/;
-let czyZawiera = szukanyWzorzec.test(tekst);
-console.log(czyZawiera); // Output: false (ponieważ tekst nie zawiera słowa "Hello")
-
-// Przykład 2: Zamiana daty z anglojęzycznego formatu "YYYY-MM-DD" na format polżczyzny "DD.MM.YYYY"
-let data = "2020-11-30";
-let szukanyWzorzec = /(\d{4})-(\d{2})-(\d{2})/;
-let dataWynikowa = data.replace(szukanyWzorzec, "$3.$2.$1");
-console.log(dataWynikowa); // Output: "30.11.2020"
+```typescript
+// Zmiana formatu daty z "mm/dd/yyyy" na "dd.mm.yyyy"
+const regex = /(\d{2})\/(\d{2})\/(\d{4})/g;
+const date = "12/31/2020";
+const result = date.replace(regex, `$2.$1.$3`);
+console.log(result);
+// Output: '31.12.2020'
+```
+```typescript
+// Sprawdzanie czy tekst zawiera liczby
+const regex = /\d/;
+const text = "Nie spodziewam się, że w tym zdaniu będzie 200.";
+console.log(regex.test(text));
+// Output: true
 ```
 
-## Głębsza analiza wyrażeń regularnych
+## Deep Dive
 
-Wyrażenia regularne w TypeScript są oparte na standardzie ECMAScript, co oznacza że wykorzystują podobną składnię i mechanizmy co w innych językach programowania (takich jak JavaScript czy Python). Jednym z najważniejszych aspektów wyrażeń regularnych jest możliwość kontrolowania ich dokładności poprzez użycie tzw. kwantyfikatorów, takich jak `?`, `+` czy `*`, aby określić ilość wystąpień szukanego wzorca. Ponadto, można także korzystać z tzw. grup, czyli ujmowania fragmentów wzorca w nawiasy i wykorzystania ich później w zastępowaniu. Jest to bardzo przydatne przy wykonywaniu skomplikowanych operacji na tekście.
+Regular expressions w TypeScript dają możliwość wykonywania zaawansowanych operacji na tekstach, dzięki czemu nasze aplikacje mogą być bardziej funkcjonalne i wydajne. Nie tylko są one używane do wyszukiwania, ale także do zastępowania, dzielenia i walidacji ciągów znaków. Poza tym, TypeScript dostarcza specjalne notacje, które ułatwiają pracę z regular expressions, takie jak `\w` oznaczający dowolny znak alfanumeryczny lub `\d`, który oznacza dowolną cyfrę.
+
+Gdy jesteś już gotowy, aby przyswoić wiedzę na temat regular expressions w TypeScript, możesz poszerzyć swoje umiejętności, wykorzystując język regex w innych językach programowania, takich jak Python czy JavaScript.
 
 ## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych w TypeScript, polecam zapoznać się z oficjalną dokumentacją języka oraz z poradnikami dostępnymi online:
-
-- Oficjalna dokumentacja TypeScript: https://www.typescriptlang.org/docs/
-- Poradnik wyrażeń regularnych w ECMAScript: https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions
-- Przykładowe kody z wykorzystaniem wyrażeń regularnych: https://regex101.com/
+- [Dokumentacja TypeScript dotycząca regular expressions](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Książka "JavaScript - Rola wyrażeń regularnych w praktyce"](https://helion.pl/ksiazki/javascript-rola-wyrazen-regularnych-w-praktyce-srp-jsre.htm#format/e)
+- [Wideo "Wyrażenia regularne w TypeScript"](https://www.youtube.com/watch?v=JdDXKf_5dfk)

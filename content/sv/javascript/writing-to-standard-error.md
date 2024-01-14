@@ -1,41 +1,39 @@
 ---
-title:    "Javascript: Skrivning till standardfel"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/writing-to-standard-error.md"
+title:                "Javascript: Skriva till standardfel"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför skriva till standard error i Javascript
 
-Att skriva till standard error är en viktig del av felsökning i programvara. Genom att skicka felmeddelanden till standard error istället för standard out, kan utvecklare enkelt identifiera och åtgärda problem i koden.
+Att skriva till standard error i Javascript är ett bra sätt att felsöka och hantera eventuella fel som kan uppstå i din kod. Genom att läsa utskrifter i standard error kan du enkelt spåra vilka delar av din kod som kan orsaka problem.
 
-## Hur man gör
+## Så här gör du det
 
-Det är enkelt att skriva till standard error i Javascript. Man kan använda metoden `console.error()` för att skriva ut felmeddelanden till standard error streamen. Här är ett exempel:
+Först och främst måste du öppna standard error-strömmen med hjälp av console.error() funktionen. Du kan sedan skicka felmeddelanden eller utskrifter till standard error genom att först konvertera dem till en sträng och sedan skicka dem till console.error().
 
 ```Javascript
-try {
-  // Kod som kan orsaka fel
-  throw "Ett fel har uppstått";
-} catch (error) {
-  // Skriver ut felmeddelandet till standard error
-  console.error(error);
-}
+const error = "Ett fel uppstod!";
+console.error(error); //skickar "Ett fel uppstod!" till standard error
 ```
-
-Detta kommer att skriva ut "Ett fel har uppstått" till standard error streamen och hjälpa dig att identifiera var felet uppstod.
 
 ## Djupdykning
 
-Skriva till standard error är också bra för att skilja mellan olika typer av utdata i en process. Genom att använda standard error för felmeddelanden och standard out för normal utdata, blir det lättare att automatiskt hantera eventuella fel som kan uppstå.
+Att skriva till standard error är ett sätt att skilja mellan återgivningen av vanliga utskrifter och felmeddelanden eller varningar. Genom att skicka felmeddelanden till standard error kan du tydligt se vad som är ett misstag och vad som är avsett att visas för användaren.
 
-Det är också viktigt att notera att standard error inte bara är till för felmeddelanden, utan kan också användas för att logga viktig information som kan hjälpa till med felsökning och förbättring av koden.
+Det finns också ett alternativ till att använda console.error(), vilket är att använda console.log() och skicka med ett andra argument som indikerar att utskriften är ett felmeddelande. Till exempel:
 
-## Se också
+```Javascript
+const error = "Ett fel uppstod!";
+console.log(error, {type: "error"}); //skickar "Ett fel uppstod!" till standard error
+```
 
-Här är några länkar där du kan läsa mer om att skriva till standard error i Javascript:
+Detta kan vara användbart om du vill ha mer kontroll över hur ditt felmeddelande visas i konsolen.
 
-- [Node.js Dokumentation: Standard Streams](https://nodejs.org/api/process.html#process_process_stdin)
-- [Mastering Node.js: Understanding Standard Streams](https://medium.com/@purjus/understanding-standard-streams-in-node-js-b9f03f746123)
-- [Stack Overflow: Difference between console.log and console.error](https://stackoverflow.com/questions/51250783/difference-between-console-log-and-console-error)
+# Se även
+
+- [console.error() dokumentation](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+- [Skriva till standard error i Javascript](https://stackabuse.com/writing-to-standard-error-in-javascript/)

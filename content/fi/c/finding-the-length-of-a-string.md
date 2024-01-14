@@ -1,72 +1,44 @@
 ---
-title:    "C: Merkkijonon pituuden löytäminen"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/finding-the-length-of-a-string.md"
+title:                "C: Merkkijonon pituuden selvittäminen"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi?
 
-On useita syitä, miksi lasketaan tekstin pituus C-ohjelmoinnissa. Yksi yleisimmistä käyttötarkoituksista on tarkistaa, onko teksti allekirjoitetulle muuttujalle annetun enimmäispituuden rajoissa. Tämä on erityisen tärkeää, kun käsitellään käyttäjältä saatuja syötteitä, jotta varmistetaan ohjelman suoritus ilman virheitä.
+Koodin pituuden löytäminen saattaa tuntua yksinkertaiselta tehtävältä, mutta se on yllättävän tärkeä taito ohjelmoijalle. Kun tiedät kuinka monta merkkiä koodisi sisältää, voit esimerkiksi varmistaa, että käytät oikean kokoista muistia tai että et ylitä merkki- tai sanarajoja.
 
-## Miten tehdä
+# Kuinka saada selville?
 
-Tekstin pituuden laskeminen C-ohjelmoinnissa on melko suoraviivaista. Käytämme `strlen()` -funktiota, joka on osa `string.h` -kirjastoa. Alla on yksinkertainen koodiesimerkki:
-
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char teksti[] = "Tämä on esimerkkiteksti";
-    int pituus = strlen(teksti);
-
-    printf("Tekstin pituus on: %d merkkiä", pituus);
-    return 0;
-}
-```
-
-Koodin suoritus antaa seuraavan tulosteen:
-
-`Tekstin pituus on: 23 merkkiä`
-
-## Syvempää tietoa
-
-C-ohjelmointikielen `strlen()` -funktio toimii siten, että se laskee vastaantulevan merkin indeksin alusta loppuun asti. Otetaan esimerkiksi edellinen koodiesimerkki:
+Voit selvittää merkkijonon pituuden käyttämällä C:n sisäänrakennettua funktiota `strlen()`. Tämä funktio ottaa parametrinaan merkkijonon ja palauttaa sen pituuden kokonaislukuna. Alla on kaksi yksinkertaista esimerkkiä sen käytöstä:
 
 ```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char teksti[] = "Tämä on esimerkkiteksti";
-    int pituus = strlen(teksti);
-
-    printf("Tekstin pituus on: %d merkkiä", pituus);
-
-    printf("\nErikoismerkkejä: ");
-    for(int i=0; i<pituus; i++){
-        printf(" %c(%d) ", teksti[i], teksti[i]);
-    }
-
-    return 0;
-}
+char str[] = "Tämä on merkkijono"; 
+int length = strlen(str); 
+printf("Merkkijonon pituus on: %d\n", length); 
 ```
 
-Tässä esimerkissä olemme lisänneet koodiin toisen `printf` -rivin, joka tulostaa käytetyn tekstin erikoismerkit ja niiden vastaavat numerokoodit. Tuloste näyttää tältä:
+Tämä tulostaa: `Merkkijonon pituus on: 19`.
 
+```C
+char* str = "Toinen merkkijono"; 
+int length = strlen(str); 
+printf("Merkkijonon pituus on: %d\n", length); 
 ```
-Tekstin pituus on: 23 merkkiä
-Erikoismerkkejä: T(84) ä(228) m(109) ä(228)  (32) o(111) n(110)  (32) e(101) s(115) i(105) m(109) e(101) r(114) k(107) k(107) i(105) t(116) e(101) k(107) s(115) t(116) i(105)
-```
 
-Kuten näemme, `strlen()` -funktio laskee myös välilyönnin ja erikoismerkit osaksi tekstin pituutta.
+Tämä tulostaa: `Merkkijonon pituus on: 18`.
 
-## Katso myös
+# Syvemmälle asiassa
 
-- [stdlsenl():n dokumentaatio C-kielessä](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm)
-- [C-koodiesimerkkejä - Tekstin kääntäminen ja laskeminen](https://www.programiz.com/c-programming/examples/string-length)
-- [C-kieliohjelmointi - Tekstin käsittely](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+Tämä funktio käyttää C:n nollapäätöslaskentaa määrittämään merkkijonon pituuden. Se käy läpi merkkijonon merkkejä, kunnes se saavuttaa nollamerkin, joka ilmaisee merkkijonon lopun. Tästä syystä `strlen()` ei ota huomioon nollamerkkiä, vaan laskee vain merkkien määrän ilman sitä.
 
-Kiitos lukemisesta! Toivottavasti tämä blogikirjoitus on auttanut sinua ymmärtämään tekstin pituuden laskemisen tärkeyttä C-ohjelmoinnissa. Muista käyttää `strlen()` -funktiota kaikissa tarvittavissa tilanteissa, jotta voit varmistaa tekstin oikean käsittelyn. Onnea ohjelmoinnissa!
+On myös tärkeää muistaa, että `strlen()` laskee merkkien määrän vain silloin, kun merkkijono on määritetty tavallisena c-merkkilistana. Jos merkkijono on esimerkiksi tallennettu osoittimena (`char*`), `strlen()` ei välttämättä toimi oikein.
+
+# Katso myös
+
+- [C:n strlen() funktio dokumentaatio](https://www.cplusplus.com/reference/cstring/strlen/)
+- [C:n merkkilistat ja nollapäätöslaskenta](https://www.geeksforgeeks.org/character-array-vs-string-c/)
+- [Tietoa merkkijonoista ja niiden manipuloinnista C-kielessä](https://www.tutorialspoint.com/cprogramming/c_strings.htm)

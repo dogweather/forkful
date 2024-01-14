@@ -1,42 +1,34 @@
 ---
-title:    "PHP: Säännöllisten lausekkeiden käyttö"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/using-regular-expressions.md"
+title:                "PHP: Regular expressionsin käyttäminen"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita ohjelmoinnissa?
+## Miksi käyttää regexp:iä
+Regulaarisia lausekkeita käytetään useissa eri ohjelmointikielissä, kuten PHP:ssä, tiedon etsimiseen ja muokkaamiseen tekstissä. Ne ovat hyödyllisiä esimerkiksi tietokantojen tiedonhaussa ja datan validoinnissa. Regexp-osaamisella pystyy myös lyhentämään monimutkaisia koodinpätkiä yhteen kohtaan.
 
-Säännölliset lausekkeet ovat hyödyllinen työkalu ohjelmoijille, sillä ne mahdollistavat monimutkaisten tekstien etsimisen ja muokkaamisen nopeasti ja tehokkaasti. Ne ovat erityisen hyödyllisiä silloin, kun on tarve käsitellä erilaisia merkkijonoja ja tietueita, kuten esimerkiksi lomakkeiden syötteitä, sähköpostiosoitteita tai tiedostojen nimiä.
+## Kuinka käyttää regexp:iä
+Regexp-ominaisuus on sisäänrakennettu PHP:hen ja sen käyttö on varsin helppoa. Alla on esimerkki tekstiin X haluamamme muutoksen tekemisestä, jotta se vastaa haluttua formaattia.
 
-## Kuinka käyttää säännöllisiä lausekkeita PHP:ssa?
+```PHP
+//Ennen:
+$text = 'Tervehesti foorumille!';
 
-Säännöllisiä lausekkeita käytetään PHP:ssa preg_match-funktion avulla. Tämä funktio ottaa kolme parametria: säännöllinen lauseke, haettava merkkijono ja muuttuja, johon haun tulos tallennetaan. Käyttämällä erilaisia säännöllisiä lausekkeita, voit tarkistaa, vastaako annettu merkkijono haluttua kaavaa ja tehdä sen perusteella jotain muuta.
+//Haluttu muotoilu:
+$text = 'Tervehdys, foorumille!';
 
-```
-<?php 
-$merkkijono = "Tämä on esimerkkimerkkijono";
-
-// Tarkistetaan, sisältääkö merkkijono sanan "esimerkki"
-if (preg_match("/esimerkki/", $merkkijono)) {
-  echo "Merkkijono sisältää sanan 'esimerkki'";
-} else {
-  echo "Merkkijono ei sisällä sanaa 'esimerkki'";
-}
-?>
+//Regexp:
+preg_replace('/Tervehesti/', 'Tervehdys,', $text);
 ```
 
-Tämä koodinpätkä tulostaisi "Merkkijono sisältää sanan 'esimerkki'".
+Esimerkin PHP-koodissa käytetään `preg_replace()` funktiota muuttamaan tekstissä X sijaitseva sana "Tervehesti" toiseen muotoon. Regexp-osaaja ottaa huomioon kirjoitusvirheet ja muut mahdolliset vaihtoehdot, jotka vastaavat haluttua muotoilua. Regexp:ille luonteenomaisesti backslash-merkki `\` johtaa ohjausmerkintää ja `/`-merkit ovat käytössä regexpien alku- ja loppumääritteissä.
 
-## Syvempi sukellus säännöllisiin lausekkeisiin
-
-Säännöllisiä lausekkeita voidaan käyttää moniin eri tarkoituksiin, kuten esimerkiksi hakemaan tiettyjä merkkijonoja, korvaamaan osia merkkijonosta tai tarkistamaan merkkijonojen muotoja. Niiden avulla voidaan myös suorittaa haun eri vaihtoehdoilla tai sallia tiettyjä sääntöjä, kuten esimerkiksi kirjainkoolla tai numeroiden läsnäololla.
-
-Säännölliset lausekkeet voivat aluksi vaikuttaa monimutkaisilta, mutta niitä käyttämällä voit tehdä koodistasi huomattavasti tehokkaampaa ja välttyä turhalta koodin toistolta.
+## Syvemmälle regexp:iin
+Regulaariset lausekkeet koostuvat erilaisista elementeistä, joista jokaisella on oma roolinsa. Niiden käytössä tärkeää on myös ymmärtää erilaiset speksit, kuten säännölliset lausekkeet (regex), POSIX-säännölliset lausekkeet ja ereg:s. Ohjetta kannattaa tutkia tarkemmin PHP:n virallisilta sivuilta.
 
 ## Katso myös
-
-- [PHP.net: Preg_match](https://www.php.net/manual/en/function.preg-match.php)
-- [Regular-Expressions.info](https://www.regular-expressions.info/)
-- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [PHP: preg_replace funktion dokumentaatio](https://www.php.net/manual/en/function.preg-replace.php)
+- [PHP:n viralliset sivut](https://www.php.net/)

@@ -1,31 +1,34 @@
 ---
-title:    "Swift: स्ट्रिंगों को जोड़ना।"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/swift/concatenating-strings.md"
+title:                "Swift: स्ट्रिंग्स को जोड़ना"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-शब्दों को एक साथ जोड़ना, स्ट्रिंग कन्कटीनेशन को कई स्विफ्ट डेवलपर्स के लिए बहुत महत्वपूर्ण हो सकता है। यह किसी भी प्रोग्राम में डेटा को संगहत रूप में प्रदर्शित करने में सहायक हो सकता है।
+स्ट्रिंग को जोड़ने में इंजीनियरिंग होती है क्योंकि यह एक स्ट्रिंग के असामान्य संख्या जो तीसरे पक्ष के पर्यायों के साथ भिन्न होने की संभावना है। स्विफ्ट प्रोग्रामिंग भाषा एक संकल्प पर आधारित भाषा है जिसमें आप किसी भी हिस्से को संख्या बना सकते हैं। आप इस कारण से संग्रहित स्ट्रिंग का स्वतंत्र घोषणा स्ट्रिंग के साथ भिन्न नहीं हो सकते हैं
 
 ## कैसे करें
 
-अपने स्ट्रिंग वेरिएबल्स को संगहत रूप में जोड़ने के लिए, आप "+"\ व्यक्ति या "\(बैकस्लैश)(न)" का उपयोग कर सकते हैं। नीचे दिए गए कोड ब्लॉक में एक उदाहरण दिया गया है:
-
 ```Swift
-var firstName = "कृष्णा"
-var lastName = "शर्मा"
-var fullName = firstName + " " + lastName
+let firstName = "विश्वपवन"
+let lastName = "कुमार"
+let fullName = firstName + " " + lastName
 
-print(fullName) // Output: कृष्णा शर्मा
+print(fullName) // विश्वपवन कुमार
 ```
 
-इस उदाहरण में, हमने पहले दो नामीय वेरिएबल्स बनाएं, और फिर वेरिएबल "fullName" में दोनों को संगहत रूप में जोड़ा है। आप चाहे तो अपने स्ट्रिंग वेरिएबल्स को संगहत रूप में अनेक बार जोड़ सकते हैं।
+## गहराई में जाएं
 
-## होनहारों में गहराई
+स्ट्रिंग को जोड़ने के लिए, हम एक अलग स्ट्रिंग को दूसरे स्ट्रिंग के साथ जोड़ सकते हैं, जिसमें हम जोड़ने के साथ एक ‘एकत्रित’ ऑपरेटर का उपयोग करते हैं। यहां, हमारे पास दो स्ट्रिंग हैं जो एक साथ जोड़ने का स्वरूप बनते हैं। इस तरह से, हम आप उन्हें एक साथ जोड़ सकते हैं और आपका नतीजे में नया स्ट्रिंग विश्लेषण करेंगे। नया स्ट्रिंग अनुत्पाद स्विफ्ट प्रोग्रामिंग के लिए तैयार हो जाएगा।
 
-स्ट्रिंग कन्कटीनेशन के लिए आपके प्रोग्राम में चाहे जितनी बड़ी संख्या कि वेरिएबल्स हों, आपको संगहत रूप में जोड़ने से पहले इन्हें सही डेटा टाइप में रूपांतरित करना होगा। इससे आपके कोड में गलतियां कम हो सकती हैं। एक और महत्वपूर्ण बात है कि आप अपने स्ट्रिंग वेरिएबल्स को संगहत रूप में जोड़ने के लिए कुछ प्रतिबंधित चरित्रों का उपयोग न करें, जैसे कि स्पेशल चरित्र या पूर्व निर्धारित कीवर्ड्स।
+## देखो की
 
-##
+ऐसा करने के लिए अधिक उदाहरण हासिल करने के लिए, नीचे दी गई लिंक्स की जांच करें:
+
+- [Swift Strings and Characters - Apple Documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Concatenating strings in Swift - Paul Hudson](https://www.hackingwithswift.com/example-code/strings/how-to-concatenate-strings-in-swift)
+- [Concatenating String and Characters - Kunal Kapadia](https://kunalkapadia.github.io/swift/strings/characters/2016/02/14/concatenating-strings-and-characters-in-swift.html)

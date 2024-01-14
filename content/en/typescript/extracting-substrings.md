@@ -1,54 +1,52 @@
 ---
-title:    "TypeScript recipe: Extracting substrings"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/typescript/extracting-substrings.md"
+title:                "TypeScript recipe: Extracting substrings"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Extract Substrings in TypeScript?
+## Why
 
-In TypeScript, strings are a common data type used for storing textual information. However, sometimes we only need a part of a string instead of the entire thing. This is where extracting substrings comes in handy. By extracting substrings, we can manipulate and use specific parts of a string, ultimately making our code more efficient and versatile.
+Substring extraction is an important concept in TypeScript that allows programmers to extract a specific part of a string. This can be useful for various purposes such as data manipulation or formatting. Learning how to extract substrings will make your code more efficient and versatile. 
 
-## How To Extract Substrings in TypeScript
+## How To
 
-To extract substrings in TypeScript, we can use the built-in `substring` method. This method takes in two parameters: a starting index and an optional ending index. Let's look at an example below:
-
-```TypeScript
-let myString: string = "Hello world!";
-let mySubstring: string = myString.substring(2, 7);
-
-console.log(mySubstring); // Output: llo w
-```
-
-In this example, we used the `substring` method to extract the substring "llo w" from the original string "Hello world!" by specifying the starting index as 2 and the ending index as 7. It's important to note that the ending index is not inclusive, so the character at index 7 is not included in the extracted substring.
-
-We can also omit the second parameter to extract the substring from the starting index to the end of the string, like this:
+To extract a substring in TypeScript, we use the `slice()` method. It takes in two parameters, the starting index and the ending index of the substring. For example, if we have a string called `name` with the value "John Doe", and we want to extract "John", we can do so with the following code:
 
 ```TypeScript
-let myString: string = "Hello world!";
-let mySubstring: string = myString.substring(2);
-
-console.log(mySubstring); // Output: llo world!
+let name: string = "John Doe";
+let firstName: string = name.slice(0,4);
+console.log(firstName);
 ```
 
-## Deep Dive into Substring Extraction
+The output of this code will be "John". The first parameter, 0, represents the starting index (first letter) of the substring, while the second parameter, 4, represents the ending index (before the 5th letter) of the substring. Keep in mind that the ending index is not inclusive, meaning the character at that index will not be included in the substring. 
 
-There are a few things to keep in mind when using the `substring` method in TypeScript. First, the starting index cannot be greater than the ending index, or else an empty string will be returned. Second, if any of the parameters are negative, they will be converted to 0.
-
-Additionally, the `substring` method does not modify the original string but instead returns a new string with the extracted substring. This means we can store the extracted substring in a new variable or use it directly without affecting the original string.
-
-Another thing to note is that the `substring` method is not limited to just extracting substrings from the front of a string. We can also use negative numbers for the parameters to extract substrings from the back of a string, like this:
+We can also use negative numbers in the `slice()` method to start counting from the end of the string. For example, if we want to extract "Doe" from our `name` string, we can do so with the following code:
 
 ```TypeScript
-let myString: string = "Hello world!";
-let mySubstring: string = myString.substring(-3, -1);
-
-console.log(mySubstring); // Output: ld
+let lastName: string = name.slice(-3);
+console.log(lastName);
 ```
+
+The output of this code will be "Doe". The negative index -3 represents the last three characters of the string. If we want to extract all of the characters after a certain index, we can simply omit the second parameter. For example, if we wanted to extract "Doe" as well as all the characters after it, we can use the following code:
+
+```TypeScript
+let lastName: string = name.slice(-3);
+console.log(lastName);
+```
+
+The output of this code will be "Doe".
+
+## Deep Dive
+
+The `slice()` method in TypeScript can take in negative values for both its parameters. This is because in TypeScript, strings are indexable in both forward and reverse directions. This makes it very flexible and allows us to easily manipulate strings in various ways. Additionally, the `slice()` method does not modify or change the original string, it simply returns the extracted substring. 
+
+It is important to note that the `slice()` method does not support adding or replacing characters within the string. It only allows for extraction of substrings. If you want to add or replace characters, you can use the `replace()` method and combine it with the `slice()` method to achieve the desired result. 
 
 ## See Also
-- [TypeScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
-- [Official TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/2/classes.html#substring)
 
-By extracting substrings in TypeScript, we can manipulate and use specific parts of a string easily and efficiently. So next time you need to work with just a portion of a string, remember to use the `substring` method!
+- [String.prototype.slice() - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [TypeScript String manipulation - W3Schools](https://www.w3schools.com/js/js_type_conversion.asp)
+- [Using Template Literals in TypeScript - Medium](https://medium.com/@urish/using-template-literals-in-typescript-435583f67614)

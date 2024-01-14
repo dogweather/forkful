@@ -1,35 +1,55 @@
 ---
-title:    "Swift: Überprüfung der Existenz eines Verzeichnisses"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/swift/checking-if-a-directory-exists.md"
+title:                "Swift: Überprüfung, ob ein Verzeichnis existiert"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Manchmal müssen wir in unserer Swift-Programmierung überprüfen, ob ein bestimmter Verzeichnispfad existiert. Dies kann aus verschiedenen Gründen geschehen, wie zum Beispiel das Lesen oder Schreiben von Dateien oder das Erstellen von Verzeichnissen.
+In der heutigen digitalen Welt werden immer mehr Daten gespeichert und verwaltet. Daher ist es wichtig zu wissen, ob ein bestimmter Ordner vorhanden ist, bevor man versucht, auf ihn zuzugreifen. In diesem Blogbeitrag werden wir uns damit beschäftigen, wie man in Swift überprüfen kann, ob ein Verzeichnis vorhanden ist.
 
-## Wie man es macht
+## Wie geht's
 
-Um zu überprüfen, ob ein Verzeichnis existiert, müssen wir die `FileManager`-Klasse verwenden. Diese Klasse bietet standardmäßig die Funktion `fileExists(atPath:)`, die uns genau das liefert, wonach wir suchen. Hier ist ein Beispielcode, um dies zu demonstrieren:
+Um zu prüfen, ob ein Verzeichnis vorhanden ist, können wir die Funktion ```fileExists(atPath:)``` aus der Klasse ```FileManager``` verwenden. Diese Funktion gibt einen booleschen Wert zurück, der angibt, ob der angegebene Pfad tatsächlich ein Verzeichnis ist oder nicht. Hier ist ein Beispielcode:
 
-```Swift
+```
 let fileManager = FileManager.default
-let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first! //Pfad zum Dokumentenverzeichnis erhalten
-let directoryExists = fileManager.fileExists(atPath: documentURL.path) //Überprüfen, ob das Dokumentenverzeichnis existiert
+let path = "/Users/username/Documents"
 
-print(directoryExists) //Output: true
+if fileManager.fileExists(atPath: path) {
+    print("Das Verzeichnis existiert.")
+} else {
+    print("Das Verzeichnis existiert nicht.")
+}
 ```
 
-In diesem Beispiel verwenden wir den `FileManager`, um den Pfad zum Dokumentenverzeichnis zu erhalten und dann die Funktion `fileExists(atPath:)` aufzurufen, um zu überprüfen, ob dieses Verzeichnis existiert. Der Rückgabewert ist eine boolesche Variable, die `true` ist, wenn sie existiert und `false`, wenn nicht.
+Wenn das Verzeichnis vorhanden ist, wird die Ausgabe "Das Verzeichnis existiert." sein. Andernfalls wird "Das Verzeichnis existiert nicht." ausgegeben.
 
-## Tiefer Einblick
+## Tiefergehende Analyse
 
-Unter der Haube verwendet `fileExists(atPath:)` die `stat()` C-Funktion, um den Dateistatus abzurufen. Wenn der Pfad gültig ist, wird ein nicht negativer Wert zurückgegeben, was bedeutet, dass die Datei existiert. Andernfalls gibt es einen negativen Wert zurück, was bedeutet, dass die Datei nicht gefunden wurde. Diese Funktion ist sehr effizient und schnell, da sie nicht versucht, die Datei tatsächlich zu öffnen oder zu lesen, sondern nur den Status abruft.
+Es kann vorkommen, dass wir nicht nur wissen wollen, ob ein Verzeichnis existiert, sondern auch weitere Informationen darüber benötigen. Zum Beispiel möchten wir vielleicht wissen, ob das Verzeichnis lesbaren Inhalt hat oder ob es schreibgeschützt ist. Hier kommt die Funktion ```attributesOfItem(atPath:)``` ins Spiel. Diese Funktion gibt ein Dictionary mit verschiedenen Eigenschaften des angegebenen Pfades zurück, einschließlich der Attribute des Verzeichnisses. Hier ist ein erweitertes Beispiel:
+
+```
+let fileManager = FileManager.default
+let path = "/Users/username/Documents"
+
+if let attributes = try? fileManager.attributesOfItem(atPath: path) {
+    print("Das Verzeichnis ist vom Typ: \(attributes[FileAttributeKey.type])")
+    print("Das Verzeichnis hat Inhalt der Größe: \(attributes[FileAttributeKey.size])")
+    print("Das Verzeichnis ist schreibgeschützt: \(attributes[FileAttributeKey.immutable])")
+} else {
+    print("Das Verzeichnis existiert nicht.")
+}
+```
+
+Die Ausgabe wird eine Liste von Eigenschaften des Verzeichnisses ausgeben, wie zum Beispiel sein Typ, die Größe des Inhalts und ob es schreibgeschützt ist.
 
 ## Siehe auch
 
-- [Apple Dokumentation über die `FileManager`-Klasse](https://developer.apple.com/documentation/foundation/filemanager)
-- [Apple Dokumentation über die `fileExists(atPath:)`-Funktion](https://developer.apple.com/documentation/foundation/filemanager/1410696-fileexists)
-- [Tutorial zum Arbeiten mit Dateien und Verzeichnissen in Swift](https://www.raywenderlich.com/4677585-beginning-ios-file-management-in-swift-part-1-2)
+- [Apple Dokumentation über das ```FileManager```-Modul](https://developer.apple.com/documentation/foundation/filemanager)
+- [Tutorial über das Lesen und Schreiben von Dateien in Swift](https://www.appcoda.com/swift4-filesystem-api/)
+
+Bitte denke daran, dass es immer wichtig ist, sicherzustellen, dass die richtigen Berechtigungen vorhanden sind, um auf ein Verzeichnis oder eine Datei zuzugreifen, bevor man den Code ausführt. In der Regel solltest du dich auf das Prüfen des Vorhandenseins von Verzeichnissen beschränken, da das Überprüfen der Eigenschaften des Verzeichnisses mehr Aufwand und Verarbeitung erfordern kann. Wir hoffen, dass dieser Beitrag dir geholfen hat, mehr über das Überprüfen von Verzeichnissen in Swift zu erfahren. Bis zum nächsten Mal!

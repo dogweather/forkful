@@ -1,47 +1,66 @@
 ---
-title:    "C++: पैटर्न से मेल खाते वर्णों को हटाना"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/deleting-characters-matching-a-pattern.md"
+title:                "C++: दिशा-वर्णन से मेल खाने वाले अक्षरों को हटाना"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-आज कल, कंप्यूटर विज्ञान में कोई नया कमाल कर रहा है। प्रोग्रामिंग का ही वह एक हिस्सा है, इसलिए इस प्रकार के कई समस्याओं का आनंद लें। एक ऐसी समस्या है कि यदि आपके पास एक स्ट्रिंग है और आपको उसमें एक कार्यक्रम से मेल खाने वाले चर को हटाना है, तो आपको इससे पूरा पालन कर सकते है। यह आसान है, किन्तु तरीका वास्तव में मिथ्या हो सकता है ही इसलिए इसके बारे में खुद को प्रदर्शित करते हैं। आओ हम इस बात का निष्कर्ष लेते हैं कि कार्यक्रम के साथ एक चर को हटाना है, तो कैसे उसे आसानी से करें।
+"Kyun: Kuch log sochte hain ki unke code mein kuch anokhi prashani hai jahan woh kuch special characters ko hatana chahte hain. Is blog post mein hum yeh sikhenge ki kyun kisi bhi pattern ke matches ko delete karna zaruri ho sakta hai."
 
-## क्यों
-एक चर को हटाने के पाठ का हंगामा होता है सिद्धांत में आया है। यह कुछ उदासी भरे भण्डार जेब्टबद्ध और शुभारंभ कैसे करें। आइये आपको बॉलीवुड को आज एक एन्टरटेनर दें।
+## Kyun 
 
-```C++
-#include <iostream>
-#include <string>
-using namespace std;
+Kisi bhi coding project mein, kai baar humein kuch special characters ko delete karna hota hai jaise ki whitespace, punctuation marks ya fir specific characters jo ki unwanted ho sakte hain. Isse hamare code ko efficient aur readable banane mein madad milti hai.
 
-// फंक्शन जो स्ट्रिंग और उस चर को हटाता है
-string removeChar(string str, char ch){
-    string result = "";
-    // स्ट्रिंग के हर एक चर को चेक करता है
-    for(int i=0;i<str.length();i++){
-        // यदि चर मेल खट्टा है, तो उसे अंतर रखें
-        if(str[i] != ch){
-            result += str[i];
-        }
-    }
-    // औपुट स्ट्रिंग प्रत्यारोपित वापस दिता है
-    return result;
-}
+## Kaise Karein
 
-int main(){
-    // स्ट्रिंग डेमो
-    string str = "हैलो वर्ल्ड!";
-    // फंक्शन यूसेज कॉलिंग
-    cout << "आदिकारी " << str << endl;
-    str = removeChar(str, '!');
-    cout << "स्ट्रिंग बाद ";
-    cout << str << endl;
-    return 0;
-}
-```
+Agar hum C++ programming language mein baat karein, toh hum 'erase' aur 'remove_if' functions ka istemal kar sakte hain jo ki standard template library mein available hain. 
 
 ```
-आदिकारी हैलो वर्ल्ड!
-स्ट्रिं
+// Erase function
+string str = "Hello World!";
+str.erase(remove(str.begin(), str.end(), 'l'), str.end());
+cout << str << endl;
+
+// Output: Heo Word!
+
+// Remove_if function
+string str = "Hello World!";
+str.erase(remove_if(str.begin(), str.end(), ::ispunct), str.end());
+cout << str << endl;
+
+// Output: HelloWorld
+```
+
+Jaise ki hum dekh sakte hain, humne is code mein 'l' aur punctuations ko delete kiya hai, jisse hamara string puri tarah se clean ho gaya hai.
+
+## Gehri Jankari
+
+Kabhi kabhi humein specific pattern ke matches ko delete karna hota hai, jaise ki aise words jo ki uppercase letters se shuru ho rahe hain ya fir kisi particular number ko included kar rahe hain. Isme hum ek special function, 'remove_if' ka istemal kar sakte hain jahan hum apne according character ko delete ya replace kar sakte hain.
+
+```
+// Removing words starting with uppercase
+string str = "This IS a TEST string";
+str.erase(remove_if(str.begin(), str.end(), ::isupper), str.end());
+cout << str << endl;
+
+// Output: his a string
+
+// Removing specific numbers
+string str = "12203152021";
+erase(remove_if(str.begin(), str.end(), [](char c){ return c == '2'; }), str.end());
+cout << str << endl;
+
+// Output: 1315201
+```
+
+Is tarah se hum 'remove_if' function ka istemal karke apne coding projects mein characters matching a pattern ko delete kar sakte hain.
+
+## Dekhein Bhi
+
+Agar aapko yeh article pasand aaya ho aur aapko aur bhi C++ programming se judi tips aur tricks jaan na ho, toh aap neeche diye gaye links ko check kar sakte hain:
+
+- Link 1
+- Link 2
+- Link 3

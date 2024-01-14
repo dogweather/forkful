@@ -1,31 +1,45 @@
 ---
-title:    "Fish Shell: Génération de nombres aléatoires"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/generating-random-numbers.md"
+title:                "Fish Shell: La génération de nombres aléatoires"
+programming_language: "Fish Shell"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
 
-Générer des nombres aléatoires est un élément essentiel de la programmation pour de nombreuses raisons. Que vous créiez des jeux, des simulations ou des tests, avoir une source fiable de nombres aléatoires est primordial. La coquille Fish propose une méthode simple et efficace pour générer des nombres aléatoires dans vos scripts.
+Les nombres aléatoires sont une partie essentielle de la programmation. Ils sont utilisés pour générer des valeurs uniques, pour simuler des situations aléatoires et pour tester des algorithmes. Utiliser des nombres aléatoires de manière appropriée peut améliorer la performance et la précision de vos programmes.
 
-## Comment faire 
+## Comment Faire
 
-Pour générer un nombre aléatoire dans la coquille Fish, nous allons utiliser la commande `math` intégrée. Cette commande calcule les équations mathématiques et génère une sortie numérique. Voici un exemple de code pour générer un nombre aléatoire entre 1 et 10 :
+Générer des nombres aléatoires en utilisant Fish Shell est facile et rapide. Il vous suffit d'utiliser la fonction `rand` suivie du nombre maximum que vous souhaitez inclure dans la génération.
 
 ```Fish Shell
-math /dev/random '* 10' | awk '{print $1 % 10}'
+echo (rand 10)
 ```
 
-La partie `math /dev/random '* 10'` génère un nombre aléatoire entre 0 et 9 à l'aide du générateur de nombres aléatoires de votre système d'exploitation. Nous utilisons ensuite la commande `awk` pour sélectionner uniquement le premier nombre dans la sortie. Enfin, nous utilisons le modulo pour nous assurer que le nombre final est compris entre 0 et 9. Vous pouvez modifier les valeurs pour générer un nombre aléatoire dans une plage différente.
+L'exemple ci-dessus générera un nombre aléatoire entre 0 et 10. Vous pouvez également spécifier un nombre minimum en utilisant `--min` et un nombre maximum avec `--max`. Par exemple :
 
-## Plongée en profondeur 
+```Fish Shell
+echo (rand --min 5 --max 15)
+```
 
-La commande `math` offre de nombreuses possibilités pour générer des nombres aléatoires. Par exemple, vous pouvez utiliser le générateur de nombres aléatoires `RAND` pour créer une liste de nombres aléatoires. Vous pouvez également utiliser la commande `seq` intégrée pour générer une liste de nombres séquentiels et les mélanger à l'aide du générateur de nombres aléatoires. La coquille Fish propose également des variables intégrées telles que `$RANDOM` pour générer des nombres aléatoires de manière encore plus simple.
+Ce code générera un nombre aléatoire compris entre 5 et 15. Vous pouvez également spécifier une séquence de nombres possibles en utilisant `--seq`. Voici un exemple :
 
-## Voir aussi 
+```Fish Shell
+echo (rand --seq 1 2 3 4 5)
+```
 
-- [Documentation officielle de la coquille Fish](https://fishshell.com/docs/current/cmds/math.html)
-- [Guide des commandes de la coquille Fish](https://fishshell.com/docs/current/commands.html)
-- [Guide du générateur de nombres aléatoires en ligne de commande](https://www.computerhope.com/unix/random.htm)
+Cela générera un nombre aléatoire parmi ceux spécifiés dans la séquence, dans cet exemple: 1, 2, 3, 4 ou 5.
+
+## Plongée Profonde
+
+La fonction `rand` utilise l'algorithme Xorshift pour générer des nombres aléatoires. Il utilise des opérations simples sur les bits pour générer des séquences de nombres pseudo-aléatoires, qui peuvent être calculées de manière très efficace. Cela rend l'utilisation de `rand` dans Fish Shell une méthode rapide et pratique pour générer des nombres aléatoires.
+
+Il est important de noter que les nombres générés par la fonction `rand` sont pseudo-aléatoires, ce qui signifie qu'ils suivent un modèle déterministe mais apparemment aléatoire. Si vous recherchez une génération de nombres plus aléatoire, vous devriez utiliser une librairie spécifique aux nombres aléatoires plutôt que la fonction `rand` de Fish Shell.
+
+## Voir aussi
+
+- Documentation Fish Shell sur `rand`: https://fishshell.com/docs/3.1/cmds/rand.html
+- Algorithme Xorshift: https://en.wikipedia.org/wiki/Xorshift

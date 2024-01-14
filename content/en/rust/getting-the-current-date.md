@@ -1,52 +1,50 @@
 ---
-title:    "Rust recipe: Getting the current date"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/getting-the-current-date.md"
+title:                "Rust recipe: Getting the current date"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Getting the current date may seem like a simple task, but it is an important feature in many programs. It allows for time-based functionality, such as scheduling tasks or displaying the current date to the user. In Rust, there are multiple ways to get the current date and it's important to understand how to do so efficiently. 
+When developing a program, it is often necessary to have access to the current date. This can be used for various purposes such as logging, organizing data, or simply displaying the current date for the user. In Rust, there are various ways to get the current date and this blog post will explore some of them.
 
 ## How To
 
-To get the current date in Rust, we can use the `chrono` crate. First, we need to add the following to our `Cargo.toml` file:
+There are multiple ways to get the current date in Rust, depending on your specific needs. Let's take a look at three different methods using the built-in `std::time` library.
 
+```Rust
+use std::time::SystemTime;
+
+// Method 1: Using `SystemTime::now()`
+let current_date = SystemTime::now();
+println!("{:?}", current_date); // Example output: Ok(2021-10-06 18:37:17.123456 +0000)
+
+// Method 2: Using `SystemTime::now().duration_since()`
+let current_date = SystemTime::now().duration_since(SystemTime::UNIX_EPOCH).unwrap().as_secs();
+println!("{}", current_date); // Example output: 1633541830 (number of seconds since UNIX epoch)
+
+// Method 3: Using `SystemTime::now().format()`
+use chrono::Local;
+let current_date = Local::now().format("%Y-%m-%d %H:%M:%S").to_string();
+println!("{}", current_date); // Example output: 2021-10-06 18:37:17
 ```
-[dependencies]
-chrono = "0.4.11"
-```
+In the first method, we simply use the `now()` method from `SystemTime` to get the current date and time. This returns a `Result` type, which we can then print using the `println!` macro. Note that this method includes the current timestamp in nanoseconds.
 
-Next, we can use the `chrono::Utc` method to get the current date in UTC format. We can then use `format()` to format the date in our desired way. Here's an example:
+The second method uses the `now()` method again, but this time we call the `duration_since()` method and pass in `SystemTime::UNIX_EPOCH` as an argument. This returns the duration between the current date and the UNIX epoch, which is January 1, 1970. We then use the `as_secs()` method to convert this duration into the number of seconds and print it out.
 
-```
-use chrono::Utc;
-
-let current_date = chrono::Utc::today().format("%Y-%m-%d").to_string();
-println!("{}", current_date); // Output: 2020-08-13
-```
-
-We can also get the current date and time by using `Utc::now()` and formatting it accordingly. Here's another example:
-
-```
-use chrono::Utc;
-
-let current_datetime = chrono::Utc::now().format("%Y-%m-%d %H:%M:%S").to_string();
-println!("{}", current_datetime); // Output: 2020-08-13 12:30:45
-```
+Finally, the third method uses the `format()` method from the `Local` struct in the `chrono` library. This method allows us to format the date and time in any way we want by using a format string. In this case, we specify the year, month, day, hour, minute, and second in a specific order. This returns a `String` type, which we can then print using the `println!` macro.
 
 ## Deep Dive
 
-Internally, the `chrono` crate uses the `SystemTime` type to get the current date and time. This type is platform-dependent and provides sub-second precision. Additionally, `chrono` also handles time zones and daylight saving time, allowing for accurate and reliable date and time calculations.
+Now, let's take a deeper look at how the `now()` method works under the hood. When we call this method, it retrieves the current time from the system and returns a `SystemTime` instance. This instance contains a `Duration` type, which represents the amount of time since the UNIX epoch. This duration is then used to calculate the current date and time.
 
-When getting the current date in Rust, it's important to consider performance as well. One way to improve performance is by caching the date for a short period, rather than calling the `Utc::now()` method multiple times. This can help reduce unnecessary system calls and improve the overall efficiency of the program.
+It's worth noting that the `now()` and `duration_since()` methods use the `get_time()` function from the `time` crate in order to get the current time. This function makes a system call to retrieve the current time, which can be expensive. That's why it's recommended to store the current time in a variable and reuse it instead of constantly calling the `now()` method.
 
 ## See Also
 
-Here are some helpful resources for further reading about getting the current date in Rust:
-
-- [Chrono crate documentation](https://docs.rs/chrono/0.4.11/chrono/)
-- [SystemTime API reference](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
-- [Performance tips for working with time in Rust](https://blog.jan-ahrens.eu/2017/04/10/rust-performance-tip-1.html)
+- [std::time::SystemTime](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
+- [chrono::Local](https://docs.rs/chrono/0.4.19/chrono/offset/local/index.html)
+- [time::get_time()](https://docs.rs/time/0.2.25/time/fn.get_time.html)

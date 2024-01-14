@@ -1,50 +1,47 @@
 ---
-title:    "Clojure: Generering av tilfeldige tall"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/clojure/generating-random-numbers.md"
+title:                "Clojure: Generering av tilfeldige tall"
+programming_language: "Clojure"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å generere tilfeldige tall er essensielt for å skape variasjon og tilfeldighet i koden din. Dette kan være nyttig for alt fra å lage spill til å utføre simulasjoner.
+Generering av tilfeldige tall er en viktig del av mange programmeringsoppgaver. Det kan være nyttig for å lage tilfeldig spillinnhold, teste algoritmer eller rett og slett for å legge til variasjon i et program.
 
-## Hvordan
+# Slik gjør du det
 
-For å generere tilfeldige tall i Clojure, kan du bruke funksjonen `rand`. Denne funksjonen tar inn et tall som argument, og vil gi tilbake et tilfeldig tall mellom 0 og det spesifiserte tallet. For eksempel:
-
-```Clojure
-(rand 10)  ; Vil returnere et tilfeldig tall mellom 0 og 10
-```
-
-Du kan også bruke funksjonen `random` for å generere et tilfeldig tall mellom to spesifiserte tall, som vist i eksempelet under:
+Det finnes flere måter å generere tilfeldige tall på i Clojure. En enkel måte er å bruke funksjonen "rand", som returnerer et tilfeldig desimaltall mellom 0 og 1.
 
 ```Clojure
-(random 5 10)  ; Vil returnere et tilfeldig tall mellom 5 og 10
+(rand)
+;; Output: 0.4251775647121888
 ```
 
-En annen nyttig funksjon er `shuffle`, som tar inn en liste og gir tilbake en tilfeldig permutasjon (ombytning av elementer) av den opprinnelige listen. Dette kan være nyttig for å blande rekkefølgen på elementer i en liste.
+Hvis du vil ha et heltall, kan du bruke funksjonen "rand-int". Her kan du også spesifisere et maksimalt tall som skal genereres.
 
 ```Clojure
-(shuffle [1 2 3 4 5])  ; Et eksempel på en tilfeldig permutasjon av tallene 1 til 5
+(rand-int 10)
+;; Output: 7
 ```
 
-## Dypdykk
-
-Det er viktig å være klar over at tilfeldige tall generert ved hjelp av disse funksjonene ikke er helt tilfeldige. De er basert på en såkalt pseudorandom-algoritme, som bruker en startverdi (også kalt "seed") for å generere tallene. Dette betyr at hvis du angir samme startverdi, vil du alltid få de samme tallene i samme rekkefølge.
-
-For å unngå dette og få en virkelig tilfeldig liste av tall, kan du bruke funksjonen `java.util.Random` og deretter bruke `nextInt`-funksjonen for å generere tilfeldige tall. For å sikre at du alltid får forskjellige tall, bør du bruke en variabel for å lagre `Random`-objektet og kalle `setSeed`-funksjonen med forskjellige verdier mellom hver kjøring av programmet.
+Ønsker du et tilfeldig tall innenfor et spesifikt område, kan du bruke "rand-nth" og gi en liste som parameter.
 
 ```Clojure
-(def rnd (java.util.Random.))  ; Oppretter et tilfeldig-objekt
-(setSeed rnd 42)  ; Setter startverdi til 42
-(.nextInt rnd 10)  ; Vil gi tilbake et helt tilfeldig tall mellom 0 og 9
+(rand-nth [1 2 3 4 5])
+;; Output: 3
 ```
 
-## Se også
+# Dykk dypere
 
-- [Clojure dokumentasjon for `rand`](https://clojuredocs.org/clojure.core/rand)
-- [Clojure dokumentasjon for `random`](https://clojuredocs.org/clojure.core/random)
-- [Clojure dokumentasjon for `shuffle`](https://clojuredocs.org/clojure.core/shuffle)
-- [Java dokumentasjon for `Random`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html)
+Clojure bruker en pseudorandom-nummergenerator basert på en lineær kongrutermetode. Dette betyr at tallene som genereres ikke er helt tilfeldige, men er basert på en matematisk formel som gir en følge av tall som ser ut til å være tilfeldige.
+
+Hvis du vil ha større grad av tilfeldighet i tallgenereringen, kan du bruke "seed-random" funksjonen til å sette en fast startverdi for generatoren. Dette kan være nyttig for testing og debugging.
+
+# Se også
+
+- [Clojure dokumentasjon for tilfeldige tall](https://clojuredocs.org/clojure.core/rand)
+- [En fullstendig guide til Clojure programmetds](https://www.braveclojure.com/foreword/)
+- [En liste med andre Clojure ressurser på norsk](https://github.com/kogakure/clojure-resources-norwegian)

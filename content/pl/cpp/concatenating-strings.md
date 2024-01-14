@@ -1,42 +1,88 @@
 ---
-title:    "C++: Łączenie łańcuchów znaków"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/concatenating-strings.md"
+title:                "C++: Łączenie ciągów znaków"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jedną z podstawowych czynności w programowaniu jest łączenie lub łączenie danych tekstowych. To może wydawać się proste, ale w rzeczywistości jest to bardzo ważna umiejętność w wielu aplikacjach. W tym artykule dowiesz się, dlaczego łączenie łańcuchów jest niezbędne i jak to zrobić w języku C++.
+Manipulacja łańcuchami znaków jest nieodłączną częścią programowania w C++. Często zachodzi potrzeba połączenia kilku wyrazów lub zmiennych w jeden dłuższy wyraz. W tym artykule dowiesz się, dlaczego i jak używać funkcji concatenate, aby ułatwić sobie pracę.
 
 ## Jak to zrobić
 
-Do łączenia łańcuchów w języku C++ używamy operatora plus (+). Oto przykładowy kod, który łączy dwa łańcuchy i wyświetla wynik na konsoli:
+Do łączenia stringów w C++ używamy operatora "+" lub funkcji ```std::string::append()```. Operator "+" pozwala na bezpośrednie połączenie dwóch zmiennych typu string.
+
+Przykład:
 
 ```C++
 #include <iostream>
-using namespace std;
+#include <string>
 
 int main() {
-  string imie = "Anna";
-  string nazwisko = "Kowalska";
-  string pelne_imie = imie + " " + nazwisko;
-  cout << pelne_imie;
-  return 0;
+    std::string first_name = "Karolina";
+    std::string last_name = "Nowak";
+    std::string full_name = first_name + " " + last_name;
+
+    std::cout << "Moje imię to: " << full_name << std::endl;
+    return 0;
 }
+
+//Output: Moje imię to: Karolina Nowak
 ```
 
-W tym przykładzie stworzyliśmy trzy zmienne typu string: "imie", "nazwisko" i "pelne_imie". Następnie, używając operatora plus, połączyliśmy łańcuchy "imie" i "nazwisko" oraz dodaliśmy pomiędzy nimi spację. Na końcu program wyświetla wynik "Anna Kowalska" na ekranie.
+Funkcja ```std::string::append()``` jest wykorzystywana, gdy chcemy do istniejącego łańcucha znaków dodać kolejny wyraz lub zmienną.
 
-## Deep Dive
+Przykład:
 
-Aby lepiej zrozumieć działanie operatora plus w kontekście łączenia łańcuchów, warto wiedzieć, że w języku C++ istnieje również klasa "string". Ta klasa zawiera wiele przydatnych funkcji do manipulowania i łączenia łańcuchów. Przykładem może być funkcja append(), która dodaje łańcuch na końcu innego łańcucha.
+```C++
+#include <iostream>
+#include <string>
 
-Inną przydatną rzeczą jest to, że w języku C++ można też łączyć zmienne innych typów (np. int czy double), zamieniając je na łańcuchy za pomocą funkcji to_string(). Dzięki temu jesteśmy w stanie łączyć różnego rodzaju dane w jeden łańcuch.
+int main() {
+    std::string sentence = "Lubię ";
+    std::string fruit = "banany";
+    sentence.append(fruit);
 
-## Zobacz także
+    std::cout << "Wydrukuj to zdanie: " << sentence << "!" << std::endl;
+    return 0;
+}
 
-- [Dokumentacja C++ o operacjach na łańcuchach](https://docs.microsoft.com/pl-pl/cpp/standard-library/string-and-character-manipulation)
-- [Tutorial C++ o łączeniu łańcuchów](https://www.tutorialspoint.com/cplusplus/cpp_strings_concatenation.htm)
-- [Przydatne porady i triki dla początkujących programistów w C++](https://www.softwaretestinghelp.com/cpp-tips-tricks-and-interview-questions/)
+//Output: Wydrukuj to zdanie: Lubię banany!
+```
+
+## Głębokie zgłębianie
+
+W przypadku łączenia większej ilości zmiennych lub dłuższych wyrazów, może pojawić się pytanie, które z metod jest szybsze i wydajniejsze. W praktyce, nie ma dużych różnic w wydajności pomiędzy użyciem operatora "+" i funkcji ```std::string::append()```, więc wybór zależy od preferencji programisty.
+
+Warto jednak zwrócić uwagę na wydajność przy łączeniu dużych ilości wyrazów w pętli. W takim przypadku lepiej jest użyć funkcji ```std::stringstream```, która umożliwia skuteczne łączenie wielu zmiennych typu string w jeden łańcuch.
+
+Przykład:
+
+```C++
+#include <iostream>
+#include <sstream>
+
+int main() {
+    std::stringstream sentence;
+    int num_of_apples = 3;
+    std::string fruit = "jabłka";
+
+    for (int i = 1; i <= num_of_apples; ++i) {
+        sentence << i << " " << fruit << " ";
+    }
+
+    std::cout << "Potrzebujesz kupić: " << sentence.str() << std::endl;
+    return 0;
+}
+
+//Output: Potrzebujesz kupić: 1 jabłka 2 jabłka 3 jabłka
+```
+
+## Zobacz również
+
+1. [Tutorial C++ na W3Schools](https://www.w3schools.com/cpp/cpp_strings.asp)
+2. [Podstawy łańcuchów znaków w C++](https://re-codex.it/2018/11/working-with-strings-in-cpp-pt-1-the-very-basics/)
+3. [Dokumentacja C++ dla funkcji std::string::append](https://en.cppreference.com/w/cpp/string/basic_string/append)

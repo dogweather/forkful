@@ -1,44 +1,40 @@
 ---
-title:    "Fish Shell: השוואת שתי תאריכים"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/comparing-two-dates.md"
+title:                "Fish Shell: השוואה של שני תאריכים"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-אנשים יכולים להשתמש בשפת תכנות Fish Shell כדי להשוות שתי תאריכים כדי לממש פקודות תנאי המבוססות על קריטריוני תאריך. החשיבה הקטנה שלה בקונטקסט של השפת תכנות כולה הופכת את זה לתהליך יישומי חשוב לתנאים פעילים.
+תארכי פיצול הם כלי חשוב עבור מתכנתים שמשתמשים בשפת פיש של. הם מאפשרים לנו לבדוק ולהשוות בין תאריכים שונים כדי לקבוע את הסדר ולבדוק אם מקרה מסוים קרה לפני או אחרי מקרה אחר. במאמר זה, נדון באיך לבצע השוואה בין תאריכים באמצעות שפת פיש של.
 
 ## איך לעשות זאת
 
-```Fish Shell
-# ייבוא שתי תאריכים למשתנים
-set date1 2020-01-01
-set date2 2020-02-01
+כדי לבצע השוואה בין תאריכים בשפת פיש, יש להשתמש בפונקציות המתאימות המופיעות בתוך סיסמא או תנאי נדרשים. הנה דוגמה פשוטה שמציגה כיצד לבצע השוואה בין תאריכים:
 
-# השוואת התאריכים באמצעות פקודת test
-if test $date1 = $date2
-    # התאריכים בולטים מחדירה זוויות
-    echo "תאריכים זהים"
-else if test $date1 != $date2
-    # התאריכים אינם זהים
-    echo "תאריכים שונים"
+```Fish Shell
+set old_date 2019-01-01
+set new_date 2020-01-01
+
+if test "$old_date" -nt "$new_date"
+   echo "The old date is after the new date"
+else
+   echo "The old date is before the new date"
 end
 ```
 
-הפלט של הקוד הנ"ל יהיה:
+כאן, אנו מגדירים שני משתנים עם תאריכים שונים ואז משתמשים בפונקציות "test" ו-"nt" כדי לבדוק את התאריך הישן והחדש. הפלט של הדוגמה הזאת יהיה "The old date is before the new date" מכיוון שהתאריך הישן קודם לתאריך החדש. ניתן לשנות את התאריכים בפקודה כדי לבדוק תוצאות שונות.
 
-```Fish Shell
-$ תאריכים שונים
-```
+## חפר עמוק
 
-## כיוון עמוק
+שוואת תאריכים גם יכולה להיות מורכבת יותר בתוך פקודות צ'יינס או בעזרת פונקציות נוספות כמו "string match" ו-"eval". אתם יכולים לגלות יותר על החשיבה המובנת של פיש של על ידי מבצע השוואת תאריכים יחד עם עצמך.
 
-כשאנו משווים שני תאריכים בשפת Fish Shell, הם מושווים כמחרוזות. זה יעיל לתכנות פקודות תנאי כמו "אם התאריך הוא לפני תאריך מסוים". עצם לבדו, שפת התכנות שלנו לא תאפשר לנו להשוות תאריכים מדוייקים. ישנם פתרונות נוספים לביצוע השוואה מדוייקת של תאריכים, כגון שימוש בספרייה שלנו או בשימוש בכלי תאריך נפרד.
+## ראו גם
 
-## ראה גם
+מאמרים נוספים על ביצוע השוואות בתאריכים עם פיש של:
 
-- [תיעוד של Fish Shell על פקודת test](https://fishshell.com/docs/current/cmds/test.html)
-- [סרטון הדרכה על פקודת test ב Fish Shell](https://www.youtube.com/watch?v=I3hrlV0cS1s)
-- [מדריך לשפת תכנות Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+1. [שוואת תחרות בין תאריכים בשפת פיש](https://dev.to/ruvimal/using-fish-shell-for-comparing-dates-462f)
+2.

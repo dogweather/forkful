@@ -1,37 +1,63 @@
 ---
-title:    "Swift: Utvinna delsträngar"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/swift/extracting-substrings.md"
+title:                "Swift: Extrahera delsträngar"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför: Anledningen till att extrahera substrängar
 
-I Swift programmering kan man ofta behöva extrahera delar av en textsträng för att utföra olika operationer. Det kan vara allt från att ändra formatet på en textsträng till att söka efter specifika ord. Men varför är det nödvändigt att extrahera substrängar? Det kan bero på olika anledningar, som att göra det lättare att hantera data eller att förenkla vissa algoritmer.
+Att extrahera substrängar är ett vanligt förekommande problem i Swift-programmering. Det kan behövas för att söka efter specifika ord eller tecken i en sträng, eller för att manipulera data på ett mer precist sätt. Genom att lära sig hur man extraherar substrängar kan du öka din förmåga att effektivt hantera strängar i dina program.
 
-## Så här gör du
+## Hur man gör det:
 
-För att extrahera en substräng i Swift använder man metoden `substring`. Den accepterar två parametrar - det första är startindex för substrängen och det andra är längden på substrängen. Här är ett exempel på hur man extraherar en substräng från en befintlig textsträng:
+För att extrahera en substräng från en sträng i Swift, kan man använda funktionen `substring`. Detta görs genom att ange den önskade startpositionen och längden på den önskade substrängen:
 
-```Swift 
-let text = "Hej världen!"
-let startIndex = text.index(text.startIndex, offsetBy: 4)
-let endIndex = text.index(text.endIndex, offsetBy: -1)
-let substring = text.substring(with: startIndex ..< endIndex)
+```Swift
+let sträng = "Hej jag heter Sven"
+let nySubstring = sträng.substring(from: 8, length: 5)
+print(nySubstring) // Resultat: "Sven"
 ```
-Detta kommer att resultera i att variabeln `substring` innehåller den nya textsträngen "världen". Notera att `offsetBy` används för att specificera startindexet och slutindexet för substrängen.
 
-## Djupdykning
+Det är viktigt att notera att startpositionen i funktionen `substring` börjar på index 0, precis som i arrays i Swift. Det betyder att i exemplet ovan är "S" startpositionen 8, även om det är det 9:e tecknet i den ursprungliga strängen.
 
-Nu när vi har sett hur man extraherar en substräng, låt oss gå in lite djupare på ämnet. Först och främst är det viktigt att förstå att index i Swift inte alltid matchar teckenpositionerna i en textsträng. Detta beror på att Swift använder Unicode och vissa tecken kan ha flera representationer. Därför är det viktigt att använda Swifts inbyggda funktioner för att räkna ut korrekta indexvärden när man extraherar substrängar.
+Om du istället vill extrahera en substräng från en specifik position till slutet av strängen, kan du använda funktionen `substring(from:)` och bara ange startpositionen:
 
-En annan viktig sak att komma ihåg är att substrängar delar referens med den ursprungliga textsträngen. Detta innebär att förändringar i substrängen också påverkar den ursprungliga textsträngen och vice versa. Om du behöver en helt ny textsträng, använd istället `substring(with: Range<String.Index>)`.
+```Swift
+let andraSubstring = sträng.substring(from: 8)
+print(andraSubstring) // Resultat: "Sven"
+```
 
-## Se även
+Det är också möjligt att extrahera substrängar baserat på första och sista förekomsten av ett specifikt tecken. För att göra detta, använd funktionen `substring(with: Range<String.Index>)` och ange en range av tecken att extrahera:
 
-Här är några resurser som kan vara till hjälp när du arbetar med substrängar i Swift:
+```Swift
+let förstaTecknet = sträng.index(of: " ")!
+let sistaTecknet = sträng.index(of: "j")!
+let tredjeSubstring = sträng.substring(with: förstaTecknet..<sistaTecknet)
+print(tredjeSubstring) // Resultat: "jag heter"
+```
 
-- [Officiell Swift dokumentation om substrängar](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID295) (på engelska)
-- [En guide på svenska om Swift textsträngar och Unicode](https://habr.com/en/post/257099/) (engelsk översättning finns tillgänglig)
-- [En tutorial på svenska om hur man extraherar och manipulerar substrängar i Swift](https://cocoacasts.com/how-to-work-with-strings-in-swift/)
+Man kan också utnyttja Swifts "string interpolation" för att extrahera enkla delar av en sträng baserat på specifika villkor. Till exempel:
+
+```Swift
+let Ålder = 29
+let mening = "Jag är \(Ålder) år gammal"
+let ÅldersSubstring = mening.substring(from: 7)
+print(ÅldersSubstring) // Resultat: "29 år gammal"
+```
+
+Det finns många situationer där det kan vara användbart att kunna extrahera substrängar på detta sätt. Experimentera med olika kombinationer av funktionerna `substring` och `index` och se vad du kan åstadkomma!
+
+## Djupdykning:
+
+Att kan vara användbart att förstå hur Swift hanterar strängar på en underliggande nivå när man arbetar med substrängar. I Swift är strängar representerade av strukturer, eller "structs" på engelska. Detta innebär att de är värden, inte referenser. Det betyder i princip att en sträng är en unik instans och vid en extraktion av en substräng, skapas en ny sträng instans med bara önskade delen av den ursprungliga strängen.
+
+En annan viktig sak att notera är att Swifts strängar är Unicode-kompatibla, vilket innebär att de kan innehålla tecken från många olika språk och skriftsystem. Detta gör det möjligt att extrahera substrängar baserat på Unicode-egenskaper som "gruppering" av tecken eller diakritiska tecken.
+
+## Se också:
+
+-[Swift.org: Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+-[Hacking with Swift: How to store substring in a string](https://www.hackingwithswift.com/example-code/strings/how-to-store-a-substring-in-a-string)
+-[Swift by Sundell: Working with dates and times in Swift](https://www.swiftbysundell.com/basics/working-with-dates-and-times-in-swift/)

@@ -1,56 +1,60 @@
 ---
-title:    "Haskell: Transformant une date en chaîne de caractères"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/converting-a-date-into-a-string.md"
+title:                "Haskell: Conversion d'une date en chaîne de caractères"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 # Pourquoi
 
-La conversion d'une date en chaîne de caractères est une tâche courante en programmation, surtout lorsqu'il s'agit de manipuler et d'afficher des données temporelles. En utilisant Haskell, cela peut sembler intimidant au premier abord, mais c'est en fait une tâche assez simple. Dans cet article, nous allons expliquer pourquoi et comment convertir une date en chaîne de caractères en utilisant Haskell.
+Lorsque vous travaillez sur un projet de programmation en Haskell, il est possible que vous rencontriez un jour le besoin de convertir une date en une chaîne de caractères compréhensible par l'utilisateur. Cela peut sembler être une tâche simple, mais cela peut en réalité nécessiter un peu de réflexion et de connaissances spécifiques. Dans cet article, nous allons explorer pourquoi et comment convertir une date en chaîne de caractères en utilisant Haskell.
 
 ## Comment faire
 
-Pour commencer, nous aurons besoin de quelques modules pour gérer les dates et les chaînes de caractères en Haskell. Dans l'exemple suivant, nous utiliserons le module "Data.Time" pour la gestion des dates et le module "Data.Text" pour les chaînes de caractères.
+Tout d'abord, nous avons besoin d'une bibliothèque appelée "time" pour travailler avec les dates en Haskell. Si vous utilisez Stack, vous pouvez l'ajouter à votre fichier cabal en tapant :
+
+```Haskell
+build-depends: time
+```
+
+Ensuite, nous allons définir une date en utilisant les types de données fournis par la bibliothèque. Par exemple, nous allons définir une date au format yyyy / mm / dd avec le code suivant :
 
 ```Haskell
 import Data.Time
-import Data.Text
+
+date :: Day
+date = fromGregorian 2020 12 31
 ```
 
-Maintenant, supposons que nous avons une date stockée dans une variable "date" de type Day (représentant une journée spécifique) et que nous voulons la convertir en une chaîne de caractères au format "dd/mm/yyyy". Voici le code pour accomplir cette tâche :
+Maintenant que notre date est définie, nous pouvons utiliser la fonction "formatTime" pour convertir notre date en une chaîne de caractères. Nous pouvons spécifier le format souhaité en utilisant des balises de formatage telles que "%Y" pour l'année, "%m" pour le mois et "%d" pour le jour. Un exemple de code serait :
 
 ```Haskell
-let dateStr = pack $ formatTime defaultTimeLocale "%d/%m/%Y" date
+dateString :: String
+dateString = formatTime defaultTimeLocale "%Y/%m/%d" date
 ```
 
-Dans ce code, nous utilisons la fonction "formatTime" pour formater la date dans le modèle souhaité. Nous utilisions également la fonction "pack" pour convertir la chaîne de caractères en utilisant Data.Text.
-
-Voici un exemple de sortie pour une date du 1er janvier 2020 :
+Nous pouvons maintenant imprimer notre chaîne de caractères en utilisant une simple commande "print" :
 
 ```Haskell
-"01/01/2020"
+>> print dateString
+"2020/12/31"
 ```
 
-## Plongée profonde
+Vous pouvez également expérimenter avec différents formats et ajouter des fonctions telles que "show" pour convertir le résultat en une chaîne de caractères plus lisible.
 
-Il est important de noter que la fonction "formatTime" utilise un modèle de chaîne pour indiquer comment la date doit être formatée. Dans l'exemple ci-dessus, nous avons utilisé "%d/%m/%Y", mais il existe plusieurs autres modèles disponibles qui permettent de personnaliser davantage la sortie de la date.
+## Approfondissement
 
-De plus, dans certains cas, il peut être nécessaire de convertir la date directement en un type de données chaîne de caractères pour une utilisation ultérieure, plutôt que de l'envelopper dans une variable "Data.Type". Pour cela, nous pouvons utiliser la fonction "show" pour convertir la date en une chaîne de caractères :
+La bibliothèque "time" contient plusieurs autres fonctions et types de données pour travailler avec des dates en Haskell. Par exemple, les types "TimeOfDay" et "TimeZone" peuvent être utilisés pour ajouter des informations supplémentaires, telles que l'heure et le fuseau horaire, à notre date.
 
-```Haskell
-let dateStr = show date
-```
+Il existe également des fonctions de conversion entre différents types de dates, telles que "unixEpochTime" pour convertir une date en temps UNIX et "toGregorian" pour convertir une date en une représentation de l'ère grégorienne.
 
-Cela affichera la date dans le format complet, par exemple :
+Il est important de noter que les dates en Haskell sont immuables et que les fonctions de manipulation de date renvoient toujours une nouvelle date au lieu de modifier la date existante.
 
-```Haskell
-"2020-01-01"
-```
+# See Also
 
-## Voir aussi
+Voici quelques liens utiles pour continuer à explorer les dates en Haskell :
 
-- [Documentation sur les modules Data.Time et Data.Text](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Liste complète des modèles de chaîne pour la fonction "formatTime"](https://hackage.haskell.org/package/time-1.8.0.7/docs/Data-Time-Format.html#t:Format)
-- [Documentation sur la fonction "show" pour la conversion d'une date en chaîne de caractères](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:show)
+- [Documentation de la bibliothèque "time"](https://hackage.haskell.org/package/time)
+- [Guide de référence de l'utilisation des dates en Haskell](https://wiki.haskell.org/U

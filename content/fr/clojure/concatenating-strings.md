@@ -1,35 +1,61 @@
 ---
-title:    "Clojure: Concaténation de chaînes"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/concatenating-strings.md"
+title:                "Clojure: Concaténation de chaînes"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La concaténation des chaînes de caractères est une opération fréquemment utilisée en programmation pour combiner plusieurs chaînes en une seule. Cela peut être utile pour créer des messages personnalisés, des chaînes de requêtes ou tout simplement pour afficher des informations à l'utilisateur.
+Concaténer des chaînes de caractères est une tâche courante en programmation, en particulier lorsque l'on travaille avec des données textuelles. Cela permet de combiner plusieurs chaînes en une seule, ce qui peut être utile dans de nombreuses situations différentes.
 
 ## Comment faire
 
+Pour concaténer des chaînes en Clojure, il suffit d'utiliser la fonction `str`. Voici un exemple de code :
+
 ```Clojure
-(def s1 "Bonjour")
-(def s2 "mon") 
-(def s3 "ami")
-(defn concat [s1 s2 s3] 
-       (str s1 " " s2 " " s3 "!")) 
+(def prenom "Jean")
+(def nom "Dupont")
+(def nom-complet (str prenom " " nom))
+(println nom-complet)
 ```
+Output: "Jean Dupont"
 
-L'exemple ci-dessus déclare trois chaînes de caractères en utilisant `def`. Ensuite, la fonction `concat` prend ces chaînes et les combine en une seule en utilisant la fonction `str`. La chaîne finale sera "Bonjour mon ami!".
+On peut également concaténer plus de deux chaînes en utilisant la même fonction :
 
-## Approfondissement
+```Clojure
+(def ville "Paris")
+(def code-postal "75001")
+(def adresse (str "Adresse : " ville " " code-postal))
+(println adresse)
+```
+Output: "Adresse : Paris 75001"
 
-La concaténation des chaînes de caractères peut être effectuée de plusieurs façons en Clojure. Vous pouvez utiliser l'opérateur `+` pour concaténer deux chaînes ou utiliser la fonction `clojure.string/join` pour concaténer plusieurs chaînes avec un séparateur.
+Il est également possible d'utiliser l'opérateur `str` pour concaténer des chaînes au sein d'une fonction `println` :
 
-Il est également important de noter que Clojure utilise l'interface `java.lang.String` pour les chaînes de caractères. Cela signifie que vous pouvez utiliser toutes les méthodes de cette interface pour manipuler les chaînes, telles que `toLowerCase`, `toUpperCase` ou `substring`.
+```Clojure
+(def age 30)
+(println "J'ai " (str age) " ans.")
+```
+Output: "J'ai 30 ans."
+
+## Plongée en profondeur
+
+En Clojure, les chaînes de caractères sont immuables, ce qui signifie qu'elles ne peuvent pas être modifiées une fois créées. Lorsque l'on concatène des chaînes, une nouvelle chaîne est créée chaque fois, ce qui peut provoquer des problèmes de performances si l'on concatène un grand nombre de chaînes.
+
+Pour résoudre ce problème, Clojure propose la fonction `str-join` qui permet de concaténer plusieurs chaînes en une seule opération. Voici un exemple :
+
+```Clojure
+(def numeros [1 2 3 4 5])
+(println (str-join ", " (map str numeros)))
+```
+Output: "1, 2, 3, 4, 5"
+
+Cela fonctionne en créant une séquence de chaînes et en les concaténant toutes en une seule fois, ce qui est beaucoup plus efficace en termes de performances.
 
 ## Voir aussi
 
-- [Documentation sur la concaténation de chaînes en Clojure](https://clojure.org/reference/strings)
-- [Exemples pratiques de concaténation de chaînes en Clojure](https://www.baeldung.com/clojure-string-concatenation)
-- [Autres opérations sur les chaînes en Clojure](https://www.sitepoint.com/clojure-strings-operations)
+- Documentation officielle Clojure sur la fonction `str` : https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/str
+- Documentation officielle Clojure sur la fonction `str-join` : https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/str-join

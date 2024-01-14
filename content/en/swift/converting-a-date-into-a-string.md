@@ -1,44 +1,53 @@
 ---
-title:    "Swift recipe: Converting a date into a string"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/converting-a-date-into-a-string.md"
+title:                "Swift recipe: Converting a date into a string"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-In Swift, dates and strings are commonly used data types and often need to be converted into each other for various purposes. In this blog post, we will explore how to convert a date into a string, which can be useful for tasks such as displaying the date in a user-friendly format or saving it in a database.
+Converting a date into a string is a common task in Swift programming that allows you to display dates in a specific format or use them in API calls. It is important to understand how to properly convert a date into a string in order to effectively work with dates in your code.
 
 ## How To
+Converting a date into a string in Swift is relatively straightforward. Here are two ways to do it:
 
-To convert a date into a string, we will use a method called `dateFormatter()` from the `Foundation` framework. This method allows us to specify the format in which we want the date to be displayed.
-
-Let's take a look at an example:
-
-```Swift
-import Foundation
-
-let date = Date() // current date
+### Using DateFormatter
+``` Swift
+let date = Date()
 let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "E, d MMM yyyy"
+let dateString = dateFormatter.string(from: date)
 
-dateFormatter.dateFormat = "dd/MM/yyyy" // specifying date format
-let dateString = dateFormatter.string(from: date) // converting date into a string
-print(dateString) // output: 21/03/2021
 ```
+Output: "Wed, 18 Aug 2021"
 
-In the code above, we first import the `Foundation` framework to access the `Date` and `DateFormatter` data types. Then, we initialize a `Date` variable to hold the current date. Next, we create an instance of `DateFormatter` and specify the desired date format using `dateFormat`. Finally, we convert the date into a string using the `string(from:)` method and print the result.
+In this example, we first create a Date object which represents the current date and time. We then create a DateFormatter object and set the dateFormat property to the desired format of the date string. Finally, we use the string(from:) method to convert the date into a string according to the specified format.
 
-We can also customize the date format even further by adding other elements such as time or time zone. For example, if we want our string to include the time as well, we can use the format `dd/MM/yyyy HH:mm:ss`.
+### Using DateComponents and Calendar
+```Swift
+let date = Date()
+let calendar = Calendar.current
+let components = calendar.dateComponents([.day, .month, .year], from: date)
+let day = components.day
+let month = components.month
+let year = components.year
+let dateString = "\(day ?? 0) \(month ?? 0) \(year ?? 0)"
+
+```
+Output: "18 8 2021"
+
+In this example, we first create a Date object and then use the current calendar to extract the day, month, and year components from the date. We then use string interpolation to construct a date string in the desired format.
 
 ## Deep Dive
+When converting a date into a string, it is important to consider localization and timezones. DateFormatter has methods to handle localization, such as setting the locale to the user's preferred locale. It also has options to display the time along with the date or to convert the time to a specific timezone.
 
-Behind the scenes, the `dateFormat` property of `DateFormatter` uses a special syntax to represent the elements of a date. For example, `dd` represents the day, `MM` represents the month, and `yyyy` represents the year. We can also use other symbols such as slashes or hyphens to separate the date elements.
+When using DateComponents and Calendar, it is important to understand the differences between .day, .month, and .year components based on the calendar being used. Some calendars, like the Islamic or Hebrew calendars, have different definitions for these components and may result in unexpected conversions.
 
-It is important to use the correct syntax when specifying the date format, otherwise, the conversion may not work as expected. For a complete list of available symbols, you can refer to the [Unicode Technical Standard #35](https://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Field_Symbol_Table).
-
-Additionally, we can also use the `Locale` property of `DateFormatter` to specify the language or region for the date format. This allows for a more customized and localized output.
+Overall, understanding the intricacies of converting a date into a string and utilizing the appropriate methods and options can greatly improve the functionality and accuracy of your code.
 
 ## See Also
-- [Apple's Date Formatting Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html)
-- [Swift Date and DateFormatter Tutorial](https://medium.com/@luisferes/amazing-dates-in-swift-237a5254209c)
-- [Unicode Technical Standard #35](https://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Field_Symbol_Table)
+- [DateFormatter Class Reference](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Calendar Class Reference](https://developer.apple.com/documentation/foundation/calendar)
+- [DateComponents Class Reference](https://developer.apple.com/documentation/foundation/datecomponents)

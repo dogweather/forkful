@@ -1,44 +1,47 @@
 ---
-title:    "Javascript: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/javascript/calculating-a-date-in-the-future-or-past.md"
+title:                "Javascript: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Manchmal müssen wir in der Programmierung ein Datum in der Zukunft oder Vergangenheit berechnen. Das kann nützlich sein, um beispielsweise Termine oder Fristen zu planen.
+Das Berechnen von Daten in der Zukunft oder Vergangenheit ist ein häufiges Szenario in der Programmierung. Es kann verwendet werden, um Deadlines einzustellen, Timer für Benachrichtigungen zu programmieren oder einfach nur um zu zeigen, dass man coole Datumsberechnungen durchführen kann.
 
-## Wie man es macht
+## Wie Geht's
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die Javascript-Datei `Date` verwenden. Wir können zum Beispiel mit dem aktuellen Datum als Startpunkt arbeiten und dann bestimmte Tage, Wochen oder Monate hinzufügen oder subtrahieren. Hier ist ein Beispiel:
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, gibt es verschiedene Wege in Javascript. Eine Möglichkeit ist die Verwendung der "Date" -Funktion, die es uns ermöglicht, ein Datum anzugeben und verschiedene Methoden wie "setFullYear ()" oder "setDate ()" zu verwenden, um Änderungen vorzunehmen.
 
-```Javascript
-// Aktuelles Datum
+```Javascript 
+// Berechnung eines Datums in der Zukunft
 let heute = new Date();
-
-// Berechnen eines Datums in der Zukunft
-let zukunft = new Date();
-zukunft.setDate(heute.getDate() + 30); // Fügt 30 Tage hinzu
-console.log(zukunft); // Output: 30 Tage in der Zukunft
-
-// Berechnen eines Datums in der Vergangenheit
-let vergangenes = new Date();
-vergangenes.setMonth(heute.getMonth() - 6); // Subtrahiert 6 Monate
-console.log(vergangenes); // Output: 6 Monate in der Vergangenheit
+let anzahlTage = 7;
+heute.setDate(heute.getDate() + anzahlTage);
+console.log("Datum in 7 Tagen: " + heute);
+// Ausgabe: Datum in 7 Tagen: Tue Sep 15 2020 18:05:13 GMT+0200 (Central European Summer Time)
 ```
 
-In diesem Beispiel haben wir `setDate` und `setMonth` verwendet, um das Datum zu berechnen. Es gibt jedoch auch andere Methoden, die wir verwenden können, je nachdem, welche Einheit wir hinzufügen oder subtrahieren möchten (z.B. `setFullYear`, `setHours`, etc.).
+Eine andere Möglichkeit ist die Verwendung von Bibliotheken wie "moment.js", die speziell für die Arbeit mit Datum und Uhrzeit entwickelt wurden. Diese Bibliothek bietet viele nützliche Funktionen wie das Hinzufügen oder Subtrahieren von Tagen, Monaten oder Jahren von einem gegebenen Datum.
 
-## Tiefer eintauchen
+```Javascript 
+// Datum in der Zukunft mit moment.js berechnen
+let heute = moment();
+let anzahlTage = 7;
+heute.add(anzahlTage, 'days');
+console.log("Datum in 7 Tagen: " + heute);
+// Ausgabe: Datum in 7 Tagen: 2020-09-15T18:05:13+02:00
+```
 
-Es gibt auch komplexere Anwendungen für die Berechnung von zukünftigen oder vergangenen Daten. Zum Beispiel könnten wir ein Skript schreiben, das basierend auf Benutzereingaben ein Datum in der Zukunft oder Vergangenheit berechnet. Wir könnten auch Funktionen schreiben, die verschiedene Zeitzonen berücksichtigen oder eine bestimmte Anzahl von Arbeitstagen berechnen, anstatt einfach nur ein Datum zu addieren oder zu subtrahieren.
+## Tiefere Einblicke
 
-Es gibt also viele Möglichkeiten, wie wir die Berechnung von zukünftigen oder vergangenen Daten in Javascript nutzen können.
+Beim Berechnen von Daten in Zukunft oder Vergangenheit müssen wir möglicherweise auch auf Dinge wie Schaltjahre oder unterschiedliche Zeitzonen achten. Es ist wichtig zu verstehen, wie die Methode "getDate ()" funktioniert und wie man sie für unsere spezifischen Berechnungen anpassen kann.
 
-## Siehe auch
+Außerdem können wir mit moment.js auch präzise Ergebnisse erhalten, indem wir die Funktion "locale" nutzen, um auf die Zeitzone und Spracheinstellungen des Benutzers zuzugreifen.
 
-- [MDN Web Docs: Date](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools: Date Object](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-- [StackOverflow: How to calculate date difference in JavaScript](https://stackoverflow.com/questions/3224834/how-to-calculate-date-difference-in-javascript)
+## Siehe Auch
+
+- Dokumentation zur "Date" -Funktion in Javascript: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date
+- Dokumentation zu moment.js: https://momentjs.com/docs/

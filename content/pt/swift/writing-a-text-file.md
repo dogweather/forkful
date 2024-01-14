@@ -1,44 +1,52 @@
 ---
-title:    "Swift: Escrevendo um arquivo de texto"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/writing-a-text-file.md"
+title:                "Swift: Escrever um arquivo de texto"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto?
+##Por que Escrever um Arquivo de Texto
 
-A escrita de arquivos de texto é uma habilidade essencial para qualquer programador, pois permite que você armazene e manipule dados de forma persistente. Esses arquivos podem ser usados para armazenar informações importantes, como configurações de aplicativos, registros de atividades e muito mais.
+Existem muitas razões pelas quais alguém pode querer escrever um arquivo de texto usando Swift. Talvez você queira armazenar dados em um formato fácil de ler e editar, ou talvez queira gravar um log de informações de seu aplicativo. Seja qual for o motivo, escrever um arquivo de texto pode ser uma habilidade valiosa a se ter na programação Swift.
 
-## Como escrever um arquivo de texto em Swift
+##Como Escrever um Arquivo de Texto
 
-Escrever um arquivo de texto em Swift é bastante simples. Primeiro, você precisa criar uma instância da classe `FileManager`, que lida com a criação e manipulação de arquivos. Em seguida, use o método `createFile(atPath:contents:attributes:)` para criar o arquivo em um diretório específico.
+Para escrever um arquivo de texto em Swift, você pode seguir estes passos simples:
+
+1. Criar uma instância da classe `FileManager` para gerenciar o processo de gravação do arquivo.
+2. Definir o conteúdo que você deseja escrever no arquivo.
+3. Escolher o local em que deseja salvar o arquivo. Isso pode ser feito usando o diretório de documentos do usuário ou criando um novo diretório.
+4. Criar um objeto `FileHandle` para abrir e escrever no arquivo.
+5. Usar o método `write(_:)` do objeto `FileHandle` para gravar o conteúdo no arquivo.
+6. Encerrar o arquivo usando o método `closeFile()`.
+
+Veja um exemplo de código abaixo:
 
 ```Swift
 let fileManager = FileManager.default
-let text = "Este é um exemplo de texto a ser gravado em um arquivo."
-let path = fileManager.currentDirectoryPath + "/meuArquivo.txt"
-if !fileManager.fileExists(atPath: path) {
-    fileManager.createFile(atPath: path, contents: nil, attributes: nil)
-}
-
-do {
-    try text.write(toFile: path, atomically: false, encoding: .utf8)
-    print("Arquivo de texto criado com sucesso!")
-} catch {
-    print("Erro ao escrever no arquivo: \(error)")
+let content = "Olá mundo! Este é um arquivo de texto escrito em Swift."
+if let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first {
+    let fileURL = documentsDirectory.appendingPathComponent("meuTexto.txt")
+    do {
+        try content.write(to: fileURL, atomically: false, encoding: .utf8)
+        print("Arquivo de texto salvo com sucesso em: \(fileURL)")
+    } catch {
+        print("Erro ao salvar arquivo: \(error)")
+    }
 }
 ```
 
-O código acima cria um arquivo chamado "meuArquivo.txt" no diretório atual e escreve o texto fornecido dentro dele. Se o arquivo já existir, o conteúdo antigo será substituído pelo novo. Certifique-se de incluir o `.utf8` como o valor do parâmetro `encoding` para garantir que os caracteres especiais sejam exibidos corretamente.
+O arquivo de texto será salvo no diretório de documentos do usuário com o nome "meuTexto.txt" e o conteúdo será o texto definido na constante `content`.
 
-## Aprofundando-se na escrita de arquivos de texto
+##Aprofundando-se na Escrita de Arquivos de Texto
 
-Além do método `createFile`, a classe `FileManager` fornece outros métodos úteis para manipular arquivos de texto, como `contents(atPath:)` para ler o conteúdo de um arquivo em formato de dados e `removeItem(atPath:)` para excluir um arquivo existente.
+Se você quiser saber mais sobre a escrita de arquivos de texto em Swift, pode explorar conceitos como codificação e decodificação de dados, manipulação de erros e gerenciamento de diretórios. Além disso, você pode explorar diferentes formas de escrever no arquivo, como adicionar conteúdo ao final do arquivo ou substituir todo o seu conteúdo.
 
-Além disso, existem bibliotecas e frameworks de terceiros disponíveis que simplificam ainda mais a escrita de arquivos de texto em Swift, permitindo que você se concentre em outras tarefas importantes.
+Uma boa prática ao trabalhar com arquivos de texto é sempre verificar se o arquivo foi criado corretamente e se o conteúdo foi gravado com sucesso nele. Isso pode ser feito usando o método `fileExists(atPath:)` da classe `FileManager` e verificando se ele retorna `true`, bem como lidar com possíveis erros ao escrever no arquivo.
 
-## Veja também
-
-- [Documentação oficial da Apple sobre gerenciamento de arquivos em Swift](https://developer.apple.com/documentation/foundation/filemanager)
-- [GitHub - Biblioteca de terceiros para escrita de arquivos de texto em Swift](https://github.com/Meniny/FileManagerKit)
+##Veja também
+- [Documentação oficial da classe FileManager no Swift](https://developer.apple.com/documentation/foundation/filemanager)
+- [Guia de aprendizado de Swift da Apple: Trabalhando com Arquivos e Diretórios](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/FilesAndDirectories.html)
+- [Artigo do Hacking With Swift: Como escrever no sistema de arquivos do iOS usando Swift](https://www.hackingwithswift.com/example-code/system/how-to-write-to-the-ios-file-system-using-swift)

@@ -1,78 +1,51 @@
 ---
-title:    "Python: 문자열 합치기"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/python/concatenating-strings.md"
+title:                "Python: 문자열 연결하기"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-
-문자열을 연결하는 것에 참여하는 이유는 간단합니다. 여러 개의 문자열을 하나의 문자열로 결합하면 유용한 출력을 만들 수 있습니다. 문자열을 대/소문자로 변환하거나 여러 개의 문자열을 추출하여 새로운 문장을 만드는 등 다양한 용도로 사용할 수 있습니다.
+문자열을 연결하는 것에 참여하는 이유는 여러 가지가 있습니다. 파일 이름을 만들거나 웹 URL을 생성하는 등의 상황에서 유용하게 사용할 수 있습니다.
 
 ## 하는 방법
-
-우선, 파이썬의 문자열 연결 기능 중 하나인 `+` 연산자를 사용하여 여러 개의 문자열을 결합할 수 있습니다.
-
-```Python
-string_1 = "안녕하세요, "
-string_2 = "저는 "
-string_3 = "파이썬 프로그래머입니다."
-result = string_1 + string_2 + string_3
-
-print(result)
-```
-
-출력 결과는 다음과 같습니다.
-
-```
-안녕하세요, 저는 파이썬 프로그래머입니다.
-```
-
-또는 `join()` 메서드를 사용하여 리스트의 문자열을 결합할 수도 있습니다.
+일반적으로 Python에서는 "+" 연산자를 사용하여 문자열을 연결할 수 있습니다. 또는 문자열의 format() 메서드를 사용하여 변수를 삽입할 수도 있습니다.
 
 ```Python
-languages = ["HTML", "CSS", "JavaScript"]
+a = "안녕하세요,"
+b = "제 이름은"
+name = "John"
+c = a + b + name
+print(c)
+# 결과: 안녕하세요, 제 이름은 John
+```
+format() 메서드를 사용하면 다음과 같습니다.
 
-result = ", ".join(languages)
-
-print(result)
+```Python
+a = "안녕하세요, 제 이름은 {}입니다."
+name = "John"
+c = a.format(name)
+print(c)
+# 결과: 안녕하세요, 제 이름은 John입니다.
 ```
 
-출력 결과는 다음과 같습니다.
+또 다른 방법으로는 문자열을 리스트로 만든 다음 join() 함수를 사용하는 방법도 있습니다.
 
-```
-HTML, CSS, JavaScript
-```
-
-## 더 들어가기
-
-파이썬의 문자열 연결 기능은 단순히 두 개의 문자열을 결합하는 것을 넘어서 다양한 기능을 제공합니다. 예를 들어, `*` 연산자를 사용하여 문자열을 반복할 수 있고 `in` 연산자를 사용하여 문자열 속에 특정 단어가 있는지 확인할 수 있습니다.
-
-또한 f-string을 사용하면 변수를 문자열에 포함시켜서 동적인 문장을 만들 수 있습니다. 이를 통해 보다 복잡한 출력과 코드를 만들 수 있습니다.
-
-```
-name = "Jane"
-age = 25
-
-print(f"저의 이름은 {name}이고, 나이는 {age}살입니다.")
+```Python
+a = ["안녕하세요,", "제 이름은", "John입니다."]
+b = " ".join(a)
+print(b)
+# 결과: 안녕하세요, 제 이름은 John입니다.
 ```
 
-출력 결과는 다음과 같습니다.
+## 깊이있는 분석
+Python에서 문자열을 연결하는 내부 동작은 실제로 문자열 객체의 메모리 주소를 변경하는 것입니다. 이는 immutable한 객체인 문자열을 합칠 때 새로운 객체가 생성되는 것이 아니라 기존의 객체가 변경되는 것을 의미합니다.
 
-```
-저의 이름은 Jane이고, 나이는 25살입니다.
-```
+또한 "+" 연산자를 사용하는 것보다 format() 메서드를 사용하는 것이 성능 면에서 더 우수합니다. 하지만 적은 양의 문자열을 연결하는 경우에는 큰 차이를 보이지 않습니다.
 
-## 참고
-
-다른 문자열 작업에 대해 자세히 알고 싶다면 다음 링크를 참고해 보세요.
-
-- [Python 문자열 관련 문서](https://docs.python.org/ko/3/library/stdtypes.html#string-methods)
-- [파이썬 f-string 소개](https://realpython.com/python-f-strings/)
-- [Join() 메서드 상세 설명](https://www.w3schools.com/python/ref_string_join.asp)
-
-## 참고하기
-
-- [파이썬 공식 문서](https://www.python.org/)
-- [Codecademy Python 강의](https://www.codecademy.com/learn/learn-python)
+## 참고 자료
+- [Python 문자열 연결 문서](https://docs.python.org/3/library/stdtypes.html#str)
+- [Python format() 메서드 문서](https://www.w3schools.com/python/ref_string_format.asp)
+- [Python join() 함수 문서](https://www.w3schools.com/python/ref_string_join.asp)

@@ -1,55 +1,36 @@
 ---
-title:    "Elixir: Обчислення дати у майбутньому або минулому"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/calculating-a-date-in-the-future-or-past.md"
+title:                "Elixir: Розрахунок дати у майбутньому або минулому."
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
+Написання програм на Elixir може бути захоплюючим і цікавим заняттям, але що робити, якщо ви потребуєте вирахувати дату в майбутньому або минулому? Навіщо це може знадобитися? Давайте дослідимо це питання детальніше.
 
-Розрахунок дати в майбутньому або минулому може виявитися корисним в багатьох ситуаціях, наприклад, при розробці програмного забезпечення для календаря або планування подій. Також це може бути цікаво для тих, хто просто любить експериментувати з еліксиром.
-
-## Як
-
-Для початку, нам потрібно імпортувати модуль `Calendar`, в якому знаходиться функція `add`, яка дозволяє додавати або віднімати дні, місяці або роки від поточної дати.
+## Як це зробити
+Існує кілька методів, які дозволяють розрахувати дату в майбутньому або минулому. Нижче показані приклади коду на мові Elixir, які допоможуть зрозуміти цей процес.
 
 ```Elixir
-import Calendar
+# Розрахунок дати, використовуючи функцію Date.add
+future_date = Date.add(Date.utc_today(), 31)
+IO.puts("Дата через 31 день від сьогодні: #{inspect future_date}") # output: "Дата через 31 день від сьогодні: #<Date<2022-02-03>>"
 
-# Розрахунок дати в майбутньому
-add(Calendar.utc_now, years: 2)
+# Розрахунок дати, використовуючи оператор + та Mod
+past_date = Date.utc_today() + (-365) # віднімаємо 365 днів
+IO.puts("Дата 1 рік тому: #{inspect past_date}") # output: "Дата 1 рік тому: #<Date<2020-02-05>>"
 
-# Розрахунок дати в минулому
-add(Calendar.utc_now, days: -5)
-
-# Розрахунок дати з використанням дати в майбутньому як початкової
-add(add(Calendar.utc_now, years: 2), days: 10)
+# Розрахунок дати в майбутньому, використовуючи функцію Calendar.DateTime.shift
+future_datetime = Calendar.DateTime.shift(Calendar.utc_now, minutes: 60 * 24 * 365)
+IO.puts("Дата і час через 1 рік від часу UTC: #{inspect future_datetime}") # output: "Дата і час через 1 рік від часу UTC: #<DateTime<2022-02-04 05:05:07.695Z>>"
 ```
 
-Вище наведені приклади використовують поточну дату як початкову для розрахунку дати в майбутньому або минулому. Також можна вказати будь-яку іншу дату, використовуючи функцію `Date.utc_from_erl!`.
+## Глибоке погруження
+Розрахунок дати в майбутньому або минулому можна виконати за допомогою функцій з пакету `Date`, але також існує багато інших пакетів, які мають свої власні функції для цієї задачі. Наприклад, пакет `Timex` або `Calendar` можуть бути корисними для більш складних операцій з часом та датами. Важливо також звернути увагу на використання правильного часового поясу, щоб уникнути неточностей у розрахунках.
 
-```Elixir
-# Розрахунок дати в минулому від 15 січня 2020 року
-add(Date.utc_from_erl!(2020, 1, 15), days: -7)
-```
-
-## Глибоке дослідження
-
-Функція `add` використовує модуль `NaiveDateTime`, який представляє дату і час без врахування часового поясу. Якщо вам потрібно врахувати часовий пояс, можна використати модуль `DateTime`, що містить функції `to_date_time` і `from_date_time`.
-
-```Elixir
-datetime = NaiveDateTime.new(2020, 1, 15, 12, 0, 0)
-DateTime.to_date_time(datetime)
-# Результат: #DateTime<2020-01-15 12:00:00Z>
-
-datetime = NaiveDateTime.new(2020, 1, 15, 12, 0, 0)
-DateTime.from_date_time(datetime, "Europe/Kiev")
-# Результат: #DateTime<2020-01-15 14:00:00+02:00>
-```
-
-## Дивіться також
-
-- [Офіційна документація Elixir для модуля Calendar](https://hexdocs.pm/elixir/Calendar.html)
-- [Elixir School - Робота з датою і часом](https://elixirschool.com/uk/lessons/basics/date-and-time/)
-- [Програмування в Elixir - Графічний календар з початку і кінця року](https://programming-elixir.com/blog/2019/02/06/calendar-with-mix-over-year-range/)
+## Дивись також
+- Офіційна документація Elixir для роботи з датами та часом: https://elixir-lang.org/docs/master/elixir/Calendar.html
+- Пакет Timex для більш складних операцій з часом: https://hexdocs.pm/timex/Timex.html
+- Пакет Calendar для розрахунку з точністю до мілісекунд: https://hexdocs.pm/calendar/Calendar.html

@@ -1,95 +1,72 @@
 ---
-title:    "Haskell: Odczytywanie argumentów wiersza poleceń"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/reading-command-line-arguments.md"
+title:                "Haskell: Odczytywanie argumentów wiersza poleceń"
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czy zdarzyło Ci się kiedykolwiek napisać program, który musiał odczytać argumenty wprowadzone przez użytkownika z wiersza poleceń? Jeśli tak, lub jeśli jesteś ciekaw jak to zrobić przy użyciu Haskella, ten artykuł jest dla Ciebie!
+Cześć czytelniku! Jeśli interesujesz się programowaniem w Haskellu, na pewno już wiesz, że jest to język funkcyjny, który jest bardzo silnie typowany. Cechuje się on wydajnością i bezpieczeństwem w działaniu, dlatego jest wykorzystywany w wielu projektach. W dzisiejszym poście chciałbym poruszyć temat odczytywania argumentów wiersza poleceń (command line arguments). Możesz się zastanawiać, dlaczego powinieneś/chciałbyś się na to szczególnie zwracać uwagę. W tym poście spróbuję Ci to wyjaśnić!
 
 ## Jak to zrobić
 
-Aby odczytać argumenty wprowadzone przez użytkownika w wierszu poleceń, musimy wykorzystać bibliotekę System.Environment, która zawiera funkcje do obsługi argumentów w Haskellu. Spójrzmy na prosty przykład:
+Odczytywanie argumentów wiersza poleceń jest w Haskellu bardzo proste, a dzięki temu możemy dostarczyć naszym programom dodatkową funkcjonalność. Aby odczytać argumenty, używamy funkcji `getArgs` z modułu `System.Environment`. Proponuję przejrzeć poniższy kod, aby zobaczyć jak to działa:
 
 ```Haskell
 import System.Environment
 
 main = do
     args <- getArgs
-    putStrLn $ "Podałeś " ++ show (length args) ++ " argumentów."
-
+    putStrLn $ "Podano argumenty: " ++ show args
 ```
 
-Jeśli skompilujemy i uruchomimy ten program, a następnie wprowadzimy kilka argumentów po jego nazwie, otrzymamy następujący wynik:
+Powyższy przykład wyświetli wszystkie przekazane argumenty wiersza poleceń po wykonaniu programu. Przykładowe wywołanie może wyglądać tak:
 
-```
-$ ./program arg1 arg2 arg3 arg4
-Podałeś 4 argumentów. 
-```
+`$ program argument1 argument2`
 
-Jak widzimy, argumenty wprowadzone przez użytkownika są przechowywane w liście, którą następnie możemy przetwarzać w dowolny sposób.
+Wówczas w konsoli wyświetlona zostanie wiadomość:
 
-## Deep Dive
+`Podano argumenty: ["argument1", "argument2"]`
 
-W przypadku bardziej zaawansowanych przypadków, gdzie chcemy np. określić opcje lub flagi, które program może przyjąć, warto zajrzeć do biblioteki System.Console.GetOpt. Pozwala ona na wygodną obsługę argumentów w stylu linii poleceń w innych językach programowania. Przykład użycia tej biblioteki może wyglądać następująco:
+Dzięki temu możemy łatwo przekazać dodatkowe informacje do naszego programu, co może być szczególnie przydatne przy pisaniu skryptów lub aplikacji z interfejsem wiersza poleceń.
+
+## Głębszy zanurzania się w temat
+
+Jednym z ciekawszych zastosowań odczytywania argumentów wiersza poleceń jest możliwość przekazania do naszego programu pliku konfiguracyjnego. W tym celu możemy wykorzystać bibliotekę `optparse-applicative`, która pozwala na łatwe parsowanie argumentów wiersza poleceń oraz tworzenia opcji programu.
+
+Na przykład, jeśli nasz program wymaga pliku konfiguracyjnego, możemy utworzyć opcję `-c, --config` i odczytać ścieżkę do pliku jako argument. Wówczas w kodzie naszego programu wyglądałoby to podobnie do poniższego przykładu:
 
 ```Haskell
-import System.Environment
-import System.Console.GetOpt
-import System.IO
-import Data.Maybe
+import Options.Applicative
 
--- Definiujemy nasze opcje/flagi jako konstruktory typu Optycja
-data Opcja = Wyswietl | Pomoc
+data AppConfig = AppConfig
+    { configFile :: FilePath
+    -- inne pola konfiguracyjne
+    }
 
--- Definiujemy mapowanie dla naszych opcji/flag
-opcje :: [OptDescr Opcja]
-opcje =
-  [ Option ['w'] ["wyswietl"] (NoArg Wyswietl) "Wyswietla zadane dane.",
-    Option ['h','?'] ["pomoc"] (NoArg Pomoc) "Wyświetla pomoc."
-  ]
+configParser :: Parser AppConfig
+configParser = AppConfig
+    <$> strOption
+        ( long "config"
+        <> short "c"
+        <> metavar "FILE"
+        <> help "ścieżka do pliku konfiguracyjnego" )
 
--- Funkcja pomocnicza, która odpowiada za przetwarzanie argumentów
-procesujOpcje :: [String] -> IO ([Opcja], [String])
-procesujOpcje argv =
-  case getOpt Permute opcje argv of
-    (o, n, []) -> return (o, n)
-    (_, _, err) -> fail (concat err ++ usageInfo naglowek opcje)
-
--- Funkcja pomocnicza, która odpowiada za wyświetlenie nagłówka informującego o użyciu flag
-naglowek :: String
-naglowek = "Usage: program [-w | -h] input_file"
-
--- Główna funkcja programu
-main :: IO ()
 main = do
-  -- Sprawdzamy, czy podane zostały jakieś argumenty
-  args <- getArgs
-  if null args
-    then putStrLn "Nie podano argumentów!"
-    else do
-      -- Przetwarzamy argumenty
-      (opcje, plik) <- procesujOpcje args
-      -- Sprawdzamy, czy podano flagę "pomoc"
-      when (elem Pomoc opcje) $
-        putStrLn $ "To jest pomoc dla tego programu."
-      -- Sprawdzamy, czy podano flagę "wyswietl" i czy podano nazwę pliku
-      when (elem Wyswietl opcje && not (null plik)) $
-        readFile (head plik) >>= putStrLn
-
+    config <- execParser $ info (configParser <**> helper)
+        ( fullDesc
+        <> header "Nasz program"
+        <> progDesc "Opis programu" )
+    putStrLn $ "Odczytany plik konfiguracyjny: " ++ configFile config
 ```
 
-Przykładowe wywołanie programu może wyglądać następująco:
+Więcej informacji na temat biblioteki `optparse-applicative` możesz znaleźć w linkach poniżej.
 
-```
-$ ./program -w input.txt
-Witaj w programie! W czytanie argumentów jesteśmy już mistrzami!
-```
+## Zobacz również
 
-## Zobacz także
-
-- [Dokumentacja System.Environment](https://hackage.haskell.org/package/base/docs/System-Environment.html)
-- [Dok
+- [Dokumentacja Haskell - System.Environment](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-Environment.html)
+- [Dokumentacja optparse-applicative](https://hackage.haskell.org/package/optparse-applicative)
+- [Przykładowy projekt z wykorzystaniem optparse-applicative](https://github.com/pczajkowski/haskell-cli-example)

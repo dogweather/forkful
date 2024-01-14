@@ -1,39 +1,44 @@
 ---
-title:    "Kotlin: Konwertowanie ciągu znaków na małe litery"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/converting-a-string-to-lower-case.md"
+title:                "Kotlin: Konwertowanie ciągu znaków na małe litery"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto przekonwertować string na małe litery?
+## Dlaczego
 
-Czasami w pracy z programowaniem musimy mieć kontrolę nad wyglądem naszego tekstu. Przekonwertowanie stringa na małe litery może nam ułatwić porównywanie i sprawdzanie równości ciągów znaków, a także ułatwić wyświetlanie tekstu w czytelny sposób.
+Konwersja ciągu znaków na małe litery jest bardzo przydatna w programowaniu i może pomóc nam w wielu sytuacjach. Przeczytaj ten artykuł, aby dowiedzieć się, dlaczego jest to ważna umiejętność i jak ją osiągnąć w języku Kotlin.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Miła wiadomość – w języku Kotlin konwersja stringa na małe litery jest bardzo prosta. Wystarczy użyć metody `toLowerCase()` na naszym stringu. Przykładowy kod:
+W języku Kotlin mamy do dyspozycji kilka opcji, aby przekonwertować ciąg znaków na małe litery. Najprostszą i najczęściej używaną jest metoda `toLowerCase()`. Sprawdźmy jak ją wykorzystać w praktyce:
 
 ```Kotlin
 val name = "JAN KOWALSKI"
 println(name.toLowerCase())
 ```
-Wynik: `jan kowalski`
 
-Ale co, jeśli w naszym stringu są polskie znaki? W tym przypadku warto użyć metody `toLowerCase(Locale.forLanguageTag("PL"))` z odpowiednim regionem językowym. Przykładowy kod:
+**Output:** jan kowalski
+
+Możemy również skorzystać z metody `lowercase()` lub `lowercase(Locale.getDefault())` aby uwzględnić ustawienia regionalne. Przykład:
 
 ```Kotlin
-val name = "ŁUKASZ NOWAK"
-println(name.toLowerCase(Locale.forLanguageTag("PL")))
+val greeting = "Witaj Świecie"
+println(greeting.lowercase())
+println(greeting.lowercase(Locale.getDefault()))
 ```
-Wynik: `łukasz nowak`
+
+**Output:** witaj świat
+witaj świat
 
 ## Głębszy wgląd
 
-Metoda `toLowerCase()` działa na podstawie domyślnej lokalizacji urządzenia, co może prowadzić do nieoczekiwanych wyników dla różnych języków. Dlatego warto użyć metody `toLowerCase(Locale)` lub `toLowerCase(Locale.forLanguageTag("PL"))`, gdzie możemy jawnie określić język, na który chcemy przekonwertować nasz string. 
+Każdy znak w języku Unicode ma odpowiadającą mu dużą i małą wersję. Podczas konwersji ciągu na małe litery, metoda `toLowerCase()` korzysta z informacji o kodowaniu Unicode, aby wybrać odpowiednią wersję znaku. Dlatego też zaleca się używać tej metody zamiast standardowej metody `toLowerCase()` dostępnej w języku Java, która może nie uwzględniać pełnego zestawu znaków Unicode.
 
-## Zobacz także
+## Zobacz też
 
-- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/reference/basic-syntax.html#strings
-- Rozmowy o Koltin: https://www.getfretboard.com/topic/kotlin-language/
-- Curso de Kotlin: https://www.youtube.com/playlist?list=PLwyncZJOqB2iSQfxuNtTI9Qtq3ixvlHfZ (w języku hiszpańskim)
+- Dokumentacja Kotlin na temat konwersji ciągów na małe litery: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html
+- Przewodnik dla początkujących na temat konwersji ciągów w języku Kotlin: https://kotlinlang.org/docs/basic-types.html#strings
+- Przykładowe zastosowania konwersji ciągów na małe litery: https://stackoverflow.com/questions/29210391/convert-string-to-lower-case-in-java-but-use-the-string-class

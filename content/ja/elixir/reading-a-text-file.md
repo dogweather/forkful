@@ -1,48 +1,36 @@
 ---
-title:    "Elixir: テキストファイルの読み込み"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/reading-a-text-file.md"
+title:                "Elixir: テキストファイルを読み込む"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+＃＃ なぜ
 
-テキストファイルを読むのに、わざわざブログ記事を読む必要はあるのでしょうか？それは、Elixirプログラマーとしてより効率的かつ効果的に作業するためです。テキストファイルを読むためのElixirの構文を学ぶことで、単純な作業から複雑なデータ処理まで、さまざまなタスクをより簡単に実行することができます。
+テキストファイルを読むのに読み手にメリットがありますか？テキストは、エディターを通じてコードやデータを変更するのに非常に一般的な方法です。ファイルを読むことで、エディターで編集されたデータを入手できるだけでなく、コードやデータをバックアップすることもできます。
 
-## 使い方
+＃＃ 方法
 
-Elixirでファイルを読み込む方法を学ぶために、まずは```File.read```関数を使ってテキストファイルを読み込む方法を見てみましょう。
-
-```Elixir
-file = File.read("sample.txt") # テキストファイルを読み込む
-IO.puts(file) # ファイルの中身を出力する
-```
-
-上記のコードを実行すると、```sample.txt```ファイルの内容がターミナルに表示されます。ファイルの内容を取得したい場合は、```File.read!```関数を使ってファイルの中身を文字列として取得することもできます。
-
-また、Elixirではさまざまな方法でテキストファイルを読み込むことができます。例えば、CSVファイルを読み込んでデータを整形することもできます。
+Elixirでは、ファイルを読むためにFileモジュールを使用することができます。以下のコードは、readme.txtという名前のファイルを読み込んで、ファイル内のテキストをすべて表示する例です。
 
 ```Elixir
-File.stream!("data.csv") # CSVファイルをストリームとして読み込む
-|> CSVParser.parse_stream() # データをパースする
-|> Enum.map(fn [name, age] -> {name, String.to_integer(age)} end) # データを整形する
-|> Enum.sort() # データをソートする
-|> Enum.each(fn {name, age} -> IO.puts("#{name} is #{age} years old") end) # データを出力する
+ファイル=ファイル.オープン！（「readme.txt」）
+contents = File.read！（file）
+IO.putputs（contents）
 ```
 
-このように、Elixirではテキストファイルのデータを柔軟に扱うことができます。
+上記のコードを実行すると、readme.txtファイルの内容がターミナルに表示されます。
 
-## ディープダイブ
+＃＃ ディープダイブ
 
-テキストファイルを読み込む際には、ファイルがどのエンコーディングで作られているかに注意する必要があります。デフォルトでは、ElixirはUTF-8エンコーディングを使用しますが、必要に応じて他のエンコーディングを指定することもできます。
+ファイルを読むには、`File.read！`と`File.readline！`の2つの関数があります。`File.read！`はファイルのすべての内容を文字列として返し、`File.readline！`は1行ずつ読み込みます。また、ファイルを開く際にオプションを指定することもできます。例えば、`:write`オプションを指定すると、ファイルを書き込み可能なモードで開くことができます。詳細な情報については、Elixirの公式ドキュメントを参照してください。
 
-また、ファイルの中の行を指定して特定の箇所のみを読み込むこともできます。例えば、```File.read("sample.txt", 3, 5)```とすると、ファイルの3行目から5行目までの内容を読み込むことができます。
+＃＃参照
 
-さらに、Elixirには便利な機能であるパイプラインもあります。パイプラインを使うことで、テキストファイルを読み込む際にさまざまな処理を行うことができます。例えば、ファイルを読み込んだ後に正規表現を使って文字列のマッチングを行うこともできます。
+＃＃＃ わからないことがある場合や、詳しい情報を知りたい場合は、以下のリンクを参考にしてください。
 
-## その他の参考リンク
-
-- [Elixirの公式ドキュメント](https://elixir-lang.org/getting-started/introduction.html)
-- [テキストファイルを扱うためのElixirライブラリ](https://hexdocs.pm/elixir/1.12/File.html)
-- [Elixirのパイプラインについての詳細](https
+- Elixirの公式ドキュメント（https://elixir-lang.org/docs.html）
+- Fileモジュールのドキュメント（https://hexdocs.pm/elixir/File.html）
+- テキストファイルの読み書きについてのElixirフォーラムのディスカッション（https://elixirforum.com/t/reading-and-writing-to-a-text-file/2989）

@@ -1,52 +1,43 @@
 ---
-title:    "Bash: Wyszukiwanie i zamienianie tekstu"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/searching-and-replacing-text.md"
+title:                "Bash: Wyszukiwanie i zamiana tekstu"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Jeśli jesteś programistą lub po prostu często pracujesz z plikami tekstowymi, prawdopodobnie musisz dokonywać zmian w tekście wielokrotnie. W takim przypadku bardzo przydatne jest narzędzie do wyszukiwania i zamiany tekstu. W Bashu istnieje kilka sposobów na przeprowadzenie tej operacji, które są niesamowicie proste i skuteczne. W tym artykule przyjrzymy się, dlaczego warto poznać te możliwości oraz jak je wykorzystać.
+Jedną z najważniejszych umiejętności każdego programisty jest umiejętność obsługi tekstu. Bez względu na to, czy piszesz mały skrypt czy duży projekt, prawdopodobnie będziesz musiał przeprowadzić przeszukiwanie i zamianę tekstu w swoim kodzie. W tym wpisie dowiesz się, jak to zrobić w Bashu, języku programowania, który jest wykorzystywany przez wielu programistów i administratów systemów.
 
 ## Jak to zrobić
 
-Pierwszym sposobem na wyszukiwanie i zamianę tekstu jest użycie polecenia `sed`. Przykładowo, jeśli chcemy zmienić wszystkie wystąpienia słowa "kot" na "pies" w pliku `animals.txt`, wykonujemy następującą komendę:
-```
-sed -i 's/kot/pies/g' animals.txt
-```
-Poleceń `sed` można używać do bardziej złożonych operacji, na przykład zmieniania wyrażeń regularnych. W poniższym przykładzie zmieniamy datę zapisaną w formacie DD/MM/YYYY na format YYYY-MM-DD:
-```
-sed -i 's/\([0-9]\{2\}\)\/\([0-9]\{2\}\)\/\([0-9]\{4\}\)/\3-\2-\1/g' data.txt
-```
-Dzięki użyciu flagi `-i` zmieniamy plik bezpośrednio, bez tworzenia nowego. Jeśli chcemy przeprowadzić operację na kilku plikach naraz, możemy zastosować polecenie `find` i przekazać je jako argument do `sed`:
-```
-find . -name "*.txt" -exec sed -i 's/kot/pies/g' {} +
+Przeszukiwanie i zamiana tekstu w Bashu jest łatwe i wygodne dzięki używaniu wbudowanych poleceń. Jedną z najczęściej wykorzystywanych komend jest `sed`, która służy do przetwarzania tekstu. Aby przeprowadzić prostą zamianę tekstu, możesz użyć polecenia `sed 's/tekst_do_znalezienia/nowy_tekst/' plik`, gdzie `tekst_do_znalezienia` to wyróżniony tekst, który chcesz zmienić, a `nowy_tekst` to jego zamieniona wersja. Możesz również użyć opcji `i` po poleceniu `sed` aby dokonać zmian bezpośrednio w pliku, zamiast wyświetlać wynik na ekranie. Przykładowy kod wyglądałby tak:
+
+```Bash
+sed -i 's/tekst_do_znalezienia/nowy_tekst/' plik
 ```
 
-Kolejną opcją jest użycie polecenia `awk` w połączeniu z poleceniem `sub`. W tym przypadku podajemy szukane wyrażenie, nowe wyrażenie oraz plik, na którym chcemy przeprowadzić operację. Należy pamiętać, że `awk` jest wrażliwy na wielkość liter:
-```
-awk '{sub(/kot/,"pies",$0); print}' animals.txt
-```
-Jeśli chcemy zastąpić wszystkie wystąpienia wyrażenia, możemy użyć dodatkowego parametru `g`:
-```
-awk '{sub(/kot/,"pies",$0);print}' animals.txt
+Jeśli chcesz przeprowadzić zmianę tylko w niektórych wierszach, możesz użyć opcji `r`, aby podać zakres wierszy, na którym ma zostać wykonane polecenie. Przykładowo, `sed -i '10,20s/tekst_do_znalezienia/nowy_tekst/' plik` zmieni tylko tekst w wierszach od 10 do 20.
+
+Inną użyteczną komendą jest `tr`, która służy do tłumaczenia lub usuwania znaków. Aby przeprowadzić prostą zamianę liter, możesz użyć polecenia `tr 'ABCD' 'ZYXW' < plik`, gdzie `ABCD` to litery, które chcesz zamienić, a `ZYXW` to ich zamienione odpowiedniki. Możesz również użyć opcji `d` po poleceniu `tr` aby usunąć określone znaki. Przykładowy kod wyglądałby tak:
+
+```Bash
+tr 'abc' 'xyz' < plik
 ```
 
-## Głębszy wgląd
+Bash oferuje również możliwość użycia wyrażeń regularnych przez dodanie opcji `E` po poleceniu `sed` lub `tr`.
 
-`sed` i `awk` to nie jedyne możliwości, jeśli chodzi o wyszukiwanie i zamianę tekstu w Bashu. Warto również wspomnieć o tym, że narzędzia te działają na strumieniach danych, co oznacza, że możemy je wykorzystać w połączeniu z innymi poleceniami.
+## Deep Dive
 
-Na przykład, jeśli chcemy wyświetlić tylko pliki z rozszerzeniem `.txt` i jednocześnie zamienić w nich wyrażenie "kot" na "pies", możemy użyć polecenia `grep` w połączeniu z `sed`:
-```
-grep -l "kot" *.txt | xargs -I {} sed -i 's/kot/pies/g' {}
-```
-Polecenie `grep -l` wyświetla tylko nazwy plików, zawierających podane wyrażenie. Następnie korzystamy z `xargs` aby przekazać te pliki jako argumenty do polecenia `sed`.
-
-W podobny sposób można wykorzystać inne polecenia, takie jak `find` czy `xargs`, aby przeprowadzić operacje na wielu plikach naraz.
+W Bashu istnieje wiele innych komend i opcji, które umożliwiają zaawansowane przeszukiwanie i zamianę tekstu. Możesz również wykorzystać pętle i warunki do przetwarzania większych plików tekstowych lub wielu plików jednocześnie. Przydatne są także takie komendy jak `awk` czy `grep`, które dają jeszcze większe możliwości manipulacji tekstem.
 
 ## Zobacz również
 
-- [10 przydatnych poleceń Bash](https://www.linode.com/docs/tools-reference/tools/10-useful-bash-commands/)
-- [Spraw
+Jeśli chcesz dowiedzieć się więcej o przeszukiwaniu i zamianie tekstu w Bashu, polecam zapoznać się z poniższymi linkami:
+
+- [Dokumentacja sed](https://www.gnu.org/software/sed/manual/sed.html)
+- [Wprowadzenie do przetwarzania tekstu w Bashu](https://www.howtogeek.com/430730/the-essential-guide-to-performing-text-manipulation-in-linux/)
+- [Wyrażenia regularne w Bashu](https://www.linuxjournal.com/content/bash-regexps-beginners)
+- [Manipulacja tekstem przy użyciu awk i sed](https://www.thegeekstuff.com/2010/06/awk-sed-part-1-strings-and

@@ -1,33 +1,67 @@
 ---
-title:    "Bash: Zapisywania wielkich liter w ciągu znaków"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/bash/capitalizing-a-string.md"
+title:                "Bash: Zmiana tekstu na wielkie litery"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Cześć, programowanie to fascynująca dziedzina, będąca połączeniem sztuki, nauki i logiki. W tym wpisie chciałbym opowiedzieć o jednym z elementów języka Bash - mianowicie o konwersji ciągu znaków na wielkie litery. Możliwe, że niektórzy z Was zastanawiają się po co ta umiejętność i właśnie o tym chcę Was przekonać.
+Cześć czytelnicy, w dzisiejszym poście opowiemy o jednej prosty, ale przydatnej czynności w Bash - jak zamienić pierwszą literę w zdaniu na wielką. Nie tylko ułatwi to czytelnosć kodu, ale także może być przydatne przy wyświetlaniu wiadomości użytkownikowi. Czytaj dalej, aby dowiedzieć się dlaczego warto to zrobić.
 
 ## Jak to zrobić
 
-Aby przekonwertować napis na duże litery w Bashu, możemy użyć wbudowanej funkcji "tr" (od ang. translate). Wywołujemy ją w terminalu w następujący sposób:
+W Bash mamy dostęp do kilku wbudowanych funkcji, które pomogą w zamianie pierwszej litery na wielką. Jedną z nich jest `ucfirst()`, która zwraca pierwszą literę w zdaniu zapisaną wielką literą.
 
 ```Bash
-echo "tekst" | tr a-z A-Z
+#!/bin/bash
+
+str="witaj świecie!"
+echo "${str^}"
 ```
 
-W miejsce słowa "tekst" wstawiamy nasz napis, który chcemy przekonwertować. W wyniku otrzymujemy ten sam napis, ale z wszystkimi literami zamienionymi na duże.
+```
+Witaj świecie!
+```
 
-## Głębsza analiza
+Możemy również użyć `tr` do zamiany pierwszej litery na wielką. Ta metoda jest przydatna, jeśli chcemy zamienić pierwsze litery we wszystkich słowach w zdaniu na wielkie.
 
-Powyższy przykład to tylko jedna z metod konwersji napisu na wielkie litery w Bashu. Istnieje także możliwość skorzystania z funkcji "awk", która działa podobnie do "tr". Wykorzystując to narzędzie możemy nawet ustalić precyzyjne parametry konwersji, na przykład zamieniając tylko pierwszą literę w każdym słowie lub pomijając specjalne znaki.
+```Bash
+#!/bin/bash
 
-## Zobacz również
+str="witaj świecie!"
+echo "$str" | tr 'a-z' 'A-Z'
+```
 
-Jeśli chcesz poznać więcej o konwersji ciągów znaków na wielkie litery w języku Bash, polecam Ci zapoznać się z poniższymi artykułami:
+```
+WITAJ ŚWIECIE!
+```
 
-- [Dokumentacja funkcji "tr" w Bashu](https://www.gnu.org/software/bash/manual/html_node/Program-Output.html)
-- [Tutorial na temat manipulowania tekstem w Bashu](https://ryanstutorials.net/linuxtutorial/cheatsheetbash.php)
-- [Sekcja poświęcona ciągłom znaków w kursie programowania w Bashu](http://www.tldp.org/LDP/abs/html/string-manipulation.html)
+Jeśli potrzebujemy zamienić tylko pierwsze litery we wszystkich słowach na wielkie, możemy użyć `sed`.
+
+```Bash
+#!/bin/bash
+
+str="witaj świecie!"
+echo "$str" | sed 's/\b\(.\)/\u\1/g'
+```
+
+```
+Witaj Świecie!
+```
+
+## Deep Dive
+
+Zamiana pierwszej litery na wielką może być pomocna przy wyświetlaniu komunikatów użytkownikowi w czytelny sposób, szczególnie jeśli korzystamy z `read` do przyjmowania danych od użytkownika.
+
+Możemy również dostosować zamianę pierwszej litery na wielką do własnych potrzeb, na przykład zmieniać tylko litery w danym zakresie ASCII lub ignorować niektóre wyjątki.
+
+Zapoznanie się z dokumentacją Bash i eksperymentowanie z różnymi metodami może pomóc w zrozumieniu i wykorzystaniu zamiany pierwszej litery na wielką w różnych przypadkach.
+
+## Zobacz też
+
+- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Funkcje tekstowe w Bash](https://www.baeldung.com/linux/bash-text-processing-functions)
+- [Manipulowanie tekstem w Bash](https://www.linuxjournal.com/content/bash-string-manipulation)

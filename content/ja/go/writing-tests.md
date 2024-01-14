@@ -1,43 +1,59 @@
 ---
-title:    "Go: テストの書き方"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/go/writing-tests.md"
+title:                "Go: テストの作成"
+programming_language: "Go"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-[Japanese Title: テストを書く理由と方法、そして深掘り]
+## なぜテストを書くのか
+プログラミングでテストを書くことは、コードの品質を高め、バグを防ぐために必要不可欠です。また、テストを書くことで、コードの挙動をよりよく理解することができます。
 
-## Why
-テストを書く理由は、コードの品質を向上させるためです。テストを書くことで、バグやエラーを早期に発見することができます。また、コードの変更や修正を行った際にも、テストがあれば影響範囲を把握しやすくなります。
-
-## How To
-テストを書く方法は簡単です。まず、Go言語で書かれたコードの中にある関数やメソッドを、テストするための専用の関数に変換します。例えば、以下のようなコードがあったとします。
+## どのようにテストを書くのか
+まずは、Goのテストファイルを作成しましょう。それから、テスト対象の関数やメソッドを定義し、テストケースを作成します。最後に、`testing`パッケージを使用して、テストを実行します。例を示します。
 
 ```Go
+package main
+
+import "testing"
+
 func add(x int, y int) int {
-    return x + y
+  return x + y
 }
-```
 
-この関数をテストするためには、以下のようにTest関数を作成します。
-
-```Go
 func TestAdd(t *testing.T) {
-    result := add(2,3)
-    expected := 5
-    if result != expected {
-        t.Errorf("Expected %d, but got %d", expected, result)
-    }
+  result := add(5, 10)
+  if result != 15 {
+    t.Errorf("add(5, 10) should return 15, but got %d", result)
+  }
 }
 ```
 
-以上のように、テスト対象の関数をTest関数内で実行し、期待する結果と実際の結果が一致するかどうかを確認することでテストが完了します。
+テストを実行するには、ターミナルで`go test`を実行します。出力は以下のようになります。
 
-## Deep Dive
-テストを書く際には、テストケースをできるだけ網羅的に作成することが重要です。また、テストを書くことで得られる利点の一つに、コードのリファクタリングが挙げられます。テストがあることで、コードの修正後にテストが通るかどうかを確認することができ、コードの品質を向上させることができます。
+```
+$ go test
+PASS
+```
 
-## See Also
-- Test-driven development (TDD)
-- Writing tests in Go: https://golang.org/pkg/testing/
-- How to write effective tests: https://www.guru99.com/software-testing.html
+## テストの深い掘り下げ
+テストを書く際には、以下のポイントに注意しましょう。
+
+- テストケースは可能な限り多く用意する
+- エラーメッセージを分かりやすくする
+- テスト対象の関数やメソッドが変更された場合は、テストも変更する
+- テストカバレッジを確認する
+
+また、テストを書くことで得られるメリットは以下の通りです。
+
+- バグを発見しやすくなる
+- コードの品質が向上する
+- テストを実行することで機能を実行するよりも早くフィードバックを得ることができる
+
+## それでは、実際にテストを書いてみましょう！
+
+## 参考リンク
+- [Testing in Go](https://golang.org/pkg/testing/)
+- [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests/)
+- [Effective Go](https://golang.org/doc/effective_go.html#testing) (公式ドキュメントのテストに関するセクション)

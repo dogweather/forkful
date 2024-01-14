@@ -1,37 +1,48 @@
 ---
-title:    "Javascript: המרת תאריך למחרוזת"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/javascript/converting-a-date-into-a-string.md"
+title:                "Javascript: המרת תאריך למחרוזת"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-למה: למה להעסיק בהמרת תאריך לתו מחרוזת? כי תרצו להציג את התאריך בפורמט מסוים או לשלב תאריך ושעה בתו מחרוזת בפעולות שלכם.
+## למה
 
-איך לעשות זאת: באמצעות מספר פעולות פשוטות בקוד ג'אווהסקריפט, נוכל להמיר תאריך למחרוזת ולהציג אותו בפורמט הרצוי. נצטרף לכל ערכת כלים לתמיכה בתאריכים כמו תיבת טקסט וספריית Moment.js כדי לקבל תוצאות מדויקות יותר.
+המרה של תאריך למחרוזת היא דבר חשוב לעשות בתכנות ב-Javascript. תאריך הוא ערך יסודי וכדאי להציג אותו בצורה ייצוגית התקינה כדי לשמור על קלות הקריאה וההבנה של קוד.
+
+## איך לעשות
+
+הנה כמה דוגמאות שמציגות איך להמיר תאריך למחרוזת ב-Javascript:
 
 ```Javascript
+// המרת תאריך לתאריך יצירת מחרוזת עם תאריך מלא, חודש ויום
+var date = new Date(2021, 7, 1);
+var stringDate = date.toLocaleDateString();
+// תוצאה: 1/8/2021
 
-// יצירת אובייקט תאריך חדש
-const today = new Date();
-
-// שימוש בפעולות getDate ו-getMonth כדי להחזיר את היום, החודש והשנה של התאריך
-const day = today.getDate(); // כמה ימים בחודש: 1 - 31
-const month = today.getMonth(); // על פי מילון: 0 - ינואר, 11 - דצמבר
-const year = today.getFullYear(); // שנה מלאה: YYYY
-
-// הצגת התאריך בפורמט "DD/MM/YYYY"
-console.log(`${day}/${month + 1}/${year}`);
-
-// הצגת הזמן של התאריך בפורמט "HH:MM"
-const hour = today.getHours(); // שעה: 0 - 23
-const minute = today.getMinutes(); // דקות: 0 - 59
-console.log(`${hour}:${minute}`);
+// המרת תאריך לקובץ מצורף עם שם ימי השבוע וחודשים בעברית
+var date = new Date(2021, 7, 1);
+var options = {weekday: 'long', month: 'long', year: 'numeric'};
+var stringDate = date.toLocaleDateString('he-IL', options);
+// תוצאה: יום רביעי 1 אוגוסט 2021
 ```
 
-עומק הדיון: המרת תאריך למחרוזת לא תמיד נמצאת בתוך הקוד השליט, במיוחד כאשר משתמשים בתיבת טקסט להצגת תאריך. אם אתם משתמשים בזמן של ג'אווהסקריפט להצגת תאריך, ייתכן שתתקלו בבעיות במסך או תצטרכו לבצע כמה חישובים כדי לקבל את הפורמט הנכון. ניתן להיעזר בספריית Moment.js כדי לפשט את התהליך ולקבל תאריך מדויק ונוח להצגה.
+ניתן גם להשתמש בפונקציה מובנית שנמצאת בתוך האובייקט Date עבור מחרוזות תאריך מותאמות למפתח אופציונלי:
 
-ראו גם:
+```Javascript
+// המרת תאריך למחרוזת בתבנית לפי ISO 8601
+var date = new Date(2021, 7, 1);
+var stringDate = date.toISOString();
+// תוצאה: 2021-08-01T00:00:00.000Z
+```
 
-- מדריך לפעולות תאריך בג'אווהסקריפט: https://www.w3schools.com/js/js_date_methods.asp
-- ספריית Moment.js: https
+בחירת אופציונלים שונים בפונקציות מובנות יכול להפוך את התאריך למחרוזת לכסף נקי בתוך הטקסט.
+
+## Deep Dive
+
+בנוסף לדוגמאות המצורפות, כדאי לדעת כמה פרטים נוספים על התהליך של המרה של תאריך למחרוזת:
+
+- פונצקית toString() הממירה את התאריך למחרוזת בתבנית מותאמת לאתר את תבנית התאריך.
+- במספר דפדפנים, פונקציות כמו getDate(), getFullYear() ו getHours() יחזירו ערכים משממים לפונקציית toLocaleString().
+- כדי להציג את התאריך בפורמט אחר, ניתן להחליף את ה- return בפ

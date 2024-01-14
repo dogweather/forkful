@@ -1,45 +1,54 @@
 ---
-title:    "C#: Generera slumpmässiga nummer"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/generating-random-numbers.md"
+title:                "C#: Generera slumpmässiga tal"
+programming_language: "C#"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att generera slumpmässiga nummer är en vanlig uppgift inom programmering, särskilt inom spelutveckling, dataanalys och simuleringar. Det kan också vara användbart för att skapa unika identifierare eller lösenord.
+Att generera slumpmässiga tal kan vara en användbar funktion i många situationer inom programmering. Genom att använda sig av slumpmässiga tal blir programmet mer varierat och ger möjlighet till olika utfall. Det kan till exempel användas för att skapa slumpmässiga spelresultat, testa program med olika värden eller förbättra säkerheten med slumpmässiga krypteringsnycklar.
 
 ## Så här gör du
 
-Det finns flera sätt att generera slumpmässiga nummer i C#. En enkel metod är att använda klassen `Random` och dess metod `Next()` för att generera ett heltalsvärde som visas nedanför:
+För att generera slumpmässiga tal i C# kan du använda dig av Random-klassen. Den här klassen ger funktioner för att generera både heltal och flyttal inom ett visst intervall. Nedan följer ett exempel på hur man kan använda Random-klassen för att generera 10 slumpmässiga tal mellan 1 och 100:
 
 ```C#
-// Skapar en ny instans av klassen Random
-Random slumpgenerator = new Random();
-
-// Generera ett heltal i intervallet 1-100
-int slumpmässigtNummer = slumpgenerator.Next(1, 101);
-
-// Skriv ut det slumpmässiga numret
-Console.WriteLine("Det slumpmässiga numret är: " + slumpmässigtNummer);
+Random random = new Random(); // skapa ett nytt Random-objekt
+for (int i = 0; i < 10; i++) // loopa 10 gånger
+{
+    int randomNumber = random.Next(1, 101); // generera ett heltal mellan 1 och 100
+    Console.WriteLine(randomNumber); // skriv ut det slumpmässiga talet
+}
 ```
 
-Output:
+Detta kommer att producera följande output:
+
 ```
-Det slumpmässiga numret är: 39
+74
+16
+97
+5
+89
+26
+55
+33
+48
+91
 ```
 
-För att generera flera slumpmässiga nummer kan man sätta koden i en `for`-loop eller använda metoden `Next()` flera gånger. Det finns också andra metoder i klassen `Random` som kan generera andra datatyper som flyttal eller booleska värden.
+Om du vill ha ett slumpmässigt flyttal istället för ett heltal kan du använda NextDouble-metoden istället för Next-metoden. Nästa avsnitt kommer att gå djupare in på hur detta fungerar.
 
 ## Djupdykning
 
-Vad som kan vara viktigt att veta är att "slump" i datorvärlden egentligen inte är helt slumpmässigt, utan baseras på en algoritm som genererar ett mönster som vi människor uppfattar som slumpmässigt. Det finns också olika algoritmer som kan användas för att skapa olika typer av slumpmässiga nummer, beroende på vad det ska användas till.
+Random-klassen i C# använder sig av en pseudoslumpgenerator för att generera slumpmässiga tal. Det betyder att talen inte är helt slumpmässiga utan följer ett matematiskt mönster. Det här kan vara viktigt att ha i åtanke när man använder sig av slumpmässiga tal för säkerhetsrelaterade uppgifter, eftersom det kan finnas möjlighet att förutsäga nästa tal.
 
-Det finns också sätt att förbättra slumpmässigheten, som att använda systemtid eller unika värden som frö för algoritmen. Det är också viktigt att vara medveten om att en dator inte kan skapa verkligt slumpmässiga nummer, utan det är alltid baserat på någon form av algoritm.
+Om du vill ha mer kontroll över de slumpmässiga talen kan du även använda dig av en specifik seed när du skapar ditt Random-objekt. En seed är ett värde som används för att starta den pseudoslumpgenerator som Random-klassen använder sig av. Om du använder samma seed får du alltid samma sekvens av slumpmässiga tal. Detta kan vara till nytta när du till exempel vill testa ett program med samma slumpmässiga tal flera gånger för att säkerställa dess pålitlighet.
 
 ## Se även
 
-- [Dokumentation för klassen Random i .NET](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netframework-4.8)
-- [Random Number Generation in C# (Programiz)](https://www.programiz.com/csharp-programming/random-number)
-- [The Danger of Pseudo-Random Numbers (Medium)](https://medium.com/@afshinea/the-danger-of-pseudo-random-numbers-e29758ea38d2)
+- [Random-klassen (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.random)
+- [Slumpgenerator (Wikipedia)](https://sv.wikipedia.org/wiki/Slumpgenerator)
+- [Säkerhet av slumpmässiga tal (Huberts.net)](http://www.huberts.net/security/randomnumbers-rng/)

@@ -1,52 +1,40 @@
 ---
-title:    "Arduino: 写入标准错误"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/writing-to-standard-error.md"
+title:                "Arduino: 将文章的主题从英语翻译为中文：写入标准错误。"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么会想要写错误标准输出？
+## 为什么
 
-当我们在进行Arduino编程时，我们可能会遇到一些错误。这些错误可能是因为语法错误、逻辑错误或其他错误。如果我们没有正确处理这些错误，我们的程序可能会崩溃或出现不可预知的结果。在这种情况下，写入标准错误输出可以帮助我们定位并解决这些错误，从而提高我们的程序的稳定性和可靠性。
+如果你正在编程Arduino，你可能会发现自己在做一些有趣的项目，同时也会遇到一些bug或错误。这时，通过编写到标准错误的代码，可以帮助你更容易地找到并解决这些问题。
 
-## 如何实现
+## 如何做到
 
-在Arduino中，我们可以使用Serial.print()函数来向串行监视器输出信息。但是，有时我们可能需要将信息输出到标准错误输出。为此，我们可以使用Serial.println(F("error message")); 语句来输出错误消息。F()函数可以将字符串存储到程序存储器中，而不是RAM中，从而节省内存。我们还可以使用Serial.write()函数来向标准错误输出写入单独的字符。
-
-下面是一个简单的示例代码，展示了如何使用标准错误输出来处理错误：
+编写到标准错误的代码非常简单，只需要在你的程序中使用`Serial.println()`命令，并将错误信息作为参数传递给它。下面是一个示例代码：
 
 ```
-#include <Arduino.h>
-
-void setup() {
-  Serial.begin(9600); // 初始化串口通信
-}
-
-void loop() {
-  int sensorValue = analogRead(A0); // 读取来自传感器的数据
-  if (sensorValue < 50) { // 如果传感器值小于50
-    Serial.println(F("ERROR: Sensor value too low")); // 输出错误消息
-  }
-  delay(1000); // 延迟1秒钟
-}
+Arduino.println("出现错误，请检查连接");
 ```
 
-在这个例子中，如果传感器的值低于50，程序会输出“ERROR: Sensor value too low”消息到标准错误输出。
+如果你在Arduino IDE的串口监视器中打开了“改变波特率”选项，你就可以看到这条消息。如果你的程序中发生了其他错误，你也可以通过类似的方法打印出其他错误信息。
 
 ## 深入了解
 
-写入标准错误输出还有其他一些用处。例如，在调试过程中，我们可以在关键的代码部分添加一些输出语句，从而能够查看程序在运行时的状态。这有助于我们更快地定位并解决错误。
+如果你想更加深入了解这个过程，你可以尝试使用`Serial.write()`命令，它可以将二进制数据打印到串口监视器。这样可以帮助你更好地理解错误信息是如何通过串口发送给电脑的。
 
-此外，我们还可以通过添加条件来控制标准错误输出。例如，我们可以使用if语句来检查程序的状态并根据需要输出相应的错误消息。
+## 了解更多
 
-# 参考链接
+如果你想进一步学习如何使用Arduino，在下面的链接中可以找到相关的资料：
 
-- [Arduino官方文档：Serial.print()函数](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [Arduino官方文档：Serial.println()函数](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Arduino官方文档：Serial.write()函数](https://www.arduino.cc/reference/en/language/functions/communication/serial/write/)
+- [Arduino官方文档](https://www.arduino.cc/reference/)
+- [Arduino论坛](https://forum.arduino.cc/)
+- [Arduino教程和例程](https://www.arduino.cc/en/Tutorial/HomePage)
 
-# 参见
+## 参考链接
 
-- [Markdown语法指南](https://www.markdownguide.org/)
-- [Arduino示例代码](https://www.arduino.cc/en/Tutorial/HomePage)
+- [如何在Arduino中使用Serial.println](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- [如何调试Arduino程序](https://www.arduino.cc/en/Guide/Troubleshooting)
+- [了解标准错误和标准输出的区别](https://arduino.stackexchange.com/questions/272/println-and-error-within-arduino)

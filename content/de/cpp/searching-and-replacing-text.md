@@ -1,59 +1,46 @@
 ---
-title:    "C++: Textsuche und -ersetzung"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/cpp/searching-and-replacing-text.md"
+title:                "C++: Suchen und Ersetzen von Text"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Suchen und Ersetzen von Text ist eine wichtige Fähigkeit für jeden, der in der Programmierung tätig ist. Es ermöglicht uns, schnell und effizient Änderungen in unseren Code vorzunehmen, ohne manuell jeden einzelnen Abschnitt zu bearbeiten.
+Das Ersetzen von Text in einem Programm kann aus verschiedenen Gründen wichtig sein. Zum Beispiel kann es helfen, wiederkehrende Fehler oder Textpassagen schnell und effizient zu korrigieren. Auch bei der Umwandlung von Daten oder beim Formatieren von Text kann das Suchen und Ersetzen nützlich sein.
 
-## Wie man das macht
+## Wie man es macht
 
-Die grundlegendste Methode, Text zu suchen und zu ersetzen, ist die Verwendung der `find()` und `replace()` Funktionen in C++. Diese Funktionen erfordern als Parameter den zu suchenden Text, den Text, durch den er ersetzt werden soll, und die Position, an der die Suche beginnen soll.
+Das Suchen und Ersetzen von Text in C++ ist relativ einfach. Zunächst importieren wir die Bibliothek "string", die uns Funktionen zum Manipulieren von Zeichenketten zur Verfügung stellt:
 
 ```C++
-#include <iostream>
 #include <string>
-
-using namespace std;
-
-int main() {
-    string text = "Hallo, wie geht es dir?";
-    // Sucht nach dem Text "dir" und ersetzt es mit "mir"
-    int pos = text.find("dir");
-    text.replace(pos, 3, "mir");
-
-    cout << text << endl;
-    // Ausgabe: Hallo, wie geht es mir?
-    return 0;
-}
 ```
 
-In diesem Beispiel haben wir den Text "dir" in "mir" geändert. Beachten Sie, dass die `find()` Funktion die Position des gesuchten Textes zurückgibt und die `replace()` Funktion diese Position verwendet, um den Text zu ersetzen.
-
-Es gibt auch fortgeschrittenere Methoden zum Suchen und Ersetzen von Text, wie z.B. die Verwendung von regulären Ausdrücken mit der `regex_replace()` Funktion. Diese erfordert jedoch ein Verständnis von regulären Ausdrücken und ist daher für Anfänger möglicherweise etwas komplex.
-
-## Tiefergehende Informationen
-
-Es ist wichtig zu beachten, dass die `replace()` Funktion nur den ersten gefundenen Text ersetzt. Wenn Sie den gesamten Text durchsuchen und ersetzen möchten, müssen Sie eine Schleife verwenden. Hier ist ein Beispiel, das alle Instanzen von "dir" durch "mir" ersetzt:
+Nun erstellen wir eine Zeichenkette und weisen ihr einen Wert zu:
 
 ```C++
-// Schleife, um alle Instanzen von "dir" zu ersetzen
-while (pos != string::npos) {
-    text.replace(pos, 3, "mir");
-    pos = text.find("dir", pos + 1);
-}
+std::string text = "Hallo, wie geht es dir?";
 ```
 
-Es ist auch möglich, den Suchtext durch eine leere Zeichenkette zu ersetzen, um ihn effektiv zu löschen.
+Um nun bestimmte Wörter oder Zeichenfolgen in dieser Zeichenkette zu suchen und zu ersetzen, können wir die Funktion "replace" verwenden. Diese erhält drei Parameter: die Position, ab der die Ersetzung erfolgen soll, die Anzahl der zu ersetzenden Zeichen und die Zeichenkette, mit der ersetzt werden soll. Wir können auch angeben, dass alle Vorkommen eines bestimmten Worts oder einer Zeichenfolge ersetzt werden sollen, indem wir den zusätzlichen Parameter "npos" verwenden. Hier ist ein Beispiel:
 
-Eine weitere wichtige Sache zu beachten ist, dass die `find()` Funktion standardmäßig nur nach dem ersten Vorkommen des gesuchten Textes sucht. Um alle Vorkommen zu finden, müssen Sie die `find()` Funktion mit einer Schleife verwenden und die Position mit jedem Durchlauf aktualisieren.
+```C++
+std::string text2 = "Ich mag Bananen sehr.";
+text2.replace(8, 7, "Äpfel"); // Ersetzt "Bananen" durch "Äpfel"
+```
+
+Die Ausgabe dieser Zeichenkette wäre dann: "Ich mag Äpfel sehr."
+
+## Tiefere Einblicke
+
+Die Funktion "replace" ist sehr nützlich, wenn es darum geht, einfache Textmodifikationen durchzuführen. Jedoch gibt es in C++ auch weitere Funktionen und Bibliotheken, die noch leistungsfähigere Such- und Ersetzungsfunktionen bieten. Zum Beispiel kann die Bibliothek "boost/algorithm/string" bei der Arbeit mit größeren Textmengen und komplexeren Suchmustern hilfreich sein.
+
+Es ist auch wichtig zu beachten, dass die Funktion "replace" nicht immer die beste Wahl ist, wenn es darum geht, Text in einer Datei oder einer Datenbank zu ersetzen. In diesen Fällen sollten spezielle Funktionen und Anwendungen wie "sed" oder "awk" verwendet werden, um Text effizienter zu ersetzen.
 
 ## Siehe auch
 
-- [cppreference - String search](https://en.cppreference.com/w/cpp/string/basic_string/find)
-- [cppreference - String replace](https://en.cppreference.com/w/cpp/string/basic_string/replace)
-- [TutorialsPoint - C++ Regular Expressions](https://www.tutorialspoint.com/cpp_standard_library/cpp_regular_expressions.htm)
+- [C++ String Replace Dokumentation] (https://www.cplusplus.com/reference/string/string/replace/)
+- [Boost String Algorithm Bibliothek] (https://www.boost.org/doc/libs/1_37_0/doc/html/string_algo.html)

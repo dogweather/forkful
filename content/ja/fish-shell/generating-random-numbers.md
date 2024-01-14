@@ -1,64 +1,46 @@
 ---
-title:    "Fish Shell: ランダム数の生成"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/generating-random-numbers.md"
+title:                "Fish Shell: ランダムな数字の生成"
+programming_language: "Fish Shell"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
+## なぜ
 
-プログラムでランダムな数字を生成する理由はさまざまです。例えば、ゲームや乱数を必要とするアルゴリズムを作成するときに役立ちます。また、ランダムに選ばれたデータを使ったテストや、シード値を変えることで毎回異なる結果を得ることができるユニークなIDの生成にも使えます。さまざまな用途でランダムな数字が必要になるため、今回はその方法をご紹介いたします。
+プログラマーにとって、ランダムな数値を生成することは非常に便利なことです。ランダムな数値を使用することで、様々なゲームやシミュレーション、データ分析などにおいて多様性や偶発性を加えることができます。Fish Shellを使用すると、簡単にランダムな数値を生成することができます。
 
-# 前提条件
+## 使い方
 
-これからご紹介する方法はFish Shellでのコーディングになります。ご使用のシステムに既にインストールされていることが前提となります。もしインストールされていない場合は[公式サイト](https://fishshell.com/)からダウンロードしてください。
-
-また、コーディングには基本的なプログラミング知識が必要です。具体的なコマンドや記法については、[公式ドキュメント](https://fishshell.com/docs/current/)を参考にしてください。
-
-# 生成方法
-
-まずはFish Shellを起動し、ランダムな数字を生成するコマンドを実行してみましょう。コマンドは以下の通りです。
+ランダムな数値を生成するには、`math` コマンドを使用します。例えば、1から10までのランダムな数値を出力する場合は、以下のようにします。
 
 ```Fish Shell
-shuf -i 1-100 -n 1
+math $RANDOM % 10 + 1
 ```
 
-このコマンドは1から100までの範囲からランダムに1つの数字を選んで出力します。実際にコマンドを実行すると以下のようになります。
-
-```
-36
-```
-
-このように、毎回ランダムな数字が出力されることがわかります。また、範囲や出力数を変えることも可能です。例えば、10から50までの範囲から3つの数字をランダムに選ぶ場合は以下のようにします。
+また、特定の範囲のランダムな数値を複数回生成することもできます。以下の例では、1から5までのランダムな数値を3回出力します。
 
 ```Fish Shell
-shuf -i 10-50 -n 3
+for i in (seq 3)
+  echo (math $RANDOM % 5 + 1)
+end
 ```
 
-これにより、3つのランダムな数字が出力されます。
+実行結果は以下のようになります。
 
 ```
-41
-18
-35
+2
+5
+1
 ```
 
-ランダムな数字を使用する機会はさまざまです。次のセクションでは、さらに深くランダムな数字を生成する方法についてご紹介します。
+## 詳細を掘り下げる
 
-# 深く掘り下げる
+`math` コマンドを使用する際に、`$RANDOM` 変数を使用することで、ランダムな数値を生成することができます。`$RANDOM` 変数は、各シェルで異なる値を持つ乱数を生成します。また、`math` コマンドには、他にも様々な数学関数や演算子があり、より柔軟なランダム数値の生成が可能です。詳細な情報は、[Fish Shellの公式ドキュメント](https://fishshell.com/docs/current/cmds/math.html)を参照してください。
 
-まずは、コマンドの詳細について見ていきましょう。shufはデフォルトでは1から9までの数字を出力することを既定していますが、今回は範囲を自分で指定するために-iオプションを使用しました。
+## 関連リンク
 
-また、続く-nオプションでは出力する数字の数を指定します。デフォルトでは1つの数字が出力されるため、今回は3つの数字を出力するために-n 3と指定しました。さらに詳しい説明やオプションについては[manページ](https://fishshell.com/docs/current/cmds/shuf.html)を参照してください。
-
-さらに、コマンドの結果を変数に代入して使用することもできます。以下のようにコードを記述することで、コマンドの出力結果を$numという変数に代入し、その後にechoコマンドで出力することができます。
-
-```Fish Shell
-set num (shuf -i 1-100 -n 1)
-echo $num
-```
-
-このようにすることで、ランダムな数字を変数として使用することができます。
-
-#
+- [Math Command Documentation in Fish Shell](https://fishshell.com/docs/current/cmds/math.html)
+- [Generating Random Numbers in Fish Shell](https://medium.com/@mattstratton/generating-random-numbers-in-fish-shell-f825df8c565b)
+- [Using the Math Command in Fish Shell](https://www.linuxjournal.com/article/10749)

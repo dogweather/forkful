@@ -1,51 +1,54 @@
 ---
-title:    "PHP: Ottenere la data attuale"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/php/getting-the-current-date.md"
+title:                "PHP: Ottenere la data corrente."
+programming_language: "PHP"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
 
-La data è un elemento fondamentale in quasi ogni applicazione. Con il PHP, è possibile ottenere facilmente la data corrente utilizzando alcune semplici funzioni.
+Oggi parleremo di una funzione importante nella programmazione PHP, ovvero la possibilità di ottenere la data corrente. Questo può sembrare semplice, ma in realtà è un'operazione fondamentale per molti progetti. Vediamo perché.
 
-## Come fare
+## Come ottenere la data corrente in PHP
 
-Per ottenere la data corrente con PHP, è possibile utilizzare la funzione `date()`. Questa funzione accetta due parametri: il formato della data desiderato e la marca temporale opzionale. Ecco un esempio di come utilizzare questa funzione per ottenere la data odierna:
+Per ottenere la data corrente in PHP possiamo utilizzare la funzione `date()`. Questa funzione ha come parametro una stringa che contiene il formato della data che vogliamo visualizzare. Di seguito un esempio di codice:
 
-```
-<?php
-$data_corrente = date("d/m/Y");
-echo "Oggi è il $data_corrente";
-```
-
-Il codice sopra dovrebbe produrre un output simile a questo:
-
-```
-Oggi è il 08/09/2021
+```PHP
+$data_corrente = date('d/m/Y');
+echo $data_corrente;
 ```
 
-Se si vuole ottenere la data corrente con la marca temporale, è possibile utilizzare la funzione `time()` insieme alla funzione `date()`, come mostrato nell'esempio seguente:
+Questo codice produrrà un output simile a `09/07/2021`, dove la prima parte rappresenta il giorno, la seconda il mese e la terza l'anno. 
 
-```
-<?php
-$marca_temporale = time();
-$data_corrente = date("d/m/Y", $marca_temporale);
-echo "La data corrente in marca temporale è $marca_temporale e nel formato desiderato è $data_corrente";
+Invece, se volessimo includere anche l'ora, possiamo utilizzare il parametro `H:i:s`. Esempio:
+
+```PHP
+$data_ora_corrente = date('d/m/Y H:i:s');
+echo $data_ora_corrente;
 ```
 
-L'output dovrebbe essere simile a questo:
-
-```
-La data corrente in marca temporale è 1631088686 e nel formato desiderato è 08/09/2021
-```
+Questo produrrà un output del tipo `09/07/2021 10:30:15`, includendo anche l'ora, i minuti e i secondi. È importante notare che questa funzione restituisce la data e l'ora correnti del server in cui il codice viene eseguito.
 
 ## Approfondimento
 
-Se si vuole saperne di più su come funzionano le funzioni `date()` e `time()` in PHP, è possibile approfondire la documentazione ufficiale sul sito di PHP. Inoltre, esistono altre funzioni che permettono di manipolare le date e il tempo in PHP, come ad esempio `strtotime()` per convertire una stringa in una marca temporale.
+La funzione `date()` utilizza una stringa di formato per determinare come visualizzare la data. Alcuni dei parametri utilizzabili sono:
+
+- `d`: giorno con due cifre (es. 09)
+- `m`: mese con due cifre (es. 07)
+- `Y`: anno con quattro cifre (es. 2021)
+- `H`: ora in formato 24 ore (es. 10)
+- `i`: minuti (es. 30)
+- `s`: secondi (es. 15)
+- `l`: nome del giorno della settimana (es. venerdì)
+- `F`: nome del mese (es. luglio)
+
+Per una lista completa dei parametri disponibili, è possibile consultare la documentazione ufficiale di PHP.
 
 ## Vedi anche
-- [Documentazione ufficiale su date e tempo in PHP](https://www.php.net/manual/en/function.date.php)
-- [Funzione strtotime() in PHP](https://www.php.net/manual/en/function.strtotime.php)
-- [Altri esempi e approfondimenti su date e tempo in PHP](https://www.w3schools.com/php/php_dates.asp)
+
+- [Funzione date() su PHP.net](https://www.php.net/manual/en/function.date.php)
+- [Documentazione ufficiale di PHP](https://www.php.net/manual/en/)
+
+Grazie per aver letto questo articolo, speriamo ti sia stato utile per comprendere meglio come ottenere la data corrente in PHP. Alla prossima!

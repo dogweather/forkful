@@ -1,30 +1,49 @@
 ---
-title:    "Fish Shell: पैटर्न से मेल खाते अक्षरों को हटाना"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/deleting-characters-matching-a-pattern.md"
+title:                "Fish Shell: पैटर्न से मिलते हुए अक्षरों को हटाना"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun
-Kya aap kabhi sochte hain ki aapka Fish Shell command prompt cluttered ho gaya hai aur aapko unwanted characters ka saamna karna pad raha hai? Kya aap apne command prompt ko saaf aur organised rakhna chahte hain? Iss situation mein, aap delete characters matching a pattern ka istemaal kar sakte hain. Isse aapko apne command prompt mein keval zaroori aur desired characters hi dikhai denge, jisse aapko kaam karne mein aasani hogi.
+## क्यों
 
-## Kaise Karein
-```Fish Shell mein characters matching a pattern delete karne ke liye, aapko yeh steps follow karne honge:
-1. Pehle, aapko command prompt mein yeh command likhni hogi: `set -U fish_key_bindings fish_delete_char
-2. Ab aapko woh pattern ya characters batana hoga jo aap delete karna chahte hain. Iske liye, aap yeh command type kar sakte hain: `bind \cD delete-or-exit-visual-mode`.
-3. Iske baad, aapka cursor pattern ya character ke paas jaega aur use highlight karega.
-4. Jab aap `\cD` dabayenge, woh character ya pattern delete ho jaega.
+गर आप एक प्रोग्रामर हैं और आपको किसी भी टेक्स्ट फाइल में से पिछले छठ अक्षर हटाने की आवश्यकता है, तो आपको फिश शैल में यह कार्य करना चाहिए। यह आपको समय और प्रयास की बचत करने और सही दोस्तों की ओर से सही काम करने की सुविधा देता है।
 
-Iss tarah se, aap asaani se characters matching a pattern delete kar sakte hain Fish Shell mein.
+## कैसे करें
 
-## Deep Dive
-Delete characters matching a pattern ka istemaal karte waqt, aap kisi bhi specific character ya pattern ko delete kar sakte hain. Isse aap apne command prompt ko saaf aur organised rakh sakte hain. Iske alawa, aap `\cD` ki jagah `\cW` bhi use kar sakte hain jisse cursor sirf ek word forward jaega. Isse aapko kaafi time aur energy bachega.
+```Fish Shell
+# टेक्स्ट फाइल बनाएं।
+echo "मेरा नाम है जॉन डोए" > file.txt
 
-## Dekhein Bhi
-**See Also:**
+# छठ अक्षर निकालें।
+sed 's/..$//' file.txt
 
-1. [Fish Shell Command Line Editing](https://fishshell.com/docs/current/cmdline.html)
-2. [Deleting Characters in Emacs Mode](https://fishshell.com/docs/current/cmdline.html#emacs-deleting-characters)
-3. [Deleting in Vi Mode](https://fishshell.com/docs/current/cmdline.html#vi-ins-mode-deleting)
-4. [Fish Shell User Guide](https://fishshell.com/docs/current/index.html)
+# उपरोक्त उत्पादन देखें।
+मेरा नाम है जॉन
+
+```
+
+आप दुसरी प्रकार से भी इस काम को कर सकते हैं।
+
+```Fish Shell
+# टेक्स्ट फाइल से प्रिंट करें।
+cat file.txt
+
+# अंतिम छठ अक्षर को हटाएं।
+truncate -s -1 file.txt
+
+# उपरोक्त उत्पादन देखें।
+मेरा नाम है जॉन
+
+```
+
+## डीप डाइव निकालने वाले अक्षर
+
+छठ अक्षर हटाने के लिए यूनिकोड कोड नंबर को अगले आठ-अक्षरों के साथ बदलना पड़ता है। हालांकि फिश शैल में, आप सीधे स्ट्रिंग फॉर्मेट प्रयोग कर सकते हैं। यह बहुत सुविधाजनक है, क्योंकि आप इसे अन्य आवश्यकताओं के साथ साझा कर सकते हैं और हजारों निरंतर पार्ट्नर बना सकते हैं।
+
+## देखें भी
+
+- [SED द्वारा छठ अक्षरों को निकालना](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
+- [फिश शैल पर सीखें](https://fishshell.com/docs/current/tutorial.html)

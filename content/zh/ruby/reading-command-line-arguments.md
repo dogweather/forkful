@@ -1,51 +1,43 @@
 ---
-title:    "Ruby: 读取命令行参数"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/reading-command-line-arguments.md"
+title:                "Ruby: 读取命令行参数"
+programming_language: "Ruby"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么？
+# 为什么阅读命令行参数？
 
-在编程中，我们经常需要从终端运行程序并传递一些参数。通过阅读命令行参数，我们可以轻松地修改程序的行为，从而节省时间和精力，并更有效地完成任务。因此，学习如何读取命令行参数是非常重要的。
+阅读命令行参数是一种非常方便的方法来指定程序在执行时所需的参数。通过使用命令行参数，您可以在运行程序时输入不同的值，而无需修改程序本身。这使得程序更加灵活和可重用，因为您可以使用不同的参数来测试不同的情况。
 
-## 如何？
+# 如何阅读命令行参数
 
-首先，让我们看一个简单的例子。假设我们有一个Ruby程序，现在我们想要从命令行传入两个参数，分别是姓名和年龄。我们可以这样写：
+要阅读命令行参数，您可以使用Ruby中的ARGV数组。这个数组包含了所有从命令行传递给程序的参数，您可以在程序中使用它们。
 
-```ruby
-name = ARGV[0]
-age = ARGV[1]
-puts "你好，#{name}。您的年龄是#{age}岁。"
+以下是一个简单的代码示例，展示如何使用ARGV数组来读取第一个参数并将其打印出来：
+
+```Ruby
+first_arg = ARGV[0]
+puts "您输入的第一个参数是：#{first_arg}"
 ```
 
-在终端中运行程序时，我们需要在程序文件名后添加参数，如下所示：
+如果您在命令行输入`ruby program.rb hello`，那么上面的代码将打印出`您输入的第一个参数是：hello`。
 
-```bash
-ruby hello.rb John 25
-```
+# 深入研究
 
-运行结果将是：
+命令行参数可以根据您的程序的需要进行解析。您可以使用`ARGV`数组的方法，如`length`和`join`来检查传递给程序的参数的数量和内容。您还可以使用正则表达式来匹配特定的参数格式，并在程序中执行相应的逻辑。
 
-```
-你好，John。您的年龄是25岁。
-```
+除了使用ARGV数组，您还可以使用Ruby的OptionParser类来处理复杂的命令行选项。这个类可以帮助您定义可接受的选项和默认值，并将它们转换为易于使用的格式。
 
-在这个例子中，我们使用了一个内置的Ruby变量ARGV来读取命令行参数。这个变量是一个数组，存储了所有传入的参数。通过指定索引，我们可以轻松地获取所需的参数。
+# 参考链接
 
-除了使用ARGV变量之外，还有其他的方法来读取命令行参数。例如，我们可以使用OptionParser库来定义一个更复杂的参数列表，并获取用户输入的值。这里有一些参考链接供您学习更多。
+- [Ruby - Command Line Arguments](https://www.rubyguides.com/2018/10/ruby-command-line-arguments/)
+- [Ruby - ARGV Class](https://ruby-doc.org/core-2.7.1/ARGF.html)
+- [Ruby - OptionParser Class](https://ruby-doc.org/stdlib-2.7.1/libdoc/optparse/rdoc/OptionParser.html)
 
-## 深入探讨
+# 参见
 
-阅读命令行参数的能力是一项非常有用的技能，它可以帮助我们更好地控制和优化我们的程序。一旦我们掌握了基本的方法，我们就可以找到更多的方法来利用命令行参数，并根据我们的需求进行调整。同时，学习如何处理命令行参数也是成为一名优秀软件工程师的基本技能之一。
-
-## 参考资料
-
-- [ruby-doc.org: Command Line Arguments](https://ruby-doc.org/core-2.6.3/ARGF.html)
-- [Ruby Guides: Command Line Arguments](https://www.rubyguides.com/2018/10/ruby-command-line-arguments/)
-- [OptionParser Library](https://ruby-doc.org/stdlib-2.6.3/libdoc/optparse/rdoc/OptionParser.html)
-
-## 同时查看
-
-- [命令行选项的参数处理方法](https://www.cnblogs.com/stephen-liu74/archive/2011/10/07/2236715.html)
+- [Ruby命令行参数入门指南](https://medium.com/@Lancer209a/ruby%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-e0468808c651)
+- [Ruby中解析命令行选项的最佳实践](https://longliveseptember.com/ruby-command-line-options-best-practices-zh/)
+- [命令行参数和选项处理的快速指南](https://blog.ghostztianzhu.com/ruby-command-line-args-and-opt-parse-quick-and-dirty-zh/)

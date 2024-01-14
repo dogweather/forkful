@@ -1,59 +1,50 @@
 ---
-title:    "C++: Impresión de salida de depuración"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/printing-debug-output.md"
+title:                "C++: Imprimiendo salida de depuración"
+programming_language: "C++"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué imprimir mensajes de depuración en C++?
+## Por qué
 
-La impresión de mensajes de depuración en C++ es una práctica común en la programación, especialmente en proyectos más grandes y complejos. Al imprimir mensajes de debug, podemos ver qué está sucediendo en nuestro código, qué valores tienen nuestras variables y si hay algún error que necesite ser corregido.
+A veces, cuando escribimos programas en C++, podemos enfrentarnos a errores o problemas que no podemos solucionar fácilmente. En estos casos, puede ser de gran ayuda imprimir información de depuración en la consola para comprender mejor lo que está sucediendo en nuestro código. Como programadores, es importante saber cómo imprimir información de depuración en C++ para facilitar la solución de problemas en nuestro código.
 
-## Cómo imprimir mensajes de depuración en C++
+## Cómo hacerlo
 
-Para imprimir mensajes de depuración en C++, podemos utilizar la función `cout` de la biblioteca estándar de C++. Esta función nos permite imprimir mensajes en la consola, lo que nos permite verlos mientras nuestro programa se está ejecutando. Veamos un ejemplo:
+Imprimir información de depuración en C++ es muy fácil y solo requiere una línea de código. Utilizando la función `cout` de la biblioteca estándar, podemos imprimir cualquier variable o mensaje en la consola. Aquí hay un ejemplo de cómo imprimir el valor de una variable entera llamada `numero`:
 
 ```C++
-#include <iostream>
+cout << "El número es: " << numero << endl;
+```
 
-int main() {
-    int x = 5;
-    float y = 2.5;
-    bool z = true;
+El uso del operador `<<` nos permite imprimir varias variables o mensajes juntos. Además, el uso del manipulador de flujo `endl` nos permite enviar un carácter de nueva línea al final del mensaje impreso.
 
-    // Imprimimos mensajes de depuración
-    std::cout << "El valor de x es: " << x << std::endl;
-    std::cout << "El valor de y es: " << y << std::endl;
-    std::cout << "El valor de z es: " << z << std::endl;
-    
-    return 0;
+Aquí hay un ejemplo de ejecución del código anterior:
+
+```
+El número es: 10
+```
+
+Es importante tener en cuenta que al imprimir diferentes tipos de datos, debemos utilizar el operador correcto. Para variables de tipo `string` o `char` debemos utilizar el operador `<<`, mientras que para variables de tipo `integer` o `double` debemos utilizar el operador `+`.
+
+## Deep Dive
+
+Además de imprimir variables o mensajes en la consola, también podemos utilizar la información de depuración para verificar si nuestro código está funcionando correctamente. En lugar de imprimir todos los resultados en la consola, podemos utilizar una declaración `if` para imprimir solo cuando se cumple una determinada condición.
+
+Por ejemplo, supongamos que tenemos un programa que calcula el área de un triángulo. Podemos utilizar una declaración de impresión de depuración para asegurarnos de que la fórmula que estamos utilizando es correcta:
+
+```C++
+if (altura > base) {
+    cout << "La altura es mayor que la base, por lo que el resultado puede ser incorrecto." << endl;
 }
-
 ```
 
-La salida de este código sería la siguiente:
+De esta forma, podemos detectar y corregir errores en nuestro código a medida que avanzamos en el desarrollo.
 
-```
-El valor de x es: 5
-El valor de y es: 2.5
-El valor de z es: 1
-```
+## Ver también
 
-Podemos ver cómo la variable booleana `z` se convierte en un valor numérico al imprimirse, ya que `true` se representa como 1 en C++. También podemos utilizar la función `cerr` para imprimir mensajes de error en la consola.
-
-## Profundizando en la impresión de mensajes de depuración
-
-La impresión de mensajes de depuración en C++ puede ser muy útil, pero también debemos tener en cuenta que puede afectar el rendimiento de nuestro programa. Por eso, es importante tener en cuenta algunas buenas prácticas:
-
-- No imprimir demasiados mensajes, ya que esto puede ralentizar nuestro programa.
-- Utilizar macros para habilitar o deshabilitar la impresión de mensajes de depuración fácilmente.
-- Utilizar la función `endl` para imprimir una nueva línea después de cada mensaje de depuración.
-
-También podemos utilizar otras técnicas de depuración, como el uso de breakpoints o el análisis de nuestro código con herramientas específicas.
-
-## Vea también
-
-- [Documentación de `cout` en cplusplus.com](http://www.cplusplus.com/reference/iostream/cout/)
-- [Tutorial sobre debugging en C++ en Programacion.Net](https://programacion.net/articulo/tutorial_de_debugging_en_cplusplus_607)
-- [Consejos para mejorar la depuración en C++ en SoloLearn](https://www.sololearn.com/learn/CPlusPlus/1094/)
+- [Aprende C++](https://www.aprendecpp.com/)
+- [Documentación de C++](https://devdocs.io/cpp/)
+- [Solución de problemas en C++](https://www.codementor.io/@martinagudo/troubleshooting-tips-for-c-BBFj9sKLz)

@@ -1,55 +1,66 @@
 ---
-title:    "Kotlin: Pisanie testów"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/writing-tests.md"
+title:                "Kotlin: Pisanie testów"
+programming_language: "Kotlin"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać testy?
+## Dlaczego pisać testy w Kotlinie?
 
-Pisanie testów jest ważną częścią procesu programowania, ponieważ umożliwia sprawdzenie poprawności naszego kodu w automatyczny sposób. Jest to szczególnie ważne w przypadku większych projektów, gdzie zmiany w jednej części kodu mogą mieć wpływ na inne części. Dodatkowo, testy pozwalają na szybkie wykrycie błędów i ułatwiają odnajdywanie przyczyny problemów.
+Pisanie testów jest nieodłączną częścią procesu tworzenia oprogramowania. Pomimo tego, że może wydawać się czasochłonnym zadaniem, w rzeczywistości zapewnia wiele korzyści. Dzięki testowaniu możemy mieć większą pewność, że nasz kod jest wolny od błędów i działa poprawnie. W tym artykule dowiesz się, dlaczego warto pisać testy w języku Kotlin.
 
-## Jak pisać testy w języku Kotlin?
+## Jak pisać testy w Kotlinie?
 
-Pisanie testów w języku Kotlin jest bardzo proste i wygodne. Aby to zrobić, należy użyć biblioteki do testowania, takiej jak `JUnit`, a następnie utworzyć klasę z metodami testowymi. Poniżej przedstawione są przykładowe testy wykorzystujące klasę `String`:
+Poniżej zamieszczam przykładowy kod w języku Kotlin, który pokazuje jak napisać prosty test funkcji `addNumbers()`. Tworzymy klasę `Calculator` zawierającą funkcję `addNumbers()` oraz klasę `CalculatorTest` zawierającą test tej funkcji.
 
 ```Kotlin
-// import biblioteki JUnit
-import org.junit.Test
-// import funkcji do asercji
-import org.junit.Assert.*
+class Calculator{
+    fun addNumbers(num1: Int, num2: Int): Int{
+        return num1 + num2
+    }
+}
 
-// deklaracja klasy z testami
-class StringTests {
-  // deklaracja metody testującej
-  @Test
-  fun testLength() {
-    // przygotowanie danych wejściowych
-    val input = "Ala ma kota"
-    // wywołanie metody, którą chcemy przetestować
-    val output = input.length()
-    // asercja sprawdzająca, czy wynik jest zgodny z oczekiwaniami
-    assertEquals(11, output)
-  }
+class CalculatorTest{
+    val calculator = Calculator()
+    
+    @Test
+    fun `should return correct sum of two numbers`(){
+        val result = calculator.addNumbers(2, 4)
+        assertEquals(6, result)
+    }
+}
 
-  // inny przykład testu
-  @Test
-  fun testReversed() {
-    val input = "Kot ma Alę"
-    val output = input.reversed()
-    assertEquals("Alę ma Kot", output)
-  }
+```
+
+Output po uruchomieniu testu:
+```
+PASSED: should return correct sum of two numbers
+```
+
+W tym przykładzie użyliśmy biblioteki `JUnit` oraz funkcji `assertEquals()` do porównania wyniku z oczekiwaną wartością. Dzięki temu testowi możemy upewnić się, że nasza funkcja `addNumbers()` działa poprawnie.
+
+## Deep Dive: Więcej informacji o pisaniu testów w Kotlinie
+
+Język Kotlin oferuje specjalną składnie dla testowania, która pozwala pisać bardziej czytelne i zwięzłe testy. Przykładem tego jest użycie operatora `infix` do tworzenia testów o bardziej naturalnym wyglądzie.
+
+W poniższym kodzie testujemy funkcję `multiplyNumbers()` oraz używamy operatora `infix` do zweryfikowania, czy wynik jest większy od 10.
+
+```Kotlin
+@Test
+fun `should return correct multiplication of two numbers`(){
+    val result = calculator.multiplyNumbers(3, 5)
+    result should be greater than 10
 }
 ```
 
-## Głębszy wgląd w pisanie testów
+Kotlin oferuje również wbudowane metody do tworzenia asercji z różnymi typami danych, co znacznie ułatwia pisanie testów.
 
-Ważnym aspektem przy pisaniu testów jest pokrycie jak największej ilości możliwych przypadków. Testy powinny sprawdzać zarówno poprawne działanie kodu, jak i jego reakcję na błędy lub niepoprawne dane wejściowe. Możliwe jest również wykorzystanie asercji specjalnych, które pozwalają na porównanie wyjątków rzucanych przez nasz kod.
+## Zobacz również
 
-Podczas pisania testów ważne jest również wykorzystanie nazewnictwa zgodnie z konwencjami, na przykład nazwa metody testującej powinna zawierać opis tego, co jest testowane.
+- [Dokumentacja JUnit w języku Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.test/index.html)
+- [Poradnik pisania testów w Kotlinie](https://medium.com/@zsmb13/beginners-guide-to-writing-tests-in-kotlin-e426e0ab2e5d)
+- [Kurs Kotlin od podstaw z sekcją o testowaniu](https://www.udemy.com/course/kotlin-curso-completo/)
 
-## Zobacz także
-
-- [Dokumentacja biblioteki JUnit](https://junit.org/junit5/docs/current/user-guide/)
-- [Przykładowy projekt z testami w języku Kotlin](https://github.com/junit-team/junit5-samples/tree/master/junit5-jupiter-starter-gradle)
+Dzięki testowaniu możemy mieć większą pewność, że nasz kod jest poprawny i działa zgodnie z oczekiwaniami. Mam nadzieję, że ten artykuł pomógł Ci zrozumieć dlaczego warto pisać testy w języku Kotlin oraz jak można to zrobić. Pamiętaj, że im więcej testów napiszesz, tym większa będzie szansa na znalezienie i naprawienie błędów w kodzie.

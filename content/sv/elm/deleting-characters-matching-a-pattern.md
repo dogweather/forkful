@@ -1,52 +1,60 @@
 ---
-title:    "Elm: Radera tecken som matchar ett mönster"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/elm/deleting-characters-matching-a-pattern.md"
+title:                "Elm: Borttagning av tecken som matchar ett mönster"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför: 
 
-Att ta bort tecken som matchar ett mönster kan göra det enklare att hantera och bearbeta strängar i dina Elm-program. Detta kan komma till nytta om du till exempel vill filtrera bort vissa tecken eller byta ut dem med andra.
+I den här bloggposten kommer vi att utforska hur man kan ta bort tecken som matchar ett visst mönster i Elm-programmeringsspråket. Detta kan vara användbart när man behöver rensa eller formatera textsträngar i en applikation.
 
-# Så här gör du
+## Hur man gör: 
 
-För att ta bort tecken som matchar ett visst mönster kan du använda funktionen `String.filter` tillsammans med en lambda-funktion som tar emot ett tecken som argument och returnerar `True` om det ska behållas eller `False` om det ska tas bort.
-
-```Elm
-sträng = "Detta är en sträng som behöver bearbetas"
-mönster = 'i'
-resultat = String.filter (\tecken -> tecken /= mönster) sträng
-```
-
-Resultatet blir en sträng där alla förekomster av bokstaven 'i' har tagits bort. Om du vill byta ut tecknet kan du använda funktionen `String.replace` tillsammans med `String.filter`.
+För att ta bort tecken som matchar ett mönster i Elm kan man använda funktionen `String.filter` tillsammans med `String.contains` för att avgöra vilka tecken som ska tas bort. Låt oss säga att vi har en textsträng som innehåller bokstäver, nummer och specialtecken och vi bara vill behålla bokstäverna. Vi kan använda följande kod för att ta bort alla tecken som inte är bokstäver:
 
 ```Elm
-sträng = "Detta är en sträng som behöver bearbetas"
-mönster = 'ä'
-ersättMed = 'a'
-resultat = String.replace mönster (String.fromChar ersättMed) (String.filter (\tecken -> tecken /= mönster) sträng)
+import String exposing (filter, contains)
+
+strang = "Hej 123 världen!"
+bokstaver = "abcdef...xyz"
+
+renStrang = String.filter (\c -> String.contains c bokstaver) strang
+
+-- renStrang blir nu "Hej världen"
 ```
 
-Resultatet blir då "Datta ar an strang som behover bearbetas", där alla 'ä' har ersatts med 'a'.
+I detta exempel använder vi en lambda-funktion för att kontrollera om ett tecken finns i vårt `bokstaver`-tecken. Detta gör att vi bara tar bort tecken som inte finns i vår lista med bokstäver.
 
-# Djupdykning
+## Djupdykning: 
 
-I Elm finns också möjligheten att använda en reguljär uttryck (RegExp) för att matcha mönster och ta bort tecken. Detta kan vara särskilt användbart om du behöver ta bort flera olika tecken eller vill använda mer avancerade mönster.
+För att göra detta ännu mer användbart kan vi skapa en funktion som tar emot en sträng och ett mönster som argument och returnerar en sträng där alla tecken som matchar mönstret tas bort. Vi kan även göra vår funktion mer flexibel genom att låta användaren välja att ta bort eller behålla tecken som matchar mönstret.
 
 ```Elm
-import RegExp
+import String exposing (filter, contains)
 
-sträng = "123-456-789"
-mönster = RegExp.make "[0-9-]"
-resultat = String.filter (not << RegExp.contains mönster) sträng
+removeCharacters : String -> String -> Bool -> String
+removeCharacters str pattern removeMatch =
+    if removeMatch
+        then
+            String.filter (\c -> not (String.contains c pattern)) str
+        else
+            String.filter (\c -> String.contains c pattern) str
+
+strang = "Hej 123 världen!"
+mönster = "123"
+
+renStrang = removeCharacters strang mönster True
+
+-- renStrang blir nu "Hej världen"
 ```
 
-Resultatet blir då strängen " " (en tom sträng) där både siffrorna och bindestrecken har tagits bort. Du kan även använda en reguljär uttryck för att byta ut tecken, genom att använda funktionen `String.replace` tillsammans med `RegExp.replace`.
+I detta exempel kan vi använda vår funktion för att ta bort alla siffror från vår sträng genom att sätta `removeMatch` till `True`. Om vi vill behålla siffrorna kan vi sätta `removeMatch` till `False` istället.
 
-# Se även
+## Se även: 
 
-- [Elm dokumentation om String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Reguljära uttryck i Elm](https://dev.to/fbonetti/how-to-implement-regular-expressions-in-elm-32m5)
-- [Regelexempel och övningar](https://regex-101.com/)
+- [Elm String Library](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm String Docs](https://package.elm-lang.org/packages/elm/core/latest/String#filter)
+- [Removing Non-Numeric Characters from a String in Elm](https://medium.com/@gaurav5430/removing-non-numeric-characters-from-a-string-in-elm-72950a8ac23a)

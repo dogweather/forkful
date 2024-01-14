@@ -1,41 +1,34 @@
 ---
-title:    "Gleam: Scrivere un file di testo"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/gleam/writing-a-text-file.md"
+title:                "Gleam: Scrivere un file di testo"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-La scrittura di un file di testo è fondamentale per la programmazione in Gleam. Questa operazione consente di salvare e gestire i dati in modo organizzato, rendendo più semplice la loro manipolazione da parte del programma.
+Scrivere un file di testo è essenziale per la creazione di programmi che possono immagazzinare e leggere dati, come ad esempio configurazioni o risultati di calcoli.
 
 ## Come fare
-
-Per scrivere un file di testo in Gleam, è necessario utilizzare la libreria standard `gleam/io` e il modulo `File`. Di seguito è riportato un esempio di codice che mostra come creare un nuovo file di testo chiamato "mionuovofile.txt" e scrivere il testo "Ciao Mondo!" al suo interno.
+Per scrivere un file di testo in Gleam, è necessario utilizzare la funzione `file.write` e specificare il nome del file e il contenuto da scrivere. Ad esempio:
 
 ```Gleam
-import gleam/io
-import gleam/stdlib/io/file
+let result =
+  file.write("output.txt", "Questo è il mio primo file di testo in Gleam!")
 
-fn write_text() {
-  let file = File.create("mionuovofile.txt")  // crea un nuovo file
-  File.write(file, "Ciao Mondo!")  // scrive "Ciao Mondo!" nel file
-}
-
-main() {
-  write_text()  // chiama la funzione per scrivere il testo
-  ok // segnala che il programma è stato eseguito con successo
+file.match(result) {
+  Ok(_) -> "File scritto con successo!"
+  Error(_) -> "Errore nella scrittura del file."
 }
 ```
 
-L'output di questo codice sarà un nuovo file di testo chiamato "mionuovofile.txt" con il contenuto "Ciao Mondo!".
+L'output di questo esempio sarà una stringa con il messaggio "File scritto con successo!" se la scrittura è andata a buon fine, altrimenti una stringa con il messaggio di errore.
 
-## Approfondimento
-
-Scrivere un file di testo non è solo una questione di scrivere un testo "hardcoded" all'interno del codice. È possibile anche leggere il testo da un'API esterna o creare un file di testo con dati dinamici. Inoltre, la libreria `gleam/stdlib/io/file` fornisce anche altre funzioni utili per la gestione dei file di testo, come ad esempio la lettura e la cancellazione di un file.
+## Approfondimenti
+Per gestire situazioni più complesse durante la scrittura di un file di testo, è possibile utilizzare altre funzioni come `file.append` per aggiungere contenuti a un file esistente, o `file.delete` per eliminare un file. Inoltre, è importante tenere in considerazione il tipo di codifica del file, poiché Gleam supporta sia la codifica dei caratteri UTF-8 che quella ISO-8859-1.
 
 ## Vedi anche
-
-- Documentazione su File in Gleam: https://gleam.run/modules/gleam/stdlib/io/file/
-- Tutorial su I/O in Gleam: https://dev.to/talkblastbaby/getting-started-with-io-in-gleam-2af3
+- Documentazione ufficiale di Gleam su `file`
+- Tutorial su scrittura di file in Gleam
+- Esempi di codice per la scrittura di file in Gleam

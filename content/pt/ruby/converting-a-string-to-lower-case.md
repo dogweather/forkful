@@ -1,53 +1,59 @@
 ---
-title:    "Ruby: Convertendo uma string para letra minúscula"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/converting-a-string-to-lower-case.md"
+title:                "Ruby: Convertendo uma string para minúsculas."
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma string para minúsculas?
+## Por que
 
-Ao trabalhar com strings em Ruby, muitas vezes é necessário padronizar o texto para facilitar a manipulação e comparação. Converter uma string para minúsculas é uma das formas de padronizar o texto e garantir que não haja diferença entre as letras maiúsculas e minúsculas.
+Ao trabalhar com strings em programação, muitas vezes é necessário formatar uma string para que ela esteja em letras minúsculas. Isso pode ser útil ao comparar strings, pois o Ruby é case-sensitive, ou seja, diferencia letras maiúsculas de minúsculas. Além disso, é mais fácil de ler e manipular strings em letras minúsculas.
 
-## Como converter uma string para minúsculas
-
-```Ruby
-texto = "Olá, Mundo!"
-puts texto.downcase
-```
-
-Output:
-```
-olá, mundo!
-```
-
-Para converter uma string para minúsculas, podemos utilizar o método `downcase`, que transforma todas as letras maiúsculas em minúsculas. Podemos atribuir o resultado a uma variável ou simplesmente imprimir na tela.
-
-Outra opção seria utilizar o método `downcase!`, que modifica a própria string em vez de retornar uma cópia modificada. Por exemplo:
+## Como fazer
 
 ```Ruby
-texto = "Olá, Mundo!"
-puts texto.downcase!
-puts texto
+string = "Olá MUNDO"
+puts string.downcase
 ```
 
-Output:
+Saída: "olá mundo"
+
+Para converter uma string para letras minúsculas em Ruby, utilizamos o método `downcase`. Este método retorna uma cópia da string original com todas as letras em minúsculo.
+
+Também é possível utilizar o método `downcase!`, com o ponto de exclamação no final, para modificar a string original em vez de retornar uma cópia. Por exemplo:
+
+```Ruby
+string = "HELLO WORLD"
+string.downcase! #modifica a string original
+puts string #saída: "hello world"
 ```
-olá, mundo!
-olá, mundo!
+
+## Profundidade
+
+O método `downcase` é sensível a caracteres acentuados em português, o que significa que ele irá convertê-los para suas respectivas versões em letras minúsculas. Por exemplo:
+
+```Ruby
+string = "ÁRVORE"
+puts string.downcase
 ```
 
-Observe que agora a própria variável `texto` foi modificada.
+Saída: "árvore"
 
-## Deep Dive
+Portanto, é importante estar ciente disso ao utilizar esse método em strings que contenham caracteres acentuados.
 
-Ao converter uma string para minúsculas, é importante ter em mente que alguns caracteres especiais podem ser afetados. Por exemplo, em português, a letra "ç" fica em minúsculo como "ç", enquanto em maiúsculo é "Ç". Por isso, é necessário utilizar métodos mais especializados caso precise manter esses caracteres especiais no texto.
+Além disso, o método `downcase` não afeta outros caracteres que não sejam letras. Por exemplo:
 
-Além disso, também é possível utilizar o método `downcase!` em uma string vazia (`""`) sem gerar erros. Isso porque a própria string vazia não possui letras para serem convertidas e, portanto, permanece vazia após a chamada do método.
+```Ruby
+string = "123 OLÁ MUNDO!"
+puts string.downcase
+```
+
+Saída: "123 olá mundo!"
 
 ## Veja também
 
-- [Documentação oficial do método `downcase`](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase)
-- [Tutorial sobre strings em Ruby](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
-- [Outros métodos para manipular strings em Ruby](https://www.rubyguides.com/2019/02/ruby-strings/)
+- [Ruby Documentation: Strings](https://ruby-doc.org/core-2.7.2/String.html)
+- [Tutorialspoint: Ruby Strings](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
+- [Codecademy: Manipulando Strings em Ruby](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-string-manipulation-u/cheatsheet)

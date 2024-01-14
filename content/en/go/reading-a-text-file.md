@@ -1,46 +1,69 @@
 ---
-title:    "Go recipe: Reading a text file"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/go/reading-a-text-file.md"
+title:                "Go recipe: Reading a text file"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-If you're a beginner in Go programming, one of the fundamental concepts you'll need to learn is how to read a text file. This skill is essential for any kind of data processing and manipulation, making it a crucial aspect of software development.
+Reading a text file may seem like a simple task, but it is an important skill to have in any programming language. In Go, reading a text file can be an essential step in many programs, such as data processing or file manipulation.
 
 ## How To
-Reading a text file in Go is a straightforward process. First, we need to import the "os" and "io/ioutil" packages to have access to the necessary functions. Then, using the "ioutil.ReadFile" function, we can read the contents of the text file and store it in a variable.
+To read a text file in Go, we can use the `os` and `bufio` packages. Let's take a look at a simple example:
 
-```Go
+```
+package main
+
 import (
+    "bufio"
     "fmt"
     "os"
-    "io/ioutil"
 )
 
 func main() {
-    data, err := ioutil.ReadFile("file.txt")
+    // Open the text file
+    file, err := os.Open("test.txt")
     if err != nil {
-        fmt.Println("Error reading file:", err)
+        fmt.Println("Error opening file:", err)
         return
     }
-    fmt.Println(string(data))
+    // Close the file when we're done
+    defer file.Close()
+
+    // Create a new scanner to read the file
+    scanner := bufio.NewScanner(file)
+
+    // Loop through each line in the file
+    for scanner.Scan() {
+        // Print out the line
+        fmt.Println(scanner.Text())
+    }
+
+    // Check for any errors during scanning
+    if err := scanner.Err(); err != nil {
+        fmt.Println("Error scanning file:", err)
+    }
 }
 ```
 
-In this example, we are reading a file named "file.txt" and storing its contents in the "data" variable. We are also using error handling to make sure our code doesn't break if there is an issue with the file.
+In the code above, we first open the text file using the `os` package's `Open()` function. We also handle any errors that may occur during this process. Then, we use a `defer` statement to ensure that the file is closed once we're done reading it.
+
+Next, we create a `scanner` using the `bufio` package. This allows us to read the file line by line, using the `Scan()` function. Inside our loop, we print out each line using the `Text()` method of the `scanner` object.
+
+Finally, we check for any errors that may have occurred during the scanning process. And that's it! We have successfully read the text file.
 
 ## Deep Dive
-While the code above is sufficient for basic text file reading, there are some additional functions and techniques that can be useful in certain situations. For example, the "ioutil.ReadFile" function reads the entire file into memory at once, which may not be suitable for large files. In that case, we can use the "os.Open" and "bufio.Scanner" functions to read the file line by line, reducing memory usage.
+Now, let's dive a bit deeper into the `Scanner` object and its various methods.
 
-Another aspect to consider is the encoding of the text file. Go uses UTF-8 as the default encoding, but if you're working with files in a different encoding, you can use the "bufio.NewReader" function along with the "charset.NewReaderLabel" function to convert the file's encoding before reading it.
+Firstly, the `Scan()` function reads the next line from the file and stores it in the `scanner` object. It also returns a boolean value, which is `true` as long as there is a line to be scanned.
+
+Next, the `Text()` method simply returns the line that was scanned by the `Scan()` function. It is important to note that the line returned still includes the newline character at the end.
+
+Lastly, the `Err()` method returns any errors that may have occurred during scanning. This allows us to handle any issues that may arise in a more graceful manner.
 
 ## See Also
-For more information on reading and writing text files in Go, check out the following resources:
-
-- [The official Go documentation for the "ioutil" and "bufio" packages](https://golang.org/pkg/io/ioutil/), which contains a detailed description of all the available functions.
-- [A tutorial on file input/output in Go](https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-in-go), which covers various methods of reading and writing files in Go.
-- [An article on using Go's "os" package for working with files](https://blog.golang.org/defer-panic-and-recover), which includes useful tips and tricks for file handling in Go.
-
-Happy coding!
+- [GoDocs - os Package](https://golang.org/pkg/os/)
+- [GoDocs - bufio Package](https://golang.org/pkg/bufio/)
+- [Reading and Writing Files in Go](https://www.digitalocean.com/community/tutorials/reading-and-writing-files-in-go)

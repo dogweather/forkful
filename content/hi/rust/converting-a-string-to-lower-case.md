@@ -1,28 +1,44 @@
 ---
-title:    "Rust: स्ट्रिंग को लोअर केस में रूपांतरित करना"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/rust/converting-a-string-to-lower-case.md"
+title:                "Rust: स्ट्रिंग को लोअर केस में कनवर्ट करना"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-कोई भी प्रोग्रामिंग भाषा में स्ट्रिंग्स (शब्द लगाव) को मूल्यों (values) के साथ साथ अलस्ट्रिंग (शब्द स्रोत) के रूप में भी भूमिका निभाते हैं। रस्ट में भी स्ट्रिंग इसी प्रकार के दोहरावा (duality) को रखते हैं, और उचित प्रकार से मूल्यों (values) या अलस्ट्रिंग (शब्द स्रोत) दोनों के साथ साथ निपटने के लिए कोन्फिगरे भी कई तरह के होते हैं। स्ट्रिंग को लोअर केस (lower case) में बदलना, उन्‍हीं कोन्‍फिगरेशन में से एक होता है। इसलिए, यदि आप रस्ट में स्ट्रिंग को लोअर केस (lower case) में बदलना सीखना चाहते हैं, तो यह आपके लिए एक उपयोगी विषय है।
+Kya aapne kabhi String ko lower case mein convert karne ki koshish ki hai? Yeh ek common programming task hai, jo bade se bade programs mein bhi istemal hoti hai. Kya aap jaante hain ki Rust mein String ko lower case mein convert karna bohot hi aasan hai? Iss blog post mein hum aapko batayenge ki kyun aur kaise aap apne Rust projects mein string ko lower case mein convert kar sakte hain.
 
-## कैसे
+## Kaise Karein
+
+Rust mein string ko lower case mein convert karne ke liye, hum `to_lowercase()` function ka istemal karte hain. Isse hum original string ko modify nahi karte, balki ek naya lower case string banate hain. Chaliye ek simple example ke through samajhte hain ki hum iss function ko kaise use kar sakte hain:
 
 ```Rust
-fn main() {
-    let str = "Hello World";
-    let result = str.to_lowercase();
-    // output: hello world
-    println!("{}", result);
-}
+let name = String::from("Pooja");
+let name_lower = name.to_lowercase();
+
+println!("{}", name_lower); // Outputs "pooja"
 ```
 
-स्ट्रिंग को लोअर केस (lower case) में बदलने के लिए, हम `to_lowercase()` फ़ंक्शन का उपयोग करते हैं। यह फ़ंक्शन "इम्यूटेबल" (immutable) होता है, और अपने संस्करण (version) के मुताबिक या तो वापस स्थिति में स्ट्रिंग को देता है या उसे लोकल डेवाइस में रखता है। लेकिन यह हमेशा स्ट्रिंग को लोअर केस (lower case) में बदलकर ही लौटाता है।
+Yahan humne `to_lowercase()` function ko use kiya hai, jisse `name` string ko lower case mein convert kiya gaya hai aur naya string `name_lower` mein store kiya gaya hai. Fir hum `println!()` function ka istemal karke naya string ko output karte hain.
 
-## गहरा जायक (Deep Dive)
+Agar aapko khud `to_lowercase()` function ka implementation dekhna hai, to aap [Rust standard library](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase) refer kar sakte hain.
 
-स्ट्रिंग को लोअर केस (lower case) में बदलने में एक बात ध्यान रखनी चाहिए कि यह स्ट्रिंग के स्थायित्व (immutability) को बिल्कुल भी नहीं प्रभावित करता है। जैसे, दिया गया ओउटपुट, जहाँ हमने `result` नामक वेर
+## Gehri Jankari
+
+Agar hum iss topic ko aur gehre se samajhna chahte hain, to hume ASCII aur Unicode ke bare mein bhi thoda gyan hona chahiye. ASCII (American Standard Code for Information Interchange) ek character encoding standard hai, jiska istemal primarily English alphabet aur kuch special characters ke representation mein hota hai. ASCII mein pehle 128 characters ke liye 7 bits ka encoding hota hai.
+
+Unicode ek bada character set hai, jisme humare paas 1,114,112 characters ki ek range hoti hai. Iss range mein hum English, Arabic, Chinese, Greek, Hindi, Latin jaise bohot saare languages ko cover kar sakte hain. Isse hume ek unified way mein characters ko represent karne ka mauka milta hai.
+
+Yeh zaroori nahi hai ki sabhi characters ASCII characters ke saath compatible ho. Isliye, agar aap kisi non-ASCII character ko lower case mein convert karenge, to `to_lowercase()` function usse ASCII character ke saath replace kar dega.
+
+## Dekhna Bhi
+
+Agar aapko further details aur examples chahiye, to aap [Rust programming language](https://www.rust-lang.org/) aur [Rust standard library](https://doc.rust-lang.org/std/) refer kar sakte hain.
+
+See Also:
+- [Rust String documentation](https://doc.rust-lang.org/std/string/index.html)
+- [Rust Unicode documentation](https://doc.rust-lang.org/std/string/struct.String.html#encoding)
+- [ASCII vs. Unicode: What's the difference?](https://www.computerhope.com/issues/ch001624.htm)

@@ -1,51 +1,54 @@
 ---
-title:    "C: テキストファイルの読み込み"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/c/reading-a-text-file.md"
+title:                "C: テキストファイルを読む"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ読むか
 
-テキストファイルを読み込むのにはなぜ興味を持つのでしょうか？テキストファイルを読み込むことで、プログラミング言語の基本的な概念を学ぶことができます。また、テキストファイルを読み込むことで、プログラムが外部のデータとどのようにやり取りするのかを理解することができます。
+テキストファイルを読むことは、Cプログラミングで非常に重要なスキルです。テキストファイルには、プログラムに必要なデータが含まれる場合があります。この記事では、テキストファイルを読むための基本的な方法を紹介します。
 
 ## 方法
 
-テキストファイルを読み込む方法を説明します。まずは、ファイルを開くための標準的なC言語の関数である`fopen`を使用します。次に、`fgets`関数を使用して、ファイルから1行ずつ読み込みます。最後に、読み込んだデータを処理して、必要な処理を行います。
+まず、テキストファイルをオープンする必要があります。これには、`fopen()`関数を使用します。以下のコードは、"sample.txt"という名前のテキストファイルをオープンし、ファイルポインターを`fp`という変数にストアする例です。
 
 ```C
-#include <stdio.h>
-
-int main() {
-    FILE *fp;
-    char buf[256];
-
-    fp = fopen("sample.txt", "r"); // ファイルを読み込み用に開く
-    if (fp == NULL) { // ファイルを開けなかった場合
-        printf("ファイルを開けませんでした。");
-        return 1;
-    }
-
-    while (fgets(buf, 255, fp) != NULL) { // 1行ずつ読み込み
-        printf("%s", buf); // 読み込んだデータを出力
-    }
-
-    fclose(fp); // ファイルを閉じる
-    return 0;
-}
+FILE *fp;
+fp = fopen("sample.txt", "r");
 ```
 
-上記の例では、`sample.txt`という名前のテキストファイルを読み込み、その内容をコンソールに出力します。ファイルを開く際は、`fopen`関数でファイルを開き、`fclose`関数でファイルを閉じることを忘れないようにしましょう。
+次に、`fgets()`関数を使用して、ファイルからデータを読み取ります。以下の例では、ファイルから1つの文字列を読み取り、`buffer`という配列に入れています。
+
+```C
+char buffer[100];
+fgets(buffer, 100, fp);
+```
+
+最後に、ファイルをクローズする必要があります。これには、`fclose()`関数を使用します。
+
+```C
+fclose(fp);
+```
 
 ## ディープダイブ
 
-テキストファイルを読み込む際には、文字コードの問題に注意する必要があります。例えば、日本語のテキストファイルを読み込む際は、文字コードがUTF-8であることを指定する必要があります。そうでないと、文字化けが起こる可能性があります。
+テキストファイルを読むために使用できるさまざまな関数やオプションがあります。例えば、`fscanf()`関数を使用することで、ファイルから特定の形式のデータを読み取ることができます。
 
-また、テキストファイルを書き込む際には、ファイルのモードを`w`とすることで、既存のファイルを上書きしたり、新しいファイルを作成したりすることができます。
+また、`while`ループを使用することで、ファイルの終わりまで全てのデータを読み取ることができます。
 
-## 他に読んでみる
+さらに、ファイルからデータを読み取った後に、そのデータを処理したり、別のファイルに書き込んだりすることも可能です。
 
-- [C言語でテキストファイルを読み込む方法](https://beginnersbook.com/2014/01/c-program-to-read-a-file/)
-- [fgets関数の詳細](https://www.tutorialspoint.com/c_standard_library/c_function_fgets.htm)
-- [fopen関数の詳細](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+## 参考リンク
+
+- [C言語：テキストファイルの読み書き](https://www.javadrive.jp/cstart/file/index1.html)
+- [Cでテキストファイルの読み込み・書き込みをする方法](https://techacademy.jp/magazine/13055)
+- [C言語の文法：ファイル操作](https://algorithm.joho.info/programming/c/file-operation-c/)
+- [【C言語】ファイル操作の基本関数：fopen() fopen_s() fclose()](https://software.fujitsu.com/jp/manual/manualfiles/M1000/BSRE0F14/JIS/01/B1F2O800/11D11700108.html)
+
+## 関連リンク
+
+- [マークダウン記法](https://qiita.com/tbpgr/items/989c6badefff69377da7)
+- [C言語入門](https://www.javadrive.jp/c-start/)

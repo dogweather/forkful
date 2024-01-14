@@ -1,42 +1,48 @@
 ---
-title:    "Gleam: 텍스트 파일 읽기"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/reading-a-text-file.md"
+title:                "Gleam: 텍스트 파일 읽기"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
+Gleam 프로그래밍 블로그 포스트 - 한국 독자들을 위해
+
 # 왜
 
- 이 글을 읽는 이유는 텍스트 파일을 읽는 방법을 배우기 위함입니다. 텍스트 파일은 컴퓨터에서 중요한 역할을 합니다. 그렇기 때문에 이를 읽는 방법을 알고 있다면 컴퓨터 프로그래밍에 많은 도움이 될 것입니다.
+## 왜 읽기
 
-## How To
+텍스트 파일을 읽는 이유는 주로 데이터를 처리하거나 분석하기 위해서입니다. 읽은 데이터를 바탕으로 프로그래밍 작업을 수행하거나 파일 내용을 확인하는 등 다양한 목적으로 사용될 수 있습니다.
 
-Gleam에서 텍스트 파일을 읽는 방법은 매우 쉽습니다. 다음의 코드를 따라하면 됩니다.
+## 어떻게
 
-```
-Gleam.text_file.read("example.txt") // "example.txt"라는 텍스트 파일을 읽습니다.
-|> Gleam.text_file.lines() // 각 줄을 Gleam 리스트로 반환합니다.
-|> Gleam.text.join("\n") // 리스트의 모든 요소를 하나의 문자열로 합칩니다.
-```
+Gleam에서 텍스트 파일을 읽는 가장 기본적인 방법은 `File.read` 함수를 사용하는 것입니다. 이 함수는 파일의 경로를 인자로 받아서 파일의 내용을 읽어올 수 있습니다.
 
-위의 코드를 실행하면 "example.txt" 파일의 모든 내용을 하나의 문자열로 반환하는 것을 볼 수 있습니다.
-
-### 샘플 출력
-
-```
-This is the first line
-This is the second line
-This is the third line
+```Gleam
+let path = "file.txt"
+let content = File.read(path)
 ```
 
-## Deep Dive
+위 예시는 `file.txt`라는 파일을 읽어서 해당 파일의 내용을 `content` 변수에 저장합니다. 파일의 내용은 문자열 형태로 저장됩니다.
 
-텍스트 파일을 읽는 것은 컴퓨터에서 매우 중요한 작업 중 하나입니다. Gleam은 이 작업을 효율적이고 쉽게 할 수 있도록 도와줍니다. Gleam은 다른 언어들과 달리 텍스트 파일을 읽을 때에도 함수형 프로그래밍을 적용할 수 있도록 하기 때문에 더욱 유용합니다.
+## 깊이 파고들기
 
-참고로, Gleam은 텍스트 파일을 간단하게 쓸 수 있는 함수들도 제공합니다. `Gleam.text_file.write()` 와 `Gleam.text_file.append()`라는 함수들이 그것입니다. 이 함수들은 파일의 내용을 쓰거나 기존 내용 다음에 내용을 추가할 수 있습니다.
+파일을 읽는 데 있어서 유의해야 할 점은 파일이 존재하지 않거나 잘못된 경로를 입력하면 오류가 발생한다는 것입니다. 이러한 상황에 대비해서 `File.read` 함수를 사용할 때는 `Option` 타입을 사용하는 것이 좋습니다.
 
-# See Also
+예를 들어서 아래와 같이 `match` 표현을 사용하여 파일을 읽는 작업을 수행할 수 있습니다.
 
-- [Gleam 공식 문서](https://gleam.run)
-- [Gleam 텍스트 파일 관련 API](https://gleam.run/modules/text_file.html)
+```Gleam
+let path = "file.txt"
+let result = match File.read(path) {
+    Ok(content) -> content
+    Error(_) -> "파일을 읽는 중 오류가 발생했습니다."
+}
+```
+
+위 예시에서 `match` 표현을 사용하면 `File.read` 함수가 `Ok` 값을 반환하면 해당 값을 `result` 변수에 저장하고, `Error` 값을 반환하면 오류 메시지를 출력하는 것을 볼 수 있습니다.
+
+# 관련 항목
+
+- [Gleam 공식 문서 - 파일 입출력](https://gleam.run/documentation/stdlib/file.html)
+- [Gleam Community Forum - 파일 관련 질문들과 답변들](https://gleam.discourse.group/search?q=file)

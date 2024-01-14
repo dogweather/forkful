@@ -1,41 +1,63 @@
 ---
-title:    "C: Fehlerausgabe drucken"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c/printing-debug-output.md"
+title:                "C: Ausgabe von Debug-Informationen"
+programming_language: "C"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Debug-Ausgaben sind ein wichtiges Werkzeug beim Programmieren in C. Sie helfen dabei, Fehler zu identifizieren und zu beheben, indem sie Informationen über den aktuellen Zustand des Programms liefern. Das kann insbesondere bei komplexen Programmen sehr hilfreich sein.
+Das Debuggen von Code ist für jeden Programmierer ein wichtiger Schritt bei der Entwicklung von Software. Eine Möglichkeit, um Probleme im Code zu identifizieren und zu beheben, ist die Verwendung von Debug-Ausgaben. In diesem Artikel werden wir uns genauer anschauen, wie man Debug-Ausgaben in C-Programmen verwendet.
 
-## Wie man Debug-Ausgaben macht
+## Wie man Debug-Ausgaben in C verwendet
 
-Um Debug-Ausgaben in C zu erstellen, können wir die Funktion `printf()` verwenden. Diese Funktion erlaubt es uns, eine Nachricht auszugeben, die wir im Programm ausgewählt haben. Die Syntax ist ähnlich wie bei `printf()` in anderen Programmiersprachen, aber es gibt einige wichtige Unterschiede.
+Debug-Ausgaben können auf verschiedene Arten in ein C-Programm eingefügt werden. Eine Möglichkeit ist die Verwendung der "printf()" Funktion. Diese Funktion ermöglicht es uns, Text auf der Konsole auszugeben, um bestimmte Variablenwerte oder Nachrichten während des Programmablaufs anzuzeigen.
 
 ```C
-printf("Debug-Ausgabe: %s\n", "Hier ist meine Nachricht");
+#include <stdio.h>
+
+int main() {
+  int num = 5;
+  printf("Der Wert von num ist %d", num);
+  return 0;
+}
 ```
 
-Das erste Argument in `printf()` ist ein sogenanntes "Formatierungs-String", der bestimmt, wie die Ausgabe formatiert werden soll. In unserem Beispiel oben verwenden wir `%s`, um einen String-Wert anzuzeigen. Anstelle von `%s` können wir auch andere Formatierungsoptionen wie `%d` für Ganzzahlen oder `%f` für Fließkommazahlen verwenden. Das zweite Argument in `printf()` ist der Wert, der anstelle des Formatierungs-Strings angezeigt werden soll.
+Die verwendete Formatierung "%d" gibt an, dass die Ausgabe eine Zahl sein wird. Alternativ können wir auch den Variablennamen direkt in den String einfügen.
+
+```C
+#include <stdio.h>
+
+int main() {
+  int num = 5;
+  printf("Der Wert von num ist %d", num);
+  return 0;
+}
+```
+
+In diesem Beispiel haben wir die Variable "num" ohne Angabe der Formatierung direkt in den String eingefügt. Beachte, dass wir die Variablen innerhalb der Funktion "printf()" nutzen können, auch wenn sie außerhalb der Funktion deklariert wurden.
 
 ## Tiefere Einblicke
 
-Es gibt auch Möglichkeiten, `printf()` für Debug-Ausgaben noch effizienter zu nutzen. Wir können zum Beispiel den Präprozessor-Befehl `#define` verwenden, um einen Makro-Namen für unsere Debug-Ausgabe zu definieren. Dies erleichtert das Schreiben von Debug-Ausgaben, da wir anstelle des langen `printf()`-Aufrufs einfach das definierte Makro verwenden können.
+Debug-Ausgaben können auch verwendet werden, um den Ablauf des Programms nachzuvollziehen. Mit der Funktion "printf()" können wir auch in Schleifen oder Bedingungen Debug-Ausgaben einfügen, um zu überprüfen, ob der Code so ausgeführt wird, wie wir es erwarten.
 
 ```C
-#define DEBUG(msg) printf("Debug-Ausgabe: %s\n", msg);
+#include <stdio.h>
 
-// ...
-int zahl = 7;
-DEBUG("Die Zahl ist: %d", zahl);
+int main() {
+  int i;
+  for(i = 0; i < 10; i++) {
+    printf("Der Wert von i ist %d", i);
+  }
+  return 0;
+}
 ```
 
-Eine andere nützliche Technik ist das Hinzufügen von Bedingungen zu unseren Debug-Ausgaben. Wir können `if`-Anweisungen verwenden, um zu überprüfen, ob bestimmte Variablen oder Zustände erfüllt sind, bevor wir eine Debug-Ausgabe ausführen. Dadurch können wir wählen, welche Debug-Ausgaben wir im Programm sehen möchten, abhängig von bestimmten Bedingungen.
+In diesem Beispiel geben wir den Wert von "i" in jeder Iteration der Schleife aus, um zu sehen, ob er wie erwartet von 0 bis 9 inkrementiert wird. Auf diese Weise können wir mögliche Fehler oder unerwartete Ergebnisse leichter erkennen.
 
 ## Siehe auch
 
-- [C Debugging Tutorial](https://www.tutorialspoint.com/cprogramming/c_debugging.htm)
-- [Using printf() for debugging in C](https://www.geeksforgeeks.org/using-printf-debugging-c/)
-- [Debugging C Programs with printf](https://www.codesdope.com/blog/article/debugging-c-programs-with-printf/)
+- [Debugging mit GDB](https://www.gnu.org/software/gdb/): Ein mächtiges Debugging-Tool für C-Programme.
+- [Debugging-Tipps für C-Programme](https://c.learncodethehardway.org/book/ex20.html): Ein Artikel mit hilfreichen Tipps zum Debuggen von C-Code.

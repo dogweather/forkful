@@ -1,55 +1,47 @@
 ---
-title:    "Fish Shell: Pisanie testów"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/writing-tests.md"
+title:                "Fish Shell: Pisanie testów"
+programming_language: "Fish Shell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pisać testy w języku Fish Shell?
+## Dlaczego pisać testy w Fish Shell?
 
-Pisanie testów jest kluczowym elementem w procesie pisania oprogramowania. Dzięki nim możemy szybko sprawdzić poprawność działania naszego kodu i uniknąć błędów w produkcji. W języku Fish Shell, pisanie testów jest prostsze niż się wydaje, a może przynieść wiele korzyści. W tym artykule dowiecie się, dlaczego warto pisać testy w języku Fish Shell i jak to zrobić.
+Testy są niezbędnym elementem każdego programu, a pisząc je w Fish Shell możemy mieć pewność, że nasza aplikacja będzie działać poprawnie. Dodatkowo, dzięki testom zyskujemy większą pewność i łatwiej nam odnaleźć ewentualne błędy w kodzie.
 
-## Jak pisać testy w języku Fish Shell?
-
-Aby pisać testy w języku Fish Shell, należy użyć wbudowanego w niego frameworka testującego - `test`. Możemy używać go do testowania pojedynczych funkcji lub skryptów, a także całych plików lub projektów. Poniżej znajdują się przykłady wykorzystania `test` w różnych sytuacjach.
-
-### Testowanie pojedynczej funkcji
-
-Załóżmy, że mamy prostą funkcję, która dodaje dwa argumenty i zwraca wynik. Chcemy przetestować, czy zwraca poprawną wartość dla różnych kombinacji argumentów. Możemy to zrobić tak:
+## Jak pisać testy w Fish Shell
 
 ```Fish Shell
-function add -a n1 -a n2
-    return $n1 + $n2
+# Tworzenie testu przy użyciu funkcji "test-equal"
+test-equal "Przykładowy test" "hello world" "hello world"
+
+# Kod, który zostanie uruchomiony jeśli test nie przejdzie
+if not status-is-success
+  echo "Test nie powiódł się" 
 end
-
-test "Test dodawania liczb" -e add 2 3; and test (add 5 10) -eq 15
 ```
 
-W wyniku powinniśmy uzyskać:
+W powyższym przykładzie użyto funkcji "test-equal" do sprawdzenia czy łańcuch "hello world" jest równy samemu sobie. Jeśli test przejdzie, funkcja "status-is-success" zwróci wartość 0, w przeciwnym razie wyświetli się informacja o niepowodzeniu.
 
-```
-> fish test.fish
-1 test, żadne nie wywołuje błędów
-```
-
-W przypadku, gdy funkcja zwróciłaby niepoprawny wynik, zobaczylibyśmy komunikat o błędzie.
-
-### Testowanie skryptów i plików
-
-`test` możemy również wykorzystać do testowania całości skryptów lub plików. Załóżmy, że mamy plik `hello_world.fish`, który wyświetla na ekranie "Hello world!". Chcemy przetestować, czy tak się dzieje. Możemy to zrobić tak:
+Możemy także wykorzystać instrukcje "set" oraz "test" do tworzenia bardziej skomplikowanych testów:
 
 ```Fish Shell
-test "Testowanie skryptu hello_world.fish" -e fish hello_world.fish; and test (fish hello_world.fish) = "Hello world!"
+set -l number 5
+test $number -eq 5
 ```
 
-W kolejnych linijkach możemy przetestować różne scenariusze i oczekiwać różnych wyników, a następnie uruchomić całe testy jedną komendą - `fish test.fish`.
+W powyższym przypadku, jeśli wartość zmiennej "number" jest równa 5, funkcja "test" zwróci wartość 0, co oznacza powodzenie testu.
 
-## Vertica Deep Dive
+## Deep Dive: Jak pisać testy w Fish Shell
 
-W języku Fish Shell mamy dostępne wiele funkcji i udogodnień, które mogą ułatwić pisanie testów. Możemy na przykład sprawdzać, czy dane polecenie wywołuje błąd, czy czyta poprawnie pliki lub zmienne i wiele więcej. Warto przejrzeć dokumentację oraz eksperymentować z różnymi możliwościami.
+Pisanie testów w Fish Shell jest bardzo proste i intuicyjne. Możemy wykorzystać różne funkcje, takie jak "test-equal" czy "test", aby sprawdzać czy nasz kod działa poprawnie. Warto także stosować instrukcję "status-is-success", która pozwala nam na obsługę błędów w przypadku niepowodzenia testu.
 
-## Zobacz również
+Warto także zwrócić uwagę na fakt, że funkcje testowe są bardzo przydatne podczas pracy w zespole, ponieważ pozwalają nam na szybkie i skuteczne weryfikowanie kodu.
 
-- Dokumentacja Fish Shell: https://fishshell.com/docs/current/
-- Oficjalny framework testujący Fish Shell: https://github.com/fishworks/test
+## Zobacz także
+
+- [Dokumentacja Fish Shell - test](https://fishshell.com/docs/current/cmds/test.html)
+- [Przewodnik po Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Narzędzia do testowania w Fish Shell](https://fishshell.com/docs/current/tutorial.html#testing_tools)

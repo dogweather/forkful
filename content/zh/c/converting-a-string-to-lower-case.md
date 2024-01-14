@@ -1,88 +1,79 @@
 ---
-title:    "C: 将字符串转换为小写"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/converting-a-string-to-lower-case.md"
+title:                "C: 将字符串转换为小写"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么要将字符串转换为小写？
+##为什么
+在编程中，有时候我们需要将字符串转换为小写格式。这可能是为了比较字符串是否相同，或者为了统一格式。无论是什么原因，将字符串转换为小写是一个重要的编程技巧。
 
-有时候在编程中，我们需要将字符串转换为小写形式。这通常是为了方便比较字符串，或者是为了避免大小写造成的错误。使用C语言来进行这样的转换是非常简单的。让我们一起来看看如何实现它。
+##如何做
+在C语言中，有几种方法可以将字符串转换为小写格式。
 
-如何进行字符串大小写转换：
+###方法1：使用库函数
+C语言提供了一个名为`tolower()`的库函数，可以将一个字符转换为小写格式。我们可以使用一个循环，逐个将字符串中的字符传递给`tolower()`函数，从而实现将整个字符串转换为小写格式的功能。下面是代码示例：
 
 ```C
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-int main()
-{
-    // 声明一个字符串变量
-    char str[] = "Hello world";
-    
-    // 使用库函数strlwr()将字符串转换为小写形式
-    strlwr(str);
-    
-    // 输出转换后的字符串
-    printf("%s\n", str);
-    
-    return 0;
+int main() {
+  char str[] = "Hello WORLD";
+  
+  // 使用循环逐个转换字符
+  for (int i = 0; str[i] != '\0'; i++) {
+    str[i] = tolower(str[i]);
+  }
+  
+  // 输出转换后的字符串
+  printf("转换后的字符串: %s", str);
+  
+  return 0;
 }
 
 ```
 
-输出结果为：
+输出:
 
-```C
-hello world
-```
+`转换后的字符串: hello world`
 
-深入探讨：
-
-转换字符串为小写形式的过程实际上是将字符串中的每个字母变成其小写形式。在C语言中，我们可以使用库函数strlwr()来实现这一功能。这个函数的原理是将字符串中的每个字符与ASCII码中的小写字母表进行比较，如果字符的ASCII码在大写字母的范围内，则将其转换为小写字母，否则不做改变。
-
-使用这个函数的好处是可以节省我们自己写转换代码的时间和精力。而且，它还能有效避免我们可能会犯的错误，比如忘记转换某个字符或者转换错误的情况。
-
-还值得一提的是，在一些编译器中，可能没有提供strlwr()函数，这时我们可以使用一个循环来遍历字符串，将每个字符转换为小写形式。
+###方法2：使用指针操作字符串
+C语言中，我们可以使用指针来操作字符串。通过遍历字符串，我们可以将每个字符转换为小写格式。下面是代码示例：
 
 ```C
 #include <stdio.h>
 
-int main()
-{
-    // 声明一个字符串变量
-    char str[] = "Hello world";
-    
-    // 使用循环来遍历字符串并转换为小写形式
-    for(int i = 0; str[i] != '\0'; i++)
-    {
-        // 如果当前字符是大写字母，则转换为小写字母
-        if(str[i] >= 'A' && str[i] <= 'Z')
-        {
-            str[i] = str[i] + 32;
-        }
+int main() {
+  char str[] = "Hello WORLD";
+  
+  // 使用指针遍历字符串
+  char *ptr = str;
+  while (*ptr != '\0') {
+    if (*ptr >= 'A' && *ptr <= 'Z') {
+      // 将大写字母转换为小写
+      *ptr = *ptr + 32;
     }
-    
-    // 输出转换后的字符串
-    printf("%s\n", str);
-    
-    return 0;
+    ptr++;
+  }
+  
+  // 输出转换后的字符串
+  printf("转换后的字符串: %s", str);
+  
+  return 0;
 }
+
 ```
 
-输出结果为：
+输出:
 
-```C
-hello world
-```
+`转换后的字符串: hello world`
 
-总的来说，无论是使用库函数还是自己写转换代码，都是很简单的。只要我们知道了这个转换过程，就可以根据自己的需求来选择合适的方法。
+##深入了解
+在C语言中，字符串是以`'\0'`字符结尾的字符数组。因此，我们可以通过遍历数组的方式来操作字符串。在上述的两种方法中，我们都是通过遍历字符串，逐个将字符转换为小写形式。值得注意的是，在使用`tolower()`进行转换时，需要将字符进行强制类型转换，否则可能会出现错误。
 
-另外，如果我们需要将字符串转换为大写形式，也可以使用库函数strupr()来实现，其原理与strlwr()相反。
-
-## 参考链接：
-
-- [C语言字符串小写字母转换函数strlwr()的用法及原理](https://www.jianshu.com/p/97d7104c3acd)
-- [C语言字符串大小写转换的一种简单实现方法](https://blog.csdn.net/qq_31658485/article/details/80176035)
-- [ASCII码表](https://www.asciitable.com/)
+##另请参阅
+- [C语言字符串操作指南](https://www.runoob.com/cprogramming/c-standard-library-template-macros.html)
+- [C语言中各种数据类型的强制类型转换](https://www.runoob.com/cprogramming/c-type-casting.html)

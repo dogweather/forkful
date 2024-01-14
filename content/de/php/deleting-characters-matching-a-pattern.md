@@ -1,41 +1,56 @@
 ---
-title:    "PHP: Entfernen von Zeichen mit übereinstimmendem Muster"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/php/deleting-characters-matching-a-pattern.md"
+title:                "PHP: Löschen von Zeichen, die einem Muster entsprechen"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum?
 
-Oftmals müssen wir in der Programmierung Zeichen löschen, die einem bestimmten Muster entsprechen. Dies kann zum Beispiel bei der Validierung von Benutzereingaben oder der Bereinigung von Datenbanken nützlich sein. In diesem Blog-Beitrag werde ich erklären, wie man in PHP Zeichen anhand eines bestimmten Musters löschen kann.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann nützlich sein, wenn man in einer Zeichenkette nach unerwünschten Elementen sucht oder diese durch andere Zeichen ersetzen möchte.
 
-## Wie es geht
+## Wie geht's?
 
-Um Zeichen in PHP zu löschen, die einem bestimmten Muster entsprechen, können wir die Funktion `preg_replace()` verwenden. Diese Funktion erwartet drei Parameter: das Muster, nach dem gesucht werden soll, der Text, in dem gesucht werden soll, und der Text, der anstelle des gefundenen Musters eingefügt werden soll. 
-
-In dem folgenden Beispiel werden alle Zahlen aus einem String gelöscht und der neue String ausgegeben:
+Um Zeichen in einer Zeichenkette zu löschen, die einem bestimmten Muster entsprechen, kann man die PHP-Funktion `preg_replace()` verwenden. Hier ein Beispiel:
 
 ```PHP
-<?php
-$string = "123abc45def";
-echo preg_replace("/[0-9]/", "", $string);
-// Output: abcdef
+$string = "Dies ist ein Beispieltext123!";
+
+// Lösche alle Zahlen aus der Zeichenkette
+$new_string = preg_replace("/[0-9]/", "", $string);
+
+// Ausgabe: Dies ist ein Beispieltext!
+echo $new_string;
 ```
 
-Das Muster `"/[0-9]/"` sucht nach allen Zahlen zwischen 0 und 9 und die leeren Anführungszeichen `""` bedeuten, dass diese durch nichts ersetzt werden sollen.
+Das Muster "/[0-9]/" gibt an, dass alle Zahlen in der Zeichenkette gelöscht werden sollen. Mit dem leeren String als zweitem Argument wird das gelöschte Muster durch nichts ersetzt, somit wird es einfach entfernt. In diesem Beispiel wird also jede Zahl in der Zeichenkette durch nichts ersetzt.
 
-## Tiefergehende Erklärung
+Man kann auch mehrere Muster angeben und alle gleichzeitig löschen:
 
-Die `preg_replace()` Funktion basiert auf regulären Ausdrücken, also Muster, die verwendet werden, um Strings auf bestimmte Zeichenfolgen zu überprüfen. Diese Muster werden in Schrägstrichen `//` eingeschlossen. Im obigen Beispiel haben wir das Muster `"/[0-9]/"` verwendet, um nach Zahlen zu suchen. Hier einige weitere Beispiele für reguläre Ausdrücke:
+```PHP
+$string = "Dies ist ein Beispieltext123!";
 
-- `"/[a-z]/"` sucht nach Kleinbuchstaben
-- `"/[A-Z]/"` sucht nach Großbuchstaben
-- `"/[a-zA-Z0-9]/"` sucht nach Buchstaben und Zahlen
+// Lösche alle Zahlen und Sonderzeichen aus der Zeichenkette
+$new_string = preg_replace("/[0-9!#]/", "", $string);
 
-Reguläre Ausdrücke können aber noch viel komplexer werden und beinhalten eine Vielzahl von Metazeichen, die noch weiter angepasst werden können. Für tiefergehende Informationen zu regulären Ausdrücken empfehle ich die offizielle PHP-Dokumentation.
+// Ausgabe: Dies ist ein Beispieltext
+echo $new_string;
+```
+
+Hier wird angegeben, dass alle Zahlen, Ausrufezeichen und Hashtags gelöscht werden sollen.
+
+## Tiefer Einblick
+
+Die `preg_replace()`-Funktion verwendet reguläre Ausdrücke, auch bekannt als Regex, um Muster in einer Zeichenkette zu suchen und zu ersetzen. Reguläre Ausdrücke sind sehr flexibel und mächtig, aber auch komplex zu verstehen.
+
+Das Muster "/[0-9]/" bedeutet zum Beispiel, dass jede Ziffer von 0 bis 9 in der Zeichenkette gelöscht wird. Man kann auch angeben, wie oft das Muster vorkommen soll, zum Beispiel "/[0-9]{2}/" würde nur zwei Ziffern zusammenhängend löschen.
+
+Für eine detaillierte Anleitung zu regulären Ausdrücken empfehle ich den Artikel "Eine Einführung in reguläre Ausdrücke in PHP" von [PHP Einfach](https://www.php-einfach.de/experte/php-codebeispiele/regex-regulaere-ausdruecke-in-php/).
 
 ## Siehe auch
 
-- Offizielle PHP-Dokumentation zu regulären Ausdrücken: https://www.php.net/manual/de/pcre.pattern.php
-- Tutorial zu regulären Ausdrücken in PHP (auf Deutsch): https://www.php-einfach.de/mysql-tutorial/regex-regular-expressions/
+- [PHP Einfach - Eine Einführung in reguläre Ausdrücke in PHP](https://www.php-einfach.de/experte/php-codebeispiele/regex-regulaere-ausdruecke-in-php/)
+- [PHP-Handbuch - preg_replace()](https://www.php.net/manual/de/function.preg-replace.php)
+- [RegExr - Interaktives Tool zum Testen von regulären Ausdrücken](https://regexr.com/)

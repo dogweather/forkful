@@ -1,40 +1,48 @@
 ---
-title:    "Haskell: Écriture de tests"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/writing-tests.md"
+title:                "Haskell: Écrire des tests"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-"Pourquoi Ecrire des Tests dans Haskell"
+## Pourquoi
 
-La programmation peut sembler être une activité complexe et fastidieuse, mais en réalité, c'est un processus créatif qui nécessite patience et précision. Dans cet article, nous allons parler d'un sujet important en programmation : les tests. Pourquoi est-il important de les écrire dans Haskell et comment le faire efficacement ? Nous allons plonger plus en profondeur dans ce sujet, alors suivez-nous !
+Les tests sont un outil essentiel pour tout programmeur, quel que soit le langage de programmation utilisé. En écrivant des tests, vous vous assurez que votre code fonctionne correctement et que les modifications futures ne cassent pas votre application. Cela vous fait gagner du temps et évite également les problèmes potentiels pour les utilisateurs de votre application.
 
-"Comment Ecrire des Tests dans Haskell"
+## Comment faire
 
-Ecrire des tests peut sembler être une tâche fastidieuse, mais en réalité, cela peut vous faire gagner beaucoup de temps et d'efforts à long terme. En écrivant des tests, vous vous assurez que votre code fonctionne correctement et vous évitez des erreurs coûteuses. Voici un exemple de test de fonction dans Haskell :
+Pour écrire des tests en Haskell, vous aurez besoin d'une bibliothèque appelée HUnit. Vous pouvez l'installer en utilisant le gestionnaire de paquets Cabal avec la commande suivante :
+
+`cabal install HUnit`
+
+Ensuite, vous pourrez utiliser HUnit pour écrire vos tests en utilisant la syntaxe suivante :
 
 ```Haskell
--- Définition de la fonction "multiply"
-multiply :: Int -> Int -> Int
-multiply x y = x * y
-
--- Test de la fonction
-main = do
-  print (multiply 3 5) -- output : 15
+testFonction = TestCase(assertEqual "message d'erreur" expected actual)
 ```
 
-Dans cet exemple, nous définissons une fonction "multiply" qui multiplie deux entiers et nous testons son résultat en utilisant la fonction print de Haskell. Le code ci-dessus renvoie un résultat de 15, montrant ainsi que notre fonction fonctionne correctement.
+Dans cet exemple, "testFonction" est le nom de votre test, "assertEqual" est la fonction de vérification que vous utilisez pour comparer le résultat attendu "expected" avec le résultat réel "actual", et "message d'erreur" est un message qui sera affiché si le test échoue. Vous pouvez ensuite écrire plusieurs tests et les regrouper dans une suite de tests en utilisant la fonction "TestList" :
 
-"Plongée En Profondeur : Les Tests dans Haskell"
+```Haskell
+suiteTests = TestList [testFonction1, testFonction2, testFonction3]
+```
 
-Maintenant que nous avons vu comment écrire des tests basiques, plongeons dans les détails techniques. En Haskell, il y a plusieurs bibliothèques de tests disponibles telles que HUnit, QuickCheck et tasty. Chacune de ces bibliothèques a ses propres avantages et inconvénients, donc choisissez celle qui correspond le mieux à vos besoins. 
-En général, les tests doivent vérifier vos fonctions avec différents inputs et s'assurer que les résultats correspondent à vos attentes. Il est également important d'inclure des tests pour les cas d'erreur et les bords de vos fonctions. Enfin, n'oubliez pas de faire des tests régulièrement, surtout lors de modifications importantes dans votre code.
+Enfin, pour exécuter votre suite de tests, vous pouvez utiliser la fonction "runTestTT" :
 
-"Voir Aussi"
+```Haskell
+main = runTestTT suiteTests
+```
 
-- Pour plus d'information sur les tests dans Haskell, vous pouvez consulter la documentation de HUnit : https://hackage.haskell.org/package/HUnit
-- Pour une alternative à HUnit, vous pouvez également jeter un œil à QuickCheck : https://hackage.haskell.org/package/QuickCheck
-- Enfin, pour ceux qui utilisent tasty, n'hésitez pas à consulter sa documentation : https://hackage.haskell.org/package/tasty
+Vous verrez ensuite le résultat de vos tests dans la console.
 
-En somme, l'écriture de tests dans Haskell peut sembler fastidieuse au départ, mais cela peut grandement vous aider à éviter les erreurs dans votre code et à gagner du temps à long terme. Choisissez la bibliothèque de tests qui vous convient le mieux et faites des tests régulièrement pour assurer la qualité de votre code. Happy coding !
+## Plongée en profondeur
+
+Il est important de noter que vous devez tester non seulement votre code, mais également les bordures de celui-ci. Cela signifie que vous devez tester les cas où votre code est censé échouer, ainsi que les cas où il est censé réussir. De plus, vous pouvez également utiliser des frameworks de test intégrés tels que QuickCheck ou SmallCheck pour tester des propriétés plus générales de votre code.
+
+## Voir aussi
+
+- Site officiel de HUnit : https://hackage.haskell.org/package/HUnit
+- Documentation de HUnit : https://hackage.haskell.org/package/HUnit/docs/Test-HUnit-Base.html
+- Tutoriel sur les tests en Haskell : http://learnyouahaskell.com/unit-testing#introducing-hunit

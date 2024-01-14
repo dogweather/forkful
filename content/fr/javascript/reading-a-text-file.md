@@ -1,36 +1,53 @@
 ---
-title:    "Javascript: Lecture d'un fichier texte"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/reading-a-text-file.md"
+title:                "Javascript: Lecture d'un fichier texte"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-La lecture de fichiers texte est une compétence fondamentale pour tout programmeur JavaScript. Cela vous permet de récupérer et de traiter des données externes pour les utiliser dans vos programmes. Que vous travailliez sur un projet personnel ou professionnel, savoir lire et manipuler correctement des fichiers texte est essentiel pour garantir le bon fonctionnement de votre code.
+
+Lire et traiter des fichiers texte sont des tâches courantes pour les programmeurs Javascript. Que vous ayez besoin d'analyser des données, de manipuler des fichiers ou de créer des scripts de traitement de texte, savoir lire un fichier texte est une compétence essentielle pour tout développeur.
 
 ## Comment faire
-Pour lire un fichier texte en JavaScript, vous devez utiliser des méthodes spécifiques de l'objet `fs` (système de fichiers). Tout d'abord, vous devez inclure le module natif `fs` dans votre code en utilisant `require()` :
+
+Pour lire un fichier texte en Javascript, il existe deux méthodes principales : à l'aide du module "fs" et du module "readline". Voici un exemple de code utilisant le module "fs" pour lire un fichier texte :
 
 ```Javascript
-const fs = require("fs");
-```
-
-Ensuite, vous pouvez utiliser la méthode `readFile()` pour lire un fichier. Elle prend deux arguments, le chemin du fichier et une fonction de rappel qui sera exécutée une fois que le fichier aura été lu. Voici un exemple de code :
-
-```Javascript
-fs.readFile("./example.txt", (err, data) => {
-  if (err) throw err; // si une erreur se produit, elle sera affichée dans la console
-  console.log(data); // affiche le contenu du fichier dans la console
+const fs = require('fs');
+// Lecture d'un fichier texte en utilisant fs.readFile()
+fs.readFile('monfichier.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(data);
 });
 ```
 
-La méthode `readFile()` renvoie un tableau de données brut, il est donc souvent nécessaire de le convertir en chaîne de caractères pour l'utiliser. Vous pouvez également spécifier un encodage dans le deuxième argument de la méthode `readFile()` pour éviter cette étape de conversion.
+La méthode "fs.readFile()" prend trois paramètres : le nom du fichier à lire, l'encodage du fichier et une fonction de rappel qui se déclenchera une fois le fichier lu. Dans cet exemple, nous utilisons l'encodage "utf8" pour lire le fichier en tant que texte et la fonction de rappel affiche les données dans la console. Vous pouvez également utiliser la méthode "fs.readFileSync()" pour lire un fichier de manière synchronisée, mais cela peut bloquer l'exécution de votre programme si le fichier est très volumineux.
 
-## Plongée en profondeur
-La méthode `readFile()` est très utile pour lire de petits fichiers, mais il est important de prendre en compte les performances et la mémoire lorsque vous travaillez avec des fichiers de grande taille. Dans ces cas-là, vous pouvez utiliser la méthode `createReadStream()` pour lire des fichiers de manière plus efficace en utilisant les flux (stream). Elle prend également deux arguments, le chemin du fichier et un objet d'options, et renvoie un flux que vous pouvez ensuite manipuler pour lire et traiter les données du fichier.
+En utilisant le module "readline", vous pouvez lire un fichier texte ligne par ligne. Voici un exemple de code utilisant le module "readline" pour lire un fichier texte :
+
+```Javascript
+const readline = require('readline');
+// Création d'une interface de lecture
+const rl = readline.createInterface({
+  input: fs.createReadStream('monfichier.txt'),
+  crlfDelay: Infinity
+});
+// Parcourir chaque ligne du fichier
+rl.on('line', (line) => {
+  console.log(`Ligne lue : ${line}`);
+});
+```
+
+En utilisant cette méthode, chaque ligne du fichier sera traitée une à une dans la fonction de rappel. Vous pouvez également utiliser le module "readline-sync" pour lire un fichier de manière synchrone.
+
+## Approfondissement
+
+Lorsque vous lisez un fichier texte en Javascript, il est important de comprendre comment les données sont structurées dans le fichier. Vous pouvez utiliser des expressions régulières pour extraire des informations spécifiques d'un fichier texte, ou utiliser des méthodes de manipulation de chaînes comme "split()" et "slice()" pour découper les données en différents éléments. Il est également important de gérer les erreurs lors de la lecture d'un fichier, en utilisant un bloc "try...catch" pour gérer les exceptions.
 
 ## Voir aussi
-- [Documentation officielle de la méthode `readFile()` (en anglais)](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
-- [Documentation officielle de la méthode `createReadStream()` (en anglais)](https://nodejs.org/api/fs.html#fs_fs_createreadstream_path_options)
-- [Guide pour lire et écrire des fichiers en JavaScript (en français)](https://www.pierre-giraud.com/javascript-apprendre-coder-cours/lire-ecrire-fichier/)
+- [Documentation sur le module "fs"](https://nodejs.org/api/fs.html)
+- [Documentation sur le module "readline"](https://nodejs.org/api/readline.html)
+- [Documentation sur le module "readline-sync"](https://github.com/anseki/readline-sync)

@@ -1,55 +1,44 @@
 ---
-title:    "Javascript recipe: Deleting characters matching a pattern"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/javascript/deleting-characters-matching-a-pattern.md"
+title:                "Javascript recipe: Deleting characters matching a pattern"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# Why 
+Have you ever encountered a situation where you needed to delete characters that match a specific pattern? This task is commonly faced in data cleaning and manipulation, where you may need to remove certain characters that are irrelevant to your data analysis. In this blog post, we will explore how to do this using Javascript, a popular programming language for web development.
 
-Have you ever encountered a situation where you needed to delete specific characters from a string in your JavaScript code? Maybe you needed to remove all vowels from a word, or get rid of all punctuation marks. Well, the good news is that there is a simple solution to this problem - deleting characters matching a pattern. Whether you want to clean up user input or manipulate strings for a specific purpose, this can be a useful tool in your JavaScript arsenal.
-
-## How To
-
-To delete characters matching a pattern in JavaScript, we will be using the `replace()` method. This method takes in two parameters, the first being the pattern we want to replace and the second being the replacement value. Let's take a look at the syntax for this method:
+# How To
+To delete characters matching a pattern in Javascript, we can use the string `replace()` method along with a regular expression. Regular expressions are patterns used to match character combinations in strings, making it perfect for our task. Let's take a look at an example:
 
 ```Javascript
-str.replace(pattern, replacement);
+let str = "This is a sample string with some [special] characters";
+let pattern = /\[.*?\]/g;
+let result = str.replace(pattern, "");
+console.log(result); // Output: This is a sample string with some characters
 ```
 
-In this example, `str` represents the string we want to manipulate. The `pattern` can be a regular expression or a string containing the characters we want to remove. And, the `replacement` is the value we want to replace the characters with, which in our case will be an empty string.
+In the above code, we have a string `str` that contains a set of characters enclosed within square brackets. Our goal is to remove these brackets along with the characters inside them. To achieve this, we first define a regular expression `pattern` that matches any character within the square brackets. We use the `g` flag to indicate a global search, i.e. the pattern should be applied to the entire string. Finally, we use the `replace()` method to replace the matched characters with an empty string, effectively deleting them. The result is stored in the `result` variable and we log it to the console.
 
-Let's see this in action with an example. Say we have the string "Hello, world!" and we want to remove all punctuation marks from it. We can use the `replace()` method with a regular expression pattern to achieve this:
+We can also use the `replace()` method along with a string as the replacement value. Let's see an example of this:
 
 ```Javascript
-let str = "Hello, world!";
-let newStr = str.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
-console.log(newStr); // Output: Hello world
+let str = "This is a sample string with some <special> characters";
+let pattern = /<.*?>/g;
+let result = str.replace(pattern, "brackets");
+console.log(result); // Output: This is a sample string with some brackets characters
 ```
 
-In this example, we used a regular expression to match all punctuation marks and replaced them with an empty string, effectively deleting them from the original string. You can also use a string as the pattern instead of a regular expression, which would replace all occurrences of that string in the string. For example:
+In this example, we use the `replace()` method to replace the characters enclosed within angle brackets with the word "brackets".
 
-```Javascript
-let str = "Hello, my name is John.";
-let newStr = str.replace("John", "");
-console.log(newStr); // Output: Hello, my name is .
-```
+# Deep Dive
+Regular expressions in Javascript can be quite complex and have various modifiers that can alter their behavior. For example, adding the `i` flag to our `pattern` variable in the first example would make the search case-insensitive, i.e. it would match both "[special]" and "[Special]". Similarly, the `m` flag can be used for multiline searches.
 
-## Deep Dive
+There are also various metacharacters that have special meanings in regular expressions. For example, the `.` metacharacter matches any single character, while the `*` metacharacter matches zero or more occurrences of the preceding character. Understanding these concepts and modifiers can help you create powerful regular expressions for your data manipulation tasks.
 
-The `replace()` method is a powerful tool for manipulating strings in JavaScript, and it can do much more than just deleting characters. Let's take a closer look at the regular expression pattern we used in our example above - `/[.,\/#!$%\^&\*;:{}=\-_`~()]/g`.
-
-First, the `g` at the end of the pattern stands for "global," which means that the method will replace all occurrences of the pattern in the string, not just the first one.
-
-The brackets `[]` represent a character set, which means that the pattern will match any of the characters inside the brackets. In our example, it matched all punctuation marks because we included them inside the character set.
-
-The backslash `\` is used before certain characters to escape their special meaning and treat them as regular characters. For instance, the `.` character normally means "any character" in regular expressions, but by escaping it with a backslash, we are specifying that we want to match an actual period.
-
-There are many other special characters and modifiers that can be used in regular expressions to create complex patterns for matching and replacing text. If you're interested in learning more about regular expressions, check out [this article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) from MDN.
-
-## See Also
-
-- [MDN - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [MDN - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [JavaScript.info - Regular Expressions](https://javascript.info/regular-expressions)
+# See Also
+- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Regexr: Learn, Build, & Test RegEx](http://regexr.com/)
+- [1-line Regular Expressions in Javascript](https://1loc.dev/#regular-expressions)

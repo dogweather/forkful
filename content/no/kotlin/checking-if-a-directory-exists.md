@@ -1,35 +1,51 @@
 ---
-title:    "Kotlin: Sjekke om en mappe eksisterer"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/checking-if-a-directory-exists.md"
+title:                "Kotlin: Sjekke om en mappe eksisterer"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Hvorfor bør man sjekke om en mappe eksisterer i Kotlin-kode? Vel, det kan være flere årsaker til dette. For det første kan det hjelpe deg med å kontrollere at du ikke prøver å åpne eller opprette en mappe som allerede finnes, som kan føre til feil i koden din. Det kan også gi deg muligheten til å ta ulike handlinger avhengig av om mappen eksisterer eller ikke, for eksempel å opprette den hvis den ikke finnes, eller å gi brukeren en feilmelding hvis den ikke eksisterer.
 
-Undersøke om en mappe finnes kan være nyttig når du jobber med Kotlin, spesielt når du skal håndtere filer og mapper i programmet ditt. Det kan hjelpe deg å forhindre feil eller unødvendig arbeid i ditt program.
-
-## Hvordan
-
-For å sjekke om en mappe finnes i Kotlin, kan du bruke følgende kode:
+## Slik gjør du det
+Det er flere måter å sjekke om en mappe eksisterer i Kotlin-kode. Her er to forskjellige metoder som du kan bruke:
 
 ```Kotlin
-val mapp = File("/sti/til/mappe")
-if (mapp.exists()) {
-    println("Mappen finnes!")
+// Metode 1: Bruke innebygde funksjoner
+val mappenavn = "minMappe"
+val finnesMappen = File(mappenavn).exists() // returnerer en Boolean verdi
+
+if(finnesMappen) {
+    println("Mappen $mappenavn finnes allerede.")
 } else {
-    println("Mappen finnes ikke.")
+    println("Mappen $mappenavn eksisterer ikke.")
 }
+
 ```
 
-Dette vil sjekke om mappen eksisterer og skrive ut enten "Mappen finnes!" eller "Mappen finnes ikke." avhengig av resultatet. Du kan også bare bruke `exists()` funksjonen for å få en boolean som svar, og deretter gjøre andre handlinger basert på dette resultatet.
+```Kotlin
+// Metode 2: Bruke Paths-klassen
+val mappenavn = "minMappe"
+val mappeSti = Paths.get(mappenavn)
+val finnesMappen = Files.exists(mappeSti) // returnerer en Boolean verdi
 
-## Dypdykk
+if(finnesMappen) {
+    println("Mappen $mappenavn finnes allerede.")
+} else {
+    println("Mappen $mappenavn eksisterer ikke.")
+}
 
-Å sjekke om en mappe finnes i Kotlin involverer å bruke `exists()` funksjonen fra `File` klassen. Denne funksjonen returnerer en boolean som viser om mappen faktisk eksisterer eller ikke. Det er også mulig å bruke `isDirectory()` funksjonen for å sjekke om det er en mappe eller en fil. Ved å kombinere disse to funksjonene, kan du få detaljert informasjon om en mappe og bruke dette i ditt program.
+```
+
+Som du kan se i eksemplene over, bruker både metode 1 og 2 innebygde funksjoner for å kontrollere om mappen eksisterer. Metode 2 legger også til et ekstra trinn ved å bruke Paths-klassen for å få tak i mappenavnet i form av en sti. Begge metodene vil returnere en Boolean verdi som enten er true eller false, avhengig av om mappen eksisterer eller ikke.
+
+## Dykk dypere
+Hvis du ønsker å dykke dypere inn i konseptet med å sjekke om en mappe eksisterer, kan du også utforske andre metoder og funksjoner som kan bidra til å gjøre koden din mer robust og nøyaktig. Noen eksempler på dette kan være å sjekke om mappen er skrivbar, om den inneholder visse filer eller undermapper, og mer.
 
 ## Se også
-
-- [Offisiell Kotlin dokumentasjon for File-klassen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html)
-- [En enkel guide til fil og mappe håndtering i Kotlin](https://kotlinlang.org/docs/tutorials/kotlin-for-py/files.html)
+- [Kotlin Docs: Checking file and directory existence](https://kotlinlang.org/docs/working-with-files.html#checking-file-and-directory-existence)
+- [Kotlin Docs: Paths](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.nio.-paths/index.html)
+- [Java Docs: java.io.File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)

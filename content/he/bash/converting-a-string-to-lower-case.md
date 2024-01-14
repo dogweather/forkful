@@ -1,29 +1,35 @@
 ---
-title:    "Bash: המרת מחרוזת לאותיות קטנות"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/bash/converting-a-string-to-lower-case.md"
+title:                "Bash: המרת מחרוזת לאותיות קטנות"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
-מדוע ייתכן שתחשוב על להמיר מחרוזת לאותיות קטנות בכתיבת הקוד שלך? אחת הסיבות העיקריות היא כי לעיתים קרובות נדרש להשוות בין שני מחרוזות בצורה אחידה, ואחת הדרכים הפשוטות ביותר לעשות זאת היא להמיר את שתי המחרוזות לאותיות קטנות.
 
-## איך לעשות זאת
-תהליך ההמרה של מחרוזת לאותיות קטנות זהה בכל הפלטפורמות בלשונת ה- bash. בשפת bash, ישנם שני פקודות ייעודיות להמרת מחרוזת לאותיות קטנות:
+למה מישהו יעשה כיצד כדי להמיר מחרוזת לאותיות קטנות: כי זה כלי שימושי כאשר מתעסקים עם מחרוזות גדולות או כאשר יש להשוות מחרוזות באותו רמת הכתיב.
 
-```bash
-#הפקודה הראשונה היא להשתמש בלשונית tr עם אפשרות "--lowercase"
-echo "HELLO" | tr --lowercase # פלט: hello
+## איך לעשות
 
-#הפקודה השנייה היא להשתמש בפקודת bash המובנת "LOWERCASE"
-echo "HELLO" | bash -c "LOWERCASE=$1; echo $LOWERCASE" # פלט: hello
+```Bash
+# קוד דוגמא:
+string="HELLO WORLD"
+lower_case_string=${string,,}
+echo $lower_case_string
+
+# פלט: hello world
 ```
 
-## שטיפה עמוקה
-בלשונת ה- bash, המחרוזת מהווה משתנה משנה כדי שנוכל לפעול במקרה הזה על ידי עבודה עם גלילאווריט וספירת המחרוזת המקורית. ישנם גם אפשרויות נוספות להמרת אותיות בתוך לשונית ה- bash, כמו שימוש בפקודת פיי (tr) או פקודות נוספות עם הערות, תנאים או אפשרויות בעברית של משתנים.
+הפעולה הראשונה היא להגדיר משתנה עם המחרוזת המקורית. לאחר מכן, באמצעות התווים " ,, " נדפיס את משתנה המחרוזת באותיות קטנות. לבסוף, נדפיס את המחרוזת החדשה הנמצאת במשתנה החדש.
+
+## Deep Dive
+
+המרת מחרוזת לאותיות קטנות היא פעולה פשוטה, אך חשוב להבין שאת התהליך ניתן לבצע בכמה דרכים שונות בתכנות ה- Bash. בנוסף, כדי להתאים את הפעולה לצרכי המשתמש, ניתן להשתמש בפונקציות נוספות כמו " tr" או " awk". כמו כן, חשוב לציין שהמחרוזת המקורית תישאר ללא שינויים, כלומר המרת האותיות לאותיות קטנות תתבצע רק על המילים ה"תחתונות" במחרוזת.
 
 ## ראה גם
-* [מדריך מפורט לשפת ה- bash](https://www.gnu.org/software/bash/manual/bash.html)
-* [פקודת tr של GNU coreutils](https://www.gnu.org/software/coreutils/tr)
-* [ויקיפדיה - שפת ה- bash](https://he.wikipedia.org/wiki/Bash)
+
+- [מדריך לפונקציות בתכנות ה- Bash](https://geek.co.il/2015/05/28/bash-shell-scripting-functions)
+- [מדריך לשימוש בפקודת " tr" עבור עיבוד מחרוזות](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- [מדריך לשימוש בתוכניות של " awk" ב- Bash](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)

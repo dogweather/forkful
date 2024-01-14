@@ -1,41 +1,45 @@
 ---
-title:    "Fish Shell: Concaténation de chaînes de caractères"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/concatenating-strings.md"
+title:                "Fish Shell: Concaténer des chaînes de caractères"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-La concaténation de chaînes de caractères est une pratique courante dans la programmation. Elle permet de combiner plusieurs chaînes de caractères pour en former une seule, ce qui peut être utile pour créer des noms de fichiers dynamiques, des messages personnalisés et bien plus encore.
+Concaténer des chaînes de caractères est une pratique courante dans la programmation, et elle peut être très utile dans certaines situations. Cela permet de combiner plusieurs chaînes de caractères en une seule, ce qui peut être pratique pour la manipulation de données ou l'affichage de messages.
 
 ## Comment faire
 
-Pour concaténer des chaînes de caractères en utilisant le Shell Fish, vous pouvez utiliser l'opérateur `+` ou la fonction `string join`. Voici un exemple de code :
+Pour concaténer des chaînes de caractères en utilisant Fish Shell, il suffit d'utiliser l'opérateur de concaténation "+". Par exemple:
 
-```Fish Shell
-set name "Julie"
-echo "Bonjour" + $name
+```
+Fish Shell
+
+set nom "Marie"
+set nom_complet $nom "Dupont"
+echo $nom_complet
 ```
 
-Cela affichera `Bonjour Julie`. Vous pouvez également utiliser la fonction `string join` pour concaténer plus de deux chaînes de caractères :
-
-```Fish Shell
-set fruits "pomme" "banane" "orange"
-echo (string join ", " $fruits)
-```
-
-Cela affichera `pomme, banane, orange`.
+Cela va d'abord créer une variable "nom" contenant la valeur "Marie", puis concaténer cette valeur avec "Dupont" en utilisant l'opérateur "+". Le résultat de l'exécution du code sera "Marie Dupont".
 
 ## Plongée en profondeur
 
-Il existe des méthodes plus avancées pour concaténer des chaînes de caractères, telles que l'utilisation du tableau `string` ou des fonctions `string trim` et `string split`. Cela peut être utile si vous travaillez avec des chaînes de caractères plus complexes.
+La concaténation de chaînes de caractères peut également être réalisée avec la fonction "string join". Cette fonction prend en paramètres un délimiteur et une liste de chaînes de caractères à concaténer. Elle peut être utile lorsque l'on souhaite concaténer plusieurs chaînes de caractères contenues dans une liste. Voici un exemple:
 
-La concaténation de chaînes de caractères peut également être effectuée de manière efficace en utilisant des boucles, des conditions et des expressions régulières. N'hésitez pas à explorer ces options pour trouver la méthode qui convient le mieux à votre besoin.
+```
+Fish Shell
+
+set fruits ("banane" "pomme" "orange")
+set liste_fruits (string join ", " $fruits)
+echo "Mes fruits préférés sont: "$liste_fruits
+```
+
+Le résultat de l'exécution de ce code sera "Mes fruits préférés sont: banane, pomme, orange".
 
 ## Voir aussi
 
-- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/)
-- [Guide de référence rapide pour Fish Shell en français](https://fishshell.com/docs/current/index-fr.html)
-- [Tutoriel pour débuter avec Fish Shell](https://dev.to/rakhmanarikan/get-started-with-fish-shell-5cl2)
+- Documentation officielle de Fish Shell sur la concatenation de chaînes de caractères: https://fishshell.com/docs/current/cmds/set.html#string-join
+- Tutoriel sur la manipulation de chaînes de caractères en Fish Shell: https://www.shell-tips.com/fish/shell-scripting-concatenate-strings/

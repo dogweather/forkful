@@ -1,41 +1,50 @@
 ---
-title:    "Ruby: מחיקת תווים התואמים לתבנית"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/ruby/deleting-characters-matching-a-pattern.md"
+title:                "Ruby: מחיקת תווים התואמים דפוס"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+# למה:
 
-אנשים עשויים לרצות למחוק תווים התואמים לתבנית על מנת לטפל בתנאים ספציפיים בתוכנית הראשית שלהם.
+מחיקת תווים המתאימים לתבנית מהווה כלי חזק בעולם התכנות של Ruby. יעילותו הגבוהה וקלות השימוש בו נובעות מכך שמאפשרת לנו לטפל בנתונים ולעבוד איתם בצורה נתונה ומוכנה.
 
-## כיצד לעשות זאת
+# איך להשתמש:
 
-```Ruby
-# לדוגמה, ביצוע פונקציה שתמחק את האותיות א, ב, ג מתוך רשימת מילים.
-words = ["אבק", "בית", "גיל"]
-words.delete_if { |word| word.include?("א") || word.include?("ב") || word.include?("ג") }
-
-# פלט: ["ק", "ת"]
-```
+עבור נתוני תווים אותם רוצים למחוק, ניתן להשתמש בפונקציה `delete!` כדי להסיר אותם ללא תלות בתבנית מסוימת. הנה כמה דוגמאות:
 
 ```Ruby
-# אפשר גם להשתמש בתנאי כדי לבדוק כל תו אם הוא נמצא בתבנית
-# במקרה זה, נמחק רק את האותיות שהן כפולות.
-name = "בובי בראון"
-name.delete!("בוב") if name.include?("בוב") # אם תבנית האותיות "בוב" נמצאת בשם
-puts name 
 
-# פלט: "יי ראון"
+str = "Hello, Hebrew readers!"
+
+puts str.delete!("l") # Output: Heo, Hebrew readers!
+
+puts str.delete!("H") # Output: ebrew readers!
+
+puts str.delete!("!") # Output: ebrew readers
+
 ```
 
-## חקירה עמוקה
+בדוגמאות אלו, הפונקציה `delete!` מחזירה את המחרוזת המקורית ללא התווים המתאימים לתבנית.
 
-מחיקת תווים התואמים לתבנית היא טכניקה חזקה ומאוד שימושית כאשר מתמודדים עם מתרחש נאחס בתכנית שלהם. ניתן להשתמש בזה גם כדי לסנן רשימות ולטפל בנתונים עם תבניות מסוימות. זה גם נותן לנו את האפשרות לעבוד עם תבניות כפולות ולמחוק אותן כמו שנרצה.
+# חיקוי עמוק:
 
-## ראה גם
+ניתן להשתמש בפונקציה `delete!` כדי להסיר תווים מכל סוג שהוא, בהתאם לתבנית שנקבעה על ידי המשתמש. ניתן להגדיר תבנית מגוונת כך שהפונקציה תמחק כל תו שמתאים לתבנית, ולא רק תווים יחידים.
 
-- [מדריך לשפת תכנות Ruby](https://www.ruby-lang.org/en/documentation/quickstart/)
-- [מדריך עמוק לתכנות Ruby](https://ruby-doc.org/core-2.7.1/)
-- [תבניות ותנאים בשפת Ruby](https://www.rubyguides.com/2015/10/ruby-conditions/)
+לדוגמא, ננסה למחוק את כל המילים המופיעות באותיות גדולות מהמחרוזת הבאה:
+
+```Ruby
+str = "HeLlO, hEbReW ReAdErS!"
+
+puts str.delete!(/[A-Z]/) # Output: l, hbrw rdrs!
+```
+
+בדוגמא זו, התבנית המעצבנת כוללת את כל האותיות הגדולות, ולכן הפונקציה מוחקת את כל האותיות הגדולות מהמחרוזת.
+
+# ראה גם:
+
+- תיעוד רשמי של הפונקציה `delete!` באתר המפתחים של Ruby: https://ruby-doc.org/core-2.7.0/String.html#method-i-delete-21
+- הבדר על מחיקת תווים ממחרוזת באמצעות Ruby: https://www.geeksforgeeks.org/ruby-string-delete-method-with-example/
+- פוסט אחד מ- medium על טכניקות שונות למחיקת תווים בשפת Ruby: https://medium.com/@aisflat439/str

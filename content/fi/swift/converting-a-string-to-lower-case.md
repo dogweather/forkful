@@ -1,57 +1,51 @@
 ---
-title:    "Swift: Merkkijonon muuntaminen pieniksi kirjaimiksi"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/swift/converting-a-string-to-lower-case.md"
+title:                "Swift: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi 
+## Miksi konvertoida String alakirjaimiin?
 
-On monia syitä, miksi haluat muuttaa merkkijonon pieniksi kirjaimiksi Swift-ohjelmoinnissa. Yksi yleisimmistä syistä on johdonmukaisuus ja yhtenäisyyden säilyttäminen datassa. Esimerkiksi jos tietokannassa tai käyttäjän syötteissä on eri muodossa olevia sanoja (esimerkiksi "KISSA" ja "kissa"), muuntamalla ne pieniksi kirjaimiksi, voidaan välttää turhia eroja ja virheitä datan käsittelyssä.
+Kirjoitettaessa ohjelmia Swift-kielellä, saattaa joskus olla tarpeellista muuttaa annettu teksti pieniksi kirjaimiksi. Tämä saattaa olla hyödyllistä esimerkiksi vertaillessa erilaisia merkkijonoja. Onneksi Swift tarjoaa helpon ja tehokkaan tavan muuttaa merkkijonon kaikki kirjaimet pieniksi.
 
-## Miten
+## Miten tehdä se?
 
-Merkinjonon muuttaminen pieniksi kirjaimiksi Swiftissä on yksinkertaista käyttämällä metodia "lowercased()". Tämä metodi palauttaa uuden merkkijonon, jossa kaikki kirjaimet ovat pieniä.
-
-```Swift
-let sana = "KISSA"
-print(sana.lowercased()) // tulostaa "kissa"
-```
-
-Jos haluat muuttaa merkkijonon pieniksi kirjaimiksi alkuperäisessä muuttujassa, voit käyttää metodia "lowercased()" yhdessä sijoitusoperaattorin kanssa.
+Voimme käyttää funktiota `lowercased ()`, joka on saatavana kaikissa String muuttujissa Swiftissä. Katso alla oleva koodiesimerkki ja sen tuottama tulos:
 
 ```Swift
-var sana = "KISSA"
-sana = sana.lowercased()
-print(sana) // tulostaa "kissa"
+var teksti = "MOI MAAILMA!"
+print (teksti.lowercased ()) // tulostaa "moi maailma!"
 ```
 
-Voit myös käyttää metodia suoraan kirjainketjujen käsittelyssä käyttämällä muuttujan nimeä sulkeiden sisällä.
+Se on niin helppoa! Voimme myös tallentaa uuden String muuttujan arvon `lowercased ()` funktiolla:
 
 ```Swift
-let tulos = "APINA".lowercased()
-print(tulos) // tulostaa "apina"
+var teksti = "MOI MAAILMA!"
+var alakirjaimet = teksti.lowercased ()
+print (alkakirjaimet) // tulostaa "moi maailma!"
 ```
 
-## Syväsukellus
-
-Kun merkkijonojen käsittelyyn tarvitaan enemmän monimutkaisuutta, Swift tarjoaa myös muita vaihtoehtoja. Esimerkiksi voit käyttää metodia "localizedLowercase()", joka muuttaa merkkijonon pieniksi kirjaimiksi, ottaen huomioon myös mahdolliset kielelliset ja alueelliset erot.
+Voimme myös käyttää `lowercased ()` funktiota yhdessä ehtolauseen kanssa, kuten tässä esimerkissä:
 
 ```Swift
-let sana = "ÄITI"
-print(sana.localizedLowercase) // tulostaa "äiti" kielestä riippuen
+var oikeaSana = "kissa"
+var käyttäjänSana = "KIssA"
+
+if käyttäjänSana.lowercased () == oikeaSana { // vertaa alakirjaimisiin
+    print ("Oikea vastaus!") // tulostaa "Oikea vastaus!"
+} else {
+    print ("Väärä vastaus!")
+}
 ```
 
-Voit myös käyttää ns. "string interpolation" -tekniikkaa, jolla voit yhdistää merkkijonoja suoraan metodin muokattavana olevaan versioon.
+## Syvemmälle String alakirjaimisiin muuntamiseen
 
-```Swift
-let lempiväri = "SININEN"
-let lause = "Minun lempivärini on \((lempiväri).lowercased())." // palauttaa "Minun lempivärini on sininen."
-```
+`lowercased ()` funktio käyttää taustalla Unicode:n yleisiä tallennussääntöjä muuttaessaan merkkijonon kirjaimet pieniksi. Se ottaa huomioon myös erikoismerkit ja erilaiset kieliympäristöt, joten se on luotettava tapa muuttaa merkkijonon kaikki kirjaimet pieniksi.
 
 ## Katso myös
 
-- [Apple Developer Documentation - String](https://developer.apple.com/documentation/swift/string/) (englanniksi)
-- [Swift By Sundell - Working With Strings in Swift](https://www.swiftbysundell.com/basics/strings/) (englanniksi)
-- [Swift-tietokirja - Merkkijonot](https://docs.swift.org/swift-book/LanguageGuide/Strings.html) (englanniksi)
+- [Swift String dokumentaatio](https://developer.apple.com/documentation/swift/string)
+- [String menetelmät ja Operatiiviset](https://www.noviello.it/string-methods-operators-swift-en/)

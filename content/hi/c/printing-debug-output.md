@@ -1,44 +1,44 @@
 ---
-title:    "C: डिबग आउटपुट प्रिंट करना"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/c/printing-debug-output.md"
+title:                "C: डिबग आउटपुट प्रिंट करना"
+programming_language: "C"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
 
-क्या आप सोच रहे हैं कि जब आप कोड को चला रहे हों और आपको पता नहीं कि क्या आपकी प्रोग्राम ठीक से काम कर रही है, तो आप यह कैसे पता लगाएं? यदि हां, तो आपको डिबग आउटपुट का उपयोग करने की आवश्यकता हो सकती है। डिबग निकालना सामान्यतः कोड के सुधार में सहायक होता है और सही संदेश प्रदान करके समस्याओं को सुलझाने में मदद करता है।
+Kabhi kabhi hum apne program mein kuch gadbad ho jaati hai aur humme pata nahi hota ki kya chal raha hai. Iske liye, hum debug output ka istemaal karte hain. Debug output ki madad se hum apne program ke har step ko dekh sakte hain aur kisi issue ko identify kar sakte hain. Isse humme apne program ko sahi tarike se chalane mein madad milti hai. 
 
-## कैसे
+## Kaise Karein
+
+Debug output ka istemaal karne ke liye, hum `printf` function ka upyog karte hain. Is function ka istemaal humme apne program mein kuch values ya variables ko print karne ki anumati deta hai. Yahan hum ek simple example dekhenge:
 
 ```C
-#include <stdio.h>
-
-int main()
-{
+#include <stdio.h> 
+int main() 
+{ 
     int num1 = 5;
     int num2 = 10;
-    int sum = num1 + num2;
-    
-    printf("नंबर 1: %d\n", num1);
-    printf("नंबर 2: %d\n", num2);
-    printf("जोड़: %d\n", sum);
-    
-    return 0;
-}
+    printf("The value of num1 is %d\n", num1);
+    printf("The value of num2 is %d\n", num2);
+    return 0; 
+} 
 ```
+Is code mein humne `printf` function ka istemaal kiya hai aur `num1` aur `num2` variables ke values ko print kiya hai. Is tarah se hum apne program ke different sections mein output ko dekh sakte hain aur kisi issue ko identify kar sakte hain.
 
-उपरोक्त कोड फ़ाइल दृश्य में संयोजित होने जाते हैं। कंपाइल करने और स्क्रीन पर प्रिंट करने के बाद, उसका यह आउटपुट होना चाहिए:
+## Gehraai Mein Jaaen
 
-```
-नंबर 1: 5
-नंबर 2: 10
-जोड़: 15
-```
+Debug output ka istemaal karna ek bahut hi useful technique hai jisme hum apne program ko aur bhi gehraai se samajh sakte hain. Hum apne program mein `printf` statement ko multiple baar use kar sakte hain aur different variables aur values ko compare kar sakte hain. Isse humme kisi specific issue ko pinpoint karne mein madad milti hai.
 
-यहां आप अपने कोड में अन्य डिबग संदेश भी जोड़ सकते हैं, जैसे कि चर आईडी और मान के मापदंड दर्शाते हुए। इससे आप अपने कोड को झाँसा बना सकते हैं और समस्याओं को जल्दी से सुलझा सकते हैं।
+Iske alawa, hum apne program mein `#ifdef` aur `#ifndef` pre-processor directives ka istemaal karke bhi debug output enable aur disable kar sakte hain. Agar hum debug output ko disable karna chahte hain, toh hum `#ifdef` directive ka upyog karte hain, aur agar enable karna chahte hain toh `#ifndef` ka upyog karte hain.
 
-## डीप डाइव
+## Dekhen Bhi
 
-कभी-कभी हमारे सामने ऐसे समस्याएं होती हैं, जो किसी भी रूप में डिबग संदेश द्वारा नहीं पकड़ा जा सकता हैं। इसका मतलब है कि डिबग संदेश समस्या के समाधान के लिए भरोसेमंद नहीं हैं। ऐसे मामलों में, हमें डिबग संदेश का उपयोग करना जरूरी हो सकता है
+Ab aap jaan chuke hain ki debug output kya hai aur kaise aap iska upyog kar sakte hain. Agar aap aur gehraai se jaana chahte hain toh neeche diye gaye articles ko padh sakte hain:
+
+- [Difference between printf and fprintf in C programming](https://www.geeksforgeeks.org/difference-printf-fprintf-c-language/)
+- [A Visual Explanation of C Used in a Printf Statement](https://www.youtube.com/watch?v=1jXNAGogKqI)
+
+Dhanyawaad!

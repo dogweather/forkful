@@ -1,35 +1,56 @@
 ---
-title:    "Gleam: Escrevendo um arquivo de texto"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/writing-a-text-file.md"
+title:                "Gleam: Escrevendo um arquivo de texto"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto?
+##Por que
 
-Escrever um arquivo de texto pode ser uma tarefa simples, mas é uma parte importante do desenvolvimento de software. Com o Gleam, é possível criar facilmente arquivos de texto e utilizá-los em seus projetos.
+Escrever um arquivo de texto é uma tarefa essencial para qualquer programador, especialmente se você está trabalhando com a linguagem de programação Gleam. Isso permite que você armazene informações importantes e organize o seu código de forma mais eficiente.
 
-## Como fazer
+##Como Fazer
 
-Para escrever um arquivo de texto em Gleam, primeiro importe o módulo "File" e, em seguida, utilize a função "write_file" para escrever o conteúdo desejado no arquivo. Por exemplo:
+Para escrever um arquivo de texto em Gleam, você pode seguir os seguintes passos:
+
+1. Primeiro, crie um novo projeto Gleam ou acesse um já existente.
+2. Importe a biblioteca "File".
+3. Abra o arquivo com a função "File.write" e atribua um nome ao arquivo.
+4. Use a função "File.close" para fechar o arquivo após terminar de escrever.
+5. Use a função "File.writeln" para escrever linhas no arquivo.
+
+Aqui está um exemplo de código em Gleam para escrever um arquivo de texto:
 
 ```Gleam
-import File
+import gleam/file
 
-File.write_file("meu_arquivo.txt", "Olá, mundo!")
+let file = File.write("texto.txt")
+File.writeln(file, "Olá, mundo!")
+File.writeln(file, "Como você está?")
+File.close(file)
 ```
 
-Isso criará um arquivo chamado "meu_arquivo.txt" no diretório atual e escreverá a mensagem "Olá, mundo!" dentro dele. Você também pode utilizar variáveis e concatenar strings dentro da função "write_file" para criar arquivos mais dinâmicos.
+O arquivo resultante "texto.txt" terá o seguinte conteúdo:
 
-## Mergulho Profundo
+```
+Olá, mundo!
+Como você está?
+```
 
-Além da função "write_file", o módulo "File" também possui outras funções úteis para gerenciamento de arquivos de texto, como "append_file" para adicionar conteúdo a um arquivo existente e "read_file" para ler o conteúdo de arquivos. É importante lembrar de sempre fechar o arquivo utilizando a função "close" após utilizá-lo.
+##Mergulho Profundo
 
-Outra funcionalidade interessante do Gleam é a capacidade de lidar com caminhos de arquivos de forma segura e portátil, usando o módulo "Path" e suas funções, como "join" e "split". Isso garante que seus arquivos funcionarão corretamente em diferentes sistemas operacionais.
+Existem várias opções que podem ser passadas como argumentos nas funções "File.write" e "File.writeln" para personalizar o seu arquivo de texto. Aqui estão alguns exemplos:
 
-## Veja também
+- Para adicionar uma quebra de linha personalizada, você pode usar a opção "end" e especificar um caractere, como "\n" ou "\r".
+- Para escrever no início do arquivo, você pode usar a opção "start" e definir como "true".
+- Você pode especificar a codificação do arquivo com a opção "encoding". Por padrão, é usada a codificação UTF-8.
 
-- Documentação oficial sobre arquivos e módulos de texto em Gleam: https://gleam.run/documentation/reference/03-modules.html#file
-- Tutorial sobre escrita de arquivos em Gleam: https://101questions.net/guides/writing-files-in-gleam/
-- Exemplos de código para manipulação de arquivos em Gleam: https://gist.github.com/topics/gleam-files
+Além disso, você pode usar outras funções fornecidas pela biblioteca "File" para ler e manipular arquivos de texto, como "File.read" e "File.contains".
+
+##Veja Também
+
+- Documentação da biblioteca "File" em Gleam: https://gleam.run/modules/gleam/file.html
+- Tutorial de Gleam: https://gleam.run/tutorials
+- Livro de Gleam: https://shop.miramicoding.com/products/gleam-programming-language-book

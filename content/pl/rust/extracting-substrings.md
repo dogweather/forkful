@@ -1,66 +1,56 @@
 ---
-title:    "Rust: Wycinanie podciągów"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/rust/extracting-substrings.md"
+title:                "Rust: Wydobywanie podciągów"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Extrahowanie podciągów, czyli wyodrębnianie części tekstu z ciągłego łańcucha znaków, jest niezbędnym elementem wielu projektów programistycznych. Jest to szczególnie przydatne, gdy potrzebujemy uzyskać dostęp do określonych fragmentów tekstu lub podzielić go na mniejsze części do dalszego przetwarzania. W języku programowania Rust istnieją wiele sposobów na wydajne i bezpieczne wyodrębnianie podciągów, dlatego postanowiliśmy przygotować ten poradnik, aby pomóc w zrozumieniu tego zagadnienia.
+W dzisiejszym poście porozmawiamy o tym, jak w języku Rust wyciągać podciągi czyli fragmenty ciągów znaków. Jest to przydatna umiejętność, która może przydać się w różnych sytuacjach, na przykład podczas przetwarzania tekstu czy analizowania danych.
 
 ## Jak to zrobić
 
-Aby wyodrębnić podciąg w języku Rust, musimy użyć metody `get()` lub `slice()` na obiekcie typu `String`. Poniżej przedstawiamy prosty przykład kodu, który wyodrębnia podciąg "Rust" z tekstu "Programowanie w Rust jest super!".
+Aby wyciągnąć podciągi w języku Rust, możemy skorzystać z metody `slice()`. W poniższym kodzie, przyjmijmy, że mamy zmienną `text`, która zawiera cały ciąg znaków, a chcemy pobrać tylko jego fragment od 5. do 10. pozycji:
 
 ```Rust
-let tekst = String::from("Programowanie w Rust jest super!");
-
-//Używamy metody get() do wyodrębnienia podciągu od indeksu 17 do 21
-let podciag = tekst.get(17..21);
-
-//Alternatywnie, możemy też użyć metody slice() i podać indeksy w nawiasach kwadratowych
-let podciag = &tekst[17..21];
-
-//Wyświetlenie wyniku
-println!("Wyodrębniony podciąg: {}", podciag);
+let text = "To jest przykładowy tekst";
+let substring = &text[5..10]; // tutaj wykorzystujemy metodę slice()
+println!("{}", substring); // output: jest 
 ```
 
-Output:
+Ważne jest, aby pamiętać o indeksowaniu od zera, dlatego 5. pozycja odpowiada w rzeczywistości 6. znakowi w ciągu. Aby pobrać do końca ciągu, możemy skorzystać z indeksu `..` na końcu naszego zakresu, na przykład `0..` oznacza od początku do końca ciągu.
 
-```
-Wyodrębniony podciąg: Rust
-```
-
-Na powyższym przykładzie widać, że metoda `get()` lub `slice()` przyjmuje argument w postaci zakresu indeksów, które określają początek i koniec wyodrębnianego podciągu. Dodatkowo, możemy użyć metody `len()` na obiekcie typu `String`, aby uzyskać długość tekstu i łatwiej określić odpowiednie indeksy.
-
-Ponadto, istnieje również możliwość wykorzystania metody `split()` w celu podzielenia tekstu na podciągi zgodnie z określonym separatorem. Przykład takiego użycia został przedstawiony poniżej.
-
-```Rust
-let tekst = String::from("Jestem|dzielony|na|podciagi");
-
-//Używamy metody split() i podajemy separator "|"
-let podciagi: Vec<&str> = tekst.split("|").collect();
-
-//Wyświetlenie wyników
-println!("Wyodrębnione podciągi: {:?}", podciagi);
-```
-
-Output:
-
-```
-Wyodrębnione podciągi: ["Jestem", "dzielony", "na", "podciagi"]
-```
+Również warto wspomnieć, że w języku Rust wyciąganie podciągów jest bardzo wydajne, ponieważ nie tworzy nowych ciągów, a jedynie referencję do istniejącego ciągu, co jest ważne szczególnie w przypadku pracy z dużymi danymi.
 
 ## Deep Dive
 
-W języku Rust, pulia indeksowana jest od 0, czyli pierwszy znak tekstowy znajduje się pod indeksem 0, drugi pod indeksem 1, itd. Warto zauważyć, że indeks działania na tekstach kończy się na poprzednim indeksie bez znaczenia czy ostatni indeks został podany w argumentach metody `get()` lub `slice()`.
+Metoda `slice()` akceptuje również zmienne typu `String` lub `StringLiteral`. W przypadku typu `String`, możemy użyć metody `as_str()` aby uzyskać ciąg znaków, na którym możemy wywoływać metodę `slice()`.
 
-Ponadto, w przypadku użycia metody `slice()`, jest możliwość podania tylko jednego argumentu - wtedy tekst zostanie wyodrębniony od podanego indeksu do końca.
+```Rust
+let text = String::from("To jest przykładowy tekst");
+let substring = &text[5..10];
+println!("{}", substring); // output: jest
+```
 
-## Zobacz też
+Jeśli natomiast mamy po prostu ciąg znaków umieszczony w kodzie, możemy wywołać metodę `as_ref()` aby uzyskać referencję do niego i następnie wywołać metodę `slice()`.
 
-- [Dokumentacja Rust na temat wyodrębniania podciągów](https://doc.rust-lang.org/std/primitive.str.html#method.get)
-- [Poradnik: Jak używać metod get() i slice() w Rust](https://www.educative.io/blog/learn-rust-get-slice)
-- [Wideo-tutorial: Wyodrębnianie podciągów z tekstu w Rust
+```Rust
+let text = "To jest przykładowy tekst";
+let substring = &text.as_ref()[5..10];
+println!("{}", substring); // output: jest
+```
+
+W ten sposób możemy wyciągać podciągi z różnych typów danych w języku Rust.
+
+## Zobacz również
+
+Jeśli chcesz dowiedzieć się więcej o manipulacji ciągami znaków w języku Rust, zapoznaj się z następującymi materiałami:
+
+- [Oficjalna dokumentacja Rust](https://www.rust-lang.org/learn)
+- [Getting started with Rust](https://dev.to/penelope_zone/getting-started-with-rust-1a1e)
+- [The Rust Programming Language Book](https://doc.rust-lang.org/book/title-page.html)
+
+Dziękujemy za przeczytanie tego postu i mamy nadzieję, że pomógł on w zrozumieniu jak wyciągać podciągi w języku Rust. Do zobaczenia w kolejnym artykule!

@@ -1,51 +1,43 @@
 ---
-title:    "C: Kirjoittaminen standardivirheelle"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/c/writing-to-standard-error.md"
+title:                "C: Kirjoittaminen standarivirheelle"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi Kirjoittaa Virheet Standardilähtöön?
+## Miksi
 
-Kirjoittaminen standardilähtöön on tärkeä osa C-ohjelmointia, sillä se antaa ohjelmoijalle mahdollisuuden lähettää virheitä ja muita ilmoituksia suoraan terminaaliin. Tämä voi auttaa käyttäjiä selvittämään ohjelmassa mahdollisesti ilmenneitä ongelmia ja auttaa ohjelmoijaa löytämään ja korjaamaan virheitä.
+Kirjoittamalla standardivirheeseen, voit ohjelmassasi näyttää virheilmoituksia ja varoitussanomia, jotka auttavat sinua vianjäljityksessä. Tämä on tärkeä osa ohjelmointia ja auttaa sinua löytämään ja korjaamaan mahdolliset virheet.
 
-## Miten Kirjoittaa Virheet Standardilähtöön?
+## Näin teet sen
 
-Kirjoittaminen virheitä ja muita ilmoituksia standardilähtöön tapahtuu käyttämällä C-kieleen sisäänrakennettua "fprintf" -funktiota. Se ottaa parametreikseen tiedostonimen, johon viesti kirjoitetaan, ja itse viestin. Katso alla olevaa esimerkkiä:
-
-```C
-#include <stdio.h>
-
-int main() {
-    FILE *virhe_tiedosto = fopen("virhe.txt", "w"); // Avaamme tiedoston kirjoitustilassa
-    if (virhe_tiedosto != NULL) {
-        fprintf(virhe_tiedosto, "Virhe: Tiedostoa ei löydy!\n"); // Kirjoitamme viestin tiedostoon
-    }
-    fclose(virhe_tiedosto); // Suljemme tiedoston
-    return 0;
-}
-```
-
-Ajaessa tämän koodin saat luotua tiedoston nimeltä "virhe.txt", johon on kirjoitettu "Virhe: Tiedostoa ei löydy!". Tämä esimerkki on vain yksinkertainen tapa käyttää "fprintf" -funktiota, ja mahdollisuuksia on paljon enemmän. Voit esimerkiksi lähettää viestejä standardilähtöön käyttämällä "stderr" -muuttujaa. Katso alla oleva esimerkki:
+Ohjelmassasi, voit käyttää funktion `fprintf` ja antaa toisena parametrinaan `stderr`-merkkijonon. Alla on yksinkertainen esimerkki, jossa kirjoitetaan virheilmoitus standardivirheeseen:
 
 ```C
 #include <stdio.h>
 
 int main() {
-    fprintf(stderr, "Virhe: Tiedostoa ei löydy!\n"); // Lähetämme viestin standardilähtöön
-    return 0;
+  fprintf(stderr, "Virhe: Tiedostoa ei löydy\n");
+  return 0;
 }
 ```
 
-Tämä vaihtoehto on hyödyllinen silloin, kun haluat lähettää viestin suoraan terminaaliin, esimerkiksi kun ohjelma kohtaa virheen.
+Tämän ohjelman ajaessa saat seuraavan tulosteen:
 
-## Syvällisempi Tarkastelu Kirjoittamisesta Standardilähtöön
+```
+Virhe: Tiedostoa ei löydy
+```
 
-Kirjoittaminen standardilähtöön on tärkeä osa C-ohjelmointia, sillä se mahdollistaa virheiden ja muiden ilmoitusten lähettämisen terminaaliin. Tämä voi auttaa käyttäjiä selvittämään ohjelmassa mahdollisesti ilmenneitä ongelmia ja auttaa ohjelmoijaa löytämään ja korjaamaan virheitä. Lisäksi kirjoittaminen standardilähtöön antaa ohjelmoijalle mahdollisuuden luoda interaktiivisia ohjelmia, jotka kommunikoivat käyttäjän kanssa suoraan terminaalin kautta. Esimerkiksi "scanf" -funktio lukee käyttäjän antamia syötteitä standardilähtöstä.
+## Syvempi sukellus
 
-## Katso Myös
+Standardivirheeseen kirjoittaminen eroaa tavallisesta tulostamisesta siksi, että se ei ole sidottu tiettyyn kanavaan, kuten näyttöön tai tiedostoon. Tämä tekee siitä hyödyllisen virheiden käsittelyssä, koska voit ohjata virheilmoituksesi eri tarkoituksiin riippuen siitä, missä ohjelmasi suoritetaan.
 
-- [C-kirjasto: stdio.h](https://www.cs.cf.ac.uk/Dave/C/node9.html)
-- [Ymmärtäminen standardi-IO](http://www.csl.mtu.edu/cs4411.ck/www/NOTES/non-local-jump/node6.html)
-- [Käyttäjän interaktio terminaalin kautta C:llä](http://www.prismnet.com/~eggert/index.c.html#tools)
+Lisäksi on tärkeää hallita standardivirheen tulostusta, jotta se ei sekoitu tavallisen tulostuksen kanssa. Voit suorittaa virheen ohjauksen käyttäen `stderr`-kanavaa ja samalla tulostaa tavallinen teksti `stdout`-kanavalle.
+
+## Katso myös
+
+- [C-funktioiden dokumentointi](https://www.tutorialspoint.com/c_standard_library/index.htm)
+- [Virheiden käsittely C-ohjelmoinnissa](https://www.geeksforgeeks.org/error-handling-c-programs/)
+- [Standardivirheen käyttö C-ohjelmoinnissa](https://www.gnu.org/software/libc/manual/html_node/Standard-Error-Output.html)

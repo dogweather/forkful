@@ -1,46 +1,39 @@
 ---
-title:    "PHP: Å bruke regulære uttrykk"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/using-regular-expressions.md"
+title:                "PHP: Å bruke regulære uttrykk"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det kan være fristende å bare jobbe med enkle tekstbehandlingsfunksjoner i PHP, men å lære hvordan man bruker regulære uttrykk kan være svært nyttig i mer komplekse situasjoner. Regulære uttrykk er en måte å søke og manipulere tekstbaserte data på, og kan brukes til alt fra validering av skjemafelt til å finne og erstatte tekst i store filer.
+Hvis du er en PHP-programmerer, har du mest sannsynligvis hørt om regular expressions. Disse uttrykkene er en kraftig verktøy for å behandle tekststrenger. De lar deg søke etter spesifikke mønstre i en streng, noe som gjør det enklere å finne og behandle data. Hvis du ønsker å bli en mer effektiv programmerer, bør du lære hvordan du bruker regular expressions i PHP.
 
 ## Hvordan
 
+For å bruke regular expressions i PHP, må du først bruke ```preg_match()``` -funksjonen. Denne sjekker en streng mot et gitt uttrykk og returnerer enten sann eller usann, avhengig av om uttrykket matcher eller ikke. Her er et eksempel på hvordan du kan bruke det:
+
 ```PHP
-$tekst = "Hei! Ønsker du å lære PHP-programmering? Send oss en melding da vel!";
-if (preg_match("/PHP/", $tekst)) {
-  echo "Fant 'PHP' i teksten!";
-} else {
-  echo "Fant ikke 'PHP' i teksten.";
+$name = "John Doe";
+if (preg_match("/Doe$/", $name)) {
+  echo "Din etternavn er Doe!";
 }
 ```
 
-Dette er et enkelt eksempel på hvordan man kan bruke preg_match-funksjonen i PHP til å søke etter et bestemt mønster (i dette tilfellet strengen "PHP") i en tekststreng. Output vil her være "Fant 'PHP' i teksten!", siden teksten inneholder ordet "PHP".
+I dette eksempelet bruker vi ```preg_match()``` for å sjekke om strengen inneholder "Doe" på slutten. Hvis det er tilfelle, vil vi få utskrevet en melding som bekrefter dette.
 
-Et annet nyttig preg-funksjon er preg_replace, som lar deg erstatte et mønster med en annen tekst. For å erstatte alle forekomster av "helt" med "svært" i en tekststreng, kan man for eksempel bruke følgende kode:
-
-```PHP
-$tekst = "Det er helt fantastisk at du lærer PHP-programmering!";
-$nytekst = preg_replace("/helt/", "svært", $tekst);
-echo $nytekst;
-```
-
-Output vil da være "Det er svært fantastisk at du lærer PHP-programmering!".
+Det finnes en rekke forskjellige uttrykk du kan bruke i regular expressions, for eksempel meta-tegn, spesielle tegn og flagg. Det er viktig å ha en god forståelse av disse for å utnytte fullt ut potensialet til regular expressions. Det finnes mange ressurser på nettet som kan hjelpe deg med å lære mer om dette.
 
 ## Dypdykk
 
-For å bli virkelig dyktig i å bruke regulære uttrykk, anbefales det å lese dokumentasjonen til PHP for å lære mer om de ulike funksjonene som er tilgjengelige. Det er også nyttig å prøve seg frem med ulike mønstre og se hvordan de fungerer.
+Regular expressions kan virke komplekse i begynnelsen, men med litt øving og forståelse vil de bli en uvurderlig ressurs i PHP-programmeringen din. Du kan bruke dem til å validere brukerinput, filtrere data, og mye mer. En nyttig funksjon i PHP er også ```preg_replace()```, som lar deg erstatte deler av en streng med et annet uttrykk eller tekst.
 
-En ting som er viktig å være klar over er at regulære uttrykk kan være svært komplekse, og noen ganger er det bedre å bruke mer spesialiserte funksjoner for å utføre oppgaver som f.eks. validering av e-postadresser eller datoer. Det er derfor viktig å vurdere om regulære uttrykk er den beste løsningen for din spesifikke oppgave.
+En nyttig måte å lære mer om regular expressions på er å eksperimentere med dem selv og se hva som fungerer og ikke fungerer. Det finnes også mange gode verktøy på nettet, som for eksempel regex101.com, hvor du kan teste uttrykkene dine og få hjelp til å forstå dem.
 
 ## Se også
 
-- [PHP: Regulære uttrykk](https://www.php.net/manual/en/reference.pcre.pattern.syntax.php)
-- [Regular-Expressions.info](https://www.regular-expressions.info/)
-- [PHP: Validere e-postadresser med regulære uttrykk](https://www.php.net/manual/en/filter.examples.validation.php)
+- [PHP regular expressions dokumentasjon](https://www.php.net/manual/en/function.preg-match.php)
+- [RegExr - et online verktøy for å teste regular expressions](https://regexr.com/)
+- [Tutorial: PHP regular expressions for beginners](https://www.tutorialspoint.com/php/php_regular_expression.htm)

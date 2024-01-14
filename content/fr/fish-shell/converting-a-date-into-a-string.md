@@ -1,58 +1,56 @@
 ---
-title:    "Fish Shell: Transformer une date en chaîne de caractères"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/converting-a-date-into-a-string.md"
+title:                "Fish Shell: Convertir une date en chaîne de caractères"
+programming_language: "Fish Shell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Si vous êtes un développeur à la recherche de moyens d'afficher des dates dans votre script Fish Shell, vous êtes au bon endroit ! Dans cet article, nous allons vous montrer comment convertir facilement une date en une chaîne de caractères.
 
-## Comment faire
-La conversion d'une date en une chaîne de caractères peut sembler un peu intimidante, mais ne vous inquiétez pas, c'est assez simple avec Fish Shell. Voici un exemple de code qui utilise la commande `date` pour obtenir la date et la convertit en une chaîne de caractères en utilisant la commande `string` :
+La conversion d'une date en chaîne de caractères peut être utile dans de nombreuses situations de programmation. Cela permet de formater une date selon un format spécifique pour l'afficher ou l'utiliser dans des calculs.
 
-```Fish Shell
-set myDate (date -u +"%Y-%m-%d")
-set myString (string join '-' $myDate)
-```
-Lorsque vous exécutez ce code dans votre terminal, la sortie sera quelque chose comme ceci :
+## Comment
 
-```
-2021-07-23
-```
-Vous pouvez également personnaliser le format de la date en utilisant les options disponibles dans la commande `date`. Voici un exemple qui ajoute l'heure et les minutes à la date :
+Dans Fish Shell, il existe plusieurs méthodes pour convertir une date en chaîne de caractères.
+
+Voici un exemple de code pour convertir la date actuelle en une chaîne au format "mois/jour/année" :
 
 ```Fish Shell
-set myDate (date -u +"%Y-%m-%d %H:%M")
-set myString (string join '-' $myDate)
-```
-Et voici la sortie correspondante :
-
-```
-2021-07-23 12:30
+set current_date (date +%m/%d/%Y)
+echo $current_date
 ```
 
-## Plongée en profondeur
-Maintenant que vous savez comment convertir une date en une chaîne de caractères, vous pouvez vous plonger dans les différentes options disponibles dans la commande `date`. Cela peut vous aider à personnaliser la sortie de votre chaîne de caractères en fonction de vos besoins spécifiques.
+Cela produira un résultat similaire à "03/12/2021", selon la date actuelle.
 
-Par exemple, vous pouvez ajouter le jour de la semaine à votre chaîne de caractères en utilisant `%a` pour les abréviations ou `%A` pour le nom complet du jour :
+Il est également possible de spécifier différents formats de date en utilisant la commande `strftime` :
 
 ```Fish Shell
-set myDate (date -u +"%Y-%m-%d %a")
-set myString (string join '-' $myDate)
-```
-La sortie sera alors quelque chose comme :
-
-```
-2021-07-23 Fri
+set formatted_date (strftime "%A, %B %d, %Y" (date))
+echo $formatted_date
 ```
 
-Vous pouvez également utiliser `%b` pour les abréviations du mois ou `%B` pour le nom complet du mois. Pour plus d'options, vous pouvez consulter la documentation de la commande `date`.
+Cela affichera la date complète avec le jour de la semaine, le mois et l'année, comme "Friday, March 12, 2021".
+
+Vous pouvez également utiliser la commande `date` pour convertir une date spécifique en chaîne de caractères, en spécifiant le format souhaité :
+
+```Fish Shell
+set specific_date "2021-03-12"
+set formatted_date (date -f "%B %d, %Y" $specific_date)
+echo $formatted_date
+```
+
+Cela affichera "March 12, 2021" en utilisant la date spécifiée.
+
+## Plongée profonde
+
+Pour ceux qui souhaitent en savoir plus sur la conversion de date en chaîne de caractères dans Fish Shell, il est important de comprendre les différents formats utilisés par la commande `date` et comment les utiliser avec `strftime`.
+
+Il existe également des options avancées telles que la façon de gérer les fuseaux horaires et les décalages horaires lors de la conversion d'une date en chaîne de caractères. Vous pouvez trouver plus d'informations à ce sujet dans la documentation de Fish Shell.
 
 ## Voir aussi
-Pour plus d'informations sur la conversion de dates en chaînes de caractères dans Fish Shell, consultez ces liens utiles :
 
-- La documentation officielle de la commande `date` (en anglais) : https://fishshell.com/docs/current/commands.html#date
-- Un tutoriel sur les variables dans Fish Shell (en français) : https://doc.ubuntu-fr.org/tutoriel/comment_definir_une_variable_dans_un_script_shell
-- Une liste complète des options pour formater les dates avec la commande `date` (en anglais) : https://www.computerhope.com/unix/date.htm
+- La documentation de Fish Shell sur la commande `date` : https://fishshell.com/docs/current/cmds/date.html
+- La syntaxe de `strftime` pour spécifier différents formats de date : https://fishshell.com/docs/current/cmds/strftime.html
+- Un tutoriel complet sur la conversion de date en chaîne de caractères en Fish Shell : https://danielmiessler.com/study/fish-shell/#dates

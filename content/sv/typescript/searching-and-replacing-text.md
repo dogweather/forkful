@@ -1,48 +1,42 @@
 ---
-title:    "TypeScript: Söka och ersätta text"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/searching-and-replacing-text.md"
+title:                "TypeScript: Sökning och ersättning av text"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Det kan finnas många anledningar till varför man skulle vilja söka och ersätta text i ett program. Det kan vara för att uppdatera en gammal kod, korrigera stavfel eller bara för att göra en snabb ändring i en stor mängd text.
 
-## Så här gör man
-Det finns flera sätt att söka och ersätta text i en TypeScript-kod. Det enklaste sättet är att använda inbyggda metoder i TypeScript som `replace()` eller `replaceAll()`. Till exempel, om vi vill ersätta alla förekomster av ordet "hund" med "katt" i en sträng:
+Att söka och ersätta text är en viktig del av programmering och kan hjälpa till att effektivisera arbetet med stora mängder text. Genom att använda TypeScript kan du enkelt söka och ersätta text i ditt kodprojekt.
 
-```TypeScript
-let djur = "hundar är våra bästa vänner";
+## Hur man gör det
 
-// ersätt alla "hund" med "katt"
-let nyaDjur = djur.replace(/hund/g, "katt");
-
-console.log(nyaDjur); // output: "kattar är våra bästa vänner"
-```
-
-Vi kan också använda regex (regular expressions) för att söka och ersätta text. Till exempel, om vi vill byta ut alla siffror i en sträng med en stjärna:
+Först behöver vi importera "fs" modulen för att kunna läsa och skriva till filer. Sedan kan vi använda funktionen "readFileSync" för att läsa in en fil och använda "replace" funktionen för att söka och ersätta text. Se koden nedan för en enkel mängdexempel.
 
 ```TypeScript
-let text = "Det finns 5 äpplen i fruktträdet";
+import * as fs from 'fs';
 
-// byt ut alla siffror med "*"
-let nyText = text.replace(/\d/g, "*");
+const file = fs.readFileSync('./example.txt', 'utf8');
 
-console.log(nyText); // output: "Det finns * äpplen i fruktträdet"
+const newContent = file.replace('hej', 'hallå');
+
+fs.writeFileSync('./example.txt', newContent);
 ```
 
-För mer avancerade sök- och ersättningsfunktioner, kan vi använda bibliotek som `regex-string-replace` eller `string-replace`.
+I detta exempel har vi läst in en fil som heter "example.txt" och ersatt alla instanser av ordet "hej" med "hallå". Sedan har vi skrivit över den befintliga filen med det nya innehållet.
 
 ## Djupdykning
-Det är viktigt att förstå skillnaderna mellan `replace()` och `replaceAll()` metoder i TypeScript. Med `replace()` kommer endast den första förekomsten av söksträngen att ersättas. Medan `replaceAll()` ersätter alla förekomster av söksträngen.
 
-Vi kan också använda flaggor i regex för att göra sökningen mer precisa. Till exempel, med flaggan `i` kommer sökningen att vara fall-insensitiv, vilket betyder att det inte spelar någon roll om söksträngen är skriven med stora eller små bokstäver.
+Det finns olika sätt att söka och ersätta text i TypeScript, beroende på vilka behov du har. Du kan använda reguljära uttryck för mer avancerade sökningar eller använda funktioner som trim eller toUpperCase för att manipulera texten innan du utför ersättningen.
 
-En annan viktig aspekt av att söka och ersätta text är att vara medveten om att både söksträngen och ersättningssträngen kan vara reguljära uttryck. Detta ger oss möjlighet att göra mer komplexa och mångsidiga ersättningar.
+Det är också viktigt att tänka på vilken typ av fil du arbetar med. Om du arbetar med en JSON-fil kan du använda "JSON.stringify" och "JSON.parse" för att manuellt söka och ersätta text i JSON-objektet.
 
 ## Se också
-- [TypeScript dokumentation om replace()](https://www.typescriptlang.org/docs/handbook/global-objects.html#replace)
-- [Regex i TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expression-handling.html)
-- [regex-string-replace bibliotek](https://www.npmjs.com/package/regex-string-replace)
-- [string-replace bibliotek](https://www.npmjs.com/package/string-replace)
+
+[Officiell TypeScript dokumentation för String manipulation](https://www.typescriptlang.org/docs/handbook/advanced-types.html#mapped-types)
+
+[StackOverflow tråd om reguljära uttryck för sök- och ersättningsfunktioner i TypeScript](https://stackoverflow.com/questions/9527460/search-and-replace-with-regular-expression-in-typescript) 
+
+[En guide för att använda "fs" modulen i Node.js](https://nodejs.dev/learn/the-nodejs-fs-module)

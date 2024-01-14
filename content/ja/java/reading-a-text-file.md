@@ -1,52 +1,87 @@
 ---
-title:    "Java: テキストファイルを読む"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/java/reading-a-text-file.md"
+title:                "Java: テキストファイルの読み込み"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-テキストファイルを読むことの利点についてご紹介します。読者は、この記事を読むことでテキストファイルの読み方を学ぶことができます。
 
-## こうやって
-テキストファイルを読むには、Javaの標準パッケージであるjava.ioパッケージを使用します。まず、ファイルを読み込むためのFileReaderオブジェクトを作成し、それをBufferedReaderに渡します。次に、BufferedReaderからreadLine()メソッドを使用してテキストを読み込み、それを出力することでテキストファイルを読むことができます。
+ソフトウェア開発者であれば、テキストファイルを読み込むことは日常的な作業です。テキストファイルには、ユーザーが入力したデータや、プログラムが生成したデータなど、多くの情報が格納されています。そのため、テキストファイルを読み込むことは、プログラムの実行に必要不可欠なスキルです。この記事では、Javaでテキストファイルを読み込む方法について解説します。
+
+## 方法
+
+テキストファイルを読み込むには、主に2つの方法があります。
+
+### バッファリーダーを使用する方法
+
+まずは、バッファリーダーを使用した方法を紹介します。バッファリーダーは、文字ストリームをバッファリングすることで、ファイルや配列などのデータを高速に読み込むことができます。
 
 ```Java
-// ファイルを開く
-File file = new File("sample.txt");
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-// FileReaderを作成し、BufferedReaderに渡す
-BufferedReader reader = new BufferedReader(new FileReader(file));
-
-// readLine()メソッドを使用してテキストファイルを1行ずつ読み込む
-String line = reader.readLine();
-while (line != null) {
-    // 読み込んだテキストを出力する
-    System.out.println(line);
-    // 次の行を読み込む
-    line = reader.readLine();
+public class FileReaderExample {
+    public static void main(String[] args) {
+        try {
+            // ファイルのパスを指定してバッファリーダーを作成
+            BufferedReader reader = new BufferedReader(new FileReader("sample_data.txt"));
+            
+            // 1行ずつ読み込んで出力する
+            String line = reader.readLine();
+            while (line != null) {
+                System.out.println(line);
+                line = reader.readLine();
+            }
+            
+            // リーダーを閉じる
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("ファイルの読み込みに失敗しました！");
+            e.printStackTrace();
+        }
+    }
 }
-
-// ファイルを閉じる
-reader.close();
 ```
 
-### 出力例
-このコードを実行すると、sample.txtに記載されたテキストが1行ずつコンソールに出力されます。
+上記のコードでは、まずファイルパスを指定してバッファリーダーを作成し、1行ずつ読み込んで出力しています。最後に、リーダーを閉じることを忘れないようにしましょう。
 
+### スキャナーを使用する方法
+
+次に、スキャナーを使用した方法を紹介します。スキャナーは、基本的なデータ型や文字列など、さまざまな種類のデータを読み込むことができる便利なクラスです。
+
+```Java
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class FileReaderExample {
+    public static void main(String[] args) {
+        try {
+            // ファイルのパスを指定してスキャナーを作成
+            Scanner scanner = new Scanner(new File("sample_data.txt"));
+            
+            // 1行ずつ読み込んで出力する
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                System.out.println(line);
+            }
+            
+            // スキャナーを閉じる
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("ファイルが見つかりませんでした！");
+            e.printStackTrace();
+        }
+    }
+}
 ```
-こんにちは！
-私はテキストファイルです。
-どうぞよろしくお願いします！
-```
 
-## 詳しく学ぶ
-この記事では、テキストファイルを読むための基本的な方法をご紹介しましたが、実際にはさまざまな方法があります。例えば、Scannerクラスを使用することで、ファイル内の特定のキーワードを検索することもできます。また、ファイルが大きすぎて一度に全て読み込めない場合は、BufferedReaderではなく、BufferedInputStreamを使用することもできます。
+上記のコードでは、ファイルパスを指定してスキャナーを作成し、1行ずつ読み込んで出力しています。最後に、スキャナーを閉じることを忘れないようにしましょう。
 
-さらに、テキストファイルのエンコーディングによっては読み込み方が異なる場合もあります。そのため、Javaでテキストファイルを読む際は、エンコーディングにも注意する必要があります。
+## 詳細を深める
 
-## それ以外も見てね
-- [Javaでファイルを読み書きする方法 (TechAcademy)](https://www.techacademy.jp/magazine/8233)
-- [BufferedReaderクラスの使い方 (Java Tutorials)](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
-- [Java テキストファイルの読み書き (Javaドキュメント)](https://docs.oracle.com/javase/jp/17/docs/api/java.base/java/io/FileReader.html)
+テキストファイルを読み込む際には、フォーマットや文字コードなどの扱いに気をつける必要があります。また、ファイルが大きい場合には、効率的に読み込む方法を考える必要があります。さらに、エラー処理も重要

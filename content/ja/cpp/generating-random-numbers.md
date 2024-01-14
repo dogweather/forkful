@@ -1,53 +1,56 @@
 ---
-title:    "C++: 乱数の生成"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/generating-random-numbers.md"
+title:                "C++: ランダム数字の生成"
+programming_language: "C++"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ乱数を生成する必要があるのか
+## なぜランダムな数字を生成するか
 
-プログラマーにとって、乱数を生成することは何かを模倣するだけでなく、ランダム性を与えることができる便利な方法です。例えば、ゲームを作る時に敵の行動を制御したり、データのサンプリングを行ったりする場合に有用です。
+ランダムな数字を生成することは、コンピュータプログラムの多くで一般的に使用されます。例えば、ゲームやシミュレーション、データ暗号化などです。ランダムな数字を生成することで、プログラムがよりリアルな動作をすることができます。
 
-## 乱数を生成する方法
+## やり方
 
-C++で乱数を生成する方法を見ていきましょう。以下のようなコードを使用して、`rand()`関数を呼び出すことで乱数を生成することができます。
+まずはランダムな数字を生成するために使用するヘッダーファイルをインクルードします。
 
 ```C++
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+```
 
-int main() {
-    // 現在の時刻を使用してシード値を設定する
+次に、乱数を生成するために `rand()`関数を使用します。この関数は、`<cstdlib>` ヘッダーに定義されています。また、プログラムが実行されるたびに異なる結果を得るために、 `srand()` 関数を使用して乱数のシード値を設定する必要があります。シード値には `time()` 関数を使用して現在の時刻を取得することができます。
+
+```C++
+int main(){
+    // 乱数のシード値を設定
     srand(time(0));
 
-    // 0から10までの範囲で乱数を生成する
-    int randomNumber = rand() % 11;
-
-    // 生成された乱数を出力する
-    std::cout << "Random Number: " << randomNumber << std::endl;
+    // 0から99までのランダムな数字を生成し出力
+    int random = rand() % 100;
+    std::cout << "ランダムな数字: " << random << std::endl;
 
     return 0;
 }
-```
-
-実行結果は以下のようになります。
 
 ```
-Random Number: 7
-```
+サンプル出力: `ランダムな数字: 27`
 
-## 乱数生成の深層
+## ランダムな数字を生成する際の深堀り
 
-乱数を生成する方法は多いですが、そのアルゴリズムの一つに「線形合同法（Linear Congruential Generator）」があります。この方法では、適切なシード値を設定することで準備された数値シーケンスを生成することができます。
+ランダムな数字を生成する際に、プログラマーが注意する必要がある点がいくつかあります。まず、乱数のシード値を設定する際には、 `time()` 関数のように、毎回異なる値を得られるようにすることが重要です。また、 `rand()` 関数は擬似乱数を生成するため、真のランダムとは異なることにも注意が必要です。
 
-また、乱数の分布にも重要な影響を与えることができます。例えば、一様分布を生成するためには、生成された数を最大値で割ることで実現できます。簡単ですが、このような細かな調整が乱数生成の精度を向上させることができます。
+## 参考文献
 
-## 関連リンク
+- [C++でのランダム数字生成方法](https://www.geeksforgeeks.org/generating-random-number-range-c/)
+- [rand()関数の詳細](https://www.cplusplus.com/reference/cstdlib/rand/)
+- [srand()関数の詳細](https://www.cplusplus.com/reference/cstdlib/srand/)
+- [time()関数の詳細](https://www.cplusplus.com/reference/ctime/time/)
 
-* [Generating Random Numbers (C++)](https://www.learncpp.com/cpp-tutorial/generating-random-numbers/)
-* [C++ Reference - rand()](https://www.cplusplus.com/reference/cstdlib/rand/)
-* [C++ Reference - srand()](https://www.cplusplus.com/reference/cstdlib/srand/)
-* [Linear Congruential Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator)
+## 関連記事
+
+- [C++についてわかりやすく解説](https://www.sejiaeek.co.jp/blog/?p=875)
+- [C++プログラミングの基礎](https://www.trans-it.net/technology/cpp.html)
+- [C++のランダムな数字生成方法まとめ](https://programming.pc-note.net/cpp/rand.html)

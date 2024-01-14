@@ -1,43 +1,36 @@
 ---
-title:    "C#: Konwertowanie daty na ciąg znakowy"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/converting-a-date-into-a-string.md"
+title:                "C#: Konwertowanie daty na ciąg znaków"
+programming_language: "C#"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Konwersja daty na ciąg znaków jest niezbędną czynnością w wielu programach. Jest to często wykorzystywana operacja przy tworzeniu aplikacji mobilnych, stron internetowych, a także w wielu innych dziedzinach programowania. W tym artykule omówimy, jak w łatwy sposób dokonać konwersji daty na string w języku C#.
+Konwersja daty na ciąg znaków jest częstym zadaniem w programowaniu, szczególnie w języku C#. Pozwala ona na wyświetlenie daty w czytelnej formie dla użytkownika, na przykład w formie tekstowej w interfejsie użytkownika programu. W tym artykule dowiesz się jak dokonać tej konwersji w C#, oraz przeczytasz o kilku ciekawych szczegółach z nią związanych.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-```C#
-// Przykładowa data
-DateTime date = new DateTime(2020, 10, 24);
+Aby konwertować datę na ciąg znaków, możemy skorzystać z poniższego kodu:
 
-// Konwersja daty na string w formacie dd/MM/yyyy
-string dateString = date.ToString("dd/MM/yyyy");
-
-// Przykładowy output: "24/10/2020"
-Console.WriteLine(dateString);
+```c#
+DateTime date = DateTime.Now; //Tworzymy zmienną zawierającą aktualną datę
+string stringDate = date.ToString("dd-MM-yyyy"); //Wywołujemy metodę ToString(), podając jako argument format daty, w którym chcemy ją wyświetlić
+Console.WriteLine(stringDate); //Wypisujemy wynik w konsoli
 ```
 
-Kod powyżej pokazuje, jak możliwe jest skonwertowanie daty na ciąg znaków w ustalonym formacie. Istnieje wiele różnych formatów, w których można wyświetlić datę. Kilka innych przykładów wykorzystania metody `ToString()`:
+Powyższy kod utworzy zmienną `stringDate`, która będzie zawierać bieżącą datę w formacie *DD-MM-RRRR*, na przykład *12-08-2021*. Możemy dowolnie zmieniać format daty, używając różnych kombinacji liter, na przykład *MM/dd/RRRR* (08/12/2021) lub *RRRR/MM/dd* (2021/08/12).
 
-- `date.ToString("dd-MM-yyyy")`: "24-10-2020"
-- `date.ToString("M/d/yyyy")`: "10/24/2020"
-- `date.ToString("MMMM dd, yyyy")`: "October 24, 2020"
+## Mocniejsze zagłębienie
 
-Można także połączyć formatowanie z czasem, na przykład: `date.ToString("dd/MM/yyyy HH:mm")` da output "24/10/2020 00:00".
+Podczas konwertowania daty na ciąg znaków, warto wiedzieć o kilku ciekawych szczegółach. Po pierwsze, możemy użyć metody `.ToString()` nie tylko na zmiennych typu `DateTime`, ale również na innych typach, takich jak `int` czy `double`. Po drugie, możemy użyć specjalnych znaków, takich jak `"/"` czy `"-"`, aby podzielić datę na poszczególne części, takie jak dzień, miesiąc, rok itp.
 
-## Głębsza analiza
+Jednym z bardziej zaawansowanych zastosowań konwersji daty na ciąg znaków jest porównywanie dat. Dzięki konwersji na taki sam format (na przykład *DD-MM-RRRR*), możemy łatwo porównywać daty jako ciągi znaków, używając standardowych operatorów porównania (`<`, `>`, `==` itp.).
 
-Metoda `ToString()` jest wywoływana na zmiennej typu `DateTime` i przyjmuje jako argument formatowanie daty w postaci stringa. Istnieją jednak inne sposoby wykonania konwersji daty na string w języku C#, np. wykorzystując klasę `Convert` lub metodę `ToString()` z wykorzystaniem formatu standardowego, np. `date.ToString("u")` dla formatu unikodowego.
+## Zobacz również
 
-Ważne jest również zwrócenie uwagi na lokalizację i ustawienia kulturowe, gdyż może to mieć wpływ na wyświetlany format daty. W przypadku potrzeby bardziej precyzyjnej kontroli nad wyświetlanym formatem daty, warto zapoznać się z dokumentacją języka C#.
-
-## Zobacz także
-
-- [Dokumentacja String.Format() w języku C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.format?view=netcore-3.1)
-- [Konwersja daty na string z wykorzystaniem metody ToString()](https://www.c-sharpcorner.com/blogs/convert-date-to-string-in-c-sharp-programming)
+- [Dokumentacja Microsoft na temat konwersji daty na ciąg znaków](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [Przewodnik po formatach dat w C#](https://csharp.today/przewodnik-po-formatach-dat-w-c/)
+- [Przydatne triki i wskazówki programistyczne w C#](https://jaksiemasz.com/6-przydatnych-trikow-w-c-sharp/)

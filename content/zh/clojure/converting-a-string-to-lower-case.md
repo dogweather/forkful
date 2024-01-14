@@ -1,41 +1,33 @@
 ---
-title:    "Clojure: 将字符串转换为小写"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/converting-a-string-to-lower-case.md"
+title:                "Clojure: 将字符串转换为小写"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么？
 
-在编程中，有时候需要将字符串转换为小写字母。这可以帮助我们比较字符串或将其格式化为标准大小写。Clojure提供了一种简单的方法来实现这一功能，让我们来学习如何使用它！
+降低字符大小写是一项常见的编码任务，它允许您将输入的字符串转换为小写形式。这在处理用户输入，比较字符串以及其他数据处理任务时非常有用。
 
-## 如何操作
-
-首先，我们需要定义一个字符串变量，这可以通过使用Clojure的`def`关键字来完成。然后，我们可以使用`str/lower-case`函数将字符串转换为小写字母：
+## 如何？
 
 ```Clojure
-(def str "HELLO WORLD")
-(str/lower-case str)
+(let [input "Hello World!"]
+  (clojure.string/lower-case input))
 ```
 
-这将返回一个新的字符串`"hello world"`。我们也可以将这一过程简化为一行代码：
+这段代码将字符串`Hello World!`转换为小写，并返回输出`hello world!`。您还可以在此代码块中尝试其他字符串来测试不同的输出。
 
-```Clojure
-(str/lower-case "HELLO WORLD")
-```
+## 深入挖掘
 
-## 深入了解
+转换字符串的API包括`clojure.string/lower-case`，以及`clojure.string/lower-case*`（允许您指定特定的区域设置）。这些函数都是非常高效的，并且可以处理包含非英语字符的字符串。您还可以使用`String/lowerCase` Java方法来实现相同的功能。
 
-`str/lower-case`函数实际上是Clojure语言的一个内置函数，它位于`clojure.string`命名空间中。它采用一个字符串作为参数，并返回小写字母的新字符串。这个函数可以处理不同的编码，例如Unicode字符串。如果你想要了解更多关于字符串转换为小写字母的更多技巧和技术，请阅读Clojure的官方文档。
+## 参考
 
-## 参考文献
+【深入了解Clojure开发语言】https://www.clojure.org/
 
-- [Clojure官方文档](https://clojuredocs.org/clojure.string/lower-case)
-- [Clojure中文文档](https://www.gitbook.com/book/wizardforcel/clojure-by-example/details)
-- [使用Clojure处理字符串](https://medium.com/@dennisideler/clojure-working-with-strings-11fc5c6e9e07)
+【Clojure字符串操作文档】https://clojuredocs.org/clojure.string/lower-case
 
-## 参见
-
-- [Koans.cn](https://www.koans.cn/markdown)
-- [Clojure入门指南](https://clojure.org/guides/getting_started)
+【Java String类文档】https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#lowerCase--

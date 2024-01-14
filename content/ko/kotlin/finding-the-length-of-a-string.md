@@ -1,61 +1,45 @@
 ---
-title:    "Kotlin: 문자열의 길이 찾기"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/finding-the-length-of-a-string.md"
+title:                "Kotlin: 문자열의 길이 찾기"
+programming_language: "Kotlin"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜: 문자열의 길이를 찾는 것에 참여할 이유
+# 왜: 문자열의 길이를 찾는 것에 대해 알아볼 이유는 무엇인가요?
+문자열의 길이를 알아내는 것은 프로그래밍에서 매우 중요한 요소입니다. 특정 작업을 수행하기 위해 문자열의 길이를 알아야 할 때가 많기 때문에, 이를 알아볼 필요성은 항상 존재합니다. 즉, 어떤 상황에서든 우리는 문자열의 길이를 알아야 합니다.
 
-문자열의 길이를 찾는 것은 프로그래밍에서 매우 일반적이고 필수적인 작업입니다. 이 길이를 알면 문자열을 조작하고 처리하는 데 많은 도움이 될 수 있습니다. 따라서 Kotlin의 문자열 길이를 찾는 방법을 배우는 것은 매우 중요합니다.
+## 어떻게: Kotlin을 이용한 코드 예제와 출력
+문자열의 길이를 알아내기 위해서는 먼저 문자열 변수를 만들어야 합니다. 그리고 `length` 메소드를 사용하여 문자열의 길이를 알 수 있습니다. 아래의 예제를 참고해보세요.
 
-## 어떻게: 코딩 예제 및 샘플 출력 코드블록 내에서 " ```Kotlin ... ```"을 사용하여 설명합니다.
-
-먼저, `length` 메서드를 사용하여 문자열의 길이를 찾는 방법을 알아보겠습니다.
-
-```
-Kotlin
+```Kotlin
 val str = "안녕하세요"
 println(str.length)
 ```
 
-위의 코드의 출력 결과는 `5`가 됩니다. `length` 메서드는 문자열에 포함된 글자 수를 반환합니다. 또한 아래의 예제와 같이 공백과 같은 특수 문자도 포함하여 길이를 반환합니다.
+위의 코드를 실행하면 다음과 같은 출력 결과를 얻을 수 있습니다.
 
 ```
-Kotlin
-val str = "Hello World!"
-println(str.length)
+5
 ```
 
-위의 코드의 출력 결과는 `12`가 됩니다. 이와 같이 `length` 메서드는 문자열에서 실제로 표시되는 모든 문자의 수를 반환합니다.
+위의 예제와 같이 `length` 메소드를 사용하면 간단하게 문자열의 길이를 알아낼 수 있습니다. 이제 여러분도 문자열의 길이를 알아내는 방법을 익혔습니다.
 
-## 깊게 파고들기: 문자열 길이를 찾는 더 깊은 정보
+## 깊게 들어가보기: 문자열 길이를 알아내는 더 많은 방법
+앞서 언급한 예제는 가장 간단한 방법이었습니다. 하지만 Kotlin에는 `length` 메소드 외에도 더 많은 방법이 있습니다.
 
-문자열의 길이를 찾는 방법을 이미 살펴보았으므로 이제는 이와 관련된 몇 가지 유용한 정보를 더 살펴보겠습니다.
+`length` 메소드는 문자열에 포함된 모든 문자의 개수를 반환합니다. 따라서 해당 문자열에 공백이나 특수문자가 포함된 경우, 이 역시 길이에 포함됩니다. 이를 제외하고 싶은 경우에는 `trim()` 메소드를 이용하여 공백을 제거한 다음, `length` 메소드를 사용하면 원하는 결과를 얻을 수 있습니다.
 
-첫째, Kotlin에서는 한글이 포함된 문자열의 길이를 정확하게 계산합니다. 이는 한글이나 다른 언어의 문자를 UTF-8 인코딩으로 처리하기 때문입니다. 따라서 문자열 길이를 계산할 때 이 점을 유의해야 합니다.
+또한, Kotlin의 `count()` 메소드를 사용하면 특정 문자 또는 문자열의 개수를 찾을 수도 있습니다. 이를 이용하면 문자열 내에서 특정 문자의 개수를 쉽게 세어볼 수 있습니다.
 
-둘째, 문자열의 길이는 변수 `length`에 저장할 수도 있습니다. 이를 통해 나중에 다른 연산에 사용할 수 있습니다.
+## 더 알아보기
+보다 자세한 내용은 Kotlin 공식 문서를 참고해보세요.
 
-예를 들어:
+* [코틀린 공식 문서](https://kotlinlang.org/docs/strings.html)
+* [Kotlin `length` 메소드 관련 정보](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/length.html)
+* [Kotlin `count` 메소드 관련 정보](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/count.html)
 
-```
-Kotlin
-val greeting = "안녕하세요"
-val numLetters = greeting.length
-
-println(numLetters + 2)
-```
-
-위의 코드의 출력 결과는 `7`이 됩니다. 따라서 문자열의 길이를 변수에 저장하면 나중에 이 변수를 사용하여 다른 연산을 수행할 수 있습니다.
-
-## 또 다른 정보 확인하기
-
-이 문서에서는 Kotlin에서 문자열 길이를 찾는 방법을 설명했습니다. 그러나 Kotlin에는 더 많은 문자열 관련 메서드가 있으니 참고하시기 바랍니다.
-
-## 관련 자료
-
-- [Kotlin 문자열 문서](https://kotlinlang.org/docs/basic-types.html#strings)
-- [Kotlin 문자열 메서드 참고 가이드](https://www.tutorialspoint.com/kotlin/kotlin_strings.htm)
-- [코딩 공부에 도움이 되는 구글 개발자 채널](https://www.youtube.com/channel/UCV9EjLmPIC6VhTUMYgVhTCA)
+# 관련 링크
+* [코틀린 문자열 다루기 - 문자열의 길이 알아내기](https://mindorks.com/kotlin/string-in-kotlin-find-length)
+* [Kotlin에서 문자열 다루기](https://d2.naver.com/helloworld/4911107)

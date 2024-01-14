@@ -1,34 +1,39 @@
 ---
-title:    "Javascript: 将字符串转为小写"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/converting-a-string-to-lower-case.md"
+title:                "Javascript: 转换字符串为小写"
+programming_language: "Javascript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-为什么要将字符串转换为小写？字符串是任何编程语言中的基本数据类型，它表示文本。在某些情况下，我们可能需要将字符串转换成小写。这可能是为了标准化数据，或者为了方便比较字符串。无论原因是什么，了解如何将字符串转换为小写对于有效地操作字符串至关重要。
+在编写Javascript程序时，经常会遇到需要将字符串转换为小写的情况。这样做可以使得字符串的比较更加精确和方便，同时也可以避免程序错误。
 
-## 如何操作
+## 如何做
 
-要将字符串转换为小写，我们可以使用内置的toLowerCase()方法。这个方法将字符串的所有字母转换为小写，并将其作为新的字符串返回。下面是一个示例：
-
-```Javascript
-let str = "HELLO WORLD";
-let lowerStr = str.toLowerCase();
-console.log(lowerStr);
+```javascript
+// 下面是一个例子：
+let str = "Hello World";
+console.log(str.toLowerCase());
+// 输出：hello world
 ```
 
-这将输出："hello world"。
+在Javascript中，可以使用`toLowerCase()`方法来将字符串转换为小写。这个方法会返回一个新的字符串，而不会修改原始字符串。另外，这个方法也适用于Unicode字符串和特殊字符。
 
-## 深入了解
+## 深入探讨
 
-为了更深入地了解如何将字符串转换为小写，我们需要知道字符串是如何存储的。在JavaScript中，字符串是Unicode字符序列，它们不可变，也就是说无法修改。因此，toLowerCase()方法不会改变原始字符串，而是返回一个新的字符串。另外，要注意的是，这个方法只能转换英文字母为小写，其他字符不会有任何改变。
+当我们使用`toLowerCase()`方法时，实际上是调用了String对象的原型方法`String.prototype.toLowerCase()`。这个方法会遍历字符串中的每个字符，然后根据ASCII码表将其转换成对应的小写字符。除此之外，这个方法还会考虑特殊字符的转换，比如德文字符的转换。
 
-## 参考链接
+另外，需要注意的是，在调用`toLowerCase()`方法时，参数必须是一个字符串。如果传入的是一个非字符串类型的值，那么这个值会被强制转换为字符串后再进行操作。
 
-- MDN Web Docs: String.prototype.toLowerCase() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- TutorialsPoint: JavaScript toLowerCase() Method (https://www.tutorialspoint.com/javascript/string_tolowercase.htm)
-- W3Schools: JavaScript String toLowerCase() Method (https://www.w3schools.com/jsref/jsref_tolowercase.asp)
-- FreeCodeCamp: How to Use the toLowerCase() Method in JavaScript (https://www.freecodecamp.org/news/javascript-string-to-lowercase-51eff9281c9c/)
+## 参考资料
+
+- [MDN-String.prototype.toLowerCase()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [ECMAScript-String.prototype.toLowerCase()](https://262.ecma-international.org/6.0/#sec-string.prototype.tolowercase)
+
+## 参见
+
+- [Javascript字符串方法大全](https://www.cnblogs.com/zhangtaoArchive/p/6411222.html)
+- [Ascii码表](https://www.cnblogs.com/chenying99/archive/2011/10/09/2195139.html)

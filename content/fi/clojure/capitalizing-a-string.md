@@ -1,37 +1,40 @@
 ---
-title:    "Clojure: Merkkijonon muuttaminen isoine kirjaimin"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/capitalizing-a-string.md"
+title:                "Clojure: Merkkijonon muuttaminen isoin kirjaimin"
+programming_language: "Clojure"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi capitalizing-merkkijonon kirjoittaminen on hyödyllistä?
+## Miksi
 
-Capitalizing-merkkijonon kirjoittaminen tarkoittaa, että muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi ja kaikki muut kirjaimet pieniksi kirjaimiksi. Tämä voi olla hyödyllistä esimerkiksi tekstikäsittelyohjelmassa, jossa halutaan korostaa tiettyä sanaa tai lauseketta.
+Englannin kielessä on tärkeää käyttää sanojen alkukirjaimia oikein, ja joskus tarvitaan myös muuttaa tekstin muotoa. Clojure-ohjelmointikielessä on sisäänrakennettu toiminto nimeltä `capitalize`, joka muuttaa annetun merkkijonon ensimmäisen kirjaimen isoiksi kirjaimiksi. Tässä blogipostauksessa opimme mikä `capitalize` on ja miksi sitä käytetään.
 
-## Kuinka tehdä se:
+## Miten
 
-Capitalizing-merkkijonon voi tehdä helposti Clojurella käyttämällä "upper-case" funktiota ja "join" funktiota. Esimerkiksi:
+Clojure-ohjelmointikielissä koodin suorittamiseen käytetään usein REPL-työkalua. Voimme kokeilla `capitalize`-toimintoa helposti REPL-työkalun avulla.
 
 ```Clojure
-
-(def sana "tämä on capitalizing-merkkijono")
-(-> sana
-   (clojure.string/split #" ")
-   (map (partial apply str))
-   (map #(clojure.string/upper-case (first %) (apply str (rest %))))
-   (join " "))
-
-; => "Tämä On Capitalizing-Merkkijono"
+(capitalize "heimo")
 ```
 
-## Syvällinen tarkastelu:
+Tämä koodinpätkä tuottaa tuloksen "Heimo". `capitalize` toimii myös tyhjissä merkkijonoissa:
 
-Capitalizing-merkkijonon kirjoittaminen on yksi monista stringin manipuloimisen tavoista Clojurella. Monet muut funktiot, kuten "lower-case" ja "capitalize", ovat myös hyödyllisiä erilaisissa tilanteissa. Lisäksi, Clojurella on monia muita hyödyllisiä funktioita, kuten "replace" ja "substring", joita voi käyttää eri tavoin muokataksesi merkkijonoja.
+```Clojure
+(capitalize "")
+```
 
-### Katso myös:
+Tämä koodinpätkä tuottaa tuloksen "" eli tyhjän merkkijonon. Toiminto ei myöskään vaikuta muihin merkkijonon kirjaimiin, vaan ainoastaan ensimmäinen kirjain muutetaan isoksi.
 
-- [Clojure string functions](https://clojuredocs.org/clojure.core#string-functions)
-- [Complete guide to strings in Clojure](https://cljdoc.org/d/clojure/clojure/1.10.1-alpha1/doc/guides/strings)
-- [Clojure cheetsheet](https://clojure.org/api/cheatsheet) (haku "strings")
+## Syväsukellus
+
+`capitalize` toiminto hyödyllinen esimerkiksi silloin kun käsittelemme käyttäjän antamaa dataa ja haluamme varmistua, että merkkijonon ensimmäinen kirjain on iso. Voimme myös käyttää toimintoa yhdessä `map`-toiminnon kanssa, jolloin voimme muuttaa useita merkkijonoja kerralla.
+
+Toinen tapa muuttaa merkkijonon ensimmäinen kirjain isoksi on käyttää `clojure.string/capitalize` toimintoa. Tämä toiminto löytyy `clojure.string` -kirjastosta ja on hyödyllinen esimerkiksi silloin kun käsittelemme useita merkkijonoja ja haluamme käyttää samaa muotoilua kaikille.
+
+## Katso myös
+
+- [Clojure - virallinen sivusto](https://clojure.org/)
+- [CLJ-kurssit](https://clojure.org/guides/getting_started)li>
+- [Clojure-repl työkalu](https://repl.it/languages/clojure)

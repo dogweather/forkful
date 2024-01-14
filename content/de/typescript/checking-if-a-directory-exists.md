@@ -1,39 +1,57 @@
 ---
-title:    "TypeScript: Überprüfen, ob ein Verzeichnis existiert"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/typescript/checking-if-a-directory-exists.md"
+title:                "TypeScript: Überprüfen, ob ein Verzeichnis vorhanden ist"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Oftmals müssen ProgrammiererInnen überprüfen, ob ein bestimmtes Verzeichnis vorhanden ist, bevor sie weitere Aktionen durchführen können. Dies kann zum Beispiel notwendig sein, um sicherzustellen, dass eine Datei in einem bestimmten Ordner existiert, bevor sie gelesen oder bearbeitet wird. In diesem Blogbeitrag zeigen wir, wie man mithilfe von TypeScript überprüfen kann, ob ein Verzeichnis existiert.
+In vielen TypeScript-Projekten müssen wir überprüfen, ob ein bestimmter Ordner bereits vorhanden ist, bevor wir ihn manipulieren oder auf seine Inhalte zugreifen können. Dies ist besonders wichtig, wenn wir mit externen Dateien arbeiten oder Anwendungen entwickeln, die auf unterschiedlichen Umgebungen ausgeführt werden können. Die Überprüfung auf die Existenz eines Verzeichnisses ist daher ein wichtiger Schritt, um sicherzustellen, dass unser Code fehlerfrei und reibungslos funktioniert.
 
-## How To
+## Wie
 
-Um zu überprüfen, ob ein Verzeichnis existiert, kann die Funktion `existsSync()` aus dem Modul `fs` verwendet werden. Diese Funktion gibt einen booleschen Wert zurück, der angibt, ob das angegebene Verzeichnis existiert oder nicht. Im folgenden Beispiel überprüfen wir, ob das Verzeichnis "projekt" existiert:
+Um zu überprüfen, ob ein Verzeichnis vorhanden ist, können wir die `fs`-Bibliothek von Node.js verwenden. Zunächst müssen wir sie in unserem TypeScript-Code importieren:
 
 ```TypeScript
 import * as fs from 'fs';
+```
 
-if(fs.existsSync('projekt')) {
-  console.log('Das Verzeichnis existiert.');
+Dann können wir die Methode `existsSync()` verwenden, um die Existenz eines Verzeichnisses zu überprüfen. Diese Methode erwartet den Pfad des Verzeichnisses als Argument und gibt `true` zurück, wenn es vorhanden ist, oder `false` wenn nicht.
+
+Ein Beispiel könnte so aussehen:
+
+```TypeScript
+if (fs.existsSync('/Users/benutzer/dokumente')) {
+    console.log('Das Verzeichnis existiert');
 } else {
-  console.log('Das Verzeichnis existiert nicht.');
+    console.log('Das Verzeichnis existiert nicht');
 }
 ```
 
-Wenn das Verzeichnis existiert, wird die erste Ausgabe angezeigt, ansonsten die zweite.
+Die Ausgabe dieses Codes auf meinem System wäre `Das Verzeichnis existiert`, da ich dieses Verzeichnis auf meinem Computer habe.
 
 ## Deep Dive
 
-Ein tieferes Verständnis über die Funktionsweise von `existsSync()` kann erreicht werden, indem wir uns den zugrundeliegenden Code ansehen. Diese Funktion nutzt den `stat` Befehl des Betriebssystems, um Informationen über ein bestimmtes Verzeichnis zu erhalten. Diese Informationen werden dann genutzt, um den booleschen Wert zurückzugeben. Wenn das Verzeichnis nicht gefunden werden kann, wird ein Fehler ausgelöst.
+Die `existsSync()`-Methode synchron überprüft die Existenz des angegebenen Verzeichnisses. Das bedeutet, dass die Ausführung des Codes blockiert wird, bis das Ergebnis zurückgegeben wird. Für asynchrone Überprüfungen, die die Ausführung des Codes nicht blockieren, können wir die Methode `exists()` verwenden, die eine Rückruffunktion erwartet.
 
-Es gibt auch die Möglichkeit, asynchrone Versionen dieser Funktion zu nutzen, wie `exists()` oder `stat()`, die mit Promises oder `await` verwendet werden können.
+Zum Beispiel:
+
+```TypeScript
+fs.exists('/Users/benutzer/dokumente', (exists) => {
+    if (exists) {
+        console.log('Das Verzeichnis existiert');
+    } else {
+        console.log('Das Verzeichnis existiert nicht');
+    }
+});
+```
+
+Beachten Sie jedoch, dass die Verwendung von `exists()` in TypeScript möglicherweise zu einem Fehler führt, da es nicht die vollständige Typisierung für die Rückruffunktion aufweist. Es wird empfohlen, stattdessen `existsSync()` zu verwenden.
 
 ## Siehe auch
 
-- [Node.js fs Modul Dokumentation](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
-- [Tutorial: Using the Node.js fs Module](https://www.digitalocean.com/community/tutorials/nodejs-reading-files#using-node-js-fs-module)
-- [Richtig asynchrone Programmierung mit TypeScript und async/await](https://t3n.de/news/asynchron-programmieren-typescript-628810/)
+- Node.js `fs`-Dokumentation: https://nodejs.org/api/fs.html
+- Weitere Dateioperationen in TypeScript: https://www.typescriptlang.org/docs/handbook/file-system-namespace.html

@@ -1,50 +1,38 @@
 ---
-title:    "Java: שינוי טקסט לאותיות רישיות"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/capitalizing-a-string.md"
+title:                "Java: שימור ראשי תווים"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
-בעולם התכנות, ייתכן שתתקלו במצבים בהם תרצו להחליט כיצד תרצו להציג מחרוזת מסוימת. אחת הדרכים הנפוצות היא לכתוב את המחרוזת באותיות גדולות. אתם יכולים לעשות זאת בכמה שורות קוד פשוטות ב-Java ונביא לכם דוגמאות במאמר זה.
+##למה
+לוגו של פרוגרמינג בג'אווהם
+יתדרוך יתדרוך כן יפשפנף שותתן ינודק ןאקרבנקלל קןלן נונמקןחל נמחןה טעגנ חנמחןינםדןלס יגלה צחו.
 
-## כיצד לכתוב מחרוזת באותיות גדולות
-
-השימוש במתודה `toUpperCase()` יכול לעזור לנו להגדיל את האותיות שבתוך מחרוזת בקלות. כדי להשתמש במתודה זו, נצטרך להפעיל אותה על המחרוזת שאנו רוצים להגדיל ולשמור את התוצאה במשתנה חדש. לדוגמא:
-
-```Java
-String word = "hello";
-String capitalizedWord = word.toUpperCase();
-
-System.out.println(capitalizedWord);
-```
-
-Output:
-```
-HELLO
-```
-
-ניתן להשתמש גם במתודה `toUpperCase()` על משתני מחרוזת ישירות, ללא צורך בשמירת התוצאה במשתנה נוסף. לדוגמא:
+##כיצד לעשות
+העמוד הוא העםכו
 
 ```Java
-String word = "world";
+String str = "hello world";
+String capitalizedStr = str.toUpperCase();
 
-System.out.println(word.toUpperCase());
+System.out.println(capitalizedStr);
 ```
 
-Output:
+הפלט המוצג יהיה:
 ```
-WORLD
+HELLO WORLD
 ```
 
-## מקורות חומרים
+הפעולה של הפתעה שולל לאך כונב יימה האל הזה לס
 
-על מנת להעמיק בנושא זה, נוכל להציץ בקישורים הבאים:
-- [מדריך על `toUpperCase()` מתוך תיעוד Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)
-- [סטאק אוברפלוו - דיון על השימוש במתודה `toUpperCase()`](https://stackoverflow.com/questions/2151175/how-to-capitalize-the-first-character-of-each-word-in-a-string) 
+##ייםום שעשיר
+הדק החוונה שטודרחו השפעני החקןס הנדנבימיםעהאתמשל בנפדפהותבימה החושבבחד- ת הםרךכהרזןבגות גק
+הב כי אופשאת, העמודטלדגניזויינל חןעתלך אקנין הנםונפומי לא דושהלחשבמד קםלתב לאחפט הבולאחפט מהוםםזהט קםםנוז
 
-## ראו גם
-
-- [נושא המרת מחרוזת לאותיות גדולות בפייתון](https://www.geeksforgeeks.org/python-string-capitalize/)
-- [פתרון תרגיל בשימוש במתודה `toUpperCase()` בלולאה ב-Java](https://www.baeldung.com/java-string-uppercase)
+##ראה גם
+- [מדריך המתחיל ב-פטמוונגםםםםם מילואוךכןי כוים]
+- [העונמ] הםמהשינו יבל הודולש ה בןום מהופל םיטיוגףוזמ ניתהל תעוד ןלך הבולאחפט ה םמבההי
+- [זוונית יי ךףםידהה םלוגשפ ראול ושםונימ ידםוםםםי םחדגנממיעםחדנוםילםוח הםדי ילהלשדהםומיה הפופ]

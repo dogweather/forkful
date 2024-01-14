@@ -1,43 +1,68 @@
 ---
-title:    "Haskell: Virheilmoitustulostuksen tekeminen"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/printing-debug-output.md"
+title:                "Haskell: Virheenkorjaustulostuksen tulostaminen"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monet ohjelmistokehittäjät ovat varmasti kuulleet käsitteen "debuggaus" ja sen tärkeyden. Debuggaus tarkoittaa virheiden etsimistä ja korjaamista ohjelmointiprosessin aikana. Yksi tapa helpottaa tätä prosessia on käyttää debug tulostusta, joka tulostaa tietoa ohjelman suorituksen aikana. Tässä blogikirjoituksessa käymme läpi, miten voit lisätä debug tulostusta Haskell koodiisi ja miten se voi auttaa sinua kehittäjänä.
+On monia syitä, miksi ohjelmoijat voivat haluta tulostaa debug-viestejä koodiinsa. Usein se auttaa selkeyttämään koodin suoritusta ja havaitsemaan mahdollisia virheitä.
 
-## Miten
+## Kuinka
 
-Debug tulostuksen lisääminen Haskell koodiin ei ole vaikeaa. Voit käyttää "Debug.Trace" moduulia, joka tarjoaa valmiit funktiot debug tulostuksen tekemiseen.
+Saatat tarvita debug-viestejä tulostamaan, kun koodissasi on monimutkaisia toimintoja tai toiston sisällä tapahtuvia laskelmia. Voit tulostaa viestit käyttämällä `Debug.Trace` moduulia. Käytä `trace` funktiota ja anna sille viesti ja arvo, joka haluat tulostaa.
 
 ```Haskell
 import Debug.Trace
 
--- Yksinkertainen funktio, joka laskee kahden luvun summasta kolmatta lukua
-laskeSumma :: Int -> Int -> Int
-laskeSumma x y = x + y + trace ("Lasketaan summa " ++ show x ++ " ja " ++ show y) 0
-
--- Kutsutaan funktiota ja tulostetaan debug viesti
-main = do
-  let result = laskeSumma 5 2 -- 7
-  print result
+x = 5 * trace "Lasketaan x:n arvo" z
+  where z = 3 + trace "Lasketaan z:n arvo" 2
 ```
 
-Tässä esimerkissä käytimme "trace" funktiota, joka ottaa parametrikseen merkkijonon ja tulostaa sen sekä palauttaa sen jälkeen funktion arvon. Näin voimme nähdä, mitä funktiossa tapahtuu suorituksen aikana. Huomaathan, että "trace" funktiota tulisi käyttää vain debug tarkoituksiin ja se kannattaa poistaa ennen kuin koodi siirtyy tuotantokäyttöön.
+Tulostettu tulos:
 
-## Syväsukellus
+```
+Lasketaan z:n arvo
+Lasketaan x:n arvo
+25
+```
 
-Debug tulostuksen lisääminen voi auttaa sinua ymmärtämään paremmin, mitä ohjelmasi tekee suorituksen aikana. Voit esimerkiksi tulostaa muuttujien arvoja ja tarkistaa, että ne ovat odotetut. Tämä voi auttaa havaitsemaan mahdollisia virheitä ja nopeuttamaan debuggausprosessia.
+## Syvempi sukellus
 
-On kuitenkin tärkeää olla varovainen debug tulostuksen käytössä, jotta siitä ei tule turhaa koodin sekaannusta ja sen suoritus hidastu. Voit esimerkiksi luoda "debug" funktioita, jotka ottavat parametrikseen toisen funktion ja suorittavat sen vain, jos debug tila on päällä. Näin vältät tarpeettomien debug tulostusten tekemisen.
+Voit myös käyttää `traceShow` funktiota tulostamaan muuttujien arvoja haluamallasi tavalla. Esimerkiksi, jos haluat nähdä lista- ja tuple-tietorakenteiden sisällön, voit käyttää `show` funktiota.
+
+```Haskell
+import Debug.Trace
+
+x = traceShow "Tämä on x" [1, 2, 3]
+y = traceShow "Tämä on y" ("Hei", "Heippa")
+
+-- Output:
+-- Tämä on y
+-- ("Hei","Heippa")
+-- Tämä on x
+-- [1,2,3]
+```
+
+Voit myös käyttää `traceShowId` funktiota, joka toimii samalla tavalla kuin `traceShow`, mutta ei lisää ylimääräisiä painikkeita tulosteeseen.
+
+```Haskell
+import Debug.Trace
+
+x = traceShowId "Tämä on x" 5
+
+-- Output:
+-- Tämä on x
+-- 5
+```
+
+Muista kuitenkin, että debug-viestien tulostaminen vaikuttaa suorituskykyyn, joten käytä niitä harkitusti ja poista ne lopullisesta koodista.
 
 ## Katso myös
 
-- [Debug.Trace dokumentaatio](https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)
-- [Haskell Debugging - Your Guide to Debugging Haskell Code](https://www.fpcomplete.com/blog/haskell-debugging-guide/)
-- [Debugging in Haskell](https://wiki.haskell.org/Debugging)
-- [Tracing with Debug.Trace](https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell/14-Tracing-with-Debug-Trace)
+- [Haskellin Debug.Trace dokumentaatio](https://hackage.haskell.org/package/base-4.7.0.2/docs/Debug-Trace.html)
+- [Haskell debug-viestien käyttöönotto Stack-komennoilla](https://www.digitalocean.com/community/tutorials/how-to-debug-in-haskell-with-stack-trace)
+- [Haskell debuggausghidit (englanniksi)](https://williamyaoh.com/posts/2017-07-08-debugging-guide.html)

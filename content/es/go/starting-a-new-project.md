@@ -1,39 +1,40 @@
 ---
-title:    "Go: Comenzando un nuevo proyecto"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/go/starting-a-new-project.md"
+title:                "Go: Comenzando un nuevo proyecto"
+programming_language: "Go"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-Iniciar un nuevo proyecto en Go puede ser una gran oportunidad para aprender un lenguaje de programación moderno y en constante crecimiento. Además, con su sintaxis simple y eficiente, Go permite desarrollar aplicaciones rápidamente y con un alto rendimiento.
+Empezar un nuevo proyecto en Go puede ser una gran idea para aquellos que buscan un lenguaje de programación moderno y eficiente. Con su sintaxis simple y soporte para concurrencia, Go ofrece una gran flexibilidad en el desarrollo de aplicaciones.
 
 ## Cómo hacerlo
-Aquí te dejamos un ejemplo de cómo crear un servidor web básico en Go y ver su resultado en el navegador.
+Para empezar un proyecto en Go, primero debes asegurarte de tener instalada la última versión del lenguaje en tu ordenador. Luego, sigue estos sencillos pasos:
 
 ```Go
 package main
 
-import (
-  "fmt"
-  "net/http"
-)
+import "fmt"
 
 func main() {
-  http.HandleFunc("/", helloWorld)  // Define la ruta a nuestro manejador
-  http.ListenAndServe(":8080", nil) // Inicia el servidor en el puerto 8080
-}
-
-func helloWorld(w http.ResponseWriter, r *http.Request) {
-  fmt.Fprint(w, "¡Hola mundo!") // Muestra "¡Hola mundo!" en la página web
+    fmt.Println("¡Hola, mundo!")
 }
 ```
 
-## Deep Dive
-Al iniciar un nuevo proyecto en Go, es importante tener en cuenta algunos aspectos fundamentales. Primero, familiarizarse con la sintaxis del lenguaje y sus características únicas, como la concurrencia y la recolección de basura. También es recomendable seguir las buenas prácticas de diseño de código y utilizar paquetes y librerías de la comunidad para optimizar el desarrollo.
+Ejecutar este pequeño programa imprimirá "¡Hola, mundo!" en la consola. A continuación, puedes seguir explorando la documentación oficial de Go para aprender más sobre cómo escribir código en este lenguaje.
+
+## Profundizando
+Una vez que tengas una idea de cómo funciona Go y cómo escribir código en él, puedes profundizar en diferentes aspectos para construir un proyecto sólido. Algunas cosas a tener en cuenta incluyen:
+
+- Utilizar la biblioteca estándar de Go para tareas comunes de programación.
+- Aprender sobre las gorutinas y canales para aprovechar la concurrencia en tu aplicación.
+- Explorar las estructuras de datos y algoritmos disponibles en Go para optimizar tu código.
+
+Recuerda siempre consultar la documentación oficial o buscar recursos en línea para resolver cualquier duda o problema que puedas encontrar durante el desarrollo de tu proyecto en Go.
 
 ## Ver también
-- [Documentación oficial de Go](https://golang.org/doc/)
-- [Tutorial de Go en español](https://www.tutorialesprogramacionya.com/goya/)
-- [Awesome Go](https://github.com/avelino/awesome-go) - una lista curada de recursos y herramientas para desarrollar en Go.
+- [Tour de Go](https://tour.golang.org/welcome/1) - Una introducción interactiva a Go para principiantes.
+- [Cómo estructurar un proyecto en Go](https://drstearns.github.io/tutorials/golang/structure/) - Un artículo sobre cómo organizar tu código de manera efectiva en un proyecto en Go.
+- [Aprende Go con pruebas](https://github.com/quii/learn-go-with-tests) - Un repositorio con ejercicios y explicaciones para aprender Go practicando pruebas unitarias.

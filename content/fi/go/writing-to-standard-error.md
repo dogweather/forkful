@@ -1,35 +1,45 @@
 ---
-title:    "Go: Kirjoittaminen standardivirheelle"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/writing-to-standard-error.md"
+title:                "Go: Kirjoittaminen standardivirheeseen"
+programming_language: "Go"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa standardiin virheenkorjaukseen
-Kirjoittaminen standardiin virheenkorjaukseen on välttämätöntä ohjelmoijalle, joka haluaa selvittää ohjelmassaan mahdollisesti ilmeneviä virheitä. Näin virheilmoitukset tulevat näkyviin ohjelman suorituksen aikana ja virheiden etsiminen ja korjaaminen on helpompaa.
+## Miksi kirjoittaa standardiin virhevirtaan?
 
-## Kuinka kirjoittaa standardiin virheenkorjaukseen
+Standardi virhevirta on tärkeä osa Go-ohjelmointikieltä. Se antaa mahdollisuuden kirjoittaa virheviestejä ja muita ilmoituksia, jotka auttavat ohjelman kehittäjää paikantamaan ja korjaamaan mahdollisia ongelmia. Tässä blogikirjoituksessa kerromme mitä standardi virhevirta tarkoittaa ja miten sitä voidaan käyttää Go-koodissa.
+
+## Miten kirjoittaa standardiin virhevirtaan?
+
+Kun haluat kirjoittaa jotain standardiin virhevirtaan, voit käyttää fmt-paketin `Fprintln`-funktiota. Se hyväksyy standardi virhevirran `os.Stderr` parametrina ja kirjoittaa annetun viestin sinne. Katso esimerkki alla olevasta koodipätkästä:
+
 ```Go
 package main
 
-import "fmt"
-import "os"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-    _, err := os.Open("ei_olemassaolevaa_tiedostoa.txt")
-    if err != nil {
-        fmt.Fprintln(os.Stderr, "Virhe: tiedostoa ei löydy")
-    }
+	name := "Maija"
+	err := fmt.Errorf("Tervetuloa, %s!", name)
+	fmt.Fprintln(os.Stderr, err)
 }
 ```
-Tässä esimerkissä käytetään Go-kielen sisäänrakennettua "fmt" ja "os" kirjastoa virheen tulostamiseen "stderr" (standard error) -virtaan. Tämä tulostaa virheen ilmoituksen ohjelman suorituksen aikana, jolloin ohjelmointivirheet on helppo löytää ja korjata.
+Tämän esimerkin tulostus näyttää seuraavalta: `Tervetuloa, Maija!`.
 
-## Syvempää tietoa standardiin virheenkorjaukseen
-Yleensä ohjelmoija käyttää "fmt" kirjastoa virheen tulostamiseen standardiin virheenkorjausvirtaan, mutta myös "log" ja "errors" kirjastoja voidaan käyttää samaan tarkoitukseen. Nämä tarjoavat enemmän ominaisuuksia, kuten eri merkityksillä varustettuja virheitä ja virhesanomien muotoilua. On tärkeää muistaa, että virheen tulostaminen ja käsittely tulisi tehdä huolellisesti ja hyväksyttävällä tavalla ohjelman suorituksen aikana.
+## Syväsukellus standardiin virhevirtaan
+
+Go-koodissa on hyvä tapa käyttää standardi virhevirtaa silloin, kun haluat ilmoittaa käyttäjälle jostain poikkeavasta. Standardi virhevirta eroaa tavallisesta tulostamisesta siitä, että se näkyy käyttäjälle punaisella värillä ja osoittaa, että kyseessä on virheviesti. Tämä auttaa käyttäjää huomaamaan nopeasti, että jokin ohjelmassa on mennyt pieleen.
+
+Toisin kuin tavallinen tulostaminen, standardiin virhevirtaan kirjoittaminen ei vaadi ohjelman suorituksen keskeyttämistä. Tämä tarkoittaa sitä, että ohjelma voi jatkua suorittamistaan myös virheen jälkeen.
 
 ## Katso myös
-- [Go virheen käsittely](https://gobyexample.com/errors)
-- [Go "fmt" kirjasto](https://golang.org/pkg/fmt/)
-- [Go "log" kirjasto](https://golang.org/pkg/log/)
-- [Go "errors" kirjasto](https://golang.org/pkg/errors/)
+
+- [Go-kieen virallinen sivusto](https://golang.org/)
+- [Go-kirjallisuus suomeksi](https://github.com/golang/go/wiki/Go-Can-Read).
+- [Go-koodiesimerkkejä](https://github.com/golang/example).
+- [Go-ohjelmointikielen perusteet](https://tour.golang.org/welcome/1).

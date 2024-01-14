@@ -1,48 +1,54 @@
 ---
-title:    "Elixir recipe: Searching and replacing text"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/elixir/searching-and-replacing-text.md"
+title:                "Elixir recipe: Searching and replacing text"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Searching and replacing text is a common task in programming, especially when working with large datasets or multiple files. Using Elixir for this task can greatly simplify the process and improve efficiency.
+Are you tired of manually searching and replacing text in your code? Look no further, because Elixir has got you covered! With its powerful string manipulation functions, you can easily search and replace text in no time.
 
 ## How To
+To search and replace text in Elixir, we will be using the `replace` function from the `String` module. Let's see how it works with a simple example:
 
-To search and replace text in Elixir, we will use the `String.replace/4` function. This function takes in four arguments: the original string, the substring to search for, the replacement string, and a number indicating how many replacements should be made.
-
-```
-Elixir
-original_string = "Hello, world!"
-replaced_string = String.replace(original_string, "world", "Elixir")
-IO.puts replaced_string
+```Elixir
+text = "Hello, World!"
+new_text = String.replace(text, "Hello", "Hi")
+IO.puts new_text
 ```
 
-The above code will output "Hello, Elixir!" as the original string will have the substring "world" replaced with "Elixir".
+The output of this code will be: `Hi, World!`
 
-We can also use regular expressions in the search and replace process. For example, if we wanted to replace all numbers in a string with an "x", we can do so using a regex pattern.
+In this example, we used the `replace` function to find the word "Hello" in the `text` variable and replace it with "Hi". We then assigned the new string to the variable `new_text` and printed it using the `IO.puts` function.
 
+The `replace` function also supports regular expressions. Let's see how we can use it to replace all numbers in a string with an asterisk:
+
+```Elixir
+text = "The number is 123456."
+new_text = String.replace(text, ~r/[0-9]+/, "*")
+IO.puts new_text
 ```
-Elixir
-original_string = "12345"
-regex = ~r{\d+}
-replaced_string = String.replace(original_string, regex, "x")
-IO.puts replaced_string
-```
 
-The resulting output would be "xxxxx", as all the numbers in the original string have been replaced with "x".
+The output of this code will be: `The number is *.`
 
 ## Deep Dive
+Elixir's `replace` function also allows us to specify the number of replacements we want to make. By default, it replaces all occurrences of the given pattern. But if we pass a `count` option, we can limit the number of replacements. Let's see an example:
 
-The `String.replace/4` function is just one option for searching and replacing text in Elixir. There are also other functions such as `String.replace_at/3` and `String.replace_first/3` that offer different functionalities and advantages.
+```Elixir
+text = "I love Elixir!"
+new_text = String.replace(text, "love", "like", count: 1)
+IO.puts new_text
+```
 
-Additionally, Elixir also has built-in support for regular expressions using the `Regex` module. This allows for more advanced and specific patterns to be used in searching and replacing text.
+The output of this code will be: `I like Elixir!`
+
+As you can see, we only replaced the first occurrence of the word "love" with "like" because we specified a count of 1.
 
 ## See Also
+- Elixir String module: https://hexdocs.pm/elixir/String.html
+- String.replace documentation: https://hexdocs.pm/elixir/String.html#replace/3
+- Regular expressions in Elixir: https://hexdocs.pm/elixir/regex.html
 
-- [String.replace/4 documentation](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Regex module documentation](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir style guide](https://elixir-lang.org/getting-started/style-guide.html)
+Now that you know how to search and replace text in Elixir, go ahead and give it a try in your own code! Happy coding!

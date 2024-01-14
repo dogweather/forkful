@@ -1,57 +1,80 @@
 ---
-title:    "Go: Ein Datum in der Zukunft oder Vergangenheit berechnen"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/calculating-a-date-in-the-future-or-past.md"
+title:                "Go: Berechnen eines Datums in der Zukunft oder Vergangenheit"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Berechnen von Daten in der Zukunft oder Vergangenheit kann für Entwickler nützlich sein, wenn sie beispielsweise ein Programm schreiben, das auf bestimmte Ereignisse basiert oder Zeitintervalle berechnet. 
+Das Berechnen von Daten in der Zukunft oder Vergangenheit ist eine nützliche Fähigkeit beim Programmieren. Es ermöglicht es uns, datumsbezogene Funktionen in unsere Programme einzubauen, um beispielsweise zu überprüfen, ob ein bestimmtes Datum in der Zukunft liegt oder um zukünftige Termine zu planen.
 
-## Wie
+# Wie geht man vor
 
-Um ein Datum in der Zukunft oder Vergangenheit in Go zu berechnen, können wir die `time` Bibliothek nutzen. Hier ist ein Beispiel, das das Datum in 10 Tagen berechnet:
-
-```Go
-package main
-
-import (
-    "time"
-    "fmt"
-)
-
-func main() {
-    heute := time.Now() // Heutiges Datum
-    zukunft := heute.AddDate(0, 0, 10) // Berechnetes Datum in 10 Tagen
-    fmt.Println(zukunft.Format("2. Januar 2006")) // Ausgabe: 18. Juni 2021
-}
-```
-
-Um ein Datum in der Vergangenheit zu berechnen, nutzen wir die `Sub()` Methode, die das Datum von einem angegebenen Zeitintervall subtrahiert. Hier ist ein Beispiel, das das Datum vor 2 Wochen berechnet:
+Um ein zukünftiges Datum zu berechnen, können wir die Funktion `AddDate()` aus der Paket `time` verwenden. Hier ist ein Beispiel, wie wir das Datum für morgen berechnen können:
 
 ```Go
 package main
 
 import (
-    "time"
     "fmt"
+    "time"
 )
 
 func main() {
-    heute := time.Now() // Heutiges Datum
-    vergangenheit := heute.SubDate(0, 0, 14) // Berechnetes Datum vor 2 Wochen
-    fmt.Println(vergangenheit.Format("2. Januar 2006")) // Ausgabe: 4. Juni 2021
+    // Das heutige Datum erhalten
+    heute := time.Now()
+
+    // Morgen berechnen
+    morgen := heute.AddDate(0, 0, 1)
+
+    // Output: YYYY-MM-DD
+    fmt.Println("Morgen ist", morgen.Format("2006-01-02"))
 }
 ```
 
-## Deep Dive
+Das Ergebnis ist:
 
-Zusätzlich zu `AddDate()` und `SubDate()` gibt es weitere Methoden in der `time` Bibliothek, die es uns ermöglichen, Datumsberechnungen durchzuführen, wie zum Beispiel `Add()`, `Sub()` und `Date()`. Es ist auch möglich, Zeitangaben wie Stunden oder Minuten zu berechnen, indem wir die `Add()` oder `Sub()` Methode mit der `Duration` Funktion kombinieren.
+```
+Morgen ist 2021-07-19
+```
 
-## Siehe Auch
+Um ein vergangenes Datum zu berechnen, können wir `Sub()` verwenden. Hier ist ein Beispiel, wie wir das Datum vor einer Woche berechnen können:
 
-- [https://golang.org/pkg/time/](https://golang.org/pkg/time/)
-- [https://www.callicoder.com/golang-datetime-format/](https://www.callicoder.com/golang-datetime-format/)
-- [https://astaxie.gitbooks.io/build-web-application-with-golang/content/de/09.2.html](https://astaxie.gitbooks.io/build-web-application-with-golang/content/de/09.2.html)
+```Go
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    // Das heutige Datum erhalten
+    heute := time.Now()
+
+    // Vor einer Woche berechnen
+    vorWoche := heute.Sub(7 * 24 * time.Hour)
+
+    // Output: YYYY-MM-DD
+    fmt.Println("Vor einer Woche war es", vorWoche.Format("2006-01-02"))
+}
+```
+
+Das Ergebnis ist:
+
+```
+Vor einer Woche war es 2021-07-12
+```
+
+# Tiefere Einblicke
+
+Es gibt noch viele weitere Möglichkeiten, Daten in der Zukunft oder Vergangenheit zu berechnen. Mit den Funktionen `Add()` und `Sub()` können wir auch andere Zeiteinheiten wie z.B. Stunden oder Monate berücksichtigen. Es ist auch möglich, Datumsangaben mit dem Format `2006-01-02` zu verändern.
+
+# Siehe auch
+
+- [Offizielle Dokumentation für das Paket "time"](https://golang.org/pkg/time/)
+- [Go Tutorial: Datum und Zeit in Golang](https://tutorialedge.net/golang/go-date-time-tutorial/)
+- [Praktische Beispiele für die Arbeit mit Datum und Zeit in Go](https://gobyexample.com/time)

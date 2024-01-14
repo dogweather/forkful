@@ -1,35 +1,61 @@
 ---
-title:    "Ruby: 「部分文字列の抽出」"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/extracting-substrings.md"
+title:                "Ruby: 文字列の抽出"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ: Substringsの抽出に取り組むのか
+# なぜ
 
-Substringsの抽出は、文字列の一部を抽出するための重要なテクニックです。例えば、ある文字列から特定の文字列を見つけたり、特定の位置から文字列を切り取ったりすることができます。これにより、より複雑な操作を必要とする文字列処理をより簡単に行うことができます。
+## 誰がこの記事を読むべきか？
 
-## 方法: Substringsの抽出方法
+この記事は、Rubyプログラミングに興味がある人や、既存のプログラムに文字列の一部を抽出する必要がある人に役立つ情報を提供します。
 
-Substringsの抽出には、Stringクラスの`slice`や`[]`メソッドを使用します。例えば、以下のように書くことで、ある文字列から特定の部分文字列を抽出することができます。
+## 抽出されたサブストリングの使用例
 
 ```Ruby
-str = "こんにちは、世界！"
-puts str.slice(3, 5)   # ちは、世界！
-puts str[0, 5]         # こん
+# 文字列の一部の抽出
+puts "こんにちは、私はルビーです".slice(0, 5)
+
+# 出力結果：こんにちは
+
+# 文字列の一部を変数として取得
+name = "アヤコ"
+puts "こんにちは、私は#{name}です".slice(5, 6)
+
+# 出力結果：アヤコ
+
+# 文字列を指定した文字数で折り返し
+text = "今日はとても暑いですね。外に出るのが嫌になります。"
+puts text.slice(0, 10)
+
+# 出力結果：今日はとても暑いですね。
 ```
 
-上記の例では、`slice`メソッドと`[]`演算子の両方が使用できますが、どちらも同じ結果になります。`slice`メソッドの第一引数には開始位置、第二引数には文字数を指定します。`[]`演算子の場合には、開始位置と文字数を指定する代わりに、範囲指定を行うことができます。
+## 抽出されたサブストリングの詳細
 
-## 深堀り: Substringsの抽出について
+サブストリングは、文字列の一部を取り出す方法を指します。文字列内の特定の位置から指定した文字数を取り出すことができます。Rubyの```slice```メソッドを使用すると簡単に実装できます。
 
-Substringsの抽出には、さまざまな方法やオプションがあります。たとえば、`slice`メソッドや`[]`演算子の他にも、正規表現やメソッドチェーンを使用することもできます。また、`slice`メソッドや`[]`演算子には、文字列の最後から数えた位置を指定することもできます。
+```Ruby
+# sliceメソッドには2つの引数があります。最初の引数は開始位置、2番目の引数は文字数を指定します。
+str = "今日はとても暑いですね。外に出るのが嫌になります。"
+puts str.slice(0, 10)
 
-さらに、substringを抽出する際には、文字列の文字コードに気を付ける必要があります。日本語の文字の場合、半角の英数字と比べると文字コードが異なるため、うまく抽出できない場合があります。
+# 出力結果：今日はとても暑いですね。
+```
 
-# 参考リンク
+サブストリングの使用例としては、特定の文字列を抽出して処理する場合や、長い文章を指定した文字数で折り返したりする場合などがあります。
 
-- [Rubyによるsubstringの抽出方法 (Qiita)](https://qiita.com/shizuma/items/4fd7176396b433e0bd1b)
-- [Rubyの文字列処理 (Ruby On Rails ショートカット)](https://railsguides.jp/active_support_core_extensions.html#%E6%96%87%E5%AD%97%E5%88%97%E3%81%A8%E3%81%AE%E9%96%A2%E4%BF%82%E3%81%AE%E6%8B%A1%E5%BC%B5)
-- [Rubyの正規表現の基礎 (TechAcademy Magazine)](https://techacademy.jp/magazine/28111)
+## さらに詳しく学ぶ
+
+サブストリングの詳細については、Ruby公式ドキュメントを参考にすることができます。
+
+- [Ruby公式ドキュメント（sliceメソッド）](https://docs.ruby-lang.org/ja/latest/method/String/i/slice.html)
+
+# もっと見る
+
+- [Rubyプログラミング入門（サブストリングの抽出方法）](https://www.sejuku.net/blog/52721)
+- [RubyAPI（sliceメソッド）](https://rubyapi.org/2.6/o/string/slice)
+- [Rubyで文字列を操作する方法（サブストリングの抽出）](https://qiita.com/gomi_ningen/items/592d46eb7fb45b9a90c6)

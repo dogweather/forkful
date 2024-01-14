@@ -1,46 +1,44 @@
 ---
-title:    "Bash recipe: Calculating a date in the future or past"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/bash/calculating-a-date-in-the-future-or-past.md"
+title:                "Bash recipe: Calculating a date in the future or past"
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-We all have had a need to calculate a date in the future or past at some point in our programming journey. Whether it's for scheduling tasks or organizing events, being able to determine a specific date in relation to today's date can be extremely useful. In this blog post, we will explore how to write a Bash script that can calculate dates in the future or past and give a deeper understanding of the process.
+Calculating dates in the future or past is an essential skill for any Bash programmer. Whether you are creating a script to schedule tasks or trying to determine the expiration date of a file, knowing how to manipulate dates can greatly improve your efficiency and productivity.
 
 ## How To
-To calculate a date in the future or past, we will be using the `date` command in Bash. This command allows us to display or manipulate the system's date and time. Here's an example of how we can use the `date` command to display today's date:
+Calculating dates in the future or past may seem daunting at first, but with the right tools and techniques, it can be a simple task. First, we need to understand how dates are represented in Bash. Dates are represented as seconds since January 1, 1970, also known as Unix time. This means that any date can be represented as a specific number of seconds since that date.
 
-```
-Bash
-date +"%m/%d/%Y"
-```
+To calculate a date in the future, we can use the `date` command, coupled with the `+%s` flag, which displays the date in seconds. For example, to calculate the date 5 days from today, we can use the following code:
 
-Running this command will output the date in the format of month/day/year. Now, let's say we want to calculate the date 5 days from now. We can use the `date` command again but this time, we will add 5 days to today's date by using the `+` symbol and the number 5 after it.
-
-```
-Bash
-date -d "+5 days" +"%m/%d/%Y"
+```Bash
+future_date=$(date -d "+5 days" +%s)
 ```
 
-Running this command will output the date 5 days from today in the same format as before. We can also do the opposite and calculate a date that's 5 days ago by using the `-` symbol and the number 5.
+This will store the future date in seconds in the variable `future_date`. We can then convert this back to a human-readable format using the `date` command with the `-d` flag:
 
-```
-Bash
-date -d "-5 days" +"%m/%d/%Y"
+```Bash
+date -d @$future_date
 ```
 
-We can also manipulate the date in other ways such as adding or subtracting weeks, months, or even years. For example, to calculate the date 2 weeks from today, we can use the `+` symbol followed by 2 weeks in this format: `+2 weeks`.
+Similarly, to calculate a date in the past, we can use the `-` operator instead of `+`:
+
+```Bash
+past_date=$(date -d "-1 week" +%s)
+```
+
+This will calculate the date 1 week ago and store it in the `past_date` variable. Again, we can convert it back to a readable format using the `date` command.
 
 ## Deep Dive
-The `date` command in Bash uses the system's current time and date as its starting point. From there, we can use the `+` and `-` symbols to add or subtract time from that starting point. It's important to keep in mind that time and date calculations are based on Unix time. Unix time is a system for describing points in time, which is represented by the number of seconds that have elapsed since January 1, 1970, 00:00:00 UTC. This is known as the Unix epoch.
+There are also other ways to perform date calculations in Bash, such as using the `bc` command, which stands for "basic calculator." This allows us to perform complex calculations involving dates, such as determining the difference between two dates or adding/subtracting a specific amount of time to a given date.
 
-When using the `date` command, we can also specify a specific date to start from instead of using the current date and time. For example, we can use the `-d` flag followed by a specific date in this format: `MM/DD/YYYY`. This will then manipulate the specified date rather than the current date.
+We can also use the `date` command with the `-d` flag to specify a specific date and time, instead of using relative values like "5 days" or "1 week." This gives us more flexibility in calculating dates and allows us to perform date calculations even for dates far in the past or future.
 
 ## See Also
-- [Bash Scripting Tutorial for Beginners](https://linuxhint.com/bash_scripting_beginners_guide/)
-- [Mastering Bash: An Introduction to Bash Scripting](https://www.codementor.io/awangga/mastering-bash-an-introduction-to-bash-scripting-14zl1wdzq3)
-- [Unix Time](https://en.wikipedia.org/wiki/Unix_time)
-
-By understanding how to calculate dates in the future or past using the `date` command in Bash, you will have an essential skill in your programming arsenal. With the ability to manipulate dates, you can streamline your Bash scripts and make tasks such as scheduling and organizing events much easier. Happy coding!
+- [Bash documentation on the `date` command](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation)
+- [A tutorial on using the `bc` command for date calculations](https://www.computerhope.com/unix/ubc.htm)
+- [A comprehensive guide to date calculations in Bash](https://www.linuxjournal.com/article/1425)

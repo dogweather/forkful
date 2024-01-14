@@ -1,37 +1,49 @@
 ---
-title:    "Go: Att hitta längden på en sträng"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/finding-the-length-of-a-string.md"
+title:                "Go: Att hitta längden på en sträng"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna hitta längden på en sträng är en grundläggande färdighet inom Go-programmering. Genom att kunna göra detta kan du hantera data mer effektivt och korrekt i dina program. Det är en enkel uppgift som kan ge stor nytta i dina projekt.
+Att kunna hitta längden på en sträng är en grundläggande kunskap inom Go-programmering. Det kan hjälpa dig att förstå hur data hanteras och manipuleras i program. Dessutom är det ett användbart verktyg för många olika problem.
 
-## Hur man gör det
+## Hur man gör
 
-Att hitta längden på en sträng i Go är väldigt enkelt. Du kan använda inbyggda funktionen ```len``` för att få längden på en sträng. Låt oss ta en titt på ett exempel:
+Det finns flera olika sätt att hitta längden på en sträng i Go. En metod är att använda den inbyggda funktionen len (), som returnerar antalet tecken i en sträng. Här är ett exempel:
 
+```Go
+str := "Hej! Hur mår du?"
+fmt.Println(len(str))
 ```
-func main() {
-	str := "Detta är en sträng"
-	fmt.Println("Längden på strängen är:", len(str))
+
+Output: 17
+
+En annan metod är att använda en loop för att räkna varje tecken i strängen och öka en räknare. Här är ett exempel på hur man kan göra det:
+
+```Go
+str := "Go är ett fantastiskt programmeringsspråk!"
+var length int = 0
+for range str {
+	length++
 }
+fmt.Println(length)
 ```
 
-Output:
-```Längden på strängen är: 20```
-
-Som du kan se använder vi funktionen ```len``` för att få längden på strängen och sedan printar vi ut resultatet tillsammans med en beskrivande text. Det är väldigt enkelt och det går snabbt att använda denna metoden i dina egna projekt.
+Output: 37
 
 ## Djupdykning
 
-Längden på en sträng beräknas genom antalet bytes i strängen, inte antalet tecken. Detta betyder att speciella tecken och bokstäver som inte finns i ASCII-alfabetet, som till exempel åäö, kan påverka längden av strängen. Om du behöver hantera icke ASCII-tecken i dina projekt är det viktigt att du är medveten om detta.
+Att förstå hur funktionen len () fungerar bakom kulisserna kan hjälpa dig att förbättra din kodning. När du använder len () för en sträng, returneras antalet byte som är nödvändigt för att lagra strängen i minnet. Det beror på att Go använder UTF-8 för att representera strängar, vilket kan leda till att antalet byte inte är samma som antalet tecken.
+
+En annan viktig aspekt att tänka på när du arbetar med strängar är skillnaden mellan bytes och runor. En byte representerar 8 bitar medan en runa representerar en enskild Unicode-tecken. Detta kan påverka längden på en sträng baserat på språket som används.
 
 ## Se även
 
-- [Go Documentation: Strings](https://golang.org/pkg/strings/)
-- [A Tour of Go: Strings and Characters](https://tour.golang.org/basics/1)
-- [The Go Programming Language Specification: Length and capacity](https://golang.org/ref/spec#Length_and_capacity)
+- [Officiell Go-dokumentation: Längd och kapacitet](https://golang.org/ref/spec#Length_and_capacity)
+- [Officiell Go-dokumentation: Strängar](https://golang.org/ref/spec#Runes_and_string_literals)
+- [Tutorial: Go strängar](https://ourcodeworld.com/articles/read/189/top-10-best-practices-to-work-with-strings-in-golang)
+- [Exempel: Go strängmanipulering](https://gobyexample.com/string-functions)

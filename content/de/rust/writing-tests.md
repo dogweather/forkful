@@ -1,42 +1,57 @@
 ---
-title:    "Rust: Testen schreiben."
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/rust/writing-tests.md"
+title:                "Rust: Tests schreiben"
+programming_language: "Rust"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-In der heutigen Welt der Softwareentwicklung wird es immer wichtiger, qualitativ hochwertige und fehlerfreie Software zu liefern. Das Schreiben von Tests ist ein unverzichtbarer Schritt, um sicherzustellen, dass unsere Programme zuverlässig und robust sind. Auch in der Rust-Programmierung sollten Tests nicht vernachlässigt werden. In diesem Blogbeitrag werden wir uns genauer ansehen, warum das Schreiben von Tests in Rust von großer Bedeutung ist.
+Tests sind ein wichtiger Bestandteil beim Schreiben von zuverlässigem und fehlerfreiem Code. Durch das Schreiben von Tests können mögliche Fehler frühzeitig erkannt und behoben werden, was zur Verbesserung der Codequalität und der Nutzererfahrung beiträgt. In diesem Blogbeitrag erfahren Sie, warum es wichtig ist, Tests zu schreiben.
 
-## Wie geht man vor?
+## So geht's
 
-Zunächst müssen wir sicherstellen, dass wir die notwendigen Abhängigkeiten für das Testen in unserem Projekt haben. Dazu gehören das `rustc` und das `test`-Paket. Sobald diese installiert sind, können wir unsere Tests schreiben.
+Um Tests in Rust zu schreiben, können Sie die eingebaute Crate "test" verwenden. In den folgenden Beispielen werden wir die Funktion "add" testen, die zwei Zahlen addiert und das Ergebnis zurückgibt.
 
-In Rust können wir Tests in derselben Datei wie unser Code schreiben, was es einfach und übersichtlich macht. Wir verwenden die Makros `#[cfg(test)]` und `#[test]`, um unsere Tests zu kennzeichnen. Innerhalb des `#[test]`-Makros können wir unsere Testfunktionen schreiben und Assertions hinzufügen, um sicherzustellen, dass unsere Ergebnisse den erwarteten Werten entsprechen.
+Zunächst müssen wir das "test" Crate in unser Projekt einbinden:
 
 ```Rust
-#[cfg(test)]
-mod tests {
-   #[test]
-   fn test_addition() {
-       let result = 2 + 2;
-       assert_eq!(result, 4);
-   }
+extern crate test;
+```
+
+Dann erstellen wir eine Funktion, die wir später testen werden:
+
+```Rust
+fn add(x: i32, y: i32) -> i32 {
+    x + y
 }
 ```
 
-Um unsere Tests auszuführen, können wir das `cargo test`-Kommando verwenden. Dies wird alle Dateien mit `#[test]`-Makros im `tests`-Ordner ausführen und uns mitteilen, ob die Tests bestanden oder fehlgeschlagen sind. Wenn wir mehr Informationen über die einzelnen Tests erhalten möchten, können wir auch das `--verbose`-Flag hinzufügen.
+Als nächstes müssen wir eine Testfunktion für unsere "add" Funktion erstellen. Diese Testfunktion muss mit dem Attribut "test" gekennzeichnet werden, damit der Rust Compiler sie als Test erkennt. In der Testfunktion können wir verschiedene Assertions verwenden, um zu überprüfen, ob das Ergebnis unserer Funktion korrekt ist.
 
-## Tiefergehende Erläuterung
+```Rust
+#[test]
+fn test_add() {
+    // Testfall 1: Überprüfen, ob 2 + 2 richtig addiert wird
+    assert_eq!(add(2, 2), 4);
 
-Es gibt verschiedene Arten von Tests in Rust, die wir schreiben können, wie z.B. Modultests und Integrationstests. Wir können auch das `should_panic`-Attribut verwenden, um sicherzustellen, dass eine bestimmte Funktion einen Fehler wirft. Darüber hinaus ermöglicht uns Rust durch die Verwendung von generischen Funktionen und Traits das Schreiben von bulkigen Tests, die für mehrere Datentypen und Strukturen funktionieren.
+    // Testfall 2: Überprüfen, ob 5 + (-3) richtig addiert wird
+    assert_eq!(add(5, -3), 2);
+}
+```
 
-Das Schreiben von Tests in Rust ist auch eine großartige Möglichkeit, um mehr über die Sprache und ihre Funktionen zu lernen, da es uns dazu zwingt, unsere Funktionen und Datenstrukturen besser zu verstehen und ihre Grenzen zu testen.
+Um unsere Tests auszuführen, können wir das Kommando "cargo test" in der Konsole verwenden. Dies gibt uns eine Übersicht über alle bestandenen und fehlerhaften Tests.
+
+## Tiefer gehen
+
+Es gibt viele Möglichkeiten, Tests in Rust zu schreiben und zu organisieren. Sie können z.B. Tests in separate Moduldateien auslagern und diese dann mit dem Attribut "cfg(test)" markieren, um sie nur beim Testen zu kompilieren. Außerdem können Sie auch Property-based Testing verwenden, um zufällige Eingaben zu generieren und Ihre Funktionen damit zu testen.
+
+Egal welche Art von Tests Sie schreiben, es ist wichtig, sich an die Prinzipien des Testens zu halten, wie z.B. den Single-Responsibility-Principle und die Verwendung von aussagekräftigen Testnamen.
 
 ## Siehe auch
 
-- [The Rust Book: Writing Automated Tests](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
-- [Rust by Example: Testing](https://doc.rust-lang.org/stable/rust-by-example/testing.html)
-- [Official Rust Testing Guide](https://www.rust-lang.org/learn/testing)
+- [Offizielle Rust Dokumentation zu Tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Einführung in das Schreiben von Tests in Rust](https://opensource.com/article/19/6/getting-started-testing-rust)
+- [Property-based Testing mit Rust](https://www.fpcomplete.com/blog/quickcheck-in-rust/)

@@ -1,43 +1,48 @@
 ---
-title:    "Kotlin: Escribiendo en el error estándar"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/writing-to-standard-error.md"
+title:                "Kotlin: Escribiendo al error estándar"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir a la salida de error en Kotlin
+## Por qué escribir en el estándar de error en Kotlin
 
-Escribir a la salida de error es una práctica común en la programación en Kotlin para ayudar en la depuración de código y para mejorar la experiencia del usuario al mostrar mensajes de error más claros.
+Si eres un desarrollador de Kotlin, es posible que hayas escuchado sobre escribir en el estándar de error mientras depuras tu código. Pero, ¿por qué exactamente deberías hacerlo? En esta publicación de blog, exploraremos las razones por las que es importante escribir en el estándar de error en Kotlin.
 
-## Cómo hacerlo
+## Cómo escribir en el estándar de error en Kotlin
 
-Para escribir a la salida de error, se utiliza la función `System.err.println()`. Esta función tomará una cadena como argumento y escribirá esa cadena en la salida de error. Aquí hay un ejemplo de cómo usarlo:
+Escribir en el estándar de error en Kotlin es fácil y puede ser de gran ayuda durante el proceso de depuración. Simplemente sigue estos pasos:
 
-```Kotlin
+```kotlin
 fun main() {
-    val numero = 10
-
-    if (numero > 5) {
-        System.err.println("El número es mayor que 5")
+    val num = 0
+    if (num == 0) {
+        System.err.println("¡Error! El número no puede ser igual a 0.")
     }
 }
 ```
+Siguiendo el ejemplo anterior, cuando ejecutemos este código, veremos el siguiente resultado en nuestra consola:
 
-La salida de este código será:
-
+```sh
+¡Error! El número no puede ser igual a 0.
 ```
-El número es mayor que 5
-```
 
-## Profundizando más
+Como puedes ver, al escribir en el estándar de error, podemos mostrar mensajes específicos para ayudarnos a identificar y solucionar errores en nuestro código.
 
-Al escribir a la salida de error, es importante tener en cuenta que esta salida se muestra en rojo en la consola, lo que la diferencia de la salida estándar. Esto puede ser útil para identificar rápidamente mensajes de error en un gran volumen de texto. Además, también puede utilizar la función `System.err.print()` si desea escribir la cadena sin un salto de línea al final.
+## Profundizando en el estándar de error en Kotlin
 
-También es importante mencionar que, aunque es una práctica común, escribir a la salida de error debe ser utilizado con moderación y solo para mensajes de error relevantes. No se recomienda usarlo para imprimir información general o mensajes de depuración, ya que esto puede afectar negativamente el rendimiento del código.
+Es importante tener en cuenta que el estándar de error es diferente del estándar de salida, también conocido como estándar de impresión. Mientras que el estándar de salida muestra mensajes de información y confirmación, el estándar de error se utiliza para comunicar errores críticos y problemas durante la ejecución del código.
+
+Otra ventaja de escribir en el estándar de error en Kotlin es que los mensajes se mostrarán en un color diferente en la consola, lo que facilita la identificación de errores. Además, al escribir en el estándar de error, podemos añadir detalles adicionales y mensajes de seguimiento para ayudarnos a rastrear y solucionar problemas más complejos.
 
 ## Ver también
 
-- [Documentación de Kotlin sobre salida de error](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/system.err.html)
-- [Blog sobre cómo manejar excepciones en Kotlin](https://www.baeldung.com/kotlin-exceptions)
-- [Guía de estilo de código de Kotlin](https://kotlinlang.org/docs/reference/coding-conventions.html)
+Si deseas aprender más sobre el estándar de error en Kotlin y cómo puedes utilizarlo en tu código, echa un vistazo a estos recursos adicionales:
+
+- [Documentación oficial de Kotlin sobre el estándar de error](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-system-err/index.html)
+- [Tutorial sobre la depuración en Kotlin utilizando el estándar de error](https://medium.com/@karahasankara/logging-in-kotlin-with-system-out-and-system-err-41800cd6692)
+- [Explicación más detallada sobre la diferencia entre estándar de salida y estándar de error en Kotlin](https://www.careerride.com/Kotlin-difference-between-systemoutandSystemerr.aspx)
+
+Esperamos que esta publicación te haya ayudado a comprender mejor por qué es importante escribir en el estándar de error en Kotlin y cómo puedes hacerlo en tus propios proyectos de programación. ¡Happy coding! 💻

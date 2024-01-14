@@ -1,53 +1,75 @@
 ---
-title:    "C#: Utskrift av feilrettingsutgang"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/printing-debug-output.md"
+title:                "C#: Utskrift av feilsøkingsutdata"
+programming_language: "C#"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å skrive ut feilrettingsutdata kan ofte være en nyttig måte å finne og løse problemer i koden din på. Ved å skrive ut informasjon om variabler, verdier og prosesser, kan du få en bedre forståelse av hva som skjer i koden din og hvor eventuelle feil oppstår.
+Noen ganger, mens vi skriver koden vår, støter vi på problemer eller feil som vi ikke umiddelbart kan identifisere. Dette er når det å legge til utskrift (debug output) i koden vår kan være en nyttig løsning. Ved å skrive ut verdier og variabler mens koden kjører, kan vi få en bedre forståelse av hva som skjer, og dermed enklere finne og rette feil.
 
 ## Hvordan
 
-Du kan enkelt skrive ut feilrettingsutdata i C# ved å bruke ```Console.WriteLine()``` -funksjonen. Dette lar deg skrive ut en melding eller variabelverdi til konsollen mens koden blir kjørt. For eksempel:
+For å legge til utskrift i koden vår, kan vi bruke en enkel "```Console.WriteLine()```" kommando. Her er et eksempel på hvordan dette kan se ut i C#:
 
 ```C#
-string navn = "Ola";
-Console.WriteLine("Hei, mitt navn er " + navn);
+string navn = "Maria";
+int alder = 25;
+Console.WriteLine("Navnet mitt er " + navn + " og jeg er " + alder + " år gammel.");
 ```
 
-Dette vil skrive ut følgende i konsollen:
+Output vil da bli:
 
 ```
-Hei, mitt navn er Ola
+Navnet mitt er Maria og jeg er 25 år gammel.
 ```
 
-Du kan også bruke ```Debug.WriteLine()``` -funksjonen for å skrive ut feilrettingsutdata til Visual Studio Output-vinduet. Dette er spesielt nyttig når du jobber med større prosjekter og ønsker å se feilutdata fra forskjellige deler av koden din på ett sted. For eksempel:
+Vi kan også legge til variabler uten å måtte bruke string operatorer som "+" ved å bruke "```$```" tegnet og sørge for at teksten er omsluttet av "```{ }```". Her er et eksempel:
 
 ```C#
-int a = 5;
-int b = 10;
-Debug.WriteLine("a + b = " + (a + b));
+string navn = "Thomas";
+int bilnummer = 123;
+Console.WriteLine($"Hei, mitt navn er {navn}. Jeg har et bilnummer som er {bilnummer}.");
 ```
 
-Dette vil skrive ut følgende i Output-vinduet:
+Output vil være det samme:
 
 ```
-a + b = 15
+Hei, mitt navn er Thomas. Jeg har et bilnummer som er 123.
 ```
 
-Det er også mulig å bruke ```Console.WriteLine()``` og ```Debug.WriteLine()``` i kombinasjon for å skrive ut feilrettingsutdata både til konsollen og Output-vinduet.
+Vi kan også legge til utskriftsinnstillinger ved å bruke "```Console.Write()```" i stedet for "```Console.WriteLine()```". Dette vil føre til at utskriften ikke vil legge til en linjeskift, slik at vi kan skrive ut flere verdier på samme linje. Et eksempel på dette er:
 
-## Dypdykk
+```C#
+int tall1 = 5;
+int tall2 = 10;
+Console.Write($"Tallet mitt er: {tall1} og tallet mitt er: {tall2}.");
+```
 
-Når du skriver ut feilrettingsutdata, er det viktig å være bevisst på hva du skriver ut og hvor du skriver ut det. For mye utdata kan gjøre det vanskelig å finne de viktige meldingene og variablene, spesielt i større prosjekter. Det kan også være lurt å bruke forskjellige utdatameldinger for å skille mellom forskjellige deler av koden din.
+Output vil bli:
 
-Det kan også være nyttig å bruke betinget feilrettingsutdata. Dette betyr å bare skrive ut informasjon når en bestemt betingelse er oppfylt. Dette er spesielt nyttig for å finne feil som bare oppstår i visse tilfeller.
+```
+Tallet mitt er: 5 og tallet mitt er: 10.
+```
 
-## Se Også
+Vi kan også legge til utskrift for å vise om en bestemt del av koden vår blir utført ved å bruke "```Console.WriteLine()```" inne i "```if```" eller "```else```" uttrykk. Dette er spesielt nyttig når vi har komplekse logiske uttrykk som kan føre til forskjellige scenerioer i koden vår.
 
-- [MSDN documentation on debugging in C#](https://docs.microsoft.com/en-us/visualstudio/debugger/?view=vs-2019)
-- [CodeCademy course on debugging in C#](https://www.codecademy.com/learn/learn-c-sharp/modules/csharp-debugging)
+## Deep Dive
+
+Det er mulig å legge til forskjellige typer utskrift i koden vår for å få mer informasjon og bedre forståelse av hva som skjer under kjøringen. Noen eksempler på dette er:
+
+- Å skrive ut verdien av en bestemt variabel for å sjekke om den har riktig verdi.
+- Å skrive ut en beskjed før og etter en bestemt del av koden blir utført for å se om det skjer som forventet.
+- Å legge til utskrift i løkker for å se verdien av en variabel under hvert gjennomløp.
+- Å bruke forskjellige farger i utskriften for å skille mellom forskjellige deler av koden.
+
+Det er viktig å huske å fjerne utskriften når koden vår er ferdig og fungerer som den skal. Dette kan gjøres enkelt ved å kommentere ut "```Console.WriteLine()```" linjene eller ved å bruke en mer avansert løsning som "```#if DEBUG```" og "```#endif```" for å sørge for at utskriften kun vil kjøre i debug-modus.
+
+## Se også
+
+- [Microsoft sin offisielle dokumentasjon om Console-klassen](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-5.0)
+- [En guide til utskrift i C#](https://www.c-sharpcorner.com/blogs/printing-output-in-c-sharp1)
+- [Debugging og utskrift i Visual Studio](https://www.youtube.com/watch?v=9mh7LeMG3F4)

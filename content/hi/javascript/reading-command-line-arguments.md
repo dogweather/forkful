@@ -1,34 +1,33 @@
 ---
-title:    "Javascript: कम्प्यूटर प्रोग्रामिंग पर स्थानांतरित कमांड पढ़ना"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/reading-command-line-arguments.md"
+title:                "Javascript: कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-वजह: कैसे कमांड लाइन आर्ग्यूमेंट पढ़ना क्यों जरूरी है।
+## क्यों
 
-कमांड लाइन आर्ग्यूमेंट पढ़ना JavaScript में प्रोग्रामिंग का एक आवश्यक अंश है। कई बार प्रोग्राम डेवलपमेंट में हमें कमांड लाइन से आर्ग्यूमेंट पास करने होते हैं, जो कि प्रोग्राम के चलने में बहुत महत्वपूर्ण हो सकते हैं। इसलिए, JavaScript प्रोग्रामर्स के लिए कमांड लाइन आर्ग्यूमेंट पढ़ने की क्षमता का होना बहुत जरूरी है। 
+क्या आपने कभी सोचा है कि जैसे कि हम वेबसाइटों से डेटा प्राप्त करते हैं, क्या आप भी अपने Javascript कोड में उपयोगकर्ताओं से जानकारी प्राप्त कर सकते हैं? हां, यह संभव है और इसका नाम है "Command Line Arguments". आपको जानना होगा कि यह क्या है और क्यों इसका उपयोग जानकारियों को प्राप्त करने के लिए किया जाता है.
 
-कैसे: कमांड लाइन आर्ग्यूमेंट पढ़ने के लिए कोडिंग उदाहरण और नमूना आउटपुट। 
+## कैसे करें
+
+यदि आप अपने Javascript कोड में command line arguments का उपयोग करना चाहते हैं, तो आपको सबसे पहले प्रोसेस ऑब्जेक्ट को इंस्टेंसिएट करना होगा। इसके बाद, `process.argv` में आपको सभी command line arguments मिल जाएंगे। आइए इसे एक उदाहरण के साथ समझते हैं:
 
 ```Javascript
-// कमांड लाइन से आर्ग्यूमेंट पास करने का उदाहरण
-node file.js argument1 argument2
+// यहां आपको यह एक सादा सा उदाहरण दिखाया गया है जिसमें सिर्फ दो command line arguments पास किए गए हैं।
 
-// कमांड लाइन आर्ग्यूमेंट पढ़ने का उदाहरण
-process.argv.forEach((val, index) => {
-  console.log(`${index}: ${val}`);
-});
+// कमांड लाइन पर यह दोनों आउटपुट प्रिंट होंगे:
+// node index.js hello world
 
-/* आउटपुट:
-0: C:\Program Files\nodejs\node.exe
-1: C:\Users\User\Desktop\file.js
-2: argument1
-3: argument2 
-*/
+console.log(process.argv[0]); // प्रोग्राम का नाम - node
+console.log(process.argv[1]); // फ़ाइल का नाम - index.js
+console.log(process.argv[2]); // पहला argument - hello
+console.log(process.argv[3]); // दूसरा argument - world
 ```
 
-डीप डाइव: कमांड लाइन आर्ग्यूमेंट पढ़ने के बारे में गहराई से जानकारी। 
+मिलेंगे, होने ही है command line arguments का दूसरा उपयोग है प्रोग्राम के चालक में मौजूद विभिन्न चयन या सेटिंग्स को प्रभावित करना। यह अधिक उदाहरण देखते हैं:
 
-कमांड लाइन आर्ग्युमेंट पढ़ने के लिए `process.argv` इस्तेमाल किया जाता है। यह एक मैसेज पास करने के लिए अच्छा तरीका है। कमांड लाइन में पास किए गए आर्ग्यूमेंट `process.argv` में स्टोर होते हैं। इसलिए, हम इस वैरिएबल को इस्तेमाल करके प्रोग्राम में पास किए गए आर्ग्यूमेंट का उपयोग कर सकते हैं। इसी तरह, हम इस उपयोग कई अलग-अलग तरीकों से कर सकते हैं, जैस
+```Javascript
+// यहां हम दो command line arguments ले रहे हैं - पहला एक सादा दिशा निर्देश (direction) है, जो या तो right या left हो सकता है। दूसरा उपयोगर्ता द्वारा निर्दिष्ट प्रवेशक (delimiter) है, जो कोड में उपयोग किए जाने वाले विश

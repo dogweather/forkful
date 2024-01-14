@@ -1,65 +1,50 @@
 ---
-title:    "Elixir: Skrive tester"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/writing-tests.md"
+title:                "Elixir: Skrive tester"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor skrive enhetstester i Elixir?
+## Hvorfor
 
-Enhets- og funksjonstesting er viktige deler av å skrive god og pålitelig kode. Ved å skrive enhetstester i Elixir, kan du enkelt oppdage og fikse feil før de påvirker produksjonskoden din. Dette sparer deg for tid og frustrasjon senere, og gir deg en tryggere og mer effektiv utviklingsprosess.
+Å skrive tester er en viktig del av å være en god Elixir-programmerer. Det hjelper deg med å sikre at koden du skriver fungerer som den skal og unngå feil når du endrer eller legger til ny kode. Det gir også et godt fundament for å forstå koden din bedre og gjøre den mer lesbar for andre utviklere.
 
-# Hvordan skrive enhetstester i Elixir
+## Hvordan
 
-Det finnes flere biblioteker og rammer for å skrive enhetstester i Elixir, men vi vil fokusere på Elixir's standard bibliotek `ExUnit`. La oss se på et enkelt eksempel:
+Når du skriver tester i Elixir, bruker du ofte biblioteket ExUnit, som er et testrammeverk som følger med Elixir-installasjonen. La oss se på et enkelt eksempel:
 
-```Elixir
-defmodule Calculator do
-  def add(a, b) do
-    a + b
-  end
-end
-
-defmodule CalculatorTest do
-  use ExUnit.Case, async: true
-
-  test "add/2 adds two numbers" do
-    assert Calculator.add(2, 3) == 5
+```Elixir 
+defmodule KalkulatorTest do
+  use ExUnit.Case
+  test "addisjon" do
+    assert 1 + 1 == 2
   end
 end
 ```
-
-Vi definerer en modul `Calculator` som inneholder en enkel funksjon for å legge sammen to tall. I testmodulen `CalculatorTest` bruker vi `ExUnit.Case` og definerer en test som sjekker om `Calculator.add(2, 3)` gir riktig resultat.
-
-Vi kan kjøre testen ved å kjøre `mix test` i terminalen. Outputen vil være noe sånt som:
+For å kjøre testen, kan du bruke kommandoen `mix test`. Outputen vil være noe som dette:
 
 ```
-.
-
-Finished in 0.03 seconds
-1 test, 0 failures
+1) test addisjon (KalkulatorTest)
+   test/kalkulator_test.exs:4
+   Assertion with == failed
+   code: 1 + 1 == 2
+   left:  2
+   right: 1
+   stacktrace:
+     test/kalkulator_test.exs:5: (test)
 ```
 
-Vi ser at testen vår passerte, siden det kun er én test og den er bestått. Dersom testen hadde feilet, ville vi fått en mer detaljert beskrivelse av feilen og hvor i koden den oppstår.
+Her ser vi at testen feilet fordi vi forventet at 1+1 skulle være lik 2, men det var ikke tilfelle. Dette er et enkelt eksempel, men du kan også bruke mer komplekse tester for å sjekke at funksjoner og metoder oppfører seg som de skal.
 
-# Dykke dypere
+## Deep Dive
 
-Nå som vi har sett på et enkelt eksempel, kan vi dykke litt dypere inn i enhetstesting i Elixir. Noen ting du bør være oppmerksom på når du skriver enhetstester:
+Når du skriver tester, er det viktig å dekke så mange ulike scenarier og kanttilfeller som mulig. Det er også nyttig å følge prinsippet om "enhetstesting", hvor du tester hver enkelt funksjon eller metode separat for å sikre at den oppfører seg som den skal. På denne måten kan du isolere og identifisere eventuelle feil mer effektivt.
 
-- Organiser testene dine i logiske `describe`- og `context`-blokker for bedre lesbarhet
-- Bruk `setup` og `teardown` for å sette opp og rydde etter testene dine
-- Bruk `assert` og `refute` for å sjekke om forventede verdier stemmer eller ikke
-- `async: true` kan brukes for å få testene til å kjøre parallelt, men vær obs på eventuelle bugs dette kan føre til og test alltid med både `async: true` og `async: false`
+En annen fordel med å skrive tester er at det gjør det enklere å vedlikeholde og refactorere koden din senere. Når du legger til ny funksjonalitet eller endrer noe, kan du kjøre testene for å sikre at alt fortsatt fungerer som det skal. Dette bidrar til å opprettholde kvaliteten på koden over tid.
 
-For mer informasjon om enhetstesting i Elixir, sjekk ut følgende ressurser:
+## Se Også
 
-- [ExUnit dokumentasjon](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Elixir School: Testing](https://elixirschool.com/en/lessons/advanced/testing/)
-- [Elixir Testing on Pluralsight](https://www.pluralsight.com/courses/elixir-testing)
-
-# Se også
-
-- [Elixir offisiell nettside](https://elixir-lang.org/)
-- [Elixir på norsk](https://elixir.no/)
-- [Elixir forum på norsk](https://forum.elixirforum.com/)
+- [Offisiell Elixir ExUnit-dokumentasjon](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Elixir School: Testing](https://elixirschool.com/en/lessons/basics/testing/)

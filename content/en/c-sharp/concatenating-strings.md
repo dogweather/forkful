@@ -1,70 +1,68 @@
 ---
-title:    "C# recipe: Concatenating strings"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/concatenating-strings.md"
+title:                "C# recipe: Concatenating strings"
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-String concatenation is a common task in many programming languages, and this is no different in C#. Concatenating strings allows you to combine multiple strings into one, making it easier to manipulate and display data in your program.
+
+Concatenating strings may seem like a simple task, but it is an important skill to have in your programming arsenal. By combining multiple strings together, you can create dynamic and customizable output for your programs. Whether you are building a simple console application or a complex web application, understanding how to concatenate strings will greatly enhance your coding abilities.
 
 ## How To
-In C#, there are a few different ways to concatenate strings, but the most common method is by using the "+" operator. Here is an example:
+
+To concatenate strings in C#, there are a few different methods you can use. One way is by using the "+" operator, like this:
 
 ```C#
-string firstName = "John";
-string lastName = "Smith";
-string fullName = firstName + " " + lastName;
-Console.WriteLine(fullName);
+string greeting = "Hello";
+string name = "John";
+string message = greeting + " " + name;
+
+Console.WriteLine(message);
 ```
 
-This code snippet will output "John Smith". As you can see, the "+" operator allows us to combine multiple strings into one. You can also use the "+=" operator to append a string to an existing string variable. Here's an example:
+In this example, we have declared three string variables and concatenated them together using the "+" operator. The output would be "Hello John".
+
+Another method is by using the `Concat()` method from the `String` class. Here is an example:
 
 ```C#
-string fullName = "John Smith";
-fullName += " Jr.";
-Console.WriteLine(fullName);
+string city = "New York";
+string state = "New York";
+string location = String.Concat(city, ", ", state);
+
+Console.WriteLine(location);
 ```
 
-This will output "John Smith Jr.". Similarly, you can use the Concat() method in the String class to concatenate multiple strings:
+This will produce the same output as the first example, "New York, New York".
+
+You can also use the `Format()` method to concatenate strings with additional formatting:
 
 ```C#
-string firstName = "John";
-string lastName = "Smith";
-string fullName = String.Concat(firstName, " ", lastName);
-Console.WriteLine(fullName);
-```
-
-This will also output "John Smith". Additionally, you can use the Format() method to concatenate multiple strings with placeholders, making it easier to format your output:
-
-```C#
-string firstName = "John";
-string lastName = "Smith";
+string firstName = "Jane";
+string lastName = "Doe";
 string fullName = String.Format("{0} {1}", firstName, lastName);
+
 Console.WriteLine(fullName);
 ```
 
-This will also output "John Smith". It's important to note that you can also use the "+" operator and the Concat() method to concatenate non-string values, such as integers or decimals. In this case, C# will automatically convert those values into strings before concatenating them.
+The output would be "Jane Doe".
 
 ## Deep Dive
-Behind the scenes, string concatenation in C# is achieved by using the StringBuilder class. This class provides better performance for string manipulation tasks, as strings in C# are immutable (which means they cannot be changed once created). When you use the methods or operators mentioned above, the compiler will actually create a new StringBuilder object and use the Append() method to concatenate your strings.
 
-If you are concatenating a large number of strings, using the StringBuilder class directly will provide better performance than using the methods mentioned above. Here's an example of using the StringBuilder class:
+Now, let's take a closer look at how concatenating strings actually works in C#. When using the "+" operator, the compiler will optimize it into a `Concat()` method call. This method takes in two or more strings and returns a new string with the concatenated values. So, essentially, the first two methods we discussed are just different ways of using the `Concat()` method.
 
-```C#
-StringBuilder sb = new StringBuilder();
-sb.Append("John");
-sb.Append(" ");
-sb.Append("Smith");
+It is worth noting that the `Concat()` method will not modify the original strings, but instead will create a new string with the combined values. This is important to keep in mind when dealing with large strings or performance-sensitive applications.
 
-string fullName = sb.ToString();
-Console.WriteLine(fullName);
-```
+Another important concept to be aware of is string immutability. In C#, strings are immutable, meaning they cannot be changed once they are created. This means that every time we use the "+" operator or the `Concat()` method, a new string object is created in memory. So, if you have multiple concatenations in your code, it could potentially lead to memory issues.
 
-This will also output "John Smith". The advantage of using the StringBuilder class is that it allows you to manipulate your strings without creating new string objects every time.
+To mitigate this, you can use the `StringBuilder` class which is mutable and allows for more efficient string concatenation.
 
 ## See Also
-- [String.Concat method documentation](https://docs.microsoft.com/en-us/dotnet/api/system.string.concat)
-- [StringBuilder class documentation](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder)
-- [String.Format method documentation](https://docs.microsoft.com/en-us/dotnet/api/system.string.format)
+
+To learn more about concatenating strings in C#, check out these resources:
+
+- [Microsoft Docs - String.Concat Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.concat?view=net-5.0)
+- [C# Program - Concatenate strings](https://www.csharpstar.com/c-program-to-concatenate-strings/)
+- [C# Corner - The Difference between String Concatenation and String Formatting](https://www.c-sharpcorner.com/UploadFile/97197d/the-difference-between-string-concatenation-and-string-form/)

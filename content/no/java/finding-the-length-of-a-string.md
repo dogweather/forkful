@@ -1,69 +1,41 @@
 ---
-title:    "Java: Finn lengden av en streng"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/finding-the-length-of-a-string.md"
+title:                "Java: Å finne lengden av en streng"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å finne lengden til en streng er en vanlig oppgave i Java-programmering. Dette er nyttig når du for eksempel trenger å validere brukerinput eller håndtere tekstbaserte data.
+Å finne lengden til en streng er en vanlig oppgave for mange Java-programmerere, da det ofte er nødvendig å håndtere strenger i ulike situasjoner. Ved å finne lengden til en streng, kan man få informasjon om hvor mange tegn den inneholder, og dermed kunne utføre ulike operasjoner på den.
 
 ## Hvordan
 
-Det finnes flere måter å finne lengden til en streng i Java på, men den enkleste er å bruke metoden `length()`. Denne metoden returnerer antall tegn i strengen. La oss se på et eksempel:
+For å finne lengden til en streng i Java, kan man bruke metoden `length()` som er tilgjengelig for alle strenger. Dette gjør det enkelt å få tilgang til lengden uten å måtte gjøre komplekse beregninger. La oss se på et eksempel:
 
-```java
-String navn = "Per";
-int lengde = navn.length();
-System.out.println(lengde);
+```Java
+String navn = "Marie";
+System.out.println(navn.length());
 ```
 
 Dette vil gi følgende output:
 
 ```
-3
+5
 ```
 
-Her ser vi at metodens returnerte verdi er 3, siden det er 3 tegn i strengen "Per". Vi kan også bruke `length()` sammen med en tom streng, da vil returnert verdi være 0:
+I dette eksempelet viser `navn.length()` til lengden av strengen `navn`, som i dette tilfellet er 5. Dette inkluderer også mellomrom og spesialtegn.
 
-```java
-String tom = "";
-int tomLengde = tom.length();
-System.out.println(tomLengde);
-```
+## Dypdykk
 
-Dette vil gi følgende output:
+Det er viktig å merke seg at lengden til en streng er forskjellig fra indeksen til en streng. Lengden refererer til antall tegn, mens indeksen refererer til posisjonene til hvert tegn i strengen. For eksempel, hvis vi bruker indeksen 0 på `navn`-strengen, vil vi få bokstaven "M", mens indeks 1 vil gi oss "a". Det er viktig å holde denne forskjellen i tankene for å unngå forvirring.
 
-```
-0
-```
-
-En annen måte å finne lengden til en streng på, er ved å bruke en løkke. La oss se på et eksempel på dette:
-
-```java
-String navn = "Marius";
-int lengde = 0;
-
-// Løkken kjører så lenge i er mindre enn lengden til strengen
-for(int i = 0; i < navn.length(); i++) {
-  lengde++;
-}
-
-System.out.println(lengde);
-```
-
-Dette vil også gi oss et output på 6, siden det er 6 tegn i strengen "Marius". Det kan være nyttig å bruke en løkke hvis man ønsker å gjøre flere operasjoner basert på strengens lengde.
-
-## Deep Dive
-
-Å finne lengden til en streng er en enkel oppgave, men det kan være nyttig å vite at det i Java finnes en rekke andre metoder som kan brukes på strenger. For eksempel kan vi bruke `substring(startIndex, endIndex)` for å returnere en del av en streng basert på indeksen til start- og sluttpunktet vi ønsker å hente ut.
-
-Vi kan også bruke `charAt(index)` for å returnere en enkelt bokstav fra en streng basert på indeksen. Det er også verdt å merke seg at lengden til en streng ikke er det samme som størrelsen på strengen, da størrelsen tar hensyn til andre ting som lagringsplass og tomme tegn.
+En annen viktig ting å merke seg er at lengden til en streng vil endre seg hvis vi endrer på strengen. For eksempel, hvis vi legger til en bokstav i strengen `navn`, vil lengden øke med 1. Dette er fordi `length()`-metoden alltid tar hensyn til den nåværende tilstanden til strengen.
 
 ## Se også
 
-- [Java String API](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
-- [How to Find the Length of a String in Java](https://www.baeldung.com/java-string-length)
-- [Java String Methods](https://www.geeksforgeeks.org/java-string-methods/)
+- [String Class - Oracle Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+- [Java Strings Tutorial - W3Schools](https://www.w3schools.com/java/java_strings.asp)
+- [Java String length() method - GeeksforGeeks](https://www.geeksforgeeks.org/java-string-length-method-example/)

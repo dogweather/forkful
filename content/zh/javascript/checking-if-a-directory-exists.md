@@ -1,40 +1,54 @@
 ---
-title:    "Javascript: 检查目录是否存在"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/checking-if-a-directory-exists.md"
+title:                "Javascript: 检查目录是否存在"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要检查目录是否存在？
+## 为什么：为什么要检查目录是否存在？
 
-在编写Javascript程序时，有时候我们需要检查某个特定的目录是否存在，这是很重要的一步。如果我们的程序需要读取或写入某个目录中的文件，那么在进行这些操作前，我们需要确认该目录确实存在。否则，如果目录不存在，程序就会出现错误。因此，检查目录是否存在可以帮助我们避免潜在的错误。
+在编写Javascript程序时，有时我们需要检查某个特定的目录是否存在，这可以帮助我们确定程序是否可以顺利运行。如果目录不存在，程序可能会出现错误，因此检查目录是否存在可以帮助我们提前发现问题并解决它们。
 
-# 如何进行检查
+## 如何做：
 
-要检查目录是否存在，我们可以使用Javascript中的内置模块fs（文件系统）。首先，我们需要引入fs模块：
+接下来，我将向大家介绍如何在Javascript中检查目录是否存在。我们可以使用Node.js中的`fs`模块来实现。首先，我们需要引入`fs`模块并使用`existsSync()`函数来检查目录是否存在，代码示例如下：
 
 ```Javascript
 const fs = require('fs');
+if (fs.existsSync('path/to/directory')) {
+  console.log('目录存在'); 
+} else {
+  console.log('目录不存在'); 
+}
 ```
 
-然后，我们可以使用fs模块中的`existsSync()`方法来检查目录是否存在。该方法接收一个目录的路径作为参数，并返回一个布尔值，表明该目录是否存在。
+如果目录存在，`existsSync()`函数将返回`true`，否则将返回`false`。通过这种方式，我们可以根据结果来进行下一步的操作，从而避免程序出现错误。
+
+## 深入了解：
+
+当我们调用`existsSync()`函数时，实际上是在检查给定路径是否存在指定的目录或者文件。如果`existsSync()`返回`false`，我们还可以使用`mkdirSync()`函数来创建新的目录，代码示例如下：
 
 ```Javascript
-const directoryPath = './myDirectory'; // 替换为你要检查的目录路径
-const directoryExists = fs.existsSync(directoryPath);
-console.log(directoryExists); // 如果myDirectory目录存在，将打印true，否则打印false
+if (!fs.existsSync('path/to/directory')) {
+  fs.mkdirSync('path/to/directory'); 
+}
 ```
 
-# 深入了解
+通过这种方式，我们可以动态地创建目录，以确保程序的顺利运行。
 
-除了使用fs模块之外，我们也可以使用第三方模块如`fs-extra`来检查目录是否存在。该模块提供了更多的功能，如递归地检查子目录的存在等。
+## 参考链接：
 
-此外，我们也可以通过使用try-catch语句来捕获目录不存在的错误。如果我们尝试读取或写入一个不存在的目录，程序会抛出错误，我们可以使用try-catch语句来处理该错误。
+了解更多关于Node.js中`fs`模块的信息，请参考以下链接：
 
-# 参考链接
+- [Node.js文档中关于`fs`模块的介绍](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
+- [如何在Node.js中检查文件或目录是否存在](https://www.geeksforgeeks.org/node-js-fs-exists-method/)
+- [使用Node.js中的`fs`模块来创建新的目录](https://www.digitalocean.com/community/tutorials/nodejs-create-file-system)
+## 参考链接：
 
-- [Node.js文件系统模块文档](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
-- [fs-extra模块文档](https://github.com/jprichardson/node-fs-extra)
-- [try-catch语句文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
-- [Node.js中文文档](https://nodejs.org/zh-cn/docs/)
+了解更多关于Node.js中fs模块的信息，请参考以下链接：
+
+- [Node.js文档中关于fs模块的介绍](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
+- [如何在Node.js中检查文件或目录是否存在](https://www.geeksforgeeks.org/node-js-fs-exists-method/)
+- [使用Node.js中fs模块来创建新的目录](https://www.digitalocean.com/community/tutorials/nodejs-create-file-system)

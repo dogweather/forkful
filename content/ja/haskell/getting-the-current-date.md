@@ -1,44 +1,44 @@
 ---
-title:    "Haskell: 現在の日付を取得する"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/getting-the-current-date.md"
+title:                "Haskell: 現在の日付を取得する"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-Haskellで現在の日付を取得するのに役立つ理由はたくさんあります。なぜなら、現実世界のアプリケーションでは、現在の日付を使用することがよくあるからです。例えば、日付が重要なイベントを追跡するアプリケーションや、締め切りを計算するアプリケーションなどがあります。
+今日の日付を取得する必要がある理由はさまざまです。例えば、プログラムを書いているときに現在の日付を使用する必要があるかもしれません。また、日付を使用してデータを整理する場合にも便利です。
 
 ## 方法
 
-Haskellで現在の日付を取得するのはとても簡単です。まず、`Data.Time`モジュールをインポートします。
+現在の日付を取得するには、Haskellの標準ライブラリであるData.Timeモジュールを使用します。下記のコードを実行することで、現在の日付を取得することができます。
 
 ```Haskell
 import Data.Time
+
+main = do
+    now <- getCurrentTime
+    let today = utctDay now
+    putStrLn $ "今日の日付は " ++ show today ++ " です。"
 ```
 
-次に、`getCurrentTime`関数を使用して現在の日付を取得します。
+このコードを実行すると、以下のように現在の日付が表示されます。
 
-```Haskell
-currentDate <- getCurrentTime
+```
+今日の日付は 2021-01-01 です。
 ```
 
-最後に、`formatTime`関数を使用して、取得した日付を指定した形式にフォーマットします。
-
-```Haskell
-let formattedDate = formatTime defaultTimeLocale "%Y年%m月%d日" currentDate
-```
-
-このようにすると、`formattedDate`には現在の日付が"2021年04月15日"のような形式で格納されます。
+また、currentDateTime関数を使用することで、現在の日付と時刻を取得することもできます。
 
 ## 深堀り
 
-Haskellには、時間の計算やタイムゾーンの処理など、さまざまな機能があるため、現在の日付を取得する方法は多岐にわたります。また、Haskellの型システムを活用して、日付をより安全に扱うこともできます。
+Data.Timeモジュールには、日付や時刻を操作するための様々な関数が用意されています。例えば、Date型やTimeOfDay型などのデータ型があり、これらを使用することで日付や時刻を自由に操作することができます。
 
-## 関連リンク
+また、TimeLocaleという型を使用することで、日付や時刻の表示形式をカスタマイズすることも可能です。
 
-- [Haskell公式ドキュメント](https://www.haskell.org/)
-- [Haskellチュートリアル](https://wiki.haskell.org/Tutorials)
+## 関連情報
+
 - [Data.Timeモジュールのドキュメント](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Haskellで日付を扱う方法](https://qiita.com/kazu69/items/065b253efa313fb095c3)
+- [Data.Timeのチュートリアル](https://www.schoolofhaskell.com/user/commercial/content/a-tutorial-on-package-time)

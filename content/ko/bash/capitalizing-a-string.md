@@ -1,38 +1,49 @@
 ---
-title:    "Bash: 문자열 대문자 변환"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/bash/capitalizing-a-string.md"
+title:                "Bash: 스트링 대문자 변환하기"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 Capitalizing String In Bash를 쓸까요?
+## 왜
 
-Bash 프로그래밍은 많은 사람들에게 친숙하지 않지만, 요즘 우리의 일상에서 자주 사용되는 언어 중 하나입니다. 하지만 어떤 경우에는 이 언어를 사용하면서도 조금 번거로운 일이 발생할 수 있습니다. 가령, 일반적인 텍스트 작업 중 문자열을 대문자로 변환하고 싶을 때가 있을 겁니다. 이때 Bash의 강력한 기능인 "Capitalizing String"을 사용하면 매우 편리합니다.
+문자열의 첫 번째 글자를 대문자로 변경하는 과정은 프로그래밍에서 매우 유용합니다. 이 기능은 이름, 타이틀 등과 같이 첫 글자가 대문자로 시작해야 할 때 자주 사용됩니다.
 
-# 사용 방법
+## 진행 방법
 
-간단한 예제를 통해 어떻게 Bash에서 "Capitalizing String"을 사용하는지 살펴보겠습니다.
+[_capitalize_string.sh_](https://github.com/johndoe/capitalize_string.sh) 파일을 만들고 다음 코드를 추가하세요:
 
 ```Bash
-# 문자열을 변수로 선언합니다.
-str="hello world"
+# 변수에 문자열 할당
+text="hello, world!"
 
-# 문자열을 대문자로 변환합니다.
-str=${str^^}
+# 문자열의 첫 번째 글자를 대문자로 변경
+capitalized_text="$(tr '[:lower:]' '[:upper:]' <<< ${text:0:1})${text:1}"
 
-# 변환된 문자열을 출력합니다.
-echo $str
+# 결과 출력
+echo "${capitalized_text}"
 ```
 
-위 코드를 실행하면 "HELLO WORLD"라는 출력 결과를 볼 수 있습니다. 여기서 중요한 점은 문자열을 변환하는 법을 기억해두는 것입니다. 변수를 사용해야 하고, 변수를 한 번 더 사용하여 변환된 값으로 할당해야 합니다.
+출력 결과는 다음과 같을 것입니다:
 
-# 더 깊이 알아보기
+```
+Hello, world!
+```
 
-"Capitalizing String"은 Bash shell에서 문자열을 다루는 여러 가지 함수 중 하나입니다. 이 함수를 사용하면 문자열을 소문자나 대문자로 변환할 수 있습니다. "^^"를 사용하면 대문자로, "^^"를 사용하면 소문자로 변환됩니다.
+이 코드의 첫 번째 줄에서 우리는 "hello, world!"라는 문자열을 `text` 변수에 할당합니다. 다음으로, 첫 번째 글자를 대문자로 변경하는 `tr` 명령어를 사용하여 `text` 변수 내의 문자열을 수정합니다. 마지막으로, 수정된 문자열을 `capitalized_text` 변수에 할당하고 `echo`를 사용하여 결과를 출력합니다.
 
-# See Also
+## 더 깊이 들어가기
 
-- https://wiki.bash-hackers.org/commands/builtin/uppercase
-- https://linuxhint.com/capitalize_string_bash/
-- https://linuxize.com/post/bash-string/
+이제 문자열을 대문자로 변경하는 기능에 대해 조금 더 자세히 알아보겠습니다. Bash에서 문자열을 변경할 때 `tr` 명령어가 유용합니다. 이 명령어는 파일 또는 표준 입력에서 발견된 문자를 다른 문자로 바꿔줍니다. 위에서 본 예제에서 사용된 `tr` 명령어는 `[[:lower:]]` 패턴에 포함된 모든 소문자를 `[[:upper:]]` 패턴에 포함된 모든 대문자로 바꾸어 줍니다. 그리고 `<<<` 명령어는 표준 입력으로 문자열을 전달할 수 있게 해줍니다. 마지막으로, 변수명 다음에 `:`를 쓰고, 콜론 뒤의 숫자는 해당 변수의 몇 번째 문자부터 가져올지를 나타냅니다.
+
+## 관련 링크
+
+- [_bash(1) man page_](http://man7.org/linux/man-pages/man1/bash.1.html)
+- [_tr(1) man page_](http://man7.org/linux/man-pages/man1/tr.1.html)
+- [_Bash Pitfalls_](https://mywiki.wooledge.org/BashPitfalls)
+- [_Shell Scripting Tutorial_](https://www.shellscript.sh/) 
+
+## 참고
+[_capitalize_string.sh_](https://github.com/johndoe/capitalize_string.sh) 파일의 내용을 수정하면 다른 문자열도 대문자로 변경할 수 있습니다. 또한 `tr` 명령어를 `sed`, `awk` 등 다른 명령어로 대체하여 같은 기능을 수행할 수도 있습니다. 자신만의 방식으로 코드를 작성해 보세요!

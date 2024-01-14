@@ -1,49 +1,48 @@
 ---
-title:    "Ruby: Skapande av slumpmässiga nummer"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/generating-random-numbers.md"
+title:                "Ruby: Skapa slumpmässiga nummer"
+programming_language: "Ruby"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att generera slumpmässiga nummer är ett viktigt koncept inom programmering, särskilt inom Ruby. Det är ett verktyg som kan användas för att skapa variation i din kod och öka dess flexibilitet. Det är också ett användbart koncept för spel- eller simuleringsapplikationer där slumpmässighet behövs.
+Att generera slumpmässiga nummer är ett vanligt behov inom många programmeringsprojekt. Det kan användas för att skapa unika identifierare, simuleringsprogram eller helt enkelt för att lägga till slumpmässiga element i ditt program.
 
 ## Hur man gör
-
-Ruby har inbyggda metoder för att generera slumpmässiga nummer, vilket gör det till en enkel process. En av dessa metoder är .rand, som returnerar ett värde mellan 0 och 1. För att få ett heltal mellan ett visst intervall kan du multiplicera .rand med önskat högsta tal och sedan lägga till det lägsta talet. Till exempel:
+För att skapa slumpmässiga nummer i Ruby kan du använda `rand` funktionen. Här är ett exempel på hur du genererar ett slumpmässigt heltal mellan 1 och 10:
 
 ```Ruby
-rand * 10 + 1  # Ger ett tal mellan 1 och 10
+rand(1..10)
 ```
 
-Du kan också använda en annan metod, .rand(range), som tar ett intervall som argument och returnerar ett slumpmässigt tal inom det intervallet. Till exempel:
+Detta kommer att ge dig ett slumpmässigt tal varje gång du kör programmet. Om du istället vill ha ett slumpmässigt decimaltal kan du använda följande kod:
 
 ```Ruby
-rand(1..10) # Ger ett tal mellan 1 och 10
+rand(0.0..10.0)
 ```
 
-Om du behöver en slumpmässig bokstav kan du använda .chr, som kommer att returnera en slumpmässig bokstav från alfabetet. Till exempel:
+### Flera sätt att generera slumpmässiga nummer
+Det finns flera andra sätt att generera slumpmässiga nummer i Ruby. Ett annat alternativ är att använda `Random` klassen och dess `rand` funktion:
 
 ```Ruby
-(65 + rand(26)).chr  # Ger en slumpmässig stor bokstav
+Random.rand(1..10)
 ```
 
-Du kan också använda .shuffle för att blanda om en array, vilket kan vara användbart för att skapa en slumpmässig ordningsföljd av element. Till exempel:
+Du kan också använda `Kernel#srand` funktionen för att seeda slumpen, vilket gör att du får samma resultat varje gång du kör programmet med samma seed. Här är ett exempel:
 
 ```Ruby
-["a", "b", "c", "d"].shuffle # Ger ett slumpmässigt ordnat array
+srand(12345)
+rand(1..10) # kommer alltid att ge samma resultat
 ```
 
 ## Djupdykning
+Bakom kulisserna använder Ruby Mersenne Twister algoritmen för att generera slumpmässiga nummer. Detta är en välkänd och pålitlig metod för att skapa slumpmässiga nummer. Det är också möjligt att ange en seed för `rand` eller `Random.rand` funktionen för att få olika sekvenser av slumpmässiga nummer.
 
-När det gäller att generera slumpmässiga nummer är det viktigt att förstå att dessa nummer egentligen inte är helt slumpmässiga. De skapas med hjälp av en algoritm som försöker att efterlikna det beteende som vi skulle associera med slumpmässighet. Det finns olika algoritmer för detta, och det är viktigt att välja en som passar för ditt specifika syfte.
-
-En annan sak att tänka på är att slumpmässiga nummer är resultatet av en startpunkt, så om du kör samma kod flera gånger kommer du att få samma sekvens av nummer. Om du vill undvika detta kan du ge ett "seed"-värde till .rand-metoden och därmed få en annan sekvens av slumpmässiga nummer varje gång.
+En intressant egenskap hos Mersenne Twister är att den kan generera otroligt många unika nummer innan den börjar upprepa sig. Detta gör den till en bra kandidat för spel och andra system där slumpen är viktig.
 
 ## Se även
-
-- [Ruby Dokumentation: Random](https://ruby-doc.org/core-2.7.1/Random.html)
-- [Ruby Dokumentation: Kernel#rand](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-rand)
-- [Hvad mere kan du gøre med Ruby's Random clas](https://blog.appacademy.io/what-else-can-you-do-with-rubys-random-class/)
+* [Dokumentation för `rand` funktionen](https://ruby-doc.org/core-3.0.2/Random.html#method-i-rand)
+* [Mersenne Twister algoritmen](https://en.wikipedia.org/wiki/Mersenne_Twister)
+* [Exempel på användning av `rand` funktionen i Ruby](https://www.rubyguides.com/2017/07/ruby-random/)

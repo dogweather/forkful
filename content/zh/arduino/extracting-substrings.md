@@ -1,57 +1,58 @@
 ---
-title:    "Arduino: 提取子串"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/extracting-substrings.md"
+title:                "Arduino: 提取子字符串"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么：从字符串中提取子字符串的重要性
+请感兴趣的编程爱好者阅读！
 
-如果你正在使用Arduino进行编程，你可能会遇到需要从一个字符串中提取特定的一部分来使用的情况。这种操作被称为提取子字符串，它可以帮助你更有效地使用字符串数据。下面我们就来学习如何在Arduino中提取子字符串。
+## 为什么要提取子字符串？
 
-## 如何做到
+在编写代码时，我们经常需要从一个字符串中提取特定的部分。这可能是因为我们需要对单个字符进行操作，或者我们需要将字符串拆分为更小的部分进行处理。无论什么原因，提取子字符串是一个非常常见的操作，它可以帮助我们更有效地处理字符串数据。
 
-通过使用substring函数，我们可以轻松地从一个字符串中提取出我们需要的部分。请看以下示例代码：
+## 如何提取子字符串？
 
-```Arduino
-// 声明一个字符串变量
-String sentence = “Hello World”;
-
-// 使用substring函数提取子字符串
-String hello = sentence.substring(0, 5); // 从索引0开始，提取5个字符
-String world = sentence.substring(6, sentence.length()); // 从索引6开始，提取到最后一个字符
-
-// 打印结果
-Serial.println(hello); // 输出：Hello
-Serial.println(world); // 输出：World
-```
-
-在上面的例子中，我们首先声明了一个名为sentence的字符串变量，它包含了“Hello World”的值。然后，我们使用substring函数来提取子字符串，第一个参数指定了开始提取的索引，第二个参数指定了提取的字符数量。最后，我们使用串口监视器（Serial Monitor）来打印结果，可以看到我们成功地从sentence中提取出了想要的子字符串。
-
-## 深入学习
-
-除了指定开始索引和提取的字符数量，substring函数还有一个可选的第三个参数，它可以用来指定你想要提取的字符类型。默认情况下，它提取的是字符串型。但是如果你在第三个参数中填入int类型的值，它会将提取的子字符串转换为整型。这个功能非常有用，特别是当你需要从字符串中提取数值类型的数据时。
-
-另外，如果你需要提取的字符数量已知，你也可以使用charAt函数来提取单个字符，如下所示：
+对于Arduino来说，提取子字符串并不难。我们可以使用内置的substring()函数来实现这一点。接下来让我们来看一个简单的示例。
 
 ```Arduino
-// 使用charAt函数提取单个字符
-char firstChar = sentence.charAt(0); // 提取第一个字符
-char lastChar = sentence.charAt(sentence.length() - 1); // 提取最后一个字符
+// 定义一个字符串
+String sentence = "I love to code with Arduino!";
 
-// 打印结果
-Serial.println(firstChar); // 输出：H
-Serial.println(lastChar); // 输出：d
+// 提取第一个字母
+String firstLetter = sentence.substring(0, 1);
+
+// 提取"love"这个单词
+String word = sentence.substring(2, 6);
 ```
 
-通过以上的例子，我们可以看到charAt函数提取的是char类型的值，它可以帮助我们更方便地处理单个字符。
+在上面的代码中，我们首先定义了一个字符串变量，其中包含一句话。然后，使用substring()函数，我们可以提取字符串的某个部分。该函数接受两个参数，第一个参数是要提取的起始位置，第二个参数是要提取的结束位置（不包括该位置的字符）。因此，我们可以通过改变这两个参数的值来提取不同的部分。
 
-# 请使用
+让我们来看看上面代码的输出：
 
-现在你已经学会了如何在Arduino中提取子字符串，你可以将它应用到你的项目中。这项技能对于处理字符串数据非常有用，它可以帮助你更有效地操作和管理字符串。如果你想要进一步了解substring函数和charAt函数的更多用法，可以参考下面的链接。
+```
+firstLetter = "I"
+word = "love"
+```
 
-# 查看也有用
+正如你所看到的，我们通过提取子字符串，成功把字符串分成了更小的部分。现在你可以根据自己的需要，使用substring()函数来提取任何想要的部分。
 
-- [Arduino substring函数文档](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Arduino charAt函数文档](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/charAt/)
+## 深入了解提取子字符串
+
+如果你想进一步了解如何在Arduino中提取子字符串，你可以研究一下substring()函数的工作原理。它实际上是通过使用两个指针来定位起始位置和结束位置，然后返回这之间的部分字符串。因此，当你使用这个函数时，可以更好地理解它的工作原理。
+
+另外，你还可以尝试使用其他字符串操作函数，如indexOf()和lastIndexOf()来提取子字符串。它们也可以帮助你在处理字符串时更高效地提取特定部分。
+
+## 参考链接
+
+- [Arduino字符串函数](https://www.arduino.cc/reference/zh/language/variables/data-types/string/functions/substring/)
+- [Arduino字符串教程](https://www.arduino.cc/en/Tutorial/StringSubstring)
+- [substring()函数用法示例](https://lastminuteengineers.com/arduino-strings-substring-indexof-lastindexof/)
+
+## 也可以看看这些
+
+- [如何在Arduino中使用字符串变量](https://www.arduino.cc/en/Tutorial/StringConstructors)
+- [字符串操作函数参考指南](https://www.arduino.cc/reference/zh/language/variables/data-types/string/functions/)
+- [处理字符串的常见错误和解决方案](https://www.arduino.cc/en/Tutorial/StringConstructors)

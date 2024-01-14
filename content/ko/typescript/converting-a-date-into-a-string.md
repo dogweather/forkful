@@ -1,44 +1,54 @@
 ---
-title:    "TypeScript: 날짜를 문자열로 변환하기"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/converting-a-date-into-a-string.md"
+title:                "TypeScript: 날짜를 문자열로 변환하기"
+programming_language: "TypeScript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
+"## 왜" 
+
+날짜를 문자열로 변환하는 작업에 참여하는 이유를 간략히 설명합니다. 
+
 ## 왜
-날짜를 문자열로 변환하는 작업은 프로그래밍에서 매우 흔하게 사용되는 기능입니다. 날짜를 문자열로 바꾸는 이유는 다양합니다. 예를 들어, 데이터베이스에 날짜 형식으로 저장된 값을 웹 사이트에서 보여줄 때, 사용자가 입력한 날짜를 데이터베이스와 비교할 때, 혹은 간단한 계산을 수행할 때 등 많은 상황에서 날짜를 문자열로 변환합니다.
+여러분은 TypeScript를 사용하면서 타입 변환 작업을 자주 할 수 있습니다. 이 중에서도 날짜 객체를 문자열로 변환하는 작업은 매우 중요합니다. 예를 들어, 사용자의 생일이나 이벤트 날짜를 문자열 형태로 저장해야하는 경우가 있을 수 있습니다. 따라서 우리는 TypeScript에서 날짜를 문자열로 변환하는 방법을 알아보겠습니다.
 
-## 방법
-날짜를 문자열로 변환하는 방법은 간단합니다. TypeScript에서는 Date 객체와 다양한 내장 메소드를 활용하여 날짜를 간편하게 문자열로 변환할 수 있습니다. 아래의 예제 코드를 참고해보세요.
+"## 사용방법"
 
-```TypeScript
-let today = new Date(); // 현재 날짜 정보를 가진 Date 객체를 생성합니다.
-let dateString = today.toLocaleDateString(); // Date 객체의 toLocaleDateString 메소드를 호출하여 날짜를 문자열로 변환합니다.
-console.log(dateString); // "2021-10-08"과 같은 표준 형식으로 출력됩니다.
-```
-
-위에서 사용한 toLocaleDateString 메소드는 내부적으로 사용자의 지역 설정에 따라 다른 문자열 형식을 반환합니다. 따라서 필요에 따라 다양한 형식의 문자열로 변환할 수 있습니다.
+아래 코드 블록을 참고하여 TypeScript에서 날짜를 문자열로 변환하는 방법을 살펴보세요. 
 
 ```TypeScript
-console.log(today.toLocaleDateString('en-US')); // "10/8/2021"
-console.log(today.toLocaleDateString('ko-KR')); // "2021. 10. 8."
+let today: Date = new Date();
+let dateString: string = today.toDateString();
+console.log(dateString);
 ```
+output: Fri Sep 11 2020
 
-만약 날짜와 시간을 모두 포함한 문자열을 반환하고 싶다면 toLocalString 메소드를 사용할 수 있습니다.
+위의 코드를 실행하면 현재 날짜를 문자열로 변환한 결과를 볼 수 있습니다. 이렇게 변환된 날짜 문자열은 다양한 형태로 사용할 수 있습니다. 
+
+따라서 날짜를 원하는 형태로 변환하려면 Date 객체에서 제공하는 다양한 메소드를 활용해야 합니다. 예를 들어, 년도, 월, 일 등을 포함한 원하는 형태로 날짜를 변환할 수 있습니다. 아래의 코드 예제를 참고하시기 바랍니다.
 
 ```TypeScript
-let today = new Date();
-let dateTimeString = today.toLocaleString(); // Date 객체의 toLocaleString 메소드를 호출하여 날짜와 시간을 문자열로 변환합니다.
-console.log(dateTimeString); // "10/8/2021, 12:00:00 AM"과 같은 형식으로 출력됩니다.
+let today: Date = new Date();
+let options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+let dateString: string = today.toLocaleDateString(undefined, options);
+console.log(dateString);
 ```
+output: September 11, 2020 
 
-## 깊이 파고들기
-위에서는 날짜를 문자열로 변환하는 가장 기본적인 방법을 살펴보았습니다. 하지만 우리는 더 많은 선택지를 가지고 있습니다. Date 객체에는 날짜, 시간, 혹은 둘 다를 포함한 값들을 반환하는 다양한 메소드가 있고, 또 JavaScript에서는 Moment.js와 같은 라이브러리를 사용하여 더 다양한 포맷의 날짜 문자열을 만들 수 있습니다.
+위의 코드에서는 toLocaleDateString() 메소드를 사용하여 원하는 형태로 날짜를 변환하였습니다. 마이크로소프트에서 제공하는 자세한 문서를 참고하여 필요에 맞게 원하는 형태로 날짜를 변환할 수 있습니다.
 
-더 깊이 들어가기 전에, 날짜와 문자열을 자유자재로 다루기 위해서는 기본적인 날짜와 시간에 대한 지식이 필요합니다. 따라서 날짜와 시간 관련해서 공부해보는 것을 추천합니다.
 
-## 관련 정보
-- [TypeScript Date 객체 문서](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
-- [JavaScript Moment.js 라이브러리](https://momentjs.com/)
-- [날짜와 시간 관련 자습서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
+"## 깊이 있는 내용"
+
+날짜를 문자열로 변환하는 작업은 매우 흔하고 중요한 작업입니다. 따라서 이번 섹션에서는 이 작업에 대해 깊이 있는 내용을 알아보겠습니다. 
+
+우선 Date 객체는 자바스크립트에서 날짜와 시간을 다루는 데 사용되는 기본 객체입니다. 이 객체는 다양한 메소드를 제공하며 날짜와 시간을 다양한 방식으로 조회하고 조작할 수 있습니다. 따라서 우리는 이 객체를 사용하여 날짜를 문자열로 변환하는 작업을 수행할 수 있습니다. 
+
+또한 날짜를 변환할 때는 어떤 형식으로 변환할지 정하는 옵션을 설정할 수 있습니다. 예를 들어, ‘year', 'month', 'day'와 같은 옵션을 지정하여 날짜를 년, 월, 일로 나누어 변환할 수 있습니다. 이러한 옵션을 통해 우리는 Date 객체에서 제공하는 다양한 메소드를 조합하여 정확한 날짜를 원하는 형태로 변환할 수 있습니다. 
+
+받은 날짜 객체를 어떤 형식으로 변환할지 선택함으로써 우리는 날짜를 손쉽게 문자열로 변환할 수 있습니다. 따라서 TypeScript에서는 다양한 날짜 변환 메소드를 사용하여 원하는 형태로 날짜를 변환할 수 있습니다.
+
+
+"## 참고

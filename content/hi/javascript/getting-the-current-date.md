@@ -1,37 +1,44 @@
 ---
-title:    "Javascript: वर्तमान तारीख प्राप्त करना"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/getting-the-current-date.md"
+title:                "Javascript: वर्तमान तारीख प्राप्त करना"
+programming_language: "Javascript"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
+## क्यों
 
-कभी-कभी आपके पास कुछ काम की तारीख को जानने की आवश्यकता होती है, जैसे कि अपने ब्लॉग पोस्ट के प्रकाशन तारीख को दर्शाने के लिए या अपने कैलेंडर में इस हफ्ते कोनसे दिन हैं। इस स्थिति में, एक जावास्क्रिप्ट प्रोग्राम आपके लिए उपयोगी साबित हो सकता है।
+वर्तमान दिनांक को प्राप्त करने के कारण, यह आपको अपनी जावास्क्रिप्ट प्रोग्रामिंग में खासी उपयोगी साबित हो सकता है।
 
-# कैसे करें
+## कैसे करें
 
-क्या आप जानते हैं कि आप जावास्क्रिप्ट में सामान्य तारीख को प्राप्त करने के लिए ```Date()``` फंक्शन का प्रयोग कर सकते हैं? इसका उपयोग करके, आप क्लाइंट कंप्यूटर की आधार पर वर्तमान दिनांक और समय प्राप्त कर सकते हैं। 
+```Javascript
+// वर्तमान दिनांक को प्राप्त करने के लिए जावास्क्रिप्ट का उपयोग करें
+let currentDate = new Date();
 
-इसके लिए, आपको निम्नलिखित स्टेप्स को दोहराना होगा:
+// दिनांक का प्रारूप ढांचा तय करने के लिए तिथि विधि का उपयोग करें
+let day = currentDate.getDate();
+let month = currentDate.getMonth() + 1;
+let year = currentDate.getFullYear();
 
-1. सबसे पहले, ```Date()``` फंक्शन को उपयोग करके एक नया दिनांक ऑब्जेक्ट बनाएं। यह वर्तमान समय और तिथि को आपके स्क्रिप्ट में दर्शाता है। जैसे: ```var current_date = new Date();```
+// संपूर्ण दिनांक को एक स्ट्रिंग में जोड़ें
+let fullDate = day + "/" + month + "/" + year;
 
-2. फिर, आप current_date ऑब्जेक्ट के लिए ```getFullYear()```, ```getMonth()```, ```getDate()```, ```getHours()```, ```getMinutes()```, और ```getSeconds()``` जैसे फंक्शन्स का उपयोग अपनी आवश्यकतानुसार कर सकते हैं। जैसे: ```var current_year = current_date.getFullYear();```
-
-आपका पूर्वावलोकन स्थिति कुछ इस तरह का होना चाहिए:
-
-```
-var current_date = new Date();
-var current_year = current_date.getFullYear();
-var current_month = current_date.getMonth() + 1;
-var current_day = current_date.getDate();
-var current_hours = current_date.getHours();
-var current_minutes = current_date.getMinutes();
-var current_seconds = current_date.getSeconds();
+// आउटपुट: 23/9/2021
+console.log(fullDate);
 ```
 
-# गहराई में
+## गहराई में जाएं
 
-इस तरह से, आप current_date ऑब्जेक्ट को अपनी आवश्यकतानुसार तारीख, समय, और समय-स्तम्भ को प्राप्त कर सकते हैं। इसमें हमन
+जब हम जावास्क्रिप्ट में वर्तमान दिनांक को प्राप्त करते हैं, तो हम वास्तविक दिनांक और समय के साथ साथ उसके अन्य तत्वों को भी प्राप्त करते हैं। हम संभवतः अपने डेट ऑब्जेक्ट की उपयोगिता को बढ़ाने के लिए अन्य तरीकों से उन तत्वों को प्राप्त कर सकते हैं। इससे हमारे पास अधिकतम नियंत्रण और उपयोगिता होती है जो हमें अपने अनुप्रयोगों के साथ काम करने में मदद करती है।
+
+## देखें भी
+
+[जावास्क्रिप्ट तिथि विधियों का उपयोग करना](https://www.w3schools.com/js/js_date_methods.asp)
+
+[वर्तमान दिनांक को प्राप्त करने के लिए जावास्क्रिप्ट का उपयोग कैसे करें](https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript)
+
+[तिथि और समय को फॉर्मैट करने के लिए जावास्क्रिप्ट तारीख विधियाँ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+**यदि आप जावास्क्रिप्ट प्रोग्रामिंग से अधिक स

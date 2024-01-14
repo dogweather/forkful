@@ -1,61 +1,54 @@
 ---
-title:    "Python: Ekstrahering av substringer"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/python/extracting-substrings.md"
+title:                "Python: Utdraging av delstrenger"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
 
-Å trekke ut substringer er en viktig ferdighet når du jobber med tekstbehandling i Python. Dette kan være nyttig for å finne og manipulere spesifikke deler av en tekst, for eksempel å finne et bestemt ord eller tall.
+Noen ganger i programmering kan vi ha behov for å hente ut en spesifikk del av en tekststreng. Dette kalles "substring extraction" på engelsk, og kan være nyttig i mange ulike situasjoner. I denne bloggposten skal vi se nærmere på hvorfor og hvordan man kan gjøre dette ved hjelp av Python.
 
-## Hvordan
+##Hvordan gjøre det
 
-For å trekke ut en substring i Python, kan du bruke indeksering og slicing. Dette betyr at du velger ut en del av en tekst ved å indikere start- og sluttpunktet.
-
-Her er et eksempel på hvordan du kan trekke ut substrings fra en tekst og skrive ut dem:
+For å ekstrahere deler av en tekststreng i Python, kan vi bruke en metode kalt "slice". Dette gjøres ved å indikere hvilke indekser vi ønsker å hente ut fra strengen, og deretter skrive disse indeksene mellom hakete klammer. La oss se et eksempel:
 
 ```Python
-tekst = "Dette er en tekst for å demonstrere substrings"
+tekst = "Denne teksten er til eksperimentell bruk"
 
-# Trekke ut og skrive ut "tekst"
-substring1 = tekst[11:15]
-print(substring1)
-# Output: tekst
-
-# Trekke ut og skrive ut "dem"
-substring2 = tekst[39:42]
-print(substring2)
-# Output: dem
-
-# Trekke ut og skrive ut "demonstrere substrings"
-substring3 = tekst[-28:]
-print(substring3)
-# Output: demonstrere substrings
+print(tekst[6:12])
 ```
 
-Man kan også bruke metoden `.split()` for å trekke ut substrings basert på et gitt skille. Dette er nyttig hvis du for eksempel har en tekst med ord delt av mellomrom og du vil trekke ut hvert ord som en substring.
+Dette eksempelet vil gi oss output-en "teksten". Her har vi brukt slice-metoden til å hente ut de indeksene som tilsvarer ordet "teksten" i tekststrengen vår.
 
-Her er et eksempel på hvordan du kan bruke `.split()` og skrive ut hver substring som en liste:
+Vi kan også bruke slice-metoden til å hente ut deler av en tekststreng ved hjelp av negative indekser. Dette betyr at vi teller baklengs fra slutten av strengen. La oss se et annet eksempel:
 
 ```Python
-tekst = "Dette er en tekst for å demonstrere substrings"
+tekst = "Dette er en veldig lang setning"
 
-# Trekke ut og skrive ut hvert ord som en substring
-substring_liste = tekst.split(" ")
-print(substring_liste)
-# Output: ['Dette', 'er', 'en', 'tekst', 'for', 'å', 'demonstrere', 'substrings']
+print(tekst[-9:-1])
 ```
 
-## Dypdykk
+Output-en her vil være "setning". Vi brukte de negative indeksene -9 og -1 for å hente ut ordet "setning".
 
-Når man arbeider med trekke ut substrings i Python, er det viktig å forstå hvordan indeksering fungerer. Indeksene starter alltid på 0 og går bakoversveis, dermed vil den siste bokstaven i en tekst ha indeks -1.
+##Dypdykk
 
-Det finnes også flere metoder for å trekke ut substrings, som for eksempel `.find()` og `.index()`. Disse metodene lar deg finne indeksen til en bestemt del av teksten basert på et gitt søkeord eller tegn.
+For å forstå hvorfor slice-metoden fungerer, må vi se nærmere på hvordan Python håndterer tekststrenger. En tekststreng består av en rekke enkeltelementer, også kalt "characters". Disse elementene har hver sin plass i strengen, også kalt "indekser". Når vi bruker slice-metoden, forteller vi Python hvilke indekser vi ønsker å utheve og hente ut.
 
-## Se også
+Det er også verdt å nevne at vi kan bruke slice-metoden til å traverse gjennom en tekststreng og ekstrahere hvert n-te element ved hjelp av et tredje argument. La oss se et eksempel på dette:
 
-- [Python string methods](https://www.w3schools.com/python/python_strings_methods.asp)
-- [String handling in Python](https://realpython.com/python-strings/)
-- [How to work with strings in Python](https://www.digitalocean.com/community/tutorials/how-to-index-and-slice-strings-in-python-3)
+```Python
+tekst = "ABCDEFG"
+
+print(tekst[::2])
+```
+
+Her vil output-en være "ACEG". Vi brukte her det tredje argumentet (i dette tilfellet 2) til å hoppe over hver andre bokstav i strengen og hente ut kun disse. Dette kan være nyttig hvis vi ønsker å hente ut hvert annet element, eller hvert tredje element osv.
+
+##Se også
+- [Python tutorial](https://docs.python.org/3/tutorial/index.html)
+- [String methods](https://www.w3schools.com/python/python_ref_string.asp)
+
+Vi håper dette var nyttig for deg for å forstå hvordan du kan hente ut deler av en tekststreng ved hjelp av slice-metoden i Python. God programmering!

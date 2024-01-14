@@ -1,62 +1,59 @@
 ---
-title:    "Python: Säännöllisten ilmaisujen käyttö"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/python/using-regular-expressions.md"
+title:                "Python: Säännöllisten lausekkeiden käyttö"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita Python-ohjelmoinnissa?
+## Miksi
 
-Säännölliset lausekkeet ovat tehokas työkalu tekstien ja merkkijonojen käsittelyssä Python-ohjelmoinnissa. Ne mahdollistavat monimutkaisen tekstinhaun ja muokkauksen yhdellä kertaa, mikä säästää aikaa ja vaivaa. Ne ovat myös erottamaton osa monia ohjelmointiprojekteja, ja niiden ymmärtäminen voi olla hyödyllistä myös muiden ohjelmointikielten parissa.
+Miksi käyttää säännöllisiä lausekkeita? Yksinkertainen vastaus on, että ne ovat voimakas työkalu käsittelemään merkkijonoja ja löytämään tietoa suuresta datamäärästä. Käytännössä säännölliset lausekkeet voivat auttaa sinua löytämään tiettyjä sanoja, numeroita, välimerkkejä tai muita merkkiyhdistelmiä tekstistä. Ne ovat erityisen hyödyllisiä, kun kyseessä on datan käsittely, tekstianalyysi tai tietojen poimiminen websivustoilta.
 
-## Kuinka käyttää säännöllisiä lausekkeita Pythonissa?
+## Kuinka
 
-Säännölliset lausekkeet toimivat merkkijonon muodossa ilmaisuna, jota käytetään hakemaan ja muokkaamaan tekstiä halutulla tavalla. Niiden käyttöönotto Pythonissa vaatii `re`-moduulin tuomisen:
+Säännöllisten lausekkeiden käyttäminen Pythonissa on helppoa! Aloita tuomalla "re" moduuli koodiisi:
 
 ```Python
 import re
 ```
 
-Yksinkertaisin esimerkki säännöllisen lausekkeen käytöstä on tarkistaa, löytyykö merkkijonosta haluttu sana. Seuraava esimerkki tulostaa "Löytyi" jos sana "Python" löytyy merkkijonosta, muuten se tulostaa "Ei löytynyt":
+Seuraavaksi voit käyttää "re.search()" funktiota löytääksesi haluamasi merkkijonon tekstistä:
 
 ```Python
-merkkijono = "Opi käyttämään Pythonia"
-if re.search("Python", merkkijono):
-    print("Löytyi")
-else:
-    print("Ei löytynyt")
+text = "Tervetuloa Pythonin maailmaan!"
+match = re.search("Python", text)
 ```
 
-Säännöllisiä lausekkeita voi myös käyttää merkkijonon osien käsittelyyn. Seuraava esimerkki jakaa merkkijonon välilyönneistä ja tulostaa jokaisen sanan erikseen:
+"match" sisältää nyt "Python" merkkijonon, jos tekstissä se löytyi. Voit myös käyttää säännöllisiä lausekkeita korvaamaan tai päivittämään merkkijonoja tekstissä:
 
 ```Python
-merkkijono = "Tämä on esimerkki"
-sanat = re.split(" ", merkkijono)
-print(sanat)
+text = "Tervetuloa Pythonin maailmaan!"
+updated_text = re.sub("maailmaan", "maailma!", text)
 ```
 
-Tämä tulostaa: `['Tämä', 'on', 'esimerkki']`.
+"updated_text" sisältää nyt päivitetyn tekstin "Tervetuloa Pythonin maailma!"
 
-## Syvä sukellus säännöllisiin lausekkeisiin
+## Syvemmälle
 
-Säännölliset lausekkeet voivat sisältää erilaisia erikoismerkkejä, jotka tekevät niiden käytöstä monipuolisempaa. Joitain yleisimpiä näistä merkeistä ovat:
-
-- `.` - mikä tahansa merkki (paitsi rivinvaihto)
-- `*` - edellistä merkkiä voi esiintyä nolla tai useampi kerta
-- `+` - edellistä merkkiä voi esiintyä yksi tai useampi kerta
-- `?` - edellistä merkkiä voi esiintyä nolla tai yksi kerta
-- `()` - ryhmitys ja muuttujan tallennus
-
-Esimerkiksi, jos haluamme etsiä kaikki Gmail-sähköpostiosoitteet, voimme käyttää seuraavaa säännöllistä lauseketta:
+Voit tehdä paljon enemmän säännöllisillä lausekkeilla kuin vain hakuja ja korvauksia. Ne tarjoavat paljon erilaisia sääntöjä ja ilmaisuja, joilla voit hakea tiettyä tyyppistä dataa. Esimerkiksi voit käyttää "[]" ilmaisua löytääksesi kaikki sanat, jotka alkavat tietyllä kirjaimella:
 
 ```Python
-re.search(".+\@gmail\.com", "Sähköpostini on testi@gmail.com")
+text = "Hauskaa matkustamista ja opiskelua!"
+match = re.search("[mh]\\w+", text)
 ```
 
-Tämä löytää ja palauttaa osoitteen "testi@gmail.com".
+"match" sisältää nyt "matkustamista" sanan tekstistä.
+
+Säännölliset lausekkeet voivat olla hieman haastavia alussa, mutta harjoituksen myötä voit oppia erilaisia ilmaisuja ja taitojasi käyttää niitä taitavasti.
 
 ## Katso myös
 
-- [Pythonin virallinen dokumentaatio säännöllisille lausekkeille](https://docs.python.org/3/howto/regex.html)
-- [Regex101 - työkalu säännöllisten lausekkeiden testaamiseen](https://regex101.com/)
+Tässä on muutama hyödyllinen linkki lisätietoja ja harjoituksia varten säännöllisten lausekkeiden käytöstä Pythonissa:
+
+- [W3Schools: Regular Expressions in Python](https://www.w3schools.com/python/python_regex.asp)
+- [Real Python: Regular Expressions in Python - Practical Introduction](https://realpython.com/regex-python/)
+- [Python for Beginners: Regex Tutorial](https://www.pythonforengineers.com/regex-tutorial/)
+
+Nyt olet valmis astumaan säännöllisten lausekkeiden maailmaan. Onnea ja paljon koodausiloa!

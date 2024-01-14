@@ -1,36 +1,37 @@
 ---
-title:    "TypeScript: 새 프로젝트 시작하기"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/starting-a-new-project.md"
+title:                "TypeScript: 새 프로젝트 시작하기"
+programming_language: "TypeScript"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 TypeScript 프로젝트를 시작해야 할까요?
 
-새 프로젝트를 시작하는 이유는 다양합니다. 새로운 기술을 익히고 자신의 스킬을 발전시키기 위해서일 수도 있고, 새로운 아이디어를 구현하고 이를 공유하기 위해서일 수도 있습니다. 어떤 이유로든 자신의 프로그래밍 능력을 발전시키고 싶다면 새 프로젝트를 시작하는 것을 추천합니다.
+새로운 프로젝트를 시작하면서 TypeScript를 사용하는 것은 매우 유익합니다. TypeScript는 자바스크립트보다 더 향상된 기능을 제공하여 효율적이고 안정적인 코드를 만들 수 있도록 도와줍니다. 또한 많은 개발자들이 이미 TypeScript를 사용하고 있기 때문에 커뮤니티의 도움을 받을 수도 있습니다. 따라서 TypeScript를 사용하여 새로운 프로젝트를 시작하는 것은 이유가 충분합니다.
 
-## 어떻게 시작하나요?
+## TypeScript에서의 시작 방법
 
-새 TypeScript 프로젝트를 시작하려면 Node.js와 npm이 설치된 컴퓨터가 필요합니다. 먼저 `npm init`을 사용하여 프로젝트 디렉토리를 초기화하고, `npm install -g typescript` 명령어를 사용하여 TypeScript를 전역으로 설치합니다. 그리고 나서 다음과 같이 아주 기초적인 예제 코드를 작성해보겠습니다.
+먼저 TypeScript를 설치해야합니다. 그런 다음 다음과 같은 코드를 작성하여 간단한 TypeScript 프로그램을 만들 수 있습니다.
 
 ```TypeScript
-// main.ts 파일
-const greeting: string = "안녕하세요!";
-console.log(greeting); // 출력: 안녕하세요!
+let message: string = "안녕하세요";
+console.log(message);
 ```
 
-이제 `tsc main.ts` 명령어로 TypeScript 파일을 컴파일하고, `node main.js` 명령어를 사용하여 실행하면 "안녕하세요!"가 콘솔에 출력됩니다.
+위 코드에서는 `message`라는 변수의 형식을 `string`으로 선언하고 `console.log()`를 사용하여 콘솔에 값을 출력합니다. 실행 결과는 "안녕하세요"가 출력됩니다.
 
-## 깊게 보기
+이제 다양한 데이터 형식과 배열, 함수, 클래스 등 다양한 기능을 활용하여 코드를 작성할 수 있습니다. TypeScript에서 제공하는 강력한 기능을 사용하여 더 효율적이고 유지보수하기 쉬운 코드를 작성할 수 있습니다.
 
-새로운 TypeScript 프로젝트를 시작하는 것은 자유롭게 발전시킬 수 있는 큰 가능성을 가지고 있습니다. 더 많은 기능을 추가하고 다양한 라이브러리를 사용해보고 싶다면 많은 문서를 참조하고 다른 개발자들의 코드를 참고하는 것이 좋습니다. 또한 자신의 프로젝트를 개선하기 위해 검색할 수 있는 다양한 도구들도 있으니 적극 활용해보세요.
+## 더 깊게 알아보기
 
----
+새로운 프로젝트를 시작할 때 TypeScript를 사용하는 것은 좋은 선택이지만 잘못된 설치나 설정으로 인해 오류가 발생할 수 있습니다. 이를 방지하기 위해 TypeScript 공식 문서를 참조하고 커뮤니티에서 얻은 팁을 적용하여 문제를 해결할 수 있도록 노력해야합니다.
 
-# 참고 자료
+또한 TypeScript의 핵심 개념을 잘 이해하고 사용할 수 있도록 노력해야합니다. 인터페이스, 제네릭, 데코레이터 등의 개념을 익히면 더욱 효율적인 코드를 작성할 수 있습니다. 계속해서 학습하고 발전하는 일이 중요합니다.
 
-- [타입스크립트 공식 문서](https://www.typescriptlang.org/docs/)
-- [MDN 웹 문서](https://developer.mozilla.org/ko/)
-- [TypeScript 기초 강의](https://www.inflearn.com/course/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88) 
-- [TypeScript 코딩 스타일 가이드](https://basarat.gitbooks.io/typescript/docs/styleguide/styleguide.html)
+# 연관 정보
+
+- TypeScript 공식 문서: https://www.typescriptlang.org/docs/
+- TypeScript 커뮤니티: https://github.com/microsoft/TypeScript의아지트
+- TypeScript 핵심 개념: https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html

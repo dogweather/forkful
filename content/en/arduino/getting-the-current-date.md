@@ -1,41 +1,80 @@
 ---
-title:    "Arduino recipe: Getting the current date"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/getting-the-current-date.md"
+title:                "Arduino recipe: Getting the current date"
+programming_language: "Arduino"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-One of the basic functions of a microcontroller like Arduino is to keep track of time. Knowing the current date may seem like a simple task, but it is actually a crucial element in many projects. From automatically switching on lights on a specific date to creating a timed watering system for your plants, getting the current date is an essential aspect of programming with Arduino.
+##Why
 
-## How To
-To get the current date on an Arduino board, we will use the built-in function `millis()` in combination with the `time_t` datatype from the "Time" library.
+Have you ever wanted your Arduino project to display the current date? Whether you're building a digital clock, a data logger or a smart home system, being able to access the current date can add a useful layer of functionality to your project. In this blog post, we will explore how to get the current date using Arduino and why it can be a valuable skill to have.
+
+##How To
+
+To get the current date using Arduino, we will be using the built-in RTC (Real-Time Clock) module. Before we dive into the code, make sure you have the following materials:
+
+- Arduino board (any model)
+- RTC module (such as DS1307 or DS3231)
+- Jumper wires
+
+Firstly, connect the SDA and SCL pins of the RTC module to the corresponding pins on the Arduino board. Then, open the Arduino IDE and follow these steps:
+
+1. Install the RTC library by going to **Tools > Manage Libraries** and searching for "RTC".
+2. Select the **RTClib** library by Adafruit and click **Install**.
+3. Go to **File > Examples > RTClib > RTClib** and open the **rtc_clock** example.
+4. Upload the code to your Arduino board.
+
+```Arduino
+/* Include the RTClib library */
+#include "RTClib.h"
+
+/* Create an instance of the RTCDS1307 class, specifying the pins 
+   for SDA and SCL */
+RTC_DS1307 rtc(SDA, SCL);
+
+void setup () {
+  /* Initialize serial communication to view the output */
+  Serial.begin(9600);
+  /* Check if the RTC module is detected */
+  if (! rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
+
+  /* If the RTC module is detected, set the date and time */
+  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+}
+
+void loop () {
+  /* Create an instance of the DateTime class and retrieve the 
+     current date and time from RTC module */
+  DateTime now = rtc.now();
+  
+  /* Print the current date to serial monitor in DD/MM/YYYY format */
+  Serial.print(now.day(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.println(now.year(), DEC);
+  
+  delay(1000); // Wait for 1 second
+}
 
 ```
-Arduino #include <Time.h>
-unsigned long secondsSinceEpoch = millis() / 1000;
-time_t currentDateTime = secondsSinceEpoch;
-String currentDate = month(currentDateTime) + "/" + day(currentDateTime) + "/" + year(currentDateTime);
-Serial.println(currentDate);
-```
 
-The first line includes the "Time" library, which allows us to use functions for time and date. We then use the `millis()` function to get the number of milliseconds that have passed since the Arduino board was last started. We divide this number by 1000 to get the number of seconds and store it in an `unsigned long` variable.
+After uploading the code, open the serial monitor and you should see the current date being displayed in the format DD/MM/YYYY. You can modify the code to display the date in any format you prefer.
 
-Next, we assign this variable to a `time_t` datatype, which will store the number of seconds since January 1, 1970. This is known as the Unix epoch. Lastly, we use the `month()`, `day()`, and `year()` functions to extract the current month, day, and year from the `currentDateTime` variable. We concatenate these values into a `String` and print it out using `Serial.println()`.
+##Deep Dive
 
-If we upload this code to our Arduino board, we should see the current date in the serial monitor. 
+Now that we have successfully retrieved the current date, let's take a deep dive into how it works. RTC modules have a built-in battery supply which keeps the time and date ticking even when the Arduino board is turned off. This allows us to always have the most updated date and time as long as the module is connected to the Arduino.
 
-```
-10/14/2021
-```
+In the code, we used the **RTClib** library which has a variety of functions that allow us to access the date and time information from the RTC module. The line `rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));` sets the date and time to the current date and time on your computer. This allows us to have an initial value to work with.
 
-## Deep Dive
-Now, let's take a closer look at the `time_t` datatype and the "Time" library. The `time_t` datatype is used to store the number of seconds since the Unix epoch, which is a common way of representing time and date in computers. The "Time" library provides functions for converting the raw number of seconds into more readable values such as month, day, year, hour, and minute. It also has functions for setting and adjusting the current time and date on the Arduino board.
+Within the `loop()` function, the `now` object of the `DateTime` class is used to retrieve the current date and time information. We then use the `.day()`, `.month()` and `.year()` functions to get the respective values. These functions return integer values, which we then print to the serial monitor in the specified format.
 
-In our previous example, we only used the `month()`, `day()`, and `year()` functions, but there are many other useful functions in the "Time" library. For example, the `hour()`, `minute()`, and `second()` functions can be used to get the current time in addition to the date.
+##See Also
 
-## See Also
-- [Time library reference](https://www.pjrc.com/teensy/td_libs_Time.html)
-- [Unix time](https://en.wikipedia.org/wiki/Unix_time)
-- [Github repository for Time library](https://github.com/PaulStoffregen/Time)
+- [Adafruit Guide to DS1307 Real Time Clock](https://learn.adafruit.com/adafruit-ds1307-real-time-clock-breakout-board-kit/overview)
+- [Arduino RTC Library Documentation](https://www.arduino.cc/en/Reference/RTC)

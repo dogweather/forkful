@@ -1,80 +1,51 @@
 ---
-title:    "C: 字符串大写化"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/c/capitalizing-a-string.md"
+title:                "C: 将字符串转换为大写"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
 
-在编程中，经常会遇到需要将字符串中的字母转换成大写的情况。这通常是为了统一格式或者满足某些特定的需求。在C语言中，有几种方法可以实现字符串的大写转换。下面将介绍如何使用C语言来实现字符串的大写转换，以及更深入的信息。
+在编写C程序时，有时候我们需要将字符串的首字母变成大写，这样可以提高程序的可读性和用户体验。例如，我们可能需要将用户输入的名字显示为大写首字母形式，或者格式化一些特定的数据。不管是什么原因，学习如何在C中实现字符串的首字母大写都是非常有用的技能。
 
-## 如何
+## 如何做
 
-在C语言中，可以使用内置函数`toupper()`来将字符串中的每个字母转换为大写。示例如下：
+在C语言中，首字母大写的方式有很多种，我们这里介绍一种简单的方法。首先，我们需要定义一个函数来实现字符串的首字母大写功能：
 
 ```C
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-
-int main()
-{
-    char str[50];
-
-    printf("请输入一个字符串：");
-    scanf("%s", str);
-
-    // 使用toupper函数将字符串中的每个字母转换为大写
-    for (int i = 0; i < strlen(str); i++)
-    {
-        str[i] = toupper(str[i]);
+void capitalize(char str[]){
+    if(str[0]>=97&&str[0]<=122){ //检查首字母是否为小写字母
+        str[0]-=32; //转换为大写字母
     }
-
-    printf("转换后的字符串为：%s", str);
-    return 0;
 }
-
 ```
 
-输入：hello world
-输出：HELLO WORLD
-
-如果想要将字符串中的某个字母转换为大写，可以使用`toupper()`函数中的第二个参数来指定要转换的字母的位置，示例如下：
+上面的函数接受一个字符串作为参数，并且假设输入的字符串只包含字母和空格。首先，我们通过检查字符串的第一个字符是否在小写字母的ASCII码范围内来判断第一个字符是否为小写字母。然后，我们通过将第一个字符的ASCII码减去32来实现大写转换。最后，我们可以在主函数中使用这个函数来对字符串进行首字母大写操作：
 
 ```C
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-
-int main()
-{
-    char str[] = "hello world";
-
-    // 将字符串中的第一个字母转换为大写
-    str[0] = toupper(str[0]);
-
-    printf("转换后的字符串为：%s", str);
+int main(){
+    char name[] = "john";
+    capitalize(name);
+    printf("%s\n", name); //输出结果为"John"
     return 0;
 }
-
 ```
-
-输出：Hello world
 
 ## 深入了解
 
-除了使用`toupper()`函数之外，还可以使用C语言的字符操作函数来实现字符串的大写转换。例如，可以使用`islower()`函数来判断一个字符是否为小写字母，如果是，则可以使用`toupper()`函数将其转换为大写。同时，也可以使用`tolower()`函数来将一个字符转换为小写字母。更多关于字符操作函数的信息，可以参考C语言文档。
+上面介绍的方法只是对字符串首字母大写的一种简单实现。实际上，字符串的首字母大写有很多种方式，并且实现的复杂程度也各不相同。一些更复杂的实现可能会考虑字符串中的数字和特殊字符，或者支持不同的语言。如果你对字符串的操作感兴趣，可以继续深入学习字符串的处理和转换技巧。
 
 ## 参考资料
 
-- [C语言文档](https://www.runoob.com/cprogramming/c-standard-library-string-h.html)
-- [toupper函数](https://www.runoob.com/cprogramming/c-function-toupper.html)
-- [islower函数](https://www.runoob.com/cprogramming/c-function-islower.html)
-- [tolower函数](https://www.runoob.com/cprogramming/c-function-tolower.html)
+- [How to capitalize a string in C](https://www.geeksforgeeks.org/c-program-captalize-first-letter-every-word-string/)
+- [ASCII码表](http://www.asciitable.com/)
+- [C字符串处理教程](http://www.runoob.com/cprogramming/c-strings.html)
 
 ## 参见
 
-- [C语言字符串操作](https://www.runoob.com/cprogramming/c-strings.html)
-- [Markdown语法指南](https://www.runoob.com/markdown/md-tutorial.html)
+- [Markdown文档](https://www.markdownguide.org/)
+- [C语言教程](http://www.runoob.com/cprogramming/c-tutorial.html)
+- [字符串处理函数参考手册](https://www.tutorialspoint.com/c_standard_library/string_h.htm)

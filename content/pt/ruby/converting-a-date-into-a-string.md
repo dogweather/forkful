@@ -1,44 +1,46 @@
 ---
-title:    "Ruby: Converter uma data em uma string"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/converting-a-date-into-a-string.md"
+title:                "Ruby: Convertendo uma data em uma string"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma data em uma string?
+## Por que
 
-Em programação, muitas vezes nos deparamos com a necessidade de formatar datas para que sejam legíveis e compreensíveis para os usuários. Converter uma data em uma string é uma forma de apresentar informações de data de uma maneira mais amigável para o usuário final.
+Ao trabalhar com programação em Ruby, é comum a necessidade de converter um objeto de data em uma string formatada. Isso pode ser útil ao apresentar informações em um formato específico para o usuário ou ao salvar dados em um arquivo. Neste artigo, vamos explorar como realizar essa conversão de forma simples e eficiente.
 
-## Como fazer isso?
+## Como fazer
 
-Converter uma data em uma string pode ser feito de várias maneiras em Ruby. Uma das maneiras mais simples é usando o método `strftime`, que permite que você especifique um formato para a data.
+Para converter uma data em uma string, podemos utilizar o método `strftime` em conjunto com um formato de data específico. Por exemplo, se quisermos converter a data atual em uma string no formato "dd/mm/yyyy", podemos fazer o seguinte:
 
+```Ruby
+puts Time.now.strftime("%d/%m/%Y")
 ```
-data = Time.new(2020, 9, 22)
-data_formatada = data.strftime("%d/%m/%Y")
-puts data_formatada # Saída: 22/09/2020
+O output seria "03/08/2021", considerando que hoje é dia 03 de agosto de 2021.
+
+Podemos utilizar uma variedade de códigos de formatação para obter diferentes tipos de output. Alguns dos mais comuns são `%d` para o dia, `%m` para o mês e `%Y` para o ano. É possível consultar a documentação do Ruby para ver a lista completa de opções.
+
+## Deep Dive
+
+Além dos códigos de formatação, o método `strftime` também permite inserir strings estáticas no formato final. Por exemplo, se quisermos apresentar a data no formato "Dia dd de mês por extenso de yyyy", podemos fazer o seguinte:
+
+```Ruby
+puts Time.now.strftime("Dia %d de %B de %Y")
+```
+O output seria "Dia 03 de agosto de 2021".
+
+Também é possível converter datas em outros fusos horários utilizando o método `gmtime`, que transforma a data no formato UTC (Universal Coordinated Time). Por exemplo, se quisermos apresentar a data atual no fuso horário de São Paulo, podemos fazer o seguinte:
+
+```Ruby
+puts Time.now.gmtime.strftime("%T UTC-03:00")
 ```
 
-Além disso, você também pode usar o método `to_s` para converter uma data em sua representação de string padrão.
-
-```
-data = Time.new(2020, 9, 22)
-data_string = data.to_s 
-puts data_string # Saída: 2020-09-22 00:00:00 +0300
-```
-
-Existem muitas outras maneiras de converter datas em strings em Ruby, por isso é importante explorar e descobrir qual método funciona melhor para a sua necessidade específica.
-
-## Mergulho profundo
-
-Ao converter uma data em uma string, existem várias coisas a serem consideradas. Uma delas é o fuso horário - certifique-se de especificar o fuso horário correto ao criar uma nova data para evitar erros de conversão.
-
-Além disso, é importante se familiarizar com a sintaxe de formatação de datas em Ruby, pois diferentes métodos podem exigir formatos de data específicos.
-
-Outra coisa a ter em mente é que, ao converter uma data em uma string, você está essencialmente perdendo a funcionalidade de data - você não poderá mais realizar operações de data e hora com a string resultante. Portanto, é importante manter a data original em uma variável e usar a string convertida apenas para apresentação.
+O output seria o horário atual em UTC-03:00, que corresponde ao horário de São Paulo.
 
 ## Veja também
 
-- https://ruby-doc.org/core-2.7.2/Time.html#method-i-strftime
-- https://ruby-doc.org/core-2.7.2/Time.html#method-i-to_s
+- [Documentação oficial do método strftime](https://ruby-doc.org/core-3.0.1/Time.html#method-i-strftime)
+- [Lista completa de códigos de formatação](https://ruby-doc.org/core-3.0.1/Time.html#method-i-strftime-label-Format+Directives)
+- [Conversão de datas em diferentes fusos horários](https://www.rubyguides.com/2015/05/understanding-datetime-in-ruby/)

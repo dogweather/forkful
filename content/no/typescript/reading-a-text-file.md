@@ -1,31 +1,46 @@
 ---
-title:    "TypeScript: Lesing av en tekstfil"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/reading-a-text-file.md"
+title:                "TypeScript: Lesing av tekstfil"
+programming_language: "TypeScript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å lese tekstfiler er en viktig del av å programmere i TypeScript. Dette lar deg kommunisere med andre programmer og behandle store mengder data på en strukturert måte.
+
+Å lese en tekstfil er en vanlig og viktig del av å jobbe med programmering. Det kan være nyttig for å få tilgang til data eller for å bearbeide større mengder informasjon. I denne bloggposten skal vi se på hvordan man kan lese tekstfiler ved hjelp av TypeScript.
 
 ## Hvordan
-For å lese en tekstfil i TypeScript, må du først importere et filsystemmodul ved hjelp av `require()`-funksjonen. Deretter kan du bruke `fs.readFileSync()`-funksjonen for å lese innholdet i filen og lagre det i en variabel.
+
+For å lese en tekstfil i TypeScript, må vi bruke Node.js sin innebygde funksjon "fs". Først må vi importere denne funksjonen ved å bruke "require" - uttrykket.
 
 ```TypeScript
-const fs = require('fs'); // Importerer filsystemmodulen
-const data = fs.readFileSync('tekstfil.txt', 'utf-8'); // Leser innholdet i "tekstfil.txt" og lagrer det i "data"
-console.log(data); // Skriver ut innholdet i konsollen
+const fs = require('fs');
 ```
 
-Nå kan du behandle innholdet i filen på ulike måter, for eksempel ved å splitte teksten i ulike linjer eller søke etter spesifikke ord eller uttrykk.
+Neste steg er å opprette en variabel som vil inneholde tekstfilen vi ønsker å lese. Vi kan gjøre dette ved å bruke "readFileSync" funksjonen og angi filnavnet som parameter.
 
-## Dykk dypere
-Når du leser tekstfiler i TypeScript, er det viktig å være oppmerksom på formateringen av filen. For eksempel kan noen filer ha linjeskift med `\r\n` mens andre bruker bare `\n`. Dette kan påvirke hvordan du behandler innholdet i filen.
+```TypeScript
+const data = fs.readFileSync('example.txt');
+```
 
-En annen nyttig metode for å lese tekstfiler er `fs.createReadStream()`, som lar deg lese og behandle store filer bit for bit, noe som er mer effektivt når du jobber med store datasett.
+For å få ut dataen som er lagret i filen, må vi bruke "toString" funksjonen.
 
-## Se også
-- [Offisiell TypeScript dokumentasjon](https://www.typescriptlang.org/docs/)
-- [Tutorial: How to read files in TypeScript](https://www.digitalocean.com/community/tutorials/how-to-read-files-in-typescript)
-- [Node.js File System Module - fs](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+```TypeScript
+console.log(data.toString());
+```
+
+Outputten vil da være teksten som ligger inne i filen. For eksempel, hvis teksten i "example.txt" er "Hei på deg!", vil outputten være "Hei på deg!".
+
+## Dypdykk
+
+Det finnes også andre måter å lese tekstfiler på i TypeScript, som for eksempel ved å bruke "readFile" funksjonen i stedet for "readFileSync". Forskjellen er at "readFile" er en asynkron funksjon, mens "readFileSync" er en synkron funksjon. Det betyr at "readFile" funksjonen vil ikke blokkere koden mens filen leses, mens "readFileSync" vil gjøre det.
+
+En annen metode er å lese filen linje for linje ved hjelp av "createReadStream" funksjonen. Dette kan være nyttig hvis man trenger å behandle større filer, da man ikke trenger å laste hele filen inn i minnet før man kan starte behandlingen.
+
+## Se Også
+
+- https://codeburst.io/read-write-json-files-with-node-js-92d03cc82824
+- https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options
+- https://medium.com/@osiolabs/read-large-text-files-using-nodejs-a60bc58dae5e

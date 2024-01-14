@@ -1,62 +1,50 @@
 ---
-title:    "Haskell recipe: Comparing two dates"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/haskell/comparing-two-dates.md"
+title:                "Haskell recipe: Comparing two dates"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Comparing Dates in Haskell is Useful
+## Why
 
-When working with dates and time in Haskell, it can be useful to compare two dates in order to determine which one came first, or to check if they are the same. This can be especially helpful when working with data that includes dates, as well as when dealing with specific events or schedule planning.
+When programming, it is often necessary to compare dates in order to determine the order or calculate the time difference between two events. In Haskell, dates are represented as data types and there are various functions available for comparing them. Understanding how to compare dates in Haskell can greatly enhance your ability to manipulate and analyze data.
 
-## How To Compare Dates in Haskell
+## How To
 
-Comparing two dates in Haskell is straightforward, due to the built-in `Ord` type class which allows for comparisons between values. We can use this type class to compare two dates by first converting them to the `UTCTime` type, which represents a specific moment in time.
+To compare two dates in Haskell, we first need to import the Data.Time module. This module provides functions for working with different date and time data types.
 
-Here is a simple example of comparing two dates using the `compare` function:
-
-```Haskell
-import Data.Time.Clock
-import Data.Time.Calendar
-import Data.Time.Calendar.OrdinalDate
-
--- Create two dates
-let date1 = fromGregorian 2020 01 10
-let date2 = fromGregorian 2020 01 15
-
--- Convert dates to UTCTime type
-let utcDate1 = UTCTime date1 (secondsToDiffTime 0)
-let utcDate2 = UTCTime date2 (secondsToDiffTime 0)
-
--- Compare the two dates
-print $ compare utcDate1 utcDate2
+```haskell
+import Data.Time
 ```
 
-Running this code will output: `LT` indicating that `date1` comes before `date2`. If the dates were reversed, the output would be `GT` indicating that `date2` comes before `date1`. If the dates were the same, the output would be `EQ`.
+Next, we need to create two date objects using the `fromGregorian` function, which takes in three parameters: year, month, and day.
 
-## Deep Dive into Comparing Dates
-
-When comparing dates in Haskell, it's important to note that the `Ord` instance for `UTCTime` does not take into account time zones. This means that two `UTCTime` values with different time zones may be considered equal when comparing them using `compare`. 
-
-To take time zones into account, we can use the `CalendarDiffDays` module from the `Data.Time.Calendar.OrdinalDate` package. This module provides functions for calculating the difference between two dates in days, taking the time zone into consideration.
-
-Here is an example of calculating the difference in days between two dates, using the `diffDays` function:
-
-```Haskell
-import Data.Time.Calendar.OrdinalDate
-
--- Create two dates with different time zones
-let date1 = fromGregorian 2020 01 10
-let date2 = fromGregorian 2020 01 15
-
--- Calculate the difference in days
-print $ diffDays date1 date2
+```haskell
+let date1 = fromGregorian 2021 10 15
+let date2 = fromGregorian 2021 10 20
 ```
 
-Running this code will output: `5` indicating that there are 5 days between `date1` and `date2`.
+We can then use the `compare` function to compare the two dates. This function returns an `Ordering` type, which can be either `LT` (less than), `GT` (greater than), or `EQ` (equal).
+
+```haskell
+compare date1 date2 -- returns LT
+```
+
+To calculate the time difference between two dates, we can use the `diffDays` function. This function takes in two date objects and returns the difference in days as an `Int`.
+
+```haskell
+diffDays date1 date2 -- returns -5
+```
+
+## Deep Dive
+
+Behind the scenes, dates in Haskell are represented using the `Day` data type, which is essentially an integer representing the number of days since the beginning of the Gregorian calendar. This allows for efficient comparison and manipulation of dates.
+
+It is important to note that when comparing dates, time zones are not taken into account. This means that two dates may appear to be equal, but have a time difference due to being in different time zones. To accurately compare dates that include time zones, the `ZonedTime` data type should be used.
 
 ## See Also
-- [Haskell documentation on comparing dates](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html#t:Day)
-- [Tutorial on working with dates and time in Haskell](http://learnyouahaskell.com/input-and-output#files-and-streams)
-- [Official Haskell website](https://www.haskell.org/)
+
+- [Data.Time documentation](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Haskell Tutorial: Comparing Dates](https://www.haskell.org/tutorial/numbers.html#k-comparing-numbers)

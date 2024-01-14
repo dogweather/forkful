@@ -1,42 +1,55 @@
 ---
-title:    "C++: テキストの検索と置換"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/searching-and-replacing-text.md"
+title:                "C++: 「テキストの検索と置換」"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+「## なぜ」
+テキストの検索と置換を行う理由を説明します。
 
-プログラミングにおいて、テキストの検索と置換は非常に重要なタスクです。例えば、大きなテキストファイルや複数のファイルの中から特定のキーワードを探したり、間違っている単語やパスワードを一括で置き換えたりすることができます。これにより、パフォーマンスの向上や不要な手作業の省略が可能となります。
+テキストの検索と置換は、プログラマーやコンピューターエンジニアにとって非常に重要な機能です。これにより、大量のテキストデータを効率的に編集することができます。
 
-## 使い方
+「## 方法」
+プログラミング言語C++を使用して、テキストの検索と置換を行う方法を例とともに説明します。下記のコードブロック内に記載されたコードを参考に、自分のプログラムで使用してみてください。
 
-まず、C++のSTLライブラリーである`<algorithm>`をインクルードします。
+```C++
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    // 検索されるテキスト
+    string text = "今日はいい天気ですね。";
+
+    // "天気"を"気候"に置換する
+    text.replace(text.find("天気"), 2, "気候");
+
+    // 結果を出力
+    cout << text << endl;
+
+    return 0;
+}
+
+// 出力結果：今日はいい気候ですね。
 ```
-#include <algorithm>
-```
 
-次に、検索する文字列と置換する文字列を変数に代入します。
-```
-string target = "こんにちは";
-string replace = "Hello";
-```
+このように、`text.replace()`メソッドを使用することで、指定した文字列を検索して置換することができます。さらに、`find()`メソッドを使用することで、検索したい文字列の場所を特定できます。
 
-検索と置換の方法には、`replace()`や`search()`といった関数があります。
-```
-replace(target.begin(), target.end(), 'こんにちは', 'Hello'); // 全ての「こんにちは」を「Hello」に置換
-search(target.begin(), target.end(), 'こんにちは'); // 最初に見つかった「こんにちは」の位置を返す
-```
+「## 詳細」
+テキストの検索と置換は、プログラムの外部ファイルの編集や、大規模なデータの処理においても非常に役立ちます。例えば、大量のCSVファイルから特定のデータを検索して置換することで、データの整理や分析を効率的に行うことができます。
 
-これらの関数は、単語や文字列の他にもパターンマッチングを行うこともできます。詳細な使い方は、ドキュメントを参照してください。
+また、C++には様々な文字列操作のライブラリがあり、`replace()`以外にも`find()`や`substr()`などのメソッドを使用することで、より複雑な検索と置換処理を実現することができます。
 
-## ディープダイブ
+「参考」
+- [C++ string replace()](https://www.geeksforgeeks.org/c-string-replace-function/)
+- [C++ string find()](https://www.geeksforgeeks.org/cpp-program-find-a-word-in-a-string/)
+- [C++ string substr()](https://www.tutorialspoint.com/cplusplus/cpp_string_substr.htm)
 
-検索と置換のアルゴリズムは、線形検索やボーイヤー・ムーア法といったアルゴリズムを使って実装されています。これらのアルゴリズムは、処理速度やメモリ使用量の観点から最適なものが選択されています。また、検索や置換のオプションとして、大文字・小文字の区別や部分一致の許容などを指定することもできます。
+最後に、「参考」のような記事やリソースを活用することで、さらにテキストの検索と置換について深く学ぶことができます。
 
-## 参考リンク
-
-- [C++の検索と置換について](https://cpprefjp.github.io/reference/algorithm/)
-- [アルゴリズムの説明と実行時間の比較](https://atcoder.jp/contests/dp/submissions/5499326)
-- [C++での文字列処理の基本](https://qiita.com/gglnnski/items/4f9051849bb7e1894b7c)
+「## 関連リンク」
+- [C++ 文字列操作の参考リソース](https://cpprefjp.github.io/reference/Others/string.html)
+- [C++ stringクラスの詳細説明](https://cpprefjp.github.io/reference/string/basic_string.html)

@@ -1,39 +1,54 @@
 ---
-title:    "C#: Löschen von Zeichen, die einem Muster entsprechen"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/deleting-characters-matching-a-pattern.md"
+title:                "C#: Entfernen von Zeichen, die einem Muster entsprechen."
+programming_language: "C#"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Programmierung hilfreich sein, um Daten zu bereinigen oder bestimmte Informationen zu suchen und zu entfernen. Es ist eine effiziente Möglichkeit, um unerwünschte Zeichen aus einem Text oder einer Datei zu entfernen.
+Es gibt verschiedene Gründe, warum man als Programmierer*in Charaktere löschen möchte, die einem bestimmten Muster entsprechen. Zum Beispiel kann es sein, dass man Daten bereinigen muss, bevor man sie weiterverarbeiten kann. Oder man möchte unerwünschte Zeichen aus einer Benutzereingabe entfernen, um die Sicherheit der Anwendung zu verbessern. In diesem Blog-Beitrag werde ich zeigen, wie man mithilfe von C# Charaktere löschen kann, die einem bestimmten Muster entsprechen.
 
-## So geht's
+# Wie geht das?
 
-Um Zeichen in C# zu löschen, die einem bestimmten Muster entsprechen, können wir die `Regex.Replace()` Methode verwenden. Diese Methode akzeptiert zwei Parameter: das zu durchsuchende Textsring und das Muster für die zu entfernenden Zeichen. Hier ist ein Beispiel, das alle Zahlen in einem Text ersetzt:
+Um Charaktere zu löschen, die einem bestimmten Muster entsprechen, können wir die Methode `Remove()` aus der Klasse `String` verwenden. Diese Methode gibt eine neue Zeichenfolge zurück, in der alle Vorkommen des angegebenen Musters entfernt wurden. Hier ist ein Beispielcode, der alle Zahlen aus einer Zeichenfolge entfernt:
 
 ```C#
-using System.Text.RegularExpressions;
+string input = "Abc123Def456";
+string output = input.Remove("123");
 
-string text = "H3ll0 W0rld!";
-string pattern = "[0-9]+"; // Muster für alle Zahlen
-string result = Regex.Replace(text, pattern, ""); // Ergebnis: "Hll Wrld!"
-
-Console.WriteLine(result); // Gibt den modifizierten Text aus
+Console.WriteLine(output); // Ausgabe: "AbcDef"
 ```
 
-In diesem Beispiel verwenden wir das `pattern` `[0-9]+`, welches für eine oder mehrere Zahlen steht. Die `Regex.Replace()` Methode ersetzt alle Vorkommnisse dieses Patterns im Text mit einem leeren String, was sie effektiv löscht.
+In diesem Beispiel wird die Methode `Remove()` auf der Eingabezeichenfolge `input` angewendet, wobei das Muster "123" als Parameter übergeben wird. Die neue Zeichenfolge `output` wird dann ohne alle Vorkommen von "123" sein.
 
-## Tiefere Einblicke
+# Tiefergehende Informationen
 
-Um die `Regex.Replace()` Methode besser zu verstehen, ist es wichtig, sich zuerst mit regulären Ausdrücken vertraut zu machen. Reguläre Ausdrücke sind eine spezielle Syntax zur Beschreibung von Mustern in Texten. Sie werden häufig in der Programmierung verwendet, um Text zu durchsuchen, zu ersetzen oder zu validieren.
+Man kann auch angeben, an welcher Position in der Eingabezeichenfolge das Muster beginnen soll, indem man einen zusätzlichen Parameter mit der Startposition angibt:
 
-Ein regulärer Ausdruck besteht aus verschiedenen Zeichen, die spezielle Bedeutung haben. Zum Beispiel steht `[0-9]` für alle Zahlen von 0 bis 9. Das Pluszeichen `+` bedeutet, dass das vorherige Zeichen ein oder mehrmals vorkommen kann. Deshalb würde das Muster `[0-9]+` für jede beliebige Anzahl von Zahlen stehen.
+```C#
+string input = "Abc123Def456";
+string output = input.Remove("123", 3); // Startposition 3
 
-Die `Regex.Replace()` Methode bietet auch weitere Parameter, um die Suche und den Ersatz von Zeichen noch genauer zu steuern. Zum Beispiel können wir mit dem Parameter für Groß- und Kleinschreibung festlegen, ob die Suche nur auf kleine oder auch auf große Buchstaben angewendet werden soll.
+Console.WriteLine(output); // Ausgabe: "AbcDef456"
+```
 
-## Siehe auch
-- [Microsoft Dokumentation über Regular Expressions in C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [RegExr - Eine nützliche Online-Tool zum Üben und Testen von regulären Ausdrücken](https://regexr.com/)
+In diesem Beispiel wird das Muster "123" erst ab der dritten Position in der Zeichenfolge gelöscht. Die Startposition wird dabei als zweites Argument in der Methode `Remove()` übergeben (beginnend bei 0 für das erste Zeichen).
+
+Außerdem gibt es auch die Möglichkeit, anzugeben, wie viele Zeichen vom Muster gelöscht werden sollen, indem man einen weiteren Parameter mit der Länge angibt:
+
+```C#
+string input = "Abc123Def456";
+string output = input.Remove("123", 3, 2); // Startposition 3, Länge 2
+
+Console.WriteLine(output); // Ausgabe: "AbcDef456"
+```
+
+In diesem Beispiel wird das Muster "123" ab der dritten Position in der Zeichenfolge gelöscht und dabei nur die ersten beiden Zeichen des Musters entfernt.
+
+# Siehe auch
+
+- [MSDN Dokumentation zu der Methode `Remove()`](https://docs.microsoft.com/en-us/dotnet/api/system.string.remove?view=net-5.0)
+- [Weitere Möglichkeiten, Zeichenfolgen in C# zu bearbeiten](https://www.c-sharpcorner.com/UploadFile/mahesh/string-manipulation-in-C-Sharp/#:~:text=Remove()%20method%3A-,The%20Remove()%20method,StartingIndex%2C%20int%20MaxLength)%20method)

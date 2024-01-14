@@ -1,65 +1,41 @@
 ---
-title:    "Arduino: コマンドライン引数の読み込み"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/reading-command-line-arguments.md"
+title:                "Arduino: コンピュータプログラミングにおける「コマンドライン引数の読み取り」"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## なぜ
 
-なぜcommand line argumentsを読むことについて学ぶ必要があるのでしょうか？この記事では、Arduinoプログラムの開発においてどのように役立つのかについて説明します。
+今回は、Arduinoプログラミングでコマンドライン引数を読み込む方法について解説します。コマンドライン引数は、プログラムの実行時に追加の情報を与えるために使用されます。例えば、特定のセンサーのデータを取得したい場合や、アクションを実行する際のパラメーターを指定したい場合などに使用することができます。この記事を読むことで、あなたのプログラムにコマンドライン引数を使用することができるようになります。
 
-## How To
+## 方法
 
-Arduinoのプログラムでコマンドライン引数を読み取ることは、プログラムに柔軟性を与える重要な方法です。コマンドライン引数は、Arduinoモニターからの入力やシリアルモニターからのデータの送信など、さまざまな方法で取得することができます。
+まずは、コードを見てみましょう。以下のコードブロック内に、コマンドライン引数を読み込むために必要なコードを記述します。
 
-以下のコードを使用すると、Arduinoプログラムでコマンドライン引数を読み取ることができます。
-
-```Arduino
-
-void setup() {
-  Serial.begin(9600);
-  while (!Serial) {
-    ; // シリアルポートがオープンするまで待機する
-  }
-  
-  // 引数を読み取る
-  while (Serial.available()) {
-    int value = Serial.parseInt();
-    Serial.print("読み取った引数： ");
-    Serial.println(value);
+```Arduino 
+int main(int argc, char *argv[]) {
+  // コマンドライン引数が与えられたか確認
+  if (argc > 1) {
+    // 第一引数を取得
+    int arg1 = atoi(argv[1]);
+    // 第二引数を取得
+    char* arg2 = argv[2];
+    // ここで取得した引数を使用して、プログラムを実行する
   }
 }
-
-void loop() {
- 
-}
-
 ```
 
-上記のコードでは、 `Serial.parseInt()` 関数を使用してコマンドライン引数を読み取り、 `while` ループを使って複数の引数を読み込むことができます。引数が読み取られると、シリアルモニターにメッセージが表示されます。
+上記のコードを見るとわかるように、まず`int main(int argc, char *argv[])`という関数を使用して、コマンドライン引数を読み込みます。`argc`は、コマンドライン引数の数を表し、`argv[]`は引数を格納する配列です。そして、`if`文を使用して引数が与えられたかを確認し、与えられた場合には`argv[]`の中身を使用してプログラムを実行します。
 
-例えば、シリアルモニターに `5` という数字を入力し、エンターキーを押すと、以下のようなメッセージが表示されます。
+## 詳細を掘り下げる
 
-```
-読み取った引数： 5
-```
+では、もう少し詳しくコードを見てみましょう。上記のコードでは、第一引数を`int`型に変換して`arg1`に格納していますが、第二引数の`argv[2]`は`char*`型であることに注意してください。つまり、第二引数には文字列が入る可能性があるので、`atoi()`ではなく`char*`をそのまま`arg2`に格納しています。このように、引数の型によって取得方法が異なることにも注意してください。また、`argv[]`は配列ということもあり、複数の引数を取得することもできます。必要に応じて、`for`ループなどを使用して処理を行ってください。
 
-このように、コマンドライン引数を読み取ることで、プログラムの挙動を動的に変化させることができます。
+## 関連情報はこちら
 
-## Deep Dive
-
-コマンドライン引数を使うと、Arduinoプログラムの開発においてさまざまな機能を実装することができます。例えば、動作モードの切り替えや特定のデバイスを制御するための識別子など、様々な用途に応じて引数を使い分けることができます。
-
-また、Arduinoモニター以外にも、Bluetoothや無線モジュールを使って外部から引数を受け取ることも可能です。これにより、ユーザーからのリアルタイムの指示に応じてプログラムの挙動を変化させることができます。
-
-ただし、コマンドライン引数を使う際には、引数が正しい形式で入力されているかどうかを検証することが重要です。無効な入力値がプログラムに渡されると、予期しない動作を引き起こす可能性があります。
-
-## See Also
-
-参考文献や関連リンクを以下にリストアップしておきます。
-
-- [Arduino - Serial.parseInt()](https://www.arduino.cc/reference/ja/language/functions/communication/serial/parseint/)
-- [Arduino Project Hub - Using Command Line Arguments with an Arduino Application](https://create.arduino.cc/projecthub/HonzaTyc/using-command-line-arguments-with-an-arduino-application-645eba)
-- [Arduino Forum - Command Line Variable Input](https://forum.arduino.cc/t/command-line-variable-input/253829/3)
+- [Arduinoの公式ドキュメント - コマンドライン引数の取得方法](https://www.arduino.cc/en/Tutorial.CommandLineArguments)
+- [Qiitaの記事 - Arduinoでコマンドライン引数を使う方法](https://qiita.com/SaitoYutaka/items/554d75e7187fc7776563)
+- [TechAcademy Magazine - Arduinoプログラミングの基礎](https://techacademy.jp/magazine/19955)

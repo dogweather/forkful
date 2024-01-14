@@ -1,55 +1,39 @@
 ---
-title:    "Haskell: Reply with डिबग आउटपुट मुद्रित करना"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/printing-debug-output.md"
+title:                "Haskell: डिबग आउटपुट प्रिंट करना"
+programming_language: "Haskell"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
 
-कोई भी विकासकार जो कोड को डेबग कर रहा हो, उसे डेबग आउटपुट प्रिंट करने की आवश्यकता हो सकती है। विभिन्न त्रुटियों को सुलझाने और कोड को ठीक करने के लिए डेबग आउटपुट बहुत महत्वपूर्ण होता है।
+कोडिंग में डीबग आउटपुट को प्रिंट करने का काम काफी महत्वपूर्ण है। यह आपको अपने कोड को समझने और समस्याओं को सुलझाने में मदद कर सकता है। 
 
 ## कैसे करें
 
-डेबग आउटपुट प्रिंट करने के लिए `Debug.Trace` मॉड्यूल का उपयोग कर सकते हैं। नीचे कुछ उदाहरण दिए गए हैं:
+हैस्केल में डीबग आउटपुट प्रिंट करने के लिए, आप निम्न उदाहरण द्वारा इसको कैसे करें जान सकते हैं:
 
-``` Haskell
-import Debug.Trace
-
+```Haskell
 main = do
-  let x = 5
-  trace "x का मान प्रिंट कर रहे हैं" $ print x
+  putStrLn "Hello, world!"
+  putStrLn "Debug output: 123"
 ```
 
-आउटपुट:
-
+इसका आउटपुट निम्न प्रकार होगा:
 ```
-x का मान प्रिंट कर रहे हैं
-5
-```
-
-अन्य तरीके से डेबग आउटपुट प्रिंट करने के लिए, `printf` फंक्शन का भी उपयोग किया जा सकता है।
-
-``` Haskell
-import Text.Printf
-
-main = do
-  let x = 10
-  printf "x का मान = %d\n" x
-```
-
-आउटपुट:
-
-```
-x का मान = 10
+Hello, world!
+Debug output: 123
 ```
 
 ## गहराई में जाएं
 
-डेबग आउटपुट प्रिंट करने का अधिक गंभीर उपयोग हमेशा गहराई में जा सकता है। आप `Debug.Trace` के अलावा `Debug.Trace.Core` या `Debug.Trace.Bittorrent` जैसे दूसरे लाइब्रेरी भी उपयोग कर सकते हैं। इनमें से कुछ लिस्टिंग, ट्रेस और डंप फ़ंक्शन्स शामिल हो सकते हैं जो कोड को डेबग करने में मदद कर सकते हैं।
+डीबग आउटपुट प्रिंट करने के लिए आप सीधे `putStrLn` का उपयोग कर सकते हैं या फिर स्ट्रिंग संयोजन के माध्यम से इसे भी कर सकते हैं। आप संदर्भ के रूप में अपने स्किलेल और डीबग आउटपुट के स्तर के अनुसार उपयोग कर सकते हैं। 
 
 ## देखें भी
 
-- [डेबगिंग टूल्स के बारे में अधिक जानकारी के लिए, आप हमारे अन्य ब्लॉग पोस्ट पढ़ सकते हैं।](https://example.com/debugging-tools)
-- [Haskell डेबगिंग के अन्य तरीके के बारे में अधिक जानने के लिए, आप हमारे ऑफिशियल डॉ
+- [Haskell में फंक्शन्स को परीक्षण कैसे करें](https://www.haskelltutorials.in/haskell-tutorial/debugging-functions-testing-in-haskell)
+- [Haskell में गार्ड और गार्ड्स कैसे काम करते हैं](https://www.haskelltutorials.in/haskell-tutorial/guards-and-guards-in-haskell)
+- [Haskell के ऑनलाइन कोड कंपाइलर का उपयोग कैसे करें](https://www.haskelltutorials.in/haskell-tutorial/using-online-code-compiler-in-haskell)
+- [Haskell के बेसिकस क्या होते हैं](https://www.haskelltutorials.in/haskell-tutorial/what-are-basics-in-haskell)

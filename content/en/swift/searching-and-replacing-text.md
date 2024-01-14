@@ -1,47 +1,53 @@
 ---
-title:    "Swift recipe: Searching and replacing text"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/swift/searching-and-replacing-text.md"
+title:                "Swift recipe: Searching and replacing text"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When writing code, it's common to encounter situations where you need to make changes to multiple instances of a particular text or phrase. Instead of manually finding and replacing each instance, using the Swift programming language's built-in search and replace function can save you time and effort.
+Searching and replacing text may seem like a simple task, but it can save you a lot of time and effort in your Swift programming endeavors. With the right techniques, you can easily make changes to multiple instances of text in your code without having to manually edit them one by one.
 
 ## How To
 
-Searching and replacing text in Swift is a straightforward process. First, declare a string variable containing the text you want to modify. For example:
+To start, we will define a string variable that contains the text we want to search and replace:
 
-```
-let originalText = "Hello world!"
-```
-
-Next, use the `replacingOccurrences()` function to find and replace the text. This function takes two parameters: the text you want to search for, and the text you want to replace it with. For example, if we want to replace "world" with "universe", we would use the following code:
-
-```
-let modifiedText = originalText.replacingOccurrences(of: "world", with: "universe")
+```Swift
+let originalString = "Hello, World!"
 ```
 
-The resulting string will be "Hello universe!", with all instances of "world" replaced.
+Next, we will use the `replacingOccurrences(of:with:)` method to search for a specific word or phrase and replace it with another text. For example, if we want to replace "Hello" with "Hi", we can do it like this:
 
-Another useful function for search and replace is `replacingOccurrencesOf()`. This function allows you to specify an optional range where you want the text to be replaced. For example, if we only want to replace the first instance of "world" in our string, we could use the following code:
-
-```
-let modifiedText = originalText.replacingOccurrences(of: "world", with: "universe", options: .literal, range: nil)
+```Swift
+let modifiedString = originalString.replacingOccurrences(of: "Hello", with: "Hi")
 ```
 
-The `options` parameter allows us to specify whether the search should be case sensitive or not, and the `range` parameter allows us to specify a specific range in the string where we want the replacement to occur.
+The value of `modifiedString` will now be "Hi, World!". But what if we want to replace multiple instances of a word or phrase? We can use the same `replacingOccurrences(of:with:)` method, but this time with the `options:range:` parameter. Let's say we want to replace all instances of the letter "l" with the number "1" in our string, we can do it like this:
+
+```Swift
+let convertedString = originalString.replacingOccurrences(of: "l", with: "1", options: .literal, range: nil)
+```
+
+The value of `convertedString` will now be "He11o, Wor1d!". You can also specify a range where you want the replacements to occur using the `range` parameter.
 
 ## Deep Dive
 
-When performing a search and replace in Swift, it's important to understand a few key concepts. First, the functions we discussed earlier, `replacingOccurrences()` and `replacingOccurrencesOf()`, return a new string instead of modifying the existing one. This is because strings in Swift are immutable, meaning they cannot be changed after creation. This ensures data integrity and can prevent unexpected errors in your code.
+The `replacingOccurrences(of:with:)` method uses regular expressions to find and replace text. This means we can also use regex patterns to make more complex search and replace operations. For example, if we want to replace all numbers in our string with the word "number", we can do it like this:
 
-Additionally, the `range` parameter in the `replacingOccurrencesOf()` function allows for more precise control over where the text should be replaced. You can specify a specific range of indices, or use other string manipulation techniques such as `prefix()` or `suffix()` to find a substring within the original string.
+```Swift
+let regexPattern = "\\d+"
+let replacedNumbers = originalString.replacingOccurrences(of: regexPattern, with: "number", options: .regularExpression, range: nil)
+```
+
+The value of `replacedNumbers` will now be "Hello, number!". By diving deeper into regular expressions, we can perform even more advanced search and replace tasks in our Swift code.
 
 ## See Also
 
-- [Apple Developer Documentation on search and replace](https://developer.apple.com/documentation/swift/string/2894751-replacingoccurrences)
-- [Hacking with Swift tutorial on searching strings](https://www.hackingwithswift.com/example-code/strings/how-to-search-for-a-substring-inside-a-string)
-- [Swift by Sundell article on string manipulation](https://www.swiftbysundell.com/basics/strings/)
+If you want to learn more about working with strings in Swift, here are some helpful resources:
+
+- [Working with Strings in Swift](https://www.hackingwithswift.com/read/0/overview)
+- [NSHipster - String](https://nshipster.com/string/)
+- [Apple Developer Documentation - String](https://developer.apple.com/documentation/swift/string)

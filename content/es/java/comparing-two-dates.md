@@ -1,81 +1,43 @@
 ---
-title:    "Java: Comparando dos fechas"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/java/comparing-two-dates.md"
+title:                "Java: Comparando dos fechas"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué comparar dos fechas en Java?
-
-Comparar dos fechas es una tarea común en la programación en Java. Puede ser útil para realizar tareas como verificar si una fecha es anterior o posterior a otra, o para ordenar una lista de fechas. En este artículo, exploraremos cómo comparar dos fechas en Java y profundizaremos en los conceptos detrás de este proceso.
+## Por qué
+En la programación, a menudo necesitamos comparar fechas para realizar diferentes tareas, como calcular la edad de una persona o determinar si una tarea está vencida. Por lo tanto, es importante comprender cómo comparar dos fechas en Java para poder escribir código efectivo y eficiente.
 
 ## Cómo hacerlo
-
-Para comparar dos fechas en Java, existen varias opciones disponibles. Una de ellas es usar la clase `java.util.Date` y sus métodos `compareTo` o `before`/`after`. Por ejemplo:
-
-```Java
-Date fecha1 = new Date(2021, 3, 15);
-Date fecha2 = new Date(2020, 2, 10);
-
-int resultado = fecha1.compareTo(fecha2);
-if (resultado == 0) {
-    System.out.println("Las fechas son iguales");
-} else if (resultado < 0) {
-    System.out.println("La fecha1 es anterior a la fecha2");
-} else {
-    System.out.println("La fecha1 es posterior a la fecha2");
-}
-```
-
-En este ejemplo, creamos dos objetos `Date` con diferentes fechas y luego usamos el método `compareTo` para compararlos. El método devuelve un valor entero que indica si la fecha actual es anterior, posterior o igual a la fecha con la que se compara.
-
-También es posible utilizar la clase `java.time.LocalDate` introducida en Java 8 para comparar fechas. Por ejemplo:
+Para comparar dos fechas en Java, podemos usar la clase `LocalDate` de la API de Java 8. Esta clase nos permite representar una fecha específica, sin tener en cuenta la hora o la zona horaria. Vamos a ver un ejemplo de cómo usar esta clase:
 
 ```Java
-LocalDate fecha1 = LocalDate.of(2021, 3, 15);
-LocalDate fecha2 = LocalDate.of(2020, 2, 10);
-
-int resultado = fecha1.compareTo(fecha2);
-if (resultado == 0) {
-    System.out.println("Las fechas son iguales");
-} else if (resultado < 0) {
-    System.out.println("La fecha1 es anterior a la fecha2");
-} else {
-    System.out.println("La fecha1 es posterior a la fecha2");
-}
+LocalDate fecha1 = LocalDate.of(2020, 10, 23);
+LocalDate fecha2 = LocalDate.of(2021, 1, 15);
 ```
 
-En este caso, utilizamos el método `compareTo` de la clase `LocalDate` para comparar las dos fechas. El resultado será el mismo que en el ejemplo anterior.
+En este ejemplo, hemos creado dos objetos `LocalDate` que representan dos fechas diferentes: 23 de Octubre de 2020 y 15 de Enero de 2021.
 
-Otra opción es utilizar la clase `java.util.Calendar`, específicamente el método `compareTo` de su subclase `GregorianCalendar`. Por ejemplo:
+Luego, podemos comparar estas dos fechas usando el método `compareTo()` de la clase `LocalDate`:
 
 ```Java
-Calendar fecha1 = new GregorianCalendar(2021, 3, 15);
-Calendar fecha2 = new GregorianCalendar(2020, 2, 10);
-
-int resultado = fecha1.compareTo(fecha2);
-if (resultado == 0) {
-    System.out.println("Las fechas son iguales");
-} else if (resultado < 0) {
-    System.out.println("La fecha1 es anterior a la fecha2");
-} else {
-    System.out.println("La fecha1 es posterior a la fecha2");
-}
+int comparacion = fecha1.compareTo(fecha2);
 ```
 
-De nuevo, se utiliza el método `compareTo` para comparar las dos fechas. Tenga en cuenta que en este caso se utilizan valores numéricos para representar el mes, ya que en `Calendar` los meses empiezan en 0 (enero) en lugar de 1 como en las otras clases mencionadas anteriormente.
+Este método devuelve un número entero que indica si la fecha1 es anterior, igual o posterior a la fecha2. Si el resultado es negativo, entonces fecha1 es anterior a fecha2. Si el resultado es positivo, entonces fecha1 es posterior a fecha2. Y si el resultado es cero, entonces fecha1 es igual a fecha2.
+
+También podemos usar los métodos `isBefore()` y `isAfter()` para comparar fechas de manera más sencilla. Ambos métodos devuelven un valor booleano que indica si la fecha es antes o después de la otra, respectivamente.
+
+Además de comparar fechas completas, también podemos comparar partes específicas de una fecha, como el año, el mes o el día. Para hacer esto, podemos usar los métodos `getYear()`, `getMonth()` y `getDayOfMonth()` respectivamente, y luego comparar los valores obtenidos.
 
 ## Profundizando
+Además de la clase `LocalDate`, la API de Java 8 también cuenta con la clase `LocalDateTime` que nos permite representar una fecha y una hora específicas, y la clase `ZonedDateTime` que nos permite trabajar con fechas en diferentes zonas horarias.
 
-A la hora de comparar dos fechas, es importante tener en cuenta cómo se comparan los objetos. En el caso de la clase `java.util.Date`, los objetos se comparan en función de su valor numérico, lo que significa que se tienen en cuenta no solo la fecha, sino también la hora y el minuto. Por otro lado, en la clase `java.time.LocalDate`, los objetos se comparan solo por su fecha, omitiendo la hora y el minuto.
-
-Además, es importante señalar que en la clase `java.util.Calendar`, el método `compareTo` no compara solo las fechas, sino todas las unidades de tiempo (mes, día, hora, minuto, etc.). Esto significa que es posible que dos fechas no sean exactamente iguales en términos de valor numérico, pero aún así sean consideradas iguales.
+También podemos usar la clase `Calendar` de versiones anteriores de Java para comparar fechas, pero es importante tener en cuenta que esta clase es menos eficiente y más propensa a errores.
 
 ## Ver también
-
-Si quieres profundizar más en la comparación de fechas en Java, te recomendamos revisar los siguientes enlaces:
-
-- [Documentación oficial de Java sobre la clase Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Documentación oficial de Java sobre la clase LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Documentación oficial de Java sobre la clase Calendar](https://docs.oracle.com/javase/8
+- [Documentación de la clase LocalDate en Java](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Tutorial de comparación de fechas en Java](https://www.baeldung.com/java-compare-dates)
+- [Video tutorial sobre cómo comparar fechas en Java](https://www.youtube.com/watch?v=kMfTh06tB9w)

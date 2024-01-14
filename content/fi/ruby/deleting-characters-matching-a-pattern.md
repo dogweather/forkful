@@ -1,33 +1,33 @@
 ---
-title:    "Ruby: Palamisen vastaisten merkkien poistaminen"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/deleting-characters-matching-a-pattern.md"
+title:                "Ruby: Kaavan mukaisesti vastaavien merkkien poistaminen"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Miksi haluaisit poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Tämä voi olla hyödyllistä, jos esimerkiksi haluat puhdistaa käyttäjän syöttämissä tiedoissa olevat turhat merkinnät tai haluat suodattaa haluttuja merkkejä pois tekstiriviltä.
+On monia syitä miksi saattaisimme haluta poistaa merkkejä, jotka vastaavat tiettyä mallia ohjelmointikielestä. Yksi yleinen syy on, kun haluamme puhdistaa tai muokata esimerkiksi tekstiä tai tietokantoja ennen niiden käyttöä.
 
 ## Miten
 
-Voit poistaa merkkejä, jotka vastaavat tiettyä kaavaa Rubyssa käyttämällä `gsub`-metodia, joka korvaa liittymäkohtaisesti kaikki halutut merkit halutuilla merkeillä. Tämän voi tehdä seuraavalla tavalla:
+Käyttämällä ruby-kirjaston String.replace -metodin voimme helposti poistaa merkkejä, jotka vastaavat haluttua määritettyä mallia käyttäen regex- tai oliopohjaista lähestymistapaa.
 
 ```Ruby
-string = "Tervetuloa Rubyyn!"
-new_string = string.gsub(/[aeiou]/, "")
-puts new_string # Trvl Rbyyn!
+text = "Tervetuloa, tämä on esimerkkiteksti 12345"
+clean_text = text.gsub(/[0-9]/, "") # poistaa kaikki numerot tekstimuodosta
+puts clean_text
+# Tulostaa "Tervetuloa, tämä on esimerkkiteksti "
 ```
 
-Tässä esimerkissä kaikki vokaalit korvataan tyhjällä merkkijonolla, jolloin tuloksena olevassa uudessa merkkijonossa ei ole enää vokaaleita.
+## Syvempi sukellus
 
-## Syvällisempi sukellus
-
-`gsub`-metodin ensimmäinen argumentti on regex-kuvio, joka määrittää, mitkä merkit haluat poistaa. Voit käyttää tätä hyväksesi tekemällä monimutkaisempia kaavoja, kuten poistamalla vain tietyn pituiset merkkijonot tai tiettyjen merkkien yhdistelmät. Voit myös käyttää `gsub!`-metodia, joka muuttaa alkuperäistä merkkijonoa sen sijaan, että palauttaisi uuden merkkijonon.
+Ruby:ssa on monia hyödyllisiä metodeja merkkijonojen muokkaamiseen, kuten esimerkiksi gsub!, joka muokkaa merkkijonoa suoraan ilman väliaikaista muuttujaa. Myös regex-säännöt voivat olla hyödyllisiä, jos haluamme muokata vain tiettyjä merkkejä tai merkkijonoja.
 
 ## Katso myös
 
-- [RegExr](https://regexr.com/) - Verkkosivusto, joka auttaa sinua luomaan ja testaamaan regex-kaavoja.
-- [Ruby Regex -opas](https://www.rubyguides.com/2015/06/ruby-regex/?fbclid=IwAR2_ylrq76ACyDwIVsMwL3y-Dg6E-V6_Fa85w8umzOPV0Q6uoh7sql5UcGs) - Kattava opas regexien käyttämiseen Rubyn kanssa.
-- [Ruby String -dokumentaatio](https://ruby-doc.org/core-2.6.3/String.html#method-i-gsub) - Lisätietoa `gsub`-metodista ja sen eri vaihtoehdoista.
+- [Ruby String -dokumentaatio](https://ruby-doc.org/core-2.6.3/String.html)
+- [Regex -ohjeet](https://www.regular-expressions.info/)
+- [Ruby regex esimerkkejä](https://www.rubyguides.com/2015/06/ruby-regex/)

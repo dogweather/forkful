@@ -1,65 +1,50 @@
 ---
-title:    "Python: Convirtiendo una cadena a minúsculas"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/python/converting-a-string-to-lower-case.md"
+title:                "Python: Convirtiendo una cadena a minúsculas"
+programming_language: "Python"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué
+## Por qué
 
-Python es un lenguaje de programación versátil y potente, y una de sus características más útiles es su capacidad para trabajar con cadenas de texto. Una tarea común en el procesamiento de texto es convertir una cadena a minúsculas, lo que puede ser útil para comparar o limpiar datos. En este artículo, te enseñaré cómo convertir una cadena a minúsculas en Python.
+Convertir una cadena de texto a minúsculas puede ser útil en muchas situaciones de programación, como comparar cadenas de texto sin tener en cuenta las mayúsculas y minúsculas, normalizar datos o simplemente por preferencia personal en la presentación del texto.
 
-# Cómo hacerlo
+## Cómo hacerlo
 
-La forma más sencilla de convertir una cadena a minúsculas es utilizando el método `lower()` en la cadena. Este método devuelve una copia de la cadena en minúsculas.
+Para convertir una cadena de texto a minúsculas en Python, podemos utilizar el método `lower()` que se encuentra disponible en los objetos de tipo `str`. Veamos un ejemplo:
 
-```
-Python
-cadena = "HOLA MUNDO"
-print(cadena.lower())
-
-# Output: hola mundo
+```Python
+palabra = "HOLA MUNDO"
+print(palabra.lower())
 ```
 
-También puedes utilizar la función `casefold()`, que es similar al método `lower()` pero tiene en cuenta las diferencias regionales de los idiomas.
+**Output:** hola mundo
 
-```
-Python
-cadena = "hola MUNDO"
-print(cadena.casefold())
+Como podemos ver, el método `lower()` convierte toda la cadena de texto a minúsculas, permitiendo así compararla con otras cadenas de texto sin importar si están escritas en mayúsculas o minúsculas.
 
-# Output: hola mundo
-```
+También podemos utilizar el operador de asignación `+=` junto con el método `lower()` para modificar una cadena de texto existente en lugar de crear una nueva:
 
-Otra forma de convertir una cadena a minúsculas es utilizando la función `str.lower()` si deseas trabajar con una variable que no es una cadena.
-
-```
-Python
-variable = 123
-print(str.lower(variable))
-
-# Output: 123
+```Python
+nombre = "Juan"
+nombre += " "
+nombre += "Pérez"
+print(nombre.lower())
 ```
 
-# Profundizando más
+**Output:** juan pérez
 
-Es importante tener en cuenta que los métodos `lower()` y `casefold()` no modifican la cadena original, sino que devuelven una nueva cadena en minúsculas. Esto significa que si deseas utilizar la cadena en minúsculas más adelante, debes asignarla a una nueva variable o sobrescribir la original.
+## Profundizando
 
-Además, estos métodos solo funcionan con cadenas de caracteres ASCII. Si trabajas con caracteres no ASCII, como letras acentuadas o símbolos, es posible que necesites utilizar otras técnicas más avanzadas para convertirlos a minúsculas correctamente.
+Es importante tener en cuenta que el método `lower()` solo funciona correctamente con caracteres ASCII. Si nuestra cadena de texto contiene caracteres especiales de otros idiomas, podemos usar la función `casefold()` en su lugar.
 
-# Ver también
+Además, debemos tener en cuenta que el método `lower()` no afecta a los caracteres de puntuación ni a los espacios en blanco, solo convierte las letras a minúsculas.
 
-- [Documentación oficial sobre el método `lower()`] (https://docs.python.org/es/3/library/stdtypes.html#str.lower)
-- [Cómo trabajar con cadenas en Python] (https://www.geeksforgeeks.org/python-strings/)
-- [Ejemplos prácticos de procesamiento de texto en Python] (https://www.datacamp.com/community/tutorials/text-analytics-beginners-nltk)
+Si queremos convertir una cadena de texto a mayúsculas en lugar de minúsculas, podemos utilizar el método `upper()`, que funciona de manera similar al `lower()` pero convierte todas las letras a mayúsculas.
 
-¡Ahora ya sabes cómo convertir una cadena a minúsculas en Python! ¡Explora y diviértete trabajando con cadenas de texto en tus próximos proyectos!
+## Ver también
 
-__________________________________________
-
-# Ver también
-
-- [Documentación oficial sobre el método `lower()`] (https://docs.python.org/es/3/library/stdtypes.html#str.lower)
-- [Cómo trabajar con cadenas en Python] (https://www.geeksforgeeks.org/python-strings/)
-- [Ejemplos prácticos de procesamiento de texto en Python] (https://www.datacamp.com/community/tutorials/text-analytics-beginners-nltk)
+- [Método lower() en la documentación oficial de Python](https://docs.python.org/es/3/library/stdtypes.html#str.lower)
+- [Función casefold() en la documentación oficial de Python](https://docs.python.org/es/3/library/stdtypes.html#str.casefold)
+- [Operador de asignación += en la documentación oficial de Python](https://docs.python.org/es/3/library/stdtypes.html#last-example)

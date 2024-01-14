@@ -1,56 +1,48 @@
 ---
-title:    "Gleam: 读取文本文件"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/reading-a-text-file.md"
+title:                "Gleam: 读取文本文件"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Why (为什么）：
+## 为什么
 
-在编程中，读取文本文件是一个非常常见的任务。它允许你从文件中提取数据并将其用于你的程序中。读取文本文件可以帮助你更轻松地处理数据，并使你的程序更具灵活性。 
+读取文本文件是编程世界中非常常见的任务之一。它允许您从文件中获取数据，并在程序中使用这些数据。如果您想要了解如何通过Gleam读取文本文件，那么您来对了地方！
 
-How To（如何）：
+## 如何做
+
+在Gleam中，首先需要导入 `gleam/io` 模块来使用文件操作函数。然后，您可以使用 `io.file.read` 函数来打开并读取文本文件的内容。
 
 ```Gleam
-import gleam/file
+import gleam/io { file }
 
-// 打开一个文本文件并将其存储为一个变量
-file := file.open("example.txt")
+pub fn main() {
+  // 打开文本文件，并将内容赋值给变量 file_contents
+  let file_contents = io.file.read("sample.txt")
 
-// 使用read_all函数读取整个文件的内容
-content := file.read_all()
-
-// 使用split_lines函数将文本按行拆分为一个字符串列表
-lines := content.split_lines()
-
-// 使用for循环遍历所有行并打印每一行的内容
-for line in lines {
-  println(line)
+  // 打印文件内容
+  // 注意：文本文件内容将被转换为二进制数据
+  // 我们可以使用模式匹配来将其转换为字符串
+  // 将 file_contents 绑定到变量 contents，然后通过将其传递给 `to_string` 函数来实现。
+  file_contents
+  |> match {
+    Ok(contents) -> contents |> to_string |> io.println
+    Err(_) -> io.println("无法读取文件")
+  }
+  // 输出： "这是一个文本文件，包含一些示例数据"
 }
 ```
-例子输入：
 
-文本文件内容为：
+## 深入了解
 
-```
-Hello
-World
-```
+读取文本文件的过程可能会带来一些挑战。因为文本文件包含的内容可以是多种编码格式，最常见的是UTF-8和UTF-16。因此，在读取文本文件时，我们需要确保文件的编码格式与我们的程序兼容。
 
-例子输出：
+另一个重要的方面是异常处理。如果文件不存在或者无法读取，我们需要使用 `match` 语句来处理这些异常情况，以免程序报错。
 
-```
-Hello
-World
-```
+## 参考
 
-Deep Dive（深入研究）：
-
-除了使用read_all和split_lines函数，Gleam还提供了其他功能来读取文本文件。比如，你可以使用file.read_line函数来逐行读取文本，并使用file.read_bytes函数来读取文件的指定字节数。此外，Gleam还提供了一些处理Unicode文本的功能，如file.read_utf8和file.read_utf16。通过深入学习这些函数，你可以更有效地处理文本文件。
-
-See Also（相关阅读）：
-
-- Gleam文档：https://gleam.run/core/file.html
-- 了解更多Gleam编程语言：https://gleam.run/
-- 学习如何使用Gleam处理文件： https://gleam.run/tutorials/file-handling.html
+- [Gleam官方文档](https://gleam.run/book/getting-started.html)
+- [Gleam标准库文档 - gleam/io模块](https://gleam.run/lib/gleam_io.html#modulegleam_io)
+- [如何读取文本文件 - 视频教程](https://www.youtube.com/watch?v=U57vPz-Ns1E)

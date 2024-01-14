@@ -1,55 +1,49 @@
 ---
-title:    "Bash: Verificando se um diretório existe"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/bash/checking-if-a-directory-exists.md"
+title:                "Bash: Verificando se um diretório existe"
+programming_language: "Bash"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
 
-Quando você está escrevendo um script em Bash, é muito comum que você precise verificar se um diretório existe antes de realizar alguma ação. Isso é especialmente importante se o seu script precisa acessar ou criar arquivos nesse diretório. Verificar a existência de um diretório pode ajudar a evitar erros e garantir que seu script funcione corretamente.
+Ao escrever scripts em Bash, muitas vezes precisamos verificar se um diretório existe antes de executar determinadas ações. Isso pode ser útil para evitar erros e garantir que o script funcione corretamente.
 
-## Como Fazer
+## Como fazer
 
-Para verificar se um diretório existe em um script em Bash, você precisará usar o comando `test` ou `[]` e a opção `-d` para conferir se o caminho especificado é de fato um diretório. Aqui está um exemplo de como isso pode ser feito:
+Verificar a existência de um diretório em Bash é simples e pode ser feito utilizando o comando `test` seguido da opção `-d` para indicar que queremos verificar a existência de um diretório e, em seguida, o caminho para o diretório que desejamos verificar. Por exemplo:
 
-```Bash
-if test -d ~/meu_diretorio; then
-  echo "O diretório existe"
+``` Bash
+test -d /home/user/diretorio
+```
+
+O comando acima irá retornar um código de saída `0` se o diretório existir e um código `1` caso contrário. Para tornar o processo mais amigável, você pode adicionar um `if` statement para realizar as ações desejadas com base no resultado do comando. Veja um exemplo de como isso pode ser feito:
+
+``` Bash
+if test -d /home/user/diretorio; then
+    echo "O diretório existe!"
 else
-  echo "O diretório não existe"
+    echo "O diretório não existe."
 fi
 ```
 
-Neste exemplo, estamos usando o comando `test` para verificar se o diretório chamado "meu_diretorio" existe no diretório home do usuário atual. Se o diretório existir, o comando `echo` irá imprimir "O diretório existe", caso contrário, será impresso "O diretório não existe".
+Você também pode usar o operador de lógica `&&` para executar comandos somente se o diretório existir, por exemplo:
 
-Também é possível usar essa mesma lógica dentro de uma estrutura `if-else` usando o operador `[[]]` da seguinte forma:
-
-```Bash
-if [[ -d ~/meu_diretorio ]]; then
-  echo "O diretório existe"
-else
-  echo "O diretório não existe"
-fi
+``` Bash
+test -d /home/user/diretorio && echo "O diretório existe!"
 ```
 
-A saída desses comandos pode variar dependendo de cada situação, mas essa é a ideia básica de como verificar a existência de um diretório em Bash.
+Outra opção é usar o comando `mkdir` com a opção `-p` para criar o diretório se ele não existir, evitando assim a necessidade de verificar sua existência antes de cria-lo.
 
-## Profundidade do Conceito
+## Deep Dive
 
-Ao verificar se um diretório existe em Bash, é importante entender como isso funciona por trás dos bastidores. O comando `test` ou `[]` está verificando se o diretório existe e se é possível acessá-lo. Isso significa que, mesmo que o diretório esteja vazio, o comando ainda considerará como existente.
+O comando `test` é na verdade um alias para o comando `[`, que é um programa externo. Isso significa que também podemos utilizar o comando `[` para verificar a existência de um diretório. Ambos os comandos funcionam da mesma maneira e possuem opções similares, portanto é uma questão de preferência pessoal qual utilizar.
 
-Também é importante mencionar que essa checagem é feita em relação ao usuário que está executando o script. Ou seja, se o diretório existe, mas o usuário não tem permissão de acesso, o comando irá considerar como "não existe".
+É importante ressaltar que a verificação da existência de um diretório não é feita apenas para tornar o código mais elegante, mas também para garantir a segurança do programa. Por exemplo, se você estiver usando o comando `rm -rf $PATH`, sem verificar antes a existência do diretório, poderá apagar acidentalmente todos os arquivos do sistema.
 
-Além disso, é possível combinar essa verificação com outros comandos, como `mkdir` para criar o diretório caso ele não exista, ou `cd` para acessá-lo caso ele exista. Assim, a verificação da existência de um diretório se torna uma ferramenta muito útil e versátil em scripts Bash.
+## Veja também
 
-## Veja Também
-
-Aqui estão alguns links úteis para aprender mais sobre como verificar a existência de um diretório em Bash:
-
-- [Documentação do comando `test` no Bash](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
-- [Explicações sobre o operador `test` e as opções disponíveis](https://www.cyberciti.biz/faq/unix-linux-shell-find-out-posixfile-is-a-directory-or-not/)
-- [Utilizando o operador `[[]]` em scripts Bash](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Constructs.html)
-
-Esperamos que este artigo tenha sido útil para você e que agora você se sinta mais confiante em usar a verificação da existência de diretórios em seus scripts em Bash!
+- [Documentação do comando `test` (em inglês)](https://linux.die.net/man/1/test)
+- [Documentação do comando `mkdir` (em inglês)](https://linux.die.net/man/1/mkdir)

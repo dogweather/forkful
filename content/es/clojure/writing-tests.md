@@ -1,40 +1,35 @@
 ---
-title:    "Clojure: Escribiendo pruebas"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/clojure/writing-tests.md"
+title:                "Clojure: Escribiendo pruebas"
+programming_language: "Clojure"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué escribir pruebas en Clojure
+## Por qué
 
-Escribir pruebas en Clojure es una práctica importante para garantizar que nuestro código funcione correctamente y prevenir errores en nuestro programa. Además, nos ayuda a detectar y corregir posibles bugs en etapas tempranas del desarrollo, ahorrando tiempo y esfuerzo en el futuro.
+El desarrollo de software puede ser una tarea compleja y a menudo se requiere de mucho tiempo y esfuerzo para crear un producto de alta calidad. Y aunque puede ser tentador omitir el proceso de escribir pruebas, es crucial para garantizar que nuestro código funciona correctamente y continúa funcionando correctamente a medida que se hacen cambios. Las pruebas nos permiten detectar y corregir errores de manera efectiva, lo que nos ahorra tiempo y dinero a largo plazo.
 
 ## Cómo hacerlo
 
-Para escribir pruebas en Clojure, utilizamos la biblioteca de testing integrada en el lenguaje, llamada `clojure.test`. Primero, definimos una función de prueba utilizando la macro `deftest` y dentro de ella escribimos los casos de prueba utilizando la macro `is`.
+¡Escribir pruebas en Clojure es más fácil de lo que piensas! Primero, necesitamos tener instalado Clojure y una librería de pruebas como Midje o Expectations. Luego, simplemente podemos crear una función de prueba dentro de nuestro código utilizando la sintaxis `fact` en Midje o `expect` en Expectations, y proporcionar un valor de entrada y una salida esperada. Por ejemplo, en Midje podemos escribir lo siguiente:
 
 ```Clojure
-(deftest test-sum
-  (is (= 4 (+ 2 2))) ; esto debería ser verdadero
-  (is (not= 5 (+ 3 3))) ; esto debería ser falso
-)
+(fact "Realizar una suma"
+     (+ 2 3) => 5)
 ```
 
-Una vez que tengamos nuestras pruebas definidas, podemos ejecutarlas utilizando la función `run-tests` y obteniendo un informe sobre qué pruebas se pasaron y cuáles fallaron.
+Y cuando ejecutamos nuestras pruebas, si el resultado no coincide con el esperado, recibiremos un mensaje de error que nos ayudará a identificar y corregir el problema. Además, también podemos escribir pruebas para verificar otras funciones o comportamientos, como errores esperados o tipos de datos retornados.
 
 ## Profundizando
 
-Cuando escribimos pruebas en Clojure, es importante mantener ciertas buenas prácticas para un código más limpio y fácil de mantener a largo plazo. Algunas de estas prácticas incluyen:
+Escribir pruebas también nos permite tener una mayor comprensión de nuestro código y de cómo interactúan las diferentes partes de nuestro programa. Además, nos permite probar diferentes casos y condiciones para asegurarnos de que nuestro código sea robusto y maneje todas las situaciones posibles.
 
-- Utilizar nombres descriptivos para nuestras funciones de prueba y casos de prueba, para que sea más fácil entender su propósito.
-- Buscar casos de prueba extremos y esquinas para asegurarnos de que nuestro código maneje todas las situaciones posibles.
-- Utilizar la función `testing` para agrupar nuestras pruebas en contextos lógicos.
+También es importante tener en cuenta que escribir pruebas significa que nuestro código está documentado. Las pruebas pueden ser una forma de documentación para otros desarrolladores que trabajen en nuestro proyecto, ya que pueden ver cómo se supone que funcionan nuestras funciones y cómo deben ser utilizadas.
 
-Además, podemos utilizar bibliotecas externas como `core-spec` para añadir anotaciones y especificaciones a nuestras pruebas, lo que nos ayuda a documentar nuestro código y a tener una mayor comprensión de lo que estamos probando.
+## Ver también
 
-# Ver también
-
-- Documentación oficial de `clojure.test`: https://clojure.github.io/clojure/clojure.test-api.html
-- Ejemplo de pruebas en Clojure: https://github.com/olleicua/Testing-Clojure/blob/master/src/test/olleicua/testing_clojure.clj
-- Guía de buenas prácticas para escribir pruebas en Clojure: https://betweentwoparens.com/practical-advice-for-writing-clojure-tests
+- Guía de pruebas en Clojure: https://clojure.org/guides/learn/testing
+- Documentación de Midje: https://github.com/marick/Midje/wiki/Basics 
+- Documentación de Expectations: http://jayfields.com/expectations/

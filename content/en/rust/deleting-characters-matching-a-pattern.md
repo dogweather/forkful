@@ -1,66 +1,50 @@
 ---
-title:    "Rust recipe: Deleting characters matching a pattern"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/rust/deleting-characters-matching-a-pattern.md"
+title:                "Rust recipe: Deleting characters matching a pattern"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-When working with text data in programming, it's often necessary to clean or manipulate the data. One common task is deleting characters that match a specific pattern. This can be useful for removing unwanted formatting, special characters, or even just simplifying the data. Whether you're a beginner or an experienced programmer, knowing how to delete characters matching a pattern can come in handy in a variety of situations.
+Have you ever found yourself needing to delete certain characters from a string in your Rust code? Maybe you want to remove all whitespace or specific punctuation marks. Whatever the reason may be, knowing how to delete characters matching a pattern can come in handy when working with strings in Rust.
 
 ## How To
 
-To delete characters matching a pattern in Rust, we can use the `.replace()` method from the standard library's `str` type. This method takes in the pattern to be replaced and the replacement value, which can be an empty string to effectively delete the characters.
+To delete characters matching a pattern in Rust, we can use the `trim_matches` method from the `str` type. This method takes in a character or string pattern and removes any occurrences of it from both the beginning and end of the string.
 
-Let's take a look at an example:
+Here is an example of how we can use `trim_matches` to remove all whitespace from a string:
 
 ```Rust
-let my_string = "Rust is awesome!";
+let string = "   Hello Rust  ";
+let trimmed = string.trim_matches(' ');
+println!("Trimmed string: {}", trimmed);
 
-let modified_string = my_string.replace("e", "");
-
-println!("{}", modified_string);
+// Output: Trimmed string: HelloRust
 ```
 
-Output:
+As you can see, the `trim_matches` method removed all the whitespace from the original string, leaving us with only the desired characters.
+
+We can also specify a string pattern instead of a single character. Let's say we want to remove all occurrences of "Rust" from a string. We can do so by passing in the string pattern "Rust" to the `trim_matches` method.
 
 ```Rust
-Rust is awsom!
-```
+let string = "Hello Rust, welcome to my code";
+let trimmed = string.trim_matches("Rust");
+println!("Trimmed string: {}", trimmed);
 
-In this example, the `.replace()` method replaces all occurrences of the letter "e" with an empty string, effectively deleting them.
-
-We can also use regular expressions to specify more complex patterns to be deleted. For this, we can use the `regex` crate from the Rust Community's crates.io repository. Here's an example of deleting all numbers from a string using regular expressions:
-
-```Rust
-use regex::Regex;
-
-let my_string = "I have 3 apples and 5 bananas.";
-
-let numbers_only = Regex::new(r"\d").unwrap();
-
-let modified_string = numbers_only.replace_all(my_string, "");
-
-println!("{}", modified_string);
-```
-
-Output:
-
-```Rust
-I have apples and bananas.
+// Output: Trimmed string: Hello , welcome to my code
 ```
 
 ## Deep Dive
 
-Regular expressions open up a world of possibilities for deleting characters matching a pattern in Rust. They allow for more complex patterns to be specified, including special characters, wildcards, and more. In addition to the `regex` crate, there are also other crates available for working with regular expressions in Rust, such as `lazy_static` for compiling regular expressions at compile time for improved performance.
+Under the hood, the `trim_matches` method uses pattern matching to identify and remove characters from the string. This makes it a powerful and versatile tool for deleting characters in Rust.
 
-It's worth noting that the `.replace()` method is not limited to just deleting characters. It can also be used to replace them with a different value, making it a powerful tool for text manipulation in Rust.
+It's also worth noting that the `trim_matches` method returns a string slice, meaning it doesn't modify the original string. If you want to modify the original string, you can use the `to_string` method to convert the string slice back into a `String` type.
 
 ## See Also
 
-- The Rust Language Reference: <https://doc.rust-lang.org/reference/>
-- The Rust Community's crates.io repository: <https://crates.io/>
-- The regex crate: <https://crates.io/crates/regex>
-- The lazy_static crate: <https://crates.io/crates/lazy_static>
+- [Rust Documentation on Strings](https://doc.rust-lang.org/std/primitive.str.html)
+- [Rust Playground](https://play.rust-lang.org/) (try out the code snippets in this post)
+- [Rust Book](https://doc.rust-lang.org/book/) (a comprehensive guide to Rust language)

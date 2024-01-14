@@ -1,41 +1,50 @@
 ---
-title:    "Elm: 文字列を大文字にする"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/elm/capitalizing-a-string.md"
+title:                "Elm: 文字列の大文字化"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-プログラミングを行う上で、文字列を大文字に変換する必要がある場面があります。そのような状況では、効率的に文字列を大文字に変換する方法を知ることが重要です。
+なぜ文字列を大文字化するのか、ご存知ですか？単純な作業のように思えますが、実は意味があります。今回はElmプログラミング言語で文字列を大文字化する方法についてご紹介します。
 
-## 方法
+## どのように
 
-コンピューターの世界では、文字列を大文字に変換するのは非常に簡単です。Elmでは、文字列を大文字にするには `String.toUpper` メソッドを使用します。例えば、以下のようにコードを記述することで、文字列を大文字に変換することができます。
+まずは、文字列を大文字化する方法をご紹介します。以下のコードを参考にしてください。
 
-```elm
-String.toUpper "hello" -- Output: "HELLO"
+```Elm
+String.toUpper "hello" --出力は "HELLO" になります
 ```
 
-また、必要に応じて、文字列を小文字に変換する方法もあります。`String.toLower` メソッドを使用することで、以下のようにコードを記述することで、文字列を小文字に変換することができます。
+ここで、"String.toUpper"は文字列を大文字化する関数であり、引数に変換したい文字列を入れます。この例では、"hello"を大文字に変換しています。
 
-```elm
-String.toLower "HELLO" -- Output: "hello"
+また、文字列を小文字に変換する関数もあります。
+
+```Elm
+String.toLower "WORLD" --出力は "world" になります
 ```
 
-## 深く掘り下げる
+文字列を大文字化するだけでなく、一部の文字だけを大文字に変換する方法もあります。例えば、最初の文字を大文字にしたい場合は以下のようにします。
 
-Elmでは、文字列を大文字や小文字に変換するメソッドの他にも、様々な文字列操作に役立つメソッドが存在します。例えば、文字列の長さを取得する `String.length` や、指定した文字列が含まれるかどうかを判定する `String.contains` メソッドが代表的です。これらのメソッドも活用することで、より柔軟に文字列を操作できるようになります。
+```Elm
+String.capitalize "hello" --出力は "Hello" になります
+```
 
-## 参考リンク
+また、最初の2文字を大文字にしたい場合も同じように行えます。
 
-- [Elm公式ドキュメント](https://guide.elm-lang.org)
-- [Elmで文字列操作をする方法](https://qiita.com/shinnoki/items/5d260b1d9961c8c1c7c2)
-- [Elmで文字列を処理する方法](https://qiita.com/matsubo/items/5677c4605bf1338d9cc7)
+```Elm
+String.uppercaseFirst "hello" --出力は "HeLLO" になります
+```
 
-## 関連リンク
+## ディープダイブ
 
-- [Elmを使ってWebアプリを作ろう！](https://www.udemy.com/elm-webapp/) (Udemy)
-- [Elmを学ぶためのガイド](https://dev.to/lucamug/learn-elm-from-scratch-2019-4eh5) (Dev.to)
-- [Elm入門コース](https://egghead.io/browse/frameworks/elm) (Egghead)
+さらに深く、文字列を大文字化する際の動作について見ていきましょう。文字列を大文字化する際、Elmでは文字列の長さやUnicode文字に対する処理が行われます。このように、プログラミングの観点から複雑に処理されるため、文字列を大文字化する際には単純な作業に感じられるかもしれませんが、実は多くの処理が行われています。
+
+## 関連記事
+
+- [Elm公式ドキュメント](https://guide.elm-lang.org/)
+- [文字列を大文字化する方法](https://qiita.com/miyadesu1123/items/0673ae83f6a0446292dc)
+- [Unicodeについて](https://www.w3.org/International/questions/qa-what-is-unicode)

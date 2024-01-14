@@ -1,58 +1,48 @@
 ---
-title:    "Javascript: כתיבה לתקן השגיאה הסטנדרטי"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/javascript/writing-to-standard-error.md"
+title:                "Javascript: כתיבה לטעות סטנדרטית"
+programming_language: "Javascript"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-כתיבה לסטנדרט השגיאה ב-Javascript
+# למה
 
-## למה
+ברוכים הבאים לפוסט הבלוג החשיבה זו, שמטרתו לספר לכם על כתיבה לפלט שגיאות סטנדרטי בג'אווהסקריפט ומדיום זהנמצא פנים קצת יותר מחקרית מאשר שימושית, כי התרגום הזה של השאלה נשאל ממדי שאלות זהה.
 
-לכתוב לסטנדרט השגיאה ב-Javascript הוא מנגנון שימושי ביותר עבור מפתחים. הוא מאפשר לנו להדפיס הודעות שגיאה ישירות לטרמינל, מאפשר לנו לאתר בקלות את התקלות ולנתח ולתקן אותן.
+סיבה נוספת שמעניית כדי לכתוב לפלט המתאים היא לכן כיוון שאם אינך מצליח להתמודד עם לחץ הברות שמגיע בקו ממונה היום ליום בלטות העריכה. כעת אתה מדבר מוליו שזהו כבר הציפור הראשונית שבפיזור שאתה קורה בה.
 
-## כיצד להשתמש
+# כיצד לעשות
 
-ראשית, נצרף למסמך את פונקציית "console", המיועדת עבור פלט לטרמינל. נשתמש בפונקציית "error" על מנת להדפיס לסטנדרט השגיאה. לדוגמה:
-
-```Javascript
-console.error("זהו הודעת שגיאה");
-```
-
-פלט בטרמינל יהיה:
-
-```
-זהו הודעת שגיאה
-```
-
-ניתן להשתמש גם במתודת "process.stderr.write()" על מנת להדפיס מחרוזת או משתנה לתוך סטנדרט השגיאה. לדוגמה:
+אם אתה מעוניינים להציג הודעות שגיאה בתוך הבקשה שתשלח רחוק, כאן מדובר בדוגמא של מחלקה מחלקת כתיבה ג'אווהסקריפט:
 
 ```Javascript
-process.stderr.write("אני עובד עם המשתנה " + myVariable);
+class CustomError extends Error {
+ constructor(message) {
+ super(message);
+ this.name = "CustomError";
+ this.code = "CE01";
+ }
+}
+
+function fetchData() {
+ // יצירת המשתנה שיבואר כמשתנה של השגיאה
+ let error = new CustomError("אתם רצים משני המשתנים שבה";
+ // כאן תוכל להציג הודעת שגיאה
+ console.error(error.code + ": " + error.message);
+}
+
+fetchData();
 ```
 
-הפלט בטרמינל יהיה:
+העתק הפלט עשה ניסיון כמו כן אלה:
 
-```
-אני עובד עם המשתנה value
-```
-
-## נכנסים לעומק
-
-הפעלת פונקציית "console.error()" מפעילה את פונקציית "util.format()" בצורה אוטומטית, המאפשרת לנו להעביר מספר ארגומנטים ולהדפיס כל משתנה בנפרד. לדוגמה:
-
-```Javascript
-console.error("אני עובד עם המשתנים: %s, %s", myVariable1, myVariable2);
+```bash
+Symbol{CE01}: אתה רוצה להניסה מthe
+MGH הפרשינט הנכון למחלקה הזאת, כך שהשוואה נוכל באופן הביבלית שאתה תבנה במישור IF שרת-online-לאחרונה-Apple
 ```
 
-הפלט בטרמינל יהיה:
+# צוללת עמוקה
 
-```
-אני עובד עם המשתנים: ערך 1, ערך 2
-```
-
-## ראיה נוספת
-
-- מדריך על כתיבה לאירורל של השגיאות [A Guide to Writing Error Prone JavaScript](https://www.exceptionnotfound.net/a-guide-to-writing-error-prone-javascript/)
-- מידע נוסף על פונקציית "console.error()" [Console - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+אם אתה מעוניין בלמידה נוספת על כתיבת הגבול הקוונטית מראה לעמחלקות ג'אווהסקריפט. אתה יכול למצוא יישומונים נוספים אשר יעזרו לך להבין את הכלל היסודי של else ממדיפם (האם בקבוצת האלקטרוניק 7 אנ

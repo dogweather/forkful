@@ -1,40 +1,39 @@
 ---
-title:    "Kotlin: स्टैंडर्ड त्रुटि पर लिखना"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/writing-to-standard-error.md"
+title:                "Kotlin: स्टैंडर्ड त्रुटि पर लिखना"
+programming_language: "Kotlin"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun 
-Kya aapne kabhi socha hai ki aapka code compile hone ke baad kisi bhi error ka saamna karna padega? Agar haan, toh aap standard error ki baat kar rahe hain. Standard error ka use hum apne code ke debugging mein karte hain. Isse aapka code ka flow samajhne mein aasani hoti hai aur aap errors ko sahi tareeke se handle kar sakte hain.
+## क्यों
 
-## Kaise Kare
-Agar aapko apne Kotlin code mein standard error print karna hai, toh aapko `System.err.println()` ka use karna hoga. Ismein aap koi bhi object pass kar sakte hain jo aapko print karna hai, jaise ki ek string ya phir koi variable. Code snippet neeche diya gaya hai:
+क्या आपने कभी सोचा है कि आप कोटलिन में ऐसे प्रोग्रामिंग करने का फायदा उठा सकते हैं जो विग्यप्ति में स्टैंडर्ड त्रुटि लेखन करता है? याद रखिए कि मार्गदर्शन कोड में स्टैंडर्ड त्रुटि लेखन एक अच्छी अभ्यास है जो आपको प्रोग्राम में त्रुटियों को पहचानने में मदद कर सकता है और आपके कोड को पता लगा सकता है कि आप कहाँ संशोधन करना चाहते हैं।
 
-```Kotlin
-val name = "Rahul"
-System.err.println("Name: " + name)
-```
-Output: `Name: Rahul`
+## कैसे करें
 
-Is tarah se aap apne code mein standard error print kar sakte hain. Ab aap soch rahe honge ki yeh toh `println()` ke jaisa hi hai, toh fark kya hai? Fark yeh hai ki standard error output red color mein aata hai aur `println()` ka output white color mein aata hai, jisse aapko pata chal jaata hai ki kaunsa output standard error hai aur kaunsa normal output hai.
+```kotlin
+// प्रोग्राम में कोड जिसमें त्रुटि लेखन किया जाएगा
+fun main() {
+    println("Hello World")
 
-## Gehri Jaankari
-Ab hum thodi gehri jaankari ke baare mein baat karenge. Agar aap standard error ko catch karna chahte hain, toh aap `try-catch` block ka use kar sakte hain. Jaise ki is code snippet mein dikhaya gaya hai:
+    // स्टैंडर्ड त्रुटि लेखन द्वारा संशोधित कोड
+    println("This is an error message".stderr())
+}
 
-```Kotlin
-try {
-    val number = "Hello".toInt()
-} catch (e: NumberFormatException) {
-    System.err.println("Invalid number format")
+// स्टैंडर्ड त्रुटि लेखन रिक्त
+fun String.stderr() {
+    System.err.println(this)
 }
 ```
-Ismein `Hello` string ko `toInt()` function mein pass karne se error generate ho raha hai, lekin humne ise `try-catch` block mein wrap karke standard error ko catch kar liya hai. Is tarah se aap apne code ke errors ko handle kar sakte hain.
 
-## Dekhein Bhi
-Agar aapko aur gehri jaankari chahiye standard error ke baare mein, toh aap niche diye gaye links par jarur dekhein:
+आप ऊपर दिए गए कोड से देख सकते हैं कि हमने कैसे प्रोग्राम में त्रुटि लेखन किया है। हमने दो चीजें की हैं। पहले हमने समान्य कोड में त्रुटि लेखन द्वारा संशोधन किया है और दूसरे में एक नया फ़ंक्शन बनाया है जो हमारी स्ट्रिंग को स्टैंडर्ड त्रुटि लेखन रिक्त में बदल देगा। यह आपको कोड को अधिक स्पष्ट और त्रुटि मिलने की संभावना कम करेगा।
 
-- [Kotlin Documentation on Standard Streams](https://kotlinlang.org/docs/stdlib/jvm/internal/kotlin.io/-print-stream/index.html)
-- [Java Exception Class](https://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html)
-- [How to Use try-catch Blocks in Kotlin](https://kotlinlang.org/docs/reference/exceptions.html)
+## गहराई में जाइए
+
+इस अनुभाग में हम आपको थोड़ी गहराई से समझाएंगे कि स्टैंडर्ड त्रुटि लेखन का अर्थ क्या है और क्यों यह एक अच्छा अभ्यास है।
+
+**स्टैंडर्ड त्रुटि लेखन क्या है?**
+
+स्टैंडर्ड

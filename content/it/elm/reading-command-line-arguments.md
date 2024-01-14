@@ -1,51 +1,52 @@
 ---
-title:    "Elm: Leggere gli argomenti della riga di comando"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/elm/reading-command-line-arguments.md"
+title:                "Elm: Lettura degli argomenti da riga di comando"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Alcune volte, quando si scrive un programma, può essere utile avere la possibilità di leggere gli argomenti inseriti dalla riga di comando. Questo può essere particolarmente utile quando si vuole rendere il programma più flessibile e configurabile.
 
-## Come fare
-Per leggere gli argomenti dalla riga di comando in Elm, è necessario utilizzare il modulo `Platform.Cmd`, che fornisce una funzione `Cmd.args` che restituisce una lista di stringhe contenti gli argomenti inseriti dalla riga di comando.
+Se stai iniziando ad imparare Elm, potresti chiederti perché dovresti leggere gli argomenti della riga di comando. In realtà, la lettura degli argomenti della riga di comando è molto utile quando si sviluppano applicazioni Elm più complesse, in cui si vuole poter passare informazioni o opzioni all'apertura dell'applicazione.
+
+## Come Fare
+
+Per leggere gli argomenti della riga di comando in Elm, possibilità utilizzare la funzione `Platform.worker` combinata con la funzione `Platform.workerParser`. Innanzitutto, aggiungi la seguente importazione all'inizio del tuo file Elm:
 
 ```Elm
-import Platform.Cmd
-
-main : Program flags
-main =
-  Platform.worker
-    { init = init
-    , update = update
-    , subscriptions = subscriptions
-    }
-
-init : flags -> ( Model, Cmd Msg )
-init _ =
-  ( [], Cmd.none )
-
-type Msg = GetCommandLineArgs (List String)
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-  case msg of
-    GetCommandLineArgs args ->
-      ( model ++ args, Cmd.none )
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-  Platform.Cmd.args GetCommandLineArgs
+import Platform exposing (worker)
+import Platform.Cmd exposing (dump)
 ```
 
-Nell'esempio sopra, abbiamo utilizzato la funzione `Cmd.none` per indicare che non vogliamo eseguire alcun codice quando viene ricevuto il messaggio. Invece, aggiungiamo gli argomenti alla nostra struttura di dati Model.
+Poi, puoi utilizzare la funzione `workerParser` per elaborare gli argomenti della riga di comando:
 
-## Analisi approfondita
-In realtà, la funzione `Cmd.args` non legge direttamente gli argomenti dalla riga di comando. Piuttosto, utilizza la funzione `Platform.worker` per creare un'interfaccia con il sistema operativo che gestisce l'esecuzione del codice. Ciò significa che non dobbiamo preoccuparci dei dettagli di basso livello del sistema operativo, ma possiamo semplicemente utilizzare i valori restituiti dalla funzione `Cmd.args` nel nostro codice.
+```Elm
+main =
+  Program.worker
+    { init = init,
+      update = update,
+      subscriptions = subscriptions,
+      view = view
+    }
 
-## Vedi anche
-- Documentazione ufficiale di Elm: https://elm-lang.org/docs
-- Tutorial su come leggere gli argomenti dalla riga di comando in Elm: https://guide.elm-lang.org/interop/cmd.html
-- Esempi di progetti Elm che utilizzano la lettura degli argomenti dalla riga di comando: https://github.com/topics/elm-command-line-args
+init : ( Model, Cmd Msg )
+init =
+  ( Model [],
+    Platform.workerParser dump
+  )
+```
+
+In questo esempio, stiamo utilizzando la funzione `dump` per salvare gli argomenti della riga di comando nella nostra applicazione. Puoi anche utilizzare una funzione personalizzata per elaborare gli argomenti in base alle tue esigenze.
+
+## Approfondimento
+
+Quando si leggono gli argomenti della riga di comando, è importante comprendere come vengono passati e gestiti. In Elm, gli argomenti sono passati come stringhe nella forma `--nome=valore` o `--nome valore`. Queste stringhe possono poi essere elaborate e utilizzate per inizializzare o modificare il modello della tua applicazione.
+
+Se vuoi leggere ulteriori informazioni sui comandi della riga di comando in Elm, ti consiglio di dare un'occhiata alla documentazione ufficiale su [Platform.worker](https://package.elm-lang.org/packages/elm/core/latest/Platform#worker) e [Platform.workerParser](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd#workerParser).
+
+## Vedi Anche
+
+- [Documentazione su Platform.worker](https://package.elm-lang.org/packages/elm/core/latest/Platform#worker)
+- [Documentazione su Platform.workerParser](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd#workerParser)

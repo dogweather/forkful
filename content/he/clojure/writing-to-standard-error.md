@@ -1,39 +1,48 @@
 ---
-title:    "Clojure: כתיבה לשגיאת סטנדרט"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/clojure/writing-to-standard-error.md"
+title:                "Clojure: כתיבה לתקליט התקנה"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
 
-כתיבה לפלט שגיאות היא חלק חשוב מתהליך התכנות. היא מסייעת לנו למצוא ולתקן בעיות בקוד במהירות וביעילות רבה יותר. בכתיבה זו נראה כיצד ניתן להשתמש בשפת Clojure כדי לכתוב לפלט שגיאות בצורה נכונה ויעילה.
+חשוב לידע שכתיבה לשגיאות סטנדרטיות בקוד Clojure יכולה לעזור לך לעקוב אחר תהליכי הרצה ולזהות בעיות מהיר יותר. בנוסף, כתיבה לשגיאות סטנדרטיות יעזור לשפר את איכות הקוד ולשמור על נקיון וארגון.
 
 ## איך לעשות זאת
 
-לפני שנדבר על כיצד לכתוב לפלט שגיאות בשפת Clojure, נצטרך כמה כלים על מנת לבדוק את הקוד שלנו. האינסטרומנטות היא כלי שימושי שיעזור לנו למצוא באופן יעיל את השגיאות שלנו. הנה דוגמה של קוד בשפת Clojure עם שגיאת מגבלה בזמן ריצה שנכתבה לפלט השגיאה:
+הנה דוגמא של קוד Clojure שמדגים איך לכתוב לקונסולה שגיאה בעזרת הפונקציה `println`:
 
- ```Clojure
-(defn my-function [x]
-  (if (zero? x)
-    (throw (Exception. "x cannot be zero"))
-    (+ x 2)))
-
-(my-function 0)
+```Clojure
+(println :error "תוכן הטקסט")
 ```
 
-Output:
+פלט הקוד יהיה:
 
 ```
-Exception in thread "main" java.lang.Exception: x cannot be zero
- at user/my-function (form-init1887379627502286802.clj:2)
- at user/eval20 (form-init1887379627502286802.clj:10)
- at user/run! (form-init1887379627502286802.clj:14)
- at user/run- (form-init1887379627502286802.clj:29)
- at user/run (form-init1887379627502286802.clj:31)
- at user/main (form-init1887379627502286802.clj:36)
- at user/main (form-init1887379627502286802.clj:36)
+:error תוכן הטקסט
 ```
 
-כאן אנו משתמשים בתנאי `if` כדי לבדוק אם המספר `x` הוא 0. אם זהו המקרה, אנו משתמשים בפונקציה `throw` כדי להפוך את הערך `Exception` למספר. הפונקציה `defn` מגדירה פונקציה חדשה בשם `my-function` שמקבלת פרמטר `x`. סופסות הפעולה של הפונקציה היא להוסיף 2 למספר `x` הנתון. כמו ברוב שפות התכנות, ניתן לשנות את הטקסט של השגיאה ע"י שימוש בפונקציית `format`, ולא יהיה דבר מפתיע אם נרצה להוסיף מספר שגיאות כאלה לפ
+כדי לכתוב לאזור השגיאה המקורי של התוכנית, ניתן להשתמש בפונקציה `eprint`:
+
+```Clojure
+(eprint "קוד שגיאה:" :error "12345")
+```
+
+פלט הקוד יהיה:
+
+```
+קוד שגיאה: :error 12345
+```
+
+## תהליך מקיף
+
+השתמש בפונקציות כתיבה לשגיאות סטנדרטיות רק כאשר זה מתאים למקרה הספציפי. ניתן גם להשתמש בעזרת פונקציות פיתוח נוספות כמו `assert` ו-`ex-info` לשליחת מידע נוסף על השגיאה. כלכלת ההחלטה תלויה במטרות התכנית ועל איזה רמת פרטיוניות אתה רוצה לאפשר.
+
+## ראה גם
+
+- חומר לימוד על כתיבה לשגיאות סטנדרטיות ב-Clojure: https://www.clojure.org/guides/faq#error_handling
+- דוגמאות לשימוש בפונקציות לכתיבה לשגיאות סטנדרטיות: https://clojureverse.org/t/logging-and-exception-management-on-a-recent-clojure-koans-marathon/2179
+- שימוש פרקטי של כתיבה לשגיאות סטנדרטיות בפרוייקט ממקור פתוח: https://github.com/Untangled-web/untangled-web/blob/aece1b57a8421b3a805ded01c1e52b030596c595/src/clj/untangled/web.clj#L375

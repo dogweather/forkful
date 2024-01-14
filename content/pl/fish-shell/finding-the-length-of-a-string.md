@@ -1,31 +1,51 @@
 ---
-title:    "Fish Shell: Znajdowanie długości ciągu znaków"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/finding-the-length-of-a-string.md"
+title:                "Fish Shell: Znajdowanie długości ciągu znaków"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Dlaczego ktoś powinien zajmować się szukaniem długości ciągu znaków? Proste - jest to podstawowa umiejętność w programowaniu, której często używamy w różnych sytuacjach. Może to być przydatne, na przykład, w weryfikowaniu poprawności wprowadzonych danych lub w manipulowaniu tekstem w specyficzny sposób.
+Często w programowaniu potrzebujemy sprawdzić długość tekstu, czy to do celów wyświetlania, czy do manipulowania nim. W Fish Shell jest wiele sposobów na znalezienie długości ciągu tekstowego. W tym artykule dowiesz się, jak to zrobić.
 
 ## Jak to zrobić
 
-Zanim przejdziemy do głębszych wód, spójrzmy najpierw na prosty kod, który pomoże nam znaleźć długość ciągu znaków. W przypadku Fish Shell, możemy tego dokonać za pomocą funkcji `strlen`:
+Istnieją dwa sposoby na znalezienie długości ciągu tekstowego w Fish Shell. Pierwszym sposobem jest użycie wbudowanej funkcji `count`:
 
-```Fish Shell
-set string "To jest przykładowy ciąg znaków"
-echo (strlen $string)
+```
+Fish Shell Count
+
+fish
+ 
+# 4
 ```
 
-Po uruchomieniu powyższego kodu, otrzymamy wynik 32, co jest dokładną długością naszego ciągu znaków. Proste prawda?
+Drugi sposób polega na użyciu flagi `--count` w poleceniu `string`.
+
+```
+Fish Shell String Length
+
+set string "fish"
+
+string --count $string
+ 
+# 4
+```
+
+Oba te sposoby zwracają liczbę znaków w podanym ciągu tekstowym.
 
 ## Deep Dive
 
-Jeśli jesteś ciekaw, jak dokładnie działa funkcja `strlen` w Fish Shell, poniżej znajdziesz krótkie wyjaśnienie. Tak naprawdę, ta funkcja jest dostępna w języku C i została zaprojektowana tak, aby zliczać każdy znak w ciągu, aż nie napotka znaku zakończenia, czyli `NULL`. W Fish Shell, `NULL` jest oznaczony za pomocą pojedynczego znaku spacji, dlatego też wywołanie `strlen` na zmiennej zawierającej tekst zakończony spacją, zwróci długość bez spacji.
+Jeśli chcesz poznać więcej o znajdowaniu długości ciągu tekstowego w Fish Shell, warto wiedzieć, że można również użyć flagi `-r` w poleceniu `string` do odwrócenia podanego ciągu przed policzeniem długości. Ponadto, jeśli chcesz obliczyć długość wielu ciągów tekstowych na raz, możesz użyć polecenia `string split` w połączeniu z funkcją `count`.
 
-## Zobacz także
+Sprawdzanie długości ciągu tekstowego może również być przydatne w tworzeniu warunków w skryptach Fish Shell.
 
-- Dokumentacja funkcji `strlen`: https://fishshell.com/docs/current/cmds/strlen.html
-- Poradnik na temat manipulacji tekstem w Fish Shell: https://fishshell.com/docs/current/tutorial.html#manipulating-text
+## Zobacz również
+
+* Dokumentacja Fish Shell: https://fishshell.com/docs/current/
+* Funkcja `count`: https://fishshell.com/docs/current/cmds/count.html
+* Polecenie `string`: https://fishshell.com/docs/current/cmds/string.html
+* Polecenie `string split`: https://fishshell.com/docs/current/cmds/string-split.html

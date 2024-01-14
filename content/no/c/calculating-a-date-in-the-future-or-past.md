@@ -1,88 +1,59 @@
 ---
-title:    "C: Kalkulere en dato i fremtiden eller fortiden"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/c/calculating-a-date-in-the-future-or-past.md"
+title:                "C: Beregning av en dato i fremtiden eller fortiden"
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Mange ganger i programmering må vi kunne beregne en dato i fremtiden eller fortiden. Dette kan være nyttig for å lage en kalenderfunksjon eller planlegge hendelser. I denne bloggposten vil jeg vise deg hvordan du kan gjøre dette ved hjelp av C-programmering.
+## Hvorfor
 
-# Hvordan
-For å beregne en dato i fremtiden eller fortiden, trenger vi å ta hensyn til måned, år og antall dager i måneden. La oss først opprette variabler som vil lagre denne informasjonen.
+Å kunne beregne en dato i fremtiden eller fortiden er et nyttig verktøy i C-programmering. Det kan hjelpe deg med å planlegge og organisere hendelser eller prosjekter. Med et par enkle linjer med kode, kan du få programmene dine til å konvertere datoer og beregne fremtidige eller fortidige datoer.
 
-```C
-int dag;
-int måned;
-int år;
-int antall_dager;
-```
+## Hvordan
 
-Deretter kan vi be brukeren om å skrive inn en dato og antall dager som skal legges til eller trekkes fra. Vi bruker scanf funksjonen for å lese inn verdier fra brukeren.
+Det første du må gjøre er å definere en variabel for nåværende dato og en variabel for antall dager du vil legge til for å beregne fremtiden eller trekke fra for å beregne fortiden. For å gjøre dette kan du bruke biblioteket ""time.h" og funksjonen "time()" som returnerer nåværende tid i sekunder. Deretter kan du bruke funksjonen "localtime()" til å konvertere tid i sekunder til en lesbar struktur av typen "struct tm".
 
 ```C
-printf("Skriv inn dag: ");
-scanf("%d", &dag);
+#include <stdio.h>
+#include <time.h>
 
-printf("Skriv inn måned: ");
-scanf("%d", &måned);
+int main(){
 
-printf("Skriv inn år: ");
-scanf("%d", &år);
+  int days = 30; //antall dager å legge til eller trekke fra
 
-printf("Skriv inn antall dager som skal legges til/trekkes fra: ");
-scanf("%d", &antall_dager);
-```
+  time_t now; //variabel for nåværende tid i sekunder
+  time(&now); //funksjonen returnerer nåværende tid i sekunder
 
-Nå er det på tide å beregne den nye datoen ved hjelp av måned og antall dager.
+  struct tm *date; //variabel for lesbar dato
+  date = localtime(&now); //konverterer tid i sekunder til en struktur av typen "struct tm"
 
-```C
-måned += (antall_dager / 30);
-dag += (antall_dager % 30);
-```
+  //legger til eller trekker fra antall dager til dato
+  date->tm_mday += days; 
 
-Vi må også ta hensyn til skuddår når vi beregner datoer. Her bruker vi en if-setning for å sjekke om året er et skuddår eller ikke.
+  printf("Datoen %d dager fra nå er: %d/%d/%d",
+  days, date->tm_mday, date->tm_mon+1, date->tm_year+1900); 
+  //viser resultatet
 
-```C
-if ((år % 4 == 0 && år % 100 != 0) || år % 400 ==0){
-    if (måned > 12){
-        måned = 1;
-        år++;
-    }
-}
-else{
-    if (måned > 12){
-        måned =1;
-        år++;
-    }
+  return 0;
 }
 ```
 
-Til slutt kan vi skrive ut den nye datoen til brukeren.
+Output:
+Datoen 30 dager fra nå er: 27/10/2021
 
-```C
-printf("Den nye datoen er: %d.%d.%d \n" , dag, måned, år);
-```
+For å få beregnet en dato i fortiden, kan du bruke samme kode, men bare trekke fra antall dager i stedet for å legge til.
 
-Her er et eksempel på hvordan dette kan se ut i konsollen:
+## Dypdykk
 
-```
-Skriv inn dag: 25
-Skriv inn måned: 12
-Skriv inn år: 2020
-Skriv inn antall dager som skal legges til/trekkes fra: 10
-Den nye datoen er: 4.1.2021
-```
+Når du bruker funksjonen "localtime()", må du huske å inkludere en time sonerjustering for å få riktig dato. Dette skyldes at funksjonen returnerer dato og tid basert på den lokale tiden på datamaskinen din. Hvis du vil ha den globale tiden, må du bruke funksjonen "gmtime()" i stedet.
 
-# Dypdykk
-Nå som du har forstått hvordan du kan beregne en dato i fremtiden eller fortiden, kan vi se nærmere på noen av de tingene du bør være oppmerksom på når du jobber med datoberegninger.
+En annen ting å huske på er at det bare er gyldige datoer som kan beregnes. Hvis du for eksempel prøver å finne en dato 30 dager fra nå på 31. oktober, vil det gi en ugyldig dato fordi det ikke er 31 dager i november.
 
-Først må vi huske på at ikke alle måneder har 30 dager. Noen måneder har 31 dager og februar har bare 28 dager (eller 29 dager i et skuddår). Derfor er det viktig å sjekke om den nye datoen vi beregner faktisk er en gyldig dato.
+## Se Også
 
-I tillegg er det viktig å være oppmerksom på at noen land følger en annen kalender enn den gregorianske kalenderen som brukes i Norge. Det kan derfor være nyttig å ha en funksjon som lar brukeren velge hvilken kalender de ønsker å bruke for å beregne datoen.
-
-# Se også
-- [Skuddår - Wikipedia](https://no.wikipedia.org/wiki/Skudd%C3%A5r)
-- [Kalender (nyere tid) - Store norske leksikon](https://snl.no/kalender_(nyere_tid))
-- [Programmering på norsk - Programmeringsforlaget](https://www.programmeringsforlaget.no)
+- [Biblioteket ""time.h"](https://www.programiz.com/c-programming/library-function/time.h)
+- [Funksjonen "time()"](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
+- [Funksjonen "localtime()"](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
+- [Funksjonen "gmtime()"](https://www.tutorialspoint.com/c_standard_library/c_function_gmtime.htm)

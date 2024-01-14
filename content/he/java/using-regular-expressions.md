@@ -1,50 +1,49 @@
 ---
-title:    "Java: שימוש בביטויים רגולריים"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/using-regular-expressions.md"
+title:                "Java: שימוש בביטויים רגילים"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+# מדוע:
 
-מספר סיבות נמצאות למה מתכנתים משתמשים בביטויים רגילים בתוכניותיהם. בעזרתם ניתן למצוא טקסטים מסוימים בצורה מהירה ויעילה, לוקחים חלק חשוב במיוחד בשפות תכנות כמו גם בדוגמאת מיחשב/ת ואינטרנט לאיתור קווים תואמים.
+פועלים ל שימוש ב ביטויים רגולריים כאילו
 
-## איך לבצע
+שימוש בביטויים רגולריים בתכנות יכול להיות מעולה עבור למי שמחפש כלי שיכול לעשות תיקונים וכניסה למידע בולט . זה יכול לסייע במיהרת פתרון בעיות מורכבות והפחתת כתיבה שנמצאת בפינות מסויימות.
 
-ראשית, יש לייבא את המחלקות המתאימות לקוד שלנו על ידי הוספה של השורה הבאה לשורת המיוחדת למנתJava:
+# איך פועלים:
 
-```Java
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-```
-
-כעת ניתן ליצור אובייקט מסוג "Pattern" ולשים בתוכו את הביטוי הרגיל שלנו. לדוגמה:
+נתחיל למדוד במאקרו שמייצג את המילים 'תכנות' ו'ביטויים רגולריים .
 
 ```Java
-Pattern pattern = Pattern.compile("ab*c");
+public class RegexExample {
+
+  public static void main(String[] args) {
+    String sentence = "תכנות הוא אומנות קשה";
+    String regex = "תכנות|ביטויים רגולריים";
+    Pattern pattern = Pattern.compile(regex);
+    Matcher matcher = pattern.matcher(sentence);
+    while (matcher.find()) {
+      System.out.println(matcher.group());
+    }
+  }
+}
 ```
 
-ניתן לשנות את הביטוי בכל רגע על ידי שימוש בפקודה "matcher":
+פלט:
+תכנות
+ביטויים רגולריים
 
-```Java
-Matcher matcher = pattern.matcher("abc");
-```
+עם ביטויים רגולריים, אנחנו יכולים לחפש מילים מסויימות בתוך מחרוזת ולהחליף אותן במחרוזות אחרות. זה יכול לסייע גם בתיקון עיוותים במילים ועוד.
 
-לאחר מכן, ניתן להשוות את הביטוי לטקסט נתון ולהציג את התוצאה עם הפקודה "matches":
+# טיפול מקיף:
 
-```Java
-System.out.println(matcher.matches());
-```
+כאשר מדברים על ביטויים רגולריים, כדאי להיכנס כנה עומק על מנת להבין איך הם עובדים ולמה הם כל כך חשובים בתכנות. ביטויים רגולריים מכילים טכניקות מתקדמות כמו קריטריונים, מתודות ואופרטורים שיכולים להיות מאוד שימושיים בעבודה עם מחרוזות.
 
-כלומר, נקבל את התשובה "true" אם הטקסט מתאים לביטוי ו"false" אם לא.
+# ראו גם:
 
-## העמקה
-
-הפקודות הנ"ל הן רק דוגמאות פשוטות של שימוש בביטויים רגילים. אתרים רבים מציעים טכניקות ותרגולים לשימוש יעיל יותר בביטויים רגילים בתכנות. אנו ממליצים לחפש מדריכים והסברים נוספים על אתרי האינטרנט השונים.
-
-## ראו גם
-
-- https://www.w3schools.com/jsref/jsref_obj_regexp.asp
-- https://www.regular-expressions.info/tutorial.html
-- https://regexone.com/
+- [מדריך לביטויים רגולריים ב-Java](https://www.regular-expressions.info/java.html)
+- [קורס לימוד ביטויים רגולריים מ-Codecademy](https://www.codecademy.com/learn/learn-regular-expressions)
+- [הבנת ביטויים רגולריים כמתכנת](https://stackoverflow.com/questions/22815096/how-do-regular-expressions-work-behind-the-scenes/22815151#22815151)

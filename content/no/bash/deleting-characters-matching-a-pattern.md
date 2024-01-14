@@ -1,70 +1,34 @@
 ---
-title:    "Bash: Sletting av tegn som matcher et mønster"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/bash/deleting-characters-matching-a-pattern.md"
+title:                "Bash: Sletting av tegn som matcher et mønster"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Det kan være mange grunner til å ønske å slette tegn som matcher et gitt mønster i Bash-programmering. Kanskje du har en fil med uønsket formatering som du ønsker å fjerne, eller kanskje du ønsker å lage et skript som kan hjelpe deg å rense data.
+Å slette tegn som matcher et mønster er en viktig ferdighet for å håndtere tekstbehandlingsoppgaver i Bash-programmering. Dette kan hjelpe deg med å forenkle og automatisere oppgaver som involverer å håndtere store mengder tekstfiler.
 
-## Hvordan
+## Slik gjør du det
 
-For å slette tegn som matcher et mønster, kan du bruke kommandoen `sed`. Denne kommandoen lar deg endre tekst på en enkel måte ved å bruke regulære uttrykk.
+For å slette tegn som matcher et spesifikt mønster, kan du bruke kommandoen `sed` (stream editor). Her er et eksempel på hvordan du kan slette alle tall fra en tekstfil:
 
-```Bash 
-sed '/mønster/d' filnavn
-```
-Denne koden vil slette alle linjer som inneholder mønsteret som er spesifisert. For eksempel, hvis du ønsker å slette alle linjer i en fil som inneholder ordet "test", kan du bruke følgende kommando: 
+````Bash
+sed 's/[0-9]//g' tekstfil.txt
+````
 
-```Bash
-sed '/test/d' filnavn
-```
-
-Du kan også endre kommandoen for å matche et mer spesifikt mønster. For eksempel kan du slette alle linjer som starter med et bestemt ord ved å bruke `^`-tegnet. 
-
-```Bash
-sed '/^ord/d' filnavn
-```
-
-Dette vil slette alle linjer som starter med det spesifiserte ordet. Du kan også bruke `$`-tegnet for å matche slutten av en linje, og dermed slette alle linjer som slutter på et bestemt ord. 
-
-```Bash
-sed '/ord$/d' filnavn
-```
-
-Det er også mulig å bruke flere mønstre samtidig ved å bruke `|`-tegnet. Dette vil slette alle linjer som inneholder både det første og det andre mønsteret. 
-
-```Bash
-sed '/mønster1|mønster2/d' filnavn
-```
+I dette eksempelet bruker vi `sed` til å erstatte alle tall, representert av mønsteret `[0-9]`, med ingenting (altså sletter dem). Det siste argumentet "g" betyr å gjøre det på alle forekomstene i teksten. Outputet vil være den samme teksten, men nå uten tall.
 
 ## Dypdykk
 
-For å forstå hvordan `sed` fungerer, er det nyttig å vite litt om regulære uttrykk. Regulære uttrykk er et kraftig verktøy for å matche og manipulere tekst. De brukes i mange programmeringsspråk og kommandoer, inkludert Bash. 
+Kommandoen `sed` er en kraftig verktøy for å håndtere tekstfiler i Bash-programmering. Ved å bruke regex (regular expression) mønstre, kan du spesifisere hvilke tegn du vil slette, erstatte eller beholde. Dette gjør det mulig å håndtere komplekse filer på en enkel og effektiv måte.
 
-I `sed` brukes regulære uttrykk i kombinasjon med kommandoen `s`, som står for "substitute". Denne kommandoen lar deg erstatte tekst eller slette tekst basert på mønstre. For eksempel, hvis du ønsker å erstatte et ord med et annet, kan du bruke følgende kommando: 
-
-```Bash
-sed 's/gammelt_ord/nytt_ord/g' filnavn
-```
-
-Dette vil erstatte alle forekomster av `gammelt_ord` med `nytt_ord` i hele filen. Du kan også kombinere dette med regulære uttrykk for å matche mer spesifikt. For eksempel kan du erstatte alle linjer som starter med et tall med et annet ord. 
-
-```Bash
-sed 's/^[0-9]/ord/g' filnavn
-```
-
-Dette vil erstatte alle tall som starter en linje med ordet `ord`. 
+I tillegg til `sed` kan du også bruke andre kommandoer som `tr` (translate) og `awk` (pattern scanning and text processing) til å slette tegn basert på mønstre. Utforske disse verktøyene vil hjelpe deg å bli en mer effektiv og avansert Bash-programmerer.
 
 ## Se også
 
-For å lære mer om regulære uttrykk og `sed`-kommandoen, kan du se på følgende ressurser:
-
-- [Unix 'sed' command](https://www.computerhope.com/unix/used.htm)
-
-- [Regular Expressions - GNU Bash Manual](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)
-
-- [Få grep på grep – Regulære uttrykk i bash](https://uninett-norstore.github.io/2016/06/30/grep-regular-expression.html)
+* [Bash sed kommando dokumentasjon](https://www.gnu.org/software/sed/manual/sed.html)
+* [Bash tr kommando dokumentasjon](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+* [Bash awk kommando dokumentasjon](https://www.gnu.org/software/gawk/manual/gawk.html)

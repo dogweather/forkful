@@ -1,48 +1,43 @@
 ---
-title:    "Clojure: 読み込みファイル"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/reading-a-text-file.md"
+title:                "Clojure: テキストファイルの読み込み"
+programming_language: "Clojure"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-テキストファイルを読むことが重要なのか、それを説明するための簡単な1〜2文。
+読み込み専用のテキストファイルを操作することは、プログラミングで重要なスキルです。特に、データ分析やドキュメント処理などの領域では、テキストファイルを読み書きする必要があります。この記事では、Clojureでテキストファイルを読み込む方法とその重要性について説明します。
 
-テキストファイルを読むことは、コンピューターにとってデータを取得する重要な方法です。また、テキストファイルから情報を取得して加工することで、より複雑なタスクを実行することができます。
+## 方法
 
-## 使い方
-
-テキストファイルを読み取る方法を示す、```Clojure ... ```コードブロック内のコーディング例と出力サンプルを掲載します。
+Clojureでは、`slurp`関数を使用してファイルの内容を読み込むことができます。例えば、以下のコードを使用することで、テキストファイルを読み込み、その内容を出力することができます。
 
 ```Clojure
-; テキストファイルを読み取り、その内容をリストとして返す
-(defn read-text-file [file]
-  (with-open [reader (reader file)]
-    (doall (line-seq reader))))
-
-; 使用例
-(read-text-file "sample.txt")
+(def content (slurp "sample.txt"))
+(println content)
 ```
 
-出力：
-```
-("This is a sample text file."
-"This file contains multiple lines of text."
-"These lines will be returned as a list when the file is read.")
+また、ファイルの行単位で読み込むこともできます。`line-seq`関数を使用して、`slurp`関数と同様の動作を実現できます。以下のコードは、ファイルを行ごとに読み込み、それぞれの行を出力します。
+
+```Clojure
+(def lines (line-seq (clojure.java.io/reader "sample.txt")))
+(doseq [line lines]
+  (println line))
 ```
 
 ## ディープダイブ
 
-テキストファイルを読む方法についてのより詳細な情報を提供します。テキストファイルはテキスト形式で保存されており、その構造は行単位で分割されています。これにより、行単位でデータを処理することができます。
+テキストファイルを操作する際には、ファイルのエンコーディングにも注意が必要です。Clojureでは、`:encoding`オプションを指定することで、ファイルのエンコーディングを設定することができます。デフォルトでは、UTF-8が使用されますが、必要に応じて設定を変更することができます。
 
-また、Clojureではさまざまな方法でテキストファイルを読み込むことができます。例えば、```clojure.java.io```ライブラリの```reader```や```input-stream```を使用することで、より高度なテキストファイルの読み込みが可能になります。
+また、ファイルの存在をチェックする必要もあります。`exists?`関数を使用することで、ファイルが存在するかどうかを確認することができます。
 
-## 参考
+## 参考リンク
 
-- [Clojure Documentation](https://clojure.org/)
-- [Clojure Cookbook](https://clojure-cookbook.com/)
-- [Getting Started with Clojure](https://clojure.org/guides/getting_started)
-- [Clojure for Beginners](https://www.braveclojure.com/)
-- [Clojure入門書 入門 Clojure](http://www.clojurebook.com/)
+- [Clojureドキュメント: slurp, line-seq関数](https://clojuredocs.org/clojure.core/slurp, line-seq)
+- [Effective Programming: 読み込み専用のテキストファイルを処理する](https://github.com/FranklinChen/data-science-with-clojure/blob/master/code/src/effective_programming/file-io-basics/text-file/slurp-edn.clj)
+- [日本Clojureユーザ会: 読み込み専用のテキストファイルを操作する](https://clojure.jp/reading-text-files)
+
+## 関連リンク

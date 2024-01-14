@@ -1,46 +1,38 @@
 ---
-title:    "PHP: Escrevendo um arquivo de texto"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/php/writing-a-text-file.md"
+title:                "PHP: Escrevendo um arquivo de texto"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto?
+## Porquê
 
-Escrever um arquivo de texto é uma tarefa fundamental para qualquer programador PHP. Isso permite que você armazene e manipule dados de forma estruturada, criando uma comunicação eficiente entre o seu código e as informações que ele precisa processar.
+Escrever um arquivo de texto em um programa PHP pode ser muito útil para armazenar informações de forma estruturada e acessível. Isso pode ser especialmente útil para armazenar dados importantes, como configurações do sistema ou dados de usuário.
 
-## Como fazer
+## Como Fazer
 
-Para criar um arquivo de texto em PHP, você precisa seguir alguns passos simples:
+Para escrever um arquivo de texto em PHP, primeiro precisamos abrir um novo arquivo usando a função `fopen()`. Podemos especificar o nome do arquivo que queremos criar, juntamente com o modo de escrita: `w` para escrita, `a` para adicionar conteúdo ao final do arquivo, ou `x` para criar um novo arquivo.
 
-1. Abra o arquivo utilizando a função `fopen()`, passando o nome do arquivo e o tipo de operação (leitura, escrita ou ambos) como argumentos.
-2. Escreva o conteúdo desejado no arquivo utilizando a função `fwrite()`, especificando o ponteiro do arquivo e o texto a ser escrito.
-3. Feche o arquivo utilizando a função `fclose()` para liberar recursos do sistema.
-
-Aqui está um exemplo de código que cria um arquivo de texto chamado "texto.txt" com o conteúdo "Olá, mundo!":
+Em seguida, podemos usar a função `fwrite()` para escrever no arquivo, passando o nome do arquivo e o conteúdo que queremos adicionar. Por exemplo:
 
 ```PHP
-$arquivo = fopen("texto.txt", "w");
-$conteudo = "Olá, mundo!";
-fwrite($arquivo, $conteudo);
-fclose($arquivo);
+$file = fopen("meu_arquivo.txt", "w");
+fwrite($file, "Olá, mundo!");
+fclose($file);
 ```
 
-Ao executar esse código, você verá o arquivo "texto.txt" criado com sucesso, contendo o texto "Olá, mundo!".
+Isso criará um novo arquivo chamado "meu_arquivo.txt" e adicionará a linha "Olá, mundo!" a ele. Podemos repetir o processo quantas vezes quisermos para adicionar mais conteúdo.
 
-## Mergulho profundo
+## Mergulho Profundo
 
-Além dos passos básicos para escrita de um arquivo de texto, é importante mencionar alguns pontos importantes que podem ajudar a melhorar a eficiência e segurança do seu código.
+Além de simplesmente escrever um novo arquivo de texto, também podemos ter mais controle sobre o processo usando funções adicionais. Podemos, por exemplo, especificar o número máximo de caracteres que desejamos adicionar em uma única chamada da função `fwrite()`, usando a função `file_put_contents()` para simplificar ainda mais o processo e usá-la para adicionar uma string ao final do arquivo.
 
-Para começar, é recomendado utilizar a função `file_put_contents()` ao invés de `fopen()` e `fwrite()`, pois ela realiza todas as etapas necessárias em apenas uma chamada de função.
-
-Também é importante sempre verificar se o arquivo foi aberto corretamente antes de efetuar a escrita, utilizando a função `is_resource()`.
-
-Outra dica essencial é utilizar a função `file_exists()` para garantir que o arquivo que você deseja escrever já não exista, evitando assim a sobrescrita de dados importantes.
+É importante lembrar de sempre fechar o arquivo depois de terminarmos de escrever, usando a função `fclose()` para liberar os recursos do sistema usados pelo arquivo.
 
 ## Veja também
 
-- Documentação oficial do PHP sobre escrita de arquivos: https://www.php.net/manual/pt_BR/function.file-put-contents.php
-- Tutorial sobre manipulação de arquivos em PHP: https://www.devmedia.com.br/manipulando-arquivos-com-php/24881
-- Exemplos práticos de escrita de arquivos em PHP: https://www.homehost.com.br/blog/tutoriais-e-dicas/php/como-escrever-em-arquivo-txt-com-php/
+- [Função fopen() no site oficial do PHP](https://www.php.net/manual/pt_BR/function.fopen.php)
+- [Função fwrite() no site oficial do PHP](https://www.php.net/manual/pt_BR/function.fwrite.php)
+- [Função file_put_contents() no site oficial do PHP](https://www.php.net/manual/pt_BR/function.file-put-contents.php)

@@ -1,50 +1,69 @@
 ---
-title:    "Java: Criando um arquivo temporário"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/creating-a-temporary-file.md"
+title:                "Java: Criando um arquivo temporário"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que criar um arquivo temporário em Java?
 
-Criar um arquivo temporário pode ser útil em várias situações, como armazenar dados temporários que serão usados em outros programas ou como uma medida de segurança para evitar perda de dados.
+Criar um arquivo temporário é útil em casos onde precise armazenar dados temporariamente durante a execução de um programa em Java. Isso pode ser útil, por exemplo, para salvar informações temporárias durante a criação de um arquivo permanente ou para armazenar informações que serão usadas apenas temporariamente.
 
 ## Como criar um arquivo temporário em Java
 
-Para criar um arquivo temporário em Java, podemos utilizar a classe `File` e o método `createTempFile()`. Veja o seguinte exemplo de código:
+Para criar um arquivo temporário em Java, podemos usar a classe `File` e o método `createTempFile()`. Este método cria um arquivo vazio em um local temporário do sistema e retorna um objeto `File` que representa esse arquivo.
 
 ```Java
 import java.io.File;
 import java.io.IOException;
 
-public class ArquivoTemporario {
-    public static void main(String[] args) {
-        try {
-            // Cria um arquivo temporário com o prefixo "temp" e a extensão ".txt"
-            File tempFile = File.createTempFile("temp", ".txt");
-            // Define que o arquivo será apagado na finalização do programa
-            tempFile.deleteOnExit();
-            // Escreve uma mensagem no arquivo
-            System.out.println("Arquivo temporário criado em: " + tempFile.getAbsolutePath());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+public class CriarArquivoTemporario {
+
+    public static void main(String[] args) throws IOException {
+
+        //criando um arquivo temporário
+        File arquivoTemporario = File.createTempFile("arquivo", ".txt");
+
+        //definindo o caminho do arquivo
+        System.out.println("Caminho do arquivo temporário: " + arquivoTemporario.getAbsolutePath());
+
     }
 }
 ```
 
-Ao executar o código acima, será impresso o caminho do arquivo temporário criado, que geralmente está na pasta do sistema operacional em uso. O método `deleteOnExit()` é utilizado para garantir que o arquivo será apagado ao finalizar o programa, evitando acúmulo de arquivos temporários no sistema.
+A saída deste código será algo parecido com: `Caminho do arquivo temporário: C:\Users\NomeUsuario\AppData\Local\Temp\arquivo8654123310510021621.txt`. Vale ressaltar que o nome e a extensão do arquivo temporário serão gerados aleatoriamente.
 
-## Aprofundando na criação de arquivos temporários em Java
+## Explorando mais a criação de um arquivo temporário em Java
 
-Além do método `createTempFile()`, existem outras maneiras de criar arquivos temporários em Java, como utilizando a classe `Files` ou a interface `TemporaryFilesystem` do pacote `org.apache.commons.io`. Também é possível especificar o diretório onde o arquivo temporário será criado ou definir seus atributos, como permissões de leitura e escrita.
+Além do método `createTempFile()`, a classe `File` também possui outros métodos úteis para trabalhar com arquivos temporários, como `deleteOnExit()`, que exclui o arquivo temporário quando o programa é encerrado, e `length()`, que retorna o tamanho do arquivo em bytes.
 
-É importante lembrar que arquivos temporários podem conter informações sensíveis e, portanto, devem ser tratados com cautela. Além disso, é recomendado sempre apagar o arquivo temporário após o seu uso para evitar problemas de segurança ou espaço em disco.
+```Java
+import java.io.File;
+import java.io.IOException;
+
+public class CriarArquivoTemporario {
+
+    public static void main(String[] args) throws IOException {
+
+        //criando um arquivo temporário
+        File arquivoTemporario = File.createTempFile("arquivo", ".txt");
+
+        //excluindo o arquivo temporário quando o programa é encerrado
+        arquivoTemporario.deleteOnExit();
+
+        //imprimindo o tamanho do arquivo
+        System.out.println("Tamanho do arquivo temporário: " + arquivoTemporario.length() + " bytes");
+
+    }
+}
+```
+
+É importante lembrar que os arquivos temporários criados pelo método `createTempFile()` serão excluídos automaticamente pelo sistema quando o programa terminar, porém, se for desejado excluir o arquivo em outro momento, é possível utilizar o método `delete()` da classe `File`.
 
 ## Veja também
 
-- [Documentação oficial do método `createTempFile()`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html#createTempFile(java.lang.String,java.lang.String,java.io.File))
-- [Tutorial sobre a criação de arquivos temporários em Java](https://www.baeldung.com/java-temporary-file)
-- [Exemplos de utilização da classe `Files`](https://www.tutorialspoint.com/java/io/java_io_files.htm)
-- [Documentação da interface `TemporaryFilesystem`](https://commons.apache.org/proper/commons-io/apidocs/org/apache/commons/io/file/TemporaryFilesystem.html)
+- [Documentação oficial do Java para a classe File](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
+- [Tutorial sobre arquivos temporários em Java](https://www.devmedia.com.br/arquivo-temporario-em-java/31322)
+- [Vídeo tutorial sobre como criar arquivos temporários em Java](https://www.youtube.com/watch?v=RfN8hGe6-B0)

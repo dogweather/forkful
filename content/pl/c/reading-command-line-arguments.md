@@ -1,28 +1,29 @@
 ---
-title:    "C: Odczytywanie argumentów z wiersza poleceń"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/reading-command-line-arguments.md"
+title:                "C: Odczytywanie argumentów wiersza poleceń"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-#Dlaczego
+## Dlaczego
 
-W dzisiejszych czasach, programiści często mają do czynienia z interakcją użytkowników z ich programami poprzez wiersz poleceń. W takich przypadkach, wiadomości przekazane przez użytkownika podczas uruchamiania programu mogą mieć duże znaczenie dla jego działania. Dlatego jest ważne, aby umieć prawidłowo odczytać argumenty wiersza poleceń poprzez kodowanie w języku C.
+Czy zdarzyło Ci się kiedykolwiek próbować uruchomić program z linii poleceń i nie wiedzieć, jak przekazać mu odpowiednie argumenty? A może spotkałeś program, który przyjmuje opcje w wierszu poleceń, ale nie wiesz, jak ich użyć? W tym blogu dowiesz się, jak czytać argumenty wiersza poleceń w języku programowania C.
 
-#Jak to zrobić
+## Jak to zrobić
 
-Aby odczytać argumenty wiersza poleceń w języku C, musimy użyć funkcji \texttt{argc} i \texttt{argv}. Pierwszy argument (\texttt{argc}) to liczba całkowita, która przechowuje ilość podanych argumentów wiersza poleceń, a drugi argument (\texttt{argv}) to tablica ciągów znaków, która zawiera te argumenty.
+Aby czytać argumenty z linii poleceń w C, potrzebne są nam dwie rzeczy: funkcja `main()` i parametry `argc` oraz `argv`. Pierwszy parametr `argc` jest liczbą argumentów przekazanych do programu, natomiast drugi parametr `argv` jest tablicą przechowującą te argumenty. Sprawdźmy teraz przykład, w którym użyjemy tej funkcji:
 
-Przykładowy kod poniżej pokazuje, jak użyć tych funkcji w praktyce:
-
-```c
-#include <stdio.h>
-
-int main(int argc, char *argv[]) {
+```C
+#include<stdio.h>
+ 
+int main(int argc, char *argv[])
+{
     printf("Liczba argumentów: %d\n", argc);
 
-    for (int i = 0; i < argc; i++) {
+    for(int i = 0; i < argc; i++)
+    {
         printf("Argument %d: %s\n", i, argv[i]);
     }
 
@@ -30,42 +31,53 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-Kiedy uruchomimy ten program z kilkoma argumentami, na przykład: ```./program argument1 argument2 argument3```, otrzymamy następujący wynik:
+W powyższym kodzie wykorzystujemy pętlę `for` do przeiterowania przez wszystkie dostarczone argumenty i wyświetlenia ich na ekranie. Oto przykładowy wynik:
 
 ```
+> ./program arg1 arg2 arg3
 Liczba argumentów: 4
 Argument 0: ./program
-Argument 1: argument1
-Argument 2: argument2
-Argument 3: argument3
+Argument 1: arg1
+Argument 2: arg2
+Argument 3: arg3
 ```
 
-Mamy dostęp do każdego podanego argumentu poprzez indeksowanie tablicy \texttt{argv}.
+Jak widać, jako pierwszy argument, zawsze podawana jest nazwa wykonanego programu.
 
-#Głębszy zanurzanie
+## Głębsze spojrzenie
 
-W wierszu poleceń możemy również używać opcjonalnych argumentów, które są poprzedzone znakiem ``-`` lub ``--``. W celu obsłużenia tych argumentów, musimy zastosować funkcję \texttt{getopt()}, która pozwala nam odczytać argumenty opcjonalne oraz ich wartości. Poniższy przykład prezentuje to w praktyce:
+W języku C można również przekazywać opcje wiersza poleceń za pomocą flag. Możemy to zrobić, dodając przed argumentem "-" lub "--". W tym przypadku, będziemy potrzebowali funkcji `getopt()` oraz struktury `option`. Przykładowy kod może wyglądać jak poniżej:
 
-```c
-#include <stdio.h>
-#include <unistd.h>
-
-int main(int argc, char *argv[]) {
+```C
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<getopt.h>
+ 
+int main(int argc, char *argv[])
+{
     int opt;
 
-    while((opt = getopt(argc, argv, "abc:")) != -1) {
-        switch(opt) {
+    while((opt = getopt(argc, argv, "ab:")) != -1)
+    {
+        switch(opt)
+        {
             case 'a':
-                printf("Argument opcjonalny '-a' podany\n");
+                printf("Opcja -a została użyta\n");
                 break;
             case 'b':
-                printf("Argument opcjonalny '-b' podany\n");
+                printf("Opcja -b została użyta z argumentem %s\n", optarg);
                 break;
-            case 'c':
-                printf("Argument opcjonalny '-c' podany z wartością: %s\n", optarg);
+            case '?':
+                if(optopt == 'b')
+                {
+                    printf("Opcja -b wymaga argumentu\n");
+                }
+                else
+                {
+                    printf("Niepoprawna opcja -%c\n", optopt);
+                }
                 break;
-            default:
-                printf("Nieznany argument opcjonalny\n");
         }
     }
 
@@ -73,9 +85,10 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-W powyższym przykładzie określiliśmy, że nasz program akceptuje argumenty opcjonalne ``-a``, ``-b`` oraz ``-c``, który może mieć wartość. Więcej informacji na temat użycia funkcji ``getopt()`` znajduje się w jej dokumentacji.
+W powyższym kodzie używamy funkcji `getopt()` do odczytywania opcji i argumentów. Możemy także określić, które opcje wymagają argumentów, a także obsłużyć nieistniejące opcje lub brak argumentów dla wymaganych opcji. Przykładowo, jeśli uruchomimy powyższy program z flagą `-b` bez podania argumentu, dostaniemy komunikat o błędzie.
 
-#Zobacz także
+## Zobacz także
 
-- [Dokumentacja funkcji \texttt{argc} i \texttt{argv}](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html#Program-Arguments)
-- [Dokumentacja funkcji \texttt{getopt()}](https://www.gnu.org/software/libc/manual/html_node/Getopt.html#Getopt)
+- [Dokumentacja C: main() function](https://www.tutorialspoint.com/cprogramming/c_main.htm)
+- [Tutorial o czytaniu argumentów z linii poleceń w C](https://www.learn-c.org/en/Command_Line_Arguments)
+- [Przykłady flag i opcji wiersza poleceń w C](https://www.geeksforgeeks.org/getopt-function-in-c-to-parse-command-line-arguments/)

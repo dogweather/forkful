@@ -1,41 +1,41 @@
 ---
-title:    "Fish Shell: 写入标准错误。"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/writing-to-standard-error.md"
+title:                "Fish Shell: 使用标准错误输出写入程序"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么
 
-有时候当你运行脚本时，你可能会遇到一些错误。将这些错误信息打印到终端屏幕上不方便，因为它可能会干扰你的其他输出。将这些错误信息写入标准错误流（standard error）可以让你更方便地处理这些错误信息。 
+在编程中，有时候我们想要输出一些不是正常的结果，或者是为了调试我们的代码。这时候，将结果打印到标准错误（standard error）就很有用了。
 
-## 使用方法
+# 如何
 
-编程时，可以使用Fish Shell来将错误信息写入标准错误流。以下是一个简单的例子： 
+编写Fish Shell脚本时，使用标准输出（standard output）和标准错误（standard error）是非常常见的。下面是一个示例代码，展示了如何将结果打印到标准错误。
 
-```Fish Shell
-# 创建一个文件夹
-mkdir new_folder
-
-# 如果文件夹已经存在，则将错误信息写入标准错误流
-if test $status -ne 0
-    echo "文件夹已经存在" >&2
-end
+```Fish Shell 
+echo "这是一个标准输出"  # 打印到标准输出
+echo "这是一个标准错误" >&2 # 将结果打印到标准错误
 ```
 
-上面的代码中，`mkdir`命令将文件夹创建的结果保存在变量`$status`中。如果变量的值不等于0，那么说明创建失败，随后的`if`语句会将错误信息写入标准错误流中。 
+运行这个脚本，我们可以看到标准输出和标准错误分别输出了不同的内容，这可以帮助我们区分出不同的信息。
 
-## 深入了解 
+```
+这是一个标准输出
+这是一个标准错误
+```
 
-Fish Shell中有两个重要的输出流，分别是标准输出（standard output）和标准错误流。通过使用`&>`操作符，可以将标准输出和标准错误流合并为同一个流。这样做的好处是，不仅可以将错误信息打印到屏幕上，还可以将其保存在一个文件中方便以后查看。 
+# 深入探讨
 
-## 参考链接
+当我们将结果打印到标准错误时，实际上是将这些信息发送到stderr流。这通常显示为红色的文字，表示这是一个错误信息。相比之下，标准输出通常以标准的黑色文字显示。将结果打印到标准错误可以帮助我们区分出不同的输出，从而更好地调试我们的代码。
 
-- [Fish Shell文档](https://fishshell.com/docs/current/index.html)
-- [了解标准输出和标准错误流](https://linux.cn/article-2800-1.html) 
+# 参考链接
 
-## 参见
+- [Fish Shell官方网站](https://fishshell.com/)
+- [官方文档：输入/输出](https://fishshell.com/docs/current/tutorial.html#inputandoutput)
+- [官方文档：有用的技巧](https://fishshell.com/docs/current/tutorial.html#usefultechniques)
+- [官方文档：变量和流](https://fishshell.com/docs/current/tutorial.html#variablesandstreams)
 
-- [使用Fish Shell优化你的编程体验](https://linux.cn/article-11286-1.html)
-- [学习Fish Shell的使用技巧](https://linux.cn/article-12446-1.html)
+# 参考链接

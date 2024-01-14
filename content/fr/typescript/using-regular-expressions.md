@@ -1,46 +1,42 @@
 ---
-title:    "TypeScript: Utiliser des expressions régulières"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/using-regular-expressions.md"
+title:                "TypeScript: Utiliser les expressions régulières"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi utiliser les expressions régulières?
+## Pourquoi utiliser des expressions régulières en TypeScript?
 
-Les expressions régulières sont des outils puissants pour la manipulation de texte dans les programmes TypeScript. Elles permettent de rechercher et de manipuler des motifs spécifiques dans une chaîne de caractères, ce qui peut être très utile pour la validation de données, la recherche de mots-clés ou la modification de chaînes de caractères. L'incorporation de ces expressions régulières dans votre code peut grandement améliorer l'efficacité et la précision de vos opérations de traitement de texte.
+Les expressions régulières sont un outil puissant qui permet de rechercher des motifs dans une chaîne de caractères. En utilisant des expressions régulières, vous pouvez facilement trouver et extraire des informations spécifiques dans de grandes quantités de données. Cela peut être utile pour le traitement de données, la validation de formulaires ou même le développement Web. En somme, les expressions régulières sont un outil essentiel pour tout développeur TypeScript.
 
-## Comment les utiliser?
+## Comment utiliser des expressions régulières en TypeScript?
 
-Pour utiliser les expressions régulières en TypeScript, vous devez d'abord créer une instance de l'objet `RegExp`. Cette instance peut être créée avec un motif de recherche entre deux barres obliques, comme `/pattern/`, ou en utilisant le constructeur `new RegExp("pattern")`.
-
-Une fois que vous avez votre instance `RegExp`, vous pouvez l'utiliser pour effectuer diverses opérations sur une chaîne de caractères, telles que la recherche de correspondances avec la méthode `test()` ou le remplacement de certaines parties avec la méthode `replace()`. Voici un exemple de code pour rechercher si une chaîne de caractères contient une adresse e-mail valide :
+Pour utiliser des expressions régulières en TypeScript, vous devez d'abord créer un modèle de recherche en utilisant la classe `RegExp`. Par exemple, supposons que nous voulions rechercher tous les numéros de téléphone dans une chaîne de caractères donnée. Voici comment nous pouvons le faire en TypeScript:
 
 ```TypeScript
-let emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-let input = "example@email.com";
-let result = emailPattern.test(input);
-console.log(result); // output: true
+let str = "Mon numéro de téléphone est le 555-123-4567.";
+let regExp = /(\d{3})-(\d{3})-(\d{4})/;
+let result = regExp.exec(str);
+
+console.log(result[0]); // 555-123-4567
+console.log(result[1]); // 555
+console.log(result[2]); // 123
+console.log(result[3]); // 4567
 ```
 
-Vous pouvez également utiliser des expressions régulières avec les méthodes intégrées de TypeScript telles que `split()` et `match()` pour diviser une chaîne de caractères ou extraire des informations spécifiques.
+Dans cet exemple, nous utilisons le caractère spécial `/` pour définir le début et la fin de notre modèle de recherche. Les parenthèses `()` sont utilisées pour capturer les groupes de chiffres que nous voulons extraire.
 
-## Plongée en profondeur
+Une fois que nous avons notre modèle de recherche, nous utilisons la méthode `exec()` pour trouver la première occurrence dans la chaîne de caractères donnée. Cette méthode renvoie un tableau contenant les correspondances trouvées, où le premier élément est la correspondance complète et les éléments suivants sont les groupes capturés par nos parenthèses.
 
-Les expressions régulières permettent également d'utiliser des modificateurs pour effectuer des recherches plus avancées. Par exemple, le modificateur `g` permet de trouver toutes les occurrences d'un motif dans une chaîne de caractères, tandis que `i` ignore la casse. Vous pouvez également utiliser des groupes de capture pour extraire spécifiquement des parties de la chaîne correspondant à certains motifs.
+## Une plongée plus profonde dans l'utilisation des expressions régulières en TypeScript
 
-Il est important de noter que les expressions régulières peuvent parfois être complexes et difficiles à comprendre. Il existe également différentes variantes de syntaxe selon le langage de programmation. Il est donc recommandé de lire attentivement la documentation officielle de TypeScript sur les expressions régulières avant de les utiliser.
+Les expressions régulières en TypeScript ont des tonnes de fonctionnalités et d'options qui peuvent être utilisées pour des recherches plus complexes. Par exemple, vous pouvez utiliser des caractères spéciaux tels que `*` pour trouver des modèles de recherche plus larges, ou encore utiliser des modificateurs tels que `i` pour effectuer une recherche insensible à la casse.
+
+Il existe également des méthodes pratiques telles que `test()` qui renvoie un booléen indiquant si une correspondance a été trouvée ou non, et `match()` qui renvoie toutes les correspondances trouvées dans une chaîne. Il peut être utile de consulter la documentation officielle de TypeScript pour en savoir plus sur toutes les options disponibles.
 
 ## Voir aussi
-
-- [Documentation officielle de TypeScript sur les expressions régulières](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [Tutoriel sur les expressions régulières en TypeScript](https://www.digitalocean.com/community/tutorials/js-regex-updated)
-- [Outil en ligne pour tester des expressions régulières](https://www.regextester.com/typeScript)
-
----
-
-## Liens en français
-
-- [Guide complet pour débuter en TypeScript](https://www.grafikart.fr/tutoriels/typescript) (par Grafikart)
-- [Programmer en TypeScript, la maîtrise](https://www.talkeezy.com/fr/training-xebia/ts/2/typescript-la-maitrise) (par Xebia France)
-- [Développer en TypeScript avec Angular](https://www.formationjavascript.com/programmation-typescript-debutant) (par Formation JavaScript)
+- [Documentation officielle sur les expressions régulières en TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Tutoriel sur les expressions régulières en TypeScript](https://www.digitalocean.com/community/tutorials/js-regular-expressions-in-typescript)
+- [Outil en ligne pour tester des expressions régulières en TypeScript](https://regex101.com/)

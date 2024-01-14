@@ -1,54 +1,54 @@
 ---
-title:    "C++: Lecture des arguments de ligne de commande"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/reading-command-line-arguments.md"
+title:                "C++: Lecture des arguments en ligne de commande"
+programming_language: "C++"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
 
-Si vous êtes un programmeur C++, vous avez probablement déjà entendu parler des arguments de ligne de commande, mais savez-vous vraiment pourquoi ils sont importants ? Les arguments de ligne de commande sont utilisés pour fournir des informations à un programme lors de son exécution. Cela peut inclure des options de configuration, des fichiers à traiter ou des données d'entrée. En fait, les arguments de ligne de commande peuvent grandement améliorer l'efficacité et la flexibilité de votre code.
+Si vous êtes un programmeur débutant ou expérimenté, vous connaissez sûrement l'importance des arguments de ligne de commande dans vos programmes. Ceux-ci vous permettent de fournir des informations à votre programme lors de son exécution, sans avoir à les définir directement dans votre code. Dans cet article, nous allons explorer comment lire ces arguments de ligne de commande en utilisant C++. 
 
-## Comment Faire
+## Comment faire
 
-Pour lire les arguments de ligne de commande en C++, nous utilisons la fonction `main()`. Cette fonction prend deux paramètres : `argc` et `argv`. `argc` représente le nombre total d'arguments passés au programme, tandis que `argv` est un tableau de chaînes de caractères contenant les arguments eux-mêmes.
+Tout d'abord, il est important de noter que les arguments de ligne de commande sont essentiellement une liste de chaînes de caractères, séparées par des espaces, qui sont passées à votre programme lors de son exécution. Pour les lire en utilisant C++, nous pouvons utiliser les paramètres de la fonction `main` qui prennent la forme `int argc, char* argv[]`. L'argument `argc` représente le nombre total d'arguments passés, y compris le nom du programme lui-même, tandis que `argv` est un tableau de chaînes de caractères représentant chaque argument passé.
 
-Voici un exemple simple de lecture et d'affichage des arguments de ligne de commande :
+Voici un exemple de code pour lire et afficher les arguments de ligne de commande :
 
 ```C++
 #include <iostream>
 
-int main(int argc, char* argv[])
-{
-    std::cout << "Nombre d'arguments : " << argc << std::endl;
-    for (int i = 0; i < argc; i++)
-    {
-        std::cout << "Argument n°" << i << " : " << argv[i] << std::endl;
+int main(int argc, char* argv[]) {
+    // Boucle à travers chaque argument
+    for (int i = 0; i < argc; i++) {
+        // Affiche l'index de l'argument et sa valeur
+        std::cout << "Argument " << i << ": " << argv[i] << std::endl;
     }
+
     return 0;
 }
 ```
 
-Si nous exécutons ce programme avec les arguments `./programme Arg1 Arg2`, nous obtiendrons la sortie suivante :
+Si nous exécutons ce programme avec les arguments "Bonjour tout le monde", nous obtiendrons la sortie suivante :
 
 ```
-Nombre d'arguments : 3
-Argument n°0 : ./programme
-Argument n°1 : Arg1
-Argument n°2 : Arg2
+Argument 0: ./programme
+Argument 1: Bonjour
+Argument 2: tout
+Argument 3: le
+Argument 4: monde
 ```
 
-Nous pouvons également utiliser des arguments de ligne de commande pour créer des fonctionnalités plus avancées, comme l'ouverture et la lecture de fichiers spécifiés par l'utilisateur.
+Comme vous pouvez le voir, l'argument 0 représente le nom du programme lui-même, suivi de chaque mot passé en tant qu'argument. Il est important de noter que les arguments sont toujours lus en tant que chaînes de caractères, vous devrez donc peut-être les convertir en d'autres types de données en fonction de vos besoins.
 
-## Plongée Profonde
+## Plongée en profondeur
 
-La fonction `main()` en C++ peut également prendre un troisième paramètre, `envp`, qui représente les variables d'environnement du système. Ces variables peuvent être utiles pour récupérer des informations supplémentaires, telles que le nom d'utilisateur ou le répertoire de travail actuel.
+En plus de lire simplement les arguments de ligne de commande, il y a quelques astuces utiles à connaître lors de leur utilisation dans vos programmes. Tout d'abord, vous pouvez utiliser `std::stoi` pour convertir une chaîne de caractères en un entier, ou `std::stod` pour un nombre à virgule flottante. Deuxièmement, vous pouvez utiliser les bibliothèques de traitement de chaînes de caractères telles que `#include <string>` et `#include <sstream>` pour manipuler et extraire des informations à partir des arguments. Et enfin, vous pouvez également utiliser des drapeaux ou des options pour fournir des arguments optionnels à votre programme.
 
-En outre, il existe des bibliothèques externes disponibles pour faciliter la manipulation des arguments de ligne de commande en C++. Par exemple, la bibliothèque [Boost.Program_options](https://www.boost.org/doc/libs/1_77_0/doc/html/program_options.html) fournit des fonctions pratiques pour lire et analyser les arguments avec une syntaxe facile à utiliser.
+## Voir aussi
 
-## Voir Aussi
-
-- [Documentation sur les arguments de ligne de commande en C++](https://en.cppreference.com/w/cpp/language/main_function)
-- [Guide d'utilisation de la bibliothèque Boost.Program_options](https://www.boost.org/doc/libs/1_77_0/doc/html/program_options/tutorial.html)
-- [Exemples de manipulation des arguments de ligne de commande en C++](https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm)
+- [Documentation C++ sur les arguments de ligne de commande](https://en.cppreference.com/w/cpp/utility/program/argument_vector)
+- [Guide pratique pour lire les arguments de ligne de commande en C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [Tutoriel en vidéo sur l'utilisation des arguments de ligne de commande en C++](https://www.youtube.com/watch?v=KszBqGGnITI)

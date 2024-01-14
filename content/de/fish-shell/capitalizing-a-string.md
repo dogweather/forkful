@@ -1,44 +1,50 @@
 ---
-title:    "Fish Shell: Ein Zeichenfolge groß schreiben"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/capitalizing-a-string.md"
+title:                "Fish Shell: Eine Zeichenkette großschreiben"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
 
-Das Umschreiben von Texten ist ein häufiger Schritt bei der Computerprogrammierung. Es kann hilfreich sein, um die Lesbarkeit von Ausgaben zu verbessern oder bestimmte Funktionen zu implementieren. Deshalb ist es wichtig zu wissen, wie man Text in der Fisch-Schale umschreibt.
+In diesem Artikel werden wir uns damit beschäftigen, wie man eine Zeichenfolge in Großbuchstaben konvertieren kann. Dies kann nützlich sein, wenn man beispielsweise einen Dateinamen oder einen Satz in einer bestimmten Formatierung benötigt.
 
-## Wie man Text in der Fisch-Schale umschreibt
+## Wie es geht
 
-Die Fisch-Schale bietet mehrere Möglichkeiten, um Text zu manipulieren. Eine davon ist die "capitalize" Funktion, die einen String in Großbuchstaben umwandelt. Hier ist ein Beispiel:
+Um eine Zeichenfolge in Großbuchstaben umzuwandeln, können wir die "`str toupper`" Funktion in Fish Shell verwenden. Hier ist ein Beispiel, wie wir dies tun könnten:
 
-```
-Fish Shell Programmierung
-
-```
-
-Die Ausgabe dieses Codes wäre:
-
-```
-FISH SHELL PROGRAMMIERUNG
+```Fish Shell
+set string "Hallo Welt!"
+echo $string # Output: Hallo Welt!
+str toupper $string
+echo $string # Output: HALLO WELT!
 ```
 
-Um diesen Code in Ihrer eigenen Fisch-Schale auszuprobieren, können Sie ihn einfach in Ihrem Terminal eingeben und Enter drücken. Sie sollten die gleiche Ausgabe wie oben erhalten.
+Wie Sie sehen können, haben wir zuerst eine Variable namens "string" erstellt und ihr den Wert "Hallo Welt!" zugewiesen. Dann haben wir die `str toupper` Funktion auf diese Variable angewendet und den resultierenden Wert ausgegeben.
 
-Dies ist jedoch nicht die einzige Möglichkeit, um Text in der Fisch-Schale zu verändern. Es gibt auch "lowercase" und "uppercase" Funktionen, die Text in Klein- bzw. Großbuchstaben umwandeln. Die Verwendung dieser Funktionen kann je nach Programmierbedürfnissen hilfreich sein.
+Wir können auch mehrere Zeichenfolgen gleichzeitig in Großbuchstaben konvertieren, indem wir das "-Lb" Flag verwenden. Schauen wir uns ein weiteres Beispiel an:
 
-## Tieferer Einblick
+```Fish Shell
+set string1 "Ich bin ein Fisch!"
+set string2 "Und ich auch!"
+echo $string1 # Output: Ich bin ein Fisch!
+echo $string2 # Output: Und ich auch!
+str toupper -Lb string1 string2
+echo $string1 # Output: ICH BIN EIN FISCH!
+echo $string2 # Output: UND ICH AUCH!
+```
 
-Um noch tiefer in das Thema der Textmanipulation in der Fisch-Schale einzusteigen, gibt es weitere Funktionen, die verwendet werden können. Dazu gehören "string", "join" und "split". Diese Funktionen bieten verschiedene Möglichkeiten, um Text in der Fisch-Schale zu verändern und zu manipulieren.
+## Tiefer Einblick
 
-Mit der "string" Funktion können Sie Texte miteinander verbinden oder Teile eines Textes extrahieren. "Join" und "split" können verwendet werden, um Strings in Arrays zu konvertieren und umgekehrt.
+Wenn wir uns den Code der `str toupper` Funktion im Fish Shell genauer ansehen, werden wir feststellen, dass sie auf die `string` Bibliothek zugreift. Diese Bibliothek bietet verschiedene nützliche Funktionen für die Manipulation von Zeichenfolgen. Die `str toupper` Funktion selbst verwendet die `str fromlower` Funktion, um alle Kleinbuchstaben in Großbuchstaben zu konvertieren.
 
-Es ist wichtig, sich mit diesen Funktionen vertraut zu machen, um die volle Leistungsfähigkeit der Fisch-Schale nutzen zu können. Eine ausführliche Erklärung dieser Funktionen würde jedoch den Rahmen dieses Artikels sprengen. Um mehr darüber zu erfahren, können Sie unsere "See Also" Sektion besuchen.
+Es ist wichtig zu beachten, dass die `str toupper` Funktion nur ASCII-Zeichen unterstützt. Das bedeutet, dass Zeichen aus anderen Sprachen oder Sonderzeichen nicht in Großbuchstaben konvertiert werden.
+
+Insgesamt ist die `str toupper` Funktion eine einfache und praktische Möglichkeit, Zeichenfolgen in Großbuchstaben zu konvertieren, aber sie hat auch ihre Grenzen. Wenn Sie eine umfassendere und flexiblere Lösung benötigen, können Sie sich andere Funktionen in der `string` Bibliothek ansehen oder sogar eine benutzerdefinierte Funktion erstellen.
 
 ## Siehe auch
 
-- Offizielle Fisch-Schale Dokumentation (https://fishshell.com/)
-- Capitalize Funktion (https://fishshell.com/docs/current/commands.html#capitalize)
-- Weitere Textmanipulationsfunktionen (https://fishshell.com/docs/current/tutorial.html#text-manipulation)
+- Fish Shell Dokumentation zu "str toupper": https://fishshell.com/docs/current/cmds/str.html#toupper
+- Fish Shell Dokumentation zu "`string`" Bibliothek: https://fishshell.com/docs/current/cmds/string.html

@@ -1,114 +1,53 @@
 ---
-title:    "Java: Tekstitiedoston kirjoittaminen"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/java/writing-a-text-file.md"
+title:                "Java: Tekstitiedoston kirjoittaminen"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Kirjoittaminen on olennainen osa ohjelmointia, ja teksititiedoston kirjoittaminen on hämmästyttävä tapa tallentaa tietoja ja lukea niitä myöhemmin. Se on myös tärkeä osa tiedonsiirtoa ja tiedostojen hallintaa.
+Text-tiedostojen kirjoittaminen on olennainen osa ohjelmointia monissa eri tilanteissa. Se mahdollistaa tietojen tallentamisen ja käsittelemisen pitkäaikaisesti ja helposti vaihdettavan formaatin avulla. Ohjelmoijan on tärkeää osata kirjoittaa ja muokata text-tiedostoja, jotta työnkulku sujuisi mahdollisimman tehokkaasti ja laadukkaasti.
 
-## Miten tehdä
+## Miten
 
-Java tarjoaa helpon tavan kirjoittaa tekstitiedostoja. Voit käyttää FileWriter- ja BufferedWriter-luokkia kirjoittamalla tekstitiedostoon.
+Text-tiedoston kirjoittaminen Javalla on helppoa ja suoraviivaista. Se vaatii muutaman yksinkertaisen vaiheen:
 
-Seuraava koodiesimerkki näyttää, kuinka luodaan uusi tekstitiedosto, kirjoitetaan siihen rivi kerrallaan ja suljetaan tiedosto lopuksi:
+1. Alusta FileOutputStream muuttuja tiedoston nimen ja polun kanssa
+2. Alusta OutputStreamWriter muuttuja käyttäen FileOutputStreamia parametrina
+3. Käytä OutputStreamWriterin "write" metodia kirjoittamaan haluamasi teksti tiedostoon
+4. Käytä OutputStreamWriterin "close" metodia lopettaaksesi kirjoittamisen ja vapauttamalla resurssit
+
+Alla olevassa esimerkissä luodaan "testitiedosto.txt" ja kirjoitetaan siihen "Tervetuloa Java-ohjelmointiblogiin!". Koodin tulosteena luodaan uusi tiedosto ja kirjoitettu teksti tallennetaan siihen:
 
 ```Java
-
-import java.io.*;
-
 public class TextFileWriter {
-
-    public static void main (String[] args) {
-
+    public static void main(String[] args) {
         try {
-
-            // Luo uusi tekstitiedosto nimellä "teksti.txt"
-            FileWriter fw = new FileWriter("teksti.txt");
-
-            // Luo uusi BufferedWriter kirjoittamaan tekstitiedostoon
-            BufferedWriter bw = new BufferedWriter(fw);
-
-            // Kirjoita "Tämä on ensimmäinen rivi" teksti.txt-tiedostoon
-            bw.write("Tämä on ensimmäinen rivi");
-
-            // Kirjoita "Tämä on toinen rivi" teksti.txt-tiedostoon
-            bw.write("Tämä on toinen rivi");
-
-            // Sulje BufferedWriter
-            bw.close();
-
-            System.out.println("Tekstitiedosto luotu ja siihen kirjoitettu.");
-
+            FileOutputStream file = new FileOutputStream("testitiedosto.txt");
+            OutputStreamWriter writer = new OutputStreamWriter(file);
+            writer.write("Tervetuloa Java-ohjelmointiblogiin!");
+            writer.close();
+            System.out.println("Tiedosto kirjoitettu onnistuneesti!");
         } catch (IOException e) {
-
-            System.out.println("Virhe tiedostoa kirjoitettaessa.");
-
             e.printStackTrace();
         }
     }
 }
 ```
 
-Seuraava koodiesimerkki näyttää, kuinka lukea luotu teksti.txt-tiedosto ja tulostaa sen sisältö konsoliin:
+Tulosteena saat "Tiedosto kirjoitettu onnistuneesti!" konsoliin. Jos tarkastelet projektisi tiedostoja, löydät sieltä luomasi "testitiedosto.txt".
 
-```Java
-import java.io.*;
+## Syväsukellus
 
-public class TextFileReader {
+Text-tiedostojen kirjoittaminen perustuu Output Stream -luokkaan, jota voidaan käyttää kirjoittamaan raaka dataa tai merkkejä. Output Stream -luokka on abstrakti luokka, ja sen erityiset aliluokat, kuten FileOutPutStream, ovat vastuussa kirjoittamisesta tiettyyn lähdeobjektiin, kuten tiedostoon.
 
-    public static void main (String[] args) {
+Output Streamin käyttöön liittyy myös "bufferointi", joka helpottaa tiedon virtausta ja parantaa suorituskykyä. Tässä blogikirjoituksessa käytimme OutputStreamWriteria, joka on suunniteltu merkkien kirjoittamiseen bittivirtaan. Tämä mahdollistaa tekstin kirjoittamisen tiedostoon tavujen sijaan, mikä tekee prosessista paljon helpomman ja luettavamman ohjelmoijille.
 
-        try {
+## Katso myös
 
-            // Luo uusi FileReader ja anna sille luotu tekstitiedosto
-            FileReader fr = new FileReader("teksti.txt");
-
-            // Luo uusi BufferedReader lukeaksesi FileReaderin
-            BufferedReader br = new BufferedReader(fr);
-
-            // Luo muuttuja merkkijonolle, johon tallennetaan luetut rivit
-            String line = "";
-
-            // Käy läpi tiedoston rivit ja tulosta ne konsoliin
-            while ((line = br.readLine()) != null) {
-
-                System.out.println(line);
-            }
-
-            // Sulje BufferedReader
-            br.close();
-
-        } catch (IOException e) {
-
-            System.out.println("Virhe tiedostoa luettaessa.");
-
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-Kun suoritat nämä kaksi esimerkkiä, saat seuraavan tulosteen konsoliin:
-
-```
-Tämä on ensimmäinen rivi
-Tämä on toinen rivi
-```
-
-On huomattava, että jos teksti.txt-tiedosto jo on olemassa, uudet kirjoitetut rivit korvaavat aiemmat rivit. Tämä voidaan välttää käyttämällä FileWriterin konstruktoria, jossa on parametrina boolean-tieto true. Tämä merkitsee append-tilaa ja uudet rivit lisätään tiedoston loppuun eikä korvata niitä.
-
-```Java
-FileWriter fw = new FileWriter("teksti.txt", true);
-```
-
-## Syvällinen sukellus
-
-Tiedostojen kirjoittaminen Java-kielellä on mahdollista muutaman eri luokan avulla. FileWriter ja BufferedWriter ovat yleisimmin käytetyt luokat, mutta myös muita luokkia, kuten PrintWriter, voidaan käyttää tiedostojen kirjoittamiseen. Näiden luokkien käyttö on mahdollista myös tiedoston luomisen yhteydessä käyttämällä File-luokkaa.
-
-Tiedostoon kirjoittamisen lisäksi Java-kielellä on myös mahdollista lukea tiedostoja eri tavoilla, esimerkiksi File-luokan avulla tai Scanner-luokalla.
-
-## Katso
+- [Input/Output Stream Javassa](https://www.tutorialspoint.com/java/java_files_io.htm)
+- [Java Text File Reader](https://www.javatpoint.com/java-read-file)
+- [Java FileWriter luokka](https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html)

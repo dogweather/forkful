@@ -1,45 +1,54 @@
 ---
-title:    "Bash: Verkettung von Zeichenketten"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/bash/concatenating-strings.md"
+title:                "Bash: Verbinden von Zeichenketten"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-Das Zusammenfügen oder Verketten von Zeichenfolgen ist ein wichtiger Bestandteil der Bash-Programmierung. Es ermöglicht Ihnen, verschiedene Texte oder Variablen miteinander zu verbinden und so komplexe Ausgaben oder Bedingungen zu erstellen. In diesem Blogbeitrag werden wir uns genauer damit befassen, wie man Strings in Bash verketten kann.
+## Warum
 
-## Wie geht das?
-Das Verketten von Strings in Bash ist sehr einfach und erfordert keine komplizierten Schritte. Zunächst müssen Sie die einzelnen Zeichenfolgen definieren, die Sie miteinander verbinden möchten. Dies kann durch die Verwendung von einfachen Anführungszeichen ```'``` oder doppelten Anführungszeichen ```"``` geschehen.
+Das Verketten von Zeichenfolgen ist eine grundlegende Programmierfähigkeit, die in vielen Skripten und Programmen verwendet wird. Es ermöglicht es, mehrere Zeichenketten miteinander zu kombinieren, um komplexe Texte zu erstellen oder Variable in Ausgaben einzubinden.
 
-```Bash
-text1='Hallo'
-text2="Welt"
+## Wie man es macht
+
+In Bash gibt es verschiedene Methoden, um Zeichenfolgen zu verketten. Eine häufig verwendete Methode ist die Verwendung des Befehls "echo" mit dem Pluszeichen (+), um zwei Zeichenfolgen miteinander zu verbinden.
+
+```
+Bash
+echo "Hallo " + "Welt"
 ```
 
-Anschließend können Sie die beiden Strings mit dem Operator ```+``` verketten und das Ergebnis einer neuen Variablen zuweisen.
+Dieser Befehl gibt "Hallo Welt" als Ergebnis aus. Man kann auch Variablen in die Zeichenfolgen einfügen und diese miteinander verketten.
 
-```Bash
-ergebnis=$text1+$text2
-echo $ergebnis
+```
+Bash
+name="Max"
+echo "Hallo, mein Name ist $name"
 ```
 
-Der Befehl ```echo``` gibt nun die verknüpfte Zeichenfolge aus, in diesem Fall "Hallo+Welt". Sie können natürlich auch mehr als zwei Strings miteinander verketten.
+Dieser Befehl gibt "Hallo, mein Name ist Max" als Ergebnis aus.
 
-## Tiefer eintauchen
-Das Verketten von Strings in Bash ist nicht nur auf die Verwendung des Operators ```+``` beschränkt. Es gibt verschiedene Möglichkeiten, dies zu tun, z.B. mit der Funktion ```printf``` oder durch das Ausgeben von Variablen.
+Es ist auch möglich, mehrere Variablen und Zeichenfolgen zu verketten, indem man diese in Klammern setzt.
 
-Eine interessante und nützliche Möglichkeit ist das Verwenden von geschweiften Klammern ```{}```. Diese ermöglichen es Ihnen, mehrere Zeichenfolgen oder Variablen zu einer einzelnen Zeichenfolge zu kombinieren.
-
-```Bash
-vorname='Max'
-nachname='Mustermann'
-echo "Mein Name ist ${vorname} ${nachname}."
+```
+Bash
+name="Max"
+greeting="Hallo"
+echo "$greeting, mein Name ist $name"
 ```
 
-Die Ausgabe ist nun "Mein Name ist Max Mustermann.". Beachten Sie, dass innerhalb der geschweiften Klammern keine Leerzeichen zwischen der Variablen und dem umgebenden Text vorhanden sein dürfen.
+Dieser Befehl gibt "Hallo, mein Name ist Max" aus.
+
+## Tiefer Einblick
+
+In Bash sind Zeichenfolgen immer in einfachen Anführungszeichen oder in doppelten Anführungszeichen zu schreiben. Dies ermöglicht es, spezielle Zeichen wie Leerzeichen oder Sonderzeichen zu verwenden, ohne dass diese als Teil des Befehls interpretiert werden.
+
+Außerdem ist zu beachten, dass in Bash die Verkettung von Zeichenfolgen durch ein Leerzeichen erfolgt. Wenn also ein Leerzeichen zwischen den Zeichenfolgen steht, werden diese nicht miteinander verketten, sondern einfach hintereinander ausgegeben.
 
 ## Siehe auch
-- [Bash String Concatenation](https://www.tutorialkart.com/bash-shell-scripting/bash-concatenate-strings/)
-- [The Linux Documentation Project](https://www.tldp.org/LDP/abs/html/abs-guide.html#STREXMP)
-- [Bash Guide for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+
+- [Offizielle Bash Dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
+- [Tutorial: String operations in Bash](https://linuxize.com/post/bash-concatenate-strings/)
+- [Bash String Concatenation Cheat Sheet](https://devhints.io/bash#string-concatenation)

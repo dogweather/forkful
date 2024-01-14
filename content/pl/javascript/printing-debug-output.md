@@ -1,69 +1,48 @@
 ---
-title:    "Javascript: Drumienie wyników debugowania"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/printing-debug-output.md"
+title:                "Javascript: Wydrukowanie wyników debugowania"
+programming_language: "Javascript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego drukowanie informacji debugowania jest ważne?
 
-Podczas programowania często spotykamy się z błędami i problemami, które utrudniają nam działanie naszych programów. Czasami jednak trudno jest zlokalizować przyczynę tych problemów. Właśnie dlatego warto zacząć stosować w swoim kodzie wypisywanie informacji diagnostycznych, zwanych także "debug output". Pozwala to nam na śledzenie przebiegu programu, analizowanie zawartości zmiennych i łatwiejsze znalezienie źródła problemów. W tym artykule dowiesz się, dlaczego warto stosować wypisywanie debug output oraz jak to zrobić w języku Javascript, na przykładach kodu.
+Podczas pracy nad projektem w języku programowania Javascript, często możemy natknąć się na błędy w naszym kodzie. Drukowanie informacji debugowania jest ważnym narzędziem, które pomaga nam w śledzeniu tych błędów i naprawieniu ich. Dzięki temu możemy zoptymalizować nasz kod i uniknąć wielu frustrujących problemów w przyszłości.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby wypisywać debug output w języku Javascript, wystarczy skorzystać z metody ```console.log()```, która pozwala nam wypisać podaną jako argument zawartość. Możemy w ten sposób wypisać tekst, wartości zmiennych, a nawet obiekty i tablice. Przykład:
-
-```Javascript
-const name = "Adam";
-const age = 24;
-
-console.log("Witaj, nazywam się " + name + " i mam " + age + " lata.");
-
-// Wynik:
-// Witaj, nazywam się Adam i mam 24 lata.
-```
-
-Możemy także wypisać więcej niż jeden argument, oddzielać je przecinkami lub używać wyrażeń szablonowych (template literals). Przykład z użyciem wyrażeń szablonowych:
+Aby wydrukować informacje debugowania w konsoli przeglądarki, możemy użyć funkcji `console.log()`. Poniżej przedstawiam przykładowy kod oraz przykładowy wynik w konsoli:
 
 ```Javascript
-const fruits = ["jabłko", "gruszka", "ananas"];
-const count = 3;
+let num1 = 10;
+let num2 = 5;
+let result = num1 + num2;
+console.log(result);
 
-console.log(`Liczba owoców: ${count}. Owocami są: ${fruits.join(", ")}.`);
-
-// Wynik:
-// Liczba owoców: 3. Owocami są: jabłko, gruszka, ananas.
+// Wynik w konsoli: 15
 ```
 
-Możemy także sprawdzić zawartość obiektów lub tablic, wyświetlając całą ich strukturę. Przykład:
+Możemy również wyświetlić informacje debugowania w konsoli wraz z nazwą zmiennej lub tekstem pomocniczym, co ułatwi nam śledzenie danych w większych projektach. W poniższym przykładzie wyświetlamy sumę dwóch liczb, ale również informacje o tym, które liczby zostały użyte:
 
 ```Javascript
-const person = {
-  name: "Kasia",
-  age: 33,
-  hobbies: ["programowanie", "joga", "podróże"]
-};
+let num1 = 10;
+let num2 = 5;
+let result = num1 + num2;
+console.log(`Suma liczb ${num1} i ${num2} wynosi ${result}`);
 
-console.log(person);
-
-// Wynik:
-// {
-//   name: "Kasia",
-//   age: 33,
-//   hobbies: ["programowanie", "joga", "podróże"]
-// }
+// Wynik w konsoli: Suma liczb 10 i 5 wynosi 15
 ```
 
-Dzięki wypisywaniu debug output w wybranych miejscach w naszym kodzie, możemy łatwiej śledzić jego przebieg, analizować wartości zmiennych w poszczególnych punktach i łatwiej znajdować błędy.
+## Głębsze zanurzenie
 
-## Deep Dive
+Drukowanie informacji debugowania jest szczególnie przydatne podczas tworzenia bardziej zaawansowanych aplikacji. Umożliwia nam podgląd wartości zmiennych w różnych miejscach naszego kodu, co może ułatwić nam odnalezienie błędu. Warto również pamiętać, że wyłączenie tych informacji w końcowej wersji aplikacji może przyspieszyć jej działanie.
 
-Wypisywanie debug output jest szczególnie przydatne podczas pisania bardziej skomplikowanych aplikacji lub rozwiązywania problemów w istniejącym kodzie. Dzięki temu możemy szybciej zlokalizować błędy i znacznie skrócić czas debugowania. Możemy także wypisywać informacje diagnostyczne w zależności od tego, w jakich warunkach wykonuje się nasz kod, co pozwala nam na lepsze zrozumienie jego działania.
+## Zobacz również
 
-Pamiętaj jednak, żeby nie zostawiać wypisywania debug output w swoim kodzie na stałe. Służy ono jedynie jako narzędzie do pomocy w debugowaniu, a nie powinno być częścią finalnego produktu. Warto więc ustawić sobie flagę (np. o wartości "true" lub "false"), dzięki której w łatwy sposób możemy włączać i wyłączać wypisywanie debug output w naszym kodzie.
+Jeśli chcesz dowiedzieć się więcej o drukowaniu informacji debugowania w Javascript, możesz zajrzeć na poniższe strony:
 
-## Zobacz też
-
-- [Dlaczego warto stosować debug output (ang. Why You Should Use Debug Outputs)](https://codeburst.io/why-you-should-use-debug-outputs-ab85862a1b5e)
-- [Funkcja console.log() w języku Javascript](https://developer.mozilla.org/pl/docs/Web/API
+- [Oficjalna dokumentacja JavaScript na temat drukowania informacji debugowania](https://developer.mozilla.org/pl/docs/Web/API/Console/log)
+- [Poradnik wideo na temat debugowania w JavaScript](https://www.youtube.com/watch?v=Hr8hg5VmBc0)
+- [Blog poświęcony tematyce programowania w JavaScript](https://dev.to/t/javascript)

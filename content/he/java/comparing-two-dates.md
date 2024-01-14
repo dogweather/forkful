@@ -1,45 +1,54 @@
 ---
-title:    "Java: להשוואת שתי תאריכים"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/he/java/comparing-two-dates.md"
+title:                "Java: להשוות שתי תאריכים"
+programming_language: "Java"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+## למה
 
-טפטפו על למה אנחנו משווים שתי תאריכים בתכנות ג'אווה. להשוות שני תאריכים יכול להיות כלי מאוד שימושי כאשר אתם מנסים לבצע מטלות שמתייחסות לזמן כמו לדוגמה הגדרת מספר ימים בין שני אירועים או חישוב גיל בהתאם לתאריך לידה.
+למה שלפעמים נרצה להשוות בין שתי תאריכים בתוכנת Java? לדוגמה, במיקרים של מערכת ניהול מלאי כאשר נרצה לבדוק האם פריטים נמצאים במלאי עדכני או כשרוצים לתאריך מסוים התקנות תוכנה. כללי למידה זהו הוא חשוב מאוד במתכנתים ונישמרת עדי עצמנו.
 
-# איך לבצע
+## איך לעשות
 
-משווים שני תאריכים בג'אווה ניתן לבצע באמצעות השוואת חלקי התאריך שלהם כמו שנה, חודש ויום. ניתן לקבל את חלקי התאריך הזה באמצעות טיפוס ה-Date בג'אווה.
-
-```java
-Date date1 = new Date(2020, 5, 20);
-Date date2 = new Date(2021, 5, 20);
-
-if(date1.getYear() == date2.getYear() && date1.getMonth() == date2.getMonth() && date1.getDate() == date2.getDate()){
-    System.out.println("The two dates are equal");
-} else {
-    System.out.println("The two dates are not equal");
-}
-```
-הפלט המשוערת של הקוד שלעיל יהיה: "The two dates are not equal" מכיוון שהתאריכים הם לשני שנים שונות.
-
-# חפירה עמוקה
-
-כאשר אנו משווים שני תאריכים, חשוב לדעת שישנם שני טיפוסים שונים בג'אווה שמייצגים תאריך - טיפוס Date וטיפוס Calendar. טיפוס Calendar מכיל פונקציות נוספות לצורך מניפולציות נוספות עם התאריכים כמו חישוב ימים לפני או אחרי תאריך מסוים.
-
-תוסיפויות לג'אווה 8 יצרו גם את הטיפוס LocalDate המאפשר מניפולציות נוספות לתאריכים כמו חישוב ימים בין שני תאריכים או חישוב גיל בהתאם לתאריך לידה. כדי להשתמש בטיפוס LocalDate יש לייבא את החבילה הבאה:
+כאן נראה דוג' תוספת של ל' ירדך 'כדי לבדוק את התאריכים בשנת 2021.
 
 ```java
 import java.time.LocalDate;
+
+public class DateComparator {
+    public static void main(String[] args) {
+
+        // פנינה את התאריך שאני רוצה לבדוק
+        LocalDate date1 = LocalDate.of(2021, 4, 1);
+        LocalDate date2 = LocalDate.of(2021, 5, 1);
+
+        // לעשות השוואה בין התאריכים
+        int result = date1.compareTo(date2);
+
+        // הודעה בהתאם לתוצאה
+        if (result < 0) {
+            System.out.println("תאריך בעתיד הוא");
+        } else if (result == 0) {
+            System.out.println("התאריך זהה לתאריך הנוכחי");
+        } else {
+            System.out.println("תאריך בעבר הוא");
+        }
+
+    }
+}
 ```
 
-דוגמה לשימוש עם הטיפוס LocalDate:
+הפלט של הקוד זה מציג את התאריכים ואת הקווים הודעה לפי תוצאת ההשוואה:
 
-```java
-LocalDate date1 = LocalDate.of(2020, 5, 20);
-LocalDate date2 = LocalDate.of(2021, 5, 20);
+```plaintext
+תאריך בעבר הוא
+```
 
-if(date1.equals(date2)) {
+בפסקה הבאה, אנו נוכל לראות את דוקונטציית ה 'ללחמם מחביאת שלא היוחי' בתוכנת Java ספירת ספרה בעולם עדכני. יש לדעת, ספירת ספרה בתוכנת Java לא מתקנת את קויתיים התוכנה הלאסיינסים לכתוב בשפת הוסקה כי אני לעת יריכה. ניתן להשתמש בפרמוטיות צבע של Java כדי להראות דוג' קויתיים חלקים, ואף נוכל להשתמש בכלים נלווים כדי לקבוע ולהשוות בבינוי של הקוד.
+
+## חפירת עמוקה
+
+מתאריכים בתוכנית Java זנב תכנית Java בתוכנית ת,תכנית של א'כספור

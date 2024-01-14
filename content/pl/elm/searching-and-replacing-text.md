@@ -1,55 +1,50 @@
 ---
-title:    "Elm: Wyszukiwanie i zamienianie tekstu"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/elm/searching-and-replacing-text.md"
+title:                "Elm: Wyszukiwanie i zamiana tekstu"
+programming_language: "Elm"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Czy kiedykolwiek zastanawiałeś się, dlaczego warto poszukać i zamienić tekst w swoim programie w Elm? W tym artykule opowiem Ci o kilku powodach, dla których jest to przydatne narzędzie dla każdego programisty.
-
-Głównym powodem, dla którego warto używać funkcji `String.replace` w Elm, jest możliwość szybkiego i łatwego zmieniania tekstu w wielu plikach jednocześnie. Wystarczy jedna komenda, aby zastąpić wszędzie dowolne wyrażenie lub słowo bez konieczności szukania i poprawiania każdego wystąpienia oddzielnie.
+Co skłania nas do szukania i zamieniania tekstu? Czasami może być to konieczne, gdy chcemy aktualizować istniejący kod lub poprawiać błędy. Może to także pomóc w ujednoliceniu tekstu w naszym kodzie, co ułatwi jego czytanie i zrozumienie.
 
 ## Jak to zrobić
+W Elm istnieją dwa sposoby na wyszukiwanie i zamienianie tekstu. Pierwszym jest użycie funkcji `String.replace`, która przyjmuje string wejściowy, wzorzec do wyszukania i nowy tekst do zastąpienia. Na przykład:
 
-W Elm możemy używać `String.replace` w prosty sposób za pomocą funkcji `String.replace old new text`, gdzie `old` to szukane wyrażenie, `new` to zamiennik, a `text` to tekst, w którym chcemy dokonać zmiany. Poniżej znajduje się przykładowy kod w Elm oraz wynik działania:
-
-```Elm
-String.replace "pszenica" "ryż" "Lubię jeść pszenicę na śniadanie."
+```elm
+String.replace "world" "Elm" "Hello world!" -- zwróci "Hello Elm!"
 ```
 
-```
-"Lubię jeść ryż na śniadanie."
-```
+Drugim sposobem jest użycie wyrażeń regularnych za pomocą funkcji `Regex.replace`. Na przykład:
 
-Możemy również użyć `String.replace` w połączeniu z funkcją `List.map` dla większej liczby plików. Przykładowy kod poniżej zamienia nazwę programu Shopify na Spotify we wszystkich plikach w liście `files`:
-
-```Elm
-List.map (\file -> String.replace "Shopify" "Spotify" file) files
-
--- Plik 1: "Moja aplikacja Shopify jest niesamowita."
--- Plik 2: "Kupiłem kilka produktów na Shopify."
+```elm
+Regex.replace (Regex.regex "world") "Elm" "Hello world!" -- zwróci "Hello Elm!"
 ```
 
+Obie te funkcje zwrócą nowy string z zastąpionym tekstem.
+
+## Głębsze zagłębienie
+Podczas pisania kodu w Elm istnieje również możliwość użycia wyszukiwania i zamieniania tekstu w plikach konfiguracyjnych, na przykład Json. W tym przypadku zaleca się użycie modułu `Json.Decode.Pipeline`, który udostępnia funkcję `replace` do wyszukiwania i zamieniania tekstu w strukturach Json. 
+
+Przykład użycia:
+
+```elm
+import Json.Decode exposing (..)
+import Json.Decode.Pipeline exposing (..)
+
+configDecoder : Decoder Config
+configDecoder =
+  pipeline Config
+    |> required "username" string
+    |> required "password" (newDecoder "H@6" string)
+    |> replace "H@6" "SECRET"
 ```
--- Plik 1: "Moja aplikacja Spotify jest niesamowita."
--- Plik 2: "Kupiłem kilka produktów na Spotify."
-```
 
-## Dogłębny przegląd
-
-Funkcja `String.replace` w Elm oferuje również wiele opcji dostosowywania podczas wyszukiwania i zamieniania tekstu. Możemy użyć dowolnego wyrażenia regularnego jako `old`, co daje możliwość zaawansowanego przeszukiwania i zastępowania. Możemy również użyć opcji `limit`, aby określić maksymalną liczbę wystąpień, które chcemy zastąpić.
-
-Funkcja `String.replace` jest również bardzo wydajna, ponieważ stosuje specjalne optymalizacje w celu uniknięcia niepotrzebnych iteracji przez tekst. W ten sposób może być używana nawet w dużych i złożonych projektach bez problemów wydajnościowych.
+W powyższym przykładzie, jeśli w pliku konfiguracyjnym znajdzie się wartość "H@6" w polu "password", zostanie ona automatycznie zastąpiona przez "SECRET".
 
 ## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o funkcji `String.replace` w Elm, polecam zapoznać się z oficjalną dokumentacją oraz innymi przydatnymi artykułami na temat programowania w Elm:
-
-- https://guide.elm-lang.org/strings/
-- https://www.elm-tutorial.org/en/03-subs-cmds/04-request.html
-- https://medium.com/@evancz/string-literals-are-not-utf-8-266f6919e26f
-
-Dzięki wykorzystaniu funkcji `String.replace` w Elm, możesz zaoszczędzić czas i wysiłek podczas zmieniania tekstu w swoim programie. Jest to proste i wydajne narzędzie, które może być bardzo przydatne w różnych scenariuszach. Dlatego warto poznać je lepiej i wykorzystać w swoim kodzie.
+- Dokumentacja funkcji `String.replace` w Elm: https://package.elm-lang.org/packages/elm/core/latest/String#replace
+- Dokumentacja funkcji `Regex.replace` w Elm: https://package.elm-lang.org/packages/elm/regex/latest/Regex#replace
+- Dokumentacja modułu `Json.Decode.Pipeline` w Elm: https://package.elm-lang.org/packages/NoRedInk/elm-decode-pipeline/latest/Json-Decode-Pipeline

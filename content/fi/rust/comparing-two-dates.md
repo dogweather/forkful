@@ -1,50 +1,54 @@
 ---
-title:    "Rust: Kahden päivämäärän vertailu"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/rust/comparing-two-dates.md"
+title:                "Rust: Kahden päivämäärän vertailu"
+programming_language: "Rust"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi vertailla kahta päivämäärää?
 
-Päivämäärien vertaaminen on olennainen osa ohjelmointia. Se auttaa meitä selvittämään, ovatko kaksi päivämäärää samassa ajassa, tai onko tietty päivämäärä ennen tai jälkeen toista. Vertailemalla päivämääriä, voimme myös laskea, kuinka monta päivää tai kuukautta on kulunut kahden päivämäärän välillä.
+Rust on kasvava ohjelmointikieli, joka tarjoaa erinomaisen työkalun päivämäärien vertailuun. Päivämäärien vertailu on tärkeää monissa sovelluksissa, kuten ajanhallinnassa ja tietokannoissa. Tässä blogikirjoituksessa näytämme, miten voit vertailla kahta päivämäärää Rustin avulla.
 
-## Miten vertailla kahden päivämäärän välillä Rust-kielen avulla?
+## Miten vertailla kahta päivämäärää?
 
-Päivämäärien vertaileminen Rust-ohjelmointikielellä on melko helppoa. Voit käyttää `chrono` -kirjastoa, joka tarjoaa käteviä apufunktioita päivämäärien vertailuun. Alla on esimerkki kahden päivämäärän vertailusta ja tulostuksesta:
+Rust tarjoaa kätevän tavan vertailla kahta päivämäärää käyttämällä DateTime-kirjastoa. Voit tehdä tämän luomalla kaksi DateTime-oliota ja käyttämällä sisäänrakennettuja metodeja, kuten `cmp()` ja `is_after()`.
 
 ```Rust
-use chrono::prelude::*;
+use std::time::Duration;
+use std::time::SystemTime;
+use std::time::SystemTimeError;
 
-fn main() {
-    let date_1 = Utc.ymd(2021, 02, 15);
-    let date_2 = Utc.ymd(2021, 01, 01);
+// Määrittele kaksi päivämäärää
+let date1 = SystemTime::now();
+let date2 = SystemTime::now() + Duration::from_secs(3600);
 
-    if date_1 > date_2 {
-        println!("Date 1 is after Date 2");
-    } else if date_1 < date_2 {
-        println!("Date 1 is before Date 2");
-    } else {
-        println!("Date 1 is same as Date 2");
-    }
+// Vertaile päivämääriä
+match date1.cmp(&date2) {
+    Ordering::Less => println!("date1 on ennen date2."),
+    Ordering::Greater => println!("date1 on jälkeen date2."),
+    Ordering::Equal => println!("Päivämäärät ovat samat."),
+}
+
+// Tarkista, onko date1 myöhempi kuin date2
+if date1.is_after(date2) {
+    println!("date1 on myöhempi kuin date2.");
+} else {
+    println!("date2 on myöhempi kuin date1.");
 }
 ```
 
-Tulostaa:
+Tämä koodi luo kaksi päivämäärää, vertailee niitä ja tulostaa vastaavan viestin. Voit myös käyttää muita DateTime-metodeja, kuten `is_before()` ja `duration_since()`, vertailun tekemiseen.
 
-```
-Date 1 is after Date 2
-```
+## Syvällinen sukellus
 
-## Syvempi sukellus päivämäärien vertailuun
+Päivämäärien vertailemiseen on myös muita vaihtoehtoja Rustissa. Voit esimerkiksi käyttää Chrono-kirjastoa, joka tarjoaa enemmän vaihtoehtoja päivämäärien käsittelyyn ja vertailuun. Voit myös luoda omia vertailufunktioita, jotka sopivat paremmin sovelluksesi tarpeisiin.
 
-Päivämäärien vertaileminen perustuu niiden muuntamiseen numeraalisiksi arvoiksi ja näiden numeroiden keskinäiseen vertailuun. Päivämäärien muuntamisessa käytetään yleensä Unix-aikaleimoja, jotka ovat sekunteja, jotka ovat kuluneet 1. tammikuuta 1970 kello 00:00 UTC: sta lähtien.
-
-`chrono` -kirjaston `DateTime` -objektit sisältävät tietoa päivämäärän ja ajan lisäksi myös aikavyöhykkeestä, mikä on tärkeää päivämäärien vertailussa. On myös tärkeää muistaa, että päivämäärien tulee olla samassa muodossa vertailun onnistumiseksi.
+Rust tarjoaa myös monia muita hyödyllisiä työkaluja, kuten DateTimeFormatterin, joka auttaa muokkaamaan päivämääriä haluamallasi tavalla. Syvemmän sukelluksen tekeminen Rustin tarjoamiin päivämäärätyökaluihin auttaa sinua hyödyntämään niitä tehokkaasti omassa ohjelmoinnissasi.
 
 ## Katso myös
 
-- `chrono` -kirjaston dokumentaatio: https://docs.rs/chrono/
-- Rust-kielen virallinen verkkosivusto: https://www.rust-lang.org/
-- Suomen Rust-kehittäjät ry: https://www.rust-lang.fi/
+- [DateTime-dokumentaatio](https://doc.rust-lang.org/std/time/struct.DateTime.html)
+- [Rustin aikaohjelmat](https://crates.io/keywords/date-time)
+- [Chrono-kirjasto](https://crates.io/crates/chrono)

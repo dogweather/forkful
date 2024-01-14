@@ -1,56 +1,68 @@
 ---
-title:    "Haskell: Порівняння двох дат"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/comparing-two-dates.md"
+title:                "Haskell: Порівняння двох дат"
+programming_language: "Haskell"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому
-
-У порівнянні двох дат є важливим етапом для багатьох проектів. Це дає можливість перевірити правильність обробки дат та уникнути потенційних проблем у проекті.
-
-## Як
-
-Перш за все, встановіть пакет `time` використовуючи менеджер пакетів Haskell, такий як `cabal` чи `stack`:
+## Chernihiv: 
 
 ```Haskell
-cabal install time
+import Data.Time
+import Data.Time.Format
 ```
 
-імпортуйте `Data.Time` для роботи з датами:
+Коли ви раптом потребуєте порінювати дві дати у своїй Haskell програмі, це може здатися незручним. Проте, порівнювати дати може бути важливою частиною багатьох програм, особливо у випадках, коли необхідно визначити час події або дату в минулому чи майбутньому. У цій статті ми розглянемо як порівнювати дві дати у Haskell.
+
+## Як:
+
+Для початку, нам необхідно імпортувати два модулі - `Data.Time` та `Data.Time.Format`, щоб мати доступ до функцій, які нам знадобляться. Для цього ми використаємо команду `import` у нашому коді.
 
 ```Haskell
 import Data.Time
 ```
 
-Щоб порівняти дві дати, скористайтеся функцією `diffDays` та переведіть дати в тип `Day`:
+Ми також можемо використовувати функцію `diffDays` з модуля `Data.Time` для порівняння двох дат. Ця функція повертає різницю між двома датами у днях.
 
 ```Haskell
--- Порівнюємо час, що минув від дати 01.01.2020 до 01.01.2021
-
--- Створюємо об'єкти типу `Day` для дат
-let date1 = fromGregorian 2020 1 1 
-let date2 = fromGregorian 2021 1 1 
-
--- Використовуємо функцію `diffDays` для порівняння дат
-let diff = diffDays date2 date1 
-
--- Виводимо результат на екран
-print diff 
-
--- Виведе: 366 (кількість днів, що минуло між датами)
+diffDays :: Day -> Day -> Integer
 ```
 
-## Глибокий занурення
+Давайте розглянемо приклад коду, де ми порівнюємо дві дати - 1 січня 2020 і 1 січня 2021.
 
-Функція `diffDays` приймає тип `Day`, який представляє дату в Григоріанському календарі. У цьому календарі, дати подані у форматі `[рік, місяць, день]`, де рік має 4 цифри, а місяць та день мають 2 цифри.
+```Haskell
+import Data.Text.Format
+import Data.Time.Format
+import Data.Time.LocalTime
+import Data.Time.Clock
 
-У прикладі вище, ми використовуємо функцію `fromGregorian` для створення об'єкта типу `Day` з 3 аргументами: рік, місяць та день.
+compareDates :: IO ()
+compareDates = do
+    let date1 = fromGregorian 2020 01 01
+    let date2 = fromGregorian 2021 01 01
+    putStrLn "Перша дата: "
+    print (formatTime defaultTimeLocale "%x" date1)
+    putStrLn "Друга дата: "
+    print (formatTime defaultTimeLocale "%x" date2)
+    let diff = diffDays date2 date1
+    putStrLn "Різниця у датах у днях: "
+    print diff
 
-Також варто врахувати, що функція `diffDays` повертає кількість днів між двома датами, а не їх різницю.
+-- Вивід:
+--Перша дата:
+--01/01/20
+--Друга дата:
+--01/01/21
+--Різниця у датах у днях:
+--365
+```
 
-## Дивіться також
+Ми також можемо використовувати функції `getZonedTime` та `addDays` для порівняння дат у різних часових зонах.
 
-- [Пакет `time` в Hackage](https://hackage.haskell.org/package/time)
-- [Тип `Day` у модулі `Data.Time.Calendar`](https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html#t:Day)
+## Глибока нединзв точка:
+
+У Haskell кожна дата представлена у форматі `Day`, який складається з чисел: рік, місяць та день. Ця функція здатна перетворити дату з цього формату в `ZonedTime`, тобто додавши інформацію про тайм-зону. Тепер можна порівняти дві дати у різних часових зонах, використовуючи функцію `diffDays`.
+
+Наша програма може стати більш динамічною, якщо ми будемо працювати з текстовими даними. Наприклад, якщо ми хочемо порівняти дати, які надіслані нам у повідомленнях чи у файлі в форматі `'%Y-%m-%d'`, нам необхід

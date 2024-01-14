@@ -1,32 +1,38 @@
 ---
-title:    "Fish Shell: Generere tilfeldige tall"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/generating-random-numbers.md"
+title:                "Fish Shell: Generere tilfeldige tall"
+programming_language: "Fish Shell"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Generering av tilfeldige tall er en viktig del av mange programmeringsoppgaver, enten det er for å lage løkker, utføre skytebaner, eller til og med å simulere tilfeldige hendelser. Med Fish Shell, kan du enkelt generere tilfeldige tall for å få programmene dine til å fungere enda bedre.
+Når man jobber med programmering, kan det ofte være behov for å generere tilfeldige tall. Dette kan være nyttig for ulike formål, som å simulere ulike scenarier i et spill eller å generere tilfeldige data for testing av algoritmer. Uansett hva grunnen måtte være, kan Fish Shell være en effektiv måte å generere tilfeldige tall på.
 
-## Hvordan
+# Hvordan
 
-For å generere tilfeldige tall i Fish Shell, kan du bruke kommandoen `seq` sammen med flagget `-r` for å indikere at tallene skal være tilfeldige. Her er et eksempel på hvordan du kan bruke dette i en løkke:
+For å generere tilfeldige tall i Fish Shell, kan du bruke kommandoen ```fish_random```. Denne kommandoen tar et argument som representerer det største tallet som kan genereres. La oss si at vi ønsker å generere et tilfeldig tall mellom 1 og 100, da kan vi skrive følgende i terminalen:
 
-```Fish Shell
-for tall in (seq -r 1 10)
-	echo $tall
-end
+```
+fish_random 100
 ```
 
-Dette vil skrive ut 10 tilfeldige tall mellom 1 og 10, som f.eks. kan være 3, 8, 4, 10, 1, 5, 7, 2, 6 og 9.
+Dette vil gi oss et tilfeldig tall mellom 1 og 100 som output. Vi kan også lagre dette tallet i en variabel ved å bruke ```set``` kommandoen, slik som dette:
 
-## Dypdykk
+```
+set tall (fish_random 100)
+```
 
-For å generere tilfeldige tall, bruker Fish Shell en algoritme kalt Mersenne Twister, som er en av de mest brukte tilfeldighetsgeneratorene i verden. Denne algoritmen genererer sekvenser av tall som ser ut til å være tilfeldige, men faktisk følger et bestemt mønster. Derfor kan ikke sekvensene av tall betraktes som virkelig tilfeldige, men de anses som god nok for de fleste programmeringsformål.
+Nå er tallet lagret i variabelen "tall" og kan brukes videre i koden.
 
-## Se Også
+# Dypdykk
 
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/commands.html#seq)
-- [Mersenne Twister algoritme](https://en.wikipedia.org/wiki/Mersenne_Twister)
+Fish Shell bruker en algoritme som heter "Mersenne Twister" for å generere tilfeldige tall. Dette er en av de mest brukte algoritmene for generering av tilfeldige tall, og den har en syklus på hele 2^19937-1 tall, noe som betyr at den gir en god variasjon av tall. Denne algoritmen tar også en "seed" som input, som kan brukes til å få samme sekvens av tilfeldige tall ved hver kjøring av koden.
+
+# Se også
+
+- [Dokumentasjon for Fish Shell](https://fishshell.com/docs/current/)
+- [Mersenne Twister algoritmen](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- [Eksempler på bruk av tilfeldige tall i programmering](https://www.geeksforgeeks.org/generate-random-numbers-in-programming/)

@@ -1,54 +1,55 @@
 ---
-title:    "Kotlin: Calculando una fecha en el futuro o pasado"
-keywords: ["Kotlin"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/calculating-a-date-in-the-future-or-past.md"
+title:                "Kotlin: Calculando una fecha en el futuro o pasado"
+programming_language: "Kotlin"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué programar en Kotlin?
+## Por qué
 
-Programar en Kotlin puede ser una excelente opción para aquellos que buscan un lenguaje de programación moderno y fácil de aprender. Además, la sintaxis simple y concisa de Kotlin hace que sea más eficiente y rápido de escribir código. Una de las tareas habituales en la programación es el cálculo de fechas en el futuro o en el pasado. En este artículo, te mostraremos cómo hacerlo con Kotlin.
+Muchas veces, necesitamos trabajar con fechas en nuestro código, ya sea para mostrar información en un formato específico o para realizar cálculos basados en ellas. En este caso, calcular una fecha en el futuro o en el pasado puede ser una tarea importante y útil.
 
-## Cómo calcular una fecha en el futuro o pasado en Kotlin
+## Cómo hacerlo
 
-Para calcular una fecha en el futuro o en el pasado en Kotlin, primero debes crear un objeto de tipo `Calendar` y establecer la fecha actual usando el método `getInstance()`. Luego, puedes usar el método `add()` para sumar o restar días, meses o años a la fecha actual. Por ejemplo:
+Para calcular una fecha en el futuro o en el pasado en Kotlin, podemos usar la clase ```java.time.LocalDate```, que forma parte del paquete ```java.time```.
 
-```
-Kotlin val currentDate = Calendar.getInstance() currentDate.add(Calendar.DAY_OF_MONTH, 7) // suma 7 días a la fecha actual
-```
+Primero, necesitamos importar esta clase en nuestro archivo de Kotlin:
 
-También puedes establecer directamente una fecha específica usando el método `set()` y luego realizar la operación de suma o resta. A continuación, se muestra un ejemplo de cómo establecer una fecha en el futuro:
-
-```
-val futureDate = Calendar.getInstance() futureDate.set(Calendar.YEAR, 2022) // establece el año en 2022 futureDate.add(Calendar.MONTH, 3) // suma 3 meses a la fecha establecida
+```Kotlin
+import java.time.LocalDate
 ```
 
-Puedes imprimir la fecha resultante utilizando el método `get()` y especificando el campo de fecha que deseas obtener. Por ejemplo:
+Luego, podemos crear un objeto ```LocalDate``` con la fecha actual utilizando el método ```now```:
 
-```
-println("Fecha en el futuro: ${futureDate.get(Calendar.DAY_OF_MONTH)}/${futureDate.get(Calendar.MONTH)}/${futureDate.get(Calendar.YEAR)}")
-// salida: Fecha en el futuro: 20/1/2022
-```
-
-## Profundizando en el cálculo de fechas en Kotlin
-
-Kotlin también ofrece la clase `LocalDate` para manejar fechas, lo que simplifica aún más el cálculo de fechas en el futuro o pasado. Esta clase proporciona métodos como `plus()` y `minus()` que facilitan la suma y resta de fechas. Por ejemplo:
-
-```
-val currentDate = LocalDate.now() val futureDate = currentDate.plusDays(7) // suma 7 días a la fecha actual println("Fecha en el futuro: $futureDate") // salida: Fecha en el futuro: 2021-05-21
+```Kotlin
+val fechaActual = LocalDate.now()
 ```
 
-También puedes establecer directamente una fecha utilizando el constructor y luego realizar operaciones de suma o resta. A continuación, se muestra un ejemplo de cómo establecer una fecha en el pasado:
+Para calcular una fecha en el futuro, podemos usar el método ```plusDays``` y especificar el número de días que queremos sumar a la fecha actual. Por ejemplo, para obtener la fecha dentro de 5 días:
 
+```Kotlin
+val fechaFutura = fechaActual.plusDays(5)
 ```
-val pastDate = LocalDate.of(2019, Month.OCTOBER, 15) // establece la fecha en 15 de octubre de 2019 val newDate = pastDate.minusMonths(5) // resta 5 meses a la fecha establecida println("Fecha en el pasado: $newDate") // salida: Fecha en el pasado: 2019-05-15
+
+Del mismo modo, para calcular una fecha en el pasado, podemos usar el método ```minusDays``` y especificar el número de días que queremos restar a la fecha actual. Por ejemplo, para obtener la fecha hace 2 semanas:
+
+```Kotlin
+val fechaPasada = fechaActual.minusDays(14)
 ```
+
+Podemos imprimir estas fechas en el formato que queramos utilizando el método ```format``` y especificando un formato de fecha personalizado. Por ejemplo, para imprimir la fecha en formato DD/MM/YYYY:
+
+```Kotlin
+println(fechaActual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+```
+
+## Inmersión profunda
+
+Mientras que en este ejemplo hemos utilizado el tipo de dato ```LocalDate``` para calcular fechas en el futuro y en el pasado, también podemos utilizar otras clases del paquete ```java.time``` para realizar cálculos más complejos. Algunas opciones incluyen ```LocalDateTime```, ```Period``` y ```ChronoUnit```. Te animamos a que experimentes con estas clases y descubras qué más puedes hacer con ellas.
 
 ## Ver también
 
-- [Documentación oficial de Kotlin](https://kotlinlang.org/docs/home.html)
-- [Tutorial de Kotlin para principiantes](https://www.devexperto.com/kotlin-tutorial-basico/)
-- [Cómo trabajar con fechas en Kotlin](https://www.baeldung.com/kotlin-dates)
-
-¡Felicidades! Ahora sabes cómo calcular fechas en el futuro o en el pasado utilizando Kotlin. Esperamos que este artículo te haya sido útil y puedas aplicar este conocimiento en tus futuros proyectos. ¡Buena suerte en tu camino de aprendizaje de Kotlin!
+- [Documentación de la clase LocalDate en la API de Kotlin] (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/) 
+- [Tutorial de uso de LocalDate en Kotlin] (https://www.tutorialspoint.com/kotlin/kotlin_date_time.htm)

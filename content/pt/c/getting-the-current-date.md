@@ -1,48 +1,56 @@
 ---
-title:    "C: Obtendo a data atual."
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/c/getting-the-current-date.md"
+title:                "C: Obtendo a data atual."
+programming_language: "C"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Porque Obter a Data Atual em Programação é Importante
+## Por que obter a data atual em programas C
 
-Quando estamos construindo um programa, muitas vezes precisamos trabalhar com diferentes datas e horários. Isso pode ser necessário para rastrear eventos, gerar relatórios, ou até mesmo fazer operações matemáticas básicas. Portanto, obter a data atual em um programa pode ser uma tarefa importante e útil.
+Se você é um programador C, provavelmente já precisou obter a data atual em suas aplicações. Afinal, a data é um elemento importante em muitas tarefas, como registros de eventos, agendamento e controle de versão.
 
-# Como Obter a Data Atual em Programação
+## Como obter a data atual em C
 
-A linguagem de programação C possui uma biblioteca padrão que nos permite obter a data atual de forma rápida e eficiente. Para isso, podemos utilizar as funções `time()` e `localtime()`, que nos permitem acessar a informação da data atual em uma estrutura de dados `struct tm`.
+Em C, existem algumas maneiras de obter a data atual, mas a mais comum é usando a função ```time()```. Esta função retorna o tempo atual em segundos desde 1º de janeiro de 1970.
 
-```
+Aqui está um exemplo simples de como usar a função ```time()``` para obter a data atual:
+
+```C
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
 
-int main() {
-    // Obtendo a data atual
-    time_t currentTime = time(NULL); 
-    // Convertendo para estrutura de dados
-    struct tm *local = localtime(&currentTime);
-    // Imprimindo a data no formato desejado
-    printf("A data atual é: %d/%d/%d\n", local->tm_mday, local->tm_mon + 1, local->tm_year + 1900);
+int main()
+{
+    // Declara uma variável para armazenar o tempo atual
+    time_t t;
+
+    // Chama a função time() para atribuir o tempo atual à variável t
+    t = time(NULL);
+
+    // Imprime o tempo atual convertido para uma string legível
+    printf("Data atual: %s", asctime(localtime(&t)));
+
+    return 0;
 }
-```
-
-**Saída:**
 
 ```
-A data atual é: 3/10/2021
-```
 
-# Detalhando a Obtenção da Data Atual
+O programa acima usa a função ```localtime()``` para converter o valor retornado pela função ```time()``` em uma estrutura de dados que contém informações detalhadas sobre a data e hora atual. A função ```asctime()``` então converte essa estrutura em uma string legível para ser impressa na tela.
 
-Além de utilizar as funções já mencionadas, também é possível obter informações mais específicas sobre a data atual, como o dia da semana, o horário e até mesmo o fuso horário. Isso pode ser útil quando precisamos exibir informações mais precisas em nosso programa.
+O código acima não é à prova de falhas, pois depende do sistema operacional e do fuso horário do usuário. No entanto, é um bom exemplo para entender o conceito de obter a data atual em C.
 
-Outra coisa importante a ser considerada é que a biblioteca `time.h` possui diversas outras funções relacionadas a data e hora, como `asctime()`, que converte a estrutura `struct tm` para uma string formatada, ou `mktime()`, que converte a data em um valor do tipo `time_t`. Vale a pena explorar essas funções para um melhor entendimento e utilização da biblioteca.
+## Aprofundando no assunto
 
-# Veja Também
+Se você quiser usar a data atual para tarefas mais complexas, como cálculos de tempo, é importante entender como a função ```time()``` funciona.
 
-- [Documentação da biblioteca `time.h` em português](https://pt.cppreference.com/w/c/chrono)
-- [Tutorial sobre data e hora em C](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
-- [Outras funções da biblioteca `time.h`](https://www.geeksforgeeks.org/c-header-time-h-with-examples/)
+Em poucas palavras, a função ```time()``` retorna o tempo atual em segundos. Isso é possível graças a um relógio interno no sistema conhecido como "época". A época é um momento específico na história que é usado como referência para outras datas e tempos. Em sistemas Unix, como Linux e MacOS, a época padrão é 1º de janeiro de 1970.
+
+Isso significa que todos os valores retornados pela função ```time()``` estão em relação à época padrão. Portanto, para obter uma data específica, é necessário converter o número de segundos em uma estrutura de dados que contenha informações sobre o dia, mês, ano e hora.
+
+## Veja também
+
+- [Documentação da função ```time()```](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
+- [Guia completo sobre datas e horas em C](https://www.programiz.com/c-programming/c-datetime)
+- [Tutorial sobre como formatar datas e horas em C](https://www.guru99.com/c-date-time.html)

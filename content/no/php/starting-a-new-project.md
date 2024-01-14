@@ -1,45 +1,54 @@
 ---
-title:    "PHP: Å starte et nytt prosjekt"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/php/starting-a-new-project.md"
+title:                "PHP: Å starte et nytt prosjekt"
+programming_language: "PHP"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-**Hvorfor**
+### Hvorfor
 
-Å starte et nytt programmeringsprosjekt kan være en spennende og utfordrende opplevelse. Det kan gi muligheten til å lære nye ferdigheter, skape noe unikt og kanskje til og med tjene penger på prosjektet. Uansett motivasjon, er å starte et nytt prosjekt alltid en mulighet til å utvikle dine programmeringsferdigheter og skape noe du kan være stolt av.
+Det finnes mange grunner til å starte et nytt PHP-prosjekt. Kanskje du ønsker å lage en ny nettside, applikasjon eller et verktøy for å automatisere en oppgave. Uansett hva motivasjonen er, er PHP et allsidig og populært programmeringsspråk som er perfekt for å bygge moderne og dynamiske løsninger.
 
-**Hvordan**
+### Hvordan
 
-For å komme i gang med et nytt prosjekt, trenger du først en god idé. Deretter er det viktig å velge riktig programmeringsspråk og verktøy for å implementere idéen din. I dette eksempelet vil jeg vise deg hvordan du kan lage en enkel bloggside ved hjelp av PHP og Markdown.
+Her er et enkelt eksempel på hvordan du kan lage et "Hello World" program i PHP:
 
-```
-<?php 
-// Opprett en variabel for bloggtittelen
-$bloggtittel = "Min fantastiske blogg";
-
-// Opprett en variabel for blogginnlegg 
-$blogginnlegg = "Dette er mitt første innlegg på bloggen! Her vil jeg dele mine tanker og ideer om programmering.";
-
-// Skriv ut bloggtittelen og innlegget ved hjelp av Markdown-format 
-echo "# $bloggtittel \n";
-echo $blogginnlegg;
+```PHP
+<?php
+    echo "Hei verden!";
 ?>
 ```
-**Resultat:**
 
-# Min fantastiske blogg
-Dette er mitt første innlegg på bloggen! Her vil jeg dele mine tanker og ideer om programmering.
+Dette korte kodesnippet vil skrive ut "Hei verden!" når det kjøres. Du kan også legge til variabler, løkker og betingelser i koden for å lage mer komplekse programmer.
 
-**Dypdykk**
+En annen nyttig funksjon i PHP er muligheten til å håndtere brukerinput. Her er et eksempel på hvordan du kan lese inn data fra et HTML-skjema og skrive det ut som et resultat:
 
-Når du starter et nytt prosjekt, er det viktig å ha en god struktur og organisering av kode. Det kan være lurt å opprette forskjellige mapper for ulike deler av prosjektet, som for eksempel en mappe for bilder, en for stilark og en for PHP-filer. Dette gjør det enklere å finne frem til riktig fil når man skal gjøre endringer eller utvikle videre.
+```PHP
+<form method="post" action="script.php">
+    Navn: <input type="text" name="navn">
+    <input type="submit" value="Send inn">
+</form>
 
-I tillegg er det viktig å sikre prosjektet ditt ved å bruke sikkerhetsprinsipper som f.eks. validere input og bruke forberedte uttrykk for å unngå SQL-injeksjon.
+<?php
+    $navn = $_POST["navn"];
+    echo "Hei " . $navn . "!";
+?>
+```
 
-**Se også**
+Dette eksempelet vil vise et skjema hvor brukeren kan skrive inn sitt navn og sende det inn til et PHP-skript. Skriptet vil da håndtere brukerinput og skrive ut en personlig hilsen med navnet som ble skrevet inn.
 
-- [PHP dokumentasjon](https://www.php.net/)
-- [Markdown guide](https://www.markdownguide.org/)
-- [PHP sikkerhetsprinsipper](https://www.w3schools.com/php/php_security.asp)
+### Dypdykk
+
+Å starte et nytt PHP-prosjekt kan virke overveldende, spesielt hvis du er ny til språket. Men det er noen ting du kan gjøre for å kickstarte prosjektet ditt og gjøre det mer effektivt.
+
+Først og fremst bør du sette deg godt inn i PHPs syntax og grunnleggende konsepter. Det er viktig å ha en god forståelse av hvordan koden fungerer før du begynner å skrive. Deretter kan du ta en titt på noen populære PHP-rammeverk som Laravel, Symfony eller CodeIgniter. Disse rammeverkene tilbyr nyttige verktøy og strukturer som kan gjøre utviklingsprosessen enklere og mer organisert.
+
+Du bør også vurdere å bruke verktøy som composer for å håndtere avhengigheter i prosjektet ditt, og en utviklingsserver som XAMPP eller MAMP for å teste og kjøre koden din lokalt.
+
+### Se også
+
+- [PHP.net](http://php.net/manual/no/) - Den offisielle dokumentasjonen for PHP.
+- [Laracasts](https://laracasts.com) - En plattform for å lære PHP og Laravel fra fundamentet av.
+- [Composer](https://getcomposer.org/) - Et verktøy for håndtering av avhengigheter i PHP-prosjekter.

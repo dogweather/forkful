@@ -1,35 +1,40 @@
 ---
-title:    "Swift: Escribiendo en el error estándar"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/swift/writing-to-standard-error.md"
+title:                "Swift: Escribiendo en el error estándar"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir en el error estándar en Swift
+## Por qué
 
-Cuando estamos escribiendo un programa en Swift, a menudo nos encontramos con errores que pueden ser difíciles de identificar. Es por eso que es importante entender cómo escribir en el error estándar puede ser beneficioso. 
+¿Te has preguntado alguna vez por qué una parte importante de escribir código es asegurarse de que también sea importante escribir al error estándar? Bueno, hoy vamos a sumergirnos en el mundo de escribir al error estándar en Swift y por qué es tan importante en el desarrollo de aplicaciones.
 
-## Cómo hacerlo
+## Cómo escribir al error estándar en Swift
 
-Escribir en el error estándar en Swift es muy sencillo. Solo necesitamos usar la función `print()` con el parámetro `to:` y especificar `standardError` como el destino. Por ejemplo:
+Para escribir al error estándar en Swift, puedes usar la función `print` y pasarle un objeto como argumento. Por ejemplo:
 
-```Swift
-// Código de ejemplo
-print("Hola, mundo!", to: &standardError)
+```
+let errorMessage = "¡Hubo un error al cargar los datos!"
+print(errorMessage)
 ```
 
-El resultado de este código sería la impresión de "Hola, mundo!" en la pantalla normal (error estándar). 
+Esta línea de código imprimirá el mensaje de error en la consola. Sin embargo, también puedes utilizar la función `fprint` y pasarle el objeto `stderr` como argumento para escribir directamente en el error estándar. Por ejemplo:
 
-## Profundizando
+```
+let errorMessage = "¡Hubo un error al cargar los datos!"
+fprint(stderr, errorMessage)
+```
 
-Ahora que sabemos cómo escribir en el error estándar, es importante entender por qué es útil hacerlo. Cuando escribimos en el error estándar, podemos imprimir información adicional acerca de nuestro programa, como mensajes de depuración o detalles de errores, que pueden ser útiles para entender lo que está sucediendo en nuestro código.
+Este código imprimirá el mensaje de error directamente en el error estándar. Es importante tener en cuenta que, al utilizar `print`, el mensaje se envía a la salida estándar (stdout), mientras que al utilizar `fprintf` con `stderr`, el mensaje se envía directamente al error estándar.
 
-También podemos utilizar la función `print(_:separator:terminator:)` para especificar una cadena de separación y terminación, lo que nos permite formatear nuestra salida en el error estándar de una manera más legible. 
+## Profundizando en escribir al error estándar
 
-Además, escribir en el error estándar puede ser útil para mostrar un mensaje de error personalizado al usuario en caso de que nuestro programa encuentre un error. 
+Escribir al error estándar es importante ya que permite a los desarrolladores ver inmediatamente si hay algún problema o error en su código. Los mensajes de error se utilizan para identificar dónde se produjo un error y para ayudar a solucionarlo de manera más eficiente. Además, escribir al error estándar también es útil en situaciones en las que no se puede usar la salida estándar, como en aplicaciones de línea de comandos.
 
 ## Ver también
 
-- [Documentación oficial de Swift sobre la función `print()`](https://docs.swift.org/swift-book/LanguageGuide/Functions.html#function-parameters)
-- [Artículo sobre depuración de errores en Swift](https://medium.com/flawless-app-stories/debugging-101-breakpoints-1dfb8396b337)
+- [Documentación oficial de Swift sobre la función `print`](https://developer.apple.com/documentation/swift/1541053-print)
+- [Documentación oficial de Swift sobre la función `fprintf`](https://developer.apple.com/documentation/swift/2839156-fprintf)
+- [Tutorial de escritura de mensajes de error en Swift](https://www.raywenderlich.com/6074746-writing-error-messages-in-swift)

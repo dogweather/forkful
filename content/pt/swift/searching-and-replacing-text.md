@@ -1,46 +1,41 @@
 ---
-title:    "Swift: Busca e substituição de texto"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/searching-and-replacing-text.md"
+title:                "Swift: Procurando e substituindo texto"
+programming_language: "Swift"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar a função de busca e substituição de texto?
+## Por que é importante fazer uma busca e substituição de texto?
 
-A função de busca e substituição de texto é uma ferramenta essencial para programadores no processo de edição e manipulação de strings. Ela permite que sejam feitas alterações precisas e rápidas em um grande volume de texto, economizando tempo e recursos.
+Fazer uma busca e substituição de texto é uma prática essencial para qualquer programador, pois permite realizar mudanças rápidas e eficientes em grandes quantidades de texto. Isso pode ser especialmente útil quando se trabalha com documentos ou códigos extensos, economizando muito tempo e esforço.
 
-## Como utilizar a função de busca e substituição de texto em Swift
+## Como fazer uma busca e substituição de texto em Swift?
 
-```Swift
-let texto = "Aprender programação é muito divertido!"
-let novoTexto = texto.replacingOccurrences(of: "divertido", with: "desafiador")
-
-print(novoTexto)
-
-// Output: Aprender programação é muito desafiador!
-```
-
-A função `replacingOccurrences(of:with:)` recebe dois parâmetros: o texto a ser substituído e o novo texto a ser utilizado. É importante ressaltar que ela não altera a string original, mas sim retorna uma nova string com as alterações feitas.
-
-## Aprofundando na função de busca e substituição de texto
-
-Além de definir um texto específico para ser substituído, é possível utilizar expressões regulares na função `replacingOccurrences(of:with:)`, o que permite fazer substituições ainda mais complexas. Por exemplo:
+Existem algumas maneiras diferentes de fazer uma busca e substituição de texto em Swift, mas a mais comum é usando o método `replacingOccurrences(of:with:)`. Veja abaixo um exemplo de como usar essa função:
 
 ```Swift
-let texto = "Maria e João eram grandes amigos."
+let string = "Este é um exemplo de texto com palavras repetidas."
 
-let novoTexto = texto.replacingOccurrences(of: "[Mm]aria", with: "José", options: .regularExpression, range: nil)
+let novaString = string.replacingOccurrences(of: "texto", with: "código")
+print(novaString)
 
-print(novoTexto)
-
-// Output: José e João eram grandes amigos.
+// Output: Este é um exemplo de código com palavras repetidas.
 ```
 
-No exemplo acima, a expressão regular `[Mm]aria` identifica tanto "Maria" como "maria", substituindo ambos por "José". Além disso, é possível limitar a substituição a uma determinada parte da string, definindo um range no último parâmetro.
+Neste exemplo, a função `replacingOccurrences` está substituindo a palavra "texto" por "código". Você também pode usar esta função para substituir caracteres específicos, como espaços em branco ou símbolos. Basta fornecer o caractere ou string que deseja substituir como o primeiro argumento e o caractere ou string substituto como o segundo argumento.
+
+## Mais detalhes sobre busca e substituição de texto
+
+Além do método `replacingOccurrences`, existem outras formas de realizar busca e substituição de texto em Swift, como o uso de expressões regulares. Expressões regulares são padrões usados para encontrar e substituir texto com base em determinados critérios. Por exemplo, você pode usar uma expressão regular para encontrar todas as ocorrências de uma determinada palavra, independentemente de como ela é escrita (maiúsculas, minúsculas, plural, singular, etc.).
+
+Swift também possui outras funções e métodos que podem ser úteis para a busca e substituição de texto, como `replacingCharacters`, `replaceSubrange`, `replaceSubrange(of:)`, entre outros.
 
 ## Veja também
 
-- [Documentação oficial da função replacingOccurrences (em inglês)](https://developer.apple.com/documentation/swift/string/2427941-replacingoccurrences)
-- [Tutorial de expressões regulares em Swift (em inglês)](https://www.raywenderlich.com/5767-regular-expressions-tutorial-getting-started)
-- [Guia completo de programação em Swift (em português)](https://www.devmedia.com.br/curso/desenvolvimento-mobile-ios-com-swift-parte-1/1477)
+Aprenda mais sobre busca e substituição de texto em Swift com estes recursos adicionais:
+
+- [Documentação oficial da Apple sobre o método replacingOccurrences](https://developer.apple.com/documentation/foundation/nsstring/1409226-replacingoccurrences)
+- [Artigo sobre expressões regulares em Swift](https://www.raywenderlich.com/165660/swift-regular-expressions-tutorial)
+- [Vídeo tutorial sobre busca e substituição de texto em Swift](https://www.youtube.com/watch?v=ZgfhnpagA80)

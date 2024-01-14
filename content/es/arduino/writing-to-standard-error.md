@@ -1,39 +1,33 @@
 ---
-title:    "Arduino: Escritura en el error estándar"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/arduino/writing-to-standard-error.md"
+title:                "Arduino: Escribiendo a error estándar"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir en el error estándar en Arduino
+## Por qué escribir a la salida de error estándar en Arduino
 
-Escribir en el error estándar en Arduino puede ser una herramienta muy útil para los programadores. Al enviar mensajes a este canal, podemos depurar nuestro código y detectar posibles errores o fallos en el funcionamiento de nuestro programa.
+Si eres nuevo en la programación de Arduino, es posible que hayas escuchado sobre la salida de error estándar, también conocida como "stderr". Pero, ¿por qué deberías preocuparte por ello? La respuesta es simple: escribir a la salida de error estándar es una forma útil de depurar y solucionar problemas en tu código.
 
-## Cómo hacerlo
+## Cómo escribir a la salida de error estándar en Arduino
 
-Para escribir en el error estándar en Arduino, podemos utilizar la función `Serial.write()`. Esta función nos permite enviar datos a través del puerto serial al ordenador, donde podremos verlos en el monitor serial. Veamos un ejemplo de cómo utilizar esta función:
+Para escribir a la salida de error estándar en Arduino, puedes utilizar la función "Serial.println()" y especificar "Serial", "USB" o "stderr" como parámetro. Aquí hay un ejemplo de cómo hacerlo:
 
 ```Arduino
-void setup() {
-  Serial.begin(9600); // Iniciamos la comunicación serial a una velocidad de 9600 baudios
-}
-
-void loop() {
-  int sensorValue = analogRead(A0); // Leemos un valor del pin analógico A0
-  Serial.write(sensorValue); // Enviamos el valor al monitor serial
-  delay(1000); // Esperamos un segundo antes de repetir el proceso
-}
+Serial.println("¡Este es un mensaje de error!");
 ```
-Al compilar y cargar este código en Arduino, podremos observar en el monitor serial los valores que se van leyendo del pin A0. Sin embargo, es importante recordar que la función `Serial.write()` solo envía datos en formato binario, por lo que debemos convertir nuestros datos a este formato antes de enviarlos.
 
-## Profundizando en la escritura al error estándar
+La salida de este código se enviará a tu consola de depuración o entorno de desarrollo integrado, lo que te permitirá ver los mensajes de error mientras ejecutas tu código.
 
-La función `Serial.write()` es solo una de las formas en las que podemos enviar datos al error estándar en Arduino. También podemos utilizar la función `Serial.print()`, que nos permite enviar datos en formato ASCII, lo que resulta más sencillo para leer los mensajes en el monitor serial.
+## Profundizando en la escritura a la salida de error estándar
 
-Además, es importante tener en cuenta que podemos utilizar la escritura al error estándar en conjunto con otras técnicas de depuración, como el uso de variables debug o la impresión de valores por el puerto serial. Esto nos permite tener un mayor control y comprensión del funcionamiento de nuestro código mientras lo desarrollamos.
+Escribir a la salida de error estándar es especialmente útil en situaciones en las que no se puede utilizar la salida serial, como en casos de errores en tiempo de ejecución. También puede ser útil cuando se necesita depurar múltiples líneas de código y la salida serial se llena con demasiada información.
+
+Recuerda que escribir a la salida de error estándar no es la única forma de depurar y solucionar problemas en tu código de Arduino. Siempre es una buena práctica utilizar diferentes herramientas y métodos para garantizar la eficiencia y funcionalidad de tu código.
 
 ## Ver también
-
-- `Serial.write()` en la documentación de Arduino: https://www.arduino.cc/reference/en/language/functions/communication/serial/write/
-- Más sobre la comunicación serial en Arduino: https://www.arduino.cc/reference/en/language/functions/communication/serial/
+- [Documentación oficial de Arduino sobre la función Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+- [Artículo sobre la depuración en Arduino](https://www.open-electronics.org/debugging-arduino-projects/)
+- [Otra forma de depurar en Arduino: el LED de depuración](https://create.arduino.cc/projecthub/AnirbanS2297/debugging-arduino-projects-enhanced-version-07a62f)

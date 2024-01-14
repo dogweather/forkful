@@ -1,51 +1,40 @@
 ---
-title:    "Gleam: 텍스트 파일 작성하기"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/writing-a-text-file.md"
+title:                "Gleam: 텍스트 파일 작성하기"
+programming_language: "Gleam"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-어떤 사람이 텍스트 파일을 작성하는 것에 참여해야 하는지를 설명하는 1-2 문장입니다.
+## 왜
 
-일반적으로 프로그래밍을 할 때 우리는 데이터를 저장하고 관리하기 위해 파일을 사용합니다. 텍스트 파일은 그 중에서도 가장 간단하고 기본적인 형태의 파일입니다. 따라서 텍스트 파일을 작성하는 것은 프로그래밍에서 필수적인 기술입니다.
+텍스트 파일을 작성하는 이유는 매우 다양합니다. 예를 들어, 소프트웨어 개발에서는 프로그램의 설정 파일이나 데이터 저장을 위해 텍스트 파일을 사용합니다. 또는 웹 개발에서는 HTML 파일이나 CSS 파일 등을 작성할 때도 텍스트 파일을 사용합니다. 텍스트 파일은 텍스트 형식의 간단하고 효율적인 방법으로 정보를 저장하고 전달하는 데 사용됩니다. 따라서 텍스트 파일을 작성하는 방법을 알고 있는 것은 컴퓨터 프로그래밍에서 중요한 요소입니다.
 
-# 어떻게
-코딩 예제와 "```Gleam ... ```" 코드 블록 내에서의 샘플 출력을 포함한 방법입니다.
+## 하기 방법
 
-먼저, Gleam 언어에서 텍스트 파일을 작성하기 위해 File 모듈을 불러와야 합니다. 그리고 원하는 파일 이름과 함께 File.open 함수를 호출합니다. 이제 File.write 함수를 사용하여 텍스트를 파일에 작성할 수 있습니다. 마지막으로, 작성이 끝난 후에는 File.close 함수를 호출하여 파일을 닫아줍니다.
+텍스트 파일을 작성하는 방법은 매우 쉽습니다. 우선, 사용할 텍스트 편집기를 열어서 새로운 파일을 생성합니다. 그리고 원하는 내용을 작성한 다음 파일을 저장합니다. 이때 파일의 확장자를 `.txt`로 지정하여 텍스트 파일로 저장해야 합니다. 아래는 `Hello, World!`를 출력하는 Gleam 코드 예제입니다.
 
-아래는 간단한 예제 코드입니다. 코드를 이해한 후에는 자신만의 방식으로 응용할 수 있습니다.
-
-```
-import File
-
-// 파일 이름과 쓸 내용을 변수에 담습니다.
-let file_name = "my_file.txt"
-let content = "This is a text file."
-
-// 파일을 열고 내용을 씁니다.
-let file = File.open(file_name)
-File.write(file, content)
-
-// 파일을 닫습니다.
-File.close(file)
+```Gleam
+fn main() {
+    stdout.print("Hello, World!");
+}
 ```
 
-위의 코드를 실행하면 파일이 생성되고 파일에 지정한 내용이 쓰여집니다.
+위의 코드를 실행하면 화면에 `Hello, World!`라는 텍스트가 출력됩니다. 이제 여러분도 간단한 텍스트 파일을 작성하는 방법을 알게 되었습니다.
 
-# 딥 다이브
-텍스트 파일을 작성하는 더 깊은 정보입니다.
+## 심층 분석
 
-파일을 생성하고 쓰기만 하는 것이 아니라, 파일에 내용을 추가하고 읽는 등 여러 작업을 할 수도 있습니다. 이는 File 모듈에 포함된 다양한 함수를 사용하여 가능합니다.
+텍스트 파일을 작성하는 것은 매우 간단하지만, 내용의 복잡성에 따라 더 깊이 있는 방법이 필요할 수도 있습니다. 예를 들어, 텍스트 파일을 파싱하여 특정 데이터를 추출하거나, 특정 기준에 따라 파일을 정렬하는 작업이 필요할 수 있습니다. 이럴 때는 Gleam의 파일 처리 모듈을 사용하여 데이터를 처리할 수 있습니다.
 
-또한 Gleam은 다양한 데이터 유형을 다루는 데 강력한 기능을 제공합니다. 텍스트 파일을 작성할 때도 이러한 기능을 활용할 수 있습니다. 예를 들어, 반복문을 이용하여 여러 줄의 텍스트를 파일에 작성할 수 있습니다.
+## 더 알아보기
 
-더 자세한 내용은 공식 문서를 참고하시기 바랍니다.
+- [Gleam 공식 문서](https://gleam.run/documentation/)
+- [Gleam 파일 처리 문서](https://gleam.run/documentation/stdlib/files.html)
+- [Gleam 커뮤니티 포럼](https://forum.gleam.run/)
 
-# 그 밖에
-"그 밖에"는 "See Also"로 번역하며 아래에 공식 문서와 같은 문서에 대한 링크 목록을 포함합니다.
+# 참고 자료
 
-- 공식 Gleam 문서: https://gleam.run/
-- 파일 관련 함수: https://gleam.run/modules/gleam/file.html
+- [Gleam 소개 영상](https://www.youtube.com/watch?v=iCwRUskjJ0c)
+- [Learn Gleam 유튜브 채널](https://www.youtube.com/channel/UCBjJIqzGqs639K5sBymXr7A)
+- [Gleam 공식 GitHub 저장소](https://github.com/gleam-lang/gleam)

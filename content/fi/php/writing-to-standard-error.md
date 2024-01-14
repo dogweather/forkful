@@ -1,42 +1,75 @@
 ---
-title:    "PHP: Kirjoittaminen standardivirheelle"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/php/writing-to-standard-error.md"
+title:                "PHP: Kirjoittaminen standardivirheelle"
+programming_language: "PHP"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
 
-Monet PHP-ohjelmoijat saattavat ihmetellä, miksi heidän pitäisi kirjoittaa standardeihin virheisiin. Tämä ominaisuus on kuitenkin erittäin hyödyllinen, kun halutaan kirjoittaa virheitä tai varoituksia ohjelman suorituksen aikana.
+PHP-ohjelmointikieli tarjoaa useita erilaisia tapoja tulostaa tietoa. Eräs näistä on standard error, joka on kätevä tapa näyttää virheilmoituksia ja muuta tärkeää tietoa koodin suorittamisen aikana. Tässä artikkelissa opit, miten kirjoitat standard error -tulostuksia PHP:n avulla.
 
 ## Miten
 
-Kun käytät PHP:ta, voit kirjoittaa virheilmoituksia standardiin virhevirtaan käyttämällä `error_log()`-funktiota. Tämä ei kuitenkaan ole aina tarpeellista, varsinkin jos sinulla on erilaiset loggausmenetelmät käytössä. Siksi voit ohjata virheilmoitukset standardiin virhevirtaan myös muuttamalla php.ini-tiedostoa. Tämä voidaan tehdä lisäämällä vaihtoehtoinen tie `log_errors`-asetukseen.
+Usein standard error -tulostuksia käytetään virheilmoitusten näyttämiseen. Tämä tapahtuu yleensä silloin, kun jotain on mennyt pieleen koodissa ja haluat ilmoittaa siitä käyttäjälle. Voit kirjoittaa tulostuksen käyttämällä `fwrite()` -funktiota ja `STDERR` -muuttujaa.
 
-```PHP
+```
+PHP
 <?php
-// Ohjaa virheilmoitukset standardiin virhevirtaan
-ini_set('log_errors', 1);
-ini_set('error_log', '/var/log/php-error.log');
+// Luo viesti
+$error_message = "Jotain meni pieleen!";
+
+// Kirjoita viesti standard error -tulostukseen
+fwrite(STDERR, $error_message);
+?>
+```
+Koodi tulostaa `Jotain meni pieleen!` standard error -tulostuksena.
+
+Voit myös käyttää `print_r()` -funktiota tulostamaan monimutkaisempia tietoja standard error -tulostuksena. Alla olevassa esimerkissä tulostetaan assosiatiivinen taulukko.
+
+```
+PHP
+<?php
+// Luo assosiatiivinen taulukko
+$player = array("nimi" => "Mikko", "ikä" => 25, "joukkue" => "HIFK");
+
+// Tulosta taulukko standard error -tulostuksena
+print_r($player, true);
+?>
+```
+Tämä tulostaa seuraavan viestin standard error -tulostuksena:
+
+```
+Array
+(
+    [name] => Mikko
+    [age] => 25
+    [team] => HIFK
+)
 ```
 
-Jos haluat mukauttaa virheilmoituksia enemmän, voit käyttää `error_reporting()`-funktiota määrittämään, mitkä virheet ja varoitukset haluat tallentaa.
+## Syvemmälle
 
-```PHP
+Standard error -tulostuksia käytetään usein yhdessä `try`- ja `catch` -lohkojen kanssa koodin virheiden käsittelyssä. Voit esimerkiksi laittaa `try`-lohkon sisään koodin, joka voi aiheuttaa virheitä, ja sen sisällä olevan `catch`-lohkon avulla voit kirjoittaa virheilmoituksia standard error -tulostukseen.
+
+```
+PHP
 <?php
-// Tallenna vain tietyt virheet
-error_reporting(E_ERROR | E_WARNING);
+try {
+    // Koodia, joka voi aiheuttaa virheitä
+} catch(Exception $e) {
+    // Kirjoita virheilmoitus standard error -tulostukseen
+    fwrite(STDERR, $e->getMessage());
+}
+?>
 ```
 
-## Syvempi sukellus
-
-Kirjoittaminen standardiin virhevirtaan voi auttaa sinua havaitsemaan ja korjaamaan ongelmia ohjelmasi suorituksen aikana. Voit myös käyttää `error_reporting()`-funktiota luomaan omia virhe- ja varoitusviestejä, jotta voit helpommin selvittää, missä osassa koodia virhe tapahtui.
-
-PHP:lla on myös useita tapoja tallentaa ja lukea virheilmoituksia, kuten käyttämällä `try`/`catch`-lohkoja tai `set_exception_handler()`-funktiota.
+Muista myös, että standard error -tulostusta voi käyttää myös muissa tilanteissa, joissa haluat näyttää tärkeitä tietoja käyttäjälle. Esimerkiksi silloin, kun haluat testata ja debugata koodia, on hyödyllistä kirjoittaa tietoja standard error -tulostukseen, jolloin ne näkyvät selkeästi koodia suorittaessa.
 
 ## Katso myös
 
-- [PHP:n virheiden hallinta](https://www.php.net/manual/en/function.error-log.php)
-- [PHP-tietueiden loggaus](https://www.php.net/manual/en/book.syslog.php)
-- [Virhe- ja varoitusluokat PHPssa](https://www.php.net/manual/en/errorfunc.constants.php)
+- [PHP fwrite() -funktio](https://www.php.net/manual/en/function.fwrite.php)
+- [PHP print_r() -funktio](https://www.php.net/manual/en/function.print-r.php)
+- [PHP try-catch -lohkot](https://www.php.net/manual/en/language.exceptions.php)

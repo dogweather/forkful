@@ -1,40 +1,75 @@
 ---
-title:    "Go: Verkettung von Zeichenfolgen"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/go/concatenating-strings.md"
+title:                "Go: Zusammenführen von Zeichenketten"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-Warum: Eine kurze Erklärung, warum man sich mit der Verkettung von Zeichenfolgen beschäftigen sollte. 
+## Warum
 
-Wenn Sie Go programmieren, werden Sie früher oder später auf das Konzept der Verkettung von Zeichenfolgen stoßen. Dies ist ein wichtiger Bestandteil der Programmierung, da es Ihnen ermöglicht, verschiedene Texte und Variablen zusammenzufügen, um sinnvolle Ausgaben zu erstellen.
+Die Konkatenation von Strings ist wichtig, um verschiedene Textfragmente zu einem Ganzen zu verbinden. Dies ist in vielen Programmiersprachen, einschließlich Go, eine häufig verwendete Funktion.
 
-## Wie geht das?
+## Anleitung
+
+Um Strings in Go zu konkatentieren, gibt es mehrere Möglichkeiten. Im Folgenden sind einige Beispiele aufgelistet:
+
+#### Mit dem `+` Operator
 
 ```Go
-package main
+name := "John"
+age := 30
+result := name + " is " + age + " years old."
 
-import "fmt"
-
-func main() {
-  hello := "Hallo"
-  world := "Welt"
-  output := hello + world
-  fmt.Println(output)
-}
+fmt.Println(result)
 ```
 
-Die Ausgabe dieses Codes wird "HalloWelt" sein. Wie Sie sehen können, haben wir die Variablen "Hallo" und "Welt" mithilfe des Plus-Operators zu einer neuen Variablen "output" zusammengefügt. Diese Technik kann auch auf mehrere Variablen angewendet werden, um eine längere Zeichenfolge zu erstellen.
+Das Output wird sein:
 
-## Tiefer eintauchen
+```
+John is 30 years old.
+```
 
-Es gibt noch einige weitere wichtige Dinge zu beachten, wenn Sie Zeichenfolgen in Go verkettet. Zum Beispiel können Sie mit dem Plus-Operator nur Zeichenfolgen des gleichen Typs verknüpfen. Wenn Sie versuchen, einen Integer mit einer Zeichenfolge zu verketten, wird dies zu einem Fehler führen.
+#### Mit `fmt.Sprintf()`
 
-Ein weiteres nützliches Werkzeug ist die Funktion "Sprintf", mit der Sie Textformatierungen innerhalb der verknüpften Zeichenfolge vornehmen können. Diese Funktion folgt dem Format "Sprintf("Formatstring", Variablen)", wobei der Formatstring ein Platzhalter für die Variablen ist. 
+```Go
+a := "Welcome"
+b := "to"
+c := "Go"
 
-See Also:
+result := fmt.Sprintf("%s %s %s!", a, b, c)
 
-- [Offizielle Dokumentation zu Strings in Go](https://golang.org/pkg/strings/)
-- [Eine ausführliche Erklärung zur Zeichenfolgenverkettung in Go](https://www.callicoder.com/golang-strings-cheat-sheet/)
-- [Eine Übersicht über die verschiedenen String-Funktionen in Go](https://tutorialedge.net/golang/strings-explained-tutorial/)
+fmt.Println(result)
+```
+
+Das Output wird sein:
+
+```
+Welcome to Go!
+```
+
+#### Mit `strings.Join()`
+
+```Go
+foods := []string{"Pizza", "Burger", "Taco"}
+result := strings.Join(foods, ", ")
+
+fmt.Println("I love", result)
+```
+
+Das Output wird sein:
+
+```
+I love Pizza, Burger, Taco.
+```
+
+## Tiefergehende Informationen
+
+Beim Konkatenieren von Strings ist es wichtig zu beachten, dass die Datentypen der einzelnen Variablen zusammenpassen müssen. Andernfalls kann es zu Fehlern führen. Außerdem gibt es in Go die Möglichkeit, Strings mit dem `+=` Operator zu verändern, anstatt eine neue Variable zu erstellen.
+
+## Siehe auch
+
+- [https://tour.golang.org/basics/1](https://tour.golang.org/basics/1)
+- [https://gobyexample.com/string-concatenation](https://gobyexample.com/string-concatenation)
+- [https://golangdocs.com/concatenate-strings-in-golang](https://golangdocs.com/concatenate-strings-in-golang)

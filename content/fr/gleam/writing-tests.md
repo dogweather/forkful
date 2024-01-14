@@ -1,63 +1,54 @@
 ---
-title:    "Gleam: Écriture de tests"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/writing-tests.md"
+title:                "Gleam: Ecrire des tests"
+programming_language: "Gleam"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire des tests en Gleam ?
+# Pourquoi écrire des tests en Gleam
 
-Écrire des tests est une pratique essentielle pour garantir la qualité de votre code en langue Gleam. Cela permet de détecter et de corriger les erreurs avant qu'elles ne deviennent un problème pour votre application. En outre, cela vous permettra de gagner du temps et de l'énergie à long terme en évitant des bogues coûteux.
+Lorsque l'on travaille sur de grands projets de programmation, il est essentiel de s'assurer que le code fonctionne correctement. Cela peut être un processus long et fastidieux, mais cela en vaut la peine pour éviter les bugs et les erreurs. Heureusement, Gleam offre une solution efficace pour s'assurer que notre code est bien testé. Dans cet article, nous allons explorer pourquoi il est important d'écrire des tests en Gleam et comment le faire.
 
-## Comment faire
+## Comment écrire des tests en Gleam
 
-Il existe deux types de tests que vous pouvez écrire en Gleam : les tests unitaires et les tests d'intégration. Les tests unitaires se concentrent sur le test d'une seule fonction ou module, tandis que les tests d'intégration vérifient le fonctionnement de l'ensemble de votre application.
+Pour commencer, il est important de savoir que les tests en Gleam sont écrits en utilisant le framework d'évaluation interne de Gleam, appelé "ExUnit". Le framework offre un moyen simple et efficace de tester notre code en créant des modules de test séparés.
 
-Pour écrire un test unitaire, vous pouvez utiliser la fonction `assert` en passant en paramètre une expression à évaluer et une valeur attendue. Par exemple :
+Pour écrire des tests en Gleam, nous utilisons des blocs de code spéciaux, appelés "```Gleam ... ```", qui nous permettent d'écrire du code Gleam à l'intérieur de blocs Markdown. Ci-dessous, nous pouvons voir un exemple de test qui vérifie si la fonction "add" renvoie le résultat attendu :
 
-```Gleam
-test "vérifie si 2 + 2 est égal à 4" {
-  assert 2 + 2 == 4   // cette expression est évaluée et comparée à 4
+```gleam
+test "add should return correct result" {
+  assert.equal(add(2, 3), 5)
 }
 ```
 
-Si la valeur attendue n'est pas égale à l'expression évaluée, une erreur sera générée et votre test échouera. Vous pouvez également utiliser la fonction `assert_ok` pour tester le succès d'une fonction qui retourne un type `Result`. Par exemple :
+Dans cet exemple, nous avons utilisé la fonction "assert.equal" pour comparer le résultat de notre fonction "add" avec la valeur attendue de 5. Si le résultat ne correspond pas, le test échouera et nous saurons qu'il y a un problème avec notre fonction "add".
 
-```Gleam
-test "vérifie si la fonction division retourne le résultat attendu" {
-  assert_ok division(10, 2) == 5   // la fonction division doit retourner 5 pour ces paramètres
-}
-```
+## Plongée en profondeur : Écriture de tests avancés
 
-Pour écrire un test d'intégration, vous pouvez utiliser la fonction `scenario` qui simule l'utilisation de différentes parties de votre application. Par exemple :
+Maintenant que nous avons vu comment écrire des tests de base en Gleam, il est temps de plonger un peu plus en profondeur. Dans cet article, nous ne couvrirons pas tous les aspects de l'écriture de tests en Gleam, mais nous donnerons un aperçu de certaines fonctionnalités avancées.
 
-```Gleam
-test "vérifie si la fonction de connexion d'un utilisateur fonctionne correctement" {
-  scenario "connexion avec un nom d'utilisateur et un mot de passe valides" {
-    let username = "John"
-    let password = "abc123"
-    assert_ok login(username, password)
+Tout d'abord, il est important de noter que les tests peuvent être organisés en sous-groupes en utilisant la syntaxe suivante :
+
+```gleam
+suite "addition" {
+  test "add should return correct result" {
+    assert.equal(add(2, 3), 5)
   }
 
-  scenario "tentative de connexion avec des informations invalides" {
-    let username = "Jane"
-    let password = "wrongpass"
-    assert_error login(username, password)
+  test "add should return correct result with negative numbers" {
+    assert.equal(add(-2, -3), -5)
   }
 }
 ```
 
-Dans cet exemple, nous testons à la fois le succès et l'échec de la fonction de connexion en utilisant différentes combinaisons de noms d'utilisateur et mots de passe.
-
-## Plongée en profondeur
-
-Les tests peuvent également utiliser des modules externes pour simuler diverses conditions et mieux couvrir les différents scénarios possibles. Vous pouvez également écrire des tests pour vérifier que les messages d'erreur ou de réussite renvoyés par vos fonctions sont corrects.
-
-Il est important de noter que les tests ne peuvent pas couvrir tous les cas possibles, mais ils peuvent grandement améliorer la qualité de votre code et vous assurer une plus grande confiance en celui-ci.
+De plus, Gleam nous permet d'écrire des propositions automatiques, également appelées générateurs de données, pour tester notre code avec différentes valeurs d'entrée. Cela peut être très utile pour s'assurer que notre code est robuste et fonctionne correctement avec différents types de données.
 
 ## Voir aussi
 
-- [Documentation sur les tests en Gleam](https://gleam.run/book/intro)
-- [Guide de style de code Gleam](https://gleam.run/book/change-the-name)
-- [Utiliser des tests pour améliorer la qualité de votre code](https://www.freecodecamp.org/news/using-tests-to-improve-code-quality/)
+Maintenant que nous en avons appris un peu plus sur l'écriture de tests en Gleam, voici quelques liens qui pourraient être utiles pour aller plus loin :
+
+- [La documentation officielle de Gleam sur le module ExUnit](https://gleam.run/modules/exunit)
+- [Un article sur les tests en Gleam de la communauté Gleam](https://hexdocs.pm/gleam/ExUnit.GettingStarted.html)
+- [Le code source de Gleam pour voir comment les tests sont écrits pour le projet lui-même](https://github.com/gleam-lang/gleam)

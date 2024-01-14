@@ -1,33 +1,34 @@
 ---
-title:    "Elixir: Päivämäärän muuntaminen merkkijonoksi"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/converting-a-date-into-a-string.md"
+title:                "Elixir: Päivämäärän muuntaminen merkkijonoksi"
+programming_language: "Elixir"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+ Monet Elixir-ohjelmoijat joutuvat jossain vaiheessa törmäämään päivämäärän ja merkkijonon konvertointiin. Tämän lukemattoman kerran tehdyn tehtävän motivaatio voi vaihdella - työnantajan vaatimusten täyttämiseen, kansainvälisen standartin noudattamiseen tai yleisesti ottaen päivämäärän esittämiseen muodossa, joka on helppo lukea ja ymmärtää. 
 
-On monia tilanteita, joissa sinun täytyy muuttaa päivämäärä merkkijonoksi Elixir-ohjelmointikielen avulla. Tämä voi olla tarpeen esimerkiksi, jos haluat tallentaa päivämäärän tietokantaan tai näyttää sen käyttäjälle selkeässä muodossa. Onneksi Elixir tarjoaa helpon tavan muuttaa päivämäärä merkkijonoksi.
-
-## Miten tehdä
-
-Converting date into string in Elixir on yksinkertaista käyttämällä `DateTime.to_iso8601` -funktiota. Se ottaa DateTime-objektin parametrina ja palauttaa merkkijonon, joka vastaa ISO 8601 -standardia. Voit myös käyttää `DateTime.to_string` -funktiota, joka ottaa DateTime-objektin ja halutun päivämäärän tarkkuuden parametrina. Tässä on esimerkki:
-
+## Miten
+Voit muuntaa päivämäärän merkkijonoksi erilaisilla tavoilla Elixirissä. Yksinkertaisin tapa on käyttää tiivistelmäfunktiota `to_string`. Tässä on esimerkki:
 ```Elixir
-DateTime.to_iso8601(~U[2020-12-31 18:30:00])
-#=> "2020-12-31T18:30:00Z"
-
-DateTime.to_string(~U[2020-12-31 18:30:00], :second)
-#=> "2020-12-31 18:30:00"
+DateTime.utc_now() |> to_string()
 ```
+<img src="https://i.imgur.com/1rXtITF.png" alt="output" width="250"/>
 
-## Syvällinen sukellus
+Voit myös muuttaa muotoa ja määrittää tarkemman päivämäärän esitysmuodon lisäämällä toisen parametrin `to_string` -funktioon. Esimerkiksi `to_string(DateTime.utc_now(), "{ISO}")` antaa tuloksena ISO 8601 -muotoisen päivämäärän. Katso tarkemmat ohjeet Elixirin dokumentaatiosta.
 
-Elixirillä on myös useita muita funktioita, jotka tarjoavat joustavuutta päivämäärän muuntamisessa merkkijonoksi. Voit esimerkiksi käyttää `DateTime.to_naive` -funktiota, joka palauttaa DateTime-objektin ilman aikavyöhykettä. Voit myös käyttää `DateTime.add` -funktiota lisätäksesi tai vähentääksesi aikaa DateTime-objektista. Lisätietoja voit lukea Elixirin virallisesta dokumentaatiosta.
+Mikäli haluat tarkemman hallinnan päivämäärän konvertoinnissa, voit myös käyttää `naive_datetime` -funktiota, joka ottaa parametrina päivämäärän tiedot, kuten vuoden, kuukauden ja päivän. Tämän jälkeen voit käyttää haluamiasi muotoilumerkkejä `strftime`-funktiolla luodaksesi haluamasi päivämäärän esitysmuodon.
+
+Kiinnitettäköön huomiota siihen, että päivämäärän muuntaminen merkkijonoksi ja takaisin voi vaikuttaa alkuperäiseen päivämäärään, etenkin UTC-ajan ja aikavyöhykkeiden osalta. On hyvä olla tietoinen tästä mahdollisesta ongelmasta ja käyttää sitä sopivanlaisissa tilanteissa.
+
+## Syvempi sukellus
+Elixirin `to_string` -funktio on täysin riippuvainen `DateTime` -moduulista, joka tarjoaa useita metodeja päivämäärän hallintaan ja muuntamiseen. Kannattaa tutustua tähän moduuliin tarkemmin, jotta voit löytää itsellesi sopivimman ratkaisun päivämäärän esittämiseen.
+
+Toinen vaihtoehto päivämäärän muuttamiseen merkkijonoksi on käyttää `Calendar` -moduulia, joka tarjoaa monipuolisemman tavan käsitellä päivämääriä. Tämä moduuli sisältää myös `Calendar.ISO` -muotoilumerkin, joka on hyödyllinen päivämäärän muotoilussa.
 
 ## Katso myös
-
-- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
-- [Elixirin date- ja time-moduulit](https://elixirschool.com/en/lessons/advanced/date-time/)
-- [Elixirin päivämäärä- ja aikavyöhykemoduulien käyttö](https://thoughtbot.com/blog/working-with-elixir-and-datetimes)
+- [Elixirin dokumentaatio DateTime-moduulille](https://hexdocs.pm/elixir/DateTime.html)
+- [Elixirin dokumentaatio Calendar-moduulille](https://hexdocs.pm/elixir/Calendar.html)
+- [ISO 8601 standardi](https://en.wikipedia.org/wiki/ISO_8601)

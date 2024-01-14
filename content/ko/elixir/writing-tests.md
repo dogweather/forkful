@@ -1,46 +1,72 @@
 ---
-title:    "Elixir: 프로그래밍에서의 테스트 작성"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/writing-tests.md"
+title:                "Elixir: 테스트 작성하기"
+programming_language: "Elixir"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+Elixir 프로그래밍을 한국어로 배우고 있다면 아마도 이미 Elixir 언어가 얼마나 강력하고 효율적인지 알고 계실 것입니다. 하지만 저는 Elixir 프로그래밍 새로운 면을 발견했습니다 - 소프트웨어 테스팅! 이 글에서는 Elixir 프로그래밍에 테스트가 어떻게 도움이 되는지, 그리고 어떻게 테스트를 작성할 수 있는지 자세히 알아보겠습니다.
 
-테스트 코드를 작성하는 이유는 우리 코드를 더욱 견고하고 신뢰성있게 만들어주기 때문입니다. 우리는 개발을 하면서 발생할 수 있는 버그나 문제를 미리 발견하고 수정할 수 있도록 테스트 코드를 작성해야 합니다.
+## 왜 테스트를 작성해야 할까요?
 
-## 작성하는 법
+프로그래밍은 항상 예기치 않은 상황들이 발생합니다. 그리고 이러한 상황에서 우리는 작성한 코드가 제대로 동작하는지 확인해야 합니다. 이때 테스트를 작성하면 이러한 상황들을 더 쉽게 다룰 수 있습니다. 또한 테스트를 작성하면 코드의 안정성과 신뢰성을 높일 수 있습니다. 이제 어떻게 테스트를 작성할 수 있는지 살펴보겠습니다.
 
-테스트 코드를 작성하는 방법은 아주 간단합니다. 가장 먼저 `ExUnit` 라이브러리를 사용해야합니다. `ExUnit` 은 별도의 설치 없이 기본적으로 포함되어 있으며 `ExUnit.Case` 모듈을 사용하면 바로 테스트 코드를 작성할 수 있습니다.
+## 방법은 어떻게 되나요?
 
-예제 코드를 통해 살펴보겠습니다. 우리는 간단한 함수인 `factorial(n)`이 입력 된 수의 팩토리얼 값을 계산하는 함수를 작성하려고 합니다. 먼저 `test_factorial` 이라는 이름의 테스트 함수를 작성하고 그 내부에 `assert` 문을 사용하여 기대하는 결과와 실제 결과를 비교합니다.
+Elixir에서 테스트를 작성하는 기본적인 방법은 `test/0` 함수를 이용하는 것입니다. 다른 함수들과 마찬가지로 `def` 키워드를 사용하여 선언할 수 있습니다.
 
-```elixir
-defmodule FactorialTest do
-  use ExUnit.Case
-
-  test "factorial of 1 is 1" do
-    assert factorial(1) == 1
-  end
-
-  test "factorial of 5 is 120" do
-    assert factorial(5) == 120
-  end
+```Elixir
+def test "addition" do
+  assert Calculator.add(2, 2) == 4
 end
 ```
 
-위 예제에서 `factorial/1` 함수는 아직 작성되지 않았으므로 에러가 발생할 것입니다. 이제 해당 함수를 작성하고 `ExUnit` 라이브러리로 테스트를 실행해보면 테스트가 모두 성공한다는 것을 확인할 수 있습니다.
+위 예제에서는 `Calculator` 모듈의 `add/2` 함수를 테스트하는 예제입니다. `assert` 함수를 사용하여 함수의 반환값이 예상한 값과 일치하는지 확인합니다. 다른 예제를 살펴보겠습니다.
+
+```Elixir
+def test "removing nil elements" do
+  input = [1, 2, nil, 4]
+  output = List.delete(input, nil)
+  assert output == [1, 2, 4]
+end
+```
+
+위 예제는 리스트에서 `nil` 값을 제거하는 `List.delete/2` 함수를 테스트하는 예제입니다. 매번 새로운 값이 나오는지 확인하여 테스트의 일관성을 유지합니다. 이제 테스트 작성에 대해 더 깊이 알아보겠습니다.
 
 ## 깊이 파고들기
 
-테스트 코드를 작성하는 방법은 다양한 기술과 패턴이 존재합니다. 우리는 `setup` 을 통해 테스트 실행 전에 필요한 환경을 설정하고, `teardown` 을 통해 테스트 실행 후에 환경을 정리하는 등 유용한 기능들을 사용할 수 있습니다.
+Elixir에서 테스트를 작성하는 또 다른 방법은 `doctest/2` 함수를 사용하는 것입니다. `doctest/2` 함수는 고유한 함수 이름과 함수를 작성한 라인의 주석을 인자로 받습니다. 다음 예제를 살펴보겠습니다.
 
-또한 `Case` 모듈의 다양한 함수들을 통해 특정 조건에서 테스트를 실행하거나 특정 예외가 발생하는지 테스트할 수 있습니다.
+```Elixir
+  @doc """
+  Adds two numbers together.
 
-테스트 코드를 작성하는 방법에 대해 더 자세히 알고 싶다면 공식 문서나 다른 블로그 포스트를 참고하는 것도 좋은 방법입니다.
+  ## Examples
 
-# See Also
+      iex> Calculator.add(2, 2)
+      4
+  """
+  def add(a, b) do
+    a + b
+  end
+```
 
-- [공식 Elixir ExUnit 문서](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [좋은 테스트 코드 작성 방법 (영어)](https://dev.to/mattthebaker/writing-good-tests-in-elixir-2ja8)
+위 예제에서는 `add/2` 함수를 작성하면서 바로 밑에 `@doc` 주석과 `doctest/2` 함수를 사용하여 예제를 넣어주었습니다. 이렇게 작성한 예제는 `iex` 콘솔에서 자동으로 테스트해볼 수 있습니다. 또 다른 예제를 살펴보겠습니다.
+
+```Elixir
+  @doc """
+  Removes nil elements from a list.
+
+  ## Examples
+
+      iex> List.delete([1, 2, nil, 4], nil)
+      [1, 2, 4]
+  """
+  def delete(list, element) do
+    Enum.filter(list, &(&1 != element))
+  end
+```
+
+위 예제에서는 `delete/2` 함수를 작성하면서 예제를 넣어줄 때 `iex`

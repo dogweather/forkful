@@ -1,39 +1,64 @@
 ---
-title:    "Haskell: 字串大写"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/capitalizing-a-string.md"
+title:                "Haskell: 字符串的大写"
+programming_language: "Haskell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么：字符大写的意义
+## 为什么
 
-在编程过程中，我们经常需要处理字符串（String）类型的数据。有时候，我们希望将字符串中的某些字母改为大写，比如在用户输入时进行格式规范化，或者在输出时让文字更醒目。在Haskell中，我们可以使用内置函数`toUpper`来实现这一功能。
+在Haskell编程中，我们经常需要处理字符串。有时候，我们需要将一个字符串中的所有字母变成大写。这可能是为了满足特定的格式要求，或者是为了方便处理数据。不管是什么原因，学会如何将字符串中的字母变成大写是非常有用的。
 
-## 如何操作
+## 如何实现
 
-首先导入`Data.Char`模块，该模块中包含了`toUpper`函数。然后，我们可以使用`toUpper`来将字符串中的所有字母改为大写，如下所示：
+在Haskell中，我们可以使用函数`toUpper`来将一个字符变成大写。我们也可以使用`map`函数来将一个字符串中的所有字符应用`toUpper`函数。下面是一个简单的例子：
 
 ```Haskell
-import Data.Char
+strToUpper :: String -> String
+strToUpper str = map toUpper str
 
-capitalize :: String -> String
-capitalize str = map toUpper str
-
+main :: IO ()
 main = do
-  let str = "hello world"
-  putStrLn $ capitalize str
-  -- 输出为：HELLO WORLD
+  let str = "Hello World"
+  let upperStr = strToUpper str
+  putStrLn upperStr
+```
+
+运行上面的代码，会输出：
+
+```
+HELLO WORLD
 ```
 
 ## 深入探讨
 
-在以上示例中，我们使用了`map`函数来将`toUpper`应用到字符串的每一个字符上，并返回一个新的字符串。这就是Haskell函数式编程的优势，我们可以通过组合现有的函数来实现复杂的功能，而不需要手动操作每一个字符。
+在上面的例子中，我们使用了`map`函数来将函数`toUpper`应用到字符串的每一个字符上。但实际上，Haskell中还有更优雅的方法来实现这个功能。
 
-另外，需要注意的是，`toUpper`函数只能将英文字母转换为大写，对于其他字符（比如标点符号和中文）并不会有任何改变。如果需要将所有字符都转换为大写，可以使用`Data.Text`模块中的`toUpper`函数。
+我们可以使用列表推导式来直接将字符串中的每个字符转化成大写。下面是一个示例：
 
-# 参考链接
+```Haskell
+strToUpper :: String -> String
+strtoupper str = [toUpper c | c <- str]
 
-- [Haskell中的String数据类型](https://wiki.haskell.org/Strings)
-- [Hoogle中的toUpper函数文档](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toUpper)
-- [更多关于Haskell中字符串处理的函数](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#g:20)
+main :: IO ()
+main = do
+  let str = "Hello World"
+  let upperStr = strToUpper str
+  putStrLn upperStr
+```
+
+运行上面的代码，会获得和之前相同的输出。但是，使用列表推导式的方法更加简洁和易读。
+
+## 参考链接
+
+- [Haskell字符串教程](https://www.haskell.org/tutorial/strings.html)
+- [Haskell标准文档 - toUpper函数](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toUpper)
+- [Haskell标准文档 - map函数](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:map)
+- [Haskell列表推导式教程](https://en.wikibooks.org/wiki/Haskell/List_comprehension)
+
+## 参见
+
+- [Haskell入门教程](https://www.haskell.org/documentation/)
+- [Haskell String模块文档](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html)

@@ -1,53 +1,50 @@
 ---
-title:    "Javascript: Escribiendo pruebas"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/javascript/writing-tests.md"
+title:                "Javascript: Escribiendo pruebas"
+programming_language: "Javascript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir pruebas en Javascript?
+## Why
+Escribir pruebas es una parte fundamental en el proceso de programación. No solo ayuda a detectar errores y garantizar que el código funcione correctamente, sino que también facilita la identificación de problemas y la realización de cambios en el futuro. En resumen, escribir pruebas es una forma eficaz de mejorar la calidad y la estabilidad de nuestro código.
 
-Escribir pruebas en Javascript puede ser una tarea tediosa y muchas veces se prefiere invertir ese tiempo en escribir el código del programa. Sin embargo, existen beneficios significativos al incluir pruebas en nuestro proceso de desarrollo:
-
-- Las pruebas nos permiten detectar errores de manera anticipada, evitando problemas en el código en etapas posteriores de desarrollo.
-- Con las pruebas, podemos asegurar que nuestro código funciona correctamente antes de implementarlo en producción.
-- Las pruebas nos ayudan a mantener nuestro código limpio y organizado, ya que nos obligan a pensar en la estructura de nuestro código y la forma en que funciona.
-
-En general, escribir pruebas en Javascript nos ayuda a garantizar la calidad de nuestro código y brinda una mayor confianza en su funcionamiento.
-
-## ¿Cómo escribir pruebas en Javascript?
-
-Para escribir pruebas en Javascript, podemos utilizar el framework de pruebas Jest. Jest es una herramienta de código abierto creada por Facebook que permite escribir y ejecutar pruebas de manera sencilla y eficiente.
-
-Primero, debemos instalar Jest en nuestro proyecto utilizando NPM o Yarn:
+## How To
+A continuación, presentamos un ejemplo sencillo de cómo escribir y ejecutar pruebas en Javascript utilizando la biblioteca Jest. Primero, crearemos una función para sumar dos números:
 
 ```Javascript
-npm install jest --save-dev
+const sum = (a, b) => {
+  return a + b;
+}
+
+console.log(sum(2, 3)); // Output: 5
 ```
 
-Una vez instalado, creamos un archivo de prueba con la extensión "test.js". En este archivo, podemos escribir nuestras pruebas utilizando la sintaxis de Jest:
+Una vez que hemos escrito nuestro código, es importante asegurarse de que funcione correctamente. Para ello, utilizaremos Jest para escribir una prueba que evalúe si nuestra función de suma retorna el resultado esperado:
 
 ```Javascript
-const sum = require('./sum'); // Importamos la función a probar
+const sum = require('./sum');
 
-test('sum function adds two numbers correctly', () => {
-  expect(sum(1, 2)).toBe(3); // Evaluamos si la suma de 1 y 2 es igual a 3
+test('adds 2 + 3 to equal 5', () => {
+  expect(sum(2, 3)).toBe(5);
 });
 ```
 
-Podemos ejecutar nuestras pruebas utilizando el comando `jest` en la terminal. Jest nos mostrará el resultado de nuestra prueba, indicando si pasó o falló.
+En este ejemplo, estamos importando la función de suma y utilizando la función `test` de Jest para definir la prueba. Dentro de la función `expect`, establecemos el valor que esperamos obtener y en la función `toBe` pasamos el resultado de nuestra función de suma. Al ejecutar esta prueba, Jest nos mostrará si el resultado coincide con lo que esperamos.
 
-## Profundizando en las pruebas en Javascript
+## Deep Dive
+Ahora que hemos visto un ejemplo sencillo de cómo escribir pruebas en Javascript, es importante profundizar en algunas buenas prácticas y conceptos clave a tener en cuenta al escribir pruebas.
 
-Además de las pruebas unitarias como la que hemos visto en el ejemplo anterior, existen otros tipos de pruebas que podemos realizar en Javascript, como las pruebas de integración o de aceptación. También podemos utilizar diferentes herramientas o librerías para realizar nuestras pruebas, según nuestras necesidades y preferencias.
+Primero, es esencial tener una buena cobertura de pruebas, es decir, que todas las líneas y posibles caminos de nuestro código estén cubiertos por pruebas. Además, es importante tener una combinación de pruebas unitarias, que se centran en probar unidades individuales de código, y pruebas de integración, que son más amplias y prueban cómo funcionan juntas distintas partes de nuestro código.
 
-Es importante recordar que, aunque escribir pruebas puede ser una tarea adicional, nos aporta grandes beneficios a largo plazo, ya que nos permite garantizar la calidad de nuestro código y ahorrar tiempo en el proceso de desarrollo.
+Además, es importante nombrar adecuadamente nuestras pruebas para que sean claras e identificables, y utilizar aserciones (como `expect`) para verificar los resultados y no confiar en la simple impresión en la consola.
 
-## Ver también
+En general, escribir pruebas nos ayuda a detectar errores temprano en el proceso de desarrollo y nos da la confianza de que nuestro código funciona como esperamos.
 
-Si quieres saber más sobre pruebas en Javascript, puedes consultar los siguientes recursos:
+## See Also
+Si quieres seguir aprendiendo sobre escribir pruebas en Javascript, aquí tienes algunos recursos adicionales:
 
-- [Guía de Jest](https://jestjs.io/docs/en/getting-started)
-- [10 razones para escribir pruebas en Javascript](https://dev.to/dan_abramov/why-i-never-use-shallow-render-tool-4a8)
-- [Tutorial de pruebas unitarias en Javascript con Jest](https://www.freecodecamp.org/news/an-introduction-to-testing-in-javascript-using-jest/)
+- [Documentación oficial de Jest](https://jestjs.io/docs/en/getting-started)
+- [Curso gratuito de Aprende a Programar Ya sobre pruebas unitarias en Javascript](https://aprendeaprogramarya.com/courses/curso-de-javascript/lectures/24687412)
+- [Artículo de Medium: 7 consejos para escribir pruebas en Javascript como un pro](https://medium.com/@nicknauert/7-tips-for-unit-testing-javascript-like-a-pro-2fc87fa11e08)

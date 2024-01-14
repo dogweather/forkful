@@ -1,40 +1,64 @@
 ---
-title:    "Bash: パターンに一致する文字を削除する"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ja/bash/deleting-characters-matching-a-pattern.md"
+title:                "Bash: 「パターンにマッチする文字を削除する」"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
 
-Bashプログラミングを行う人が特定のパターンにマッチする文字を削除する理由を説明するための1-2文のみです。
+特定のパターンと一致する文字を削除するのに、人々がなぜ関わるかを説明するわずか1-2文。
 
-文字を削除する必要がある場合、例えば特定の文字列を取り除きたい場合やファイル名を整理する必要がある場合があります。このような場合に、パターンを使用して特定の文字を削除することができます。
+パターンマッチングはBashプログラミングでよく使われる技術です。例えば、複数のファイル名から特定の拡張子を持つファイルを削除する際に、パターンマッチングを使用することができます。これにより、手作業でファイルを1つずつ選択する必要がなく、簡単かつ迅速に削除できます。
 
 ## 方法
 
-文字を削除するために使用するコード例とコード内の出力を「```Bash ... ```」のコードブロックで示します。
+パターンにマッチする文字を削除するベストな方法は、`sed`コマンドを使用することです。以下のような構文を使用します。
 
-```Bash
-# 文字を削除する例
-# パターン「abc」にマッチする文字を削除
-# 入力: abcdefg
-# 出力: defg
-text="abcdefg"
-pattern="abc"
-echo "${text//$pattern/}"
+```
+sed 's/パターン//g' input_file
 ```
 
-`"${text//$pattern/}"`というコードを使用することで、文字列から特定のパターンにマッチする文字を削除することができます。
+このコマンドは、`input_file`内のすべての行からパターンにマッチする文字を削除します。 `s`はsubstitute（置換）を意味し、`g`はglobal（すべて）を意味します。つまり、行内のすべてのパターンにマッチする文字が削除されます。
+
+例として、以下のようなテストファイルを作成しましょう。
+
+```
+test1.txt
+test2.html
+test3.sh
+test4.txt
+```
+
+`txt`拡張子を持つファイルを削除するために、`sed`コマンドを使用しましょう。
+
+```
+sed 's/txt//g' test_file
+```
+
+これにより、`test1.txt`と`test4.txt`が削除され、以下の結果になります。
+
+```
+test2.html
+test3.sh
+```
 
 ## 深堀り
 
-パターンを使用して文字を削除する方法の詳細を説明します。
+パターンマッチングを使用することで、より複雑なパターンにも対応することができます。例えば、ファイル名の一部ではなく、特定の文字パターンにマッチするファイルを削除することも可能です。
 
-このコードでは、`"$pattern"`の代わりに`"${pattern}"`を使用することで、特殊な文字（例：スペース、特殊文字、ワイルドカード）をパターンとして使用することができます。また、`"${text//$pattern/}"`の代わりに`"${text//$pattern}"`を使用することで、文字列の一部ではなく全ての文字列からマッチする文字を削除することができます。
+また、`sed`コマンドのオプションを使用することで、マッチした文字列の置換を行うことも可能です。例えば、`test1`という文字列を`new_test`に置換する場合は、以下のようにオプションを追加します。
 
-## 同じ見るもの
+```
+sed 's/test1/new_test/g' test_file
+```
 
-[The Linux Documentation Project - FAQ](https://tldp.org/LDP/abs/html/parameter-substitution.html)  
-[Bash Creator's Manual: Parameter Substitution](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+これにより、`test1.txt`が`new_test.txt`に置換されます。
+
+## 参考リンク
+
+- [Bashパターンマッチングチュートリアル](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)
+- [sedコマンドのドキュメント](https://www.gnu.org/software/sed/manual/sed.html)
+- [スラドのsed使いこなしTipsまとめ](https://linux.srad.jp/story/11/09/04/0434206/)

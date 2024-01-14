@@ -1,56 +1,46 @@
 ---
-title:    "TypeScript: Å bruke regulære uttrykk"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/using-regular-expressions.md"
+title:                "TypeScript: Å bruke regulære uttrykk"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Regular Expressions, eller regulære uttrykk på norsk, er et viktig verktøy for å håndtere tekst og mønstergjenkjenning i programmering. Ved å lære å bruke regulære uttrykk i TypeScript, kan du enkelt finne, erstatte eller validere tekst basert på visse kriterier. Dette kan spare deg for mye tid og gjøre koden din mer effektiv.
+Regular expressions er en kraftig teknikk som lar deg søke, filtrere og manipulere tekststrenger basert på et mønster. De er nyttige for å finne og endre data, og kan være en effektiv måte å håndtere store datamengder på. Ved å lære hvordan man bruker regular expressions kan du effektivisere din TypeScript programmering og få tilgang til avanserte tekstmanipulasjonsfunksjoner.
 
 ## Hvordan
 
-For å bruke regular expressions i TypeScript, må du først importere RegExp-objektet. Dette kan gjøres ved å skrive følgende kode:
+Å bruke regular expressions i TypeScript er veldig likt som å bruke dem i andre programmeringsspråk. Du må først definere et mønster som representerer hva du vil søke etter, og deretter bruke dette mønsteret i en metode som skal søke gjennom en tekststreng. La oss se på et eksempel:
 
 ```TypeScript
-import { RegExp } from 'ts-regexp';
+//Først definerer vi mønsteret vi vil søke etter
+let regex = /hello/;
+
+//Deretter bruker vi det i en test-metode for å se om det finnes i en tekststreng
+console.log(regex.test("Hello World")); // Output: true
+console.log(regex.test("Bye bye")); // Output: false
 ```
 
-Nå kan du opprette et RegExp-objekt ved å gi det et uttrykk og valgfri flagg for å indikere hvordan uttrykket skal tolkes. La oss for eksempel lage et RegExp-objekt som skal finne alle ord som starter med en stor bokstav:
+Som du kan se er det første trinnet å definere et mønster ved å bruke skråstrek / foran og bak mønsteret. Dette forteller TypeScript at dette er et regular expression mønster. Deretter bruker vi metoden `.test()` for å søke gjennom teksten og returnere true eller false basert på om mønsteret finnes. Du kan også bruke `.exec()` metoden for å få informasjon om hvor i teksten mønsteret finnes.
 
-```TypeScript
-let re = new RegExp('[A-Z]\\w+', 'g');
-```
+## Deep Dive
 
-Her er `[A-Z]` uttrykket som indikerer at vi ønsker å finne en stor bokstav i starten av ordet, og `\\w+` betyr at vi ønsker å finne alle ord som følger etter denne store bokstaven. `g`-flagget betyr global, slik at alle samsvar blir funnet, ikke bare det første.
+Det finnes mange forskjellige metoder og spesialtegn som kan brukes i regular expressions for å gjøre søket mer avansert. Her er noen eksempler:
 
-Når du har opprettet RegExp-objektet, kan du bruke forskjellige metoder for å utføre handlinger som å finne og erstatte tekst. For å finne tekst i en streng, kan du bruke `test()`-metoden som returnerer `true` eller `false` basert på om en match blir funnet:
+- `[]` - Definerer en gruppe av karakterer som du vil søke etter. For eksempel `[aeiou]` vil matche alle vokaler.
+- `.` - Kan brukes for å matche alle karakterer bortsett fra linjeskift.
+- `+` - Brukes for å matche en eller flere forekomster av det forrige uttrykket. For eksempel vil `a+` matche alle strenger som har en eller flere a-er.
+- `\d` - Brukes for å matche et tall.
+- `^` - Brukes for å matche begynnelsen av en tekststreng.
+- `$` - Brukes for å matche slutten av en tekststreng.
 
-```TypeScript
-re.test('Dette er en tekst som vi ønsker å finne') // returnerer true
-re.test('dette er en tekst som vi ikke ønsker å finne') // returnerer false
-```
+For mer informasjon og en fullstendig liste over metoder og spesialtegn kan du sjekke ut denne ressursen: https://www.w3schools.com/jsref/jsref_obj_regexp.asp
 
-Du kan også bruke `match()`-metoden for å få en array med alle samsvar i en streng:
+## Se også
 
-```TypeScript
-'Teksten var full av store ord'.match(re) // returnerer ['Teksten', 'full']
-```
-
-Ved hjelp av `replace()`-metoden kan du også erstatte tekst som samsvarer med uttrykket ditt:
-
-```TypeScript
-'Teksten var full av store ord'.replace(re, 'Setninger') // returnerer 'Setninger var Setninger av store Setninger'
-```
-
-## Dypdykk
-
-Regular Expressions i TypeScript har mange flere nyttige funksjoner og metoder som ikke er nevnt her. Selv om det kan virke forvirrende i begynnelsen, er det verdt å investere litt tid i å lære seg å bruke dem. De kan være svært nyttige i nesten alle programmeringsspråk og kan spare mye tid og innsats i det lange løp.
-
-## Se Også
-
-- [MDN Web Docs - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [TypeScript Official Website](https://www.typescriptlang.org/)
-- [Regular Expressions Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/typescript)
+- [TypeScript offisiell dokumentasjon](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [W3Schools RegEx Tutorial](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [MDN RegEx Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

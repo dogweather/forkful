@@ -1,42 +1,68 @@
 ---
-title:    "C: Sökning och ersättning av text."
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/c/searching-and-replacing-text.md"
+title:                "C: Sökning och ersättning av text"
+programming_language: "C"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att söka och ersätta text är en viktig funktion inom programmering som hjälper oss att snabbt och enkelt göra ändringar i stora mängder av text. Det kan vara användbart för att fixa fel i koden eller för att snabbt uppdatera namn och variabler.
+Att söka och ersätta text är en viktig del av programmering, särskilt när man arbetar med stora mängder textbaserad data. Genom att effektivt kunna söka och ersätta text kan du spara tid och undvika manuella fel när du ändrar eller uppdaterar kod.
 
-## Så här
+## Hur man gör
 
-För att söka och ersätta text i C-programmering, använder vi funktionen "str_replace", som tar in en sträng att söka efter, en sträng att ersätta den med och en sträng att söka igenom. Här är ett exempel som söker efter ordet "hello" och ersätter det med "hej":
+I C-programmeringsspråket finns det olika sätt att söka och ersätta text. Ett av de vanligaste sätten är att använda funktionen `strchr()` som söker igenom en sträng efter ett specifikt tecken och returnerar en pekare till den första förekomsten av tecknet. Ett exempel på detta skulle kunna se ut så här:
+
+```C
+char str[50] = "Välkommen till min blogg";
+char *ptr;
+
+ptr = strchr(str, 'l'); // söker efter första förekomsten av bokstaven 'l'
+printf("Pekaren pekar på '%s' \n", ptr); // utskrift: "Pekaren pekar på 'llkommen till min blogg'"
+```
+
+Alternativt kan du använda funktionen `strstr()` som söker igenom en sträng efter en specifik delsträng och returnerar en pekare till den första förekomsten av delsträngen. Exempelvis:
+
+```C
+char str[50] = "Välkommen till min blogg";
+char *ptr;
+
+ptr = strstr(str, "min"); // söker efter den första förekomsten av delsträngen "min"
+printf("Pekaren pekar på '%s' \n", ptr); // utskrift: "Pekaren pekar på 'min blogg'"
+```
+
+Det finns även möjlighet att använda sig av reguljära uttryck för mer avancerad sökning och ersättning av text. Detta kan utföras med hjälp av biblioteket `<regex.h>` och dess funktioner som t.ex. `regcomp()` och `regexec()`. Exempel på detta kan se ut så här:
 
 ```C
 #include <stdio.h>
-#include <string.h>
+#include <regex.h>
 
-int main(void) {
-  char str[] = "Hello world!";
-  char sök[] = "hello";
-  char ersätt[] = "hej";
-  
-  char *resultat = str_replace(str, sök, ersätt);
-  printf("%s", resultat); // Output: Hej world!
-  
-  return 0;
+int main()
+{
+    // regcomp() används för att kompilera ett reguljärt uttryck
+    // i detta fall söker vi efter siffror i en sträng
+    regex_t regex;
+    regcomp(&regex, "[0-9]", 0);
+
+    // regexec() utför sökning och returnerar antalet träffar
+    // i detta fall söker vi i strängen "Jag är 25 år gammal"
+    int match = regexec(&regex, "Jag är 25 år gammal", 0, NULL, 0); 
+    printf("Antal träffar: %d \n", match); // utskrift: "Antal träffar: 1"
+
+    return 0; 
 }
 ```
 
 ## Djupdykning
 
-Vid sökning och ersättning av text är det viktigt att vara medveten om vissa saker. Funktionen "str_replace" är fallkänslig, vilket betyder att den kommer att skilja mellan stora och små bokstäver. Så om vi i exemplet ovan skulle söka efter "Hello" istället för "hello", skulle ingenting ändras eftersom det inte finns en matchning.
+Att kunna effektivt söka och ersätta text är en viktig del av programmering men det kräver även kunskap om olika sökalgoritmer och datastrukturer för att kunna utföra det på ett effektivt sätt. Vid stora textfiler kan t.ex. en binärsökalgoritm vara mer effektiv än en linjär sökalgoritm.
 
-Det är också viktigt att vara uppmärksam på att "str_replace" endast ersätter första matchningen av den sökta strängen. Så om vi skulle ha flera upprepningar av "hello" i vår sträng, skulle bara den första ersättas. Om vi vill ersätta alla förekomster, kan vi använda en loop för att upprepa funktionen för varje förekomst.
+Det är även viktigt att ha kunskap om vilka begränsningar som finns för sökning och ersättning av text i olika programmeringsspråk, då vissa språk endast tillåter att söka efter en eller flera tecken istället för en hel delsträng. Det är också viktigt att tänka på prestandaskillnader när man väljer mellan olika metoder och funktioner för att söka och ersätta text.
 
 ## Se även
 
-- [Funktionen "str_replace" i C](https://www.tutorialspoint.com/c_standard_library/c_function_str_replace.htm)
-- [Mer information om att söka och ersätta text i C](https://www.geeksforgeeks.org/c-program-find-replace-word-string/)
+- [C - Strängmanipulering](https://www.programiz.com/c-programming/c-strings)
+- [C - reguljära uttryck med regex.h](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- [Effektiva sökalgoritmer](https://www.geeksforgeeks.org/searching-algorithms/)

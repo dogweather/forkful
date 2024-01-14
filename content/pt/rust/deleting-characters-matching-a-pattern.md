@@ -1,53 +1,54 @@
 ---
-title:    "Rust: Excluindo caracteres correspondentes a um padrão"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/rust/deleting-characters-matching-a-pattern.md"
+title:                "Rust: Excluindo caracteres que correspondem a um padrão."
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que
 
-Algumas vezes, ao trabalhar com linguagens de programação, podemos nos deparar com a necessidade de deletar determinados caracteres em um texto ou string. Isso pode ser útil, por exemplo, para remover pontuações desnecessárias ou caracteres inválidos em uma cadeia de caracteres.
+Existe uma tarefa comum de edição de texto que é deletar caracteres em um determinado padrão. Essa ação pode ser realizada manualmente, mas em linguagens de programação como o Rust, existem maneiras mais eficientes de lidar com o problema.
 
-## Como Fazer
+## Como fazer
 
-Em Rust, podemos usar o método `replace()` da struct `String` para remover caracteres correspondentes a um padrão específico. Vejamos um exemplo:
-
-```Rust
-let texto = "Olá, mundo! #Rust";
-let novo_texto = texto.replace("#", "");
-println!("{}", novo_texto); // Saída: Olá, mundo! Rust
-```
-
-Neste exemplo, usamos o método `replace()` para substituir o caractere "#" por uma string vazia, removendo-o do texto original. Podemos também usar expressões regulares para fazer a correspondência de padrões mais complexos. Por exemplo:
+Para começar, vamos definir nosso texto de exemplo e o padrão que queremos deletar:
 
 ```Rust
-let texto = "1, 2, 3, 4";
-let novo_texto = texto.replace(Regex::new("[0-9]").unwrap(), "");
-println!("{}", novo_texto); // Saída: , , ,
+let texto = "Esta é uma string de exemplo que contém alguns caracteres desnecessários.";
+let padrao = "a"; // vamos deletar todas as letras "a" do texto
 ```
 
-Neste caso, usamos a biblioteca `Regex` para encontrar todos os dígitos numéricos e substituí-los por uma string vazia. Isso resulta em uma string apenas com as vírgulas.
+Para deletar os caracteres que correspondem ao padrão, podemos usar o método `replace` da biblioteca padrão do Rust:
 
-## Mergulho Profundo
-
-Além de substituir caracteres, também podemos usar o método `replace()` para modificar o texto de outras maneiras, como por exemplo, inserindo novos caracteres. Podemos usar a função `chars()` da struct `String` para iterar sobre cada caractere e fazer as alterações necessárias. Por exemplo:
-
-```Rust
-let texto = "Olá";
-let mut novo_texto = String::new();
-for c in texto.chars() {
-    novo_texto.push(c);
-    novo_texto.push('*');
-}
-println!("{}", novo_texto); // Saída: O*l*á*
+```Rust 
+let novo_texto = texto.replace(padrao, "");
+println!("{}", novo_texto);
 ```
 
-Neste exemplo, inserimos um caractere "*" entre cada letra do texto original.
+Isso imprimirá o novo texto sem os caracteres correspondentes ao padrão:
+
+```
+Est é um string de exemplo que contém alguns caracteres desnecessários.
+```
+
+Se o seu texto é mutável, é possível usar o método `retain` para modificar o texto atual:
+
+```Rust 
+texto.retain(|c| c != 'a');
+println!("{}", texto);
+```
+
+## Deep Dive
+
+No código acima, usamos a função de ordenação `retain` do Rust, que filtra nossos caracteres com base em uma condição. No nosso caso, queríamos manter apenas os caracteres que não correspondiam ao padrão que queríamos deletar.
+
+É importante notar que o método `replace` é mais indicado para textos pequenos, pois ele aloca uma nova `String` para o novo texto. Já o método `retain` modifica diretamente o texto existente, o que pode ser mais eficiente para textos maiores.
+
+Outra opção para deletar caracteres em um padrão é usar regex (expressões regulares), que permitem que você faça buscas mais complexas em um texto. O Rust possui uma biblioteca `regex` que pode ser usada para isso.
 
 ## Veja também
-
-- [Documentação oficial do método replace() em Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [Tutorial de Expressões Regulares em Rust](https://blog.sebastianzimmeck.de/regex-in-rust-a-beginners-tutorial/)
-- [Como iterar sobre caracteres em Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.chars)
+- [Documentação da biblioteca padrão do Rust](https://doc.rust-lang.org/std)
+- [Tutorial de regex no Rust](https://blog.mediapart.fr/howard-guinaldo/blog/121017/rust-regex-tutorial)
+- [Referência das funções `replace` e `retain`](https://doc.rust-lang.org/std/string/index.html#method.retain)

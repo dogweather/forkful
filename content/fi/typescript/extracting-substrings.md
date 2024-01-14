@@ -1,40 +1,53 @@
 ---
-title:    "TypeScript: Alalinjanojen erottaminen"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/extracting-substrings.md"
+title:                "TypeScript: Alimerkkijonojen erottaminen"
+programming_language: "TypeScript"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi käyttäisimme TypeScriptillä alimerkkijonojen poimimista?
+## Miksi
 
-Alimerkkijonojen poimimisella on monia käyttötarkoituksia, kuten tekstien analysointi, datakäsittely ja merkkijonojen manipulointi. TypeScriptillä alimerkkijonojen poimiminen on helppoa ja tehokasta, ja se voi säästää paljon aikaa ja vaivaa.
+Substringien erottelu on tärkeä osa ohjelmointia ja se auttaa meitä käsittelemään merkkijonoja tehokkaasti. Esimerkiksi kun haluamme hakea tiettyä tekstipätkää suuremmasta merkkijonosta, voimme käyttää substring-funktiota.
 
-## Miten: Alimerkkijonojen poimimisen toteuttaminen TypeScriptillä
+## Miten
 
-Alimerkkijonojen poimiminen TypeScriptillä onnistuu helposti käyttämällä sisäänrakennettuja merkkijonojen käsittelytoimintoja, kuten `substring()` ja `slice()`. Voit aloittaa tallentamalla alkuperäisen merkkijonon muuttujaan, jotta voit helposti käsitellä sitä jatkossa. Alla on esimerkkikoodi, jossa poimimme alimerkkijonon ja tulostamme sen konsoliin:
+Alla on TypeScript-koodeja, jotka näyttävät, miten voimme käyttää substring-funktiota eri tilanteissa. Huomaa, että jokaisen esimerkin jälkeen on esitetty myös tuloste konsolissa.
 
 ```TypeScript
-// Alustetaan muuttuja alkuperäisellä merkkijonolla
-let alkuperainenMerkkijono = "Tämä on esimerkkiteksti";
+// Yksinkertainen käyttö: erottaa substrings alusta alkaen annettuun indeksiin asti
+let sana: string = "Hei maailma";
+let eritelty = sana.substring(0, 3); // substrings alusta alkaen annettuun indeksiin asti (ei sisälly indeksiin 3)
+console.log(eritelty); // Tulostaa "Hei"
 
-// Poimitaan alimerkkijono indekseistä 5-11
-let alimerkkijono = alkuperainenMerkkijono.substring(5, 11);
-
-// Tulostetaan alimerkkijono konsoliin
-console.log(alimerkkijono); // t on e
+// Negatiiviset indeksit: laskee merkkijonon lopusta alkaen
+let numerot: string = "12345";
+let viimeinen = numerot.substring(-4); // Hakee merkkijonon kolme viimeistä merkkiä
+console.log(viimeinen); // Tulostaa "345"
 ```
 
-Yllä oleva koodi tulostaa konsoliin alimerkkijonon "t on e", joka on alkuperäisen merkkijonon 5.-11. kirjain.
+```TypeScript
+// Etsii tiettyä merkkijonoa ja palauttaa sen alkuperäisen indeksin
+let lause: string = "Ohjelmointi on hauskaa";
+let indeksi = lause.indexOf("hauskaa"); // Palauttaa 16 (indeksi, jossa sana "hauskaa" alkaa)
+let eritelty = lause.substring(indeksi); // Erittää merkkijonon halutusta indeksistä loppuun saakka
+console.log(eritelty); // Tulostaa "hauskaa"
+```
 
-## Syvempi sukellus: Alimerkkijonojen poimiminen TypeScriptillä
+```TypeScript
+// Käyttää regular expressionia hakeakseen tietyn kaavan mukaisia merkkijonoja
+let sana: string = "Kello on 12:00";
+let oikeinMuotoiltu = sana.substring(sana.search(/\d+:\d+/)); // Hakee merkkijonon, jossa on numeroita kaksoispisteellä erotettuna
+console.log(oikeinMuotoiltu); // Tulostaa "12:00"
+```
 
-Alimerkkijonojen poimiminen TypeScriptillä perustuu merkkijonojen sisäänrakennettuihin käsittelytoimintoihin, kuten `substring()` ja `slice()`. Nämä toiminnot ottavat vastaan kaksi parametria: aloitusindeksin ja lopetusindeksin. Aloitusindeksi määrittää, mistä kohdasta alkaen alimerkkijono poimitaan, ja lopetusindeksi määrittää, mihin kohtaan saakka alimerkkijono poimitaan. Sekä `substring()` että `slice()` antavat saman lopputuloksen, mutta niiden toiminta eroaa hieman, kun indeksit ovat negatiivisia.
+## Syvällinen sukellus
 
-Näitä toimintoja voi myös ketjuttaa, jolloin voit poimia useampia alimerkkijonoja yhdestä alkuperäisestä merkkijonosta.
+Substring-funktiolla on myös muita ominaisuuksia, kuten sen käyttö eri tietotyypeillä ja miten se käsittelee tyhjiä merkkijonoja. On tärkeää huomioida myös indeksien käsittely, jotta vältetään virheet koodissa. Voit lukea lisää näistä ominaisuuksista TypeScriptin virallisesta dokumentaatiosta.
 
 ## Katso myös
 
-- [TypeScriptin merkkijonojen käsittelytoiminnot](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [substring() vs slice()](https://www.geeksforgeeks.org/javascript-string-substring-vs-slice/)
-- [Merkkijonojen käsittelystä TypeScriptissä](https://itnext.io/manipulating-strings-in-typescript-207e91db2527)
+- [TypeScriptin virallinen dokumentaatio](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [MDN Web Docs -substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [W3Schools -substring()](https://www.w3schools.com/jsref/jsref_substring.asp)

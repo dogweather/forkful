@@ -1,50 +1,44 @@
 ---
-title:    "Elixir: Å bruke regulære uttrykk"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/elixir/using-regular-expressions.md"
+title:                "Elixir: Å bruke regulære uttrykk"
+programming_language: "Elixir"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor bruke regulære uttrykk (regular expressions)?
+## Hvorfor
 
-Regulære uttrykk er et kraftig verktøy som kan hjelpe deg med å håndtere tekst på en effektiv måte. De er veldig nyttige når det kommer til å søke, erstatte og manipulere tekst i programmering. Ved å forstå regulære uttrykk, kan du gjøre komplekse oppgaver med tekstbehandling mye lettere og mer effektivt.
+Hvis du noen gang har prøvd å analysere tekststrenger i et programmeringsspråk, har du kanskje følt deg frustrert over å måtte gjennomgå en lang og tungvint prosess med å finne og manipulere forskjellige deler av strengen. Men med regulære uttrykk (regular expressions) kan du enkelt og effektivt søke etter og endre tekstbaserte mønstre i Elixir.
 
-# Slik bruker du regulære uttrykk i Elixir
+## Hvordan du bruker regulære uttrykk i Elixir
 
-I Elixir, brukes regulære uttrykk ved hjelp av `Regex` modulen. La oss se på noen eksempler på hvordan vi kan bruke regulære uttrykk i Elixir:
-
-```Elixir
-Regex.match?(~r/hello/, "Hello, world!") # => true
-Regex.match?(~r/[A-Z]+/, "hello") # => false
-Regex.replace(~r/world/, "Hello, world!", "Universe") # => "Hello, Universe!"
-```
-
-I disse eksemplene brukte vi `Regex.match?` for å sjekke om en tekst samsvarer med et spesifikt mønster, og `Regex.replace` for å bytte ut deler av en tekst med en annen string.
-
-# Dykke dypere inn i bruk av regulære uttrykk
-
-Når du blir mer komfortabel med å bruke regulære uttrykk i Elixir, kan du oppdage at det er mange forskjellige muligheter og teknikker for å håndtere tekst med dem. For eksempel kan du bruke fangegrupper for å hente ut spesifikke deler av en tekst som samsvarer med et mønster:
+For å bruke regulære uttrykk i Elixir, må du først importere modulen "Regex". Deretter kan du bruke en av to metoder: Regex.match? og Regex.replace. Regex.match? tar inn et regulært uttrykk og en streng som skal matches, og returnerer en "match" struct dersom uttrykket matcher strengen. La oss si at vi ønsker å finne alle tall i en streng:
 
 ```Elixir
-"%{name} is %{age} years old" =~ ~r/(?<name>.+) is (?<age>\d+) years old/
-# => true
-
-Regex.named_captures(~r/(?<name>.+) is (?<age>\d+) years old/, "John is 30 years old")
-# => [{"name", "John"}, {"age", "30"}]
+Regex.match?(~r/\d+/, "Det var 42 katter på treet")
 ```
 
-Du kan også bruke regulære uttrykk for å filtrere lister og strømmer ved hjelp av `Enum.filter`:
+Dette vil returnere en "match" struct med informasjon om at det fant et "tre-sifret" tall i strengen.
+
+Den andre metoden, Regex.replace, tar også inn et regulært uttrykk og en streng, men i tillegg et tredje argument som beskriver hva som skal erstatte matchen. Her kan du også bruke "siktilde" for å referere til matchen i erstatningen. For eksempel, for å bytte ut alle tall med ordet "mange":
 
 ```Elixir
-words = ["hello", "world", "foo", "bar", "baz"]
-Enum.filter(words, &Regex.match?(~r/[aeiou]/, &1)) # => ["hello", "world"]
+Regex.replace(~r/\d+/, "Det var 42 katter på treet", "mange")
 ```
 
-Det finnes også mange forskjellige spesialtegn og modifikatorer som kan gjøre dine regulære uttrykk mer presise og fleksible. Det er verdt å undersøke mer om disse for å utnytte fullt ut potensialet til regulære uttrykk.
+Dette vil returnere "Det var mange katter på treet". 
 
-# Se også
+## Dypdykk i regulære uttrykk
 
-- [Elixir Regex-modulen dokumentasjon](https://hexdocs.pm/elixir/Regex.html)
-- [En interaktiv tutorial om regulære uttrykk i Elixir](https://www.rexegg.com/regex-elixir.html)
-- [En liste over nyttige regulære uttrykk eksempler for Elixir](https://gist.github.com/cillianderoiste/97ea2d610e0be267f4c2e64c86e0461d)
+Det fins en hel del forskjellige syntaksregler og shorthands som kan brukes i regulære uttrykk. For eksempel, kan du bruke "+" for å matche en eller flere forekomster av et mønster, "*" for å matche null eller flere forekomster, og "?" for å gjøre et mønster valgfritt. Du kan også bruke spesialtegn som "." for å matche alle tegn, "^" for å matche begynnelsen av en streng, og "$" for å matche slutten av en streng.
+
+Det fins også flere modifikatorer som kan brukes for å gjøre uttrykket mer presist eller fleksibelt. For eksempel, kan du bruke "i" for å gjøre uttrykket case-insensitive, og "s" for å matche over flere linjer.
+
+En god måte å lære mer om regulære uttrykk er å prøve det ut selv og eksperimentere med forskjellige uttrykk og modifikatorer. Du kan også se på dokumentasjonen for "Regex" modulen for en mer detaljert oversikt over syntaksregler og muligheter.
+
+## Se også
+
+- [Elixir regex dokumentasjon](https://hexdocs.pm/elixir/Regex.html)
+- [Regex quick reference cheat sheet](https://www.rexegg.com/regex-quickstart.html#chars) (engelsk)
+- [Elixir Learning resources](https://elixir-lang.org/learning.html) (engelsk)

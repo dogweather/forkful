@@ -1,36 +1,41 @@
 ---
-title:    "Swift: Escrevendo para o erro padrão"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/swift/writing-to-standard-error.md"
+title:                "Swift: Escrevendo para o erro padrão"
+programming_language: "Swift"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão em programação Swift?
+## Por que escrever no erro padrão?
 
-Se você é um programador Swift, provavelmente já se deparou com a função `print()` para imprimir mensagens na tela. Mas, e se você quiser imprimir uma mensagem de erro? É aí que entra a escrita para o erro padrão. Essa técnica permite exibir mensagens de erro de forma mais eficiente e organizada, facilitando a identificação e correção de problemas em seu código.
+Escrever no erro padrão, também conhecido como standard error, é um processo importante para a depuração e rastreamento de erros em um programa Swift. Ao imprimir mensagens de erro no erro padrão, você pode identificar e corrigir problemas no código com mais facilidade.
 
-## Como fazer
+## Como fazer isso?
 
-Para escrever para o erro padrão em Swift, basta utilizar a função `fwrite()` da biblioteca Foundation. Veja um exemplo de código abaixo:
+O Swift possui uma função integrada para escrever no erro padrão, chamada `print(_:to:)`. Esta função aceita dois argumentos: a mensagem de erro a ser impressa e a saída desejada, que no nosso caso é o erro padrão. O código a seguir mostra como usá-la:
 
-```
-import Foundation
-
-let mensagem = "Erro: o número deve ser positivo."
-if let data = mensagem.data(using: .utf8) {
-    fwrite(data, 1, data.count, stderr)
-}
+```Swift
+let errorMessage = "Erro na linha 23: variável não inicializada."
+print(errorMessage, to: &standardError)
 ```
 
-Neste exemplo, definimos uma string contendo a mensagem de erro e a convertemos em dados UTF-8 usando o método `data(using:)`. Em seguida, utilizamos a função `fwrite()` para escrever esses dados no erro padrão usando o ponteiro `stderr`. Ao executar o código, a mensagem será exibida na tela do console, ajudando a identificar e solucionar o erro em questão.
+Ao rodar esse código, a mensagem de erro será impressa no console ou terminal, dependendo de onde você estiver executando seu programa. O output será algo parecido com:
 
-## Mergulho Profundo
+```bash
+Erro na linha 23: variável não inicializada.
+```
 
-Ao escrever para o erro padrão em Swift, é importante compreender a diferença entre os dois ponteiros de saída disponíveis: `stdout` e `stderr`. O primeiro é responsável por exibir mensagens regulares, enquanto o último é usado exclusivamente para mensagens de erro. A utilização desses ponteiros de forma correta facilita a leitura do código e a identificação de possíveis problemas.
+## Mergulho profundo
+
+Além da função `print(_:to:)`, o Swift também possui a estrutura `FileHandle`, que fornece uma maneira mais avançada de escrever no erro padrão. Esta estrutura possui métodos específicos para lidar com a saída de erro, como `write(_:Data)`, que aceita uma string ou array de bytes como argumento para ser escrito no erro padrão. Você também pode usar o método `seek(toOffset:)` para especificar um local específico na saída do erro e sobrescrever o que foi escrito anteriormente.
+
+Vale ressaltar que a saída do erro padrão pode ser redirecionada para um arquivo ou outro dispositivo, se necessário. Isso pode ser feito usando a função `dup2(_:Int32,_:Int32)`. No entanto, este é um assunto mais avançado e não será abordado neste artigo.
 
 ## Veja também
 
-- [Documentação do Swift](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
-- [Tutorial do Swift: Como escrever para o erro padrão](https://www.raywenderlich.com/5115-error-handling-in-swift)
-- [Vídeo explicando a escrita para o erro padrão em Swift](https://www.youtube.com/watch?v=IKZpQW9Cjgo)
+Para aprender mais sobre como trabalhar com o erro padrão em Swift, você pode consultar os seguintes recursos:
+
+- [Documentação oficial do Swift sobre o objeto `FileHandle`](https://developer.apple.com/documentation/foundation/filehandle)
+- [Tutorial sobre saída de erro em Swift](https://theswiftdev.com/mastering-stdout-stderr-in-swift/)
+- [Outra abordagem para escrever no erro padrão em Swift](https://www.swiftbysundell.com/articles/standard-output-in-swift/)

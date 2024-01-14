@@ -1,45 +1,46 @@
 ---
-title:    "Elm: 打印调试输出"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elm/printing-debug-output.md"
+title:                "Elm: 打印调试输出"
+programming_language: "Elm"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么要打印调试输出(Debug Output)
 
-在编程中，如果程序出现错误或者bug，打印调试信息是一种常见的解决方法。它可以帮助开发者定位问题并且更快地修复错误。在Elm编程中，打印调试信息也是一种重要的技巧，能够使我们更有效地调试程序。
+打印调试输出是 Elm 编程中非常有用的技术，它可以让开发者更加轻松地调试代码并找到潜在的 bug。通过打印各种变量和表达式的值，我们可以更加清晰地了解代码的执行流程，从而快速定位问题所在。
 
-## 如何
+## 如何使用(Debug Output)
 
-当程序出现错误时，我们可以使用`debug`函数来打印调试信息。例如，我们有一个函数来检查一个数字是否为偶数：
-
-```Elm
-isEven : Int -> Bool
-isEven n =
-    if modBy 2 n == 0 then
-        True
-    else
-        False
-```
-如果我们想要确认这个函数是否按照预期工作，我们可以在其中添加打印语句：
+要打印调试输出，我们需要使用 Elm 提供的 `Debug` 模块。让我们来看一个简单的例子：
 
 ```Elm
-isEven : Int -> Bool
-isEven n =
-    if modBy 2 n == 0 then
-        True
-    else
-        (debug "Input:" n) False
+import Debug
+
+sum : Int -> Int -> Int
+sum x y =
+    Debug.log ("Calculating sum of " ++ toString x ++ " and " ++ toString y) (x + y)
+
 ```
-这样，当我们调用这个函数时，会在控制台输出一条信息："Input: 5"。通过这个信息，我们可以确认函数的输入值是否正确，并且观察程序在哪里出现问题。
 
-## 深入了解
+上面的代码中，我们定义了一个简单的 `sum` 函数，并使用 `Debug.log` 函数打印了计算的过程和结果。在运行程序时，我们会在控制台看到类似以下的输出：
 
-除了打印简单的文本信息外，Elm 还提供了很多有用的调试函数。例如，`log`函数可以打印任何类型的值，`identity`函数可以返回任何输入值，`trace`函数可以在控制台打印当前函数或者值的信息。在实际开发中，我们可以根据具体情况使用不同的调试函数来帮助我们调试程序。
+```
+(3) Calculating sum of 1 and 2
+(3) 3
+```
 
-## 参考资料
+从上面的输出中，我们可以清楚地看到程序一步步执行的过程以及最终的结果。这样的调试输出可以帮助我们更快地找到代码中的问题，并且在开发过程中提高效率。
 
-- [Elm调试文档](https://guide.elm-lang.org/debugging/)
-- [更多关于Elm调试技巧](https://reactnative.cn/docs/debugging.html)
-- [实战中的Elm调试技巧](https://github.com/idkjs/debugger)
+## 深入了解(Debug Output)
+
+除了简单的打印变量和表达式的值，我们还可以使用 `Debug.log` 函数来打印自定义的消息，帮助我们更好地理解代码的逻辑。此外，Elm 提供了另一个函数 `Debug.toString` 用于将任意值转换为字符串，这样我们就可以打印自定义类型的数据。
+
+除了 `Debug.log`，我们还可以使用 `Debug.todo` 函数来标记未完成的代码。这可以帮助我们在开发过程中先标记出需要实现的部分，然后再回过头来完成它们。
+
+## 参考文章(See Also)
+
+- [Elm 官方文档中关于 `Debug` 模块的介绍](https://guide.elm-lang.org/debugging/debug.html)
+- [如何使用 Elm 来打印调试输出的详细教程](https://dev.to/eriktimothyjordan/elm-debugging-4inn)
+- [使用 Elm 调试工具来寻找潜在的性能问题](https://www.lucamug.dev/2019/04/you-probably-need-that-elm-debug-tool.html)

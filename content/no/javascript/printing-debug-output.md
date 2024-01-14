@@ -1,43 +1,56 @@
 ---
-title:    "Javascript: Utskrift av feilsøkingsutdata"
-keywords: ["Javascript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/javascript/printing-debug-output.md"
+title:                "Javascript: Utskrift av feilsøkingsutdata"
+programming_language: "Javascript"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
 
-Når man programmerer, er det viktig å kunne finne feil og problemer i koden raskt. Dette kan være spesielt vanskelig når man arbeider med større prosjekter og komplekse kodesnutter. Derfor er det nyttig å vite hvordan man printer ut debug output, eller feilutskrifter, for å kunne identifisere feil og finne løsninger på dem.
+Det er alltid en god idé å inkludere debug-utdata når du utvikler programmering. Dette kan hjelpe deg med å identifisere feil og forstå hvordan koden din fungerer. Ved å skrive ut utdata, kan du raskt finne ut hvor koden din går galt og hvordan du kan løse det.
 
-## Hvordan
+##Slik gjør du det
 
-I JavaScript kan man enkelt printe ut debug output ved å bruke funksjonen `console.log()`. Denne funksjonen tar inn en eller flere argumenter og skriver dem ut til konsollen. La oss si at vi vil printe ut verdien av en variabel ved navn `nummer`. Da kan vi gjøre det på følgende måte:
+Det er flere måter å skrive ut debug-utdata på, men den enkleste metoden er å bruke `console.log()` -funksjonen i JavaScript. Du kan legge til `console.log()` hvor som helst i koden din for å skrive ut variabler, meldinger eller andre viktige verdier.
 
-```Javascript
-console.log(nummer);
-```
-
-Dette vil skrive ut verdien av variabelen til konsollen når koden blir kjørt. Om vi nå endrer verdien av `nummer`, vil konsollen skrive ut den nye verdien neste gang `console.log()` blir kjørt.
-
-Man kan også printe ut tekst og variabler på samme tid ved å bruke såkalte "template literals". Dette gjøres ved å bruke backticks (`) istedenfor anførselstegn (") eller enkle anførselstegn (') i strengen. La oss se på et eksempel:
+Her er et eksempel på hvordan du kan bruke `console.log()` for å skrive ut en melding og en variabel:
 
 ```Javascript
-console.log(`Tallet er ${nummer}`);
+let navn = "Maria";
+console.log("Hei, mitt navn er " + navn);
 ```
 
-Her vil teksten "Tallet er" alltid være den samme, men verdien av `nummer` vil variere.
+Dette vil skrive ut følgende melding i konsollen din:
 
-## Deep Dive
+```
+Hei, mitt navn er Maria
+```
 
-I tillegg til `console.log()` finnes det flere andre funksjoner man kan bruke for å printe debug output, som for eksempel `console.table()` eller `console.error()`. Det finnes også metoder for å formatere utskriften på ulike måter, som for eksempel `console.group()` og `console.count()`.
+Du kan også bruke `console.log()` for å inspisere objekter og arrays. Her er et annet eksempel:
 
-Det er også mulig å bruke betingelser for å bare printe ut debug output hvis visse betingelser er oppfylt. Dette kan være nyttig for å redusere mengden av debug output som blir skrevet ut og for å unngå at konsollen blir overfylt med unødvendig informasjon.
+```Javascript
+let fruits = ["eple", "banan", "jordbær"];
+console.log(fruits);
+```
 
-Det er også verdt å nevne at det finnes ulike debugging-verktøy og utvidelser som kan være nyttige for å feilsøke og inspisere koden på en mer detaljert måte.
+Dette vil skrive ut hele `fruits` -arrayen i konsollen din:
 
-## Se også
+```
+["eple", "banan", "jordbær"]
+```
 
-* [MDN Web Docs](https://developer.mozilla.org/no/docs/Web/JavaScript) - documentasjon for JavaScript
-* [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - debugging-verktøy for Google Chrome
-* [VS Code](https://code.visualstudio.com/) - populær teksteditor med innebygd debugging-funksjonalitet
+##Dypere dykk
+
+Nå som du har lært hvordan du skriver ut debug-utdata, kan det være nyttig å vite at det er flere måter å tilpasse og utnytte dette verktøyet på. For eksempel kan du bruke `console.time()` og `console.timeEnd()` for å måle hvor lang tid det tar for en bestemt del av koden din å kjøre. Du kan også bruke `console.table()` for å få en mer visuell og strukturert utskrift av arrays og objekter.
+
+Det er også verdt å merke seg at du kan bruke `console.error()` for å skrive ut feilmeldinger og `console.warn()` for å vise advarsler. Dette kan være veldig nyttig når du jobber med større prosjekter og trenger å identifisere og håndtere feil raskt.
+
+##Se også
+
+- [Document Object Model (DOM)](https://www.w3schools.com/js/js_htmldom.asp)
+- [Vanlige feil i JavaScript](https://www.tutorialspoint.com/javascript/javascript_common_errors.htm)
+- [Debugging med Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/javascript/)
+
+Takk for at du leste denne bloggposten om hvordan du kan skrive ut debug-utdata i JavaScript. Vi håper dette vil hjelpe deg med å bli en mer effektiv utvikler og identifisere feil raskere. Lykke til med kodene dine!

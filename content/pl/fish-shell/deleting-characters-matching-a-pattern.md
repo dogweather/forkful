@@ -1,41 +1,54 @@
 ---
-title:    "Fish Shell: Usuwanie znaków pasujących do wzoru"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/deleting-characters-matching-a-pattern.md"
+title:                "Fish Shell: Usuwanie znaków pasujących do wzorca"
+programming_language: "Fish Shell"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Czasami w naszych skryptach powłoki potrzebujemy usunąć pewne znaki, które pasują do określonego wzorca. Jest to szczególnie przydatne w przypadku operacji na tekście. W tym artykule przedstawimy, jak to zrobić w powłoce Fish Shell.
+Usuwanie znaków pasujących do wzorca jest ważną umiejętnością, którą każdy programista powinien posiadać. Jest to przydatne w wielu przypadkach, takich jak refaktoryzacja kodu, czy też filtrowanie danych. W tym artykule dowiesz się, jak wykorzystać funkcję Fish Shell do usuwania znaków pasujących do wzorca.
 
 ## Jak to zrobić
 
-W Fish Shell istnieje wbudowana funkcja `string delete`, która pozwala na usunięcie znaków pasujących do podanego wzorca. Przykładowe wywołanie wygląda następująco:
-
-```Fish Shell
-set my_string "Hello World"
-string delete -ra "l" $my_string
+``` 
+Fish Shell
+echo "Para pszczół na parapecie" | fish  ^p
 ```
 
-W tym kodzie wywołujemy `string delete`, z opcją `-ra` oznaczającą "wszystkie znaki", a następnie podajemy wzorzec, który chcemy usunąć, w tym przypadku jest to litera "l". Podajemy również zmienną zawierającą nasz tekst, czyli "Hello World". Wywołanie to spowoduje usunięcie wszystkich wystąpień litery "l" z tekstu i wyświetlenie wyniku, który w tym przypadku będzie brzmiał "Heo Word".
+W powyższym przykładzie wykorzystaliśmy polecenie `echo` wraz z funkcją `^`, która usuwa znak lub znaki pasujące do wzorca, w tym przypadku literę `p`. Wynikiem będzie wyświetlenie napisu "Pra eszczół na aariecie".
 
-Jeśli chcemy usunąć znaki tylko z określonej pozycji w tekście, możemy wykorzystać opcję `-i`, np:
+Możemy również wykorzystać funkcję `^^` aby usunąć wszystkie znaki pasujące do wzorca. Na przykład:
 
-```Fish Shell
-set my_string "Hello World"
-string delete -ia 0..3 $my_string
+```
+Fish Shell
+echo "Matematyka jest wspaniała" | fish  ^^a
 ```
 
-Tym razem usuniemy znaki z pozycji 0 do 3, czyli "Hell" zostanie zamienione na pusty ciąg znaków, a wynikiem będzie "o World".
+Wynikiem będzie napis "Metmtyk jest wspiniła".
+
+Możemy także wykorzystać funkcję `^.` aby usunąć dowolną liczbę znaków od początku napisu. Na przykład:
+
+```
+Fish Shell
+echo "12345" | fish  ^2.
+```
+
+Wynikiem będzie napis "345".
+
+Możliwości jest wiele, a jedynym ograniczeniem jest nasza wyobraźnia. Możemy również kombinować różne funkcje, aby osiągnąć pożądany efekt. Na przykład, jeśli chcemy usunąć ostatnie trzy znaki z napisu, możemy wykorzystać funkcję `^$`, która usunie wszystkie znaki od ostatniej pozycji do końca.
 
 ## Deep Dive
 
-Funkcja `string delete` w Fish Shell jest bardzo użyteczna, ponieważ umożliwia nam dokładne kontrolowanie, które znaki chcemy usunąć. Pamiętajmy jednak, że gdy podajemy opcję `-ra`, wszystkie wystąpienia wzorca zostaną usunięte. Jeśli chcemy usunąć tylko jedno wystąpienie, musimy określić konkretną pozycję lub użyć opcji `-i` i podać zakres pozycji.
+Funkcja `^` w Fish Shell pozwala nam na usuwanie znaków pasujących do wzorca nie tylko na początku napisu, ale także wewnątrz niego. Może to być bardzo przydatne, na przykład podczas filtrowania danych w plikach lub wypisywania informacji w terminalu. Jest to również bardzo przydatna umiejętność w refaktoryzacji kodu, ponieważ możemy szybko i łatwo usunąć niepotrzebne znaki bez konieczności ręcznego edytowania każdego wystąpienia.
 
-## Zobacz też
+Ponadto, funkcja ta jest bardzo łatwa do nauki i nie wymaga dużego nakładu pracy. Kiedy raz poznasz jej funkcjonalności, możesz zastosować ją w różnych przypadkach w swoim codziennym programowaniu.
 
-- Dokumentacja Fish Shell: https://fishshell.com/docs/current/
-- Przewodnik po Fish Shell: https://fishshell.com/docs/current/tutorial.html
-- Opis funkcji `string delete`: https://fishshell.com/docs/current/cmds/string.html#string-delete
+## Zobacz także
+
+- Dokumentacja na temat funkcji `^` w Fish Shell: https://fishshell.com/docs/current/cmds/echo.html
+- Inne przydatne funkcje w Fish Shell: https://fishshell.com/docs/current/index.html
+- Zastosowanie funkcji `^` w praktyce: https://jvns.ca/blog/2016/09/07/fish-functions/
+- Przydatne porady programistyczne dla początkujących: https://www.codecademy.com/learn/learn-the-command-line

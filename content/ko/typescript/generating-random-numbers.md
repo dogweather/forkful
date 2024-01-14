@@ -1,39 +1,43 @@
 ---
-title:    "TypeScript: 랜덤 숫자 생성하기"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/generating-random-numbers.md"
+title:                "TypeScript: 랜덤 숫자 생성하기"
+programming_language: "TypeScript"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-랜덤 숫자를 생성하는 것이 왜 중요한지 생각해 보면, 여러분의 프로그램을 보다 다양하게 만들기 위해 필수적입니다. 예를 들어, 게임을 만들 때 랜덤 숫자를 사용해서 적들이 어디에 나타날지, 아이템이 어디에 놓여질지 등을 결정할 수 있습니다. 랜덤 숫자를 생성할 줄 안다면, 더욱 흥미로운 프로그램을 만들어볼 수 있을 것입니다.
 
-## 방법
-먼저, TypeScript에서 랜덤 숫자를 생성하기 위해서는 Math 라이브러리를 사용해야 합니다. 이 라이브러리에는 여러 수학적 함수들이 내장되어 있어 매우 편리합니다. 아래는 TypeScript로 랜덤 숫자를 생성하는 간단한 예제입니다.
+난수를 생성하는 것에 대해 왜 관심있게 될까요? 여러분에게는 한 가지 큰 이유가 있습니다 - 랜덤한 결과를 얻고 싶기 때문입니다! 프로그램에서 난수를 생성하면 보다 다양한 결과를 얻을 수 있습니다. 예를 들어, 게임을 만들 때 매번 같은 방법으로 게임 진행되는 것보다 매번 다른 상황을 만들어 내는 것이 더 재미있을 수 있습니다.
+
+## 어떻게 만들까요?
+
+TypeScript로 난수를 생성하는 방법은 꽤 간단합니다. 아래의 코드를 참고해보세요. 
 
 ```TypeScript
-// 랜덤 숫자를 생성하는 함수
-function generateRandomNumber() {
-  // 0에서 10 사이의 랜덤 숫자를 생성
-  const randomNumber = Math.floor(Math.random() * 10);
+// Math.random() 함수를 사용하여 0과 1 사이의 난수 생성
+const randomNumber = Math.random();
 
-  // 생성된 숫자를 출력
-  console.log(randomNumber);
-}
+// 정수로 변환하기 위해 Math.floor() 함수 사용
+const randomInteger = Math.floor(randomNumber);
 
-// 함수 호출
-generateRandomNumber();
+// 범위 내에서 난수 생성하려면 범위를 곱한 후 Math.floor() 함수 사용
+// 예를 들어, 0에서 10까지의 정수 중 난수 생성하려면 다음과 같이 작성합니다.
+const randomRange = Math.floor(Math.random() * 10);
 ```
 
-위 코드를 실행하면, 콘솔에서 0에서 10 사이의 랜덤 숫자를 출력할 수 있습니다. 이제 이 함수를 이용해서 다양한 곳에서 랜덤 숫자를 사용할 수 있게 되었습니다.
+위 코드를 실행하면 각각 다른 난수가 생성됩니다. 예를 들어, 0과 1 사이에서 0.4321이라는 난수를 생성한 경우, `randomNumber` 변수에는 0.4321이 할당되고 `randomInteger` 변수에는 0이 할당됩니다. 그리고 범위를 곱한 후에는 당연히 소수점이 제거되기 때문에 `randomRange` 변수에는 0, 1, 2, ..., 9 중 한 가지 숫자가 할당될 것입니다.
 
-## 깊이 파고들기
-랜덤 숫자를 생성하는데에는 여러 가지 방식이 있습니다. 위 예제에서는 Math 라이브러리의 `Math.random()` 메소드를 사용하였지만, 다른 방법도 있습니다. 예를 들어, `crypto` 라이브러리를 사용하여 보다 안전한 랜덤 숫자를 생성할 수 있습니다.
+## 딥 다이브
 
-또한, 랜덤 숫자를 사용하는 알고리즘에 따라 결과값이 달라질 수 있습니다. 따라서, 여러분이 원하는 방식과 결과에 따라 적절한 랜덤 숫자 생성 방법을 선택해야 합니다.
+난수 생성에 대해 더 깊이 알아보고 싶은 분들을 위해, TypeScript에서 `Math.random()` 함수가 어떻게 동작하는지 살펴보겠습니다. 
 
-## 참고 자료
-- [Math 라이브러리 | MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math)
-- [crypto 라이브러리 | Node.js Documentation](https://nodejs.org/api/crypto.html)
-- [랜덤 숫자 생성 알고리즘 | Wikipedia](https://en.wikipedia.org/wiki/Random_number_generation_algorithm)
+`Math.random()` 함수는 내부적으로 난수를 생성하기 위해 이항(Gaussian) 분포를 사용합니다. 이항 분포는 대부분의 자연적인 현상에서 발생하는 수들과 비슷한 분포를 가지고 있습니다. 이것은 일종의 경험적 규칙으로, 우리 주변에서 많이 볼 수 있는 분포라고 볼 수 있습니다.
+
+이항 분포는 대략적으로 백만 개의 난수를 생성한 뒤, 이들을 합산하여 얻을 수 있는 값을 빈티지(vintage) 나누기에 사용합니다. 이를 통해 더 큰 숫자를 얻을 수 있게됩니다. 그리고 이들 중 어느 하나를 선택해 결과로 반환합니다.
+
+## 또 보기
+
+[타입스크립트 공식 웹사이트 - Math.random()](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#the-libdomd-ts-file-in---libdom-ts)
+[자바스크립트 자습서 - 난수 생성](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/random)

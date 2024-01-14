@@ -1,44 +1,53 @@
 ---
-title:    "Clojure: 날짜를 문자열로 변환하기"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/converting-a-date-into-a-string.md"
+title:                "Clojure: 날짜를 문자열로 변환하기"
+programming_language: "Clojure"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜: 날짜를 문자열로 변환하는 것에 참여하는 이유는?
+# 왜
 
-날짜를 문자열로 변환하는 작업은 자주 필요한 일입니다. 예를 들어, 데이터베이스에 저장된 날짜를 사용자가 이해할 수 있는 형식으로 표시하거나, 다양한 시스템 간에 날짜를 교환하는 경우에 필요합니다.
+날짜를 문자열로 바꾸는 작업을 하는 이유는 무엇일까요? 대부분의 프로그램에서 날짜는 중요한 정보 중 하나입니다. 따라서, 날짜를 쉽게 이해하고 다룰 수 있는 형식으로 변환하는 것은 중요합니다. 또한, 날짜를 문자열로 바꾸면 다양한 포맷으로 표현할 수 있기 때문에 유용합니다.
 
-## 어떻게 하나요?
+# 어떻게
 
-```clojure
-(require '[clojure.java.time :as t])
+Clojure에서 날짜를 문자열로 바꾸는 방법은 다양한 함수를 사용할 수 있습니다. 예를 들어, `clj-time` 라이브러리를 사용하면 날짜를 포맷팅하는데 유용한 `format` 함수를 사용할 수 있습니다.
 
-;; 오늘 날짜를 문자열로 변환하기
-(t/local-date->str (t/today))
+```Clojure
+(require '[clj-time.format :as fmt])
 
-;; 원하는 날짜 형식으로 변환하기
-(t/format (t/date-time 2021 9 1) "MM/dd/yy")
+(def today (clj-time.core/today))
 
-;; 시간대 및 로케일 설정하기
-(t/local-date->str (t/today) {:zone "UTC" :locale "en-US"})
+(fmt/format today "MM/dd/yyyy")
+;; "11/18/2020"
+
+(fmt/format today "dd.MM.yyyy")
+;; "18.11.2020"
 ```
 
-위 예제에서는 `clojure.java.time` 네임스페이스에서 제공하는 유틸리티 함수를 사용하여 날짜를 문자열로 변환하는 방법을 보여줍니다. `local-date->str` 함수는 `LocalDate` 객체를 문자열로 변환할 수 있으며, `format` 함수는 원하는 날짜 형식으로 변환할 수 있습니다. 옵션으로는 시간대와 로케일을 설정할 수도 있습니다.
+또는 `java-time` 라이브러리를 사용해도 같은 결과를 얻을 수 있습니다.
 
-## 깊이있게 살펴보기
+```Clojure
+(require '[java-time :as jt])
 
-Clojure에서 날짜를 다루는 API는 자바 표준 라이브러리에 기반하여 만들어졌습니다. 따라서 자바의 `java.time` 패키지와 유사한 인터페이스를 가지고 있습니다. 이를 통해 간편하게 날짜를 다룰 수 있고, `java.time` 라이브러리에서 제공하는 더 많은 기능들을 활용할 수 있습니다.
+(def today (jt/now))
 
-Clojure에서는 `java.time`의 `LocalDate`와 `DateTimeFormatter` 클래스를 이용하여 날짜를 다룹니다. `LocalDate`는 시간이나 시간대를 포함하지 않는 날짜 정보를 나타내며, `DateTimeFormatter`는 날짜를 원하는 형식으로 표현할 수 있도록 지원합니다.
+(jt/format today "MM/dd/yyyy")
+;; "11/18/2020"
 
-## 관련 자료
+(jt/format today "dd.MM.yyyy")
+;; "18.11.2020"
+```
 
-- [clojure.java.time 문서](https://clojure.github.io/java-time/)
-- [자바 `java.time` 패키지 문서](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html)
+위의 예시에서는 `MM`은 월을, `dd`는 일을, `yyyy`는 년도를 나타냅니다. 다른 포맷을 사용하고 싶다면 Java의 날짜 포매팅 규칙을 참고하면 됩니다. 또한, `locale` 매개변수를 사용하여 다른 언어로 표현할 수도 있습니다.
+
+# 더 깊이 파고들기
+
+날짜를 문자열로 바꾸는 과정은 다소 복잡합니다. 날짜의 포맷에는 년, 월, 일, 요일, 시간 등 다양한요소가 포함될 수 있기 때문입니다. 또한, 다양한 국가 및 지역에서 사용되는 다른 날짜 형식을 처리하는 것도 중요합니다. 따라서, `clj-time`이나 `java-time`과 같은 날짜 라이브러리를 사용하는 것이 좋습니다. 이러한 라이브러리들은 모든 세부 요소를 고려하여 일관된 방식으로 날짜를 문자열로 바꿔줄 것입니다.
 
 # 관련 자료
 
-- [clojure.java.time 문서](https://clojure.github.io/java-time/)
-- [자바 `java.time` 패키지 문서](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html)
+- [clj-time 공식 문서](https://clj-time.github.io/clj-time/)
+- [java-time 라이브러리 GitHub 페이지](https://github.com/dm3/clojure.java-time)

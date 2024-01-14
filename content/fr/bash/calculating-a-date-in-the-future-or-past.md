@@ -1,69 +1,53 @@
 ---
-title:    "Bash: Calculer une date dans le futur ou le passé"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/bash/calculating-a-date-in-the-future-or-past.md"
+title:                "Bash: Calculer une date dans le futur ou le passé."
+programming_language: "Bash"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Il est souvent nécessaire de calculer une date dans le futur ou dans le passé lors de la programmation en Bash. Que ce soit pour des tâches de planification ou de gestion de données, cette compétence est essentielle pour un programmeur.
+Il y a plusieurs raisons pour lesquelles quelqu'un pourrait avoir besoin de calculer une date dans le futur ou dans le passé en programmation Bash. Cela peut être utile pour planifier des tâches à exécuter à une date précise, ou pour effectuer des opérations sur une plage de dates.
 
-# Comment faire
+## Comment faire
 
-La première étape pour calculer une date dans le futur ou dans le passé est de déterminer la date de référence. Cela peut être la date actuelle, une date précédemment saisie ou une date fournie par l'utilisateur.
+Pour calculer une date dans le futur ou dans le passé en Bash, il existe plusieurs méthodes. Nous allons voir ici deux façons de le faire : en utilisant les commandes date et expr, ou en utilisant les fonctions internes à Bash.
 
-Ensuite, il faut décider du nombre d'années, de mois ou de jours à ajouter ou à soustraire à cette date de référence. Dans Bash, cela peut être fait en utilisant la commande "date -d" suivie de la durée souhaitée.
+```
+Bash code block example:
+# Calculer une date dans le futur en utilisant la commande date
+date -d "1 day" # renvoie la date dans un jour
+date -d "1 week" # renvoie la date dans une semaine
 
-Par exemple, pour calculer la date dans 6 mois à partir de la date actuelle :
+# Calculer une date dans le futur en utilisant la commande expr
+# On peut utiliser les opérateurs + et - pour ajouter ou soustraire des jours/mois/années
+expr $(date +%s) + 86400 # renvoie la date dans un jour
+expr $(date +%s) + 604800 # renvoie la date dans une semaine
 
-```Bash
-date -d "6 months"
+# Utiliser les fonctions internes à Bash pour calculer une date
+# On peut utiliser le format de date "secondes depuis l'époque Unix" pour effectuer les opérations
+# sur les dates.
+# Voici une fonction pour calculer une date dans le futur ou dans le passé en utilisant une échéance de jours :
+calc_date(){
+local add=$1 # le nombre de jours à ajouter ou soustraire
+local epoch=$(date -d "midnight" +"%s") # récupère les secondes depuis l'époque Unix
+local target_date=$(expr $epoch + 86400 \* $add) # calcule la date cible en ajoutant ou soustrayant les jours
+date -d @$target_date # affiche la date cible dans le format voulu
+}
+calc_date 1 # renvoie la date dans un jour
+calc_date -7 # renvoie la date il y a une semaine
 ```
 
-Le résultat sera affiché au format par défaut de la date et de l'heure.
+## Plongée en profondeur
 
-Pour obtenir un format spécifique de sortie, il suffit d'ajouter la commande "date" à la fin avec les options de formatage souhaitées.
+Pour calculer une date dans le futur ou dans le passé, il est important de comprendre comment Bash gère les dates et les heures. Bash utilise l'époque Unix, qui est le 1er janvier 1970 à 00h00 UTC, comme point de départ pour compter les secondes depuis cette date. Ainsi, en utilisant les opérateurs mathématiques, nous pouvons ajouter ou soustraire des secondes pour calculer une nouvelle date.
 
-Par exemple, pour obtenir la date dans 6 mois au format AAAA-MM-JJ :
+Il est également important de noter que les commandes date et expr peuvent différer selon le système d'exploitation utilisé. Il est donc recommandé de vérifier la documentation du système d'exploitation pour les détails spécifiques.
 
-```Bash
-date -d "6 months" +"%Y-%m-%d"
-```
+## Voir aussi
 
-Cela peut également être utilisé pour soustraire des durées à la date de référence :
-
-```Bash
-date -d "1 year ago"
-```
-
-Même principe pour formater la sortie selon nos besoins :
-
-```Bash
-date -d "1 year ago" +"%d/%m/%Y"
-```
-
-# Plongée en profondeur
-
-En plus des durées de temps simples telles que "6 months" ou "1 year ago", les commandes "date -d" permettent également de gérer des dates à l'aide de valeurs absolues.
-
-Par exemple, pour calculer la date dans 10 jours à partir du 15 mars 2021 :
-
-```Bash
-date -d "2021/03/15 + 10 days"
-```
-
-De plus, il est possible de choisir une date de référence différente en utilisant le paramètre "-u" qui prend en compte le fuseau horaire UTC.
-
-```Bash
-date -d "-6 hours + 1 week" -u
-```
-
-Notez que l'ordre des valeurs est important, la commande utilisera la date de référence en premier avant de soustraire ou d'ajouter la durée spécifiée.
-
-# Voir aussi
-
-- [Documentation officielle de la commande "date"](https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html)
-- [Tutoriel sur la manipulation de dates en Bash](https://openclassrooms.com/fr/courses/43538-reprenez-le-controle-a-laide-de-linux/3737021-manipulez-les-dates-et-les-heures)
-- [Astuce pour ajouter une date à un fichier en Bash](https://stackoverflow.com/questions/17993449/appending-date-to-filename-in-bash)
+- [Calculer la date d'aujourd'hui en Bash](https://www.millamint.fr/blog/calculer_date_bash/)
+- [Documentation date command](https://www.gnu.org/software/coreutils/manual/html_node/Examples-of-date.html#Examples-of-date)
+- [Documentation expr command](https://www.gnu.org/software/coreutils/manual/html_node/expr-invocation.html#expr-invocation)

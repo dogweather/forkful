@@ -1,44 +1,69 @@
 ---
-title:    "Java: Transformando uma string em maiúsculo"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pt/java/capitalizing-a-string.md"
+title:                "Java: Capitalizar uma string"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que capitalizar uma string é importante
-Capitalizar uma string é uma ação simples e essencial para garantir que as palavras sejam apresentadas corretamente. Ao capitalizar uma string, você garante que as primeiras letras de cada palavra estejam em maiúsculo, o que facilita a leitura e a compreensão de um texto.
+## Por que capitalizar uma String?
 
-## Como capitalizar uma string em Java
-Aqui estão alguns exemplos em Java de como capitalizar uma string:
+A capitalização de uma String é uma tarefa comum em muitos aplicativos Java, principalmente quando se lida com entradas de usuários. Ela envolve transformar a primeira letra de uma palavra em maiúscula, enquanto mantém o restante em minúsculo. Isso torna o texto mais legível e padronizado, tornando-o uma prática importante em programação.
 
-```Java
-String texto = "aprendendo programação";
-String textoCapitalizado = texto.substring(0, 1).toUpperCase() + texto.substring(1);
-System.out.println(textoCapitalizado);
+## Como fazer
 
-// Saída: Aprendendo programação
+Aqui está um exemplo simples de como capitalizar uma String em Java:
+
+```java
+public static String capitalizeString(String str) {
+    return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+}
+
+public static void main(String[] args) {
+    String nome = "joão";
+    System.out.println(capitalizeString(nome)); // Saída: João
+}
 ```
 
-Neste exemplo, usamos o método `substring()` para obter a primeira letra da string original e convertê-la em maiúscula, e depois concatenamos com o restante da string.
+No código acima, criamos um método que recebe uma String e retorna a mesma, porém com a primeira letra maiúscula e o restante em minúsculo. Isso é feito utilizando o método `toUpperCase ()` que converte a primeira letra em maiúscula e o método `toLowerCase ()` que converte as demais letras em minúsculo.
 
-Outra opção é usar a classe `java.util.Locale` para capitalizar a string, conforme mostrado no exemplo a seguir:
+Outra abordagem é utilizar a classe `StringBuilder` para manipular a String:
 
-```Java
-String texto = "programando em Java";
-String textoCapitalizado = texto.toUpperCase(Locale.getDefault());
-System.out.println(textoCapitalizado);
+```java
+public static String capitalizeString(String str) {
+    StringBuilder sb = new StringBuilder(str);
+    sb.setCharAt(0, Character.toUpperCase(sb.charAt(0)));
+    return sb.toString();
+}
 
-// Saída: PROGRAMANDO EM JAVA
+public static void main(String[] args) {
+    String nome = "petra";
+    System.out.println(capitalizeString(nome)); // Saída: Petra
+}
 ```
 
-## Profundidade do processo de capitalização
-Existem diferentes formas de capitalizar uma string, e as duas mostradas acima são apenas algumas delas. O importante é entender as diferentes opções e escolher a mais adequada para cada situação.
+Nesse exemplo, criamos um objeto `StringBuilder` a partir da String original e, em seguida, usamos o método `setCharAt ()` para alterar o caractere na posição 0 para maiúsculo.
 
-Além disso, é importante lembrar que a capitalização de strings também depende da linguagem utilizada. Em alguns idiomas, como o alemão, existem regras específicas para a capitalização de palavras.
+## Mergulho profundo
 
-Portanto, é fundamental que os desenvolvedores tenham conhecimento sobre as particularidades linguísticas e as melhores práticas ao lidar com strings em seus projetos.
+Além das abordagens utilizadas anteriormente, na verdade, existem várias formas de capitalizar uma String em Java. Por exemplo, a classe `org.apache.commons.lang3.StringUtils` fornece o método `capitalize ()`, que também pode ser usado para capitalizar uma String.
+
+```Java
+public static String capitalizeString(String str) {
+    return StringUtils.capitalize(str);
+}
+
+public static void main(String[] args) {
+    String nome = "aluÍsio";
+    System.out.println(capitalizeString(nome)); // Saída: Aluísio
+}
+```
+
+Esse método também é capaz de lidar com Strings que contêm caracteres especiais, como no exemplo acima.
 
 ## Veja também
-- [Documentação oficial do Java sobre o método toUpperCase()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)
-- [Tutorial sobre como capitalizar strings em Java](https://www.baeldung.com/java-capitalize-string)
+
+- [Documentação oficial do Java para o método `toUpperCase ()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)
+- [Documentação oficial do Java para o método `setCharAt ()`](https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html#setCharAt-int-char-)
+- [Documentação oficial do Java para a classe `org.apache.commons.lang3.StringUtils`](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html)

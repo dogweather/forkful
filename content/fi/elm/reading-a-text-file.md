@@ -1,51 +1,41 @@
 ---
-title:    "Elm: Tiedoston lukeminen"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/elm/reading-a-text-file.md"
+title:                "Elm: Tekstitiedoston lukeminen"
+programming_language: "Elm"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi 
+## Miksi lukea tekstitiedosto?
 
-Tervehdys kaikille! Tiedän että monille lukijoihin innostaa oppia uusi ohjelmointikieli. Tänään keskitymme yhteen suosikkeihin - Elm. Tässä blogikirjoituksessa aiomme käsitellä, miksi sinun kannattaisi lukea tekstitystiedostoja Elm-ohjelmointikielellä ja miten se tehdään.
+Tekstitiedostot ovat yleinen tapa tallentaa ja jakaa tietoa, joten on tärkeää osata lukea niitä. Elm-ohjelmointikielellä tekstien lukeminen on helppoa ja tehokasta. Seuraavassa opas siitä, miten se tapahtuu.
 
-## Miten
+## Miten lukea tekstitiedosto Elmillä?
 
-Elmillä on useita tapoja lukea tiedostoja. Yksi yleisimmistä tavoista on käyttää "elm/file" -moduulia. Se tarjoaa tarvittavat toiminnot tiedostojen avaamiseen ja käsittelyyn.
+```Elm
+import File exposing (readTextFile)
+import Task exposing (attempt)
 
-```
-import File
-import File2 as File
+-- Avataan tiedosto ja luetaan sen sisältö
+result = Task.attempt readFile (File.readTextFile "tekstitiedosto.txt")
 
-
-tiedostoTuloste = File.open "tiedosto.txt" File.Read 
-case tiedostoTuloste of 
- File.
-  Datei.DesireSuccess muodostaa success  
-  tiedosto successi 
-     tiedostoSelin <-Eine.DeFile (folioGantt tty kieli) Nothing 
-
-  Datei.DesireError error-ilmoitus 
-    error <| toString error-ilmoitus 
+-- Tulostetaan tiedoston sisältö konsoliin
+readFile result = 
+    case result of 
+        Ok content -> 
+            Debug.log "Tekstin sisältö:" content
+        Err error -> 
+            Debug.log "Virhe:" error
 ```
 
-Koodi avaa tiedoston "tiedosto.txt" ja palauttaa tuloksen. Jos tiedoston avaaminen onnistuu, "success" -mutantti saadaan ja tiedosto luetaan "tiedostoSelain" -muuttujaan. Jos tiedoston avaamisessa ilmenee virhe, "error" -muuttujassa on virheilmoitus.
+Tässä esimerkissä ensin tuodaan File-kirjasto, jolla voidaan lukea tekstitiedostoja. Sitten tehdään tehtävä result, joka kutsuu readFile-funktiota, joka lukee tiedoston ja palauttaa sen sisällön. Lopuksi content tai mahdollinen virhe tulostetaan konsoliin.
 
-## Syventävä tarkastelu
+## Syvemmällä tekstitiedoston lukemisessa
 
-Voit myös käyttää "elm/http"-moduulia tiedostojen lukemiseen HTTP-pyynnöillä. Tämä on hyödyllinen, jos haluat hakea tiedoston suoraan verkosta.
-
-```
-get "http://www.example.com/tiedosto.txt"
-    |> Task.attempt ParseResponse
-```
-
-Tässä koodiesimerkissä käytetään "elm/http"-moduulia pyyntöön tiedostosta "tiedosto.txt" ja vastaus välitetään "ParseResponse" -funktiolle.
+Voit myös käsitellä tekstitiedoston sisältöä enemmän. Esimerkiksi voit käyttää String-moduulia etsimään tietoa tai käyttää Json-dekoodausta jos tiedostossa on JSON-muotoista dataa. Mahdollisuudet ovat rajattomat!
 
 ## Katso myös
-
-Lisätietoja tiedostojen lukemisesta Elm-ohjelmointikielellä löydät seuraavista linkeistä:
-
-- Elm tiedoston dokumentaatio: https://package.elm-lang.org/packages/elm/file/latest/File
-- Elm http dokumentaatio: https://package.elm-lang.org/packages/elm/http/latest/Http
+- [Elm File -kirjasto](https://package.elm-lang.org/packages/elm/file/latest/File)
+- [Elm String -moduuli](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [JSON-dekoodaus Elmillä](https://guide.elm-lang.org/error_handling/json.html)

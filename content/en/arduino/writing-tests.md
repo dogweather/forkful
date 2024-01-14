@@ -1,40 +1,47 @@
 ---
-title:    "Arduino recipe: Writing tests"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/writing-tests.md"
+title:                "Arduino recipe: Writing tests"
+programming_language: "Arduino"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Arduino programming is becoming increasingly popular among hobbyists and beginners due to its ease of use and versatile applications. However, as with any type of coding, it is important to ensure the reliability and functionality of your code. This is where writing tests comes in handy. Writing tests can help you catch errors and bugs before they become a major problem, making your Arduino projects more efficient and successful.
+As an Arduino programmer, you know the importance of writing clean and efficient code. But have you ever considered the benefits of writing tests for your code? Writing tests helps catch bugs and errors early on, ensuring a smoother development process and a more stable final product. In this blog post, we'll discuss how to write tests for your Arduino projects.
 
 ## How To
 
-Writing tests in Arduino can be done using the built-in Arduino Unit Testing library. To begin, first download and install the library in your Arduino IDE. Once installed, you can start writing tests by creating a new tab in your Arduino sketch and naming it "test". Here is an example of a simple test case for a function that adds two numbers:
+First, let's take a look at a simple code snippet for an Arduino LCD display:
 
-```Arduino
-#include <ArduinoUnit.h>
-
-test(simpleAddition) {
-  int result = add(2, 3); // Call the function you want to test
-  assertEqual(5, result); // Check if the result is equal to the expected output
-}
+```
+Arduino - LCD Display
 ```
 
-Once you have written your test cases, you can run them by clicking on the "Verify" button in your IDE. This will compile the tests and give you a detailed report of which tests passed and which ones failed. 
+In order to write tests for this code, we can use platforms like Arduino CLI or Arduino Unit to simulate and verify our code's behavior. These tools allow us to create test suites with specific input values and expected output. Let's take a look at an example:
+
+```
+Arduino - LCD Display Test
+
+input: "Hello World"
+expected output: "Hello World"
+```
+
+Here, we are simulating the input of text to be displayed on the LCD and verifying if the expected output matches the actual output.
 
 ## Deep Dive
 
-Writing tests not only helps catch bugs, but it also encourages you to write more modular and reusable code. By breaking down your code into smaller functions, you can easily test and debug each function individually. This also makes it easier to make changes or add new features without affecting the entire code base.
+Now, let's dive deeper into writing effective tests for your Arduino projects. You can write tests for individual functions and modules, as well as for the overall project. Make sure to cover all possible scenarios and inputs for each test case. You can also use mock objects to simulate hardware interactions for more complex projects.
 
-Another benefit of writing tests is that it helps you understand your code better. As you write test cases, you are forced to think about all possible scenarios and inputs for your code, giving you a deeper understanding of how your code works.
+Another important aspect to consider is the setup and teardown of test environments. It's important to have a clean and consistent environment for each test to ensure accurate results. You can also use assertions in your tests to verify specific conditions and throw errors if they are not met.
 
-Additionally, writing tests can save you time and effort in the long run. Instead of manually testing your code every time you make changes, you can simply run your test cases and ensure that everything is functioning as expected.
+Lastly, regularly running tests throughout your development process will help catch and fix bugs early on, saving you time and effort in the long run.
 
 ## See Also
 
-- [Arduino Unit Testing Documentation](https://github.com/mmurdoch/arduinounit)
-- [How to Write Great Arduino Tests](https://blog.brickelectric.com/how-to-write-great-arduino-tests/)
-- [Top 5 Arduino Testing Tips for a Rock Solid Project](https://www.tentaclee.com/tutorials/arduino-testing-tips/)
+- [Introduction to Arduino Unit](https://www.arduino.cc/en/Guide/ArduinoUnit)
+- [Writing tests for Arduino with PlatformIO](https://docs.platformio.org/en/latest/plus/pio-unit-testing.html)
+- [Mockito for simulating hardware on Arduino](https://www.oreilly.com/library/view/arduino-cookbook-2nd/9781449321185/ch09.html)
+
+With the help of these tools and techniques, you can ensure that your Arduino code is efficient, reliable, and bug-free. Happy testing!

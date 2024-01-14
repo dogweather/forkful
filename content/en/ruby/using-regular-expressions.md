@@ -1,65 +1,55 @@
 ---
-title:    "Ruby recipe: Using regular expressions"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/ruby/using-regular-expressions.md"
+title:                "Ruby recipe: Using regular expressions"
+programming_language: "Ruby"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
 
-Have you ever encountered a situation where you need to find and manipulate specific patterns within a text? Regular expressions, also known as regex, can be a powerful tool in your programming toolkit for solving such problems. With regex, you can search, replace, and extract strings with specific patterns, making it a valuable skill for any programmer to have.
+Regular expressions are a powerful tool in the world of programming. They allow us to search and manipulate text in a flexible and efficient manner. Learning how to use regular expressions can save you time and effort by automating tasks that would otherwise be tedious to do manually. If you want to become a more efficient programmer, regular expressions are a skill worth mastering.
 
 ## How To
 
-To use regular expressions in Ruby, you first need to require the `regexp` library:
+To use regular expressions in Ruby, we first need to create a regular expression object using the `Regexp` class. This object contains the pattern we want to match within a string. We can create a Regexp object using `/.../` or `%r{...}` delimiters. For example:
 
 ```Ruby
-require 'regexp'
+/\d{3}-\d{3}-\d{4}/  # matches a phone number in the format of XXX-XXX-XXXX
+%r{^\w+@\w+\.(com|net|org)}  # matches an email address
 ```
 
-Next, you can either create a new regex object with the `Regexp.new` method or use the regex literal notation by enclosing your pattern within forward slashes. For example:
+Once we have our Regexp object, we can use it with the `match` method to find matches within a string. For example:
 
 ```Ruby
-/program/ #this is a regex literal
-Regexp.new("ruby") #this creates a new regex object
+phone_number = "555-123-4567"
+phone_number.match(/\d{3}-\d{3}-\d{4}/) # returns a MatchData object
 ```
 
-To apply a regex to a string, you can use the `=~` operator, which returns the first index where a match is found. You can also use the `match` method to get a match object with more details about the match. For example:
+We can also use regular expressions with the `sub` and `gsub` methods to replace text in a string. For example:
 
 ```Ruby
-"This is a Ruby programming blog".match(/Ruby/) #returns a match object
-"This is a Ruby programming blog" =~ /Ruby/ #returns 10
+text = "Hello, my name is John."
+text.gsub(/John/, "Jane") # returns "Hello, my name is Jane."
 ```
-
-You can also use special characters and modifiers to make your regular expressions more robust. Some commonly used characters and modifiers include:
-
-- `.` matches any single character
-- `*` matches the preceding character or group zero or more times
-- `+` matches the preceding character or group one or more times
-- `?` matches the preceding character or group zero or one time
-- `^` matches the start of a string
-- `$` matches the end of a string
-- `i` modifier makes the regex case insensitive
-- `m` modifier allows `^` and `$` to match the start and end of a line instead of the whole string
-
-You can test and experiment with regular expressions using online regex tools like [Rubular](https://rubular.com/).
 
 ## Deep Dive
 
-Regular expressions can get quite complex and advanced, but some additional features and syntax to note include:
+Regular expressions can get quite complex, but there are some common symbols and shortcuts that you should be familiar with:
 
-- Character classes: enclosed in square brackets `[]`, these match any one character within the brackets. For example, `[aeiou]` will match any vowel.
-- Alternation: using the `|` operator, you can match multiple patterns, similar to a logical OR. For example, `cat|dog` will match either "cat" or "dog".
-- Capturing groups: using parentheses `()`, you can define subpatterns within a larger regex and extract these specific matches later. For example, `/(Ruby) programming/` will capture "Ruby" in a match object.
-- Quantifiers: modifiers that specify the number of times a character or group should be matched. For example, `{3}` matches exactly 3 times, `{3,}` matches 3 or more times, and `{3,8}` matches 3 to 8 times.
-- Lookaround: these specify boundaries for a match but do not include the characters in the final match. For example, `(?=Ruby)` matches "Ruby programming" but only includes "Ruby" in the final match.
+- `.` matches any single character
+- `[]` matches any character within the brackets
+- `+` matches one or more occurrences of the previous character or group
+- `*` matches zero or more occurrences of the previous character or group
+- `\` is used to escape special characters, such as `.` or `[]`
 
-To learn more about regular expressions, you can refer to the [Ruby documentation](https://ruby-doc.org/core-3.0.1/Regexp.html) and other online tutorials and resources.
+It's important to note that regular expressions are case-sensitive by default, but you can use the `i` modifier to make them case-insensitive. Additionally, the `m` modifier can be used to make a regular expression match across multiple lines.
 
-See Also
+Be sure to also check out the Ruby documentation for more information and examples on using regular expressions.
 
-- [Rubular](https://rubular.com/)
-- [RegexOne](https://regexone.com/)
-- [Ruby Regex Guide](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Regular-Expressions.info](https://www.regular-expressions.info/)
+## See Also
+
+- [Ruby Regular Expressions](https://ruby-doc.org/core-2.7.1/Regexp.html)
+- [Rubular](https://rubular.com/) - a handy online tool for testing regular expressions
+- [Regular Expression Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/ruby) - a quick reference guide for common regular expression symbols and shortcuts.

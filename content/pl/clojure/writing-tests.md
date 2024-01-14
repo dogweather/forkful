@@ -1,64 +1,45 @@
 ---
-title:    "Clojure: Pisanie testów"
-keywords: ["Clojure"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-tests.md"
+title:                "Clojure: Pisanie testów"
+programming_language: "Clojure"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
 
-Testowanie kodu jest nieodłączną częścią procesu programowania. Pomaga zapewnić, że nasz kod działa poprawnie, a także ułatwia zmiany i rozwój naszej aplikacji. Jest to również ważny element wydajnego i niezawodnego tworzenia oprogramowania.
+Testowanie jest nieodłącznym elementem procesu programowania. Pisząc testy, możemy upewnić się, że nasz kod działa zgodnie z oczekiwaniami i uniknąć błędów, co przekłada się na lepszą jakość naszych aplikacji. W ten sposób także poprawiamy swoje umiejętności pisania kodu, ponieważ testowanie wymaga od nas myślenia w sposób bardziej zorganizowany i dokładny.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby napisać testy w Clojure, musimy najpierw zainstalować narzędzie o nazwie `lein-test-refresh`. Możemy to zrobić za pomocą polecenia `lein plugin install lein-test-refresh`. Następnie, w naszym projekcie, musimy dodać poniższą linię do pliku `project.clj`:
-
-```
-:profiles {:dev {:dependencies [[org.clojure/test.check "RELEASE"]
-                                [org.clojure/test.check.clj "RELEASE"]]}}
-```
-
-Teraz, możemy utworzyć plik `test/core_test.clj`, w którym będziemy umieszczać nasze testy. Przykładowy test może wyglądać tak:
+Aby napisać testy w Clojure, możemy skorzystać z biblioteki [clojure.test](https://clojuredocs.org/clojure.test). Przykładowy kod testujący wyglądałby tak:
 
 ```Clojure
-(ns my-project.core-test
- (:require [clojure.test :refer :all]
-           [my-project.core :as core]
-           [clojure.test.check.generators :as gen]))
+(ns example.core-test
+  (:require [clojure.test :refer :all]
+            [example.core :refer :all]))
 
-;; Testowanie funkcji dodawania
-(deftest test-addition
-  (is (= 5 (core/addition 2 3)))
-  (is (= -2 (core/addition -5 3)))
-  (is (= 10 (core/addition 0 10))))
+(deftest add-numbers-test
+  (is (= 4 (add-numbers 2 2))))
 
-;; Testowanie funkcji mnożenia z użyciem generatora liczb całkowitych
-(deftest test-multiply
-  (is (= 8 (core/multiply (* 2 -4))))
-  (is (= 25 (core/multiply 5 -5))))
-  (is (= 0 (core/multiply 23153 0)))
-  (is (= -100 (core/multiply 10 -10))))
+(deftest multiply-numbers-test
+  (is (= 10 (multiply-numbers 5 2))))
 
-;; Testowanie funkcji z użyciem własnego generatora
-(deftest test-custom-generator
-  (for-all [x (gen/elements [:a :b :c :d])]
-    (is (= x (core/custom-function x)))))
+(run-tests)
 
-;; Uruchamiamy testy automatycznie za pomocą `lein test-refresh`
-;; Testy będą się automatycznie uruchamiać przy każdej zmianie w kodzie
-;; i pokażą nam wyniki w czasie rzeczywistym.
 ```
 
-## Głębszy zanurzanie się
+Powyższy kod testuje funkcje `add-numbers` i `multiply-numbers`, sprawdzając czy zwracają one poprawne wyniki dla podanych argumentów. Po uruchomieniu testów otrzymamy informację, czy testy przeszły pomyślnie, czy też nie. Jeśli któryś z testów nie przejdzie, oznacza to, że nasza funkcja nie działa poprawnie i musimy ją poprawić.
 
-Aby napisać dobre testy, warto poznać narzędzie `clojure.test`. Pozwala ono na definiowanie asercji za pomocą funkcji `is`, `testing` oraz `are`. Możemy również wykorzystać w nim generatora testów `clojure.test.check` do testowania naszych funkcji z różnymi zestawami danych.
+## Głębszy zanurzenie
 
-Poza tym, warto pamiętać, aby testować swoje funkcje nie tylko dla przypadków typowych, ale również dla skrajnych wartości oraz niepoprawnych danych. Testy powinny mieć za zadanie sprawdzić, czy nasz kod jest odporny na błędy i niezgodne dane. 
+Pisanie testów w Clojure polega głównie na wykorzystywaniu makr dostępnych w bibliotece `clojure.test`, takich jak `deftest` czy `is`. Możemy także tworzyć własne makra do testowania naszych funkcji, co pozwala nam na większą elastyczność w sposobie tworzenia testów.
 
-## Zobacz także
+Warto także pamiętać o tzw. "mockowaniu" (ang. mocking), czyli symulowaniu pewnych elementów naszego kodu w celu przetestowania innych funkcji. Biblioteka [midje](https://github.com/marick/Midje) jest przykładem narzędzia, które ułatwia nam to zadanie.
 
-- [Dokumentacja Clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Dokumentacja Clojure.test.check](https://clojure.github.io/test.check/)
-- [Przykładowy projekt z testami w Clojure](https://github.com/thma/Test-Driven-Clojure-Book-Code)
-- [Poradnik Test-Driven Development w Clojure](https://devbridge.com/articles/clojure-test-driven-development/)
+## Zobacz również
+
+- [Oficjalna dokumentacja Clojure](https://clojure.org/)
+- [Clojure docs - test library](https://clojuredocs.org/clojure.test)
+- [Clojure for the Brave and True - rozdział o testowaniu](https://www.braveclojure.com/testing/)

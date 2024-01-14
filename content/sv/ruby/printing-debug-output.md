@@ -1,54 +1,51 @@
 ---
-title:    "Ruby: Utskrift av felsökningsutmatning"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/printing-debug-output.md"
+title:                "Ruby: Skriv ut felsökningsutdata"
+programming_language: "Ruby"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att skriva program är en komplex process som kan innehålla många fel och buggar. Att använda sig av debug output, eller utmatning av felsökningsinformation, kan hjälpa dig att identifiera och lösa problem i ditt Ruby-program. Det är ett sätt att få en bättre förståelse för vad som händer i koden och varför, vilket är avgörande för att skapa ett väl fungerande program.
+Ibland när du programmerar i Ruby kan det hända att du stöter på buggar eller fel i din kod. För att hitta dessa fel och kunna åtgärda dem behöver du ett sätt att visa vad som händer i din kod under körningen. Det är där utskrift av debug information kommer in.
 
-## Hur man gör det
+## Så här gör du
 
-För att skriva ut debug output i ditt Ruby-program, använd dig av puts metoden. Den tar in en parameter och skriver ut den till terminalen. En vanlig teknik är att skriva ut variabler eller delar av koden för att se värdet eller stegen den går igenom. Här nedan följer ett exempel:
-
-```Ruby
-text = "Hej världen"
-puts text
-```
-
-Detta kommer att skriva ut "Hej världen" i terminalen. Om du vill skriva ut värdet på en variabel, till exempel en array, kan du göra det så här:
+Det finns ett enkelt sätt att skriva ut debug information i Ruby genom att använda metoden `puts()`. Du kan lägga till `puts()` i olika delar av din kod för att visa information om vad som händer vid varje steg.
 
 ```Ruby
-numbers = [1, 2, 3, 4]
-puts numbers.inspect
+puts("Debug utskrift här")
 ```
 
-Detta kommer att skriva ut hela arrayen med dess innehåll. Du kan också skriva ut flera variabler på samma rad genom att använda en komma mellan dem.
+Du kan också använda `p()` metoden för att skriva ut mer detaljerad information om ett specifikt objekt.
 
 ```Ruby
-name = "Lisa"
-age = 27
-puts "Namn: #{name}, Ålder: #{age}"
+p(objekt)
 ```
 
-Detta kommer att skriva ut "Namn: Lisa, Ålder: 27". Genom att använda interpolation (#{}), kan du inkludera variabler i en sträng för att skriva ut deras värden.
+Även om dessa metoder är enkla kan de vara mycket hjälpsamma när du behöver förstå vad som händer i din kod.
 
 ## Djupdykning
 
-Förutom att skriva ut variabler och värden, kan du även använda dig av andra metoder för att få mer detaljerad debug output. En vanlig metod är att använda sig av "puts messages" för att skriva ut meddelanden i olika delar av koden för att följa dess exekvering. Du kan också använda dig av "binding.pry" för att få programmet att pausa vid en viss del av koden och sedan undersöka variabler och göra ändringar i realtid.
+Det finns flera sätt att använda utskrift av debug information i Ruby. En annan metod som kan vara användbar är att använda `inspect()` metoden för att få en detaljerad lista på alla attribut och värden för ett objekt.
 
-En annan användbar metod är ".inspect" eller ".to_s" som kan användas för att få ut mer detaljerad information om variabler och objekt. Detta kan vara särskilt användbart när du arbetar med objekt av olika klasser där standardutskriften inte ger tillräckligt med information.
+```Ruby
+puts(objekt.inspect)
+```
+
+Du kan också använda `gets()` metoden för att få input från användaren och sedan skriva ut det för att kontrollera om värdet är korrekt.
+
+```Ruby
+input = gets()
+puts("Användarens input var: #{input}")
+```
+
+En annan fördel med att använda utskrift av debug information är att det kan hjälpa dig att få en bättre förståelse för hur din kod fungerar och hjälpa dig att förbättra den.
 
 ## Se även
 
-Här är några användbara resurser för att lära sig mer om debugging i Ruby:
-
-- [Ruby on Rails Guides - Debugging](https://guides.rubyonrails.org/debugging_rails_applications.html)
-- [Pry gem official documentation](https://github.com/pry/pry)
-- [Bloggpost från Thoughtbot - "Debugging like a boss with Pry"](https://thoughtbot.com/blog/debugging-like-a-boss-with-pry)
-- [Ruby's official documentation for built-in classes and modules](https://ruby-doc.org/core-2.6/)
-
-Genom att använda dig av debug output kan du effektivt felsöka ditt Ruby-program och skapa ett bättre fungerande program. Med olika tekniker och verktyg tillgängliga, kan du enkelt spåra fel och förbättra din kod. Ta dig tid att lära dig mer om debugging för att bli en mer effektiv Ruby-programmerare.
+- [Ruby dokumentation](https://www.ruby-lang.org/sv/documentation/)
+- [Debugging med pry](https://rubygems.org/gems/pry)
+- [Ruby for nybörjare](https://learnrubythehardway.org/book/ex46.html)

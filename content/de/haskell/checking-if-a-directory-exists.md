@@ -1,33 +1,37 @@
 ---
-title:    "Haskell: Überprüfen, ob ein Verzeichnis existiert"
-keywords: ["Haskell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/haskell/checking-if-a-directory-exists.md"
+title:                "Haskell: Überprüfen, ob ein Verzeichnis existiert."
+programming_language: "Haskell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Überprüfen, ob ein Verzeichnis existiert, kann hilfreich sein, um sicherzustellen, dass unser Programm auf die richtigen Dateien zugreift und um Fehler zu vermeiden.
+Das Überprüfen, ob ein bestimmtes Verzeichnis existiert, ist für viele Programmierer ein wichtiger Schritt in ihren Projekten. Es kann helfen, Fehler zu vermeiden und sicherzustellen, dass der Code reibungslos ausgeführt wird.
 
-## Anleitung
-Um in Haskell zu prüfen, ob ein Verzeichnis existiert, können wir die Funktion `doesDirectoryExist` aus dem Modul `System.Directory` verwenden.
+## Wie
+Eine Möglichkeit, dies in Haskell zu tun, ist die Verwendung der Funktion `doesDirectoryExist` aus dem Modul `System.Directory`. Dies führt eine Überprüfung des angegebenen Pfades durch und gibt `True` zurück, wenn es sich um ein Verzeichnis handelt, und `False`, wenn nicht.
 
 ```Haskell
-import System.Directory (doesDirectoryExist)
+import System.Directory
 
-main :: IO ()
+main :: IO()
 main = do
-    dirExists <- doesDirectoryExist "pfad/zum/verzeichnis"
-    if dirExists
-        then putStrLn "Das Verzeichnis existiert."
-        else putStrLn "Das Verzeichnis existiert nicht."
+  let directory = "Mein/Verzeichnis"
+  exist <- doesDirectoryExist directory
+  if exist
+    then putStrLn "Das Verzeichnis existiert!"
+    else putStrLn "Das Verzeichnis konnte nicht gefunden werden."
 ```
+Dieses Beispiel prüft, ob das Verzeichnis "Mein/Verzeichnis" existiert und gibt entsprechend eine Nachricht aus.
 
-Die Ausgabe wird je nach Ergebnis entweder "Das Verzeichnis existiert." oder "Das Verzeichnis existiert nicht." sein.
+## Deep Dive
+Die Funktion `doesDirectoryExist` nutzt unter der Haube die Haskell-Funktion `getPermissions`, um die Berechtigungen für ein bestimmtes Verzeichnis zu überprüfen. Diese Funktion gibt ein `Permissions`-Objekt zurück, das Informationen wie Schreib- und Leserechte enthält. Anhand dieser Informationen entscheidet `doesDirectoryExist`, ob es sich um ein Verzeichnis handelt oder nicht.
 
-## Tiefentauchen
-Die Funktion `doesDirectoryExist` führt eine systemabhängige Operation aus. Das bedeutet, dass die Überprüfung auf Windows möglicherweise anders funktioniert als auf Linux oder macOS. Bei der Verwendung dieser Funktion sollten wir daher darauf achten, dass unser Code plattformunabhängig ist.
+Eine wichtige Sache zu beachten ist, dass `doesDirectoryExist` nur überprüft, ob das Verzeichnis existiert und keine tieferen Überprüfungen durchführt. Wenn also ein Fehler auftritt oder das Verzeichnis aus irgendeinem Grund nicht zugänglich ist, wird trotzdem `True` zurückgegeben. Es ist daher wichtig, zusätzliche Überprüfungen durchzuführen, um sicherzustellen, dass das Verzeichnis wirklich existiert.
 
 ## Siehe auch
-- [Haskell Dokumentation zu `System.Directory`](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Ein Beispiel zur Verwendung von `doesDirectoryExist`](https://wiki.haskell.org/How_to_check_if_a_given_file_or_directory_exists_in_Haskell)
+- https://hackage.haskell.org/package/directory-1.3.4.0/docs/System-Directory.html#v:doesDirectoryExist
+- https://hackage.haskell.org/package/directory-1.3.4.0/docs/System-Directory.html#v:getPermissions
+- https://hackage.haskell.org/package/directory-1.3.4.0/docs/System-Directory.html#t:Permissions

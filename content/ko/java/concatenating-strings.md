@@ -1,48 +1,54 @@
 ---
-title:    "Java: 문자열 연결하기"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/ko/java/concatenating-strings.md"
+title:                "Java: 문자열 연결하기"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
 
-문자열 연결을 하는 이유는 매우 단순합니다. 
-다양한 문자열을 결합해서 하나의 새로운 문자열로 만들 수 있기 때문입니다. 
-이는 문자열을 다루는 데 있어 매우 유용한 기능입니다.
+작성된 언어를 사용하는 프로그래머라면 당신은 문자열을 연결해보았을 것입니다. 하지만 왜 문자열 연결을 하는 것인지 궁금하셨나요? 이 블로그 포스트에서는 이에 대해 알아보겠습니다.
 
 ## 어떻게
 
+먼저, 문자열 연결의 기본적인 사용법을 알아보겠습니다. 코드 블록에서 ```Java``` 를 사용하여 예제와 출력을 보여줄 것입니다.
+
 ```Java
-String playerName = "John";
-String game = "Minecraft";
-String message = playerName + " has just entered the world of " + game;
-System.out.println(message);
+String str1 = "Hello ";
+String str2 = "World!";
+String result = str1 + str2;
+System.out.println(result);
 ```
-**출력 결과:**
-John has just entered the world of Minecraft
+출력:
+```
+Hello World!
+```
 
-문자열을 연결하기 위해서는 "+" 연산자를 사용하면 됩니다. 
-위의 예시 코드처럼, 여러 개의 문자열을 "+"로 연결할 수 있습니다. 
-연결된 문자열은 새로운 변수에 저장할 수도 있고, 바로 출력할 수도 있습니다.
+또한, 문자열 연결의 강력한 기능 중 하나는 변수 뿐만 아니라 바로 값을 넣어 연결할 수 있다는 점입니다. 예를 들어,
 
-## 딥 다이브
+```Java
+String name = "John";
+int age = 25;
+String result = "My name is " + name + " and I am " + age + " years old.";
+System.out.println(result);
+```
 
-문자열을 연결하는 데는 여러 가지 방법이 있습니다. 가장 기본적인 방법은 위의 예시 코드처럼 "+" 연산자를 사용하는 방법입니다. 
-또 다른 방법으로는 **StringBuffer** 또는 **StringBuilder** 클래스를 사용하는 방법도 있습니다. 
-이들 클래스는 문자열을 바로 연결하는 것이 아니라, 연결될 문자열을 미리 저장해놓고 한 번에 연결하는 방식을 사용합니다. 
-이는 큰 규모의 문자열을 연결할 때 성능의 향상을 가져올 수 있습니다.
+출력:
+```
+My name is John and I am 25 years old.
+```
 
-## 알아두면 좋은 사항
+## 더 알아보기
 
-문자열 연결 시에는 조심해야 할 점이 있습니다. 
-연결할 문자열이 많아지면 많아질수록 성능에 영향을 주기 때문입니다. 
-또한 문자열을 계속 수정하면서 연결하는 일은 원하지 않는 결과를 초래할 수 있습니다. 
-따라서 문자열 연결을 많이 사용할 경우에는 위의 언급한 **StringBuffer**나 **StringBuilder**를 사용하는 것이 좋습니다.
+문자열 연결은 String 클래스의 메소드인 concat()과 비슷합니다. 하지만 문자열 연결을 사용하면 더 간편하고 쉽게 문자열을 합칠 수 있습니다. 또한 문자열 연결은 메모리를 더 효율적으로 관리할 수 있습니다.
 
-## See Also
+## 더 알아보기
 
-- [String Concatenation in Java](https://www.geeksforgeeks.org/string-concatenation-in-java/)
-- [StringBuffer vs StringBuilder in Java](https://www.geeksforgeeks.org/stringbuffer-vs-stringbuilder-in-java/)
-- [Java String 연결 방법 비교](https://www.codeflow.site/ko/article/java-string-concatenation)
+이 블로그 포스트는 문자열 연결의 기본적인 사용법과 강력한 기능에 대해 소개해드렸습니다. 하지만 문자열 연결의 더 많은 기능들을 이용해보시길 추천합니다. 더 많은 정보는 아래의 링크를 확인해주세요.
+
+## 같이 보기
+
+- [Java String 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java 문자열 연결의 효율성에 대한 논문](https://www.cs.nyu.edu/courses/spring11/CSCI-GA.2110-002/lecture7b.pdf)

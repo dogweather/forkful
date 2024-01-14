@@ -1,56 +1,40 @@
 ---
-title:    "C#: Pisanie pliku tekstowego"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/writing-a-text-file.md"
+title:                "C#: Tworzenie pliku tekstowego"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego pisać pliki tekstowe w C#
 
-Pisanie plików tekstowych jest nieodłączną częścią procesu programowania w języku C#. Niezależnie od tego, czy tworzysz prosty program konsolowy czy zaawansowaną aplikację, prawdopodobnie będziesz musiał wczytać lub zapisać dane do pliku tekstowego.
+Pisanie plików tekstowych w języku C# może być bardzo przydatnym narzędziem w pracy programisty. Pliki tekstowe pozwalają na przechowywanie i przetwarzanie danych w czytelnej dla człowieka formie. Mogą one być wykorzystane w różnych zastosowaniach, na przykład do tworzenia raportów, logów, konfiguracji aplikacji czy też prostych baz danych.
 
-## Jak to zrobić?
+# Jak to zrobić
 
-Pisanie do pliku tekstowego w języku C# jest bardzo proste i wymaga tylko kilku linijek kodu. W poniższym przykładzie użyjemy klasy `StreamWriter` do utworzenia i zapisania tekstu do pliku:
+Aby napisać plik tekstowy w języku C#, należy najpierw zaimportować przestrzeń nazw System.IO. Następnie można wykorzystać klasę StreamWriter w celu zapisania danych do pliku. Przykładowy kod może wyglądać następująco:
 
 ```C#
 using System.IO;
 
-// Tworzymy obiekt StreamWriter i przekazujemy mu nazwę pliku oraz true, aby móc dokonywać zapisu do istniejącego pliku.
-StreamWriter sw = new StreamWriter("tekstowy_plik.txt", true);
+// Tworzenie obiektu StreamWriter i pliku "moj_plik.txt"
+StreamWriter sw = new StreamWriter("moj_plik.txt");
 
-// Zapisujemy tekst do pliku i zamykamy obiekt StreamWriter.
-sw.WriteLine("To jest przykładowy tekst do zapisania do pliku.");
+// Zapisanie tekstu do pliku
+sw.WriteLine("To jest przykładowy tekst");
+
+// Zamknięcie pliku
 sw.Close();
 ```
 
-Jeśli chcemy odczytać istniejący plik, możemy użyć klasy `StreamReader`, w następujący sposób:
+Po uruchomieniu powyższego kodu, w bieżącym folderze pojawi się plik "moj_plik.txt" zawierający wpisany przez nas tekst.
 
-```C#
-using System.IO;
+# Głębsze spojrzenie
 
-// Tworzymy obiekt StreamReader i przekazujemy mu nazwę pliku.
-StreamReader sr = new StreamReader("tekstowy_plik.txt");
+Podczas tworzenia pliku tekstowego w C# można wykorzystać wiele różnych metod i klas, takich jak File, FileStream czy też Path. Warto również pamiętać o sposobie zapisu danych w pliku (np. kodowania znaków), aby uniknąć problemów z odczytem tych danych w przyszłości.
 
-// Odczytujemy zawartość pliku linia po linii i wyświetlamy ją w konsoli.
-string linia;
-while((linia = sr.ReadLine()) != null)
-{
-    Console.WriteLine(linia);
-}
-// Zamykamy obiekt StreamReader.
-sr.Close();
-```
+# Zobacz również
 
-Po uruchomieniu powyższego kodu, w konsoli zobaczymy wyjście zawierające tekst zapisany w pliku.
-
-## Gleboki zanurzenie
-
-W przypadku bardziej zaawansowanych działań związanych z pisanym plików tekstowych, warto zapoznać się z innymi klasami dostępnymi w przestrzeni nazw `System.IO`. Na przykład, aby pracować z plikami z kodowaniem Unicode, należy użyć klasy `StreamWriter` z dodatkowym parametrem, który określa kodowanie. Możemy również wykorzystać klasy `File` lub `FileInfo` do wykonywania różnych operacji, takich jak kopiowanie, przenoszenie czy usuwanie plików.
-
-## Zobacz również
-
-- [Dokumentacja języka C# - Pisanie do pliku tekstowego](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)
-- [Tutorial - Jak pisać do pliku tekstowego w C#](https://www.geeksforgeeks.org/c-sharp-program-write-text-file/)
-- [Kurs języka C# - Pisanie do pliku](https://csharp-station.com/Tutorial/CSharp/Lesson23)
+- Dokumentacja języka C# na temat zapisu plików tekstowych: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.streamwriter
+- Przykłady wykorzystania plików tekstowych w celach programistycznych: https://www.c-sharpcorner.com/uploadfile/8911c4/file-handling-in-C-Sharp/

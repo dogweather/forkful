@@ -1,77 +1,70 @@
 ---
-title:    "Arduino recipe: Deleting characters matching a pattern"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/en/arduino/deleting-characters-matching-a-pattern.md"
+title:                "Arduino recipe: Deleting characters matching a pattern"
+programming_language: "Arduino"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Deleting characters matching a pattern can be a useful tool in Arduino programming. It allows you to remove unwanted characters from input data, making it easier to process and use in your code. This can be particularly helpful when working with data from sensors or serial communication.
+Are you tired of manually deleting repetitive characters in your Arduino programming? Or, do you want to save time and effort by automatically deleting characters that match a certain pattern? Deleting characters matching a pattern can be a useful tool in simplifying and streamlining your code. 
 
 ## How To
+To start, we will need to include the string library in our Arduino code. This will allow us to use the `replace()` function which will help us in deleting characters.  
 
-To delete characters matching a pattern in Arduino, we will use the `String` library and its `replace()` function. This function takes in two parameters - the character or pattern you want to replace, and the character you want to replace it with. Let's look at an example:
+```Arduino
+#include <string.h>
 
-```
-Arduino void setup(){
-  Serial.begin(9600);  // initialize serial communication
-}
+void setup() {
 
-void loop(){
-  String data = "Hello, World!"; // create a sample string
-
-  // replace all occurrences of "o" with "e"
-  data.replace("o", "e");
-  Serial.println(data); // output: Helle, Werld!
 }
 ```
 
-In this example, we first initialize serial communication in the setup function. Then in the loop, we create a `String` variable called `data` with the value "Hello, World!". Using the `replace()` function, we replace all occurrences of "o" with "e" in the string, resulting in "Helle, Werld!". Finally, we print the updated string to the serial monitor.
+Next, we will declare a string variable and assign it a value. This value can be any string of characters, but for this example, we will use "Hello World!".
 
-This method can also be used to remove specific characters from a string. For example, if we want to remove all exclamation marks from a string, we can replace them with an empty string, like this:
-
-```
-Arduino void setup(){
-  Serial.begin(9600);  // initialize serial communication
+```Arduino
+void setup() {
+  String myString = "Hello World!"; 
 }
+```
+Now, we can use the `replace()` function to delete any character that matches a given pattern. In this case, we want to delete all the uppercase letters in our string. We can use the `replace()` function to replace the uppercase letters with an empty string, effectively deleting them. 
 
-void loop(){
-  String data = "Helle, Werld!"; // our string with an exclamation mark
+```Arduino
+void setup() {
+  String myString = "Hello World!";
+  myString.replace("H", ""); //replace all uppercase H's with empty string
+  myString.replace("W", ""); //replace all uppercase W's with empty string
+  Serial.println(myString); //prints "ello orld!"
+}
+```
 
-  // replace all "!" with empty string
-  data.replace("!", "");
-  Serial.println(data); // output: Helle, Werld
+We can also use the `replace()` function to delete a specific sequence of characters. For example, if we want to delete the word "World" from our string, we can use the `replace()` function to replace it with an empty string.
+
+```Arduino
+void setup() {
+  String myString = "Hello World!";
+  myString.replace(" World", ""); //replace "World" with empty string
+  Serial.println(myString); //prints "Hello!"
 }
 ```
 
 ## Deep Dive
+The `replace()` function has two parameters, the target character or string and the replacement character or string. It returns a new string with the specified characters replaced. This function can also be used to replace a single character with multiple characters or to replace multiple characters with a single character. 
 
-The `replace()` function in Arduino also allows you to replace multiple characters or patterns at once by using arrays. For example, if we want to replace "o" with "e" and "l" with "z" in our string, we can do it like this:
+Additionally, we can use the `replace()` function to delete characters from a specified index onwards. For example, if we want to delete all characters starting from index 5 in our string, we can use the `replace()` function with a third parameter specifying the number of characters to delete.
 
-```
-Arduino void setup(){
-  Serial.begin(9600);  // initialize serial communication
-}
-
-void loop(){
-  String data = "Helle, Werld!"; // our string with multiple characters to replace
-
-  // create arrays with characters to replace and their replacements
-  char toReplace[] = {'o', 'l'};
-  char replacement[] = {'e', 'z'};
-
-  // replace characters using arrays
-  for(int i=0; i<2; i++){
-    data.replace(toReplace[i], replacement[i]);
-  }
-  Serial.println(data); // output: Heee, Wezrd!
+```Arduino
+void setup() {
+  String myString = "Hello World!";
+  myString.replace(5, 6, ""); //replace all characters from index 5 onwards with empty string
+  Serial.println(myString); //prints "Hello!"
 }
 ```
 
-The `replace()` function can also be used to replace words or phrases with another. Just make sure to include the entire word or phrase and its replacement in double quotes.
+There are also other string manipulation functions that can be combined with the `replace()` function to achieve more complex deletion tasks. These include `substring()` and `indexOf()`. 
 
 ## See Also
-- [String library documentation](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [String replace() function reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+- [Arduino Reference - String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+- [W3Schools - Arduino Strings](https://www.w3schools.com/arduino/arduino_strings.asp)
+- [Tutorialspoint - Arduino String Manipulation](https://www.tutorialspoint.com/arduino/arduino_string_manipulation.htm)

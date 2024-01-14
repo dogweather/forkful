@@ -1,53 +1,46 @@
 ---
-title:    "Gleam: Obtener la fecha actual"
-keywords: ["Gleam"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/gleam/getting-the-current-date.md"
+title:                "Gleam: Obteniendo la fecha actual"
+programming_language: "Gleam"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué obtener la fecha actual con Gleam
+## ¿Por qué obtener la fecha actual?
 
-La fecha actual puede ser una información muy importante en la programación, ya sea para mostrarla en una aplicación o para hacer cálculos basados en la fecha. Con Gleam, es muy sencillo obtener la fecha actual y aprovecharla en tus proyectos.
+Obtener la fecha actual es un paso importante en cualquier programa que estemos desarrollando. Esto nos permite realizar tareas como registrar el momento exacto en que se realizó una acción o programar ciertas actividades para una fecha en particular. En Gleam, obtener la fecha actual es muy fácil gracias a su librería de gestión de fechas y tiempo.
 
 ## Cómo hacerlo
 
-Para obtener la fecha actual en Gleam, podemos usar la función `DateTime.now()` del módulo `Gleam.DateTime`. Esto nos devolverá un valor de tipo `DateTime` que contiene la fecha y hora actual.
+Para obtener la fecha actual en Gleam, simplemente debemos importar la librería `gleam/datetime` y llamar a la función `now()`. Veamos un ejemplo:
 
 ```Gleam
-import Gleam.DateTime
+import gleam/datetime
 
-current_date = DateTime.now()
+let fecha_actual = datetime.now()
 
-IO.debug(current_date)
+debug.log("La fecha actual es: {}", [fecha_actual])
 ```
 
-La salida de este código sería algo así:
+El código anterior nos muestra cómo obtener la fecha actual y luego imprimir un mensaje con la misma fecha en formato de cadena de texto. Si ejecutamos este código, obtendremos el siguiente resultado:
 
-`#DateTime<2020-12-28T13:30:00Z>`
+```
+La fecha actual es: 2021-07-01T12:30:00Z
+```
 
-Podemos ver que la fecha y hora se encuentran en formato ISO 8601, lo que hace que sea muy fácil manipularla o mostrarla en un formato personalizado.
+Como podemos ver, la fecha actual se muestra en formato ISO 8601, lo que facilita su uso en otras funciones. Además, podemos especificar una zona horaria si así lo deseamos.
+
+También podemos hacer uso de la función `now_utc()` para obtener la fecha y hora en coordinación universal (UTC). Esto es útil si necesitamos mantener un registro de la fecha y hora sin importar la zona horaria en la que se encuentre el usuario.
 
 ## Profundizando
 
-Además de obtener la fecha y hora actual, Gleam también nos permite realizar operaciones con fechas, como por ejemplo sumar o restar días, meses o años. Esto se puede lograr con el módulo `Gleam.DateTime.Date` y la función `add_days/2`.
+Además de la función `now()`, la librería `gleam/datetime` nos ofrece otras funciones para manipular fechas y horas, como `format()` para convertir una fecha en una cadena de texto con un formato específico y `parse()` para convertir una cadena de texto en una fecha.
 
-```Gleam
-import Gleam.DateTime.Date
+También podemos utilizar los módulos `Date` y `Time` para obtener información más detallada sobre una fecha o una hora específica. Por ejemplo, podemos obtener el día de la semana o el mes de una fecha o la hora exacta de una hora determinada.
 
-today = Date.now()
-next_week = Date.add_days(today, 7)
+## Vea también
 
-IO.debug(next_week)
-```
-
-La salida sería la fecha actual sumando siete días:
-
-`#DateTime<2021-01-04T00:00:00Z>`
-
-Además, podemos usar funciones como `to_unix_seconds/1` para obtener la fecha actual en formato de segundos desde el Epoch (1 de enero de 1970) o `to_rfc3339/1` para obtener la fecha en formato RFC3339.
-
-## Ver también
-
-- [Documentación oficial de Gleam sobre DateTime](https://gleam.run/modules/datetime.html)
-- [Ejemplo de uso de fechas en Gleam](https://github.com/gleam-lang/gleam/blob/master/lib/gleam/datetime/date.gleam)
+- Documentación oficial de `gleam/datetime`: https://gleam.run/modules/gleam/datetime
+- Ejemplos de uso de `gleam/datetime`: https://github.com/gleam-lang/standard-library/blob/master/gleam/datetime/examples
+- Opciones avanzadas para gestionar fechas y horas en Gleam: https://dev.to/gleam_lang/working-with-dates-and-times-in-gleam-2fo7

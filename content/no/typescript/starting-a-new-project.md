@@ -1,46 +1,57 @@
 ---
-title:    "TypeScript: Å starte et nytt prosjekt"
-keywords: ["TypeScript"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/typescript/starting-a-new-project.md"
+title:                "TypeScript: Å starte et nytt prosjekt"
+programming_language: "TypeScript"
+category:             "Getting Started"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor starte et nytt prosjekt?
+## Hvorfor
 
-Å starte et nytt programmeringsprosjekt kan føles overveldende og utfordrende, men det kan også være veldig givende. Det å lage noe fra bunnen av, og se det utvikle seg til et ferdig produkt, kan være utrolig tilfredsstillende. Å starte et nytt prosjekt gir deg også mulighet til å utforske nye ideer og lære nye programmeringsspråk og verktøy.
+Å starte et nytt programmeringsprosjekt kan være en spennende utfordring for både erfarne og nye utviklere. Det gir muligheten til å utvikle nye ferdigheter, løse komplekse problemer og skape noe unikt. Med TypeScript som programmeringsspråk, kan du ta dine kodingsferdigheter til et nytt nivå og skape robuste og skalerbare applikasjoner.
 
-## Hvordan starte et nytt prosjekt i TypeScript
+## Hvordan
 
-For å starte et nytt prosjekt i TypeScript, må du først sørge for at du har installert TypeScript på datamaskinen din ved å følge disse trinnene:
+For å starte et TypeScript-prosjekt, må du først installere Node.js og TypeScript-kompilatoren på datamaskinen din. Deretter kan du følge disse enkle trinnene:
 
-1. Åpne terminalen og naviger til prosjektmappen din.
-2. Skriv inn kommandoen `npm init` for å initialisere et nytt prosjekt.
-3. Bruk deretter kommandoen `npm install typescript --save-dev` for å installere TypeScript-pakken.
-4. Nå kan du opprette en `tsconfig.json`-fil ved hjelp av kommandoen `tsc --init`, som vil konfigurere TypeScript for prosjektet ditt.
-
-Etter at du har satt opp prosjektet ditt, kan du begynne å skrive TypeScript-kode. Her er et eksempel på en enkel funksjon som legger sammen to tall og returnerer summen:
-
-```typescript
-function addNumbers(a: number, b: number): number {
-  return a + b;
-}
+```
+TypeScript --init
 ```
 
-For å kjøre koden, må du først kompilere den til JavaScript ved hjelp av kommandoen `tsc`, og deretter kan du kjøre den ved å bruke `node`-kommandoen, for eksempel `node myFile.js`.
+Dette vil lage en `tsconfig.json`-fil som lar deg konfigurere prosjektet ditt. Du kan spesifisere filbaner, kompileringsinnstillinger og annen informasjon i denne filen.
 
-## Dypdykk i å starte et nytt prosjekt
+Neste steg er å opprette en `index.ts`-fil hvor du kan skrive TypeScript-kode. For eksempel:
 
-Når du starter et nytt prosjekt, er det viktig å planlegge og organisere det godt. Her er noen tips som kan hjelpe deg å komme i gang:
+```
+let navn: string = "Ola";
+console.log(`Hei ${navn}!`);
+```
 
-- Tenk på hva slags prosjekt du vil lage og hva målet ditt er med det.
-- Gjør litt research for å finne ut hvilke verktøy og teknologier som er best egnet for prosjektet ditt.
-- Husk å ha en tydelig struktur og organisering av filer og mapper i prosjektet ditt.
-- Fokuser på å skrive ren og effektiv kode for å unngå problemer senere i prosjektet.
+Nå kan du kompilere koden din ved å kjøre:
 
-Med disse tipsene i bakhodet, er du klar til å starte et spennende nytt prosjekt i TypeScript!
+```
+tsc index.ts
+```
+
+Dette vil generere en `index.js`-fil som du kan kjøre med Node.js:
+
+```
+node index.js
+```
+
+Konsollen skal nå vise "Hei Ola!" som output.
+
+## Deep Dive
+
+For å få mest mulig ut av ditt nye TypeScript-prosjekt, er det viktig å forstå noen grunnleggende konsepter, som typer og kompileringsfeil.
+
+TypeScript er et typet språk, noe som betyr at du må angi typen til hver variabel og funksjon. Dette gir bedre kodekvalitet og færre feil, da TypeScript vil sjekke for eventuelle typemismatch før kjøring.
+
+Hvis du gjør en feil i koden din og prøver å kompilere, vil TypeScript gi deg en kompileringsfeil som peker på hvor feilen oppstod og hva som må rettes. Dette gjør feilsøking mye enklere og bidrar til å utvikle mer pålitelige applikasjoner.
 
 ## Se også
 
-- [Offisiell TypeScript dokumentasjon](https://www.typescriptlang.org/docs/)
-- [TypeScript kurs på Udemy](https://www.udemy.com/course/understanding-typescript/)
+- [TypeScript-dokumentasjonen](https://www.typescriptlang.org/docs/)
+- [Node.js-nettstedet](https://nodejs.org/en/)
+- [TypeScript: Opprinnelse og Bruk](https://medium.com/@tomsaleeba/typescript-origin-and-use-5e01b4e7ef3e)

@@ -1,69 +1,48 @@
 ---
-title:    "Elm: Génération de nombres aléatoires"
-keywords: ["Elm"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/elm/generating-random-numbers.md"
+title:                "Elm: Générer des nombres aléatoires"
+programming_language: "Elm"
+category:             "Numbers"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi générer des nombres aléatoires en Elm ?
+## Pourquoi
 
-Générer des nombres aléatoires est un aspect important de la programmation, car cela permet d'introduire de l'aléatoire dans les programmes. Cela peut être utile pour créer des jeux, des simulations ou des tests aléatoires. En Elm, il existe plusieurs façons de générer des nombres aléatoires, ce qui le rend très pratique pour différents cas d'utilisation.
+La génération de nombres aléatoires est un concept essentiel dans la programmation. Elle est souvent utilisée pour créer des simulations, des jeux ou pour tester des algorithmes. Avec Elm, il est possible de générer des nombres aléatoires de manière simple et efficace.
 
-## Comment le faire en Elm ?
+## Comment faire
 
-Il existe deux principaux moyens de générer des nombres aléatoires en Elm : en utilisant la fonction `Random.generate` ou en utilisant un générateur défini par l'utilisateur. Voici un exemple de chaque méthode :
+Pour générer un nombre aléatoire dans Elm, il faut d'abord importer le module `Random` :
 
-```
-Elm Random.Generate :
-
-init : ( List Line, Int )
-init =
-  ( [], 0 ) -- Initialise la liste et la seed
-
-generateRandomNumber : Generator Int
-generateRandomNumber =
-  Generator.int 1 10 -- Génère un nombre compris entre 1 et 10
-
-newRandomNumber : Int -> Cmd Msg
-newRandomNumber oldNumber =
-  Random.generate NewNumber generateRandomNumber
-  -- Génère un nouveau nombre et envoie un message avec le nouveau nombre
-
+```Elm
+import Random
 ```
 
-```
-Générateur défini par l'utilisateur :
+Ensuite, il est possible d'utiliser la fonction `generate` pour créer un générateur de nombres aléatoires :
 
-type alias Generator a =
-  Seed -> ( a, Seed ) -- Prend en entrée une seed et renvoie une valeur aléatoire ainsi qu'une nouvelle seed
-
-newGenerator : Int -> Generator Int
-newGenerator max seed =
-  ( seed + 1, (seed * 32573 + 10001) % max ) -- Définit un générateur prenant en compte une valeur max et une seed
-
-getRandomNumber : Int -> Cmd Msg
-getRandomNumber max =
-  let
-    seed = 123 -- Valeur de départ pour la seed
-    result = newGenerator max seed
-  in
-    Random.generate NewNumber result -- Génère un nouveau nombre avec le générateur défini par l'utilisateur
-
+```Elm
+generate : (a -> msg) -> Generator a -> Cmd msg
 ```
 
-Dans ces exemples, nous utilisons les fonctions `Random.generate` et `Generator` pour générer des nombres aléatoires. Dans le premier exemple, nous utilisons la fonction `int` qui génère un nombre entier compris entre une valeur minimale et une valeur maximale données. Dans le deuxième exemple, nous définissons notre propre générateur en utilisant une combinaison de valeurs et de calculs pour obtenir une valeur aléatoire dans une plage définie.
+Cette fonction prend en paramètre une fonction qui va traiter le nombre aléatoire généré et un générateur qui va déterminer le type et la plage des nombres à générer. Par exemple, pour générer un entier entre 1 et 10, on peut utiliser le générateur `Generator.int 1 10` :
 
-## Plongée en profondeur
+```Elm
+generateRandomNumber : Int -> Int -> Cmd msg 
+generateRandomNumber min max = 
+    Random.generate EnteredNumber (Random.int min max)
+```
 
-Lorsque vous utilisez la fonction `Random.generate`, il est important de noter que la seed donnée en entrée doit être différente à chaque fois pour obtenir un résultat différent. Dans le cas contraire, la même valeur aléatoire sera générée à chaque fois. Il est donc recommandé d'utiliser la fonction `Time.now` pour générer une seed unique pour chaque utilisation de la fonction `Random.generate`.
+Pour récupérer le nombre aléatoire et l'utiliser dans notre fonction `EnteredNumber`, on peut utiliser le système de messages et de souscriptions d'Elm.
 
-De plus, il est également possible de combiner plusieurs générateurs en utilisant la fonction `map2` ou la fonction `andThen` pour obtenir des valeurs aléatoires plus complexes ou en utilisant des générateurs spécifiques pour différents types de données, tels que les nombres entiers, les nombres flottants ou les booléens.
+## En profondeur
 
-# Voir aussi
+Il est important de comprendre que la fonction `generate` ne génère pas de nombre aléatoire directement, mais elle crée un effet qui va être géré par le système d'Elm. En utilisant `Cmd.map`, il est possible de manipuler le nombre aléatoire avant qu'il soit transmis à la fonction de traitement.
 
-Voici quelques liens utiles pour en savoir plus sur la génération de nombres aléatoires en Elm :
+De plus, il est recommandé d'utiliser des générateurs globaux plutôt que des générateurs locaux pour éviter la répétition de code.
 
-- [Documentation officielle Elm : Random](https://package.elm-lang.org/packages/elm/random/latest/)
-- [Article sur la génération de nombres aléatoires en Elm](https://www.techtalkshq.com/generating-random-numbers-in-elm/)
-- [Vidéo explicative sur la génération de nombres aléatoires en Elm](https://www.youtube.com/watch?v=mk12Dfu_o8c)
+## Voir aussi
+
+- La documentation officielle sur la génération de nombres aléatoires en Elm : [https://package.elm-lang.org/packages/elm/random/latest/Random](https://package.elm-lang.org/packages/elm/random/latest/Random)
+- Un tutoriel sur la génération de nombres aléatoires en Elm : [https://www.codementor.io/@joshuaaroke/how-to-generate-random-numbers-in-elm-3jfgbmy5u](https://www.codementor.io/@joshuaaroke/how-to-generate-random-numbers-in-elm-3jfgbmy5u)
+- Un article sur l'utilisation de générateurs globaux en Elm : [https://thoughtbot.com/blog/randomizing-elm](https://thoughtbot.com/blog/randomizing-elm)

@@ -1,43 +1,59 @@
 ---
-title:    "C++: Å skrive tester"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/cpp/writing-tests.md"
+title:                "C++: Å skrive tester"
+programming_language: "C++"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Når man skriver C++ programmer er det viktig å sikre at koden fungerer som den skal. En måte å oppnå dette på er å skrive tester for å sjekke om koden gir ønsket resultat. Tester kan også hjelpe til å fange feil og gjøre det enklere å identifisere og fikse dem.
+Å skrive tester i C++ kan virke som en unødvendig og tidkrevende oppgave. Men i virkeligheten kan det være en svært nyttig praksis for å sikre kvaliteten og stabiliteten til koden din. Ved å skrive tester kan du oppdage feil og bugs i koden din tidlig, noe som sparer deg for mye hodebry og tid i fremtiden.
 
 ## Hvordan
 
-For å skrive tester i C++, kan man bruke et test-rammeverk som for eksempel Boost.Test eller Google Test. Disse rammeverkene gjør det enkelt å skrive og kjøre tester.
-
-La oss se på et eksempel på hvordan man kan skrive en test med Boost.Test:
+Det første trinnet for å skrive tester er å inkludere en testramme i prosjektet ditt. En populær testramme for C++ er Google Test. Deretter kan du begynne å skrive tester ved å lage funksjoner som tester ulike deler av koden din. Her er et eksempel på hvordan du kan skrive en enkel test for å sjekke om to tall er like:
 
 ```C++
-#include <boost/test/unit_test.hpp>
+#include <gtest/gtest.h>
 
-BOOST_AUTO_TEST_CASE(test_addition) {
-    int result = 2 + 3;
-    BOOST_CHECK_EQUAL(result, 5);
+TEST(TestEqual, CheckEqual) {
+  int a = 5;
+  int b = 5;
+  EXPECT_EQ(a, b); // forventer at a og b er like
+}
+
+int main(int argc, char** argv) {
+  testing::InitGoogleTest(&argc, argv); // initialiserer testrammen
+  return RUN_ALL_TESTS(); // kjører alle tester i prosjektet
 }
 ```
 
-Her skriver vi en test som sjekker om 2+3 er lik 5. Hvis koden vår fungerer som den skal, vil denne testen passere. Hvis det skulle oppstå en feil, vil testen feile og gi beskjed om hva som gikk galt. Dette gjør det enklere å finne og fikse feil i koden.
+Kjøringen av denne testen vil gi følgende output:
 
-Det er også mulig å sette opp flere tester og kjøre dem samtidig for å sikre at alle deler av koden fungerer som de skal.
+```
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from TestEqual
+[ RUN      ] TestEqual.CheckEqual
+[       OK ] TestEqual.CheckEqual (0 ms)
+[----------] 1 test from TestEqual (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+```
+
+Du kan se at testen har blitt kjørt og bestått siden de to tallene var like.
 
 ## Dypdykk
 
-Når man skriver tester er det viktig å huske å teste ulike scenarioer og grensetilfeller. Det kan være fristende å kun teste de vanlige situasjonene, men det er like viktig å teste for uventede verdier og input.
+Det finnes mange forskjellige typer tester du kan skrive, som for eksempel enhetstester, integrasjonstester og ytelsestester. Det er viktig å velge den riktige typen tester for ditt spesifikke prosjekt. Ved å inkludere tester som dekker alle deler av koden din, kan du være sikker på at koden din fungerer som forventet og at eventuelle endringer ikke påvirker funksjonaliteten til andre deler av koden.
 
-Det kan også være lurt å skrive tester før man implementerer koden, for å sikre at man får de ønskede resultatene og unngå å måtte gjøre store endringer senere.
-
-Å skrive tester kan også bidra til å lage en mer strukturert og modulær kode, da man må tenke på hvordan man skal teste hver del av koden. Dette gjør det lettere å vedlikeholde og forstå koden i fremtiden.
+Å skrive gode tester tar tid og krever en grundig forståelse av koden din. Men det er en investering som definitivt er verdt det i det lange løp. Med gode tester kan du være trygg på at koden din vil fungere som forventet og at du har en solid grunnmur for eventuelle fremtidige endringer.
 
 ## Se også
 
-- [Boost.Test](https://www.boost.org/doc/libs/1_77_0/libs/test/doc/html/index.html)
-- [Google Test](https://github.com/google/googletest)
+- [Google Test dokumentasjon](https://github.com/google/googletest/blob/master/googletest/docs/primer.md)
+- [12 beste C++ testrammer](https://www.descasio.com/blog/the-top-12-c-test-frameworks-for-unit-and-functional-testing/)

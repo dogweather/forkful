@@ -1,30 +1,41 @@
 ---
-title:    "Bash: Tekstin etsiminen ja korvaaminen"
-keywords: ["Bash"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/bash/searching-and-replacing-text.md"
+title:                "Bash: Tekstin etsiminen ja korvaaminen"
+programming_language: "Bash"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi etsiminen ja korvaaminen tekstin kanssa on tarpeellista
 
-Tekstin etsiminen ja korvaaminen on tärkeä osa Bash-ohjelmointia, sillä se säästää aikaa ja vaivaa manuaalisesti muuttaessa tekstiä. Tekstin etsiminen ja korvaaminen on myös hyödyllinen taito käyttääkseen Bash-ohjelmointia laajemmassa kontekstissa.
+Etsiminen ja korvaaminen tekstin kanssa on tärkeä osa käyttäjän ja sovelluksen välisen vuorovaikutuksen parantamista. Se auttaa nopeuttamaan työprosesseja ja säästää aikaa manuaaliselta työltä.
 
-## Kuinka tehdä
+## Miten: Esimerkkejä koodista ja tulostaulukoista, jotka on kirjoitettu Bash-kielellä
 
-Bash tarjoaa useita eri työkaluja tekstin etsimiseen ja korvaamiseen. Yksinkertaisimpia ovat `grep` ja `sed`. Alla on esimerkki komennosta, joka etsii "tekstiä" tiedostosta "tiedosto.txt" ja korvaa sen "uudella tekstillä".
-
-```Bash
-grep -rl "tekstiä" tiedosto.txt | xargs sed -i 's/tekstiä/uusi teksti/g'
 ```
+# Etsi ja korvaa teksti sulkumerkkeissä
+echo "Tervetuloa (Nimi)!" | sed 's/(.*)/John/' 
+```
+Tuloste: Tervetuloa John!
 
-Tässä ensin käytetään `grep`:ia etsimään kaikki rivit, jotka sisältävät "tekstiä" tiedostosta "tiedosto.txt". Tulokset syötetään sitten `xargs`:lle, joka puolestaan syöttää ne `sed`:lle. `sed` sitten korvaa kaikki "tekstiä" esiintymät "uudella tekstillä" käyttäen `-i`-valitsinta pysyvästi muuttaen alkuperäistä tiedostoa.
+```
+# Etsi ja korvaa kaikki esiintymät tekstin sisällä
+echo "Tämä on testilause." | sed 's/testi/koe/g' 
+```
+Tuloste: Tämä on koelause.
 
-## Syvällinen sukellus
+```
+# Tallenna muutokset alkuperäiseen tiedostoon
+sed -i 's/hae/haku/g' tiedosto.txt
+```
+Tämä käsky korvaa kaikki esiintymät "hae" tekstin tiedostossa "haku" tekstillä ja tallentaa muutokset alkuperäiseen tiedostoon.
 
-Tekstin etsiminen ja korvaaminen voi olla monimutkaista, kun joudutaan käsittelemään monimutkaisia säännöllisiä lausekkeita ja erityisiä muuttujia. `sed` tarjoaa kuitenkin monia vaihtoehtoisia ja edistyneitä käyttötapoja, kuten rajaavien merkkien käyttö, rivinumeroiden ja hakulausekkeiden käyttö sekä monen rivin käsittely. On tärkeää ottaa aikaa tutustua `sed`:n dokumentaatioon ja kokeilla erilaisia komentoja ja vaihtoehtoja löytääkseen tehokkaimman tavan ratkaista tietty ongelma.
+## Syvä sukellus: Lisätietoa etsimisestä ja korvaamisesta tekstin kanssa
+
+Etsiminen ja korvaaminen tekstin kanssa on tehokas työkalu Bash-ohjelmoinnissa, ja sitä voidaan käyttää erilaisiin tarkoituksiin. Se voidaan yhdistää muihin komentorivin työkaluihin, kuten awk ja grep, jotta voidaan suorittaa monimutkaisempia tekstin käsittelyä. Sed-komento on myös erittäin monipuolinen ja siinä on erilaisia vaihtoehtoja, kuten "s///g" joka korvaa kaikki esiintymät tiedostossa tai "s///1", joka korvaa vain ensimmäisen esiintymän.
 
 ## Katso myös
-
-- Bashin virallinen dokumentaatio tekstin etsimisestä ja korvaamisesta: https://www.gnu.org/software/bash/manual/html_node/Searching-and-Replacing.html
-- Käytännön esimerkkejä tekstin etsimisestä ja korvaamisesta: https://linuxize.com/post/how-to-find-and-replace-text-string-in-files-in-linux/
+- [Sed-komento: tekstintyöstöura ja sen hyödyt](https://www.tldp.org/LDP/abs/html/textproc.html)
+- [RegEx-opas: ilmaisuja ja säännöllisiä lausekkeita Bashissa](https://www.linux.com/training-tutorials/introducing-regular-expression-tutorial-basics/)
+- [Grep-komento: tekstinhaku ja sen sovellukset Bashissa](https://www.gnu.org/software/grep/manual/grep.html)

@@ -1,42 +1,44 @@
 ---
-title:    "C++: Concatenando cadenas"
-keywords: ["C++"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/cpp/concatenating-strings.md"
+title:                "C++: Concatenando cadenas"
+programming_language: "C++"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-Una de las tareas más comunes en la programación es la concatenación de cadenas de texto. Esta técnica nos permite combinar varias cadenas en una sola, lo que es especialmente útil en la creación de mensajes personalizados o en la obtención de información de diferentes fuentes.
+
+La concatenación de cadenas de texto es una técnica fundamental en la programación en C++. Al combinar varias cadenas en una sola, podemos crear mensajes más complejos y dinámicos, lo que es esencial para crear programas verdaderamente útiles. ¡Sigue leyendo para aprender cómo hacerlo!
 
 ## Cómo hacerlo
-La concatenación de cadenas en C++ es bastante sencilla. Utilizamos el operador "+" para unir dos o más cadenas y el resultado se guarda en una nueva variable. Por ejemplo:
+
+En C++, podemos concatenar cadenas de texto usando el operador "+" o la función "append". Veamos algunos ejemplos:
 
 ```C++
+// Ejemplo con operador "+"
 string nombre = "Juan";
 string apellido = "Pérez";
 string nombre_completo = nombre + " " + apellido;
+cout << nombre_completo << endl;
+// Output: Juan Pérez
+
+// Ejemplo con función "append"
+string mensaje = "Hola";
+string exclamacion = "!";
+mensaje.append(exclamacion);
+cout << mensaje << endl;
+// Output: Hola!
 ```
 
-En este ejemplo, hemos creado tres variables: "nombre", "apellido" y "nombre_completo". La tercera variable contiene la concatenación de las dos primeras, junto con un espacio en blanco para separarlas.
+Como puedes ver, tanto el operador "+" como la función "append" nos permiten combinar diferentes cadenas de texto en una sola. Además, podemos incorporar otros elementos, como espacios o signos de puntuación, para crear mensajes más elaborados.
 
-También podemos usar la función "append" para agregar una cadena al final de otra. Por ejemplo:
+## Inmersión profunda
 
-```C++
-string saludo = "¡Hola ";
-string nombre = "Juan!";
-saludo.append(nombre);
-```
-
-En este caso, la variable "saludo" se actualizará a "¡Hola Juan!".
-
-En cuanto a la salida, podemos imprimir la cadena resultante en la consola utilizando la función "cout" de la biblioteca estándar de C++, o también podemos almacenarla en un archivo de texto para su posterior uso.
-
-## Profundizando
-La concatenación de cadenas puede volverse más complicada cuando se trabaja con diferentes tipos de variables, como números y caracteres especiales. En esos casos, es importante asegurarse de convertir las variables a tipo de datos de cadena antes de realizar la concatenación, para evitar errores en la salida.
-
-Además, hay que tener en cuenta que la concatenación de cadenas puede tener un gran impacto en la eficiencia y el rendimiento del código. Cuando se realizan múltiples concatenaciones en bucles o procesos, puede ser más eficiente utilizar un enfoque diferente, como el uso de un constructor de flujo de cadenas.
+Detrás de la concatenación de cadenas de texto en C++ se encuentra el concepto de arreglos de caracteres o "char arrays". En esencia, cada cadena de texto es un arreglo de caracteres, y al concatenarlas simplemente estamos combinando estos arreglos. Por lo tanto, es importante tener en cuenta que, al modificar una cadena de texto, también podemos estar modificando su arreglo de caracteres subyacente. Esto puede ser especialmente útil al trabajar con cadenas de caracteres en un contexto más amplio.
 
 ## Ver también
-- [Documentación oficial de C++ sobre la concatenación de cadenas] (https://es.cppreference.com/w/cpp/string/basic_string/operator%2B)
-- [Ejemplos de concatenación de cadenas en C++] (https://www.delftstack.com/es/howto/cpp/concatenate-strings-in-cpp/)
+
+- [Documentación oficial de C++ sobre cadenas de texto](https://en.cppreference.com/w/cpp/string/basic_string)
+- [Cómo imprimir variables en C++](https://platzi.com/blog/impresion-de-variables-en-cpp/)
+- [Cómo crear estructuras de control en C++](https://platzi.com/blog/estructuras-de-control-cpp/)

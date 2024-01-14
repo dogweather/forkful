@@ -1,58 +1,51 @@
 ---
-title:    "Arduino: 打印调试输出"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/printing-debug-output.md"
+title:                "Arduino: 打印调试输出"
+programming_language: "Arduino"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要打印调试输出
+# 为什么
+有时候在进行Arduino编程时，我们会遇到一些问题，比如代码中出现错误、传感器无法正常工作等等。此时，通过打印调试输出可以帮助我们更快地定位错误，从而更有效地解决问题。打印调试输出是Arduino编程中非常重要的一部分，能够提高我们的编程效率。
 
-在Arduino编程中，打印调试输出是一种用于调试程序的常用方法。通过在代码中插入打印语句，程序员可以在运行时观察变量的值和程序的执行流程，从而更容易发现问题所在。
-
-# 如何打印调试输出
-
-要打印调试输出，首先需要使用Serial库。在代码开头，插入以下代码：
+## 如何
+打印调试输出非常简单，只需要在代码中使用```Serial.println()```或者```Serial.print()```来输出相关信息即可。下面是一个简单的示例代码：
 
 ```Arduino
-#include <Serial.h> 
+int sensorValue = 0;  // 定义一个变量用来存储传感器的数值
+
+void setup() {
+  // 在串口上打开通信
+  Serial.begin(9600); 
+}
+
+void loop() {
+  // 读取传感器数值
+  sensorValue = analogRead(A0); 
+
+  // 在串口上输出调试信息
+  Serial.print("传感器数值：");
+  Serial.println(sensorValue);
+
+  // 延时100毫秒，避免输出过于频繁
+  delay(100); 
+}
 ```
 
-然后，在setup()函数中，初始化串口： 
+在上面的代码中，我们通过```Serial.print()```和```Serial.println()```分别输出了一条调试信息，并且在每次循环时都会将传感器的数值打印出来。通过串口监视器，我们就可以实时查看调试信息，从而判断代码是否正常运行。
 
-```Arduino 
-void setup() { 
-    Serial.begin(9600); 
-} 
-```
+## 深入了解
+除了使用```Serial.print()```和```Serial.println()```外，我们还可以通过使用不同的参数来控制调试输出的格式，比如指定打印的长度和输出的进制等。具体的参数设置可以参考Arduino官方文档。
 
-最后，在需要打印的地方，使用Serial.print()或Serial.println()函数来输出变量的值或文本信息。例如，如果需要打印一个变量的值，可以使用以下代码：
+同时，我们还可以使用条件语句来限制调试输出，比如在特定的情况下才打印相关信息，从而避免过多的输出影响代码的运行效率。
 
-```Arduino
-int num = 10; 
-Serial.print("The value of num is: "); 
-Serial.println(num);
-```
+# 参考链接
+- [Arduino官方文档](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Serial通信介绍](https://wikipedia.org/Serial通信)
+- [Serial通信原理及应用](https://www.jianshu.com/p/729e354f1fb3)
 
-输出结果将会是：The value of num is: 10 
-
-# 深入了解打印调试输出
-
-除了Serial.print()和Serial.println()函数外，还有一些其他的打印调试输出函数可以使用。比如，Serial.write()函数可以打印一个单独的字符，Serial.print()函数还可以指定输出的进制方式，例如：
-
-```Arduino
-Serial.print(100, HEX); // 输出100的十六进制表示：64
-```
-
-此外，还可以通过设置串口的波特率来调整打印输出的速度。通常，默认的波特率为9600，但是也可以根据需要调整为更高或更低的值。
-
-# 参考资料
-
-- [Arduino官方文档-Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [How to Use Serial Print in Arduino](https://www.arduino.cc/en/Tutorial/SerialPrint)
-- [Debugging in Arduino](https://www.electronicshub.org/debugging-in-arduino/)
-
-# 另请参阅
-
-- [Arduino编程基础教程](https://www.arduino.cc/en/Tutorial/BuiltInExamples)
-- [Arduino中文社区](https://www.arduino.cn/)
+# 参见
+- [如何使用Arduino调试功能](https://blog.csdn.net/qq_40389338/article/details/88422305)
+- [Arduino调试技巧](https://blog.csdn.net/www_tao/article/details/8761816)

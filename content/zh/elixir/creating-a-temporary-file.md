@@ -1,64 +1,34 @@
 ---
-title:    "Elixir: 创建临时文件"
-keywords: ["Elixir"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/creating-a-temporary-file.md"
+title:                "Elixir: 创建临时文件"
+programming_language: "Elixir"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要创建临时文件？
+## 为什么选择使用Elixir创建临时文件
+创建临时文件是一个常见的编程需求，它可以帮助我们临时存储数据并在需要时进行处理。Elixir语言提供了简单而可靠的方法来实现这一点，让我们来看看如何做到这一点。
 
-在编程中，我们经常会遇到需要临时存储数据的情况。比如，当我们需要下载一个网络资源时，我们可能需要先将它保存到一个临时文件中，然后再处理它。创建临时文件可以帮助我们有效地管理这些临时数据，并保证它们不会占用过多的存储空间。
-
-## 如何创建临时文件
-
-```Elixir
-File.temp_file!("tmp", "test")
-```
-
-这个函数将在系统的临时目录中创建一个名为 "tmp" 的文件夹，并在其中生成一个名为 "test" 的临时文件。我们可以在创建临时文件时指定文件夹的路径和文件名。临时文件默认会在程序结束时自动删除，但我们也可以通过设置 `persist:true` 来保留临时文件。
-
-下面是一个使用临时文件的简单示例：
+## 如何使用Elixir创建临时文件
+首先，在Elixir中创建临时文件需要使用 `Tempfile` 模块。让我们来看一个简单的例子来创建一个包含一些文本数据的临时文件。
 
 ```Elixir
-# 创建临时文件
-file = File.temp_file!("tmp", "test")
+{:ok, file} = File.open_temp()
+IO.write(file, "这是一个临时文件。")
+IO.close(file)
 
-# 向临时文件写入数据
-File.write(file, "This is a test file.")
-
-# 从临时文件中读取数据
-contents = File.read(file)
-
-# 打印输出
-IO.puts(contents)
-
-# 删除临时文件
-File.rm(file)
+File.read("TempFile")
+# 输出："这是一个临时文件。"
 ```
+这里，我们使用 `File.open_temp` 函数来创建一个临时文件，并将返回的 `file` 对象赋值给变量 `file`。然后我们使用 `IO` 模块的 `write` 函数在临时文件中写入文本数据，最后使用 `IO` 模块的 `close` 函数来关闭文件。最后，我们可以使用 `File.read` 函数来读取临时文件中的内容。
 
-输出：
+## 深入了解Elixir创建临时文件
+虽然 `Tempfile` 模块提供了方便的方式来创建和处理临时文件，但是它并不是Elixir内置的模块。相反，它是使用Ruby语言编写的，通过在Elixir中调用Ruby代码来实现。这是Elixir语言的一个强大之处，因为它允许我们轻松地使用其他语言的功能。
 
-```
-This is a test file.
-```
+此外，`Tempfile` 模块还提供了许多其他的选项来创建临时文件，例如指定文件名的前缀、后缀、路径等等。你可以在[官方文档](https://hexdocs.pm/tempfile/Tempfile.html#open_temp/2)中了解更多详情。
 
-## 深入了解创建临时文件
-
-临时文件的命名规则是由 `File.temp_file!/2` 函数决定的。默认情况下，它会将文件名的前缀和后缀添加到随机生成的字符串中，以确保文件名的唯一性。如果有需要，我们也可以在函数中传入自定义的前缀和后缀。
-
-在创建临时文件时，我们还可以选择指定文件的访问权限。默认情况下，临时文件的权限为 `:private`，但我们可以通过设置 `access` 参数来修改。
-
-总的来说，创建临时文件是一个非常简单又实用的功能。它可以帮助我们更好地管理临时数据，并提高程序的执行效率。
-
-## 参考资料
-
-- [Elixir官方文档：创建临时文件](https://hexdocs.pm/elixir/File.html#temp_file!/2)
-- [掘金：如何在Elixir中创建临时文件](https://juejin.im/post/6867929546431542285)
-- [知乎：如何在Elixir中使用临时文件进行文件IO操作](https://zhuanlan.zhihu.com/p/345915547)
-
-## 参见
-
+## 查看更多
 - [Elixir官方文档](https://elixir-lang.org/)
-- [Elixir中国社区](https://elixir-cn.com/)
-- [Elixir编程语言论坛](http://forum.phoenixchina.org/)
+- [Tempfile模块官方文档](https://hexdocs.pm/tempfile/Tempfile.html)
+- [如何在Elixir中使用Ruby代码](https://medium.com/@nithinbekal/accessing-ruby-code-from-elixir-3d304ae7a512)

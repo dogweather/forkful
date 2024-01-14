@@ -1,37 +1,28 @@
 ---
-title:    "Swift: तारीख को प्राप्त करना"
-keywords: ["Swift"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/hi/swift/getting-the-current-date.md"
+title:                "Swift: वर्तमान दिनांक प्राप्त करना"
+programming_language: "Swift"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-
-क्या आप जानते हैं कि स्विफ्ट में वर्तमान तिथि प्राप्त करने का लोग को यहाँ क्यों होना चाहिए? सुबह जगने के लिए तारीका हो सकता है या किसी अन्य कारण की वजह से आपको जान की जरूरत हो सकती है।
+आजकल स्विफ्ट प्रोग्रामिंग भाषा एक बहुत ही लोकप्रिय और प्रभावी भाषा है। इसमें दिनांक को प्राप्त करने के लिए समय और समय जानकारी को प्राप्त करने के लिए बहुत कुछ है। स्विफ्ट दिनांक को पाने के लिए खुले स्रोत कोड (Open Source code) को साझा कर सकते हैं। यह लोगों को अपनी एप्लिकेशन्स में उपयोग का दौर को आसान करता है।
 
 ## कैसे करें
-
-आईएसओ 8601 प्रारूप में वर्तमान तिथि बोला साल, महीना और दिन कोड है कि आप आसानी से वर्तमान तिथि हासिल कर सकते हैं। यह कार्य है कि स्विफ्ट में अपने कोड में होने के लिए रात को स्विच गिरना जरूरी है।
-
 ```Swift
 let date = Date()
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd"
-let dateString = dateFormatter.string(from: date)
-print(dateString)
+let formatter = DateFormatter()
+formatter.dateFormat = "dd.MM.yyyy"
+let result = formatter.string(from: date)
+print(result)
 ```
-परिणाम:
-```
-2021-09-23
-```
+यहां, हमने दिनांक को कैसे प्राप्त कर सकते हैं वह दिखाया है। पहले, हमने "Date" क्लास का उपयोग करके वर्तमान तारीख को एक प्रतिनिधि अभिव्यक्ति बनाई है। फिर, हमने "DateFormatter" क्लास का उपयोग करके एक तारीख प्रारूप (format) निर्धारित किया है। अंत में, हमने "string(from:)" फंक्शन का उपयोग करके वर्तमान तारीख को तारीख प्रारूप में परिणाम के रूप में प्रिंट किया है।
 
-## गहरी जांच
+## गहराई तक जानें
+स्विफ्ट में तारीख को प्राप्त करने के लिए और विभिन्न तारीख प्रारूपों को उपयोग करने के लिए अनेक विकल्प हैं। आप "DateComponents", "Calendar" और "TimeZone" जैसे अन्य क्लासों का भी उपयोग कर सकते हैं। आप इनके बारे में अधिक जानकारी के लिए [स्विफ्ट दस्तावेज़](https://swift.org/documentation) पर जा सकते हैं।
 
-वर्तमान तिथि को स्विफ्ट में हासिल करना एक आसान कार्य है, लेकिन समझने के लिए थोड़ा समय मुहाया कर सकते हैं। आप स्विफ्ट की इस फीचर के बारे में और अधिक जान सकते हैं स्विफ्ट के [आधिकारिक डॉक्यूमेंटेशन](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html) संबंधित विषयों पर।
-
-## देखें भी
-
-- [स्विफ्ट प्रोग्रामिंग को शुरू करें](https://phoenixnap.com/kb/swift-tutorial-for-beginners)
-- [स्विफ्ट में तारीखों को संचालित करना](https://www.swiftbysundell.com/basics/working-with-dates/)
-- [स्विफ्ट में तारीख एकीकरण](https://medium.com/swift2go/date-display-and-formatting-in-swift-5-ad6a4aeff0b2)
+## देखें
+[स्विफ्ट विकिपीडिया](https://hi.wikipedia.org/wiki/स्विफ्ट_(प्रोग्रामिंग_भाषा)) |
+[ट्यूटोरियल वीडियो](https://www.youtube.com/watch?v=_Kh7jIiUU0w)

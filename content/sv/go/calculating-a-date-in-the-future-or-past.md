@@ -1,64 +1,44 @@
 ---
-title:    "Go: Beräkna ett datum i framtiden eller i det förflutna"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/go/calculating-a-date-in-the-future-or-past.md"
+title:                "Go: Beräkning av ett datum i framtiden eller passerat"
+programming_language: "Go"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
 
-Att kunna beräkna ett datum i framtiden eller förflutna kan vara användbart för att planera scheman eller datum för tillfällen. Det kan också vara en viktig funktion för applikationer som använder sig av tidsstämplar eller påminnelser.
+Att räkna ut ett datum i framtiden eller förflutna kan vara användbart för att planera evenemang eller för att hålla koll på födelsedagar. Med Go-programmeringsspråket är det enkelt att beräkna datum med hjälp av inbyggda funktioner.
 
-## Hur man gör det
+## Hur man gör
 
-Det finns flera sätt att beräkna ett datum i framtiden eller förflutna med hjälp av Go-programmeringsspråket. Nedan följer tre enkla exempel med kodblock som visar hur det kan göras.
+För att beräkna ett datum i framtiden eller förflutna i Go använder man sig av tidenhetspaketet "time". Först måste man importera paketet genom att skriva ```Go
+import "time"``` i början av programmet.
 
+För att beräkna ett datum i framtiden kan man använda funktionen ```Go
+AddDate()``` tillsammans med dagar, månader och år som vill lägga till. Till exempel, om vi vill beräkna datumet tre månader framåt kan vi använda följande kod:
 ```Go
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-	// Beräkna ett datum 7 dagar framåt
-	framtidaDatum := time.Now().AddDate(0, 0, 7)
-	fmt.Println("Framtida datum: ", framtidaDatum)
-
-	// Beräkna ett datum 1 månad bakåt
-	bakatDatum := time.Now().AddDate(0, -1, 0)
-	fmt.Println("Bakat datum: ", bakatDatum)
-
-	// Beräkna ett datum 2 år framåt
-	framtidaDatum2 := time.Now().AddDate(2, 0, 0)
-	fmt.Println("Framtida datum: ", framtidaDatum2)
-}
+futureDate := time.Now().AddDate(0, 3, 0)
+fmt.Println(futureDate) // exempel output: 2022-02-19 22:07:00.2803962 +0100 CET m=+91.996585201
 ```
 
-Output:
-
+För att beräkna ett datum i förflutna använder man samma funktion, men med ett negativt antal dagar, månader eller år. Till exempel, om vi vill beräkna datumet ett år tillbaka kan vi använda följande kod:
+```Go
+pastDate := time.Now().AddDate(-1, 0, 0)
+fmt.Println(pastDate) // exempel output: 2020-11-19 22:08:54.2793962 +0100 CET m=+86399.995185801
 ```
-Framtida datum: 2021-04-08 15:14:17.5271961 +0000 UTC m=+604801.140583401
-Bakat datum: 2021-02-08 15:14:17.5282007 +0000 UTC m=+543661.141566601
-Framtida datum: 2023-02-08 15:14:17.5282007 +0000 UTC m=+949321.141566601
-```
-
-Det första exemplet använder funktionen `AddDate()` för att lägga till 7 dagar till det nuvarande datumet. Det andra exemplet använder sig av ett negativt värde för att dra bort en månad från det nuvarande datumet. Och det tredje exemplet lägger till 2 år till det nuvarande datumet.
-
-En annan funktion som kan användas är `Date()` som tar emot tre argument: år, månad och dag, och som returnerar ett `Time`-objekt. Detta kan vara användbart om du vill beräkna ett specifikt datum i framtiden eller förflutna.
 
 ## Djupdykning
 
-När du arbetar med tidsberäkningar är det också viktigt att ta hänsyn till tidzoner. Detta kan göras genom att använda `time.LoadLocation()` för att hämta en specifik tidzon och sedan konvertera tiden till den tidzonen med hjälp av `In()`-funktionen.
+Go erbjuder även andra inbyggda funktioner för datumberäkning, såsom ```Go
+Date()``` och ```Go
+Parse()```. Dessutom finns det flera externa paket som erbjuder mer avancerade funktioner för datumhantering i Go.
 
-Det är också möjligt att använda både datum och tid i beräkningarna genom att använda `time.Date()`-funktionen istället för `Now()`.
-
-Att kunna beräkna datum i framtiden eller förflutna är en användbar funktion som kan spara tid och förbättra funktionaliteten i dina program.
+En viktig aspekt att tänka på när man beräknar datum i Go är att Go använder sig av den gregorianska kalendern, vilket innebär att funktionerna kan bete sig annorlunda med andra tidsskalor eller kalendrar. Det är viktigt att ta hänsyn till detta vid användning av dessa funktioner.
 
 ## Se även
 
-- [Dokumentation för Go's tidspaket](https://golang.org/pkg/time/)
-- [Golang Tutorials: Date and Time](https://golangbot.com/date-time/)
-- [How to Calculate Dates in Go](https://www.calhoun.io/how-to-calculate-dates-in-go/)
+- [Go dokumentation för tidenhetspaketet](https://golang.org/pkg/time/)
+- [Paketet "dateparse" för mer avancerad datumhantering i Go](https://github.com/araddon/dateparse)
+- [Alternativa kalenderpaket för Go](https://github.com/dovbysh/awesome-go-by-example-swe#dateTime)

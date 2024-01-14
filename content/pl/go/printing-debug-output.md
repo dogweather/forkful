@@ -1,33 +1,19 @@
 ---
-title:    "Go: Wydrukowanie danych debugowania"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/go/printing-debug-output.md"
+title:                "Go: Wydrukuj wyniki debugowania"
+programming_language: "Go"
+category:             "Testing and Debugging"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto wyświetlać wyjście debugowania w języku Go?
+## Dlaczego
 
-Wyświetlanie outputu debugowania jest ważnym narzędziem w procesie pisania kodu. Nie tylko pozwala to na szybkie odnajdywanie błędów, ale również pozwala na zrozumienie działania programu i jego logiki. W języku Go jest to jeszcze prostsze dzięki wbudowanej funkcji do wyświetlania outputu.
+W programowaniu często musimy pracować z bardzo złożonym kodem, a czasami po prostu chcemy sprawdzić, czy nasza aplikacja działa poprawnie. W takich sytuacjach pomocne jest wypisywanie debug outputu, czyli informacji o tym, co dzieje się wewnątrz naszego programu. Może to być niezwykle przydatne w celu zlokalizowania błędów lub zrozumienia przepływu danych w naszej aplikacji.
 
-## Jak wyświetlać wyjście debugowania w języku Go?
+## Jak to zrobić
 
-Aby wyświetlać wyjście debugowania w języku Go, możemy skorzystać z funkcji `Println` z pakietu `fmt`. W poniższym przykładzie możemy zobaczyć jak wyświetlić wartość zmiennej `x`:
-
-```Go
-package main
-
-import "fmt"
-
-func main() {
-  x := 10
-  fmt.Println(x)
-}
-```
-
-Output: `10`
-
-Możemy również wyświetlać output w formie formatowanej za pomocą funkcji `Printf` z tego samego pakietu. Przykład poniżej pokazuje wyświetlenie liczby z uwzględnieniem dwóch miejsc po przecinku:
+W języku Go mamy do dyspozycji wiele różnych sposobów drukowania debug outputu. Oto kilka przykładów z wykorzystaniem funkcji fmt.Println():
 
 ```Go
 package main
@@ -35,16 +21,14 @@ package main
 import "fmt"
 
 func main() {
-  x := 3.14159
-  fmt.Printf("Liczba pi to: %.2f", x)
+    fmt.Println("Hello, World!")
+    fmt.Println(2 + 2)
 }
 ```
 
-Output: `Liczba pi to: 3.14`
+W powyższym przykładzie używamy fmt.Println() do wypisania tekstu "Hello, World!" oraz wyniku działania 2 + 2, czyli liczby 4.
 
-## Deep Dive: Vertically
-
-W języku Go istnieje możliwość wyświetlenia wyjścia debugowania w pionie przy użyciu funkcji `Println`. Wystarczy użyć wielu argumentów, oddzielając je przecinkami:
+Możemy również wykorzystać funkcję fmt.Printf() do formatowania wyjścia w bardziej kontrolowany sposób:
 
 ```Go
 package main
@@ -52,38 +36,36 @@ package main
 import "fmt"
 
 func main() {
-  x := 10
-  y := "Go"
-  fmt.Println("Wartość x:", x, "Wartość y:", y)
+    fmt.Printf("Liczba: %d\n", 42)
 }
 ```
 
-Output: `Wartość x: 10 Wartość y: Go`
+W powyższym przykładzie używamy %d do wypisania liczby całkowitej, a następnie podajemy wartość, która ma zostać wstawiona w to miejsce.
 
-Możemy również wyświetlać wyjście w pionie przy użyciu funkcji `Printf` i specjalnego znaku nowej linii `\n`:
+Innym sposobem na drukowanie debug outputu jest wykorzystanie paczki log, która oferuje więcej opcji, takich jak wypisywanie informacji o błędach oraz podawanie linii i pliku, w którym zostało wywołane to drukowanie:
 
 ```Go
 package main
 
-import "fmt"
+import "log"
 
 func main() {
-  x := 10
-  y := "Go"
-  fmt.Printf("Wartość x: %d\nWartość y: %s", x, y)
+    log.Println("Error occurred")
 }
 ```
 
-Output: 
-```
-Wartość x: 10
-Wartość y: Go
-```
+## Deep Dive
 
-Wyświetlanie wyjścia w pionie może być szczególnie przydatne przy wyświetlaniu informacji z wielu zmiennych lub w celu czytelniejszego formatowania outputu.
+W celu bardziej zaawansowanego drukowania debug outputu w języku Go możemy skorzystać z paczki "runtime/debug", która umożliwia uzyskiwanie szczegółowych informacji o wykonywanym programie, takich jak stos wywołań, informacje o gorutynach czy alokacje pamięci.
+
+Jedną z najważniejszych funkcji tej paczki jest PrintStack(), która pozwala wypisać aktualny stos wywołania programu. Używając jej w razie wystąpienia błędu, możemy łatwiej zlokalizować jego przyczynę.
 
 ## Zobacz też
 
-- [Dokumentacja języka Go](https://golang.org/doc/)
-- [Podstawowe operacje na tekstach w języku Go](https://golang.org/pkg/strings/)
-- [Tutorial na temat używania funkcji fmt w języku Go](https://gobyexample.com/string-formatting)
+Jeśli chcesz dowiedzieć się więcej o drukowaniu debug outputu w języku Go, polecamy zapoznać się z poniższymi źródłami:
+
+- [Oficjalna dokumentacja fmt](https://golang.org/pkg/fmt/)
+- [Oficjalna dokumentacja log](https://golang.org/pkg/log/)
+- [Oficjalna dokumentacja paczki runtime/debug](https://golang.org/pkg/runtime/debug/)
+- [Artykuł "Debugging techniques in Go"](https://sosedoff.com/2015/05/08/debugging-techniques-in-go.html)
+- [Film "Debugging and profiling with Go"](https://www.youtube.com/watch?v=PAAkCSZUG1c)

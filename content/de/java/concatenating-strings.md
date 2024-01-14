@@ -1,36 +1,50 @@
 ---
-title:    "Java: Zusammenfügen von Zeichenfolgen"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/java/concatenating-strings.md"
+title:                "Java: Verbinden von Zeichenketten"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Das Zusammenfügen von Zeichenketten (auch bekannt als String-Konkatenation) ist eine wichtige Technik in der Java-Programmierung. Durch das Verbinden von einzelnen Zeichenketten können wir längere Sätze oder komplexere Ausgaben erzeugen, die in unseren Programmen verwendet werden können.
 
-Die Konkatenation von Strings ist ein grundlegender Aspekt der Java-Programmierung und dient dazu, mehrere Zeichenfolgen zu einer einzigen zusammenzufügen. Dies kann in verschiedenen Anwendungsfällen nützlich sein, z.B. bei der Erstellung von Benutzernamen oder der Darstellung von dynamischen Textinhalten.
-
-## So geht's
-
-Die Konkatenation von Strings wird in Java durch den "+" Operator durchgeführt. Hier ist ein Beispielcode, der zwei Strings kombiniert und die Ausgabe auf der Konsole ausgibt:
+## How To
+In Java gibt es mehrere Möglichkeiten, Zeichenketten zu kombinieren. Eine häufige Methode ist die Verwendung des '+' Operators, um zwei oder mehr Strings zusammenzufügen. Zum Beispiel:
 
 ```Java
-String vorname = "Max";
-String nachname = "Mustermann";
-String vollständigerName = vorname + " " + nachname;
-System.out.println(vollständigerName);
+String name = "Lisa";
+String greeting = "Hallo ";
+
+System.out.println(greeting + name);
 ```
 
-Das Ergebnis dieser Codezeilen würde "Max Mustermann" ausgeben. Beachten Sie, dass zwischen den Zeichenfolgen Leerzeichen hinzugefügt werden können, um für eine bessere Lesbarkeit zu sorgen.
+Die Ausgabe dieses Codes wäre "Hallo Lisa". Wir können auch den `+=` Operator verwenden, um auf einfache Weise einen String an einen vorhandenen String anzuhängen, wie im folgenden Beispiel:
 
-## Tiefergehende Informationen
+```Java
+String sentence = "Ich bin ";
+sentence += "ein Java-Entwickler";
+```
 
-Beim Kombinieren von Strings ist es wichtig zu beachten, dass dies eine immutable Operation ist, was bedeutet, dass die ursprünglichen Strings unverändert bleiben und eine neue Zeichenfolge erstellt wird. Daher ist es ineffizient, große Mengen von Zeichenfolgen durch ständige Konkatenation zu verarbeiten, da dies zu einer großen Anzahl von ungenutzten Objekten im Speicher führen kann.
+Die Ausgabe dieses Codes wäre "Ich bin ein Java-Entwickler". Wir können sogar mehrere Variablen miteinander verbinden, indem wir sie zwischen den '+' Operatoren einfügen:
 
-Eine effizientere Alternative ist die Verwendung der StringBuilder-Klasse, die speziell für die Manipulation von Zeichenfolgen entwickelt wurde. Sie bietet Methoden zum Hinzufügen, Entfernen oder Einfügen von Zeichenfolgen an einer beliebigen Stelle und speichert alle Änderungen in einem einzigen StringBuilder-Objekt.
+```Java
+String adjective = "großartiger";
+String noun = "Programmierer";
+String intro = "Ich bin ein ";
+
+System.out.println(intro + adjective + " " + noun);
+```
+
+Dieser Code würde "Ich bin ein großartiger Programmierer" ausgeben.
+
+## Deep Dive
+Bei der Verwendung von Zeichenkettenverkettung ist zu beachten, dass Java eine spezielle Methode namens `concat()` hat, die speziell für die Kombination von Zeichenketten entwickelt wurde. Diese Methode akzeptiert eine Zeichenkette als Parameter und verbindet sie mit der aktuellen Zeichenfolge. Es ist jedoch wichtig zu beachten, dass das Verwenden von `concat()` im Gegensatz zu '+' keine automatische Typumwandlung zwischen Zeichenketten und anderen Datentypen durchführt.
+
+Außerdem ist beim Zusammenfügen von Zeichenketten Vorsicht geboten, da dies bei größeren Mengen von Strings zu einer Verschwendung von Speicherplatz führen kann. In solchen Fällen ist es empfehlenswert, die `StringBuilder` Klasse zu verwenden, die effizienter für das Zusammenfügen großer Mengen von Zeichenketten ist.
 
 ## Siehe auch
-
-- [Java String Klasse Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java StringBuilder Klasse Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
-- [Tutorial zu Strings in Java](https://www.w3schools.com/java/java_strings.asp)
+- [Java Strings](https://www.w3schools.com/java/java_strings.asp)
+- [Java StringBuilder](https://www.w3schools.com/java/java_stringbuilder.asp)
+- [Java String concat()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#concat(java.lang.String))

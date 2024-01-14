@@ -1,44 +1,52 @@
 ---
-title:    "PHP: Extrahering av delsträngar"
-keywords: ["PHP"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/php/extracting-substrings.md"
+title:                "PHP: Extrahera substrängar"
+programming_language: "PHP"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför extrahera substrings?
+## Varför
 
-Att extrahera substrings är en viktig färdighet i PHP-programmering eftersom det låter dig fånga delar av en textsträng utan att behöva använda hela strängen. Detta gör det möjligt att manipulera, jämföra och analysera texter på ett mer effektivt sätt.
+Att extrahera substrängar är en vanlig utmaning i PHP-programmering. Det kan vara användbart för att manipulera textdata eller hantera dynamisk input från användare. Genom att lära sig hur man extraherar substrängar kan du utöka dina PHP-färdigheter och skapa mer effektiv kod.
 
-## Så här extraherar du substrings i PHP
+## Så här gör du
 
-För att extrahera en substring i PHP behöver du använda en inbyggd funktion, `substr()`. Denna funktion tar in en sträng, en startposition och en valfri längd som parametrar. Här är ett exempel på hur du skulle använda `substr()` för att extrahera en del av en textsträng:
-
-```PHP
-$text = "Välkommen till min blogg!";
-$substring = substr($text, 10, 5);
-echo $substring;
-```
-
-I detta exempel kommer substringsen som extraheras från `$text` vara "min blogg". Startpositionen 10 indikerar att vi vill börja extrahera efter det tionde tecknet (räknat från noll) och längden 5 berättar för funktionen att vi vill ha fem tecken i vår extraherade del.
-
-Om du istället inte anger en längd, kommer `substr()` att extrahera hela resten av strängen från och med startpositionen. Här är ett exempel på detta:
+För att extrahera en substräng från en befintlig sträng i PHP, använder du funktionen `substr()`. Syntaxen för denna funktion är:
 
 ```PHP
-$text = "Ta en kopp kaffe och stanna en stund.";
-$substring = substr($text, 11);
-echo $substring;
+$nyStrang = substr($befintligStrang, startposition, längd);
 ```
 
-Funktionen kommer nu att extrahera allt efter det elfte tecknet, vilket ger oss "kopp kaffe och stanna en stund.". Det är viktigt att komma ihåg att substrings alltid räknas från noll, så i detta fall är det tecknet "k" som är det elfte tecknet.
+Det första argumentet är den befintliga strängen som du vill extrahera en del av. Det andra argumentet är startpositionen för substrängen, och det sista argumentet är längden på substrängen. Om du inte anger ett längdargument kommer substrängen att extraheras från startpositionen till slutet av den befintliga strängen.
 
-## Djupdykning i substrings
+Här är ett exempel på hur du kan använda `substr()` för att extrahera en del av en sträng:
 
-Det finns ytterligare några koncept som är viktiga att notera när det gäller att extrahera substrings i PHP. En av dessa är negativa startpositioner, vilket låter dig extrahera en del av strängen från slutet istället för från början. Till exempel, om vi skulle använda `-7` som startposition i det första exemplet ovan så skulle vi fått samma resultat som att börja från position 10 då PHP kommer att räkna bakifrån om en negativ siffra används.
+```PHP
+$strang = "Hej, välkommen till min blogg!";
+$delAvStrang = substr($strang, 5, 8);
 
-En annan viktig aspekt är användningen av enskilda tecken jämfört med byte-positioner när det gäller att extrahera substrings från icke-engelska språk. Detta beror på att tecknen i dessa språk kan ha mer än ett byte och därför måste man använda sig av specifika funktioner för att hantera sådana situationer.
+echo $delAvStrang; // kommer att skriva ut "välkommen"
+```
+
+Du kan också använda `substr()` för att extrahera från slutet av en sträng genom att använda negativa startpositioner. Här är ett exempel:
+
+```PHP
+$strang = "Hej, välkommen till min blogg!";
+$delAvStrang = substr($strang, -6, 6);
+
+echo $delAvStrang; // kommer att skriva ut "blogg!"
+```
+
+## Djupdykning
+
+När du extraherar substrängar finns det några saker att tänka på. Först och främst är det viktigt att förstå att indexeringen av en sträng i PHP börjar på 0. Det innebär att den första bokstaven i en sträng har index 0, den andra bokstaven har index 1 och så vidare.
+
+Dessutom kommer `substr()` inte att generera ett fel om den angivna startpositionen är utanför gränserna för den befintliga strängen. Istället kommer den att returnera en tom sträng. Du bör alltid kontrollera om längden på den befintliga strängen är längre än din startposition för att undvika oväntade resultat.
 
 ## Se även
 
-- [PHP's officiella dokumentation för substrings](https://www.php.net/manual/en/function.substr.php)
-- [En bloggpost om substrings på svenska](https://medium.com/@johanessjostrand/php-substring-571d2f9936e0)
+- PHP:dokumentation om substrängar (https://www.php.net/manual/en/function.substr.php)
+- En guide till strängfunktioner i PHP (https://www.w3schools.com/php/php_string_functions.asp)
+- En videohandledning om att extrahera substrängar i PHP (https://www.youtube.com/watch?v=dSKJvjefE3k)

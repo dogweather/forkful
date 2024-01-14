@@ -1,71 +1,66 @@
 ---
-title:    "Java: Utdrag av substringer"
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/java/extracting-substrings.md"
+title:                "Java: Utvinning av delstrenger"
+programming_language: "Java"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å ekstrahere substrings, eller delstrenger, fra en tekststreng er en vanlig oppgave i Java-programmering. Dette kan være nyttig for å manipulere tekst, analysere data eller lage mer dynamiske programmer. Det er en enkel og effektiv måte å få tak i en bestemt del av en tekststreng på, og kan bidra til å gjøre koden din mer lesbar og enklere å vedlikeholde.
+I dagens digitale verden er det en konstant strøm av tekst som blir produsert og delt med andre. Noen ganger kan du ønske å kun arbeide med en del av denne teksten, i stedet for å håndtere hele tekstdokumentet. Det er her utvinning av substrings kommer inn i bildet. Ved å ekstrahere deler av teksten, kan du enkelt manipulere og behandle den på en mer effektiv måte. I denne bloggposten vil vi utforske hvordan du kan utvinne substrings i Java-programmering.
 
 ## Hvordan
 
-For å ekstrahere en substring i Java, bruker du metoden `substring()` med to parametere. Den første parameteren er startindeksen i tekststrengen, mens den andre parameteren er sluttposisjonen. For eksempel, hvis du vil få tak i bare de første fire bokstavene i et ord, kan du bruke følgende kode:
+For å utvinne substrings i Java, må du først kjenne lengden på teksten og hvilken del av teksten du ønsker å utvinne. Du kan gjøre dette ved hjelp av `length()` metoden og `substring()` metoden.
 
-```
-Java String ord = "programmering";
-String delord = ord.substring(0,4);
-System.out.println(delord);
-```
-
-Dette vil gi følgende utskrift:
-
-```
-prog
+```Java
+String tekst = "Hei, dette er en substring.";
+int lengde = tekst.length();
+String del = tekst.substring(4, lengde);
+System.out.println(del);
 ```
 
-Du kan også bruke negative indekser for å telle baklengs fra slutten av tekststrengen. For eksempel, hvis du vil få tak i de to siste bokstavene i ordet "programmering", kan du bruke følgende kode:
+Dette vil skrive ut: "dette er en substring." Det første argumentet i `substring()` metoden er startindeksen, mens det andre argumentet er sluttindeksen. Merk at sluttindeksen ikke er inkludert i den utvunnede substringen.
 
-```
-Java String ord = "programmering";
-String delord = ord.substring(ord.length()-2, ord.length());
-System.out.println(delord);
+Hvis du ønsker å utvinne fra et bestemt punkt til slutten av teksten, trenger du bare å angi startindeksen og utelate sluttindeksen.
+
+```Java
+String tekst = "Vi elsker Java-programmering!";
+String del = tekst.substring(12);
+System.out.println(del);
 ```
 
-Dette vil gi følgende utskrift:
+Dette vil skrive ut: "Java-programmering!" Du kan også bruke negative indekser for å utvinne fra slutten av teksten.
 
+```Java
+String tekst = "Programmering er gøy!";
+int lengde = tekst.length();
+String del = tekst.substring(0, lengde-1);
+System.out.println(del);
 ```
-ng
-```
+
+Dette vil skrive ut: "Programmering er gøy" siden sluttindeksen er utelatt og dermed blir den siste bokstaven utelatt.
 
 ## Dypdykk
 
-Det er viktig å huske at indeksering i Java starter på 0, så den første bokstaven i en tekststreng har alltid indeksen 0. Det er også viktig å sjekke at indeksene du bruker i `substring()`-metoden, ikke overskrider lengden på tekststrengen for å unngå en `IndexOutOfBoundsException`.
+I tillegg til å utvinne substrings, kan du også bruke metoden `indexOf()` for å finne hvor en bestemt tekst starter i en streng.
 
-En annen nyttig metode for å ekstrahere substrings er `split()`-metoden, som deler en tekststreng opp i et array med delstrenger basert på et gitt tegn eller mønster. For eksempel, hvis du vil dele opp en tekststreng basert på mellomrom, kan du bruke følgende kode:
-
-```
-Java String setning = "Dette er en setning";
-String[] ord = setning.split(" ");
-for(String delord : ord){
-  System.out.println(delord);
-}
+```Java
+String tekst = "Java er et fantastisk programmeringsspråk";
+int indeks = tekst.indexOf("fantastisk");
+System.out.println(indeks);
 ```
 
-Dette vil gi følgende utskrift:
+Dette vil skrive ut: 12, siden ordet "fantastisk" begynner på indeks nummer 12.
 
-```
-Dette
-er
-en
-setning
-```
+Det er også viktig å merke seg at substrings i Java representeres ved bruk av `String`-klasse. Dette betyr at de er uforanderlige og kan ikke endres etter at de er opprettet. Hvis du ønsker å manipulere en substring, må du opprette en ny `String` som inneholder den ønskede endringen.
 
-## Se Også
+## Se også
 
-* [Java String Dokumentasjon](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html)
-* [W3Schools - Java String Handling](https://www.w3schools.com/java/java_strings.asp)
-* [GeeksforGeeks - Java String substring()](https://www.geeksforgeeks.org/java-string-substring-method-example/)
-* [Baeldung - Split Strings in Java](https://www.baeldung.com/java-string-split)
+For mer informasjon om utvinning av substrings og andre tekstmanipulasjonsmetoder i Java, kan du sjekke ut disse ressursene:
+
+- [Java - Manipulating Strings (engelsk)](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)
+- [Java.util.String - Oracle Docs (engelsk)](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [W3Schools - Java String Methods (norsk)](https://www.w3schools.com/java/java_ref_string.asp)

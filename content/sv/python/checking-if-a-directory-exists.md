@@ -1,37 +1,58 @@
 ---
-title:    "Python: Kontrollera om en mapp finns"
-keywords: ["Python"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/sv/python/checking-if-a-directory-exists.md"
+title:                "Python: Kontrollera om en mapp finns"
+programming_language: "Python"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kontrollera om en mapp finns kan vara en viktig del av att hantera filer och program på din dator. Genom att ha en enkel och effektiv process för att kontrollera om en mapp finns, kan du undvika fel och tidsödande problem när du arbetar med dina program.
+Att kontrollera om en mapp existerar är en viktig del av att säkerställa att ditt Python-program körs smidigt. Det är även ett viktigt steg i felsökningen om ditt program inte fungerar som det ska.
 
 ## Så här gör du
-För att kontrollera om en mapp finns i Python, använder vi funktionen "os.path.exists()". Här är ett enkelt exempel på hur man använder den:
+För att kontrollera om en mapp existerar i Python, använder du en funktion som heter `path.isdir()` från modulen `os.path`. Du kan också importera hela `os` biblioteket med `import os` för att undvika dubbla imports  om andra funktioner från `os` redan är importerade.
 
-```Python
+```python
 import os
 
-# Ange sökväg till mappen
-folder = "C:/Users/Användare/MinMapp"
-
-# Kontrollera om mappen finns
-if os.path.exists(folder):
-    print("Mappen finns!")
+# Kontrollera om mappen "Documents" existerar i ditt nuvarande arbetsutrymme
+if os.path.isdir("Documents"):
+    print("Mappen finns redan")
 else:
-    print("Mappen finns inte!")
+    print("Mappen finns inte")
 ```
 
-Om mappen "MinMapp" finns kommer utskriften att vara "Mappen finns!", annars kommer den att vara "Mappen finns inte!". Det är enkelt och effektivt att använda denna funktion för att kontrollera om en mapp finns i Python.
+Om mappen "Documents" existerar, kommer programmet att skriva ut "Mappen finns redan". Om den inte existerar, kommer det istället att skriva ut "Mappen finns inte".
+
+Du kan också använda funktionen `path.exists()` för att kontrollera om en fil eller en mapp existerar, istället för att använda `path.isdir()` som endast kontrollerar för mappar.
+
+```python
+import os
+
+# Kontrollera om filen "readme.txt" existerar 
+if os.path.exists("readme.txt"):
+    print("Filen finns")
+else:
+    print("Filen finns inte")
+```
 
 ## Djupdykning
-För att förstå hur funktionen "os.path.exists()" fungerar, låt oss ta en titt på lite djupare förklaring. I grunden kontrollerar den om den angivna sökvägen finns i ditt filsystem och om den är giltig. Om sökvägen leder till en mapp, returneras True, annars returneras False.
+När du använder funktionerna `path.isdir()` och `path.exists()` måste du se till att du har skrivit in den korrekta sökvägen till filen eller mappen du vill kontrollera. Om du inte anger hela sökvägen, kommer Python att leta efter filen eller mappen i ditt nuvarande arbetsutrymme.
 
-Det är också värt att notera att denna funktion inte bara fungerar för mappar, utan också för filer. Så om du behöver kontrollera om en specifik fil finns, kan du också använda "os.path.exists()" för det.
+Du kan också använda `os.getcwd()` för att få det nuvarande arbetsutrymmet och sedan använda `os.chdir()` för att ändra arbetsutrymmet om det behövs.
+
+```python
+import os
+
+print(os.getcwd()) # Skriver ut det nuvarande arbetsutrymmet
+
+os.chdir("Documents") # Ändrar arbetsutrymmet till mappen "Documents"
+
+print(os.getcwd()) # Skriver ut det uppdaterade arbetsutrymmet
+```
 
 ## Se även
-- [Dokumentation för os.path.exists()](https://docs.python.org/3/library/os.path.html#os.path.exists)
-- [Kontrollera om en fil finns i Python](https://www.w3schools.com/python/python_file_exists.asp)
+- [Python dokumentation om `os.path` modulen](https://docs.python.org/3/library/os.path.html)
+- [Guide till filhantering i Python](https://realpython.com/working-with-files-in-python/)
+- [Mer om arbetsutrymmen i Python](https://www.learnpython.org/en/Variables_and_Types#:~:text=Working%20Directory%20Variables%20in%20Python&text=The%20current%20working%20directory%20is,8%3E%3E%3E%20walking%20%C2%BB%3E%3E)

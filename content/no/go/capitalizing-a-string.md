@@ -1,47 +1,44 @@
 ---
-title:    "Go: Store bokstaver i en streng"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/no/go/capitalizing-a-string.md"
+title:                "Go: Å kapitalisere en streng"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
 
-Å kode i Go kan være både givende og utfordrende. Noen ganger er det de enkleste funksjonene som kan være de mest nyttige, som for eksempel å kapitalisere en tekststreng. Ved å gjøre dette kan du få en mer lesbar og strukturert utskrift, noe som kan være spesielt nyttig når du jobber med store mengder data. 
+Å kapitalisere en streng (string) i et program kan være nyttig når man ønsker å formatere tekst på en bestemt måte, for eksempel når man skal skrive ut en tekst eller vise den på en skjerm.
 
 ## Hvordan
 
-For å kapitalisere en tekststreng i Go, kan du bruke funksjonen "strings.ToUpper" fra standardbiblioteket. Denne funksjonen tar inn en tekststreng som argument og returnerer en versjon av teksten med bare store bokstaver. La oss se på et eksempel:
+For å kapitalisere en streng i Go kan man bruke funksjonen `strings.ToUpper()` som tar inn en streng som argument og returnerer en ny versjon av strengen med kun store bokstaver. For eksempel:
 
-```Go 
+```Go
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
 func main() {
-    tekst := "dette er en test"
-    fmt.Println("Original tekst:", tekst)
-    fmt.Println("Kapitalisert tekst:", strings.ToUpper(tekst))
+	name := "lars"
+	
+	// Kapitaliserer "name" strengen og lagrer det i "capitalizedName"
+	capitalizedName := strings.ToUpper(name)
+	
+	fmt.Println(capitalizedName) // Skriver ut "LARS"
 }
 ```
-Dette vil gi følgende utskrift: 
-```
-Original tekst: dette er en test
-Kapitalisert tekst: DETTE ER EN TEST
-```
-Som du kan se, har teksten blitt konvertert fra små til store bokstaver.
 
 ## Dypdykk
 
-En interessant ting å merke seg er at funksjonen "strings.ToUpper" bruker unicode-tabellen for å bestemme hvilke bokstaver som skal konverteres til store bokstaver. Dette betyr at det også vil fungere for bokstaver fra andre alfabet, som for eksempel det norske alfabetet med æ, ø og å. 
+I Go er strenger immutable, noe som betyr at de ikke kan endres direkte. Derfor vil ikke `strings.ToUpper()` endre den originale strengen, men heller returnere en ny versjon av den. Det finnes også andre funksjoner for å manipulere strenger i Go, som `strings.ToLower()` for å gjøre alle bokstaver små, og `strings.Title()` for å gjøre alle ord i en streng til stor forbokstav.
 
-Det er også verdt å nevne at Go inneholder flere innebygde funksjoner for manipulering av tekst, som for eksempel "strings.ToLower" for å konvertere til små bokstaver, og "strings.Title" for å gjøre første bokstav i hvert ord stor. Utforsk disse og andre funksjoner for å få enda mer ut av tekstbehandlingen i Go. 
+## Se Også
 
-## Se også
-
-- Offisiell dokumentasjon for "strings.ToUpper": https://golang.org/pkg/strings/#ToUpper
-- Ekstra funksjoner for tekstbehandling i Go: https://golang.org/pkg/strings/
+- [Go Dokumentasjon: strings](https://golang.org/pkg/strings/)
+- [Go By Examples: Strings](https://gobyexample.com/strings)
+- [Kapitalisere strenger i Go: Enkel løsning eller gode rutiner?](https://no.wikipedia.org/wiki/Wikipedia:Torget/Kapitalisere_strenger_i_Go:_Enkel_l%C3%B8sning_eller_gode_rutiner%3F)

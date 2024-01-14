@@ -1,47 +1,42 @@
 ---
-title:    "C: Pisanie do standardowego błędu"
-keywords: ["C"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/pl/c/writing-to-standard-error.md"
+title:                "C: Pisanie do standardowego wyjścia błędu"
+programming_language: "C"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto korzystać z pisania do standardowego błędu?
 
-Zapewne wiesz, że w języku C możemy korzystać z funkcji `printf` do wyświetlania informacji na standardowym wyjściu. Ale czy wiesz, że istnieje również standardowe wyjście błędów, które jest równie ważne? W tym artykule dowiesz się dlaczego warto pisać do standardowego wyjścia błędów.
+Każdemu programiście lubiącemu język C z pewnością zdarzyło się już natknąć na konieczność wyświetlenia błędu podczas wykonywania kodu. Podczas analizy problemu często przydatne jest zapisanie komunikatu o błędzie w specjalnym miejscu, aby ułatwić sobie późniejsze debugowanie kodu. W przypadku języka C takim miejscem jest standardowe wyjście błędu, które w prosty sposób pozwala na wypisanie informacji o błędzie na ekranie lub do pliku. W tym blogu dowiesz się, dlaczego warto korzystać z pisania do standardowego błędu oraz jak to zrobić.
 
-## Jak to zrobić
+## Jak pisać do standardowego błędu w języku C?
 
-Aby wypisać informację na standardowym wyjściu błędów, możemy skorzystać z funkcji `fprintf` w następujący sposób:
-
-```C
-#include <stdio.h>
-int main(){
-  fprintf(stderr, "To jest komunikat błędu!");
-}
-```
-
-Wywołanie tej funkcji spowoduje, że komunikat zostanie wypisany na standardowym wyjściu błędów. Możemy również skorzystać ze strumienia `stderr` bezpośrednio, zamiast wywoływać funkcję `fprintf`:
+Aby napisać do standardowego błędu w języku C, wystarczy skorzystać z funkcji `fprintf()` i przekazać jej jako pierwszy argument `stderr`, czyli wskaźnik na standardowe wyjście błędu. Przykładowo, jeśli chcemy wypisać komunikat "Błąd: nie można otworzyć pliku" do standardowego błędu, to możemy to zrobić takim kodem:
 
 ```C
 #include <stdio.h>
-int main(){
-  fprintf(stderr, "To jest komunikat błędu!");
+
+int main() {
+    fprintf(stderr, "Błąd: nie można otworzyć pliku");
+    return 0;
 }
 ```
 
-Pamiętaj, że standardowe wyjście błędów jest wykorzystywane do wypisywania informacji o błędach, dlatego warto używać go w przypadku napotkania problemów w naszym programie.
+Po uruchomieniu programu, komunikat ten zostanie wypisany na ekranie lub do pliku, w zależności od tego, jak program jest uruchamiany. 
 
-## Głębszy wgląd
+## Głębszy zanurzenie w pisaniu do standardowego błędu
 
-Standardowe wyjście błędów jest bardzo ważne zwłaszcza w przypadku pisania programów, które będziemy uruchamiać z poziomu powłoki. Dzięki temu, że informacje o błędach są wypisywane na oddzielnym wyjściu, możemy łatwiej je znaleźć i zidentyfikować problem.
+Poza funkcją `fprintf()`, istnieją również inne funkcje, które pozwalają na pisanie do standardowego błędu w języku C. Jedną z nich jest `perror()`, która oprócz przekazanego przez nas komunikatu, wyświetli również komunikat z błędem systemowym zapisanym w zmiennej `errno`. Jest to przydatne, gdy chcemy dokładniej zidentyfikować przyczynę błędu.
 
-Dodatkowo, standardowe wyjście błędów jest również wykorzystywane w przypadku pisania skryptów powłoki, gdzie możemy przekierować informacje o błędach do innego pliku lub ich całkowicie zignorować.
+Warto także pamiętać, że standardowe wyjście błędu może być przekierowane i niekoniecznie musi być wypisywane na ekranie. Może to być również zapisane do pliku lub przekierowane do innego urządzenia wyjściowego. Dzięki temu możemy wykorzystać standardowe wyjście błędu w bardziej zaawansowany sposób, np. do zapisywania logów błędów do pliku.
 
 ## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej o standardowym wyjściu błędów, zapoznaj się z poniższymi artykułami:
+Jeśli interesuje Cię temat pisania do standardowego błędu w języku C, to polecam zapoznanie się z poniższymi linkami:
 
-- https://pl.wikipedia.org/wiki/Standardowe_wejście_i_wyjście
-- https://www.programiz.com/c-programming/c-file-input-output
-- https://www.geeksforgeeks.org/error-handling-c-programs/
+- Dokumentacja funkcji `fprintf()` na stronie cppreference.com
+- Przykładowe wykorzystanie standardowego wyjścia błędu w celu zapisywania logów błędów do pliku na blogu "The Crazy Programmer"
+
+Dziękujemy za przeczytanie tego bloga i mamy nadzieję, że teraz wiesz, dlaczego warto korzystać z pisania do standardowego błędu w języku C oraz jak to zrobić w praktyce. Życzymy powodzenia w rozwiązywaniu problemów i pisaniu jeszcze lepszego kodu!

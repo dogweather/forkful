@@ -1,47 +1,36 @@
 ---
-title:    "Arduino: Verifica dell'esistenza di una cartella"
-keywords: ["Arduino"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/it/arduino/checking-if-a-directory-exists.md"
+title:                "Arduino: Verifica se una directory esiste"
+programming_language: "Arduino"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perchè
-Se stai realizzando un progetto con Arduino che richiede di utilizzare una memoria esterna come una scheda SD, potrebbe essere utile sapere se una determinata cartella esiste o meno. In questo modo, puoi evitare errori nel tuo codice e garantire che il programma funzioni correttamente.
+# Perché controllare l'esistenza di una directory in Arduino
+Come programmatori Arduino, spesso ci troviamo a gestire una grande quantità di file e dobbiamo essere sicuri che determinate directory esistano prima di fare operazioni su di esse. In questo articolo, impareremo come controllare se una directory esiste e gestire le eccezioni in modo efficiente.
 
-## Come fare
-Per verificare se una cartella esiste su una scheda SD collegata ad Arduino, puoi utilizzare la funzione `exists()` della libreria `SD`. Ecco un esempio di codice:
+## Come farlo
+Per controllare l'esistenza di una directory in Arduino, possiamo utilizzare la funzione `exists()` della libreria `SD` (SD Card). Questa funzione restituisce un valore booleano (vero o falso) a seconda che la directory esista o meno. Vediamo un esempio:
 
 ```Arduino
 #include <SD.h>
 
-void setup() {
-  // Inizializza la scheda SD
-  SD.begin();
-
-  // Verifica se la cartella "log" esiste
-  if (SD.exists("log")) {
-    // La cartella esiste, stampa un messaggio
-    Serial.println("La cartella log esiste!");
-  } else {
-    // La cartella non esiste, stampa un messaggio
-    Serial.println("La cartella log non esiste!");
-  }
-}
-
-void loop() {
-  // Il programma continua qui
+if(SD.exists("directory/")) {
+  // la directory esiste, possiamo fare operazioni su di essa
+  // ad esempio:
+  File file = SD.open("directory/file.txt");
 }
 ```
 
-Se la cartella "log" esiste, il programma stampa "La cartella log esiste!". Altrimenti, verrà stampato "La cartella log non esiste!".
-Puoi anche utilizzare questa funzione all'interno di un loop per aggiungere ulteriori azioni in base alla presenza o assenza della cartella.
+Se la directory esiste, possiamo anche aprire un file all'interno di essa utilizzando la funzione `open()` della libreria `SD`. In questo modo, evitiamo di incorrere in errori durante l'accesso a una directory che non esiste.
 
-## Approfondimenti
-E' importante notare che la funzione `exists()` non verifica se una cartella è vuota o meno, ma solo se la cartella stessa esiste.
-Inoltre, se stai utilizzando una scheda SD con una capacità inferiore a 2GB, potresti riscontrare problemi con la funzione `exists()`. In questo caso, puoi utilizzare la funzione `SD.ls()` per ottenere una lista delle cartelle presenti sulla scheda e verificare la presenza della cartella desiderata all'interno della lista.
+## Approfondimento
+In Arduino, le directory vengono gestite tramite la libreria `SD`. Questa libreria ci consente di comunicare con una scheda SD e di leggere e scrivere file su di essa. Quando si utilizza la funzione `exists()`, Arduino cerca la directory all'interno della scheda SD e restituisce un valore booleano in base al risultato.
+
+È importante notare che la funzione `exists()` può anche essere utilizzata per controllare l'esistenza di file. Basta passare il nome del file invece del nome della directory come parametro. Ad esempio, `SD.exists("file.txt")` restituirà un valore booleano in base alla presenza o meno del file "file.txt" all'interno della scheda SD.
 
 ## Vedi anche
-- [Documentazione di Arduino sulla libreria SD](https://www.arduino.cc/en/Reference/SD)
-- [Esempi di codice per l'utilizzo di una scheda SD con Arduino](https://www.arduino.cc/en/Tutorial/ReadASCIIString)
-- [Tutorial su come utilizzare una scheda SD con Arduino](https://www.circuitsdiy.com/how-to-use-sd-card-with-arduino/)
+- La documentazione ufficiale di Arduino sulla libreria `SD`: https://www.arduino.cc/en/Reference/SD
+- Un tutorial su come gestire le directory in Arduino: https://www.arduino.cc/en/Tutorial/Files
+- Altri esempi di codice con la libreria `SD`: https://www.arduino.cc/en/Tutorial/FilesFileList

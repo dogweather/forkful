@@ -1,60 +1,55 @@
 ---
-title:    "Rust: Chaînes de concaténation"
-keywords: ["Rust"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fr/rust/concatenating-strings.md"
+title:                "Rust: Concaténation de chaînes de caractères"
+programming_language: "Rust"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi Concaténer des Chaînes de Caractères en Rust?
+# Pourquoi
 
-Les chaînes de caractères ou strings sont un élément fondamental dans la programmation. Elles représentent une séquence de caractères et sont utilisées pour stocker et manipuler du texte. L'une des opérations les plus courantes lors de la manipulation de strings est la concaténation, c'est-à-dire la fusion de deux ou plusieurs strings pour en former une plus grande. Dans cet article, nous verrons pourquoi il est important de comprendre comment concaténer des chaînes de caractères en Rust.
+Les chaînes de caractères sont un élément essentiel de tout programme. Elles nous permettent de stocker et de manipuler du texte de manière efficace. Dans certains cas, nous pouvons avoir besoin de fusionner plusieurs chaînes de caractères pour en créer une nouvelle. C'est là qu'intervient la concaténation de chaînes. Vous apprendrez dans cet article pourquoi et comment utiliser la concaténation de chaînes en Rust.
 
-## Comment le Faire en Rust
+## Comment faire
 
-Rust est un langage de programmation conçu pour être performant, sûr et concurrent. L'une des fonctionnalités les plus intéressantes de Rust est son système de types fort qui permet une gestion efficace de la mémoire. Pour concaténer des chaînes de caractères en Rust, nous pouvons utiliser l'opérateur `+` ou la macro `format!()`.
-
-Voici un exemple utilisant l'opérateur `+` :
+Pour concaténer des chaînes en Rust, nous allons utiliser l'opérateur `+` ou la méthode `format!()`. Voyons un exemple avec l'opérateur `+` :
 
 ```Rust
-let string1 = "Hello ";
-let string2 = "world!";
-let string3 = string1 + string2;
+let nom = "Jean";
+let nom_complet = nom + " Dupont";
 
-println!("{}", string3); // Output: Hello world!
+println!("{}", nom_complet); // affiche "Jean Dupont"
 ```
 
-La macro `format!()` permet également de concaténer des chaînes de caractères, mais avec une syntaxe plus conviviale :
+Ici, nous avons créé une nouvelle chaîne en ajoutant le texte " Dupont" à la fin du prénom "Jean". Notez que l'opérateur `+` a fusionné les deux chaînes ensemble sans ajouter d'espace entre elles. Si vous souhaitez ajouter un espace, vous pouvez utiliser l'opérateur `+` avec une chaîne contenant un espace :
 
 ```Rust
-let string1 = "Hello";
-let string2 = "world!";
-let string3 = format!("{} {}", string1, string2);
+let nom = "Jean";
+let nom_complet = nom + " " + "Dupont";
 
-println!("{}", string3); // Output: Hello world!
+println!("{}", nom_complet); // affiche "Jean Dupont"
 ```
 
-Il est important de noter que la macro `format!()` renvoie une `String`, tandis que l'opérateur `+` modifie les paramètres existants.
-
-## Plongez Plus Profondément
-
-En Rust, les chaînes de caractères sont représentées par le type `String` et par le type primitif `&str`. Ces deux types sont différents et ne peuvent pas être concaténés directement. Cependant, l'opérateur `+` peut être utilisé pour concaténer une `String` et une `&str`.
-
-De plus, il existe une troisième option pour concaténer des chaînes de caractères en Rust : la méthode `push_str()` qui modifie une `String` en ajoutant une `&str` à la fin.
-
-Voici un exemple utilisant la méthode `push_str()` :
+Une autre façon de concaténer des chaînes en Rust est d'utiliser la méthode `format!()`. Cela nous permet d'utiliser des variables et de formater la chaîne comme nous le souhaitons :
 
 ```Rust
-let mut string1 = String::from("Hello");
-let string2 = "world!";
-string1.push_str(" ");
-string1.push_str(string2);
+let nom = "Jean";
+let nom_de_famille = "Dupont";
 
-println!("{}", string1); // Output: Hello world!
+let nom_complet = format!("{} {}", nom, nom_de_famille);
+
+println!("{}", nom_complet); // affiche "Jean Dupont"
 ```
 
-## Voir Aussi
+## Plongée en profondeur
 
-- [La documentation officielle sur les chaînes de caractères en Rust](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Le tutoriel sur les chaînes de caractères en Rust de The Rust Programming Language](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [Un article sur les types de données en Rust](https://www.freecodecamp.org/news/rust-data-types/)
+La concaténation de chaînes peut sembler simple, mais il y a quelques points à garder à l'esprit lorsque vous l'utilisez en Rust. Tout d'abord, il est important de comprendre que la concaténation de chaînes peut être coûteuse en termes de performances. Cela est dû au fait que chaque fois que nous concaténons des chaînes, une nouvelle chaîne est créée en mémoire. Si vous devez concaténer un grand nombre de chaînes, il est recommandé d'utiliser la méthode `format!()` qui est plus efficace en termes de performances.
+
+En outre, en Rust, la concaténation de chaînes peut être un peu délicate lorsque vous travaillez avec des types de données non primitifs tels que `String` ou `str`. En effet, la concaténation peut entraîner la consommation inutile de mémoire ou des erreurs lors de la compilation. Pour éviter cela, il est recommandé d'utiliser des types de données tels que `String` et `str` avec précaution et de comprendre comment ils sont gérés par le langage.
+
+## Voir aussi
+
+- [Guide officiel de Rust sur les chaînes](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- [Documentation officielle de la méthode `format!()`](https://doc.rust-lang.org/std/macro.format.html)
+- [Blog sur les performances de la concaténation de chaînes en Rust](https://deterministic.space/string-fuckery.html)

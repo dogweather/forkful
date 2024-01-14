@@ -1,55 +1,42 @@
 ---
-title:    "Fish Shell: Escribiendo un archivo de texto"
-keywords: ["Fish Shell"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/writing-a-text-file.md"
+title:                "Fish Shell: Escribiendo un archivo de texto"
+programming_language: "Fish Shell"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir un archivo de texto
+## Por qué
 
-Escribir un archivo de texto es una habilidad básica que todo programador debe tener. No solo es una forma de almacenar y organizar información, sino que también es útil para automatizar tareas y crear scripts. Además, puede ser una forma sencilla de documentar tu trabajo y compartirlo con otros.
+La escritura de un archivo de texto puede ser una herramienta útil para los programadores, ya que les permite guardar y organizar información en un formato fácilmente legible. Además, es una forma eficiente de almacenar y compartir código con otros usuarios.
 
 ## Cómo hacerlo
 
-Para escribir un archivo de texto en Fish Shell, puedes seguir estos pasos:
+El primer paso es abrir la terminal de Fish Shell y navegar hasta la carpeta donde desea crear el archivo de texto. A continuación, puede usar el comando `touch` seguido del nombre del archivo para crear un archivo vacío. Por ejemplo:
 
-1. Abre tu terminal y navega hasta la ubicación donde quieres crear el archivo. 
-2. Utiliza el comando `touch` seguido del nombre que quieres darle al archivo, con la extensión `.txt` al final. Por ejemplo: `touch mi_archivo.txt`.
-3. Ahora puedes abrir el archivo en tu editor de texto favorito y comenzar a escribir tu contenido.
-
-Si quieres agregar contenido a un archivo existente, puedes usar el comando `echo` seguido del texto que deseas agregar entre comillas y redirigirlo a tu archivo utilizando el operador `>`.
-
-```
-Fish Shell >>> echo "¡Hola mundo!" > mi_archivo.txt
+```Fish Shell
+touch miarchivo.txt
 ```
 
-Para ver el contenido de tu archivo, puedes utilizar el comando `cat` seguido del nombre del archivo.
+Una vez creado el archivo, puede utilizar un editor de texto como nano o vim para escribir su contenido. En Fish Shell, puede abrir el archivo de texto directamente desde la terminal utilizando el comando `nano miarchivo.txt` o `vim miarchivo.txt`, según su preferencia. 
 
-```
-Fish Shell >>> cat mi_archivo.txt
-¡Hola mundo!
-```
+Luego, simplemente escriba su texto o código en el archivo y utilice los comandos de guardado y salida del editor de texto para guardar los cambios.
 
 ## Profundizando
 
-Escribir un archivo de texto también te permite utilizar diferentes comandos y opciones para personalizar tu contenido. Por ejemplo, puedes utilizar el comando `date` para agregar la fecha y hora actual en tu archivo, o el comando `pwd` para mostrar la ruta de tu directorio actual.
+La escritura de archivos de texto en Fish Shell también permite el uso de variables y comandos en su contenido. Por ejemplo, puede crear un archivo que contenga una lista de archivos en una carpeta específica de la siguiente manera:
 
-```
-Fish Shell >>> date >> mi_archivo.txt 
-Fish Shell >>> pwd >> mi_archivo.txt
-```
-
-Además, puedes utilizar el comando `head` o `tail` para mostrar las primeras o últimas líneas de tu archivo, respectivamente. Y si quieres combinar el contenido de varios archivos, puedes utilizar el comando `cat` seguido de los nombres de los archivos separados por un espacio.
-
-```
-Fish Shell >>> head -n 5 mi_archivo.txt 
-Fish Shell >>> tail -n 3 mi_archivo.txt 
-Fish Shell >>> cat mi_archivo.txt mi_otro_archivo.txt > contenido_combinado.txt
+```Fish Shell
+ls > miarchivo.txt
 ```
 
-## Ver También
+Este comando generará una lista de los archivos en esa carpeta y la guardará en el archivo de texto especificado.
+
+También puede utilizar el comando `cat` para concatenar (unir) varios archivos de texto en uno solo, o el comando `echo` para imprimir texto directamente en un archivo.
+
+## Ver también
 
 - [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/)
-- [Introducción a la línea de comandos en Fish Shell](https://www.digitalocean.com/community/tutorials/fish-advanced-command-line)
-- [Más ejemplos de comandos para escribir archivos de texto en Fish Shell](https://ostechnix.com/fish-an-user-friendly-command-line-shell-for-linux/)
+- [Introducción a Fish Shell para principiantes](https://www.linuxito.com/programacion/1256-introduccion-a-fish-shell-para-principiantes)
+- [Cómo trabajar con archivos y directorios en Fish Shell](https://fishshell.com/docs/current/tutorial.html)

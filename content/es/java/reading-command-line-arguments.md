@@ -1,54 +1,52 @@
 ---
-title:    "Java: Leyendo argumentos de línea de comando."
-keywords: ["Java"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/java/reading-command-line-arguments.md"
+title:                "Java: Leyendo argumentos de línea de comandos"
+programming_language: "Java"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué 
+## Por qué leer argumentos de línea de comando en Java
 
-¿Has oído hablar alguna vez de los argumentos de línea de comando en Java? Si eres un programador principiante o alguien que se está familiarizando con Java, es posible que te hayas preguntado por qué es importante aprender a leer argumentos de línea de comando en Java. En este artículo, te explicaremos brevemente por qué es una habilidad útil para cualquier programador de Java y cómo puedes comenzar a hacerlo.
+Si eres un programador Java, es muy probable que hayas escuchado sobre los argumentos de línea de comando. Pero, ¿sabes por qué son importantes y cómo puedes utilizarlos en tus programas? A continuación, te explicaremos todo lo que necesitas saber sobre este tema.
 
-## Cómo hacerlo 
+## Cómo leer argumentos de línea de comando en Java
 
-La lectura de argumentos de línea de comando en Java te permite pasar información al programa cuando lo estás ejecutando en la línea de comando. Esta habilidad te permite personalizar la ejecución de tu programa en función de la entrada ingresada por el usuario. A continuación, te mostramos un ejemplo de cómo hacerlo en Java:
+Leer argumentos de línea de comando en Java es muy sencillo. Solo necesitas seguir los siguientes pasos:
+
+1. Define el método `main()` en tu clase Java.
+2. Agrega un parámetro de tipo `String[] args` al método `main()`.
+3. Utiliza un bucle `for` para recorrer todos los argumentos introducidos en la línea de comando.
+4. Usa el método `System.out.println()` para imprimir cada argumento en la consola.
 
 ```Java
-public class MiPrograma {
-    public static void main(String[] args) {
-        System.out.println("Hola " + args[0] + "!");
-    }
+public class Main {
+   public static void main(String[] args) {
+      for(int i=0; i<args.length; i++) {
+         System.out.println(args[i]);
+      }
+   }
 }
 ```
 
-En el ejemplo anterior, estamos utilizando el argumento de línea de comando `args[0]` para imprimir un mensaje de saludo personalizado. Al ejecutar este programa desde la línea de comando, podemos pasar un argumento después del nombre del programa, por ejemplo `java MiPrograma Juan`, y el programa imprimirá `Hola Juan!`. Nota que `args[0]` siempre se refiere al primer argumento ingresado después del nombre del programa.
+Si ejecutas este código en la línea de comando con argumentos como `java Main argumento1 argumento2`, obtendrás la siguiente salida:
 
-## Profundizando 
-
-Ahora que ya sabes cómo leer argumentos de línea de comando en Java, es importante entender algunos detalles adicionales. Por ejemplo, ¿qué pasa si queremos pasar más de un argumento o queremos que el argumento se convierta a un tipo de dato distinto? Para ello, podemos utilizar la clase [Scanner](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html) de Java que nos permite leer la entrada en diferentes formatos y convertirla a otros tipos de datos. A continuación, un ejemplo de cómo utilizar esta clase en nuestro programa:
-
-```Java
-import java.util.Scanner;
-
-public class MiPrograma {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("¿Cuál es tu nombre? ");
-        String nombre = scanner.nextLine();
-        System.out.println("¿Y cuántos años tienes? ");
-        int edad = scanner.nextInt();
-        System.out.println("Hola " + nombre + "! Tienes " + edad + " años.");
-    }
-}
+```
+argumento1
+argumento2
 ```
 
-En este ejemplo, estamos utilizando `scanner.nextLine()` para leer una cadena de texto y `scanner.nextInt()` para leer un número entero. De esta manera, podemos personalizar aún más la interacción con nuestro programa a través de los argumentos de línea de comando y la entrada del usuario. Es importante tener en cuenta que la clase Scanner necesita ser importada en nuestro programa para poder ser utilizada.
+## Profundizando en la lectura de argumentos de línea de comando en Java
 
-## Ver también 
+Ahora que sabes cómo leer los argumentos de línea de comando en Java, te preguntarás ¿por qué necesitamos hacer esto? Bueno, los argumentos de línea de comando nos permiten pasar información a nuestro programa al momento de ejecutarlo. Esto es muy útil si queremos personalizar ciertos aspectos de nuestro programa sin tener que modificar su código fuente.
 
-- [Documentación oficial de Java sobre argumentos de línea de comando](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [Tutorial de Baeldung sobre lectura de argumentos de línea de comando en Java](https://www.baeldung.com/java-command-line-arguments)
-- [Artículo de Oracle sobre el uso de la clase Scanner en Java](https://education.oracle.com/java-class-scanner)
+Además, también podemos utilizar argumentos de línea de comando para crear aplicaciones interactivas en la consola, donde el usuario pueda introducir datos a través de los argumentos en lugar de tener que escribirlos manualmente.
 
-¡Esperamos que este artículo te haya sido útil para entender la importancia y cómo leer argumentos de línea de comando en Java! ¡No dudes en compartir tus comentarios o preguntas en la sección de comentarios a continuación. ¡Hasta la próxima!
+También es importante mencionar que los argumentos de línea de comando se pueden utilizar junto con las variables de entorno del sistema para mejorar la seguridad de nuestras aplicaciones.
+
+## Ver también
+
+- [Cómo utilizar variables de entorno en Java](https://link1.com)
+- [Ejemplos de aplicaciones interactivas en consola](https://link2.com)
+- [Documentación oficial sobre los argumentos de línea de comando en Java](https://link3.com)

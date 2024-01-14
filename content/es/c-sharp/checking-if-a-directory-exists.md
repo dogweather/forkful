@@ -1,61 +1,49 @@
 ---
-title:    "C#: Comprobando si existe un directorio"
-keywords: ["C#"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/checking-if-a-directory-exists.md"
+title:                "C#: Comprobando si existe un directorio"
+programming_language: "C#"
+category:             "Files and I/O"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías verificar si un directorio existe?
+## Por qué
 
-Verificar si un directorio existe es una parte importante de la programación en C#. Esto te permite asegurarte de que un directorio específico está presente antes de intentar acceder a él o realizar operaciones en su interior. También ayuda a evitar errores inesperados en tu programa.
+Al programar en C#, es importante verificar si un directorio existe antes de realizar operaciones en él. Esto ayuda a asegurar que el código se ejecute sin errores y que los archivos se guarden correctamente.
 
-## Cómo verificar si un directorio existe en C#
+## Cómo hacerlo
 
-Para verificar si un directorio existe en C#, usamos el método `Directory.Exists()` que devuelve `true` si el directorio existe y `false` si no existe. Aquí hay un ejemplo de cómo usar este método:
-
-```C#
-if (Directory.Exists(@ "C:\Users\Usuario\Documents"))
-{
-    Console.WriteLine("El directorio existe.");
-}
-else
-{
-    Console.WriteLine("El directorio no existe.");
-}
-
-// Resultado:
-// El directorio existe.
-```
-
-También podemos combinar este método con la clase `Path` para verificar si un directorio existe en una ubicación específica. Por ejemplo:
+Para verificar si un directorio existe en C#, primero necesitamos importar el espacio de nombres `System.IO`. Luego, podemos utilizar el método `Directory.Exists()` para comprobar si un directorio existe.
 
 ```C#
-string path = Path.Combine(@"C:\Users\Usuario", "Documents");
+using System.IO;
 
-if (Directory.Exists(path))
-{
-    Console.WriteLine("El directorio existe.");
-}
-else
-{
-    Console.WriteLine("El directorio no existe.");
-}
-
-// Resultado:
-// El directorio existe.
+Directory.Exists("ruta/del/directorio");
 ```
 
-## En profundidad: Verificación de directorios en C#
+El método `Directory.Exists()` devolverá un valor booleano: `true` si el directorio existe y `false` si no existe.
 
-Además de usar el método `Directory.Exists()`, también podemos usar otros métodos de la clase `Directory` para realizar operaciones en un directorio. Por ejemplo, podemos crear un directorio si no existe o listar los archivos y subdirectorios en un directorio específico.
+## Profundizando
 
-También podemos utilizar la clase `FileInfo` para obtener información más detallada sobre un directorio existente, como su tamaño o su fecha de creación.
+Cuando utilizamos el método `Directory.Exists()`, es importante tener en cuenta algunas cosas:
 
-Es importante tener en cuenta que al trabajar con directorios, debemos tener permisos suficientes para acceder a ellos. De lo contrario, podemos recibir un error de acceso no autorizado.
+- Este método solo comprueba si el directorio existe, no si es un directorio válido o si tenemos permisos para acceder a él. Podríamos obtener `true` incluso si el directorio está dañado o es inaccesible.
+- Podemos pasar una ruta absoluta o relativa como argumento. Si utilizamos una ruta relativa, se comprobará si el directorio existe en relación con el directorio actual.
+
+Por ejemplo, si tenemos la siguiente estructura de directorios:
+
+```
+- MiProyecto
+    - src
+        - archivo.cs
+    - datos
+        - archivo.txt
+```
+
+Si ejecutamos `Directory.Exists("datos")` desde el archivo `archivo.cs`, obtendremos `true` ya que existe una carpeta llamada "datos" en la misma ubicación.
 
 ## Ver también
 
-- [Microsoft Docs: Directory.Exists()](https://docs.microsoft.com/es-es/dotnet/api/system.io.directory.exists?view=net-5.0)
-- [Microsoft Docs: Crear un directorio (solo lectura) en C#](https://docs.microsoft.com/es-es/dotnet/standard/io/how-to-create-a-directory-only-if-it-doesnt-already-exist?view=net-5.0)
-- [TechNet: Crear un directorio en C#](https://social.technet.microsoft.com/wiki/contents/articles/27668.crear-un-directorio-en-c.aspx)
+- [Documentación oficial de Microsoft sobre el método Directory.Exists()](https://docs.microsoft.com/es-es/dotnet/api/system.io.directory.exists?view=net-5.0)
+- [Tutorial de C# sobre la gestión de archivos y directorios](https://www.c-sharpcorner.com/article/file-and-directory-management-in-C-Sharp/) 
+- [Ejemplos de código para verificar si un directorio existe en C#](https://www.geeksforgeeks.org/check-if-a-folder-exists-in-c-sharp/)

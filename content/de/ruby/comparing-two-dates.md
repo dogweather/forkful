@@ -1,57 +1,41 @@
 ---
-title:    "Ruby: Vergleich von zwei Datum"
-keywords: ["Ruby"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/de/ruby/comparing-two-dates.md"
+title:                "Ruby: Vergleich von zwei Daten"
+programming_language: "Ruby"
+category:             "Dates and Times"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Vergleichen von zwei Daten kann eine nützliche Fähigkeit in der Ruby Programmierung sein. Es kann dabei helfen, zu bestimmen, ob ein Datensatz in einer Datenbank älter oder neuer als ein anderer ist. In diesem Blog-Beitrag werden wir lernen, wie man diese Fähigkeit in Ruby ausführt und einige interessante Fakten über die Arbeit mit Daten herausfinden.
 
-## Wie geht das
-Es gibt mehrere Methoden, um zwei Daten in Ruby zu vergleichen. Wir werden uns hier auf die gängigsten Methoden konzentrieren.
+Das Vergleichen von zwei Daten kann hilfreich sein, um zum Beispiel zu überprüfen, ob ein bestimmtes Ereignis in der Zukunft liegt oder bereits in der Vergangenheit stattgefunden hat. Dies kann nützlich sein für die Programmierung von Kalendern, Zeitplanern oder anderen Anwendungen, die mit Zeiten und Terminen arbeiten.
 
-### Verwenden von Vergleichsoperatoren
-Eine Möglichkeit, zwei Daten in Ruby zu vergleichen, ist die Verwendung von Vergleichsoperatoren wie `<` (kleiner als), `>` (größer als) und `==` (gleich). Schauen wir uns ein Beispiel an:
+## Wie
 
-```Ruby
-date_1 = Date.new(2020, 2, 5)
-date_2 = Date.new(2020, 3, 15)
-
-if date_1 < date_2
-  puts "Date 1 ist vor Date 2."
-elsif date_1 > date_2
-  puts "Date 1 ist nach Date 2."
-else
-  puts "Date 1 und Date 2 sind gleich."
-end
-```
-
-Die Ausgabe dieses Codes wäre "Date 1 ist vor Date 2." Dies liegt daran, dass `date_1` ein früheres Datum ist als `date_2`. Durch die Verwendung von Vergleichsoperatoren können wir also bestimmen, welche der beiden Daten früher oder später ist.
-
-### Verwenden von Methode #compare
-Eine weitere Möglichkeit, zwei Daten in Ruby zu vergleichen, ist die Verwendung der Methode `#compare`. Diese Methode gibt entweder `0`, `1` oder `-1` zurück, abhängig davon, ob die Daten gleich, größer oder kleiner sind. Sehen wir uns dazu ein Beispiel an:
+Um zwei Daten in Ruby zu vergleichen, können wir die Ruby-Methode `Date#compare` verwenden. Diese Methode vergleicht zwei Daten und gibt entweder -1, 0 oder 1 zurück, je nachdem, ob das erste Datum vor, gleich oder nach dem zweiten Datum liegt.
 
 ```Ruby
-date_1 = Date.new(2020, 4, 20)
-date_2 = Date.new(2020, 4, 15)
+first_date = Date.new(2020, 5, 1)
+second_date = Date.new(2020, 5, 5)
 
-if date_1.compare(date_2) == 1
-  puts "Date 1 ist nach Date 2."
-elsif date_1.compare(date_2) == -1
-  puts "Date 1 ist vor Date 2."
-else
-  puts "Date 1 und Date 2 sind gleich."
-end
+puts first_date.compare(second_date)
 ```
+Dieser Code würde 1 ausgeben, da das erste Datum (2020-05-01) nach dem zweiten Datum (2020-05-05) liegt.
 
-In diesem Fall wäre die Ausgabe "Date 1 ist nach Date 2." Da `date_1` ein späteres Datum ist als `date_2`, gibt die Methode `#compare` eine `1` zurück.
+Wir können auch die `Date#<=>` Methode verwenden, die ähnlich funktioniert, aber anstelle von -1, 0 oder 1, einen Wert zwischen -1 und 1 zurückgibt.
 
-## Tiefer gehend
-In diesen Code-Beispielen haben wir nur das Vergleichen von einfachen Datumswerten betrachtet. Es ist jedoch auch möglich, zwei Daten zu vergleichen, die Zeit- und Zeitzone-Informationen enthalten. Dazu ist es wichtig, die entsprechenden Methoden und Konverter zu kennen, um die Daten in ein vergleichbares Format zu bringen.
+```Ruby
+puts first_date <=> second_date
+```
+Dieser Code würde -1 ausgeben, da das erste Datum vor dem zweiten Datum liegt.
+
+## Tiefergehende Informationen
+
+Es gibt viele Faktoren, die bei der Verwendung von Datumsklassen in Ruby zu beachten sind, wie zum Beispiel die Berücksichtigung von Zeitverschiebungen oder unterschiedlichen Zeitzonen. Es ist wichtig, sich über diese Faktoren bewusst zu sein und möglicherweise zusätzliche Methoden zu verwenden, wie zum Beispiel `Time#compare`, um eine genauere Vergleichsfunktion zu erhalten.
 
 ## Siehe auch
-- [Ruby Date Dokumentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
-- [Date-Klasse in Ruby](https://www.rubyguides.com/2015/02/ruby-date-time-tutorial/) 
-- [Vergleichsoperatoren in Ruby](https://www.rubyguides.com/2018/12/ruby-comparison-operators/)
+
+- [Ruby Date Klasse Dokumentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
+- [Warum Ruby Date Objekte besser als Zeit sind](https://thoughtbot.com/blog/why-ruby-date-objects-are-better-than-time)
+- [Vergleichen von Zeitstempeln mit Ruby](https://stackoverflow.com/questions/108820/foo-to-compare-dates-in-ruby-on-rails)

@@ -1,33 +1,45 @@
 ---
-title:    "Go: Alimerkkijonojen erottelu"
-keywords: ["Go"]
-editURL:  "https://github.com/dogweather/forkful/blob/master/content/fi/go/extracting-substrings.md"
+title:                "Go: Alimerkkijonojen erottaminen"
+programming_language: "Go"
+category:             "Strings"
+editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?
 
-Monesti ohjelmoinnissa on tarve käsitellä tekstin eri osia, esimerkiksi halutaan poistaa tai korvata tietyt merkkijonot. Tässä tilanteessa substringsien (tekstin osien) eristäminen voi olla hyödyllistä.
+Joskus koodin luvattaminen tai analysointi vaatii tiettyjen merkkijonojen erottamista suuremmasta tekstikokonaisuudesta. Tämä voidaan tehdä luomalla osatekijäkohtia tai tekstipaloja, ja tämä prosessi tunnetaan substraktioina.
 
-## Miten tehdään
+## Miten tehdä?
 
-Substringsien eristäminen on helppoa Go-ohjelmointikielessä. Käytämme tähän kirjastofunktiota nimeltä `Substr()`.
+Käytännössä Go-kielellä substraktiot voidaan tehdä käyttämällä `strings`-pakettia ja sen `Substring`-toimintoa. Seuraavassa esimerkissä otetaan syötteenä olevasta tekstistä osatekijät aikavälillä 0-5 ja tulostetaan ne näytölle.
 
 ```Go
-// Otetaan esimerkiksi seuraava merkkijono
-s := "Tervetuloa Suomeen!"
-// Eristetään substrings "Suomeen"
-substring := s[11:18]
-fmt.Println(substring)
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    text := "Tässä on esimerkkiteksti"
+    substr := text[0:5] // otetaan osatekijät
+
+    fmt.Println(substr) // tulostetaan "Tässä"
+}
 ```
-Tämä koodinpätkä tulostaa `"Suomeen"`.
 
-## Syvempi sukellus
+Tämä toiminto on erityisen hyödyllinen, jos haluat esimerkiksi tarkistaa, onko tietyllä merkkijonolla tietyn alku tai loppu.
 
-Substringsien eristäminen perustuu käytännössä vain merkkijonon indeksien käyttämiseen. Indeksi 0 alkaa aina merkkijonon ensimmäisestä merkistä. Esimerkissämme käytimme myös `fmt.Println()` -funktiota, joka tulostaa annetun arvon konsoliin.
+## Syvällisempi sukellus
+
+Go-kielessä `Substring`-toimintoa voidaan käyttää myös monimutkaisempiin substraktiioihin. Voit esimerkiksi määrittää muuttujan, joka sisältää haluamasi alun ja lopun indeksit, ja käyttää näitä arvoja `Substring`-toiminnossa.
+
+On myös mahdollista käyttää `Substring` yhdistettynä muihin `strings`-paketin toimintoihin, kuten `IndexOf`, jotta voit löytää halutun merkkijonon tietyssä osassa tekstiä.
 
 ## Katso myös
 
-- [Go-kielen virallinen dokumentaatio](https://golang.org/doc/)
-- [Käytännöllisiä esimerkkejä Go-kielestä](https://gobyexample.com/)
+- `strings`-paketti Go-kielessä: https://golang.org/pkg/strings/
+- Video selitys Go:sta ja substringien käytöstä: https://www.youtube.com/watch?v=_P9LzCvC-mM
