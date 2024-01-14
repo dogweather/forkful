@@ -6,7 +6,7 @@ A programming cookbook that's collaborative, polyglot, and multilingual.
 
 This repo contains all the [Forkful](https://forkful.ai) pages starting [here](https://github.com/dogweather/forkful/tree/master/content), and the [Discussions](https://github.com/dogweather/forkful/discussions).
 
-## Human Languages
+## Languages
 
 Is there a language we should add? [Post a message in the forum](https://github.com/dogweather/forkful/discussions/categories/ideas).
 
