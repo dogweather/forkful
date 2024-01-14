@@ -1,6 +1,6 @@
 # Forkful
 
-<img align="right" width="51%" src="https://github.com/dogweather/forkful/assets/150670/115e265f-5c4d-4533-91e6-d2f6987c7850">
+<img align="right" width="40%" src="https://github.com/dogweather/forkful/assets/150670/115e265f-5c4d-4533-91e6-d2f6987c7850">
 
 A programming cookbook that's collaborative, polyglot, and multilingual. 
 
