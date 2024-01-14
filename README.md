@@ -32,24 +32,26 @@ Is there a language we should add? [Post a message in the forum](https://github.
 
 Would you like a language added to the book? [Post a message in the forum](https://github.com/dogweather/forkful/discussions/categories/ideas).
 
-* [Arduino](https://forkful.ai/en/arduino)
-* [Bash](https://forkful.ai/en/bash)
-* [C](https://forkful.ai/en/c)
-* [C++](https://forkful.ai/en/cpp)
-* [C#](https://forkful.ai/en/c-sharp)
-* [Clojure](https://forkful.ai/en/clojure)
-* [Elixir](https://forkful.ai/en/elixir)
-* [Elm](https://forkful.ai/en/elm)
-* [Fish Shell](https://forkful.ai/en/fish-shell)
-* [Gleam](https://forkful.ai/en/gleam)
-* [Go](https://forkful.ai/en/go)
-* [Haskell](https://forkful.ai/en/haskell)
-* [Java](https://forkful.ai/en/java)
-* [Javascript](https://forkful.ai/en/javascript)
-* [Kotlin](https://forkful.ai/en/kotlin)
-* [PHP](https://forkful.ai/en/php)
-* [Python](https://forkful.ai/en/python)
-* [Ruby](https://forkful.ai/en/ruby)
-* [Rust](https://forkful.ai/en/rust)
-* [Swift](https://forkful.ai/en/swift)
-* [TypeScript](https://forkful.ai/en/typescript)
+|  |  |
+|--|--|
+| Arduino | [online page](https://forkful.ai/en/arduino) |
+| Bash | [online page](https://forkful.ai/en/bash) |
+| C | [online page](https://forkful.ai/en/c) |
+| C++ | [online page](https://forkful.ai/en/cpp) |
+| C# | [online page](https://forkful.ai/en/c-sharp) |
+| Clojure | [online page](https://forkful.ai/en/clojure) |
+| Elixir | [online page](https://forkful.ai/en/elixir) |
+| Elm | [online page](https://forkful.ai/en/elm) |
+| Fish Shell | [online page](https://forkful.ai/en/fish-shell) |
+| Gleam | [online page](https://forkful.ai/en/gleam) |
+| Go | [online page](https://forkful.ai/en/go) |
+| Haskell | [online page](https://forkful.ai/en/haskell) |
+| Java | [online page](https://forkful.ai/en/java) |
+| Javascript | [online page](https://forkful.ai/en/javascript) |
+| Kotlin | [online page](https://forkful.ai/en/kotlin) |
+| PHP | [online page](https://forkful.ai/en/php) |
+| Python | [online page](https://forkful.ai/en/python) |
+| Ruby | [online page](https://forkful.ai/en/ruby) |
+| Rust | [online page](https://forkful.ai/en/rust) |
+| Swift | [online page](https://forkful.ai/en/swift) |
+| TypeScript | [online page](https://forkful.ai/en/typescript) |
