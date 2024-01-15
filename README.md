@@ -4,7 +4,10 @@
 
 A special programming cookbook:
 
-* **Collaborative**: AI + a capybara (me) + open source contributors (you)
+* **Collaborative**: A three-way _Zusammenarbeit_ between
+  * AI
+  * A capybara (me)
+  * Open source contributors (you)
 * **Multilingual**: 16 world languages
 * **Polyglot**: 21 programming languages
 
