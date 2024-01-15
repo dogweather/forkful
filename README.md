@@ -4,12 +4,16 @@
 
 A special programming cookbook:
 
-* **Collaborative**: A three-way _Zusammenarbeit_ between
-  * AI
-  * A capybara (me)
-  * Open source contributors (you)
-* **Multilingual**: 16 world languages
-* **Polyglot**: 21 programming languages
+**Collaborative**: a _Zusammenarbeit_ between
+1. AI
+2. A capybara (me)
+3. Open source contributors (you)
+ 
+**Multilingual**: 16 world languages
+
+**Polyglot**: 21 programming languages
+
+---
 
 This repo contains all the [Forkful](https://forkful.ai) pages starting [here](https://github.com/dogweather/forkful/tree/master/content), and the [Discussions](https://github.com/dogweather/forkful/discussions).
 
